@@ -397,7 +397,6 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a7ee7d450c03e89bb0beb6cd97056aa4e" kind="variable"><name>indent_size_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1aaa55b147a670878984952ca1112cecd8" kind="variable"><name>totals_size_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a38252f2ef24feabcb7f55e7bdac30bd2" kind="variable"><name>add_empty_line_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a3e47f2c530c5019bde9fe56867bc581f" kind="variable"><name>arguments_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a0972f104175c075295a8aa385e90aad4" kind="variable"><name>buffer_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a970a08a00e70f1574033085350656230" kind="variable"><name>buffer_has_failures_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a69616e251ebb3d22e481ada0831bec3c" kind="variable"><name>colours_</name></member>
@@ -454,7 +453,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1abaee31ffca8e65c9af34f7f67227c5b3" kind="function"><name>write_console</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a887f23131eb91fecf060982dcbd3b1ca" kind="function"><name>write_console_text</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a90a541c6a9b1ddd3da9440358bfc704e" kind="function"><name>write_file</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1aeafdc8e05a6d80d9445f17ff354ee215" kind="function"><name>write_info</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a6b48a4007c568c28fffbc2f2fe3f32e7" kind="function"><name>write_info</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1aa97f2ba65009154090dc68e42c94db71" kind="function"><name>write_line</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1ac6dca3d3fa34870f3960fe5e226e45d8" kind="function"><name>format_elapsed_time</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a6bf3aac88a5e66e2f93eb32c54dbdd14" kind="function"><name>format_session_totals</name></member>
@@ -505,7 +504,6 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a7ee7d450c03e89bb0beb6cd97056aa4e" kind="variable"><name>indent_size_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1aaa55b147a670878984952ca1112cecd8" kind="variable"><name>totals_size_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a38252f2ef24feabcb7f55e7bdac30bd2" kind="variable"><name>add_empty_line_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a3e47f2c530c5019bde9fe56867bc581f" kind="variable"><name>arguments_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a0972f104175c075295a8aa385e90aad4" kind="variable"><name>buffer_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a970a08a00e70f1574033085350656230" kind="variable"><name>buffer_has_failures_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a69616e251ebb3d22e481ada0831bec3c" kind="variable"><name>colours_</name></member>
@@ -528,7 +526,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1abaee31ffca8e65c9af34f7f67227c5b3" kind="function"><name>write_console</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a887f23131eb91fecf060982dcbd3b1ca" kind="function"><name>write_console_text</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a90a541c6a9b1ddd3da9440358bfc704e" kind="function"><name>write_file</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1aeafdc8e05a6d80d9445f17ff354ee215" kind="function"><name>write_info</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a6b48a4007c568c28fffbc2f2fe3f32e7" kind="function"><name>write_info</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1aa97f2ba65009154090dc68e42c94db71" kind="function"><name>write_line</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1ac6dca3d3fa34870f3960fe5e226e45d8" kind="function"><name>format_elapsed_time</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a6bf3aac88a5e66e2f93eb32c54dbdd14" kind="function"><name>format_session_totals</name></member>
@@ -582,7 +580,6 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a7ee7d450c03e89bb0beb6cd97056aa4e" kind="variable"><name>indent_size_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1aaa55b147a670878984952ca1112cecd8" kind="variable"><name>totals_size_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a38252f2ef24feabcb7f55e7bdac30bd2" kind="variable"><name>add_empty_line_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a3e47f2c530c5019bde9fe56867bc581f" kind="variable"><name>arguments_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a0972f104175c075295a8aa385e90aad4" kind="variable"><name>buffer_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a970a08a00e70f1574033085350656230" kind="variable"><name>buffer_has_failures_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a69616e251ebb3d22e481ada0831bec3c" kind="variable"><name>colours_</name></member>
@@ -605,7 +602,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1abaee31ffca8e65c9af34f7f67227c5b3" kind="function"><name>write_console</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a887f23131eb91fecf060982dcbd3b1ca" kind="function"><name>write_console_text</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a90a541c6a9b1ddd3da9440358bfc704e" kind="function"><name>write_file</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1aeafdc8e05a6d80d9445f17ff354ee215" kind="function"><name>write_info</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a6b48a4007c568c28fffbc2f2fe3f32e7" kind="function"><name>write_info</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1aa97f2ba65009154090dc68e42c94db71" kind="function"><name>write_line</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1ac6dca3d3fa34870f3960fe5e226e45d8" kind="function"><name>format_elapsed_time</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a6bf3aac88a5e66e2f93eb32c54dbdd14" kind="function"><name>format_session_totals</name></member>
@@ -658,15 +655,12 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ad107cec6e32daac2da4cd665c7444e51" kind="variable"><name>aborted_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1abacf53ab658e289ae89051531c0cddad" kind="variable"><name>children_suites_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1aa6f3fec517a49f9cdc70ec79b9d1e5" kind="variable"><name>exit_code_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a12b7d597d11b0ff284cdb84a7c4ea927" kind="variable"><name>filter_patterns_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a3d2fa5da18948374d9ee4e68153edcf9" kind="variable"><name>has_invalid_reporter_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a8e9e6782d6cde59ac82fb6fb459888cb" kind="variable"><name>has_option_errors_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a999d64ffbd12dcacb59c34fbea4452ba" kind="variable"><name>has_rejected_suites_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a2cbcc12d72c192f6053cd342af1b5a77" kind="variable"><name>list_tests_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a4a43729c815ce9b3e3f15a650f011f66" kind="variable"><name>has_top_suite_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1af8ce5a496dba305f6fbd45005d580321" kind="variable"><name>listed_suite_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1acb06cb7ebf949b8af5c5d57645c56e4a" kind="variable"><name>listed_suites_count_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a90900e7d0a4571407b3727e031e46685" kind="variable"><name>listed_test_cases_count_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a0a778164fa15ced714c3859a1546c5f5" kind="variable"><name>option_errors_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1acea30e98ccf65d97e8c0e0d0ff8edda0" kind="variable"><name>options_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a67205181c73d11d12964bb324f1dc902" kind="variable"><name>reporter_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1acf5727abb4e4b23e1a2d7d3320f5dec9" kind="variable"><name>running_test_case_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a70dad6c927a59d5459c2edfdb40fdece" kind="variable"><name>session_state_</name></member>
@@ -676,7 +670,6 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a93a3afb222db1fcaa87cd1ba7fa15bc0" kind="variable"><name>top_suite_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a401e4e098f0ceba7f21a3a5bf1ea89e3" kind="variable"><name>top_suite_name_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a04b52f3243abe3a9b08b44efd03e4b57" kind="variable"><name>totals_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1d4b6b07a507c00a5ac262e098b12ad3" kind="variable"><name>verbosity_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a10788baa079e19676a8cdbaa253285dc" kind="function"><name>runner</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1adbe02fed3c414adf001d856ab390e000" kind="function"><name>runner</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a09acf1e03953d8017e56c8b5e38b879a" kind="function"><name>runner</name></member>
@@ -684,10 +677,12 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1aea1a1eff9cac943c1cd84e48b9add92f" kind="function"><name>~runner</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a7bc806540e65c21095ef1ea1ef970db2" kind="function"><name>abort</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a4069fe957bbc7a9217ca2dd4d2034a97" kind="function"><name>add_suite</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1aac24d1193ac0579dd6ac3c523a32015f" kind="function"><name>add_top_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a9484b22aa909151712144cd39130187a" kind="function"><name>added_suites_count</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a7f8403f1ccc6a0e8171ef077bcd9cbd4" kind="function"><name>exit_code</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ac40f554936c71d7c748c1241ffd3f2ac" kind="function"><name>initialise</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1acfabd0e10d233ad305b6f4fc125a97f2" kind="function"><name>initialise</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1aba1f6140138ba802f91f8f025258b63d" kind="function"><name>initialise</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a39ee9ec53f8df687cd84092de5118592" kind="function"><name>initialise</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ae87c4a8f0e08e069b6d1a393f88e040e" kind="function"><name>initialise</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ae5df469f7aaccc8e24bfadff4c209688" kind="function"><name>is_listing</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a549524d15dc1eb5e6b4eb4bdd2af7b6b" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1aa34a0418d54c633630a089eb2b5a61ee" kind="function"><name>operator=</name></member>
@@ -705,24 +700,34 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a94a9df0418776ebce476cd9a2e4f591f" kind="function"><name>verbosity</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1dd0221dca8e7382f0b625ff6316ed92" kind="function"><name>verbosity_level</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1af0682165f5d07b13fd21e3f6f8da546c" kind="function"><name>abort</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ab5026c76f266f0bc4b4ce5e4fd8dc98b" kind="function"><name>add_option_error</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a11cfc0285b39ae765ccf3082c1eadebe" kind="function"><name>has_option_errors</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a2b0adeef059676a455d9506ba8a06d26" kind="function"><name>is_selected</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a0e478c394741ff78f65a7e2c0822ba50" kind="function"><name>list_test_case</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a2319eb34fc8b601ca5e6a8ec538ba138" kind="function"><name>parse_options</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1dcc8f8d7f80044c67c492a1aebe3043" kind="function"><name>register_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a964febc11fcd08a4437e11d16544ca7b" kind="function"><name>reject_suite</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a283a814f62388d03524c8f17ae3613c9" kind="function"><name>report_option_errors</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a7c4dbf695c086ca4d3f0ce33e6d561f7" kind="function"><name>run_suites</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a19160679a4fe484fc9f8f76ed3408762" kind="function"><name>link_static_suite</name></member>
   </compound>
-  <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options" kind="struct"><name>micro_os_plus::micro_test_plus::runner_options</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a7c2cca740efdbdc4927cac43aa456611" kind="variable"><name>arguments</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a48ed4dd71eff02911c2d6943ba616850" kind="variable"><name>colour</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a8dc9c5a5b6c89c12acd27d67d57618dd" kind="variable"><name>filter_patterns</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1ac4f95336439b329d0f3731a5dcafb6f9" kind="variable"><name>list_tests</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1aacf79acd1554b6e8899524bc02ee6257" kind="variable"><name>output_file_path</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1ad22d04df014c5b0658b6e7bd239f15b0" kind="variable"><name>selected_reporter</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1aff30f0303a958a549a2f4b6e67db00d5" kind="variable"><name>verbosity_level</name></member>
+  <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options" kind="class"><name>micro_os_plus::micro_test_plus::runner_options</name>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1ae26cb575ce2e252eef06b7b124a6400a" kind="variable"><name>arguments</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a48ed4dd71eff02911c2d6943ba616850" kind="variable"><name>colour</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a62b0a05ad2be4f3a5131aaf8bb523910" kind="variable"><name>filter_patterns</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1ac4f95336439b329d0f3731a5dcafb6f9" kind="variable"><name>list_tests</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a86bc6ef13bb488a933f6001c98aa2c6e" kind="variable"><name>output_file_path</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1ad22d04df014c5b0658b6e7bd239f15b0" kind="variable"><name>selected_reporter</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1aff30f0303a958a549a2f4b6e67db00d5" kind="variable"><name>verbosity_level</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a34e9ffd5e17176de9c845f71fb0f399c" kind="variable"><name>has_errors_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a29f60856a79601eaa48a2bb7a3a615ff" kind="variable"><name>has_invalid_reporter_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a01ea0d0319a60701968fbfea120ce767" kind="function"><name>runner_options</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a561d969dc26eb39663173a4a6684b0d9" kind="function"><name>runner_options</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a16a3fae931e45f0803e9d28b174ab615" kind="function"><name>runner_options</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a1cd0deb2811e578a7e767414b1092eec" kind="function"><name>runner_options</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1af70c67dedde76ad2c47f73d1cffbf354" kind="function"><name>~runner_options</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a4ed347422b26dded0244c3926ef384a8" kind="function"><name>has_errors</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1acd0e6a20ac7d916592945346f29654ad" kind="function"><name>has_invalid_reporter</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a7df40b87a2471732f9a411bdb1e5db52" kind="function"><name>operator=</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1aa8399af15f4ab63f8208f9a4775cd650" kind="function"><name>operator=</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1abe865fdd65296f743fd11bdf5ef79a14" kind="function"><name>add_error</name></member>
   </compound>
   <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kind="class"><name>micro_os_plus::micro_test_plus::reflection::source_location</name>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1ae648fa43322766fbeb3f9103b43bcc4b" kind="variable"><name>file_</name></member>
@@ -851,15 +856,15 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1ab7f67423b68a596e6a31ffc7ba261345" kind="function"><name>test_case</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a13ad0f433d3a8189cb806ddb38c2a56c" kind="function"><name>test_case</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a26a1b913fdcece44668b56200298218a" kind="function"><name>~test_case</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-requirements_1gad25dc8d5d657ace9d47d3a95b3341802" kind="function"><name>assume</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1gaf4f5f9632b5a290c1894984661a41a86" kind="function"><name>expect</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-expectations_1gaf4f5f9632b5a290c1894984661a41a86" kind="function"><name>expect</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1ad25dc8d5d657ace9d47d3a95b3341802" kind="function"><name>assume</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a0fbd378373bbda24c9d574904268bc94" kind="function"><name>expect</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1af4f5f9632b5a290c1894984661a41a86" kind="function"><name>expect</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a6c652cd5dc8194269c1cc5f0dc1945e0" kind="function"><name>name</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1af2b6792d06fa335f2b617e4d39bbba3c" kind="function"><name>nesting_depth</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a556bbac39502797d52241f481e021847" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1ac2e310ec902a0c3e786d4c415269c23e" kind="function"><name>operator=</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1gace68a1bd4dd258082f4b1fc01fcd008a" kind="function"><name>require</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-requirements_1gace68a1bd4dd258082f4b1fc01fcd008a" kind="function"><name>require</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a51f15ed441451eb5809559a54a1c7a73" kind="function"><name>require</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1ace68a1bd4dd258082f4b1fc01fcd008a" kind="function"><name>require</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1aac23ee148d8e5946cd87e0de036e9fb8" kind="function"><name>test</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a018224e675db634b3b9898c72d1c8655" kind="function"><name>test_each</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1afe716dc1b9245d7761b1fd6e6e854c5c" kind="function"><name>test_each</name></member>
@@ -1055,53 +1060,53 @@
   <compound refid="namespacemicro__os__plus" kind="namespace"><name>micro_os_plus</name>
   </compound>
   <compound refid="namespacemicro__os__plus_1_1micro__test__plus" kind="namespace"><name>micro_os_plus::micro_test_plus</name>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kind="typedef"><name>to_b</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kind="typedef"><name>to_c</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kind="typedef"><name>to_sc</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kind="typedef"><name>to_s</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf3ee271cefcffa625e40d476305da62f" kind="typedef"><name>to_i</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga09028a1e0e713723257afba48b9ee551" kind="typedef"><name>to_l</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kind="typedef"><name>to_ll</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kind="typedef"><name>to_u</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kind="typedef"><name>to_uc</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kind="typedef"><name>to_us</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga5d2d6a69c090569866a779672772b48f" kind="typedef"><name>to_ul</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kind="typedef"><name>to_ull</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kind="typedef"><name>to_i8</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kind="typedef"><name>to_i16</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga201eeff58867ba58d3312ae56113ef06" kind="typedef"><name>to_i32</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaead55f5e265634a742633261f9f2aa3f" kind="typedef"><name>to_i64</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kind="typedef"><name>to_u8</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kind="typedef"><name>to_u16</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kind="typedef"><name>to_u32</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kind="typedef"><name>to_u64</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga5368740b47e92605914b6c38ea88aebf" kind="typedef"><name>to_f</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kind="typedef"><name>to_d</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaeba32254fdd8159523b525745b13bfa9" kind="typedef"><name>to_ld</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kind="typedef"><name>_b</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gafdd897d040f92df9cd42e551ebc88cd8" kind="typedef"><name>_c</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga0cc4baab5f421ac7adee10218d8ee8a2" kind="typedef"><name>_sc</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga461a956b7e308ed6e8c64afa3cf160f2" kind="typedef"><name>_s</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga8468610e763177a8f569f7d618851288" kind="typedef"><name>_i</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga429a848542fc4ffafd3dd22bc1832654" kind="typedef"><name>_l</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9c597ca04848620b8570c29a4741e77d" kind="typedef"><name>_ll</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaaa486af2418a24076237fbe26940f5ae" kind="typedef"><name>_u</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaa8bb559065ea34a9645fdfd6339b9b7a" kind="typedef"><name>_uc</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga65aea7fc6324806cc029041a1c785611" kind="typedef"><name>_us</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga32c7eef01fcaef2f1a9478427d951f62" kind="typedef"><name>_ul</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gada8a165060d3d3b3ab51272b9da58761" kind="typedef"><name>_ull</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga265f8609ef3d6ead78c7a66825553e24" kind="typedef"><name>_i8</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gad2d95793c99112ad2889c6663789d1e3" kind="typedef"><name>_i16</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga917a1759e37cd0d3fe3786da11729a4b" kind="typedef"><name>_i32</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga290a150eae030e183ca2e14e9095c93b" kind="typedef"><name>_i64</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" kind="typedef"><name>_u8</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga97f7bc9a25eb4b7c663bd2388ade01ae" kind="typedef"><name>_u16</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga4afa32150456241245bfc641a6f17bbc" kind="typedef"><name>_u32</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga1241e84fc4457af1b4df5f053eec6aa5" kind="typedef"><name>_u64</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga231cd51e76a2f426703275739d605ad4" kind="typedef"><name>_f</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga7c6c0169d894a7dd589d96df49e8df26" kind="typedef"><name>_d</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gacfe28c6fb7bfb47ca8891cb61e7f58d9" kind="typedef"><name>_ld</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga15147e343475e219c2e46dce07b4127c" kind="typedef"><name>_t</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kind="typedef"><name>to_b</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kind="typedef"><name>to_c</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kind="typedef"><name>to_sc</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kind="typedef"><name>to_s</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf3ee271cefcffa625e40d476305da62f" kind="typedef"><name>to_i</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga09028a1e0e713723257afba48b9ee551" kind="typedef"><name>to_l</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kind="typedef"><name>to_ll</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kind="typedef"><name>to_u</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kind="typedef"><name>to_uc</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kind="typedef"><name>to_us</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5d2d6a69c090569866a779672772b48f" kind="typedef"><name>to_ul</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kind="typedef"><name>to_ull</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kind="typedef"><name>to_i8</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kind="typedef"><name>to_i16</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga201eeff58867ba58d3312ae56113ef06" kind="typedef"><name>to_i32</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaead55f5e265634a742633261f9f2aa3f" kind="typedef"><name>to_i64</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kind="typedef"><name>to_u8</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kind="typedef"><name>to_u16</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kind="typedef"><name>to_u32</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kind="typedef"><name>to_u64</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5368740b47e92605914b6c38ea88aebf" kind="typedef"><name>to_f</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kind="typedef"><name>to_d</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaeba32254fdd8159523b525745b13bfa9" kind="typedef"><name>to_ld</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kind="typedef"><name>_b</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafdd897d040f92df9cd42e551ebc88cd8" kind="typedef"><name>_c</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0cc4baab5f421ac7adee10218d8ee8a2" kind="typedef"><name>_sc</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga461a956b7e308ed6e8c64afa3cf160f2" kind="typedef"><name>_s</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kind="typedef"><name>_i</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga429a848542fc4ffafd3dd22bc1832654" kind="typedef"><name>_l</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9c597ca04848620b8570c29a4741e77d" kind="typedef"><name>_ll</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaaa486af2418a24076237fbe26940f5ae" kind="typedef"><name>_u</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaa8bb559065ea34a9645fdfd6339b9b7a" kind="typedef"><name>_uc</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga65aea7fc6324806cc029041a1c785611" kind="typedef"><name>_us</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga32c7eef01fcaef2f1a9478427d951f62" kind="typedef"><name>_ul</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gada8a165060d3d3b3ab51272b9da58761" kind="typedef"><name>_ull</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga265f8609ef3d6ead78c7a66825553e24" kind="typedef"><name>_i8</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad2d95793c99112ad2889c6663789d1e3" kind="typedef"><name>_i16</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga917a1759e37cd0d3fe3786da11729a4b" kind="typedef"><name>_i32</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga290a150eae030e183ca2e14e9095c93b" kind="typedef"><name>_i64</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" kind="typedef"><name>_u8</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga97f7bc9a25eb4b7c663bd2388ade01ae" kind="typedef"><name>_u16</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga4afa32150456241245bfc641a6f17bbc" kind="typedef"><name>_u32</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga1241e84fc4457af1b4df5f053eec6aa5" kind="typedef"><name>_u64</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga231cd51e76a2f426703275739d605ad4" kind="typedef"><name>_f</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga7c6c0169d894a7dd589d96df49e8df26" kind="typedef"><name>_d</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gacfe28c6fb7bfb47ca8891cb61e7f58d9" kind="typedef"><name>_ld</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga15147e343475e219c2e46dce07b4127c" kind="typedef"><name>_t</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a603af2d1c9643caa351305180b2e905b" kind="enum"><name>colour_mode</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8" kind="enumvalue"><name>automatic</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb" kind="enumvalue"><name>always</name></member>
@@ -1114,26 +1119,26 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d" kind="enumvalue"><name>quiet</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kind="enumvalue"><name>normal</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" kind="enumvalue"><name>verbose</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gabecc05360d0941067222d827ff8e3f08" kind="typedef"><name>expression_formatter</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-runners_1ga47d2c99f85fc5597b82da402d4687e75" kind="typedef"><name>static_runner</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-test-case_1ga1424c18b26d5fdaed11439c77e6bf561" kind="typedef"><name>subtest</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" kind="function"><name>_and</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" kind="function"><name>_not</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" kind="function"><name>_or</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kind="function"><name>all_of</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kind="function"><name>any_of</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gacae776e46a799b81af859ba9bb74e7d0" kind="function"><name>approx</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kind="function"><name>eq</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kind="function"><name>ge</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kind="function"><name>gt</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kind="function"><name>le</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kind="function"><name>lt</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga5bf176ef730172592095657417e5f039" kind="function"><name>ne</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kind="function"><name>negate</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gabecc05360d0941067222d827ff8e3f08" kind="typedef"><name>expression_formatter</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga47d2c99f85fc5597b82da402d4687e75" kind="typedef"><name>static_runner</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga1424c18b26d5fdaed11439c77e6bf561" kind="typedef"><name>subtest</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" kind="function"><name>_and</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" kind="function"><name>_not</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" kind="function"><name>_or</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kind="function"><name>all_of</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kind="function"><name>any_of</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gacae776e46a799b81af859ba9bb74e7d0" kind="function"><name>approx</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kind="function"><name>eq</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kind="function"><name>ge</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kind="function"><name>gt</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kind="function"><name>le</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kind="function"><name>lt</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga5bf176ef730172592095657417e5f039" kind="function"><name>ne</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kind="function"><name>negate</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
   </compound>
   <compound refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail" kind="namespace"><name>micro_os_plus::micro_test_plus::detail</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a0726a1bc3b6f16245cb8a4b42fe0e70c" kind="enum"><name>check_kind</name></member>
@@ -1150,9 +1155,9 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1af25a23e4451135649a8207c3a0ea30b5ae3a1f45168c36de6c9f4a81f84aaa640" kind="enumvalue"><name>failed_check</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1af25a23e4451135649a8207c3a0ea30b5afbb44b4487415b134bce9c790a27fe5e" kind="enumvalue"><name>total</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1af25a23e4451135649a8207c3a0ea30b5a5bb94a1c12413a2e5d14deabab29f2aa" kind="enumvalue"><name>abort</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1af123417aafc76c826760101bcc517dfa" kind="typedef"><name>runner_totals</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gaf123417aafc76c826760101bcc517dfa" kind="typedef"><name>runner_totals</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a85cd019d0861a4b6d62c3424f4a8931d" kind="typedef"><name>stored_operand_t</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a53a6bc7f86b15378c8296b3647e7013f" kind="typedef"><name>timestamps</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga53a6bc7f86b15378c8296b3647e7013f" kind="typedef"><name>timestamps</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a2c197674df5b07499a4ea40d124f1082" kind="typedef"><name>unwrapped_t</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a48c790000ed3d766b705c6c5223d8767" kind="variable"><name>colours_none</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ad59e204218aa41581652a072be0e8a8a" kind="variable"><name>colours_red_green</name></member>
@@ -1212,54 +1217,54 @@
   <compound refid="namespacemicro__os__plus_1_1micro__test__plus_1_1extension" kind="namespace"><name>micro_os_plus::micro_test_plus::extension</name>
   </compound>
   <compound refid="namespacemicro__os__plus_1_1micro__test__plus_1_1literals" kind="namespace"><name>micro_os_plus::micro_test_plus::literals</name>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaa2bfc74376f8c110053bfa6e06e40772" kind="function"><name>operator&quot;&quot;_b</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gae521cebfd48332f44d01e4f880b4aafa" kind="function"><name>operator&quot;&quot;_c</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" kind="function"><name>operator&quot;&quot;_d</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" kind="function"><name>operator&quot;&quot;_f</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga366a0d47aec3241e659816067c94fcdf" kind="function"><name>operator&quot;&quot;_i</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gabce6e838737bf25be6e7527f69e75590" kind="function"><name>operator&quot;&quot;_i16</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga6a192d3dfff5a4a98aa7532d36d1b1bd" kind="function"><name>operator&quot;&quot;_i32</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gab0bb5d1e37cbe8de6477c11ecd60956d" kind="function"><name>operator&quot;&quot;_i64</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9ca6fecc72b6da90acee52977eb077d7" kind="function"><name>operator&quot;&quot;_i8</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga96e891b439024e116cb845bc65bc9c4f" kind="function"><name>operator&quot;&quot;_l</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" kind="function"><name>operator&quot;&quot;_ld</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf5ab66b00c9486ade5d49f34a83783f5" kind="function"><name>operator&quot;&quot;_ll</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga812816a2e9b23de1f8d8b2d86553d96d" kind="function"><name>operator&quot;&quot;_s</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga57d27f1a76de2d2b2a067134cbe61457" kind="function"><name>operator&quot;&quot;_sc</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf45bf641153a462a1ba7c12b908e667f" kind="function"><name>operator&quot;&quot;_u</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga96d12d563093f297a73a8b984ae7a3a5" kind="function"><name>operator&quot;&quot;_u16</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga3171e605b5c2e1d9a0e55ae34e904674" kind="function"><name>operator&quot;&quot;_u32</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga622b4808b7ebfc26ddf9db9128533f28" kind="function"><name>operator&quot;&quot;_u64</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga80f43260f6a1afd8260355136858df48" kind="function"><name>operator&quot;&quot;_u8</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga6c1b46d4b967bdbc573e3192c2d9f98a" kind="function"><name>operator&quot;&quot;_uc</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaef96b19b140b5007ec33a944c3b72cae" kind="function"><name>operator&quot;&quot;_ul</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga01adcd3866da43c393b7fba8a5e72bb2" kind="function"><name>operator&quot;&quot;_ull</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" kind="function"><name>operator&quot;&quot;_us</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaa2bfc74376f8c110053bfa6e06e40772" kind="function"><name>operator&quot;&quot;_b</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae521cebfd48332f44d01e4f880b4aafa" kind="function"><name>operator&quot;&quot;_c</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" kind="function"><name>operator&quot;&quot;_d</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" kind="function"><name>operator&quot;&quot;_f</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga366a0d47aec3241e659816067c94fcdf" kind="function"><name>operator&quot;&quot;_i</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gabce6e838737bf25be6e7527f69e75590" kind="function"><name>operator&quot;&quot;_i16</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6a192d3dfff5a4a98aa7532d36d1b1bd" kind="function"><name>operator&quot;&quot;_i32</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gab0bb5d1e37cbe8de6477c11ecd60956d" kind="function"><name>operator&quot;&quot;_i64</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9ca6fecc72b6da90acee52977eb077d7" kind="function"><name>operator&quot;&quot;_i8</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga96e891b439024e116cb845bc65bc9c4f" kind="function"><name>operator&quot;&quot;_l</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" kind="function"><name>operator&quot;&quot;_ld</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf5ab66b00c9486ade5d49f34a83783f5" kind="function"><name>operator&quot;&quot;_ll</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga812816a2e9b23de1f8d8b2d86553d96d" kind="function"><name>operator&quot;&quot;_s</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga57d27f1a76de2d2b2a067134cbe61457" kind="function"><name>operator&quot;&quot;_sc</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf45bf641153a462a1ba7c12b908e667f" kind="function"><name>operator&quot;&quot;_u</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga96d12d563093f297a73a8b984ae7a3a5" kind="function"><name>operator&quot;&quot;_u16</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga3171e605b5c2e1d9a0e55ae34e904674" kind="function"><name>operator&quot;&quot;_u32</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga622b4808b7ebfc26ddf9db9128533f28" kind="function"><name>operator&quot;&quot;_u64</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga80f43260f6a1afd8260355136858df48" kind="function"><name>operator&quot;&quot;_u8</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6c1b46d4b967bdbc573e3192c2d9f98a" kind="function"><name>operator&quot;&quot;_uc</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaef96b19b140b5007ec33a944c3b72cae" kind="function"><name>operator&quot;&quot;_ul</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga01adcd3866da43c393b7fba8a5e72bb2" kind="function"><name>operator&quot;&quot;_ull</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" kind="function"><name>operator&quot;&quot;_us</name></member>
   </compound>
   <compound refid="namespacemicro__os__plus_1_1micro__test__plus_1_1operators" kind="namespace"><name>micro_os_plus::micro_test_plus::operators</name>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1gad47ea22957940a08ff56104d3c0c16f7" kind="function"><name>operator and</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1ga1d79c807e0d12684f1a850d7269c077b" kind="function"><name>operator not</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1gac008174d3b00512dc53b3e9e26ed45ec" kind="function"><name>operator or</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1ga0cc55025bbf6cac2f1b64242784559cb" kind="function"><name>operator!=</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1ga1d1c66d2cce699e0e64d8307e3951090" kind="function"><name>operator&lt;</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1gaa0bcc006277ab947cf9ff7f13ab9b8ed" kind="function"><name>operator&lt;=</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1ga6f2d36e79581db77f3aa9f8d7a958c78" kind="function"><name>operator==</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1gaa7e34201bb41a287742c3c08a88924d3" kind="function"><name>operator&gt;</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1ga9d9f5f30c7d8973ef7ccd6f52f0cbd21" kind="function"><name>operator&gt;=</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gad47ea22957940a08ff56104d3c0c16f7" kind="function"><name>operator and</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga1d79c807e0d12684f1a850d7269c077b" kind="function"><name>operator not</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gac008174d3b00512dc53b3e9e26ed45ec" kind="function"><name>operator or</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga0cc55025bbf6cac2f1b64242784559cb" kind="function"><name>operator!=</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga1d1c66d2cce699e0e64d8307e3951090" kind="function"><name>operator&lt;</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gaa0bcc006277ab947cf9ff7f13ab9b8ed" kind="function"><name>operator&lt;=</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga6f2d36e79581db77f3aa9f8d7a958c78" kind="function"><name>operator==</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gaa7e34201bb41a287742c3c08a88924d3" kind="function"><name>operator&gt;</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga9d9f5f30c7d8973ef7ccd6f52f0cbd21" kind="function"><name>operator&gt;=</name></member>
   </compound>
   <compound refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection" kind="namespace"><name>micro_os_plus::micro_test_plus::reflection</name>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1afc93799846770e521c4721d0de0a81cc" kind="function"><name>short_name</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gafc93799846770e521c4721d0de0a81cc" kind="function"><name>short_name</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" kind="function"><name>type_name</name></member>
   </compound>
   <compound refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits" kind="namespace"><name>micro_os_plus::micro_test_plus::type_traits</name>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a67890916b8d3d8cbaab893cc6b599745" kind="typedef"><name>genuine_integral_value</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a65ad920b21a6c0df6848aa939659b92e" kind="typedef"><name>value_base_</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga67890916b8d3d8cbaab893cc6b599745" kind="typedef"><name>genuine_integral_value</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga65ad920b21a6c0df6848aa939659b92e" kind="typedef"><name>value_base_</name></member>
   </compound>
   <compound refid="namespacemicro__os__plus_1_1micro__test__plus_1_1utility" kind="namespace"><name>micro_os_plus::micro_test_plus::utility</name>
-    <member refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kind="function"><name>extract_file_name</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" kind="function"><name>is_match</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-utility-functions_1gac17bb0b9be9a1ca01854c8bbbabc5def" kind="function"><name>split</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" kind="function"><name>split</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kind="function"><name>extract_file_name</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" kind="function"><name>is_match</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gac17bb0b9be9a1ca01854c8bbbabc5def" kind="function"><name>split</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" kind="function"><name>split</name></member>
   </compound>
   <compound refid="micro-test-plus_8h" kind="file"><name>micro-test-plus.h</name>
     <member refid="group__micro-os-plus-micro-test-plus-config_1ga3dd1e70998580fe7d7f410e5cd83879b" kind="define"><name>MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</name></member>
@@ -1274,96 +1279,96 @@
   <compound refid="counters_8h" kind="file"><name>counters.h</name>
   </compound>
   <compound refid="deprecated_8h" kind="file"><name>deprecated.h</name>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kind="typedef"><name>to_b</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kind="typedef"><name>to_c</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kind="typedef"><name>to_d</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga5368740b47e92605914b6c38ea88aebf" kind="typedef"><name>to_f</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf3ee271cefcffa625e40d476305da62f" kind="typedef"><name>to_i</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kind="typedef"><name>to_i16</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga201eeff58867ba58d3312ae56113ef06" kind="typedef"><name>to_i32</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaead55f5e265634a742633261f9f2aa3f" kind="typedef"><name>to_i64</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kind="typedef"><name>to_i8</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga09028a1e0e713723257afba48b9ee551" kind="typedef"><name>to_l</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaeba32254fdd8159523b525745b13bfa9" kind="typedef"><name>to_ld</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kind="typedef"><name>to_ll</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kind="typedef"><name>to_s</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kind="typedef"><name>to_sc</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kind="typedef"><name>to_u</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kind="typedef"><name>to_u16</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kind="typedef"><name>to_u32</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kind="typedef"><name>to_u64</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kind="typedef"><name>to_u8</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kind="typedef"><name>to_uc</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga5d2d6a69c090569866a779672772b48f" kind="typedef"><name>to_ul</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kind="typedef"><name>to_ull</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kind="typedef"><name>to_us</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kind="typedef"><name>_b</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gafdd897d040f92df9cd42e551ebc88cd8" kind="typedef"><name>_c</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga7c6c0169d894a7dd589d96df49e8df26" kind="typedef"><name>_d</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga231cd51e76a2f426703275739d605ad4" kind="typedef"><name>_f</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga8468610e763177a8f569f7d618851288" kind="typedef"><name>_i</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gad2d95793c99112ad2889c6663789d1e3" kind="typedef"><name>_i16</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga917a1759e37cd0d3fe3786da11729a4b" kind="typedef"><name>_i32</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga290a150eae030e183ca2e14e9095c93b" kind="typedef"><name>_i64</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga265f8609ef3d6ead78c7a66825553e24" kind="typedef"><name>_i8</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga429a848542fc4ffafd3dd22bc1832654" kind="typedef"><name>_l</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gacfe28c6fb7bfb47ca8891cb61e7f58d9" kind="typedef"><name>_ld</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9c597ca04848620b8570c29a4741e77d" kind="typedef"><name>_ll</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga461a956b7e308ed6e8c64afa3cf160f2" kind="typedef"><name>_s</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga0cc4baab5f421ac7adee10218d8ee8a2" kind="typedef"><name>_sc</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga15147e343475e219c2e46dce07b4127c" kind="typedef"><name>_t</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaaa486af2418a24076237fbe26940f5ae" kind="typedef"><name>_u</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga97f7bc9a25eb4b7c663bd2388ade01ae" kind="typedef"><name>_u16</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga4afa32150456241245bfc641a6f17bbc" kind="typedef"><name>_u32</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga1241e84fc4457af1b4df5f053eec6aa5" kind="typedef"><name>_u64</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" kind="typedef"><name>_u8</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaa8bb559065ea34a9645fdfd6339b9b7a" kind="typedef"><name>_uc</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga32c7eef01fcaef2f1a9478427d951f62" kind="typedef"><name>_ul</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gada8a165060d3d3b3ab51272b9da58761" kind="typedef"><name>_ull</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga65aea7fc6324806cc029041a1c785611" kind="typedef"><name>_us</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a67890916b8d3d8cbaab893cc6b599745" kind="typedef"><name>genuine_integral_value</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1af123417aafc76c826760101bcc517dfa" kind="typedef"><name>runner_totals</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-runners_1ga47d2c99f85fc5597b82da402d4687e75" kind="typedef"><name>static_runner</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-test-case_1ga1424c18b26d5fdaed11439c77e6bf561" kind="typedef"><name>subtest</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a53a6bc7f86b15378c8296b3647e7013f" kind="typedef"><name>timestamps</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a65ad920b21a6c0df6848aa939659b92e" kind="typedef"><name>value_base_</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" kind="function"><name>_and</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" kind="function"><name>_not</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" kind="function"><name>_or</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1gad47ea22957940a08ff56104d3c0c16f7" kind="function"><name>operator and</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1ga1d79c807e0d12684f1a850d7269c077b" kind="function"><name>operator not</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1gac008174d3b00512dc53b3e9e26ed45ec" kind="function"><name>operator or</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1ga0cc55025bbf6cac2f1b64242784559cb" kind="function"><name>operator!=</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaa2bfc74376f8c110053bfa6e06e40772" kind="function"><name>operator&quot;&quot;_b</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gae521cebfd48332f44d01e4f880b4aafa" kind="function"><name>operator&quot;&quot;_c</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" kind="function"><name>operator&quot;&quot;_d</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" kind="function"><name>operator&quot;&quot;_f</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga366a0d47aec3241e659816067c94fcdf" kind="function"><name>operator&quot;&quot;_i</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gabce6e838737bf25be6e7527f69e75590" kind="function"><name>operator&quot;&quot;_i16</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga6a192d3dfff5a4a98aa7532d36d1b1bd" kind="function"><name>operator&quot;&quot;_i32</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gab0bb5d1e37cbe8de6477c11ecd60956d" kind="function"><name>operator&quot;&quot;_i64</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9ca6fecc72b6da90acee52977eb077d7" kind="function"><name>operator&quot;&quot;_i8</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga96e891b439024e116cb845bc65bc9c4f" kind="function"><name>operator&quot;&quot;_l</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" kind="function"><name>operator&quot;&quot;_ld</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf5ab66b00c9486ade5d49f34a83783f5" kind="function"><name>operator&quot;&quot;_ll</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga812816a2e9b23de1f8d8b2d86553d96d" kind="function"><name>operator&quot;&quot;_s</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga57d27f1a76de2d2b2a067134cbe61457" kind="function"><name>operator&quot;&quot;_sc</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf45bf641153a462a1ba7c12b908e667f" kind="function"><name>operator&quot;&quot;_u</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga96d12d563093f297a73a8b984ae7a3a5" kind="function"><name>operator&quot;&quot;_u16</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga3171e605b5c2e1d9a0e55ae34e904674" kind="function"><name>operator&quot;&quot;_u32</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga622b4808b7ebfc26ddf9db9128533f28" kind="function"><name>operator&quot;&quot;_u64</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga80f43260f6a1afd8260355136858df48" kind="function"><name>operator&quot;&quot;_u8</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga6c1b46d4b967bdbc573e3192c2d9f98a" kind="function"><name>operator&quot;&quot;_uc</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaef96b19b140b5007ec33a944c3b72cae" kind="function"><name>operator&quot;&quot;_ul</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga01adcd3866da43c393b7fba8a5e72bb2" kind="function"><name>operator&quot;&quot;_ull</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" kind="function"><name>operator&quot;&quot;_us</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1ga1d1c66d2cce699e0e64d8307e3951090" kind="function"><name>operator&lt;</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1gaa0bcc006277ab947cf9ff7f13ab9b8ed" kind="function"><name>operator&lt;=</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1ga6f2d36e79581db77f3aa9f8d7a958c78" kind="function"><name>operator==</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1gaa7e34201bb41a287742c3c08a88924d3" kind="function"><name>operator&gt;</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1ga9d9f5f30c7d8973ef7ccd6f52f0cbd21" kind="function"><name>operator&gt;=</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1afc93799846770e521c4721d0de0a81cc" kind="function"><name>short_name</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kind="typedef"><name>to_b</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kind="typedef"><name>to_c</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kind="typedef"><name>to_d</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5368740b47e92605914b6c38ea88aebf" kind="typedef"><name>to_f</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf3ee271cefcffa625e40d476305da62f" kind="typedef"><name>to_i</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kind="typedef"><name>to_i16</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga201eeff58867ba58d3312ae56113ef06" kind="typedef"><name>to_i32</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaead55f5e265634a742633261f9f2aa3f" kind="typedef"><name>to_i64</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kind="typedef"><name>to_i8</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga09028a1e0e713723257afba48b9ee551" kind="typedef"><name>to_l</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaeba32254fdd8159523b525745b13bfa9" kind="typedef"><name>to_ld</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kind="typedef"><name>to_ll</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kind="typedef"><name>to_s</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kind="typedef"><name>to_sc</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kind="typedef"><name>to_u</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kind="typedef"><name>to_u16</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kind="typedef"><name>to_u32</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kind="typedef"><name>to_u64</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kind="typedef"><name>to_u8</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kind="typedef"><name>to_uc</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5d2d6a69c090569866a779672772b48f" kind="typedef"><name>to_ul</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kind="typedef"><name>to_ull</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kind="typedef"><name>to_us</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kind="typedef"><name>_b</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafdd897d040f92df9cd42e551ebc88cd8" kind="typedef"><name>_c</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga7c6c0169d894a7dd589d96df49e8df26" kind="typedef"><name>_d</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga231cd51e76a2f426703275739d605ad4" kind="typedef"><name>_f</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kind="typedef"><name>_i</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad2d95793c99112ad2889c6663789d1e3" kind="typedef"><name>_i16</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga917a1759e37cd0d3fe3786da11729a4b" kind="typedef"><name>_i32</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga290a150eae030e183ca2e14e9095c93b" kind="typedef"><name>_i64</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga265f8609ef3d6ead78c7a66825553e24" kind="typedef"><name>_i8</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga429a848542fc4ffafd3dd22bc1832654" kind="typedef"><name>_l</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gacfe28c6fb7bfb47ca8891cb61e7f58d9" kind="typedef"><name>_ld</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9c597ca04848620b8570c29a4741e77d" kind="typedef"><name>_ll</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga461a956b7e308ed6e8c64afa3cf160f2" kind="typedef"><name>_s</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0cc4baab5f421ac7adee10218d8ee8a2" kind="typedef"><name>_sc</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga15147e343475e219c2e46dce07b4127c" kind="typedef"><name>_t</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaaa486af2418a24076237fbe26940f5ae" kind="typedef"><name>_u</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga97f7bc9a25eb4b7c663bd2388ade01ae" kind="typedef"><name>_u16</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga4afa32150456241245bfc641a6f17bbc" kind="typedef"><name>_u32</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga1241e84fc4457af1b4df5f053eec6aa5" kind="typedef"><name>_u64</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" kind="typedef"><name>_u8</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaa8bb559065ea34a9645fdfd6339b9b7a" kind="typedef"><name>_uc</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga32c7eef01fcaef2f1a9478427d951f62" kind="typedef"><name>_ul</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gada8a165060d3d3b3ab51272b9da58761" kind="typedef"><name>_ull</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga65aea7fc6324806cc029041a1c785611" kind="typedef"><name>_us</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga67890916b8d3d8cbaab893cc6b599745" kind="typedef"><name>genuine_integral_value</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gaf123417aafc76c826760101bcc517dfa" kind="typedef"><name>runner_totals</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga47d2c99f85fc5597b82da402d4687e75" kind="typedef"><name>static_runner</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga1424c18b26d5fdaed11439c77e6bf561" kind="typedef"><name>subtest</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga53a6bc7f86b15378c8296b3647e7013f" kind="typedef"><name>timestamps</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga65ad920b21a6c0df6848aa939659b92e" kind="typedef"><name>value_base_</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" kind="function"><name>_and</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" kind="function"><name>_not</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" kind="function"><name>_or</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gad47ea22957940a08ff56104d3c0c16f7" kind="function"><name>operator and</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga1d79c807e0d12684f1a850d7269c077b" kind="function"><name>operator not</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gac008174d3b00512dc53b3e9e26ed45ec" kind="function"><name>operator or</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga0cc55025bbf6cac2f1b64242784559cb" kind="function"><name>operator!=</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaa2bfc74376f8c110053bfa6e06e40772" kind="function"><name>operator&quot;&quot;_b</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae521cebfd48332f44d01e4f880b4aafa" kind="function"><name>operator&quot;&quot;_c</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" kind="function"><name>operator&quot;&quot;_d</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" kind="function"><name>operator&quot;&quot;_f</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga366a0d47aec3241e659816067c94fcdf" kind="function"><name>operator&quot;&quot;_i</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gabce6e838737bf25be6e7527f69e75590" kind="function"><name>operator&quot;&quot;_i16</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6a192d3dfff5a4a98aa7532d36d1b1bd" kind="function"><name>operator&quot;&quot;_i32</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gab0bb5d1e37cbe8de6477c11ecd60956d" kind="function"><name>operator&quot;&quot;_i64</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9ca6fecc72b6da90acee52977eb077d7" kind="function"><name>operator&quot;&quot;_i8</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga96e891b439024e116cb845bc65bc9c4f" kind="function"><name>operator&quot;&quot;_l</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" kind="function"><name>operator&quot;&quot;_ld</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf5ab66b00c9486ade5d49f34a83783f5" kind="function"><name>operator&quot;&quot;_ll</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga812816a2e9b23de1f8d8b2d86553d96d" kind="function"><name>operator&quot;&quot;_s</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga57d27f1a76de2d2b2a067134cbe61457" kind="function"><name>operator&quot;&quot;_sc</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf45bf641153a462a1ba7c12b908e667f" kind="function"><name>operator&quot;&quot;_u</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga96d12d563093f297a73a8b984ae7a3a5" kind="function"><name>operator&quot;&quot;_u16</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga3171e605b5c2e1d9a0e55ae34e904674" kind="function"><name>operator&quot;&quot;_u32</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga622b4808b7ebfc26ddf9db9128533f28" kind="function"><name>operator&quot;&quot;_u64</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga80f43260f6a1afd8260355136858df48" kind="function"><name>operator&quot;&quot;_u8</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6c1b46d4b967bdbc573e3192c2d9f98a" kind="function"><name>operator&quot;&quot;_uc</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaef96b19b140b5007ec33a944c3b72cae" kind="function"><name>operator&quot;&quot;_ul</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga01adcd3866da43c393b7fba8a5e72bb2" kind="function"><name>operator&quot;&quot;_ull</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" kind="function"><name>operator&quot;&quot;_us</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga1d1c66d2cce699e0e64d8307e3951090" kind="function"><name>operator&lt;</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gaa0bcc006277ab947cf9ff7f13ab9b8ed" kind="function"><name>operator&lt;=</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga6f2d36e79581db77f3aa9f8d7a958c78" kind="function"><name>operator==</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gaa7e34201bb41a287742c3c08a88924d3" kind="function"><name>operator&gt;</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga9d9f5f30c7d8973ef7ccd6f52f0cbd21" kind="function"><name>operator&gt;=</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gafc93799846770e521c4721d0de0a81cc" kind="function"><name>short_name</name></member>
   </compound>
   <compound refid="detail_8h" kind="file"><name>detail.h</name>
     <member refid="detail_8h_1aaec16ed032c8fc52ba753a273b788381" kind="define"><name>MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</name></member>
@@ -1389,70 +1394,70 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6c5237ff6944278e8c5e3294cf99a3b9" kind="function"><name>within_tolerance</name></member>
   </compound>
   <compound refid="exceptions_8h" kind="file"><name>exceptions.h</name>
-    <member refid="group__micro-os-plus-micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
   </compound>
   <compound refid="expression-formatter_8h" kind="file"><name>expression-formatter.h</name>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gabecc05360d0941067222d827ff8e3f08" kind="typedef"><name>expression_formatter</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gabecc05360d0941067222d827ff8e3f08" kind="typedef"><name>expression_formatter</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a48c790000ed3d766b705c6c5223d8767" kind="variable"><name>colours_none</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ad59e204218aa41581652a072be0e8a8a" kind="variable"><name>colours_red_green</name></member>
   </compound>
   <compound refid="extension_8h" kind="file"><name>extension.h</name>
   </compound>
   <compound refid="function-comparators_8h" kind="file"><name>function-comparators.h</name>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kind="function"><name>all_of</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kind="function"><name>any_of</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gacae776e46a799b81af859ba9bb74e7d0" kind="function"><name>approx</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kind="function"><name>eq</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kind="function"><name>ge</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kind="function"><name>gt</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kind="function"><name>le</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kind="function"><name>lt</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga5bf176ef730172592095657417e5f039" kind="function"><name>ne</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kind="function"><name>negate</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kind="function"><name>all_of</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kind="function"><name>any_of</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gacae776e46a799b81af859ba9bb74e7d0" kind="function"><name>approx</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kind="function"><name>eq</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kind="function"><name>ge</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kind="function"><name>gt</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kind="function"><name>le</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kind="function"><name>lt</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga5bf176ef730172592095657417e5f039" kind="function"><name>ne</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kind="function"><name>negate</name></member>
   </compound>
   <compound refid="check-result-inlines_8h" kind="file"><name>check-result-inlines.h</name>
   </compound>
   <compound refid="counters-inlines_8h" kind="file"><name>counters-inlines.h</name>
   </compound>
   <compound refid="deprecated-inlines_8h" kind="file"><name>deprecated-inlines.h</name>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" kind="function"><name>_and</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" kind="function"><name>_not</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" kind="function"><name>_or</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1gad47ea22957940a08ff56104d3c0c16f7" kind="function"><name>operator and</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1ga1d79c807e0d12684f1a850d7269c077b" kind="function"><name>operator not</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1gac008174d3b00512dc53b3e9e26ed45ec" kind="function"><name>operator or</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1ga0cc55025bbf6cac2f1b64242784559cb" kind="function"><name>operator!=</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaa2bfc74376f8c110053bfa6e06e40772" kind="function"><name>operator&quot;&quot;_b</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gae521cebfd48332f44d01e4f880b4aafa" kind="function"><name>operator&quot;&quot;_c</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" kind="function"><name>operator&quot;&quot;_d</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" kind="function"><name>operator&quot;&quot;_f</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga366a0d47aec3241e659816067c94fcdf" kind="function"><name>operator&quot;&quot;_i</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gabce6e838737bf25be6e7527f69e75590" kind="function"><name>operator&quot;&quot;_i16</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga6a192d3dfff5a4a98aa7532d36d1b1bd" kind="function"><name>operator&quot;&quot;_i32</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gab0bb5d1e37cbe8de6477c11ecd60956d" kind="function"><name>operator&quot;&quot;_i64</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9ca6fecc72b6da90acee52977eb077d7" kind="function"><name>operator&quot;&quot;_i8</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga96e891b439024e116cb845bc65bc9c4f" kind="function"><name>operator&quot;&quot;_l</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" kind="function"><name>operator&quot;&quot;_ld</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf5ab66b00c9486ade5d49f34a83783f5" kind="function"><name>operator&quot;&quot;_ll</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga812816a2e9b23de1f8d8b2d86553d96d" kind="function"><name>operator&quot;&quot;_s</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga57d27f1a76de2d2b2a067134cbe61457" kind="function"><name>operator&quot;&quot;_sc</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf45bf641153a462a1ba7c12b908e667f" kind="function"><name>operator&quot;&quot;_u</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga96d12d563093f297a73a8b984ae7a3a5" kind="function"><name>operator&quot;&quot;_u16</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga3171e605b5c2e1d9a0e55ae34e904674" kind="function"><name>operator&quot;&quot;_u32</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga622b4808b7ebfc26ddf9db9128533f28" kind="function"><name>operator&quot;&quot;_u64</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga80f43260f6a1afd8260355136858df48" kind="function"><name>operator&quot;&quot;_u8</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga6c1b46d4b967bdbc573e3192c2d9f98a" kind="function"><name>operator&quot;&quot;_uc</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaef96b19b140b5007ec33a944c3b72cae" kind="function"><name>operator&quot;&quot;_ul</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga01adcd3866da43c393b7fba8a5e72bb2" kind="function"><name>operator&quot;&quot;_ull</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" kind="function"><name>operator&quot;&quot;_us</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1ga1d1c66d2cce699e0e64d8307e3951090" kind="function"><name>operator&lt;</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1gaa0bcc006277ab947cf9ff7f13ab9b8ed" kind="function"><name>operator&lt;=</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1ga6f2d36e79581db77f3aa9f8d7a958c78" kind="function"><name>operator==</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1gaa7e34201bb41a287742c3c08a88924d3" kind="function"><name>operator&gt;</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1ga9d9f5f30c7d8973ef7ccd6f52f0cbd21" kind="function"><name>operator&gt;=</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" kind="function"><name>_and</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" kind="function"><name>_not</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" kind="function"><name>_or</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gad47ea22957940a08ff56104d3c0c16f7" kind="function"><name>operator and</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga1d79c807e0d12684f1a850d7269c077b" kind="function"><name>operator not</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gac008174d3b00512dc53b3e9e26ed45ec" kind="function"><name>operator or</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga0cc55025bbf6cac2f1b64242784559cb" kind="function"><name>operator!=</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaa2bfc74376f8c110053bfa6e06e40772" kind="function"><name>operator&quot;&quot;_b</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae521cebfd48332f44d01e4f880b4aafa" kind="function"><name>operator&quot;&quot;_c</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" kind="function"><name>operator&quot;&quot;_d</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" kind="function"><name>operator&quot;&quot;_f</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga366a0d47aec3241e659816067c94fcdf" kind="function"><name>operator&quot;&quot;_i</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gabce6e838737bf25be6e7527f69e75590" kind="function"><name>operator&quot;&quot;_i16</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6a192d3dfff5a4a98aa7532d36d1b1bd" kind="function"><name>operator&quot;&quot;_i32</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gab0bb5d1e37cbe8de6477c11ecd60956d" kind="function"><name>operator&quot;&quot;_i64</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9ca6fecc72b6da90acee52977eb077d7" kind="function"><name>operator&quot;&quot;_i8</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga96e891b439024e116cb845bc65bc9c4f" kind="function"><name>operator&quot;&quot;_l</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" kind="function"><name>operator&quot;&quot;_ld</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf5ab66b00c9486ade5d49f34a83783f5" kind="function"><name>operator&quot;&quot;_ll</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga812816a2e9b23de1f8d8b2d86553d96d" kind="function"><name>operator&quot;&quot;_s</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga57d27f1a76de2d2b2a067134cbe61457" kind="function"><name>operator&quot;&quot;_sc</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf45bf641153a462a1ba7c12b908e667f" kind="function"><name>operator&quot;&quot;_u</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga96d12d563093f297a73a8b984ae7a3a5" kind="function"><name>operator&quot;&quot;_u16</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga3171e605b5c2e1d9a0e55ae34e904674" kind="function"><name>operator&quot;&quot;_u32</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga622b4808b7ebfc26ddf9db9128533f28" kind="function"><name>operator&quot;&quot;_u64</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga80f43260f6a1afd8260355136858df48" kind="function"><name>operator&quot;&quot;_u8</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6c1b46d4b967bdbc573e3192c2d9f98a" kind="function"><name>operator&quot;&quot;_uc</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaef96b19b140b5007ec33a944c3b72cae" kind="function"><name>operator&quot;&quot;_ul</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga01adcd3866da43c393b7fba8a5e72bb2" kind="function"><name>operator&quot;&quot;_ull</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" kind="function"><name>operator&quot;&quot;_us</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga1d1c66d2cce699e0e64d8307e3951090" kind="function"><name>operator&lt;</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gaa0bcc006277ab947cf9ff7f13ab9b8ed" kind="function"><name>operator&lt;=</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga6f2d36e79581db77f3aa9f8d7a958c78" kind="function"><name>operator==</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gaa7e34201bb41a287742c3c08a88924d3" kind="function"><name>operator&gt;</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga9d9f5f30c7d8973ef7ccd6f52f0cbd21" kind="function"><name>operator&gt;=</name></member>
   </compound>
   <compound refid="detail-inlines_8h" kind="file"><name>detail-inlines.h</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" kind="function"><name>append_number</name></member>
@@ -1470,23 +1475,23 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6c5237ff6944278e8c5e3294cf99a3b9" kind="function"><name>within_tolerance</name></member>
   </compound>
   <compound refid="exceptions-inlines_8h" kind="file"><name>exceptions-inlines.h</name>
-    <member refid="group__micro-os-plus-micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
   </compound>
   <compound refid="expression-formatter-inlines_8h" kind="file"><name>expression-formatter-inlines.h</name>
   </compound>
   <compound refid="function-comparators-inlines_8h" kind="file"><name>function-comparators-inlines.h</name>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kind="function"><name>all_of</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kind="function"><name>any_of</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gacae776e46a799b81af859ba9bb74e7d0" kind="function"><name>approx</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kind="function"><name>eq</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kind="function"><name>ge</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kind="function"><name>gt</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kind="function"><name>le</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kind="function"><name>lt</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga5bf176ef730172592095657417e5f039" kind="function"><name>ne</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kind="function"><name>negate</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kind="function"><name>all_of</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kind="function"><name>any_of</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gacae776e46a799b81af859ba9bb74e7d0" kind="function"><name>approx</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kind="function"><name>eq</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kind="function"><name>ge</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kind="function"><name>gt</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kind="function"><name>le</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kind="function"><name>lt</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga5bf176ef730172592095657417e5f039" kind="function"><name>ne</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kind="function"><name>negate</name></member>
   </compound>
   <compound refid="math-inlines_8h" kind="file"><name>math-inlines.h</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a515f68bbb31d64d07810f45f3b1118f6" kind="function"><name>abs</name></member>
@@ -1509,6 +1514,8 @@
   </compound>
   <compound refid="runner-inlines_8h" kind="file"><name>runner-inlines.h</name>
   </compound>
+  <compound refid="runner-options-inlines_8h" kind="file"><name>runner-options-inlines.h</name>
+  </compound>
   <compound refid="stopwatch-inlines_8h" kind="file"><name>stopwatch-inlines.h</name>
   </compound>
   <compound refid="test-inlines_8h" kind="file"><name>test-inlines.h</name>
@@ -1516,7 +1523,7 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1acb0858a0ba8b635ff89c4cb00c532ce8" kind="function"><name>test_each_value</name></member>
   </compound>
   <compound refid="utility-inlines_8h" kind="file"><name>utility-inlines.h</name>
-    <member refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" kind="function"><name>split</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" kind="function"><name>split</name></member>
   </compound>
   <compound refid="values-inlines_8h" kind="file"><name>values-inlines.h</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kind="function"><name>integral_literal</name></member>
@@ -1580,10 +1587,10 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1acb0858a0ba8b635ff89c4cb00c532ce8" kind="function"><name>test_each_value</name></member>
   </compound>
   <compound refid="utility_8h" kind="file"><name>utility.h</name>
-    <member refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kind="function"><name>extract_file_name</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" kind="function"><name>is_match</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-utility-functions_1gac17bb0b9be9a1ca01854c8bbbabc5def" kind="function"><name>split</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" kind="function"><name>split</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kind="function"><name>extract_file_name</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" kind="function"><name>is_match</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gac17bb0b9be9a1ca01854c8bbbabc5def" kind="function"><name>split</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" kind="function"><name>split</name></member>
   </compound>
   <compound refid="values_8h" kind="file"><name>values.h</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kind="function"><name>integral_literal</name></member>
@@ -1593,7 +1600,7 @@
   <compound refid="counters_8cpp" kind="file"><name>counters.cpp</name>
   </compound>
   <compound refid="deprecated_8cpp" kind="file"><name>deprecated.cpp</name>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1afc93799846770e521c4721d0de0a81cc" kind="function"><name>short_name</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gafc93799846770e521c4721d0de0a81cc" kind="function"><name>short_name</name></member>
   </compound>
   <compound refid="expression-formatter_8cpp" kind="file"><name>expression-formatter.cpp</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1a2736611c9676822f8e948dc473f748f1" kind="function"><name>append_hex</name></member>
@@ -1612,6 +1619,8 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_1a25afc917399bf6d116b401e47ca8a4d5" kind="function"><name>plural</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_1a78d7c9fe8e59d559bf67bc55e7c52040" kind="function"><name>write_without_colours</name></member>
   </compound>
+  <compound refid="runner-options_8cpp" kind="file"><name>runner-options.cpp</name>
+  </compound>
   <compound refid="runner_8cpp" kind="file"><name>runner.cpp</name>
   </compound>
   <compound refid="stopwatch_8cpp" kind="file"><name>stopwatch.cpp</name>
@@ -1620,9 +1629,9 @@
   <compound refid="test_8cpp" kind="file"><name>test.cpp</name>
   </compound>
   <compound refid="utility_8cpp" kind="file"><name>utility.cpp</name>
-    <member refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kind="function"><name>extract_file_name</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" kind="function"><name>is_match</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-utility-functions_1gac17bb0b9be9a1ca01854c8bbbabc5def" kind="function"><name>split</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kind="function"><name>extract_file_name</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" kind="function"><name>is_match</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gac17bb0b9be9a1ca01854c8bbbabc5def" kind="function"><name>split</name></member>
   </compound>
   <compound refid="top-common_8h" kind="file"><name>top-common.h</name>
   </compound>
@@ -1643,133 +1652,139 @@
   </compound>
   <compound refid="group__micro-os-plus-micro-test-plus-cli" kind="group"><name>micro-os-plus-micro-test-plus-cli</name>
   </compound>
-  <compound refid="group__micro-os-plus-micro-test-plus-runners" kind="group"><name>micro-os-plus-micro-test-plus-runners</name>
-    <member refid="group__micro-os-plus-micro-test-plus-runners_1ga47d2c99f85fc5597b82da402d4687e75" kind="typedef"><name>static_runner</name></member>
+  <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-runners" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-runners</name>
   </compound>
-  <compound refid="group__micro-os-plus-micro-test-plus-test-case" kind="group"><name>micro-os-plus-micro-test-plus-test-case</name>
-    <member refid="group__micro-os-plus-micro-test-plus-test-case_1ga1424c18b26d5fdaed11439c77e6bf561" kind="typedef"><name>subtest</name></member>
+  <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-test-case" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-test-case</name>
   </compound>
-  <compound refid="group__micro-os-plus-micro-test-plus-expectations" kind="group"><name>micro-os-plus-micro-test-plus-expectations</name>
-    <member refid="group__micro-os-plus-micro-test-plus-expectations_1gaf4f5f9632b5a290c1894984661a41a86" kind="function"><name>expect</name></member>
+  <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-expectations" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-expectations</name>
   </compound>
-  <compound refid="group__micro-os-plus-micro-test-plus-requirements" kind="group"><name>micro-os-plus-micro-test-plus-requirements</name>
-    <member refid="group__micro-os-plus-micro-test-plus-requirements_1gad25dc8d5d657ace9d47d3a95b3341802" kind="function"><name>assume</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-requirements_1gace68a1bd4dd258082f4b1fc01fcd008a" kind="function"><name>require</name></member>
+  <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-requirements" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-requirements</name>
   </compound>
-  <compound refid="group__micro-os-plus-micro-test-plus-function-comparators" kind="group"><name>micro-os-plus-micro-test-plus-function-comparators</name>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gabecc05360d0941067222d827ff8e3f08" kind="typedef"><name>expression_formatter</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gacae776e46a799b81af859ba9bb74e7d0" kind="function"><name>approx</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kind="function"><name>eq</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kind="function"><name>ge</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kind="function"><name>gt</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kind="function"><name>le</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kind="function"><name>lt</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga5bf176ef730172592095657417e5f039" kind="function"><name>ne</name></member>
+  <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-function-comparators</name>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gabecc05360d0941067222d827ff8e3f08" kind="typedef"><name>expression_formatter</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gacae776e46a799b81af859ba9bb74e7d0" kind="function"><name>approx</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kind="function"><name>eq</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kind="function"><name>ge</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kind="function"><name>gt</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kind="function"><name>le</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kind="function"><name>lt</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga5bf176ef730172592095657417e5f039" kind="function"><name>ne</name></member>
   </compound>
-  <compound refid="group__micro-os-plus-micro-test-plus-logical-functions" kind="group"><name>micro-os-plus-micro-test-plus-logical-functions</name>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" kind="function"><name>_and</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" kind="function"><name>_not</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" kind="function"><name>_or</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kind="function"><name>all_of</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kind="function"><name>any_of</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kind="function"><name>negate</name></member>
+  <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-logical-functions</name>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kind="function"><name>all_of</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kind="function"><name>any_of</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kind="function"><name>negate</name></member>
   </compound>
-  <compound refid="group__micro-os-plus-micro-test-plus-exceptions" kind="group"><name>micro-os-plus-micro-test-plus-exceptions</name>
-    <member refid="group__micro-os-plus-micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
+  <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-exceptions</name>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
   </compound>
-  <compound refid="group__micro-os-plus-micro-test-plus-operators" kind="group"><name>micro-os-plus-micro-test-plus-operators</name>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1gad47ea22957940a08ff56104d3c0c16f7" kind="function"><name>operator and</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1ga1d79c807e0d12684f1a850d7269c077b" kind="function"><name>operator not</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1gac008174d3b00512dc53b3e9e26ed45ec" kind="function"><name>operator or</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1ga0cc55025bbf6cac2f1b64242784559cb" kind="function"><name>operator!=</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1ga1d1c66d2cce699e0e64d8307e3951090" kind="function"><name>operator&lt;</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1gaa0bcc006277ab947cf9ff7f13ab9b8ed" kind="function"><name>operator&lt;=</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1ga6f2d36e79581db77f3aa9f8d7a958c78" kind="function"><name>operator==</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1gaa7e34201bb41a287742c3c08a88924d3" kind="function"><name>operator&gt;</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-operators_1ga9d9f5f30c7d8973ef7ccd6f52f0cbd21" kind="function"><name>operator&gt;=</name></member>
+  <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-utility-functions</name>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kind="function"><name>extract_file_name</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" kind="function"><name>is_match</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gac17bb0b9be9a1ca01854c8bbbabc5def" kind="function"><name>split</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" kind="function"><name>split</name></member>
   </compound>
-  <compound refid="group__micro-os-plus-micro-test-plus-literals" kind="group"><name>micro-os-plus-micro-test-plus-literals</name>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kind="typedef"><name>to_b</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kind="typedef"><name>to_c</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kind="typedef"><name>to_sc</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kind="typedef"><name>to_s</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf3ee271cefcffa625e40d476305da62f" kind="typedef"><name>to_i</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga09028a1e0e713723257afba48b9ee551" kind="typedef"><name>to_l</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kind="typedef"><name>to_ll</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kind="typedef"><name>to_u</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kind="typedef"><name>to_uc</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kind="typedef"><name>to_us</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga5d2d6a69c090569866a779672772b48f" kind="typedef"><name>to_ul</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kind="typedef"><name>to_ull</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kind="typedef"><name>to_i8</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kind="typedef"><name>to_i16</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga201eeff58867ba58d3312ae56113ef06" kind="typedef"><name>to_i32</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaead55f5e265634a742633261f9f2aa3f" kind="typedef"><name>to_i64</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kind="typedef"><name>to_u8</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kind="typedef"><name>to_u16</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kind="typedef"><name>to_u32</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kind="typedef"><name>to_u64</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga5368740b47e92605914b6c38ea88aebf" kind="typedef"><name>to_f</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kind="typedef"><name>to_d</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaeba32254fdd8159523b525745b13bfa9" kind="typedef"><name>to_ld</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kind="typedef"><name>_b</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gafdd897d040f92df9cd42e551ebc88cd8" kind="typedef"><name>_c</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga0cc4baab5f421ac7adee10218d8ee8a2" kind="typedef"><name>_sc</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga461a956b7e308ed6e8c64afa3cf160f2" kind="typedef"><name>_s</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga8468610e763177a8f569f7d618851288" kind="typedef"><name>_i</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga429a848542fc4ffafd3dd22bc1832654" kind="typedef"><name>_l</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9c597ca04848620b8570c29a4741e77d" kind="typedef"><name>_ll</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaaa486af2418a24076237fbe26940f5ae" kind="typedef"><name>_u</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaa8bb559065ea34a9645fdfd6339b9b7a" kind="typedef"><name>_uc</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga65aea7fc6324806cc029041a1c785611" kind="typedef"><name>_us</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga32c7eef01fcaef2f1a9478427d951f62" kind="typedef"><name>_ul</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gada8a165060d3d3b3ab51272b9da58761" kind="typedef"><name>_ull</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga265f8609ef3d6ead78c7a66825553e24" kind="typedef"><name>_i8</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gad2d95793c99112ad2889c6663789d1e3" kind="typedef"><name>_i16</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga917a1759e37cd0d3fe3786da11729a4b" kind="typedef"><name>_i32</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga290a150eae030e183ca2e14e9095c93b" kind="typedef"><name>_i64</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" kind="typedef"><name>_u8</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga97f7bc9a25eb4b7c663bd2388ade01ae" kind="typedef"><name>_u16</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga4afa32150456241245bfc641a6f17bbc" kind="typedef"><name>_u32</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga1241e84fc4457af1b4df5f053eec6aa5" kind="typedef"><name>_u64</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga231cd51e76a2f426703275739d605ad4" kind="typedef"><name>_f</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga7c6c0169d894a7dd589d96df49e8df26" kind="typedef"><name>_d</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gacfe28c6fb7bfb47ca8891cb61e7f58d9" kind="typedef"><name>_ld</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga15147e343475e219c2e46dce07b4127c" kind="typedef"><name>_t</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaa2bfc74376f8c110053bfa6e06e40772" kind="function"><name>operator&quot;&quot;_b</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gae521cebfd48332f44d01e4f880b4aafa" kind="function"><name>operator&quot;&quot;_c</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" kind="function"><name>operator&quot;&quot;_d</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" kind="function"><name>operator&quot;&quot;_f</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga366a0d47aec3241e659816067c94fcdf" kind="function"><name>operator&quot;&quot;_i</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gabce6e838737bf25be6e7527f69e75590" kind="function"><name>operator&quot;&quot;_i16</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga6a192d3dfff5a4a98aa7532d36d1b1bd" kind="function"><name>operator&quot;&quot;_i32</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gab0bb5d1e37cbe8de6477c11ecd60956d" kind="function"><name>operator&quot;&quot;_i64</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9ca6fecc72b6da90acee52977eb077d7" kind="function"><name>operator&quot;&quot;_i8</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga96e891b439024e116cb845bc65bc9c4f" kind="function"><name>operator&quot;&quot;_l</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" kind="function"><name>operator&quot;&quot;_ld</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf5ab66b00c9486ade5d49f34a83783f5" kind="function"><name>operator&quot;&quot;_ll</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga812816a2e9b23de1f8d8b2d86553d96d" kind="function"><name>operator&quot;&quot;_s</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga57d27f1a76de2d2b2a067134cbe61457" kind="function"><name>operator&quot;&quot;_sc</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf45bf641153a462a1ba7c12b908e667f" kind="function"><name>operator&quot;&quot;_u</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga96d12d563093f297a73a8b984ae7a3a5" kind="function"><name>operator&quot;&quot;_u16</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga3171e605b5c2e1d9a0e55ae34e904674" kind="function"><name>operator&quot;&quot;_u32</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga622b4808b7ebfc26ddf9db9128533f28" kind="function"><name>operator&quot;&quot;_u64</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga80f43260f6a1afd8260355136858df48" kind="function"><name>operator&quot;&quot;_u8</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga6c1b46d4b967bdbc573e3192c2d9f98a" kind="function"><name>operator&quot;&quot;_uc</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1gaef96b19b140b5007ec33a944c3b72cae" kind="function"><name>operator&quot;&quot;_ul</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga01adcd3866da43c393b7fba8a5e72bb2" kind="function"><name>operator&quot;&quot;_ull</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" kind="function"><name>operator&quot;&quot;_us</name></member>
+  <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-test-suites" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-test-suites</name>
   </compound>
-  <compound refid="group__micro-os-plus-micro-test-plus-utility-functions" kind="group"><name>micro-os-plus-micro-test-plus-utility-functions</name>
-    <member refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kind="function"><name>extract_file_name</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" kind="function"><name>is_match</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-utility-functions_1gac17bb0b9be9a1ca01854c8bbbabc5def" kind="function"><name>split</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" kind="function"><name>split</name></member>
+  <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-deprecated</name>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga67890916b8d3d8cbaab893cc6b599745" kind="typedef"><name>genuine_integral_value</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gaf123417aafc76c826760101bcc517dfa" kind="typedef"><name>runner_totals</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga47d2c99f85fc5597b82da402d4687e75" kind="typedef"><name>static_runner</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga1424c18b26d5fdaed11439c77e6bf561" kind="typedef"><name>subtest</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga53a6bc7f86b15378c8296b3647e7013f" kind="typedef"><name>timestamps</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga65ad920b21a6c0df6848aa939659b92e" kind="typedef"><name>value_base_</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gafc93799846770e521c4721d0de0a81cc" kind="function"><name>short_name</name></member>
   </compound>
-  <compound refid="group__micro-os-plus-micro-test-plus-test-suites" kind="group"><name>micro-os-plus-micro-test-plus-test-suites</name>
+  <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-deprecated-operators</name>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gad47ea22957940a08ff56104d3c0c16f7" kind="function"><name>operator and</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga1d79c807e0d12684f1a850d7269c077b" kind="function"><name>operator not</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gac008174d3b00512dc53b3e9e26ed45ec" kind="function"><name>operator or</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga0cc55025bbf6cac2f1b64242784559cb" kind="function"><name>operator!=</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga1d1c66d2cce699e0e64d8307e3951090" kind="function"><name>operator&lt;</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gaa0bcc006277ab947cf9ff7f13ab9b8ed" kind="function"><name>operator&lt;=</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga6f2d36e79581db77f3aa9f8d7a958c78" kind="function"><name>operator==</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gaa7e34201bb41a287742c3c08a88924d3" kind="function"><name>operator&gt;</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga9d9f5f30c7d8973ef7ccd6f52f0cbd21" kind="function"><name>operator&gt;=</name></member>
+  </compound>
+  <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions</name>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" kind="function"><name>_and</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" kind="function"><name>_not</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" kind="function"><name>_or</name></member>
+  </compound>
+  <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-deprecated-literals</name>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kind="typedef"><name>to_b</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kind="typedef"><name>to_c</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kind="typedef"><name>to_sc</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kind="typedef"><name>to_s</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf3ee271cefcffa625e40d476305da62f" kind="typedef"><name>to_i</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga09028a1e0e713723257afba48b9ee551" kind="typedef"><name>to_l</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kind="typedef"><name>to_ll</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kind="typedef"><name>to_u</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kind="typedef"><name>to_uc</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kind="typedef"><name>to_us</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5d2d6a69c090569866a779672772b48f" kind="typedef"><name>to_ul</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kind="typedef"><name>to_ull</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kind="typedef"><name>to_i8</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kind="typedef"><name>to_i16</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga201eeff58867ba58d3312ae56113ef06" kind="typedef"><name>to_i32</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaead55f5e265634a742633261f9f2aa3f" kind="typedef"><name>to_i64</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kind="typedef"><name>to_u8</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kind="typedef"><name>to_u16</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kind="typedef"><name>to_u32</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kind="typedef"><name>to_u64</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5368740b47e92605914b6c38ea88aebf" kind="typedef"><name>to_f</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kind="typedef"><name>to_d</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaeba32254fdd8159523b525745b13bfa9" kind="typedef"><name>to_ld</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kind="typedef"><name>_b</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafdd897d040f92df9cd42e551ebc88cd8" kind="typedef"><name>_c</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0cc4baab5f421ac7adee10218d8ee8a2" kind="typedef"><name>_sc</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga461a956b7e308ed6e8c64afa3cf160f2" kind="typedef"><name>_s</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kind="typedef"><name>_i</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga429a848542fc4ffafd3dd22bc1832654" kind="typedef"><name>_l</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9c597ca04848620b8570c29a4741e77d" kind="typedef"><name>_ll</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaaa486af2418a24076237fbe26940f5ae" kind="typedef"><name>_u</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaa8bb559065ea34a9645fdfd6339b9b7a" kind="typedef"><name>_uc</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga65aea7fc6324806cc029041a1c785611" kind="typedef"><name>_us</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga32c7eef01fcaef2f1a9478427d951f62" kind="typedef"><name>_ul</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gada8a165060d3d3b3ab51272b9da58761" kind="typedef"><name>_ull</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga265f8609ef3d6ead78c7a66825553e24" kind="typedef"><name>_i8</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad2d95793c99112ad2889c6663789d1e3" kind="typedef"><name>_i16</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga917a1759e37cd0d3fe3786da11729a4b" kind="typedef"><name>_i32</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga290a150eae030e183ca2e14e9095c93b" kind="typedef"><name>_i64</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" kind="typedef"><name>_u8</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga97f7bc9a25eb4b7c663bd2388ade01ae" kind="typedef"><name>_u16</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga4afa32150456241245bfc641a6f17bbc" kind="typedef"><name>_u32</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga1241e84fc4457af1b4df5f053eec6aa5" kind="typedef"><name>_u64</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga231cd51e76a2f426703275739d605ad4" kind="typedef"><name>_f</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga7c6c0169d894a7dd589d96df49e8df26" kind="typedef"><name>_d</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gacfe28c6fb7bfb47ca8891cb61e7f58d9" kind="typedef"><name>_ld</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga15147e343475e219c2e46dce07b4127c" kind="typedef"><name>_t</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaa2bfc74376f8c110053bfa6e06e40772" kind="function"><name>operator&quot;&quot;_b</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae521cebfd48332f44d01e4f880b4aafa" kind="function"><name>operator&quot;&quot;_c</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" kind="function"><name>operator&quot;&quot;_d</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" kind="function"><name>operator&quot;&quot;_f</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga366a0d47aec3241e659816067c94fcdf" kind="function"><name>operator&quot;&quot;_i</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gabce6e838737bf25be6e7527f69e75590" kind="function"><name>operator&quot;&quot;_i16</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6a192d3dfff5a4a98aa7532d36d1b1bd" kind="function"><name>operator&quot;&quot;_i32</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gab0bb5d1e37cbe8de6477c11ecd60956d" kind="function"><name>operator&quot;&quot;_i64</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9ca6fecc72b6da90acee52977eb077d7" kind="function"><name>operator&quot;&quot;_i8</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga96e891b439024e116cb845bc65bc9c4f" kind="function"><name>operator&quot;&quot;_l</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" kind="function"><name>operator&quot;&quot;_ld</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf5ab66b00c9486ade5d49f34a83783f5" kind="function"><name>operator&quot;&quot;_ll</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga812816a2e9b23de1f8d8b2d86553d96d" kind="function"><name>operator&quot;&quot;_s</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga57d27f1a76de2d2b2a067134cbe61457" kind="function"><name>operator&quot;&quot;_sc</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf45bf641153a462a1ba7c12b908e667f" kind="function"><name>operator&quot;&quot;_u</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga96d12d563093f297a73a8b984ae7a3a5" kind="function"><name>operator&quot;&quot;_u16</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga3171e605b5c2e1d9a0e55ae34e904674" kind="function"><name>operator&quot;&quot;_u32</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga622b4808b7ebfc26ddf9db9128533f28" kind="function"><name>operator&quot;&quot;_u64</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga80f43260f6a1afd8260355136858df48" kind="function"><name>operator&quot;&quot;_u8</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6c1b46d4b967bdbc573e3192c2d9f98a" kind="function"><name>operator&quot;&quot;_uc</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaef96b19b140b5007ec33a944c3b72cae" kind="function"><name>operator&quot;&quot;_ul</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga01adcd3866da43c393b7fba8a5e72bb2" kind="function"><name>operator&quot;&quot;_ull</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" kind="function"><name>operator&quot;&quot;_us</name></member>
   </compound>
   <compound refid="deprecated" kind="page"><name>deprecated</name>
   </compound>

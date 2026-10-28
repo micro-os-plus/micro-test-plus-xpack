@@ -9,6 +9,7 @@
     <innerfile refid="reporter-human_8cpp">reporter-human.cpp</innerfile>
     <innerfile refid="reporter-tap_8cpp">reporter-tap.cpp</innerfile>
     <innerfile refid="reporter_8cpp">reporter.cpp</innerfile>
+    <innerfile refid="runner-options_8cpp">runner-options.cpp</innerfile>
     <innerfile refid="runner_8cpp">runner.cpp</innerfile>
     <innerfile refid="stopwatch_8cpp">stopwatch.cpp</innerfile>
     <innerfile refid="test_8cpp">test.cpp</innerfile>

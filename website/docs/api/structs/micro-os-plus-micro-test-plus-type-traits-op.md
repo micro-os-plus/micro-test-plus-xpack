@@ -83,7 +83,7 @@ struct micro_os_plus::micro_test_plus::type_traits::op { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Struct representing a named boolean constant, created by the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gad4203783cfbe141f41ee8515f7b2ea94">_b</a></span> literal. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/named-bool/#details">More...</a></p>
+<p>Struct representing a named boolean constant, created by the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gad4203783cfbe141f41ee8515f7b2ea94">_b</a></span> literal. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/named-bool/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">

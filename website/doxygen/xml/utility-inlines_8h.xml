@@ -61,7 +61,7 @@
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus">micro_os_plus::micro_test_plus</innernamespace>
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1utility">micro_os_plus::micro_test_plus::utility</innernamespace>
     <sectiondef kind="func">
-      <member refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" kind="function"><name>split</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" kind="function"><name>split</name></member>
     </sectiondef>
     <briefdescription>
 <para>C++ header file with inline implementations for the µTest++ utility functions. </para>
@@ -123,7 +123,7 @@
 <codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s.substr<sp/>(std::size_t{},<sp/>std::size_t{});</highlight></codeline>
 <codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="96" refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" kindref="member">split</ref><sp/>(T<sp/>input,<sp/>Delim_T<sp/>delim)<sp/>-&gt;<sp/>std::vector&lt;T&gt;</highlight></codeline>
+<codeline lineno="96" refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" kindref="member">split</ref><sp/>(T<sp/>input,<sp/>Delim_T<sp/>delim)<sp/>-&gt;<sp/>std::vector&lt;T&gt;</highlight></codeline>
 <codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;T&gt;<sp/>output{};</highlight></codeline>
 <codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>first{};</highlight></codeline>

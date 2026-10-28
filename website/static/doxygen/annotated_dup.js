@@ -75,7 +75,7 @@ var annotated_dup =
         ] ],
         [ "counters", "classmicro__os__plus_1_1micro__test__plus_1_1counters.html", "classmicro__os__plus_1_1micro__test__plus_1_1counters" ],
         [ "runner", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html", "classmicro__os__plus_1_1micro__test__plus_1_1runner" ],
-        [ "runner_options", "structmicro__os__plus_1_1micro__test__plus_1_1runner__options.html", "structmicro__os__plus_1_1micro__test__plus_1_1runner__options" ],
+        [ "runner_options", "classmicro__os__plus_1_1micro__test__plus_1_1runner__options.html", "classmicro__os__plus_1_1micro__test__plus_1_1runner__options" ],
         [ "static_suite", "classmicro__os__plus_1_1micro__test__plus_1_1static__suite.html", "classmicro__os__plus_1_1micro__test__plus_1_1static__suite" ],
         [ "suite", "classmicro__os__plus_1_1micro__test__plus_1_1suite.html", "classmicro__os__plus_1_1micro__test__plus_1_1suite" ],
         [ "test_case", "classmicro__os__plus_1_1micro__test__plus_1_1test__case.html", "classmicro__os__plus_1_1micro__test__plus_1_1test__case" ],

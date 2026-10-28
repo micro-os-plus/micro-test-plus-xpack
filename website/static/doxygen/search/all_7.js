@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['ge_0',['ge',['../group__micro-os-plus-micro-test-plus-function-comparators.html#gab8da4228bc9a820546753b018a129a7e',1,'micro_os_plus::micro_test_plus']]],
-  ['genuine_5fintegral_5fvalue_1',['genuine_integral_value',['../namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html#a67890916b8d3d8cbaab893cc6b599745',1,'micro_os_plus::micro_test_plus::type_traits']]],
+  ['ge_0',['ge',['../group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gab8da4228bc9a820546753b018a129a7e',1,'micro_os_plus::micro_test_plus']]],
+  ['genuine_5fintegral_5fvalue_1',['genuine_integral_value',['../group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga67890916b8d3d8cbaab893cc6b599745',1,'micro_os_plus::micro_test_plus::type_traits']]],
   ['get_2',['get',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html#a9199f28db3a365b60ca6ef17053cec2a',1,'micro_os_plus::micro_test_plus::detail::value_base::get()'],['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html#a0169d044ee9d39e5d1b63c0a1fc4ce95',1,'micro_os_plus::micro_test_plus::detail::floating_point_constant::get()'],['../structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#a0169d044ee9d39e5d1b63c0a1fc4ce95',1,'micro_os_plus::micro_test_plus::type_traits::floating_point_constant::get()'],['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html#a9199f28db3a365b60ca6ef17053cec2a',1,'micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::get(void) const noexcept'],['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html#a9199f28db3a365b60ca6ef17053cec2a',1,'micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::get(void) const noexcept']]],
   ['greater_3',['greater',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater.html',1,'micro_os_plus::micro_test_plus::detail']]],
   ['greater_5fequal_4',['greater_equal',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal.html',1,'micro_os_plus::micro_test_plus::detail']]],
-  ['gt_5',['gt',['../group__micro-os-plus-micro-test-plus-function-comparators.html#ga9ae8e4747ff029faa7378110c8680278',1,'micro_os_plus::micro_test_plus']]]
+  ['gt_5',['gt',['../group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga9ae8e4747ff029faa7378110c8680278',1,'micro_os_plus::micro_test_plus']]]
 ];

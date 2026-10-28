@@ -457,7 +457,7 @@ Struct template representing a generic floating point constant with custom size 
 <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/named-bool">named_bool</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Struct representing a named boolean constant, created by the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gad4203783cfbe141f41ee8515f7b2ea94">_b</a></span> literal
+Struct representing a named boolean constant, created by the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gad4203783cfbe141f41ee8515f7b2ea94">_b</a></span> literal
 </td>
 </tr>
 
@@ -644,7 +644,7 @@ A test suite designed for static (namespace-scope) registration with a <span cla
 <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/top-suite">top_suite</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-The implicit top-level suite owned by every <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a></span> instance
+The optional top suite owned by every <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a></span> instance
 </td>
 </tr>
 
@@ -673,11 +673,11 @@ The test runner for the µTest++ framework
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/runner-options">runner_options</a>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-options">runner_options</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-The configuration of a test session
+The configuration of a test session, and its command-line parser
 </td>
 </tr>
 
@@ -798,7 +798,7 @@ Struct template representing a floating point value with precision control
 <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/to-t">to_t&lt;T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Generic strongly-typed wrapper for explicit type conversion
+Deprecated generic strongly-typed wrapper for explicit type conversion
 </td>
 </tr>
 

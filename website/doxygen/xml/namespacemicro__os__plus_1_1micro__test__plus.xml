@@ -4,7 +4,7 @@
     <compoundname>micro_os_plus::micro_test_plus</compoundname>
     <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1counters" prot="public">micro_os_plus::micro_test_plus::counters</innerclass>
     <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" prot="public">micro_os_plus::micro_test_plus::runner</innerclass>
-    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options" prot="public">micro_os_plus::micro_test_plus::runner_options</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options" prot="public">micro_os_plus::micro_test_plus::runner_options</innerclass>
     <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" prot="public">micro_os_plus::micro_test_plus::static_suite</innerclass>
     <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" prot="public">micro_os_plus::micro_test_plus::suite</innerclass>
     <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" prot="public">micro_os_plus::micro_test_plus::test_case</innerclass>
@@ -22,76 +22,76 @@
       <header>Type Wrappers</header>
       <description><para>Strongly-typed wrappers for converting dynamic values and expressions to specific types recognised by µTest++ comparators.</para>
 <para>These type aliases provide a type-safe mechanism for explicitly converting values to the required types for µTest++ test expressions and comparators. Each alias is a wrapper around <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" kindref="compound">detail::value</ref>&lt;T&gt;</computeroutput>, ensuring that the value is treated as the specified type within the framework.</para>
-<para>The <computeroutput>to_*</computeroutput> forms replaced the older <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" kindref="member">_u8</ref></computeroutput>, etc. aliases, which were deprecated in version 3.2.0.</para>
-<para><simplesect kind="par"><title>Deprecated</title><para>Pass the plain values to the function comparators <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga5bf176ef730172592095657417e5f039" kindref="member">ne()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kindref="member">gt()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kindref="member">ge()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kindref="member">lt()</ref></computeroutput>, and <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kindref="member">le()</ref></computeroutput> instead; they report the operands in the same way. For the floating-point values compared with a tolerance, use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref></computeroutput> (since 5.1.0).</para>
+<para>The <computeroutput>to_*</computeroutput> forms replaced the older <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" kindref="member">_u8</ref></computeroutput>, etc. aliases, which were deprecated in version 3.2.0.</para>
+<para><simplesect kind="par"><title>Deprecated</title><para>Pass the plain values to the function comparators <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga5bf176ef730172592095657417e5f039" kindref="member">ne()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kindref="member">gt()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kindref="member">ge()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kindref="member">lt()</ref></computeroutput>, and <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kindref="member">le()</ref></computeroutput> instead; they report the operands in the same way. For the floating-point values compared with a tolerance, use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref></computeroutput> (since 5.1.0).</para>
 </simplesect>
 <simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
 <programlisting><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x<sp/>=<sp/>42;</highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Explicitly<sp/>treat<sp/>x<sp/>as<sp/>an<sp/>int<sp/>for<sp/>test<sp/>comparison.</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>wrapped<sp/>=<sp/><ref refid="group__micro-os-plus-micro-test-plus-literals_1gaf3ee271cefcffa625e40d476305da62f" kindref="member">to_i</ref>{x};</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>wrapped<sp/>=<sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf3ee271cefcffa625e40d476305da62f" kindref="member">to_i</ref>{x};</highlight></codeline>
 </programlisting></para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
 </para>
 </description>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kind="typedef"><name>to_b</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kind="typedef"><name>to_c</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kind="typedef"><name>to_sc</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kind="typedef"><name>to_s</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf3ee271cefcffa625e40d476305da62f" kind="typedef"><name>to_i</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga09028a1e0e713723257afba48b9ee551" kind="typedef"><name>to_l</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kind="typedef"><name>to_ll</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kind="typedef"><name>to_u</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kind="typedef"><name>to_uc</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kind="typedef"><name>to_us</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga5d2d6a69c090569866a779672772b48f" kind="typedef"><name>to_ul</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kind="typedef"><name>to_ull</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kind="typedef"><name>to_i8</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kind="typedef"><name>to_i16</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga201eeff58867ba58d3312ae56113ef06" kind="typedef"><name>to_i32</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaead55f5e265634a742633261f9f2aa3f" kind="typedef"><name>to_i64</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kind="typedef"><name>to_u8</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kind="typedef"><name>to_u16</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kind="typedef"><name>to_u32</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kind="typedef"><name>to_u64</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga5368740b47e92605914b6c38ea88aebf" kind="typedef"><name>to_f</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kind="typedef"><name>to_d</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaeba32254fdd8159523b525745b13bfa9" kind="typedef"><name>to_ld</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kind="typedef"><name>to_b</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kind="typedef"><name>to_c</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kind="typedef"><name>to_sc</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kind="typedef"><name>to_s</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf3ee271cefcffa625e40d476305da62f" kind="typedef"><name>to_i</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga09028a1e0e713723257afba48b9ee551" kind="typedef"><name>to_l</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kind="typedef"><name>to_ll</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kind="typedef"><name>to_u</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kind="typedef"><name>to_uc</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kind="typedef"><name>to_us</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5d2d6a69c090569866a779672772b48f" kind="typedef"><name>to_ul</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kind="typedef"><name>to_ull</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kind="typedef"><name>to_i8</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kind="typedef"><name>to_i16</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga201eeff58867ba58d3312ae56113ef06" kind="typedef"><name>to_i32</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaead55f5e265634a742633261f9f2aa3f" kind="typedef"><name>to_i64</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kind="typedef"><name>to_u8</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kind="typedef"><name>to_u16</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kind="typedef"><name>to_u32</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kind="typedef"><name>to_u64</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5368740b47e92605914b6c38ea88aebf" kind="typedef"><name>to_f</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kind="typedef"><name>to_d</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaeba32254fdd8159523b525745b13bfa9" kind="typedef"><name>to_ld</name></member>
     </sectiondef>
     <sectiondef kind="user-defined">
       <header>Deprecated Type Wrappers</header>
       <description><para>The v5.0.1 names of the <computeroutput>to_*</computeroutput> type wrappers.</para>
-<para>The Boost UT style names, with a leading underscore, kept for compatibility with the existing applications. Each one is an alias of the corresponding <computeroutput>to_*</computeroutput> wrapper, so the wrapped values are compared and reported in the same way. They do not conflict with the literal operators with the same suffixes (<computeroutput>42<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>), which are in the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1literals" kindref="compound">literals</ref></computeroutput> namespace.</para>
-<para>GCC reports the deprecation only when the alias names the type of a declaration, not when it is used in an expression, as in <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref> (expr)</computeroutput>; Clang reports it in both cases.</para>
-<para><simplesect kind="par"><title>Deprecated</title><para>Pass the plain values to the function comparators <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga5bf176ef730172592095657417e5f039" kindref="member">ne()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kindref="member">gt()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kindref="member">ge()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kindref="member">lt()</ref></computeroutput>, and <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kindref="member">le()</ref></computeroutput> instead; the <computeroutput>to_*</computeroutput> type wrappers that replaced these aliases (since 3.2.0) are deprecated too (since 5.1.0). </para>
+<para>The Boost UT style names, with a leading underscore, kept for compatibility with the existing applications. Each one is an alias of the corresponding <computeroutput>to_*</computeroutput> wrapper, so the wrapped values are compared and reported in the same way. They do not conflict with the literal operators with the same suffixes (<computeroutput>42<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>), which are in the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1literals" kindref="compound">literals</ref></computeroutput> namespace.</para>
+<para>GCC reports the deprecation only when the alias names the type of a declaration, not when it is used in an expression, as in <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref> (expr)</computeroutput>; Clang reports it in both cases.</para>
+<para><simplesect kind="par"><title>Deprecated</title><para>Pass the plain values to the function comparators <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga5bf176ef730172592095657417e5f039" kindref="member">ne()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kindref="member">gt()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kindref="member">ge()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kindref="member">lt()</ref></computeroutput>, and <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kindref="member">le()</ref></computeroutput> instead; the <computeroutput>to_*</computeroutput> type wrappers that replaced these aliases (since 3.2.0) are deprecated too (since 5.1.0). </para>
 </simplesect>
 </para>
 </description>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kind="typedef"><name>_b</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gafdd897d040f92df9cd42e551ebc88cd8" kind="typedef"><name>_c</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga0cc4baab5f421ac7adee10218d8ee8a2" kind="typedef"><name>_sc</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga461a956b7e308ed6e8c64afa3cf160f2" kind="typedef"><name>_s</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga8468610e763177a8f569f7d618851288" kind="typedef"><name>_i</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga429a848542fc4ffafd3dd22bc1832654" kind="typedef"><name>_l</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga9c597ca04848620b8570c29a4741e77d" kind="typedef"><name>_ll</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaaa486af2418a24076237fbe26940f5ae" kind="typedef"><name>_u</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaa8bb559065ea34a9645fdfd6339b9b7a" kind="typedef"><name>_uc</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga65aea7fc6324806cc029041a1c785611" kind="typedef"><name>_us</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga32c7eef01fcaef2f1a9478427d951f62" kind="typedef"><name>_ul</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gada8a165060d3d3b3ab51272b9da58761" kind="typedef"><name>_ull</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga265f8609ef3d6ead78c7a66825553e24" kind="typedef"><name>_i8</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gad2d95793c99112ad2889c6663789d1e3" kind="typedef"><name>_i16</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga917a1759e37cd0d3fe3786da11729a4b" kind="typedef"><name>_i32</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga290a150eae030e183ca2e14e9095c93b" kind="typedef"><name>_i64</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" kind="typedef"><name>_u8</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga97f7bc9a25eb4b7c663bd2388ade01ae" kind="typedef"><name>_u16</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga4afa32150456241245bfc641a6f17bbc" kind="typedef"><name>_u32</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga1241e84fc4457af1b4df5f053eec6aa5" kind="typedef"><name>_u64</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga231cd51e76a2f426703275739d605ad4" kind="typedef"><name>_f</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga7c6c0169d894a7dd589d96df49e8df26" kind="typedef"><name>_d</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gacfe28c6fb7bfb47ca8891cb61e7f58d9" kind="typedef"><name>_ld</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1ga15147e343475e219c2e46dce07b4127c" kind="typedef"><name>_t</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kind="typedef"><name>_b</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafdd897d040f92df9cd42e551ebc88cd8" kind="typedef"><name>_c</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0cc4baab5f421ac7adee10218d8ee8a2" kind="typedef"><name>_sc</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga461a956b7e308ed6e8c64afa3cf160f2" kind="typedef"><name>_s</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kind="typedef"><name>_i</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga429a848542fc4ffafd3dd22bc1832654" kind="typedef"><name>_l</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9c597ca04848620b8570c29a4741e77d" kind="typedef"><name>_ll</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaaa486af2418a24076237fbe26940f5ae" kind="typedef"><name>_u</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaa8bb559065ea34a9645fdfd6339b9b7a" kind="typedef"><name>_uc</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga65aea7fc6324806cc029041a1c785611" kind="typedef"><name>_us</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga32c7eef01fcaef2f1a9478427d951f62" kind="typedef"><name>_ul</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gada8a165060d3d3b3ab51272b9da58761" kind="typedef"><name>_ull</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga265f8609ef3d6ead78c7a66825553e24" kind="typedef"><name>_i8</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad2d95793c99112ad2889c6663789d1e3" kind="typedef"><name>_i16</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga917a1759e37cd0d3fe3786da11729a4b" kind="typedef"><name>_i32</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga290a150eae030e183ca2e14e9095c93b" kind="typedef"><name>_i64</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" kind="typedef"><name>_u8</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga97f7bc9a25eb4b7c663bd2388ade01ae" kind="typedef"><name>_u16</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga4afa32150456241245bfc641a6f17bbc" kind="typedef"><name>_u32</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga1241e84fc4457af1b4df5f053eec6aa5" kind="typedef"><name>_u64</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga231cd51e76a2f426703275739d605ad4" kind="typedef"><name>_f</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga7c6c0169d894a7dd589d96df49e8df26" kind="typedef"><name>_d</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gacfe28c6fb7bfb47ca8891cb61e7f58d9" kind="typedef"><name>_ld</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga15147e343475e219c2e46dce07b4127c" kind="typedef"><name>_t</name></member>
     </sectiondef>
     <sectiondef kind="enum">
       <memberdef kind="enum" id="namespacemicro__os__plus_1_1micro__test__plus_1a603af2d1c9643caa351305180b2e905b" prot="public" static="no" strong="yes">
@@ -126,7 +126,7 @@
 <para>The use of colours in the console output. </para>
         </briefdescription>
         <detaileddescription>
-<para>Selected with the <computeroutput>--color</computeroutput> command-line option (or its alternative, <computeroutput>--use-colour</computeroutput>), or with <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a48ed4dd71eff02911c2d6943ba616850" kindref="member">runner_options::colour</ref></computeroutput>; the default is <computeroutput>automatic</computeroutput>. The names follow the values of <computeroutput>--color</computeroutput> in the GNU tools.</para>
+<para>Selected with the <computeroutput>--color</computeroutput> command-line option (or its alternative, <computeroutput>--use-colour</computeroutput>), or with <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a48ed4dd71eff02911c2d6943ba616850" kindref="member">runner_options::colour</ref></computeroutput>; the default is <computeroutput>automatic</computeroutput>. The names follow the values of <computeroutput>--color</computeroutput> in the GNU tools.</para>
 <para>Only the human reporter uses colours; the TAP reporter never does, since the ANSI escape sequences are not part of the TAP syntax. The output file never receives colours, whatever the mode.</para>
 <para><simplesect kind="since"><para>5.1.0 </para>
 </simplesect>
@@ -134,7 +134,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="149" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="150" bodyend="159"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="152" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="153" bodyend="162"/>
       </memberdef>
       <memberdef kind="enum" id="namespacemicro__os__plus_1_1micro__test__plus_1a913c4161963e9439b20857358486e8b2" prot="public" static="no" strong="yes">
         <type></type>
@@ -160,14 +160,14 @@
 <para>The built-in reporters. </para>
         </briefdescription>
         <detaileddescription>
-<para>Selected with the <computeroutput>--reporter</computeroutput> command-line option, or with <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1ad22d04df014c5b0658b6e7bd239f15b0" kindref="member">runner_options::selected_reporter</ref></computeroutput>; the default is <computeroutput>tap</computeroutput>.</para>
+<para>Selected with the <computeroutput>--reporter</computeroutput> command-line option, or with <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1ad22d04df014c5b0658b6e7bd239f15b0" kindref="member">runner_options::selected_reporter</ref></computeroutput>; the default is <computeroutput>tap</computeroutput>.</para>
 <para><simplesect kind="since"><para>5.1.0 </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="126" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="127" bodyend="130"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="129" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="130" bodyend="133"/>
       </memberdef>
       <memberdef kind="enum" id="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" prot="public" static="no" strong="yes">
         <type></type>
@@ -214,37 +214,37 @@
         </briefdescription>
         <detaileddescription>
 <para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kindref="member">verbosity</ref></computeroutput> enumeration defines the available levels of detail for test output produced by the reporting system. These levels control the amount and type of information displayed during test execution, allowing users to tailor the output to their specific requirements.</para>
-<para>The level is selected with the <computeroutput>--silent</computeroutput>, <computeroutput>--quiet</computeroutput>, and <computeroutput>--verbose</computeroutput> command-line options, or with <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options_1aff30f0303a958a549a2f4b6e67db00d5" kindref="member">runner_options::verbosity_level</ref></computeroutput>; the default is <computeroutput>normal</computeroutput>. The console output is intended for the people who watch the tests run, while the optional output file is intended for the integration with other tools. The level affects only the console output; the output file always receives the full report.</para>
+<para>The level is selected with the <computeroutput>--silent</computeroutput>, <computeroutput>--quiet</computeroutput>, and <computeroutput>--verbose</computeroutput> command-line options, or with <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1aff30f0303a958a549a2f4b6e67db00d5" kindref="member">runner_options::verbosity_level</ref></computeroutput>; the default is <computeroutput>normal</computeroutput>. The console output is intended for the people who watch the tests run, while the optional output file is intended for the integration with other tools. The level affects only the console output; the output file always receives the full report.</para>
 <para>The <computeroutput>quiet</computeroutput> level displays the failed checks, with the names of the suite and of the test cases that contain them, and the totals; the passed checks and the passed test cases are not displayed. To also see them, use the <computeroutput>verbose</computeroutput> level, or keep <computeroutput>quiet</computeroutput> and use an output file, which receives them. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="101" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="102" bodyend="113"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="104" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="105" bodyend="116"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="typedef">
-      <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gabecc05360d0941067222d827ff8e3f08" kind="typedef"><name>expression_formatter</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-runners_1ga47d2c99f85fc5597b82da402d4687e75" kind="typedef"><name>static_runner</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-test-case_1ga1424c18b26d5fdaed11439c77e6bf561" kind="typedef"><name>subtest</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gabecc05360d0941067222d827ff8e3f08" kind="typedef"><name>expression_formatter</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga47d2c99f85fc5597b82da402d4687e75" kind="typedef"><name>static_runner</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga1424c18b26d5fdaed11439c77e6bf561" kind="typedef"><name>subtest</name></member>
     </sectiondef>
     <sectiondef kind="func">
-      <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" kind="function"><name>_and</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" kind="function"><name>_not</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" kind="function"><name>_or</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kind="function"><name>all_of</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kind="function"><name>any_of</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gacae776e46a799b81af859ba9bb74e7d0" kind="function"><name>approx</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kind="function"><name>eq</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kind="function"><name>ge</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kind="function"><name>gt</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kind="function"><name>le</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kind="function"><name>lt</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1ga5bf176ef730172592095657417e5f039" kind="function"><name>ne</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kind="function"><name>negate</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" kind="function"><name>_and</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" kind="function"><name>_not</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" kind="function"><name>_or</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kind="function"><name>all_of</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kind="function"><name>any_of</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gacae776e46a799b81af859ba9bb74e7d0" kind="function"><name>approx</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kind="function"><name>eq</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kind="function"><name>ge</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kind="function"><name>gt</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kind="function"><name>le</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kind="function"><name>lt</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga5bf176ef730172592095657417e5f039" kind="function"><name>ne</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kind="function"><name>negate</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
     </sectiondef>
     <briefdescription>
 <para>Primary namespace for the µTest++ testing framework. </para>

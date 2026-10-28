@@ -370,6 +370,7 @@
     <value><![CDATA[MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED]]></value>
     <value><![CDATA[MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED]]></value>
     <value><![CDATA[MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED]]></value>
+    <value><![CDATA[MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED]]></value>
   </option>
   <option  id='EXPAND_AS_DEFINED' default='yes' type='stringlist'>
   </option>

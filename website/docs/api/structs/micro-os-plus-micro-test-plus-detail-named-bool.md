@@ -17,7 +17,7 @@ keywords:
 
 # `named_bool` Struct
 
-<p>Struct representing a named boolean constant, created by the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gad4203783cfbe141f41ee8515f7b2ea94">_b</a></span> literal. <a href="#details">More...</a></p>
+<p>Struct representing a named boolean constant, created by the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gad4203783cfbe141f41ee8515f7b2ea94">_b</a></span> literal. <a href="#details">More...</a></p>
 
 ## Declaration
 
@@ -166,10 +166,10 @@ struct micro_os_plus::micro_test_plus::detail::named_bool { ... }
 
 ## Description {#details}
 
-<p>Struct representing a named boolean constant, created by the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gad4203783cfbe141f41ee8515f7b2ea94">_b</a></span> literal.</p>
+<p>Struct representing a named boolean constant, created by the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gad4203783cfbe141f41ee8515f7b2ea94">_b</a></span> literal.</p>
 
 
-<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/named-bool">named_bool</a></span> struct holds the constant <span class="doxyComputerOutput">true</span>, together with a name, which the expression formatter prints instead of the value, so that a failed comparison like <span class="doxyComputerOutput">"flag"<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gad4203783cfbe141f41ee8515f7b2ea94">_b</a> == flag</span>, with the operators in the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/operators">operators</a></span> namespace, is reported as <span class="doxyComputerOutput">flag == false</span>.</p>
+<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/named-bool">named_bool</a></span> struct holds the constant <span class="doxyComputerOutput">true</span>, together with a name, which the expression formatter prints instead of the value, so that a failed comparison like <span class="doxyComputerOutput">"flag"<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gad4203783cfbe141f41ee8515f7b2ea94">_b</a> == flag</span>, with the operators in the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/operators">operators</a></span> namespace, is reported as <span class="doxyComputerOutput">flag == false</span>.</p>
 
 
 <p>The value is available only via the implicit conversion to <span class="doxyComputerOutput">bool</span>, and the struct has neither a <span class="doxyComputerOutput">get()</span> accessor nor comparison operators. Thus <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a59eb53c96f68d26635c13df53b358ac8">detail::unwrap()</a></span> returns the object itself, so that the formatter receives the name, the comparators compare it as the <span class="doxyComputerOutput">bool</span> value <span class="doxyComputerOutput">true</span>, and the generic operators in the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/operators">operators</a></span> namespace, not a better matching operator of this struct, are selected for it.</p>

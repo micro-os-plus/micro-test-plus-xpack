@@ -37,57 +37,73 @@
                 {
                   "type": "doc",
                   "label": "Test Runners",
-                  "id": "api/groups/micro-os-plus-micro-test-plus-runners"
+                  "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-runners"
                 },
                 {
                   "type": "doc",
                   "label": "Test Cases",
-                  "id": "api/groups/micro-os-plus-micro-test-plus-test-case"
+                  "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-test-case"
                 },
                 {
                   "type": "doc",
                   "label": "Expectations",
-                  "id": "api/groups/micro-os-plus-micro-test-plus-expectations"
+                  "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-expectations"
                 },
                 {
                   "type": "doc",
                   "label": "Requirements",
-                  "id": "api/groups/micro-os-plus-micro-test-plus-requirements"
+                  "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-requirements"
                 },
                 {
                   "type": "doc",
                   "label": "Function Comparators",
-                  "id": "api/groups/micro-os-plus-micro-test-plus-function-comparators"
+                  "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators"
                 },
                 {
                   "type": "doc",
                   "label": "Logical Functions",
-                  "id": "api/groups/micro-os-plus-micro-test-plus-logical-functions"
+                  "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions"
                 },
                 {
                   "type": "doc",
                   "label": "Checking Exceptions",
-                  "id": "api/groups/micro-os-plus-micro-test-plus-exceptions"
-                },
-                {
-                  "type": "doc",
-                  "label": "Operators",
-                  "id": "api/groups/micro-os-plus-micro-test-plus-operators"
-                },
-                {
-                  "type": "doc",
-                  "label": "Literals and Wrappers",
-                  "id": "api/groups/micro-os-plus-micro-test-plus-literals"
+                  "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-exceptions"
                 },
                 {
                   "type": "doc",
                   "label": "Utility Functions",
-                  "id": "api/groups/micro-os-plus-micro-test-plus-utility-functions"
+                  "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-utility-functions"
                 },
                 {
                   "type": "doc",
                   "label": "Test Suites",
-                  "id": "api/groups/micro-os-plus-micro-test-plus-test-suites"
+                  "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-test-suites"
+                },
+                {
+                  "type": "category",
+                  "label": "Deprecated",
+                  "link": {
+                    "type": "doc",
+                    "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated"
+                  },
+                  "collapsed": true,
+                  "items": [
+                    {
+                      "type": "doc",
+                      "label": "Operators",
+                      "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-operators"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "Logical Functions",
+                      "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "Literals and Wrappers",
+                      "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals"
+                    }
+                  ]
                 }
               ]
             },
@@ -953,7 +969,7 @@
               "type": "doc",
               "label": "runner_options",
               "className": "doxyEllipsis",
-              "id": "api/structs/micro-os-plus-micro-test-plus-runner-options"
+              "id": "api/classes/micro-os-plus-micro-test-plus-runner-options"
             },
             {
               "type": "doc",
@@ -1198,6 +1214,12 @@
                             },
                             {
                               "type": "doc",
+                              "label": "runner-options-inlines.h",
+                              "className": "doxyEllipsis",
+                              "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-runner-options-inlines-h"
+                            },
+                            {
+                              "type": "doc",
                               "label": "stopwatch-inlines.h",
                               "className": "doxyEllipsis",
                               "id": "api/files/include-micro-os-plus-micro-test-plus-inlines-stopwatch-inlines-h"
@@ -1399,6 +1421,12 @@
                   "label": "reporter.cpp",
                   "className": "doxyEllipsis",
                   "id": "api/files/src-reporter-cpp"
+                },
+                {
+                  "type": "doc",
+                  "label": "runner-options.cpp",
+                  "className": "doxyEllipsis",
+                  "id": "api/files/src-runner-options-cpp"
                 },
                 {
                   "type": "doc",

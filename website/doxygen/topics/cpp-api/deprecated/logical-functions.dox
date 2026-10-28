@@ -1,0 +1,35 @@
+@defgroup micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions Logical Functions
+@brief Deprecated v5.0.1 names of the logical functions.
+
+@details
+The functions `mt::_and()`, `mt::_or()`, and `mt::_not()` are the v5.0.1
+names of `mt::all_of()`, `mt::any_of()`, and `mt::negate()`. They are
+deprecated since 5.1.0, and are kept for compatibility with the existing
+applications; they behave as the functions that replace them.
+
+The names were changed since a leading underscore is not used by the other
+public names. Unlike the replacements, `mt::_and()` and `mt::_or()` take
+exactly two operands, whereas `mt::all_of()` and `mt::any_of()` take two or
+more.
+
+| Deprecated    | Replacement    |
+| ------------- | -------------- |
+| `mt::_and()`  | `mt::all_of()` |
+| `mt::_or()`   | `mt::any_of()` |
+| `mt::_not()`  | `mt::negate()` |
+
+@par Example
+
+@code{.cpp}
+// Deprecated.
+t.expect (mt::_and (mt::eq (compute_answer (), 42),
+                    mt::lt (compute_answer (), 43)));
+
+// Replacement.
+t.expect (mt::all_of (mt::eq (compute_answer (), 42),
+                      mt::lt (compute_answer (), 43)));
+@endcode
+
+The overloaded logical operators of the `micro_test_plus::operators`
+namespace are also deprecated since 5.1.0, in favour of the same
+replacement functions.

@@ -1,6 +1,6 @@
 var runner_options_8h =
 [
-    [ "micro_os_plus::micro_test_plus::runner_options", "structmicro__os__plus_1_1micro__test__plus_1_1runner__options.html", "structmicro__os__plus_1_1micro__test__plus_1_1runner__options" ],
+    [ "micro_os_plus::micro_test_plus::runner_options", "classmicro__os__plus_1_1micro__test__plus_1_1runner__options.html", "classmicro__os__plus_1_1micro__test__plus_1_1runner__options" ],
     [ "micro_os_plus::micro_test_plus::colour_mode", "namespacemicro__os__plus_1_1micro__test__plus.html#a603af2d1c9643caa351305180b2e905b", [
       [ "micro_os_plus::micro_test_plus::colour_mode::automatic", "namespacemicro__os__plus_1_1micro__test__plus.html#a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8", null ],
       [ "micro_os_plus::micro_test_plus::colour_mode::always", "namespacemicro__os__plus_1_1micro__test__plus.html#a603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb", null ],

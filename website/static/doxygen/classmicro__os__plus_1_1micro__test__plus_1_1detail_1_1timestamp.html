@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classmicro__os
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">micro_os_plus::micro_test_plus::detail::timestamp Class Reference</div></div>
+  <div class="headertitle"><div class="title">micro_os_plus::micro_test_plus::detail::timestamp Class Reference<div class="ingroups"><a class="el" href="group__micro-os-plus.html">µOS++ Topics</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus.html">µTest++</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api.html">C++ API</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html">Deprecated</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -149,11 +149,11 @@ Protected Attributes</h2></td></tr>
 <tr class="memdesc:a62c9539975cee7a03be62eb0a903bbf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The stored time.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The v5.0.1 class of the two readings kept by <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a53a6bc7f86b15378c8296b3647e7013f" title="Deprecated name of stopwatch.">detail::timestamps</a></span>, restored for the applications that used it directly; the framework no longer uses it, since <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html" title="Measures the elapsed time of an operation.">stopwatch</a></span> keeps the readings as <span class="tt">timespec</span> members. The timings are internal; use <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html" title="Measures the elapsed time of an operation.">stopwatch</a></span> instead.</p>
+<div class="textblock"><p>The v5.0.1 class of the two readings kept by <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga53a6bc7f86b15378c8296b3647e7013f" title="Deprecated name of stopwatch.">detail::timestamps</a></span>, restored for the applications that used it directly; the framework no longer uses it, since <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html" title="Measures the elapsed time of an operation.">stopwatch</a></span> keeps the readings as <span class="tt">timespec</span> members. The timings are internal; use <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html" title="Measures the elapsed time of an operation.">stopwatch</a></span> instead.</p>
 <p>A zero <span class="tt">timespec</span> means that the clock was not read, or that the platform has no clock.</p>
 <p>The data member is <span class="tt">protected</span>, as in v5.0.1, so that the existing derived classes can still access it. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000096">Deprecated</a></b></dt><dd>the timings are internal (since 5.1.0)</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l01611">1611</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l01626">1626</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5bc1f0da3e55b740b16c2269012e141e" name="a5bc1f0da3e55b740b16c2269012e141e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5bc1f0da3e55b740b16c2269012e141e">&#9670;&#160;</a></span>timestamp() <span class="overload">[1/4]</span></h2>
@@ -180,16 +180,16 @@ Protected Attributes</h2></td></tr>
 <p>Reads the system clock, as <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html#af5ebb1e454867633db12fef45db9788d" title="Records the start time, from the system clock.">stopwatch::start()</a></span> does; without a clock, the value remains zero.</p>
 <p>Reads the system clock into the stored value, with <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a60dcef812e43e13d1e30f602a572e27a" title="Reads the system clock.">read_clock()</a></span>, the same clock as <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html" title="Measures the elapsed time of an operation.">stopwatch</a></span>; without a clock, the value remains zero. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated_8cpp_source.html#l00096">96</a> of file <a class="el" href="deprecated_8cpp_source.html">deprecated.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   97</span>    {</div>
-<div class="line"><span class="lineno">   98</span>      <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a60dcef812e43e13d1e30f602a572e27a">read_clock</a> (<a class="code hl_variable" href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>);</div>
-<div class="line"><span class="lineno">   99</span>    }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_html_a62c9539975cee7a03be62eb0a903bbf3"><div class="ttname"><a href="#a62c9539975cee7a03be62eb0a903bbf3">micro_os_plus::micro_test_plus::detail::timestamp::value_</a></div><div class="ttdeci">timespec value_</div><div class="ttdoc">The stored time.</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l01724">deprecated.h:1724</a></div></div>
+<p class="definition">Definition at line <a class="el" href="deprecated_8cpp_source.html#l00097">97</a> of file <a class="el" href="deprecated_8cpp_source.html">deprecated.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   98</span>    {</div>
+<div class="line"><span class="lineno">   99</span>      <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a60dcef812e43e13d1e30f602a572e27a">read_clock</a> (<a class="code hl_variable" href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>);</div>
+<div class="line"><span class="lineno">  100</span>    }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_html_a62c9539975cee7a03be62eb0a903bbf3"><div class="ttname"><a href="#a62c9539975cee7a03be62eb0a903bbf3">micro_os_plus::micro_test_plus::detail::timestamp::value_</a></div><div class="ttdeci">timespec value_</div><div class="ttdoc">The stored time.</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l01739">deprecated.h:1739</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a60dcef812e43e13d1e30f602a572e27a"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a60dcef812e43e13d1e30f602a572e27a">micro_os_plus::micro_test_plus::detail::read_clock</a></div><div class="ttdeci">void read_clock(timespec &amp;ts) noexcept</div><div class="ttdoc">Reads the system clock.</div><div class="ttdef"><b>Definition</b> <a href="stopwatch_8cpp_source.html#l00066">stopwatch.cpp:66</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="stopwatch_8cpp_source.html#l00066">micro_os_plus::micro_test_plus::detail::read_clock()</a>, and <a class="el" href="deprecated_8h_source.html#l01724">value_</a>.</p>
+<p class="reference">References <a class="el" href="stopwatch_8cpp_source.html#l00066">micro_os_plus::micro_test_plus::detail::read_clock()</a>, and <a class="el" href="deprecated_8h_source.html#l01739">value_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00679">timestamp()</a>, <a class="el" href="#a78ec32dd29a858de635f6be2a4fd3f8f">timestamp()</a>, <a class="el" href="#a1edc35b9931f3fdb714daf9cae3da73e">~timestamp()</a>, <a class="el" href="#a91c4b65a10407ab3c2a65343b924902b">operator=()</a>, and <a class="el" href="#a790a0f4322a690f7ab6591ada80222a0">operator=()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00681">timestamp()</a>, <a class="el" href="#a78ec32dd29a858de635f6be2a4fd3f8f">timestamp()</a>, <a class="el" href="#a1edc35b9931f3fdb714daf9cae3da73e">~timestamp()</a>, <a class="el" href="#a91c4b65a10407ab3c2a65343b924902b">operator=()</a>, and <a class="el" href="#a790a0f4322a690f7ab6591ada80222a0">operator=()</a>.</p>
 
 </div>
 </div>
@@ -224,12 +224,12 @@ Protected Attributes</h2></td></tr>
 </dl>
 <p>Copies <code class="param">ts</code> into the stored value. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00679">679</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  679</span>                                                          : <a class="code hl_variable" href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>{ ts }</div>
-<div class="line"><span class="lineno">  680</span>  {</div>
-<div class="line"><span class="lineno">  681</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00681">681</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  681</span>                                                          : <a class="code hl_variable" href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>{ ts }</div>
+<div class="line"><span class="lineno">  682</span>  {</div>
+<div class="line"><span class="lineno">  683</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="deprecated_8cpp_source.html#l00096">timestamp()</a>, and <a class="el" href="deprecated_8h_source.html#l01724">value_</a>.</p>
+<p class="reference">References <a class="el" href="deprecated_8cpp_source.html#l00097">timestamp()</a>, and <a class="el" href="deprecated_8h_source.html#l01739">value_</a>.</p>
 
 </div>
 </div>
@@ -283,7 +283,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Equivalent to the copy, since the value is trivially copyable. </p>
 
-<p class="reference">References <a class="el" href="deprecated_8cpp_source.html#l00096">timestamp()</a>.</p>
+<p class="reference">References <a class="el" href="deprecated_8cpp_source.html#l00097">timestamp()</a>.</p>
 
 </div>
 </div>
@@ -311,7 +311,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>No resources are owned, so there is nothing to release. </p>
 
-<p class="reference">References <a class="el" href="deprecated_8cpp_source.html#l00096">timestamp()</a>.</p>
+<p class="reference">References <a class="el" href="deprecated_8cpp_source.html#l00097">timestamp()</a>.</p>
 
 </div>
 </div>
@@ -349,14 +349,14 @@ Protected Attributes</h2></td></tr>
 </dl>
 <p>Returns <span class="tt">true</span> if either the seconds or the nanoseconds member is not zero. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00691">691</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  692</span>  {</div>
-<div class="line"><span class="lineno">  693</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>.tv_sec != 0 || <a class="code hl_variable" href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>.tv_nsec != 0;</div>
-<div class="line"><span class="lineno">  694</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00693">693</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  694</span>  {</div>
+<div class="line"><span class="lineno">  695</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>.tv_sec != 0 || <a class="code hl_variable" href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>.tv_nsec != 0;</div>
+<div class="line"><span class="lineno">  696</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00691">has_clock()</a>, and <a class="el" href="deprecated_8h_source.html#l01724">value_</a>.</p>
+<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00693">has_clock()</a>, and <a class="el" href="deprecated_8h_source.html#l01739">value_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00691">has_clock()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00693">has_clock()</a>.</p>
 
 </div>
 </div>
@@ -385,7 +385,7 @@ Protected Attributes</h2></td></tr>
 <p>A timestamp is a plain value, so it may be assigned.</p>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the current object. </dd></dl>
 
-<p class="reference">References <a class="el" href="deprecated_8cpp_source.html#l00096">timestamp()</a>.</p>
+<p class="reference">References <a class="el" href="deprecated_8cpp_source.html#l00097">timestamp()</a>.</p>
 
 </div>
 </div>
@@ -414,7 +414,7 @@ Protected Attributes</h2></td></tr>
 <p>Equivalent to the copy assignment, since the value is trivially copyable.</p>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the current object. </dd></dl>
 
-<p class="reference">References <a class="el" href="deprecated_8cpp_source.html#l00096">timestamp()</a>.</p>
+<p class="reference">References <a class="el" href="deprecated_8cpp_source.html#l00097">timestamp()</a>.</p>
 
 </div>
 </div>
@@ -444,12 +444,12 @@ Protected Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A constant reference to the stored <span class="tt">timespec</span>.</dd></dl>
 <p>The returned reference is valid as long as the object exists. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00716">716</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  717</span>  {</div>
-<div class="line"><span class="lineno">  718</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>;</div>
-<div class="line"><span class="lineno">  719</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00718">718</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  719</span>  {</div>
+<div class="line"><span class="lineno">  720</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>;</div>
+<div class="line"><span class="lineno">  721</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00704">value()</a>, and <a class="el" href="deprecated_8h_source.html#l01724">value_</a>.</p>
+<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00706">value()</a>, and <a class="el" href="deprecated_8h_source.html#l01739">value_</a>.</p>
 
 </div>
 </div>
@@ -479,14 +479,14 @@ Protected Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the stored <span class="tt">timespec</span>.</dd></dl>
 <p>The caller may modify the stored time through the returned reference. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00704">704</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  705</span>  {</div>
-<div class="line"><span class="lineno">  706</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>;</div>
-<div class="line"><span class="lineno">  707</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00706">706</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  707</span>  {</div>
+<div class="line"><span class="lineno">  708</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a62c9539975cee7a03be62eb0a903bbf3">value_</a>;</div>
+<div class="line"><span class="lineno">  709</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00704">value()</a>, and <a class="el" href="deprecated_8h_source.html#l01724">value_</a>.</p>
+<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00706">value()</a>, and <a class="el" href="deprecated_8h_source.html#l01739">value_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00716">value()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00704">value()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00718">value()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00706">value()</a>.</p>
 
 </div>
 </div>
@@ -512,9 +512,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Set by the constructors; zero if the clock was not read. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l01724">1724</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l01739">1739</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00679">timestamp()</a>, <a class="el" href="deprecated_8cpp_source.html#l00096">timestamp()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00691">has_clock()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00716">value()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00704">value()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00681">timestamp()</a>, <a class="el" href="deprecated_8cpp_source.html#l00097">timestamp()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00693">has_clock()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00718">value()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00706">value()</a>.</p>
 
 </div>
 </div>

@@ -39,17 +39,23 @@
 
 @addtogroup micro-os-plus-micro-test-plus-cpp-api
 @{
-    @include{doc} topics/cpp-api/inits.dox
+    @include{doc} topics/cpp-api/runners.dox
     @include{doc} topics/cpp-api/test-case.dox
     @include{doc} topics/cpp-api/expectations.dox
     @include{doc} topics/cpp-api/requirements.dox
     @include{doc} topics/cpp-api/function-comparators.dox
     @include{doc} topics/cpp-api/logical-functions.dox
     @include{doc} topics/cpp-api/exceptions.dox
-    @include{doc} topics/cpp-api/operators.dox
-    @include{doc} topics/cpp-api/literals.dox
     @include{doc} topics/cpp-api/utility-functions.dox
     @include{doc} topics/cpp-api/test-suites.dox
+    @include{doc} topics/cpp-api/deprecated.dox
+@}
+
+@addtogroup micro-os-plus-micro-test-plus-cpp-api-deprecated
+@{
+    @include{doc} topics/cpp-api/deprecated/operators.dox
+    @include{doc} topics/cpp-api/deprecated/logical-functions.dox
+    @include{doc} topics/cpp-api/deprecated/literals.dox
 @}
 
 @addtogroup micro-os-plus-micro-test-plus-config

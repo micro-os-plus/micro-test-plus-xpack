@@ -228,12 +228,12 @@ namespace micro_os_plus::micro_test_plus::type_traits { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a67890916b8d3d8cbaab893cc6b599745">genuine_integral_value</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value</a>&lt; T &gt;</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga67890916b8d3d8cbaab893cc6b599745">genuine_integral_value</a> = detail::value&lt; T &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated integral value wrapper. <a href="#a67890916b8d3d8cbaab893cc6b599745">More...</a></p>
+<p>Deprecated integral value wrapper. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga67890916b8d3d8cbaab893cc6b599745">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -245,12 +245,12 @@ namespace micro_os_plus::micro_test_plus::type_traits { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a65ad920b21a6c0df6848aa939659b92e">value_base_</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-base">detail::value_base</a>&lt; T &gt;</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga65ad920b21a6c0df6848aa939659b92e">value_base_</a> = detail::value_base&lt; T &gt;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated name of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-base">detail::value_base</a></span>. <a href="#a65ad920b21a6c0df6848aa939659b92e">More...</a></p>
+<p>Deprecated name of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-base">detail::value_base</a></span>. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga65ad920b21a6c0df6848aa939659b92e">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -284,122 +284,6 @@ namespace micro_os_plus::micro_test_plus::type_traits { ... }
 </dd>
 </dl>
 </div>
-
-<div class="doxySectionDef">
-
-## Typedefs
-
-### genuine\_integral\_value {#a67890916b8d3d8cbaab893cc6b599745}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;class T&gt;</div>
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::type_traits::genuine_integral_value = detail::value&lt;T&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Deprecated integral value wrapper.</p>
-
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Template Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">T</td>
-<td class="doxyParamItemDescription"><p>The integral type of the stored value.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<p>In v5.0.1, a separate wrapper with the same members as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value</a>&lt;T&gt;</span>, never created by the framework; now <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value</a>&lt;T&gt;</span>, so the values are compared and reported in the same way.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000107>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>The value wrappers are internal (since 5.1.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line 2068 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
-
-</div>
-</div>
-
-### value\_base\_ {#a65ad920b21a6c0df6848aa939659b92e}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;class T&gt;</div>
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">using micro_os_plus::micro_test_plus::type_traits::value_base_ = detail::value_base&lt;T&gt;</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Deprecated name of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-base">detail::value_base</a></span>.</p>
-
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Template Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">T</td>
-<td class="doxyParamItemDescription"><p>The type of the stored value.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<p>The v5.0.1 name, with a trailing underscore. The stored value is now private, and <span class="doxyComputerOutput">get()</span> returns a reference; the value is read with <span class="doxyComputerOutput">get()</span> or with the explicit conversion, not through the v5.0.1 public member <span class="doxyComputerOutput">value_</span>.</p>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000106>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>The value wrappers are internal (since 5.1.0).</p>
-</dd>
-</dl>
-</div>
-
-<p>Definition at line 2053 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
-
-</div>
-</div>
-
-</div>
-
-<hr/>
-
-The documentation for this namespace was generated from the following file:
-
-<ul>
-<li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a></li>
-</ul>
 
 <hr/>
 

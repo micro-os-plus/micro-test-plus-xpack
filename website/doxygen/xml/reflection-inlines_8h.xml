@@ -230,7 +230,7 @@
 </para>
 <para>If the marker is not found, or the compiler is not supported (e.g. MSVC, which uses <computeroutput>__FUNCSIG__</computeroutput> instead of <computeroutput>__PRETTY_FUNCTION__</computeroutput>), the function returns <computeroutput>"unknown"</computeroutput> rather than failing to compile, since the name is used only to improve the test output.</para>
 <para>The expected layouts are verified at compile time by the <computeroutput>static_assert</computeroutput> checks that follow the definition.</para>
-<para>The name is spelled as the compiler prints it, and is used to identify the expected exception type in the <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kindref="member">throws</ref>&lt;E&gt;</computeroutput> failure messages. Only clang and GCC are supported; with other compilers the function returns <computeroutput>"unknown"</computeroutput>.</para>
+<para>The name is spelled as the compiler prints it, and is used to identify the expected exception type in the <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kindref="member">throws</ref>&lt;E&gt;</computeroutput> failure messages. Only clang and GCC are supported; with other compilers the function returns <computeroutput>"unknown"</computeroutput>.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>T</parametername>

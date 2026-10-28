@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="group__micro-os-plus-micro-test-plus-cpp-api-requirements" kind="group">
+    <compoundname>micro-os-plus-micro-test-plus-cpp-api-requirements</compoundname>
+    <title>Requirements</title>
+    <briefdescription>
+<para>Requirements are checks that stop the test case when they fail. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>When a precondition of the following checks does not hold, the test case cannot continue meaningfully. A failed requirement is reported and counted like a failed expectation, and then the rest of the test case body is skipped; the run continues with the next test case.</para>
+<para>This is the behaviour of the fatal assertions of most C++ test frameworks (<computeroutput>ASSERT_*</computeroutput> in GoogleTest, <computeroutput>REQUIRE()</computeroutput> in Catch2 and doctest, <computeroutput>BOOST_REQUIRE()</computeroutput> in Boost.Test). The test case is stopped with an exception; without exceptions, it cannot be stopped alone, so the results of the test case are reported, ending with the failed requirement (followed, with the TAP reporter, by a <computeroutput>Bail out!</computeroutput> line), and the whole test execution is aborted with <computeroutput>runner::abort()</computeroutput>, as Catch2 does; the remaining test cases do not run, and no totals are written.</para>
+<para><computeroutput>assume()</computeroutput> is a deprecated alias of <computeroutput>require()</computeroutput>; in JUnit or Hypothesis, an unmet assumption skips the test instead of failing it.  </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

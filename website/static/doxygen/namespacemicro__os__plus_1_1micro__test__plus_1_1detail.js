@@ -71,9 +71,9 @@ var namespacemicro__os__plus_1_1micro__test__plus_1_1detail =
     [ "static_suite_body", "conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1static__suite__body.html", null ],
     [ "test_values_range", "conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__range.html", null ],
     [ "test_values_tuple", "conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__tuple.html", null ],
-    [ "runner_totals", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#af123417aafc76c826760101bcc517dfa", null ],
+    [ "runner_totals", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#gaf123417aafc76c826760101bcc517dfa", null ],
     [ "stored_operand_t", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a85cd019d0861a4b6d62c3424f4a8931d", null ],
-    [ "timestamps", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a53a6bc7f86b15378c8296b3647e7013f", null ],
+    [ "timestamps", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga53a6bc7f86b15378c8296b3647e7013f", null ],
     [ "unwrapped_t", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a2c197674df5b07499a4ea40d124f1082", null ],
     [ "check_kind", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a0726a1bc3b6f16245cb8a4b42fe0e70c", [
       [ "expectation", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a0726a1bc3b6f16245cb8a4b42fe0e70cae15c5d274bf9fa6571890c731d88bc37", null ],

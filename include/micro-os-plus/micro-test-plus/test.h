@@ -960,7 +960,7 @@ namespace micro_os_plus::micro_test_plus
   // ==========================================================================
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-test-case
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-test-case
    * @brief A named, runnable test case that lives inside a `suite`.
    *
    * @details
@@ -1172,7 +1172,6 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-expectations
      * @brief Evaluates a condition and reports the result.
      *
      * @tparam Expr_T The type of the custom expression.
@@ -1196,7 +1195,6 @@ namespace micro_os_plus::micro_test_plus
                                 = reflection::source_location::current ());
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-requirements
      * @brief Checks a condition and, if false, stops the test case.
      *
      * @details
@@ -1234,7 +1232,6 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
-     * @ingroup micro-os-plus-micro-test-plus-expectations
      * @brief Deprecated `expect()` of a suspicious condition.
      *
      * @details
@@ -1258,7 +1255,6 @@ namespace micro_os_plus::micro_test_plus
                                 = reflection::source_location::current ());
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-requirements
      * @brief Deprecated `require()` of a suspicious condition.
      *
      * @details
@@ -1279,7 +1275,6 @@ namespace micro_os_plus::micro_test_plus
                                  = reflection::source_location::current ());
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-requirements
      * @brief Deprecated name of `require()`.
      *
      * @details
@@ -1397,7 +1392,7 @@ namespace micro_os_plus::micro_test_plus
   // ==========================================================================
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-test-suites
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-test-suites
    * @brief A named, runnable test suite registered with the test runner.
    *
    * @details
@@ -1919,7 +1914,7 @@ namespace micro_os_plus::micro_test_plus
   // ==========================================================================
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-test-suites
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-test-suites
    * @brief A test suite designed for static (namespace-scope) registration
    * with a `runner`.
    *

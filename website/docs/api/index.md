@@ -53,7 +53,7 @@ Topics related to the µTest++ C++ API
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-runners">Test Runners</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-runners">Test Runners</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Classes for initialising the framework and returning an exit code
@@ -63,7 +63,7 @@ Classes for initialising the framework and returning an exit code
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-test-case">Test Cases</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-test-case">Test Cases</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Test cases are named sequences of checks
@@ -73,7 +73,7 @@ Test cases are named sequences of checks
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-expectations">Expectations</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-expectations">Expectations</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Expectations are checks whose outcomes are counted and reported
@@ -83,7 +83,7 @@ Expectations are checks whose outcomes are counted and reported
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-requirements">Requirements</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-requirements">Requirements</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Requirements are checks that stop the test case when they fail
@@ -93,7 +93,7 @@ Requirements are checks that stop the test case when they fail
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators">Function Comparators</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators">Function Comparators</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Functions for comparing actual and expected values in tests
@@ -103,7 +103,7 @@ Functions for comparing actual and expected values in tests
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions">Logical Functions</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions">Logical Functions</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Functions used to compose logical expressions in tests
@@ -113,7 +113,7 @@ Functions used to compose logical expressions in tests
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-exceptions">Checking Exceptions</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-exceptions">Checking Exceptions</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Functions for verifying exceptions in test cases
@@ -123,27 +123,7 @@ Functions for verifying exceptions in test cases
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-operators">Operators</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Deprecated overloaded operators for test comparisons
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals">Literals and Wrappers</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-Deprecated literal operators and wrappers for typed operands
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-utility-functions">Utility Functions</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-utility-functions">Utility Functions</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Utility functions for advanced string handling in tests
@@ -153,10 +133,50 @@ Utility functions for advanced string handling in tests
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-test-suites">Test Suites</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-test-suites">Test Suites</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Test suites are named groups of related test cases
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated">Deprecated</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Definitions kept for compatibility with earlier releases
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 60px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-operators">Operators</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Deprecated overloaded operators for test comparisons
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 60px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions">Logical Functions</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Deprecated v5.0.1 names of the logical functions
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 60px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals">Literals and Wrappers</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Deprecated literal operators and wrappers for typed operands
 </td>
 </tr>
 

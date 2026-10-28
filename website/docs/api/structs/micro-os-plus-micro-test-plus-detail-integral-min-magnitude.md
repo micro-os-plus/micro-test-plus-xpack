@@ -71,7 +71,7 @@ struct micro_os_plus::micro_test_plus::detail::integral_min_magnitude&lt;T&gt; {
 </dd>
 </dl>
 
-<p>The absolute value of the minimum of a signed type (e.g. 128 for <span class="doxyComputerOutput">int8_t</span>) does not fit in the type, but the literal must be accepted to write the minimum with the unary minus (e.g. <span class="doxyComputerOutput">-128<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga265f8609ef3d6ead78c7a66825553e24">_i8</a></span>). The literal operators return this type for such a literal; its only operation is the unary minus, so any other use of the literal fails to compile.</p>
+<p>The absolute value of the minimum of a signed type (e.g. 128 for <span class="doxyComputerOutput">int8_t</span>) does not fit in the type, but the literal must be accepted to write the minimum with the unary minus (e.g. <span class="doxyComputerOutput">-128<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#ga265f8609ef3d6ead78c7a66825553e24">_i8</a></span>). The literal operators return this type for such a literal; its only operation is the unary minus, so any other use of the literal fails to compile.</p>
 
 
 <p>Definition at line 281 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/values-h">values.h</a>.</p>

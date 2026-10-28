@@ -392,7 +392,7 @@
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus">micro_os_plus::micro_test_plus</innernamespace>
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail">micro_os_plus::micro_test_plus::detail</innernamespace>
     <sectiondef kind="typedef">
-      <member refid="group__micro-os-plus-micro-test-plus-function-comparators_1gabecc05360d0941067222d827ff8e3f08" kind="typedef"><name>expression_formatter</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gabecc05360d0941067222d827ff8e3f08" kind="typedef"><name>expression_formatter</name></member>
     </sectiondef>
     <sectiondef kind="var">
       <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a48c790000ed3d766b705c6c5223d8767" prot="public" static="no" constexpr="yes" mutable="no">
@@ -802,7 +802,7 @@
 <codeline lineno="1177"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1178"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1179"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1227" refid="group__micro-os-plus-micro-test-plus-function-comparators_1gabecc05360d0941067222d827ff8e3f08" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gabecc05360d0941067222d827ff8e3f08" kindref="member">expression_formatter</ref><sp/>=<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter" kindref="compound">detail::expression_formatter</ref>;</highlight></codeline>
+<codeline lineno="1227" refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gabecc05360d0941067222d827ff8e3f08" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gabecc05360d0941067222d827ff8e3f08" kindref="member">expression_formatter</ref><sp/>=<sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter" kindref="compound">detail::expression_formatter</ref>;</highlight></codeline>
 <codeline lineno="1228"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1229"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1230"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>micro_os_plus::micro_test_plus</highlight><highlight class="normal"></highlight></codeline>

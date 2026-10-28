@@ -95,7 +95,7 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-function-comparators
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-function-comparators
    * @brief Generic equality comparator.
    *
    * @details
@@ -129,7 +129,7 @@ namespace micro_os_plus::micro_test_plus
   eq (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-function-comparators
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-function-comparators
    * @brief Generic non-equality comparator.
    *
    * @tparam Lhs_T Type of the left hand side operand.
@@ -145,7 +145,7 @@ namespace micro_os_plus::micro_test_plus
   ne (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-function-comparators
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-function-comparators
    * @brief Generic greater than comparator.
    *
    * @tparam Lhs_T Type of the left hand side operand.
@@ -161,7 +161,7 @@ namespace micro_os_plus::micro_test_plus
   gt (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-function-comparators
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-function-comparators
    * @brief Generic greater than or equal comparator.
    *
    * @tparam Lhs_T Type of the left hand side operand.
@@ -178,7 +178,7 @@ namespace micro_os_plus::micro_test_plus
   ge (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-function-comparators
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-function-comparators
    * @brief Generic less than comparator.
    *
    * @tparam Lhs_T Type of the left hand side operand.
@@ -195,7 +195,7 @@ namespace micro_os_plus::micro_test_plus
   lt (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-function-comparators
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-function-comparators
    * @brief Generic less than or equal comparator.
    *
    * @tparam Lhs_T Type of the left hand side operand.
@@ -212,7 +212,7 @@ namespace micro_os_plus::micro_test_plus
   le (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-function-comparators
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-function-comparators
    * @brief Approximate equality comparator, with an explicit tolerance.
    *
    * @details
@@ -253,7 +253,7 @@ namespace micro_os_plus::micro_test_plus
   approx (Lhs_T&& lhs, Rhs_T&& rhs, Epsilon_T&& epsilon);
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-logical-functions
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-logical-functions
    * @brief Generic logical **not** operation.
    *
    * @tparam Expr_T Type of the operand.
@@ -266,7 +266,7 @@ namespace micro_os_plus::micro_test_plus
   negate (Expr_T&& expr);
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-logical-functions
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-logical-functions
    * @brief Generic logical **and** operation, for two or more operands.
    *
    * @tparam First_T Type of the first operand.
@@ -284,7 +284,7 @@ namespace micro_os_plus::micro_test_plus
   all_of (First_T&& first, Second_T&& second, Rest_T&&... rest);
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-logical-functions
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-logical-functions
    * @brief Generic logical (inclusive) **or** operation, for two or more
    * operands.
    *

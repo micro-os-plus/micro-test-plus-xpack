@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['line_20options_0',['Command Line Options',['../group__micro-os-plus-micro-test-plus-cli.html',1,'']]],
-  ['literals_20and_20wrappers_1',['Literals and Wrappers',['../group__micro-os-plus-micro-test-plus-literals.html',1,'']]],
-  ['logical_20functions_2',['Logical Functions',['../group__micro-os-plus-micro-test-plus-logical-functions.html',1,'']]]
+  ['function_20comparators_0',['Function Comparators',['../group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html',1,'']]],
+  ['functions_1',['Functions',['../group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html',1,'Logical Functions'],['../group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions.html',1,'Logical Functions'],['../group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html',1,'Utility Functions']]]
 ];

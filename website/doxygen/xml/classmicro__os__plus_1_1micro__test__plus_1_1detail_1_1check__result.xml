@@ -531,7 +531,7 @@ Stores the evaluated Boolean <computeroutput>value</computeroutput>, and, in the
         <label>micro_os_plus::micro_test_plus::counters</label>
         <link refid="classmicro__os__plus_1_1micro__test__plus_1_1counters"/>
       </node>
-      <node id="11">
+      <node id="12">
         <label>micro_os_plus::micro_test_plus::detail::callable_ref&lt; micro_os_plus::micro_test_plus::test_case &gt;</label>
         <link refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref"/>
       </node>
@@ -586,6 +586,9 @@ Stores the evaluated Boolean <computeroutput>value</computeroutput>, and, in the
         <childnode refid="6" relation="usage">
           <edgelabel>totals_</edgelabel>
         </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>options_</edgelabel>
+        </childnode>
         <childnode refid="3" relation="usage">
           <edgelabel>abort_handler_</edgelabel>
         </childnode>
@@ -595,6 +598,10 @@ Stores the evaluated Boolean <computeroutput>value</computeroutput>, and, in the
         <childnode refid="9" relation="usage">
           <edgelabel>listed_suite_</edgelabel>
         </childnode>
+      </node>
+      <node id="11">
+        <label>micro_os_plus::micro_test_plus::runner_options</label>
+        <link refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options"/>
       </node>
       <node id="9">
         <label>micro_os_plus::micro_test_plus::suite</label>
@@ -614,7 +621,7 @@ Stores the evaluated Boolean <computeroutput>value</computeroutput>, and, in the
         <link refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case"/>
         <childnode refid="5" relation="public-inheritance">
         </childnode>
-        <childnode refid="11" relation="usage">
+        <childnode refid="12" relation="usage">
           <edgelabel>callable_</edgelabel>
         </childnode>
         <childnode refid="3" relation="usage">

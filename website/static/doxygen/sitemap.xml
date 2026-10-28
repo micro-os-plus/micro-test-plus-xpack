@@ -65,6 +65,9 @@
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/runner-inlines_8h_source.html</loc>
   </url>
   <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/runner-options-inlines_8h_source.html</loc>
+  </url>
+  <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/stopwatch-inlines_8h_source.html</loc>
   </url>
   <url>
@@ -129,6 +132,9 @@
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/reporter_8cpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/runner-options_8cpp_source.html</loc>
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/runner_8cpp_source.html</loc>
@@ -209,6 +215,9 @@
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/runner-inlines_8h.html</loc>
   </url>
   <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/runner-options-inlines_8h.html</loc>
+  </url>
+  <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/stopwatch-inlines_8h.html</loc>
   </url>
   <url>
@@ -275,6 +284,9 @@
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/reporter_8cpp.html</loc>
   </url>
   <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/runner-options_8cpp.html</loc>
+  </url>
+  <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/runner_8cpp.html</loc>
   </url>
   <url>
@@ -314,37 +326,43 @@
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-cli.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-runners.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-cpp-api-runners.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-test-case.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-cpp-api-test-case.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-expectations.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-cpp-api-expectations.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-requirements.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-cpp-api-requirements.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-function-comparators.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-logical-functions.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-exceptions.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-operators.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-literals.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-cpp-api-test-suites.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-utility-functions.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-test-suites.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions.html</loc>
+  </url>
+  <url>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html</loc>
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/namespacemicro__os__plus.html</loc>
@@ -365,10 +383,10 @@
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/classmicro__os__plus_1_1micro__test__plus_1_1runner-members.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/structmicro__os__plus_1_1micro__test__plus_1_1runner__options.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/classmicro__os__plus_1_1micro__test__plus_1_1runner__options.html</loc>
   </url>
   <url>
-    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/structmicro__os__plus_1_1micro__test__plus_1_1runner__options-members.html</loc>
+    <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/classmicro__os__plus_1_1micro__test__plus_1_1runner__options-members.html</loc>
   </url>
   <url>
     <loc>https://micro-os-plus.github.io/micro-test-plus-xpack/reference/classmicro__os__plus_1_1micro__test__plus_1_1static__suite.html</loc>

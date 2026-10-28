@@ -3,17 +3,16 @@
   <compounddef id="group__micro-os-plus-micro-test-plus-cpp-api" kind="group">
     <compoundname>micro-os-plus-micro-test-plus-cpp-api</compoundname>
     <title>C++ API</title>
-    <innergroup refid="group__micro-os-plus-micro-test-plus-runners">Test Runners</innergroup>
-    <innergroup refid="group__micro-os-plus-micro-test-plus-test-case">Test Cases</innergroup>
-    <innergroup refid="group__micro-os-plus-micro-test-plus-expectations">Expectations</innergroup>
-    <innergroup refid="group__micro-os-plus-micro-test-plus-requirements">Requirements</innergroup>
-    <innergroup refid="group__micro-os-plus-micro-test-plus-function-comparators">Function Comparators</innergroup>
-    <innergroup refid="group__micro-os-plus-micro-test-plus-logical-functions">Logical Functions</innergroup>
-    <innergroup refid="group__micro-os-plus-micro-test-plus-exceptions">Checking Exceptions</innergroup>
-    <innergroup refid="group__micro-os-plus-micro-test-plus-operators">Operators</innergroup>
-    <innergroup refid="group__micro-os-plus-micro-test-plus-literals">Literals and Wrappers</innergroup>
-    <innergroup refid="group__micro-os-plus-micro-test-plus-utility-functions">Utility Functions</innergroup>
-    <innergroup refid="group__micro-os-plus-micro-test-plus-test-suites">Test Suites</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-runners">Test Runners</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-test-case">Test Cases</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-expectations">Expectations</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-requirements">Requirements</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators">Function Comparators</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions">Logical Functions</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions">Checking Exceptions</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions">Utility Functions</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-test-suites">Test Suites</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated">Deprecated</innergroup>
     <briefdescription>
 <para>Topics related to the µTest++ C++ API. </para>
     </briefdescription>

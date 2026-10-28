@@ -124,7 +124,7 @@ namespace micro_os_plus::micro_test_plus
   // ==========================================================================
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-runners
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-runners
    * @brief The test runner for the µTest++ framework.
    *
    * @details

@@ -63,7 +63,7 @@ The text is moved into a formatter in the plain mode, the value is appended with
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="1172" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/expression-formatter-inlines.h" bodystart="494" bodyend="499"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1102" endline="1102">micro_os_plus::micro_test_plus::detail::expression_formatter::buffer_</references>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1acb0858a0ba8b635ff89c4cb00c532ce8" compoundref="test-inlines_8h" startline="707" endline="760">micro_os_plus::micro_test_plus::detail::test_each_value</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1acb0858a0ba8b635ff89c4cb00c532ce8" compoundref="test-inlines_8h" startline="709" endline="762">micro_os_plus::micro_test_plus::detail::test_each_value</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

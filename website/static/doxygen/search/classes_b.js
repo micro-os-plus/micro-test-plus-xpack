@@ -7,5 +7,5 @@ var searchData=
   ['reporter_5ftap_4',['reporter_tap',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap.html',1,'micro_os_plus::micro_test_plus::detail']]],
   ['runnable_5fbase_5',['runnable_base',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html',1,'micro_os_plus::micro_test_plus::detail']]],
   ['runner_6',['runner',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html',1,'micro_os_plus::micro_test_plus']]],
-  ['runner_5foptions_7',['runner_options',['../structmicro__os__plus_1_1micro__test__plus_1_1runner__options.html',1,'micro_os_plus::micro_test_plus']]]
+  ['runner_5foptions_7',['runner_options',['../classmicro__os__plus_1_1micro__test__plus_1_1runner__options.html',1,'micro_os_plus::micro_test_plus']]]
 ];

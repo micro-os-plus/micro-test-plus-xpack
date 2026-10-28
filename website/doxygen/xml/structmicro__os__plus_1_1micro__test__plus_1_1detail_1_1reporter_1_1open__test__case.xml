@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="1265" column="14" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="1265" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="1267" column="14" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="1267" bodyend="-1"/>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1aec7a63f892ff631e659c28607bf31242" compoundref="reporter-tap_8cpp" startline="1050" endline="1075">micro_os_plus::micro_test_plus::detail::reporter_tap::display_open_headers</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1abcfa63d8c5ca8acd458383102b7e99e9" compoundref="reporter-human_8cpp" startline="864" endline="902">micro_os_plus::micro_test_plus::detail::reporter_human::display_open_names</referencedby>
       </memberdef>
@@ -36,7 +36,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="1255" column="25" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="1255" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="1257" column="25" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="1257" bodyend="-1"/>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1aec7a63f892ff631e659c28607bf31242" compoundref="reporter-tap_8cpp" startline="1050" endline="1075">micro_os_plus::micro_test_plus::detail::reporter_tap::display_open_headers</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1abcfa63d8c5ca8acd458383102b7e99e9" compoundref="reporter-human_8cpp" startline="864" endline="902">micro_os_plus::micro_test_plus::detail::reporter_human::display_open_names</referencedby>
       </memberdef>
@@ -52,7 +52,7 @@
         <label>micro_os_plus::micro_test_plus::counters</label>
         <link refid="classmicro__os__plus_1_1micro__test__plus_1_1counters"/>
       </node>
-      <node id="10">
+      <node id="11">
         <label>micro_os_plus::micro_test_plus::detail::callable_ref&lt; micro_os_plus::micro_test_plus::test_case &gt;</label>
         <link refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref"/>
       </node>
@@ -77,7 +77,7 @@
         <label>micro_os_plus::micro_test_plus::detail::stopwatch</label>
         <link refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch"/>
       </node>
-      <node id="9">
+      <node id="10">
         <label>micro_os_plus::micro_test_plus::reflection::source_location</label>
         <link refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location"/>
       </node>
@@ -98,6 +98,9 @@
           <edgelabel>totals_</edgelabel>
         </childnode>
         <childnode refid="9" relation="usage">
+          <edgelabel>options_</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
           <edgelabel>abort_handler_</edgelabel>
         </childnode>
         <childnode refid="2" relation="usage">
@@ -106,6 +109,10 @@
         <childnode refid="7" relation="usage">
           <edgelabel>listed_suite_</edgelabel>
         </childnode>
+      </node>
+      <node id="9">
+        <label>micro_os_plus::micro_test_plus::runner_options</label>
+        <link refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options"/>
       </node>
       <node id="7">
         <label>micro_os_plus::micro_test_plus::suite</label>
@@ -125,10 +132,10 @@
         <link refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
-        <childnode refid="10" relation="usage">
+        <childnode refid="11" relation="usage">
           <edgelabel>callable_</edgelabel>
         </childnode>
-        <childnode refid="9" relation="usage">
+        <childnode refid="10" relation="usage">
           <edgelabel>location_</edgelabel>
         </childnode>
         <childnode refid="7" relation="usage">
@@ -142,7 +149,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="1247" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="1248" bodyend="1266"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="1249" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="1250" bodyend="1268"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1_1open__test__case_1a545589f22f45b2450bf06447aaee7ee5" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::reporter::open_test_case</scope><name>name_displayed</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1_1open__test__case_1abb9fb536c656c747e0e2f9062193f7e2" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::reporter::open_test_case</scope><name>test</name></member>

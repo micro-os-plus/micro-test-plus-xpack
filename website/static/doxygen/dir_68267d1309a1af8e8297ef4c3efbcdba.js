@@ -7,6 +7,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "reporter-human.cpp", "reporter-human_8cpp.html", null ],
     [ "reporter-tap.cpp", "reporter-tap_8cpp.html", "reporter-tap_8cpp" ],
     [ "reporter.cpp", "reporter_8cpp.html", "reporter_8cpp" ],
+    [ "runner-options.cpp", "runner-options_8cpp.html", null ],
     [ "runner.cpp", "runner_8cpp.html", null ],
     [ "stopwatch.cpp", "stopwatch_8cpp.html", "stopwatch_8cpp" ],
     [ "test.cpp", "test_8cpp.html", null ],

@@ -76,7 +76,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__cpp_exceptions)
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-exceptions
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-exceptions
    * @brief Checks whether a callable throws a specific exception, for
    * `expect()` or `require()`.
    *
@@ -92,7 +92,7 @@ namespace micro_os_plus::micro_test_plus
   throws (const Callable_T& func);
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-exceptions
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-exceptions
    * @brief Checks whether a callable throws any exception, for `expect()`
    * or `require()`.
    *
@@ -107,7 +107,7 @@ namespace micro_os_plus::micro_test_plus
   throws (const Callable_T& func);
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-exceptions
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-exceptions
    * @brief Checks whether a callable does not throw any exception, for
    * `expect()` or `require()`.
    *

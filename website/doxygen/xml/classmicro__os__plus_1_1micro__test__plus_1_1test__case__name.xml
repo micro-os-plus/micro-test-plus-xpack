@@ -157,7 +157,7 @@ Returns a reference to the location stored in <computeroutput><ref refid="classm
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case__name_1ab9ecf89d495d71f224e182228eaec66e" compoundref="test_8h" startline="222">location_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case__name_1a86534273fcfac3a3edd7fbae2f04e5ea" compoundref="test-inlines_8h" startline="101" endline="105">test_case_name</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case__name_1ae590d4402a8065342fa591ff78b81797" compoundref="test-inlines_8h" startline="114" endline="119">test_case_name</referencedby>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1acb0858a0ba8b635ff89c4cb00c532ce8" compoundref="test-inlines_8h" startline="707" endline="760">micro_os_plus::micro_test_plus::detail::test_each_value</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1acb0858a0ba8b635ff89c4cb00c532ce8" compoundref="test-inlines_8h" startline="709" endline="762">micro_os_plus::micro_test_plus::detail::test_each_value</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1test__case__name_1a624bdd72fd18db434a64993818bb5466" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>const char *</type>
@@ -184,9 +184,9 @@ Returns the pointer stored in <computeroutput><ref refid="classmicro__os__plus_1
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case__name_1a2941ef285834b5d22e0300238473e648" compoundref="test_8h" startline="213">name_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case__name_1a86534273fcfac3a3edd7fbae2f04e5ea" compoundref="test-inlines_8h" startline="101" endline="105">test_case_name</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case__name_1ae590d4402a8065342fa591ff78b81797" compoundref="test-inlines_8h" startline="114" endline="119">test_case_name</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a402696dc4d4978ff3c050427890cfe01" compoundref="test-inlines_8h" startline="671" endline="688">micro_os_plus::micro_test_plus::suite::test</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a402696dc4d4978ff3c050427890cfe01" compoundref="test-inlines_8h" startline="673" endline="690">micro_os_plus::micro_test_plus::suite::test</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1aac23ee148d8e5946cd87e0de036e9fb8" compoundref="test-inlines_8h" startline="396" endline="406">micro_os_plus::micro_test_plus::test_case::test</referencedby>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1acb0858a0ba8b635ff89c4cb00c532ce8" compoundref="test-inlines_8h" startline="707" endline="760">micro_os_plus::micro_test_plus::detail::test_each_value</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1acb0858a0ba8b635ff89c4cb00c532ce8" compoundref="test-inlines_8h" startline="709" endline="762">micro_os_plus::micro_test_plus::detail::test_each_value</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

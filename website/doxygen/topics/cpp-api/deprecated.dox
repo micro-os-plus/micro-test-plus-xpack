@@ -1,0 +1,82 @@
+@defgroup micro-os-plus-micro-test-plus-cpp-api-deprecated Deprecated
+@brief Definitions kept for compatibility with earlier releases.
+
+@details
+The definitions in this group, and in the groups they refer to, are still
+available, but the compiler reports their use, and they will be removed in
+a future major release. Each one names its replacement in the deprecation
+message, together with the version that deprecated it (most of them since
+5.1.0).
+
+@par Availability
+The deprecated definitions are compiled only when the application defines
+the macro `MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED`, in
+`micro-os-plus/project-config.h` or in
+`micro-os-plus/micro-test-plus-defines.h`. Without it, the applications
+that still use them fail to compile, which is a way of finding what must
+be migrated.
+
+@par Groups
+The deprecated definitions are documented together with the features they
+belong to:
+
+- the overloaded comparison and logical operators, in
+  @ref micro-os-plus-micro-test-plus-cpp-api-deprecated-operators, replaced by the function
+  comparators and the logical functions;
+- the user-defined literals and the type wrappers, in
+  @ref micro-os-plus-micro-test-plus-cpp-api-deprecated-literals, replaced by the plain values
+  passed to the function comparators;
+- the underscore-prefixed logical functions (`_not()`, `_and()`, and `_or()`), in
+  @ref micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions, replaced by
+  `negate()`, `all_of()`, and `any_of()`.
+
+@par Other deprecated definitions
+- the v5.0.1 names of the classes: `static_runner` (replaced by `runner`),
+  `subtest` (replaced by `test_case`), `detail::runner_totals` (replaced by
+  `counters`), and `detail::timestamps` and `detail::timestamp`, which are
+  internal and not replaced;
+- `runner (const char*)`, replaced by `runner()` followed by
+  `add_top_suite()` (since 4.1.0);
+- `runner::initialise (argc, argv, top_suite_name)`, replaced by
+  `initialise (argc, argv)` followed by `add_top_suite()`;
+- `runner::exit_code()`, replaced by `runner::run()`;
+- `runner::suite()`, replaced by `runner::add_suite()`;
+- `runner::suites_count()`, replaced by `added_suites_count()` or
+  `total_suites_count()`;
+- `runner::verbosity()`, and `runner::reporter()` with its `verbosity()`
+  member, replaced by `runner::verbosity_level()`;
+- `runner::timings()` and `test_case::timings()`, and the members of
+  `detail::stopwatch` kept from the v5.0.1 timestamps, which are
+  internal and not replaced;
+- the `counters` members `increment_successful_checks()`,
+  `increment_executed_subtests()`, `successful_checks()`,
+  `executed_subtests()`, and `was_successful()`, replaced by
+  `increment_passed_checks()`, `increment_executed_test_cases()`,
+  `passed_checks()`, `executed_test_cases()`, and `passed()`;
+- `test_case::assume()`, replaced by `test_case::require()`;
+- the overloads of `test_case::expect()` and `test_case::require()` that
+  accept an argument that is always true (a string literal or a function
+  name), replaced by writing the condition;
+- the `static_suite` constructor whose callable takes a `static_suite&`,
+  replaced by a callable taking a `suite&`;
+- `reflection::short_name()`, replaced by `utility::extract_file_name()`;
+- the `type_traits` namespace, with the concepts and the value wrapper
+  templates of v5.0.1, replaced by the `extension` namespace.
+
+@par Migration
+Build once with the deprecation warnings enabled, and rewrite each
+reported use as suggested by the message. Temporarily, the warnings can be
+disabled with `-Wno-deprecated-declarations`, for the applications that
+build with `-Werror`.
+
+@code{.cpp}
+namespace mt = micro_os_plus::micro_test_plus;
+
+// Deprecated.
+using namespace mt::operators;
+using namespace mt::literals;
+t.expect (compute_answer () == 42_i) << "answer is 42";
+
+// Replacement.
+t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+@endcode

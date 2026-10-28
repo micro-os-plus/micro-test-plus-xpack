@@ -16,70 +16,8 @@
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__value">micro_os_plus::micro_test_plus::type_traits::has_value</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__floating__point">micro_os_plus::micro_test_plus::type_traits::is_floating_point</innerconcept>
     <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a67890916b8d3d8cbaab893cc6b599745" prot="public" static="no">
-        <templateparamlist>
-          <param>
-            <type>class T</type>
-          </param>
-        </templateparamlist>
-        <type><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" kindref="compound">detail::value</ref>&lt; T &gt;</type>
-        <definition>using micro_os_plus::micro_test_plus::type_traits::genuine_integral_value = detail::value&lt;T&gt;</definition>
-        <argsstring></argsstring>
-        <name>genuine_integral_value</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::genuine_integral_value</qualifiedname>
-        <briefdescription>
-<para>Deprecated integral value wrapper. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The integral type of the stored value.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-In v5.0.1, a separate wrapper with the same members as <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref>&lt;T&gt;</computeroutput>, never created by the framework; now <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref>&lt;T&gt;</computeroutput>, so the values are compared and reported in the same way.</para>
-<para><xrefsect id="deprecated_1_deprecated000107"><xreftitle>Deprecated</xreftitle><xrefdescription><para>The value wrappers are internal (since 5.1.0). </para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2068" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="2068" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits_1a65ad920b21a6c0df6848aa939659b92e" prot="public" static="no">
-        <templateparamlist>
-          <param>
-            <type>class T</type>
-          </param>
-        </templateparamlist>
-        <type><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base" kindref="compound">detail::value_base</ref>&lt; T &gt;</type>
-        <definition>using micro_os_plus::micro_test_plus::type_traits::value_base_ = detail::value_base&lt;T&gt;</definition>
-        <argsstring></argsstring>
-        <name>value_base_</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::value_base_</qualifiedname>
-        <briefdescription>
-<para>Deprecated name of <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base" kindref="compound">detail::value_base</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The type of the stored value.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-The v5.0.1 name, with a trailing underscore. The stored value is now private, and <computeroutput>get()</computeroutput> returns a reference; the value is read with <computeroutput>get()</computeroutput> or with the explicit conversion, not through the v5.0.1 public member <computeroutput>value_</computeroutput>.</para>
-<para><xrefsect id="deprecated_1_deprecated000106"><xreftitle>Deprecated</xreftitle><xrefdescription><para>The value wrappers are internal (since 5.1.0). </para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2053" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="2053" bodyend="-1"/>
-      </memberdef>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga67890916b8d3d8cbaab893cc6b599745" kind="typedef"><name>genuine_integral_value</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga65ad920b21a6c0df6848aa939659b92e" kind="typedef"><name>value_base_</name></member>
     </sectiondef>
     <briefdescription>
 <para>Deprecated v5.0.1 namespace of the concepts and of the value wrapper templates. </para>
@@ -92,6 +30,6 @@ The v5.0.1 name, with a trailing underscore. The stored value is now private, an
 <para><xrefsect id="deprecated_1_deprecated000060"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use the extension namespace (since 5.1.0)</para>
 </xrefdescription></xrefsect></para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1737" column="1"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1752" column="1"/>
   </compounddef>
 </doxygen>

@@ -84,7 +84,7 @@ namespace micro_os_plus::micro_test_plus
   namespace utility
   {
     /**
-     * @ingroup micro-os-plus-micro-test-plus-utility-functions
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-utility-functions
      * @brief Extracts the file name component from a full path.
      *
      * @param path A null-terminated file path string.
@@ -95,7 +95,7 @@ namespace micro_os_plus::micro_test_plus
     extract_file_name (const char* path) noexcept;
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-utility-functions
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-utility-functions
      * @brief Checks whether a string matches a pattern with `*` and `?`
      * wildcards.
      *
@@ -108,7 +108,7 @@ namespace micro_os_plus::micro_test_plus
     is_match (std::string_view input, std::string_view pattern);
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-utility-functions
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-utility-functions
      * @brief Splits a string into a vector of sub-strings.
      *
      * @details
@@ -137,7 +137,7 @@ namespace micro_os_plus::micro_test_plus
     split (T input, Delim_T delim) -> std::vector<T>;
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-utility-functions
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-utility-functions
      * @brief Splits a string view into a vector of string views.
      *
      * @details

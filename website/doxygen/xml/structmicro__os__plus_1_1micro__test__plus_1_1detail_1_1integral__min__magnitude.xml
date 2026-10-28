@@ -42,7 +42,7 @@ Returns the minimum of <computeroutput>T</computeroutput>, which is the negation
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-The absolute value of the minimum of a signed type (e.g. 128 for <computeroutput>int8_t</computeroutput>) does not fit in the type, but the literal must be accepted to write the minimum with the unary minus (e.g. <computeroutput>-128<ref refid="group__micro-os-plus-micro-test-plus-literals_1ga265f8609ef3d6ead78c7a66825553e24" kindref="member">_i8</ref></computeroutput>). The literal operators return this type for such a literal; its only operation is the unary minus, so any other use of the literal fails to compile. </para>
+The absolute value of the minimum of a signed type (e.g. 128 for <computeroutput>int8_t</computeroutput>) does not fit in the type, but the literal must be accepted to write the minimum with the unary minus (e.g. <computeroutput>-128<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga265f8609ef3d6ead78c7a66825553e24" kindref="member">_i8</ref></computeroutput>). The literal operators return this type for such a literal; its only operation is the unary minus, so any other use of the literal fails to compile. </para>
     </detaileddescription>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="281" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" bodystart="282" bodyend="294"/>
     <listofallmembers>

@@ -70,7 +70,7 @@ var hierarchy =
       [ "micro_os_plus::micro_test_plus::test_case", "classmicro__os__plus_1_1micro__test__plus_1_1test__case.html", null ]
     ] ],
     [ "micro_os_plus::micro_test_plus::runner", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html", null ],
-    [ "micro_os_plus::micro_test_plus::runner_options", "structmicro__os__plus_1_1micro__test__plus_1_1runner__options.html", null ],
+    [ "micro_os_plus::micro_test_plus::runner_options", "classmicro__os__plus_1_1micro__test__plus_1_1runner__options.html", null ],
     [ "micro_os_plus::micro_test_plus::reflection::source_location", "classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::stopwatch", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html", null ],
     [ "micro_os_plus::micro_test_plus::test_case_name", "classmicro__os__plus_1_1micro__test__plus_1_1test__case__name.html", null ],

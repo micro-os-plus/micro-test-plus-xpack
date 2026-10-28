@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['selected_5freporter_0',['selected_reporter',['../structmicro__os__plus_1_1micro__test__plus_1_1runner__options.html#ad22d04df014c5b0658b6e7bd239f15b0',1,'micro_os_plus::micro_test_plus::runner_options']]],
+  ['selected_5freporter_0',['selected_reporter',['../classmicro__os__plus_1_1micro__test__plus_1_1runner__options.html#ad22d04df014c5b0658b6e7bd239f15b0',1,'micro_os_plus::micro_test_plus::runner_options']]],
   ['session_5fstate_5f_1',['session_state_',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a70dad6c927a59d5459c2edfdb40fdece',1,'micro_os_plus::micro_test_plus::runner']]],
   ['size_5f_2',['size_',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ac98a2bf493b2ffe5ded3075dce583702',1,'micro_os_plus::micro_test_plus::detail::c_string']]],
   ['skipped_5fsuites_5fcount_5f_3',['skipped_suites_count_',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#ae815c0c97245032223f4c1523e1d35fe',1,'micro_os_plus::micro_test_plus::runner']]],

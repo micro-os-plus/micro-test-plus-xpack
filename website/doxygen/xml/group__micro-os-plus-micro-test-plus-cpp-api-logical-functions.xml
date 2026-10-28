@@ -1,0 +1,270 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions" kind="group">
+    <compoundname>micro-os-plus-micro-test-plus-cpp-api-logical-functions</compoundname>
+    <title>Logical Functions</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class First_T</type>
+          </param>
+          <param>
+            <type>class Second_T</type>
+          </param>
+          <param>
+            <type>class...</type>
+            <declname>Rest_T</declname>
+            <defname>Rest_T</defname>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::all_of</definition>
+        <argsstring>(First_T &amp;&amp;first, Second_T &amp;&amp;second, Rest_T &amp;&amp;... rest)</argsstring>
+        <name>all_of</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::all_of</qualifiedname>
+        <param>
+          <type>First_T &amp;&amp;</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>Second_T &amp;&amp;</type>
+          <declname>second</declname>
+        </param>
+        <param>
+          <type>Rest_T &amp;&amp;...</type>
+          <declname>rest</declname>
+        </param>
+        <briefdescription>
+<para>Generic logical <bold>and</bold> operation, for two or more operands. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>First_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the first operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Second_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the second operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rest_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Types of the other operands, if any.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>first</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>second</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other operands, if any. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An object that evaluates to true if all the operand expressions are true.</para>
+</simplesect>
+The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kindref="member">all_of</ref></computeroutput> function template provides a generic logical conjunction for any expression types. It constructs a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op" kindref="compound">detail::and_op</ref></computeroutput> logical conjunction object, which evaluates to <computeroutput>true</computeroutput> if all the operands are true. For more than two operands, the objects are nested from the left, <computeroutput>(a and b) and c</computeroutput>, and the expression formatter writes them as a single chain, <computeroutput>(a and b and c)</computeroutput>.</para>
+<para>All the operands are evaluated before the check, so, unlike the standard algorithm of the same name, the function does not stop at the first operand that is false.</para>
+<para>The name is the same as that of <computeroutput>std::all_of</computeroutput>: after a <computeroutput>using namespace std</computeroutput>, an unqualified call with three or more operands of the same type selects the standard algorithm, so the function must be called as <computeroutput>mt::all_of()</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="246" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="246" bodyend="260" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="284" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" compoundref="function-comparators-inlines_8h" startline="246" endline="260">micro_os_plus::micro_test_plus::all_of</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" compoundref="deprecated-inlines_8h" startline="96" endline="99">micro_os_plus::micro_test_plus::_and</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" compoundref="function-comparators-inlines_8h" startline="246" endline="260">micro_os_plus::micro_test_plus::all_of</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class First_T</type>
+          </param>
+          <param>
+            <type>class Second_T</type>
+          </param>
+          <param>
+            <type>class...</type>
+            <declname>Rest_T</declname>
+            <defname>Rest_T</defname>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::any_of</definition>
+        <argsstring>(First_T &amp;&amp;first, Second_T &amp;&amp;second, Rest_T &amp;&amp;... rest)</argsstring>
+        <name>any_of</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::any_of</qualifiedname>
+        <param>
+          <type>First_T &amp;&amp;</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>Second_T &amp;&amp;</type>
+          <declname>second</declname>
+        </param>
+        <param>
+          <type>Rest_T &amp;&amp;...</type>
+          <declname>rest</declname>
+        </param>
+        <briefdescription>
+<para>Generic logical (inclusive) <bold>or</bold> operation, for two or more operands. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>First_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the first operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Second_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the second operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rest_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Types of the other operands, if any.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>first</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>second</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other operands, if any. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An object that evaluates to true if at least one of the operand expressions is true, including when all are.</para>
+</simplesect>
+The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kindref="member">any_of</ref></computeroutput> function template provides a generic logical disjunction for any expression types. It constructs a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op" kindref="compound">detail::or_op</ref></computeroutput> logical disjunction object, which evaluates to <computeroutput>true</computeroutput> if at least one of the operands is true; the disjunction is inclusive, so the result is also true when all the conditions are true. For more than two operands, the objects are nested from the left, and the expression formatter writes them as a single chain, <computeroutput>(a or b or c)</computeroutput>.</para>
+<para>All the operands are evaluated before the check, so the function does not stop at the first operand that is true; and, as for <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kindref="member">all_of()</ref></computeroutput>, it must be called as <computeroutput>mt::any_of()</computeroutput> after a <computeroutput>using namespace std</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="278" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="278" bodyend="292" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="303" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" compoundref="function-comparators-inlines_8h" startline="278" endline="292">micro_os_plus::micro_test_plus::any_of</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" compoundref="deprecated-inlines_8h" startline="109" endline="112">micro_os_plus::micro_test_plus::_or</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" compoundref="function-comparators-inlines_8h" startline="278" endline="292">micro_os_plus::micro_test_plus::any_of</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Expr_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::negate</definition>
+        <argsstring>(Expr_T &amp;&amp;expr)</argsstring>
+        <name>negate</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::negate</qualifiedname>
+        <param>
+          <type>Expr_T &amp;&amp;</type>
+          <declname>expr</declname>
+        </param>
+        <briefdescription>
+<para>Generic logical <bold>not</bold> operation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Expr_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>expr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Logical expression to be negated. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An object that evaluates to true if the operand is false.</para>
+</simplesect>
+The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate</ref></computeroutput> function template provides a generic logical negation for any expression type. It constructs a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__op" kindref="compound">detail::not_op</ref></computeroutput> logical negator object, which evaluates to <computeroutput>true</computeroutput> if the operand is false; the template argument is named, since the class template argument deduction would copy an operand that is itself a <computeroutput>not_op</computeroutput>, instead of negating it.</para>
+<para>It is the function form of the <computeroutput>!</computeroutput> operator from the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1operators" kindref="compound">micro_test_plus::operators</ref></computeroutput> namespace. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="219" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="219" bodyend="224" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="266" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" compoundref="function-comparators-inlines_8h" startline="219" endline="224">micro_os_plus::micro_test_plus::negate</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" compoundref="deprecated-inlines_8h" startline="83" endline="86">micro_os_plus::micro_test_plus::_not</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" compoundref="function-comparators-inlines_8h" startline="219" endline="224">micro_os_plus::micro_test_plus::negate</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Functions used to compose logical expressions in tests. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The functions <computeroutput>mt::all_of()</computeroutput>, <computeroutput>mt::any_of()</computeroutput>, and <computeroutput>mt::negate()</computeroutput> combine multiple conditions, allowing expressive and concise test logic. <computeroutput>mt::all_of()</computeroutput> and <computeroutput>mt::any_of()</computeroutput> take two or more operands, and <computeroutput>mt::any_of()</computeroutput> is an inclusive or: it is true also when all the conditions are true. A chain of the same operation is reported as a single group, for example <computeroutput>(a and b and c)</computeroutput>.</para>
+<para>All the operands are evaluated before the check, so the functions do not stop at the first operand that decides the result, like the standard algorithms of the same names. After a <computeroutput>using namespace std</computeroutput>, an unqualified call with three or more operands of the same type selects the standard algorithm; call the functions as <computeroutput>mt::all_of()</computeroutput> and <computeroutput>mt::any_of()</computeroutput>.</para>
+<para>The functions have descriptive names, since <computeroutput>and</computeroutput>, <computeroutput>or</computeroutput>, and <computeroutput>not</computeroutput> are alternative tokens and cannot be used as identifiers. Using these logical functions allows developers to express compound conditions clearly and improve readability.</para>
+<para><simplesect kind="par"><title>Example</title><para></para>
+</simplesect>
+<programlisting filename=".cpp"><codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>compound<sp/>conditions&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::all_of<sp/>(mt::eq<sp/>(compute_answer<sp/>(),<sp/>42),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mt::eq<sp/>(compute_float<sp/>(),<sp/>42.0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mt::lt<sp/>(compute_answer<sp/>(),<sp/>43)));</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+</programlisting></para>
+<para>The overloaded logical operators of the <computeroutput>micro_test_plus::operators</computeroutput> namespace are deprecated since 5.1.0, in favour of these functions.  </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

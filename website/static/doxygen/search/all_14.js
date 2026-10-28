@@ -5,7 +5,7 @@ var searchData=
   ['unlink_2',['unlink',['../classmicro__os__plus_1_1micro__test__plus_1_1suite.html#a20ca7721bdf59488ed0713378235cfd2',1,'micro_os_plus::micro_test_plus::suite']]],
   ['unwrap_3',['unwrap',['../namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a59eb53c96f68d26635c13df53b358ac8',1,'micro_os_plus::micro_test_plus::detail::unwrap(const T &amp;t)'],['../namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a5ab08a688b0f89e017e0d90a6a18ff8d',1,'micro_os_plus::micro_test_plus::detail::unwrap(const T &amp;t)']]],
   ['unwrapped_5ft_4',['unwrapped_t',['../namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a2c197674df5b07499a4ea40d124f1082',1,'micro_os_plus::micro_test_plus::detail']]],
-  ['utility_20functions_5',['Utility Functions',['../group__micro-os-plus-micro-test-plus-utility-functions.html',1,'']]],
+  ['utility_20functions_5',['Utility Functions',['../group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html',1,'']]],
   ['utility_2dinlines_2eh_6',['utility-inlines.h',['../utility-inlines_8h.html',1,'']]],
   ['utility_2ecpp_7',['utility.cpp',['../utility_8cpp.html',1,'']]],
   ['utility_2eh_8',['utility.h',['../utility_8h.html',1,'']]]

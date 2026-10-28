@@ -10,7 +10,9 @@ var searchData=
   ['reporter_2ecpp_7',['reporter.cpp',['../reporter_8cpp.html',1,'']]],
   ['reporter_2eh_8',['reporter.h',['../reporter_8h.html',1,'']]],
   ['runner_2dinlines_2eh_9',['runner-inlines.h',['../runner-inlines_8h.html',1,'']]],
-  ['runner_2doptions_2eh_10',['runner-options.h',['../runner-options_8h.html',1,'']]],
-  ['runner_2ecpp_11',['runner.cpp',['../runner_8cpp.html',1,'']]],
-  ['runner_2eh_12',['runner.h',['../runner_8h.html',1,'']]]
+  ['runner_2doptions_2dinlines_2eh_10',['runner-options-inlines.h',['../runner-options-inlines_8h.html',1,'']]],
+  ['runner_2doptions_2ecpp_11',['runner-options.cpp',['../runner-options_8cpp.html',1,'']]],
+  ['runner_2doptions_2eh_12',['runner-options.h',['../runner-options_8h.html',1,'']]],
+  ['runner_2ecpp_13',['runner.cpp',['../runner_8cpp.html',1,'']]],
+  ['runner_2eh_14',['runner.h',['../runner_8h.html',1,'']]]
 ];

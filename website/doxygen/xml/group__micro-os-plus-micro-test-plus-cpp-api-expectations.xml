@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="group__micro-os-plus-micro-test-plus-cpp-api-expectations" kind="group">
+    <compoundname>micro-os-plus-micro-test-plus-cpp-api-expectations</compoundname>
+    <title>Expectations</title>
+    <briefdescription>
+<para>Expectations are checks whose outcomes are counted and reported. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>During test execution, each condition outcome, whether passing or failing, is explicitly reported in test results. Unlike requirements, a failed expectation does not stop the test; execution continues, allowing multiple conditions to be checked within a single test case.</para>
+<para>This approach enables comprehensive validation of code behaviour, because all relevant expectations can be evaluated and reported in one run. Using expectations provides detailed insight into which aspects of the code meet requirements and which do not, supporting thorough and efficient testing.  </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

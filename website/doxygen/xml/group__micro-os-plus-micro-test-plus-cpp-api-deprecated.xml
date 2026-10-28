@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated" kind="group">
+    <compoundname>micro-os-plus-micro-test-plus-cpp-api-deprecated</compoundname>
+    <title>Deprecated</title>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits" prot="public">micro_os_plus::micro_test_plus::type_traits::function_traits</innerclass>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_5_08_07_args___t_8_8_8_08_4" prot="public">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(*)(Args_T...)&gt;</innerclass>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_args___t_8_8_8_08_4" prot="public">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(Args_T...)&gt;</innerclass>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_52125631e1849775afa0689d07acdc76e" prot="public">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...) const &gt;</innerclass>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4" prot="public">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...)&gt;</innerclass>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity" prot="public">micro_os_plus::micro_test_plus::type_traits::identity</innerclass>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list" prot="public">micro_os_plus::micro_test_plus::type_traits::list</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp" prot="public">micro_os_plus::micro_test_plus::detail::timestamp</innerclass>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__value">micro_os_plus::micro_test_plus::type_traits::has_value</innerconcept>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__floating__point">micro_os_plus::micro_test_plus::type_traits::is_floating_point</innerconcept>
+    <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits">micro_os_plus::micro_test_plus::type_traits</innernamespace>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators">Operators</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions">Logical Functions</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals">Literals and Wrappers</innergroup>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga67890916b8d3d8cbaab893cc6b599745" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>detail::value&lt; T &gt;</type>
+        <definition>using micro_os_plus::micro_test_plus::type_traits::genuine_integral_value = detail::value&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>genuine_integral_value</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::genuine_integral_value</qualifiedname>
+        <briefdescription>
+<para>Deprecated integral value wrapper. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The integral type of the stored value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+In v5.0.1, a separate wrapper with the same members as <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref>&lt;T&gt;</computeroutput>, never created by the framework; now <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref>&lt;T&gt;</computeroutput>, so the values are compared and reported in the same way.</para>
+<para><xrefsect id="deprecated_1_deprecated000107"><xreftitle>Deprecated</xreftitle><xrefdescription><para>The value wrappers are internal (since 5.1.0). </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2095" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="2095" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gaf123417aafc76c826760101bcc517dfa" prot="public" static="no">
+        <type>counters</type>
+        <definition>using micro_os_plus::micro_test_plus::detail::runner_totals = counters</definition>
+        <argsstring></argsstring>
+        <name>runner_totals</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::runner_totals</qualifiedname>
+        <briefdescription>
+<para>Deprecated name of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters" kindref="compound">counters</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The v5.0.1 name of the class returned by <computeroutput>totals()</computeroutput>, renamed since the suites and the test cases own one too, not only the runner. <xrefsect id="deprecated_1_deprecated000094"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use counters (since 5.1.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1586" column="5"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga47d2c99f85fc5597b82da402d4687e75" prot="public" static="no">
+        <type>runner</type>
+        <definition>using micro_os_plus::micro_test_plus::static_runner = runner</definition>
+        <argsstring></argsstring>
+        <name>static_runner</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::static_runner</qualifiedname>
+        <briefdescription>
+<para>Deprecated name of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref></computeroutput> also runs the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref></computeroutput> objects that refer to it, so a separate runner class is no longer needed. <xrefsect id="deprecated_1_deprecated000059"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use runner (since 5.1.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1541" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga1424c18b26d5fdaed11439c77e6bf561" prot="public" static="no">
+        <type>test_case</type>
+        <definition>using micro_os_plus::micro_test_plus::subtest = test_case</definition>
+        <argsstring></argsstring>
+        <name>subtest</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::subtest</qualifiedname>
+        <briefdescription>
+<para>Deprecated name of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" kindref="compound">test_case</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The v5.0.1 name of the class passed to the test case bodies, kept for the functions and the lambdas that name it as the type of their first parameter (<computeroutput>void f (mt::subtest&amp; t)</computeroutput>); the lambdas with an <computeroutput>auto&amp;</computeroutput> parameter are not affected. <xrefsect id="deprecated_1_deprecated000058"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" kindref="compound">test_case</ref> (since 5.1.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1528" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga53a6bc7f86b15378c8296b3647e7013f" prot="public" static="no">
+        <type>stopwatch</type>
+        <definition>using micro_os_plus::micro_test_plus::detail::timestamps = stopwatch</definition>
+        <argsstring></argsstring>
+        <name>timestamps</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::timestamps</qualifiedname>
+        <briefdescription>
+<para>Deprecated name of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch" kindref="compound">stopwatch</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The v5.0.1 name of the class returned by the <computeroutput>timings()</computeroutput> functions of the runner and of the suites, which kept the two timestamps of the measured interval. Its public members are kept, on <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch" kindref="compound">stopwatch</ref></computeroutput>; its protected members, the two optional <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp" kindref="compound">timestamp</ref></computeroutput> objects, are not. The timings are internal; the elapsed times are shown by the reporters. <xrefsect id="deprecated_1_deprecated000095"><xreftitle>Deprecated</xreftitle><xrefdescription><para>the timings are internal (since 5.1.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1603" column="5"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga65ad920b21a6c0df6848aa939659b92e" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>detail::value_base&lt; T &gt;</type>
+        <definition>using micro_os_plus::micro_test_plus::type_traits::value_base_ = detail::value_base&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>value_base_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::value_base_</qualifiedname>
+        <briefdescription>
+<para>Deprecated name of <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base" kindref="compound">detail::value_base</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the stored value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The v5.0.1 name, with a trailing underscore. The stored value is now private, and <computeroutput>get()</computeroutput> returns a reference; the value is read with <computeroutput>get()</computeroutput> or with the explicit conversion, not through the v5.0.1 public member <computeroutput>value_</computeroutput>.</para>
+<para><xrefsect id="deprecated_1_deprecated000106"><xreftitle>Deprecated</xreftitle><xrefdescription><para>The value wrappers are internal (since 5.1.0). </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2079" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="2079" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gafc93799846770e521c4721d0de0a81cc" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * micro_os_plus::micro_test_plus::reflection::short_name</definition>
+        <argsstring>(const char *name) noexcept</argsstring>
+        <name>short_name</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::reflection::short_name</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Deprecated extraction of the file name from a path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Forwards to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">utility::extract_file_name()</ref></computeroutput>, which the framework uses internally; it is kept only for compatibility with the existing applications.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The path, as a C-string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A pointer to the file name within the input string, after the last <computeroutput>/</computeroutput> or <computeroutput>\\endiskip</computeroutput> separator, or the string itself if there is no separator. </para>
+</simplesect>
+<xrefsect id="deprecated_1_deprecated000093"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">utility::extract_file_name()</ref> (since 5.1.0)</para>
+</xrefdescription></xrefsect></para>
+<para>Delegates to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">utility::extract_file_name()</ref></computeroutput>, the single implementation used by the framework, so both the <computeroutput>/</computeroutput> and the <computeroutput>\\endiskip</computeroutput> separators are recognised. If no separator is present, the original input string is returned. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/deprecated.cpp" line="75" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/deprecated.cpp" bodystart="75" bodyend="78" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1566" declcolumn="5"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" compoundref="utility_8cpp" startline="89" endline="98">micro_os_plus::micro_test_plus::utility::extract_file_name</references>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gafc93799846770e521c4721d0de0a81cc" compoundref="deprecated_8cpp" startline="75" endline="78">micro_os_plus::micro_test_plus::reflection::short_name</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gafc93799846770e521c4721d0de0a81cc" compoundref="deprecated_8cpp" startline="75" endline="78">micro_os_plus::micro_test_plus::reflection::short_name</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Definitions kept for compatibility with earlier releases. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The definitions in this group, and in the groups they refer to, are still available, but the compiler reports their use, and they will be removed in a future major release. Each one names its replacement in the deprecation message, together with the version that deprecated it (most of them since 5.1.0).</para>
+<para><simplesect kind="par"><title>Availability</title><para>The deprecated definitions are compiled only when the application defines the macro <computeroutput>MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</computeroutput>, in <computeroutput>micro-os-plus/project-config.h</computeroutput> or in <computeroutput>micro-os-plus/micro-test-plus-defines.h</computeroutput>. Without it, the applications that still use them fail to compile, which is a way of finding what must be migrated.</para>
+</simplesect>
+<simplesect kind="par"><title>Groups</title><para>The deprecated definitions are documented together with the features they belong to:</para>
+</simplesect>
+<itemizedlist>
+<listitem><para>the overloaded comparison and logical operators, in <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators" kindref="compound">Operators</ref>, replaced by the function comparators and the logical functions;</para>
+</listitem><listitem><para>the user-defined literals and the type wrappers, in <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals" kindref="compound">Literals and Wrappers</ref>, replaced by the plain values passed to the function comparators;</para>
+</listitem><listitem><para>the underscore-prefixed logical functions (<computeroutput>_not()</computeroutput>, <computeroutput>_and()</computeroutput>, and <computeroutput>_or()</computeroutput>), in <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions" kindref="compound">Logical Functions</ref>, replaced by <computeroutput>negate()</computeroutput>, <computeroutput>all_of()</computeroutput>, and <computeroutput>any_of()</computeroutput>.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Other deprecated definitions</title><para><itemizedlist>
+<listitem><para>the v5.0.1 names of the classes: <computeroutput>static_runner</computeroutput> (replaced by <computeroutput>runner</computeroutput>), <computeroutput>subtest</computeroutput> (replaced by <computeroutput>test_case</computeroutput>), <computeroutput>detail::runner_totals</computeroutput> (replaced by <computeroutput>counters</computeroutput>), and <computeroutput>detail::timestamps</computeroutput> and <computeroutput>detail::timestamp</computeroutput>, which are internal and not replaced;</para>
+</listitem><listitem><para><computeroutput>runner (const char*)</computeroutput>, replaced by <computeroutput>runner()</computeroutput> followed by <computeroutput>add_top_suite()</computeroutput> (since 4.1.0);</para>
+</listitem><listitem><para><computeroutput>runner::initialise (argc, argv, top_suite_name)</computeroutput>, replaced by <computeroutput>initialise (argc, argv)</computeroutput> followed by <computeroutput>add_top_suite()</computeroutput>;</para>
+</listitem><listitem><para><computeroutput>runner::exit_code()</computeroutput>, replaced by <computeroutput>runner::run()</computeroutput>;</para>
+</listitem><listitem><para><computeroutput>runner::suite()</computeroutput>, replaced by <computeroutput>runner::add_suite()</computeroutput>;</para>
+</listitem><listitem><para><computeroutput>runner::suites_count()</computeroutput>, replaced by <computeroutput>added_suites_count()</computeroutput> or <computeroutput>total_suites_count()</computeroutput>;</para>
+</listitem><listitem><para><computeroutput>runner::verbosity()</computeroutput>, and <computeroutput>runner::reporter()</computeroutput> with its <computeroutput>verbosity()</computeroutput> member, replaced by <computeroutput>runner::verbosity_level()</computeroutput>;</para>
+</listitem><listitem><para><computeroutput>runner::timings()</computeroutput> and <computeroutput>test_case::timings()</computeroutput>, and the members of <computeroutput>detail::stopwatch</computeroutput> kept from the v5.0.1 timestamps, which are internal and not replaced;</para>
+</listitem><listitem><para>the <computeroutput>counters</computeroutput> members <computeroutput>increment_successful_checks()</computeroutput>, <computeroutput>increment_executed_subtests()</computeroutput>, <computeroutput>successful_checks()</computeroutput>, <computeroutput>executed_subtests()</computeroutput>, and <computeroutput>was_successful()</computeroutput>, replaced by <computeroutput>increment_passed_checks()</computeroutput>, <computeroutput>increment_executed_test_cases()</computeroutput>, <computeroutput>passed_checks()</computeroutput>, <computeroutput>executed_test_cases()</computeroutput>, and <computeroutput>passed()</computeroutput>;</para>
+</listitem><listitem><para><computeroutput>test_case::assume()</computeroutput>, replaced by <computeroutput>test_case::require()</computeroutput>;</para>
+</listitem><listitem><para>the overloads of <computeroutput>test_case::expect()</computeroutput> and <computeroutput>test_case::require()</computeroutput> that accept an argument that is always true (a string literal or a function name), replaced by writing the condition;</para>
+</listitem><listitem><para>the <computeroutput>static_suite</computeroutput> constructor whose callable takes a <computeroutput>static_suite&amp;</computeroutput>, replaced by a callable taking a <computeroutput>suite&amp;</computeroutput>;</para>
+</listitem><listitem><para><computeroutput>reflection::short_name()</computeroutput>, replaced by <computeroutput>utility::extract_file_name()</computeroutput>;</para>
+</listitem><listitem><para>the <computeroutput>type_traits</computeroutput> namespace, with the concepts and the value wrapper templates of v5.0.1, replaced by the <computeroutput>extension</computeroutput> namespace.</para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+<simplesect kind="par"><title>Migration</title><para>Build once with the deprecation warnings enabled, and rewrite each reported use as suggested by the message. Temporarily, the warnings can be disabled with <computeroutput>-Wno-deprecated-declarations</computeroutput>, for the applications that build with <computeroutput>-Werror</computeroutput>.</para>
+</simplesect>
+<programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Deprecated.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">mt::operators;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">mt::literals;</highlight></codeline>
+<codeline><highlight class="normal">t.expect<sp/>(compute_answer<sp/>()<sp/>==<sp/>42_i)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Replacement.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">t.expect<sp/>(mt::eq<sp/>(compute_answer<sp/>(),<sp/>42))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
+</programlisting>  </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

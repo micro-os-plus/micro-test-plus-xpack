@@ -1178,7 +1178,7 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-function-comparators
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-function-comparators
    * @brief Public name of the formatter used to report operand values.
    *
    * @details

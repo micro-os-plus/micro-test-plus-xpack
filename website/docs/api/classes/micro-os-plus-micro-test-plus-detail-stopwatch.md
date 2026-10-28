@@ -406,7 +406,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>The class is <span class="doxyComputerOutput">final</span>; the non-public members are <span class="doxyComputerOutput">private</span>, and only the unit tests, through a friend, set known readings.</p>
 
 
-<p>The public members of the v5.0.1 <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a53a6bc7f86b15378c8296b3647e7013f">detail::timestamps</a></span> class (<span class="doxyComputerOutput"><a href="#a621a32c96a4950306c0a1aef8c577740">timestamp_begin()</a></span>, <span class="doxyComputerOutput"><a href="#a4c1a4d8b22d04205be49f8289ed7abd6">timestamp_end()</a></span>, <span class="doxyComputerOutput"><a href="#a306d33023758a96948a6b24ea7a5dc06">has_begin()</a></span>, <span class="doxyComputerOutput"><a href="#adbabde73dd4f7588ae46f8d051d120e1">has_end()</a></span>, <span class="doxyComputerOutput"><a href="#ac698189ef451dfe398d779eb7cccda7f">has_timestamps()</a></span>, and <span class="doxyComputerOutput"><a href="#afd1213b3e3ffa9997ab0eba78b944ecf">compute_elapsed_time()</a></span>) are kept, deprecated, for the applications that used the deprecated <span class="doxyComputerOutput">timings()</span> of the runner and of the suites, which return a reference to this class.</p>
+<p>The public members of the v5.0.1 <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga53a6bc7f86b15378c8296b3647e7013f">detail::timestamps</a></span> class (<span class="doxyComputerOutput"><a href="#a621a32c96a4950306c0a1aef8c577740">timestamp_begin()</a></span>, <span class="doxyComputerOutput"><a href="#a4c1a4d8b22d04205be49f8289ed7abd6">timestamp_end()</a></span>, <span class="doxyComputerOutput"><a href="#a306d33023758a96948a6b24ea7a5dc06">has_begin()</a></span>, <span class="doxyComputerOutput"><a href="#adbabde73dd4f7588ae46f8d051d120e1">has_end()</a></span>, <span class="doxyComputerOutput"><a href="#ac698189ef451dfe398d779eb7cccda7f">has_timestamps()</a></span>, and <span class="doxyComputerOutput"><a href="#afd1213b3e3ffa9997ab0eba78b944ecf">compute_elapsed_time()</a></span>) are kept, deprecated, for the applications that used the deprecated <span class="doxyComputerOutput">timings()</span> of the runner and of the suites, which return a reference to this class.</p>
 
 
 <p>Definition at line 139 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>.</p>
@@ -440,12 +440,12 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>It is declared here, and defined by the unit tests only, so that the tests can inject readings without deriving from the class.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00399">399</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00401">401</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#acdcaae1b9c3790cb15df661d99efcba4">399</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">friend</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight"><a href="#acdcaae1b9c3790cb15df661d99efcba4">stopwatch_test_access</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#acdcaae1b9c3790cb15df661d99efcba4">401</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">friend</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight"><a href="#acdcaae1b9c3790cb15df661d99efcba4">stopwatch_test_access</a>;</span></span></div>
 
 </div>
 
@@ -731,7 +731,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>Deprecated split of the elapsed time.</p>
 
 
-<p>Kept from the v5.0.1 <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a53a6bc7f86b15378c8296b3647e7013f">detail::timestamps</a></span> class. Splits the value returned by <span class="doxyComputerOutput"><a href="#a3719382123c6741054a89e4f76b55d90">elapsed()</a></span> into whole milliseconds and the remaining microseconds. Without both readings, both are zero; in v5.0.1, the call was not allowed (it asserted).</p>
+<p>Kept from the v5.0.1 <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga53a6bc7f86b15378c8296b3647e7013f">detail::timestamps</a></span> class. Splits the value returned by <span class="doxyComputerOutput"><a href="#a3719382123c6741054a89e4f76b55d90">elapsed()</a></span> into whole milliseconds and the remaining microseconds. Without both readings, both are zero; in v5.0.1, the call was not allowed (it asserted).</p>
 
 
 <dl class="doxyParamsList">
@@ -758,7 +758,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000120>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000121>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>use <a href="#a3719382123c6741054a89e4f76b55d90">elapsed()</a> (since 5.1.0)</p>
 </dd>
@@ -768,18 +768,18 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>Divides the microseconds count returned by <span class="doxyComputerOutput"><a href="#a3719382123c6741054a89e4f76b55d90">elapsed()</a></span> by 1000; the conversions to <span class="doxyComputerOutput">uint32_t</span> truncate the intervals longer than about 49 days, as in v5.0.1.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00320">320</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h/#l00124">124</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h">stopwatch-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00321">321</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h/#l00125">125</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h">stopwatch-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#afd1213b3e3ffa9997ab0eba78b944ecf">124</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#afd1213b3e3ffa9997ab0eba78b944ecf">stopwatch::compute_elapsed_time</a> (uint32_t&amp; milliseconds,</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">125</span><span class="doxyLineContent"><span class="doxyHighlight">                                   uint32_t&amp; microseconds) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">126</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">127</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> count = <a href="#a3719382123c6741054a89e4f76b55d90">elapsed</a> ().count ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">128</span><span class="doxyLineContent"><span class="doxyHighlight">    milliseconds = </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight">uint32_t</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (count / 1000);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">129</span><span class="doxyLineContent"><span class="doxyHighlight">    microseconds = </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight">uint32_t</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (count % 1000);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">130</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#afd1213b3e3ffa9997ab0eba78b944ecf">125</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#afd1213b3e3ffa9997ab0eba78b944ecf">stopwatch::compute_elapsed_time</a> (uint32_t&amp; milliseconds,</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">126</span><span class="doxyLineContent"><span class="doxyHighlight">                                   uint32_t&amp; microseconds) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">127</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">128</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> count = <a href="#a3719382123c6741054a89e4f76b55d90">elapsed</a> ().count ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">129</span><span class="doxyLineContent"><span class="doxyHighlight">    milliseconds = </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight">uint32_t</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (count / 1000);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">130</span><span class="doxyLineContent"><span class="doxyHighlight">    microseconds = </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight">uint32_t</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (count % 1000);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">131</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -895,7 +895,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>Deprecated check of the start reading.</p>
 
 
-<p>Kept from the v5.0.1 <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a53a6bc7f86b15378c8296b3647e7013f">detail::timestamps</a></span> class. The start reading is available after <span class="doxyComputerOutput"><a href="#af5ebb1e454867633db12fef45db9788d">start()</a></span>, on a platform with a clock; in v5.0.1, it was also reported without a clock.</p>
+<p>Kept from the v5.0.1 <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga53a6bc7f86b15378c8296b3647e7013f">detail::timestamps</a></span> class. The start reading is available after <span class="doxyComputerOutput"><a href="#af5ebb1e454867633db12fef45db9788d">start()</a></span>, on a platform with a clock; in v5.0.1, it was also reported without a clock.</p>
 
 
 <dl class="doxySectionUser">
@@ -922,7 +922,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000117>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000118>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>use <a href="#a3f84d3511f9130c9daefac85e2a772d7">has_elapsed()</a> (since 5.1.0)</p>
 </dd>
@@ -932,15 +932,15 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>Returns <span class="doxyComputerOutput">true</span> if the start reading was recorded, as determined by <span class="doxyComputerOutput"><a href="#a197be08374692404afd4b07ae8b30e75">is_recorded()</a></span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00270">270</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h/#l00088">88</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h">stopwatch-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00271">271</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h/#l00089">89</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h">stopwatch-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a306d33023758a96948a6b24ea7a5dc06">88</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a306d33023758a96948a6b24ea7a5dc06">stopwatch::has_begin</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">89</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">90</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a>);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">91</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a306d33023758a96948a6b24ea7a5dc06">89</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a306d33023758a96948a6b24ea7a5dc06">stopwatch::has_begin</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">90</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">91</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a>);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">92</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1058,7 +1058,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>Deprecated check of the stop reading.</p>
 
 
-<p>Kept from the v5.0.1 <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a53a6bc7f86b15378c8296b3647e7013f">detail::timestamps</a></span> class. The stop reading is available after <span class="doxyComputerOutput"><a href="#a83ab4e25e25a4a81ed1d3277ac09390d">stop()</a></span>, on a platform with a clock, until the next <span class="doxyComputerOutput"><a href="#af5ebb1e454867633db12fef45db9788d">start()</a></span>; in v5.0.1, it was also reported without a clock.</p>
+<p>Kept from the v5.0.1 <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga53a6bc7f86b15378c8296b3647e7013f">detail::timestamps</a></span> class. The stop reading is available after <span class="doxyComputerOutput"><a href="#a83ab4e25e25a4a81ed1d3277ac09390d">stop()</a></span>, on a platform with a clock, until the next <span class="doxyComputerOutput"><a href="#af5ebb1e454867633db12fef45db9788d">start()</a></span>; in v5.0.1, it was also reported without a clock.</p>
 
 
 <dl class="doxySectionUser">
@@ -1085,7 +1085,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000118>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000119>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>use <a href="#a3f84d3511f9130c9daefac85e2a772d7">has_elapsed()</a> (since 5.1.0)</p>
 </dd>
@@ -1095,15 +1095,15 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>Returns <span class="doxyComputerOutput">true</span> if the stop reading was recorded, as determined by <span class="doxyComputerOutput"><a href="#a197be08374692404afd4b07ae8b30e75">is_recorded()</a></span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00287">287</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h/#l00100">100</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h">stopwatch-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00288">288</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h/#l00101">101</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h">stopwatch-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#adbabde73dd4f7588ae46f8d051d120e1">100</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#adbabde73dd4f7588ae46f8d051d120e1">stopwatch::has_end</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">101</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">102</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a>);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">103</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#adbabde73dd4f7588ae46f8d051d120e1">101</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#adbabde73dd4f7588ae46f8d051d120e1">stopwatch::has_end</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">102</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">103</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a>);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">104</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1144,7 +1144,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>Deprecated name of <span class="doxyComputerOutput"><a href="#a3f84d3511f9130c9daefac85e2a772d7">has_elapsed()</a></span>.</p>
 
 
-<p>Kept from the v5.0.1 <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a53a6bc7f86b15378c8296b3647e7013f">detail::timestamps</a></span> class; calls <span class="doxyComputerOutput"><a href="#a3f84d3511f9130c9daefac85e2a772d7">has_elapsed()</a></span>.</p>
+<p>Kept from the v5.0.1 <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga53a6bc7f86b15378c8296b3647e7013f">detail::timestamps</a></span> class; calls <span class="doxyComputerOutput"><a href="#a3f84d3511f9130c9daefac85e2a772d7">has_elapsed()</a></span>.</p>
 
 
 <dl class="doxySectionUser">
@@ -1161,7 +1161,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000119>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000120>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>use <a href="#a3f84d3511f9130c9daefac85e2a772d7">has_elapsed()</a> (since 5.1.0)</p>
 </dd>
@@ -1171,15 +1171,15 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>Forwards to <span class="doxyComputerOutput"><a href="#a3f84d3511f9130c9daefac85e2a772d7">has_elapsed()</a></span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00301">301</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h/#l00111">111</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h">stopwatch-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00302">302</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h/#l00112">112</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h">stopwatch-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ac698189ef451dfe398d779eb7cccda7f">111</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ac698189ef451dfe398d779eb7cccda7f">stopwatch::has_timestamps</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">112</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">113</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a3f84d3511f9130c9daefac85e2a772d7">has_elapsed</a> ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">114</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ac698189ef451dfe398d779eb7cccda7f">112</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ac698189ef451dfe398d779eb7cccda7f">stopwatch::has_timestamps</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">113</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">114</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a3f84d3511f9130c9daefac85e2a772d7">has_elapsed</a> ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">115</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1254,7 +1254,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>References <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a60dcef812e43e13d1e30f602a572e27a">micro_os_plus::micro_test_plus::detail::read_clock</a>, <a href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a> and <a href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a>.</p>
 
 
-<p>Referenced by <a href="#addee5d2a57a6465734840797ff23cdc2">~stopwatch</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#ac40f554936c71d7c748c1241ffd3f2ac">micro_os_plus::micro_test_plus::runner::initialise</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite/#a432deda5a8721472e8775cbc98451722">micro_os_plus::micro_test_plus::suite::run</a>.</p>
+<p>Referenced by <a href="#addee5d2a57a6465734840797ff23cdc2">~stopwatch</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#aac24d1193ac0579dd6ac3c523a32015f">micro_os_plus::micro_test_plus::runner::add_top_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#ae87c4a8f0e08e069b6d1a393f88e040e">micro_os_plus::micro_test_plus::runner::initialise</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite/#a432deda5a8721472e8775cbc98451722">micro_os_plus::micro_test_plus::suite::run</a>.</p>
 
 </div>
 </div>
@@ -1352,7 +1352,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>Deprecated recording of a given start time.</p>
 
 
-<p>Kept from the v5.0.1 <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a53a6bc7f86b15378c8296b3647e7013f">detail::timestamps</a></span> class. Stores <span class="doxyComputerOutput">ts</span> as the start reading, only if the start reading is absent; the stop reading is not changed. A zero <span class="doxyComputerOutput">ts</span> leaves the reading absent; in v5.0.1, it was stored, and reported by <span class="doxyComputerOutput"><a href="#a306d33023758a96948a6b24ea7a5dc06">has_begin()</a></span>.</p>
+<p>Kept from the v5.0.1 <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga53a6bc7f86b15378c8296b3647e7013f">detail::timestamps</a></span> class. Stores <span class="doxyComputerOutput">ts</span> as the start reading, only if the start reading is absent; the stop reading is not changed. A zero <span class="doxyComputerOutput">ts</span> leaves the reading absent; in v5.0.1, it was stored, and reported by <span class="doxyComputerOutput"><a href="#a306d33023758a96948a6b24ea7a5dc06">has_begin()</a></span>.</p>
 
 
 <dl class="doxyParamsList">
@@ -1375,7 +1375,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000122>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000123>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>use <a href="#af5ebb1e454867633db12fef45db9788d">start()</a> (since 5.1.0)</p>
 </dd>
@@ -1385,18 +1385,18 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>Stores <span class="doxyComputerOutput">ts</span> only if <span class="doxyComputerOutput"><a href="#a197be08374692404afd4b07ae8b30e75">is_recorded()</a></span> reports no start reading.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00356">356</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h/#l00138">138</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h">stopwatch-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00357">357</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h/#l00139">139</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h">stopwatch-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#adcdd0817f5db5db49eac3562c52e5470">138</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a621a32c96a4950306c0a1aef8c577740">stopwatch::timestamp_begin</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> timespec&amp; ts) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">139</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">140</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!<a href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a>))</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">141</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">142</span><span class="doxyLineContent"><span class="doxyHighlight">        <a href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a> = ts;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">143</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">144</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#adcdd0817f5db5db49eac3562c52e5470">139</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a621a32c96a4950306c0a1aef8c577740">stopwatch::timestamp_begin</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> timespec&amp; ts) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">140</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">141</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!<a href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a>))</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">142</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">143</span><span class="doxyLineContent"><span class="doxyHighlight">        <a href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a> = ts;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">144</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">145</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1432,7 +1432,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>Deprecated recording of the start time, from the system clock.</p>
 
 
-<p>Kept from the v5.0.1 <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a53a6bc7f86b15378c8296b3647e7013f">detail::timestamps</a></span> class. Unlike <span class="doxyComputerOutput"><a href="#af5ebb1e454867633db12fef45db9788d">start()</a></span>, it reads the clock only if the start reading is absent, and it does not clear the stop reading. In v5.0.1, a reading taken without a clock was also kept; here, the next call reads the clock again.</p>
+<p>Kept from the v5.0.1 <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga53a6bc7f86b15378c8296b3647e7013f">detail::timestamps</a></span> class. Unlike <span class="doxyComputerOutput"><a href="#af5ebb1e454867633db12fef45db9788d">start()</a></span>, it reads the clock only if the start reading is absent, and it does not clear the stop reading. In v5.0.1, a reading taken without a clock was also kept; here, the next call reads the clock again.</p>
 
 
 <dl class="doxySectionUser">
@@ -1449,7 +1449,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000121>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000122>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>use <a href="#af5ebb1e454867633db12fef45db9788d">start()</a> (since 5.1.0)</p>
 </dd>
@@ -1459,18 +1459,18 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>Reads the system clock into <span class="doxyComputerOutput"><a href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a></span> only if <span class="doxyComputerOutput"><a href="#a197be08374692404afd4b07ae8b30e75">is_recorded()</a></span> reports no start reading; since the reading is zero in that case, it need not be cleared first, as in <span class="doxyComputerOutput"><a href="#af5ebb1e454867633db12fef45db9788d">start()</a></span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00340">340</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/stopwatch-cpp/#l00138">138</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/stopwatch-cpp">stopwatch.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00341">341</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/stopwatch-cpp/#l00139">139</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/stopwatch-cpp">stopwatch.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a621a32c96a4950306c0a1aef8c577740">138</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a621a32c96a4950306c0a1aef8c577740">stopwatch::timestamp_begin</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">139</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">140</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!<a href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a>))</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">141</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">142</span><span class="doxyLineContent"><span class="doxyHighlight">        <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a60dcef812e43e13d1e30f602a572e27a">read_clock</a> (<a href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a>);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">143</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">144</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a621a32c96a4950306c0a1aef8c577740">139</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a621a32c96a4950306c0a1aef8c577740">stopwatch::timestamp_begin</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">140</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">141</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!<a href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a>))</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">142</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">143</span><span class="doxyLineContent"><span class="doxyHighlight">        <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a60dcef812e43e13d1e30f602a572e27a">read_clock</a> (<a href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a>);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">144</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">145</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1510,7 +1510,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>Deprecated recording of a given stop time.</p>
 
 
-<p>Kept from the v5.0.1 <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a53a6bc7f86b15378c8296b3647e7013f">detail::timestamps</a></span> class. Stores <span class="doxyComputerOutput">ts</span> as the stop reading, only if the stop reading is absent. A zero <span class="doxyComputerOutput">ts</span> leaves the reading absent; in v5.0.1, it was stored, and reported by <span class="doxyComputerOutput"><a href="#adbabde73dd4f7588ae46f8d051d120e1">has_end()</a></span>.</p>
+<p>Kept from the v5.0.1 <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga53a6bc7f86b15378c8296b3647e7013f">detail::timestamps</a></span> class. Stores <span class="doxyComputerOutput">ts</span> as the stop reading, only if the stop reading is absent. A zero <span class="doxyComputerOutput">ts</span> leaves the reading absent; in v5.0.1, it was stored, and reported by <span class="doxyComputerOutput"><a href="#adbabde73dd4f7588ae46f8d051d120e1">has_end()</a></span>.</p>
 
 
 <dl class="doxyParamsList">
@@ -1533,7 +1533,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000124>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000125>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>use <a href="#a83ab4e25e25a4a81ed1d3277ac09390d">stop()</a> (since 5.1.0)</p>
 </dd>
@@ -1543,18 +1543,18 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>Stores <span class="doxyComputerOutput">ts</span> only if <span class="doxyComputerOutput"><a href="#a197be08374692404afd4b07ae8b30e75">is_recorded()</a></span> reports no stop reading.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00389">389</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h/#l00152">152</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h">stopwatch-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00390">390</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h/#l00153">153</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h">stopwatch-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aaa80547cfa783c321b0ce88ecaa39648">152</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a4c1a4d8b22d04205be49f8289ed7abd6">stopwatch::timestamp_end</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> timespec&amp; ts) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">153</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">154</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!<a href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a>))</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">155</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">156</span><span class="doxyLineContent"><span class="doxyHighlight">        <a href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a> = ts;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">157</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">158</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aaa80547cfa783c321b0ce88ecaa39648">153</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a4c1a4d8b22d04205be49f8289ed7abd6">stopwatch::timestamp_end</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> timespec&amp; ts) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">154</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">155</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!<a href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a>))</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">156</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">157</span><span class="doxyLineContent"><span class="doxyHighlight">        <a href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a> = ts;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">158</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">159</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1590,7 +1590,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>Deprecated recording of the stop time, from the system clock.</p>
 
 
-<p>Kept from the v5.0.1 <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a53a6bc7f86b15378c8296b3647e7013f">detail::timestamps</a></span> class. Unlike <span class="doxyComputerOutput"><a href="#a83ab4e25e25a4a81ed1d3277ac09390d">stop()</a></span>, it reads the clock only if the stop reading is absent, so the elapsed time is measured to the first call, not to the last one.</p>
+<p>Kept from the v5.0.1 <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga53a6bc7f86b15378c8296b3647e7013f">detail::timestamps</a></span> class. Unlike <span class="doxyComputerOutput"><a href="#a83ab4e25e25a4a81ed1d3277ac09390d">stop()</a></span>, it reads the clock only if the stop reading is absent, so the elapsed time is measured to the first call, not to the last one.</p>
 
 
 <dl class="doxySectionUser">
@@ -1607,7 +1607,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000123>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000124>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>use <a href="#a83ab4e25e25a4a81ed1d3277ac09390d">stop()</a> (since 5.1.0)</p>
 </dd>
@@ -1617,18 +1617,18 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>Reads the system clock into <span class="doxyComputerOutput"><a href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a></span> only if <span class="doxyComputerOutput"><a href="#a197be08374692404afd4b07ae8b30e75">is_recorded()</a></span> reports no stop reading, for the same reason as in <span class="doxyComputerOutput"><a href="#a621a32c96a4950306c0a1aef8c577740">timestamp_begin()</a></span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00373">373</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/stopwatch-cpp/#l00154">154</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/stopwatch-cpp">stopwatch.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00374">374</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/stopwatch-cpp/#l00155">155</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/stopwatch-cpp">stopwatch.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4c1a4d8b22d04205be49f8289ed7abd6">154</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a4c1a4d8b22d04205be49f8289ed7abd6">stopwatch::timestamp_end</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">155</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">156</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!<a href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a>))</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">157</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">158</span><span class="doxyLineContent"><span class="doxyHighlight">        <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a60dcef812e43e13d1e30f602a572e27a">read_clock</a> (<a href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a>);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">159</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">160</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4c1a4d8b22d04205be49f8289ed7abd6">155</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a4c1a4d8b22d04205be49f8289ed7abd6">stopwatch::timestamp_end</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">156</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">157</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!<a href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a>))</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">158</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">159</span><span class="doxyLineContent"><span class="doxyHighlight">        <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a60dcef812e43e13d1e30f602a572e27a">read_clock</a> (<a href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a>);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">160</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">161</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1671,12 +1671,12 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>Zero until <span class="doxyComputerOutput"><a href="#af5ebb1e454867633db12fef45db9788d">start()</a></span> is called; set again by each <span class="doxyComputerOutput"><a href="#af5ebb1e454867633db12fef45db9788d">start()</a></span>.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00421">421</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00423">423</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">421</a></span><span class="doxyLineContent"><span class="doxyHighlight">      timespec <a href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a>{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">423</a></span><span class="doxyLineContent"><span class="doxyHighlight">      timespec <a href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a>{};</span></span></div>
 
 </div>
 
@@ -1710,12 +1710,12 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>Zero until <span class="doxyComputerOutput"><a href="#a83ab4e25e25a4a81ed1d3277ac09390d">stop()</a></span> is called; set again by each <span class="doxyComputerOutput"><a href="#a83ab4e25e25a4a81ed1d3277ac09390d">stop()</a></span>, and cleared by <span class="doxyComputerOutput"><a href="#af5ebb1e454867633db12fef45db9788d">start()</a></span>.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00430">430</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00432">432</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#afa5a38b18b6f14b904fafac9f0bd74fa">430</a></span><span class="doxyLineContent"><span class="doxyHighlight">      timespec <a href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a>{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#afa5a38b18b6f14b904fafac9f0bd74fa">432</a></span><span class="doxyLineContent"><span class="doxyHighlight">      timespec <a href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a>{};</span></span></div>
 
 </div>
 
@@ -1794,7 +1794,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>Returns <span class="doxyComputerOutput">true</span> if at least one of the <span class="doxyComputerOutput">tv_sec</span> or <span class="doxyComputerOutput">tv_nsec</span> members of <span class="doxyComputerOutput">ts</span> is non-zero, indicating that a clock reading was captured.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00413">413</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h/#l00074">74</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h">stopwatch-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h/#l00415">415</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h">stopwatch.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h/#l00074">74</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h">stopwatch-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">

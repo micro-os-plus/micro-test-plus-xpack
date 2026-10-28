@@ -148,6 +148,10 @@
         <label>inlines/reporter-inlines.h</label>
         <link refid="reporter-inlines_8h"/>
       </node>
+      <node id="40">
+        <label>inlines/runner-options-inlines.h</label>
+        <link refid="runner-options-inlines_8h"/>
+      </node>
       <node id="16">
         <label>inlines/values-inlines.h</label>
         <link refid="values-inlines_8h"/>
@@ -207,8 +211,6 @@
         </childnode>
         <childnode refid="41" relation="include">
         </childnode>
-        <childnode refid="40" relation="include">
-        </childnode>
         <childnode refid="32" relation="include">
         </childnode>
         <childnode refid="27" relation="include">
@@ -219,11 +221,15 @@
       <node id="39">
         <label>runner-options.h</label>
         <link refid="runner-options_8h"/>
-        <childnode refid="40" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="14" relation="include">
         </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
         <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
         </childnode>
       </node>
       <node id="7">
@@ -292,9 +298,6 @@
       </node>
       <node id="30">
         <label>optional</label>
-      </node>
-      <node id="40">
-        <label>span</label>
       </node>
       <node id="23">
         <label>string</label>
@@ -410,7 +413,7 @@
 <codeline lineno="106" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a82221fa355584dbaa75c7e66fbefa6b8" kindref="member">reporter_human</ref><sp/>final<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a7e04bcbd0745543c604fdd975829175a" kindref="member">reporter</ref></highlight></codeline>
 <codeline lineno="107"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a82221fa355584dbaa75c7e66fbefa6b8" kindref="member">reporter_human</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1runner__options" kindref="compound">runner_options</ref>&amp;<sp/>opts);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a82221fa355584dbaa75c7e66fbefa6b8" kindref="member">reporter_human</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options" kindref="compound">runner_options</ref>&amp;<sp/>opts);</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"></highlight></codeline>
 <codeline lineno="124" refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a003819bbfdc2a63ca0da37074ec4b1ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a003819bbfdc2a63ca0da37074ec4b1ec" kindref="member">reporter_human</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a82221fa355584dbaa75c7e66fbefa6b8" kindref="member">reporter_human</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="125"><highlight class="normal"></highlight></codeline>

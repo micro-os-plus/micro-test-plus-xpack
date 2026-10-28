@@ -550,7 +550,7 @@ Appends the null-terminated C string <computeroutput>s</computeroutput> to the i
 <para>Formats a logical AND as <computeroutput>(lhs and rhs)</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>A chain of ANDs, as built by <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kindref="member">all_of()</ref></computeroutput> for more than two operands, is written as a single group, <computeroutput>(a and b and c)</computeroutput>.</para>
+<para>A chain of ANDs, as built by <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kindref="member">all_of()</ref></computeroutput> for more than two operands, is written as a single group, <computeroutput>(a and b and c)</computeroutput>.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -791,7 +791,7 @@ Writes the word <computeroutput>not</computeroutput>, followed by the operand, i
           <declname>op</declname>
         </param>
         <briefdescription>
-<para>Formats a nothrow expression as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kindref="member">nothrow</ref></computeroutput>. </para>
+<para>Formats a nothrow expression as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga798bd28001c3938784073e60dd904148" kindref="member">nothrow</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -805,7 +805,7 @@ Writes the word <computeroutput>not</computeroutput>, followed by the operand, i
 </parameterlist>
 <simplesect kind="return"><para>Reference to this instance.</para>
 </simplesect>
-Writes <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-exceptions_1ga798bd28001c3938784073e60dd904148" kindref="member">nothrow</ref></computeroutput>, in the colour of the result.</para>
+Writes <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga798bd28001c3938784073e60dd904148" kindref="member">nothrow</ref></computeroutput>, in the colour of the result.</para>
 <para>It is defined inline, not in the library sources, so that it is available to the applications built with exceptions even when the library is built without them. </para>
         </detaileddescription>
         <inbodydescription>
@@ -838,7 +838,7 @@ Writes <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-exceptio
 <para>Formats a logical OR as <computeroutput>(lhs or rhs)</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>A chain of ORs, as built by <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kindref="member">any_of()</ref></computeroutput> for more than two operands, is written as a single group, <computeroutput>(a or b or c)</computeroutput>.</para>
+<para>A chain of ORs, as built by <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kindref="member">any_of()</ref></computeroutput> for more than two operands, is written as a single group, <computeroutput>(a or b or c)</computeroutput>.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -952,7 +952,7 @@ Writes the symbol of the tag, followed by the operand, with the same colour high
           <declname>op</declname>
         </param>
         <briefdescription>
-<para>Formats a throws expression as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kindref="member">throws</ref>&lt;TypeName&gt;</computeroutput>, or as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kindref="member">throws</ref></computeroutput> when any exception is expected. </para>
+<para>Formats a throws expression as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kindref="member">throws</ref>&lt;TypeName&gt;</computeroutput>, or as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kindref="member">throws</ref></computeroutput> when any exception is expected. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="templateparam"><parameteritem>
@@ -975,7 +975,7 @@ Writes the symbol of the tag, followed by the operand, with the same colour high
 </parameterlist>
 <simplesect kind="return"><para>Reference to this instance.</para>
 </simplesect>
-Writes <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kindref="member">throws</ref></computeroutput>, followed, when a specific exception type is expected, by its name between angle brackets, as returned by <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" kindref="member">reflection::type_name()</ref></computeroutput>, in the colour of the result. </para>
+Writes <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kindref="member">throws</ref></computeroutput>, followed, when a specific exception type is expected, by its name between angle brackets, as returned by <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" kindref="member">reflection::type_name()</ref></computeroutput>, in the colour of the result. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -1001,7 +1001,7 @@ Writes <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-exceptio
 <para>Appends the name of a named boolean constant. </para>
         </briefdescription>
         <detaileddescription>
-<para>The constant, created by the <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kindref="member">_b</ref></computeroutput> literal, is reported by its name, not by its value, which is always <computeroutput>true</computeroutput>.</para>
+<para>The constant, created by the <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kindref="member">_b</ref></computeroutput> literal, is reported by its name, not by its value, which is always <computeroutput>true</computeroutput>.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>b</parametername>
@@ -1447,7 +1447,7 @@ Converts <computeroutput>v</computeroutput> to its string representation via <co
 </parameterlist>
 <simplesect kind="return"><para>Reference to this instance.</para>
 </simplesect>
-Converts <computeroutput>v</computeroutput> to its string representation via <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" kindref="member">append_number()</ref></computeroutput>, adds the decimal point if needed (via <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a7b397504fbb760801d70b1a06186a599" kindref="member">append_decimal_point()</ref></computeroutput>), and appends the type suffix <computeroutput>"ld"</computeroutput>, the name of the <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1gacfe28c6fb7bfb47ca8891cb61e7f58d9" kindref="member">_ld</ref></computeroutput> literal; the C++ suffix <computeroutput>"l"</computeroutput> would suggest <computeroutput>long</computeroutput>. The suffix is not appended to an infinity or a NaN, which would read as a misspelling (<computeroutput>infld</computeroutput>). </para>
+Converts <computeroutput>v</computeroutput> to its string representation via <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" kindref="member">append_number()</ref></computeroutput>, adds the decimal point if needed (via <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a7b397504fbb760801d70b1a06186a599" kindref="member">append_decimal_point()</ref></computeroutput>), and appends the type suffix <computeroutput>"ld"</computeroutput>, the name of the <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gacfe28c6fb7bfb47ca8891cb61e7f58d9" kindref="member">_ld</ref></computeroutput> literal; the C++ suffix <computeroutput>"l"</computeroutput> would suggest <computeroutput>long</computeroutput>. The suffix is not appended to an infinity or a NaN, which would read as a misspelling (<computeroutput>infld</computeroutput>). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -1483,7 +1483,7 @@ Converts <computeroutput>v</computeroutput> to its string representation via <co
 </parameterlist>
 <simplesect kind="return"><para>Reference to this instance.</para>
 </simplesect>
-Converts <computeroutput>c</computeroutput> to its decimal string representation via <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" kindref="member">append_number()</ref></computeroutput> and appends the type suffix <computeroutput>"sc"</computeroutput>, the name of the <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-literals_1ga0cc4baab5f421ac7adee10218d8ee8a2" kindref="member">_sc</ref></computeroutput> literal; the suffix <computeroutput>"c"</computeroutput> would suggest <computeroutput>char</computeroutput>, which is written as a character. </para>
+Converts <computeroutput>c</computeroutput> to its decimal string representation via <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" kindref="member">append_number()</ref></computeroutput> and appends the type suffix <computeroutput>"sc"</computeroutput>, the name of the <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0cc4baab5f421ac7adee10218d8ee8a2" kindref="member">_sc</ref></computeroutput> literal; the suffix <computeroutput>"c"</computeroutput> would suggest <computeroutput>char</computeroutput>, which is written as a character. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -1645,7 +1645,7 @@ Converts <computeroutput>v</computeroutput> to its decimal string representation
 <para>Appends the string <computeroutput>"nullopt"</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>Selected for <computeroutput>std::nullopt</computeroutput>, so that an optional value can be compared with it (<computeroutput><ref refid="group__micro-os-plus-micro-test-plus-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq</ref> (opt, std::nullopt)</computeroutput>).</para>
+<para>Selected for <computeroutput>std::nullopt</computeroutput>, so that an optional value can be compared with it (<computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq</ref> (opt, std::nullopt)</computeroutput>).</para>
 <para><simplesect kind="return"><para>Reference to this instance.</para>
 </simplesect>
 Appends the string <computeroutput>"nullopt"</computeroutput> to the internal buffer; also used by the <computeroutput>std::optional</computeroutput> template for the optionals without a value. </para>

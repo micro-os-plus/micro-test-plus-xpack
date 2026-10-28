@@ -175,6 +175,16 @@ C++ header file with inline implementations for the µTest++ test runner
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h"><span class="doxyIconFile">runner-options-inlines.h</span></a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+C++ header file with inline implementations for the µTest++ runner options
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
 <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines-h"><span class="doxyIconFile">stopwatch-inlines.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -489,6 +499,16 @@ C++ source file with implementations for the µTest++ TAP test reporter member f
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++ source file with implementations for the µTest++ test reporter member functions
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/files/src/runner-options-cpp"><span class="doxyIconFile">runner-options.cpp</span></a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+C++ source file with implementations for the µTest++ runner options
 </td>
 </tr>
 

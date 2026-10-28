@@ -1,0 +1,50 @@
+@defgroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals Literals and Wrappers
+@brief Deprecated literal operators and wrappers for typed operands.
+
+@details
+Literals such as `1_i` and `42_f` create strongly typed operands, whilst
+wrappers like `mt::to_i{expression}` convert dynamic values, so that the
+(deprecated) overloaded operators can compare and report them.
+
+@par Deprecated
+The literals of the `literals` namespace, the `to_*` type wrappers,
+`to_t<T>`, and the two-argument `mt::approx (value, epsilon)` are
+deprecated since 5.1.0, in favour of the function comparators `mt::eq()`,
+`mt::ne()`, `mt::lt()`, `mt::le()`, `mt::gt()`, and `mt::ge()`, which
+compare and report the plain values, and of the function comparator
+`mt::approx (lhs, rhs, epsilon)`, which sets the tolerance explicitly. The
+compiler reports their use.
+
+The integer literals follow the C++ syntax: decimal, hexadecimal (`0x10_i`),
+binary (`0b101_i`), and octal (`010_i`, which is 8), with digit separators
+(`1'000_i`). A decimal point, an exponent, or a value that does not fit in the
+type of the literal (e.g. `300_u8`) is a compilation error.
+
+The floating-point literals are written with decimal digits and a decimal
+point, optionally with digit separators (`1'000.000'5_d`), but without an
+exponent; the digits before the decimal point, and the decimals, are each
+limited to `std::numeric_limits<T>::digits10` of the type of the literal
+(for example 6 for `_f` and 15 for `_d`), otherwise the compilation fails.
+
+The literal `"name"_b` creates a named `bool` constant with the value
+`true`, reported by its name; it is deprecated in favour of a plain `bool`
+and a check message.
+
+The floating-point literals (`1.5_d`) and wrappers (`mt::to_d{ 1.5 }`)
+compare with a tolerance of one unit of the last decimal written (0.1 for
+`1.5`), so that `1.45 == 1.5_d` is true. All six comparisons apply it
+consistently: values within the tolerance are equal, and neither less nor
+greater. Plain floating-point values compare exactly. The tolerance
+depends on the digits written, and on which operand is wrapped; to set it
+explicitly, use `mt::approx (lhs, rhs, epsilon)`.
+
+@par Replacement
+
+@code{.cpp}
+namespace mt = micro_os_plus::micro_test_plus;
+
+ts.test ("Check operands", [] (auto& t) {
+  t.expect (mt::eq (answer, 42));
+  t.expect (mt::approx (measured, 42.0f, 0.01f));
+});
+@endcode

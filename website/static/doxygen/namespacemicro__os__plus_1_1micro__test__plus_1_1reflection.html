@@ -125,8 +125,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afc93799846770e521c4721d0de0a81cc" id="r_afc93799846770e521c4721d0de0a81cc"><td class="memItemLeft">const char *&#160;</td><td class="memItemRight"><a class="el" href="#afc93799846770e521c4721d0de0a81cc">short_name</a> (const char *name) noexcept</td></tr>
-<tr class="memdesc:afc93799846770e521c4721d0de0a81cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the file name from a path.  <br /></td></tr>
+<tr class="memitem:gafc93799846770e521c4721d0de0a81cc" id="r_gafc93799846770e521c4721d0de0a81cc"><td class="memItemLeft">const char *&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#gafc93799846770e521c4721d0de0a81cc">short_name</a> (const char *name) noexcept</td></tr>
+<tr class="memdesc:gafc93799846770e521c4721d0de0a81cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated extraction of the file name from a path.  <br /></td></tr>
 <tr class="memitem:a6580ad54ad22a1d3ab43a1d9d49d1f26" id="r_a6580ad54ad22a1d3ab43a1d9d49d1f26"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:a6580ad54ad22a1d3ab43a1d9d49d1f26 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a6580ad54ad22a1d3ab43a1d9d49d1f26">type_name</a> (void) -&gt; std::string_view</td></tr>
 <tr class="memdesc:a6580ad54ad22a1d3ab43a1d9d49d1f26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the type name from the <span class="tt">__PRETTY_FUNCTION__</span> macro.  <br /></td></tr>
@@ -135,51 +135,6 @@ Functions</h2></td></tr>
 <div class="textblock"><p>The <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection.html" title="Reflection utilities for the µTest++ testing framework.">reflection</a></span> namespace provides facilities for obtaining source location information and type names at compile time, thereby supporting advanced reporting and diagnostics within the µTest++ framework.</p>
 <p>It includes a local implementation of <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html" title="Local implementation of source location information for diagnostics.">source_location</a></span> for standard libraries that do not yet provide <span class="tt">std::source_location</span>, as well as utilities for extracting file names from paths and concise type names from the compiler-specific <span class="tt">__PRETTY_FUNCTION__</span> macro. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="afc93799846770e521c4721d0de0a81cc" name="afc93799846770e521c4721d0de0a81cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc93799846770e521c4721d0de0a81cc">&#9670;&#160;</a></span>short_name()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char * micro_os_plus::micro_test_plus::reflection::short_name </td>
-          <td>(</td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Forwards to <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-utility-functions.html#ga791f22f0c85b6436c9016821907b0653" title="Extracts the file name component from a full path.">utility::extract_file_name()</a></span>, which the framework uses internally; it is kept only for compatibility with the existing applications.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>The path, as a C-string. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A pointer to the file name within the input string, after the last <span class="tt">/</span> or <span class="tt">\\endiskip</span> separator, or the string itself if there is no separator. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000093">Deprecated</a></b></dt><dd>use <a class="el" href="group__micro-os-plus-micro-test-plus-utility-functions.html#ga791f22f0c85b6436c9016821907b0653" title="Extracts the file name component from a full path.">utility::extract_file_name()</a> (since 5.1.0)</dd></dl>
-<p>Delegates to <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-utility-functions.html#ga791f22f0c85b6436c9016821907b0653" title="Extracts the file name component from a full path.">utility::extract_file_name()</a></span>, the single implementation used by the framework, so both the <span class="tt">/</span> and the <span class="tt">\\endiskip</span> separators are recognised. If no separator is present, the original input string is returned. </p>
-
-<p class="definition">Definition at line <a class="el" href="deprecated_8cpp_source.html#l00074">74</a> of file <a class="el" href="deprecated_8cpp_source.html">deprecated.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   75</span>    {</div>
-<div class="line"><span class="lineno">   76</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="group__micro-os-plus-micro-test-plus-utility-functions.html#ga791f22f0c85b6436c9016821907b0653">utility::extract_file_name</a> (name);</div>
-<div class="line"><span class="lineno">   77</span>    }</div>
-<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-utility-functions_html_ga791f22f0c85b6436c9016821907b0653"><div class="ttname"><a href="group__micro-os-plus-micro-test-plus-utility-functions.html#ga791f22f0c85b6436c9016821907b0653">micro_os_plus::micro_test_plus::utility::extract_file_name</a></div><div class="ttdeci">const char * extract_file_name(const char *path) noexcept</div><div class="ttdoc">Extracts the file name component from a full path.</div><div class="ttdef"><b>Definition</b> <a href="utility_8cpp_source.html#l00089">utility.cpp:89</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="utility_8cpp_source.html#l00089">micro_os_plus::micro_test_plus::utility::extract_file_name()</a>, and <a class="el" href="deprecated_8cpp_source.html#l00074">short_name()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="deprecated_8cpp_source.html#l00074">short_name()</a>.</p>
-
-</div>
-</div>
 <a id="a6580ad54ad22a1d3ab43a1d9d49d1f26" name="a6580ad54ad22a1d3ab43a1d9d49d1f26"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6580ad54ad22a1d3ab43a1d9d49d1f26">&#9670;&#160;</a></span>type_name()</h2>
 
@@ -212,7 +167,7 @@ template&lt;class T&gt; </div>
 </ul>
 <p>If the marker is not found, or the compiler is not supported (e.g. MSVC, which uses <span class="tt">__FUNCSIG__</span> instead of <span class="tt">__PRETTY_FUNCTION__</span>), the function returns <span class="tt">"unknown"</span> rather than failing to compile, since the name is used only to improve the test output.</p>
 <p>The expected layouts are verified at compile time by the <span class="tt">static_assert</span> checks that follow the definition.</p>
-<p>The name is spelled as the compiler prints it, and is used to identify the expected exception type in the <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-exceptions.html#gaf8f7602f40119da514be2a0bfc4b70f5" title="Checks whether a callable throws a specific exception, for expect() or require().">throws</a>&lt;E&gt;</span> failure messages. Only clang and GCC are supported; with other compilers the function returns <span class="tt">"unknown"</span>.</p>
+<p>The name is spelled as the compiler prints it, and is used to identify the expected exception type in the <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#gaf8f7602f40119da514be2a0bfc4b70f5" title="Checks whether a callable throws a specific exception, for expect() or require().">throws</a>&lt;E&gt;</span> failure messages. Only clang and GCC are supported; with other compilers the function returns <span class="tt">"unknown"</span>.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>The type whose name is to be extracted.</td></tr>

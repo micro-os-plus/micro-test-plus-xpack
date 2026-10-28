@@ -40,9 +40,9 @@
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus">micro_os_plus::micro_test_plus</innernamespace>
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1utility">micro_os_plus::micro_test_plus::utility</innernamespace>
     <sectiondef kind="func">
-      <member refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kind="function"><name>extract_file_name</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" kind="function"><name>is_match</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-utility-functions_1gac17bb0b9be9a1ca01854c8bbbabc5def" kind="function"><name>split</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kind="function"><name>extract_file_name</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" kind="function"><name>is_match</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gac17bb0b9be9a1ca01854c8bbbabc5def" kind="function"><name>split</name></member>
     </sectiondef>
     <briefdescription>
 <para>C++ source file with implementations for the µTest++ utility functions. </para>
@@ -105,7 +105,7 @@
 <codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="69"><highlight class="normal"></highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*</highlight></codeline>
-<codeline lineno="89" refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">extract_file_name</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>path)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">extract_file_name</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>path)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string_view<sp/>sv{<sp/>path<sp/>};</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pos<sp/>=<sp/>sv.find_last_of<sp/>(</highlight><highlight class="stringliteral">&quot;/\\&quot;</highlight><highlight class="normal">);</highlight></codeline>
@@ -121,7 +121,7 @@
 <codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="103"><highlight class="normal"></highlight></codeline>
 <codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="135" refid="group__micro-os-plus-micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" kindref="member">is_match</ref><sp/>(std::string_view<sp/>input,<sp/>std::string_view<sp/>pattern)</highlight></codeline>
+<codeline lineno="135" refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" kindref="member">is_match</ref><sp/>(std::string_view<sp/>input,<sp/>std::string_view<sp/>pattern)</highlight></codeline>
 <codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>npos<sp/>=<sp/>std::string_view::npos;</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"></highlight></codeline>
@@ -169,7 +169,7 @@
 <codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="181"><highlight class="normal"></highlight></codeline>
 <codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>std::vector&lt;std::string_view&gt;</highlight></codeline>
-<codeline lineno="202" refid="group__micro-os-plus-micro-test-plus-utility-functions_1gac17bb0b9be9a1ca01854c8bbbabc5def" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" kindref="member">split</ref><sp/>(std::string_view<sp/>input,<sp/>std::string_view<sp/>delimiters)</highlight></codeline>
+<codeline lineno="202" refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gac17bb0b9be9a1ca01854c8bbbabc5def" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" kindref="member">split</ref><sp/>(std::string_view<sp/>input,<sp/>std::string_view<sp/>delimiters)</highlight></codeline>
 <codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::string_view&gt;<sp/>output{};</highlight></codeline>
 <codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>first{};</highlight></codeline>

@@ -1,0 +1,42 @@
+@defgroup micro-os-plus-micro-test-plus-cpp-api-deprecated-operators Operators
+@brief Deprecated overloaded operators for test comparisons.
+
+@details
+The overloaded operators `==`, `!=`, `<`, `>`, `<=`, `>=`, `and`, `or`, and
+`not` are defined in the dedicated `micro_test_plus::operators` namespace,
+to avoid conflicts with application-defined operators.
+
+@par Deprecated
+The operators are deprecated since 5.1.0, in favour of the function
+comparators `mt::eq()`, `mt::ne()`, `mt::lt()`, `mt::le()`, `mt::gt()`, and
+`mt::ge()`, and of the logical functions `mt::all_of()`, `mt::any_of()`, and
+`mt::negate()`, which check and report the plain values, without literal
+suffixes or casts. The compiler reports the use of the operators.
+
+The operators are restricted to the framework types (see
+`extension::is_op`). For constant values, this is achieved with the
+(deprecated) literals, for example `1_i`, whilst dynamic values can be
+wrapped with the (deprecated) converters such as `mt::to_i{expression}`.
+When neither operand is of such a type, the standard operators are
+selected; they return a plain `bool`, so a failed check cannot show the
+operands.
+
+@warning The overloaded `and` and `or` operators evaluate both operands
+before the check, so they do not short-circuit like the built-in ones.
+
+@par Replacement
+
+@code{.cpp}
+namespace mt = micro_os_plus::micro_test_plus;
+
+ts.test ("Comparators", [] (auto& t) {
+  t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+  t.expect (mt::ne (compute_answer (), 43)) << "answer is not 43";
+  t.expect (mt::lt (compute_answer (), 43)) << "answer is < 43";
+  t.expect (mt::le (compute_answer (), 43)) << "answer is <= 43";
+  t.expect (mt::gt (compute_answer (), 41)) << "answer is > 41";
+  t.expect (mt::ge (compute_answer (), 42)) << "answer is >= 42";
+  t.expect (mt::all_of (mt::eq (compute_answer (), 42),
+                        mt::eq (compute_float (), 42.0f)));
+});
+@endcode

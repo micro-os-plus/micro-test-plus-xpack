@@ -112,8 +112,8 @@ namespace micro_os_plus::micro_test_plus
   // `function-comparators.h`.
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-logical-functions
-   * @brief Generic logical **not** operation, the v5.0.1 name of
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions
+   * @brief Deprecated generic logical **not** operation, the v5.0.1 name of
    * `negate()`.
    *
    * @details
@@ -130,8 +130,8 @@ namespace micro_os_plus::micro_test_plus
   _not (Expr_T&& expr);
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-logical-functions
-   * @brief Generic logical **and** operation, the v5.0.1 name of
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions
+   * @brief Deprecated generic logical **and** operation, the v5.0.1 name of
    * `all_of()`.
    *
    * @details
@@ -151,9 +151,9 @@ namespace micro_os_plus::micro_test_plus
   _and (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-logical-functions
-   * @brief Generic logical (inclusive) **or** operation, the v5.0.1 name
-   * of `any_of()`.
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions
+   * @brief Deprecated generic logical (inclusive) **or** operation, the v5.0.1
+   * name of `any_of()`.
    *
    * @details
    * The same as `any_of()`. The name was changed since a leading
@@ -232,9 +232,9 @@ namespace micro_os_plus::micro_test_plus
   namespace operators
   {
     /**
-     * @ingroup micro-os-plus-micro-test-plus-operators
-     * @brief Equality operator. Matches only if at least one operand is a
-     * framework type (see `extension::is_op`).
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-operators
+     * @brief Deprecated equality operator. Matches only if at least one operand
+     * is a framework type (see `extension::is_op`).
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -251,9 +251,9 @@ namespace micro_os_plus::micro_test_plus
     operator== (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-operators
-     * @brief Non-equality operator. Matches only if at least one operand
-     * is a framework type (see `extension::is_op`).
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-operators
+     * @brief Deprecated non-equality operator. Matches only if at least one
+     * operand is a framework type (see `extension::is_op`).
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -270,9 +270,9 @@ namespace micro_os_plus::micro_test_plus
     operator!= (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-operators
-     * @brief Greater than operator. Matches only if at least one operand is
-     * a framework type (see `extension::is_op`).
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-operators
+     * @brief Deprecated greater than operator. Matches only if at least one
+     * operand is a framework type (see `extension::is_op`).
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -289,9 +289,9 @@ namespace micro_os_plus::micro_test_plus
     operator> (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-operators
-     * @brief Greater than or equal operator. Matches only if at least one
-     * operand is a framework type (see `extension::is_op`).
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-operators
+     * @brief Deprecated greater than or equal operator. Matches only if at
+     * least one operand is a framework type (see `extension::is_op`).
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -308,9 +308,9 @@ namespace micro_os_plus::micro_test_plus
     operator>= (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-operators
-     * @brief Less than operator. Matches only if at least one operand is
-     * a framework type (see `extension::is_op`).
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-operators
+     * @brief Deprecated less than operator. Matches only if at least one
+     * operand is a framework type (see `extension::is_op`).
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -327,9 +327,9 @@ namespace micro_os_plus::micro_test_plus
     operator< (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-operators
-     * @brief Less than or equal operator. Matches only if at least one operand
-     * is a framework type (see `extension::is_op`).
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-operators
+     * @brief Deprecated less than or equal operator. Matches only if at least
+     * one operand is a framework type (see `extension::is_op`).
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -346,9 +346,9 @@ namespace micro_os_plus::micro_test_plus
     operator<= (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-operators
-     * @brief Logical `&&` (and) operator. Matches only if at least one operand
-     * is a framework type (see `extension::is_op`).
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-operators
+     * @brief Deprecated logical `&&` (and) operator. Matches only if at least
+     * one operand is a framework type (see `extension::is_op`).
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -365,9 +365,9 @@ namespace micro_os_plus::micro_test_plus
     operator and (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-operators
-     * @brief Logical `||` (or) operator. Matches only if at least one operand
-     * is a framework type (see `extension::is_op`).
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-operators
+     * @brief Deprecated logical `||` (or) operator. Matches only if at least
+     * one operand is a framework type (see `extension::is_op`).
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -384,9 +384,9 @@ namespace micro_os_plus::micro_test_plus
     operator or (Lhs_T&& lhs, Rhs_T&& rhs);
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-operators
-     * @brief Logical `!` (not) operator. Matches only if the operand is a
-     * framework type (see `extension::is_op`).
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-operators
+     * @brief Deprecated logical `!` (not) operator. Matches only if the operand
+     * is a framework type (see `extension::is_op`).
      *
      * @tparam T Type of the operand, constrained to the framework types.
      *
@@ -439,8 +439,8 @@ namespace micro_os_plus::micro_test_plus
   namespace literals
   {
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `int`.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to convert to `int`.
      *
      * @tparam Cs The character pack representing the digits of the integer
      * constant.
@@ -455,8 +455,8 @@ namespace micro_os_plus::micro_test_plus
     operator""_i ();
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `short`.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to convert to `short`.
      *
      * @tparam Cs The character pack representing the digits of the integer
      * constant.
@@ -471,8 +471,8 @@ namespace micro_os_plus::micro_test_plus
     operator""_s ();
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `char`.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to convert to `char`.
      *
      * @tparam Cs The character pack representing the digits of the character
      * constant.
@@ -487,8 +487,9 @@ namespace micro_os_plus::micro_test_plus
     operator""_c ();
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `signed char`.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to convert to `signed
+     * char`.
      *
      * @tparam Cs The character pack representing the digits of the signed
      * character constant.
@@ -503,8 +504,8 @@ namespace micro_os_plus::micro_test_plus
     operator""_sc ();
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `long`.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to convert to `long`.
      *
      * @tparam Cs The character pack representing the digits of the long
      * integer constant.
@@ -519,8 +520,9 @@ namespace micro_os_plus::micro_test_plus
     operator""_l ();
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `long long`.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to convert to `long
+     * long`.
      *
      * @tparam Cs The character pack representing the digits of the long long
      * integer constant.
@@ -535,8 +537,8 @@ namespace micro_os_plus::micro_test_plus
     operator""_ll ();
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `unsigned`.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to convert to `unsigned`.
      *
      * @tparam Cs The character pack representing the digits of the unsigned
      * integer constant.
@@ -551,8 +553,9 @@ namespace micro_os_plus::micro_test_plus
     operator""_u ();
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `unsigned char`.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to convert to `unsigned
+     * char`.
      *
      * @tparam Cs The character pack representing the digits of the unsigned
      * character constant.
@@ -567,8 +570,9 @@ namespace micro_os_plus::micro_test_plus
     operator""_uc ();
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `unsigned short`.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to convert to `unsigned
+     * short`.
      *
      * @tparam Cs The character pack representing the digits of the unsigned
      * short constant.
@@ -583,8 +587,9 @@ namespace micro_os_plus::micro_test_plus
     operator""_us ();
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `unsigned long`.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to convert to `unsigned
+     * long`.
      *
      * @tparam Cs The character pack representing the digits of the unsigned
      * long integer constant.
@@ -599,8 +604,9 @@ namespace micro_os_plus::micro_test_plus
     operator""_ul ();
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `unsigned long long`.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to convert to `unsigned
+     * long long`.
      *
      * @tparam Cs The character pack representing the digits of the unsigned
      * long long integer constant.
@@ -615,8 +621,8 @@ namespace micro_os_plus::micro_test_plus
     operator""_ull ();
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `int8_t`.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to convert to `int8_t`.
      *
      * @tparam Cs The character pack representing the digits of the `int8_t`
      * constant.
@@ -631,8 +637,8 @@ namespace micro_os_plus::micro_test_plus
     operator""_i8 ();
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `int16_t`.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to convert to `int16_t`.
      *
      * @tparam Cs The character pack representing the digits of the `int16_t`
      * constant.
@@ -647,8 +653,8 @@ namespace micro_os_plus::micro_test_plus
     operator""_i16 ();
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `int32_t`.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to convert to `int32_t`.
      *
      * @tparam Cs The character pack representing the digits of the `int32_t`
      * constant.
@@ -663,8 +669,8 @@ namespace micro_os_plus::micro_test_plus
     operator""_i32 ();
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `int64_t`.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to convert to `int64_t`.
      *
      * @tparam Cs The character pack representing the digits of the `int64_t`
      * constant.
@@ -679,8 +685,8 @@ namespace micro_os_plus::micro_test_plus
     operator""_i64 ();
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `uint8_t`.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to convert to `uint8_t`.
      *
      * @tparam Cs The character pack representing the digits of the `uint8_t`
      * constant.
@@ -695,8 +701,8 @@ namespace micro_os_plus::micro_test_plus
     operator""_u8 ();
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `uint16_t`.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to convert to `uint16_t`.
      *
      * @tparam Cs The character pack representing the digits of the `uint16_t`
      * constant.
@@ -711,8 +717,8 @@ namespace micro_os_plus::micro_test_plus
     operator""_u16 ();
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `uint32_t`.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to convert to `uint32_t`.
      *
      * @tparam Cs The character pack representing the digits of the `uint32_t`
      * constant.
@@ -727,8 +733,8 @@ namespace micro_os_plus::micro_test_plus
     operator""_u32 ();
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `uint64_t`.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to convert to `uint64_t`.
      *
      * @tparam Cs The character pack representing the digits of the `uint64_t`
      * constant.
@@ -743,8 +749,8 @@ namespace micro_os_plus::micro_test_plus
     operator""_u64 ();
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `float`.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to convert to `float`.
      *
      * @tparam Cs The character pack representing the digits of the
      * floating-point constant.
@@ -758,8 +764,8 @@ namespace micro_os_plus::micro_test_plus
     operator""_f ();
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `double`.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to convert to `double`.
      *
      * @tparam Cs The character pack representing the digits of the
      * floating-point constant.
@@ -773,8 +779,9 @@ namespace micro_os_plus::micro_test_plus
     operator""_d ();
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to convert to `long double`.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to convert to `long
+     * double`.
      *
      * @tparam Cs The character pack representing the digits of the
      * floating-point constant.
@@ -788,8 +795,8 @@ namespace micro_os_plus::micro_test_plus
     operator""_ld ();
 
     /**
-     * @ingroup micro-os-plus-micro-test-plus-literals
-     * @brief User-defined literal operator to create a named boolean
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+     * @brief Deprecated user-defined literal operator to create a named boolean
      * constant.
      *
      * @param name Pointer to the character sequence representing the literal.
@@ -807,7 +814,7 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
-   * @addtogroup micro-os-plus-micro-test-plus-literals
+   * @addtogroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
    * @{
    */
 
@@ -846,7 +853,7 @@ namespace micro_os_plus::micro_test_plus
    */
 
   /**
-   * @brief Strongly-typed wrapper for `bool` values.
+   * @brief Deprecated strongly-typed wrapper for `bool` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -859,7 +866,7 @@ namespace micro_os_plus::micro_test_plus
   = detail::value<bool>;
 
   /**
-   * @brief Strongly-typed wrapper for `char` values.
+   * @brief Deprecated strongly-typed wrapper for `char` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -872,7 +879,7 @@ namespace micro_os_plus::micro_test_plus
   = detail::value<char>;
 
   /**
-   * @brief Strongly-typed wrapper for `signed char` values.
+   * @brief Deprecated strongly-typed wrapper for `signed char` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -885,7 +892,7 @@ namespace micro_os_plus::micro_test_plus
   = detail::value<signed char>;
 
   /**
-   * @brief Strongly-typed wrapper for `short` values.
+   * @brief Deprecated strongly-typed wrapper for `short` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -898,7 +905,7 @@ namespace micro_os_plus::micro_test_plus
   = detail::value<short>;
 
   /**
-   * @brief Strongly-typed wrapper for `int` values.
+   * @brief Deprecated strongly-typed wrapper for `int` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -911,7 +918,7 @@ namespace micro_os_plus::micro_test_plus
   = detail::value<int>;
 
   /**
-   * @brief Strongly-typed wrapper for `long` values.
+   * @brief Deprecated strongly-typed wrapper for `long` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -924,7 +931,7 @@ namespace micro_os_plus::micro_test_plus
   = detail::value<long>;
 
   /**
-   * @brief Strongly-typed wrapper for `long long` values.
+   * @brief Deprecated strongly-typed wrapper for `long long` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -937,7 +944,7 @@ namespace micro_os_plus::micro_test_plus
   = detail::value<long long>;
 
   /**
-   * @brief Strongly-typed wrapper for `unsigned` values.
+   * @brief Deprecated strongly-typed wrapper for `unsigned` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -950,7 +957,7 @@ namespace micro_os_plus::micro_test_plus
   = detail::value<unsigned>;
 
   /**
-   * @brief Strongly-typed wrapper for `unsigned char` values.
+   * @brief Deprecated strongly-typed wrapper for `unsigned char` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -963,7 +970,7 @@ namespace micro_os_plus::micro_test_plus
   = detail::value<unsigned char>;
 
   /**
-   * @brief Strongly-typed wrapper for `unsigned short` values.
+   * @brief Deprecated strongly-typed wrapper for `unsigned short` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -976,7 +983,7 @@ namespace micro_os_plus::micro_test_plus
   = detail::value<unsigned short>;
 
   /**
-   * @brief Strongly-typed wrapper for `unsigned long` values.
+   * @brief Deprecated strongly-typed wrapper for `unsigned long` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -989,7 +996,7 @@ namespace micro_os_plus::micro_test_plus
   = detail::value<unsigned long>;
 
   /**
-   * @brief Strongly-typed wrapper for `unsigned long long` values.
+   * @brief Deprecated strongly-typed wrapper for `unsigned long long` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -1002,7 +1009,7 @@ namespace micro_os_plus::micro_test_plus
   = detail::value<unsigned long long>;
 
   /**
-   * @brief Strongly-typed wrapper for `std::int8_t` values.
+   * @brief Deprecated strongly-typed wrapper for `std::int8_t` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -1015,7 +1022,7 @@ namespace micro_os_plus::micro_test_plus
   = detail::value<std::int8_t>;
 
   /**
-   * @brief Strongly-typed wrapper for `std::int16_t` values.
+   * @brief Deprecated strongly-typed wrapper for `std::int16_t` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -1028,7 +1035,7 @@ namespace micro_os_plus::micro_test_plus
   = detail::value<std::int16_t>;
 
   /**
-   * @brief Strongly-typed wrapper for `std::int32_t` values.
+   * @brief Deprecated strongly-typed wrapper for `std::int32_t` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -1041,7 +1048,7 @@ namespace micro_os_plus::micro_test_plus
   = detail::value<std::int32_t>;
 
   /**
-   * @brief Strongly-typed wrapper for `std::int64_t` values.
+   * @brief Deprecated strongly-typed wrapper for `std::int64_t` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -1054,7 +1061,7 @@ namespace micro_os_plus::micro_test_plus
   = detail::value<std::int64_t>;
 
   /**
-   * @brief Strongly-typed wrapper for `std::uint8_t` values.
+   * @brief Deprecated strongly-typed wrapper for `std::uint8_t` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -1067,7 +1074,7 @@ namespace micro_os_plus::micro_test_plus
   = detail::value<std::uint8_t>;
 
   /**
-   * @brief Strongly-typed wrapper for `std::uint16_t` values.
+   * @brief Deprecated strongly-typed wrapper for `std::uint16_t` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -1080,7 +1087,7 @@ namespace micro_os_plus::micro_test_plus
   = detail::value<std::uint16_t>;
 
   /**
-   * @brief Strongly-typed wrapper for `std::uint32_t` values.
+   * @brief Deprecated strongly-typed wrapper for `std::uint32_t` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -1093,7 +1100,7 @@ namespace micro_os_plus::micro_test_plus
   = detail::value<std::uint32_t>;
 
   /**
-   * @brief Strongly-typed wrapper for `std::uint64_t` values.
+   * @brief Deprecated strongly-typed wrapper for `std::uint64_t` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -1106,7 +1113,7 @@ namespace micro_os_plus::micro_test_plus
   = detail::value<std::uint64_t>;
 
   /**
-   * @brief Strongly-typed wrapper for `float` values.
+   * @brief Deprecated strongly-typed wrapper for `float` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -1118,7 +1125,7 @@ namespace micro_os_plus::micro_test_plus
   = detail::value<float>;
 
   /**
-   * @brief Strongly-typed wrapper for `double` values.
+   * @brief Deprecated strongly-typed wrapper for `double` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -1130,7 +1137,7 @@ namespace micro_os_plus::micro_test_plus
   = detail::value<double>;
 
   /**
-   * @brief Strongly-typed wrapper for `long double` values.
+   * @brief Deprecated strongly-typed wrapper for `long double` values.
    *
    * @details
    * Wraps a run-time value, so that the comparators and the reporter
@@ -1150,8 +1157,9 @@ namespace micro_os_plus::micro_test_plus
    */
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-literals
-   * @brief Generic strongly-typed wrapper for explicit type conversion.
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+   * @brief Deprecated generic strongly-typed wrapper for explicit type
+   * conversion.
    *
    * @since 3.2.0
    *
@@ -1196,9 +1204,9 @@ namespace micro_os_plus::micro_test_plus
   };
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-literals
-   * @brief Wraps a floating-point value with an explicit comparison
-   * tolerance.
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
+   * @brief Deprecated wrapping of a floating-point value with an explicit
+   * comparison tolerance.
    *
    * @details
    * The floating-point literals (`1.5_d`) and wrappers (`to_d{ 1.5 }`)
@@ -1243,7 +1251,7 @@ namespace micro_os_plus::micro_test_plus
 #endif // defined(__GNUC__)
 
   /**
-   * @addtogroup micro-os-plus-micro-test-plus-literals
+   * @addtogroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
    * @{
    */
 
@@ -1273,8 +1281,8 @@ namespace micro_os_plus::micro_test_plus
    */
 
   /**
-   * @brief Strongly-typed wrapper for `bool` values, the v5.0.1 name of
-   * `to_b`.
+   * @brief Deprecated strongly-typed wrapper for `bool` values, the v5.0.1 name
+   * of `to_b`.
    *
    * @details
    * The same type as `to_b`; kept for backwards compatibility.
@@ -1284,8 +1292,8 @@ namespace micro_os_plus::micro_test_plus
   = to_b;
 
   /**
-   * @brief Strongly-typed wrapper for `char` values, the v5.0.1 name of
-   * `to_c`.
+   * @brief Deprecated strongly-typed wrapper for `char` values, the v5.0.1 name
+   * of `to_c`.
    *
    * @details
    * The same type as `to_c`; kept for backwards compatibility.
@@ -1295,8 +1303,8 @@ namespace micro_os_plus::micro_test_plus
   = to_c;
 
   /**
-   * @brief Strongly-typed wrapper for `signed char` values, the v5.0.1 name of
-   * `to_sc`.
+   * @brief Deprecated strongly-typed wrapper for `signed char` values, the
+   * v5.0.1 name of `to_sc`.
    *
    * @details
    * The same type as `to_sc`; kept for backwards compatibility.
@@ -1306,8 +1314,8 @@ namespace micro_os_plus::micro_test_plus
   = to_sc;
 
   /**
-   * @brief Strongly-typed wrapper for `short` values, the v5.0.1 name of
-   * `to_s`.
+   * @brief Deprecated strongly-typed wrapper for `short` values, the v5.0.1
+   * name of `to_s`.
    *
    * @details
    * The same type as `to_s`; kept for backwards compatibility.
@@ -1317,8 +1325,8 @@ namespace micro_os_plus::micro_test_plus
   = to_s;
 
   /**
-   * @brief Strongly-typed wrapper for `int` values, the v5.0.1 name of
-   * `to_i`.
+   * @brief Deprecated strongly-typed wrapper for `int` values, the v5.0.1 name
+   * of `to_i`.
    *
    * @details
    * The same type as `to_i`; kept for backwards compatibility.
@@ -1328,8 +1336,8 @@ namespace micro_os_plus::micro_test_plus
   = to_i;
 
   /**
-   * @brief Strongly-typed wrapper for `long` values, the v5.0.1 name of
-   * `to_l`.
+   * @brief Deprecated strongly-typed wrapper for `long` values, the v5.0.1 name
+   * of `to_l`.
    *
    * @details
    * The same type as `to_l`; kept for backwards compatibility.
@@ -1339,8 +1347,8 @@ namespace micro_os_plus::micro_test_plus
   = to_l;
 
   /**
-   * @brief Strongly-typed wrapper for `long long` values, the v5.0.1 name of
-   * `to_ll`.
+   * @brief Deprecated strongly-typed wrapper for `long long` values, the v5.0.1
+   * name of `to_ll`.
    *
    * @details
    * The same type as `to_ll`; kept for backwards compatibility.
@@ -1350,8 +1358,8 @@ namespace micro_os_plus::micro_test_plus
   = to_ll;
 
   /**
-   * @brief Strongly-typed wrapper for `unsigned` values, the v5.0.1 name of
-   * `to_u`.
+   * @brief Deprecated strongly-typed wrapper for `unsigned` values, the v5.0.1
+   * name of `to_u`.
    *
    * @details
    * The same type as `to_u`; kept for backwards compatibility.
@@ -1361,8 +1369,8 @@ namespace micro_os_plus::micro_test_plus
   = to_u;
 
   /**
-   * @brief Strongly-typed wrapper for `unsigned char` values, the v5.0.1
-   * name of `to_uc`.
+   * @brief Deprecated strongly-typed wrapper for `unsigned char` values, the
+   * v5.0.1 name of `to_uc`.
    *
    * @details
    * The same type as `to_uc`; kept for backwards compatibility.
@@ -1372,8 +1380,8 @@ namespace micro_os_plus::micro_test_plus
   = to_uc;
 
   /**
-   * @brief Strongly-typed wrapper for `unsigned short` values, the v5.0.1
-   * name of `to_us`.
+   * @brief Deprecated strongly-typed wrapper for `unsigned short` values, the
+   * v5.0.1 name of `to_us`.
    *
    * @details
    * The same type as `to_us`; kept for backwards compatibility.
@@ -1383,8 +1391,8 @@ namespace micro_os_plus::micro_test_plus
   = to_us;
 
   /**
-   * @brief Strongly-typed wrapper for `unsigned long` values, the v5.0.1
-   * name of `to_ul`.
+   * @brief Deprecated strongly-typed wrapper for `unsigned long` values, the
+   * v5.0.1 name of `to_ul`.
    *
    * @details
    * The same type as `to_ul`; kept for backwards compatibility.
@@ -1394,8 +1402,8 @@ namespace micro_os_plus::micro_test_plus
   = to_ul;
 
   /**
-   * @brief Strongly-typed wrapper for `unsigned long long` values, the v5.0.1
-   * name of `to_ull`.
+   * @brief Deprecated strongly-typed wrapper for `unsigned long long` values,
+   * the v5.0.1 name of `to_ull`.
    *
    * @details
    * The same type as `to_ull`; kept for backwards compatibility.
@@ -1405,8 +1413,8 @@ namespace micro_os_plus::micro_test_plus
   = to_ull;
 
   /**
-   * @brief Strongly-typed wrapper for `std::int8_t` values, the v5.0.1 name of
-   * `to_i8`.
+   * @brief Deprecated strongly-typed wrapper for `std::int8_t` values, the
+   * v5.0.1 name of `to_i8`.
    *
    * @details
    * The same type as `to_i8`; kept for backwards compatibility.
@@ -1416,8 +1424,8 @@ namespace micro_os_plus::micro_test_plus
   = to_i8;
 
   /**
-   * @brief Strongly-typed wrapper for `std::int16_t` values, the v5.0.1
-   * name of `to_i16`.
+   * @brief Deprecated strongly-typed wrapper for `std::int16_t` values, the
+   * v5.0.1 name of `to_i16`.
    *
    * @details
    * The same type as `to_i16`; kept for backwards compatibility.
@@ -1427,8 +1435,8 @@ namespace micro_os_plus::micro_test_plus
   = to_i16;
 
   /**
-   * @brief Strongly-typed wrapper for `std::int32_t` values, the v5.0.1
-   * name of `to_i32`.
+   * @brief Deprecated strongly-typed wrapper for `std::int32_t` values, the
+   * v5.0.1 name of `to_i32`.
    *
    * @details
    * The same type as `to_i32`; kept for backwards compatibility.
@@ -1438,8 +1446,8 @@ namespace micro_os_plus::micro_test_plus
   = to_i32;
 
   /**
-   * @brief Strongly-typed wrapper for `std::int64_t` values, the v5.0.1
-   * name of `to_i64`.
+   * @brief Deprecated strongly-typed wrapper for `std::int64_t` values, the
+   * v5.0.1 name of `to_i64`.
    *
    * @details
    * The same type as `to_i64`; kept for backwards compatibility.
@@ -1449,8 +1457,8 @@ namespace micro_os_plus::micro_test_plus
   = to_i64;
 
   /**
-   * @brief Strongly-typed wrapper for `std::uint8_t` values, the v5.0.1
-   * name of `to_u8`.
+   * @brief Deprecated strongly-typed wrapper for `std::uint8_t` values, the
+   * v5.0.1 name of `to_u8`.
    *
    * @details
    * The same type as `to_u8`; kept for backwards compatibility.
@@ -1460,8 +1468,8 @@ namespace micro_os_plus::micro_test_plus
   = to_u8;
 
   /**
-   * @brief Strongly-typed wrapper for `std::uint16_t` values, the v5.0.1
-   * name of `to_u16`.
+   * @brief Deprecated strongly-typed wrapper for `std::uint16_t` values, the
+   * v5.0.1 name of `to_u16`.
    *
    * @details
    * The same type as `to_u16`; kept for backwards compatibility.
@@ -1471,8 +1479,8 @@ namespace micro_os_plus::micro_test_plus
   = to_u16;
 
   /**
-   * @brief Strongly-typed wrapper for `std::uint32_t` values, the v5.0.1
-   * name of `to_u32`.
+   * @brief Deprecated strongly-typed wrapper for `std::uint32_t` values, the
+   * v5.0.1 name of `to_u32`.
    *
    * @details
    * The same type as `to_u32`; kept for backwards compatibility.
@@ -1482,8 +1490,8 @@ namespace micro_os_plus::micro_test_plus
   = to_u32;
 
   /**
-   * @brief Strongly-typed wrapper for `std::uint64_t` values, the v5.0.1
-   * name of `to_u64`.
+   * @brief Deprecated strongly-typed wrapper for `std::uint64_t` values, the
+   * v5.0.1 name of `to_u64`.
    *
    * @details
    * The same type as `to_u64`; kept for backwards compatibility.
@@ -1493,8 +1501,8 @@ namespace micro_os_plus::micro_test_plus
   = to_u64;
 
   /**
-   * @brief Strongly-typed wrapper for `float` values, the v5.0.1 name of
-   * `to_f`.
+   * @brief Deprecated strongly-typed wrapper for `float` values, the v5.0.1
+   * name of `to_f`.
    *
    * @details
    * The same type as `to_f`; kept for backwards compatibility.
@@ -1502,8 +1510,8 @@ namespace micro_os_plus::micro_test_plus
   using _f [[deprecated ("use approx() for tolerances (since 5.1.0)")]] = to_f;
 
   /**
-   * @brief Strongly-typed wrapper for `double` values, the v5.0.1 name of
-   * `to_d`.
+   * @brief Deprecated strongly-typed wrapper for `double` values, the v5.0.1
+   * name of `to_d`.
    *
    * @details
    * The same type as `to_d`; kept for backwards compatibility.
@@ -1511,8 +1519,8 @@ namespace micro_os_plus::micro_test_plus
   using _d [[deprecated ("use approx() for tolerances (since 5.1.0)")]] = to_d;
 
   /**
-   * @brief Strongly-typed wrapper for `long double` values, the v5.0.1 name of
-   * `to_ld`.
+   * @brief Deprecated strongly-typed wrapper for `long double` values, the
+   * v5.0.1 name of `to_ld`.
    *
    * @details
    * The same type as `to_ld`; kept for backwards compatibility.
@@ -1521,7 +1529,8 @@ namespace micro_os_plus::micro_test_plus
   = to_ld;
 
   /**
-   * @brief Generic strongly-typed wrapper, the v5.0.1 name of `to_t`.
+   * @brief Deprecated generic strongly-typed wrapper, the v5.0.1 name of
+   * `to_t`.
    *
    * @details
    * The same type as `to_t<T>`, so it takes the same argument and is
@@ -1552,7 +1561,7 @@ namespace micro_os_plus::micro_test_plus
   // The test case class, now `test_case`, in `test.h`.
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-test-case
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
    * @brief Deprecated name of `test_case`.
    *
    * @details
@@ -1567,7 +1576,7 @@ namespace micro_os_plus::micro_test_plus
   // The runner class, now `runner`, in `runner.h`.
 
   /**
-   * @ingroup micro-os-plus-micro-test-plus-runners
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
    * @brief Deprecated name of `runner`.
    *
    * @details
@@ -1584,7 +1593,8 @@ namespace micro_os_plus::micro_test_plus
     // Now `utility::extract_file_name()`, in `utility.h`.
 
     /**
-     * @brief Extracts the file name from a path.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
+     * @brief Deprecated extraction of the file name from a path.
      *
      * @details
      * Forwards to `utility::extract_file_name()`, which the framework
@@ -1611,6 +1621,7 @@ namespace micro_os_plus::micro_test_plus
     // The counters class, now `counters`, in `counters.h`.
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
      * @brief Deprecated name of `counters`.
      *
      * @details
@@ -1624,6 +1635,7 @@ namespace micro_os_plus::micro_test_plus
     // The timings classes, now `stopwatch`, in `stopwatch.h`.
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
      * @brief Deprecated name of `stopwatch`.
      *
      * @details
@@ -1640,6 +1652,7 @@ namespace micro_os_plus::micro_test_plus
     // ========================================================================
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
      * @brief Deprecated clock reading.
      *
      * @details
@@ -1782,6 +1795,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @namespace micro_os_plus::micro_test_plus::type_traits
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
    * @brief Deprecated v5.0.1 namespace of the concepts and of the value
    * wrapper templates.
    *
@@ -1840,6 +1854,7 @@ namespace micro_os_plus::micro_test_plus
     using detail::has_npos;
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
      * @brief Deprecated C++20 concept satisfied when `T` has a member
      * named `value`.
      *
@@ -1860,6 +1875,7 @@ namespace micro_os_plus::micro_test_plus
     concept has_value = requires (const T& t) { t.value; };
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
      * @brief Deprecated C++20 concept satisfied when `T` is a
      * floating-point type.
      *
@@ -1878,6 +1894,7 @@ namespace micro_os_plus::micro_test_plus
     // Helpers removed from the framework, restored as in v5.0.1.
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
      * @brief Deprecated empty type list.
      *
      * @tparam Types The types in the list.
@@ -1894,6 +1911,7 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
      * @brief Deprecated identity type.
      *
      * @tparam T The type to be exposed.
@@ -1918,6 +1936,7 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
      * @brief Deprecated traits of the callable objects.
      *
      * @tparam T The type of the callable object; its `operator()` is
@@ -1942,6 +1961,7 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
      * @brief Deprecated traits of the function pointers.
      *
      * @tparam R The return type.
@@ -1975,6 +1995,7 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
      * @brief Deprecated traits of the function types.
      *
      * @tparam R The return type.
@@ -2007,6 +2028,7 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
      * @brief Deprecated traits of the pointers to member functions.
      *
      * @tparam R The return type.
@@ -2041,6 +2063,7 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
      * @brief Deprecated traits of the pointers to `const` member
      * functions.
      *
@@ -2084,6 +2107,7 @@ namespace micro_os_plus::micro_test_plus
     using detail::value;
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
      * @brief Deprecated name of `detail::value_base`.
      *
      * @tparam T The type of the stored value.
@@ -2100,6 +2124,7 @@ namespace micro_os_plus::micro_test_plus
     using value_base_ = detail::value_base<T>;
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
      * @brief Deprecated integral value wrapper.
      *
      * @tparam T The integral type of the stored value.

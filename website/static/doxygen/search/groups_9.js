@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['utility_20functions_0',['Utility Functions',['../group__micro-os-plus-micro-test-plus-utility-functions.html',1,'']]]
+  ['test_20cases_0',['Test Cases',['../group__micro-os-plus-micro-test-plus-cpp-api-test-case.html',1,'']]],
+  ['test_20runners_1',['Test Runners',['../group__micro-os-plus-micro-test-plus-cpp-api-runners.html',1,'']]],
+  ['test_20suites_2',['Test Suites',['../group__micro-os-plus-micro-test-plus-cpp-api-test-suites.html',1,'']]],
+  ['topics_3',['µOS++ Topics',['../group__micro-os-plus.html',1,'']]]
 ];

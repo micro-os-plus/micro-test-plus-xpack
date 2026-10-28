@@ -315,7 +315,7 @@ class micro_os_plus::micro_test_plus::detail::expression_formatter { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Formats a nothrow expression as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-exceptions/#ga798bd28001c3938784073e60dd904148">nothrow</a></span>. <a href="#a0ffe9183360b8f7e674f8546888ec5cc">More...</a></p>
+<p>Formats a nothrow expression as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-exceptions/#ga798bd28001c3938784073e60dd904148">nothrow</a></span>. <a href="#a0ffe9183360b8f7e674f8546888ec5cc">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -366,7 +366,7 @@ class micro_os_plus::micro_test_plus::detail::expression_formatter { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Formats a throws expression as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-exceptions/#gaf8f7602f40119da514be2a0bfc4b70f5">throws</a>&lt;TypeName&gt;</span>, or as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-exceptions/#gaf8f7602f40119da514be2a0bfc4b70f5">throws</a></span> when any exception is expected. <a href="#a6734ab254c188ce23514b5e84dd1232f">More...</a></p>
+<p>Formats a throws expression as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-exceptions/#gaf8f7602f40119da514be2a0bfc4b70f5">throws</a>&lt;TypeName&gt;</span>, or as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-exceptions/#gaf8f7602f40119da514be2a0bfc4b70f5">throws</a></span> when any exception is expected. <a href="#a6734ab254c188ce23514b5e84dd1232f">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1877,7 +1877,7 @@ class micro_os_plus::micro_test_plus::detail::expression_formatter { ... }
 <p>Formats a logical AND as <span class="doxyComputerOutput">(lhs and rhs)</span>.</p>
 
 
-<p>A chain of ANDs, as built by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#gab9b9c26860ceafc1288ecb415f52aaaf">all_of()</a></span> for more than two operands, is written as a single group, <span class="doxyComputerOutput">(a and b and c)</span>.</p>
+<p>A chain of ANDs, as built by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/#gab9b9c26860ceafc1288ecb415f52aaaf">all_of()</a></span> for more than two operands, is written as a single group, <span class="doxyComputerOutput">(a and b and c)</span>.</p>
 
 
 <dl class="doxyParamsList">
@@ -2205,7 +2205,7 @@ class micro_os_plus::micro_test_plus::detail::expression_formatter { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Formats a nothrow expression as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-exceptions/#ga798bd28001c3938784073e60dd904148">nothrow</a></span>.</p>
+<p>Formats a nothrow expression as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-exceptions/#ga798bd28001c3938784073e60dd904148">nothrow</a></span>.</p>
 
 
 <dl class="doxyParamsList">
@@ -2226,7 +2226,7 @@ class micro_os_plus::micro_test_plus::detail::expression_formatter { ... }
 </dl>
 
 
-<p>Writes <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-exceptions/#ga798bd28001c3938784073e60dd904148">nothrow</a></span>, in the colour of the result.</p>
+<p>Writes <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-exceptions/#ga798bd28001c3938784073e60dd904148">nothrow</a></span>, in the colour of the result.</p>
 
 
 <p>It is defined inline, not in the library sources, so that it is available to the applications built with exceptions even when the library is built without them.</p>
@@ -2272,7 +2272,7 @@ class micro_os_plus::micro_test_plus::detail::expression_formatter { ... }
 <p>Formats a logical OR as <span class="doxyComputerOutput">(lhs or rhs)</span>.</p>
 
 
-<p>A chain of ORs, as built by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-logical-functions/#gae6395736f05626ba6dcf79ecc523486c">any_of()</a></span> for more than two operands, is written as a single group, <span class="doxyComputerOutput">(a or b or c)</span>.</p>
+<p>A chain of ORs, as built by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/#gae6395736f05626ba6dcf79ecc523486c">any_of()</a></span> for more than two operands, is written as a single group, <span class="doxyComputerOutput">(a or b or c)</span>.</p>
 
 
 <dl class="doxyParamsList">
@@ -2433,7 +2433,7 @@ class micro_os_plus::micro_test_plus::detail::expression_formatter { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Formats a throws expression as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-exceptions/#gaf8f7602f40119da514be2a0bfc4b70f5">throws</a>&lt;TypeName&gt;</span>, or as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-exceptions/#gaf8f7602f40119da514be2a0bfc4b70f5">throws</a></span> when any exception is expected.</p>
+<p>Formats a throws expression as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-exceptions/#gaf8f7602f40119da514be2a0bfc4b70f5">throws</a>&lt;TypeName&gt;</span>, or as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-exceptions/#gaf8f7602f40119da514be2a0bfc4b70f5">throws</a></span> when any exception is expected.</p>
 
 
 <dl class="doxyParamsList">
@@ -2466,7 +2466,7 @@ class micro_os_plus::micro_test_plus::detail::expression_formatter { ... }
 </dl>
 
 
-<p>Writes <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-exceptions/#gaf8f7602f40119da514be2a0bfc4b70f5">throws</a></span>, followed, when a specific exception type is expected, by its name between angle brackets, as returned by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection/#a6580ad54ad22a1d3ab43a1d9d49d1f26">reflection::type_name()</a></span>, in the colour of the result.</p>
+<p>Writes <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-exceptions/#gaf8f7602f40119da514be2a0bfc4b70f5">throws</a></span>, followed, when a specific exception type is expected, by its name between angle brackets, as returned by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection/#a6580ad54ad22a1d3ab43a1d9d49d1f26">reflection::type_name()</a></span>, in the colour of the result.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h/#l00852">852</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h">expression-formatter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/expression-formatter-inlines-h/#l00453">453</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/expression-formatter-inlines-h">expression-formatter-inlines.h</a>.</p>
@@ -2518,7 +2518,7 @@ class micro_os_plus::micro_test_plus::detail::expression_formatter { ... }
 <p>Appends the name of a named boolean constant.</p>
 
 
-<p>The constant, created by the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gad4203783cfbe141f41ee8515f7b2ea94">_b</a></span> literal, is reported by its name, not by its value, which is always <span class="doxyComputerOutput">true</span>.</p>
+<p>The constant, created by the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gad4203783cfbe141f41ee8515f7b2ea94">_b</a></span> literal, is reported by its name, not by its value, which is always <span class="doxyComputerOutput">true</span>.</p>
 
 
 <dl class="doxyParamsList">
@@ -3238,7 +3238,7 @@ class micro_os_plus::micro_test_plus::detail::expression_formatter { ... }
 </dl>
 
 
-<p>Converts <span class="doxyComputerOutput">v</span> to its string representation via <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a3abe0c9c597c7fe04a5f101022ecea5d">append_number()</a></span>, adds the decimal point if needed (via <span class="doxyComputerOutput"><a href="#a7b397504fbb760801d70b1a06186a599">append_decimal_point()</a></span>), and appends the type suffix <span class="doxyComputerOutput">"ld"</span>, the name of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gacfe28c6fb7bfb47ca8891cb61e7f58d9">_ld</a></span> literal; the C++ suffix <span class="doxyComputerOutput">"l"</span> would suggest <span class="doxyComputerOutput">long</span>. The suffix is not appended to an infinity or a NaN, which would read as a misspelling (<span class="doxyComputerOutput">infld</span>).</p>
+<p>Converts <span class="doxyComputerOutput">v</span> to its string representation via <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a3abe0c9c597c7fe04a5f101022ecea5d">append_number()</a></span>, adds the decimal point if needed (via <span class="doxyComputerOutput"><a href="#a7b397504fbb760801d70b1a06186a599">append_decimal_point()</a></span>), and appends the type suffix <span class="doxyComputerOutput">"ld"</span>, the name of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gacfe28c6fb7bfb47ca8891cb61e7f58d9">_ld</a></span> literal; the C++ suffix <span class="doxyComputerOutput">"l"</span> would suggest <span class="doxyComputerOutput">long</span>. The suffix is not appended to an infinity or a NaN, which would read as a misspelling (<span class="doxyComputerOutput">infld</span>).</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h/#l00585">585</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h">expression-formatter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp/#l00551">551</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp">expression-formatter.cpp</a>.</p>
@@ -3305,7 +3305,7 @@ class micro_os_plus::micro_test_plus::detail::expression_formatter { ... }
 </dl>
 
 
-<p>Converts <span class="doxyComputerOutput">c</span> to its decimal string representation via <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a3abe0c9c597c7fe04a5f101022ecea5d">append_number()</a></span> and appends the type suffix <span class="doxyComputerOutput">"sc"</span>, the name of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga0cc4baab5f421ac7adee10218d8ee8a2">_sc</a></span> literal; the suffix <span class="doxyComputerOutput">"c"</span> would suggest <span class="doxyComputerOutput">char</span>, which is written as a character.</p>
+<p>Converts <span class="doxyComputerOutput">c</span> to its decimal string representation via <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a3abe0c9c597c7fe04a5f101022ecea5d">append_number()</a></span> and appends the type suffix <span class="doxyComputerOutput">"sc"</span>, the name of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#ga0cc4baab5f421ac7adee10218d8ee8a2">_sc</a></span> literal; the suffix <span class="doxyComputerOutput">"c"</span> would suggest <span class="doxyComputerOutput">char</span>, which is written as a character.</p>
 
 
 <p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h/#l00467">467</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h">expression-formatter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp/#l00383">383</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp">expression-formatter.cpp</a>.</p>
@@ -3596,7 +3596,7 @@ class micro_os_plus::micro_test_plus::detail::expression_formatter { ... }
 <p>Appends the string <span class="doxyComputerOutput">"nullopt"</span>.</p>
 
 
-<p>Selected for <span class="doxyComputerOutput">std::nullopt</span>, so that an optional value can be compared with it (<span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-function-comparators/#gaa7c7b6a7ad32856edc235a05e77d8c7f">eq</a> (opt, std::nullopt)</span>).</p>
+<p>Selected for <span class="doxyComputerOutput">std::nullopt</span>, so that an optional value can be compared with it (<span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gaa7c7b6a7ad32856edc235a05e77d8c7f">eq</a> (opt, std::nullopt)</span>).</p>
 
 
 <dl class="doxySectionUser">

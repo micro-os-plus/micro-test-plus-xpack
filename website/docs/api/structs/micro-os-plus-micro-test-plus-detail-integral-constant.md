@@ -474,7 +474,7 @@ struct micro_os_plus::micro_test_plus::detail::integral_constant&lt;N&gt; { ... 
 <p>Unary minus operator.</p>
 
 
-<p>The result has the type of <span class="doxyComputerOutput">N</span>, not the type promoted by the built-in unary minus, so <span class="doxyComputerOutput">-1<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#ga265f8609ef3d6ead78c7a66825553e24">_i8</a></span> is an <span class="doxyComputerOutput">int8_t</span>. The negation of an unsigned value wraps around, as for <span class="doxyComputerOutput">unsigned int</span> in C++ (<span class="doxyComputerOutput">-1<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-literals/#gaf27e37e2e29af1a3ffd5c4fb07e77ff9">_u8</a></span> is 255). The negation of the minimum of a signed type does not fit in the type, so it is a compilation error.</p>
+<p>The result has the type of <span class="doxyComputerOutput">N</span>, not the type promoted by the built-in unary minus, so <span class="doxyComputerOutput">-1<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#ga265f8609ef3d6ead78c7a66825553e24">_i8</a></span> is an <span class="doxyComputerOutput">int8_t</span>. The negation of an unsigned value wraps around, as for <span class="doxyComputerOutput">unsigned int</span> in C++ (<span class="doxyComputerOutput">-1<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gaf27e37e2e29af1a3ffd5c4fb07e77ff9">_u8</a></span> is 255). The negation of the minimum of a signed type does not fit in the type, so it is a compilation error.</p>
 
 
 <dl class="doxySectionUser">

@@ -19,12 +19,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1724" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="1724" bodyend="1724"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a5877a6dda459f5dc695f0e4569175a82" compoundref="deprecated-inlines_8h" startline="679" endline="681">timestamp</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a5bc1f0da3e55b740b16c2269012e141e" compoundref="deprecated_8cpp" startline="96" endline="99">timestamp</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1ae5494fb57bcc3b577c914a0cc95ff667" compoundref="deprecated-inlines_8h" startline="691" endline="694">has_clock</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1ab5cdd20fcc69d0a7539d0fa219206e68" compoundref="deprecated-inlines_8h" startline="716" endline="719">value</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a1538d7ab5b57c425c61510adfca32012" compoundref="deprecated-inlines_8h" startline="704" endline="707">value</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1739" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="1739" bodyend="1739"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a5877a6dda459f5dc695f0e4569175a82" compoundref="deprecated-inlines_8h" startline="681" endline="683">timestamp</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a5bc1f0da3e55b740b16c2269012e141e" compoundref="deprecated_8cpp" startline="97" endline="100">timestamp</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1ae5494fb57bcc3b577c914a0cc95ff667" compoundref="deprecated-inlines_8h" startline="693" endline="696">has_clock</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1ab5cdd20fcc69d0a7539d0fa219206e68" compoundref="deprecated-inlines_8h" startline="718" endline="721">value</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a1538d7ab5b57c425c61510adfca32012" compoundref="deprecated-inlines_8h" startline="706" endline="709">value</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -56,9 +56,9 @@ Copies <computeroutput>ts</computeroutput> into the stored value. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1632" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="679" bodyend="681"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a5bc1f0da3e55b740b16c2269012e141e" compoundref="deprecated_8cpp" startline="96" endline="99">timestamp</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a62c9539975cee7a03be62eb0a903bbf3" compoundref="deprecated_8h" startline="1724" endline="1724">value_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1647" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="681" bodyend="683"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a5bc1f0da3e55b740b16c2269012e141e" compoundref="deprecated_8cpp" startline="97" endline="100">timestamp</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a62c9539975cee7a03be62eb0a903bbf3" compoundref="deprecated_8h" startline="1739" endline="1739">value_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a25cc87189f5ec1dbdef3302de6408d62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -77,7 +77,7 @@ Copies <computeroutput>ts</computeroutput> into the stored value. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1640" column="7"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1655" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a78ec32dd29a858de635f6be2a4fd3f8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -96,8 +96,8 @@ Copies <computeroutput>ts</computeroutput> into the stored value. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1648" column="7"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a5bc1f0da3e55b740b16c2269012e141e" compoundref="deprecated_8cpp" startline="96" endline="99">timestamp</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1663" column="7"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a5bc1f0da3e55b740b16c2269012e141e" compoundref="deprecated_8cpp" startline="97" endline="100">timestamp</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a5bc1f0da3e55b740b16c2269012e141e" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type></type>
@@ -117,10 +117,10 @@ Copies <computeroutput>ts</computeroutput> into the stored value. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1621" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/deprecated.cpp" bodystart="96" bodyend="99"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1636" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/deprecated.cpp" bodystart="97" bodyend="100"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a60dcef812e43e13d1e30f602a572e27a" compoundref="stopwatch_8cpp" startline="66" endline="75">micro_os_plus::micro_test_plus::detail::read_clock</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a62c9539975cee7a03be62eb0a903bbf3" compoundref="deprecated_8h" startline="1724" endline="1724">value_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a5877a6dda459f5dc695f0e4569175a82" compoundref="deprecated-inlines_8h" startline="679" endline="681">timestamp</referencedby>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a62c9539975cee7a03be62eb0a903bbf3" compoundref="deprecated_8h" startline="1739" endline="1739">value_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a5877a6dda459f5dc695f0e4569175a82" compoundref="deprecated-inlines_8h" startline="681" endline="683">timestamp</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a78ec32dd29a858de635f6be2a4fd3f8f">timestamp</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a1edc35b9931f3fdb714daf9cae3da73e">~timestamp</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a91c4b65a10407ab3c2a65343b924902b">operator=</referencedby>
@@ -140,8 +140,8 @@ Copies <computeroutput>ts</computeroutput> into the stored value. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1681" column="7"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a5bc1f0da3e55b740b16c2269012e141e" compoundref="deprecated_8cpp" startline="96" endline="99">timestamp</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1696" column="7"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a5bc1f0da3e55b740b16c2269012e141e" compoundref="deprecated_8cpp" startline="97" endline="100">timestamp</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1ae5494fb57bcc3b577c914a0cc95ff667" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>bool</type>
@@ -180,10 +180,10 @@ Returns <computeroutput>true</computeroutput> if either the seconds or the nanos
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1695" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="691" bodyend="694"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1ae5494fb57bcc3b577c914a0cc95ff667" compoundref="deprecated-inlines_8h" startline="691" endline="694">has_clock</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a62c9539975cee7a03be62eb0a903bbf3" compoundref="deprecated_8h" startline="1724" endline="1724">value_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1ae5494fb57bcc3b577c914a0cc95ff667" compoundref="deprecated-inlines_8h" startline="691" endline="694">has_clock</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1710" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="693" bodyend="696"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1ae5494fb57bcc3b577c914a0cc95ff667" compoundref="deprecated-inlines_8h" startline="693" endline="696">has_clock</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a62c9539975cee7a03be62eb0a903bbf3" compoundref="deprecated_8h" startline="1739" endline="1739">value_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1ae5494fb57bcc3b577c914a0cc95ff667" compoundref="deprecated-inlines_8h" startline="693" endline="696">has_clock</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a91c4b65a10407ab3c2a65343b924902b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a5bc1f0da3e55b740b16c2269012e141e" kindref="member">timestamp</ref> &amp;</type>
@@ -205,8 +205,8 @@ Returns <computeroutput>true</computeroutput> if either the seconds or the nanos
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1659" column="7"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a5bc1f0da3e55b740b16c2269012e141e" compoundref="deprecated_8cpp" startline="96" endline="99">timestamp</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1674" column="7"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a5bc1f0da3e55b740b16c2269012e141e" compoundref="deprecated_8cpp" startline="97" endline="100">timestamp</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a790a0f4322a690f7ab6591ada80222a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a5bc1f0da3e55b740b16c2269012e141e" kindref="member">timestamp</ref> &amp;</type>
@@ -228,8 +228,8 @@ Returns <computeroutput>true</computeroutput> if either the seconds or the nanos
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1672" column="7"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a5bc1f0da3e55b740b16c2269012e141e" compoundref="deprecated_8cpp" startline="96" endline="99">timestamp</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1687" column="7"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a5bc1f0da3e55b740b16c2269012e141e" compoundref="deprecated_8cpp" startline="97" endline="100">timestamp</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1ab5cdd20fcc69d0a7539d0fa219206e68" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>const timespec &amp;</type>
@@ -252,9 +252,9 @@ The returned reference is valid as long as the object exists. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1715" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="716" bodyend="719"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a1538d7ab5b57c425c61510adfca32012" compoundref="deprecated-inlines_8h" startline="704" endline="707">value</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a62c9539975cee7a03be62eb0a903bbf3" compoundref="deprecated_8h" startline="1724" endline="1724">value_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1730" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="718" bodyend="721"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a1538d7ab5b57c425c61510adfca32012" compoundref="deprecated-inlines_8h" startline="706" endline="709">value</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a62c9539975cee7a03be62eb0a903bbf3" compoundref="deprecated_8h" startline="1739" endline="1739">value_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a1538d7ab5b57c425c61510adfca32012" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>timespec &amp;</type>
@@ -277,23 +277,23 @@ The caller may modify the stored time through the returned reference. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1705" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="704" bodyend="707"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a1538d7ab5b57c425c61510adfca32012" compoundref="deprecated-inlines_8h" startline="704" endline="707">value</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a62c9539975cee7a03be62eb0a903bbf3" compoundref="deprecated_8h" startline="1724" endline="1724">value_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1ab5cdd20fcc69d0a7539d0fa219206e68" compoundref="deprecated-inlines_8h" startline="716" endline="719">value</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a1538d7ab5b57c425c61510adfca32012" compoundref="deprecated-inlines_8h" startline="704" endline="707">value</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1720" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="706" bodyend="709"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a1538d7ab5b57c425c61510adfca32012" compoundref="deprecated-inlines_8h" startline="706" endline="709">value</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a62c9539975cee7a03be62eb0a903bbf3" compoundref="deprecated_8h" startline="1739" endline="1739">value_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1ab5cdd20fcc69d0a7539d0fa219206e68" compoundref="deprecated-inlines_8h" startline="718" endline="721">value</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a1538d7ab5b57c425c61510adfca32012" compoundref="deprecated-inlines_8h" startline="706" endline="709">value</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Deprecated clock reading. </para>
     </briefdescription>
     <detaileddescription>
-<para>The v5.0.1 class of the two readings kept by <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a53a6bc7f86b15378c8296b3647e7013f" kindref="member">detail::timestamps</ref></computeroutput>, restored for the applications that used it directly; the framework no longer uses it, since <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch" kindref="compound">stopwatch</ref></computeroutput> keeps the readings as <computeroutput>timespec</computeroutput> members. The timings are internal; use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch" kindref="compound">stopwatch</ref></computeroutput> instead.</para>
+<para>The v5.0.1 class of the two readings kept by <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga53a6bc7f86b15378c8296b3647e7013f" kindref="member">detail::timestamps</ref></computeroutput>, restored for the applications that used it directly; the framework no longer uses it, since <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch" kindref="compound">stopwatch</ref></computeroutput> keeps the readings as <computeroutput>timespec</computeroutput> members. The timings are internal; use <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch" kindref="compound">stopwatch</ref></computeroutput> instead.</para>
 <para>A zero <computeroutput>timespec</computeroutput> means that the clock was not read, or that the platform has no clock.</para>
 <para>The data member is <computeroutput>protected</computeroutput>, as in v5.0.1, so that the existing derived classes can still access it. <xrefsect id="deprecated_1_deprecated000096"><xreftitle>Deprecated</xreftitle><xrefdescription><para>the timings are internal (since 5.1.0)</para>
 </xrefdescription></xrefsect></para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1611" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="1612" bodyend="1725"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1626" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="1627" bodyend="1740"/>
     <listofallmembers>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1ae5494fb57bcc3b577c914a0cc95ff667" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::timestamp</scope><name>has_clock</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp_1a91c4b65a10407ab3c2a65343b924902b" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::timestamp</scope><name>operator=</name></member>

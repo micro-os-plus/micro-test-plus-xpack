@@ -1,4 +1,4 @@
-@defgroup micro-os-plus-micro-test-plus-requirements Requirements
+@defgroup micro-os-plus-micro-test-plus-cpp-api-requirements Requirements
 @brief Requirements are checks that stop the test case when they fail.
 
 @details

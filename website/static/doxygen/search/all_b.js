@@ -1,7 +1,7 @@
 var searchData=
 [
   ['lazy_5fmessage_0',['lazy_message',['../conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lazy__message.html',1,'micro_os_plus::micro_test_plus::detail']]],
-  ['le_1',['le',['../group__micro-os-plus-micro-test-plus-function-comparators.html#gae695dd46840f76a156aee70ff4df33fa',1,'micro_os_plus::micro_test_plus']]],
+  ['le_1',['le',['../group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gae695dd46840f76a156aee70ff4df33fa',1,'micro_os_plus::micro_test_plus']]],
   ['legacy_5fcheckable_2',['legacy_checkable',['../conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1legacy__checkable.html',1,'micro_os_plus::micro_test_plus::extension']]],
   ['less_3',['less',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less.html',1,'micro_os_plus::micro_test_plus::detail']]],
   ['less_5fequal_4',['less_equal',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal.html',1,'micro_os_plus::micro_test_plus::detail']]],
@@ -18,15 +18,14 @@ var searchData=
   ['list_15',['list',['../structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list.html',1,'micro_os_plus::micro_test_plus::type_traits']]],
   ['list_3c_20args_5ft_2e_2e_2e_20_3e_16',['list&lt; Args_T... &gt;',['../structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list.html',1,'micro_os_plus::micro_test_plus::type_traits']]],
   ['list_5ftest_5fcase_17',['list_test_case',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a0e478c394741ff78f65a7e2c0822ba50',1,'micro_os_plus::micro_test_plus::runner']]],
-  ['list_5ftests_18',['list_tests',['../structmicro__os__plus_1_1micro__test__plus_1_1runner__options.html#ac4f95336439b329d0f3731a5dcafb6f9',1,'micro_os_plus::micro_test_plus::runner_options']]],
-  ['list_5ftests_5f_19',['list_tests_',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a2cbcc12d72c192f6053cd342af1b5a77',1,'micro_os_plus::micro_test_plus::runner']]],
-  ['listed_5fsuite_5f_20',['listed_suite_',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#af8ce5a496dba305f6fbd45005d580321',1,'micro_os_plus::micro_test_plus::runner']]],
-  ['listed_5fsuites_5fcount_5f_21',['listed_suites_count_',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#acb06cb7ebf949b8af5c5d57645c56e4a',1,'micro_os_plus::micro_test_plus::runner']]],
-  ['listed_5ftest_5fcases_5fcount_5f_22',['listed_test_cases_count_',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a90900e7d0a4571407b3727e031e46685',1,'micro_os_plus::micro_test_plus::runner']]],
-  ['listing_20the_20test_20cases_23',['Listing the Test Cases',['../group__micro-os-plus-micro-test-plus-cli.html#cli-list-tests',1,'']]],
-  ['literals_20and_20wrappers_24',['Literals and Wrappers',['../group__micro-os-plus-micro-test-plus-literals.html',1,'']]],
-  ['location_25',['location',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1failure__info.html#a8c259595885388a6a550576d1d3fab35',1,'micro_os_plus::micro_test_plus::detail::failure_info::location'],['../classmicro__os__plus_1_1micro__test__plus_1_1test__case__name.html#abfb91a55df657bbfbfb5fe774f46329b',1,'micro_os_plus::micro_test_plus::test_case_name::location(void) const noexcept']]],
-  ['location_5f_26',['location_',['../classmicro__os__plus_1_1micro__test__plus_1_1test__case__name.html#ab9ecf89d495d71f224e182228eaec66e',1,'micro_os_plus::micro_test_plus::test_case_name::location_'],['../classmicro__os__plus_1_1micro__test__plus_1_1test__case.html#a1c0173e5186060d94f09db00552f44b4',1,'micro_os_plus::micro_test_plus::test_case::location_']]],
-  ['logical_20functions_27',['Logical Functions',['../group__micro-os-plus-micro-test-plus-logical-functions.html',1,'']]],
-  ['lt_28',['lt',['../group__micro-os-plus-micro-test-plus-function-comparators.html#ga714ff07cd77e05898de4fd315770f901',1,'micro_os_plus::micro_test_plus']]]
+  ['list_5ftests_18',['list_tests',['../classmicro__os__plus_1_1micro__test__plus_1_1runner__options.html#ac4f95336439b329d0f3731a5dcafb6f9',1,'micro_os_plus::micro_test_plus::runner_options']]],
+  ['listed_5fsuite_5f_19',['listed_suite_',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#af8ce5a496dba305f6fbd45005d580321',1,'micro_os_plus::micro_test_plus::runner']]],
+  ['listed_5fsuites_5fcount_5f_20',['listed_suites_count_',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#acb06cb7ebf949b8af5c5d57645c56e4a',1,'micro_os_plus::micro_test_plus::runner']]],
+  ['listed_5ftest_5fcases_5fcount_5f_21',['listed_test_cases_count_',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a90900e7d0a4571407b3727e031e46685',1,'micro_os_plus::micro_test_plus::runner']]],
+  ['listing_20the_20test_20cases_22',['Listing the Test Cases',['../group__micro-os-plus-micro-test-plus-cli.html#cli-list-tests',1,'']]],
+  ['literals_20and_20wrappers_23',['Literals and Wrappers',['../group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html',1,'']]],
+  ['location_24',['location',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1failure__info.html#a8c259595885388a6a550576d1d3fab35',1,'micro_os_plus::micro_test_plus::detail::failure_info::location'],['../classmicro__os__plus_1_1micro__test__plus_1_1test__case__name.html#abfb91a55df657bbfbfb5fe774f46329b',1,'micro_os_plus::micro_test_plus::test_case_name::location(void) const noexcept']]],
+  ['location_5f_25',['location_',['../classmicro__os__plus_1_1micro__test__plus_1_1test__case__name.html#ab9ecf89d495d71f224e182228eaec66e',1,'micro_os_plus::micro_test_plus::test_case_name::location_'],['../classmicro__os__plus_1_1micro__test__plus_1_1test__case.html#a1c0173e5186060d94f09db00552f44b4',1,'micro_os_plus::micro_test_plus::test_case::location_']]],
+  ['logical_20functions_26',['Logical Functions',['../group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html',1,'Logical Functions'],['../group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions.html',1,'Logical Functions']]],
+  ['lt_27',['lt',['../group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga714ff07cd77e05898de4fd315770f901',1,'micro_os_plus::micro_test_plus']]]
 ];
