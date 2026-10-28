@@ -36,7 +36,7 @@ test 21
 21: Test timeout computed to be: 10000000
 21: micro_os_plus::trace::initialise()
 21: 
-21: # Running: minimal-test one two --output-file minimal-test-verbose.tap --verbose
+21: # Running: minimal-test one two --output-file=minimal-test-verbose.tap --verbose
 21: # Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 21: TAP version 14
 21: # Subtest: minimal-test
@@ -82,7 +82,7 @@ test 24
 24: Test timeout computed to be: 10000000
 24: micro_os_plus::trace::initialise()
 24: 
-24: # Running: minimal-test one two --output-file minimal-test.tap
+24: # Running: minimal-test one two --output-file=minimal-test.tap
 24: # Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 24: TAP version 14
 24: # Subtest: minimal-test
@@ -185,7 +185,7 @@ test 61
 61: Test timeout computed to be: 10000000
 61: micro_os_plus::trace::initialise()
 61: 
-61: # Running: sample-test one two --output-file sample-test-verbose.tap --verbose
+61: # Running: sample-test one two --output-file=sample-test-verbose.tap --verbose
 61: # Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 61: TAP version 14
 61: # Subtest: Sample
@@ -320,12 +320,12 @@ A typical execution produces the following output:
 test 97
         Start  97: unit-checks-test-reporter-human
 
-97: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/unit-checks-test "one" "two" "--reporter" "human" "--output-file" "unit-checks-test.txt"
+97: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/unit-checks-test "one" "two" "--reporter=human" "--output-file=unit-checks-test.txt"
 97: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
 97: Test timeout computed to be: 10000000
 97: micro_os_plus::trace::initialise()
 97: 
-97: Running: unit-checks-test one two --reporter human --output-file unit-checks-test.txt
+97: Running: unit-checks-test one two --reporter=human --output-file=unit-checks-test.txt
 97: Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 97: µTest++ human report
 97: 

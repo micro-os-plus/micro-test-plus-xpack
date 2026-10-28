@@ -1,4 +1,4 @@
-# Running: unit-deprecated-test one two --output-file unit-deprecated-test-noexcept.tap
+# Running: unit-deprecated-test one two --output-file=unit-deprecated-test-noexcept.tap
 # Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 TAP version 14
 # Subtest: Top suite

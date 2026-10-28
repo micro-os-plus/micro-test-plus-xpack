@@ -1,4 +1,4 @@
-Running: unit-miscellaneous-test one two --reporter human --output-file unit-miscellaneous-test.txt
+Running: unit-miscellaneous-test one two --reporter=human --output-file=unit-miscellaneous-test.txt
 Built with GCC 15.2.1 20251203, with FP, with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 µTest++ human report
 • Top suite
@@ -334,7 +334,7 @@ next line FAILED (miscellaneous.cpp:917)
     ✓ Reporter, verbosity, and listing - passed (7 checks)
     • Output file and filters
         ✓ --output-file=<path>
-        ✓ --output-file <path>
+        ✓ --output-file=<path>
         ✓ an empty path disables the output file
         ✓ all the --filter patterns are kept, in order
         ✓ a separate value is taken whatever its content

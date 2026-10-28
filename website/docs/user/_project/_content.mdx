@@ -1623,10 +1623,10 @@ The verbosity selects only the console output; the output file always receives t
 
 | Level | Option | Console |
 | --- | --- | --- |
-| verbose | `--verbose` | everything displayed by the normal level, plus the heading of every test case and each passed check |
+| verbose | `‑‑verbose` | everything displayed by the normal level, plus the heading of every test case and each passed check |
 | normal | (none) | the informational lines, the result of each suite and of each test case, passed or failed, with the counts of checks, and the failed checks, under the headings of the test cases that contain them; the passed checks are only counted |
-| quiet | `--quiet` | the failed checks, with the names of the suite and of the test cases that contain them, and the totals; with TAP, also one `ok`/`not ok` line per test suite, and the failed checks as comments |
-| silent | `--silent` | nothing; only the exit code |
+| quiet | `‑‑quiet` | the failed checks, with the names of the suite and of the test cases that contain them, and the totals; with TAP, also one `ok`/`not ok` line per test suite, and the failed checks as comments |
+| silent | `‑‑silent` | nothing; only the exit code |
 
 In short, the levels differ as follows:
 
@@ -1697,7 +1697,7 @@ if (!tr.is_listing ())
 
 ### Output file
 
-To also write the report to a file, use the `--output-file` option, either as `--output-file=<path>` or as `--output-file <path>`.
+To also write the report to a file, use the `--output-file` option, either as `--output-file=<path>` or as `--output-file=<path>`.
 
 The two outputs have different purposes: the console is intended for the people who watch the tests run, and its content is selected with the verbosity options, while the output file is intended for the integration with other tools (for example a CI pipeline, or a TAP consumer such as node-tap).
 
@@ -1710,7 +1710,7 @@ previous versions, the original **human** reporter was preserved and can be
 enabled with:
 
 ```
---reporter human
+--reporter=human
 ```
 
 The output is slightly more compact, for example:
