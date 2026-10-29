@@ -881,6 +881,47 @@ namespace micro_os_plus::micro_test_plus
       [[nodiscard]] const std::string&
       str (void) const noexcept;
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
+      /**
+       * @name Deprecated Functions
+       * @{
+       */
+
+      /**
+       * @brief Deprecated access to the text as a C string.
+       *
+       * @details
+       * Forwards to `str().c_str()`. The other buffer accessors of
+       * v5.0.1 (`clear()`, `append()`, and `reserve()`) were removed,
+       * since they allowed an application `operator<<` to alter the
+       * texts of the pending checks.
+       *
+       * @par Parameters
+       *   None.
+       * @return A pointer to the null-terminated text.
+       */
+      [[deprecated ("use str().c_str() (since 5.1.0)"), nodiscard]] const char*
+      c_str (void) const noexcept;
+
+      /**
+       * @brief Deprecated test for an empty text.
+       *
+       * @details
+       * Forwards to `str().empty()`.
+       *
+       * @par Parameters
+       *   None.
+       * @retval true The formatter holds no text.
+       * @retval false The formatter holds some text.
+       */
+      [[deprecated ("use str().empty() (since 5.1.0)"), nodiscard]] bool
+      empty (void) const noexcept;
+
+      /**
+       * @}
+       */
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
+
     private:
       /**
        * @brief Constructs a formatter in the plain mode, for a message.

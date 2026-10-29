@@ -772,6 +772,24 @@ namespace micro_os_plus::micro_test_plus
      */
 
     /**
+     * @brief Deprecated name of the runner.
+     *
+     * @details
+     * In v5.0.1, the runner was a test node, and always returned
+     * `"runner"`. The runner is no longer a node; the name shown at the
+     * beginning of the reports is that of the top suite, returned by
+     * `add_top_suite()`.
+     *
+     * @par Parameters
+     *   None.
+     * @return The constant string `"runner"`.
+     */
+    [[deprecated ("the runner has no name; see add_top_suite() "
+                  "(since 5.1.0)"),
+      nodiscard]] const char*
+    name (void) const noexcept;
+
+    /**
      * @brief Deprecated count of the test suites added with
      * `add_suite()`, plus the top suite.
      *

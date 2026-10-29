@@ -1657,6 +1657,60 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
+    // The helpers removed from the public API in 5.1.0 whose forwarders
+    // are kept: `mut()`, `runner::name()`, the read-only functions of the
+    // nodes, and the text accessors of the formatter.
+    ts.test ("Kept helpers", [] (auto& t)
+      {
+        int value = 1;
+        const int& const_ref = value;
+        mut (const_ref) = 2;
+        t.expect (eq (value, 2)) << "mut()";
+        local_counts.passed_checks++;
+
+        runner_options options{};
+        options.verbosity_level = verbosity::silent;
+
+        runner local_runner;
+        local_runner.initialise (options);
+        auto& local_ts = local_runner.add_top_suite ("Local");
+
+        t.expect (eq (std::string_view{ local_runner.name () }, "runner"sv))
+            << "runner::name()";
+        local_counts.passed_checks++;
+
+        local_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
+
+        t.expect (eq (local_ts.own_index (), 1u)) << "own_index()";
+        local_counts.passed_checks++;
+
+        t.expect (eq (local_ts.children_subtests_count (), 1u))
+            << "children_subtests_count()";
+        local_counts.passed_checks++;
+
+        t.expect (eq (local_ts.current_subtest_index (), 1u))
+            << "current_subtest_index()";
+        local_counts.passed_checks++;
+
+        t.expect (eq (local_runner.run_suites (), 0))
+            << "local session passed";
+        local_counts.passed_checks++;
+
+        detail::colours no_colours{};
+        expression_formatter f{ no_colours };
+        t.expect (f.empty ()) << "empty formatter";
+        local_counts.passed_checks++;
+
+        f << "abc";
+        t.expect (eq (std::string_view{ f.c_str () }, "abc"sv)) << "c_str()";
+        local_counts.passed_checks++;
+
+        t.expect (eq (f.empty (), false)) << "not empty";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
     test_assert (current_suite_totals.passed_checks ()
                  == local_counts.passed_checks);
     test_assert (current_suite_totals.failed_checks ()

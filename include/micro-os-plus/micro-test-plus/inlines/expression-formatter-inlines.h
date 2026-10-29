@@ -119,6 +119,30 @@ namespace micro_os_plus::micro_test_plus::detail
     return buffer_;
   }
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
+  /**
+   * @details
+   * Forwards to `str().c_str()`.
+   */
+  // Deprecated since 5.1.0; use str().c_str().
+  inline const char*
+  expression_formatter::c_str (void) const noexcept
+  {
+    return buffer_.c_str ();
+  }
+
+  /**
+   * @details
+   * Forwards to `str().empty()`.
+   */
+  // Deprecated since 5.1.0; use str().empty().
+  inline bool
+  expression_formatter::empty (void) const noexcept
+  {
+    return buffer_.empty ();
+  }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
+
   // --------------------------------------------------------------------------
 
   /**

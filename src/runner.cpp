@@ -846,6 +846,18 @@ namespace micro_os_plus::micro_test_plus
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
+   * Returns the constant string `"runner"`, as before the runner stopped
+   * being a test node.
+   */
+  // Deprecated since 5.1.0; the name is that of the top suite.
+  const char*
+  runner::name (void) const noexcept
+  {
+    return "runner";
+  }
+
+  /**
+   * @details
    * Returns `added_suites_count()` plus one, for the top suite, as
    * before the rename.
    */

@@ -26,6 +26,7 @@
  * written for the previous versions:
  * - the v5.0.1 names of the logical functions (`_not`, `_and`, and
  *   `_or`);
+ * - the `mut()` helper, not used by the framework;
  * - the overloaded operators of the `operators` namespace, the
  *   user-defined literals of the `literals` namespace, the `to_*` type
  *   wrappers, `to_t<T>`, and `approx (value, epsilon)`, deprecated since
@@ -170,6 +171,30 @@ namespace micro_os_plus::micro_test_plus
   template <class Lhs_T, class Rhs_T>
   [[deprecated ("use any_of() (since 5.1.0)"), nodiscard]] constexpr auto
   _or (Lhs_T&& lhs, Rhs_T&& rhs);
+
+  // --------------------------------------------------------------------------
+  // The `mut()` helper, not used by the framework.
+
+  /**
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
+   * @brief Deprecated generic mutator to remove const qualification from a
+   * reference.
+   *
+   * @details
+   * Not used by the framework. Equivalent to `const_cast<T&> (t)`, which
+   * replaces it.
+   *
+   * @warning Modifying an object that was originally declared as `const`
+   * through the returned reference is undefined behaviour.
+   *
+   * @tparam T The type of the input object.
+   *
+   * @param t The object from which to remove const qualification.
+   * @return A non-const reference to the input object.
+   */
+  template <class T>
+  [[deprecated ("use const_cast<T&> (since 5.1.0)"), nodiscard]] constexpr auto
+  mut (const T& t) noexcept -> T&;
 
   // --------------------------------------------------------------------------
 

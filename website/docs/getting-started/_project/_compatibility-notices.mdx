@@ -175,12 +175,12 @@ same way in the messages added with `<<`.
 
 The `expression_formatter` can now only be appended to, through its
 `operator<<` overloads, and read, through `str()`. The buffer
-accessors `c_str()`, `clear()`, `empty()`, `append()`, and
-`reserve()`, which the framework did not use, were removed, and the
-functions that assign the buffer to the checks are private, so that an
-application `operator<<` cannot alter the texts of the pending checks.
-Use `str().c_str()` and `str().empty()` instead of the removed
-functions.
+accessors `clear()`, `append()`, and `reserve()`, which the framework
+did not use, were removed, and the functions that assign the buffer to
+the checks are private, so that an application `operator<<` cannot
+alter the texts of the pending checks. The read-only `c_str()` and
+`empty()` are deprecated, in favour of `str().c_str()` and
+`str().empty()`; they are still available.
 
 Where `long double` is wider than `double` (e.g. x86-64 Linux and
 macOS, AArch64, and RISC-V), the `long double` values are now written
@@ -255,9 +255,10 @@ the exit code. The `own_index (size_t)` setter and
 
 The functions of the suites and the test cases that serve only the
 runner and the reporters are no longer public: `run_suites()`, which ran the
-node again and reported it twice, `abort()`, and the read-only
+node again and reported it twice, and `abort()`. The read-only
 `own_index()`, `children_subtests_count()`, and
-`current_subtest_index()`, used only for the TAP output. The
+`current_subtest_index()`, used only for the TAP output, are deprecated,
+and still available. The
 `name (const char*)` setter of the top suite, which could not be
 reached, since the top suite is returned as a `suite&`, was removed. Call
 `runner::abort()` to abort the test execution, and `totals()` to read
@@ -439,7 +440,7 @@ Tools that read the previous names must be updated.
 
 The runner no longer derives from the internal `detail::test_node`
 class, since it is not a node of the test tree: `runner::name()`, which
-always returned `"runner"`, was removed; the name shown at the
+always returned `"runner"`, is deprecated; the name shown at the
 beginning of the reports is that of the top suite, returned by
 `add_top_suite()`. The session
 totals are still available, via `runner::totals()`.
@@ -578,9 +579,8 @@ now fails. Replace them with, respectively, the constructor without
 arguments followed by `add_top_suite (name)`, `run_suites()`, `require()`, and
 `runner`.
 
-The `mut()` helper, not used by the framework, was removed; code that
-used it must define its own equivalent: `mt::mut (x)` is
-`const_cast<T&> (x)`. The `type_traits::list`,
+The `mut()` helper, not used by the framework, is deprecated; replace
+`mt::mut (x)` with `const_cast<T&> (x)`. The `type_traits::list`,
 `type_traits::identity`, and `type_traits::function_traits` templates,
 also not used by the framework, are deprecated, with their namespace
 (see below); `std::type_identity` (C++20) replaces

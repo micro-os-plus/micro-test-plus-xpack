@@ -164,6 +164,43 @@ namespace micro_os_plus::micro_test_plus
       return totals_;
     }
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
+    /**
+     * @details
+     * Returns the one-based positional index of this node within its
+     * parent.
+     */
+    // Deprecated since 5.1.0; internal to the framework.
+    inline size_t
+    runnable_base::own_index (void) const noexcept
+    {
+      return own_index_;
+    }
+
+    /**
+     * @details
+     * Returns the number of the most recent child test point.
+     */
+    // Deprecated since 5.1.0; internal to the framework.
+    inline size_t
+    runnable_base::current_subtest_index (void) const noexcept
+    {
+      return test_point_number_;
+    }
+
+    /**
+     * @details
+     * Returns the number of direct child test cases, including those
+     * skipped by the filter.
+     */
+    // Deprecated since 5.1.0; internal to the framework.
+    inline size_t
+    runnable_base::children_subtests_count (void) const noexcept
+    {
+      return child_test_cases_count_;
+    }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
+
     /**
      * @details
      * Each call to `test()` invokes this member function before constructing

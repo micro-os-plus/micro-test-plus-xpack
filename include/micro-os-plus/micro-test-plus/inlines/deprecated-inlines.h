@@ -24,9 +24,9 @@
  * This header provides the inline implementations for the deprecated
  * definitions declared in `deprecated.h`: the v5.0.1 names of the
  * logical functions (`_not`, `_and`, and `_or`), which forward to
- * `negate()`, `all_of()`, and `any_of()`, the overloaded operators, the
- * user-defined literals, and `approx (value, epsilon)`, and the members
- * of the `detail::timestamp` class.
+ * `negate()`, `all_of()`, and `any_of()`, `mut()`, the overloaded
+ * operators, the user-defined literals, and `approx (value, epsilon)`,
+ * and the members of the `detail::timestamp` class.
  *
  * The constructor of `detail::timestamp` that reads the system clock is
  * defined in `src/deprecated.cpp`, with `detail::read_clock()`, the
@@ -109,6 +109,20 @@ namespace micro_os_plus::micro_test_plus
   _or (Lhs_T&& lhs, Rhs_T&& rhs)
   {
     return any_of (std::forward<Lhs_T> (lhs), std::forward<Rhs_T> (rhs));
+  }
+
+  // --------------------------------------------------------------------------
+
+  /**
+   * @details
+   * Removes the `const` qualifier from the reference with `const_cast`.
+   */
+  // Deprecated since 5.1.0; use const_cast<T&>.
+  template <class T>
+  constexpr auto
+  mut (const T& t) noexcept -> T&
+  {
+    return const_cast<T&> (t);
   }
 
   // --------------------------------------------------------------------------

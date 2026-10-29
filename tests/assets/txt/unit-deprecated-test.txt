@@ -257,5 +257,16 @@ Built with GCC 15.2.1 20251203, with FP, with exceptions, with MICRO_OS_PLUS_DEB
         ✓ wrapped operand
         ✓ wrapped operand not copied
     ✓ Operand copies of wrappers - passed (2 checks)
-✗ Deprecated suite - FAILED (145 checks passed, 38 failed, in 35 test cases)
-✗ Total: 145 checks passed, 38 failed, in 35 test cases, 2 test suites
+    • Kept helpers
+        ✓ mut()
+        ✓ runner::name()
+        ✓ own_index()
+        ✓ children_subtests_count()
+        ✓ current_subtest_index()
+        ✓ local session passed
+        ✓ empty formatter
+        ✓ c_str()
+        ✓ not empty
+    ✓ Kept helpers - passed (9 checks)
+✗ Deprecated suite - FAILED (154 checks passed, 38 failed, in 36 test cases)
+✗ Total: 154 checks passed, 38 failed, in 36 test cases, 2 test suites

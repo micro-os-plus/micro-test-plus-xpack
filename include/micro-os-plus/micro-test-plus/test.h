@@ -394,6 +394,65 @@ namespace micro_os_plus::micro_test_plus
       [[nodiscard]] const counters&
       totals (void) const noexcept;
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
+      /**
+       * @name Deprecated Functions
+       * @{
+       */
+
+      /**
+       * @brief Deprecated positional index of this node within its parent.
+       *
+       * @details
+       * Used only for the TAP output, by the reporters, which access it
+       * directly. The setter of v5.0.1, and `increment_subtest_index()`,
+       * were removed, since they allowed the application code to corrupt
+       * the numbering of the reports.
+       *
+       * @par Parameters
+       *   None.
+       * @return The one-based own index.
+       */
+      [[deprecated ("internal to the framework (since 5.1.0)"),
+        nodiscard]] size_t
+      own_index (void) const noexcept;
+
+      /**
+       * @brief Deprecated number of the most recent child test point.
+       *
+       * @details
+       * Used only for the TAP output, by the reporters, which access it
+       * directly.
+       *
+       * @par Parameters
+       *   None.
+       * @return The one-based test point number, or 0 before the first
+       * test point.
+       */
+      [[deprecated ("internal to the framework (since 5.1.0)"),
+        nodiscard]] size_t
+      current_subtest_index (void) const noexcept;
+
+      /**
+       * @brief Deprecated number of direct child test cases of this node.
+       *
+       * @details
+       * Used only for the TAP plan, by the reporters, which access it
+       * directly. The test cases skipped by the filter are included.
+       *
+       * @par Parameters
+       *   None.
+       * @return The number of child test cases.
+       */
+      [[deprecated ("internal to the framework (since 5.1.0)"),
+        nodiscard]] size_t
+      children_subtests_count (void) const noexcept;
+
+      /**
+       * @}
+       */
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
+
     private:
       /**
        * @brief Runs the body of the test case or suite.
