@@ -931,7 +931,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     void
-    run_suites (void);
+    run_child_suites (void);
 
     /**
      * @brief Registers a test suite with the runner.
@@ -1137,7 +1137,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Totals of the test session.
      *
      * @details
-     * The totals of each suite are added by `run()` and `run_suites()`,
+     * The totals of each suite are added by `run()` and `run_child_suites()`,
      * after the suite was run.
      */
     counters totals_;
@@ -1167,7 +1167,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief The number of suites skipped by the filter.
      *
      * @details
-     * Incremented by `run_suites()`; returned by
+     * Incremented by `run_child_suites()`; returned by
      * `skipped_suites_count()`.
      */
     size_t skipped_suites_count_ = 0;

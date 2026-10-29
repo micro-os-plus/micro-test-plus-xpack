@@ -1,5 +1,9 @@
 # API compatibility with v5.0.1
 
+Note: the private function `runner::run_suites()` (earlier `run_suites_()`)
+was renamed `run_child_suites()`, to free the name for a public function;
+this document uses the new name throughout.
+
 Date: 2026-10-20, on branch `xpack-development`, commit `70660a6c`,
 compared with the tag `v5.0.1`.
 
@@ -738,7 +742,7 @@ the paragraphs are named below by their first words.
 
 - **v5.0.1:** `runner` derived from `detail::test_node`, had a virtual
   destructor and a virtual `total_suites_count()`, and protected
-  members (`run_suites_()`, `register_suite_()`, the data members);
+  members (`run_child_suites()`, `register_suite_()`, the data members);
   `static_runner` derived from it and added the static member
   `register_static_suite()`; `detail::runnable<Self_T>` was the common
   template base of `suite` and `subtest`; the free functions

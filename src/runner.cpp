@@ -435,7 +435,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * The suites are listed in the order in which their first test cases
    * are created: the top suite first, during `main()`, then the other
-   * suites, in the order of `run_suites()`; so the name of a suite is
+   * suites, in the order of `run_child_suites()`; so the name of a suite is
    * written when it differs from the previous one.
    */
   void
@@ -462,13 +462,13 @@ namespace micro_os_plus::micro_test_plus
    * Takes ownership of the supplied `suite` unique pointer and appends
    * it to the internal `children_suites_` vector, then inserts the suite
    * into the list of suites, sorted by name, deferring execution until
-   * `run_suites()` is called. The suite is inserted after it is stored,
+   * `run_child_suites()` is called. The suite is inserted after it is stored,
    * so that a failed allocation of the vector leaves it out of the list.
    * If tracing is enabled, the suite name is logged for diagnostic
    * purposes.
    *
    * Once `run()` has started, the suite is rejected, since it would
-   * never run: `run_suites()` takes the number of suites only once,
+   * never run: `run_child_suites()` takes the number of suites only once,
    * before running them, and after the session has ended nothing runs.
    * The error is reported on `stderr`, the suite is destroyed when the
    * pointer goes out of scope, and `has_rejected_suites_` is set, so that
@@ -567,7 +567,7 @@ namespace micro_os_plus::micro_test_plus
    * inserted into the list, and removed again, while it runs.
    */
   void
-  runner::run_suites (void)
+  runner::run_child_suites (void)
   {
     // The top suite, if added, has index 1.
     size_t own_index = has_top_suite_ ? 1 : 0;
@@ -606,7 +606,7 @@ namespace micro_os_plus::micro_test_plus
    * Initialises the runner with the default options, if not yet done.
    * Finalises the top suite, if added, by stopping its stopwatch and
    * notifying the reporter, then accumulates its totals into the runner
-   * totals. Subsequently invokes `run_suites()` to execute, sorted by
+   * totals. Subsequently invokes `run_child_suites()` to execute, sorted by
    * name, and accumulate the registered and the static child suites.
    * Finally, stops the session stopwatch, notifies the reporter, and
    * returns `0` if all checks passed or `1` otherwise, or if a suite was
@@ -666,7 +666,7 @@ namespace micro_os_plus::micro_test_plus
     // are listed, and the number of listed test cases ends the list.
     if (options_.list_tests)
       {
-        run_suites ();
+        run_child_suites ();
 
         const unsigned long test_cases = listed_test_cases_count_;
         const unsigned long suites = listed_suites_count_;
@@ -688,7 +688,7 @@ namespace micro_os_plus::micro_test_plus
         totals_ += top_suite_.totals ();
       }
 
-    run_suites ();
+    run_child_suites ();
 
     // A session without suites runs nothing; report it.
     const bool has_no_suites = (total_suites_count () == 0);
@@ -891,7 +891,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Returns the counter incremented by `run_suites()`.
+   * Returns the counter incremented by `run_child_suites()`.
    */
   size_t
   runner::skipped_suites_count (void) const noexcept

@@ -596,7 +596,7 @@ namespace micro_os_plus::micro_test_plus
        * @brief Reports a test suite skipped by the filter.
        *
        * @details
-       * Called by `runner::run_suites()`, instead of running the suite,
+       * Called by `runner::run_child_suites()`, instead of running the suite,
        * when its name does not match the first filter pattern; the suite
        * has already been assigned its index. Implementations display a
        * single line, without the suite body.

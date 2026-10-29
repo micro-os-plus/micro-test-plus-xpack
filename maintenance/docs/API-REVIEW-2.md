@@ -1,5 +1,9 @@
 # C++ API review
 
+Note: the private function `runner::run_suites()` (earlier `run_suites_()`)
+was renamed `run_child_suites()`, to free the name for a public function;
+this document uses the new name throughout.
+
 Date: 2026-10-15, on branch `xpack-development`, commit `821ca8ab`.
 
 Scope: the C++ source code of the library: the umbrella header
@@ -127,7 +131,7 @@ the others are derived from reading the code.
   rejected too; regression test in
   `tests/sources/unit/src/miscellaneous.cpp`.
   `inlines/runner-inlines.h` lines 104 to 119, `src/runner.cpp` lines
-  433 to 441, 475, and 559 to 563: `run_suites_()` takes the number of
+  433 to 441, 475, and 559 to 563: `run_child_suites()` takes the number of
   suites once (line 475), and `runner::suite()` accepts registrations in
   any state. In a probe, a suite registered from inside another suite's
   body, and one registered after `run()`, both containing a failing
@@ -1097,7 +1101,7 @@ the others are derived from reading the code.
   `fail_unexpected_exception_()`, `link_()`, `next_test_point_number_()`,
   `reporter_()`, `run_()`, `running_test_case_()`, `test_runner_()`,
   `unlink_()`); `runner.h` (`is_selected_()`, `parse_options_()`,
-  `register_suite_()`, `run_suites_()`); `reporter.h`,
+  `register_suite_()`, `run_child_suites()`); `reporter.h`,
   `reporter-human.h`, and `reporter-tap.h` (`clear_buffer_()`,
   `commit_buffer_()`, `display_open_names_()`,
   `format_elapsed_time_()`, `output_pass_prefix_()` and its three
@@ -1241,7 +1245,7 @@ the others are derived from reading the code.
   all the suites in the intrusive list, sorted by `link()`: move
   `next_`, `first_`, `link()`, and `unlink()` from `static_suite` to
   `suite`, link the registered suites in `register_suite()`, unlink in
-  `~suite()`, and let `run_suites()` walk the list, skipping the suites
+  `~suite()`, and let `run_child_suites()` walk the list, skipping the suites
   of other runners; `static_suites_count()` subtracts the registered
   suites from the count of the list. The insertion sort and the merge
   are removed, nothing is allocated, and the names are compared in one

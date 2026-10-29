@@ -1,5 +1,9 @@
 # C++ API review
 
+Note: the private function `runner::run_suites()` (earlier `run_suites_()`)
+was renamed `run_child_suites()`, to free the name for a public function;
+this document uses the new name throughout.
+
 Date: 2026-10-12, on branch `xpack-development`, commit `38bb4962`.
 
 Scope: the C++ source code of the library: the public headers in
@@ -745,7 +749,7 @@ public API, or **[internal]** when it does not.
   `tests/sources/unit/src/utility.cpp`. Give it a purpose: a
   `--filter=<pattern>` option (also `--filter <pattern>`), parsed by
   `runner::parse_options_()`, that runs only the suites whose names
-  match, tested in the single loop of `runner::run_suites_()` (both
+  match, tested in the single loop of `runner::run_child_suites()` (both
   added after this review; `src/runner.cpp` lines 282 and 417 at
   commit `395c980d`). The option may be repeated, and a suite runs
   when it matches any of the patterns; this is an exception to the
@@ -1232,8 +1236,8 @@ public API, or **[internal]** when it does not.
 
   [internal] The same logic exists twice or
   more:
-  - a hand-written selection sort, in `runner::run_suites_()` and
-    `static_runner::run_suites_()` (`src/runner.cpp` lines 321 to 333
+  - a hand-written selection sort, in `runner::run_child_suites()` and
+    `static_runner::run_child_suites()` (`src/runner.cpp` lines 321 to 333
     and 531 to 544), while `<algorithm>` is included and unused;
     `std::ranges::stable_sort` with a projection replaces both;
   - `suite::run()` and `static_suite::run()` (`src/test.cpp` lines 257
