@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.1.0</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;6.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -120,6 +120,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__micro-o
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:ga67c701de5426ac340584ed038494a873" id="r_ga67c701de5426ac340584ed038494a873"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ga67c701de5426ac340584ed038494a873">MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</a></td></tr>
+<tr class="memdesc:ga67c701de5426ac340584ed038494a873"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the deprecated definitions of the µTest++ Testing Framework.  <br /></td></tr>
 <tr class="memitem:ga3dd1e70998580fe7d7f410e5cd83879b" id="r_ga3dd1e70998580fe7d7f410e5cd83879b"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ga3dd1e70998580fe7d7f410e5cd83879b">MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</a></td></tr>
 <tr class="memdesc:ga3dd1e70998580fe7d7f410e5cd83879b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the µTest++ Testing Framework.  <br /></td></tr>
 <tr class="memitem:ga27bb1b9066b162d868e0b1c557b91e0d" id="r_ga27bb1b9066b162d868e0b1c557b91e0d"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ga27bb1b9066b162d868e0b1c557b91e0d">MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</a></td></tr>
@@ -136,6 +138,26 @@ Macros</h2></td></tr>
 <div class="line"><span class="preprocessor">#endif </span><span class="comment">// !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)</span></div>
 </div><!-- fragment --><p>A macro defined only on the compiler command line (for example <span class="tt">‑DMICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</span>) must be defined for the entire build (both the application and the library sources).  </p>
 </div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a id="ga67c701de5426ac340584ed038494a873" name="ga67c701de5426ac340584ed038494a873"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga67c701de5426ac340584ed038494a873">&#9670;&#160;</a></span>MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This option has no value, only its definition matters.</p>
+<p>Without it, the deprecated definitions (the old names of the functions, the classes, and the members, the overloaded operators, the user-defined literals, the type wrappers, and the deprecated overloads and constructors) are neither declared nor defined, so the applications that still use them fail to compile.</p>
+<p>With it, they are available, but marked <span class="tt">[[deprecated]]</span>, so the compiler reports their use; the applications that build with <span class="tt">-Werror</span> fail until the deprecated definitions are replaced.</p>
+<p>The macro must be defined for the library sources too, otherwise the link of an application that uses the non-inline deprecated members fails with undefined references.   </p>
+
+<p class="definition">Definition at line <a class="el" href="micro-test-plus_8h_source.html#l00079">79</a> of file <a class="el" href="micro-test-plus_8h_source.html">micro-test-plus.h</a>.</p>
+
+</div>
+</div>
 <a id="ga3dd1e70998580fe7d7f410e5cd83879b" name="ga3dd1e70998580fe7d7f410e5cd83879b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga3dd1e70998580fe7d7f410e5cd83879b">&#9670;&#160;</a></span>MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</h2>
 
@@ -165,7 +187,7 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Displays trace messages in the constructors and destructors of the µTest++ Testing Framework, through <span class="tt">trace::printf()</span>, which writes them only when <span class="tt">MICRO_OS_PLUS_DIAG_TRACE_ENABLED</span> is also defined.   </p>
+<p>Displays trace messages in the constructors and destructors of the µTest++ Testing Framework, through <span class="tt">trace::printf()</span>, which writes them only when <span class="tt">MICRO_OS_PLUS_DIAG_TRACE_ENABLED</span> is also defined.  </p>
 
 <p class="definition">Definition at line <a class="el" href="micro-test-plus_8h_source.html#l00078">78</a> of file <a class="el" href="micro-test-plus_8h_source.html">micro-test-plus.h</a>.</p>
 

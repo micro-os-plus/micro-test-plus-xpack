@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="1227" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" bodystart="1227" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="1268" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" bodystart="1268" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -136,14 +136,14 @@
 </parameterlist>
 <simplesect kind="return"><para>A comparator object that evaluates to true if <computeroutput>lhs</computeroutput> and <computeroutput>rhs</computeroutput> differ by less than <computeroutput>epsilon</computeroutput>.</para>
 </simplesect>
-<simplesect kind="since"><para>5.1.0</para>
+<simplesect kind="since"><para>6.0.0</para>
 </simplesect>
 The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx</ref></computeroutput> function template constructs a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op" kindref="compound">detail::approx_op</ref></computeroutput> from the forwarded operands and tolerance; the operands are numbers, so <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand()</ref></computeroutput>, which converts the C strings, is not needed. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="196" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="196" bodyend="201" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="253" declcolumn="3"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" compoundref="deprecated-inlines_8h" startline="661" endline="665">micro_os_plus::micro_test_plus::approx</references>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" compoundref="deprecated-inlines_8h" startline="675" endline="679">micro_os_plus::micro_test_plus::approx</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>

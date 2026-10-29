@@ -134,7 +134,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * reports no start reading; since the reading is zero in that case,
    * it need not be cleared first, as in `start()`.
    */
-  // Deprecated since 5.1.0; use start().
+  // Deprecated since 6.0.0; use start().
   void
   stopwatch::timestamp_begin (void) noexcept
   {
@@ -150,7 +150,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * reports no stop reading, for the same reason as in
    * `timestamp_begin()`.
    */
-  // Deprecated since 5.1.0; use stop().
+  // Deprecated since 6.0.0; use stop().
   void
   stopwatch::timestamp_end (void) noexcept
   {

@@ -319,7 +319,7 @@ keywords:
 <p>This folder provides the headers included by the primary public header, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a></span>, which defines the core functionality of the µTest++ Testing Framework.</p>
 
 
-<p>It includes declarations for essential library components, including test suite and test case management, test runner and reporter classes, function comparators, overloaded operators, user-defined literals, mathematical utilities, extension concepts, value wrappers, reflection utilities, and supporting internal mechanisms.</p>
+<p>It includes declarations for essential library components, including test suite and test case management, the test runner and its options, the reporter classes, function comparators, the exception checks, the expression formatter, the extension templates and concepts, mathematical utilities, value helpers, reflection utilities, and supporting internal mechanisms.</p>
 
 
 <p>By consolidating public API definitions in this folder, the project maintains a clear separation from implementation details (located in the <span class="doxyComputerOutput">src</span> folder), thereby promoting modularity, maintainability, and straightforward integration.</p>

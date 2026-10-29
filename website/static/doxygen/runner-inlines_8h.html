@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.1.0</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;6.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -128,7 +128,7 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primary namespace for the µTest++ testing framework. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This header provides the inline accessors of the <span class="tt">runner</span> class and the inline template implementation for <span class="tt">runner::add_suite()</span>, the member function used to create and register a named test suite with a <span class="tt">runner</span> instance, and for its deprecated alias <span class="tt">runner::suite()</span>. It constructs a <span class="tt">suite</span> object on the heap (wrapped in <span class="tt">std::unique_ptr</span>) and transfers ownership to the runner via <span class="tt">register_suite()</span>; the suite is run later, by <span class="tt">run()</span>.</p>
+<div class="textblock"><p>This header provides the inline accessors of the <span class="tt">runner</span> class and the inline template implementation for <span class="tt">runner::add_suite()</span>, the member function used to create and register a named test suite with a <span class="tt">runner</span> instance, and for its deprecated alias <span class="tt">runner::suite()</span>. It constructs a <span class="tt">suite</span> object on the heap (wrapped in <span class="tt">std::unique_ptr</span>) and transfers ownership to the runner via <span class="tt">register_suite()</span>; the suite is run later, by <span class="tt">run_suites()</span>.</p>
 <p>The implementation is separated into this inline header so that the template definition is visible at every call site without cluttering the main <span class="tt"><a class="el" href="runner_8h.html" title="C++ header file with declarations for the µTest++ test runner.">runner.h</a></span> declaration file.</p>
 <p>This file is intended solely for internal use within the framework and should not be included directly by user code. </p>
 

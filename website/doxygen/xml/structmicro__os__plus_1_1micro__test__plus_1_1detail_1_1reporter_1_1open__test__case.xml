@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="1267" column="14" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="1267" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="1276" column="14" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="1276" bodyend="-1"/>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1aec7a63f892ff631e659c28607bf31242" compoundref="reporter-tap_8cpp" startline="1050" endline="1075">micro_os_plus::micro_test_plus::detail::reporter_tap::display_open_headers</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1abcfa63d8c5ca8acd458383102b7e99e9" compoundref="reporter-human_8cpp" startline="864" endline="902">micro_os_plus::micro_test_plus::detail::reporter_human::display_open_names</referencedby>
       </memberdef>
@@ -36,7 +36,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="1257" column="25" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="1257" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="1266" column="25" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="1266" bodyend="-1"/>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1aec7a63f892ff631e659c28607bf31242" compoundref="reporter-tap_8cpp" startline="1050" endline="1075">micro_os_plus::micro_test_plus::detail::reporter_tap::display_open_headers</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1abcfa63d8c5ca8acd458383102b7e99e9" compoundref="reporter-human_8cpp" startline="864" endline="902">micro_os_plus::micro_test_plus::detail::reporter_human::display_open_names</referencedby>
       </memberdef>
@@ -149,7 +149,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="1249" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="1250" bodyend="1268"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="1258" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="1259" bodyend="1277"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1_1open__test__case_1a545589f22f45b2450bf06447aaee7ee5" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::reporter::open_test_case</scope><name>name_displayed</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1_1open__test__case_1abb9fb536c656c747e0e2f9062193f7e2" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::reporter::open_test_case</scope><name>test</name></member>

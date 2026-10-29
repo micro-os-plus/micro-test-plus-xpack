@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.1.0</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;6.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -131,7 +131,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga1c7ddbf53764ab67240f1cf0e0fb4b8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated generic logical (inclusive) <b>or</b> operation, the v5.0.1 name of <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gae6395736f05626ba6dcf79ecc523486c" title="Generic logical (inclusive) or operation, for two or more operands.">any_of()</a></span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The functions <span class="tt">mt::_and()</span>, <span class="tt">mt::_or()</span>, and <span class="tt">mt::_not()</span> are the v5.0.1 names of <span class="tt">mt::all_of()</span>, <span class="tt">mt::any_of()</span>, and <span class="tt">mt::negate()</span>. They are deprecated since 5.1.0, and are kept for compatibility with the existing applications; they behave as the functions that replace them.</p>
+<div class="textblock"><p>The functions <span class="tt">mt::_and()</span>, <span class="tt">mt::_or()</span>, and <span class="tt">mt::_not()</span> are the v5.0.1 names of <span class="tt">mt::all_of()</span>, <span class="tt">mt::any_of()</span>, and <span class="tt">mt::negate()</span>. They are deprecated since 6.0.0, and are kept for compatibility with the existing applications; they behave as the functions that replace them.</p>
 <p>The names were changed since a leading underscore is not used by the other public names. Unlike the replacements, <span class="tt">mt::_and()</span> and <span class="tt">mt::_or()</span> take exactly two operands, whereas <span class="tt">mt::all_of()</span> and <span class="tt">mt::any_of()</span> take two or more.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -151,7 +151,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="comment">// Replacement.</span></div>
 <div class="line">t.expect (mt::all_of (mt::eq (compute_answer (), 42),</div>
 <div class="line">                      mt::lt (compute_answer (), 43)));</div>
-</div><!-- fragment --><p>The overloaded logical operators of the <span class="tt">micro_test_plus::operators</span> namespace are also deprecated since 5.1.0, in favour of the same replacement functions.  </p>
+</div><!-- fragment --><p>The overloaded logical operators of the <span class="tt">micro_test_plus::operators</span> namespace are also deprecated since 6.0.0, in favour of the same replacement functions.  </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="ga9998cd63972fac8b24a2f0138322e7c1" name="ga9998cd63972fac8b24a2f0138322e7c1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga9998cd63972fac8b24a2f0138322e7c1">&#9670;&#160;</a></span>_and()</h2>
@@ -197,7 +197,7 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An object that evaluates to true if both operand expressions are true. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000007">Deprecated</a></b></dt><dd>use <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gab9b9c26860ceafc1288ecb415f52aaaf" title="Generic logical and operation, for two or more operands.">all_of()</a> (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000007">Deprecated</a></b></dt><dd>use <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gab9b9c26860ceafc1288ecb415f52aaaf" title="Generic logical and operation, for two or more operands.">all_of()</a> (since 6.0.0)</dd></dl>
 <p>Forwards to <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gab9b9c26860ceafc1288ecb415f52aaaf" title="Generic logical and operation, for two or more operands.">all_of()</a></span>, so the returned expression is the same, and is reported in the same way. </p>
 
 <p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00096">96</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
@@ -250,7 +250,7 @@ template&lt;class Expr_T&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An object that evaluates to true if the operand is false. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000006">Deprecated</a></b></dt><dd>use <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#ga6a0bb2654eb89c1b0a35134e8738eeb1" title="Generic logical not operation.">negate()</a> (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000006">Deprecated</a></b></dt><dd>use <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#ga6a0bb2654eb89c1b0a35134e8738eeb1" title="Generic logical not operation.">negate()</a> (since 6.0.0)</dd></dl>
 <p>Forwards to <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#ga6a0bb2654eb89c1b0a35134e8738eeb1" title="Generic logical not operation.">negate()</a></span>, so the returned expression is the same, and is reported in the same way. </p>
 
 <p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00083">83</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
@@ -309,7 +309,7 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An object that evaluates to true if at least one of the operand expressions is true, including when both are. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000008">Deprecated</a></b></dt><dd>use <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gae6395736f05626ba6dcf79ecc523486c" title="Generic logical (inclusive) or operation, for two or more operands.">any_of()</a> (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000008">Deprecated</a></b></dt><dd>use <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gae6395736f05626ba6dcf79ecc523486c" title="Generic logical (inclusive) or operation, for two or more operands.">any_of()</a> (since 6.0.0)</dd></dl>
 <p>Forwards to <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gae6395736f05626ba6dcf79ecc523486c" title="Generic logical (inclusive) or operation, for two or more operands.">any_of()</a></span>, so the returned expression is the same, and is reported in the same way. </p>
 
 <p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00109">109</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>

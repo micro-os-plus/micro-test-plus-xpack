@@ -487,7 +487,7 @@ namespace micro_os_plus::micro_test_plus
        *   None.
        * @return The verbosity level of the session.
        */
-      [[deprecated ("use runner::verbosity_level() (since 5.1.0)"),
+      [[deprecated ("use runner::verbosity_level() (since 6.0.0)"),
         nodiscard]] auto
       verbosity (void) const noexcept -> micro_test_plus::verbosity;
 
@@ -605,7 +605,7 @@ namespace micro_os_plus::micro_test_plus
        * @par Returns
        *   Nothing.
        *
-       * @since 5.1.0
+       * @since 6.0.0
        */
       virtual void
       skip_suite (const suite& suite)
@@ -626,7 +626,7 @@ namespace micro_os_plus::micro_test_plus
        * @param suite Reference to the test suite.
        * @par Returns
        *   Nothing.
-       * @since 5.1.0
+       * @since 6.0.0
        */
       virtual void
       fail_suite (const std::string& message, const suite& suite)
@@ -678,7 +678,7 @@ namespace micro_os_plus::micro_test_plus
        * @par Returns
        *   Nothing.
        *
-       * @since 5.1.0
+       * @since 6.0.0
        */
       virtual void
       skip_test_case (const test_case& test_case)
@@ -712,7 +712,7 @@ namespace micro_os_plus::micro_test_plus
        * @par Returns
        *   Nothing.
        *
-       * @since 5.1.0
+       * @since 6.0.0
        */
       virtual void
       abort_session (const reflection::source_location& location,

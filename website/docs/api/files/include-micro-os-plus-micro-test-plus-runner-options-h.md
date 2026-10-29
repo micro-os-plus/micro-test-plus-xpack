@@ -209,7 +209,7 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 
@@ -279,7 +279,7 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 

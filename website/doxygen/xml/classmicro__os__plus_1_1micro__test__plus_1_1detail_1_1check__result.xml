@@ -333,7 +333,7 @@ This operator overload enables the check result to accumulate expectation messag
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/check-result.h" line="297" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines.h" bodystart="184" bodyend="212"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1102" endline="1102">micro_os_plus::micro_test_plus::detail::expression_formatter::buffer_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" compoundref="expression-formatter_8h" startline="1143" endline="1143">micro_os_plus::micro_test_plus::detail::expression_formatter::buffer_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1af96f9a6d186ff05253e33d088cab8106" compoundref="check-result_8h" startline="360">info_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1af0281b8df34411a8e9e45fa7f7c83d4b" compoundref="check-result_8h" startline="349">is_written_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1a5e3cca5a1c660bc576184ca200f73cc7" compoundref="check-result_8h" startline="338">value_</references>

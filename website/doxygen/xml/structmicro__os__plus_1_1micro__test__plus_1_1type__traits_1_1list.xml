@@ -24,10 +24,10 @@
 </parameteritem>
 </parameterlist>
 Used only as the type of <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits" kindref="compound">function_traits</ref>&lt;&gt;::args</computeroutput>; the framework no longer uses it.</para>
-<para><xrefsect id="deprecated_1_deprecated000099"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Not replaced (since 5.1.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000100"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Not replaced (since 6.0.0). </para>
 </xrefdescription></xrefsect></para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1864" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="1865" bodyend="1866"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1894" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="1895" bodyend="1896"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

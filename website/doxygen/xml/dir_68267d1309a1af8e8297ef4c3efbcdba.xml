@@ -23,14 +23,14 @@
 <listitem><para><computeroutput><ref refid="check-result_8cpp" kindref="compound">check-result.cpp</ref></computeroutput> — <computeroutput>check_result</computeroutput> construction and reporting</para>
 </listitem><listitem><para><computeroutput><ref refid="counters_8cpp" kindref="compound">counters.cpp</ref></computeroutput> — <computeroutput>counters</computeroutput> accumulation and <computeroutput>operator+=</computeroutput></para>
 </listitem><listitem><para><computeroutput><ref refid="expression-formatter_8cpp" kindref="compound">expression-formatter.cpp</ref></computeroutput> — non-template <computeroutput>operator&lt;&lt;</computeroutput> overloads of the expression formatter, and the texts of the pending checks</para>
-</listitem><listitem><para><computeroutput>reflection.cpp</computeroutput> — deprecated <computeroutput>reflection::short_name()</computeroutput></para>
+</listitem><listitem><para><computeroutput><ref refid="runner-options_8cpp" kindref="compound">runner-options.cpp</ref></computeroutput> — <computeroutput>runner_options</computeroutput> command line parsing, and the reporting of the option errors</para>
 </listitem><listitem><para><computeroutput><ref refid="reporter-human_8cpp" kindref="compound">reporter-human.cpp</ref></computeroutput> — human-readable reporter implementation</para>
 </listitem><listitem><para><computeroutput><ref refid="reporter-tap_8cpp" kindref="compound">reporter-tap.cpp</ref></computeroutput> — TAP-format reporter implementation</para>
 </listitem><listitem><para><computeroutput><ref refid="reporter_8cpp" kindref="compound">reporter.cpp</ref></computeroutput> — base <computeroutput>reporter</computeroutput> class and <computeroutput>operator&lt;&lt;</computeroutput> overloads</para>
-</listitem><listitem><para><computeroutput><ref refid="runner_8cpp" kindref="compound">runner.cpp</ref></computeroutput> — <computeroutput>runner</computeroutput> constructors, option parsing, suite registration, <computeroutput>run()</computeroutput>, and <computeroutput>abort()</computeroutput></para>
+</listitem><listitem><para><computeroutput><ref refid="runner_8cpp" kindref="compound">runner.cpp</ref></computeroutput> — <computeroutput>runner</computeroutput> constructors, option parsing, suite registration, <computeroutput>run_suites()</computeroutput>, and <computeroutput>abort()</computeroutput></para>
 </listitem><listitem><para><computeroutput><ref refid="stopwatch_8cpp" kindref="compound">stopwatch.cpp</ref></computeroutput> — <computeroutput>stopwatch</computeroutput> clock readings and elapsed-time computation</para>
 </listitem><listitem><para><computeroutput><ref refid="test_8cpp" kindref="compound">test.cpp</ref></computeroutput> — <computeroutput>suite</computeroutput>, <computeroutput>top_suite</computeroutput>, <computeroutput>static_suite</computeroutput>, and <computeroutput>test_case</computeroutput> lifecycle methods</para>
-</listitem><listitem><para><computeroutput><ref refid="utility_8cpp" kindref="compound">utility.cpp</ref></computeroutput> — <computeroutput>extract_file_name()</computeroutput> and <computeroutput>is_match()</computeroutput> helpers   </para>
+</listitem><listitem><para><computeroutput><ref refid="utility_8cpp" kindref="compound">utility.cpp</ref></computeroutput> — <computeroutput>extract_file_name()</computeroutput>, <computeroutput>is_match()</computeroutput>, and <computeroutput>split()</computeroutput> helpers   </para>
 </listitem></itemizedlist>
 </para>
     </detaileddescription>

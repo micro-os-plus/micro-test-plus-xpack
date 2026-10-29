@@ -125,7 +125,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param other The instance to copy.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     counters (const counters& other) = default;
 
@@ -138,7 +138,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param other The instance to move from.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     counters (counters&& other) = default;
 
@@ -151,7 +151,7 @@ namespace micro_os_plus::micro_test_plus
      * @param other The instance to copy.
      * @return Reference to this instance.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     counters&
     operator= (const counters& other)
@@ -167,7 +167,7 @@ namespace micro_os_plus::micro_test_plus
      * @param other The instance to move from.
      * @return Reference to this instance.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     counters&
     operator= (counters&& other)
@@ -201,7 +201,7 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     void
     increment_passed_checks (size_t count = 1) noexcept;
@@ -223,7 +223,7 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      */
-    [[deprecated ("use increment_passed_checks() (since 5.1.0)")]] void
+    [[deprecated ("use increment_passed_checks() (since 6.0.0)")]] void
     increment_successful_checks (size_t count = 1) noexcept;
 
     /**
@@ -268,7 +268,7 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      */
-    [[deprecated ("use increment_executed_test_cases() (since 5.1.0)")]] void
+    [[deprecated ("use increment_executed_test_cases() (since 6.0.0)")]] void
     increment_executed_subtests (size_t count = 1) noexcept;
 
     /**
@@ -293,7 +293,7 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     void
     increment_skipped_test_cases (size_t count = 1) noexcept;
@@ -309,7 +309,7 @@ namespace micro_os_plus::micro_test_plus
      *   None.
      * @return The cumulative count of passed checks.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     [[nodiscard]] size_t
     passed_checks (void) const noexcept;
@@ -331,7 +331,7 @@ namespace micro_os_plus::micro_test_plus
      *   None.
      * @return The value returned by `passed_checks()`.
      */
-    [[deprecated ("use passed_checks() (since 5.1.0)"), nodiscard]] size_t
+    [[deprecated ("use passed_checks() (since 6.0.0)"), nodiscard]] size_t
     successful_checks (void) const noexcept;
 
     /**
@@ -386,7 +386,7 @@ namespace micro_os_plus::micro_test_plus
      *   None.
      * @return The value returned by `executed_test_cases()`.
      */
-    [[deprecated ("use executed_test_cases() (since 5.1.0)"),
+    [[deprecated ("use executed_test_cases() (since 6.0.0)"),
       nodiscard]] size_t
     executed_subtests (void) const noexcept;
 
@@ -415,7 +415,7 @@ namespace micro_os_plus::micro_test_plus
      *   None.
      * @return The cumulative count of skipped test cases.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     [[nodiscard]] size_t
     skipped_test_cases (void) const noexcept;
@@ -449,7 +449,7 @@ namespace micro_os_plus::micro_test_plus
      *   None.
      * @return The value returned by `passed()`.
      */
-    [[deprecated ("use passed() (since 5.1.0)"), nodiscard]] bool
+    [[deprecated ("use passed() (since 6.0.0)"), nodiscard]] bool
     was_successful (void) const noexcept;
 
     /**

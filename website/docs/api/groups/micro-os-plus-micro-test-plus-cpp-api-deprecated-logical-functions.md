@@ -81,7 +81,7 @@ keywords:
 <p>Deprecated v5.0.1 names of the logical functions.</p>
 
 
-<p>The functions <span class="doxyComputerOutput">mt::_and()</span>, <span class="doxyComputerOutput">mt::_or()</span>, and <span class="doxyComputerOutput">mt::_not()</span> are the v5.0.1 names of <span class="doxyComputerOutput">mt::all_of()</span>, <span class="doxyComputerOutput">mt::any_of()</span>, and <span class="doxyComputerOutput">mt::negate()</span>. They are deprecated since 5.1.0, and are kept for compatibility with the existing applications; they behave as the functions that replace them.</p>
+<p>The functions <span class="doxyComputerOutput">mt::_and()</span>, <span class="doxyComputerOutput">mt::_or()</span>, and <span class="doxyComputerOutput">mt::_not()</span> are the v5.0.1 names of <span class="doxyComputerOutput">mt::all_of()</span>, <span class="doxyComputerOutput">mt::any_of()</span>, and <span class="doxyComputerOutput">mt::negate()</span>. They are deprecated since 6.0.0, and are kept for compatibility with the existing applications; they behave as the functions that replace them.</p>
 
 
 <p>The names were changed since a leading underscore is not used by the other public names. Unlike the replacements, <span class="doxyComputerOutput">mt::_and()</span> and <span class="doxyComputerOutput">mt::_or()</span> take exactly two operands, whereas <span class="doxyComputerOutput">mt::all_of()</span> and <span class="doxyComputerOutput">mt::any_of()</span> take two or more.</p>
@@ -125,7 +125,7 @@ keywords:
 </div>
 
 
-<p>The overloaded logical operators of the <span class="doxyComputerOutput">micro_test_plus::operators</span> namespace are also deprecated since 5.1.0, in favour of the same replacement functions.</p>
+<p>The overloaded logical operators of the <span class="doxyComputerOutput">micro_test_plus::operators</span> namespace are also deprecated since 6.0.0, in favour of the same replacement functions.</p>
 
 
 <div class="doxySectionDef">
@@ -205,7 +205,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000007>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/#gab9b9c26860ceafc1288ecb415f52aaaf">all_of()</a> (since 5.1.0)</p>
+<p>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/#gab9b9c26860ceafc1288ecb415f52aaaf">all_of()</a> (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -299,7 +299,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000006>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/#ga6a0bb2654eb89c1b0a35134e8738eeb1">negate()</a> (since 5.1.0)</p>
+<p>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/#ga6a0bb2654eb89c1b0a35134e8738eeb1">negate()</a> (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -401,7 +401,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000008>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/#gae6395736f05626ba6dcf79ecc523486c">any_of()</a> (since 5.1.0)</p>
+<p>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/#gae6395736f05626ba6dcf79ecc523486c">any_of()</a> (since 6.0.0)</p>
 </dd>
 </dl>
 </div>

@@ -58,7 +58,7 @@ keywords:
 <p>Test suites are named groups of related test cases.</p>
 
 
-<p>By default, all test cases defined in <span class="doxyComputerOutput">main()</span> are included in the top-level test suite, which is owned by the runner and returned by <span class="doxyComputerOutput">runner::initialise()</span>; its test cases run immediately. For more complex projects, additional test suites can be defined, typically in separate source files.</p>
+<p>By default, all test cases defined in <span class="doxyComputerOutput">main()</span> are included in the top-level test suite, which is owned by the runner and returned by <span class="doxyComputerOutput">runner::add_top_suite()</span>; its test cases run immediately. For more complex projects, additional test suites can be defined, typically in separate source files.</p>
 
 
 <p>The additional test suites are either added in <span class="doxyComputerOutput">main()</span> with <span class="doxyComputerOutput">runner::add_suite()</span>, or defined as <span class="doxyComputerOutput">mt::static_suite</span> objects, at namespace scope, constructed with a name, a reference to the runner, and a callable (usually a function or a lambda with a <span class="doxyComputerOutput">mt::suite&amp;</span> first parameter, which creates the test cases), along with any optional arguments. The static suites register themselves in their constructors, so they are included in the test run without other calls.</p>
@@ -70,7 +70,7 @@ keywords:
 :::
 
 
-<p>The static suites may be constructed before or after the runner, in any order. All suites, added or static, are run by <span class="doxyComputerOutput">runner::run()</span>, after the test cases of the top suite, in a single order, sorted by name (byte by byte, as by <span class="doxyComputerOutput">std::strcmp()</span>); suites with the same name run in the order in which they were created, so the static ones first. Zero-padded numeric prefixes (<span class="doxyComputerOutput">"01 - Init"</span>) give an explicit order. Test suites should nevertheless be designed to be independent of each other.</p>
+<p>The static suites may be constructed before or after the runner, in any order. <span class="doxyComputerOutput">runner::run_suites()</span> runs all the suites, added or static, after the test cases of the top suite, sorted by name (byte by byte, as by <span class="doxyComputerOutput">std::strcmp()</span>). Suites with the same name run in the order in which they were created, so the static ones, which exist before <span class="doxyComputerOutput">main()</span> starts, run before the added ones; the relative order of static suites defined in different source files is unspecified, so give them distinct names. Zero-padded numeric prefixes (<span class="doxyComputerOutput">"01 - Init"</span>) give an explicit order. Nevertheless, design the test suites to be independent of each other, so that they do not depend on the execution order.</p>
 
 
 <dl class="doxySectionUser">
@@ -97,13 +97,15 @@ keywords:
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeywordType">int</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">main (</span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> argc, </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* argv[])</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">{</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp; ts = tr.<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a39ee9ec53f8df687cd84092de5118592">initialise</a> (argc, argv, </span><span class="doxyHighlightStringLiteral">"Sample"</span><span class="doxyHighlight">);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  tr.<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a39ee9ec53f8df687cd84092de5118592">initialise</a> (argc, argv);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp; ts = tr.<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#aac24d1193ac0579dd6ac3c523a32015f">add_top_suite</a> (</span><span class="doxyHighlightStringLiteral">"Sample"</span><span class="doxyHighlight">);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  ts.<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite/#a402696dc4d4978ff3c050427890cfe01">test</a> (</span><span class="doxyHighlightStringLiteral">"Check one"</span><span class="doxyHighlight">, [] (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp; t) {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    t.expect (</span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">) &lt;&lt; </span><span class="doxyHighlightStringLiteral">"Passed"</span><span class="doxyHighlight">;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  });</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> tr.<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a97f725cb167a2b464fac0eb88a0c8a46">run</a> ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> tr.<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a700e3ef1f955492cd84235bd388dcdf2">run_suites</a> ();</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">}</span></span></div>
 
 </div>

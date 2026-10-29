@@ -1657,7 +1657,7 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
-    // The helpers removed from the public API in 5.1.0 whose forwarders
+    // The helpers removed from the public API in 6.0.0 whose forwarders
     // are kept: `mut()`, `runner::name()`, the read-only functions of the
     // nodes, and the text accessors of the formatter.
     ts.test ("Kept helpers", [] (auto& t)

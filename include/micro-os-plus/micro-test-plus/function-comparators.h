@@ -244,7 +244,7 @@ namespace micro_os_plus::micro_test_plus
    * @return A comparator object that evaluates to true if `lhs` and `rhs`
    * differ by less than `epsilon`.
    *
-   * @since 5.1.0
+   * @since 6.0.0
    */
   template <class Lhs_T, class Rhs_T, class Epsilon_T>
     requires (detail::approx_operand<Lhs_T> and detail::approx_operand<Rhs_T>

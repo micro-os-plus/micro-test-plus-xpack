@@ -566,6 +566,23 @@ namespace micro_os_plus::micro_test_plus { ... }
 </tr>
 
 <tr class="doxyMemberIndexTemplate">
+<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T&gt;</div></td>
+</tr>
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr T &amp;</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga00ea8f3dfb7cb0ef39919065321cf62f">mut</a> (const T &amp;t) noexcept</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Deprecated generic mutator to remove const qualification from a reference. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga00ea8f3dfb7cb0ef39919065321cf62f">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexTemplate">
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Lhs_T, class Rhs_T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
@@ -1404,7 +1421,7 @@ namespace micro_os_plus::micro_test_plus { ... }
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 
@@ -1474,7 +1491,7 @@ namespace micro_os_plus::micro_test_plus { ... }
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 

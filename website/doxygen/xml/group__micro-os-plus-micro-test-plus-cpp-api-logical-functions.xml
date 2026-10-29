@@ -264,7 +264,7 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-log
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mt::lt<sp/>(compute_answer<sp/>(),<sp/>43)));</highlight></codeline>
 <codeline><highlight class="normal">});</highlight></codeline>
 </programlisting></para>
-<para>The overloaded logical operators of the <computeroutput>micro_test_plus::operators</computeroutput> namespace are deprecated since 5.1.0, in favour of these functions.  </para>
+<para>The overloaded logical operators of the <computeroutput>micro_test_plus::operators</computeroutput> namespace are deprecated since 6.0.0, in favour of these functions.  </para>
     </detaileddescription>
   </compounddef>
 </doxygen>

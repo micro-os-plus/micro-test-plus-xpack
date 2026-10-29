@@ -8,397 +8,418 @@
     <detaileddescription>
 <para><variablelist>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" kindref="member">micro_os_plus::micro_test_plus::_and</ref>  (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000007"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kindref="member">all_of()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000007"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kindref="member">all_of()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kindref="member">micro_os_plus::micro_test_plus::_b</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000034"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000035"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafdd897d040f92df9cd42e551ebc88cd8" kindref="member">micro_os_plus::micro_test_plus::_c</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000035"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000036"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga7c6c0169d894a7dd589d96df49e8df26" kindref="member">micro_os_plus::micro_test_plus::_d</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000055"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000056"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga231cd51e76a2f426703275739d605ad4" kindref="member">micro_os_plus::micro_test_plus::_f</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000054"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000055"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">micro_os_plus::micro_test_plus::_i</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000038"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000039"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad2d95793c99112ad2889c6663789d1e3" kindref="member">micro_os_plus::micro_test_plus::_i16</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000047"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000048"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga917a1759e37cd0d3fe3786da11729a4b" kindref="member">micro_os_plus::micro_test_plus::_i32</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000048"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000049"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga290a150eae030e183ca2e14e9095c93b" kindref="member">micro_os_plus::micro_test_plus::_i64</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000049"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000050"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga265f8609ef3d6ead78c7a66825553e24" kindref="member">micro_os_plus::micro_test_plus::_i8</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000046"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000047"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga429a848542fc4ffafd3dd22bc1832654" kindref="member">micro_os_plus::micro_test_plus::_l</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000039"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000040"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gacfe28c6fb7bfb47ca8891cb61e7f58d9" kindref="member">micro_os_plus::micro_test_plus::_ld</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000056"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000057"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9c597ca04848620b8570c29a4741e77d" kindref="member">micro_os_plus::micro_test_plus::_ll</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000040"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000041"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" kindref="member">micro_os_plus::micro_test_plus::_not</ref>  (Expr_T &amp;&amp;expr)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000006"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000006"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" kindref="member">micro_os_plus::micro_test_plus::_or</ref>  (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000008"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kindref="member">any_of()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000008"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kindref="member">any_of()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga461a956b7e308ed6e8c64afa3cf160f2" kindref="member">micro_os_plus::micro_test_plus::_s</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000037"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000038"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0cc4baab5f421ac7adee10218d8ee8a2" kindref="member">micro_os_plus::micro_test_plus::_sc</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000036"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000037"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga15147e343475e219c2e46dce07b4127c" kindref="member">micro_os_plus::micro_test_plus::_t</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000057"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000058"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaaa486af2418a24076237fbe26940f5ae" kindref="member">micro_os_plus::micro_test_plus::_u</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000041"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000042"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga97f7bc9a25eb4b7c663bd2388ade01ae" kindref="member">micro_os_plus::micro_test_plus::_u16</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000051"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000052"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga4afa32150456241245bfc641a6f17bbc" kindref="member">micro_os_plus::micro_test_plus::_u32</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000052"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000053"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga1241e84fc4457af1b4df5f053eec6aa5" kindref="member">micro_os_plus::micro_test_plus::_u64</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000053"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000054"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" kindref="member">micro_os_plus::micro_test_plus::_u8</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000050"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000051"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaa8bb559065ea34a9645fdfd6339b9b7a" kindref="member">micro_os_plus::micro_test_plus::_uc</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000042"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000043"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga32c7eef01fcaef2f1a9478427d951f62" kindref="member">micro_os_plus::micro_test_plus::_ul</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000044"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000045"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gada8a165060d3d3b3ab51272b9da58761" kindref="member">micro_os_plus::micro_test_plus::_ull</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000045"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000046"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga65aea7fc6324806cc029041a1c785611" kindref="member">micro_os_plus::micro_test_plus::_us</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000043"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000044"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">micro_os_plus::micro_test_plus::approx</ref>  (T value, std::type_identity_t&lt; T &gt; epsilon) noexcept -&gt; <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4" kindref="compound">detail::value&lt; T &gt;</ref></term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000033"/>use approx (lhs, rhs, epsilon) (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000034"/>use approx (lhs, rhs, epsilon) (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3cd85c566bdf2b3b92e27db4c29c7bc5" kindref="member">micro_os_plus::micro_test_plus::counters::executed_subtests</ref>  (void) const noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000004"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3d33b96c8d1a299929ead1f830e91853" kindref="member">executed_test_cases()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000004"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3d33b96c8d1a299929ead1f830e91853" kindref="member">executed_test_cases()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a082c78df2d5f6b10b6ac8c246caae6c5" kindref="member">micro_os_plus::micro_test_plus::counters::increment_executed_subtests</ref>  (size_t count=1) noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000002"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a21c6250b78a96ae1448a7fa93608d2d3" kindref="member">increment_executed_test_cases()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000002"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a21c6250b78a96ae1448a7fa93608d2d3" kindref="member">increment_executed_test_cases()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a4d3d1d6dfcc6a3a8c61c8c0326799533" kindref="member">micro_os_plus::micro_test_plus::counters::increment_successful_checks</ref>  (size_t count=1) noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000001"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2805c82d9f1e97c61c538eb78381119d" kindref="member">increment_passed_checks()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000001"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2805c82d9f1e97c61c538eb78381119d" kindref="member">increment_passed_checks()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2e1ed349fc1d936b5de5929fa1a62650" kindref="member">micro_os_plus::micro_test_plus::counters::successful_checks</ref>  (void) const noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000003"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a6d478407d2416d3d19a4041fa1c12c9b" kindref="member">passed_checks()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000003"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a6d478407d2416d3d19a4041fa1c12c9b" kindref="member">passed_checks()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ae27ffc4d38a71b5c7d54f4a3b56c2203" kindref="member">micro_os_plus::micro_test_plus::counters::was_successful</ref>  (void) const noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000005"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a14690f9880df505f9dd90a9f2c3dfc96" kindref="member">passed()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000005"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a14690f9880df505f9dd90a9f2c3dfc96" kindref="member">passed()</ref> (since 6.0.0) </para>
+</listitem>
+<varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6a426d5cae4216ba3ed17bd20069f8a2" kindref="member">micro_os_plus::micro_test_plus::detail::expression_formatter::c_str</ref>  (void) const noexcept</term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000109"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a57a2737ff5f067461e4f220acd9fcd4b" kindref="member">str()</ref>.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6a426d5cae4216ba3ed17bd20069f8a2" kindref="member">c_str()</ref> (since 6.0.0) </para>
+</listitem>
+<varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1c8635cbb51fea4f2b1ef839c85599e8" kindref="member">micro_os_plus::micro_test_plus::detail::expression_formatter::empty</ref>  (void) const noexcept</term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000110"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a57a2737ff5f067461e4f220acd9fcd4b" kindref="member">str()</ref>.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1c8635cbb51fea4f2b1ef839c85599e8" kindref="member">empty()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a467d1332df523b9acaa3ff82b0ebb714" kindref="member">micro_os_plus::micro_test_plus::detail::reporter::verbosity</ref>  (void) const noexcept -&gt; <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kindref="member">micro_test_plus::verbosity</ref></term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000108"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1dd0221dca8e7382f0b625ff6316ed92" kindref="member">runner::verbosity_level()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000111"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1dd0221dca8e7382f0b625ff6316ed92" kindref="member">runner::verbosity_level()</ref> (since 6.0.0) </para>
+</listitem>
+<varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aaf838b03cddfb039d1295611be8a5e32" kindref="member">micro_os_plus::micro_test_plus::detail::runnable_base::children_subtests_count</ref>  (void) const noexcept</term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000132"/>internal to the framework (since 6.0.0) </para>
+</listitem>
+<varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a7ad637d38c035d54c872f72e1b9ac358" kindref="member">micro_os_plus::micro_test_plus::detail::runnable_base::current_subtest_index</ref>  (void) const noexcept</term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000131"/>internal to the framework (since 6.0.0) </para>
+</listitem>
+<varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a8def9cddbb5bc877918104c785271753" kindref="member">micro_os_plus::micro_test_plus::detail::runnable_base::own_index</ref>  (void) const noexcept</term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000130"/>internal to the framework (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gaf123417aafc76c826760101bcc517dfa" kindref="member">micro_os_plus::micro_test_plus::detail::runner_totals</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000094"/>use counters (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000095"/>use counters (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afd1213b3e3ffa9997ab0eba78b944ecf" kindref="member">micro_os_plus::micro_test_plus::detail::stopwatch::compute_elapsed_time</ref>  (uint32_t &amp;milliseconds, uint32_t &amp;microseconds) const noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000121"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" kindref="member">elapsed()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000125"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" kindref="member">elapsed()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a306d33023758a96948a6b24ea7a5dc06" kindref="member">micro_os_plus::micro_test_plus::detail::stopwatch::has_begin</ref>  (void) const noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000118"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000122"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adbabde73dd4f7588ae46f8d051d120e1" kindref="member">micro_os_plus::micro_test_plus::detail::stopwatch::has_end</ref>  (void) const noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000119"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000123"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1ac698189ef451dfe398d779eb7cccda7f" kindref="member">micro_os_plus::micro_test_plus::detail::stopwatch::has_timestamps</ref>  (void) const noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000120"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000124"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a621a32c96a4950306c0a1aef8c577740" kindref="member">micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_begin</ref>  (void) noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000122"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000126"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adcdd0817f5db5db49eac3562c52e5470" kindref="member">micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_begin</ref>  (const timespec &amp;ts) noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000123"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000127"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a4c1a4d8b22d04205be49f8289ed7abd6" kindref="member">micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_end</ref>  (void) noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000124"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000128"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1aaa80547cfa783c321b0ce88ecaa39648" kindref="member">micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_end</ref>  (const timespec &amp;ts) noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000125"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000129"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Class <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp" kindref="compound">micro_os_plus::micro_test_plus::detail::timestamp</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000096"/>the timings are internal (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000097"/>the timings are internal (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga53a6bc7f86b15378c8296b3647e7013f" kindref="member">micro_os_plus::micro_test_plus::detail::timestamps</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000095"/>the timings are internal (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000096"/>the timings are internal (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaa2bfc74376f8c110053bfa6e06e40772" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_b&quot; (const char *name, decltype(sizeof(&quot;&quot;)) size)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000092"/>use a plain bool and a check message (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000093"/>use a plain bool and a check message (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae521cebfd48332f44d01e4f880b4aafa" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_c&quot; ()</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000072"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000073"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_d&quot; ()</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000090"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000091"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_f&quot; ()</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000089"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000090"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga366a0d47aec3241e659816067c94fcdf" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_i&quot; ()</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000070"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000071"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gabce6e838737bf25be6e7527f69e75590" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_i16&quot; ()</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000082"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000083"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6a192d3dfff5a4a98aa7532d36d1b1bd" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_i32&quot; ()</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000083"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000084"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gab0bb5d1e37cbe8de6477c11ecd60956d" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_i64&quot; ()</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000084"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000085"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9ca6fecc72b6da90acee52977eb077d7" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_i8&quot; ()</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000081"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000082"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga96e891b439024e116cb845bc65bc9c4f" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_l&quot; ()</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000074"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000075"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_ld&quot; ()</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000091"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000092"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf5ab66b00c9486ade5d49f34a83783f5" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_ll&quot; ()</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000075"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000076"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga812816a2e9b23de1f8d8b2d86553d96d" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_s&quot; ()</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000071"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000072"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga57d27f1a76de2d2b2a067134cbe61457" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_sc&quot; ()</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000073"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000074"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf45bf641153a462a1ba7c12b908e667f" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_u&quot; ()</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000076"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000077"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga96d12d563093f297a73a8b984ae7a3a5" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_u16&quot; ()</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000086"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000087"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga3171e605b5c2e1d9a0e55ae34e904674" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_u32&quot; ()</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000087"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000088"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga622b4808b7ebfc26ddf9db9128533f28" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_u64&quot; ()</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000088"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000089"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga80f43260f6a1afd8260355136858df48" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_u8&quot; ()</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000085"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000086"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6c1b46d4b967bdbc573e3192c2d9f98a" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_uc&quot; ()</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000077"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000078"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaef96b19b140b5007ec33a944c3b72cae" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_ul&quot; ()</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000079"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000080"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga01adcd3866da43c393b7fba8a5e72bb2" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_ull&quot; ()</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000080"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000081"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" kindref="member">micro_os_plus::micro_test_plus::literals::operator</ref> &quot;_us&quot; ()</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000078"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000079"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
+</listitem>
+<varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga00ea8f3dfb7cb0ef39919065321cf62f" kindref="member">micro_os_plus::micro_test_plus::mut</ref>  (const T &amp;t) noexcept -&gt; T &amp;</term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000009"/>use const_cast&lt;T&amp;&gt; (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gad47ea22957940a08ff56104d3c0c16f7" kindref="member">micro_os_plus::micro_test_plus::operators::operator and</ref>  (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000067"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kindref="member">all_of()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000068"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kindref="member">all_of()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga1d79c807e0d12684f1a850d7269c077b" kindref="member">micro_os_plus::micro_test_plus::operators::operator not</ref>  (T &amp;&amp;t)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000069"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000070"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gac008174d3b00512dc53b3e9e26ed45ec" kindref="member">micro_os_plus::micro_test_plus::operators::operator or</ref>  (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000068"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kindref="member">any_of()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000069"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kindref="member">any_of()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga0cc55025bbf6cac2f1b64242784559cb" kindref="member">micro_os_plus::micro_test_plus::operators::operator!=</ref>  (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000062"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga5bf176ef730172592095657417e5f039" kindref="member">ne()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000063"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga5bf176ef730172592095657417e5f039" kindref="member">ne()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga1d1c66d2cce699e0e64d8307e3951090" kindref="member">micro_os_plus::micro_test_plus::operators::operator&lt;</ref>  (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000065"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kindref="member">lt()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000066"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kindref="member">lt()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gaa0bcc006277ab947cf9ff7f13ab9b8ed" kindref="member">micro_os_plus::micro_test_plus::operators::operator&lt;=</ref>  (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000066"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kindref="member">le()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000067"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kindref="member">le()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga6f2d36e79581db77f3aa9f8d7a958c78" kindref="member">micro_os_plus::micro_test_plus::operators::operator==</ref>  (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000061"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000062"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gaa7e34201bb41a287742c3c08a88924d3" kindref="member">micro_os_plus::micro_test_plus::operators::operator&gt;</ref>  (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000063"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kindref="member">gt()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000064"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kindref="member">gt()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga9d9f5f30c7d8973ef7ccd6f52f0cbd21" kindref="member">micro_os_plus::micro_test_plus::operators::operator&gt;=</ref>  (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000064"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kindref="member">ge()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000065"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kindref="member">ge()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gafc93799846770e521c4721d0de0a81cc" kindref="member">micro_os_plus::micro_test_plus::reflection::short_name</ref>  (const char *name) noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000093"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">utility::extract_file_name()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000094"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">utility::extract_file_name()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a7f8403f1ccc6a0e8171ef077bcd9cbd4" kindref="member">micro_os_plus::micro_test_plus::runner::exit_code</ref>  (void)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000111"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a97f725cb167a2b464fac0eb88a0c8a46" kindref="member">run()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000114"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a700e3ef1f955492cd84235bd388dcdf2" kindref="member">run_suites()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a39ee9ec53f8df687cd84092de5118592" kindref="member">micro_os_plus::micro_test_plus::runner::initialise</ref>  (int argc, char *argv[], const char *top_suite_name)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000110"/> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000113"/> </para>
+</listitem>
+<varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a5f1698a93a8b09c39b87c23452335646" kindref="member">micro_os_plus::micro_test_plus::runner::name</ref>  (void) const noexcept</term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000117"/> </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a65250ff363fbb3b5869bbe4de9578e86" kindref="member">micro_os_plus::micro_test_plus::runner::reporter</ref>  (void) const noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000117"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1dd0221dca8e7382f0b625ff6316ed92" kindref="member">verbosity_level()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000121"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1dd0221dca8e7382f0b625ff6316ed92" kindref="member">verbosity_level()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a10788baa079e19676a8cdbaa253285dc" kindref="member">micro_os_plus::micro_test_plus::runner::runner</ref>  (const char *top_suite_name)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000109"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a5e2001730fd3659e9045fcc5cc668f07" kindref="member">runner()</ref> and <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1aac24d1193ac0579dd6ac3c523a32015f" kindref="member">add_top_suite()</ref> (since 4.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000112"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a5e2001730fd3659e9045fcc5cc668f07" kindref="member">runner()</ref> and <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1aac24d1193ac0579dd6ac3c523a32015f" kindref="member">add_top_suite()</ref> (since 4.1.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a2636252ac7f80b7425cf2e5eced77834" kindref="member">micro_os_plus::micro_test_plus::runner::suite</ref>  (std::string_view name, Callable_T &amp;&amp;callable, Args_T &amp;&amp;... arguments)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000112"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a4069fe957bbc7a9217ca2dd4d2034a97" kindref="member">add_suite()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000115"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a4069fe957bbc7a9217ca2dd4d2034a97" kindref="member">add_suite()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a6ed3a02ced62ed475c75678cd9e91be1" kindref="member">micro_os_plus::micro_test_plus::runner::suites_count</ref>  (void) const noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000114"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a9484b22aa909151712144cd39130187a" kindref="member">added_suites_count()</ref> or <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ac29e4b993bb3fe795eb8900231cbf5c4" kindref="member">total_suites_count()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000118"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a9484b22aa909151712144cd39130187a" kindref="member">added_suites_count()</ref> or <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ac29e4b993bb3fe795eb8900231cbf5c4" kindref="member">total_suites_count()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1af314280f14d61d37da276567685ec2a8" kindref="member">micro_os_plus::micro_test_plus::runner::timings</ref>  (void) const noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000115"/>the timings are internal (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000119"/>the timings are internal (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a7d3ccfaf760cb2f4ace586c222b22244" kindref="member">micro_os_plus::micro_test_plus::runner::timings</ref>  (void) noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000116"/>the timings are internal (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000120"/>the timings are internal (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a94a9df0418776ebce476cd9a2e4f591f" kindref="member">micro_os_plus::micro_test_plus::runner::verbosity</ref>  (void) const noexcept -&gt; <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kindref="member">micro_test_plus::verbosity</ref></term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000113"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1dd0221dca8e7382f0b625ff6316ed92" kindref="member">verbosity_level()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000116"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1dd0221dca8e7382f0b625ff6316ed92" kindref="member">verbosity_level()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga47d2c99f85fc5597b82da402d4687e75" kindref="member">micro_os_plus::micro_test_plus::static_runner</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000059"/>use runner (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000060"/>use runner (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a7890c9db0d4a64f53164857a4d034435" kindref="member">micro_os_plus::micro_test_plus::static_suite::static_suite</ref>  (const char *name, runner &amp;test_runner, Callable_T &amp;&amp;callable, Args_T &amp;&amp;... arguments)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000131"/>use a suite&amp; first parameter (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000138"/>use a suite&amp; first parameter (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga1424c18b26d5fdaed11439c77e6bf561" kindref="member">micro_os_plus::micro_test_plus::subtest</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000058"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" kindref="compound">test_case</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000059"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" kindref="compound">test_case</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a06c121fc0e8e87451a718846a11fc853" kindref="member">micro_os_plus::micro_test_plus::suite::timings</ref>  (void) const noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000129"/>the timings are internal (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000136"/>the timings are internal (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a431faae19127cec8fbc9ebce59709f31" kindref="member">micro_os_plus::micro_test_plus::suite::timings</ref>  (void) noexcept</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000130"/>the timings are internal (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000137"/>the timings are internal (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1ad25dc8d5d657ace9d47d3a95b3341802" kindref="member">micro_os_plus::micro_test_plus::test_case::assume</ref>  (const Expr_T &amp;expr, const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kindref="compound">reflection::source_location</ref> &amp;sl=<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1af2ee3ac5db96f13680291736d58fe327" kindref="member">reflection::source_location::current()</ref>)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000128"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1ace68a1bd4dd258082f4b1fc01fcd008a" kindref="member">require()</ref> (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000135"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-requirements_1gace68a1bd4dd258082f4b1fc01fcd008a" kindref="member">require()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a0fbd378373bbda24c9d574904268bc94" kindref="member">micro_os_plus::micro_test_plus::test_case::expect</ref>  (const Expr_T &amp;expr, const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kindref="compound">reflection::source_location</ref> &amp;sl=<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1af2ee3ac5db96f13680291736d58fe327" kindref="member">reflection::source_location::current()</ref>)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000126"/> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000133"/> </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a51f15ed441451eb5809559a54a1c7a73" kindref="member">micro_os_plus::micro_test_plus::test_case::require</ref>  (const Expr_T &amp;expr, const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kindref="compound">reflection::source_location</ref> &amp;sl=<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1af2ee3ac5db96f13680291736d58fe327" kindref="member">reflection::source_location::current()</ref>)</term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000127"/> </para>
+<listitem><para><anchor id="deprecated_1_deprecated000134"/> </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kindref="member">micro_os_plus::micro_test_plus::to_b</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000009"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000010"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kindref="member">micro_os_plus::micro_test_plus::to_c</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000010"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000011"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kindref="member">micro_os_plus::micro_test_plus::to_d</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000030"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000031"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5368740b47e92605914b6c38ea88aebf" kindref="member">micro_os_plus::micro_test_plus::to_f</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000029"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000030"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf3ee271cefcffa625e40d476305da62f" kindref="member">micro_os_plus::micro_test_plus::to_i</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000013"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000014"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kindref="member">micro_os_plus::micro_test_plus::to_i16</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000022"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000023"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga201eeff58867ba58d3312ae56113ef06" kindref="member">micro_os_plus::micro_test_plus::to_i32</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000023"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000024"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaead55f5e265634a742633261f9f2aa3f" kindref="member">micro_os_plus::micro_test_plus::to_i64</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000024"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000025"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kindref="member">micro_os_plus::micro_test_plus::to_i8</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000021"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000022"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga09028a1e0e713723257afba48b9ee551" kindref="member">micro_os_plus::micro_test_plus::to_l</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000014"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000015"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaeba32254fdd8159523b525745b13bfa9" kindref="member">micro_os_plus::micro_test_plus::to_ld</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000031"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000032"/>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kindref="member">micro_os_plus::micro_test_plus::to_ll</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000015"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000016"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kindref="member">micro_os_plus::micro_test_plus::to_s</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000012"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000013"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kindref="member">micro_os_plus::micro_test_plus::to_sc</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000011"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000012"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Struct <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" kindref="compound">micro_os_plus::micro_test_plus::to_t&lt; T &gt;</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000032"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000033"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kindref="member">micro_os_plus::micro_test_plus::to_u</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000016"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000017"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kindref="member">micro_os_plus::micro_test_plus::to_u16</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000026"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000027"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kindref="member">micro_os_plus::micro_test_plus::to_u32</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000027"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000028"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kindref="member">micro_os_plus::micro_test_plus::to_u64</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000028"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000029"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kindref="member">micro_os_plus::micro_test_plus::to_u8</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000025"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000026"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kindref="member">micro_os_plus::micro_test_plus::to_uc</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000017"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000018"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5d2d6a69c090569866a779672772b48f" kindref="member">micro_os_plus::micro_test_plus::to_ul</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000019"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000020"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kindref="member">micro_os_plus::micro_test_plus::to_ull</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000020"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000021"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kindref="member">micro_os_plus::micro_test_plus::to_us</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000018"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000019"/>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Namespace <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits" kindref="compound">micro_os_plus::micro_test_plus::type_traits</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000060"/>use the extension namespace (since 5.1.0) </para>
+<listitem><para><anchor id="deprecated_1_deprecated000061"/>use the extension namespace (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Struct <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_5_08_07_args___t_8_8_8_08_4" kindref="compound">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(*)(Args_T...)&gt;</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000102"/>Not replaced (since 5.1.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000103"/>Not replaced (since 6.0.0).  </para>
 </listitem>
 <varlistentry><term>Struct <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_args___t_8_8_8_08_4" kindref="compound">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(Args_T...)&gt;</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000103"/>Not replaced (since 5.1.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000104"/>Not replaced (since 6.0.0).  </para>
 </listitem>
 <varlistentry><term>Struct <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_52125631e1849775afa0689d07acdc76e" kindref="compound">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...) const &gt;</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000105"/>Not replaced (since 5.1.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000106"/>Not replaced (since 6.0.0).  </para>
 </listitem>
 <varlistentry><term>Struct <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits_3_01_r_07_t_1_1_5_08_07_args___t_8_8_8_08_4" kindref="compound">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...)&gt;</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000104"/>Not replaced (since 5.1.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000105"/>Not replaced (since 6.0.0).  </para>
 </listitem>
 <varlistentry><term>Struct <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits" kindref="compound">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; T &gt;</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000101"/>Not replaced (since 5.1.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000102"/>Not replaced (since 6.0.0).  </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga67890916b8d3d8cbaab893cc6b599745" kindref="member">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000107"/>The value wrappers are internal (since 5.1.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000108"/>The value wrappers are internal (since 6.0.0).  </para>
 </listitem>
 <varlistentry><term>Concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__value" kindref="compound">micro_os_plus::micro_test_plus::type_traits::has_value</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000097"/>There is no replacement; the concept used by the framework is internal (since 5.1.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000098"/>There is no replacement; the concept used by the framework is internal (since 6.0.0).  </para>
 </listitem>
 <varlistentry><term>Struct <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity" kindref="compound">micro_os_plus::micro_test_plus::type_traits::identity&lt; T, Extra &gt;</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000100"/>Use <computeroutput>std::type_identity</computeroutput> (since 5.1.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000101"/>Use <computeroutput>std::type_identity</computeroutput> (since 6.0.0).  </para>
 </listitem>
 <varlistentry><term>Concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__floating__point" kindref="compound">micro_os_plus::micro_test_plus::type_traits::is_floating_point</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000098"/>Use <computeroutput>std::floating_point</computeroutput> (since 5.1.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000099"/>Use <computeroutput>std::floating_point</computeroutput> (since 6.0.0).  </para>
 </listitem>
 <varlistentry><term>Struct <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list" kindref="compound">micro_os_plus::micro_test_plus::type_traits::list&lt; Types &gt;</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000099"/>Not replaced (since 5.1.0).  </para>
+<listitem><para><anchor id="deprecated_1_deprecated000100"/>Not replaced (since 6.0.0).  </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga65ad920b21a6c0df6848aa939659b92e" kindref="member">micro_os_plus::micro_test_plus::type_traits::value_base_</ref>  </term></varlistentry>
-<listitem><para><anchor id="deprecated_1_deprecated000106"/>The value wrappers are internal (since 5.1.0). </para>
+<listitem><para><anchor id="deprecated_1_deprecated000107"/>The value wrappers are internal (since 6.0.0). </para>
 </listitem>
 </variablelist>
 </para>

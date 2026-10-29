@@ -278,9 +278,9 @@ namespace micro_os_plus::micro_test_plus::type_traits { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000060>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000061>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use the extension namespace (since 5.1.0)</p>
+<p>use the extension namespace (since 6.0.0)</p>
 </dd>
 </dl>
 </div>

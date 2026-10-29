@@ -54,6 +54,9 @@ keywords:
 </div>
 
 
+<p>Options may also be set programmatically, on platforms without a command line, through <span class="doxyComputerOutput">runner_options</span>. The arguments that are not options are left to the application. An unknown <span class="doxyComputerOutput">--</span> option, an unknown reporter or colour mode, or an option with a missing argument, is reported on <span class="doxyComputerOutput">stderr</span> as an error, the option is ignored, and the exit code of the run is 2.</p>
+
+
 ## Reporter {#cli-reporter}
 
 

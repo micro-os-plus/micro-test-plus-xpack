@@ -84,7 +84,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * Returns `true` if the start reading was recorded, as determined by
    * `is_recorded()`.
    */
-  // Deprecated since 5.1.0; use has_elapsed().
+  // Deprecated since 6.0.0; use has_elapsed().
   inline bool
   stopwatch::has_begin (void) const noexcept
   {
@@ -96,7 +96,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * Returns `true` if the stop reading was recorded, as determined by
    * `is_recorded()`.
    */
-  // Deprecated since 5.1.0; use has_elapsed().
+  // Deprecated since 6.0.0; use has_elapsed().
   inline bool
   stopwatch::has_end (void) const noexcept
   {
@@ -107,7 +107,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * Forwards to `has_elapsed()`.
    */
-  // Deprecated since 5.1.0; use has_elapsed().
+  // Deprecated since 6.0.0; use has_elapsed().
   inline bool
   stopwatch::has_timestamps (void) const noexcept
   {
@@ -120,7 +120,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * conversions to `uint32_t` truncate the intervals longer than about
    * 49 days, as in v5.0.1.
    */
-  // Deprecated since 5.1.0; use elapsed().
+  // Deprecated since 6.0.0; use elapsed().
   inline void
   stopwatch::compute_elapsed_time (uint32_t& milliseconds,
                                    uint32_t& microseconds) const noexcept
@@ -134,7 +134,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * Stores @p ts only if `is_recorded()` reports no start reading.
    */
-  // Deprecated since 5.1.0; use start().
+  // Deprecated since 6.0.0; use start().
   inline void
   stopwatch::timestamp_begin (const timespec& ts) noexcept
   {
@@ -148,7 +148,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * Stores @p ts only if `is_recorded()` reports no stop reading.
    */
-  // Deprecated since 5.1.0; use stop().
+  // Deprecated since 6.0.0; use stop().
   inline void
   stopwatch::timestamp_end (const timespec& ts) noexcept
   {

@@ -132,6 +132,7 @@ var namespacemicro__os__plus_1_1micro__test__plus =
     [ "gt", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga9ae8e4747ff029faa7378110c8680278", null ],
     [ "le", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gae695dd46840f76a156aee70ff4df33fa", null ],
     [ "lt", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga714ff07cd77e05898de4fd315770f901", null ],
+    [ "mut", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga00ea8f3dfb7cb0ef39919065321cf62f", null ],
     [ "ne", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga5bf176ef730172592095657417e5f039", null ],
     [ "negate", "group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#ga6a0bb2654eb89c1b0a35134e8738eeb1", null ],
     [ "nothrow", "group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#ga798bd28001c3938784073e60dd904148", null ],

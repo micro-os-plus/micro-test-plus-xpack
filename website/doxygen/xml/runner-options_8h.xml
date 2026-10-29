@@ -219,7 +219,7 @@
         <detaileddescription>
 <para>Selected with the <computeroutput>--color</computeroutput> command-line option (or its alternative, <computeroutput>--use-colour</computeroutput>), or with <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a48ed4dd71eff02911c2d6943ba616850" kindref="member">runner_options::colour</ref></computeroutput>; the default is <computeroutput>automatic</computeroutput>. The names follow the values of <computeroutput>--color</computeroutput> in the GNU tools.</para>
 <para>Only the human reporter uses colours; the TAP reporter never does, since the ANSI escape sequences are not part of the TAP syntax. The output file never receives colours, whatever the mode.</para>
-<para><simplesect kind="since"><para>5.1.0 </para>
+<para><simplesect kind="since"><para>6.0.0 </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -252,7 +252,7 @@
         </briefdescription>
         <detaileddescription>
 <para>Selected with the <computeroutput>--reporter</computeroutput> command-line option, or with <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1ad22d04df014c5b0658b6e7bd239f15b0" kindref="member">runner_options::selected_reporter</ref></computeroutput>; the default is <computeroutput>tap</computeroutput>.</para>
-<para><simplesect kind="since"><para>5.1.0 </para>
+<para><simplesect kind="since"><para>6.0.0 </para>
 </simplesect>
 </para>
         </detaileddescription>

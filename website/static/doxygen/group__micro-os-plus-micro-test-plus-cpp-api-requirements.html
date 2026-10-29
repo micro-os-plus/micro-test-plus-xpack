@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.1.0</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;6.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -116,11 +116,81 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__micro-o
 <div class="contents">
 
 <p>Requirements are checks that stop the test case when they fail.  
-</p>
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gace68a1bd4dd258082f4b1fc01fcd008a" id="r_gace68a1bd4dd258082f4b1fc01fcd008a"><td class="memTemplParams" colspan="2">template&lt;class Expr_T&gt; <br />
+requires extension::checkable&lt;Expr_T&gt;</td></tr>
+<tr class="memitem:gace68a1bd4dd258082f4b1fc01fcd008a template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#gace68a1bd4dd258082f4b1fc01fcd008a">micro_os_plus::micro_test_plus::test_case::require</a> (const Expr_T &amp;expr, const <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html">reflection::source_location</a> &amp;sl=<a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current</a>())</td></tr>
+<tr class="memdesc:gace68a1bd4dd258082f4b1fc01fcd008a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks a condition and, if false, stops the test case.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>When a precondition of the following checks does not hold, the test case cannot continue meaningfully. A failed requirement is reported and counted like a failed expectation, and then the rest of the test case body is skipped; the run continues with the next test case.</p>
-<p>This is the behaviour of the fatal assertions of most C++ test frameworks (<span class="tt">ASSERT_*</span> in GoogleTest, <span class="tt">REQUIRE()</span> in Catch2 and doctest, <span class="tt">BOOST_REQUIRE()</span> in Boost.Test). The test case is stopped with an exception; without exceptions, it cannot be stopped alone, so the results of the test case are reported, ending with the failed requirement (followed, with the TAP reporter, by a <span class="tt">Bail out!</span> line), and the whole test execution is aborted with <span class="tt">runner::abort()</span>, as Catch2 does; the remaining test cases do not run, and no totals are written.</p>
-<p><span class="tt">assume()</span> is a deprecated alias of <span class="tt">require()</span>; in JUnit or Hypothesis, an unmet assumption skips the test instead of failing it.  </p>
-</div></div><!-- contents -->
+<p>This is the behaviour of the fatal assertions of most C++ test frameworks (<span class="tt">ASSERT_*</span> in GoogleTest, <span class="tt">REQUIRE()</span> in Catch2 and doctest, <span class="tt">BOOST_REQUIRE()</span> in Boost.Test). The test case is stopped with an exception; without exceptions, it cannot be stopped alone, so the results of the test case are reported, ending with the failed requirement (followed, with the TAP reporter, by a <span class="tt">Bail out!</span> line), and the whole test execution is aborted with <span class="tt">runner::abort()</span>, as Catch2 does; the remaining test cases do not run, and no totals are written.  </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="gace68a1bd4dd258082f4b1fc01fcd008a" name="gace68a1bd4dd258082f4b1fc01fcd008a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gace68a1bd4dd258082f4b1fc01fcd008a">&#9670;&#160;</a></span>require()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Expr_T&gt; <br />
+requires extension::checkable&lt;Expr_T&gt;</div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto micro_os_plus::micro_test_plus::test_case::require </td>
+          <td>(</td>
+          <td class="paramtype">const Expr_T &amp;</td>          <td class="paramname"><span class="paramname"><em>expr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html">reflection::source_location</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>sl</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current</a>&#160;()</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The failure is reported and counted as for <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-expectations.html#gaf4f5f9632b5a290c1894984661a41a86" title="Evaluates a condition and reports the result.">expect()</a></span>; then, when exceptions are enabled, the rest of the test case body is skipped, and the run continues with the next test case, as <span class="tt">ASSERT_*</span> in GoogleTest, <span class="tt">REQUIRE()</span> in Catch2 and doctest, and <span class="tt">BOOST_REQUIRE()</span> in Boost.Test do. Without exceptions, the test execution is aborted with <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a7bc806540e65c21095ef1ea1ef970db2" title="Aborts test execution immediately.">runner::abort()</a></span>.</p>
+<p>The test case is stopped by throwing a private exception, at the end of the statement, after the optional message was appended. It is not derived from <span class="tt">std::exception</span>; a <span class="tt">catch (...)</span> in the test case body must rethrow it, and the body must not be <span class="tt">noexcept</span>.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Expr_T</td><td>The type of the custom expression.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Constraints</dt><dd>Enabled only if <span class="tt">Expr_T</span> is a framework expression type or is contextually convertible to <span class="tt">bool</span>, including by an <span class="tt">explicit operator bool</span> (enforced via a C++20 <span class="tt">requires</span> clause, with <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable.html" title="C++20 concept satisfied when a type can be used as a test expression in expect() or require().">extension::checkable</a></span>).</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expr</td><td>Logical expression to evaluate. </td></tr>
+    <tr><td class="paramname">sl</td><td>Optional source location, defaulting to the current line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The check result, to which optional messages can be appended with <span class="tt">operator&lt;&lt;</span>; the check is reported when it is destroyed, at the end of the statement.</dd></dl>
+<p>Constructs and returns a <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result.html" title="The result of one check, reported when destroyed.">detail::check_result</a></span> of the kind <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a0726a1bc3b6f16245cb8a4b42fe0e70caba12fb48e2d23bb2bd2819f64d02ec7e" title="A check created by require().">detail::check_kind::requirement</a></span>. The check result evaluates the condition when constructed, records a pass or fail when it is destroyed, and, if the condition is false, stops the test case by throwing <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1failed__requirement.html" title="The exception thrown to stop a test case after a failed require().">detail::failed_requirement</a></span> (caught by <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__case.html#adb4333ecb107fee477156b661f0b1512" title="Executes the test case body by invoking the referred callable.">test_case::run()</a></span>), or, without exceptions, aborts the test execution.</p>
+<p>Deprecated; the check is the same as that of <span class="tt"><a class="el" href="#gace68a1bd4dd258082f4b1fc01fcd008a" title="Checks a condition and, if false, stops the test case.">require()</a></span>, for the arguments that are always true. </p>
+
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00477">477</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  479</span>  {</div>
+<div class="line"><span class="lineno">  480</span>    <span class="keywordflow">return</span> detail::check_result{ expr,</div>
+<div class="line"><span class="lineno">  481</span>                                 <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a0726a1bc3b6f16245cb8a4b42fe0e70caba12fb48e2d23bb2bd2819f64d02ec7e">detail::check_kind::requirement</a>,</div>
+<div class="line"><span class="lineno">  482</span>                                 sl,</div>
+<div class="line"><span class="lineno">  483</span>                                 *<span class="keyword">this</span>,</div>
+<div class="line"><span class="lineno">  484</span>                                 <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a7e4a578732a0464480e211f6591fa69f">test_reporter</a> ().<a class="code hl_variable" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#ac928cbe8852ca0c0273482b905c6301b">expression_</a>,</div>
+<div class="line"><span class="lineno">  485</span>                                 <a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a7e4a578732a0464480e211f6591fa69f">test_reporter</a> ().<a class="code hl_function" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a0e6f0a129d495a7e9d57ef71412cd88f">writes_passed_checks</a> () };</div>
+<div class="line"><span class="lineno">  486</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_a0e6f0a129d495a7e9d57ef71412cd88f"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a0e6f0a129d495a7e9d57ef71412cd88f">micro_os_plus::micro_test_plus::detail::reporter::writes_passed_checks</a></div><div class="ttdeci">bool writes_passed_checks(void) const noexcept</div><div class="ttdoc">Returns whether the passed checks are written anywhere.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8cpp_source.html#l00290">reporter.cpp:290</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_ac928cbe8852ca0c0273482b905c6301b"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#ac928cbe8852ca0c0273482b905c6301b">micro_os_plus::micro_test_plus::detail::reporter::expression_</a></div><div class="ttdeci">expression_formatter expression_</div><div class="ttdoc">Expression formatter for pass and fail reporting.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01318">reporter.h:1318</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_html_a7e4a578732a0464480e211f6591fa69f"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a7e4a578732a0464480e211f6591fa69f">micro_os_plus::micro_test_plus::detail::runnable_base::test_reporter</a></div><div class="ttdeci">class reporter &amp; test_reporter(void) const noexcept</div><div class="ttdoc">Gets the test reporter associated with this test runnable.</div><div class="ttdef"><b>Definition</b> <a href="test_8cpp_source.html#l00115">test.cpp:115</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a0726a1bc3b6f16245cb8a4b42fe0e70caba12fb48e2d23bb2bd2819f64d02ec7e"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a0726a1bc3b6f16245cb8a4b42fe0e70caba12fb48e2d23bb2bd2819f64d02ec7e">micro_os_plus::micro_test_plus::detail::check_kind::requirement</a></div><div class="ttdeci">@ requirement</div><div class="ttdoc">A check created by require().</div><div class="ttdef"><b>Definition</b> <a href="check-result_8h_source.html#l00130">check-result.h:130</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="reporter_8h_source.html#l01318">micro_os_plus::micro_test_plus::detail::reporter::expression_</a>, <a class="el" href="check-result_8h_source.html#l00130">micro_os_plus::micro_test_plus::detail::requirement</a>, <a class="el" href="test_8cpp_source.html#l00115">micro_os_plus::micro_test_plus::detail::runnable_base::test_reporter()</a>, and <a class="el" href="reporter_8cpp_source.html#l00290">micro_os_plus::micro_test_plus::detail::reporter::writes_passed_checks()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00535">assume()</a>, and <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__case.html#ac2e310ec902a0c3e786d4c415269c23e">operator=()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

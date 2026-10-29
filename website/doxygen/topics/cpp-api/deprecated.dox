@@ -6,7 +6,7 @@ The definitions in this group, and in the groups they refer to, are still
 available, but the compiler reports their use, and they will be removed in
 a future major release. Each one names its replacement in the deprecation
 message, together with the version that deprecated it (most of them since
-5.1.0).
+6.0.0).
 
 @par Availability
 The deprecated definitions are compiled only when the application defines

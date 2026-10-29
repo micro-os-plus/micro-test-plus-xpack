@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.1.0</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;6.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -225,7 +225,7 @@ requires (extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&gt
 </div><!-- fragment --><p>Without such an operator, comparators such as <span class="tt"><a class="el" href="#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a></span> do not compile for user-defined types, since the operand values cannot be formatted; only the scoped enumerations are formatted without it, by their underlying value. Plain boolean checks, such as <span class="tt">expect (a == b)</span>, do not need it, but they report only the source location on failure. The same operator also writes the values appended to the messages of the checks (<span class="tt">expect (a == b) &lt;&lt; "a is " &lt;&lt; a</span>).</p>
 <p>Applications use the <span class="tt">operator&lt;&lt;</span> overloads, and <span class="tt">str()</span> to test their own operators; the functions that manage the buffer are private to the framework. </p>
 
-<p class="definition">Definition at line <a class="el" href="expression-formatter_8h_source.html#l01227">1227</a> of file <a class="el" href="expression-formatter_8h_source.html">expression-formatter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="expression-formatter_8h_source.html#l01268">1268</a> of file <a class="el" href="expression-formatter_8h_source.html">expression-formatter.h</a>.</p>
 
 </div>
 </div>
@@ -285,7 +285,7 @@ requires (detail::approx_operand&lt;Lhs_T&gt; and detail::approx_operand&lt;Rhs_
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A comparator object that evaluates to true if <span class="tt">lhs</span> and <span class="tt">rhs</span> differ by less than <span class="tt">epsilon</span>.</dd></dl>
-<dl class="section since"><dt>Since</dt><dd>5.1.0</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>6.0.0</dd></dl>
 <p>The <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx</a></span> function template constructs a <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op.html" title="Approximate comparator struct template.">detail::approx_op</a></span> from the forwarded operands and tolerance; the operands are numbers, so <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b" title="Prepares an operand of a comparator.">detail::as_operand()</a></span>, which converts the C strings, is not needed. </p>
 
 <p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00196">196</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
@@ -296,7 +296,7 @@ requires (detail::approx_operand&lt;Lhs_T&gt; and detail::approx_operand&lt;Rhs_
 <div class="line"><span class="lineno">  201</span>  }</div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op.html">micro_os_plus::micro_test_plus::detail::approx_op</a></div><div class="ttdoc">Approximate comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00881">detail.h:882</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00661">approx()</a>.</p>
+<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00675">approx()</a>.</p>
 
 </div>
 </div>

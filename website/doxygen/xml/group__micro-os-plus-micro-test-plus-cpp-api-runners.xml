@@ -14,17 +14,20 @@
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">mt::runner<sp/>tr;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal">main<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>argv[])</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>mt::runner<sp/>tr;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>ts<sp/>=<sp/>tr.initialise<sp/>(argc,<sp/>argv,<sp/></highlight><highlight class="stringliteral">&quot;Minimal&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>tr.initialise<sp/>(argc,<sp/>argv);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>ts<sp/>=<sp/>tr.add_top_suite<sp/>(</highlight><highlight class="stringliteral">&quot;Minimal&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>truth&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t.expect<sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>});</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tr.run<sp/>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tr.run_suites<sp/>();</highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 <para>When this test is executed, the output is as follows:</para>
@@ -39,7 +42,7 @@
 <codeline><highlight class="normal">1..1</highlight></codeline>
 <codeline><highlight class="normal">#<sp/>{<sp/>total:<sp/>1<sp/>check<sp/>passed,<sp/>0<sp/>failed,<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>1<sp/>test<sp/>suite,<sp/>time:<sp/>0.136<sp/>ms<sp/>}</highlight></codeline>
 </programlisting></para>
-<para>The name passed to the initialiser is optional; if missing, it will attempt to extract a name from argv[0], which is commonly the executable name. If that fails, a default name is used.  </para>
+<para>The name passed to the top suite is optional; if missing, it will attempt to extract a name from argv[0], which is commonly the executable name. If that fails, a default name is used.  </para>
     </detaileddescription>
   </compounddef>
 </doxygen>

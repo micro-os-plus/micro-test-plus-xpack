@@ -124,7 +124,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    *
-   * @since 5.1.0
+   * @since 6.0.0
    */
   enum class reporter_kind
   {
@@ -147,7 +147,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    *
-   * @since 5.1.0
+   * @since 6.0.0
    */
   enum class colour_mode
   {
@@ -210,7 +210,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    *
-   * @since 5.1.0
+   * @since 6.0.0
    */
   class runner_options
   {
@@ -248,7 +248,7 @@ namespace micro_os_plus::micro_test_plus
      * @param argc The argument count from main().
      * @param argv The argument vector from main().
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     explicit runner_options (int argc, char* argv[]);
 
@@ -262,7 +262,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param other The instance to copy.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     runner_options (const runner_options& other) = default;
 
@@ -275,7 +275,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param other The instance to move from.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     runner_options (runner_options&& other) = default;
 
@@ -294,7 +294,7 @@ namespace micro_os_plus::micro_test_plus
      * @param other The instance to copy.
      * @return Reference to this instance.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     runner_options&
     operator= (const runner_options& other);
@@ -308,7 +308,7 @@ namespace micro_os_plus::micro_test_plus
      * @param other The instance to move from.
      * @return Reference to this instance.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     runner_options&
     operator= (runner_options&& other)
@@ -366,7 +366,7 @@ namespace micro_os_plus::micro_test_plus
      * Catch2 and Boost UT, takes `yes`, `no`, or `auto`, and also accepts
      * the other values of `--color`. Used only by the human reporter.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     colour_mode colour{ colour_mode::automatic };
 
@@ -407,7 +407,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * When the list is empty (the default), everything runs.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     std::vector<std::string> filter_patterns{};
 
@@ -439,7 +439,7 @@ namespace micro_os_plus::micro_test_plus
      * the output file, if any; no report is written, and `run_suites()` returns
      * 0, or 2 after an option error.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     bool list_tests{ false };
 
@@ -454,7 +454,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @return `true` if at least one error was found.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     [[nodiscard]] bool
     has_errors (void) const noexcept;
@@ -470,7 +470,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @return `true` if the reporter name was not recognised.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     [[nodiscard]] bool
     has_invalid_reporter (void) const noexcept;

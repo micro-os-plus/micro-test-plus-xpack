@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.1.0</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;6.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -130,7 +130,7 @@ Classes</h2></td></tr>
 <dl class="section user"><dt>Examples</dt><dd></dd></dl>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>mt = <a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// In main(), after tr.initialise():</span></div>
+<div class="line"><span class="comment">// In main(), after tr.add_top_suite():</span></div>
 <div class="line">ts.test (<span class="stringliteral">&quot;Check various conditions&quot;</span>, [] (<span class="keyword">auto</span>&amp; t) {</div>
 <div class="line">  t.expect (mt::eq (compute_answer (), 42)) &lt;&lt; <span class="stringliteral">&quot;answer eq 42&quot;</span>;</div>
 <div class="line">  t.expect (mt::ne (compute_answer (), 43)) &lt;&lt; <span class="stringliteral">&quot;answer ne 43&quot;</span>;</div>

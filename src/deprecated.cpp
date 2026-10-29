@@ -73,7 +73,7 @@ namespace micro_os_plus::micro_test_plus
      * separators are recognised. If no separator is present, the original
      * input string is returned.
      */
-    // Deprecated since 5.1.0; use utility::extract_file_name().
+    // Deprecated since 6.0.0; use utility::extract_file_name().
     const char*
     short_name (const char* name) noexcept
     {
@@ -95,7 +95,7 @@ namespace micro_os_plus::micro_test_plus
      * `read_clock()`, the same clock as `stopwatch`; without a clock,
      * the value remains zero.
      */
-    // Deprecated since 5.1.0, as the whole `timestamp` class; the timings are
+    // Deprecated since 6.0.0, as the whole `timestamp` class; the timings are
     // internal.
     timestamp::timestamp (void) noexcept
     {

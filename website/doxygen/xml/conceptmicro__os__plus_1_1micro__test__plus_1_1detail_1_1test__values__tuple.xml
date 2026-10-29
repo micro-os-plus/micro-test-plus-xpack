@@ -13,7 +13,7 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1tes
       std::tuple_size&lt;std::remove_cvref_t&lt;T&gt;&gt;<ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" kindref="compound">::value</ref>;
     }</initializer>
     <conceptparts>
-      <codepart line="928">    <programlisting>
+      <codepart line="987">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">test_values_tuple<sp/>=<sp/>(not<sp/>test_values_range&lt;T&gt;)<sp/>and<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::tuple_size&lt;std::remove_cvref_t&lt;T&gt;&gt;::value;</highlight></codeline>
@@ -36,6 +36,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1tes
 </parameterlist>
 Satisfied by the tuple-like types, like <computeroutput>std::tuple</computeroutput> and <computeroutput>std::pair</computeroutput>, which are not ranges (<computeroutput>std::array</computeroutput> is iterated as a range); their values may have different types. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="928" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="987" column="5"/>
   </compounddef>
 </doxygen>

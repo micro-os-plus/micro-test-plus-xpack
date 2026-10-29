@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.1.0</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;6.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -210,7 +210,7 @@ Type Wrappers</h2></td></tr>
 <tr><td class="ititle" colspan="2"><p>Strongly-typed wrappers for converting dynamic values and expressions to specific types recognised by µTest++ comparators.</p>
 <p>These type aliases provide a type-safe mechanism for explicitly converting values to the required types for µTest++ test expressions and comparators. Each alias is a wrapper around <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">detail::value</a>&lt;T&gt;</span>, ensuring that the value is treated as the specified type within the framework.</p>
 <p>The <span class="tt">to_*</span> forms replaced the older <span class="tt"><a class="el" href="#ga8468610e763177a8f569f7d618851288" title="Deprecated strongly-typed wrapper for int values, the v5.0.1 name of to_i.">_i</a></span>, <span class="tt"><a class="el" href="#gaf27e37e2e29af1a3ffd5c4fb07e77ff9" title="Deprecated strongly-typed wrapper for std::uint8_t values, the v5.0.1 name of to_u8.">_u8</a></span>, etc. aliases, which were deprecated in version 3.2.0.</p>
-<dl class="section user"><dt>Deprecated</dt><dd>Pass the plain values to the function comparators <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga5bf176ef730172592095657417e5f039" title="Generic non-equality comparator.">ne()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga9ae8e4747ff029faa7378110c8680278" title="Generic greater than comparator.">gt()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gab8da4228bc9a820546753b018a129a7e" title="Generic greater than or equal comparator.">ge()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga714ff07cd77e05898de4fd315770f901" title="Generic less than comparator.">lt()</a></span>, and <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gae695dd46840f76a156aee70ff4df33fa" title="Generic less than or equal comparator.">le()</a></span> instead; they report the operands in the same way. For the floating-point values compared with a tolerance, use <span class="tt"><a class="el" href="#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a></span> (since 5.1.0).</dd></dl>
+<dl class="section user"><dt>Deprecated</dt><dd>Pass the plain values to the function comparators <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga5bf176ef730172592095657417e5f039" title="Generic non-equality comparator.">ne()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga9ae8e4747ff029faa7378110c8680278" title="Generic greater than comparator.">gt()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gab8da4228bc9a820546753b018a129a7e" title="Generic greater than or equal comparator.">ge()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga714ff07cd77e05898de4fd315770f901" title="Generic less than comparator.">lt()</a></span>, and <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gae695dd46840f76a156aee70ff4df33fa" title="Generic less than or equal comparator.">le()</a></span> instead; they report the operands in the same way. For the floating-point values compared with a tolerance, use <span class="tt"><a class="el" href="#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a></span> (since 6.0.0).</dd></dl>
 <dl class="section user"><dt>Example</dt><dd></dd></dl>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> x = 42;</div>
 <div class="line"><span class="comment">// Explicitly treat x as an int for test comparison.</span></div>
@@ -270,7 +270,7 @@ Deprecated Type Wrappers</h2></td></tr>
 <tr><td class="ititle" colspan="2"><p>The v5.0.1 names of the <span class="tt">to_*</span> type wrappers.</p>
 <p>The Boost UT style names, with a leading underscore, kept for compatibility with the existing applications. Each one is an alias of the corresponding <span class="tt">to_*</span> wrapper, so the wrapped values are compared and reported in the same way. They do not conflict with the literal operators with the same suffixes (<span class="tt">42<a class="el" href="#ga8468610e763177a8f569f7d618851288" title="Deprecated strongly-typed wrapper for int values, the v5.0.1 name of to_i.">_i</a></span>), which are in the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1literals.html" title="User-defined literals for the µTest++ testing framework.">literals</a></span> namespace.</p>
 <p>GCC reports the deprecation only when the alias names the type of a declaration, not when it is used in an expression, as in <span class="tt"><a class="el" href="#ga8468610e763177a8f569f7d618851288" title="Deprecated strongly-typed wrapper for int values, the v5.0.1 name of to_i.">_i</a> (expr)</span>; Clang reports it in both cases.</p>
-<dl class="section user"><dt>Deprecated</dt><dd>Pass the plain values to the function comparators <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga5bf176ef730172592095657417e5f039" title="Generic non-equality comparator.">ne()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga9ae8e4747ff029faa7378110c8680278" title="Generic greater than comparator.">gt()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gab8da4228bc9a820546753b018a129a7e" title="Generic greater than or equal comparator.">ge()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga714ff07cd77e05898de4fd315770f901" title="Generic less than comparator.">lt()</a></span>, and <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gae695dd46840f76a156aee70ff4df33fa" title="Generic less than or equal comparator.">le()</a></span> instead; the <span class="tt">to_*</span> type wrappers that replaced these aliases (since 3.2.0) are deprecated too (since 5.1.0). </dd></dl>
+<dl class="section user"><dt>Deprecated</dt><dd>Pass the plain values to the function comparators <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga5bf176ef730172592095657417e5f039" title="Generic non-equality comparator.">ne()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga9ae8e4747ff029faa7378110c8680278" title="Generic greater than comparator.">gt()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gab8da4228bc9a820546753b018a129a7e" title="Generic greater than or equal comparator.">ge()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga714ff07cd77e05898de4fd315770f901" title="Generic less than comparator.">lt()</a></span>, and <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gae695dd46840f76a156aee70ff4df33fa" title="Generic less than or equal comparator.">le()</a></span> instead; the <span class="tt">to_*</span> type wrappers that replaced these aliases (since 3.2.0) are deprecated too (since 6.0.0). </dd></dl>
 </td></tr>
 <tr class="memitem:gad4203783cfbe141f41ee8515f7b2ea94" id="r_gad4203783cfbe141f41ee8515f7b2ea94"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#gad4203783cfbe141f41ee8515f7b2ea94">micro_os_plus::micro_test_plus::_b</a> = <a class="el" href="#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a></td></tr>
 <tr class="memdesc:gad4203783cfbe141f41ee8515f7b2ea94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated strongly-typed wrapper for <span class="tt">bool</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="#ga5570e36fb3e73be3edf734ac80a23d93" title="Deprecated strongly-typed wrapper for bool values.">to_b</a></span>.  <br /></td></tr>
@@ -324,7 +324,7 @@ Deprecated Type Wrappers</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Literals such as <span class="tt">1<a class="el" href="#ga8468610e763177a8f569f7d618851288" title="Deprecated strongly-typed wrapper for int values, the v5.0.1 name of to_i.">_i</a></span> and <span class="tt">42<a class="el" href="#ga231cd51e76a2f426703275739d605ad4" title="Deprecated strongly-typed wrapper for float values, the v5.0.1 name of to_f.">_f</a></span> create strongly typed operands, whilst wrappers like <span class="tt">mt::to_i{expression}</span> convert dynamic values, so that the (deprecated) overloaded operators can compare and report them.</p>
-<dl class="section user"><dt>Deprecated</dt><dd>The literals of the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1literals.html" title="User-defined literals for the µTest++ testing framework.">literals</a></span> namespace, the <span class="tt">to_*</span> type wrappers, <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1to__t.html" title="Deprecated generic strongly-typed wrapper for explicit type conversion.">to_t</a>&lt;T&gt;</span>, and the two-argument <span class="tt">mt::approx (<a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">value</a>, epsilon)</span> are deprecated since 5.1.0, in favour of the function comparators <span class="tt">mt::eq()</span>, <span class="tt">mt::ne()</span>, <span class="tt">mt::lt()</span>, <span class="tt">mt::le()</span>, <span class="tt">mt::gt()</span>, and <span class="tt">mt::ge()</span>, which compare and report the plain values, and of the function comparator <span class="tt">mt::approx (lhs, rhs, epsilon)</span>, which sets the tolerance explicitly. The compiler reports their use.</dd></dl>
+<dl class="section user"><dt>Deprecated</dt><dd>The literals of the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1literals.html" title="User-defined literals for the µTest++ testing framework.">literals</a></span> namespace, the <span class="tt">to_*</span> type wrappers, <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1to__t.html" title="Deprecated generic strongly-typed wrapper for explicit type conversion.">to_t</a>&lt;T&gt;</span>, and the two-argument <span class="tt">mt::approx (<a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">value</a>, epsilon)</span> are deprecated since 6.0.0, in favour of the function comparators <span class="tt">mt::eq()</span>, <span class="tt">mt::ne()</span>, <span class="tt">mt::lt()</span>, <span class="tt">mt::le()</span>, <span class="tt">mt::gt()</span>, and <span class="tt">mt::ge()</span>, which compare and report the plain values, and of the function comparator <span class="tt">mt::approx (lhs, rhs, epsilon)</span>, which sets the tolerance explicitly. The compiler reports their use.</dd></dl>
 <p>The integer literals follow the C++ syntax: decimal, hexadecimal (<span class="tt">0x10_i</span>), binary (<span class="tt">0b101_i</span>), and octal (<span class="tt">010<a class="el" href="#ga8468610e763177a8f569f7d618851288" title="Deprecated strongly-typed wrapper for int values, the v5.0.1 name of to_i.">_i</a></span>, which is 8), with digit separators (<span class="tt">1'000<a class="el" href="#ga8468610e763177a8f569f7d618851288" title="Deprecated strongly-typed wrapper for int values, the v5.0.1 name of to_i.">_i</a></span>). A decimal point, an exponent, or a value that does not fit in the type of the literal (e.g. <span class="tt">300<a class="el" href="#gaf27e37e2e29af1a3ffd5c4fb07e77ff9" title="Deprecated strongly-typed wrapper for std::uint8_t values, the v5.0.1 name of to_u8.">_u8</a></span>) is a compilation error.</p>
 <p>The floating-point literals are written with decimal digits and a decimal point, optionally with digit separators (<span class="tt">1'000.000'5<a class="el" href="#ga7c6c0169d894a7dd589d96df49e8df26" title="Deprecated strongly-typed wrapper for double values, the v5.0.1 name of to_d.">_d</a></span>), but without an exponent; the digits before the decimal point, and the decimals, are each limited to <span class="tt">std::numeric_limits&lt;T&gt;::digits10</span> of the type of the literal (for example 6 for <span class="tt"><a class="el" href="#ga231cd51e76a2f426703275739d605ad4" title="Deprecated strongly-typed wrapper for float values, the v5.0.1 name of to_f.">_f</a></span> and 15 for <span class="tt"><a class="el" href="#ga7c6c0169d894a7dd589d96df49e8df26" title="Deprecated strongly-typed wrapper for double values, the v5.0.1 name of to_d.">_d</a></span>), otherwise the compilation fails.</p>
 <p>The literal <span class="tt">"name"<a class="el" href="#gad4203783cfbe141f41ee8515f7b2ea94" title="Deprecated strongly-typed wrapper for bool values, the v5.0.1 name of to_b.">_b</a></span> creates a named <span class="tt">bool</span> constant with the value <span class="tt">true</span>, reported by its name; it is deprecated in favour of a plain <span class="tt">bool</span> and a check message.</p>
@@ -349,7 +349,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga5570e36fb3e73be3edf734ac80a23d93" title="Deprecated strongly-typed wrapper for bool values.">to_b</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000034">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga5570e36fb3e73be3edf734ac80a23d93" title="Deprecated strongly-typed wrapper for bool values.">to_b</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000035">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -364,7 +364,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga6ccf42d05ae14c445f602128f8ffd831" title="Deprecated strongly-typed wrapper for char values.">to_c</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000035">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga6ccf42d05ae14c445f602128f8ffd831" title="Deprecated strongly-typed wrapper for char values.">to_c</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000036">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -379,7 +379,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga9608f4a6f0a61bc159a66a46fb8cd630" title="Deprecated strongly-typed wrapper for double values.">to_d</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000055">Deprecated</a></b></dt><dd>use <a class="el" href="#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a> for tolerances (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga9608f4a6f0a61bc159a66a46fb8cd630" title="Deprecated strongly-typed wrapper for double values.">to_d</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000056">Deprecated</a></b></dt><dd>use <a class="el" href="#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a> for tolerances (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -394,7 +394,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga5368740b47e92605914b6c38ea88aebf" title="Deprecated strongly-typed wrapper for float values.">to_f</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000054">Deprecated</a></b></dt><dd>use <a class="el" href="#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a> for tolerances (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga5368740b47e92605914b6c38ea88aebf" title="Deprecated strongly-typed wrapper for float values.">to_f</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000055">Deprecated</a></b></dt><dd>use <a class="el" href="#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a> for tolerances (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -409,7 +409,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#gaf3ee271cefcffa625e40d476305da62f" title="Deprecated strongly-typed wrapper for int values.">to_i</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000038">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#gaf3ee271cefcffa625e40d476305da62f" title="Deprecated strongly-typed wrapper for int values.">to_i</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000039">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -424,7 +424,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga5cc1961eb074bb0740d8a593c411e0f9" title="Deprecated strongly-typed wrapper for std::int16_t values.">to_i16</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000047">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga5cc1961eb074bb0740d8a593c411e0f9" title="Deprecated strongly-typed wrapper for std::int16_t values.">to_i16</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000048">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -439,7 +439,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga201eeff58867ba58d3312ae56113ef06" title="Deprecated strongly-typed wrapper for std::int32_t values.">to_i32</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000048">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga201eeff58867ba58d3312ae56113ef06" title="Deprecated strongly-typed wrapper for std::int32_t values.">to_i32</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000049">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -454,7 +454,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#gaead55f5e265634a742633261f9f2aa3f" title="Deprecated strongly-typed wrapper for std::int64_t values.">to_i64</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000049">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#gaead55f5e265634a742633261f9f2aa3f" title="Deprecated strongly-typed wrapper for std::int64_t values.">to_i64</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000050">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -469,7 +469,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga52ad3a0a454c230f9fcfb01e5d73e6db" title="Deprecated strongly-typed wrapper for std::int8_t values.">to_i8</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000046">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga52ad3a0a454c230f9fcfb01e5d73e6db" title="Deprecated strongly-typed wrapper for std::int8_t values.">to_i8</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000047">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -484,7 +484,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga09028a1e0e713723257afba48b9ee551" title="Deprecated strongly-typed wrapper for long values.">to_l</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000039">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga09028a1e0e713723257afba48b9ee551" title="Deprecated strongly-typed wrapper for long values.">to_l</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000040">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -499,7 +499,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#gaeba32254fdd8159523b525745b13bfa9" title="Deprecated strongly-typed wrapper for long double values.">to_ld</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000056">Deprecated</a></b></dt><dd>use <a class="el" href="#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a> for tolerances (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#gaeba32254fdd8159523b525745b13bfa9" title="Deprecated strongly-typed wrapper for long double values.">to_ld</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000057">Deprecated</a></b></dt><dd>use <a class="el" href="#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a> for tolerances (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -514,7 +514,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga0d0ae1e784a8a4da6630ab06addcad34" title="Deprecated strongly-typed wrapper for long long values.">to_ll</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000040">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga0d0ae1e784a8a4da6630ab06addcad34" title="Deprecated strongly-typed wrapper for long long values.">to_ll</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000041">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -529,7 +529,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#gabc8f58b457f42435bcb51f53e6fe6b78" title="Deprecated strongly-typed wrapper for short values.">to_s</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000037">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#gabc8f58b457f42435bcb51f53e6fe6b78" title="Deprecated strongly-typed wrapper for short values.">to_s</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000038">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -544,7 +544,7 @@ Deprecated Type Wrappers</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#gae3838e23c60edeadbafdd4a22d1b1516" title="Deprecated strongly-typed wrapper for signed char values.">to_sc</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000036">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#gae3838e23c60edeadbafdd4a22d1b1516" title="Deprecated strongly-typed wrapper for signed char values.">to_sc</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000037">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -568,7 +568,7 @@ template&lt;class T&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000057">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000058">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -583,7 +583,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" title="Deprecated strongly-typed wrapper for unsigned values.">to_u</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000041">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" title="Deprecated strongly-typed wrapper for unsigned values.">to_u</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000042">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -598,7 +598,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga87bb08ab5e58f481ee911e872108f8e0" title="Deprecated strongly-typed wrapper for std::uint16_t values.">to_u16</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000051">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga87bb08ab5e58f481ee911e872108f8e0" title="Deprecated strongly-typed wrapper for std::uint16_t values.">to_u16</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000052">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -613,7 +613,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#gafe7f9ec77325e0ae6111967bf8c5f29a" title="Deprecated strongly-typed wrapper for std::uint32_t values.">to_u32</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000052">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#gafe7f9ec77325e0ae6111967bf8c5f29a" title="Deprecated strongly-typed wrapper for std::uint32_t values.">to_u32</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000053">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -628,7 +628,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#gaf7cbf6fdcdeae86203faebdf9df7a201" title="Deprecated strongly-typed wrapper for std::uint64_t values.">to_u64</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000053">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#gaf7cbf6fdcdeae86203faebdf9df7a201" title="Deprecated strongly-typed wrapper for std::uint64_t values.">to_u64</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000054">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -643,7 +643,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#gaceb70f41ddfa8f5805dbe9be2adf2289" title="Deprecated strongly-typed wrapper for std::uint8_t values.">to_u8</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000050">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#gaceb70f41ddfa8f5805dbe9be2adf2289" title="Deprecated strongly-typed wrapper for std::uint8_t values.">to_u8</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000051">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -658,7 +658,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#gae0c0ed1401416ce6ee417ec86d8d2a89" title="Deprecated strongly-typed wrapper for unsigned char values.">to_uc</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000042">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#gae0c0ed1401416ce6ee417ec86d8d2a89" title="Deprecated strongly-typed wrapper for unsigned char values.">to_uc</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000043">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -673,7 +673,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga5d2d6a69c090569866a779672772b48f" title="Deprecated strongly-typed wrapper for unsigned long values.">to_ul</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000044">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga5d2d6a69c090569866a779672772b48f" title="Deprecated strongly-typed wrapper for unsigned long values.">to_ul</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000045">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -688,7 +688,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#gae1438b74ec39a793d5ad516a7c2c7788" title="Deprecated strongly-typed wrapper for unsigned long long values.">to_ull</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000045">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#gae1438b74ec39a793d5ad516a7c2c7788" title="Deprecated strongly-typed wrapper for unsigned long long values.">to_ull</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000046">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -703,7 +703,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The same type as <span class="tt"><a class="el" href="#ga8c22086f0e7e89d753cf7846ef7229d4" title="Deprecated strongly-typed wrapper for unsigned short values.">to_us</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000043">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<p>The same type as <span class="tt"><a class="el" href="#ga8c22086f0e7e89d753cf7846ef7229d4" title="Deprecated strongly-typed wrapper for unsigned short values.">to_us</a></span>; kept for backwards compatibility. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000044">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -720,7 +720,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">bool</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000009">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000010">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -737,7 +737,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">char</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000010">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000011">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -754,7 +754,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">double</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000030">Deprecated</a></b></dt><dd>use <a class="el" href="#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a> for tolerances (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000031">Deprecated</a></b></dt><dd>use <a class="el" href="#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a> for tolerances (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -771,7 +771,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">float</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000029">Deprecated</a></b></dt><dd>use <a class="el" href="#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a> for tolerances (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000030">Deprecated</a></b></dt><dd>use <a class="el" href="#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a> for tolerances (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -788,7 +788,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">int</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000013">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000014">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -805,7 +805,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">std::int16_t</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000022">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000023">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -822,7 +822,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">std::int32_t</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000023">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000024">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -839,7 +839,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">std::int64_t</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000024">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000025">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -856,7 +856,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">std::int8_t</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000021">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000022">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -873,7 +873,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">long</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000014">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000015">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -890,7 +890,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">long double</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000031">Deprecated</a></b></dt><dd>use <a class="el" href="#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a> for tolerances (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000032">Deprecated</a></b></dt><dd>use <a class="el" href="#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a> for tolerances (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -907,7 +907,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">long long</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000015">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000016">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -924,7 +924,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">short</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000012">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000013">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -941,7 +941,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">signed char</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000011">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000012">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -958,7 +958,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">unsigned</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000016">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000017">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -975,7 +975,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">std::uint16_t</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000026">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000027">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -992,7 +992,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">std::uint32_t</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000027">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000028">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -1009,7 +1009,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">std::uint64_t</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000028">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000029">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -1026,7 +1026,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">std::uint8_t</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000025">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000026">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -1043,7 +1043,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">unsigned char</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000017">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000018">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -1060,7 +1060,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">unsigned long</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000019">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000020">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -1077,7 +1077,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">unsigned long long</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000020">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000021">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -1094,7 +1094,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Wraps a run-time value, so that the comparators and the reporter treat it as <span class="tt">unsigned short</span>.</p>
 <dl class="section since"><dt>Since</dt><dd>3.2.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000018">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000019">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -1145,20 +1145,20 @@ requires std::is_floating_point_v&lt;T&gt;</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">detail::value</a>&lt;T&gt;</span> wrapper, recognised by the comparators and the operators.</dd></dl>
-<dl class="section user"><dt>Deprecated</dt><dd>Use the function comparator <span class="tt"><a class="el" href="#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx</a> (lhs, rhs, epsilon)</span> instead (since 5.1.0).</dd></dl>
-<dl class="section since"><dt>Since</dt><dd>5.1.0 </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000033">Deprecated</a></b></dt><dd>use approx (lhs, rhs, epsilon) (since 5.1.0)</dd></dl>
+<dl class="section user"><dt>Deprecated</dt><dd>Use the function comparator <span class="tt"><a class="el" href="#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx</a> (lhs, rhs, epsilon)</span> instead (since 6.0.0).</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>6.0.0 </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000034">Deprecated</a></b></dt><dd>use approx (lhs, rhs, epsilon) (since 6.0.0)</dd></dl>
 <p>Constructs the floating-point <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">detail::value</a>&lt;T&gt;</span> with the given tolerance, instead of the one derived from the number of decimals of the value. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00661">661</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  663</span>  {</div>
-<div class="line"><span class="lineno">  664</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">detail::value&lt;T&gt;</a>{ value, epsilon };</div>
-<div class="line"><span class="lineno">  665</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00675">675</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  677</span>  {</div>
+<div class="line"><span class="lineno">  678</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">detail::value&lt;T&gt;</a>{ value, epsilon };</div>
+<div class="line"><span class="lineno">  679</span>  }</div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">micro_os_plus::micro_test_plus::detail::value</a></div><div class="ttdoc">Struct template representing a generic value, accessible via a getter.</div><div class="ttdef"><b>Definition</b> <a href="values_8h_source.html#l00427">values.h:428</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00661">approx()</a>.</p>
+<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00675">approx()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="function-comparators-inlines_8h_source.html#l00196">approx()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00661">approx()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="function-comparators-inlines_8h_source.html#l00196">approx()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00675">approx()</a>.</p>
 
 </div>
 </div>
@@ -1196,14 +1196,14 @@ requires std::is_floating_point_v&lt;T&gt;</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html" title="Struct representing a named boolean constant, created by the _b literal.">detail::named_bool</a></span> instance, with the value <span class="tt">true</span>, reported by its name. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000092">Deprecated</a></b></dt><dd>use a plain bool and a check message (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000093">Deprecated</a></b></dt><dd>use a plain bool and a check message (since 6.0.0)</dd></dl>
 <p>This user-defined literal operator creates a named boolean constant, with the value <span class="tt">true</span>, from a string literal (for example, <span class="tt">"feature_enabled"<a class="el" href="#gad4203783cfbe141f41ee8515f7b2ea94" title="Deprecated strongly-typed wrapper for bool values, the v5.0.1 name of to_b.">_b</a></span>).</p>
 <p>The returned <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html" title="Struct representing a named boolean constant, created by the _b literal.">detail::named_bool</a></span> converts implicitly to <span class="tt">bool</span>, and the expression formatter prints its name instead of its value. With the operators in the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1operators.html" title="Custom operator overloads for expressive and type-safe test assertions.">operators</a></span> namespace, a comparison like <span class="tt">"feature_enabled"<a class="el" href="#gad4203783cfbe141f41ee8515f7b2ea94" title="Deprecated strongly-typed wrapper for bool values, the v5.0.1 name of to_b.">_b</a> == flag</span> is true when <span class="tt">flag</span> is true, and, when it fails, it is reported as <span class="tt">feature_enabled == false</span>; the same applies to <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq</a> ("feature_enabled"<a class="el" href="#gad4203783cfbe141f41ee8515f7b2ea94" title="Deprecated strongly-typed wrapper for bool values, the v5.0.1 name of to_b.">_b</a>, flag)</span>. Without these operators, the comparison is a plain <span class="tt">bool</span> expression, and its operands are not reported. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00622">622</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  623</span>    {</div>
-<div class="line"><span class="lineno">  624</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html">detail::named_bool</a>{ std::string_view{ name, size } };</div>
-<div class="line"><span class="lineno">  625</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00636">636</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  637</span>    {</div>
+<div class="line"><span class="lineno">  638</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html">detail::named_bool</a>{ std::string_view{ name, size } };</div>
+<div class="line"><span class="lineno">  639</span>    }</div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html">micro_os_plus::micro_test_plus::detail::named_bool</a></div><div class="ttdoc">Struct representing a named boolean constant, created by the _b literal.</div><div class="ttdef"><b>Definition</b> <a href="values_8h_source.html#l00542">values.h:543</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1239,13 +1239,13 @@ template&lt;char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html" title="Struct template representing a generic integral constant.">detail::integral_constant</a></span> instance holding the parsed <span class="tt">char</span> value. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000072">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000073">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 <p>Creates a compile-time <span class="tt">char</span> constant, for example <span class="tt">65<a class="el" href="#gafdd897d040f92df9cd42e551ebc88cd8" title="Deprecated strongly-typed wrapper for char values, the v5.0.1 name of to_c.">_c</a></span>, with <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40" title="Creates the compile-time constant of an integer literal.">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00323">323</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  324</span>    {</div>
-<div class="line"><span class="lineno">  325</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;char, Cs...&gt; ();</div>
-<div class="line"><span class="lineno">  326</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00337">337</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  338</span>    {</div>
+<div class="line"><span class="lineno">  339</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;char, Cs...&gt; ();</div>
+<div class="line"><span class="lineno">  340</span>    }</div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a8e476a4d97076ce7f016a18821d66c40"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">micro_os_plus::micro_test_plus::detail::integral_literal</a></div><div class="ttdeci">constexpr auto integral_literal(void)</div><div class="ttdoc">Creates the compile-time constant of an integer literal.</div><div class="ttdef"><b>Definition</b> <a href="values-inlines_8h_source.html#l00175">values-inlines.h:175</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="values-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::integral_literal()</a>.</p>
@@ -1283,16 +1283,16 @@ template&lt;char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html" title="Struct template representing a generic floating point constant with custom size and precision.">detail::floating_point_constant</a></span> instance holding the parsed <span class="tt">double</span> value. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000090">Deprecated</a></b></dt><dd>use <a class="el" href="#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a> for tolerances (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000091">Deprecated</a></b></dt><dd>use <a class="el" href="#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a> for tolerances (since 6.0.0)</dd></dl>
 <p>Creates a compile-time <span class="tt">double</span> constant, for example <span class="tt">2.718_d</span>, from the integral part, the decimals, and the number of decimals of the literal, parsed at compile time by <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a6b03b257bb18615448fe9b4fca4a8402" title="Computes the integral part of a decimal floating-point number represented as an array of characters.">detail::math::num()</a></span>, <span class="tt">den()</span>, and <span class="tt">den_size()</span>; the comparison tolerance is one unit of the last decimal written. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00580">580</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  581</span>    {</div>
-<div class="line"><span class="lineno">  582</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html">detail::floating_point_constant</a>&lt;</div>
-<div class="line"><span class="lineno">  583</span>          double, <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a6b03b257bb18615448fe9b4fca4a8402">detail::math::num</a>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> long, Cs...&gt; (),</div>
-<div class="line"><span class="lineno">  584</span>          <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a154910632d01b827ab1b67f309064211">detail::math::den&lt;unsigned long long, Cs...&gt;</a> (),</div>
-<div class="line"><span class="lineno">  585</span>          <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a3557a9ea7ea89e94be133fb78edcd01f">detail::math::den_size</a>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> long, Cs...&gt; ()&gt;{};</div>
-<div class="line"><span class="lineno">  586</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00594">594</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  595</span>    {</div>
+<div class="line"><span class="lineno">  596</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html">detail::floating_point_constant</a>&lt;</div>
+<div class="line"><span class="lineno">  597</span>          double, <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a6b03b257bb18615448fe9b4fca4a8402">detail::math::num</a>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> long, Cs...&gt; (),</div>
+<div class="line"><span class="lineno">  598</span>          <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a154910632d01b827ab1b67f309064211">detail::math::den&lt;unsigned long long, Cs...&gt;</a> (),</div>
+<div class="line"><span class="lineno">  599</span>          <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a3557a9ea7ea89e94be133fb78edcd01f">detail::math::den_size</a>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> long, Cs...&gt; ()&gt;{};</div>
+<div class="line"><span class="lineno">  600</span>    }</div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_html_a154910632d01b827ab1b67f309064211"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a154910632d01b827ab1b67f309064211">micro_os_plus::micro_test_plus::detail::math::den</a></div><div class="ttdeci">consteval auto den(void) -&gt; T</div><div class="ttdoc">Computes the decimal part of a number represented as an array of characters.</div><div class="ttdef"><b>Definition</b> <a href="math-inlines_8h_source.html#l00218">math-inlines.h:218</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_html_a3557a9ea7ea89e94be133fb78edcd01f"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a3557a9ea7ea89e94be133fb78edcd01f">micro_os_plus::micro_test_plus::detail::math::den_size</a></div><div class="ttdeci">consteval auto den_size(void) -&gt; T</div><div class="ttdoc">Counts the decimal places of a number represented as an array of characters.</div><div class="ttdef"><b>Definition</b> <a href="math-inlines_8h_source.html#l00261">math-inlines.h:261</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_html_a6b03b257bb18615448fe9b4fca4a8402"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a6b03b257bb18615448fe9b4fca4a8402">micro_os_plus::micro_test_plus::detail::math::num</a></div><div class="ttdeci">consteval auto num(void) -&gt; T</div><div class="ttdoc">Computes the integral part of a decimal floating-point number represented as an array of characters.</div><div class="ttdef"><b>Definition</b> <a href="math-inlines_8h_source.html#l00175">math-inlines.h:175</a></div></div>
@@ -1333,16 +1333,16 @@ template&lt;char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html" title="Struct template representing a generic floating point constant with custom size and precision.">detail::floating_point_constant</a></span> instance holding the parsed <span class="tt">float</span> value. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000089">Deprecated</a></b></dt><dd>use <a class="el" href="#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a> for tolerances (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000090">Deprecated</a></b></dt><dd>use <a class="el" href="#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a> for tolerances (since 6.0.0)</dd></dl>
 <p>Creates a compile-time <span class="tt">float</span> constant, for example <span class="tt">3.14_f</span>, from the integral part, the decimals, and the number of decimals of the literal, parsed at compile time by <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a6b03b257bb18615448fe9b4fca4a8402" title="Computes the integral part of a decimal floating-point number represented as an array of characters.">detail::math::num()</a></span>, <span class="tt">den()</span>, and <span class="tt">den_size()</span>; the comparison tolerance is one unit of the last decimal written. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00562">562</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  563</span>    {</div>
-<div class="line"><span class="lineno">  564</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html">detail::floating_point_constant</a>&lt;</div>
-<div class="line"><span class="lineno">  565</span>          float, <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a6b03b257bb18615448fe9b4fca4a8402">detail::math::num</a>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> long, Cs...&gt; (),</div>
-<div class="line"><span class="lineno">  566</span>          <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a154910632d01b827ab1b67f309064211">detail::math::den&lt;unsigned long long, Cs...&gt;</a> (),</div>
-<div class="line"><span class="lineno">  567</span>          <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a3557a9ea7ea89e94be133fb78edcd01f">detail::math::den_size</a>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> long, Cs...&gt; ()&gt;{};</div>
-<div class="line"><span class="lineno">  568</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00576">576</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  577</span>    {</div>
+<div class="line"><span class="lineno">  578</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html">detail::floating_point_constant</a>&lt;</div>
+<div class="line"><span class="lineno">  579</span>          float, <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a6b03b257bb18615448fe9b4fca4a8402">detail::math::num</a>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> long, Cs...&gt; (),</div>
+<div class="line"><span class="lineno">  580</span>          <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a154910632d01b827ab1b67f309064211">detail::math::den&lt;unsigned long long, Cs...&gt;</a> (),</div>
+<div class="line"><span class="lineno">  581</span>          <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a3557a9ea7ea89e94be133fb78edcd01f">detail::math::den_size</a>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> long, Cs...&gt; ()&gt;{};</div>
+<div class="line"><span class="lineno">  582</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="math-inlines_8h_source.html#l00218">micro_os_plus::micro_test_plus::detail::math::den()</a>, <a class="el" href="math-inlines_8h_source.html#l00261">micro_os_plus::micro_test_plus::detail::math::den_size()</a>, and <a class="el" href="math-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::math::num()</a>.</p>
 
@@ -1379,13 +1379,13 @@ template&lt;char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html" title="Struct template representing a generic integral constant.">detail::integral_constant</a></span> instance holding the parsed <span class="tt">int</span> value. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000070">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000071">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 <p>Creates a compile-time <span class="tt">int</span> constant, for example <span class="tt">42<a class="el" href="#ga8468610e763177a8f569f7d618851288" title="Deprecated strongly-typed wrapper for int values, the v5.0.1 name of to_i.">_i</a></span>, with <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40" title="Creates the compile-time constant of an integer literal.">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00295">295</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  296</span>    {</div>
-<div class="line"><span class="lineno">  297</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;int, Cs...&gt; ();</div>
-<div class="line"><span class="lineno">  298</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00309">309</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  310</span>    {</div>
+<div class="line"><span class="lineno">  311</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;int, Cs...&gt; ();</div>
+<div class="line"><span class="lineno">  312</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="values-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::integral_literal()</a>.</p>
 
@@ -1422,13 +1422,13 @@ template&lt;char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html" title="Struct template representing a generic integral constant.">detail::integral_constant</a></span> instance holding the parsed <span class="tt">int16_t</span> value. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000082">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000083">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 <p>Creates a compile-time <span class="tt">int16_t</span> constant, for example <span class="tt">32767<a class="el" href="#gad2d95793c99112ad2889c6663789d1e3" title="Deprecated strongly-typed wrapper for std::int16_t values, the v5.0.1 name of to_i16.">_i16</a></span>, with <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40" title="Creates the compile-time constant of an integer literal.">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00463">463</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  464</span>    {</div>
-<div class="line"><span class="lineno">  465</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::int16_t, Cs...&gt; ();</div>
-<div class="line"><span class="lineno">  466</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00477">477</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  478</span>    {</div>
+<div class="line"><span class="lineno">  479</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::int16_t, Cs...&gt; ();</div>
+<div class="line"><span class="lineno">  480</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="values-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::integral_literal()</a>.</p>
 
@@ -1465,13 +1465,13 @@ template&lt;char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html" title="Struct template representing a generic integral constant.">detail::integral_constant</a></span> instance holding the parsed <span class="tt">int32_t</span> value. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000083">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000084">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 <p>Creates a compile-time <span class="tt">int32_t</span> constant, for example <span class="tt">2147483647<a class="el" href="#ga917a1759e37cd0d3fe3786da11729a4b" title="Deprecated strongly-typed wrapper for std::int32_t values, the v5.0.1 name of to_i32.">_i32</a></span>, with <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40" title="Creates the compile-time constant of an integer literal.">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00477">477</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  478</span>    {</div>
-<div class="line"><span class="lineno">  479</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::int32_t, Cs...&gt; ();</div>
-<div class="line"><span class="lineno">  480</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00491">491</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  492</span>    {</div>
+<div class="line"><span class="lineno">  493</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::int32_t, Cs...&gt; ();</div>
+<div class="line"><span class="lineno">  494</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="values-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::integral_literal()</a>.</p>
 
@@ -1508,13 +1508,13 @@ template&lt;char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html" title="Struct template representing a generic integral constant.">detail::integral_constant</a></span> instance holding the parsed <span class="tt">int64_t</span> value. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000084">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000085">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 <p>Creates a compile-time <span class="tt">int64_t</span> constant, for example <span class="tt">9223372036854775807<a class="el" href="#ga290a150eae030e183ca2e14e9095c93b" title="Deprecated strongly-typed wrapper for std::int64_t values, the v5.0.1 name of to_i64.">_i64</a></span>, with <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40" title="Creates the compile-time constant of an integer literal.">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00491">491</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  492</span>    {</div>
-<div class="line"><span class="lineno">  493</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::int64_t, Cs...&gt; ();</div>
-<div class="line"><span class="lineno">  494</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00505">505</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  506</span>    {</div>
+<div class="line"><span class="lineno">  507</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::int64_t, Cs...&gt; ();</div>
+<div class="line"><span class="lineno">  508</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="values-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::integral_literal()</a>.</p>
 
@@ -1551,13 +1551,13 @@ template&lt;char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html" title="Struct template representing a generic integral constant.">detail::integral_constant</a></span> instance holding the parsed <span class="tt">int8_t</span> value. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000081">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000082">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 <p>Creates a compile-time <span class="tt">int8_t</span> constant, for example <span class="tt">127<a class="el" href="#ga265f8609ef3d6ead78c7a66825553e24" title="Deprecated strongly-typed wrapper for std::int8_t values, the v5.0.1 name of to_i8.">_i8</a></span>, with <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40" title="Creates the compile-time constant of an integer literal.">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00449">449</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  450</span>    {</div>
-<div class="line"><span class="lineno">  451</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::int8_t, Cs...&gt; ();</div>
-<div class="line"><span class="lineno">  452</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00463">463</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  464</span>    {</div>
+<div class="line"><span class="lineno">  465</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::int8_t, Cs...&gt; ();</div>
+<div class="line"><span class="lineno">  466</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="values-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::integral_literal()</a>.</p>
 
@@ -1594,13 +1594,13 @@ template&lt;char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html" title="Struct template representing a generic integral constant.">detail::integral_constant</a></span> instance holding the parsed <span class="tt">long</span> value. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000074">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000075">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 <p>Creates a compile-time <span class="tt">long</span> constant, for example <span class="tt">123<a class="el" href="#ga429a848542fc4ffafd3dd22bc1832654" title="Deprecated strongly-typed wrapper for long values, the v5.0.1 name of to_l.">_l</a></span>, with <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40" title="Creates the compile-time constant of an integer literal.">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00351">351</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  352</span>    {</div>
-<div class="line"><span class="lineno">  353</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;long, Cs...&gt; ();</div>
-<div class="line"><span class="lineno">  354</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00365">365</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  366</span>    {</div>
+<div class="line"><span class="lineno">  367</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;long, Cs...&gt; ();</div>
+<div class="line"><span class="lineno">  368</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="values-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::integral_literal()</a>.</p>
 
@@ -1637,16 +1637,16 @@ template&lt;char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html" title="Struct template representing a generic floating point constant with custom size and precision.">detail::floating_point_constant</a></span> instance holding the parsed <span class="tt">long double</span> value. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000091">Deprecated</a></b></dt><dd>use <a class="el" href="#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a> for tolerances (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000092">Deprecated</a></b></dt><dd>use <a class="el" href="#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a> for tolerances (since 6.0.0)</dd></dl>
 <p>Creates a compile-time <span class="tt">long double</span> constant, for example <span class="tt">1.618_ld</span>, from the integral part, the decimals, and the number of decimals of the literal, parsed at compile time by <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a6b03b257bb18615448fe9b4fca4a8402" title="Computes the integral part of a decimal floating-point number represented as an array of characters.">detail::math::num()</a></span>, <span class="tt">den()</span>, and <span class="tt">den_size()</span>; the comparison tolerance is one unit of the last decimal written. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00598">598</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  599</span>    {</div>
-<div class="line"><span class="lineno">  600</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html">detail::floating_point_constant</a>&lt;</div>
-<div class="line"><span class="lineno">  601</span>          <span class="keywordtype">long</span> double, <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a6b03b257bb18615448fe9b4fca4a8402">detail::math::num</a>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> long, Cs...&gt; (),</div>
-<div class="line"><span class="lineno">  602</span>          <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a154910632d01b827ab1b67f309064211">detail::math::den&lt;unsigned long long, Cs...&gt;</a> (),</div>
-<div class="line"><span class="lineno">  603</span>          <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a3557a9ea7ea89e94be133fb78edcd01f">detail::math::den_size</a>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> long, Cs...&gt; ()&gt;{};</div>
-<div class="line"><span class="lineno">  604</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00612">612</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  613</span>    {</div>
+<div class="line"><span class="lineno">  614</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html">detail::floating_point_constant</a>&lt;</div>
+<div class="line"><span class="lineno">  615</span>          <span class="keywordtype">long</span> double, <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a6b03b257bb18615448fe9b4fca4a8402">detail::math::num</a>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> long, Cs...&gt; (),</div>
+<div class="line"><span class="lineno">  616</span>          <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a154910632d01b827ab1b67f309064211">detail::math::den&lt;unsigned long long, Cs...&gt;</a> (),</div>
+<div class="line"><span class="lineno">  617</span>          <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a3557a9ea7ea89e94be133fb78edcd01f">detail::math::den_size</a>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> long, Cs...&gt; ()&gt;{};</div>
+<div class="line"><span class="lineno">  618</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="math-inlines_8h_source.html#l00218">micro_os_plus::micro_test_plus::detail::math::den()</a>, <a class="el" href="math-inlines_8h_source.html#l00261">micro_os_plus::micro_test_plus::detail::math::den_size()</a>, and <a class="el" href="math-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::math::num()</a>.</p>
 
@@ -1683,13 +1683,13 @@ template&lt;char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html" title="Struct template representing a generic integral constant.">detail::integral_constant</a></span> instance holding the parsed <span class="tt">long long</span> value. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000075">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000076">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 <p>Creates a compile-time <span class="tt">long long</span> constant, for example <span class="tt">123<a class="el" href="#ga9c597ca04848620b8570c29a4741e77d" title="Deprecated strongly-typed wrapper for long long values, the v5.0.1 name of to_ll.">_ll</a></span>, with <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40" title="Creates the compile-time constant of an integer literal.">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00365">365</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  366</span>    {</div>
-<div class="line"><span class="lineno">  367</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;<span class="keywordtype">long</span> long, Cs...&gt; ();</div>
-<div class="line"><span class="lineno">  368</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00379">379</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  380</span>    {</div>
+<div class="line"><span class="lineno">  381</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;<span class="keywordtype">long</span> long, Cs...&gt; ();</div>
+<div class="line"><span class="lineno">  382</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="values-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::integral_literal()</a>.</p>
 
@@ -1726,13 +1726,13 @@ template&lt;char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html" title="Struct template representing a generic integral constant.">detail::integral_constant</a></span> instance holding the parsed <span class="tt">short</span> value. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000071">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000072">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 <p>Creates a compile-time <span class="tt">short</span> constant, for example <span class="tt">123<a class="el" href="#ga461a956b7e308ed6e8c64afa3cf160f2" title="Deprecated strongly-typed wrapper for short values, the v5.0.1 name of to_s.">_s</a></span>, with <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40" title="Creates the compile-time constant of an integer literal.">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00309">309</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  310</span>    {</div>
-<div class="line"><span class="lineno">  311</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;short, Cs...&gt; ();</div>
-<div class="line"><span class="lineno">  312</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00323">323</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  324</span>    {</div>
+<div class="line"><span class="lineno">  325</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;short, Cs...&gt; ();</div>
+<div class="line"><span class="lineno">  326</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="values-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::integral_literal()</a>.</p>
 
@@ -1769,13 +1769,13 @@ template&lt;char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html" title="Struct template representing a generic integral constant.">detail::integral_constant</a></span> instance holding the parsed <span class="tt">signed char</span> value. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000073">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000074">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 <p>Creates a compile-time <span class="tt">signed char</span> constant, for example <span class="tt">65<a class="el" href="#ga0cc4baab5f421ac7adee10218d8ee8a2" title="Deprecated strongly-typed wrapper for signed char values, the v5.0.1 name of to_sc.">_sc</a></span>, with <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40" title="Creates the compile-time constant of an integer literal.">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00337">337</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  338</span>    {</div>
-<div class="line"><span class="lineno">  339</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;<span class="keywordtype">signed</span> char, Cs...&gt; ();</div>
-<div class="line"><span class="lineno">  340</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00351">351</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  352</span>    {</div>
+<div class="line"><span class="lineno">  353</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;<span class="keywordtype">signed</span> char, Cs...&gt; ();</div>
+<div class="line"><span class="lineno">  354</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="values-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::integral_literal()</a>.</p>
 
@@ -1812,13 +1812,13 @@ template&lt;char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html" title="Struct template representing a generic integral constant.">detail::integral_constant</a></span> instance holding the parsed <span class="tt">unsigned</span> value. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000076">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000077">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 <p>Creates a compile-time <span class="tt">unsigned</span> constant, for example <span class="tt">123<a class="el" href="#gaaa486af2418a24076237fbe26940f5ae" title="Deprecated strongly-typed wrapper for unsigned values, the v5.0.1 name of to_u.">_u</a></span>, with <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40" title="Creates the compile-time constant of an integer literal.">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00379">379</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  380</span>    {</div>
-<div class="line"><span class="lineno">  381</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;unsigned, Cs...&gt; ();</div>
-<div class="line"><span class="lineno">  382</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00393">393</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  394</span>    {</div>
+<div class="line"><span class="lineno">  395</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;unsigned, Cs...&gt; ();</div>
+<div class="line"><span class="lineno">  396</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="values-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::integral_literal()</a>.</p>
 
@@ -1855,13 +1855,13 @@ template&lt;char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html" title="Struct template representing a generic integral constant.">detail::integral_constant</a></span> instance holding the parsed <span class="tt">uint16_t</span> value. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000086">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000087">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 <p>Creates a compile-time <span class="tt">uint16_t</span> constant, for example <span class="tt">65535<a class="el" href="#ga97f7bc9a25eb4b7c663bd2388ade01ae" title="Deprecated strongly-typed wrapper for std::uint16_t values, the v5.0.1 name of to_u16.">_u16</a></span>, with <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40" title="Creates the compile-time constant of an integer literal.">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00519">519</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  520</span>    {</div>
-<div class="line"><span class="lineno">  521</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::uint16_t, Cs...&gt; ();</div>
-<div class="line"><span class="lineno">  522</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00533">533</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  534</span>    {</div>
+<div class="line"><span class="lineno">  535</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::uint16_t, Cs...&gt; ();</div>
+<div class="line"><span class="lineno">  536</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="values-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::integral_literal()</a>.</p>
 
@@ -1898,13 +1898,13 @@ template&lt;char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html" title="Struct template representing a generic integral constant.">detail::integral_constant</a></span> instance holding the parsed <span class="tt">uint32_t</span> value. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000087">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000088">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 <p>Creates a compile-time <span class="tt">uint32_t</span> constant, for example <span class="tt">4294967295<a class="el" href="#ga4afa32150456241245bfc641a6f17bbc" title="Deprecated strongly-typed wrapper for std::uint32_t values, the v5.0.1 name of to_u32.">_u32</a></span>, with <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40" title="Creates the compile-time constant of an integer literal.">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00533">533</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  534</span>    {</div>
-<div class="line"><span class="lineno">  535</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::uint32_t, Cs...&gt; ();</div>
-<div class="line"><span class="lineno">  536</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00547">547</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  548</span>    {</div>
+<div class="line"><span class="lineno">  549</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::uint32_t, Cs...&gt; ();</div>
+<div class="line"><span class="lineno">  550</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="values-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::integral_literal()</a>.</p>
 
@@ -1941,13 +1941,13 @@ template&lt;char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html" title="Struct template representing a generic integral constant.">detail::integral_constant</a></span> instance holding the parsed <span class="tt">uint64_t</span> value. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000088">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000089">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 <p>Creates a compile-time <span class="tt">uint64_t</span> constant, for example <span class="tt">18446744073709551615<a class="el" href="#ga1241e84fc4457af1b4df5f053eec6aa5" title="Deprecated strongly-typed wrapper for std::uint64_t values, the v5.0.1 name of to_u64.">_u64</a></span>, with <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40" title="Creates the compile-time constant of an integer literal.">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00547">547</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  548</span>    {</div>
-<div class="line"><span class="lineno">  549</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::uint64_t, Cs...&gt; ();</div>
-<div class="line"><span class="lineno">  550</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00561">561</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  562</span>    {</div>
+<div class="line"><span class="lineno">  563</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::uint64_t, Cs...&gt; ();</div>
+<div class="line"><span class="lineno">  564</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="values-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::integral_literal()</a>.</p>
 
@@ -1984,13 +1984,13 @@ template&lt;char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html" title="Struct template representing a generic integral constant.">detail::integral_constant</a></span> instance holding the parsed <span class="tt">uint8_t</span> value. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000085">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000086">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 <p>Creates a compile-time <span class="tt">uint8_t</span> constant, for example <span class="tt">255<a class="el" href="#gaf27e37e2e29af1a3ffd5c4fb07e77ff9" title="Deprecated strongly-typed wrapper for std::uint8_t values, the v5.0.1 name of to_u8.">_u8</a></span>, with <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40" title="Creates the compile-time constant of an integer literal.">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00505">505</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  506</span>    {</div>
-<div class="line"><span class="lineno">  507</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::uint8_t, Cs...&gt; ();</div>
-<div class="line"><span class="lineno">  508</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00519">519</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  520</span>    {</div>
+<div class="line"><span class="lineno">  521</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::uint8_t, Cs...&gt; ();</div>
+<div class="line"><span class="lineno">  522</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="values-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::integral_literal()</a>.</p>
 
@@ -2027,13 +2027,13 @@ template&lt;char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html" title="Struct template representing a generic integral constant.">detail::integral_constant</a></span> instance holding the parsed <span class="tt">unsigned char</span> value. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000077">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000078">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 <p>Creates a compile-time <span class="tt">unsigned char</span> constant, for example <span class="tt">65<a class="el" href="#gaa8bb559065ea34a9645fdfd6339b9b7a" title="Deprecated strongly-typed wrapper for unsigned char values, the v5.0.1 name of to_uc.">_uc</a></span>, with <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40" title="Creates the compile-time constant of an integer literal.">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00393">393</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  394</span>    {</div>
-<div class="line"><span class="lineno">  395</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;<span class="keywordtype">unsigned</span> char, Cs...&gt; ();</div>
-<div class="line"><span class="lineno">  396</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00407">407</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  408</span>    {</div>
+<div class="line"><span class="lineno">  409</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;<span class="keywordtype">unsigned</span> char, Cs...&gt; ();</div>
+<div class="line"><span class="lineno">  410</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="values-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::integral_literal()</a>.</p>
 
@@ -2070,13 +2070,13 @@ template&lt;char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html" title="Struct template representing a generic integral constant.">detail::integral_constant</a></span> instance holding the parsed <span class="tt">unsigned long</span> value. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000079">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000080">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 <p>Creates a compile-time <span class="tt">unsigned long</span> constant, for example <span class="tt">123<a class="el" href="#ga32c7eef01fcaef2f1a9478427d951f62" title="Deprecated strongly-typed wrapper for unsigned long values, the v5.0.1 name of to_ul.">_ul</a></span>, with <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40" title="Creates the compile-time constant of an integer literal.">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00421">421</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  422</span>    {</div>
-<div class="line"><span class="lineno">  423</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;<span class="keywordtype">unsigned</span> long, Cs...&gt; ();</div>
-<div class="line"><span class="lineno">  424</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00435">435</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  436</span>    {</div>
+<div class="line"><span class="lineno">  437</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;<span class="keywordtype">unsigned</span> long, Cs...&gt; ();</div>
+<div class="line"><span class="lineno">  438</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="values-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::integral_literal()</a>.</p>
 
@@ -2113,13 +2113,13 @@ template&lt;char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html" title="Struct template representing a generic integral constant.">detail::integral_constant</a></span> instance holding the parsed <span class="tt">unsigned long long</span> value. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000080">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000081">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 <p>Creates a compile-time <span class="tt">unsigned long long</span> constant, for example <span class="tt">123<a class="el" href="#gada8a165060d3d3b3ab51272b9da58761" title="Deprecated strongly-typed wrapper for unsigned long long values, the v5.0.1 name of to_ull.">_ull</a></span>, with <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40" title="Creates the compile-time constant of an integer literal.">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00435">435</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  436</span>    {</div>
-<div class="line"><span class="lineno">  437</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> long, Cs...&gt; ();</div>
-<div class="line"><span class="lineno">  438</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00449">449</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  450</span>    {</div>
+<div class="line"><span class="lineno">  451</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> long, Cs...&gt; ();</div>
+<div class="line"><span class="lineno">  452</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="values-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::integral_literal()</a>.</p>
 
@@ -2156,13 +2156,13 @@ template&lt;char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html" title="Struct template representing a generic integral constant.">detail::integral_constant</a></span> instance holding the parsed <span class="tt">unsigned short</span> value. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000078">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000079">Deprecated</a></b></dt><dd>pass plain values to <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f" title="Generic equality comparator.">eq()</a> and the other comparators (since 6.0.0)</dd></dl>
 <p>Creates a compile-time <span class="tt">unsigned short</span> constant, for example <span class="tt">123<a class="el" href="#ga65aea7fc6324806cc029041a1c785611" title="Deprecated strongly-typed wrapper for unsigned short values, the v5.0.1 name of to_us.">_us</a></span>, with <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40" title="Creates the compile-time constant of an integer literal.">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00407">407</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  408</span>    {</div>
-<div class="line"><span class="lineno">  409</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;<span class="keywordtype">unsigned</span> short, Cs...&gt; ();</div>
-<div class="line"><span class="lineno">  410</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00421">421</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  422</span>    {</div>
+<div class="line"><span class="lineno">  423</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;<span class="keywordtype">unsigned</span> short, Cs...&gt; ();</div>
+<div class="line"><span class="lineno">  424</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="values-inlines_8h_source.html#l00175">micro_os_plus::micro_test_plus::detail::integral_literal()</a>.</p>
 

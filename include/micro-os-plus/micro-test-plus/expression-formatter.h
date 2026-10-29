@@ -900,7 +900,7 @@ namespace micro_os_plus::micro_test_plus
        *   None.
        * @return A pointer to the null-terminated text.
        */
-      [[deprecated ("use str().c_str() (since 5.1.0)"), nodiscard]] const char*
+      [[deprecated ("use str().c_str() (since 6.0.0)"), nodiscard]] const char*
       c_str (void) const noexcept;
 
       /**
@@ -914,7 +914,7 @@ namespace micro_os_plus::micro_test_plus
        * @retval true The formatter holds no text.
        * @retval false The formatter holds some text.
        */
-      [[deprecated ("use str().empty() (since 5.1.0)"), nodiscard]] bool
+      [[deprecated ("use str().empty() (since 6.0.0)"), nodiscard]] bool
       empty (void) const noexcept;
 
       /**

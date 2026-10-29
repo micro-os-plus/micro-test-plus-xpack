@@ -388,7 +388,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 
@@ -442,7 +442,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 
@@ -483,7 +483,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 <p>Starts from the defaults, and parses the µTest++ options (<span class="doxyComputerOutput">--reporter</span>, <span class="doxyComputerOutput">--silent</span>, <span class="doxyComputerOutput">--quiet</span>, <span class="doxyComputerOutput">--verbose</span>, <span class="doxyComputerOutput">--output-file</span>, <span class="doxyComputerOutput">--color</span>, <span class="doxyComputerOutput">--use-colour</span>, <span class="doxyComputerOutput">--filter</span>, and <span class="doxyComputerOutput">--list-tests</span>). The other arguments are ignored, since the applications may define their own, except for those starting with <span class="doxyComputerOutput">--</span>, which are reported as unknown options.</p>
 
 
-<p>A missing option argument, an unknown reporter name, an unknown colour mode, or an unknown option, is reported on <span class="doxyComputerOutput">stderr</span>, the option is ignored, and <span class="doxyComputerOutput"><a href="#a4ed347422b26dded0244c3926ef384a8">has_errors()</a></span> is set; <span class="doxyComputerOutput">run()</span> then returns</p>
+<p>A missing option argument, an unknown reporter name, an unknown colour mode, or an unknown option, is reported on <span class="doxyComputerOutput">stderr</span>, the option is ignored, and <span class="doxyComputerOutput"><a href="#a4ed347422b26dded0244c3926ef384a8">has_errors()</a></span> is set; <span class="doxyComputerOutput">run_suites()</span> then returns</p>
 
 
 <ol class="doxyList" type="1">
@@ -511,7 +511,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 
@@ -755,7 +755,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 
@@ -902,7 +902,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 
@@ -978,7 +978,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 
@@ -1024,7 +1024,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 <p>Checks whether errors were found while parsing the command line.</p>
 
 
-<p>The errors were already written on <span class="doxyComputerOutput">stderr</span> by the constructor; when set, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a97f725cb167a2b464fac0eb88a0c8a46">runner::run()</a></span> returns 2. Never set for the default options.</p>
+<p>The errors were already written on <span class="doxyComputerOutput">stderr</span> by the constructor; when set, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a700e3ef1f955492cd84235bd388dcdf2">runner::run_suites()</a></span> returns 2. Never set for the default options.</p>
 
 
 <dl class="doxySectionUser">
@@ -1035,7 +1035,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 
@@ -1088,7 +1088,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 <p>Checks whether the command line selected an unknown reporter.</p>
 
 
-<p>When set, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a39ee9ec53f8df687cd84092de5118592">runner::initialise()</a></span> does not proceed: no output file is created, nothing is reported, no test is run, and <span class="doxyComputerOutput">run()</span> returns 2, even if <span class="doxyComputerOutput"><a href="#ad22d04df014c5b0658b6e7bd239f15b0">selected_reporter</a></span> was changed after the parsing.</p>
+<p>When set, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a39ee9ec53f8df687cd84092de5118592">runner::initialise()</a></span> does not proceed: no output file is created, nothing is reported, no test is run, and <span class="doxyComputerOutput">run_suites()</span> returns 2, even if <span class="doxyComputerOutput"><a href="#ad22d04df014c5b0658b6e7bd239f15b0">selected_reporter</a></span> was changed after the parsing.</p>
 
 
 <dl class="doxySectionUser">
@@ -1099,7 +1099,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 
@@ -1284,7 +1284,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 
@@ -1338,7 +1338,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 
@@ -1352,7 +1352,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 </div>
 
 
-<p>Referenced by <a href="#a561d969dc26eb39663173a4a6684b0d9">runner_options</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#ae87c4a8f0e08e069b6d1a393f88e040e">micro_os_plus::micro_test_plus::runner::initialise</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a2b0adeef059676a455d9506ba8a06d26">micro_os_plus::micro_test_plus::runner::is_selected</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a97f725cb167a2b464fac0eb88a0c8a46">micro_os_plus::micro_test_plus::runner::run</a>.</p>
+<p>Referenced by <a href="#a561d969dc26eb39663173a4a6684b0d9">runner_options</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#ae87c4a8f0e08e069b6d1a393f88e040e">micro_os_plus::micro_test_plus::runner::initialise</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a2b0adeef059676a455d9506ba8a06d26">micro_os_plus::micro_test_plus::runner::is_selected</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a700e3ef1f955492cd84235bd388dcdf2">micro_os_plus::micro_test_plus::runner::run_suites</a>.</p>
 
 </div>
 </div>
@@ -1394,12 +1394,12 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 </div>
 
 
-<p>The header is <span class="doxyComputerOutput">Matching test cases:</span> when there are filter patterns, and the suites without selected test cases are not listed. The nested test cases are not listed, since they are created by the bodies of their parents, which do not run. The list is written to the console, unless the verbosity is <span class="doxyComputerOutput">silent</span>, and to the output file, if any; no report is written, and <span class="doxyComputerOutput">run()</span> returns 0, or 2 after an option error.</p>
+<p>The header is <span class="doxyComputerOutput">Matching test cases:</span> when there are filter patterns, and the suites without selected test cases are not listed. The nested test cases are not listed, since they are created by the bodies of their parents, which do not run. The list is written to the console, unless the verbosity is <span class="doxyComputerOutput">silent</span>, and to the output file, if any; no report is written, and <span class="doxyComputerOutput">run_suites()</span> returns 0, or 2 after an option error.</p>
 
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 
@@ -1413,7 +1413,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 </div>
 
 
-<p>Referenced by <a href="#a561d969dc26eb39663173a4a6684b0d9">runner_options</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#aac24d1193ac0579dd6ac3c523a32015f">micro_os_plus::micro_test_plus::runner::add_top_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runnable-base/#a38cf903fb0ba5b76b1eb2350b6385962">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#ae87c4a8f0e08e069b6d1a393f88e040e">micro_os_plus::micro_test_plus::runner::initialise</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a97f725cb167a2b464fac0eb88a0c8a46">micro_os_plus::micro_test_plus::runner::run</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a7c4dbf695c086ca4d3f0ce33e6d561f7">micro_os_plus::micro_test_plus::runner::run_suites</a>.</p>
+<p>Referenced by <a href="#a561d969dc26eb39663173a4a6684b0d9">runner_options</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#aac24d1193ac0579dd6ac3c523a32015f">micro_os_plus::micro_test_plus::runner::add_top_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runnable-base/#a38cf903fb0ba5b76b1eb2350b6385962">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#ae87c4a8f0e08e069b6d1a393f88e040e">micro_os_plus::micro_test_plus::runner::initialise</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a061939d61f7f2d4a4523c427b0dc98f2">micro_os_plus::micro_test_plus::runner::run_child_suites</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a700e3ef1f955492cd84235bd388dcdf2">micro_os_plus::micro_test_plus::runner::run_suites</a>.</p>
 
 </div>
 </div>
@@ -1439,7 +1439,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 <p>Path of the optional output file.</p>
 
 
-<p>Set by <span class="doxyComputerOutput">--output-file=&lt;path&gt;</span> or <span class="doxyComputerOutput">--output-file &lt;path&gt;</span>. When it is empty (the default), no file is written. The reporter opens the file when it is created by <span class="doxyComputerOutput">initialise()</span>; if the file cannot be opened, the error is reported on <span class="doxyComputerOutput">stderr</span>, the report is written only to the console, and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a97f725cb167a2b464fac0eb88a0c8a46">runner::run()</a></span> returns 2.</p>
+<p>Set by <span class="doxyComputerOutput">--output-file=&lt;path&gt;</span> or <span class="doxyComputerOutput">--output-file &lt;path&gt;</span>. When it is empty (the default), no file is written. The reporter opens the file when it is created by <span class="doxyComputerOutput">initialise()</span>; if the file cannot be opened, the error is reported on <span class="doxyComputerOutput">stderr</span>, the report is written only to the console, and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a700e3ef1f955492cd84235bd388dcdf2">runner::run_suites()</a></span> returns 2.</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00355">355</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
@@ -1542,7 +1542,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 </div>
 
 
-<p>Referenced by <a href="#a561d969dc26eb39663173a4a6684b0d9">runner_options</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#ae87c4a8f0e08e069b6d1a393f88e040e">micro_os_plus::micro_test_plus::runner::initialise</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a0e478c394741ff78f65a7e2c0822ba50">micro_os_plus::micro_test_plus::runner::list_test_case</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a97f725cb167a2b464fac0eb88a0c8a46">micro_os_plus::micro_test_plus::runner::run</a>.</p>
+<p>Referenced by <a href="#a561d969dc26eb39663173a4a6684b0d9">runner_options</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#ae87c4a8f0e08e069b6d1a393f88e040e">micro_os_plus::micro_test_plus::runner::initialise</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a0e478c394741ff78f65a7e2c0822ba50">micro_os_plus::micro_test_plus::runner::list_test_case</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a700e3ef1f955492cd84235bd388dcdf2">micro_os_plus::micro_test_plus::runner::run_suites</a>.</p>
 
 </div>
 </div>

@@ -216,14 +216,16 @@ keywords:
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math"><b>math</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus"><b>micro_os_plus</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/top-common-h">top-common.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-config/#ga67c701de5426ac340584ed038494a873"><b>MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</b></a>: as macro definition in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">include/micro-os-plus/micro-test-plus.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-config/#ga3dd1e70998580fe7d7f410e5cd83879b"><b>MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</b></a>: as macro definition in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">include/micro-os-plus/micro-test-plus.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#aaec16ed032c8fc52ba753a273b788381"><b>MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</b></a>: as macro definition in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-config/#ga27bb1b9066b162d868e0b1c557b91e0d"><b>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</b></a>: as macro definition in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">include/micro-os-plus/micro-test-plus.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-config/#ga039219e6edfdcaa8a5e07badd7f4830d"><b>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED</b></a>: as macro definition in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">include/micro-os-plus/micro-test-plus.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus"><b>micro_test_plus</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/utility-cpp">src/utility.cpp</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a67e71e2dce0120ad4839635830e80de8"><b>min_value()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga00ea8f3dfb7cb0ef39919065321cf62f"><b>mut()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">include/micro-os-plus/micro-test-plus/deprecated.h</a></li>
 </ul>
-<p>8 entries</p>
+<p>10 entries</p>
 
 ## - N -
 
@@ -442,7 +444,7 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-tap-cpp-/#ae344ed13847263c08e39a3e9266c0109"><b>yaml_double_quoted()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-tap-cpp">src/reporter-tap.cpp</a></li>
 </ul>
 <br/>
-<p>Total: 289 entries.</p>
+<p>Total: 291 entries.</p>
 
 <hr/>
 

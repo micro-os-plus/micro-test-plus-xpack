@@ -15,7 +15,7 @@
 </simplesect>
 <programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>In<sp/>main(),<sp/>after<sp/>tr.initialise():</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>In<sp/>main(),<sp/>after<sp/>tr.add_top_suite():</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>various<sp/>conditions&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::eq<sp/>(compute_answer<sp/>(),<sp/>42))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>eq<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::ne<sp/>(compute_answer<sp/>(),<sp/>43))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>ne<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>

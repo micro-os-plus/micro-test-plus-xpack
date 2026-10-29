@@ -170,7 +170,7 @@ namespace micro_os_plus::micro_test_plus
      * Returns the one-based positional index of this node within its
      * parent.
      */
-    // Deprecated since 5.1.0; internal to the framework.
+    // Deprecated since 6.0.0; internal to the framework.
     inline size_t
     runnable_base::own_index (void) const noexcept
     {
@@ -181,7 +181,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Returns the number of the most recent child test point.
      */
-    // Deprecated since 5.1.0; internal to the framework.
+    // Deprecated since 6.0.0; internal to the framework.
     inline size_t
     runnable_base::current_subtest_index (void) const noexcept
     {
@@ -193,7 +193,7 @@ namespace micro_os_plus::micro_test_plus
      * Returns the number of direct child test cases, including those
      * skipped by the filter.
      */
-    // Deprecated since 5.1.0; internal to the framework.
+    // Deprecated since 6.0.0; internal to the framework.
     inline size_t
     runnable_base::children_subtests_count (void) const noexcept
     {
@@ -528,7 +528,7 @@ namespace micro_os_plus::micro_test_plus
    * Forwards to `require()`; the returned check result is neither copied
    * nor moved, since a prvalue is returned (guaranteed copy elision).
    */
-  // Deprecated since 5.1.0; use require().
+  // Deprecated since 6.0.0; use require().
   template <class Expr_T>
     requires extension::checkable<Expr_T>
   auto
@@ -860,7 +860,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns a const reference to the `stopwatch` member.
    */
-  // Deprecated since 5.1.0; the timings are internal.
+  // Deprecated since 6.0.0; the timings are internal.
   inline const detail::stopwatch&
   suite::timings (void) const noexcept
   {
@@ -871,7 +871,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Returns a reference to the `stopwatch` member.
    */
-  // Deprecated since 5.1.0; the timings are internal.
+  // Deprecated since 6.0.0; the timings are internal.
   inline detail::stopwatch&
   suite::timings (void) noexcept
   {
@@ -918,7 +918,7 @@ namespace micro_os_plus::micro_test_plus
    * extra call happens once for each run of the suite, not for each test
    * case.
    */
-  // Deprecated since 5.1.0; use a suite& first parameter.
+  // Deprecated since 6.0.0; use a suite& first parameter.
   template <typename Callable_T, typename... Args_T>
     requires (detail::static_suite_body<Callable_T, Args_T...>)
   static_suite::static_suite (const char* name, runner& test_runner,

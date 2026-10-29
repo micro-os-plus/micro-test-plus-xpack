@@ -166,20 +166,6 @@ class micro_os_plus::micro_test_plus::counters { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">size_t</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3cd85c566bdf2b3b92e27db4c29c7bc5">executed_subtests</a> (void) const noexcept</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated name of <span class="doxyComputerOutput"><a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases()</a></span>. <a href="#a3cd85c566bdf2b3b92e27db4c29c7bc5">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">size_t</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases</a> (void) const noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -214,20 +200,6 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
 <p>Returns the number of executed test cases that failed. <a href="#a85981e2e55a820cb49ee04aa82bbde56">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">void</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a082c78df2d5f6b10b6ac8c246caae6c5">increment_executed_subtests</a> (size_t count=1) noexcept</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated name of <span class="doxyComputerOutput"><a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases()</a></span>. <a href="#a082c78df2d5f6b10b6ac8c246caae6c5">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -305,20 +277,6 @@ class micro_os_plus::micro_test_plus::counters { ... }
 </tr>
 
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">void</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4d3d1d6dfcc6a3a8c61c8c0326799533">increment_successful_checks</a> (size_t count=1) noexcept</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated name of <span class="doxyComputerOutput"><a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks()</a></span>. <a href="#a4d3d1d6dfcc6a3a8c61c8c0326799533">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a14690f9880df505f9dd90a9f2c3dfc96">passed</a> (void) const noexcept</td>
 </tr>
@@ -354,34 +312,6 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
 <p>Returns the number of test cases skipped by the filter. <a href="#a2e5ea7bbb9bd5a05213dee741f08599d">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">size_t</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2e1ed349fc1d936b5de5929fa1a62650">successful_checks</a> (void) const noexcept</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated name of <span class="doxyComputerOutput"><a href="#a6d478407d2416d3d19a4041fa1c12c9b">passed_checks()</a></span>. <a href="#a2e1ed349fc1d936b5de5929fa1a62650">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae27ffc4d38a71b5c7d54f4a3b56c2203">was_successful</a> (void) const noexcept</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated name of <span class="doxyComputerOutput"><a href="#a14690f9880df505f9dd90a9f2c3dfc96">passed()</a></span>. <a href="#ae27ffc4d38a71b5c7d54f4a3b56c2203">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -458,6 +388,82 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
 <p>Total number of test cases skipped by the filter. <a href="#a4399ece2b4eb697927d7cf205d5b18d9">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+</table>
+
+## Deprecated Functions Index
+
+<table class="doxyMembersIndex">
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">void</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a4d3d1d6dfcc6a3a8c61c8c0326799533">increment_successful_checks</a> (size_t count=1) noexcept</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Deprecated name of <span class="doxyComputerOutput"><a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks()</a></span>. <a href="#a4d3d1d6dfcc6a3a8c61c8c0326799533">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">void</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a082c78df2d5f6b10b6ac8c246caae6c5">increment_executed_subtests</a> (size_t count=1) noexcept</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Deprecated name of <span class="doxyComputerOutput"><a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases()</a></span>. <a href="#a082c78df2d5f6b10b6ac8c246caae6c5">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">size_t</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2e1ed349fc1d936b5de5929fa1a62650">successful_checks</a> (void) const noexcept</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Deprecated name of <span class="doxyComputerOutput"><a href="#a6d478407d2416d3d19a4041fa1c12c9b">passed_checks()</a></span>. <a href="#a2e1ed349fc1d936b5de5929fa1a62650">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">size_t</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a3cd85c566bdf2b3b92e27db4c29c7bc5">executed_subtests</a> (void) const noexcept</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Deprecated name of <span class="doxyComputerOutput"><a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases()</a></span>. <a href="#a3cd85c566bdf2b3b92e27db4c29c7bc5">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">bool</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ae27ffc4d38a71b5c7d54f4a3b56c2203">was_successful</a> (void) const noexcept</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Deprecated name of <span class="doxyComputerOutput"><a href="#a14690f9880df505f9dd90a9f2c3dfc96">passed()</a></span>. <a href="#ae27ffc4d38a71b5c7d54f4a3b56c2203">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -544,7 +550,7 @@ class micro_os_plus::micro_test_plus::counters { ... }
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 
@@ -599,7 +605,7 @@ class micro_os_plus::micro_test_plus::counters { ... }
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 
@@ -826,7 +832,7 @@ class micro_os_plus::micro_test_plus::counters { ... }
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 
@@ -887,7 +893,7 @@ class micro_os_plus::micro_test_plus::counters { ... }
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 
@@ -948,7 +954,7 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Returns the sum of <span class="doxyComputerOutput"><a href="#a454de640619adaeeb5cbc2ada7144946">passed_checks_</a></span> and <span class="doxyComputerOutput"><a href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a></span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00333">333</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00167">167</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00360">360</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00167">167</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -965,82 +971,6 @@ class micro_os_plus::micro_test_plus::counters { ... }
 
 
 <p>Referenced by <a href="#a7e957314ea5aa3c064741c42336d1ee7">~counters</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-tap/#a2d5ddae3195ab52a957927a1b455f7b8">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-tap/#ad15f7dbbf6a683441df40c502125adc3">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case</a>.</p>
-
-</div>
-</div>
-
-### executed\_subtests() {#a3cd85c566bdf2b3b92e27db4c29c7bc5}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::counters::executed_subtests (void)</td>
-</tr>
-</table>
-</td>
-<td class="doxyMemberLabelsRight">
-<span class="doxyMemberLabels">
-<span class="doxyMemberLabel inline">inline</span>
-<span class="doxyMemberLabel nodiscard">nodiscard</span>
-<span class="doxyMemberLabel noexcept">noexcept</span>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Deprecated name of <span class="doxyComputerOutput"><a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases()</a></span>.</p>
-
-
-<p>Calls <span class="doxyComputerOutput"><a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases()</a></span>. The old name referred to the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga1424c18b26d5fdaed11439c77e6bf561">subtest</a></span> class, which is now <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a></span>.</p>
-
-
-<dl class="doxySectionUser">
-<dt>Parameters</dt>
-<dd><p>None.</p></dd>
-</dl>
-
-
-<dl class="doxySectionUser">
-<dt>Returns</dt>
-<dd><p>The value returned by <span class="doxyComputerOutput"><a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases()</a></span>.</p></dd>
-</dl>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000004>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases()</a> (since 5.1.0)</p>
-</dd>
-</dl>
-</div>
-
-<p>Forwards to <span class="doxyComputerOutput"><a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases()</a></span>.</p>
-
-
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00359">359</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00189">189</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a3cd85c566bdf2b3b92e27db4c29c7bc5">189</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a3cd85c566bdf2b3b92e27db4c29c7bc5">counters::executed_subtests</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">190</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">191</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases</a> ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">192</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
-
-</div>
-
-
-<p>Reference <a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases</a>.</p>
-
-
-<p>Referenced by <a href="#a7e957314ea5aa3c064741c42336d1ee7">~counters</a>.</p>
 
 </div>
 </div>
@@ -1088,7 +1018,7 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Returns the value of the <span class="doxyComputerOutput"><a href="#a72fb6b1038be0ac8b09b4da60aa292e8">executed_test_cases_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00343">343</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00177">177</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00370">370</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00177">177</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1104,7 +1034,7 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Reference <a href="#a72fb6b1038be0ac8b09b4da60aa292e8">executed_test_cases_</a>.</p>
 
 
-<p>Referenced by <a href="#a7e957314ea5aa3c064741c42336d1ee7">~counters</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-human/#af8dc976373fc0976c8486693d9b9f835">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-tap/#a2d5ddae3195ab52a957927a1b455f7b8">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-tap/#ad15f7dbbf6a683441df40c502125adc3">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case</a>, <a href="#a3cd85c566bdf2b3b92e27db4c29c7bc5">executed_subtests</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a6bf3aac88a5e66e2f93eb32c54dbdd14">micro_os_plus::micro_test_plus::detail::reporter::format_session_totals</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a570030599ccc9f4133ed6a9eda2c2a1c">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a97f725cb167a2b464fac0eb88a0c8a46">micro_os_plus::micro_test_plus::runner::run</a>.</p>
+<p>Referenced by <a href="#a7e957314ea5aa3c064741c42336d1ee7">~counters</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-human/#af8dc976373fc0976c8486693d9b9f835">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-tap/#a2d5ddae3195ab52a957927a1b455f7b8">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-tap/#ad15f7dbbf6a683441df40c502125adc3">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case</a>, <a href="#a3cd85c566bdf2b3b92e27db4c29c7bc5">executed_subtests</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a6bf3aac88a5e66e2f93eb32c54dbdd14">micro_os_plus::micro_test_plus::detail::reporter::format_session_totals</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a570030599ccc9f4133ed6a9eda2c2a1c">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a700e3ef1f955492cd84235bd388dcdf2">micro_os_plus::micro_test_plus::runner::run_suites</a>.</p>
 
 </div>
 </div>
@@ -1152,7 +1082,7 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Returns the value of the <span class="doxyComputerOutput"><a href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00323">323</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00157">157</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00350">350</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00157">157</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1216,7 +1146,7 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Returns the value of the <span class="doxyComputerOutput"><a href="#a09550bb4fd851f9b704904311bba27b6">failed_test_cases_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00370">370</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00200">200</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00406">406</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00200">200</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1233,87 +1163,6 @@ class micro_os_plus::micro_test_plus::counters { ... }
 
 
 <p>Referenced by <a href="#a7e957314ea5aa3c064741c42336d1ee7">~counters</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a60b8564f54a6a1230e6d4ce110de93f5">micro_os_plus::micro_test_plus::detail::reporter::format_test_case_totals</a>.</p>
-
-</div>
-</div>
-
-### increment\_executed\_subtests() {#a082c78df2d5f6b10b6ac8c246caae6c5}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">void micro_os_plus::micro_test_plus::counters::increment_executed_subtests (size_t count=1)</td>
-</tr>
-</table>
-</td>
-<td class="doxyMemberLabelsRight">
-<span class="doxyMemberLabels">
-<span class="doxyMemberLabel inline">inline</span>
-<span class="doxyMemberLabel noexcept">noexcept</span>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Deprecated name of <span class="doxyComputerOutput"><a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases()</a></span>.</p>
-
-
-<p>Calls <span class="doxyComputerOutput"><a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases()</a></span>. The old name referred to the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga1424c18b26d5fdaed11439c77e6bf561">subtest</a></span> class, which is now <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a></span>.</p>
-
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">count</td>
-<td class="doxyParamItemDescription"><p>The number of test cases to add (default 1).</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<dl class="doxySectionUser">
-<dt>Returns</dt>
-<dd><p>Nothing.</p></dd>
-</dl>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000002>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases()</a> (since 5.1.0)</p>
-</dd>
-</dl>
-</div>
-
-<p>Forwards to <span class="doxyComputerOutput"><a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases()</a></span>.</p>
-
-
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00258">258</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00103">103</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a082c78df2d5f6b10b6ac8c246caae6c5">103</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a082c78df2d5f6b10b6ac8c246caae6c5">counters::increment_executed_subtests</a> (</span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> count) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">104</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">105</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases</a> (count);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">106</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
-
-</div>
-
-
-<p>Reference <a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases</a>.</p>
-
-
-<p>Referenced by <a href="#a7e957314ea5aa3c064741c42336d1ee7">~counters</a>.</p>
 
 </div>
 </div>
@@ -1366,7 +1215,7 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Adds <span class="doxyComputerOutput">count</span> to the <span class="doxyComputerOutput"><a href="#a72fb6b1038be0ac8b09b4da60aa292e8">executed_test_cases_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00243">243</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00091">91</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00252">252</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00091">91</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1435,7 +1284,7 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Adds <span class="doxyComputerOutput">count</span> to the <span class="doxyComputerOutput"><a href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00233">233</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00081">81</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00242">242</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00081">81</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1504,7 +1353,7 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Adds <span class="doxyComputerOutput">count</span> to the <span class="doxyComputerOutput"><a href="#a09550bb4fd851f9b704904311bba27b6">failed_test_cases_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00269">269</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00114">114</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00287">287</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00114">114</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1575,7 +1424,7 @@ class micro_os_plus::micro_test_plus::counters { ... }
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 
@@ -1650,14 +1499,14 @@ class micro_os_plus::micro_test_plus::counters { ... }
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 
 <p>Adds <span class="doxyComputerOutput">count</span> to the <span class="doxyComputerOutput"><a href="#a4399ece2b4eb697927d7cf205d5b18d9">skipped_test_cases_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00281">281</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00124">124</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00299">299</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00124">124</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1674,87 +1523,6 @@ class micro_os_plus::micro_test_plus::counters { ... }
 
 
 <p>Referenced by <a href="#a7e957314ea5aa3c064741c42336d1ee7">~counters</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runnable-base/#a38cf903fb0ba5b76b1eb2350b6385962">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create</a>.</p>
-
-</div>
-</div>
-
-### increment\_successful\_checks() {#a4d3d1d6dfcc6a3a8c61c8c0326799533}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">void micro_os_plus::micro_test_plus::counters::increment_successful_checks (size_t count=1)</td>
-</tr>
-</table>
-</td>
-<td class="doxyMemberLabelsRight">
-<span class="doxyMemberLabels">
-<span class="doxyMemberLabel inline">inline</span>
-<span class="doxyMemberLabel noexcept">noexcept</span>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Deprecated name of <span class="doxyComputerOutput"><a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks()</a></span>.</p>
-
-
-<p>Calls <span class="doxyComputerOutput"><a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks()</a></span>. The old name called the checks "successful", while the reporters print them as "passed".</p>
-
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">count</td>
-<td class="doxyParamItemDescription"><p>The number of passed checks to add (default 1).</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<dl class="doxySectionUser">
-<dt>Returns</dt>
-<dd><p>Nothing.</p></dd>
-</dl>
-
-
-<div class="doxyXrefSect">
-<dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000001>Deprecated</a></dt>
-<dd class="doxyXrefSectDescription">
-<p>use <a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks()</a> (since 5.1.0)</p>
-</dd>
-</dl>
-</div>
-
-<p>Forwards to <span class="doxyComputerOutput"><a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks()</a></span>.</p>
-
-
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00222">222</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00070">70</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4d3d1d6dfcc6a3a8c61c8c0326799533">70</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a4d3d1d6dfcc6a3a8c61c8c0326799533">counters::increment_successful_checks</a> (</span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> count) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">71</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">72</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks</a> (count);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">73</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
-
-</div>
-
-
-<p>Reference <a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks</a>.</p>
-
-
-<p>Referenced by <a href="#a7e957314ea5aa3c064741c42336d1ee7">~counters</a>.</p>
 
 </div>
 </div>
@@ -1812,7 +1580,7 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>A node with no checks at all is considered successful, as it did not fail any check. A test case whose own checks all passed is still unsuccessful if one of its nested test cases failed, so that a failure is reported at every level above it, as in node-tap.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00397">397</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00223">223</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00433">433</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00223">223</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1828,7 +1596,7 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>References <a href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a> and <a href="#a09550bb4fd851f9b704904311bba27b6">failed_test_cases_</a>.</p>
 
 
-<p>Referenced by <a href="#a7e957314ea5aa3c064741c42336d1ee7">~counters</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runnable-base/#a38cf903fb0ba5b76b1eb2350b6385962">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-human/#ace9c2dfffc49a97516b96dacaf87b943">micro_os_plus::micro_test_plus::detail::reporter_human::end_session</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-human/#af8dc976373fc0976c8486693d9b9f835">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-tap/#a2d5ddae3195ab52a957927a1b455f7b8">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-human/#a7987c7a524058211a73d048d28943fb9">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-tap/#ad15f7dbbf6a683441df40c502125adc3">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a570030599ccc9f4133ed6a9eda2c2a1c">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a60b8564f54a6a1230e6d4ce110de93f5">micro_os_plus::micro_test_plus::detail::reporter::format_test_case_totals</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a97f725cb167a2b464fac0eb88a0c8a46">micro_os_plus::micro_test_plus::runner::run</a> and <a href="#ae27ffc4d38a71b5c7d54f4a3b56c2203">was_successful</a>.</p>
+<p>Referenced by <a href="#a7e957314ea5aa3c064741c42336d1ee7">~counters</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runnable-base/#a38cf903fb0ba5b76b1eb2350b6385962">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-human/#ace9c2dfffc49a97516b96dacaf87b943">micro_os_plus::micro_test_plus::detail::reporter_human::end_session</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-human/#af8dc976373fc0976c8486693d9b9f835">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-tap/#a2d5ddae3195ab52a957927a1b455f7b8">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-human/#a7987c7a524058211a73d048d28943fb9">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-tap/#ad15f7dbbf6a683441df40c502125adc3">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a570030599ccc9f4133ed6a9eda2c2a1c">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a60b8564f54a6a1230e6d4ce110de93f5">micro_os_plus::micro_test_plus::detail::reporter::format_test_case_totals</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a700e3ef1f955492cd84235bd388dcdf2">micro_os_plus::micro_test_plus::runner::run_suites</a> and <a href="#ae27ffc4d38a71b5c7d54f4a3b56c2203">was_successful</a>.</p>
 
 </div>
 </div>
@@ -1878,14 +1646,14 @@ class micro_os_plus::micro_test_plus::counters { ... }
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 
 <p>Returns the value of the <span class="doxyComputerOutput"><a href="#a454de640619adaeeb5cbc2ada7144946">passed_checks_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00297">297</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00134">134</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00315">315</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00134">134</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1951,14 +1719,14 @@ class micro_os_plus::micro_test_plus::counters { ... }
 
 <dl class="doxySectionUser">
 <dt>Since</dt>
-<dd><p>5.1.0</p></dd>
+<dd><p>6.0.0</p></dd>
 </dl>
 
 
 <p>Returns the value of the <span class="doxyComputerOutput"><a href="#a4399ece2b4eb697927d7cf205d5b18d9">skipped_test_cases_</a></span> counter.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00385">385</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00210">210</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00421">421</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00210">210</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1979,7 +1747,452 @@ class micro_os_plus::micro_test_plus::counters { ... }
 </div>
 </div>
 
-### successful\_checks() {#a2e1ed349fc1d936b5de5929fa1a62650}
+</div>
+
+<div class="doxySectionDef">
+
+## Private Member Attributes
+
+### executed\_test\_cases\_ {#a72fb6b1038be0ac8b09b4da60aa292e8}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::counters::executed_test_cases_ = 0</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Total number of test cases executed.</p>
+
+
+<p>Incremented by <span class="doxyComputerOutput"><a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases()</a></span> and by <span class="doxyComputerOutput">operator+=</span>.</p>
+
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00484">484</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a72fb6b1038be0ac8b09b4da60aa292e8">484</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a72fb6b1038be0ac8b09b4da60aa292e8">executed_test_cases_</a> = 0;</span></span></div>
+
+</div>
+
+
+<p>Referenced by <a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases</a>, <a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases</a> and <a href="#ad41430bc47f5539370b82ae9b8caf863">operator+=</a>.</p>
+
+</div>
+</div>
+
+### failed\_checks\_ {#a903b0e792447e149a032a7e46570bfc1}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::counters::failed_checks_ = 0</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Total number of failed checks.</p>
+
+
+<p>Incremented by <span class="doxyComputerOutput"><a href="#aceea5d97d4ae5cd25f077d0349465062">increment_failed_checks()</a></span> and by <span class="doxyComputerOutput">operator+=</span>.</p>
+
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00475">475</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a903b0e792447e149a032a7e46570bfc1">475</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a> = 0;</span></span></div>
+
+</div>
+
+
+<p>Referenced by <a href="#a5909350d1852fa54f2cf4c260d99b820">executed_checks</a>, <a href="#ab1684c7c6101a4d534356d9d16807bee">failed_checks</a>, <a href="#aceea5d97d4ae5cd25f077d0349465062">increment_failed_checks</a>, <a href="#ad41430bc47f5539370b82ae9b8caf863">operator+=</a> and <a href="#a14690f9880df505f9dd90a9f2c3dfc96">passed</a>.</p>
+
+</div>
+</div>
+
+### failed\_test\_cases\_ {#a09550bb4fd851f9b704904311bba27b6}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::counters::failed_test_cases_ = 0</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Total number of executed test cases that failed.</p>
+
+
+<p>Incremented by <span class="doxyComputerOutput"><a href="#a80c4365daa5804dc8ea52c7a5531e4cd">increment_failed_test_cases()</a></span>, when a test case ends with a failed check or a failed nested test case, and by <span class="doxyComputerOutput">operator+=</span>. A test case fails when any of its nested test cases fails, as in node-tap, although the checks of the nested test cases are not counted in its check counters.</p>
+
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00496">496</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a09550bb4fd851f9b704904311bba27b6">496</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a09550bb4fd851f9b704904311bba27b6">failed_test_cases_</a> = 0;</span></span></div>
+
+</div>
+
+
+<p>Referenced by <a href="#a85981e2e55a820cb49ee04aa82bbde56">failed_test_cases</a>, <a href="#a80c4365daa5804dc8ea52c7a5531e4cd">increment_failed_test_cases</a>, <a href="#ad41430bc47f5539370b82ae9b8caf863">operator+=</a> and <a href="#a14690f9880df505f9dd90a9f2c3dfc96">passed</a>.</p>
+
+</div>
+</div>
+
+### passed\_checks\_ {#a454de640619adaeeb5cbc2ada7144946}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::counters::passed_checks_ = 0</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Total number of passed checks.</p>
+
+
+<p>Incremented by <span class="doxyComputerOutput"><a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks()</a></span> and by <span class="doxyComputerOutput">operator+=</span>.</p>
+
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00467">467</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a454de640619adaeeb5cbc2ada7144946">467</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a454de640619adaeeb5cbc2ada7144946">passed_checks_</a> = 0;</span></span></div>
+
+</div>
+
+
+<p>Referenced by <a href="#a5909350d1852fa54f2cf4c260d99b820">executed_checks</a>, <a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks</a>, <a href="#ad41430bc47f5539370b82ae9b8caf863">operator+=</a> and <a href="#a6d478407d2416d3d19a4041fa1c12c9b">passed_checks</a>.</p>
+
+</div>
+</div>
+
+### skipped\_test\_cases\_ {#a4399ece2b4eb697927d7cf205d5b18d9}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::counters::skipped_test_cases_ = 0</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Total number of test cases skipped by the filter.</p>
+
+
+<p>Incremented by <span class="doxyComputerOutput"><a href="#a0fdafd0ee8aa838ecc833365d2b0eebb">increment_skipped_test_cases()</a></span>, when the name of a test case, or of its suite, does not match the filter pattern of its level, and by <span class="doxyComputerOutput">operator+=</span>.</p>
+
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00506">506</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4399ece2b4eb697927d7cf205d5b18d9">506</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a4399ece2b4eb697927d7cf205d5b18d9">skipped_test_cases_</a> = 0;</span></span></div>
+
+</div>
+
+
+<p>Referenced by <a href="#a0fdafd0ee8aa838ecc833365d2b0eebb">increment_skipped_test_cases</a>, <a href="#ad41430bc47f5539370b82ae9b8caf863">operator+=</a> and <a href="#a2e5ea7bbb9bd5a05213dee741f08599d">skipped_test_cases</a>.</p>
+
+</div>
+</div>
+
+</div>
+
+<div class="doxySectionDef">
+
+## Deprecated Functions
+
+### executed\_subtests {#a3cd85c566bdf2b3b92e27db4c29c7bc5}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::counters::executed_subtests (void)</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel inline">inline</span>
+<span class="doxyMemberLabel nodiscard">nodiscard</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Deprecated name of <span class="doxyComputerOutput"><a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases()</a></span>.</p>
+
+
+<p>Calls <span class="doxyComputerOutput"><a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases()</a></span>. The old name referred to the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga1424c18b26d5fdaed11439c77e6bf561">subtest</a></span> class, which is now <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a></span>.</p>
+
+
+<dl class="doxySectionUser">
+<dt>Parameters</dt>
+<dd><p>None.</p></dd>
+</dl>
+
+
+<dl class="doxySectionUser">
+<dt>Returns</dt>
+<dd><p>The value returned by <span class="doxyComputerOutput"><a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases()</a></span>.</p></dd>
+</dl>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000004>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases()</a> (since 6.0.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Forwards to <span class="doxyComputerOutput"><a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases()</a></span>.</p>
+
+
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00391">391</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00189">189</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a3cd85c566bdf2b3b92e27db4c29c7bc5">189</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a3cd85c566bdf2b3b92e27db4c29c7bc5">counters::executed_subtests</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">190</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">191</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases</a> ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">192</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+
+</div>
+
+
+<p>Reference <a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases</a>.</p>
+
+
+<p>Referenced by <a href="#a7e957314ea5aa3c064741c42336d1ee7">~counters</a>.</p>
+
+</div>
+</div>
+
+### increment\_executed\_subtests {#a082c78df2d5f6b10b6ac8c246caae6c5}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">void micro_os_plus::micro_test_plus::counters::increment_executed_subtests (size_t count=1)</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel inline">inline</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Deprecated name of <span class="doxyComputerOutput"><a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases()</a></span>.</p>
+
+
+<p>Calls <span class="doxyComputerOutput"><a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases()</a></span>. The old name referred to the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga1424c18b26d5fdaed11439c77e6bf561">subtest</a></span> class, which is now <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a></span>.</p>
+
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">count</td>
+<td class="doxyParamItemDescription"><p>The number of test cases to add (default 1).</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="doxySectionUser">
+<dt>Returns</dt>
+<dd><p>Nothing.</p></dd>
+</dl>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000002>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases()</a> (since 6.0.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Forwards to <span class="doxyComputerOutput"><a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases()</a></span>.</p>
+
+
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00272">272</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00103">103</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a082c78df2d5f6b10b6ac8c246caae6c5">103</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a082c78df2d5f6b10b6ac8c246caae6c5">counters::increment_executed_subtests</a> (</span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> count) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">104</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">105</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases</a> (count);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">106</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+
+</div>
+
+
+<p>Reference <a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases</a>.</p>
+
+
+<p>Referenced by <a href="#a7e957314ea5aa3c064741c42336d1ee7">~counters</a>.</p>
+
+</div>
+</div>
+
+### increment\_successful\_checks {#a4d3d1d6dfcc6a3a8c61c8c0326799533}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">void micro_os_plus::micro_test_plus::counters::increment_successful_checks (size_t count=1)</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel inline">inline</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Deprecated name of <span class="doxyComputerOutput"><a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks()</a></span>.</p>
+
+
+<p>Calls <span class="doxyComputerOutput"><a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks()</a></span>. The old name called the checks "successful", while the reporters print them as "passed".</p>
+
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">count</td>
+<td class="doxyParamItemDescription"><p>The number of passed checks to add (default 1).</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="doxySectionUser">
+<dt>Returns</dt>
+<dd><p>Nothing.</p></dd>
+</dl>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000001>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use <a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks()</a> (since 6.0.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Forwards to <span class="doxyComputerOutput"><a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks()</a></span>.</p>
+
+
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00227">227</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00070">70</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4d3d1d6dfcc6a3a8c61c8c0326799533">70</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a4d3d1d6dfcc6a3a8c61c8c0326799533">counters::increment_successful_checks</a> (</span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> count) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">71</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">72</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks</a> (count);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">73</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+
+</div>
+
+
+<p>Reference <a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks</a>.</p>
+
+
+<p>Referenced by <a href="#a7e957314ea5aa3c064741c42336d1ee7">~counters</a>.</p>
+
+</div>
+</div>
+
+### successful\_checks {#a2e1ed349fc1d936b5de5929fa1a62650}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2026,7 +2239,7 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000003>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use <a href="#a6d478407d2416d3d19a4041fa1c12c9b">passed_checks()</a> (since 5.1.0)</p>
+<p>use <a href="#a6d478407d2416d3d19a4041fa1c12c9b">passed_checks()</a> (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -2034,7 +2247,7 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Forwards to <span class="doxyComputerOutput"><a href="#a6d478407d2416d3d19a4041fa1c12c9b">passed_checks()</a></span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00312">312</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00146">146</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00335">335</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00146">146</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -2055,7 +2268,7 @@ class micro_os_plus::micro_test_plus::counters { ... }
 </div>
 </div>
 
-### was\_successful() {#ae27ffc4d38a71b5c7d54f4a3b56c2203}
+### was\_successful {#ae27ffc4d38a71b5c7d54f4a3b56c2203}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2102,7 +2315,7 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000005>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use <a href="#a14690f9880df505f9dd90a9f2c3dfc96">passed()</a> (since 5.1.0)</p>
+<p>use <a href="#a14690f9880df505f9dd90a9f2c3dfc96">passed()</a> (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -2110,7 +2323,7 @@ class micro_os_plus::micro_test_plus::counters { ... }
 <p>Forwards to <span class="doxyComputerOutput"><a href="#a14690f9880df505f9dd90a9f2c3dfc96">passed()</a></span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00412">412</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00235">235</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00453">453</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h/#l00235">235</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/counters-inlines-h">counters-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -2127,207 +2340,6 @@ class micro_os_plus::micro_test_plus::counters { ... }
 
 
 <p>Referenced by <a href="#a7e957314ea5aa3c064741c42336d1ee7">~counters</a>.</p>
-
-</div>
-</div>
-
-</div>
-
-<div class="doxySectionDef">
-
-## Private Member Attributes
-
-### executed\_test\_cases\_ {#a72fb6b1038be0ac8b09b4da60aa292e8}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::counters::executed_test_cases_ = 0</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Total number of test cases executed.</p>
-
-
-<p>Incremented by <span class="doxyComputerOutput"><a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases()</a></span> and by <span class="doxyComputerOutput">operator+=</span>.</p>
-
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00439">439</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a72fb6b1038be0ac8b09b4da60aa292e8">439</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a72fb6b1038be0ac8b09b4da60aa292e8">executed_test_cases_</a> = 0;</span></span></div>
-
-</div>
-
-
-<p>Referenced by <a href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases</a>, <a href="#a21c6250b78a96ae1448a7fa93608d2d3">increment_executed_test_cases</a> and <a href="#ad41430bc47f5539370b82ae9b8caf863">operator+=</a>.</p>
-
-</div>
-</div>
-
-### failed\_checks\_ {#a903b0e792447e149a032a7e46570bfc1}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::counters::failed_checks_ = 0</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Total number of failed checks.</p>
-
-
-<p>Incremented by <span class="doxyComputerOutput"><a href="#aceea5d97d4ae5cd25f077d0349465062">increment_failed_checks()</a></span> and by <span class="doxyComputerOutput">operator+=</span>.</p>
-
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00430">430</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a903b0e792447e149a032a7e46570bfc1">430</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a> = 0;</span></span></div>
-
-</div>
-
-
-<p>Referenced by <a href="#a5909350d1852fa54f2cf4c260d99b820">executed_checks</a>, <a href="#ab1684c7c6101a4d534356d9d16807bee">failed_checks</a>, <a href="#aceea5d97d4ae5cd25f077d0349465062">increment_failed_checks</a>, <a href="#ad41430bc47f5539370b82ae9b8caf863">operator+=</a> and <a href="#a14690f9880df505f9dd90a9f2c3dfc96">passed</a>.</p>
-
-</div>
-</div>
-
-### failed\_test\_cases\_ {#a09550bb4fd851f9b704904311bba27b6}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::counters::failed_test_cases_ = 0</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Total number of executed test cases that failed.</p>
-
-
-<p>Incremented by <span class="doxyComputerOutput"><a href="#a80c4365daa5804dc8ea52c7a5531e4cd">increment_failed_test_cases()</a></span>, when a test case ends with a failed check or a failed nested test case, and by <span class="doxyComputerOutput">operator+=</span>. A test case fails when any of its nested test cases fails, as in node-tap, although the checks of the nested test cases are not counted in its check counters.</p>
-
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00451">451</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a09550bb4fd851f9b704904311bba27b6">451</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a09550bb4fd851f9b704904311bba27b6">failed_test_cases_</a> = 0;</span></span></div>
-
-</div>
-
-
-<p>Referenced by <a href="#a85981e2e55a820cb49ee04aa82bbde56">failed_test_cases</a>, <a href="#a80c4365daa5804dc8ea52c7a5531e4cd">increment_failed_test_cases</a>, <a href="#ad41430bc47f5539370b82ae9b8caf863">operator+=</a> and <a href="#a14690f9880df505f9dd90a9f2c3dfc96">passed</a>.</p>
-
-</div>
-</div>
-
-### passed\_checks\_ {#a454de640619adaeeb5cbc2ada7144946}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::counters::passed_checks_ = 0</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Total number of passed checks.</p>
-
-
-<p>Incremented by <span class="doxyComputerOutput"><a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks()</a></span> and by <span class="doxyComputerOutput">operator+=</span>.</p>
-
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00422">422</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a454de640619adaeeb5cbc2ada7144946">422</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a454de640619adaeeb5cbc2ada7144946">passed_checks_</a> = 0;</span></span></div>
-
-</div>
-
-
-<p>Referenced by <a href="#a5909350d1852fa54f2cf4c260d99b820">executed_checks</a>, <a href="#a2805c82d9f1e97c61c538eb78381119d">increment_passed_checks</a>, <a href="#ad41430bc47f5539370b82ae9b8caf863">operator+=</a> and <a href="#a6d478407d2416d3d19a4041fa1c12c9b">passed_checks</a>.</p>
-
-</div>
-</div>
-
-### skipped\_test\_cases\_ {#a4399ece2b4eb697927d7cf205d5b18d9}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::counters::skipped_test_cases_ = 0</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Total number of test cases skipped by the filter.</p>
-
-
-<p>Incremented by <span class="doxyComputerOutput"><a href="#a0fdafd0ee8aa838ecc833365d2b0eebb">increment_skipped_test_cases()</a></span>, when the name of a test case, or of its suite, does not match the filter pattern of its level, and by <span class="doxyComputerOutput">operator+=</span>.</p>
-
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h/#l00461">461</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">counters.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4399ece2b4eb697927d7cf205d5b18d9">461</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a4399ece2b4eb697927d7cf205d5b18d9">skipped_test_cases_</a> = 0;</span></span></div>
-
-</div>
-
-
-<p>Referenced by <a href="#a0fdafd0ee8aa838ecc833365d2b0eebb">increment_skipped_test_cases</a>, <a href="#ad41430bc47f5539370b82ae9b8caf863">operator+=</a> and <a href="#a2e5ea7bbb9bd5a05213dee741f08599d">skipped_test_cases</a>.</p>
 
 </div>
 </div>

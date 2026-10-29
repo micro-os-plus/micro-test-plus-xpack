@@ -124,7 +124,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * Forwards to `str().c_str()`.
    */
-  // Deprecated since 5.1.0; use str().c_str().
+  // Deprecated since 6.0.0; use str().c_str().
   inline const char*
   expression_formatter::c_str (void) const noexcept
   {
@@ -135,7 +135,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * Forwards to `str().empty()`.
    */
-  // Deprecated since 5.1.0; use str().empty().
+  // Deprecated since 6.0.0; use str().empty().
   inline bool
   expression_formatter::empty (void) const noexcept
   {

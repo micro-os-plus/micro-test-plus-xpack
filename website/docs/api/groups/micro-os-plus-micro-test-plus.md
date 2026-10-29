@@ -89,10 +89,10 @@ keywords:
 <p>The <b>µTest++</b> project is a <b>modern C++</b> library designed to provide a <b>lightweight and efficient</b>, <b>macro free</b>, <b>TAP based</b> testing framework, purpose-built for embedded systems development.</p>
 
 
-<p>The <b>C++ API</b> is the primary interface for writing test suites and test cases. It is centred on the <span class="doxyComputerOutput">runner</span> and <span class="doxyComputerOutput">test_case</span> classes, which provide methods for registering tests, evaluating expectations and requirements, and collecting results. Utility types such as strongly-typed literals, function comparators, and operator overloads complement the core API to enable expressive, type-safe assertions with no macro dependencies. The API is documented in the <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api">C++ API</a> group.</p>
+<p>The <b>C++ API</b> is the primary interface for writing test suites and test cases. It is centred on the <span class="doxyComputerOutput">runner</span> and <span class="doxyComputerOutput">test_case</span> classes, which provide methods for registering tests, evaluating expectations and requirements, and collecting results. Function comparators and logical functions complement the core API to enable expressive, type-safe assertions with no macro dependencies. The API is documented in the <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api">C++ API</a> group.</p>
 
 
-<p>The <b>command-line interface (CLI)</b> allows test executables to be configured at run time without recompilation. Arguments are passed to <span class="doxyComputerOutput">runner::initialise()</span> and control aspects such as the verbosity level and the output reporter format. The available options are documented in the <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cli">Command Line Options</a> group.</p>
+<p>The <b>command-line interface (CLI)</b> allows test executables to be configured at run time without recompilation. Arguments are passed to <span class="doxyComputerOutput">runner::initialise()</span> and control aspects such as the verbosity level the output reporter format, the colours, an output file, and the selection or listing of the test cases. The available options are documented in the <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cli">Command Line Options</a> group.</p>
 
 
 <hr/>

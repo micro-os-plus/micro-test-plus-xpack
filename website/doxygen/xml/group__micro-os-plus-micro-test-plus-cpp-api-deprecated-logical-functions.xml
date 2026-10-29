@@ -67,13 +67,13 @@
 </parameterlist>
 <simplesect kind="return"><para>An object that evaluates to true if both operand expressions are true. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000007"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kindref="member">all_of()</ref> (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000007"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kindref="member">all_of()</ref> (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Forwards to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kindref="member">all_of()</ref></computeroutput>, so the returned expression is the same, and is reported in the same way. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="96" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="96" bodyend="99" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="151" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="96" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="96" bodyend="99" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="157" declcolumn="3"/>
         <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" compoundref="deprecated-inlines_8h" startline="96" endline="99">micro_os_plus::micro_test_plus::_and</references>
         <references refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" compoundref="function-comparators-inlines_8h" startline="246" endline="260">micro_os_plus::micro_test_plus::all_of</references>
         <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" compoundref="deprecated-inlines_8h" startline="96" endline="99">micro_os_plus::micro_test_plus::_and</referencedby>
@@ -118,13 +118,13 @@
 </parameterlist>
 <simplesect kind="return"><para>An object that evaluates to true if the operand is false. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000006"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate()</ref> (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000006"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate()</ref> (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Forwards to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kindref="member">negate()</ref></computeroutput>, so the returned expression is the same, and is reported in the same way. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="83" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="83" bodyend="86" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="130" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="83" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="83" bodyend="86" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="136" declcolumn="3"/>
         <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" compoundref="deprecated-inlines_8h" startline="83" endline="86">micro_os_plus::micro_test_plus::_not</references>
         <references refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" compoundref="function-comparators-inlines_8h" startline="219" endline="224">micro_os_plus::micro_test_plus::negate</references>
         <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" compoundref="deprecated-inlines_8h" startline="83" endline="86">micro_os_plus::micro_test_plus::_not</referencedby>
@@ -192,13 +192,13 @@
 </parameterlist>
 <simplesect kind="return"><para>An object that evaluates to true if at least one of the operand expressions is true, including when both are. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000008"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kindref="member">any_of()</ref> (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000008"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kindref="member">any_of()</ref> (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Forwards to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kindref="member">any_of()</ref></computeroutput>, so the returned expression is the same, and is reported in the same way. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="109" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="109" bodyend="112" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="172" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="109" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="109" bodyend="112" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="178" declcolumn="3"/>
         <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" compoundref="deprecated-inlines_8h" startline="109" endline="112">micro_os_plus::micro_test_plus::_or</references>
         <references refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" compoundref="function-comparators-inlines_8h" startline="278" endline="292">micro_os_plus::micro_test_plus::any_of</references>
         <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" compoundref="deprecated-inlines_8h" startline="109" endline="112">micro_os_plus::micro_test_plus::_or</referencedby>
@@ -208,7 +208,7 @@
 <para>Deprecated v5.0.1 names of the logical functions. </para>
     </briefdescription>
     <detaileddescription>
-<para>The functions <computeroutput>mt::_and()</computeroutput>, <computeroutput>mt::_or()</computeroutput>, and <computeroutput>mt::_not()</computeroutput> are the v5.0.1 names of <computeroutput>mt::all_of()</computeroutput>, <computeroutput>mt::any_of()</computeroutput>, and <computeroutput>mt::negate()</computeroutput>. They are deprecated since 5.1.0, and are kept for compatibility with the existing applications; they behave as the functions that replace them.</para>
+<para>The functions <computeroutput>mt::_and()</computeroutput>, <computeroutput>mt::_or()</computeroutput>, and <computeroutput>mt::_not()</computeroutput> are the v5.0.1 names of <computeroutput>mt::all_of()</computeroutput>, <computeroutput>mt::any_of()</computeroutput>, and <computeroutput>mt::negate()</computeroutput>. They are deprecated since 6.0.0, and are kept for compatibility with the existing applications; they behave as the functions that replace them.</para>
 <para>The names were changed since a leading underscore is not used by the other public names. Unlike the replacements, <computeroutput>mt::_and()</computeroutput> and <computeroutput>mt::_or()</computeroutput> take exactly two operands, whereas <computeroutput>mt::all_of()</computeroutput> and <computeroutput>mt::any_of()</computeroutput> take two or more.</para>
 <para><table rows="4" cols="2"><row>
 <entry thead="yes"><para>Deprecated  </para>
@@ -238,7 +238,7 @@
 <codeline><highlight class="normal">t.expect<sp/>(mt::all_of<sp/>(mt::eq<sp/>(compute_answer<sp/>(),<sp/>42),</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mt::lt<sp/>(compute_answer<sp/>(),<sp/>43)));</highlight></codeline>
 </programlisting></para>
-<para>The overloaded logical operators of the <computeroutput>micro_test_plus::operators</computeroutput> namespace are also deprecated since 5.1.0, in favour of the same replacement functions.  </para>
+<para>The overloaded logical operators of the <computeroutput>micro_test_plus::operators</computeroutput> namespace are also deprecated since 6.0.0, in favour of the same replacement functions.  </para>
     </detaileddescription>
   </compounddef>
 </doxygen>

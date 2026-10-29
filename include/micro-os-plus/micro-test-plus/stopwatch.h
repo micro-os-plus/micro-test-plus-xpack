@@ -272,7 +272,7 @@ namespace micro_os_plus::micro_test_plus
        * @retval true  The start reading is available.
        * @retval false The start reading is absent.
        */
-      [[deprecated ("use has_elapsed() (since 5.1.0)"), nodiscard]] bool
+      [[deprecated ("use has_elapsed() (since 6.0.0)"), nodiscard]] bool
       has_begin (void) const noexcept;
 
       /**
@@ -289,7 +289,7 @@ namespace micro_os_plus::micro_test_plus
        * @retval true  The stop reading is available.
        * @retval false The stop reading is absent.
        */
-      [[deprecated ("use has_elapsed() (since 5.1.0)"), nodiscard]] bool
+      [[deprecated ("use has_elapsed() (since 6.0.0)"), nodiscard]] bool
       has_end (void) const noexcept;
 
       /**
@@ -303,7 +303,7 @@ namespace micro_os_plus::micro_test_plus
        *   None.
        * @return The value returned by `has_elapsed()`.
        */
-      [[deprecated ("use has_elapsed() (since 5.1.0)"), nodiscard]] bool
+      [[deprecated ("use has_elapsed() (since 6.0.0)"), nodiscard]] bool
       has_timestamps (void) const noexcept;
 
       /**
@@ -322,7 +322,7 @@ namespace micro_os_plus::micro_test_plus
        * @par Returns
        *   Nothing.
        */
-      [[deprecated ("use elapsed() (since 5.1.0)")]] void
+      [[deprecated ("use elapsed() (since 6.0.0)")]] void
       compute_elapsed_time (uint32_t& milliseconds,
                             uint32_t& microseconds) const noexcept;
 
@@ -342,7 +342,7 @@ namespace micro_os_plus::micro_test_plus
        * @par Returns
        *   Nothing.
        */
-      [[deprecated ("use start() (since 5.1.0)")]] void
+      [[deprecated ("use start() (since 6.0.0)")]] void
       timestamp_begin (void) noexcept;
 
       /**
@@ -358,7 +358,7 @@ namespace micro_os_plus::micro_test_plus
        * @par Returns
        *   Nothing.
        */
-      [[deprecated ("use start() (since 5.1.0)")]] void
+      [[deprecated ("use start() (since 6.0.0)")]] void
       timestamp_begin (const timespec& ts) noexcept;
 
       /**
@@ -375,7 +375,7 @@ namespace micro_os_plus::micro_test_plus
        * @par Returns
        *   Nothing.
        */
-      [[deprecated ("use stop() (since 5.1.0)")]] void
+      [[deprecated ("use stop() (since 6.0.0)")]] void
       timestamp_end (void) noexcept;
 
       /**
@@ -391,7 +391,7 @@ namespace micro_os_plus::micro_test_plus
        * @par Returns
        *   Nothing.
        */
-      [[deprecated ("use stop() (since 5.1.0)")]] void
+      [[deprecated ("use stop() (since 6.0.0)")]] void
       timestamp_end (const timespec& ts) noexcept;
 
       /**

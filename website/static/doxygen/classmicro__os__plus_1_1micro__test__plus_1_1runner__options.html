@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.1.0</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;6.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -186,7 +186,7 @@ Private Attributes</h2></td></tr>
 <div class="line">tr.initialise (options);</div>
 </div><!-- fragment --><p>The configuration members are public, since any combination of their values is valid; only the results of the parsing (whether errors were found, and whether the reporter was unknown) are private, and are read by the runner.</p>
 <p>The options own their strings (the command line, the path of the output file, and the filter patterns), so they do not depend on the lifetime of the caller's strings; the runner keeps its own copy of them.</p>
-<dl class="section since"><dt>Since</dt><dd>5.1.0 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>6.0.0 </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00215">215</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -245,7 +245,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Starts from the defaults, and parses the µTest++ options (<span class="tt">--reporter</span>, <span class="tt">--silent</span>, <span class="tt">--quiet</span>, <span class="tt">--verbose</span>, <span class="tt">--output-file</span>, <span class="tt">--color</span>, <span class="tt">--use-colour</span>, <span class="tt">--filter</span>, and <span class="tt">--list-tests</span>). The other arguments are ignored, since the applications may define their own, except for those starting with <span class="tt">--</span>, which are reported as unknown options.</p>
-<p>A missing option argument, an unknown reporter name, an unknown colour mode, or an unknown option, is reported on <span class="tt">stderr</span>, the option is ignored, and <span class="tt"><a class="el" href="#a4ed347422b26dded0244c3926ef384a8" title="Checks whether errors were found while parsing the command line.">has_errors()</a></span> is set; <span class="tt">run()</span> then returns</p><ol type="1">
+<p>A missing option argument, an unknown reporter name, an unknown colour mode, or an unknown option, is reported on <span class="tt">stderr</span>, the option is ignored, and <span class="tt"><a class="el" href="#a4ed347422b26dded0244c3926ef384a8" title="Checks whether errors were found while parsing the command line.">has_errors()</a></span> is set; <span class="tt">run_suites()</span> then returns</p><ol type="1">
 <li>The errors are not written in the report, since the reporter does not exist yet.</li>
 </ol>
 <p>The <span class="tt">argv[]</span> strings are copied, so they need not outlive the options.</p>
@@ -256,7 +256,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section since"><dt>Since</dt><dd>5.1.0</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>6.0.0</dd></dl>
 <p>Scans the arguments after <span class="tt">argv[0]</span>, in order, for:</p>
 <ul>
 <li><span class="tt">--reporter=&lt;name&gt;</span> or <span class="tt">--reporter &lt;name&gt;</span>, with <span class="tt">tap</span> (the default) or <span class="tt">human</span>;</li>
@@ -485,7 +485,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section since"><dt>Since</dt><dd>5.1.0 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>6.0.0 </dd></dl>
 
 <p class="reference">References <a class="el" href="#a1cd0deb2811e578a7e767414b1092eec">runner_options()</a>.</p>
 
@@ -520,7 +520,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section since"><dt>Since</dt><dd>5.1.0 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>6.0.0 </dd></dl>
 
 <p class="reference">References <a class="el" href="#a1cd0deb2811e578a7e767414b1092eec">runner_options()</a>.</p>
 
@@ -635,9 +635,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The errors were already written on <span class="tt">stderr</span> by the constructor; when set, <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a97f725cb167a2b464fac0eb88a0c8a46" title="Runs the registered suites, ends the session, and returns the exit code.">runner::run()</a></span> returns 2. Never set for the default options.</p>
+<p>The errors were already written on <span class="tt">stderr</span> by the constructor; when set, <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a700e3ef1f955492cd84235bd388dcdf2" title="Runs the registered suites, ends the session, and returns the exit code.">runner::run_suites()</a></span> returns 2. Never set for the default options.</p>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if at least one error was found.</dd></dl>
-<dl class="section since"><dt>Since</dt><dd>5.1.0</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>6.0.0</dd></dl>
 <p>Returns the <span class="tt"><a class="el" href="#a34e9ffd5e17176de9c845f71fb0f399c" title="Whether errors were found while parsing the command line.">has_errors_</a></span> member. </p>
 
 <p class="definition">Definition at line <a class="el" href="runner-options-inlines_8h_source.html#l00071">71</a> of file <a class="el" href="runner-options-inlines_8h_source.html">runner-options-inlines.h</a>.</p>
@@ -671,9 +671,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>When set, <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a39ee9ec53f8df687cd84092de5118592" title="Deprecated initialisation with the command-line arguments, which also adds the top suite.">runner::initialise()</a></span> does not proceed: no output file is created, nothing is reported, no test is run, and <span class="tt">run()</span> returns 2, even if <span class="tt"><a class="el" href="#ad22d04df014c5b0658b6e7bd239f15b0" title="The reporter that displays the results.">selected_reporter</a></span> was changed after the parsing.</p>
+<p>When set, <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a39ee9ec53f8df687cd84092de5118592" title="Deprecated initialisation with the command-line arguments, which also adds the top suite.">runner::initialise()</a></span> does not proceed: no output file is created, nothing is reported, no test is run, and <span class="tt">run_suites()</span> returns 2, even if <span class="tt"><a class="el" href="#ad22d04df014c5b0658b6e7bd239f15b0" title="The reporter that displays the results.">selected_reporter</a></span> was changed after the parsing.</p>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the reporter name was not recognised.</dd></dl>
-<dl class="section since"><dt>Since</dt><dd>5.1.0</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>6.0.0</dd></dl>
 <p>Returns the <span class="tt"><a class="el" href="#a29f60856a79601eaa48a2bb7a3a615ff" title="Whether the reporter name was not recognised.">has_invalid_reporter_</a></span> member. </p>
 
 <p class="definition">Definition at line <a class="el" href="runner-options-inlines_8h_source.html#l00081">81</a> of file <a class="el" href="runner-options-inlines_8h_source.html">runner-options-inlines.h</a>.</p>
@@ -718,7 +718,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Reference to this instance.</dd></dl>
-<dl class="section since"><dt>Since</dt><dd>5.1.0</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>6.0.0</dd></dl>
 <p>Copies <span class="tt">other</span> with the copy constructor, and moves the copy into this instance; self-assignment is safe. </p>
 
 <p class="definition">Definition at line <a class="el" href="runner-options-inlines_8h_source.html#l00059">59</a> of file <a class="el" href="runner-options-inlines_8h_source.html">runner-options-inlines.h</a>.</p>
@@ -763,7 +763,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Reference to this instance.</dd></dl>
-<dl class="section since"><dt>Since</dt><dd>5.1.0 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>6.0.0 </dd></dl>
 
 <p class="reference">References <a class="el" href="#a1cd0deb2811e578a7e767414b1092eec">runner_options()</a>.</p>
 
@@ -801,7 +801,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Set by <span class="tt">--color[=&lt;when&gt;]</span>, as in the GNU tools, where <span class="tt">&lt;when&gt;</span> is <span class="tt">always</span>, <span class="tt">never</span>, or <span class="tt">auto</span>, or one of their GNU synonyms (<span class="tt">yes</span> and <span class="tt">force</span>, <span class="tt">no</span> and <span class="tt">none</span>, <span class="tt">tty</span> and <span class="tt">if-tty</span>), and <span class="tt">--color</span> alone means <span class="tt">always</span>; the value is accepted only after <span class="tt">=</span>. The alternative <span class="tt">--use-colour=&lt;mode&gt;</span> or <span class="tt">--use-colour &lt;mode&gt;</span>, as in Catch2 and Boost UT, takes <span class="tt">yes</span>, <span class="tt">no</span>, or <span class="tt">auto</span>, and also accepts the other values of <span class="tt">--color</span>. Used only by the human reporter.</p>
-<dl class="section since"><dt>Since</dt><dd>5.1.0 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>6.0.0 </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00371">371</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
 
@@ -824,11 +824,11 @@ Private Attributes</h2></td></tr>
 <p>Within a pattern, <span class="tt">|</span> separates alternatives; a name matches when it matches any of them, as defined by <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html#gaa2f0f4cff320a783ad2347c9ff3fc731" title="Checks whether a string matches a pattern with * and ? wildcards.">utility::is_match()</a></span>: <span class="tt">*</span> matches any sequence of characters, <span class="tt">?</span> matches any single character, the match is case-sensitive, and the alternative must cover the whole name.</p>
 <p>The suites and the test cases that do not match are reported as skipped, and their bodies are not called. The top suite is never skipped as a whole, since its body is <span class="tt">main()</span>, but when its name does not match the first pattern, all its test cases are skipped.</p>
 <p>When the list is empty (the default), everything runs.</p>
-<dl class="section since"><dt>Since</dt><dd>5.1.0 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>6.0.0 </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00412">412</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="runner-options_8cpp_source.html#l00109">runner_options()</a>, <a class="el" href="runner_8cpp_source.html#l00229">micro_os_plus::micro_test_plus::runner::initialise()</a>, <a class="el" href="runner_8cpp_source.html#l00409">micro_os_plus::micro_test_plus::runner::is_selected()</a>, and <a class="el" href="runner_8cpp_source.html#l00632">micro_os_plus::micro_test_plus::runner::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="runner-options_8cpp_source.html#l00109">runner_options()</a>, <a class="el" href="runner_8cpp_source.html#l00229">micro_os_plus::micro_test_plus::runner::initialise()</a>, <a class="el" href="runner_8cpp_source.html#l00409">micro_os_plus::micro_test_plus::runner::is_selected()</a>, and <a class="el" href="runner_8cpp_source.html#l00633">micro_os_plus::micro_test_plus::runner::run_suites()</a>.</p>
 
 </div>
 </div>
@@ -905,13 +905,13 @@ Private Attributes</h2></td></tr>
 <div class="line">  Explicit <span class="keyword">namespace </span><a class="code hl_class" href="classmicro__os__plus_1_1micro__test__plus_1_1suite.html">suite</a></div>
 <div class="line">    Check one</div>
 <div class="line">3 test cases in 2 test suites</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1suite_html"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1suite.html">micro_os_plus::micro_test_plus::suite</a></div><div class="ttdoc">A named, runnable test suite registered with the test runner.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01428">test.h:1429</a></div></div>
-</div><!-- fragment --><p>The header is <span class="tt">Matching test cases:</span> when there are filter patterns, and the suites without selected test cases are not listed. The nested test cases are not listed, since they are created by the bodies of their parents, which do not run. The list is written to the console, unless the verbosity is <span class="tt">silent</span>, and to the output file, if any; no report is written, and <span class="tt">run()</span> returns 0, or 2 after an option error.</p>
-<dl class="section since"><dt>Since</dt><dd>5.1.0 </dd></dl>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1suite_html"><div class="ttname"><a href="classmicro__os__plus_1_1micro__test__plus_1_1suite.html">micro_os_plus::micro_test_plus::suite</a></div><div class="ttdoc">A named, runnable test suite registered with the test runner.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01498">test.h:1499</a></div></div>
+</div><!-- fragment --><p>The header is <span class="tt">Matching test cases:</span> when there are filter patterns, and the suites without selected test cases are not listed. The nested test cases are not listed, since they are created by the bodies of their parents, which do not run. The list is written to the console, unless the verbosity is <span class="tt">silent</span>, and to the output file, if any; no report is written, and <span class="tt">run_suites()</span> returns 0, or 2 after an option error.</p>
+<dl class="section since"><dt>Since</dt><dd>6.0.0 </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00444">444</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="runner-options_8cpp_source.html#l00109">runner_options()</a>, <a class="el" href="runner_8cpp_source.html#l00318">micro_os_plus::micro_test_plus::runner::add_top_suite()</a>, <a class="el" href="test_8cpp_source.html#l00201">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create()</a>, <a class="el" href="runner_8cpp_source.html#l00229">micro_os_plus::micro_test_plus::runner::initialise()</a>, <a class="el" href="runner_8cpp_source.html#l00632">micro_os_plus::micro_test_plus::runner::run()</a>, and <a class="el" href="runner_8cpp_source.html#l00570">micro_os_plus::micro_test_plus::runner::run_suites()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="runner-options_8cpp_source.html#l00109">runner_options()</a>, <a class="el" href="runner_8cpp_source.html#l00318">micro_os_plus::micro_test_plus::runner::add_top_suite()</a>, <a class="el" href="test_8cpp_source.html#l00201">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create()</a>, <a class="el" href="runner_8cpp_source.html#l00229">micro_os_plus::micro_test_plus::runner::initialise()</a>, <a class="el" href="runner_8cpp_source.html#l00571">micro_os_plus::micro_test_plus::runner::run_child_suites()</a>, and <a class="el" href="runner_8cpp_source.html#l00633">micro_os_plus::micro_test_plus::runner::run_suites()</a>.</p>
 
 </div>
 </div>
@@ -926,7 +926,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Set by <span class="tt">--output-file=&lt;path&gt;</span> or <span class="tt">--output-file &lt;path&gt;</span>. When it is empty (the default), no file is written. The reporter opens the file when it is created by <span class="tt">initialise()</span>; if the file cannot be opened, the error is reported on <span class="tt">stderr</span>, the report is written only to the console, and <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a97f725cb167a2b464fac0eb88a0c8a46" title="Runs the registered suites, ends the session, and returns the exit code.">runner::run()</a></span> returns 2. </p>
+<p>Set by <span class="tt">--output-file=&lt;path&gt;</span> or <span class="tt">--output-file &lt;path&gt;</span>. When it is empty (the default), no file is written. The reporter opens the file when it is created by <span class="tt">initialise()</span>; if the file cannot be opened, the error is reported on <span class="tt">stderr</span>, the report is written only to the console, and <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a700e3ef1f955492cd84235bd388dcdf2" title="Runs the registered suites, ends the session, and returns the exit code.">runner::run_suites()</a></span> returns 2. </p>
 
 <p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00355">355</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
 
@@ -972,7 +972,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00341">341</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="runner-options_8cpp_source.html#l00109">runner_options()</a>, <a class="el" href="runner_8cpp_source.html#l00229">micro_os_plus::micro_test_plus::runner::initialise()</a>, <a class="el" href="runner_8cpp_source.html#l00442">micro_os_plus::micro_test_plus::runner::list_test_case()</a>, and <a class="el" href="runner_8cpp_source.html#l00632">micro_os_plus::micro_test_plus::runner::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="runner-options_8cpp_source.html#l00109">runner_options()</a>, <a class="el" href="runner_8cpp_source.html#l00229">micro_os_plus::micro_test_plus::runner::initialise()</a>, <a class="el" href="runner_8cpp_source.html#l00442">micro_os_plus::micro_test_plus::runner::list_test_case()</a>, and <a class="el" href="runner_8cpp_source.html#l00633">micro_os_plus::micro_test_plus::runner::run_suites()</a>.</p>
 
 </div>
 </div>

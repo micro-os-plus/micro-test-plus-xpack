@@ -25,6 +25,20 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga67c701de5426ac340584ed038494a873">MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Enables the deprecated definitions of the µTest++ Testing Framework. <a href="#ga67c701de5426ac340584ed038494a873">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">#define</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#ga3dd1e70998580fe7d7f410e5cd83879b">MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -96,6 +110,51 @@ keywords:
 <div class="doxySectionDef">
 
 ## Macro Definitions
+
+### MICRO\_OS\_PLUS\_MICRO\_TEST\_PLUS\_DEPRECATED\_ENABLED {#ga67c701de5426ac340584ed038494a873}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">#define MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Enables the deprecated definitions of the µTest++ Testing Framework.</p>
+
+
+<p>This option has no value, only its definition matters.</p>
+
+
+<p>Without it, the deprecated definitions (the old names of the functions, the classes, and the members, the overloaded operators, the user-defined literals, the type wrappers, and the deprecated overloads and constructors) are neither declared nor defined, so the applications that still use them fail to compile.</p>
+
+
+<p>With it, they are available, but marked <span class="doxyComputerOutput">[[deprecated]]</span>, so the compiler reports their use; the applications that build with <span class="doxyComputerOutput">-Werror</span> fail until the deprecated definitions are replaced.</p>
+
+
+<p>The macro must be defined for the library sources too, otherwise the link of an application that uses the non-inline deprecated members fails with undefined references.</p>
+
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00079">79</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga67c701de5426ac340584ed038494a873">79</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#define MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</span></span></div>
+
+</div>
+
+</div>
+</div>
 
 ### MICRO\_OS\_PLUS\_MICRO\_TEST\_PLUS\_ENABLED {#ga3dd1e70998580fe7d7f410e5cd83879b}
 

@@ -101,14 +101,14 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(T::*)(A
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000105>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000106>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>Not replaced (since 5.1.0).</p>
+<p>Not replaced (since 6.0.0).</p>
 </dd>
 </dl>
 </div>
 
-<p>Definition at line 2036 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line 2066 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -140,12 +140,12 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(T::*)(A
 <p>The types <span class="doxyComputerOutput">Args_T</span> of the specialisation, without the object parameter of the member functions.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l02053">2053</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l02083">2083</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6a6bb2b3c72d75ae76a082278c7086da">2053</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a19bf7a6150e7a0a8615fd74fda001d97">result_type</a> = R;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6a6bb2b3c72d75ae76a082278c7086da">2083</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a19bf7a6150e7a0a8615fd74fda001d97">result_type</a> = R;</span></span></div>
 
 </div>
 
@@ -177,12 +177,12 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(T::*)(A
 <p>The type <span class="doxyComputerOutput">R</span> of the specialisation.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l02044">2044</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l02074">2074</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a19bf7a6150e7a0a8615fd74fda001d97">2044</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">R, </span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">T, </span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight">... Args_T&gt;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a19bf7a6150e7a0a8615fd74fda001d97">2074</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">R, </span><span class="doxyHighlightKeyword">class </span><span class="doxyHighlight">T, </span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight">... Args_T&gt;</span></span></div>
 
 </div>
 

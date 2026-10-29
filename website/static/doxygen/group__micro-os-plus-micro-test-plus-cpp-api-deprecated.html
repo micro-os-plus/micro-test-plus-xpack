@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.1.0</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;6.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -177,12 +177,15 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ga00ea8f3dfb7cb0ef39919065321cf62f" id="r_ga00ea8f3dfb7cb0ef39919065321cf62f"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:ga00ea8f3dfb7cb0ef39919065321cf62f template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga00ea8f3dfb7cb0ef39919065321cf62f">micro_os_plus::micro_test_plus::mut</a> (const T &amp;t) noexcept -&gt; T &amp;</td></tr>
+<tr class="memdesc:ga00ea8f3dfb7cb0ef39919065321cf62f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated generic mutator to remove const qualification from a reference.  <br /></td></tr>
 <tr class="memitem:gafc93799846770e521c4721d0de0a81cc" id="r_gafc93799846770e521c4721d0de0a81cc"><td class="memItemLeft">const char *&#160;</td><td class="memItemRight"><a class="el" href="#gafc93799846770e521c4721d0de0a81cc">micro_os_plus::micro_test_plus::reflection::short_name</a> (const char *name) noexcept</td></tr>
 <tr class="memdesc:gafc93799846770e521c4721d0de0a81cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated extraction of the file name from a path.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The definitions in this group, and in the groups they refer to, are still available, but the compiler reports their use, and they will be removed in a future major release. Each one names its replacement in the deprecation message, together with the version that deprecated it (most of them since 5.1.0).</p>
-<dl class="section user"><dt>Availability</dt><dd>The deprecated definitions are compiled only when the application defines the macro <span class="tt">MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</span>, in <span class="tt">micro-os-plus/project-config.h</span> or in <span class="tt">micro-os-plus/micro-test-plus-defines.h</span>. Without it, the applications that still use them fail to compile, which is a way of finding what must be migrated.</dd></dl>
+<div class="textblock"><p>The definitions in this group, and in the groups they refer to, are still available, but the compiler reports their use, and they will be removed in a future major release. Each one names its replacement in the deprecation message, together with the version that deprecated it (most of them since 6.0.0).</p>
+<dl class="section user"><dt>Availability</dt><dd>The deprecated definitions are compiled only when the application defines the macro <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-config.html#ga67c701de5426ac340584ed038494a873" title="Enables the deprecated definitions of the µTest++ Testing Framework.">MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</a></span>, in <span class="tt">micro-os-plus/project-config.h</span> or in <span class="tt">micro-os-plus/micro-test-plus-defines.h</span>. Without it, the applications that still use them fail to compile, which is a way of finding what must be migrated.</dd></dl>
 <dl class="section user"><dt>Groups</dt><dd>The deprecated definitions are documented together with the features they belong to:</dd></dl>
 <ul>
 <li>the overloaded comparison and logical operators, in <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators.html" title="Operators">Operators</a>, replaced by the function comparators and the logical functions;</li>
@@ -193,7 +196,7 @@ Functions</h2></td></tr>
 <li>the v5.0.1 names of the classes: <span class="tt">static_runner</span> (replaced by <span class="tt">runner</span>), <span class="tt">subtest</span> (replaced by <span class="tt">test_case</span>), <span class="tt">detail::runner_totals</span> (replaced by <span class="tt">counters</span>), and <span class="tt">detail::timestamps</span> and <span class="tt">detail::timestamp</span>, which are internal and not replaced;</li>
 <li><span class="tt">runner (const char*)</span>, replaced by <span class="tt">runner()</span> followed by <span class="tt">add_top_suite()</span> (since 4.1.0);</li>
 <li><span class="tt">runner::initialise (argc, argv, top_suite_name)</span>, replaced by <span class="tt">initialise (argc, argv)</span> followed by <span class="tt">add_top_suite()</span>;</li>
-<li><span class="tt">runner::exit_code()</span>, replaced by <span class="tt">runner::run()</span>;</li>
+<li><span class="tt">runner::exit_code()</span>, replaced by <span class="tt">runner::run_suites()</span>;</li>
 <li><span class="tt">runner::suite()</span>, replaced by <span class="tt">runner::add_suite()</span>;</li>
 <li><span class="tt">runner::suites_count()</span>, replaced by <span class="tt">added_suites_count()</span> or <span class="tt">total_suites_count()</span>;</li>
 <li><span class="tt">runner::verbosity()</span>, and <span class="tt">runner::reporter()</span> with its <span class="tt">verbosity()</span> member, replaced by <span class="tt">runner::verbosity_level()</span>;</li>
@@ -238,9 +241,9 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 <p>In v5.0.1, a separate wrapper with the same members as <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">value</a>&lt;T&gt;</span>, never created by the framework; now <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">value</a>&lt;T&gt;</span>, so the values are compared and reported in the same way.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000107">Deprecated</a></b></dt><dd>The value wrappers are internal (since 5.1.0). </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000108">Deprecated</a></b></dt><dd>The value wrappers are internal (since 6.0.0). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l02095">2095</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l02125">2125</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
 
 </div>
 </div>
@@ -255,7 +258,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The v5.0.1 name of the class returned by <span class="tt">totals()</span>, renamed since the suites and the test cases own one too, not only the runner. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000094">Deprecated</a></b></dt><dd>use counters (since 5.1.0)</dd></dl>
+<p>The v5.0.1 name of the class returned by <span class="tt">totals()</span>, renamed since the suites and the test cases own one too, not only the runner. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000095">Deprecated</a></b></dt><dd>use counters (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -270,7 +273,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html" title="The test runner for the µTest++ framework.">runner</a></span> also runs the <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1static__suite.html" title="A test suite designed for static (namespace-scope) registration with a runner.">static_suite</a></span> objects that refer to it, so a separate runner class is no longer needed. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000059">Deprecated</a></b></dt><dd>use runner (since 5.1.0)</dd></dl>
+<p>The <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html" title="The test runner for the µTest++ framework.">runner</a></span> also runs the <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1static__suite.html" title="A test suite designed for static (namespace-scope) registration with a runner.">static_suite</a></span> objects that refer to it, so a separate runner class is no longer needed. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000060">Deprecated</a></b></dt><dd>use runner (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -285,7 +288,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The v5.0.1 name of the class passed to the test case bodies, kept for the functions and the lambdas that name it as the type of their first parameter (<span class="tt">void f (mt::subtest&amp; t)</span>); the lambdas with an <span class="tt">auto&amp;</span> parameter are not affected. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000058">Deprecated</a></b></dt><dd>use <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__case.html" title="A named, runnable test case that lives inside a suite.">test_case</a> (since 5.1.0)</dd></dl>
+<p>The v5.0.1 name of the class passed to the test case bodies, kept for the functions and the lambdas that name it as the type of their first parameter (<span class="tt">void f (mt::subtest&amp; t)</span>); the lambdas with an <span class="tt">auto&amp;</span> parameter are not affected. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000059">Deprecated</a></b></dt><dd>use <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__case.html" title="A named, runnable test case that lives inside a suite.">test_case</a> (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -300,7 +303,7 @@ template&lt;class T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The v5.0.1 name of the class returned by the <span class="tt">timings()</span> functions of the runner and of the suites, which kept the two timestamps of the measured interval. Its public members are kept, on <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html" title="Measures the elapsed time of an operation.">stopwatch</a></span>; its protected members, the two optional <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp.html" title="Deprecated clock reading.">timestamp</a></span> objects, are not. The timings are internal; the elapsed times are shown by the reporters. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000095">Deprecated</a></b></dt><dd>the timings are internal (since 5.1.0)</dd></dl>
+<p>The v5.0.1 name of the class returned by the <span class="tt">timings()</span> functions of the runner and of the suites, which kept the two timestamps of the measured interval. Its public members are kept, on <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html" title="Measures the elapsed time of an operation.">stopwatch</a></span>; its protected members, the two optional <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp.html" title="Deprecated clock reading.">timestamp</a></span> objects, are not. The timings are internal; the elapsed times are shown by the reporters. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000096">Deprecated</a></b></dt><dd>the timings are internal (since 6.0.0)</dd></dl>
 
 </div>
 </div>
@@ -324,13 +327,66 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 <p>The v5.0.1 name, with a trailing underscore. The stored value is now private, and <span class="tt">get()</span> returns a reference; the value is read with <span class="tt">get()</span> or with the explicit conversion, not through the v5.0.1 public member <span class="tt">value_</span>.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000106">Deprecated</a></b></dt><dd>The value wrappers are internal (since 5.1.0). </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000107">Deprecated</a></b></dt><dd>The value wrappers are internal (since 6.0.0). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l02079">2079</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l02109">2109</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="ga00ea8f3dfb7cb0ef39919065321cf62f" name="ga00ea8f3dfb7cb0ef39919065321cf62f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga00ea8f3dfb7cb0ef39919065321cf62f">&#9670;&#160;</a></span>mut()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto micro_os_plus::micro_test_plus::mut </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>t</em></span></td><td>)</td>
+          <td> -&gt; T &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Not used by the framework. Equivalent to <span class="tt">const_cast&lt;T&amp;&gt; (t)</span>, which replaces it.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Modifying an object that was originally declared as <span class="tt">const</span> through the returned reference is undefined behaviour.</dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the input object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>The object from which to remove const qualification. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A non-const reference to the input object. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000009">Deprecated</a></b></dt><dd>use const_cast&lt;T&amp;&gt; (since 6.0.0)</dd></dl>
+<p>Removes the <span class="tt">const</span> qualifier from the reference with <span class="tt">const_cast</span>. </p>
+
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00123">123</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  124</span>  {</div>
+<div class="line"><span class="lineno">  125</span>    <span class="keywordflow">return</span> <span class="keyword">const_cast&lt;</span>T&amp;<span class="keyword">&gt;</span> (t);</div>
+<div class="line"><span class="lineno">  126</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00123">mut()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00123">mut()</a>.</p>
+
+</div>
+</div>
 <a id="gafc93799846770e521c4721d0de0a81cc" name="gafc93799846770e521c4721d0de0a81cc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gafc93799846770e521c4721d0de0a81cc">&#9670;&#160;</a></span>short_name()</h2>
 
@@ -361,18 +417,18 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the file name within the input string, after the last <span class="tt">/</span> or <span class="tt">\\endiskip</span> separator, or the string itself if there is no separator. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000093">Deprecated</a></b></dt><dd>use <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html#ga791f22f0c85b6436c9016821907b0653" title="Extracts the file name component from a full path.">utility::extract_file_name()</a> (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000094">Deprecated</a></b></dt><dd>use <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html#ga791f22f0c85b6436c9016821907b0653" title="Extracts the file name component from a full path.">utility::extract_file_name()</a> (since 6.0.0)</dd></dl>
 <p>Delegates to <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html#ga791f22f0c85b6436c9016821907b0653" title="Extracts the file name component from a full path.">utility::extract_file_name()</a></span>, the single implementation used by the framework, so both the <span class="tt">/</span> and the <span class="tt">\\endiskip</span> separators are recognised. If no separator is present, the original input string is returned. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated_8cpp_source.html#l00075">75</a> of file <a class="el" href="deprecated_8cpp_source.html">deprecated.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   76</span>    {</div>
-<div class="line"><span class="lineno">   77</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html#ga791f22f0c85b6436c9016821907b0653">utility::extract_file_name</a> (name);</div>
-<div class="line"><span class="lineno">   78</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated_8cpp_source.html#l00078">78</a> of file <a class="el" href="deprecated_8cpp_source.html">deprecated.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   79</span>    {</div>
+<div class="line"><span class="lineno">   80</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html#ga791f22f0c85b6436c9016821907b0653">utility::extract_file_name</a> (name);</div>
+<div class="line"><span class="lineno">   81</span>    }</div>
 <div class="ttc" id="agroup__micro-os-plus-micro-test-plus-cpp-api-utility-functions_html_ga791f22f0c85b6436c9016821907b0653"><div class="ttname"><a href="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html#ga791f22f0c85b6436c9016821907b0653">micro_os_plus::micro_test_plus::utility::extract_file_name</a></div><div class="ttdeci">const char * extract_file_name(const char *path) noexcept</div><div class="ttdoc">Extracts the file name component from a full path.</div><div class="ttdef"><b>Definition</b> <a href="utility_8cpp_source.html#l00089">utility.cpp:89</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="utility_8cpp_source.html#l00089">micro_os_plus::micro_test_plus::utility::extract_file_name()</a>, and <a class="el" href="deprecated_8cpp_source.html#l00075">short_name()</a>.</p>
+<p class="reference">References <a class="el" href="utility_8cpp_source.html#l00089">micro_os_plus::micro_test_plus::utility::extract_file_name()</a>, and <a class="el" href="deprecated_8cpp_source.html#l00078">short_name()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated_8cpp_source.html#l00075">short_name()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated_8cpp_source.html#l00078">short_name()</a>.</p>
 
 </div>
 </div>

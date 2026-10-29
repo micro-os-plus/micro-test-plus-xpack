@@ -344,7 +344,7 @@ namespace micro_os_plus::micro_test_plus
      * @return Reference to the top suite.
      */
     [[deprecated ("use initialise (argc, argv) and add_top_suite() "
-                  "(since 5.1.0)")]] class suite&
+                  "(since 6.0.0)")]] class suite&
     initialise (int argc, char* argv[], const char* top_suite_name);
 
     /**
@@ -371,7 +371,7 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     void
     initialise (int argc, char* argv[]);
@@ -409,7 +409,7 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     void
     initialise (runner_options options);
@@ -442,7 +442,7 @@ namespace micro_os_plus::micro_test_plus
      * call, nor be null-terminated. Defaults to an empty string.
      * @return Reference to the top suite.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     class suite&
     add_top_suite (std::string_view top_suite_name = {});
@@ -483,7 +483,7 @@ namespace micro_os_plus::micro_test_plus
      * an option error, or if the filters selected no test case,
      * regardless of the checks.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     int
     run_suites (void);
@@ -505,7 +505,7 @@ namespace micro_os_plus::micro_test_plus
      *   None.
      * @return The value returned by `run_suites()`.
      */
-    [[deprecated ("use run_suites() (since 5.1.0)")]] int
+    [[deprecated ("use run_suites() (since 6.0.0)")]] int
     exit_code (void);
 
     /**
@@ -543,7 +543,7 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     template <typename Callable_T, typename... Args_T>
     void
@@ -578,7 +578,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     template <typename Callable_T, typename... Args_T>
-    [[deprecated ("use add_suite() (since 5.1.0)")]] void
+    [[deprecated ("use add_suite() (since 6.0.0)")]] void
     suite (std::string_view name, Callable_T&& callable,
            Args_T&&... arguments);
 
@@ -607,7 +607,7 @@ namespace micro_os_plus::micro_test_plus
      * run. The report is complete, but the runner cannot be used
      * afterwards (see `abort()`).
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     using abort_handler_t = void (*) (const reflection::source_location& sl);
 
@@ -626,7 +626,7 @@ namespace micro_os_plus::micro_test_plus
      * behaviour, which terminates the process with `::abort()`.
      * @return The previous handler, or `nullptr` if none was set.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     abort_handler_t
     set_abort_handler (abort_handler_t handler) noexcept;
@@ -693,7 +693,7 @@ namespace micro_os_plus::micro_test_plus
      *   None.
      * @return The active `verbosity` value.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     [[nodiscard]] auto
     verbosity_level (void) const noexcept -> micro_test_plus::verbosity;
@@ -715,7 +715,7 @@ namespace micro_os_plus::micro_test_plus
      * @retval true The test cases are listed.
      * @retval false The test cases are run.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     [[nodiscard]] bool
     is_listing (void) const noexcept;
@@ -737,7 +737,7 @@ namespace micro_os_plus::micro_test_plus
      *   None.
      * @return The value returned by `verbosity_level()`.
      */
-    [[deprecated ("use verbosity_level() (since 5.1.0)"), nodiscard]] auto
+    [[deprecated ("use verbosity_level() (since 6.0.0)"), nodiscard]] auto
     verbosity (void) const noexcept -> micro_test_plus::verbosity;
 
     /**
@@ -760,7 +760,7 @@ namespace micro_os_plus::micro_test_plus
      *   None.
      * @return The number of test suites added with `add_suite()`.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     [[nodiscard]] size_t
     added_suites_count (void) const noexcept;
@@ -785,7 +785,7 @@ namespace micro_os_plus::micro_test_plus
      * @return The constant string `"runner"`.
      */
     [[deprecated ("the runner has no name; see add_top_suite() "
-                  "(since 5.1.0)"),
+                  "(since 6.0.0)"),
       nodiscard]] const char*
     name (void) const noexcept;
 
@@ -805,7 +805,7 @@ namespace micro_os_plus::micro_test_plus
      * one.
      */
     [[deprecated (
-          "use added_suites_count() or total_suites_count() (since 5.1.0)"),
+          "use added_suites_count() or total_suites_count() (since 6.0.0)"),
       nodiscard]] size_t
     suites_count (void) const noexcept;
 
@@ -844,7 +844,7 @@ namespace micro_os_plus::micro_test_plus
      *   None.
      * @return The number of test suites that were not run.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     [[nodiscard]] size_t
     skipped_suites_count (void) const noexcept;
@@ -887,7 +887,7 @@ namespace micro_os_plus::micro_test_plus
      *   None.
      * @return A const reference to the stopwatch of the session.
      */
-    [[deprecated ("the timings are internal (since 5.1.0)"),
+    [[deprecated ("the timings are internal (since 6.0.0)"),
       nodiscard]] const detail::stopwatch&
     timings (void) const noexcept;
 
@@ -905,7 +905,7 @@ namespace micro_os_plus::micro_test_plus
      *   None.
      * @return A reference to the stopwatch of the session.
      */
-    [[deprecated ("the timings are internal (since 5.1.0)"),
+    [[deprecated ("the timings are internal (since 6.0.0)"),
       nodiscard]] detail::stopwatch&
     timings (void) noexcept;
 
@@ -924,7 +924,7 @@ namespace micro_os_plus::micro_test_plus
      *   None.
      * @return A reference to the reporter of the session.
      */
-    [[deprecated ("use verbosity_level() (since 5.1.0)"),
+    [[deprecated ("use verbosity_level() (since 6.0.0)"),
       nodiscard]] detail::reporter&
     reporter (void) const noexcept;
 

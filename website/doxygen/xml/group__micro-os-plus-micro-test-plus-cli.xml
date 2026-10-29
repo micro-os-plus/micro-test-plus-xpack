@@ -26,6 +26,7 @@
 <codeline><highlight class="normal">1..1</highlight></codeline>
 <codeline><highlight class="normal">#<sp/>{<sp/>total:<sp/>2<sp/>checks<sp/>passed,<sp/>0<sp/>failed,<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>1<sp/>test<sp/>suite,<sp/>time:<sp/>X.XXX<sp/>ms<sp/>}</highlight></codeline>
 </programlisting></para>
+<para>Options may also be set programmatically, on platforms without a command line, through <computeroutput>runner_options</computeroutput>. The arguments that are not options are left to the application. An unknown <computeroutput>--</computeroutput> option, an unknown reporter or colour mode, or an option with a missing argument, is reported on <computeroutput>stderr</computeroutput> as an error, the option is ignored, and the exit code of the run is 2.</para>
 <sect1 id="group__micro-os-plus-micro-test-plus-cli_1cli-reporter">
 <title>Reporter</title><para>By default, the µTest++ output follows the <ulink url="https://en.wikipedia.org/wiki/Test_Anything_Protocol">TAP</ulink> rules.</para>
 <para>The human-readable format of the initial releases is also available. It is intended for the people who read the console output, while the TAP format is intended for the integration with other tools.</para>

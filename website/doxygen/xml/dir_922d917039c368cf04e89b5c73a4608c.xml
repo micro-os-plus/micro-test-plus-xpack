@@ -27,7 +27,7 @@
     </briefdescription>
     <detaileddescription>
 <para>This folder provides the headers included by the primary public header, <computeroutput><ref refid="micro-test-plus_8h" kindref="compound">micro-os-plus/micro-test-plus.h</ref></computeroutput>, which defines the core functionality of the µTest++ Testing Framework.</para>
-<para>It includes declarations for essential library components, including test suite and test case management, test runner and reporter classes, function comparators, overloaded operators, user-defined literals, mathematical utilities, extension concepts, value wrappers, reflection utilities, and supporting internal mechanisms.</para>
+<para>It includes declarations for essential library components, including test suite and test case management, the test runner and its options, the reporter classes, function comparators, the exception checks, the expression formatter, the extension templates and concepts, mathematical utilities, value helpers, reflection utilities, and supporting internal mechanisms.</para>
 <para>By consolidating public API definitions in this folder, the project maintains a clear separation from implementation details (located in the <computeroutput>src</computeroutput> folder), thereby promoting modularity, maintainability, and straightforward integration.</para>
 <para>To access the full capabilities of the µTest++ Testing Framework, include only the top <computeroutput><ref refid="micro-test-plus_8h" kindref="compound">micro-os-plus/micro-test-plus.h</ref></computeroutput> in user projects.  </para>
     </detaileddescription>

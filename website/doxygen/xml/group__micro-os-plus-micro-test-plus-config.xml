@@ -4,6 +4,21 @@
     <compoundname>micro-os-plus-micro-test-plus-config</compoundname>
     <title>Configuration</title>
     <sectiondef kind="define">
+      <memberdef kind="define" id="group__micro-os-plus-micro-test-plus-config_1ga67c701de5426ac340584ed038494a873" prot="public" static="no">
+        <name>MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</name>
+        <briefdescription>
+<para>Enables the deprecated definitions of the µTest++ Testing Framework. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This option has no value, only its definition matters.</para>
+<para>Without it, the deprecated definitions (the old names of the functions, the classes, and the members, the overloaded operators, the user-defined literals, the type wrappers, and the deprecated overloads and constructors) are neither declared nor defined, so the applications that still use them fail to compile.</para>
+<para>With it, they are available, but marked <computeroutput>[[deprecated]]</computeroutput>, so the compiler reports their use; the applications that build with <computeroutput>-Werror</computeroutput> fail until the deprecated definitions are replaced.</para>
+<para>The macro must be defined for the library sources too, otherwise the link of an application that uses the non-inline deprecated members fails with undefined references.   </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" line="79" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="define" id="group__micro-os-plus-micro-test-plus-config_1ga3dd1e70998580fe7d7f410e5cd83879b" prot="public" static="no">
         <name>MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</name>
         <briefdescription>
@@ -23,7 +38,7 @@
 <para>Enables the trace messages of the µTest++ constructors and destructors. </para>
         </briefdescription>
         <detaileddescription>
-<para>Displays trace messages in the constructors and destructors of the µTest++ Testing Framework, through <computeroutput>trace::printf()</computeroutput>, which writes them only when <computeroutput>MICRO_OS_PLUS_DIAG_TRACE_ENABLED</computeroutput> is also defined.   </para>
+<para>Displays trace messages in the constructors and destructors of the µTest++ Testing Framework, through <computeroutput>trace::printf()</computeroutput>, which writes them only when <computeroutput>MICRO_OS_PLUS_DIAG_TRACE_ENABLED</computeroutput> is also defined.  </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>

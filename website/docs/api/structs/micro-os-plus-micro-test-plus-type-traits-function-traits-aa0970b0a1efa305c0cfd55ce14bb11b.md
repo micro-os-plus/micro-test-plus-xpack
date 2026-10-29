@@ -101,14 +101,14 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(T::*)(A
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000104>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000105>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>Not replaced (since 5.1.0).</p>
+<p>Not replaced (since 6.0.0).</p>
 </dd>
 </dl>
 </div>
 
-<p>Definition at line 2000 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line 2030 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -140,7 +140,7 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(T::*)(A
 <p>The types <span class="doxyComputerOutput">Args_T</span> of the specialisation, without the object parameter of the member functions.</p>
 
 
-<p>Definition at line 2017 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line 2047 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 </div>
 </div>
@@ -170,7 +170,7 @@ struct micro_os_plus::micro_test_plus::type_traits::function_traits&lt;R(T::*)(A
 <p>The type <span class="doxyComputerOutput">R</span> of the specialisation.</p>
 
 
-<p>Definition at line 2008 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line 2038 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 </div>
 </div>

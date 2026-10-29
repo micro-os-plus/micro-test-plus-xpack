@@ -9,7 +9,7 @@
       <description><para>Strongly-typed wrappers for converting dynamic values and expressions to specific types recognised by µTest++ comparators.</para>
 <para>These type aliases provide a type-safe mechanism for explicitly converting values to the required types for µTest++ test expressions and comparators. Each alias is a wrapper around <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" kindref="compound">detail::value</ref>&lt;T&gt;</computeroutput>, ensuring that the value is treated as the specified type within the framework.</para>
 <para>The <computeroutput>to_*</computeroutput> forms replaced the older <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" kindref="member">_u8</ref></computeroutput>, etc. aliases, which were deprecated in version 3.2.0.</para>
-<para><simplesect kind="par"><title>Deprecated</title><para>Pass the plain values to the function comparators <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga5bf176ef730172592095657417e5f039" kindref="member">ne()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kindref="member">gt()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kindref="member">ge()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kindref="member">lt()</ref></computeroutput>, and <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kindref="member">le()</ref></computeroutput> instead; they report the operands in the same way. For the floating-point values compared with a tolerance, use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref></computeroutput> (since 5.1.0).</para>
+<para><simplesect kind="par"><title>Deprecated</title><para>Pass the plain values to the function comparators <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga5bf176ef730172592095657417e5f039" kindref="member">ne()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kindref="member">gt()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kindref="member">ge()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kindref="member">lt()</ref></computeroutput>, and <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kindref="member">le()</ref></computeroutput> instead; they report the operands in the same way. For the floating-point values compared with a tolerance, use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref></computeroutput> (since 6.0.0).</para>
 </simplesect>
 <simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
@@ -34,12 +34,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>bool</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000009"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000010"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="864" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="894" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6ccf42d05ae14c445f602128f8ffd831" prot="public" static="no">
         <type>detail::value&lt; char &gt;</type>
@@ -54,12 +54,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>char</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000010"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000011"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="876" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="906" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae3838e23c60edeadbafdd4a22d1b1516" prot="public" static="no">
         <type>detail::value&lt; signed char &gt;</type>
@@ -74,12 +74,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>signed char</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000011"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000012"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="888" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="918" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" prot="public" static="no">
         <type>detail::value&lt; short &gt;</type>
@@ -94,12 +94,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>short</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000012"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000013"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="900" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="930" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf3ee271cefcffa625e40d476305da62f" prot="public" static="no">
         <type>detail::value&lt; int &gt;</type>
@@ -114,12 +114,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>int</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000013"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000014"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="912" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="942" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga09028a1e0e713723257afba48b9ee551" prot="public" static="no">
         <type>detail::value&lt; long &gt;</type>
@@ -134,12 +134,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>long</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000014"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000015"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="924" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="954" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" prot="public" static="no">
         <type>detail::value&lt; long long &gt;</type>
@@ -154,12 +154,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>long long</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000015"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000016"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="936" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="966" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" prot="public" static="no">
         <type>detail::value&lt; unsigned &gt;</type>
@@ -174,12 +174,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>unsigned</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000016"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000017"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="948" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="978" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" prot="public" static="no">
         <type>detail::value&lt; unsigned char &gt;</type>
@@ -194,12 +194,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>unsigned char</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000017"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000018"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="960" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="990" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" prot="public" static="no">
         <type>detail::value&lt; unsigned short &gt;</type>
@@ -214,12 +214,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>unsigned short</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000018"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000019"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="972" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1002" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5d2d6a69c090569866a779672772b48f" prot="public" static="no">
         <type>detail::value&lt; unsigned long &gt;</type>
@@ -234,12 +234,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>unsigned long</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000019"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000020"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="984" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1014" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae1438b74ec39a793d5ad516a7c2c7788" prot="public" static="no">
         <type>detail::value&lt; unsigned long long &gt;</type>
@@ -254,12 +254,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>unsigned long long</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000020"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000021"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="996" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1026" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" prot="public" static="no">
         <type>detail::value&lt; std::int8_t &gt;</type>
@@ -274,12 +274,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>std::int8_t</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000021"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000022"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1008" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1038" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" prot="public" static="no">
         <type>detail::value&lt; std::int16_t &gt;</type>
@@ -294,12 +294,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>std::int16_t</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000022"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000023"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1020" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1050" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga201eeff58867ba58d3312ae56113ef06" prot="public" static="no">
         <type>detail::value&lt; std::int32_t &gt;</type>
@@ -314,12 +314,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>std::int32_t</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000023"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000024"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1032" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1062" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaead55f5e265634a742633261f9f2aa3f" prot="public" static="no">
         <type>detail::value&lt; std::int64_t &gt;</type>
@@ -334,12 +334,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>std::int64_t</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000024"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000025"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1044" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1074" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" prot="public" static="no">
         <type>detail::value&lt; std::uint8_t &gt;</type>
@@ -354,12 +354,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>std::uint8_t</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000025"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000026"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1056" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1086" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga87bb08ab5e58f481ee911e872108f8e0" prot="public" static="no">
         <type>detail::value&lt; std::uint16_t &gt;</type>
@@ -374,12 +374,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>std::uint16_t</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000026"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000027"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1068" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1098" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" prot="public" static="no">
         <type>detail::value&lt; std::uint32_t &gt;</type>
@@ -394,12 +394,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>std::uint32_t</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000027"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000028"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1080" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1110" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" prot="public" static="no">
         <type>detail::value&lt; std::uint64_t &gt;</type>
@@ -414,12 +414,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>std::uint64_t</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000028"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000029"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1092" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1122" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5368740b47e92605914b6c38ea88aebf" prot="public" static="no">
         <type>detail::value&lt; float &gt;</type>
@@ -434,12 +434,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>float</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000029"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000030"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1104" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1134" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" prot="public" static="no">
         <type>detail::value&lt; double &gt;</type>
@@ -454,12 +454,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>double</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000030"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000031"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1115" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1145" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaeba32254fdd8159523b525745b13bfa9" prot="public" static="no">
         <type>detail::value&lt; long double &gt;</type>
@@ -474,12 +474,12 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>long double</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000031"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000032"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1126" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1156" column="3"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="user-defined">
@@ -487,7 +487,7 @@
       <description><para>The v5.0.1 names of the <computeroutput>to_*</computeroutput> type wrappers.</para>
 <para>The Boost UT style names, with a leading underscore, kept for compatibility with the existing applications. Each one is an alias of the corresponding <computeroutput>to_*</computeroutput> wrapper, so the wrapped values are compared and reported in the same way. They do not conflict with the literal operators with the same suffixes (<computeroutput>42<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>), which are in the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1literals" kindref="compound">literals</ref></computeroutput> namespace.</para>
 <para>GCC reports the deprecation only when the alias names the type of a declaration, not when it is used in an expression, as in <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref> (expr)</computeroutput>; Clang reports it in both cases.</para>
-<para><simplesect kind="par"><title>Deprecated</title><para>Pass the plain values to the function comparators <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga5bf176ef730172592095657417e5f039" kindref="member">ne()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kindref="member">gt()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kindref="member">ge()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kindref="member">lt()</ref></computeroutput>, and <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kindref="member">le()</ref></computeroutput> instead; the <computeroutput>to_*</computeroutput> type wrappers that replaced these aliases (since 3.2.0) are deprecated too (since 5.1.0). </para>
+<para><simplesect kind="par"><title>Deprecated</title><para>Pass the plain values to the function comparators <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga5bf176ef730172592095657417e5f039" kindref="member">ne()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kindref="member">gt()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kindref="member">ge()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kindref="member">lt()</ref></computeroutput>, and <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kindref="member">le()</ref></computeroutput> instead; the <computeroutput>to_*</computeroutput> type wrappers that replaced these aliases (since 3.2.0) are deprecated too (since 6.0.0). </para>
 </simplesect>
 </para>
 </description>
@@ -501,12 +501,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>bool</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kindref="member">to_b</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kindref="member">to_b</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000034"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kindref="member">to_b</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000035"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1267" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1297" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafdd897d040f92df9cd42e551ebc88cd8" prot="public" static="no">
         <type>to_c</type>
@@ -518,12 +518,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>char</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kindref="member">to_c</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kindref="member">to_c</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000035"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kindref="member">to_c</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000036"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1277" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1307" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0cc4baab5f421ac7adee10218d8ee8a2" prot="public" static="no">
         <type>to_sc</type>
@@ -535,12 +535,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>signed char</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kindref="member">to_sc</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kindref="member">to_sc</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000036"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kindref="member">to_sc</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000037"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1287" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1317" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga461a956b7e308ed6e8c64afa3cf160f2" prot="public" static="no">
         <type>to_s</type>
@@ -552,12 +552,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>short</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kindref="member">to_s</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kindref="member">to_s</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000037"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kindref="member">to_s</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000038"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1297" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1327" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" prot="public" static="no">
         <type>to_i</type>
@@ -569,12 +569,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>int</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf3ee271cefcffa625e40d476305da62f" kindref="member">to_i</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf3ee271cefcffa625e40d476305da62f" kindref="member">to_i</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000038"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf3ee271cefcffa625e40d476305da62f" kindref="member">to_i</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000039"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1307" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1337" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga429a848542fc4ffafd3dd22bc1832654" prot="public" static="no">
         <type>to_l</type>
@@ -586,12 +586,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>long</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga09028a1e0e713723257afba48b9ee551" kindref="member">to_l</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga09028a1e0e713723257afba48b9ee551" kindref="member">to_l</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000039"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga09028a1e0e713723257afba48b9ee551" kindref="member">to_l</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000040"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1317" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1347" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9c597ca04848620b8570c29a4741e77d" prot="public" static="no">
         <type>to_ll</type>
@@ -603,12 +603,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>long long</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kindref="member">to_ll</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kindref="member">to_ll</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000040"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kindref="member">to_ll</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000041"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1327" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1357" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaaa486af2418a24076237fbe26940f5ae" prot="public" static="no">
         <type>to_u</type>
@@ -620,12 +620,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>unsigned</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kindref="member">to_u</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kindref="member">to_u</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000041"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kindref="member">to_u</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000042"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1337" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1367" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaa8bb559065ea34a9645fdfd6339b9b7a" prot="public" static="no">
         <type>to_uc</type>
@@ -637,12 +637,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>unsigned char</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kindref="member">to_uc</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kindref="member">to_uc</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000042"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kindref="member">to_uc</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000043"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1347" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1377" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga65aea7fc6324806cc029041a1c785611" prot="public" static="no">
         <type>to_us</type>
@@ -654,12 +654,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>unsigned short</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kindref="member">to_us</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kindref="member">to_us</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000043"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kindref="member">to_us</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000044"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1357" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1387" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga32c7eef01fcaef2f1a9478427d951f62" prot="public" static="no">
         <type>to_ul</type>
@@ -671,12 +671,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>unsigned long</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5d2d6a69c090569866a779672772b48f" kindref="member">to_ul</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5d2d6a69c090569866a779672772b48f" kindref="member">to_ul</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000044"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5d2d6a69c090569866a779672772b48f" kindref="member">to_ul</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000045"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1367" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1397" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gada8a165060d3d3b3ab51272b9da58761" prot="public" static="no">
         <type>to_ull</type>
@@ -688,12 +688,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>unsigned long long</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kindref="member">to_ull</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kindref="member">to_ull</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000045"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kindref="member">to_ull</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000046"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1377" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1407" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga265f8609ef3d6ead78c7a66825553e24" prot="public" static="no">
         <type>to_i8</type>
@@ -705,12 +705,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>std::int8_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kindref="member">to_i8</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kindref="member">to_i8</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000046"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kindref="member">to_i8</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000047"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1387" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1417" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad2d95793c99112ad2889c6663789d1e3" prot="public" static="no">
         <type>to_i16</type>
@@ -722,12 +722,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>std::int16_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kindref="member">to_i16</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kindref="member">to_i16</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000047"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kindref="member">to_i16</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000048"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1397" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1427" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga917a1759e37cd0d3fe3786da11729a4b" prot="public" static="no">
         <type>to_i32</type>
@@ -739,12 +739,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>std::int32_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga201eeff58867ba58d3312ae56113ef06" kindref="member">to_i32</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga201eeff58867ba58d3312ae56113ef06" kindref="member">to_i32</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000048"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga201eeff58867ba58d3312ae56113ef06" kindref="member">to_i32</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000049"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1407" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1437" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga290a150eae030e183ca2e14e9095c93b" prot="public" static="no">
         <type>to_i64</type>
@@ -756,12 +756,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>std::int64_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaead55f5e265634a742633261f9f2aa3f" kindref="member">to_i64</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaead55f5e265634a742633261f9f2aa3f" kindref="member">to_i64</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000049"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaead55f5e265634a742633261f9f2aa3f" kindref="member">to_i64</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000050"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1417" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1447" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" prot="public" static="no">
         <type>to_u8</type>
@@ -773,12 +773,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>std::uint8_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kindref="member">to_u8</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kindref="member">to_u8</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000050"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kindref="member">to_u8</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000051"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1427" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1457" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga97f7bc9a25eb4b7c663bd2388ade01ae" prot="public" static="no">
         <type>to_u16</type>
@@ -790,12 +790,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>std::uint16_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kindref="member">to_u16</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kindref="member">to_u16</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000051"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kindref="member">to_u16</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000052"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1437" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1467" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga4afa32150456241245bfc641a6f17bbc" prot="public" static="no">
         <type>to_u32</type>
@@ -807,12 +807,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>std::uint32_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kindref="member">to_u32</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kindref="member">to_u32</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000052"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kindref="member">to_u32</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000053"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1447" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1477" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga1241e84fc4457af1b4df5f053eec6aa5" prot="public" static="no">
         <type>to_u64</type>
@@ -824,12 +824,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>std::uint64_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kindref="member">to_u64</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kindref="member">to_u64</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000053"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kindref="member">to_u64</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000054"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1457" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1487" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga231cd51e76a2f426703275739d605ad4" prot="public" static="no">
         <type>to_f</type>
@@ -841,12 +841,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>float</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5368740b47e92605914b6c38ea88aebf" kindref="member">to_f</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5368740b47e92605914b6c38ea88aebf" kindref="member">to_f</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000054"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5368740b47e92605914b6c38ea88aebf" kindref="member">to_f</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000055"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1467" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1497" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga7c6c0169d894a7dd589d96df49e8df26" prot="public" static="no">
         <type>to_d</type>
@@ -858,12 +858,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>double</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kindref="member">to_d</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kindref="member">to_d</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000055"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kindref="member">to_d</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000056"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1476" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1506" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gacfe28c6fb7bfb47ca8891cb61e7f58d9" prot="public" static="no">
         <type>to_ld</type>
@@ -875,12 +875,12 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>long double</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaeba32254fdd8159523b525745b13bfa9" kindref="member">to_ld</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaeba32254fdd8159523b525745b13bfa9" kindref="member">to_ld</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000056"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 5.1.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaeba32254fdd8159523b525745b13bfa9" kindref="member">to_ld</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000057"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1485" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1515" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga15147e343475e219c2e46dce07b4127c" prot="public" static="no">
         <templateparamlist>
@@ -907,12 +907,12 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<xrefsect id="deprecated_1_deprecated000057"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000058"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1500" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1530" column="3"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -972,20 +972,20 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" kindref="compound">detail::value</ref>&lt;T&gt;</computeroutput> wrapper, recognised by the comparators and the operators.</para>
 </simplesect>
-<simplesect kind="par"><title>Deprecated</title><para>Use the function comparator <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx</ref> (lhs, rhs, epsilon)</computeroutput> instead (since 5.1.0).</para>
+<simplesect kind="par"><title>Deprecated</title><para>Use the function comparator <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx</ref> (lhs, rhs, epsilon)</computeroutput> instead (since 6.0.0).</para>
 </simplesect>
-<simplesect kind="since"><para>5.1.0 </para>
+<simplesect kind="since"><para>6.0.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000033"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use approx (lhs, rhs, epsilon) (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000034"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use approx (lhs, rhs, epsilon) (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Constructs the floating-point <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" kindref="compound">detail::value</ref>&lt;T&gt;</computeroutput> with the given tolerance, instead of the one derived from the number of decimals of the value. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="661" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="661" bodyend="665" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1221" declcolumn="3"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" compoundref="deprecated-inlines_8h" startline="661" endline="665">micro_os_plus::micro_test_plus::approx</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="675" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="675" bodyend="679" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1251" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" compoundref="deprecated-inlines_8h" startline="675" endline="679">micro_os_plus::micro_test_plus::approx</references>
         <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gacae776e46a799b81af859ba9bb74e7d0" compoundref="function-comparators-inlines_8h" startline="196" endline="201">micro_os_plus::micro_test_plus::approx</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" compoundref="deprecated-inlines_8h" startline="661" endline="665">micro_os_plus::micro_test_plus::approx</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" compoundref="deprecated-inlines_8h" startline="675" endline="679">micro_os_plus::micro_test_plus::approx</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaa2bfc74376f8c110053bfa6e06e40772" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>auto</type>
@@ -1024,14 +1024,14 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool" kindref="compound">detail::named_bool</ref></computeroutput> instance, with the value <computeroutput>true</computeroutput>, reported by its name. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000092"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use a plain bool and a check message (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000093"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use a plain bool and a check message (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>This user-defined literal operator creates a named boolean constant, with the value <computeroutput>true</computeroutput>, from a string literal (for example, <computeroutput>"feature_enabled"<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kindref="member">_b</ref></computeroutput>).</para>
 <para>The returned <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool" kindref="compound">detail::named_bool</ref></computeroutput> converts implicitly to <computeroutput>bool</computeroutput>, and the expression formatter prints its name instead of its value. With the operators in the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1operators" kindref="compound">operators</ref></computeroutput> namespace, a comparison like <computeroutput>"feature_enabled"<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kindref="member">_b</ref> == flag</computeroutput> is true when <computeroutput>flag</computeroutput> is true, and, when it fails, it is reported as <computeroutput>feature_enabled == false</computeroutput>; the same applies to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq</ref> ("feature_enabled"<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kindref="member">_b</ref>, flag)</computeroutput>. Without these operators, the comparison is a plain <computeroutput>bool</computeroutput> expression, and its operands are not reported. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="622" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="622" bodyend="625" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="809" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="636" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="636" bodyend="639" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="839" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae521cebfd48332f44d01e4f880b4aafa" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1061,13 +1061,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>char</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000072"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000073"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>char</computeroutput> constant, for example <computeroutput>65<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafdd897d040f92df9cd42e551ebc88cd8" kindref="member">_c</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="323" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="323" bodyend="326" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="487" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="337" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="337" bodyend="340" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="517" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1098,13 +1098,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant" kindref="compound">detail::floating_point_constant</ref></computeroutput> instance holding the parsed <computeroutput>double</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000090"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000091"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>double</computeroutput> constant, for example <computeroutput>2.718_d</computeroutput>, from the integral part, the decimals, and the number of decimals of the literal, parsed at compile time by <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" kindref="member">detail::math::num()</ref></computeroutput>, <computeroutput>den()</computeroutput>, and <computeroutput>den_size()</computeroutput>; the comparison tolerance is one unit of the last decimal written. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="580" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="580" bodyend="586" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="779" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="594" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="594" bodyend="600" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="809" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a154910632d01b827ab1b67f309064211" compoundref="math-inlines_8h" startline="218" endline="245">micro_os_plus::micro_test_plus::detail::math::den</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" compoundref="math-inlines_8h" startline="261" endline="266">micro_os_plus::micro_test_plus::detail::math::den_size</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" compoundref="math-inlines_8h" startline="175" endline="200">micro_os_plus::micro_test_plus::detail::math::num</references>
@@ -1137,13 +1137,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant" kindref="compound">detail::floating_point_constant</ref></computeroutput> instance holding the parsed <computeroutput>float</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000089"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000090"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>float</computeroutput> constant, for example <computeroutput>3.14_f</computeroutput>, from the integral part, the decimals, and the number of decimals of the literal, parsed at compile time by <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" kindref="member">detail::math::num()</ref></computeroutput>, <computeroutput>den()</computeroutput>, and <computeroutput>den_size()</computeroutput>; the comparison tolerance is one unit of the last decimal written. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="562" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="562" bodyend="568" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="764" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="576" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="576" bodyend="582" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="794" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a154910632d01b827ab1b67f309064211" compoundref="math-inlines_8h" startline="218" endline="245">micro_os_plus::micro_test_plus::detail::math::den</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" compoundref="math-inlines_8h" startline="261" endline="266">micro_os_plus::micro_test_plus::detail::math::den_size</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" compoundref="math-inlines_8h" startline="175" endline="200">micro_os_plus::micro_test_plus::detail::math::num</references>
@@ -1176,13 +1176,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>int</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000070"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000071"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>int</computeroutput> constant, for example <computeroutput>42<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="295" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="295" bodyend="298" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="455" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="309" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="309" bodyend="312" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="485" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gabce6e838737bf25be6e7527f69e75590" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1213,13 +1213,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>int16_t</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000082"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000083"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>int16_t</computeroutput> constant, for example <computeroutput>32767<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad2d95793c99112ad2889c6663789d1e3" kindref="member">_i16</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="463" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="463" bodyend="466" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="653" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="477" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="477" bodyend="480" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="683" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6a192d3dfff5a4a98aa7532d36d1b1bd" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1250,13 +1250,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>int32_t</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000083"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000084"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>int32_t</computeroutput> constant, for example <computeroutput>2147483647<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga917a1759e37cd0d3fe3786da11729a4b" kindref="member">_i32</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="477" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="477" bodyend="480" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="669" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="491" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="491" bodyend="494" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="699" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gab0bb5d1e37cbe8de6477c11ecd60956d" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1287,13 +1287,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>int64_t</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000084"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000085"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>int64_t</computeroutput> constant, for example <computeroutput>9223372036854775807<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga290a150eae030e183ca2e14e9095c93b" kindref="member">_i64</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="491" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="491" bodyend="494" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="685" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="505" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="505" bodyend="508" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="715" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9ca6fecc72b6da90acee52977eb077d7" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1324,13 +1324,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>int8_t</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000081"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000082"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>int8_t</computeroutput> constant, for example <computeroutput>127<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga265f8609ef3d6ead78c7a66825553e24" kindref="member">_i8</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="449" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="449" bodyend="452" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="637" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="463" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="463" bodyend="466" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="667" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga96e891b439024e116cb845bc65bc9c4f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1361,13 +1361,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>long</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000074"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000075"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>long</computeroutput> constant, for example <computeroutput>123<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga429a848542fc4ffafd3dd22bc1832654" kindref="member">_l</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="351" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="351" bodyend="354" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="520" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="365" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="365" bodyend="368" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="550" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1398,13 +1398,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant" kindref="compound">detail::floating_point_constant</ref></computeroutput> instance holding the parsed <computeroutput>long double</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000091"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000092"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref> for tolerances (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>long double</computeroutput> constant, for example <computeroutput>1.618_ld</computeroutput>, from the integral part, the decimals, and the number of decimals of the literal, parsed at compile time by <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" kindref="member">detail::math::num()</ref></computeroutput>, <computeroutput>den()</computeroutput>, and <computeroutput>den_size()</computeroutput>; the comparison tolerance is one unit of the last decimal written. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="598" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="598" bodyend="604" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="795" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="612" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="612" bodyend="618" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="825" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a154910632d01b827ab1b67f309064211" compoundref="math-inlines_8h" startline="218" endline="245">micro_os_plus::micro_test_plus::detail::math::den</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" compoundref="math-inlines_8h" startline="261" endline="266">micro_os_plus::micro_test_plus::detail::math::den_size</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" compoundref="math-inlines_8h" startline="175" endline="200">micro_os_plus::micro_test_plus::detail::math::num</references>
@@ -1437,13 +1437,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>long long</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000075"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000076"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>long long</computeroutput> constant, for example <computeroutput>123<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9c597ca04848620b8570c29a4741e77d" kindref="member">_ll</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="365" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="365" bodyend="368" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="537" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="379" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="379" bodyend="382" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="567" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga812816a2e9b23de1f8d8b2d86553d96d" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1474,13 +1474,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>short</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000071"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000072"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>short</computeroutput> constant, for example <computeroutput>123<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga461a956b7e308ed6e8c64afa3cf160f2" kindref="member">_s</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="309" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="309" bodyend="312" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="471" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="323" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="323" bodyend="326" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="501" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga57d27f1a76de2d2b2a067134cbe61457" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1511,13 +1511,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>signed char</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000073"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000074"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>signed char</computeroutput> constant, for example <computeroutput>65<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0cc4baab5f421ac7adee10218d8ee8a2" kindref="member">_sc</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="337" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="337" bodyend="340" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="504" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="351" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="351" bodyend="354" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="534" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf45bf641153a462a1ba7c12b908e667f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1548,13 +1548,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>unsigned</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000076"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000077"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>unsigned</computeroutput> constant, for example <computeroutput>123<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaaa486af2418a24076237fbe26940f5ae" kindref="member">_u</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="379" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="379" bodyend="382" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="553" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="393" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="393" bodyend="396" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="583" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga96d12d563093f297a73a8b984ae7a3a5" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1585,13 +1585,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>uint16_t</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000086"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000087"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>uint16_t</computeroutput> constant, for example <computeroutput>65535<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga97f7bc9a25eb4b7c663bd2388ade01ae" kindref="member">_u16</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="519" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="519" bodyend="522" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="717" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="533" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="533" bodyend="536" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="747" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga3171e605b5c2e1d9a0e55ae34e904674" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1622,13 +1622,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>uint32_t</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000087"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000088"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>uint32_t</computeroutput> constant, for example <computeroutput>4294967295<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga4afa32150456241245bfc641a6f17bbc" kindref="member">_u32</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="533" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="533" bodyend="536" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="733" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="547" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="547" bodyend="550" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="763" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga622b4808b7ebfc26ddf9db9128533f28" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1659,13 +1659,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>uint64_t</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000088"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000089"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>uint64_t</computeroutput> constant, for example <computeroutput>18446744073709551615<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga1241e84fc4457af1b4df5f053eec6aa5" kindref="member">_u64</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="547" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="547" bodyend="550" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="749" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="561" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="561" bodyend="564" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="779" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga80f43260f6a1afd8260355136858df48" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1696,13 +1696,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>uint8_t</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000085"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000086"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>uint8_t</computeroutput> constant, for example <computeroutput>255<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" kindref="member">_u8</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="505" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="505" bodyend="508" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="701" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="519" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="519" bodyend="522" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="731" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6c1b46d4b967bdbc573e3192c2d9f98a" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1733,13 +1733,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>unsigned char</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000077"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000078"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>unsigned char</computeroutput> constant, for example <computeroutput>65<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaa8bb559065ea34a9645fdfd6339b9b7a" kindref="member">_uc</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="393" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="393" bodyend="396" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="570" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="407" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="407" bodyend="410" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="600" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaef96b19b140b5007ec33a944c3b72cae" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1770,13 +1770,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>unsigned long</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000079"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000080"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>unsigned long</computeroutput> constant, for example <computeroutput>123<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga32c7eef01fcaef2f1a9478427d951f62" kindref="member">_ul</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="421" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="421" bodyend="424" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="604" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="435" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="435" bodyend="438" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="634" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga01adcd3866da43c393b7fba8a5e72bb2" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1807,13 +1807,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>unsigned long long</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000080"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000081"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>unsigned long long</computeroutput> constant, for example <computeroutput>123<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gada8a165060d3d3b3ab51272b9da58761" kindref="member">_ull</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="435" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="435" bodyend="438" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="621" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="449" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="449" bodyend="452" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="651" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1844,13 +1844,13 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>unsigned short</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000078"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 5.1.0)</para>
+<xrefsect id="deprecated_1_deprecated000079"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>unsigned short</computeroutput> constant, for example <computeroutput>123<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga65aea7fc6324806cc029041a1c785611" kindref="member">_us</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="407" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="407" bodyend="410" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="587" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="421" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="421" bodyend="424" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="617" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="values-inlines_8h" startline="175" endline="189">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
     </sectiondef>
@@ -1859,7 +1859,7 @@
     </briefdescription>
     <detaileddescription>
 <para>Literals such as <computeroutput>1<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput> and <computeroutput>42<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga231cd51e76a2f426703275739d605ad4" kindref="member">_f</ref></computeroutput> create strongly typed operands, whilst wrappers like <computeroutput>mt::to_i{expression}</computeroutput> convert dynamic values, so that the (deprecated) overloaded operators can compare and report them.</para>
-<para><simplesect kind="par"><title>Deprecated</title><para>The literals of the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1literals" kindref="compound">literals</ref></computeroutput> namespace, the <computeroutput>to_*</computeroutput> type wrappers, <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" kindref="compound">to_t</ref>&lt;T&gt;</computeroutput>, and the two-argument <computeroutput>mt::approx (<ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref>, epsilon)</computeroutput> are deprecated since 5.1.0, in favour of the function comparators <computeroutput>mt::eq()</computeroutput>, <computeroutput>mt::ne()</computeroutput>, <computeroutput>mt::lt()</computeroutput>, <computeroutput>mt::le()</computeroutput>, <computeroutput>mt::gt()</computeroutput>, and <computeroutput>mt::ge()</computeroutput>, which compare and report the plain values, and of the function comparator <computeroutput>mt::approx (lhs, rhs, epsilon)</computeroutput>, which sets the tolerance explicitly. The compiler reports their use.</para>
+<para><simplesect kind="par"><title>Deprecated</title><para>The literals of the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1literals" kindref="compound">literals</ref></computeroutput> namespace, the <computeroutput>to_*</computeroutput> type wrappers, <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" kindref="compound">to_t</ref>&lt;T&gt;</computeroutput>, and the two-argument <computeroutput>mt::approx (<ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref>, epsilon)</computeroutput> are deprecated since 6.0.0, in favour of the function comparators <computeroutput>mt::eq()</computeroutput>, <computeroutput>mt::ne()</computeroutput>, <computeroutput>mt::lt()</computeroutput>, <computeroutput>mt::le()</computeroutput>, <computeroutput>mt::gt()</computeroutput>, and <computeroutput>mt::ge()</computeroutput>, which compare and report the plain values, and of the function comparator <computeroutput>mt::approx (lhs, rhs, epsilon)</computeroutput>, which sets the tolerance explicitly. The compiler reports their use.</para>
 </simplesect>
 The integer literals follow the C++ syntax: decimal, hexadecimal (<computeroutput>0x10_i</computeroutput>), binary (<computeroutput>0b101_i</computeroutput>), and octal (<computeroutput>010<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>, which is 8), with digit separators (<computeroutput>1&apos;000<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>). A decimal point, an exponent, or a value that does not fit in the type of the literal (e.g. <computeroutput>300<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" kindref="member">_u8</ref></computeroutput>) is a compilation error.</para>
 <para>The floating-point literals are written with decimal digits and a decimal point, optionally with digit separators (<computeroutput>1&apos;000.000&apos;5<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga7c6c0169d894a7dd589d96df49e8df26" kindref="member">_d</ref></computeroutput>), but without an exponent; the digits before the decimal point, and the decimals, are each limited to <computeroutput>std::numeric_limits&lt;T&gt;::digits10</computeroutput> of the type of the literal (for example 6 for <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga231cd51e76a2f426703275739d605ad4" kindref="member">_f</ref></computeroutput> and 15 for <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga7c6c0169d894a7dd589d96df49e8df26" kindref="member">_d</ref></computeroutput>), otherwise the compilation fails.</para>

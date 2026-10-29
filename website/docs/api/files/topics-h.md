@@ -30,10 +30,10 @@ keywords:
 <p>Although named as a header, this file is not included in the build process; it is intended exclusively as a documentation resource for Doxygen. Due to Doxygen processing requirements, it cannot be provided as a Markdown file or as a <span class="doxyComputerOutput">.doxyfile</span>.</p>
 
 
-<p>It introduces and organises the main documentation groups for the library, covering the C++ API, command-line options, expectations, requirements, comparators, operators, literals, utility functions, and test suite management.</p>
+<p>It introduces and organises the main documentation groups for the library, covering the C++ API, command-line options, expectations, requirements, function comparators, logical functions, exception checks, utility functions, and test suite management.</p>
 
 
-<p>The documentation is structured to provide a comprehensive overview of the library's features, usage patterns, and configuration options. It includes detailed explanations, usage examples, and descriptions of the available verbosity modes, along with representative output for various scenarios.</p>
+<p>The documentation is structured to provide a comprehensive overview of the library's features, usage patterns, and configuration options. It includes detailed explanations, usage examples, and descriptions of the available reporters, verbosity modes, and filters, along with representative output for various scenarios.</p>
 
 
 <p>All documentation topics and group definitions are maintained in this file to ensure a consistent and modular structure. The file is located in the <span class="doxyComputerOutput">website/doxygen/files</span> folder to facilitate integration with the Doxygen system.</p>

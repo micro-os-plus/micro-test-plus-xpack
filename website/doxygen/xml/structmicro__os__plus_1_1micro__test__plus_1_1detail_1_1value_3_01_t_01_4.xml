@@ -101,7 +101,7 @@ Delegates to <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__p
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="494" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" bodystart="494" bodyend="497"/>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad2d04a9ef0d53c48107b13005ec0877d" compoundref="values-inlines_8h" startline="78" endline="80">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::value_base</references>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t_1aad9720f2d1e443d77cdfd1eb1151e924" compoundref="deprecated-inlines_8h" startline="644" endline="646">micro_os_plus::micro_test_plus::to_t&lt; T &gt;::to_t</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t_1aad9720f2d1e443d77cdfd1eb1151e924" compoundref="deprecated-inlines_8h" startline="658" endline="660">micro_os_plus::micro_test_plus::to_t&lt; T &gt;::to_t</referencedby>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1a6c551645c456ea1319752d0055aceb5a" compoundref="values_8h" startline="511" endline="514">value</referencedby>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1a6c551645c456ea1319752d0055aceb5a" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">

@@ -15,11 +15,11 @@ Every actionable item has a permanent number.
 
 ## Automatic checks
 
-| Check | Before | After |
-| --- | --- | --- |
-| Doxygen warnings (strict settings) | 0 | 0 |
-| Merged completeness (`check-doxygen-merged.mjs`) | 34 | 0 |
-| Style (`check-doxygen-style.mjs`) | 21 | 3 |
+| Check                                            | Before | After |
+| ------------------------------------------------ | ------ | ----- |
+| Doxygen warnings (strict settings)               | 0      | 0     |
+| Merged completeness (`check-doxygen-merged.mjs`) | 34     | 0     |
+| Style (`check-doxygen-style.mjs`)                | 21     | 3     |
 
 The 3 remaining style problems are long `#endif` comments that repeat
 long conditions (`micro-test-plus.h:61`, `detail-inlines.h:790`,
@@ -316,7 +316,7 @@ projects, so the text must stay generic.
   `[[deprecated (...)]]` attribute, which Doxygen also turns into a
   Deprecated section. The `@deprecated` comments were removed from the
   59 such declarations, and from the `type_traits` namespace. The version
-  was added to the attribute messages (`use test_case (since 5.1.0)`),
+  was added to the attribute messages (`use test_case (since 6.0.0)`),
   which the compilers also print. Where the comment said more than the
   attribute, the text moved to the `@details`. The duplicate on the
   definition of `reflection::short_name()` was also removed. The
@@ -327,7 +327,7 @@ projects, so the text must stay generic.
   string literals, which `clang-format` creates when a message does not
   fit on a line. This had hidden the deprecation of the `static_suite`
   constructor for a `static_suite&` body; its message is now a single
-  literal (`use a suite& first parameter (since 5.1.0)`). All 60
+  literal (`use a suite& first parameter (since 6.0.0)`). All 60
   attribute messages are single literals after `clang-format`, and the
   Doxygen XML has exactly one Deprecated section, with the version, for
   each of the 71 deprecated entities. Keep the attribute messages short

@@ -77,7 +77,7 @@ namespace micro_os_plus::micro_test_plus
    * Forwards to `negate()`, so the returned expression is the same, and
    * is reported in the same way.
    */
-  // Deprecated since 5.1.0; use negate().
+  // Deprecated since 6.0.0; use negate().
   template <class Expr_T>
   constexpr auto
   _not (Expr_T&& expr)
@@ -90,7 +90,7 @@ namespace micro_os_plus::micro_test_plus
    * Forwards to `all_of()`, so the returned expression is the same, and
    * is reported in the same way.
    */
-  // Deprecated since 5.1.0; use all_of().
+  // Deprecated since 6.0.0; use all_of().
   template <class Lhs_T, class Rhs_T>
   constexpr auto
   _and (Lhs_T&& lhs, Rhs_T&& rhs)
@@ -103,7 +103,7 @@ namespace micro_os_plus::micro_test_plus
    * Forwards to `any_of()`, so the returned expression is the same, and
    * is reported in the same way.
    */
-  // Deprecated since 5.1.0; use any_of().
+  // Deprecated since 6.0.0; use any_of().
   template <class Lhs_T, class Rhs_T>
   constexpr auto
   _or (Lhs_T&& lhs, Rhs_T&& rhs)
@@ -117,7 +117,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Removes the `const` qualifier from the reference with `const_cast`.
    */
-  // Deprecated since 5.1.0; use const_cast<T&>.
+  // Deprecated since 6.0.0; use const_cast<T&>.
   template <class T>
   constexpr auto
   mut (const T& t) noexcept -> T&
@@ -690,7 +690,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * Copies @p ts into the stored value.
    */
-  // Deprecated since 5.1.0, as the whole `timestamp` class; the timings are
+  // Deprecated since 6.0.0, as the whole `timestamp` class; the timings are
   // internal.
   inline timestamp::timestamp (const timespec& ts) noexcept : value_{ ts }
   {
@@ -701,7 +701,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * Returns `true` if either the seconds or the nanoseconds member is
    * not zero.
    */
-  // Deprecated since 5.1.0, as the whole `timestamp` class; the timings are
+  // Deprecated since 6.0.0, as the whole `timestamp` class; the timings are
   // internal.
   inline bool
   timestamp::has_clock (void) const noexcept
@@ -714,7 +714,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * The caller may modify the stored time through the returned
    * reference.
    */
-  // Deprecated since 5.1.0, as the whole `timestamp` class; the timings are
+  // Deprecated since 6.0.0, as the whole `timestamp` class; the timings are
   // internal.
   inline timespec&
   timestamp::value (void) noexcept
@@ -726,7 +726,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * The returned reference is valid as long as the object exists.
    */
-  // Deprecated since 5.1.0, as the whole `timestamp` class; the timings are
+  // Deprecated since 6.0.0, as the whole `timestamp` class; the timings are
   // internal.
   inline const timespec&
   timestamp::value (void) const noexcept

@@ -241,7 +241,7 @@ the others are derived from reading the code.
   (AddressSanitizer: stack-overflow at line 193). The unit tests use
   `_b` only in `static_assert` (`tests/sources/unit/src/static-asserts.cpp`
   lines 135 to 137), so this was never exercised. Also, `named ==
-  bool` returns the `bool` itself, so the name never appears in any
+bool` returns the `bool` itself, so the name never appears in any
   output. Either give `named` a formatter overload that prints the name
   and a `get()`, or remove `_b`.
 
@@ -430,7 +430,7 @@ the others are derived from reading the code.
   76 to 107: the generic operators require one framework operand, and
   the `std::string_view` overloads are outranked by the standard ones
   whenever an operand is a `std::string`. With `using namespace
-  operators`, `t.expect (s1 == s2)` and `t.expect (s1 == "abd")` (with
+operators`, `t.expect (s1 == s2)` and `t.expect (s1 == "abd")` (with
   `std::string s1`) evaluate to `bool`, and the failure message has no
   operands, while `eq (s1, s2)` prints "abc == abd". Conversely, two
   `std::string_view` operands select the framework's non-template
@@ -461,7 +461,7 @@ the others are derived from reading the code.
   formatter has no overload for scoped enumerations, `std::byte`,
   `std::pair` (so no map), `std::tuple`, or `std::optional`, so
   `eq (colour::red, colour::green)`, `eq (std::byte{ 1 },
-  std::byte{ 2 })`, and `eq (map1, map2)` do not compile, with the error
+std::byte{ 2 })`, and `eq (map1, map2)` do not compile, with the error
   deep inside the formatter. Scoped enumerations are common in
   embedded code. Print scoped enumerations and `std::byte` by their
   underlying value, pairs and tuples as `(a, b)`, and consider a
@@ -661,7 +661,7 @@ the others are derived from reading the code.
   `runner::suite()` and of the `suite` constructor is a
   `std::string_view`, since the name is copied. The change is additive,
   not breaking, since `detail::test_name` was new in the unreleased
-  v5.1. The other `detail` return types (`approx()`, `expect()`, the
+  v6.0. The other `detail` return types (`approx()`, `expect()`, the
   `to_i` family) stay in `detail`, since users do not need to name
   them. Unit test, user guide, and compatibility notices updated.
   `test.h` lines 130 to 178, 666 to 669, and 956 to 959: `test()` takes
@@ -868,7 +868,7 @@ the others are derived from reading the code.
   the results of the running test case, then
   `✗ Test execution aborted at <file>:<line>` (human) or
   `Bail out! Requirement failed|Test execution aborted at
-  <file>:<line>` (TAP), on the console and in the output file; the
+<file>:<line>` (TAP), on the console and in the output file; the
   `stderr` line is written only before `initialise()` or after `run_suites()`.
   A probe confirmed that an explicit `runner::abort()` previously lost
   the buffered results of the running test case, and left the output
@@ -913,7 +913,7 @@ the others are derived from reading the code.
   errors go only to `stderr` and are not written to the output file.
   Revised by decision on 2026-10-18. The original item also proposed
   an output sink in `runner_options` (a `void (*) (const char*,
-  size_t)` defaulting to `stdout`) and, later, user-defined reporters;
+size_t)` defaulting to `stdout`) and, later, user-defined reporters;
   both parts are withdrawn, and the behaviour is documented in the
   Console output section of the User's Guide. The redirection of the
   output is the job of the C library, not of the framework: on the
@@ -1334,7 +1334,7 @@ the others are derived from reading the code.
   [internal]
   (fixed)
   Fixed in `a451f903` (#152): `reporter::write_line (bool to_console,
-  const char* format, ...)` formats the text once and writes it to the
+const char* format, ...)` formats the text once and writes it to the
   output file, without the colour sequences, and, when requested, to
   `stdout`; it serves the 8 pairs of the TAP reporter, the 12 pairs of
   the human reporter (all of which match their console lines once the
@@ -1357,7 +1357,7 @@ the others are derived from reading the code.
   second under a verbosity condition (in `end_suite()`, only with
   normal or verbose verbosity; the quiet line is shorter). Add to
   `reporter` a variadic helper, for example `write_line (bool
-  to_console, const char* format, ...)`, which formats the line once
+to_console, const char* format, ...)`, which formats the line once
   and writes it to the output file and, when requested, to `stdout`.
   The empty line and the buffered output that precede the console line
   stay with the callers, since their conditions differ; they are
@@ -1523,7 +1523,7 @@ the others are derived from reading the code.
   reference files when they are regenerated, and passes unnoticed. Perl
   `TAP::Parser` 3.43 (`prove`, installed with macOS) cannot be used: it
   stops with `TAP specified version 14 but we don't know about versions
-  later than 13`, and does not understand the indented subtests. The
+later than 13`, and does not understand the indented subtests. The
   `tap-parser` 18.3.4 command (the node-tap parser) cannot be used as
   it is either, since its exit code tells whether the tests passed, and
   `unit-test.tap` has 356 intentional failures. A short Node script

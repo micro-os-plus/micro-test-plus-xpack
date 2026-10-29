@@ -1,7 +1,7 @@
 # Boost UT API changes from v1.1.8 to v2.3.1
 
 Date: 2026-10-21, on branch `xpack-development`, commit `dbe0c110`
-(µTest++ `5.1.0-pre`).
+(µTest++ `6.0.0-pre`).
 
 Purpose: µTest++ was derived from v1.1.8 of Boost UT
 (<https://github.com/boost-ext/ut>). This report lists the changes to the
@@ -123,7 +123,7 @@ std::expected<bool, std::string> e = std::unexpected ("lazy evaluated");
 expect (e.has_value ()) << [&] { return e.error (); } << fatal;
 ```
 
-µTest++: `check_result::operator<<` already skips the *formatting* of
+µTest++: `check_result::operator<<` already skips the _formatting_ of
 the message when the outcome is not written, but the argument
 expression itself is evaluated before the operator is called. For
 `e.error ()` on an `expected` holding a value, or `*ptr` on a null
@@ -500,7 +500,7 @@ Verdict: **Covered**.
 
 ## 5. Reporters
 
-### 5.1. JUnit XML reporter
+### 6.0. JUnit XML reporter
 
 UT (commits `2f02b0c`, `e45ea7e`): a new `reporter_junit` class,
 selected with `--reporter junit` and written to the file given with
@@ -525,7 +525,7 @@ Verdict: **Defer**. Document the TAP to JUnit conversion in the website
 guide; reconsider if users of the native builds ask for it.
 
 Status: deferred, recorded in #161 on 2026-10-21; not planned for
-v5.1.0, and not implemented.
+v6.0.0, and not implemented.
 
 ### 5.2. New reporter events
 
@@ -693,12 +693,12 @@ Verdict: **Reject**; keep the current µTest++ design.
    `tests/sources/unit/` and a paragraph in the website guide.
 2. Documentation only: the loop idiom for data-driven test cases
    (item 2.1), the custom source location (item 1.10), and the
-   conversion of TAP to JUnit XML (item 5.1).
+   conversion of TAP to JUnit XML (item 6.0).
 3. Probes for item 1.6 (printable ranges in the formatter), then a
    decision.
 4. Design notes, if there is demand: `--list` (item 4.1), the integral
    `approx()` (item 1.4), and a `test_each()` helper (item 2.1).
-5. Deferred: the JUnit reporter (item 5.1) and the module interface
+5. Deferred: the JUnit reporter (item 6.0) and the module interface
    (item 7.5).
 
 ## 11. Comparison of the latest versions
@@ -717,9 +717,9 @@ Result: no new feature in UT `master` is worth adding. The one new
 candidate comes from an old UT feature: skipping a test case from the
 code (item 11.2.1).
 
-| #      | Feature                                                   | Recommendation | Cost  | Breaking |
-| ------ | --------------------------------------------------------- | -------------- | ----- | -------- |
-| 11.2.1 | Skip a test case from the code, reported as TAP `# SKIP`  | Consider       | Small | No       |
+| #      | Feature                                                  | Recommendation | Cost  | Breaking |
+| ------ | -------------------------------------------------------- | -------------- | ----- | -------- |
+| 11.2.1 | Skip a test case from the code, reported as TAP `# SKIP` | Consider       | Small | No       |
 
 ### 11.1. Changes after v2.3.1
 
@@ -774,7 +774,7 @@ from its constructor and destructor.
 test cases in order, with their own totals.
 
 Verdict: **Not applicable**; the JUnit reporter itself remains
-**Defer** (item 5.1).
+**Defer** (item 6.0).
 
 #### 11.1.5. Dangling test names
 

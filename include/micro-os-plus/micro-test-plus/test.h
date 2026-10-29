@@ -413,7 +413,7 @@ namespace micro_os_plus::micro_test_plus
        *   None.
        * @return The one-based own index.
        */
-      [[deprecated ("internal to the framework (since 5.1.0)"),
+      [[deprecated ("internal to the framework (since 6.0.0)"),
         nodiscard]] size_t
       own_index (void) const noexcept;
 
@@ -429,7 +429,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The one-based test point number, or 0 before the first
        * test point.
        */
-      [[deprecated ("internal to the framework (since 5.1.0)"),
+      [[deprecated ("internal to the framework (since 6.0.0)"),
         nodiscard]] size_t
       current_subtest_index (void) const noexcept;
 
@@ -444,7 +444,7 @@ namespace micro_os_plus::micro_test_plus
        *   None.
        * @return The number of child test cases.
        */
-      [[deprecated ("internal to the framework (since 5.1.0)"),
+      [[deprecated ("internal to the framework (since 6.0.0)"),
         nodiscard]] size_t
       children_subtests_count (void) const noexcept;
 
@@ -1193,7 +1193,7 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     template <typename Values_T, typename Callable_T>
       requires (detail::test_values_range<Values_T>
@@ -1221,7 +1221,7 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     template <typename T, typename Callable_T>
     void
@@ -1316,7 +1316,7 @@ namespace micro_os_plus::micro_test_plus
     template <class Expr_T>
       requires extension::legacy_checkable<Expr_T>
     [[deprecated ("the argument is always true; write the condition "
-                  "(since 5.1.0)")]] auto
+                  "(since 6.0.0)")]] auto
     expect (const Expr_T& expr, const reflection::source_location& sl
                                 = reflection::source_location::current ());
 
@@ -1336,7 +1336,7 @@ namespace micro_os_plus::micro_test_plus
     template <class Expr_T>
       requires extension::legacy_checkable<Expr_T>
     [[deprecated ("the argument is always true; write the condition "
-                  "(since 5.1.0)")]] auto
+                  "(since 6.0.0)")]] auto
     require (const Expr_T& expr, const reflection::source_location& sl
                                  = reflection::source_location::current ());
 
@@ -1358,7 +1358,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class Expr_T>
       requires extension::checkable<Expr_T>
-    [[deprecated ("use require() (since 5.1.0)")]] auto
+    [[deprecated ("use require() (since 6.0.0)")]] auto
     assume (const Expr_T& expr, const reflection::source_location& sl
                                 = reflection::source_location::current ());
 
@@ -1658,7 +1658,7 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     template <typename Values_T, typename Callable_T>
       requires (detail::test_values_range<Values_T>
@@ -1686,7 +1686,7 @@ namespace micro_os_plus::micro_test_plus
      * @par Returns
      *   Nothing.
      *
-     * @since 5.1.0
+     * @since 6.0.0
      */
     template <typename T, typename Callable_T>
     void
@@ -1714,7 +1714,7 @@ namespace micro_os_plus::micro_test_plus
      *   None.
      * @return A const reference to the stopwatch of the suite.
      */
-    [[deprecated ("the timings are internal (since 5.1.0)"),
+    [[deprecated ("the timings are internal (since 6.0.0)"),
       nodiscard]] const detail::stopwatch&
     timings (void) const noexcept;
 
@@ -1732,7 +1732,7 @@ namespace micro_os_plus::micro_test_plus
      *   None.
      * @return A reference to the stopwatch of the suite.
      */
-    [[deprecated ("the timings are internal (since 5.1.0)"),
+    [[deprecated ("the timings are internal (since 6.0.0)"),
       nodiscard]] detail::stopwatch&
     timings (void) noexcept;
 
@@ -2105,7 +2105,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <typename Callable_T, typename... Args_T>
       requires (detail::static_suite_body<Callable_T, Args_T...>)
-    [[deprecated ("use a suite& first parameter (since 5.1.0)")]]
+    [[deprecated ("use a suite& first parameter (since 6.0.0)")]]
     static_suite (const char* name, runner& test_runner, Callable_T&& callable,
                   Args_T&&... arguments);
 

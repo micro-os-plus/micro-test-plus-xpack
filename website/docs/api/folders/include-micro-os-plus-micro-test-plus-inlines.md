@@ -254,7 +254,7 @@ keywords:
 <p>Folder with C++ header files containing inline µTest++ implementations.</p>
 
 
-<p>This folder gathers the inline implementation headers used by µTest++. These headers define logic for core library components, including the check results, function comparators, literals, mathematical utilities, reflection utilities, test reporters, test runners, test suites, utility functions, and value wrappers.</p>
+<p>This folder gathers the inline implementation headers used by µTest++. These headers define logic for core library components, including the check results, counters, exception checks, the expression formatter, function comparators, mathematical utilities, reflection utilities, test reporters, test runners and their options, the stopwatch, test suites, utility functions, and values.</p>
 
 
 <p>By separating inline implementations from their corresponding declarations, this structure promotes modularity, clarity, and maintainability within the codebase. All inline definitions are designed to be lightweight and efficient, supporting both embedded and general C++ development.</p>

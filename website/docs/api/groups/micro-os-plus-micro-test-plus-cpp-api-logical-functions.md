@@ -107,7 +107,7 @@ keywords:
 </div>
 
 
-<p>The overloaded logical operators of the <span class="doxyComputerOutput">micro_test_plus::operators</span> namespace are deprecated since 5.1.0, in favour of these functions.</p>
+<p>The overloaded logical operators of the <span class="doxyComputerOutput">micro_test_plus::operators</span> namespace are deprecated since 6.0.0, in favour of these functions.</p>
 
 
 <div class="doxySectionDef">

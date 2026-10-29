@@ -65,7 +65,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Forwards to `increment_passed_checks()`.
    */
-  // Deprecated since 5.1.0; use increment_passed_checks().
+  // Deprecated since 6.0.0; use increment_passed_checks().
   inline void
   counters::increment_successful_checks (size_t count) noexcept
   {
@@ -98,7 +98,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Forwards to `increment_executed_test_cases()`.
    */
-  // Deprecated since 5.1.0; use increment_executed_test_cases().
+  // Deprecated since 6.0.0; use increment_executed_test_cases().
   inline void
   counters::increment_executed_subtests (size_t count) noexcept
   {
@@ -141,7 +141,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Forwards to `passed_checks()`.
    */
-  // Deprecated since 5.1.0; use passed_checks().
+  // Deprecated since 6.0.0; use passed_checks().
   inline size_t
   counters::successful_checks (void) const noexcept
   {
@@ -184,7 +184,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Forwards to `executed_test_cases()`.
    */
-  // Deprecated since 5.1.0; use executed_test_cases().
+  // Deprecated since 6.0.0; use executed_test_cases().
   inline size_t
   counters::executed_subtests (void) const noexcept
   {
@@ -230,7 +230,7 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Forwards to `passed()`.
    */
-  // Deprecated since 5.1.0; use passed().
+  // Deprecated since 6.0.0; use passed().
   inline bool
   counters::was_successful (void) const noexcept
   {

@@ -144,7 +144,7 @@ namespace micro_os_plus::micro_test_plus
    * aborted, the error is reported by `initialise()`, and the top suite
    * is returned without being added.
    */
-  // Deprecated since 5.1.0; use initialise (argc, argv) and
+  // Deprecated since 6.0.0; use initialise (argc, argv) and
   // add_top_suite().
   suite&
   runner::initialise (int argc, char* argv[], const char* top_suite_name)
@@ -742,7 +742,7 @@ namespace micro_os_plus::micro_test_plus
    * Kept for compatibility; it calls `run_suites()`, so the first call runs the
    * session and the later ones return the stored exit code.
    */
-  // Deprecated since 5.1.0; use run_suites().
+  // Deprecated since 6.0.0; use run_suites().
   int
   runner::exit_code (void)
   {
@@ -849,7 +849,7 @@ namespace micro_os_plus::micro_test_plus
    * Returns the constant string `"runner"`, as before the runner stopped
    * being a test node.
    */
-  // Deprecated since 5.1.0; the name is that of the top suite.
+  // Deprecated since 6.0.0; the name is that of the top suite.
   const char*
   runner::name (void) const noexcept
   {
@@ -861,7 +861,7 @@ namespace micro_os_plus::micro_test_plus
    * Returns `added_suites_count()` plus one, for the top suite, as
    * before the rename.
    */
-  // Deprecated since 5.1.0; use added_suites_count() or total_suites_count().
+  // Deprecated since 6.0.0; use added_suites_count() or total_suites_count().
   size_t
   runner::suites_count (void) const noexcept
   {

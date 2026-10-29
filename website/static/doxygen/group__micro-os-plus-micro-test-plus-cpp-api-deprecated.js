@@ -46,5 +46,6 @@ var group__micro_os_plus_micro_test_plus_cpp_api_deprecated =
     [ "micro_os_plus::micro_test_plus::subtest", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga1424c18b26d5fdaed11439c77e6bf561", null ],
     [ "micro_os_plus::micro_test_plus::detail::timestamps", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga53a6bc7f86b15378c8296b3647e7013f", null ],
     [ "micro_os_plus::micro_test_plus::type_traits::value_base_", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga65ad920b21a6c0df6848aa939659b92e", null ],
+    [ "micro_os_plus::micro_test_plus::mut", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga00ea8f3dfb7cb0ef39919065321cf62f", null ],
     [ "micro_os_plus::micro_test_plus::reflection::short_name", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#gafc93799846770e521c4721d0de0a81cc", null ]
 ];

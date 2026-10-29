@@ -61,6 +61,7 @@ var deprecated_8h =
     [ "micro_os_plus::micro_test_plus::_not", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions.html#gaa465723bc4fe309f15d30a4e7207d40f", null ],
     [ "micro_os_plus::micro_test_plus::_or", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions.html#ga1c7ddbf53764ab67240f1cf0e0fb4b8d", null ],
     [ "micro_os_plus::micro_test_plus::approx", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gafe47800a219b00fcccf0a1dc596dbe20", null ],
+    [ "micro_os_plus::micro_test_plus::mut", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga00ea8f3dfb7cb0ef39919065321cf62f", null ],
     [ "micro_os_plus::micro_test_plus::operators::operator and", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators.html#gad47ea22957940a08ff56104d3c0c16f7", null ],
     [ "micro_os_plus::micro_test_plus::operators::operator not", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators.html#ga1d79c807e0d12684f1a850d7269c077b", null ],
     [ "micro_os_plus::micro_test_plus::operators::operator or", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators.html#gac008174d3b00512dc53b3e9e26ed45ec", null ],

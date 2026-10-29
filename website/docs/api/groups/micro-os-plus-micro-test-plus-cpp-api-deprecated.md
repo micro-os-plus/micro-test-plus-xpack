@@ -319,6 +319,23 @@ keywords:
 
 <table class="doxyMembersIndex">
 
+<tr class="doxyMemberIndexTemplate">
+<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T&gt;</div></td>
+</tr>
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr T &amp;</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ga00ea8f3dfb7cb0ef39919065321cf62f">mut</a> (const T &amp;t) noexcept</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Deprecated generic mutator to remove const qualification from a reference. <a href="#ga00ea8f3dfb7cb0ef39919065321cf62f">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">const char *</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#gafc93799846770e521c4721d0de0a81cc">short_name</a> (const char *name) noexcept</td>
@@ -340,12 +357,12 @@ keywords:
 <p>Definitions kept for compatibility with earlier releases.</p>
 
 
-<p>The definitions in this group, and in the groups they refer to, are still available, but the compiler reports their use, and they will be removed in a future major release. Each one names its replacement in the deprecation message, together with the version that deprecated it (most of them since 5.1.0).</p>
+<p>The definitions in this group, and in the groups they refer to, are still available, but the compiler reports their use, and they will be removed in a future major release. Each one names its replacement in the deprecation message, together with the version that deprecated it (most of them since 6.0.0).</p>
 
 
 <dl class="doxySectionUser">
 <dt>Availability</dt>
-<dd><p>The deprecated definitions are compiled only when the application defines the macro <span class="doxyComputerOutput">MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</span>, in <span class="doxyComputerOutput">micro-os-plus/project-config.h</span> or in <span class="doxyComputerOutput">micro-os-plus/micro-test-plus-defines.h</span>. Without it, the applications that still use them fail to compile, which is a way of finding what must be migrated.</p></dd>
+<dd><p>The deprecated definitions are compiled only when the application defines the macro <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-config/#ga67c701de5426ac340584ed038494a873">MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</a></span>, in <span class="doxyComputerOutput">micro-os-plus/project-config.h</span> or in <span class="doxyComputerOutput">micro-os-plus/micro-test-plus-defines.h</span>. Without it, the applications that still use them fail to compile, which is a way of finding what must be migrated.</p></dd>
 </dl>
 
 
@@ -368,7 +385,7 @@ keywords:
 <li>the v5.0.1 names of the classes: <span class="doxyComputerOutput">static_runner</span> (replaced by <span class="doxyComputerOutput">runner</span>), <span class="doxyComputerOutput">subtest</span> (replaced by <span class="doxyComputerOutput">test_case</span>), <span class="doxyComputerOutput">detail::runner_totals</span> (replaced by <span class="doxyComputerOutput">counters</span>), and <span class="doxyComputerOutput">detail::timestamps</span> and <span class="doxyComputerOutput">detail::timestamp</span>, which are internal and not replaced;</li>
 <li><span class="doxyComputerOutput">runner (const char*)</span>, replaced by <span class="doxyComputerOutput">runner()</span> followed by <span class="doxyComputerOutput">add_top_suite()</span> (since 4.1.0);</li>
 <li><span class="doxyComputerOutput">runner::initialise (argc, argv, top_suite_name)</span>, replaced by <span class="doxyComputerOutput">initialise (argc, argv)</span> followed by <span class="doxyComputerOutput">add_top_suite()</span>;</li>
-<li><span class="doxyComputerOutput">runner::exit_code()</span>, replaced by <span class="doxyComputerOutput">runner::run()</span>;</li>
+<li><span class="doxyComputerOutput">runner::exit_code()</span>, replaced by <span class="doxyComputerOutput">runner::run_suites()</span>;</li>
 <li><span class="doxyComputerOutput">runner::suite()</span>, replaced by <span class="doxyComputerOutput">runner::add_suite()</span>;</li>
 <li><span class="doxyComputerOutput">runner::suites_count()</span>, replaced by <span class="doxyComputerOutput">added_suites_count()</span> or <span class="doxyComputerOutput">total_suites_count()</span>;</li>
 <li><span class="doxyComputerOutput">runner::verbosity()</span>, and <span class="doxyComputerOutput">runner::reporter()</span> with its <span class="doxyComputerOutput">verbosity()</span> member, replaced by <span class="doxyComputerOutput">runner::verbosity_level()</span>;</li>
@@ -448,14 +465,14 @@ keywords:
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000107>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000108>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>The value wrappers are internal (since 5.1.0).</p>
+<p>The value wrappers are internal (since 6.0.0).</p>
 </dd>
 </dl>
 </div>
 
-<p>Definition at line 2095 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line 2125 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 </div>
 </div>
@@ -486,14 +503,14 @@ keywords:
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000094>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000095>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use counters (since 5.1.0)</p>
+<p>use counters (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l01586">1586</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l01616">1616</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 </div>
 </div>
@@ -524,14 +541,14 @@ keywords:
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000059>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000060>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use runner (since 5.1.0)</p>
+<p>use runner (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
 
-<p>Definition at line 1541 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line 1571 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 </div>
 </div>
@@ -562,14 +579,14 @@ keywords:
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000058>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000059>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a> (since 5.1.0)</p>
+<p>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a> (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l01528">1528</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l01558">1558</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 </div>
 </div>
@@ -600,14 +617,14 @@ keywords:
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000095>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000096>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>the timings are internal (since 5.1.0)</p>
+<p>the timings are internal (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
 
-<p>Definition at line 1603 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line 1633 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 </div>
 </div>
@@ -651,14 +668,14 @@ keywords:
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000106>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000107>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>The value wrappers are internal (since 5.1.0).</p>
+<p>The value wrappers are internal (since 6.0.0).</p>
 </dd>
 </dl>
 </div>
 
-<p>Definition at line 2079 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line 2109 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 </div>
 </div>
@@ -668,6 +685,107 @@ keywords:
 <div class="doxySectionDef">
 
 ## Functions
+
+### mut() {#ga00ea8f3dfb7cb0ef39919065321cf62f}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<div class="doxyMemberTemplate">template &lt;class T&gt;</div>
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">T &amp; micro_os_plus::micro_test_plus::mut (const T &amp; t)</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel nodiscard">nodiscard</span>
+<span class="doxyMemberLabel constexpr">constexpr</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Deprecated generic mutator to remove const qualification from a reference.</p>
+
+
+<p>Not used by the framework. Equivalent to <span class="doxyComputerOutput">const_cast&lt;T&amp;&gt; (t)</span>, which replaces it.</p>
+
+
+
+:::warning
+<p>Modifying an object that was originally declared as <span class="doxyComputerOutput">const</span> through the returned reference is undefined behaviour.</p>
+:::
+
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Template Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">T</td>
+<td class="doxyParamItemDescription"><p>The type of the input object.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">t</td>
+<td class="doxyParamItemDescription"><p>The object from which to remove const qualification.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="doxySectionUser">
+<dt>Returns</dt>
+<dd><p>A non-const reference to the input object.</p></dd>
+</dl>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000009>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>use const_cast&lt;T&amp;&gt; (since 6.0.0)</p>
+</dd>
+</dl>
+</div>
+
+<p>Removes the <span class="doxyComputerOutput">const</span> qualifier from the reference with <span class="doxyComputerOutput">const_cast</span>.</p>
+
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00123">123</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga00ea8f3dfb7cb0ef39919065321cf62f">123</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga00ea8f3dfb7cb0ef39919065321cf62f">mut</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; t) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight"> -&gt; T&amp;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">124</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">125</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">const_cast&lt;</span><span class="doxyHighlight">T&amp;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (t);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">126</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+
+</div>
+
+
+<p>Reference <a href="#ga00ea8f3dfb7cb0ef39919065321cf62f">micro_os_plus::micro_test_plus::mut</a>.</p>
+
+
+<p>Referenced by <a href="#ga00ea8f3dfb7cb0ef39919065321cf62f">micro_os_plus::micro_test_plus::mut</a>.</p>
+
+</div>
+</div>
 
 ### short\_name() {#gafc93799846770e521c4721d0de0a81cc}
 
@@ -719,9 +837,9 @@ keywords:
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000093>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000094>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-utility-functions/#ga791f22f0c85b6436c9016821907b0653">utility::extract_file_name()</a> (since 5.1.0)</p>
+<p>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-utility-functions/#ga791f22f0c85b6436c9016821907b0653">utility::extract_file_name()</a> (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -729,15 +847,15 @@ keywords:
 <p>Delegates to <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-utility-functions/#ga791f22f0c85b6436c9016821907b0653">utility::extract_file_name()</a></span>, the single implementation used by the framework, so both the <span class="doxyComputerOutput">/</span> and the <span class="doxyComputerOutput">\\endiskip</span> separators are recognised. If no separator is present, the original input string is returned.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/deprecated-cpp/#l00075">75</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/deprecated-cpp">deprecated.cpp</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/deprecated-cpp/#l00078">78</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/deprecated-cpp">deprecated.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gafc93799846770e521c4721d0de0a81cc">75</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#gafc93799846770e521c4721d0de0a81cc">short_name</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* name) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">76</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">77</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-utility-functions/#ga791f22f0c85b6436c9016821907b0653">utility::extract_file_name</a> (name);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">78</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gafc93799846770e521c4721d0de0a81cc">78</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#gafc93799846770e521c4721d0de0a81cc">short_name</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* name) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">79</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">80</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-utility-functions/#ga791f22f0c85b6436c9016821907b0653">utility::extract_file_name</a> (name);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">81</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 

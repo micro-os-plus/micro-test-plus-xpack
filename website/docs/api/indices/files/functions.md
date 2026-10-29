@@ -114,7 +114,9 @@ keywords:
 
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a67e71e2dce0120ad4839635830e80de8"><b>min_value()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga00ea8f3dfb7cb0ef39919065321cf62f"><b>mut()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">include/micro-os-plus/micro-test-plus/deprecated.h</a></li>
 </ul>
+<p>2 entries</p>
 
 ## - N -
 
@@ -230,7 +232,7 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-tap-cpp-/#ae344ed13847263c08e39a3e9266c0109"><b>yaml_double_quoted()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-tap-cpp">src/reporter-tap.cpp</a></li>
 </ul>
 <br/>
-<p>Total: 98 entries.</p>
+<p>Total: 99 entries.</p>
 
 <hr/>
 

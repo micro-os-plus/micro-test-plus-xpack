@@ -63,7 +63,7 @@ Suggested order of work:
 4. The deprecated definitions, last, since they need no separate work:
    #1, #4, #13, #18, #22, #23, #27, and #24. The first seven concern
    the overloaded operators, the literals, and the type wrappers, which
-   are deprecated since 5.1.0 (#166); their defects disappear when
+   are deprecated since 6.0.0 (#166); their defects disappear when
    these are removed in a future major release, so none of them needs
    a fix of its own. #24 is the removal of the members that were
    deprecated earlier, in the same release.
@@ -121,7 +121,7 @@ Tags:
   that `approx()` must be used where a tolerance is intended.
 
   Status: deprecated in `0b707ed6` (#166), not removed. The wrappers and
-  literals that carry the tolerance are deprecated since 5.1.0; the
+  literals that carry the tolerance are deprecated since 6.0.0; the
   digit-based tolerance itself is unchanged until they are removed.
 
 - **#2 — `eq()` and the other comparators compare arrays by
@@ -200,7 +200,7 @@ Tags:
   `[[deprecated ("use both()/either()/negate()")]]` for one release.
 
   Status: deprecated in `0b707ed6` (#166), not removed. The overloaded `and`,
-  `or`, and `not` operators are deprecated since 5.1.0 (they are removed
+  `or`, and `not` operators are deprecated since 6.0.0 (they are removed
   together with the operators). The definitions moved to `deprecated.h` in
   `1b55e954` (#169). The functions `both()` and `either()`, recommended
   above, were renamed `all_of()` and `any_of()`, and made variadic, in
@@ -403,7 +403,7 @@ Tags:
   common type before taking the minimum.
 
   Status: deprecated in `0b707ed6` (#166), not removed. The `to_f`/`to_d`
-  wrappers are deprecated since 5.1.0; the defect remains until they are
+  wrappers are deprecated since 6.0.0; the defect remains until they are
   removed.
 
 - **#14 — A null test case or suite name crashes.** [internal]
@@ -499,7 +499,7 @@ Tags:
   compare them the same way.
 
   Status: deprecated in `0b707ed6` (#166), not removed. The operators are
-  deprecated since 5.1.0; the difference disappears when they are removed.
+  deprecated since 6.0.0; the difference disappears when they are removed.
   The definitions moved to `deprecated.h` in `1b55e954` (#169).
 
 - **#19 — `std::chrono` durations can be neither printed nor
@@ -553,7 +553,7 @@ Tags:
   string-like types (those having `npos`, `find_first_of()`, and
   `substr()`), drop the dead default, and add the non-template overload
   `split (std::string_view input, std::string_view delimiters)
-  -> std::vector<std::string_view>`, so that literals and `const char*`
+-> std::vector<std::string_view>`, so that literals and `const char*`
   select it. The calls with an explicit `<std::string_view>` and those
   with a `std::string` keep their meaning. Not breaking.
 
@@ -570,14 +570,14 @@ Tags:
   declared with the literals, the second with the comparators. The
   same name for a value and for a check is confusing in the reports
   and in the documentation. Suggested change: keep `approx (lhs, rhs,
-  epsilon)` as the comparator and rename the wrapper (for example
+epsilon)` as the comparator and rename the wrapper (for example
   `to_d (value, epsilon)`, overloads of the existing wrappers, or
   `within (value, epsilon)`). Migration: keep the two-argument
   `approx()` as a `[[deprecated]]` alias for one release.
 
   Status: deprecated in `0b707ed6` (#166), not removed. The two-argument
-  `approx (value, epsilon)` is deprecated since 5.1.0, in favour of `approx
-  (lhs, rhs, epsilon)`. The definitions moved to `deprecated.h` in `1b55e954`
+  `approx (value, epsilon)` is deprecated since 6.0.0, in favour of `approx
+(lhs, rhs, epsilon)`. The definitions moved to `deprecated.h` in `1b55e954`
   (#169).
 
 - **#23 — The `_b` literal does not match `to_b`.** [breaking]
@@ -608,7 +608,7 @@ Tags:
   `_s` suffix can stay, since it matches `to_s`.
 
   Status: deprecated in `0b707ed6` (#166), not removed. The `_b` literal and
-  `to_b` are deprecated since 5.1.0. The definitions moved to `deprecated.h`
+  `to_b` are deprecated since 6.0.0. The definitions moved to `deprecated.h`
   in `1b55e954` (#169).
 
 - **#24 — Deprecated members named after types force qualified names
@@ -670,14 +670,14 @@ Tags:
   to 189: `2147483648_i` returns `integral_min_magnitude<int>`, which
   only supports unary minus, so `2147483648_i == 0` fails with
   `invalid operands to binary expression
-  ('integral_min_magnitude<int>' and 'int')`. The other out-of-range
+('integral_min_magnitude<int>' and 'int')`. The other out-of-range
   literals get a clear `static_assert`. Suggested change: give
   `integral_min_magnitude` a constrained conversion or comparison that
   fails with a `static_assert` stating that the value does not fit in
   the type of the literal.
 
   Status: deprecated in `0b707ed6` (#166), not removed. The literals are
-  deprecated since 5.1.0; the error message is unchanged until they are
+  deprecated since 6.0.0; the error message is unchanged until they are
   removed.
 
 ## 6. Suitability for embedded targets
@@ -729,7 +729,7 @@ Tags:
   user code.** [internal] **[confirmed]**
   With `-Weverything`, a user translation unit that includes the
   umbrella header gets warnings such as `'@tparam' command used in a
-  comment that is not attached to a template declaration` from
+comment that is not attached to a template declaration` from
   `extension.h` lines 181 to 431 and `test.h` lines 142, 919, 936,
   1875, and 1876 (Clang does not attach these comments to concepts).
   Apart from these and #29, `-Weverything` reports nothing in the
@@ -815,6 +815,6 @@ Tags:
   function declarations. Derived from reading; not probed with two
   translation units.
 - Cross build (GCC 15.2.1, Cortex-M4, `-Os -fno-exceptions -fno-rtti
-  -Wdouble-promotion -Wframe-larger-than=512`): no warnings; the
+-Wdouble-promotion -Wframe-larger-than=512`): no warnings; the
   largest frame is 320 bytes (`reporter_tap::end_suite()`); there is
   no recursion, including in the literal parsing.

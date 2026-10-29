@@ -32,4 +32,4 @@ ts.test ("Check compound conditions", [] (auto& t) {
 @endcode
 
 The overloaded logical operators of the `micro_test_plus::operators`
-namespace are deprecated since 5.1.0, in favour of these functions.
+namespace are deprecated since 6.0.0, in favour of these functions.

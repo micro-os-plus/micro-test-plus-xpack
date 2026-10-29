@@ -9,7 +9,7 @@ wrappers like `mt::to_i{expression}` convert dynamic values, so that the
 @par Deprecated
 The literals of the `literals` namespace, the `to_*` type wrappers,
 `to_t<T>`, and the two-argument `mt::approx (value, epsilon)` are
-deprecated since 5.1.0, in favour of the function comparators `mt::eq()`,
+deprecated since 6.0.0, in favour of the function comparators `mt::eq()`,
 `mt::ne()`, `mt::lt()`, `mt::le()`, `mt::gt()`, and `mt::ge()`, which
 compare and report the plain values, and of the function comparator
 `mt::approx (lhs, rhs, epsilon)`, which sets the tolerance explicitly. The

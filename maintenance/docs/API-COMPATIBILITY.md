@@ -418,7 +418,7 @@ is not listed here because it did not exist in v5.0.1.
 
 ### I.C. Behaviour changes (the code compiles, the results differ)
 
-All the items of this section are documented in the v5.1 compatibility
+All the items of this section are documented in the v6.0 compatibility
 notices (`website/docs/getting-started/_project/_compatibility-notices.mdx`);
 the paragraphs are named below by their first words.
 

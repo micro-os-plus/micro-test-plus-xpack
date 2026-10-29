@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="wall-e-icon-64.png"/></td>
   <td id="projectalign">
-   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;5.1.0</span>
+   <div id="projectname">micro-test-plus<span id="projectnumber">&#160;6.0.0</span>
    </div>
    <div id="projectbrief">µTest++ Testing Framework</div>
   </td>
@@ -196,10 +196,11 @@ requires std::is_arithmetic_v&lt;T&gt;</td></tr>
 <tr class="memdesc:a01df0bb54bda2662826e84e685374ce0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports a test suite skipped by the filter.  <br /></td></tr>
 <tr class="memitem:a1986653001ad23e18de13822bbcd022f" id="r_a1986653001ad23e18de13822bbcd022f"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a1986653001ad23e18de13822bbcd022f">skip_test_case</a> (const test_case &amp;test_case)=0</td></tr>
 <tr class="memdesc:a1986653001ad23e18de13822bbcd022f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports a test case skipped by the filter.  <br /></td></tr>
-<tr class="memitem:a467d1332df523b9acaa3ff82b0ebb714" id="r_a467d1332df523b9acaa3ff82b0ebb714"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a467d1332df523b9acaa3ff82b0ebb714">verbosity</a> (void) const noexcept -&gt; <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914b">micro_test_plus::verbosity</a></td></tr>
-<tr class="memdesc:a467d1332df523b9acaa3ff82b0ebb714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated access to the verbosity level.  <br /></td></tr>
 <tr class="memitem:a0e6f0a129d495a7e9d57ef71412cd88f" id="r_a0e6f0a129d495a7e9d57ef71412cd88f"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a0e6f0a129d495a7e9d57ef71412cd88f">writes_passed_checks</a> (void) const noexcept</td></tr>
 <tr class="memdesc:a0e6f0a129d495a7e9d57ef71412cd88f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the passed checks are written anywhere.  <br /></td></tr>
+<tr id="pub-methods-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Deprecated Functions</div></td></tr>
+<tr class="memitem:a467d1332df523b9acaa3ff82b0ebb714" id="r_a467d1332df523b9acaa3ff82b0ebb714"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a467d1332df523b9acaa3ff82b0ebb714">verbosity</a> (void) const noexcept -&gt; <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914b">micro_test_plus::verbosity</a></td></tr>
+<tr class="memdesc:a467d1332df523b9acaa3ff82b0ebb714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated access to the verbosity level.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -359,13 +360,13 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  182</span>    <span class="comment">// Pre-allocate buffer to reduce dynamic allocations.</span></div>
 <div class="line"><span class="lineno">  183</span>    <a class="code hl_variable" href="#a0972f104175c075295a8aa385e90aad4">buffer_</a>.reserve (128);</div>
 <div class="line"><span class="lineno">  184</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_a0972f104175c075295a8aa385e90aad4"><div class="ttname"><a href="#a0972f104175c075295a8aa385e90aad4">micro_os_plus::micro_test_plus::detail::reporter::buffer_</a></div><div class="ttdeci">std::string buffer_</div><div class="ttdoc">Output accumulation buffer.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01219">reporter.h:1219</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_a0d73674812cca717a754137b4b26ed89"><div class="ttname"><a href="#a0d73674812cca717a754137b4b26ed89">micro_os_plus::micro_test_plus::detail::reporter::has_output_file_error_</a></div><div class="ttdeci">bool has_output_file_error_</div><div class="ttdoc">Whether the output file could not be opened.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01330">reporter.h:1330</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_a2560a0f1cf935e420a2e584ccddf1a1e"><div class="ttname"><a href="#a2560a0f1cf935e420a2e584ccddf1a1e">micro_os_plus::micro_test_plus::detail::reporter::verbosity_</a></div><div class="ttdeci">const micro_test_plus::verbosity verbosity_</div><div class="ttdoc">The verbosity level for test reporting.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01198">reporter.h:1198</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_a270178ed5fbe0d3f4d72766c2984582a"><div class="ttname"><a href="#a270178ed5fbe0d3f4d72766c2984582a">micro_os_plus::micro_test_plus::detail::reporter::output_file_</a></div><div class="ttdeci">FILE * output_file_</div><div class="ttdoc">Optional output file, receiving a copy of the test report.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01351">reporter.h:1351</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_ac3878d2e85ed2cae4c71c793d7a8f52e"><div class="ttname"><a href="#ac3878d2e85ed2cae4c71c793d7a8f52e">micro_os_plus::micro_test_plus::detail::reporter::output_file_path_</a></div><div class="ttdeci">std::string output_file_path_</div><div class="ttdoc">Path of the optional output file.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01340">reporter.h:1340</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_a0972f104175c075295a8aa385e90aad4"><div class="ttname"><a href="#a0972f104175c075295a8aa385e90aad4">micro_os_plus::micro_test_plus::detail::reporter::buffer_</a></div><div class="ttdeci">std::string buffer_</div><div class="ttdoc">Output accumulation buffer.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01228">reporter.h:1228</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_a0d73674812cca717a754137b4b26ed89"><div class="ttname"><a href="#a0d73674812cca717a754137b4b26ed89">micro_os_plus::micro_test_plus::detail::reporter::has_output_file_error_</a></div><div class="ttdeci">bool has_output_file_error_</div><div class="ttdoc">Whether the output file could not be opened.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01339">reporter.h:1339</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_a2560a0f1cf935e420a2e584ccddf1a1e"><div class="ttname"><a href="#a2560a0f1cf935e420a2e584ccddf1a1e">micro_os_plus::micro_test_plus::detail::reporter::verbosity_</a></div><div class="ttdeci">const micro_test_plus::verbosity verbosity_</div><div class="ttdoc">The verbosity level for test reporting.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01207">reporter.h:1207</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_a270178ed5fbe0d3f4d72766c2984582a"><div class="ttname"><a href="#a270178ed5fbe0d3f4d72766c2984582a">micro_os_plus::micro_test_plus::detail::reporter::output_file_</a></div><div class="ttdeci">FILE * output_file_</div><div class="ttdoc">Optional output file, receiving a copy of the test report.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01360">reporter.h:1360</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_ac3878d2e85ed2cae4c71c793d7a8f52e"><div class="ttname"><a href="#ac3878d2e85ed2cae4c71c793d7a8f52e">micro_os_plus::micro_test_plus::detail::reporter::output_file_path_</a></div><div class="ttdeci">std::string output_file_path_</div><div class="ttdoc">Path of the optional output file.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01349">reporter.h:1349</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8h_source.html#l01219">buffer_</a>, <a class="el" href="reporter_8h_source.html#l01330">has_output_file_error_</a>, <a class="el" href="reporter_8h_source.html#l01351">output_file_</a>, <a class="el" href="runner-options_8h_source.html#l00355">micro_os_plus::micro_test_plus::runner_options::output_file_path</a>, <a class="el" href="reporter_8h_source.html#l01340">output_file_path_</a>, and <a class="el" href="reporter_8h_source.html#l01198">verbosity_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8h_source.html#l01228">buffer_</a>, <a class="el" href="reporter_8h_source.html#l01339">has_output_file_error_</a>, <a class="el" href="reporter_8h_source.html#l01360">output_file_</a>, <a class="el" href="runner-options_8h_source.html#l00355">micro_os_plus::micro_test_plus::runner_options::output_file_path</a>, <a class="el" href="reporter_8h_source.html#l01349">output_file_path_</a>, and <a class="el" href="reporter_8h_source.html#l01207">verbosity_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00080">micro_os_plus::micro_test_plus::detail::reporter_human::reporter_human()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00229">micro_os_plus::micro_test_plus::detail::reporter_tap::reporter_tap()</a>, <a class="el" href="reporter_8h_source.html#l00302">micro_test_plus::runner</a>, <a class="el" href="reporter_8cpp_source.html#l00669">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00632">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00647">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00608">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00594">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00681">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00620">operator&lt;&lt;()</a>, <a class="el" href="reporter-inlines_8h_source.html#l00084">operator&lt;&lt;()</a>, and <a class="el" href="reporter-inlines_8h_source.html#l00101">operator&lt;&lt;()</a>.</p>
 
@@ -420,7 +421,7 @@ Friends</h2></td></tr>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_abaee31ffca8e65c9af34f7f67227c5b3"><div class="ttname"><a href="#abaee31ffca8e65c9af34f7f67227c5b3">micro_os_plus::micro_test_plus::detail::reporter::write_console</a></div><div class="ttdeci">void write_console(const char *format,...)</div><div class="ttdoc">Writes formatted text to the console.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8cpp_source.html#l00387">reporter.cpp:387</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">micro_os_plus::micro_test_plus::verbosity::silent</a></div><div class="ttdeci">@ silent</div><div class="ttdef"><b>Definition</b> <a href="runner-options_8h_source.html#l00106">runner-options.h:106</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8h_source.html#l01351">output_file_</a>, <a class="el" href="reporter_8h_source.html#l01340">output_file_path_</a>, <a class="el" href="runner-options_8h_source.html#l00106">micro_os_plus::micro_test_plus::silent</a>, <a class="el" href="reporter_8h_source.html#l01198">verbosity_</a>, and <a class="el" href="reporter_8cpp_source.html#l00387">write_console()</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8h_source.html#l01360">output_file_</a>, <a class="el" href="reporter_8h_source.html#l01349">output_file_path_</a>, <a class="el" href="runner-options_8h_source.html#l00106">micro_os_plus::micro_test_plus::silent</a>, <a class="el" href="reporter_8h_source.html#l01207">verbosity_</a>, and <a class="el" href="reporter_8cpp_source.html#l00387">write_console()</a>.</p>
 
 </div>
 </div>
@@ -461,7 +462,7 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 <dl class="section user"><dt>Returns</dt><dd>Nothing.</dd></dl>
-<dl class="section since"><dt>Since</dt><dd>5.1.0 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>6.0.0 </dd></dl>
 
 <p>Implemented in <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human.html#a66f620b093f92e0def6bf5297fb6d6ee">micro_os_plus::micro_test_plus::detail::reporter_human</a>, and <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap.html#aa8802baefcb360f48451418c783ac413">micro_os_plus::micro_test_plus::detail::reporter_tap</a>.</p>
 
@@ -526,7 +527,7 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Called by <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1suite.html#a432deda5a8721472e8775cbc98451722" title="Executes the suite body by invoking the stored callable.">suite::run()</a></span> before the suite body, for the suites registered with <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a4069fe957bbc7a9217ca2dd4d2034a97" title="Adds a test suite to the runner, to be run by run().">runner::add_suite()</a></span> and for the static suites, and by <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#aac24d1193ac0579dd6ac3c523a32015f" title="Adds the top suite and returns it.">runner::add_top_suite()</a></span> for the top suite.</p>
+<p>Called by <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1suite.html#a432deda5a8721472e8775cbc98451722" title="Executes the suite body by invoking the stored callable.">suite::run()</a></span> before the suite body, for the suites registered with <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a4069fe957bbc7a9217ca2dd4d2034a97" title="Adds a test suite to the runner, to be run by run_suites().">runner::add_suite()</a></span> and for the static suites, and by <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#aac24d1193ac0579dd6ac3c523a32015f" title="Adds the top suite and returns it.">runner::add_top_suite()</a></span> for the top suite.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">suite</td><td>Reference to the test suite. </td></tr>
@@ -576,7 +577,7 @@ Friends</h2></td></tr>
 
 <p class="reference">References <a class="el" href="reporter_8h_source.html#l00285">micro_test_plus::test_case</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00541">micro_os_plus::micro_test_plus::test_case::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00578">micro_os_plus::micro_test_plus::test_case::run()</a>.</p>
 
 </div>
 </div>
@@ -613,10 +614,10 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  741</span>    <a class="code hl_variable" href="#ab8acd7e0c7bc5240a0912affd115305b">failures_</a>.clear ();</div>
 <div class="line"><span class="lineno">  742</span>    <a class="code hl_variable" href="#a970a08a00e70f1574033085350656230">buffer_has_failures_</a> = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">  743</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_a970a08a00e70f1574033085350656230"><div class="ttname"><a href="#a970a08a00e70f1574033085350656230">micro_os_plus::micro_test_plus::detail::reporter::buffer_has_failures_</a></div><div class="ttdeci">bool buffer_has_failures_</div><div class="ttdoc">Whether the output buffer contains a failed check.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01230">reporter.h:1230</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_ab8acd7e0c7bc5240a0912affd115305b"><div class="ttname"><a href="#ab8acd7e0c7bc5240a0912affd115305b">micro_os_plus::micro_test_plus::detail::reporter::failures_</a></div><div class="ttdeci">std::string failures_</div><div class="ttdoc">The lines of the failed checks, for the quiet verbosity.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01241">reporter.h:1241</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_a970a08a00e70f1574033085350656230"><div class="ttname"><a href="#a970a08a00e70f1574033085350656230">micro_os_plus::micro_test_plus::detail::reporter::buffer_has_failures_</a></div><div class="ttdeci">bool buffer_has_failures_</div><div class="ttdoc">Whether the output buffer contains a failed check.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01239">reporter.h:1239</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_ab8acd7e0c7bc5240a0912affd115305b"><div class="ttname"><a href="#ab8acd7e0c7bc5240a0912affd115305b">micro_os_plus::micro_test_plus::detail::reporter::failures_</a></div><div class="ttdeci">std::string failures_</div><div class="ttdoc">The lines of the failed checks, for the quiet verbosity.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01250">reporter.h:1250</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8h_source.html#l01219">buffer_</a>, <a class="el" href="reporter_8h_source.html#l01230">buffer_has_failures_</a>, and <a class="el" href="reporter_8h_source.html#l01241">failures_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8h_source.html#l01228">buffer_</a>, <a class="el" href="reporter_8h_source.html#l01239">buffer_has_failures_</a>, and <a class="el" href="reporter_8h_source.html#l01250">failures_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00738">micro_os_plus::micro_test_plus::detail::reporter_human::abort_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00947">micro_os_plus::micro_test_plus::detail::reporter_tap::abort_session()</a>, <a class="el" href="#a324aa273975068c140ab6eecc7e722c9">comment_prefix()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00814">micro_os_plus::micro_test_plus::detail::reporter_human::commit_buffer()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l01014">micro_os_plus::micro_test_plus::detail::reporter_tap::commit_buffer()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00254">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00386">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00451">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00606">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>.</p>
 
@@ -726,7 +727,7 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  962</span>  }</div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_a844e80839c81133b52ee3beabf64d942"><div class="ttname"><a href="#a844e80839c81133b52ee3beabf64d942">micro_os_plus::micro_test_plus::detail::reporter::commit_buffer</a></div><div class="ttdeci">virtual void commit_buffer(void)=0</div><div class="ttdoc">Writes the results buffered for the outer test case before a nested test case begins or is skipped.</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8h_source.html#l01219">buffer_</a>, and <a class="el" href="#a844e80839c81133b52ee3beabf64d942">commit_buffer()</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8h_source.html#l01228">buffer_</a>, and <a class="el" href="#a844e80839c81133b52ee3beabf64d942">commit_buffer()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00397">micro_os_plus::micro_test_plus::detail::reporter_human::begin_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00549">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_test_case()</a>, <a class="el" href="#a844e80839c81133b52ee3beabf64d942">commit_buffer()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00676">micro_os_plus::micro_test_plus::detail::reporter_human::skip_test_case()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00888">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_test_case()</a>.</p>
 
@@ -784,7 +785,7 @@ Friends</h2></td></tr>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">micro_os_plus::micro_test_plus::verbosity::quiet</a></div><div class="ttdeci">@ quiet</div><div class="ttdef"><b>Definition</b> <a href="runner-options_8h_source.html#l00107">runner-options.h:107</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">micro_os_plus::micro_test_plus::verbosity::normal</a></div><div class="ttdeci">@ normal</div><div class="ttdef"><b>Definition</b> <a href="runner-options_8h_source.html#l00111">runner-options.h:111</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8h_source.html#l01219">buffer_</a>, <a class="el" href="reporter_8h_source.html#l01241">failures_</a>, <a class="el" href="runner-options_8h_source.html#l00111">micro_os_plus::micro_test_plus::normal</a>, <a class="el" href="runner-options_8h_source.html#l00107">micro_os_plus::micro_test_plus::quiet</a>, <a class="el" href="runner-options_8h_source.html#l00114">micro_os_plus::micro_test_plus::verbose</a>, and <a class="el" href="reporter_8h_source.html#l01198">verbosity_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8h_source.html#l01228">buffer_</a>, <a class="el" href="reporter_8h_source.html#l01250">failures_</a>, <a class="el" href="runner-options_8h_source.html#l00111">micro_os_plus::micro_test_plus::normal</a>, <a class="el" href="runner-options_8h_source.html#l00107">micro_os_plus::micro_test_plus::quiet</a>, <a class="el" href="runner-options_8h_source.html#l00114">micro_os_plus::micro_test_plus::verbose</a>, and <a class="el" href="reporter_8h_source.html#l01207">verbosity_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00738">micro_os_plus::micro_test_plus::detail::reporter_human::abort_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00947">micro_os_plus::micro_test_plus::detail::reporter_tap::abort_session()</a>, <a class="el" href="#a324aa273975068c140ab6eecc7e722c9">comment_prefix()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00814">micro_os_plus::micro_test_plus::detail::reporter_human::commit_buffer()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l01014">micro_os_plus::micro_test_plus::detail::reporter_tap::commit_buffer()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00254">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00386">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00451">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00606">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>.</p>
 
@@ -814,7 +815,7 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  240</span>    <a class="code hl_variable" href="#a0972f104175c075295a8aa385e90aad4">buffer_</a>.append (<span class="stringliteral">&quot;\n&quot;</span>);</div>
 <div class="line"><span class="lineno">  241</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8h_source.html#l01219">buffer_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8h_source.html#l01228">buffer_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00224">micro_os_plus::micro_test_plus::detail::endl()</a>, and <a class="el" href="reporter_8h_source.html#l00302">micro_test_plus::runner</a>.</p>
 
@@ -842,7 +843,7 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Called by <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a97f725cb167a2b464fac0eb88a0c8a46" title="Runs the registered suites, ends the session, and returns the exit code.">runner::run()</a></span>, after all suites have run; implementations display the session summary.</p>
+<p>Called by <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a700e3ef1f955492cd84235bd388dcdf2" title="Runs the registered suites, ends the session, and returns the exit code.">runner::run_suites()</a></span>, after all suites have run; implementations display the session summary.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">runner</td><td>Reference to the test runner. </td></tr>
@@ -879,7 +880,7 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Called by <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1suite.html#a432deda5a8721472e8775cbc98451722" title="Executes the suite body by invoking the stored callable.">suite::run()</a></span> after the suite body, also when an exception escaped it, for the suites registered with <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a4069fe957bbc7a9217ca2dd4d2034a97" title="Adds a test suite to the runner, to be run by run().">runner::add_suite()</a></span> and for the static suites, and by <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a97f725cb167a2b464fac0eb88a0c8a46" title="Runs the registered suites, ends the session, and returns the exit code.">runner::run()</a></span> for the top suite; implementations display the suite results.</p>
+<p>Called by <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1suite.html#a432deda5a8721472e8775cbc98451722" title="Executes the suite body by invoking the stored callable.">suite::run()</a></span> after the suite body, also when an exception escaped it, for the suites registered with <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a4069fe957bbc7a9217ca2dd4d2034a97" title="Adds a test suite to the runner, to be run by run_suites().">runner::add_suite()</a></span> and for the static suites, and by <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a700e3ef1f955492cd84235bd388dcdf2" title="Runs the registered suites, ends the session, and returns the exit code.">runner::run_suites()</a></span> for the top suite; implementations display the suite results.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">suite</td><td>Reference to the test suite. </td></tr>
@@ -929,7 +930,7 @@ Friends</h2></td></tr>
 
 <p class="reference">References <a class="el" href="reporter_8h_source.html#l00285">micro_test_plus::test_case</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00541">micro_os_plus::micro_test_plus::test_case::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00578">micro_os_plus::micro_test_plus::test_case::run()</a>.</p>
 
 </div>
 </div>
@@ -975,10 +976,10 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  354</span>    <a class="code hl_variable" href="#ad0a2ebe9aedaecf71fc76993122e661f">current_suite_</a> = &amp;suite;</div>
 <div class="line"><span class="lineno">  355</span>    <a class="code hl_variable" href="#a6b07e60aa8baeb90821690d1ff9c65e6">suite_displayed_</a> = displayed;</div>
 <div class="line"><span class="lineno">  356</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_a6b07e60aa8baeb90821690d1ff9c65e6"><div class="ttname"><a href="#a6b07e60aa8baeb90821690d1ff9c65e6">micro_os_plus::micro_test_plus::detail::reporter::suite_displayed_</a></div><div class="ttdeci">bool suite_displayed_</div><div class="ttdoc">Whether the heading of the current suite was displayed on the console.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01296">reporter.h:1296</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_ad0a2ebe9aedaecf71fc76993122e661f"><div class="ttname"><a href="#ad0a2ebe9aedaecf71fc76993122e661f">micro_os_plus::micro_test_plus::detail::reporter::current_suite_</a></div><div class="ttdeci">const suite * current_suite_</div><div class="ttdoc">The suite that has begun and not yet ended.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01285">reporter.h:1285</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_a6b07e60aa8baeb90821690d1ff9c65e6"><div class="ttname"><a href="#a6b07e60aa8baeb90821690d1ff9c65e6">micro_os_plus::micro_test_plus::detail::reporter::suite_displayed_</a></div><div class="ttdeci">bool suite_displayed_</div><div class="ttdoc">Whether the heading of the current suite was displayed on the console.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01305">reporter.h:1305</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_ad0a2ebe9aedaecf71fc76993122e661f"><div class="ttname"><a href="#ad0a2ebe9aedaecf71fc76993122e661f">micro_os_plus::micro_test_plus::detail::reporter::current_suite_</a></div><div class="ttdeci">const suite * current_suite_</div><div class="ttdoc">The suite that has begun and not yet ended.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01294">reporter.h:1294</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8h_source.html#l01285">current_suite_</a>, and <a class="el" href="reporter_8h_source.html#l01296">suite_displayed_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8h_source.html#l01294">current_suite_</a>, and <a class="el" href="reporter_8h_source.html#l01305">suite_displayed_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00207">micro_os_plus::micro_test_plus::detail::reporter_human::begin_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00341">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_suite()</a>, and <a class="el" href="#a324aa273975068c140ab6eecc7e722c9">comment_prefix()</a>.</p>
 
@@ -1039,7 +1040,7 @@ Friends</h2></td></tr>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_a904f410e240644fa77d65e686e6fc3eb"><div class="ttname"><a href="#a904f410e240644fa77d65e686e6fc3eb">micro_os_plus::micro_test_plus::detail::reporter::test_case</a></div><div class="ttdeci">friend class micro_test_plus::test_case</div><div class="ttdoc">The test case, which creates the checks.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l00285">reporter.h:285</a></div></div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_adce64d6a989f193c1d0c306039a3639c"><div class="ttname"><a href="#adce64d6a989f193c1d0c306039a3639c">micro_os_plus::micro_test_plus::detail::reporter::output_fail_suffix</a></div><div class="ttdeci">virtual void output_fail_suffix(const reflection::source_location &amp;location, check_kind kind, const test_case &amp;test_case)=0</div><div class="ttdoc">Outputs the suffix for a failing condition.</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8h_source.html#l01219">buffer_</a>, <a class="el" href="check-result_8h_source.html#l00172">micro_os_plus::micro_test_plus::detail::failure_info::has_expression</a>, <a class="el" href="check-result_8h_source.html#l00155">micro_os_plus::micro_test_plus::detail::failure_info::kind</a>, <a class="el" href="check-result_8h_source.html#l00180">micro_os_plus::micro_test_plus::detail::failure_info::location</a>, <a class="el" href="reporter_8cpp_source.html#l00337">mark_failure()</a>, <a class="el" href="check-result_8h_source.html#l00163">micro_os_plus::micro_test_plus::detail::failure_info::message</a>, <a class="el" href="reporter_8h_source.html#l00285">micro_test_plus::test_case</a>, <a class="el" href="#a24888ee49f3e3abb1a849e309a099189">output_fail_prefix()</a>, and <a class="el" href="#adce64d6a989f193c1d0c306039a3639c">output_fail_suffix()</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8h_source.html#l01228">buffer_</a>, <a class="el" href="check-result_8h_source.html#l00172">micro_os_plus::micro_test_plus::detail::failure_info::has_expression</a>, <a class="el" href="check-result_8h_source.html#l00155">micro_os_plus::micro_test_plus::detail::failure_info::kind</a>, <a class="el" href="check-result_8h_source.html#l00180">micro_os_plus::micro_test_plus::detail::failure_info::location</a>, <a class="el" href="reporter_8cpp_source.html#l00337">mark_failure()</a>, <a class="el" href="check-result_8h_source.html#l00163">micro_os_plus::micro_test_plus::detail::failure_info::message</a>, <a class="el" href="reporter_8h_source.html#l00285">micro_test_plus::test_case</a>, <a class="el" href="#a24888ee49f3e3abb1a849e309a099189">output_fail_prefix()</a>, and <a class="el" href="#adce64d6a989f193c1d0c306039a3639c">output_fail_suffix()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00315">micro_os_plus::micro_test_plus::test_case::fail_unexpected_exception()</a>, and <a class="el" href="reporter_8h_source.html#l00302">micro_test_plus::runner</a>.</p>
 
@@ -1080,7 +1081,7 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 <dl class="section user"><dt>Returns</dt><dd>Nothing. </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>5.1.0 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>6.0.0 </dd></dl>
 
 <p>Implemented in <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human.html#afd98d9a322823d67448d4ba301846392">micro_os_plus::micro_test_plus::detail::reporter_human</a>, and <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap.html#a314df80e98fe6fa5de008d6708a14925">micro_os_plus::micro_test_plus::detail::reporter_tap</a>.</p>
 
@@ -1116,7 +1117,7 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  571</span>      }</div>
 <div class="line"><span class="lineno">  572</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8h_source.html#l01351">output_file_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8h_source.html#l01360">output_file_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00738">micro_os_plus::micro_test_plus::detail::reporter_human::abort_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00947">micro_os_plus::micro_test_plus::detail::reporter_tap::abort_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00127">micro_os_plus::micro_test_plus::detail::reporter_human::begin_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00262">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00207">micro_os_plus::micro_test_plus::detail::reporter_human::begin_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00341">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00397">micro_os_plus::micro_test_plus::detail::reporter_human::begin_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00549">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_test_case()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00814">micro_os_plus::micro_test_plus::detail::reporter_human::commit_buffer()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l01014">micro_os_plus::micro_test_plus::detail::reporter_tap::commit_buffer()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00161">micro_os_plus::micro_test_plus::detail::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00299">micro_os_plus::micro_test_plus::detail::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00254">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00386">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00451">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00606">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="reporter_8h_source.html#l00302">micro_test_plus::runner</a>, <a class="el" href="reporter-human_8cpp_source.html#l00333">micro_os_plus::micro_test_plus::detail::reporter_human::skip_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00480">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00676">micro_os_plus::micro_test_plus::detail::reporter_human::skip_test_case()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00888">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_test_case()</a>.</p>
 
@@ -1176,7 +1177,7 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  767</span>      }</div>
 <div class="line"><span class="lineno">  768</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="stopwatch_8cpp_source.html#l00116">micro_os_plus::micro_test_plus::detail::stopwatch::elapsed()</a>, and <a class="el" href="reporter_8h_source.html#l00965">elapsed_time_size_</a>.</p>
+<p class="reference">References <a class="el" href="stopwatch_8cpp_source.html#l00116">micro_os_plus::micro_test_plus::detail::stopwatch::elapsed()</a>, and <a class="el" href="reporter_8h_source.html#l00974">elapsed_time_size_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00161">micro_os_plus::micro_test_plus::detail::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00299">micro_os_plus::micro_test_plus::detail::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00254">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00386">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>.</p>
 
@@ -1250,13 +1251,13 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  867</span>              message_skipped_suites);</div>
 <div class="line"><span class="lineno">  868</span>  }</div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_a68a030feff1f481126e9a6d170331420"><div class="ttname"><a href="#a68a030feff1f481126e9a6d170331420">micro_os_plus::micro_test_plus::detail::reporter::runner</a></div><div class="ttdeci">friend class micro_test_plus::runner</div><div class="ttdoc">The runner, which lists the test cases.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l00302">reporter.h:302</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_aaa55b147a670878984952ca1112cecd8"><div class="ttname"><a href="#aaa55b147a670878984952ca1112cecd8">micro_os_plus::micro_test_plus::detail::reporter::totals_size_</a></div><div class="ttdeci">static constexpr size_t totals_size_</div><div class="ttdoc">Size of the array that receives the totals text.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01007">reporter.h:1008</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_aaa55b147a670878984952ca1112cecd8"><div class="ttname"><a href="#aaa55b147a670878984952ca1112cecd8">micro_os_plus::micro_test_plus::detail::reporter::totals_size_</a></div><div class="ttdeci">static constexpr size_t totals_size_</div><div class="ttdoc">Size of the array that receives the totals text.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01016">reporter.h:1017</a></div></div>
 <div class="ttc" id="adetail_8h_html_aaec16ed032c8fc52ba753a273b788381"><div class="ttname"><a href="detail_8h.html#aaec16ed032c8fc52ba753a273b788381">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a></div><div class="ttdeci">#define MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</div><div class="ttdoc">Portable printf() conversion for the size_t values.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00096">detail.h:96</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_html_a0d696f5039163e76ec2e4005980ca285"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03.html#a0d696f5039163e76ec2e4005980ca285">micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter.cpp}::format_skipped</a></div><div class="ttdeci">void format_skipped(size_t count, char(&amp;message)[fragment_size])</div><div class="ttdoc">Formats the number of items skipped by the filter.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8cpp_source.html#l00817">reporter.cpp:817</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_html_a1ffff9ae8f2024f3bff18ec45b2baaf9"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03.html#a1ffff9ae8f2024f3bff18ec45b2baaf9">micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter.cpp}::fragment_size</a></div><div class="ttdeci">constexpr size_t fragment_size</div><div class="ttdoc">Size of the array that receives a fragment of the totals.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8cpp_source.html#l00783">reporter.cpp:784</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_html_a25afc917399bf6d116b401e47ca8a4d5"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03.html#a25afc917399bf6d116b401e47ca8a4d5">micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter.cpp}::plural</a></div><div class="ttdeci">constexpr const char * plural(size_t count) noexcept</div><div class="ttdoc">Returns the plural suffix for a count.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8cpp_source.html#l00797">reporter.cpp:797</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="counters-inlines_8h_source.html#l00177">micro_os_plus::micro_test_plus::counters::executed_test_cases()</a>, <a class="el" href="counters-inlines_8h_source.html#l00157">micro_os_plus::micro_test_plus::counters::failed_checks()</a>, <a class="el" href="detail_8h_source.html#l00096">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a>, <a class="el" href="reporter_8h_source.html#l00302">micro_test_plus::runner</a>, <a class="el" href="counters-inlines_8h_source.html#l00134">micro_os_plus::micro_test_plus::counters::passed_checks()</a>, <a class="el" href="runner_8cpp_source.html#l00897">micro_os_plus::micro_test_plus::runner::skipped_suites_count()</a>, <a class="el" href="counters-inlines_8h_source.html#l00210">micro_os_plus::micro_test_plus::counters::skipped_test_cases()</a>, <a class="el" href="runner_8cpp_source.html#l00886">micro_os_plus::micro_test_plus::runner::total_suites_count()</a>, <a class="el" href="runner-inlines_8h_source.html#l00121">micro_os_plus::micro_test_plus::runner::totals()</a>, and <a class="el" href="reporter_8h_source.html#l01008">totals_size_</a>.</p>
+<p class="reference">References <a class="el" href="counters-inlines_8h_source.html#l00177">micro_os_plus::micro_test_plus::counters::executed_test_cases()</a>, <a class="el" href="counters-inlines_8h_source.html#l00157">micro_os_plus::micro_test_plus::counters::failed_checks()</a>, <a class="el" href="detail_8h_source.html#l00096">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a>, <a class="el" href="reporter_8h_source.html#l00302">micro_test_plus::runner</a>, <a class="el" href="counters-inlines_8h_source.html#l00134">micro_os_plus::micro_test_plus::counters::passed_checks()</a>, <a class="el" href="runner_8cpp_source.html#l00910">micro_os_plus::micro_test_plus::runner::skipped_suites_count()</a>, <a class="el" href="counters-inlines_8h_source.html#l00210">micro_os_plus::micro_test_plus::counters::skipped_test_cases()</a>, <a class="el" href="runner_8cpp_source.html#l00899">micro_os_plus::micro_test_plus::runner::total_suites_count()</a>, <a class="el" href="runner-inlines_8h_source.html#l00121">micro_os_plus::micro_test_plus::runner::totals()</a>, and <a class="el" href="reporter_8h_source.html#l01017">totals_size_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00161">micro_os_plus::micro_test_plus::detail::reporter_human::end_session()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00299">micro_os_plus::micro_test_plus::detail::reporter_tap::end_session()</a>.</p>
 
@@ -1329,7 +1330,7 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  904</span>      }</div>
 <div class="line"><span class="lineno">  905</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="counters-inlines_8h_source.html#l00177">micro_os_plus::micro_test_plus::counters::executed_test_cases()</a>, <a class="el" href="counters-inlines_8h_source.html#l00157">micro_os_plus::micro_test_plus::counters::failed_checks()</a>, <a class="el" href="detail_8h_source.html#l00096">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a>, <a class="el" href="counters-inlines_8h_source.html#l00223">micro_os_plus::micro_test_plus::counters::passed()</a>, <a class="el" href="counters-inlines_8h_source.html#l00134">micro_os_plus::micro_test_plus::counters::passed_checks()</a>, <a class="el" href="counters-inlines_8h_source.html#l00210">micro_os_plus::micro_test_plus::counters::skipped_test_cases()</a>, <a class="el" href="test-inlines_8h_source.html#l00162">micro_os_plus::micro_test_plus::detail::runnable_base::totals()</a>, and <a class="el" href="reporter_8h_source.html#l01008">totals_size_</a>.</p>
+<p class="reference">References <a class="el" href="counters-inlines_8h_source.html#l00177">micro_os_plus::micro_test_plus::counters::executed_test_cases()</a>, <a class="el" href="counters-inlines_8h_source.html#l00157">micro_os_plus::micro_test_plus::counters::failed_checks()</a>, <a class="el" href="detail_8h_source.html#l00096">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a>, <a class="el" href="counters-inlines_8h_source.html#l00223">micro_os_plus::micro_test_plus::counters::passed()</a>, <a class="el" href="counters-inlines_8h_source.html#l00134">micro_os_plus::micro_test_plus::counters::passed_checks()</a>, <a class="el" href="counters-inlines_8h_source.html#l00210">micro_os_plus::micro_test_plus::counters::skipped_test_cases()</a>, <a class="el" href="test-inlines_8h_source.html#l00162">micro_os_plus::micro_test_plus::detail::runnable_base::totals()</a>, and <a class="el" href="reporter_8h_source.html#l01017">totals_size_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00254">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00386">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>.</p>
 
@@ -1403,7 +1404,7 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  942</span>      }</div>
 <div class="line"><span class="lineno">  943</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="counters-inlines_8h_source.html#l00157">micro_os_plus::micro_test_plus::counters::failed_checks()</a>, <a class="el" href="counters-inlines_8h_source.html#l00200">micro_os_plus::micro_test_plus::counters::failed_test_cases()</a>, <a class="el" href="detail_8h_source.html#l00096">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a>, <a class="el" href="reporter_8h_source.html#l00285">micro_test_plus::test_case</a>, <a class="el" href="counters-inlines_8h_source.html#l00223">micro_os_plus::micro_test_plus::counters::passed()</a>, <a class="el" href="counters-inlines_8h_source.html#l00134">micro_os_plus::micro_test_plus::counters::passed_checks()</a>, <a class="el" href="test-inlines_8h_source.html#l00162">micro_os_plus::micro_test_plus::detail::runnable_base::totals()</a>, and <a class="el" href="reporter_8h_source.html#l01008">totals_size_</a>.</p>
+<p class="reference">References <a class="el" href="counters-inlines_8h_source.html#l00157">micro_os_plus::micro_test_plus::counters::failed_checks()</a>, <a class="el" href="counters-inlines_8h_source.html#l00200">micro_os_plus::micro_test_plus::counters::failed_test_cases()</a>, <a class="el" href="detail_8h_source.html#l00096">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a>, <a class="el" href="reporter_8h_source.html#l00285">micro_test_plus::test_case</a>, <a class="el" href="counters-inlines_8h_source.html#l00223">micro_os_plus::micro_test_plus::counters::passed()</a>, <a class="el" href="counters-inlines_8h_source.html#l00134">micro_os_plus::micro_test_plus::counters::passed_checks()</a>, <a class="el" href="test-inlines_8h_source.html#l00162">micro_os_plus::micro_test_plus::detail::runnable_base::totals()</a>, and <a class="el" href="reporter_8h_source.html#l01017">totals_size_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00451">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00606">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>.</p>
 
@@ -1447,7 +1448,7 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  581</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a0d73674812cca717a754137b4b26ed89">has_output_file_error_</a>;</div>
 <div class="line"><span class="lineno">  582</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8h_source.html#l01330">has_output_file_error_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8h_source.html#l01339">has_output_file_error_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter_8h_source.html#l00302">micro_test_plus::runner</a>.</p>
 
@@ -1494,7 +1495,7 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  343</span>    <a class="code hl_variable" href="#a970a08a00e70f1574033085350656230">buffer_has_failures_</a> = <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">  344</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8h_source.html#l01219">buffer_</a>, <a class="el" href="reporter_8h_source.html#l01230">buffer_has_failures_</a>, <a class="el" href="reporter_8h_source.html#l01241">failures_</a>, <a class="el" href="runner-options_8h_source.html#l00107">micro_os_plus::micro_test_plus::quiet</a>, and <a class="el" href="reporter_8h_source.html#l01198">verbosity_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8h_source.html#l01228">buffer_</a>, <a class="el" href="reporter_8h_source.html#l01239">buffer_has_failures_</a>, <a class="el" href="reporter_8h_source.html#l01250">failures_</a>, <a class="el" href="runner-options_8h_source.html#l00107">micro_os_plus::micro_test_plus::quiet</a>, and <a class="el" href="reporter_8h_source.html#l01207">verbosity_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="#a324aa273975068c140ab6eecc7e722c9">comment_prefix()</a>, <a class="el" href="reporter_8cpp_source.html#l00714">fail()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00365">micro_os_plus::micro_test_plus::detail::reporter_human::fail_suite()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00518">micro_os_plus::micro_test_plus::detail::reporter_tap::fail_suite()</a>.</p>
 
@@ -1529,7 +1530,7 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  672</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><span class="lineno">  673</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00160">reporter()</a>, and <a class="el" href="reporter_8h_source.html#l01219">buffer_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00160">reporter()</a>, and <a class="el" href="reporter_8h_source.html#l01228">buffer_</a>.</p>
 
 </div>
 </div>
@@ -1562,7 +1563,7 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  635</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><span class="lineno">  636</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00160">reporter()</a>, and <a class="el" href="reporter_8h_source.html#l01219">buffer_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00160">reporter()</a>, and <a class="el" href="reporter_8h_source.html#l01228">buffer_</a>.</p>
 
 </div>
 </div>
@@ -1603,7 +1604,7 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  657</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><span class="lineno">  658</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00160">reporter()</a>, and <a class="el" href="reporter_8h_source.html#l01219">buffer_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00160">reporter()</a>, and <a class="el" href="reporter_8h_source.html#l01228">buffer_</a>.</p>
 
 </div>
 </div>
@@ -1636,9 +1637,9 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  610</span>    <a class="code hl_variable" href="#a0972f104175c075295a8aa385e90aad4">buffer_</a>.append (m.level * <a class="code hl_variable" href="#a7ee7d450c03e89bb0beb6cd97056aa4e">indent_size_</a>, <span class="charliteral">&#39; &#39;</span>);</div>
 <div class="line"><span class="lineno">  611</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><span class="lineno">  612</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_a7ee7d450c03e89bb0beb6cd97056aa4e"><div class="ttname"><a href="#a7ee7d450c03e89bb0beb6cd97056aa4e">micro_os_plus::micro_test_plus::detail::reporter::indent_size_</a></div><div class="ttdeci">static constexpr size_t indent_size_</div><div class="ttdoc">Number of spaces per nesting level.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01188">reporter.h:1188</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_html_a7ee7d450c03e89bb0beb6cd97056aa4e"><div class="ttname"><a href="#a7ee7d450c03e89bb0beb6cd97056aa4e">micro_os_plus::micro_test_plus::detail::reporter::indent_size_</a></div><div class="ttdeci">static constexpr size_t indent_size_</div><div class="ttdoc">Number of spaces per nesting level.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l01197">reporter.h:1197</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00160">reporter()</a>, <a class="el" href="reporter_8h_source.html#l01219">buffer_</a>, <a class="el" href="reporter_8h_source.html#l01188">indent_size_</a>, and <a class="el" href="reporter_8h_source.html#l00138">micro_os_plus::micro_test_plus::detail::indentation::level</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00160">reporter()</a>, <a class="el" href="reporter_8h_source.html#l01228">buffer_</a>, <a class="el" href="reporter_8h_source.html#l01197">indent_size_</a>, and <a class="el" href="reporter_8h_source.html#l00138">micro_os_plus::micro_test_plus::detail::indentation::level</a>.</p>
 
 </div>
 </div>
@@ -1699,7 +1700,7 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  684</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><span class="lineno">  685</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00160">reporter()</a>, and <a class="el" href="reporter_8h_source.html#l01219">buffer_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00160">reporter()</a>, and <a class="el" href="reporter_8h_source.html#l01228">buffer_</a>.</p>
 
 </div>
 </div>
@@ -1732,7 +1733,7 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  623</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><span class="lineno">  624</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00160">reporter()</a>, and <a class="el" href="reporter_8h_source.html#l01219">buffer_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00160">reporter()</a>, and <a class="el" href="reporter_8h_source.html#l01228">buffer_</a>.</p>
 
 </div>
 </div>
@@ -1776,7 +1777,7 @@ requires (not std::is_same_v&lt;T, char&gt;)</div>
 <div class="line"><span class="lineno">   88</span>  }</div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a622a2bb23e2c98ecfa3a2ccb53e19910"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a622a2bb23e2c98ecfa3a2ccb53e19910">micro_os_plus::micro_test_plus::detail::append_pointer</a></div><div class="ttdeci">void append_pointer(std::string &amp;buffer, T *v)</div><div class="ttdoc">Appends the hexadecimal address of a pointer to a buffer.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00825">detail-inlines.h:825</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00160">reporter()</a>, <a class="el" href="detail-inlines_8h_source.html#l00825">micro_os_plus::micro_test_plus::detail::append_pointer()</a>, and <a class="el" href="reporter_8h_source.html#l01219">buffer_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00160">reporter()</a>, <a class="el" href="detail-inlines_8h_source.html#l00825">micro_os_plus::micro_test_plus::detail::append_pointer()</a>, and <a class="el" href="reporter_8h_source.html#l01228">buffer_</a>.</p>
 
 </div>
 </div>
@@ -1819,7 +1820,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 <div class="line"><span class="lineno">  105</span>  }</div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a3abe0c9c597c7fe04a5f101022ecea5d"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a3abe0c9c597c7fe04a5f101022ecea5d">micro_os_plus::micro_test_plus::detail::append_number</a></div><div class="ttdeci">void append_number(std::string &amp;buffer, T v)</div><div class="ttdoc">Appends the shortest decimal representation of a numeric value to a buffer.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00729">detail-inlines.h:729</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00160">reporter()</a>, <a class="el" href="detail-inlines_8h_source.html#l00729">micro_os_plus::micro_test_plus::detail::append_number()</a>, and <a class="el" href="reporter_8h_source.html#l01219">buffer_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8cpp_source.html#l00160">reporter()</a>, <a class="el" href="detail-inlines_8h_source.html#l00729">micro_os_plus::micro_test_plus::detail::append_number()</a>, and <a class="el" href="reporter_8h_source.html#l01228">buffer_</a>.</p>
 
 </div>
 </div>
@@ -2140,7 +2141,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_af25a23e4451135649a8207c3a0ea30b5ae3a1f45168c36de6c9f4a81f84aaa640"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#af25a23e4451135649a8207c3a0ea30b5ae3a1f45168c36de6c9f4a81f84aaa640">micro_os_plus::micro_test_plus::detail::record_kind::failed_check</a></div><div class="ttdeci">@ failed_check</div><div class="ttdoc">The lines of a failed check, or the failure of a suite.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l00206">reporter.h:206</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_af25a23e4451135649a8207c3a0ea30b5afbb44b4487415b134bce9c790a27fe5e"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#af25a23e4451135649a8207c3a0ea30b5afbb44b4487415b134bce9c790a27fe5e">micro_os_plus::micro_test_plus::detail::record_kind::total</a></div><div class="ttdeci">@ total</div><div class="ttdoc">The totals of the session.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8h_source.html#l00211">reporter.h:211</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8h_source.html#l00216">micro_os_plus::micro_test_plus::detail::abort</a>, <a class="el" href="reporter_8h_source.html#l00206">micro_os_plus::micro_test_plus::detail::failed_check</a>, <a class="el" href="reporter_8h_source.html#l00170">micro_os_plus::micro_test_plus::detail::info</a>, <a class="el" href="runner-options_8h_source.html#l00111">micro_os_plus::micro_test_plus::normal</a>, <a class="el" href="reporter_8h_source.html#l01351">output_file_</a>, <a class="el" href="reporter_8h_source.html#l00201">micro_os_plus::micro_test_plus::detail::passed_check</a>, <a class="el" href="runner-options_8h_source.html#l00106">micro_os_plus::micro_test_plus::silent</a>, <a class="el" href="reporter_8h_source.html#l00185">micro_os_plus::micro_test_plus::detail::test_case_heading</a>, <a class="el" href="reporter_8h_source.html#l00211">micro_os_plus::micro_test_plus::detail::total</a>, <a class="el" href="runner-options_8h_source.html#l00114">micro_os_plus::micro_test_plus::verbose</a>, and <a class="el" href="reporter_8h_source.html#l01198">verbosity_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8h_source.html#l00216">micro_os_plus::micro_test_plus::detail::abort</a>, <a class="el" href="reporter_8h_source.html#l00206">micro_os_plus::micro_test_plus::detail::failed_check</a>, <a class="el" href="reporter_8h_source.html#l00170">micro_os_plus::micro_test_plus::detail::info</a>, <a class="el" href="runner-options_8h_source.html#l00111">micro_os_plus::micro_test_plus::normal</a>, <a class="el" href="reporter_8h_source.html#l01360">output_file_</a>, <a class="el" href="reporter_8h_source.html#l00201">micro_os_plus::micro_test_plus::detail::passed_check</a>, <a class="el" href="runner-options_8h_source.html#l00106">micro_os_plus::micro_test_plus::silent</a>, <a class="el" href="reporter_8h_source.html#l00185">micro_os_plus::micro_test_plus::detail::test_case_heading</a>, <a class="el" href="reporter_8h_source.html#l00211">micro_os_plus::micro_test_plus::detail::total</a>, <a class="el" href="runner-options_8h_source.html#l00114">micro_os_plus::micro_test_plus::verbose</a>, and <a class="el" href="reporter_8h_source.html#l01207">verbosity_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00738">micro_os_plus::micro_test_plus::detail::reporter_human::abort_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00947">micro_os_plus::micro_test_plus::detail::reporter_tap::abort_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00127">micro_os_plus::micro_test_plus::detail::reporter_human::begin_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00262">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00207">micro_os_plus::micro_test_plus::detail::reporter_human::begin_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00341">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00397">micro_os_plus::micro_test_plus::detail::reporter_human::begin_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00549">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_test_case()</a>, <a class="el" href="#a324aa273975068c140ab6eecc7e722c9">comment_prefix()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00814">micro_os_plus::micro_test_plus::detail::reporter_human::commit_buffer()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l01014">micro_os_plus::micro_test_plus::detail::reporter_tap::commit_buffer()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00161">micro_os_plus::micro_test_plus::detail::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00299">micro_os_plus::micro_test_plus::detail::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00254">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00386">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00451">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00606">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00333">micro_os_plus::micro_test_plus::detail::reporter_human::skip_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00480">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00676">micro_os_plus::micro_test_plus::detail::reporter_human::skip_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00888">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_test_case()</a>, and <a class="el" href="reporter_8cpp_source.html#l00490">write_info()</a>.</p>
 
@@ -2168,7 +2169,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Called by <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a7c4dbf695c086ca4d3f0ce33e6d561f7" title="Runs all registered test suites.">runner::run_suites()</a></span>, instead of running the suite, when its name does not match the first filter pattern; the suite has already been assigned its index. Implementations display a single line, without the suite body.</p>
+<p>Called by <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a061939d61f7f2d4a4523c427b0dc98f2" title="Runs all registered test suites.">runner::run_child_suites()</a></span>, instead of running the suite, when its name does not match the first filter pattern; the suite has already been assigned its index. Implementations display a single line, without the suite body.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">suite</td><td>Reference to the skipped test suite. </td></tr>
@@ -2176,7 +2177,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
   </dd>
 </dl>
 <dl class="section user"><dt>Returns</dt><dd>Nothing.</dd></dl>
-<dl class="section since"><dt>Since</dt><dd>5.1.0 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>6.0.0 </dd></dl>
 
 <p>Implemented in <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human.html#aca37d52611ed87d102dce89c3c6cc99d">micro_os_plus::micro_test_plus::detail::reporter_human</a>, and <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap.html#a319f35d4af8c72af8b14a89b421c1c74">micro_os_plus::micro_test_plus::detail::reporter_tap</a>.</p>
 
@@ -2212,7 +2213,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
   </dd>
 </dl>
 <dl class="section user"><dt>Returns</dt><dd>Nothing.</dd></dl>
-<dl class="section since"><dt>Since</dt><dd>5.1.0 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>6.0.0 </dd></dl>
 
 <p>Implemented in <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human.html#af28ab5a9448645fb8976c0b139bf302b">micro_os_plus::micro_test_plus::detail::reporter_human</a>, and <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap.html#a31ccd7af941d06241ce16df9274abc38">micro_os_plus::micro_test_plus::detail::reporter_tap</a>.</p>
 
@@ -2247,7 +2248,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 <p>Kept from the v5.0.1 <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html" title="Abstract base class for the reporters that display test results, including operand values for failure...">reporter</a></span> class, for the applications that read it through the deprecated <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a65250ff363fbb3b5869bbe4de9578e86" title="Deprecated access to the reporter of the test session.">runner::reporter()</a></span> (<span class="tt">tr.reporter ().<a class="el" href="#a467d1332df523b9acaa3ff82b0ebb714" title="Deprecated access to the verbosity level.">verbosity</a> ()</span>). The level is the one returned by <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a1dd0221dca8e7382f0b625ff6316ed92" title="Returns the verbosity level of the console output.">runner::verbosity_level()</a></span>, from the same session options.</p>
 <dl class="section user"><dt>Parameters</dt><dd>None. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>The verbosity level of the session. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000108">Deprecated</a></b></dt><dd>use <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a1dd0221dca8e7382f0b625ff6316ed92" title="Returns the verbosity level of the console output.">runner::verbosity_level()</a> (since 5.1.0)</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000111">Deprecated</a></b></dt><dd>use <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a1dd0221dca8e7382f0b625ff6316ed92" title="Returns the verbosity level of the console output.">runner::verbosity_level()</a> (since 6.0.0)</dd></dl>
 <p>Returns the level stored in <span class="tt"><a class="el" href="#a2560a0f1cf935e420a2e584ccddf1a1e" title="The verbosity level for test reporting.">verbosity_</a></span>, set by the constructor. </p>
 
 <p class="definition">Definition at line <a class="el" href="reporter-inlines_8h_source.html#l00114">114</a> of file <a class="el" href="reporter-inlines_8h_source.html">reporter-inlines.h</a>.</p>
@@ -2255,7 +2256,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 <div class="line"><span class="lineno">  116</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a2560a0f1cf935e420a2e584ccddf1a1e">verbosity_</a>;</div>
 <div class="line"><span class="lineno">  117</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8h_source.html#l01198">verbosity_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8h_source.html#l01207">verbosity_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter_8h_source.html#l00302">micro_test_plus::runner</a>.</p>
 
@@ -2301,7 +2302,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 <div class="line"><span class="lineno">  377</span>  }</div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_html_a78d7c9fe8e59d559bf67bc55e7c52040"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03.html#a78d7c9fe8e59d559bf67bc55e7c52040">micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter.cpp}::write_without_colours</a></div><div class="ttdeci">void write_without_colours(FILE *file, std::string_view text)</div><div class="ttdoc">Writes a text to a file, without the ANSI colour sequences.</div><div class="ttdef"><b>Definition</b> <a href="reporter_8cpp_source.html#l00113">reporter.cpp:113</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8h_source.html#l01219">buffer_</a>, and <a class="el" href="reporter_8h_source.html#l01351">output_file_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8h_source.html#l01228">buffer_</a>, and <a class="el" href="reporter_8h_source.html#l01360">output_file_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00738">micro_os_plus::micro_test_plus::detail::reporter_human::abort_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00947">micro_os_plus::micro_test_plus::detail::reporter_tap::abort_session()</a>, <a class="el" href="#a324aa273975068c140ab6eecc7e722c9">comment_prefix()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00814">micro_os_plus::micro_test_plus::detail::reporter_human::commit_buffer()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l01014">micro_os_plus::micro_test_plus::detail::reporter_tap::commit_buffer()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00254">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00386">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00451">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00606">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>.</p>
 
@@ -2448,7 +2449,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 <div class="line"><span class="lineno">  411</span>    va_end (args);</div>
 <div class="line"><span class="lineno">  412</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8h_source.html#l01351">output_file_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8h_source.html#l01360">output_file_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="#a324aa273975068c140ab6eecc7e722c9">comment_prefix()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00606">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>.</p>
 
@@ -2654,7 +2655,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 <div class="line"><span class="lineno">  472</span>      }</div>
 <div class="line"><span class="lineno">  473</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8h_source.html#l01351">output_file_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8h_source.html#l01360">output_file_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00738">micro_os_plus::micro_test_plus::detail::reporter_human::abort_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00947">micro_os_plus::micro_test_plus::detail::reporter_tap::abort_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00127">micro_os_plus::micro_test_plus::detail::reporter_human::begin_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00262">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00207">micro_os_plus::micro_test_plus::detail::reporter_human::begin_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00341">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00397">micro_os_plus::micro_test_plus::detail::reporter_human::begin_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00549">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_test_case()</a>, <a class="el" href="#a324aa273975068c140ab6eecc7e722c9">comment_prefix()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00161">micro_os_plus::micro_test_plus::detail::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00299">micro_os_plus::micro_test_plus::detail::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00254">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00386">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00451">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00606">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00333">micro_os_plus::micro_test_plus::detail::reporter_human::skip_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00480">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00676">micro_os_plus::micro_test_plus::detail::reporter_human::skip_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00888">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_test_case()</a>, and <a class="el" href="reporter_8cpp_source.html#l00490">write_info()</a>.</p>
 
@@ -2682,7 +2683,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Called by <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__case.html#af4f5f9632b5a290c1894984661a41a86" title="Evaluates a condition and reports the result.">test_case::expect()</a></span> and <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__case.html#ace68a1bd4dd258082f4b1fc01fcd008a" title="Checks a condition and, if false, stops the test case.">test_case::require()</a></span>, so that a passed check whose line is never written does not format its expression, its messages, or its line. The answer depends only on the verbosity and on the output file, which do not change during the session. A failed check is always formatted.</p>
+<p>Called by <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-expectations.html#gaf4f5f9632b5a290c1894984661a41a86" title="Evaluates a condition and reports the result.">test_case::expect()</a></span> and <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-requirements.html#gace68a1bd4dd258082f4b1fc01fcd008a" title="Checks a condition and, if false, stops the test case.">test_case::require()</a></span>, so that a passed check whose line is never written does not format its expression, its messages, or its line. The answer depends only on the verbosity and on the output file, which do not change during the session. A failed check is always formatted.</p>
 <dl class="section user"><dt>Parameters</dt><dd>None. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
@@ -2698,9 +2699,9 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 <div class="line"><span class="lineno">  292</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a270178ed5fbe0d3f4d72766c2984582a">output_file_</a> != <span class="keyword">nullptr</span> || <a class="code hl_variable" href="#a2560a0f1cf935e420a2e584ccddf1a1e">verbosity_</a> == <a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus.html#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbosity::verbose</a>;</div>
 <div class="line"><span class="lineno">  293</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reporter_8h_source.html#l01351">output_file_</a>, <a class="el" href="runner-options_8h_source.html#l00114">micro_os_plus::micro_test_plus::verbose</a>, and <a class="el" href="reporter_8h_source.html#l01198">verbosity_</a>.</p>
+<p class="reference">References <a class="el" href="reporter_8h_source.html#l01360">output_file_</a>, <a class="el" href="runner-options_8h_source.html#l00114">micro_os_plus::micro_test_plus::verbose</a>, and <a class="el" href="reporter_8h_source.html#l01207">verbosity_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#a324aa273975068c140ab6eecc7e722c9">comment_prefix()</a>, <a class="el" href="test-inlines_8h_source.html#l00418">micro_os_plus::micro_test_plus::test_case::expect()</a>, and <a class="el" href="test-inlines_8h_source.html#l00440">micro_os_plus::micro_test_plus::test_case::require()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#a324aa273975068c140ab6eecc7e722c9">comment_prefix()</a>, <a class="el" href="test-inlines_8h_source.html#l00455">micro_os_plus::micro_test_plus::test_case::expect()</a>, and <a class="el" href="test-inlines_8h_source.html#l00477">micro_os_plus::micro_test_plus::test_case::require()</a>.</p>
 
 </div>
 </div>
@@ -2812,7 +2813,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 </div><div class="memdoc">
 <p>Set and cleared by the concrete reporters, to separate the groups of console lines, such as the suites and the failed test cases; the output file is not affected. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01320">1320</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01329">1329</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00738">micro_os_plus::micro_test_plus::detail::reporter_human::abort_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00947">micro_os_plus::micro_test_plus::detail::reporter_tap::abort_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00127">micro_os_plus::micro_test_plus::detail::reporter_human::begin_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00262">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00207">micro_os_plus::micro_test_plus::detail::reporter_human::begin_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00341">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00397">micro_os_plus::micro_test_plus::detail::reporter_human::begin_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00549">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_test_case()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00814">micro_os_plus::micro_test_plus::detail::reporter_human::commit_buffer()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l01014">micro_os_plus::micro_test_plus::detail::reporter_tap::commit_buffer()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l01050">micro_os_plus::micro_test_plus::detail::reporter_tap::display_open_headers()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00864">micro_os_plus::micro_test_plus::detail::reporter_human::display_open_names()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00161">micro_os_plus::micro_test_plus::detail::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00299">micro_os_plus::micro_test_plus::detail::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00254">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00386">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00451">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00606">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00333">micro_os_plus::micro_test_plus::detail::reporter_human::skip_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00480">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00676">micro_os_plus::micro_test_plus::detail::reporter_human::skip_test_case()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00888">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_test_case()</a>.</p>
 
@@ -2839,7 +2840,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 </div><div class="memdoc">
 <p>Accumulates all reporter output until it is written to the console or the output file via <span class="tt"><a class="el" href="#a887f23131eb91fecf060982dcbd3b1ca" title="Writes a text to the console, unchanged.">write_console_text()</a></span> or <span class="tt"><a class="el" href="#a37cba38a47d66a928a936ee081c6d88c" title="Writes the current buffered content to the output file.">write_buffer_to_file()</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01219">1219</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01228">1228</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00160">reporter()</a>, <a class="el" href="reporter_8cpp_source.html#l00738">clear_buffer()</a>, <a class="el" href="reporter_8cpp_source.html#l00956">commit_outer_results()</a>, <a class="el" href="reporter_8cpp_source.html#l00302">console_lines()</a>, <a class="el" href="reporter_8cpp_source.html#l00238">end_line()</a>, <a class="el" href="reporter_8cpp_source.html#l00714">fail()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00365">micro_os_plus::micro_test_plus::detail::reporter_human::fail_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00518">micro_os_plus::micro_test_plus::detail::reporter_tap::fail_suite()</a>, <a class="el" href="reporter_8cpp_source.html#l00337">mark_failure()</a>, <a class="el" href="reporter_8cpp_source.html#l00669">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00632">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00647">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00608">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00681">operator&lt;&lt;()</a>, <a class="el" href="reporter_8cpp_source.html#l00620">operator&lt;&lt;()</a>, <a class="el" href="reporter-inlines_8h_source.html#l00084">operator&lt;&lt;()</a>, <a class="el" href="reporter-inlines_8h_source.html#l00101">operator&lt;&lt;()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00790">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_prefix()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00846">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_suffix()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00738">micro_os_plus::micro_test_plus::detail::reporter_tap::output_pass_prefix()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00766">micro_os_plus::micro_test_plus::detail::reporter_tap::output_pass_suffix()</a>, and <a class="el" href="reporter_8cpp_source.html#l00368">write_buffer_to_file()</a>.</p>
 
@@ -2866,7 +2867,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 </div><div class="memdoc">
 <p>Set by <span class="tt"><a class="el" href="#a406cf77b7adcd5fe9417ce7bce4f3afb" title="Reports a failed condition.">fail()</a></span> and reset by <span class="tt"><a class="el" href="#a5859ce31641330b243cfb5d1c6080859" title="Clears the output buffer.">clear_buffer()</a></span>. When a nested test case begins, the concrete reporters use it to decide whether the results already buffered for the outer test case are displayed with normal verbosity. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01230">1230</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01239">1239</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00738">clear_buffer()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00814">micro_os_plus::micro_test_plus::detail::reporter_human::commit_buffer()</a>, and <a class="el" href="reporter_8cpp_source.html#l00337">mark_failure()</a>.</p>
 
@@ -2893,7 +2894,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 </div><div class="memdoc">
 <p>Empty strings by default; the human reporter assigns <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ad59e204218aa41581652a072be0e8a8a" title="Predefined colour set, with green for pass and red for fail.">detail::colours_red_green</a></span> when colours are enabled by <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner__options.html#a48ed4dd71eff02911c2d6943ba616850" title="Whether the console output uses colours.">runner_options::colour</a></span>, explicitly or because the console is a terminal. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01209">1209</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01218">1218</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00080">micro_os_plus::micro_test_plus::detail::reporter_human::reporter_human()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00738">micro_os_plus::micro_test_plus::detail::reporter_human::abort_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00161">micro_os_plus::micro_test_plus::detail::reporter_human::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00254">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00451">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00365">micro_os_plus::micro_test_plus::detail::reporter_human::fail_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00594">micro_os_plus::micro_test_plus::detail::reporter_human::output_fail_prefix()</a>, and <a class="el" href="reporter-human_8cpp_source.html#l00553">micro_os_plus::micro_test_plus::detail::reporter_human::output_pass_prefix()</a>.</p>
 
@@ -2920,7 +2921,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 </div><div class="memdoc">
 <p>Set by <span class="tt"><a class="el" href="#a5ddd6ca6ce847ca89d7a3fcf9751f97d" title="Notes the suite that begins, for the headings displayed later.">enter_suite()</a></span>; null outside the suites. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01285">1285</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01294">1294</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00738">micro_os_plus::micro_test_plus::detail::reporter_human::abort_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00947">micro_os_plus::micro_test_plus::detail::reporter_tap::abort_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00864">micro_os_plus::micro_test_plus::detail::reporter_human::display_open_names()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00254">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00386">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter_8cpp_source.html#l00352">enter_suite()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l01087">micro_os_plus::micro_test_plus::detail::reporter_tap::write_quiet_failures()</a>.</p>
 
@@ -2947,7 +2948,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 </div><div class="memdoc">
 <p>Large enough for <span class="tt">", time: 4294967295.999 ms"</span>, the longest text produced by <span class="tt"><a class="el" href="#ac6dca3d3fa34870f3960fe5e226e45d8" title="Formats the elapsed time of a suite or of the session.">format_elapsed_time()</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l00965">965</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l00974">974</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00161">micro_os_plus::micro_test_plus::detail::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00299">micro_os_plus::micro_test_plus::detail::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00254">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00386">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, and <a class="el" href="reporter_8cpp_source.html#l00753">format_elapsed_time()</a>.</p>
 
@@ -2972,11 +2973,11 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Used by the checks (<span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__case.html#af4f5f9632b5a290c1894984661a41a86" title="Evaluates a condition and reports the result.">test_case::expect()</a></span>, <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__case.html#ace68a1bd4dd258082f4b1fc01fcd008a" title="Checks a condition and, if false, stops the test case.">test_case::require()</a></span>, and <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result.html" title="The result of one check, reported when destroyed.">detail::check_result</a></span>), which are friends, to pre-format expressions at construction time; <span class="tt"><a class="el" href="#ad9e6ccebc1904f723409ddb0caaddb3e" title="Reports a passed condition.">pass()</a></span> and <span class="tt"><a class="el" href="#a406cf77b7adcd5fe9417ce7bce4f3afb" title="Reports a failed condition.">fail()</a></span> then append the formatted text to <span class="tt"><a class="el" href="#a0972f104175c075295a8aa385e90aad4" title="Output accumulation buffer.">buffer_</a></span>. The applications format their own types by defining <span class="tt">operator&lt;&lt;</span> for the public <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter.html" title="Formats values and expressions into an owned string buffer.">expression_formatter</a></span> alias. </p>
+<p>Used by the checks (<span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-expectations.html#gaf4f5f9632b5a290c1894984661a41a86" title="Evaluates a condition and reports the result.">test_case::expect()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-requirements.html#gace68a1bd4dd258082f4b1fc01fcd008a" title="Checks a condition and, if false, stops the test case.">test_case::require()</a></span>, and <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result.html" title="The result of one check, reported when destroyed.">detail::check_result</a></span>), which are friends, to pre-format expressions at construction time; <span class="tt"><a class="el" href="#ad9e6ccebc1904f723409ddb0caaddb3e" title="Reports a passed condition.">pass()</a></span> and <span class="tt"><a class="el" href="#a406cf77b7adcd5fe9417ce7bce4f3afb" title="Reports a failed condition.">fail()</a></span> then append the formatted text to <span class="tt"><a class="el" href="#a0972f104175c075295a8aa385e90aad4" title="Output accumulation buffer.">buffer_</a></span>. The applications format their own types by defining <span class="tt">operator&lt;&lt;</span> for the public <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter.html" title="Formats values and expressions into an owned string buffer.">expression_formatter</a></span> alias. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01309">1309</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01318">1318</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00418">micro_os_plus::micro_test_plus::test_case::expect()</a>, and <a class="el" href="test-inlines_8h_source.html#l00440">micro_os_plus::micro_test_plus::test_case::require()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00455">micro_os_plus::micro_test_plus::test_case::expect()</a>, and <a class="el" href="test-inlines_8h_source.html#l00477">micro_os_plus::micro_test_plus::test_case::require()</a>.</p>
 
 </div>
 </div>
@@ -3001,7 +3002,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 </div><div class="memdoc">
 <p>With the quiet verbosity, the console displays only the failed checks, while <span class="tt"><a class="el" href="#a0972f104175c075295a8aa385e90aad4" title="Output accumulation buffer.">buffer_</a></span> may also contain the passed checks, for the output file. Filled by <span class="tt"><a class="el" href="#a2d5e5125b8c71fe0dedbe92d730647ec" title="Records that the lines appended to the buffer from a given position are a failure.">mark_failure()</a></span> and emptied by <span class="tt"><a class="el" href="#a5859ce31641330b243cfb5d1c6080859" title="Clears the output buffer.">clear_buffer()</a></span>; not used with the other verbosity levels. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01241">1241</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01250">1250</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00738">clear_buffer()</a>, <a class="el" href="reporter_8cpp_source.html#l00302">console_lines()</a>, <a class="el" href="reporter_8cpp_source.html#l00337">mark_failure()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l01087">micro_os_plus::micro_test_plus::detail::reporter_tap::write_quiet_failures()</a>.</p>
 
@@ -3028,7 +3029,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 </div><div class="memdoc">
 <p>Set by the constructor, and returned by <span class="tt"><a class="el" href="#a083ecdfa952d7f8c372a61fbea309357" title="Returns whether the output file could not be opened.">has_output_file_error()</a></span>. Kept next to the other flags, so that the class does not end with padding, which the derived classes would report. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01330">1330</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01339">1339</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00160">reporter()</a>, and <a class="el" href="reporter_8cpp_source.html#l00579">has_output_file_error()</a>.</p>
 
@@ -3055,7 +3056,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 </div><div class="memdoc">
 <p>Used by the concrete reporters to indent the lines of the nested test cases; four spaces is also the TAP 14 subtest indentation. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01188">1188</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01197">1197</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00397">micro_os_plus::micro_test_plus::detail::reporter_human::begin_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00549">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l01050">micro_os_plus::micro_test_plus::detail::reporter_tap::display_open_headers()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00864">micro_os_plus::micro_test_plus::detail::reporter_human::display_open_names()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00386">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00451">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00606">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="reporter_8cpp_source.html#l00608">operator&lt;&lt;()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00676">micro_os_plus::micro_test_plus::detail::reporter_human::skip_test_case()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00888">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_test_case()</a>.</p>
 
@@ -3082,7 +3083,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 </div><div class="memdoc">
 <p>The last element is the test case that owns the buffered results. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01277">1277</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01286">1286</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00738">micro_os_plus::micro_test_plus::detail::reporter_human::abort_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00947">micro_os_plus::micro_test_plus::detail::reporter_tap::abort_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00397">micro_os_plus::micro_test_plus::detail::reporter_human::begin_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00549">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l01050">micro_os_plus::micro_test_plus::detail::reporter_tap::display_open_headers()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00864">micro_os_plus::micro_test_plus::detail::reporter_human::display_open_names()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00451">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00606">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l01087">micro_os_plus::micro_test_plus::detail::reporter_tap::write_quiet_failures()</a>.</p>
 
@@ -3109,7 +3110,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 </div><div class="memdoc">
 <p>When non-null, the report is written to this file in addition to the console, without colour sequences. The file receives the full report, regardless of the verbosity. The file is opened by the constructor and closed by the destructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01351">1351</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01360">1360</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00160">reporter()</a>, <a class="el" href="reporter_8cpp_source.html#l00194">~reporter()</a>, <a class="el" href="reporter_8cpp_source.html#l00565">flush_streams()</a>, <a class="el" href="reporter_8cpp_source.html#l00251">route()</a>, <a class="el" href="reporter_8cpp_source.html#l00368">write_buffer_to_file()</a>, <a class="el" href="reporter_8cpp_source.html#l00401">write_file()</a>, <a class="el" href="reporter_8cpp_source.html#l00428">write_line()</a>, and <a class="el" href="reporter_8cpp_source.html#l00290">writes_passed_checks()</a>.</p>
 
@@ -3136,7 +3137,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 </div><div class="memdoc">
 <p>Copied by the constructor from the session options. Used to name the file in the confirmation message displayed when the file is closed (not displayed with the <span class="tt">silent</span> verbosity). </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01340">1340</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01349">1349</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00160">reporter()</a>, and <a class="el" href="reporter_8cpp_source.html#l00194">~reporter()</a>.</p>
 
@@ -3163,7 +3164,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 </div><div class="memdoc">
 <p>Set by <span class="tt"><a class="el" href="#a5ddd6ca6ce847ca89d7a3fcf9751f97d" title="Notes the suite that begins, for the headings displayed later.">enter_suite()</a></span>; with the quiet verbosity, which does not display the headings, the heading is displayed when the first failure of the suite is. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01296">1296</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01305">1305</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00738">micro_os_plus::micro_test_plus::detail::reporter_human::abort_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00864">micro_os_plus::micro_test_plus::detail::reporter_human::display_open_names()</a>, and <a class="el" href="reporter_8cpp_source.html#l00352">enter_suite()</a>.</p>
 
@@ -3191,7 +3192,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 <p>Large enough for the longest text produced by <span class="tt"><a class="el" href="#a6bf3aac88a5e66e2f93eb32c54dbdd14" title="Formats the totals of the test session.">format_session_totals()</a></span>, which is longer than the texts of the suites and of the test cases: 53 characters, four counts, two fragments of up to 20 characters and a count each (the longest fragment is <span class="tt">", N test cases failed"</span>), and the terminator, with the counts of the largest <span class="tt">size_t</span> value (10 digits on 32-bit targets, 20 on 64-bit ones). The fragments are counted at their maximum length, as the compiler does when it checks for truncation.</p>
 <p>The array is a local variable of the functions that end the test cases, which run at the deepest point of the stack, so it is not larger than needed on the 32-bit embedded targets. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01007">1007</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01016">1016</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter-human_8cpp_source.html#l00161">micro_os_plus::micro_test_plus::detail::reporter_human::end_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00299">micro_os_plus::micro_test_plus::detail::reporter_tap::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00254">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00386">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00451">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00606">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="reporter_8cpp_source.html#l00839">format_session_totals()</a>, <a class="el" href="reporter_8cpp_source.html#l00876">format_suite_totals()</a>, and <a class="el" href="reporter_8cpp_source.html#l00913">format_test_case_totals()</a>.</p>
 
@@ -3218,7 +3219,7 @@ requires std::is_arithmetic_v&lt;T&gt;</div>
 </div><div class="memdoc">
 <p>A copy of the level kept by the runner, set by the constructor from the same session options and not changed afterwards. The public accessor is <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a1dd0221dca8e7382f0b625ff6316ed92" title="Returns the verbosity level of the console output.">runner::verbosity_level()</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01198">1198</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reporter_8h_source.html#l01207">1207</a> of file <a class="el" href="reporter_8h_source.html">reporter.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reporter_8cpp_source.html#l00160">reporter()</a>, <a class="el" href="reporter_8cpp_source.html#l00194">~reporter()</a>, <a class="el" href="reporter_8cpp_source.html#l00302">console_lines()</a>, <a class="el" href="reporter_8cpp_source.html#l00337">mark_failure()</a>, <a class="el" href="reporter_8cpp_source.html#l00251">route()</a>, <a class="el" href="reporter-inlines_8h_source.html#l00114">verbosity()</a>, and <a class="el" href="reporter_8cpp_source.html#l00290">writes_passed_checks()</a>.</p>
 
