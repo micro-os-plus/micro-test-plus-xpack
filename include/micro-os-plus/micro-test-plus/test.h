@@ -1172,6 +1172,7 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-expectations
      * @brief Evaluates a condition and reports the result.
      *
      * @tparam Expr_T The type of the custom expression.
@@ -1195,6 +1196,7 @@ namespace micro_os_plus::micro_test_plus
                                 = reflection::source_location::current ());
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-requirements
      * @brief Checks a condition and, if false, stops the test case.
      *
      * @details
@@ -1231,6 +1233,11 @@ namespace micro_os_plus::micro_test_plus
                                  = reflection::source_location::current ());
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
+    /**
+     * @name Deprecated Functions
+     * @{
+     */
+
     /**
      * @brief Deprecated `expect()` of a suspicious condition.
      *
@@ -1295,6 +1302,10 @@ namespace micro_os_plus::micro_test_plus
     [[deprecated ("use require() (since 5.1.0)")]] auto
     assume (const Expr_T& expr, const reflection::source_location& sl
                                 = reflection::source_location::current ());
+
+    /**
+     * @}
+     */
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
     // ------------------------------------------------------------------------
@@ -1625,6 +1636,11 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
+     * @name Deprecated Functions
+     * @{
+     */
+
+    /**
      * @brief Deprecated access to the timings of the suite.
      *
      * @details
@@ -1660,6 +1676,10 @@ namespace micro_os_plus::micro_test_plus
     [[deprecated ("the timings are internal (since 5.1.0)"),
       nodiscard]] detail::stopwatch&
     timings (void) noexcept;
+
+    /**
+     * @}
+     */
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   private:
@@ -1989,6 +2009,11 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
+     * @name Deprecated Functions
+     * @{
+     */
+
+    /**
      * @brief Deprecated constructor, for a body whose first parameter is
      * `static_suite&`.
      *
@@ -2024,6 +2049,10 @@ namespace micro_os_plus::micro_test_plus
     [[deprecated ("use a suite& first parameter (since 5.1.0)")]]
     static_suite (const char* name, runner& test_runner, Callable_T&& callable,
                   Args_T&&... arguments);
+
+    /**
+     * @}
+     */
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
     /**

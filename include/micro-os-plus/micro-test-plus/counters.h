@@ -208,6 +208,11 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
+     * @name Deprecated Functions
+     * @{
+     */
+
+    /**
      * @brief Deprecated name of `increment_passed_checks()`.
      *
      * @details
@@ -220,6 +225,10 @@ namespace micro_os_plus::micro_test_plus
      */
     [[deprecated ("use increment_passed_checks() (since 5.1.0)")]] void
     increment_successful_checks (size_t count = 1) noexcept;
+
+    /**
+     * @}
+     */
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
     /**
@@ -244,6 +253,11 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
+     * @name Deprecated Functions
+     * @{
+     */
+
+    /**
      * @brief Deprecated name of `increment_executed_test_cases()`.
      *
      * @details
@@ -256,6 +270,10 @@ namespace micro_os_plus::micro_test_plus
      */
     [[deprecated ("use increment_executed_test_cases() (since 5.1.0)")]] void
     increment_executed_subtests (size_t count = 1) noexcept;
+
+    /**
+     * @}
+     */
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
     /**
@@ -298,6 +316,11 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
+     * @name Deprecated Functions
+     * @{
+     */
+
+    /**
      * @brief Deprecated name of `passed_checks()`.
      *
      * @details
@@ -310,6 +333,10 @@ namespace micro_os_plus::micro_test_plus
      */
     [[deprecated ("use passed_checks() (since 5.1.0)"), nodiscard]] size_t
     successful_checks (void) const noexcept;
+
+    /**
+     * @}
+     */
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
     /**
@@ -344,6 +371,11 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
+     * @name Deprecated Functions
+     * @{
+     */
+
+    /**
      * @brief Deprecated name of `executed_test_cases()`.
      *
      * @details
@@ -357,6 +389,10 @@ namespace micro_os_plus::micro_test_plus
     [[deprecated ("use executed_test_cases() (since 5.1.0)"),
       nodiscard]] size_t
     executed_subtests (void) const noexcept;
+
+    /**
+     * @}
+     */
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
     /**
@@ -398,6 +434,11 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
+     * @name Deprecated Functions
+     * @{
+     */
+
+    /**
      * @brief Deprecated name of `passed()`.
      *
      * @details
@@ -410,6 +451,10 @@ namespace micro_os_plus::micro_test_plus
      */
     [[deprecated ("use passed() (since 5.1.0)"), nodiscard]] bool
     was_successful (void) const noexcept;
+
+    /**
+     * @}
+     */
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   private:

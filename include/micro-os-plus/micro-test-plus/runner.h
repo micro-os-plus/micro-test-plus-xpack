@@ -243,6 +243,11 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
+     * @name Deprecated Functions
+     * @{
+     */
+
+    /**
      * @brief Deprecated constructor for the runner class.
      *
      * @details
@@ -253,6 +258,10 @@ namespace micro_os_plus::micro_test_plus
      */
     [[deprecated ("use runner() and add_top_suite() (since 4.1.0)")]]
     runner (const char* top_suite_name);
+
+    /**
+     * @}
+     */
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
     /**
@@ -306,6 +315,11 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
+     * @name Deprecated Functions
+     * @{
+     */
+
+    /**
      * @brief Deprecated initialisation with the command-line arguments,
      * which also adds the top suite.
      *
@@ -331,6 +345,10 @@ namespace micro_os_plus::micro_test_plus
     [[deprecated ("use initialise (argc, argv) and add_top_suite() "
                   "(since 5.1.0)")]] class suite&
     initialise (int argc, char* argv[], const char* top_suite_name);
+
+    /**
+     * @}
+     */
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
     /**
@@ -471,6 +489,11 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
+     * @name Deprecated Functions
+     * @{
+     */
+
+    /**
      * @brief Deprecated name of `run()`.
      *
      * @details
@@ -483,6 +506,10 @@ namespace micro_os_plus::micro_test_plus
      */
     [[deprecated ("use run() (since 5.1.0)")]] int
     exit_code (void);
+
+    /**
+     * @}
+     */
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
     /**
@@ -524,6 +551,11 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
+     * @name Deprecated Functions
+     * @{
+     */
+
+    /**
      * @brief Deprecated name of `add_suite()`.
      *
      * @details
@@ -548,6 +580,10 @@ namespace micro_os_plus::micro_test_plus
     [[deprecated ("use add_suite() (since 5.1.0)")]] void
     suite (std::string_view name, Callable_T&& callable,
            Args_T&&... arguments);
+
+    /**
+     * @}
+     */
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
     // ------------------------------------------------------------------------
@@ -685,6 +721,11 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
+     * @name Deprecated Functions
+     * @{
+     */
+
+    /**
      * @brief Deprecated name of `verbosity_level()`.
      *
      * @details
@@ -697,6 +738,10 @@ namespace micro_os_plus::micro_test_plus
      */
     [[deprecated ("use verbosity_level() (since 5.1.0)"), nodiscard]] auto
     verbosity (void) const noexcept -> micro_test_plus::verbosity;
+
+    /**
+     * @}
+     */
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
     /**
@@ -721,6 +766,11 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
+     * @name Deprecated Functions
+     * @{
+     */
+
+    /**
      * @brief Deprecated count of the test suites added with
      * `add_suite()`, plus the top suite.
      *
@@ -739,6 +789,10 @@ namespace micro_os_plus::micro_test_plus
           "use added_suites_count() or total_suites_count() (since 5.1.0)"),
       nodiscard]] size_t
     suites_count (void) const noexcept;
+
+    /**
+     * @}
+     */
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
     /**
@@ -795,6 +849,11 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
+     * @name Deprecated Functions
+     * @{
+     */
+
+    /**
      * @brief Deprecated access to the timings of the test session.
      *
      * @details
@@ -849,6 +908,10 @@ namespace micro_os_plus::micro_test_plus
     [[deprecated ("use verbosity_level() (since 5.1.0)"),
       nodiscard]] detail::reporter&
     reporter (void) const noexcept;
+
+    /**
+     * @}
+     */
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   private:
