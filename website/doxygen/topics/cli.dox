@@ -29,6 +29,13 @@ ok 1 - Minimal # { passed, 2 checks in 1 test case, time: X.XXX ms }
 # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: X.XXX ms }
 @endcode
 
+Options may also be set programmatically, on platforms without a command
+line, through `runner_options`. The arguments that are not options are
+left to the application. An unknown `--` option, an unknown reporter or
+colour mode, or an option with a missing argument, is reported on
+`stderr` as an error, the option is ignored, and the exit code of the
+run is 2.
+
 @section cli-reporter Reporter
 
 By default, the µTest++ output follows the

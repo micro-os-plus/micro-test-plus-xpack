@@ -9,14 +9,14 @@ framework, purpose-built for embedded systems development.
 The **C++ API** is the primary interface for writing test suites and
 test cases. It is centred on the `runner` and `test_case` classes, which
 provide methods for registering tests, evaluating expectations and
-requirements, and collecting results. Utility types such as
-strongly-typed literals, function comparators, and operator overloads
-complement the core API to enable expressive, type-safe assertions
-with no macro dependencies. The API is documented in the
+requirements, and collecting results. Function comparators
+and logical functions complement the core API to enable expressive,
+type-safe assertions with no macro dependencies. The API is documented in the
 @ref micro-os-plus-micro-test-plus-cpp-api group.
 
 The **command-line interface (CLI)** allows test executables to be
 configured at run time without recompilation. Arguments are passed to
 `runner::initialise()` and control aspects such as the verbosity level
-and the output reporter format. The available options are documented in
+the output reporter format, the colours, an output file, and the
+selection or listing of the test cases. The available options are documented in
 the @ref micro-os-plus-micro-test-plus-cli group.

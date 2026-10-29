@@ -22,7 +22,7 @@ quality.
 @code{.cpp}
 namespace mt = micro_os_plus::micro_test_plus;
 
-// In main(), after tr.initialise():
+// In main(), after tr.add_top_suite():
 ts.test ("Check various conditions", [] (auto& t) {
   t.expect (mt::eq (compute_answer (), 42)) << "answer eq 42";
   t.expect (mt::ne (compute_answer (), 43)) << "answer ne 43";

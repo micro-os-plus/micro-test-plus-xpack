@@ -7,10 +7,11 @@ This folder provides the headers included by the primary public header,
 the µTest++ Testing Framework.
 
 It includes declarations for essential library components, including
-test suite and test case management, test runner and reporter classes,
-function comparators, overloaded operators, user-defined literals,
-mathematical utilities, extension concepts, value wrappers, reflection
-utilities, and supporting internal mechanisms.
+test suite and test case management, the test runner and its options,
+the reporter classes, function comparators, the exception checks, the
+expression formatter, the extension templates and concepts, mathematical
+utilities, value helpers, reflection utilities, and supporting internal
+mechanisms.
 
 By consolidating public API definitions in this folder, the project
 maintains a clear separation from implementation details (located in the

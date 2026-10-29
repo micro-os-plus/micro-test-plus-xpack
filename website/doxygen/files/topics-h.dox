@@ -12,14 +12,14 @@ or as a `.doxyfile`.
 
 It introduces and organises the main documentation groups for the
 library, covering the C++ API, command-line options, expectations,
-requirements, comparators, operators, literals, utility functions, and test
-suite management.
+requirements, function comparators, logical functions, exception checks,
+utility functions, and test suite management.
 
 The documentation is structured to provide a comprehensive overview of the
 library's features, usage patterns, and configuration options. It
 includes detailed explanations, usage examples, and descriptions of the
-available verbosity modes, along with representative output for various
-scenarios.
+available reporters, verbosity modes, and filters, along with
+representative output for various scenarios.
 
 All documentation topics and group definitions are maintained in this file
 to ensure a consistent and modular structure. The file is located in the

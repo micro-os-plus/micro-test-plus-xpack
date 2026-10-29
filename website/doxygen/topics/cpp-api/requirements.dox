@@ -16,6 +16,3 @@ requirement (followed, with the TAP reporter, by a `Bail out!` line),
 and the whole test execution is aborted with `runner::abort()`, as
 Catch2 does; the remaining test cases do not run, and no totals are
 written.
-
-`assume()` is a deprecated alias of `require()`; in JUnit or Hypothesis, an
-unmet assumption skips the test instead of failing it.

@@ -4,7 +4,7 @@
 @details
 By default, all test cases defined in `main()` are included in the
 top-level test suite, which is owned by the runner and returned by
-`runner::initialise()`; its test cases run immediately. For more complex
+`runner::add_top_suite()`; its test cases run immediately. For more complex
 projects, additional test suites can be defined, typically in separate
 source files.
 
@@ -22,12 +22,15 @@ have external linkage (not `static`), and be declared `extern` in a
 header shared by these files.
 
 The static suites may be constructed before or after the runner, in any
-order. All suites, added or static, are run by `runner::run()`, after the
-test cases of the top suite, in a single order, sorted by name (byte by
-byte, as by `std::strcmp()`); suites with the same name run in the order
-in which they were created, so the static ones first. Zero-padded
-numeric prefixes (`"01 - Init"`) give an explicit order. Test suites
-should nevertheless be designed to be independent of each other.
+order. `runner::run()` runs all the suites, added or static, after the
+test cases of the top suite, sorted by name (byte by byte, as by
+`std::strcmp()`). Suites with the same name run in the order in which
+they were created, so the static ones, which exist before `main()`
+starts, run before the added ones; the relative order of static suites
+defined in different source files is unspecified, so give them distinct
+names. Zero-padded numeric prefixes (`"01 - Init"`) give an explicit
+order. Nevertheless, design the test suites to be independent of each
+other, so that they do not depend on the execution order.
 
 @par Examples
 

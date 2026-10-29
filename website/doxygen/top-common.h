@@ -77,7 +77,7 @@ of modern C++ libraries for embedded systems development.
 
 µOS++ is organised as a **collection of modular source libraries**, each 
 maintained in its own repository on GitHub and collectively managed under the
-[micro-os-plus](https://github.com/micro-os-plus) GitHub organization.
+[micro-os-plus](https://github.com/micro-os-plus) GitHub organisation.
 This modular structure
 enables developers to select and integrate only the components relevant to
 their projects, promoting flexibility and maintainability.

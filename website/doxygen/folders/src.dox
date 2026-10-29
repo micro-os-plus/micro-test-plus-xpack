@@ -10,7 +10,8 @@ more related components:
 - `counters.cpp` — `counters` accumulation and `operator+=`
 - `expression-formatter.cpp` — non-template `operator<<` overloads of the
   expression formatter, and the texts of the pending checks
-- `reflection.cpp` — deprecated `reflection::short_name()`
+- `runner-options.cpp` — `runner_options` command line parsing, and the
+  reporting of the option errors
 - `reporter-human.cpp` — human-readable reporter implementation
 - `reporter-tap.cpp` — TAP-format reporter implementation
 - `reporter.cpp` — base `reporter` class and `operator<<` overloads
@@ -20,4 +21,5 @@ more related components:
   computation
 - `test.cpp` — `suite`, `top_suite`, `static_suite`, and `test_case`
   lifecycle methods
-- `utility.cpp` — `extract_file_name()` and `is_match()` helpers
+- `utility.cpp` — `extract_file_name()`, `is_match()`, and `split()`
+  helpers
