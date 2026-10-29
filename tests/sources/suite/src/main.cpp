@@ -76,6 +76,7 @@ main (int argc, char* argv[])
   {
     mt::runner lr;
     lr.initialise (argc, argv);
+
     auto& ts = lr.add_top_suite ("Local suite");
 
     ts.test ("Check various conditions 1.1", [] (auto& t)
@@ -86,7 +87,7 @@ main (int argc, char* argv[])
         t.expect (compute_condition ()) << "condition is true";
       });
 
-    // The suite will be executed when the runner terminates, at `run()`.
+    // The suite will be executed when the runner terminates, at `run_suites()`.
     lr.add_suite ("Local suite 1", suite_function);
 
     ts.test ("Check various conditions 1.2", [] (auto& t)
@@ -97,7 +98,7 @@ main (int argc, char* argv[])
         t.expect (compute_condition ()) << "condition is true";
       });
 
-    exit_code = lr.run ();
+    exit_code = lr.run_suites ();
   }
 
   // --------------------------------------------------------------------------
@@ -113,7 +114,7 @@ main (int argc, char* argv[])
         t.expect (compute_condition ()) << "condition is true";
       });
 
-    // The suite will be executed when the runner terminates, at `run()`,
+    // The suite will be executed when the runner terminates, at `run_suites()`,
     // together with the static suites, sorted by name.
     sr.add_suite ("Local suite 2", suite_function);
 
@@ -125,7 +126,7 @@ main (int argc, char* argv[])
         t.expect (compute_condition ()) << "condition is true";
       });
 
-    exit_code += sr.run ();
+    exit_code += sr.run_suites ();
   }
 
   // --------------------------------------------------------------------------

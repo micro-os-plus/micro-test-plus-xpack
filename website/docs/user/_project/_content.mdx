@@ -63,12 +63,12 @@ The most basic test comprises a single test case with a single expectation; for 
 // For convenience, alias the fully qualified namespace to a shorter name.
 namespace mt = micro_os_plus::micro_test_plus;
 
+// Create a runner instance.
+mt::runner tr;
+
 int
 main(int argc, char* argv[])
 {
-  // Create a local instance of the runner.
-  mt::runner tr;
-
   // Initialise the runner with the command-line options.
   tr.initialise (argc, argv);
 
@@ -80,7 +80,7 @@ main(int argc, char* argv[])
     t.expect (true);
   });
 
-  return tr.run ();
+  return tr.run_suites ();
 }
 ```
 
@@ -126,18 +126,20 @@ compute_answer()
   return 42;
 }
 
+mt::runner tr;
+
 int
 main(int argc, char* argv[])
 {
-  mt::runner tr;
   tr.initialise (argc, argv);
+
   auto& ts = tr.add_top_suite ("The Answer");
 
   ts.test ("Check answer", [] (auto& t) {
     t.expect (compute_answer() == 42) << "answer is 42";
   });
 
-  return tr.run ();
+  return tr.run_suites ();
 }
 ```
 
@@ -204,10 +206,11 @@ compute_answer()
   return 42+1;
 }
 
+mt::runner tr;
+
 int
 main(int argc, char* argv[])
 {
-  mt::runner tr;
   tr.initialise (argc, argv);
   auto& ts = tr.add_top_suite ("The Answer");
 
@@ -215,7 +218,7 @@ main(int argc, char* argv[])
     t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
   });
 
-  return tr.run ();
+  return tr.run_suites ();
 }
 ```
 
@@ -282,7 +285,10 @@ The runner object must be instantiated by the application:
 mt::runner tr;
 ```
 
-For simple tests, the runner can be a local stack-allocated object in `main()`.
+For simple tests, the runner can be a local object in `main()`. When suites
+are added from other files, with `add_suite()`, the runner is usually a global
+object, so that those files can refer to it. The runner should outlive the
+static suites that refer to it.
 
 #### Initialisation
 
@@ -292,7 +298,7 @@ After instantiation, the runner is usually initialised with the options parsed f
 tr.initialise (argc, argv);
 ```
 
-The initialisation is optional; without it, the runner uses the default options (the TAP reporter, the `normal` verbosity, no output file, and no filter). If used, `initialise()` must precede `add_top_suite()` and `run()`, which otherwise initialise the runner with the default options; a later call is reported as an error.
+The initialisation is optional; without it, the runner uses the default options (the TAP reporter, the `normal` verbosity, no output file, and no filter). If used, `initialise()` must precede `add_top_suite()` and `run_suites()`, which otherwise initialise the runner with the default options; a later call is reported as an error.
 
 On platforms without a command line, such as embedded applications without semihosting arguments, the runner can be initialised with the options set directly, starting from the defaults, instead of the main arguments:
 
@@ -331,28 +337,28 @@ ts.test ("Check something", [] (auto& t) {
 
 The test cases of the top suite run immediately, when `test()` is called; the top suite is always the first suite in the report. If no name is given, the top suite is named after the program (the file name of `argv[0]`, without the extension), or `default suite` when there is no command line.
 
-The top suite is optional; without `add_top_suite()`, there is no top suite, and `run()` runs only the suites added with `add_suite()` and the static suites (see [Test suites](#test-suites)). It can be added only once, and before `run()`; a second call returns the same suite, and a call once `run()` has started is reported as an error.
+The top suite is optional; without `add_top_suite()`, there is no top suite, and `run_suites()` runs only the suites added with `add_suite()` and the static suites (see [Test suites](#test-suites)). It can be added only once, and before `run_suites()`; a second call returns the same suite, and a call once `run_suites()` has started is reported as an error.
 
 Until 5.0, `initialise (argc, argv, name)` also created and returned the top suite; it is deprecated, and is equivalent to `initialise (argc, argv)` followed by `add_top_suite (name)`.
 
 #### Test result
 
-To run the registered suites, end the session, and return the test result as the process exit code, the runner provides the `run()` member function; the session runs only once, and later calls return the same result:
+To run the registered suites, end the session, and return the test result as the process exit code, the runner provides the `run_suites()` member function; the session runs only once, and later calls return the same result:
 
 ```cpp
-return tr.run ();
+return tr.run_suites ();
 ```
 
 The result is 0 if all checks passed, and 1 otherwise, including when a suite was added too late (see [Non-static test suites](#non-static-test-suites)), and when there is no suite at all (no top suite, no suite added with `add_suite()`, and no static suite), since a test program that runs nothing must not pass unnoticed. If the command-line options, or the `runner_options`, were not valid (an unknown reporter name, an unknown colour mode, a missing option argument, or an output file that cannot be opened), the error is reported on `stderr` when the options are parsed, or, for the output file, when the runner is initialised, the option is ignored, and the tests are still run, but the result is 2. With an unknown reporter name, no test is run.
 
 #### Aborting the test execution
 
-When exceptions are not enabled, a failed requirement cannot stop only its test case (see [Requirements](#requirements)), so it aborts the whole test execution: the remaining test cases and suites do not run, `run()` does not return, and no totals are written. The test execution can also be aborted explicitly, from a test case, from a suite, or from the application, by calling `tr.abort ()`. Before the process is terminated, the reporter completes the report, in place of the totals:
+When exceptions are not enabled, a failed requirement cannot stop only its test case (see [Requirements](#requirements)), so it aborts the whole test execution: the remaining test cases and suites do not run, `run_suites()` does not return, and no totals are written. The test execution can also be aborted explicitly, from a test case, from a suite, or from the application, by calling `tr.abort ()`. Before the process is terminated, the reporter completes the report, in place of the totals:
 
 1. it displays the results of the running test case, if any; after a failed requirement, they end with it, and the human reporter marks it as `test execution aborted` (the TAP reporter adds no marker, since its `Bail out!` line, below, reports the abort); they are preceded by the name of the test case, and by those of the outer test cases, unless already displayed, so that a failure cannot be attributed to the previous test case;
 2. it ends the output with a line with the location of the failed requirement, or of the `abort()` call: `✗ Test execution aborted at <file>:<line>` for the human reporter, and `Bail out! Requirement failed at <file>:<line>` (or `Bail out! Test execution aborted at <file>:<line>`, for an explicit abort) for the TAP reporter, which tells the TAP consumers that the run stopped early, not that the output was truncated.
 
-Then `runner::abort()` flushes the standard streams, calls the abort handler, if one was set (see below), and then `::abort()`. An abort before `initialise()`, or after `run()`, when there is no report to complete, is reported on `stderr`, as `error: test execution aborted at <file>:<line>`.
+Then `runner::abort()` flushes the standard streams, calls the abort handler, if one was set (see below), and then `::abort()`. An abort before `initialise()`, or after `run_suites()`, when there is no report to complete, is reported on `stderr`, as `error: test execution aborted at <file>:<line>`.
 
 With `--quiet`, which otherwise displays only the failed checks and the totals, the failed checks of the aborted test case are displayed as well, since the totals are never reached. With `--silent`, nothing is displayed. If an output file is used, the results and the final line are written to it too, whatever the verbosity.
 
@@ -410,7 +416,7 @@ With the TAP reporter, the end of the output is then:
 Bail out! Test execution aborted at main.cpp:61
 ```
 
-Unless the abort handler ends the program otherwise, the process ends with `SIGABRT`, so a test harness sees a terminated process, not an exit code returned by `run()`.
+Unless the abort handler ends the program otherwise, the process ends with `SIGABRT`, so a test harness sees a terminated process, not an exit code returned by `run_suites()`.
 
 On embedded targets, where terminating the process is not meaningful, the application can set a handler, called before `::abort()`, for example to reset the target or to signal the result to the debugger:
 
@@ -423,7 +429,7 @@ tr.set_abort_handler ([] (const mt::reflection::source_location& sl)
 
 If the handler returns, `::abort()` is still called.
 
-When exceptions are enabled, the handler may also throw an exception, to return control to the application without terminating the process, for example when the test runner is only one part of a larger program. The test cases and the suites do not catch it, as they do with the other exceptions, so it leaves `run()`, or the `test()` call that started a test case of the top suite, and reaches the application:
+When exceptions are enabled, the handler may also throw an exception, to return control to the application without terminating the process, for example when the test runner is only one part of a larger program. The test cases and the suites do not catch it, as they do with the other exceptions, so it leaves `run_suites()`, or the `test()` call that started a test case of the top suite, and reaches the application:
 
 ```cpp
 struct test_aborted {};
@@ -434,7 +440,7 @@ tr.set_abort_handler ([] (const mt::reflection::source_location&)
 int result;
 try
   {
-    result = tr.run ();
+    result = tr.run_suites ();
   }
 catch (const test_aborted&)
   {
@@ -442,7 +448,7 @@ catch (const test_aborted&)
   }
 ```
 
-The abort is final: the report is complete, no test case runs afterwards, and `initialise()` and `run()` report an error on `stderr` (`run()` returns 1). Without exceptions, the handler must not return.
+The abort is final: the report is complete, no test case runs afterwards, and `initialise()` and `run_suites()` report an error on `stderr` (`run_suites()` returns 1). Without exceptions, the handler must not return.
 
 Refer to the [Test Runners](/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-runners/) reference page.
 
@@ -1020,10 +1026,11 @@ namespace app
   }
 } // namespace app
 
+mt::runner tr;
+
 int
 main (int argc, char* argv[])
 {
-  mt::runner tr;
   tr.initialise (argc, argv);
   auto& ts = tr.add_top_suite ();
 
@@ -1032,7 +1039,7 @@ main (int argc, char* argv[])
     t.expect (mt::eq (p, app::point{ 1, 3 })) << "point is { 1, 3 }";
   });
 
-  return tr.run ();
+  return tr.run_suites ();
 }
 ```
 
@@ -1126,11 +1133,13 @@ namespace app
 
 } // namespace app
 
+mt::runner tr;
+
 int
 main (int argc, char* argv[])
 {
-  mt::runner tr;
   tr.initialise (argc, argv);
+
   auto& ts = tr.add_top_suite ();
 
   ts.test ("Custom", [] (auto& t) {
@@ -1139,7 +1148,7 @@ main (int argc, char* argv[])
     t.expect (mt::all_of (app::divides (3, 12), app::even (7)));
   });
 
-  return tr.run ();
+  return tr.run_suites ();
 }
 ```
 
@@ -1198,11 +1207,11 @@ main (int argc, char* argv[])
 {
   sr.initialise (argc, argv);
 
-  // Without add_top_suite(), there is no top suite; run() runs only the
+  // Without add_top_suite(), there is no top suite; run_suites() runs only the
   // static suites. If tests are also needed in main(), add it:
   // auto& ts = sr.add_top_suite ("Top suite");
 
-  return sr.run ();
+  return sr.run_suites ();
 }
 ```
 
@@ -1229,11 +1238,11 @@ suite_function (mt::suite& ts)
 static mt::static_suite suite = { "Static suite", sr, suite_function };
 ```
 
-The implementation uses the C++ static constructors that are performed before the `main()` function is called. The order of registration is not defined; to provide a certain degree of predictability, the framework runs all suites when the `run()` member function is called, after **ordering them by name**.
+The implementation uses the C++ static constructors that are performed before the `main()` function is called. The order of registration is not defined; to provide a certain degree of predictability, the framework runs all suites when the `run_suites()` member function is called, after **ordering them by name**.
 
 The names are compared byte by byte, as with `strcmp()`: the comparison is case-sensitive (`"Zeta"` runs before `"alpha"`), and numbers are not compared by value (`"Suite 10"` runs before `"Suite 2"`). To run the suites in a given order, start their names with zero-padded numbers (`"01 - Init"`, `"02 - Run"`), and use the same case.
 
-A `static_suite` may also be a local object, constructed in a function, but only before the `run()` of its runner has started; one constructed later would never run, so it is rejected, the error is reported on `stderr`, and the result is not 0. The runner should outlive the static suites that refer to it.
+A `static_suite` may also be a local object, constructed in a function, but only before the `run_suites()` of its runner has started; one constructed later would never run, so it is rejected, the error is reported on `stderr`, and the result is not 0. The runner should outlive the static suites that refer to it.
 
 #### Non-static test suites
 
@@ -1250,10 +1259,11 @@ namespace mt = micro_os_plus::micro_test_plus;
 extern void
 suite_function (mt::suite& ts);
 
+mt::runner tr;
+
 int
 main(int argc, char* argv[])
 {
-  mt::runner tr;
   tr.initialise (argc, argv);
 
   auto& ts = tr.add_top_suite ("Minimal");
@@ -1264,14 +1274,14 @@ main(int argc, char* argv[])
 
   tr.add_suite("External suite", suite_function);
 
-  return tr.run ();
+  return tr.run_suites ();
 }
 ```
 
 :::warning Suites run by name, not in the order of the calls
 
 The order of the calls to `add_suite()` is **ignored**. The added suites
-run when `run()` is called, together with the static suites, sorted
+run when `run_suites()` is called, together with the static suites, sorted
 **alphabetically by name** (see above). Only for equal names, they run
 after the static suites constructed before `main()`, in the order of the
 calls.
@@ -1283,8 +1293,8 @@ for example with a numeric prefix, such as `"01 Setup"` and
 
 :::
 
-The suites must be added before `run()` is called. A suite added while
-`run()` runs, for example from the body of another suite, or after it
+The suites must be added before `run_suites()` is called. A suite added while
+`run_suites()` runs, for example from the body of another suite, or after it
 returned, would never run; it is rejected, the error is reported on
 `stderr`, and the result is not 0.
 
@@ -1296,7 +1306,7 @@ need not outlive the call to `add_suite()`.
 
 A program may have several runners, each with its own static suites and
 suites added with `add_suite()`. All the suites are kept in a single list,
-shared by the runners, but each suite refers to its runner, and `run()`
+shared by the runners, but each suite refers to its runner, and `run_suites()`
 runs only the suites that refer to it; the suites of the other runners are
 skipped, so the runners do not interfere:
 
@@ -1315,8 +1325,8 @@ main (int argc, char* argv[])
 
   second_runner.initialise (argc, argv);
 
-  int exit_code = first_runner.run ();   // Runs A and C.
-  exit_code += second_runner.run ();     // Runs B.
+  int exit_code = first_runner.run_suites ();   // Runs A and C.
+  exit_code += second_runner.run_suites ();     // Runs B.
 
   return exit_code;
 }
@@ -1634,7 +1644,7 @@ The passed checks are not formatted at the quiet and normal levels, unless an ou
 
 With the TAP reporter and the normal verbosity, the passed test cases are displayed as single `ok` lines, and the failed ones as complete `# Subtest:` blocks; the nested passed test cases appear inside the block of their outer test case. With the human reporter, the line of a passed nested test case is preceded by the name of its outer test case.
 
-When the test execution is aborted, the totals are replaced by a line with the location of the abort, also with `--quiet`, and there is no exit code, since `run()` does not return; see [Aborting the test execution](#aborting-the-test-execution).
+When the test execution is aborted, the totals are replaced by a line with the location of the abort, also with `--quiet`, and there is no exit code, since `run_suites()` does not return; see [Aborting the test execution](#aborting-the-test-execution).
 
 With `--quiet`, the failed checks are the only details displayed, so it is the level to use for a long run, in which only the failures matter. To also keep the details of the passed checks, add an output file, which receives every check, whatever the verbosity:
 
@@ -1682,7 +1692,7 @@ With `--filter`, the header is `Matching test cases:`, and only the selected tes
 
 The suite bodies run, as usual, since they create the test cases, but the bodies of the test cases do not run, so no check is evaluated; for the same reason, the nested test cases, created by the bodies of their parents, are not listed. No report is written: the list is written to the console, unless `--silent` is given, and to the output file, if any, and the exit code is 0 (or 2 after an option error).
 
-The code of `main()` and of the suite bodies also runs while listing, so the parts that depend on the results of the test cases (their totals, or the exit code of `run()`), and the messages of the test program, which would be mixed with the list, should be skipped when `tr.is_listing ()` is true:
+The code of `main()` and of the suite bodies also runs while listing, so the parts that depend on the results of the test cases (their totals, or the exit code of `run_suites()`), and the messages of the test program, which would be mixed with the list, should be skipped when `tr.is_listing ()` is true:
 
 ```cpp
 if (!tr.is_listing ())

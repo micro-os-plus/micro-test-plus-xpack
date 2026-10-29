@@ -57,9 +57,9 @@ main (int argc, char* argv[])
   // --------------------------------------------------------------------------
 
   // The inner tests should return failure.
-  // run() must be always called, otherwise the test suites
+  // run_suites() must be always called, otherwise the test suites
   // are not executed.
-  int code = tr.run ();
+  int code = tr.run_suites ();
   test_assert (code != 0);
 
   if (tr.verbosity_level () > verbosity::quiet && !tr.is_listing ())

@@ -316,7 +316,7 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
               s.test ("Local test", [] (auto& lt) { lt.expect (true); });
             });
 
-          t.expect (eq (local_runner.run (), 1)) << "session failed";
+          t.expect (eq (local_runner.run_suites (), 1)) << "session failed";
           local_counts.passed_checks++;
 
           t.expect (eq (later_runs, 1)) << "later suite run";

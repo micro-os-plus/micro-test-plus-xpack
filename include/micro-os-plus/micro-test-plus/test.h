@@ -1410,7 +1410,7 @@ namespace micro_os_plus::micro_test_plus
    * `suite` represents a top-level named group of related test cases within
    * the µTest++ framework. It is created by calling `runner::add_suite()`,
    * which constructs the object and stores it in the runner's collection; the
-   * stored suites are run later by `runner::run()`, together with the
+   * stored suites are run later by `runner::run_suites()`, together with the
    * static suites, sorted by name.
    * Each suite records its own timing information and propagates its
    * results to the owning `runner`.
@@ -1646,8 +1646,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Returns the internal stopwatch of the suite, started before its
      * body runs and stopped after it; for the top suite, it is started by
-     * `runner::add_top_suite()` and stopped by `runner::run()`. In v5.0.1,
-     * the returned class was `detail::timestamps`, now a deprecated
+     * `runner::add_top_suite()` and stopped by `runner::run_suites()`. In
+     * v5.0.1, the returned class was `detail::timestamps`, now a deprecated
      * alias; only its read-only members are kept. The timings are
      * internal; the elapsed times are shown by the reporters.
      *
@@ -1947,7 +1947,7 @@ namespace micro_os_plus::micro_test_plus
    * Upon construction, the suite inserts itself into the list of suites,
    * kept sorted by name, which does not depend on the runner object (see
    * `suite`). The runner is only referred to, not accessed, so it may be
-   * constructed later. When `runner::run()` is called, the runner runs
+   * constructed later. When `runner::run_suites()` is called, the runner runs
    * the suites that refer to it, static or registered with
    * `runner::add_suite()`, in the order of the list; for equal names, in
    * the order of their insertion, so the static suites constructed
@@ -1956,7 +1956,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * The list is shared by all the runners, and each runner runs only the
    * suites that refer to it, so several runners may each have their own
-   * static suites. A static suite constructed once its runner's `run()`
+   * static suites. A static suite constructed once its runner's `run_suites()`
    * has started, for example a local one, is rejected, since it would
    * never run; the error is reported on `stderr`, and the exit code of
    * the runner is not 0. The runner should outlive the static suites

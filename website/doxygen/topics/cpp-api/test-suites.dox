@@ -22,7 +22,7 @@ have external linkage (not `static`), and be declared `extern` in a
 header shared by these files.
 
 The static suites may be constructed before or after the runner, in any
-order. `runner::run()` runs all the suites, added or static, after the
+order. `runner::run_suites()` runs all the suites, added or static, after the
 test cases of the top suite, sorted by name (byte by byte, as by
 `std::strcmp()`). Suites with the same name run in the order in which
 they were created, so the static ones, which exist before `main()`
@@ -48,13 +48,15 @@ mt::runner tr;
 int
 main (int argc, char* argv[])
 {
-  auto& ts = tr.initialise (argc, argv, "Sample");
+  tr.initialise (argc, argv);
+
+  auto& ts = tr.add_top_suite ("Sample");
 
   ts.test ("Check one", [] (auto& t) {
     t.expect (true) << "Passed";
   });
 
-  return tr.run ();
+  return tr.run_suites ();
 }
 @endcode
 

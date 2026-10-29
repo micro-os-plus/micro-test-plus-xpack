@@ -51,10 +51,11 @@ compute_condition (void)
 
 // ----------------------------------------------------------------------------
 
+mt::runner tr;
+
 int
 main (int argc, char* argv[])
 {
-  mt::runner tr;
   tr.initialise (argc, argv);
 
   // Without a name, the top suite is named after the program.
@@ -75,7 +76,7 @@ main (int argc, char* argv[])
   // --------------------------------------------------------------------------
 
   // Return the overall test result to the system.
-  return tr.run ();
+  return tr.run_suites ();
 }
 
 // ----------------------------------------------------------------------------

@@ -1,5 +1,10 @@
 # C++ API review
 
+Note: the public function `runner::run()` was renamed `run_suites()` (#193).
+Where this document mentions `run()` of the runner, the new name is used,
+except in the passages that describe the history of the name; `run()` of
+the suites and of the test cases is unchanged.
+
 Date: 2026-10-23, on branch `xpack-development`, commit `1e491028`.
 
 Scope: the umbrella header `include/micro-os-plus/micro-test-plus.h`,
@@ -201,20 +206,20 @@ Tags:
   above, were renamed `all_of()` and `any_of()`, and made variadic, in
   `e7f7d5f7` (#168).
 
-- **#5 — A `static_suite` constructed during or after `run()` is
+- **#5 — A `static_suite` constructed during or after `run_suites()` is
   silently skipped, and still counted.** [internal] **[confirmed]**
   `inlines/test-inlines.h` lines 820 and 851, `src/runner.cpp` lines
   554 to 577, 604 to 637, and 865 to 878: the `static_suite`
   constructors call `link()` directly, so they bypass the check in
-  `register_suite()` that rejects `add_suite()` after `run()` has
+  `register_suite()` that rejects `add_suite()` after `run_suites()` has
   started. The probes:
-  - constructed inside a suite body during `run()`, a suite whose name
+  - constructed inside a suite body during `run_suites()`, a suite whose name
     sorts after the running suite is run, but one whose name sorts
     before it is never run; it is still counted by
     `static_suites_count()`, so the human total says "5 test suites"
     while four ran, and the TAP plan is `1..5` with four test points;
-  - constructed after `run()` has returned, the suite is ignored
-    without a message, a second `run()` still returns 0, and
+  - constructed after `run_suites()` has returned, the suite is ignored
+    without a message, a second `run_suites()` still returns 0, and
     `total_suites_count()` reports 2.
 
   Suggested change: route the registration of `static_suite` through
@@ -341,7 +346,7 @@ Tags:
 
   Status: fixed. An unknown reporter name stops the session in
   `initialise()`: no output file is created, nothing is reported, no
-  test is run, and `run()` returns 2. The other command-line errors are
+  test is run, and `run_suites()` returns 2. The other command-line errors are
   kept by the runner and written by `begin_session()` as comment lines
   (`# error: ...` in TAP), to the console and to the output file, as
   well as on `stderr`.
@@ -462,7 +467,7 @@ Tags:
   which they are added.** [breaking] **[confirmed]**
   `src/test.cpp` lines 499 to 515, `src/runner.cpp` lines 554 to 577
   and 604 to 637: `add_suite()` links the new suite into the same
-  name-sorted list as the `static_suite` objects, and `run()` follows
+  name-sorted list as the `static_suite` objects, and `run_suites()` follows
   that list. The probe adds "Zeta (added first)" and then
   "Alpha (added second)"; Alpha runs first. Sorting is a reasonable
   way to make the static initialisation order deterministic, but for
@@ -770,9 +775,9 @@ Tags:
   visible "test execution aborted" message and the abort handler
   hook; given that C++ cannot unwind without exceptions, this is a
   deliberate and visible difference.
-- The session functions handle the wrong call orders: `run()` before
-  `initialise()`, `initialise()` twice, and `run()` twice report an
-  error or return the stable exit code; `add_suite()` after `run()`
+- The session functions handle the wrong call orders: `run_suites()` before
+  `initialise()`, `initialise()` twice, and `run_suites()` twice report an
+  error or return the stable exit code; `add_suite()` after `run_suites()`
   is rejected and makes the exit code non-zero.
 - Nesting: failures in nested test cases reach the parent, the suite,
   and the totals; checks before and after a nested test case are

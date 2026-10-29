@@ -71,7 +71,7 @@ main (int argc, char* argv[])
     mt::runner tr;
     tr.initialise (argc, argv);
 
-    int exit_code = tr.run ();
+    int exit_code = tr.run_suites ();
 
     // error: no test suites.
     test_assert (exit_code == 1);
@@ -82,6 +82,7 @@ main (int argc, char* argv[])
   {
     mt::runner tr;
     tr.initialise (argc, argv);
+
     auto& ts = tr.add_top_suite ("Suite with subtest");
 
     int xc = 0;
@@ -94,7 +95,7 @@ main (int argc, char* argv[])
         test_assert (strcmp (t.name (), "Empty subtest") == 0);
       });
 
-    int exit_code = tr.run ();
+    int exit_code = tr.run_suites ();
 
     test_assert (exit_code == 0);
     test_assert (xc == 1);
@@ -105,6 +106,7 @@ main (int argc, char* argv[])
   {
     mt::runner tr;
     tr.initialise (argc, argv);
+
     auto& ts = tr.add_top_suite ("Suite with second subtest");
 
     int xc = 0;
@@ -138,8 +140,8 @@ main (int argc, char* argv[])
       });
 
     // The test cases of the top suite already ran, when `test()` was
-    // called; run() only completes the session.
-    int exit_code = tr.run ();
+    // called; run_suites() only completes the session.
+    int exit_code = tr.run_suites ();
     test_assert (exit_code == 0);
 
     test_assert (xc == 1);
@@ -176,7 +178,7 @@ main (int argc, char* argv[])
         test_assert (yc == 1);
       });
 
-    int exit_code = tr.run ();
+    int exit_code = tr.run_suites ();
 
     test_assert (exit_code == 0);
     test_assert (xc == 1);

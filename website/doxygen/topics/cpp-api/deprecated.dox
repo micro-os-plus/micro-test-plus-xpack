@@ -39,7 +39,7 @@ belong to:
   `add_top_suite()` (since 4.1.0);
 - `runner::initialise (argc, argv, top_suite_name)`, replaced by
   `initialise (argc, argv)` followed by `add_top_suite()`;
-- `runner::exit_code()`, replaced by `runner::run()`;
+- `runner::exit_code()`, replaced by `runner::run_suites()`;
 - `runner::suite()`, replaced by `runner::add_suite()`;
 - `runner::suites_count()`, replaced by `added_suites_count()` or
   `total_suites_count()`;

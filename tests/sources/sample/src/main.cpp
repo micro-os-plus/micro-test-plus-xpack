@@ -264,7 +264,7 @@ main (int argc, char* argv[])
   // --------------------------------------------------------------------------
 
   // Return the overall test result to the system.
-  return tr.run ();
+  return tr.run_suites ();
 }
 
 // ----------------------------------------------------------------------------

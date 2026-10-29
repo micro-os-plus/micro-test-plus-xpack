@@ -16,7 +16,7 @@ more related components:
 - `reporter-tap.cpp` — TAP-format reporter implementation
 - `reporter.cpp` — base `reporter` class and `operator<<` overloads
 - `runner.cpp` — `runner` constructors, option parsing, suite
-  registration, `run()`, and `abort()`
+  registration, `run_suites()`, and `abort()`
 - `stopwatch.cpp` — `stopwatch` clock readings and elapsed-time
   computation
 - `test.cpp` — `suite`, `top_suite`, `static_suite`, and `test_case`

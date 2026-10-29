@@ -131,7 +131,7 @@ next line FAILED (miscellaneous.cpp:917)
         ✓ a top suite without test cases passes
         ✓ a second add_top_suite() returns the same suite
         ✓ the session passes
-        ✓ a top suite added after run() is rejected
+        ✓ a top suite added after run_suites() is rejected
         ✓ without initialise(), the default options are used
     ✓ Optional top suite - passed (7 checks)
     • Runner option errors
@@ -177,13 +177,13 @@ next line FAILED (miscellaneous.cpp:917)
         ✓ still no test case body run
     ✓ List test cases - passed (7 checks)
     • Late suites
-        ✓ suite added during run() rejected
+        ✓ suite added during run_suites() rejected
         ✓ rejected suite neither run nor counted
-        ✓ nested run() rejected
+        ✓ nested run_suites() rejected
         ✓ session passed
-        ✓ suite added after run() rejected
-        ✓ static suites constructed during run() rejected
-        ✓ static suite constructed after run() rejected
+        ✓ suite added after run_suites() rejected
+        ✓ static suites constructed during run_suites() rejected
+        ✓ static suite constructed after run_suites() rejected
     ✓ Late suites - passed (7 checks)
     • Test case started on the suite
         ✓ check before the test case
@@ -293,10 +293,10 @@ next line FAILED (miscellaneous.cpp:917)
     • Abort during the session
         ✓ human handler exception passed on
         ✓ human no test case after the abort
-        ✓ human run() refused after the abort
+        ✓ human run_suites() refused after the abort
         ✓ tap handler exception passed on
         ✓ tap no test case after the abort
-        ✓ tap run() refused after the abort
+        ✓ tap run_suites() refused after the abort
     ✓ Abort during the session - passed (6 checks)
     • Test case and suite names
         ✓ temporary string name

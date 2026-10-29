@@ -132,11 +132,11 @@ namespace micro_os_plus::micro_test_plus
    * execution of test suites within the µTest++ framework. It owns the
    * optional top suite, returned by `add_top_suite()`, whose test cases
    * run immediately, in `main()`, and a collection of test suites added
-   * with `add_suite()`, which are run later, by `run()`. These suites and
-   * the `static_suite` objects that refer to the runner are kept in a
-   * single list, sorted by name, independent of the runner object, so
-   * the static suites may be constructed before it. `run()` runs the
-   * suites added with `add_suite()` and the static suites together, in a
+   * with `add_suite()`, which are run later, by `run_suites()`. These
+   * suites and the `static_suite` objects that refer to the runner are kept
+   * in a single list, sorted by name, independent of the runner object,
+   * so the static suites may be constructed before it. `run_suites()` runs
+   * the suites added with `add_suite()` and the static suites together, in a
    * single order, sorted by name; for equal names, in the order of their
    * creation, so the static suites constructed before `main()` run first.
    * The names are compared byte by byte, as by `std::strcmp()`, not in
@@ -145,10 +145,10 @@ namespace micro_os_plus::micro_test_plus
    * before `"Suite 2"`); zero-padded numeric prefixes (`"01 - Init"`) give
    * an explicit order.
    *
-   * Several runners may coexist, static or local, each with its own
+   * Several runners may coexist, global or local, each with its own
    * static suites and suites added with `add_suite()`. The list of suites
    * is shared by all the runners; each suite refers to its runner, and
-   * `run()` runs only the suites that refer to this runner, skipping
+   * `run_suites()` runs only the suites that refer to this runner, skipping
    * those of the other runners, so the runners do not interfere. The list
    * is not protected by a lock: the runners must not run, and the suites
    * must not be created or destroyed, concurrently from different threads.
@@ -163,21 +163,22 @@ namespace micro_os_plus::micro_test_plus
    * Both `initialise()` and `add_top_suite()` are optional:
    *
    * @code{.cpp}
+   * mt::runner tr;
+   * 
    * int
    * main (int argc, char* argv[])
    * {
-   *   mt::runner tr;
    *   tr.initialise (argc, argv);
    *
    *   auto& ts = tr.add_top_suite ("Main");
    *   ts.test ("Check something", [] (auto& t) { t.expect (true); });
    *
-   *   return tr.run ();
+   *   return tr.run_suites ();
    * }
    * @endcode
    *
    * Without `initialise()`, the default options are used; without
-   * `add_top_suite()`, there is no top suite, and `run()` runs only the
+   * `add_top_suite()`, there is no top suite, and `run_suites()` runs only the
    * suites added with `add_suite()` and the static suites.
    *
    * The runner is not a node of the test tree: it has no name of its own
@@ -224,7 +225,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The `static_suite` constructors call `link_static_suite()`, which
-     * rejects the suites constructed after `run()` has started.
+     * rejects the suites constructed after `run_suites()` has started.
      */
     friend class static_suite;
 
@@ -359,7 +360,7 @@ namespace micro_os_plus::micro_test_plus
      * them; equivalent to `initialise (runner_options{ argc, argv })`.
      *
      * The call is optional; without it, the runner is initialised with the
-     * default options by the first call of `add_top_suite()` or `run()`.
+     * default options by the first call of `add_top_suite()` or `run_suites()`.
      * If used, it must therefore precede them; a later call, or a call
      * after the test execution was aborted, reports an error on `stderr`,
      * without other effects; the options are then not parsed, so their
@@ -390,15 +391,15 @@ namespace micro_os_plus::micro_test_plus
      * @endcode
      *
      * The call is optional; without it, the runner is initialised with the
-     * default options by the first call of `add_top_suite()` or `run()`.
+     * default options by the first call of `add_top_suite()` or `run_suites()`.
      * If used, it must therefore precede them; a later call, or a call
      * after the test execution was aborted, reports an error on `stderr`,
      * without other effects.
      *
      * If the output file cannot be opened, the error is reported on
      * `stderr` and the report is written only to the console; the tests
-     * are still run, but `run()` returns 2. With an unknown reporter
-     * name, nothing is reported, no test is run, and `run()` returns 2.
+     * are still run, but `run_suites()` returns 2. With an unknown reporter
+     * name, nothing is reported, no test is run, and `run_suites()` returns 2.
      *
      * The options are taken by value and moved into the runner, which
      * keeps them for the whole session; pass a temporary, or use
@@ -420,7 +421,7 @@ namespace micro_os_plus::micro_test_plus
      * The top suite is the suite whose body is the code of `main()`: its
      * test cases run immediately, when `test()` is called, before the
      * suites added with `add_suite()` and the static suites, which run
-     * later, by `run()`. It is always the first suite in the report.
+     * later, by `run_suites()`. It is always the first suite in the report.
      *
      * The call is optional; without it, there is no top suite, and only
      * the other suites are run and reported. If the runner is not yet
@@ -430,8 +431,8 @@ namespace micro_os_plus::micro_test_plus
      * suite is named after the file name of `runner_options::arguments[0]`,
      * without the extension, when available, or "default suite".
      *
-     * The top suite can be added only once, and before `run()`; a second
-     * call, or a call made once `run()` has started, is reported on
+     * The top suite can be added only once, and before `run_suites()`; a second
+     * call, or a call made once `run_suites()` has started, is reported on
      * `stderr`, and the existing top suite is returned. With an unknown
      * reporter name, the top suite is returned, but nothing is reported.
      *
@@ -485,7 +486,7 @@ namespace micro_os_plus::micro_test_plus
      * @since 5.1.0
      */
     int
-    run (void);
+    run_suites (void);
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
@@ -494,17 +495,17 @@ namespace micro_os_plus::micro_test_plus
      */
 
     /**
-     * @brief Deprecated name of `run()`.
+     * @brief Deprecated name of `run_suites()`.
      *
      * @details
-     * Calls `run()`; once the session has ended, it only returns the exit
-     * code.
+     * Calls `run_suites()`; once the session has ended, it only returns the
+     * exit code.
      *
      * @par Parameters
      *   None.
-     * @return The value returned by `run()`.
+     * @return The value returned by `run_suites()`.
      */
-    [[deprecated ("use run() (since 5.1.0)")]] int
+    [[deprecated ("use run_suites() (since 5.1.0)")]] int
     exit_code (void);
 
     /**
@@ -513,20 +514,20 @@ namespace micro_os_plus::micro_test_plus
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
     /**
-     * @brief Adds a test suite to the runner, to be run by `run()`.
+     * @brief Adds a test suite to the runner, to be run by `run_suites()`.
      *
      * @details
      * Unlike the test cases added to the top suite (see
      * `add_top_suite()`), which run immediately, the suite is only
-     * stored; `run()` runs it later,
+     * stored; `run_suites()` runs it later,
      * together with the static suites that refer to this runner, sorted
      * by name.
      *
-     * The suites must be added before `run()` is called. A suite added
-     * while `run()` runs (for example from the body of another suite), or
-     * after it returned, would never run; it is rejected, the error is
-     * reported on `stderr`, and the exit code is not 0, so that the
-     * omission cannot pass unnoticed.
+     * The suites must be added before `run_suites()` is called. A suite added
+     * while `run_suites()` runs (for example from the body of another
+     * suite), or after it returned, would never run; it is rejected, the
+     * error is reported on `stderr`, and the exit code is not 0, so that
+     * the omission cannot pass unnoticed.
      *
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
@@ -560,7 +561,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Calls `add_suite()`. The old name did not show that the suite is
-     * only stored, to be run later by `run()`, unlike the test cases,
+     * only stored, to be run later by `run_suites()`, unlike the test cases,
      * which run immediately; it also hid the `suite` class inside the
      * runner.
      *
@@ -602,7 +603,7 @@ namespace micro_os_plus::micro_test_plus
      * return control to the application without terminating the process.
      * The test cases and the suites do not catch it, so it leaves the
      * `test()` call that started a test case of the top suite, or
-     * `run()`, and reaches the application; their remaining code is not
+     * `run_suites()`, and reaches the application; their remaining code is not
      * run. The report is complete, but the runner cannot be used
      * afterwards (see `abort()`).
      *
@@ -634,12 +635,12 @@ namespace micro_os_plus::micro_test_plus
      * @brief Aborts test execution immediately.
      *
      * @details
-     * Between `initialise()` and the end of `run()`, the reporter
+     * Between `initialise()` and the end of `run_suites()`, the reporter
      * completes the report, on the console and in the output file: it
      * writes the results of the running test case, if any, followed by a
      * line with the source location (a `Bail out!` line with the TAP
      * reporter), in place of the totals. Before `initialise()` or after
-     * `run()`, when there is no report to complete, the source location
+     * `run_suites()`, when there is no report to complete, the source location
      * is written to `stderr`.
      *
      * The handler set by `set_abort_handler()` is then called, if any. If
@@ -647,8 +648,8 @@ namespace micro_os_plus::micro_test_plus
      * with `::abort()`.
      *
      * The abort is final, also when the handler throws an exception: no
-     * test case runs afterwards, `initialise()` and `run()` report an
-     * error on `stderr` (`run()` returns 1), and a later abort is not
+     * test case runs afterwards, `initialise()` and `run_suites()` report an
+     * error on `stderr` (`run_suites()` returns 1), and a later abort is not
      * reported again.
      *
      * @param sl The source location from which the abort is triggered.
@@ -705,8 +706,8 @@ namespace micro_os_plus::micro_test_plus
      * `runner_options::list_tests`. While the test cases are listed, their
      * bodies do not run, so the code in `main()` or in the suite bodies
      * that depends on their results (their totals, or the exit code of
-     * `run()`) can use it to skip those parts, and the tests can use it to
-     * keep their own messages out of the list. Before `initialise()` is
+     * `run_suites()`) can use it to skip those parts, and the tests can use
+     * it to keep their own messages out of the list. Before `initialise()` is
      * called, it is `false`.
      *
      * @par Parameters
@@ -752,7 +753,7 @@ namespace micro_os_plus::micro_test_plus
      * The count includes neither the top suite nor the static suites,
      * which are counted by `static_suites_count()`; add one for the top
      * suite, if added, or use `total_suites_count()`, which counts all of
-     * them. The suites that `add_suite()` rejects, once `run()` has
+     * them. The suites that `add_suite()` rejects, once `run_suites()` has
      * started, are not counted.
      *
      * @par Parameters
@@ -816,7 +817,7 @@ namespace micro_os_plus::micro_test_plus
      * Counts the suites, registered or static, whose names do not match
      * the first filter pattern (`--filter` or
      * `runner_options::filter_patterns`); it is complete only after
-     * `run()` has returned, and is zero when there are no patterns. The
+     * `run_suites()` has returned, and is zero when there are no patterns. The
      * skipped suites are included in `added_suites_count()` and
      * `static_suites_count()`; the skipped test cases are counted by
      * `counters::skipped_test_cases()`.
@@ -836,8 +837,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The counters include the checks and the test cases of all the
      * suites that were run, including the top suite, if any; they are
-     * complete only after `run()` has returned. The totals are read-only;
-     * there is no non-const overload, so that the counters cannot be
+     * complete only after `run_suites()` has returned. The totals are
+     * read-only; there is no non-const overload, so that the counters cannot be
      * modified from the test code.
      *
      * @par Parameters
@@ -858,8 +859,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Returns the internal stopwatch of the session, started by
-     * `initialise()` and stopped at the end of `run()`; the elapsed time
-     * is complete only after `run()` has returned. In v5.0.1, the
+     * `initialise()` and stopped at the end of `run_suites()`; the elapsed time
+     * is complete only after `run_suites()` has returned. In v5.0.1, the
      * returned class was `detail::timestamps`, now a deprecated alias;
      * only its read-only members are kept. The timings are internal; the
      * elapsed times are shown by the reporters.
@@ -937,7 +938,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief Registers a test suite with the runner.
      *
      * @details
-     * Called by `add_suite()`. Once `run()` has started, the suite is
+     * Called by `add_suite()`. Once `run_suites()` has started, the suite is
      * rejected: it is destroyed, the error is reported on `stderr`, and
      * `has_rejected_suites_` is set.
      *
@@ -949,12 +950,12 @@ namespace micro_os_plus::micro_test_plus
     register_suite (std::unique_ptr<class suite> suite);
 
     /**
-     * @brief Reject a suite constructed after `run()` has started.
+     * @brief Reject a suite constructed after `run_suites()` has started.
      *
      * @details
      * Reports the error on `stderr`, sets `has_rejected_suites_`, and,
      * if the session has already ended, updates the stored exit code,
-     * for the later calls of `run()`. Used by `register_suite()` and by
+     * for the later calls of `run_suites()`. Used by `register_suite()` and by
      * `link_static_suite()`.
      *
      * @param [in] name The name of the rejected suite.
@@ -973,7 +974,7 @@ namespace micro_os_plus::micro_test_plus
      * constructed before its runner, which must not be accessed then;
      * therefore the runners that have started are kept in a
      * constant-initialised list, which is searched by address. If the
-     * runner is in the list, `run()` has started and the suite would
+     * runner is in the list, `run_suites()` has started and the suite would
      * never run, so it is rejected, as by `add_suite()`; otherwise, it
      * is linked.
      *
@@ -991,7 +992,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Constant-initialised, so it is valid before any constructor runs.
-     * A runner is inserted by `run()` and removed by the destructor.
+     * A runner is inserted by `run_suites()` and removed by the destructor.
      */
     static runner* started_first_;
 
@@ -1028,10 +1029,10 @@ namespace micro_os_plus::micro_test_plus
      * @brief Checks whether an option error was found by `initialise()`.
      *
      * @details
-     * Called by `run()`, which then returns 2. The errors are those found
-     * while parsing the options (see `runner_options::has_errors()`),
+     * Called by `run_suites()`, which then returns 2. The errors are those
+     * found while parsing the options (see `runner_options::has_errors()`),
      * and the output file that cannot be opened. The filters that select
-     * no test case are checked by `run()` itself.
+     * no test case are checked by `run_suites()` itself.
      *
      * Valid only after `initialise()` created the reporter.
      *
@@ -1087,7 +1088,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Always constructed with the runner, but part of the session only
      * after `add_top_suite()` (see `has_top_suite_`); its test cases are
-     * added directly, between `add_top_suite()` and `run()`.
+     * added directly, between `add_top_suite()` and `run_suites()`.
      */
     class top_suite top_suite_;
 
@@ -1106,7 +1107,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Each call to `add_suite()` appends a new `suite` to this vector,
      * and inserts it into the list of suites, sorted by name; the suites
-     * are run later, by `run()`, in the order of the list. The vector
+     * are run later, by `run_suites()`, in the order of the list. The vector
      * retains ownership of all suites for the lifetime of the runner.
      */
     std::vector<std::unique_ptr<class suite>> children_suites_;
@@ -1128,7 +1129,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Measures the duration of the entire test session; started by
-     * `initialise()`, stopped by `run()`, and read by the reporters,
+     * `initialise()`, stopped by `run_suites()`, and read by the reporters,
      * which are friends.
      */
     detail::stopwatch stopwatch_;
@@ -1137,8 +1138,8 @@ namespace micro_os_plus::micro_test_plus
      * @brief Totals of the test session.
      *
      * @details
-     * The totals of each suite are added by `run()` and `run_child_suites()`,
-     * after the suite was run.
+     * The totals of each suite are added by `run_suites()` and
+     * `run_child_suites()`, after the suite was run.
      */
     counters totals_;
 
@@ -1158,7 +1159,7 @@ namespace micro_os_plus::micro_test_plus
      * Moved in by `initialise()`, and kept for the whole session: the
      * verbosity is returned by `verbosity_level()`, the filter patterns
      * are read by `is_selected()`, the listing of the test cases by
-     * `run()` and `is_listing()`, and the command line by the reporters,
+     * `run_suites()` and `is_listing()`, and the command line by the reporters,
      * which are friends. The defaults until then.
      */
     runner_options options_{};
@@ -1178,13 +1179,13 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The session moves only forwards, from `created` to `initialised`
      * (by `initialise()`), to `running`, and to `finished` (both by
-     * `run()`); the calls made in another state are reported or ignored.
+     * `run_suites()`); the calls made in another state are reported or ignored.
      */
     enum class session_state
     {
       created, /**< Constructed; `initialise()` not yet called. */
       initialised, /**< Initialised; test cases may be added and run. */
-      running, /**< `run()` is running the suites; no suite may be added. */
+      running, /**< `run_suites()` runs the suites; no suite may be added. */
       finished /**< All suites run and the session ended. */
     };
 
@@ -1192,25 +1193,25 @@ namespace micro_os_plus::micro_test_plus
      * @brief The current state of the test session.
      *
      * @details
-     * Set by `initialise()` and `run()`; read by `register_suite()`, to
+     * Set by `initialise()` and `run_suites()`; read by `register_suite()`, to
      * reject the suites added too late.
      */
     session_state session_state_ = session_state::created;
 
     /**
-     * @brief The exit code computed by `run()`.
+     * @brief The exit code computed by `run_suites()`.
      *
      * @details
-     * Returned again by the calls of `run()` made after the session
+     * Returned again by the calls of `run_suites()` made after the session
      * ended.
      */
     int exit_code_ = 1;
 
     /**
-     * @brief Whether a suite was added after `run()` had started.
+     * @brief Whether a suite was added after `run_suites()` had started.
      *
      * @details
-     * Set by `register_suite()`, which rejects such a suite; `run()`
+     * Set by `register_suite()`, which rejects such a suite; `run_suites()`
      * then returns 1, unless an option error requires 2.
      */
     bool has_rejected_suites_ = false;
@@ -1231,7 +1232,7 @@ namespace micro_os_plus::micro_test_plus
      * Read by `detail::runnable_base`, a friend, so that, when the abort
      * handler throws an exception, the test cases and the suites pass it
      * on instead of reporting it, and no test case runs afterwards; read
-     * by `initialise()` and `run()`, which then refuse to start, and by
+     * by `initialise()` and `run_suites()`, which then refuse to start, and by
      * `abort()`, so that a later abort is not reported again.
      */
     bool aborted_ = false;
@@ -1260,7 +1261,7 @@ namespace micro_os_plus::micro_test_plus
      * @brief The number of listed test cases.
      *
      * @details
-     * Incremented by `list_test_case()`; written by `run()` at the end
+     * Incremented by `list_test_case()`; written by `run_suites()` at the end
      * of the list.
      */
     size_t listed_test_cases_count_ = 0;
@@ -1270,7 +1271,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Incremented by `list_test_case()` when it writes the name of a
-     * suite; written by `run()` at the end of the list.
+     * suite; written by `run_suites()` at the end of the list.
      */
     size_t listed_suites_count_ = 0;
   };

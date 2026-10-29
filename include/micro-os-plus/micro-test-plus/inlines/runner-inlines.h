@@ -23,7 +23,7 @@
  * instance, and for its deprecated alias `runner::suite()`. It constructs
  * a `suite` object on the heap (wrapped in `std::unique_ptr`) and
  * transfers ownership to the runner via `register_suite()`; the suite is
- * run later, by `run()`.
+ * run later, by `run_suites()`.
  *
  * The implementation is separated into this inline header so that the
  * template definition is visible at every call site without cluttering the
@@ -166,8 +166,8 @@ namespace micro_os_plus::micro_test_plus
    * Constructs a `suite` object on the heap, binding the callable and any
    * additional arguments, then transfers ownership to the runner via
    * `register_suite()`. The suite is not run here; all registered suites
-   * are run later by `run()`, together with the static suites, sorted by
-   * name. A suite added once `run()` has started is rejected by
+   * are run later by `run_suites()`, together with the static suites, sorted by
+   * name. A suite added once `run_suites()` has started is rejected by
    * `register_suite()`.
    */
   template <typename Callable_T, typename... Args_T>

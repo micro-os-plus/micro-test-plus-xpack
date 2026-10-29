@@ -55,7 +55,7 @@ Built with GCC 15.2.1 20251203, with FP, with exceptions, with MICRO_OS_PLUS_DEB
         ✓ the timings are started by initialise()
         ✓ local session passed
         ✓ the suite timings are started
-        ✓ the timings are stopped by run()
+        ✓ the timings are stopped by run_suites()
     ✓ timings(), detail::timestamps - passed (5 checks)
     • timestamps::compute_elapsed_time()
         ✓ no readings, zero elapsed time

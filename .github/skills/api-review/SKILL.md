@@ -261,7 +261,7 @@ The questions that found real defects in this code base:
   the whole run), unless the difference is unavoidable and visible.
 - **Registration**: `static_suite` objects constructed before the
   runner, in other translation units (the static initialisation
-  order), during `run()`, or after it; none of them may be silently
+  order), during `run_suites()`, or after it; none of them may be silently
   ignored.
 - **Copy and move**: objects that are registered in a list or referred
   to by pointer must not be copyable or movable; value types (e.g. the

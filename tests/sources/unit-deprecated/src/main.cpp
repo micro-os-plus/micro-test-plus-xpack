@@ -53,9 +53,9 @@ main (int argc, char* argv[])
 
   // --------------------------------------------------------------------------
 
-  // run() must be always called, otherwise the test suites
+  // run_suites() must be always called, otherwise the test suites
   // are not executed.
-  int code = tr.run ();
+  int code = tr.run_suites ();
   // The deprecated tests include checks that fail on purpose, so the
   // session should return failure.
   test_assert (code != 0);

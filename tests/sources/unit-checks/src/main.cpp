@@ -318,8 +318,7 @@ main (int argc, char* argv[])
           << "literal a.b,c splits on any delimiter";
       local_counts.passed_checks++;
 
-      t.expect (std::vector<std::string_view>{}
-                == utility::split ("", "."))
+      t.expect (std::vector<std::string_view>{} == utility::split ("", "."))
           << "literal empty splits into []";
       local_counts.passed_checks++;
 
@@ -586,7 +585,7 @@ main (int argc, char* argv[])
   // --------------------------------------------------------------------------
 
   // Exercise the dynamic runner::add_suite() path (registers a child suite
-  // that is run lazily inside run()).
+  // that is run lazily inside run_suites()).
   test_assert (tr.added_suites_count () == 0);
   tr.add_suite ("Dynamic suite", [] (auto& s)
     {
@@ -632,22 +631,22 @@ main (int argc, char* argv[])
   // --------------------------------------------------------------------------
 
   // The inner test should return failure.
-  // run() must always be called; otherwise the static suites are not
+  // run_suites() must always be called; otherwise the static suites are not
   // run, and the session is not completed.
-  int code = tr.run ();
+  int code = tr.run_suites ();
   test_assert (code != 0);
 
-  // The session runs only once; the later calls of run() return the same
+  // The session runs only once; the later calls of run_suites() return the same
   // code without running the suites again, and a second initialise() or
   // add_top_suite() changes nothing.
   {
     const size_t executed_checks = tr.totals ().executed_checks ();
     const size_t executed_test_cases = tr.totals ().executed_test_cases ();
 
-    test_assert (tr.run () == code);
+    test_assert (tr.run_suites () == code);
     tr.initialise (argc, argv);
     test_assert (&tr.add_top_suite () == &ts);
-    test_assert (tr.run () == code);
+    test_assert (tr.run_suites () == code);
 
     test_assert (tr.totals ().executed_checks () == executed_checks);
     test_assert (tr.totals ().executed_test_cases () == executed_test_cases);

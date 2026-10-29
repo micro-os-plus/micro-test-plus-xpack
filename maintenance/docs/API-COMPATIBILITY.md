@@ -4,6 +4,11 @@ Note: the private function `runner::run_suites()` (earlier `run_suites_()`)
 was renamed `run_child_suites()`, to free the name for a public function;
 this document uses the new name throughout.
 
+Note: the public function `runner::run()` was renamed `run_suites()` (#193).
+Where this document mentions `run()` of the runner, the new name is used,
+except in the passages that describe the history of the name; `run()` of
+the suites and of the test cases is unchanged.
+
 Date: 2026-10-20, on branch `xpack-development`, commit `70660a6c`,
 compared with the tag `v5.0.1`.
 
@@ -52,7 +57,7 @@ framework internals.
 |    | **I.A. Public, already aliased**                       |                               |           |
 | 1  | `runner (const char*)`                                 | warning, all                  | yes       |
 | 2  | `static_runner` became an alias of `runner`            | warning, all                  | yes       |
-| 3  | `runner::exit_code()` → `run()`                        | warning, all                  | yes       |
+| 3  | `runner::exit_code()` → `run_suites()`                 | warning, all                  | yes       |
 | 4  | `runner::suite()` → `add_suite()`                      | warning, `unit`               | yes       |
 | 5  | `runner::suites_count()`                               | warning, `unit`               | yes       |
 | 6  | `assume()` → `require()`                               | warning, `unit`               | yes       |
@@ -129,10 +134,10 @@ is not listed here because it did not exist in v5.0.1.
 #### 3. `runner::exit_code()`
 
 - **v5.0.1:** ran the suites and returned the exit code.
-- **Current:** deprecated, forwards to `run()`.
+- **Current:** deprecated, forwards to `run_suites()`.
 - **Tested:** yes, "runner::exit_code()": `0` for a passed session,
   `1` for a failed one, and the later calls of `exit_code()` and
-  `run()` return the same code without running the suites again.
+  `run_suites()` return the same code without running the suites again.
 
 #### 4. `runner::suite (name, callable, args...)`
 
@@ -529,7 +534,7 @@ the paragraphs are named below by their first words.
   `--output-file` without a value, or an output file that could not be
   opened, terminated the program inside `initialise()` with `exit (1)`.
 - **Current:** the error is printed on `stderr`, the option is ignored,
-  `initialise()` returns, the tests are run, and `run()` returns `2`
+  `initialise()` returns, the tests are run, and `run_suites()` returns `2`
   (probe: an output file that cannot be opened ends v5.0.1 before any
   test, and the current version runs the tests and returns `2`).
 - **Decision:** document.

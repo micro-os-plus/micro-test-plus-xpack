@@ -302,7 +302,7 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
             << "a second call returns the same top suite";
         local_counts.passed_checks++;
 
-        t.expect (eq (local_runner.run (), 0)) << "the session passes";
+        t.expect (eq (local_runner.run_suites (), 0)) << "the session passes";
         local_counts.passed_checks++;
 
         runner unnamed_runner;
@@ -329,14 +329,15 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         auto& local_ts = local_runner.add_top_suite ("Static runner");
         local_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
 
-        t.expect (eq (local_runner.run (), 0)) << "static_runner session";
+        t.expect (eq (local_runner.run_suites (), 0))
+            << "static_runner session";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
       });
 
-    // The deprecated `exit_code()` runs the session, as `run()` does; the
-    // later calls return the same code without running the suites again.
+    // The deprecated `exit_code()` runs the session, as `run_suites()` does;
+    // the later calls return the same code without running the suites again.
     ts.test ("runner::exit_code()", [] (auto& t)
       {
         runner_options options{};
@@ -351,7 +352,7 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         local_counts.passed_checks++;
 
         t.expect (eq (passed_runner.exit_code (), 0)
-                  and eq (passed_runner.run (), 0)
+                  and eq (passed_runner.run_suites (), 0)
                   and eq (passed_runner.totals ().executed_test_cases (), 1u))
             << "later calls do not run the suites again";
         local_counts.passed_checks++;
@@ -397,7 +398,8 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
             << "suites_count() counts the top suite";
         local_counts.passed_checks++;
 
-        t.expect (eq (local_runner.run (), 0)) << "local session passed";
+        t.expect (eq (local_runner.run_suites (), 0))
+            << "local session passed";
         local_counts.passed_checks++;
 
         t.expect (suite_ran) << "suite() added the suite";
@@ -436,7 +438,8 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
                                        original,
                                        &out };
 
-          t.expect (eq (local_runner.run (), 0)) << "local session passed";
+          t.expect (eq (local_runner.run_suites (), 0))
+              << "local session passed";
           local_counts.passed_checks++;
         }
 
@@ -474,7 +477,8 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         local_ts.test ("Lambda", [] (subtest& lt)
           { lt.test ("Nested function", subtest_function); });
 
-        t.expect (eq (local_runner.run (), 0)) << "local session passed";
+        t.expect (eq (local_runner.run_suites (), 0))
+            << "local session passed";
         local_counts.passed_checks++;
 
         t.expect (eq (local_runner.totals ().executed_test_cases (), 3u)
@@ -612,7 +616,8 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
             << "the timings are started by initialise()";
         local_counts.passed_checks++;
 
-        t.expect (eq (local_runner.run (), 0)) << "local session passed";
+        t.expect (eq (local_runner.run_suites (), 0))
+            << "local session passed";
         local_counts.passed_checks++;
 
         t.expect (added_started) << "the suite timings are started";
@@ -623,7 +628,7 @@ static static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
                   and eq (top_timings.has_timestamps (), has_clock)
                   and added_timings != nullptr
                   and eq (added_timings->has_timestamps (), has_clock))
-            << "the timings are stopped by run()";
+            << "the timings are stopped by run_suites()";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;

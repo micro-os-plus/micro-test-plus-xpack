@@ -215,11 +215,11 @@ namespace micro_os_plus::micro_test_plus
    * written; the session is not reported.
    *
    * If the output file cannot be opened, the reporter writes only to the
-   * console, and `run()` will return 2.
+   * console, and `run_suites()` will return 2.
    *
    * If the reporter name is not recognised, nothing else is done: no
    * output file is created, nothing is reported, the session is marked as
-   * finished, so that no test is run, and `run()` returns 2.
+   * finished, so that no test is run, and `run_suites()` returns 2.
    *
    * The runner is initialised only once; a later call, or a call after
    * the test execution was aborted, reports an error on `stderr`, without
@@ -250,8 +250,8 @@ namespace micro_os_plus::micro_test_plus
     options_ = std::move (options);
 
     // With an unknown reporter, do not proceed: no output file is created,
-    // nothing is reported, no test is run, and `run()` returns 2. A silent
-    // reporter without output file is still created, since the suites and
+    // nothing is reported, no test is run, and `run_suites()` returns 2. A
+    // silent reporter without output file is still created, since the suites and
     // the test cases refer to it.
     if (options_.has_invalid_reporter ())
       {
@@ -310,7 +310,7 @@ namespace micro_os_plus::micro_test_plus
    * After the test execution was aborted, the error is reported on
    * `stderr`. With an unknown reporter, the session has already
    * finished, and the top suite is returned without other effects. A
-   * second call, or a call once `run()` has started, is reported on
+   * second call, or a call once `run_suites()` has started, is reported on
    * `stderr`; the latter also sets `has_rejected_suites_`, so that the
    * exit code is not 0.
    */
@@ -467,13 +467,13 @@ namespace micro_os_plus::micro_test_plus
    * If tracing is enabled, the suite name is logged for diagnostic
    * purposes.
    *
-   * Once `run()` has started, the suite is rejected, since it would
+   * Once `run_suites()` has started, the suite is rejected, since it would
    * never run: `run_child_suites()` takes the number of suites only once,
    * before running them, and after the session has ended nothing runs.
    * The error is reported on `stderr`, the suite is destroyed when the
    * pointer goes out of scope, and `has_rejected_suites_` is set, so that
    * the exit code is not 0; if the session has already ended, the stored
-   * exit code is updated, for the later calls of `run()`.
+   * exit code is updated, for the later calls of `run_suites()`.
    */
   void
   runner::register_suite (std::unique_ptr<micro_test_plus::suite> suite)
@@ -501,7 +501,8 @@ namespace micro_os_plus::micro_test_plus
   void
   runner::reject_suite (const char* name)
   {
-    fprintf (stderr, "error: suite '%s' added after run() started, rejected\n",
+    fprintf (stderr,
+             "error: suite '%s' added after run_suites() started, rejected\n",
              name);
     has_rejected_suites_ = true;
     if (session_state_ == session_state::finished && exit_code_ == 0)
@@ -629,7 +630,7 @@ namespace micro_os_plus::micro_test_plus
    * is reported on `stderr` and `1` is returned.
    */
   int
-  runner::run (void)
+  runner::run_suites (void)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
@@ -738,14 +739,14 @@ namespace micro_os_plus::micro_test_plus
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
-   * Kept for compatibility; it calls `run()`, so the first call runs the
+   * Kept for compatibility; it calls `run_suites()`, so the first call runs the
    * session and the later ones return the stored exit code.
    */
-  // Deprecated since 5.1.0; use run().
+  // Deprecated since 5.1.0; use run_suites().
   int
   runner::exit_code (void)
   {
-    return run ();
+    return run_suites ();
   }
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
@@ -776,10 +777,10 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * While the report is open, from `initialise()`, which begins it (the
-   * test cases of the top suite run from then on), to the end of `run()`,
-   * the reporter writes the buffered results and the location of the
-   * abort, with `abort_session()`, to the console and to the output
-   * file, since the totals are never reached. Otherwise, there is no
+   * test cases of the top suite run from then on), to the end of
+   * `run_suites()`, the reporter writes the buffered results and the
+   * location of the abort, with `abort_session()`, to the console and to
+   * the output file, since the totals are never reached. Otherwise, there is no
    * report to complete, and the location is written to `stderr`. The
    * standard streams are then flushed, and the handler set by
    * `set_abort_handler()` is called, if any. If there is no handler, or

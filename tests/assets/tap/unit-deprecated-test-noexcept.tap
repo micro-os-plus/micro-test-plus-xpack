@@ -65,7 +65,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
         ok 2 - the timings are started by initialise()
         ok 3 - local session passed
         ok 4 - the suite timings are started
-        ok 5 - the timings are stopped by run()
+        ok 5 - the timings are stopped by run_suites()
         1..5
     ok 10 - timings(), detail::timestamps # { passed, 5 checks }
     # Subtest: timestamps::compute_elapsed_time()

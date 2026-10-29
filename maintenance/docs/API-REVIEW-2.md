@@ -4,6 +4,11 @@ Note: the private function `runner::run_suites()` (earlier `run_suites_()`)
 was renamed `run_child_suites()`, to free the name for a public function;
 this document uses the new name throughout.
 
+Note: the public function `runner::run()` was renamed `run_suites()` (#193).
+Where this document mentions `run()` of the runner, the new name is used,
+except in the passages that describe the history of the name; `run()` of
+the suites and of the test cases is unchanged.
+
 Date: 2026-10-15, on branch `xpack-development`, commit `821ca8ab`.
 
 Scope: the C++ source code of the library: the umbrella header
@@ -114,29 +119,29 @@ the others are derived from reading the code.
   `runner.h` line 652, `src/runner.cpp` lines 253 to 257,
   `runner-options.h` line 224: `initialise (const runner_options&)`
   copies `std::string_view` objects, and `is_selected_()` reads them
-  later, during `run()`. A probe that fills `filter_patterns` from a
+  later, during `run_suites()`. A probe that fills `filter_patterns` from a
   local `std::string` destroyed after `initialise()` ends with
   "heap-use-after-free" in `runner::is_selected_()`. The command-line
   path is safe only because `argv` lives until the end of the program.
   Store the patterns as `std::string` in the runner.
 
-- **#4 — Suites registered during or after `run()` are silently never
+- **#4 — Suites registered during or after `run_suites()` are silently never
   run.** [internal] **[confirmed]** (fixed)
-  Fixed in `2ddf8780` (#99): `run()` moves the session to a new
+  Fixed in `2ddf8780` (#99): `run_suites()` moves the session to a new
   `running` state, and `register_suite_()` rejects a suite added while
   the session runs or after it ended: the error is reported on
   `stderr`, the suite is discarded, so it is not counted either, and
   the exit code is 1 (unless an option error requires 2), also for the
-  later calls of `run()`; a call of `run()` from a suite body is
+  later calls of `run_suites()`; a call of `run_suites()` from a suite body is
   rejected too; regression test in
   `tests/sources/unit/src/miscellaneous.cpp`.
   `inlines/runner-inlines.h` lines 104 to 119, `src/runner.cpp` lines
   433 to 441, 475, and 559 to 563: `run_child_suites()` takes the number of
   suites once (line 475), and `runner::suite()` accepts registrations in
   any state. In a probe, a suite registered from inside another suite's
-  body, and one registered after `run()`, both containing a failing
+  body, and one registered after `run_suites()`, both containing a failing
   check, never ran; the summary counted three suites, only two ran, and
-  the exit code was 0. Either reject a registration after `run()` has
+  the exit code was 0. Either reject a registration after `run_suites()` has
   started (report it as a failure, so that the exit code is not 0), or
   keep running suites until no new ones remain.
 
@@ -152,7 +157,7 @@ the others are derived from reading the code.
   `src/test.cpp` lines 337 to 355: `test_case::run()` catches
   everything, but `suite::run()` has no `try` block, so an exception
   thrown by the suite body outside a test case (for example by a set-up
-  step) leaves `runner::run()` and calls `std::terminate()`. In a probe
+  step) leaves `runner::run_suites()` and calls `std::terminate()`. In a probe
   the program ended with "terminating due to uncaught exception", with
   no summary and none of the following suites run. Catch the exceptions
   in `suite::run()` as `test_case::run()` does, and count them as a
@@ -859,12 +864,12 @@ the others are derived from reading the code.
   to `stdout`. (2) `runner::abort()`, for a failed requirement and for
   an explicit call alike, now has the reporter complete the report,
   through the new `reporter::abort_session()` (replacing
-  `abort_test_case()`), between `initialise()` and the end of `run()`:
+  `abort_test_case()`), between `initialise()` and the end of `run_suites()`:
   the results of the running test case, then
   `✗ Test execution aborted at <file>:<line>` (human) or
   `Bail out! Requirement failed|Test execution aborted at
   <file>:<line>` (TAP), on the console and in the output file; the
-  `stderr` line is written only before `initialise()` or after `run()`.
+  `stderr` line is written only before `initialise()` or after `run_suites()`.
   A probe confirmed that an explicit `runner::abort()` previously lost
   the buffered results of the running test case, and left the output
   file without a trace of the abort. A probe also showed that an
@@ -873,13 +878,13 @@ the others are derived from reading the code.
   test case (or the suite) as unexpected, and the run continued; the
   runner now sets a final `aborted_` flag before calling the handler,
   the test cases and the suites pass the exception on, no test case
-  runs afterwards, `initialise()` and `run()` refuse to start (`run()`
+  runs afterwards, `initialise()` and `run_suites()` refuse to start (`run_suites()`
   returns 1), a repeated abort is not reported again, and the
   reporters clear the buffer after the abort, so that its results are
   not written twice. Verified with probes (both
   reporters, all verbosity levels, the output file, with and without
   exceptions, from a test case, a top suite test case, a suite body,
-  and after `run()`); regression test in
+  and after `run_suites()`); regression test in
   `tests/sources/unit/src/miscellaneous.cpp`. The configuration errors
   (options, output file, suites added too late) are still reported on
   `stderr`, as usage errors, mostly before the reporter exists; having
@@ -900,7 +905,7 @@ the others are derived from reading the code.
   [internal] (withdrawn)
   Withdrawn by decision on 2026-10-20; the code is unchanged. Of the
   four errors, an output file that cannot be opened cannot be written
-  to it, and a suite added after `run()` finished is reported when the
+  to it, and a suite added after `run_suites()` finished is reported when the
   file is already closed; only the option errors could be repeated,
   and only by keeping them until the file is open, which adds state
   for little benefit, since the CI tools keep `stderr` in their logs.
@@ -978,7 +983,7 @@ the others are derived from reading the code.
   `runner::verbosity_level()` replace `runner::suite()` and
   `runner::verbosity()`, which remain as `[[deprecated]]` aliases that
   forward to them; the new name also shows that the suite is only
-  added to a list, to be run by `run()` (see #24).
+  added to a list, to be run by `run_suites()` (see #24).
   `reporter::verbosity()` no longer existed, so it needed no change.
   While the aliases exist, they still hide the types inside the
   runner, so `class suite` and `micro_test_plus::verbosity` stay in
@@ -1495,7 +1500,7 @@ the others are derived from reading the code.
   explaining it.
   The observation is not correct: the branch does not repeat the check,
   it skips `parse_options()`, which reports the option errors on
-  `stderr` and sets `has_option_errors_`, so that `run()` returns 2.
+  `stderr` and sets `has_option_errors_`, so that `run_suites()` returns 2.
   Without the branch, a second call with an invalid option would report
   the error and change the exit code of the session already running.
   `src/runner.cpp` lines 163 to 166: the branch only forwards to the
@@ -1559,7 +1564,7 @@ the others are derived from reading the code.
   compile time, also for the negated values (#13).
 - Exceptions in test case bodies are reported as failures, with their
   `what()` text, and the run continues.
-- `run()` runs the suites once; a second call returns the same exit
+- `run_suites()` runs the suites once; a second call returns the same exit
   code.
 - The runner can be configured without a command line
   (`initialise (const runner_options&)`), and the command line is

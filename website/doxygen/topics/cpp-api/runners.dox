@@ -29,7 +29,7 @@ main (int argc, char* argv[])
     t.expect (true);
   });
 
-  return tr.run ();
+  return tr.run_suites ();
 }
 @endcode
 

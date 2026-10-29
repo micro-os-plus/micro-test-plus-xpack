@@ -3,10 +3,10 @@
 ### v5.1 (not yet released)
 
 The runner function `exit_code()`, which runs the suites and ends the
-session, is deprecated in favour of `run()`, which does the same and
+session, is deprecated in favour of `run_suites()`, which does the same and
 returns the same exit code; `exit_code()` is still available, as an
-alias of `run()`. The session now runs only once: later calls of
-`run()` return the same exit code without running the suites again, and
+alias of `run_suites()`. The session now runs only once: later calls of
+`run_suites()` return the same exit code without running the suites again, and
 a second `initialise()` is reported and ignored.
 
 The overloaded operators of the `operators` namespace (`==`, `!=`, `<`,
@@ -254,7 +254,7 @@ the exit code. The `own_index (size_t)` setter and
 `increment_subtest_index()` are no longer public.
 
 The functions of the suites and the test cases that serve only the
-runner and the reporters are no longer public: `run()`, which ran the
+runner and the reporters are no longer public: `run_suites()`, which ran the
 node again and reported it twice, `abort()`, and the read-only
 `own_index()`, `children_subtests_count()`, and
 `current_subtest_index()`, used only for the TAP output. The
@@ -324,14 +324,14 @@ replaced by `tr.initialise (argc, argv);` and
 constructor. The code that ignored the returned suite still compiles,
 but no longer adds the top suite, which could not have test cases. Both calls are now optional:
 without `initialise()`, the default options are used, and without
-`add_top_suite()`, there is no top suite, and `run()` runs only the
+`add_top_suite()`, there is no top suite, and `run_suites()` runs only the
 suites added with `add_suite()` and the static suites. A session
-without any suite is now an error, and `run()` returns 1.
+without any suite is now an error, and `run_suites()` returns 1.
 
 The option errors (an unknown `--reporter` name, a missing option
 argument, or an output file that cannot be opened) no longer terminate
 the program: they are reported on `stderr`, the option is ignored, the
-tests are run, and `run()` returns 2. The new
+tests are run, and `run_suites()` returns 2. The new
 `runner::set_abort_handler()` can replace the final `::abort()` call
 when the test execution is aborted, for example to reset an embedded
 target.
@@ -355,7 +355,7 @@ colours of the human reporter on or off. Previously, the colours were
 used only when `stdout` was a terminal, which remains the default. An
 application that used its own `--color` or `--use-colour` option, and
 passed the whole command line to `initialise()`, now gets an error, and
-`run()` returns 2, when its value is not one of these modes.
+`run_suites()` returns 2, when its value is not one of these modes.
 
 The runner now also recognises the `--list-tests` option, or its short
 form `--list`, as in Catch2 and Boost UT, which lists the suites and
@@ -396,16 +396,16 @@ way, with the results of the running test case, if any, and a final
 line with its location (`Bail out! Test execution aborted at
 <file>:<line>` with the TAP reporter); previously, the buffered results
 were lost, and the output file ended without a trace of the abort. Only
-an abort before `initialise()` or after `run()`, when there is no
+an abort before `initialise()` or after `run_suites()`, when there is no
 report to complete, is still reported on `stderr`. An inconsistent
 state of the reporter no longer aborts the test execution.
 
 An exception thrown by the abort handler is no longer caught by the
 test cases and the suites, which reported it as unexpected, and
 continued the run after the abort; it now reaches the application,
-from `run()`, or from the `test()` call of a test case of the top
+from `run_suites()`, or from the `test()` call of a test case of the top
 suite. The abort is final: afterwards, no test case runs, and
-`initialise()` and `run()` report an error (`run()` returns 1).
+`initialise()` and `run_suites()` report an error (`run_suites()` returns 1).
 
 A failed requirement is no longer marked as `aborted...`, which was
 inaccurate with exceptions, since only the test case is stopped. The
@@ -461,7 +461,7 @@ call its `get()` function, or pass a pointer instead.
 
 The runner function `suite()` is deprecated in favour of `add_suite()`,
 which does the same; the new name shows that the suite is only added
-to a list, to be run later by `run()`, unlike the test cases started
+to a list, to be run later by `run_suites()`, unlike the test cases started
 with `test()`, which run immediately. Likewise, `runner::verbosity()`
 is deprecated in favour of `verbosity_level()`, the name of the
 `runner_options` data member. The old names also hid, inside the runner, the
@@ -575,7 +575,7 @@ compiler warns where they are used: the runner constructor with the top
 suite name (deprecated in v4.1), `exit_code()`, `assume()`, and
 `static_runner`. They still work as before, but a build with `-Werror`
 now fails. Replace them with, respectively, the constructor without
-arguments followed by `add_top_suite (name)`, `run()`, `require()`, and
+arguments followed by `add_top_suite (name)`, `run_suites()`, `require()`, and
 `runner`.
 
 The `mut()` helper, not used by the framework, was removed; code that

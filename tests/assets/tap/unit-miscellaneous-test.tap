@@ -178,7 +178,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.024 ms }
         ok 3 - a top suite without test cases passes
         ok 4 - a second add_top_suite() returns the same suite
         ok 5 - the session passes
-        ok 6 - a top suite added after run() is rejected
+        ok 6 - a top suite added after run_suites() is rejected
         ok 7 - without initialise(), the default options are used
         1..7
     ok 12 - Optional top suite # { passed, 7 checks }
@@ -231,13 +231,13 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.024 ms }
         1..7
     ok 18 - List test cases # { passed, 7 checks }
     # Subtest: Late suites
-        ok 1 - suite added during run() rejected
+        ok 1 - suite added during run_suites() rejected
         ok 2 - rejected suite neither run nor counted
-        ok 3 - nested run() rejected
+        ok 3 - nested run_suites() rejected
         ok 4 - session passed
-        ok 5 - suite added after run() rejected
-        ok 6 - static suites constructed during run() rejected
-        ok 7 - static suite constructed after run() rejected
+        ok 5 - suite added after run_suites() rejected
+        ok 6 - static suites constructed during run_suites() rejected
+        ok 7 - static suite constructed after run_suites() rejected
         1..7
     ok 19 - Late suites # { passed, 7 checks }
     # Subtest: Test case started on the suite
@@ -384,10 +384,10 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.024 ms }
     # Subtest: Abort during the session
         ok 1 - human handler exception passed on
         ok 2 - human no test case after the abort
-        ok 3 - human run() refused after the abort
+        ok 3 - human run_suites() refused after the abort
         ok 4 - tap handler exception passed on
         ok 5 - tap no test case after the abort
-        ok 6 - tap run() refused after the abort
+        ok 6 - tap run_suites() refused after the abort
         1..6
     ok 47 - Abort during the session # { passed, 6 checks }
     # Subtest: Test case and suite names

@@ -4,6 +4,11 @@ Note: the private function `runner::run_suites()` (earlier `run_suites_()`)
 was renamed `run_child_suites()`, to free the name for a public function;
 this document uses the new name throughout.
 
+Note: the public function `runner::run()` was renamed `run_suites()` (#193).
+Where this document mentions `run()` of the runner, the new name is used,
+except in the passages that describe the history of the name; `run()` of
+the suites and of the test cases is unchanged.
+
 Review of the Doxygen comments in `include/`, `src/`, and
 `website/doxygen`, following `.github/skills/doxygen-review/SKILL.md`.
 Every actionable item has a permanent number.
@@ -76,7 +81,7 @@ The tests pass, with no compiler warnings: `xpm run test` (102 of
 
 - #15 Fixed: `runner-options.h`, `output_file_path`: "if the file cannot be
   opened, the program exits with an error message". In fact the error is
-  reported on `stderr`, the report goes only to the console, and `run()`
+  reported on `stderr`, the report goes only to the console, and `run_suites()`
   returns 2.
 - #16 Fixed: `runner.h`, `run_child_suites()`: "for equal names, the registered
   suites run first". Suites with equal names run in insertion order, so
@@ -136,9 +141,9 @@ The tests pass, with no compiler warnings: `xpm run test` (102 of
 
 ### Missing information
 
-- #39 Fixed: `runner.h`, `run()`: the listing mode was not described, and the
+- #39 Fixed: `runner.h`, `run_suites()`: the listing mode was not described, and the
   return value omitted the "already running" case.
-- #40 Fixed: `runner.cpp`, `initialise()`, `run_child_suites()`, `run()`: the
+- #40 Fixed: `runner.cpp`, `initialise()`, `run_child_suites()`, `run_suites()`: the
   listing mode was not described.
 - #41 Fixed: `test.cpp`, `after_test_case_create()`: the listing mode was not
   described.

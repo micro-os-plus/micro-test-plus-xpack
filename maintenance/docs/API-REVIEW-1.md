@@ -4,6 +4,11 @@ Note: the private function `runner::run_suites()` (earlier `run_suites_()`)
 was renamed `run_child_suites()`, to free the name for a public function;
 this document uses the new name throughout.
 
+Note: the public function `runner::run()` was renamed `run_suites()` (#193).
+Where this document mentions `run()` of the runner, the new name is used,
+except in the passages that describe the history of the name; `run()` of
+the suites and of the test cases is unchanged.
+
 Date: 2026-10-12, on branch `xpack-development`, commit `38bb4962`.
 
 Scope: the C++ source code of the library: the public headers in

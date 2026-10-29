@@ -238,7 +238,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * A missing option argument, an unknown reporter name, an unknown
      * colour mode, or an unknown option, is reported on `stderr`, the
-     * option is ignored, and `has_errors()` is set; `run()` then returns
+     * option is ignored, and `has_errors()` is set; `run_suites()` then returns
      * 2. The errors are not written in the report, since the reporter
      * does not exist yet.
      *
@@ -350,7 +350,7 @@ namespace micro_os_plus::micro_test_plus
      * is empty (the default), no file is written. The reporter opens the
      * file when it is created by `initialise()`; if the file cannot be
      * opened, the error is reported on `stderr`, the report is written
-     * only to the console, and `runner::run()` returns 2.
+     * only to the console, and `runner::run_suites()` returns 2.
      */
     std::string output_file_path{};
 
@@ -436,7 +436,7 @@ namespace micro_os_plus::micro_test_plus
      * listed. The nested test cases are not listed, since they are
      * created by the bodies of their parents, which do not run. The list
      * is written to the console, unless the verbosity is `silent`, and to
-     * the output file, if any; no report is written, and `run()` returns
+     * the output file, if any; no report is written, and `run_suites()` returns
      * 0, or 2 after an option error.
      *
      * @since 5.1.0
@@ -449,7 +449,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The errors were already written on `stderr` by the constructor;
-     * when set, `runner::run()` returns 2. Never set for the default
+     * when set, `runner::run_suites()` returns 2. Never set for the default
      * options.
      *
      * @return `true` if at least one error was found.
@@ -464,7 +464,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * When set, `runner::initialise()` does not proceed: no output file
-     * is created, nothing is reported, no test is run, and `run()`
+     * is created, nothing is reported, no test is run, and `run_suites()`
      * returns 2, even if `selected_reporter` was changed after the
      * parsing.
      *
