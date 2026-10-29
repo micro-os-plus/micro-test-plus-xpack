@@ -76,6 +76,7 @@
 #define MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED
 #define MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 #define MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
+#define MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED
 #endif // defined(__DOXYGEN__)
 
 // ----------------------------------------------------------------------------

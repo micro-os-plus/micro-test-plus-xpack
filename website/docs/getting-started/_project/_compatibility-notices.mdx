@@ -2,689 +2,328 @@
 
 ### v5.1 (not yet released)
 
-The runner function `exit_code()`, which runs the suites and ends the
-session, is deprecated in favour of `run_suites()`, which does the same and
-returns the same exit code; `exit_code()` is still available, as an
-alias of `run_suites()`. The session now runs only once: later calls of
-`run_suites()` return the same exit code without running the suites again, and
-a second `initialise()` is reported and ignored.
+The new features are listed first, followed by the deprecated
+definitions (available only on request, and reported by the compiler),
+the changes that break the compilation of existing code, and the changes of
+behaviour, which compile unchanged but may give different results or a
+different output.
 
-The overloaded operators of the `operators` namespace (`==`, `!=`, `<`,
-`<=`, `>`, `>=`, `and`, `or`, and `not`), the user-defined literals of
-the `literals` namespace (`42_i`, `1.5_d`, `"flag"_b`, and the others),
-the `to_*` type wrappers, `to_t<T>`, and the two-argument
-`mt::approx (value, epsilon)` are deprecated in favour of the function
+#### New features
+
+- `test_each()`, a member function of the suites and of the test cases,
+  adds and runs a test case for each value of a braced list, a range, or
+  a tuple, named after the value, as the parametrised tests of Boost UT
+  do.
+- `runner::initialise (options)` takes a `runner_options` object, so the
+  applications without command-line arguments no longer need an `argv`
+  array; the `runner_options` constructor taking the `main()` arguments
+  parses the command line into the same object. `initialise()` and the
+  new `add_top_suite (name)`, which adds the top suite and returns it,
+  are both optional.
+- `runner::set_abort_handler()` replaces the final `::abort()` call, for
+  example to reset an embedded target.
+- The command-line options `--filter=<pattern>` (or `--filter <pattern>`)
+  select the suites and the test cases to run by name; `--color`
+  (GNU style) and `--use-colour=<mode>` force the colours of the human
+  reporter on or off; `--list-tests`, or `--list`, lists the suites and
+  the test cases instead of running them. An application that passes its
+  whole command line to `initialise()` and uses its own option with one
+  of these names must rename it or remove it from the arguments: `--filter`
+  now filters the tests, a `--color` or `--use-colour` value that is not
+  a colour mode is an error (`run_suites()` returns 2), and `--list` lists
+  instead of running.
+- New function comparators: `all_of()` and `any_of()` (two or more
+  operands, reported as a single group, `(a and b and c)`), `negate()`,
+  and `approx (lhs, rhs, epsilon)`, reported as `lhs ~ (rhs +/- epsilon)`.
+  All the operands are evaluated before the check, and an unqualified
+  `all_of()` or `any_of()` after `using namespace std` may select the
+  standard algorithm, so call them as `mt::all_of()` and `mt::any_of()`.
+  `all_of()` and `any_of()` replace the `both()` and `either()` of the
+  earlier development versions of 5.1.
+- The `extension` namespace lets the applications write their own
+  comparators, predicates, and operators that report their operands as
+  the built-in ones do: they return an `extension::compare_op` or an
+  `extension::predicate_op`, parametrised by a tag that defines the
+  operation and its symbol (see the User's Guide).
+- `expect()` and `require()` accept the values that are only explicitly
+  convertible to `bool`: `std::optional`, `std::unique_ptr`,
+  `std::shared_ptr`, `std::function`, and the application types with an
+  `explicit operator bool`.
+- The messages appended to the checks (`t.expect (...) << value`) accept
+  the same values as the operands of the comparators, and the callable
+  objects (lambdas, `std::function`) that return such a value; a callable
+  is called only if the check fails.
+- The named booleans of the `_b` literal can be used in the checks, and
+  are reported by their name (`"flag"_b == flag` fails as `flag == false`).
+
+#### Deprecated definitions
+
+The deprecated definitions are available only when the macro
+`MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED` is defined, for the
+application and for the library sources; without it, the applications
+that still use them fail to compile. When it is defined, they are marked
+`[[deprecated]]`, so the compiler reports their use; the applications
+that build with `-Werror` fail until the warnings are fixed, or disabled
+with `-Wno-deprecated-declarations`. GCC reports the deprecated aliases
+only in declarations, not in expressions, so search the sources for the
+old names instead of relying on the warnings.
+
+| Deprecated | Replacement |
+| --- | --- |
+| `runner::exit_code()` | `run_suites()` |
+| `runner::suite()` | `add_suite()` |
+| `runner::verbosity()`, `runner::reporter().verbosity()` | `verbosity_level()` |
+| `runner::suites_count()` | `added_suites_count () + 1`, or `total_suites_count()` to include the static suites |
+| `static_runner` | `runner` |
+| the `runner` constructor with a name (since 4.1) | the default constructor and `add_top_suite (name)` |
+| `initialise (argc, argv, name)` | `initialise (argc, argv)` and `add_top_suite (name)` |
+| `assume()` | `require()` |
+| `subtest` | `test_case` |
+| `executed_subtests()`, `increment_executed_subtests()` | `executed_test_cases()`, `increment_executed_test_cases()` |
+| `successful_checks()`, `increment_successful_checks()` | `passed_checks()`, `increment_passed_checks()` |
+| `detail::runner_totals`, `was_successful()` | `counters`, `passed()` |
+| `timings()`, `detail::timestamps`, `detail::timestamp` | none, the reporters show the elapsed times |
+| `_and()`, `_or()`, `_not()` | `all_of()`, `any_of()`, `negate()` |
+| the `_i`, `_d`, `_t<T>` and other aliases of the `to_*` wrappers (deprecated since 3.2) | `to_i`, `to_d`, `to_t<T>`, and so on |
+| the operators of `operators`, the literals of `literals`, the `to_*` wrappers, `to_t<T>`, and `approx (value, epsilon)` | the function comparators, see below |
+| the `type_traits` namespace | `extension::` |
+| `type_traits::identity`, `list`, and `function_traits` | `std::type_identity`, none, none |
+| `mut()` | `const_cast<T&>` |
+| `runner::name()` | none, the reports show the name of the top suite |
+| `own_index()`, `current_subtest_index()`, and `children_subtests_count()` of the nodes | none, internal |
+| `expression_formatter::c_str()` and `empty()` | `str().c_str()` and `str().empty()` |
+| `expect()` and `require()` of an argument that is always true: an array (including a string literal), a function name, a pointer to a function or a member, or a character pointer | the condition, for example `mt::ne (p, nullptr)`; kept for one release |
+
+The overloaded operators and the literals are replaced by the function
 comparators, which check and report the plain values: `mt::eq (x, 42)`
 replaces `x == 42_i` and `mt::to_i{ x } == 42`, and `mt::all_of ()`,
-`mt::any_of ()`, and `mt::negate ()` replace `and`, `or`, and `not`.
-They are still available, but the compiler reports their use; the
-applications that build with `-Werror` fail until the checks are
-rewritten, or the warning is disabled with `-Wno-deprecated-declarations`
-for the time being. Clang reports the use of the `to_*` aliases in
-expressions as well as in declarations; GCC only in declarations, so the
-operators and the literals are the reliable reminder there. The
-user's guide has a table with the replacements.
-
-The overloaded `and` and `or` operators evaluate both operands before the
-check, so they do not short-circuit like the built-in ones: after
+`mt::any_of ()`, and `mt::negate ()` replace `and`, `or`, and `not`. The
+User's Guide has a table with all the replacements. The overloaded `and`
+and `or` evaluate both operands, so they do not short-circuit: after
 `using namespace mt::operators`, `p != nullptr and p->x == 1_i`
-dereferences a null pointer. This is one of the reasons for the
-deprecation.
-
-The logical functions `all_of()` and `any_of()`, which replace the
-`both()` and `either()` of the earlier development versions of 5.1, take
-two or more operands, and report a chain of the same operation as a
-single group, `(a and b and c)`. All the operands are evaluated before
-the check, and an unqualified call after a `using namespace std` selects
-`std::all_of()` or `std::any_of()` when there are three or more operands
-of the same type; call them as `mt::all_of()` and `mt::any_of()`.
-
-The integer literals now follow the C++ syntax: `0x`, `0b`, and
-leading-`0` (octal) prefixes are parsed, so `010_i` is 8 (it was 10),
-and a decimal point, or a value that does not fit in the type of the
-literal (e.g. `300_u8`), is now a compilation error. The minimum of a
-signed type can be written with the unary minus (`-128_i8`), but its
-absolute value alone (`128_i8`) cannot be used.
-
-The negation of an integer literal now keeps the type of the literal:
-`-1_i8` and `-1_s` were previously of type `int`, and `-1_u8` was the
-`int` value -1. The negation of an unsigned literal now wraps around
-for all the types, as it already did for `-1_u` (`UINT_MAX`), so `-1_u8`
-is the `std::uint8_t` value 255, and `mt::eq (-1_u8, -1)` now fails.
-The negation of the minimum of a signed type (`-(-128_i8)`) is a
-compilation error.
-
-With `--quiet`, the TAP reporter now displays one `ok`/`not ok` line per
-test suite, followed by the plan of the session (`1..N`) and the totals.
-The plan was previously `1..0`, which the TAP consumers (for example
-node-tap) read as a run with all tests skipped, so as successful, even
-when tests failed.
-
-In the `ok`/`not ok` lines of the TAP output, the `#` and `\`
-characters of the names, the messages, and the expressions are now
-escaped (`\#` and `\\`), as the TAP 14 specification recommends, and
-the line breaks are replaced by spaces. Previously, a `#` in a name
-could start a directive, so a failed test case named
-`parser # TODO rework` was read by the TAP consumers as a `TODO`, and
-not counted as failed, and a line break in a message broke the line.
-The consumers remove the escapes, so the names they report are
-unchanged; tools that read the TAP lines as plain text now see the
-escapes.
-
-The relational comparisons (`<`, `<=`, `>`, `>=`, `lt()`, `le()`, `gt()`,
-`ge()`) now apply the tolerance of the floating-point literals and
-wrappers, as `==` and `!=` already did: values within the tolerance are
-equal, so `1.45 < 1.5_d` is now false, and `1.45 <= 1.5_d` true. The new
-`mt::approx (value, epsilon)` sets the tolerance explicitly. The new
-function comparator `mt::approx (lhs, rhs, epsilon)`, as in Boost UT,
-compares two numbers, integral or floating-point, with an explicit
-tolerance, and is reported as `lhs ~ (rhs +/- epsilon)`.
-
-The function comparators (`eq()`, `ne()`, `gt()`, `ge()`, `lt()`, and
-`le()`) now require both operands to satisfy `extension::printable`. An
-operand that cannot be reported is now rejected at the call, with a
-short diagnostic that names its type; previously the error was reported
-inside the formatter, in a long instantiation chain. A comparator of
-such operands that was not checked, for example one used only in a
-`static_assert()`, previously compiled, and is now an error; use the
-comparison operator of the type instead.
-
-The ranges are now detected as by a range-based `for` statement, so the
-types with `begin()` and `end()` functions, found by argument-dependent
-lookup, instead of members, are now shown element by element, and
-accepted by the comparators. The types whose elements are of their own
-type, like `std::filesystem::path`, were previously accepted, and
-formatting them, for a failed check or in the verbose mode, recursed
-until the stack overflowed; they are now rejected at compile time
-(compare `p.string ()` instead, for a path). The ranges of
-elements that cannot be reported, like `std::vector` of an application
-type without an `operator<<`, are now also rejected at the call.
-
-The new `test_each()` member functions of the suites and of the test
-cases add and run a test case for each value of a braced list, a
-range, or a tuple, named after the value, as the parametrised tests of
-Boost UT do.
-
-The tolerance of the floating-point wrappers (`mt::to_f`, `mt::to_d`,
-and `mt::to_ld`) is now one unit of the last decimal of the value, as
-documented, for all values. Previously, the rounding of many values
-(e.g. `mt::to_d{ 0.011 }`) produced 17 or 18 decimals, so they were
-compared almost exactly, and a negative value (e.g. `mt::to_d{ -1.5 }`)
-gave an undefined tolerance. Such comparisons may now give a different
-result: `mt::lt (0.0105, mt::to_d{ 0.011 })` is now false, since the
-values are within the tolerance of 0.001. To compare exactly, use
-`mt::approx (value, 0.0)`, or a plain floating-point value.
-
-The leading zeros of a small wrapped value are now counted as decimals:
-previously, every value up to `1e-8`, and zero, got a tolerance of 0.1,
-so `mt::eq (mt::to_d{ 1e-12 }, 0.05)` passed. Now `mt::to_d{ 1e-12 }`
-has a tolerance of 1e-12, and a zero (`mt::to_d{ 0.0 }`) compares
-exactly, so `mt::eq (mt::to_d{ 0.0 }, 0.09)` fails; the literal
-`0.0_d` keeps the tolerance of its written decimal, 0.1. Comparisons of
-such values may now fail; to keep a wider tolerance, use
-`mt::approx()`.
-
-The comparators now ignore the members named `value` and `epsilon` of
-the application types, which only identify the numeric literals and
-the floating-point wrappers of the framework, and compare such types
-with their own operators. Previously, a type with a data member named
-`value` could not be compared (a compilation error), and a type with a
-member named `epsilon` was compared with that member as a tolerance.
-
-The comparators now compare the C strings (`char` arrays, string
-literals, and `char` pointers) by content, as `std::string_view`, also
-with `std::string`; two `const char*` holding equal strings were
-previously compared by address. To compare the addresses, cast the
-pointers to `const void*`. The pointer overloads of the comparators
-were removed; the generic ones handle all the pointers.
-
-The `expression_formatter` and the reporters now write the non-const
-`char` pointers and arrays as strings, as they write the `const char`
-pointers; they were previously written as addresses. A null `char`
-pointer is written as `nullptr`.
-
-In the failure messages, the `signed char` values are now written with
-the `sc` suffix (`5sc`), and the `long double` values with the `ld`
-suffix (`1.5ld`), the names of the `_sc` and `_ld` literals; they were
-previously written with `c` and `l`, which suggest `char` and `long`.
-The floating-point values with an integral value are now written with a
-decimal point (`42.0`, `42.0f`, `42.0ld`), so that they can be
-distinguished from the integers; they were previously written as `42`
-and `42f`. The messages added with `<<` are unchanged.
-
-The `char` values are now written as quoted character literals, with
-the non-printable characters escaped (`'a'`, `' '`, `'\0'`, `'\x1b'`);
-they were previously written raw, so a space was invisible, and a zero
-character hid the rest of the output of the test case. This also
-applies to the `char` values written by the application `operator<<`
-functions to the `expression_formatter`; to write a separator without
-quotes, use a string (`" "` instead of `' '`). A zero character in a
-message added with `<<` no longer ends the message.
-
-The `char8_t`, `char16_t`, `char32_t`, and `wchar_t` values are now
-written as quoted character literals, with their prefix (`u8'a'`,
-`u'a'`, `U'a'`, `L'a'`), and with the escapes of `char`; the other
-values outside ASCII are written as universal character names
-(`u'\u00e9'`, `U'\U0001f600'`), and the values that are not
-characters by themselves (the UTF-8 code units above `0x7F`, the
-surrogates, and the values above `0x10FFFF`) with `\x` and all the
-hexadecimal digits of their type (`u8'\xc3'`, `u'\xd83d'`). They were
-previously written as numbers (`120`, or `120u` for `char32_t`). Since
-they cannot be appended to the text unchanged, they are written in the
-same way in the messages added with `<<`.
-
-The `expression_formatter` can now only be appended to, through its
-`operator<<` overloads, and read, through `str()`. The buffer
-accessors `clear()`, `append()`, and `reserve()`, which the framework
-did not use, were removed, and the functions that assign the buffer to
-the checks are private, so that an application `operator<<` cannot
-alter the texts of the pending checks. The read-only `c_str()` and
-`empty()` are deprecated, in favour of `str().c_str()` and
-`str().empty()`; they are still available.
-
-Where `long double` is wider than `double` (e.g. x86-64 Linux and
-macOS, AArch64, and RISC-V), the `long double` values are now written
-in the shortest form that reads back as the same value, as the `float`
-and `double` values are; they were previously written with six
-significant digits, so `0.1L` and `0.1000001L` were both written as
-`0.1ld`. A value converted from `double` may now show the digits of
-its conversion error (`static_cast<long double> (42.42)` is written as
-`42.420000000000001705ld` on x86-64). Where the C library formats
-`long double` with the precision of `double` (e.g. newlib on AArch64
-and RISC-V), the values are written in the shortest form of their
-conversion to `double`.
-
-The named boolean constants created by the `_b` literal can now be
-used in the checks; any check that used them previously overflowed
-the stack. They are reported by their name (`"flag"_b == flag` fails
-as `flag == false`), and, with the operators in the `operators`
-namespace, `==` and `!=` now return a comparator, as for the other
-literals, instead of a plain `bool`. The literal now returns a
-`detail::named_bool`, which no longer derives from `std::string_view`;
-`name()` returns the name.
-
-The `==` and `!=` operators for `std::string_view` were removed from
-the `operators` namespace; the standard operators are now selected, and
-return a plain `bool`, so a failed `t.expect (sv == "abc"sv)` no longer
-shows the operands. Previously, after `using namespace mt::operators`,
-every comparison of a `std::string_view` with a `std::string_view`, a
-`std::string`, or a C string, also in the application code, returned a
-comparator instead of a `bool`, while the comparisons of two
-`std::string` objects, or of a `std::string` and a C string, returned a
-`bool`. Use `mt::eq()` and `mt::ne()` to compare strings.
-
-An exception that escapes the body of a test case is now reported as a
-failed check, at the location of the `test()` call, and the run
-continues with the next test case; it previously ended the program. To
-capture that location, the name parameter of `suite::test()` and
-`test_case::test()` is now a `test_case_name`, converted implicitly
-from a string literal, a `const char*`, or a `std::string` (which was
-previously not accepted); an argument that converts to `const char*`
-only via a user-defined conversion operator must now be converted
-explicitly. Helper functions that add test cases can take a
-`const test_case_name&` parameter, so that the reported location is
-that of their caller.
-
-The name parameter of `runner::add_suite()` is now a `std::string_view`, so
-a `std::string` is also accepted; as for `test()`, an argument that
-converts to `const char*` only via a user-defined conversion operator
-must now be converted explicitly. As for `expect()`, GCC with `-Waggregate-return`
-now warns at the `test()` calls too.
-
-Likewise, an exception that escapes the body of a test suite, outside
-its test cases, is now reported as a failed check of that suite,
-without a source location, and the run continues with the next suite;
-it previously ended the program, without the final totals. As for the
-test cases, the suite body must not be `noexcept` for the exception to
-be caught.
-
-A test case started on the suite (`ts.test()`) from the body of a
-running test case, for example via a captured suite reference, now runs
-nested in the running test case, as if started with `t.test()`. After a
-check, it previously aborted the program; before any check, the report
-was malformed.
-
-The counters of the suites and of the test cases are meant to be read
-only. The `totals()` function returns a `const` reference, also for
-the non-`const` nodes, so the code that binds a non-`const` reference
-(`detail::runner_totals& t = ts.totals ();`) no longer compiles; store
-the result in a `const counters&` reference, or copy it into a
-`counters` object to modify the copy, since the live counters decide
-the exit code. The `own_index (size_t)` setter and
-`increment_subtest_index()` are no longer public.
-
-The functions of the suites and the test cases that serve only the
-runner and the reporters are no longer public: `run_suites()`, which ran the
-node again and reported it twice, and `abort()`. The read-only
-`own_index()`, `children_subtests_count()`, and
-`current_subtest_index()`, used only for the TAP output, are deprecated,
-and still available. The
-`name (const char*)` setter of the top suite, which could not be
-reached, since the top suite is returned as a `suite&`, was removed. Call
-`runner::abort()` to abort the test execution, and `totals()` to read
-the counters of a node; the name of a node is still returned by
-`name()`.
-
-The constructors of `test_case`, `suite`, and `top_suite` are no longer
-public, since a suite or a test case constructed directly was neither
-registered nor run. Create the suites with `runner::add_suite()` or as
-`static_suite` objects, and the test cases with `test()`.
-
-The `detail::runner_totals` class, returned by `totals()`, is now
-`micro_os_plus::micro_test_plus::counters`, since the suites and the
-test cases own one too, not only the runner. The old class name is
-deprecated; replace `detail::runner_totals` with `counters`. Its
-`was_successful()` function is deprecated in favour of `passed()`; the
-old names are still available, as aliases, but marked `[[deprecated]]`.
-The `expression()` function of the reporters was removed, since it
-returns an internal type and is used only by the framework. The
-`timings()` functions of the runner and of the suites are deprecated,
-for the same reason; they now return the internal stopwatch, of which
-the old `detail::timestamps` class name is a deprecated alias, and the
-public members of that class are kept, also deprecated:
-`timestamp_begin()`, `timestamp_end()`, `has_begin()`, `has_end()`,
-`has_timestamps()`, and `compute_elapsed_time()`. The
-`detail::timestamp` class, no longer used by the framework, is kept,
-deprecated. The elapsed times are shown by the reporters.
-
-The reporters (`reporter`, `reporter_human`, and `reporter_tap`) and the
-`endl` and `indent()` manipulators moved to the `detail` namespace,
-since they are internal to the framework and custom reporters are not
-supported; the reporter is still selected with the `--reporter`
-command-line option. `runner::reporter()` is deprecated, for the same
-reason; it now returns the internal `detail::reporter`, on which the
-`verbosity()` function is kept, also deprecated. Replace
-`runner.reporter ().verbosity ()` with the new
-`runner.verbosity_level ()`.
-
-The runner can now be initialised without a command line, with a new
-`initialise (options)` overload taking a `runner_options` object (the
-reporter, the verbosity, the output file, and the other options), so
-the applications without command-line arguments no longer need to build
-an `argv` array; the `runner_options` constructor taking the `main()`
-arguments parses the command line into the same object, which can be
-adjusted before being passed to `initialise()`.
+dereferences a null pointer.
 
 The initialisation of the runner no longer creates the top suite.
-`initialise (argc, argv, name)`, which parsed the command line and
-returned the top suite, is deprecated, in favour of
-`initialise (argc, argv)`, which returns nothing, followed by the new
-`add_top_suite (name)`, which adds the top suite and returns it.
 Replace `auto& ts = tr.initialise (argc, argv, "Main");` with
-`tr.initialise (argc, argv);` and
-`auto& ts = tr.add_top_suite ("Main");`.
 
-The name argument of the deprecated form no longer has a default
-value, so the call with two arguments now selects the new
-`initialise (argc, argv)`. This breaks the code that used the top suite
-returned by the two-argument form, usually together with the
-constructor taking the name, deprecated since 4.1.0:
-`auto& ts = tr.initialise (argc, argv);` no longer compiles, and must be
-replaced by `tr.initialise (argc, argv);` and
-`auto& ts = tr.add_top_suite ();`, which uses the name given to the
-constructor. The code that ignored the returned suite still compiles,
-but no longer adds the top suite, which could not have test cases. Both calls are now optional:
-without `initialise()`, the default options are used, and without
-`add_top_suite()`, there is no top suite, and `run_suites()` runs only the
-suites added with `add_suite()` and the static suites. A session
-without any suite is now an error, and `run_suites()` returns 1.
+```cpp
+tr.initialise (argc, argv);
+auto& ts = tr.add_top_suite ("Main");
+```
 
-The option errors (an unknown `--reporter` name, a missing option
-argument, or an output file that cannot be opened) no longer terminate
-the program: they are reported on `stderr`, the option is ignored, the
-tests are run, and `run_suites()` returns 2. The new
-`runner::set_abort_handler()` can replace the final `::abort()` call
-when the test execution is aborted, for example to reset an embedded
-target.
+The name argument of the deprecated form no longer has a default value,
+so `auto& ts = tr.initialise (argc, argv);` now selects the new function,
+which returns nothing, and no longer compiles; replace it with
+`tr.initialise (argc, argv);` and `auto& ts = tr.add_top_suite ();`,
+which uses the name given to the constructor. The code that ignored the
+returned suite still compiles, but no longer adds the top suite.
 
-The runner now also recognises the `--filter` option, which selects
-the suites and the test cases to run by name (see the User's Guide),
-as either `--filter=<pattern>` or `--filter <pattern>`; the latter
-takes the next argument as the pattern. The other unknown arguments
-are still ignored. An application that used its own `--filter` option,
-and passed the whole command line to `initialise()`, now also has its
-tests filtered, and the suites and test cases that do not match its
-value are skipped; rename the application option, or remove it from
-the arguments passed to `initialise()`.
+The concepts of `type_traits` moved to `extension` (`is_op`, `any_op`,
+`has_epsilon`, `checkable`, and `printable`), and `type-traits.h` is now
+`extension.h`. The `type_traits` names are kept, referring to the current
+concepts, so with their current semantics: `is_op` detects the `op_type`
+member, `has_epsilon` is satisfied only by the framework types, and
+`genuine_integral_value` is now `value`. The concepts and templates used
+only by the framework (`has_value`, `container_like`, `has_npos`, `op`,
+`value`, `integral_constant`, `floating_point_constant`) moved to
+`detail`; to detect containers and strings, use `std::ranges::range` and
+`std::string_view`.
 
-The runner also recognises the `--color` option, as in the GNU tools
-(`--color[=always|never|auto]`, with the GNU synonyms, where `--color`
-alone means `always`),
-and its Catch2 and Boost UT alternative, `--use-colour=<mode>` or
-`--use-colour <mode>`, with `yes`, `no`, or `auto`; they force the
-colours of the human reporter on or off. Previously, the colours were
-used only when `stdout` was a terminal, which remains the default. An
-application that used its own `--color` or `--use-colour` option, and
-passed the whole command line to `initialise()`, now gets an error, and
-`run_suites()` returns 2, when its value is not one of these modes.
+The reporters (`reporter`, `reporter_human`, and `reporter_tap`), the
+`endl` and `indent()` manipulators, and `runner::reporter()` moved to, or
+now return types of, the `detail` namespace, since custom reporters are
+not supported; select the reporter with `--reporter`. The `expression()`
+function of the reporters was removed.
 
-The runner now also recognises the `--list-tests` option, or its short
-form `--list`, as in Catch2 and Boost UT, which lists the suites and
-the test cases instead of running them (see the User's Guide). An
-application that used its own `--list` or `--list-tests` option, and
-passed the whole command line to `initialise()`, now gets the list
-instead of the run; rename the application option, or remove it from
-the arguments passed to `initialise()`.
+#### Changes that break the compilation
 
-`assume()` is deprecated in favour of `require()`, which does the same:
-in other frameworks (JUnit, Hypothesis), an unmet assumption skips the
-test, while here it fails it. When exceptions are enabled, a failed
-`require()` (or `assume()`) now stops only the current test case, as
-`ASSERT_*` in GoogleTest, `REQUIRE()` in Catch2 and doctest, and
-`BOOST_REQUIRE()` in Boost.Test do, and the run continues with the next
-test case; it previously aborted the program, without the final
-totals. The test case is stopped with an exception not derived from
-`std::exception`, so a test case body that calls `require()` must not
-be `noexcept`, and a `catch (...)` in it must rethrow. Without
-exceptions, a failed `require()` still aborts the test execution, but
-the report written before the abort is now complete: the results of
-the aborted test case are displayed after its name, which the human
-reporter previously omitted with normal and quiet verbosity, so that
-the failure appeared under the previous test case; they are now also
-written to the output file, which previously ended before them, and
-they are no longer displayed with silent verbosity; with quiet
-verbosity, they include only the failed checks, unless the TAP reporter
-writes an output file. The output now
-ends, in place of the totals, with a line with the location of the
-failure, `✗ Test execution aborted at <file>:<line>` with the human
-reporter, and `Bail out! Requirement failed at <file>:<line>` with the
-TAP reporter; the `error: test execution aborted at <file>:<line>` line
-is no longer written to `stderr`, which may not be connected on
-embedded targets.
+- `totals()` returns a `const` reference, also for the non-`const` nodes,
+  so `detail::runner_totals& t = ts.totals ();` no longer compiles;
+  store the result in a `const counters&`, or copy it to modify the copy.
+- Not public any more: the constructors of `test_case`, `suite`, and
+  `top_suite` (create suites with `add_suite()` or `static_suite`, and
+  test cases with `test()`), `run_suites()`, `abort()` (call
+  `runner::abort()`), `runner()`, `own_index (size_t)`, and
+  `increment_subtest_index()` of the nodes (a test function that needs
+  the runner can capture it). The `name (const char*)` setter of the
+  top suite and `static_runner::register_static_suite()` were removed.
+- The callable of a `static_suite` receives a `suite&`, as for
+  `add_suite()`; replace `mt::static_suite&` with `mt::suite&` in the
+  parameter lists (lambdas with `auto&` need no change).
+- The additional arguments of `test()`, `add_suite()`, and `static_suite`
+  are stored by a lambda instead of `std::bind`: a `std::ref()` argument
+  is no longer unwrapped, so an `auto&` parameter receives the
+  `std::reference_wrapper`; call its `get()`, or pass a pointer.
+- The name of `test()` is a `test_case_name` (a string literal,
+  `const char*`, or `std::string`), and that of `add_suite()` a
+  `std::string_view`. An argument that converts to `const char*` only
+  through a user-defined conversion operator must be converted
+  explicitly. GCC with `-Waggregate-return` now warns at the `test()`
+  calls too.
+- The comparators require `extension::printable` operands, and reject
+  with a short diagnostic those that cannot be reported, also when the
+  comparator is not checked (for example in `static_assert()`; use the
+  comparison operator instead). Ranges are detected as by a range-based
+  `for`, so types with `begin()` and `end()` found by argument-dependent
+  lookup are accepted; ranges of elements that cannot be reported, and
+  types whose elements are of their own type, like
+  `std::filesystem::path` (compare `p.string ()`), are rejected.
+- A type that only declares the `op_type` marker of the framework
+  expressions, without a formatter, is rejected.
+- `expression_formatter` can only be appended to, with `operator<<`, and
+  read, with `str()`; `clear()`, `append()`, and `reserve()` were removed.
+- The `get()` function of the `to_*` wrappers and of the integer literals
+  returns a `const` reference; in
+  `const auto& s = mt::to_t<std::string>{ str }.get ();`, `s` refers to a
+  destroyed temporary. Store the result by value.
+- The comparators and the operators no longer copy their operands: the
+  temporaries are moved into the expression, the named class-type
+  operands and the nested expressions are referred to, and the scalars
+  are copied. An expression kept in a variable, as in
+  `auto op = mt::eq (v, w);`, must be checked before `v` and `w` are
+  destroyed. `not not (x == 1_i)` is now negated twice; it was negated
+  once.
+- The `==` and `!=` operators for `std::string_view` were removed from
+  `operators`; the standard ones return a `bool`, so a failed
+  `t.expect (sv == "abc"sv)` no longer shows the operands. Use
+  `mt::eq()` and `mt::ne()`.
+- `detail::named_bool`, returned by the `_b` literal, no longer derives
+  from `std::string_view`; `name()` returns the name.
+- The `extension::checkable` concept no longer holds for the always-true
+  arguments; the new `extension::suspicious_condition` concept tells
+  which they are.
 
-An explicit `runner::abort()` now completes the report in the same
-way, with the results of the running test case, if any, and a final
-line with its location (`Bail out! Test execution aborted at
-<file>:<line>` with the TAP reporter); previously, the buffered results
-were lost, and the output file ended without a trace of the abort. Only
-an abort before `initialise()` or after `run_suites()`, when there is no
-report to complete, is still reported on `stderr`. An inconsistent
-state of the reporter no longer aborts the test execution.
+#### Changes of behaviour
 
-An exception thrown by the abort handler is no longer caught by the
-test cases and the suites, which reported it as unexpected, and
-continued the run after the abort; it now reaches the application,
-from `run_suites()`, or from the `test()` call of a test case of the top
-suite. The abort is final: afterwards, no test case runs, and
-`initialise()` and `run_suites()` report an error (`run_suites()` returns 1).
+##### Comparisons and tolerances
 
-A failed requirement is no longer marked as `aborted...`, which was
-inaccurate with exceptions, since only the test case is stopped. The
-human reporter now names the effect that follows, `- test case stopped`
-or, without exceptions, `- test execution aborted`. The TAP reporter
-reports it like any other failed check, as node-tap does: the marker
-was written inside the YAML diagnostics block, either after the
-opening `---`, which the TAP consumers then did not recognise, or at
-the end of the `condition:` value.
+- The integer literals follow the C++ syntax: the `0x`, `0b`, and
+  leading-`0` (octal) prefixes are parsed, so `010_i` is 8 (it was 10),
+  and a decimal point, or a value that does not fit the type (`300_u8`),
+  is a compilation error. The minimum of a signed type is written with
+  the unary minus (`-128_i8`).
+- The negation of an integer literal keeps its type (`-1_i8` was an
+  `int`), and the negation of an unsigned literal wraps around (`-1_u8` is
+  the `std::uint8_t` value 255, so `mt::eq (-1_u8, -1)` fails).
+- The tolerance of the floating-point wrappers (`to_f`, `to_d`, `to_ld`)
+  is one unit of the last decimal of the value, for all values, with the
+  leading zeros of small values counted as decimals: `to_d{ 1e-12 }` has
+  a tolerance of 1e-12, `to_d{ 0.0 }` compares exactly, and the literal
+  `0.0_d` keeps its tolerance of 0.1. Previously, many values (for
+  example `to_d{ 0.011 }`) were compared almost exactly, the small values
+  and zero got 0.1, and negative values had an undefined tolerance. Such
+  comparisons may now give a different result; to compare exactly, use
+  `mt::approx (value, 0.0)` or a plain value.
+- The relational comparisons (`<`, `<=`, `>`, `>=`, `lt()`, `le()`,
+  `gt()`, `ge()`) apply the tolerance too, as `==` and `!=` did: the
+  comparison `1.45 < 1.5_d` is false, and `1.45 <= 1.5_d` is true.
+- The C strings (`char` arrays, string literals, and `char` pointers) are
+  compared by content, also with `std::string`; two `const char*` were
+  compared by address. To compare the addresses, cast the pointers to
+  `const void*`. The pointer overloads of the comparators were removed.
+- The comparators ignore the members named `value` and `epsilon` of the
+  application types, and compare them with their own operators.
 
-In the YAML diagnostics blocks of the TAP output, the `condition:`
-values are now written as YAML double-quoted scalars, with `\`, `"`,
-and the control characters escaped (`condition: "1 == 2"`). They were
-previously written as plain scalars, so the values that start with `{`
-or `'` (the container and the `char` operands, e.g. `{1, 2} != {1, 2}`
-or `'\0' == 'a'`), or contain `: `, were rejected by the YAML parsers
-of the TAP consumers, which then reported the failed test point without
-any diagnostics, and a value that contains ` #` was truncated. The
-consumers remove the quotes and the escapes, so the values they report
-are unchanged; tools that read the TAP lines as plain text now see
-them.
+##### Values in the reports
 
-In the `at:` field of the YAML diagnostics blocks, the location of a
-failed check is now written as `fileName:` and `lineNumber:`, as
-node-tap writes it; it was previously written as `filename:` and
-`line:`. The node-tap reporters read the file name only from
-`fileName:` (or `file:`), so the file name was lost, for example in the
-JUnit report, where the failed test case had neither the `file` nor
-the `line` attribute that the CI systems use to annotate the failure.
-Tools that read the previous names must be updated.
+- The `char` values are written as quoted literals with the non-printable
+  characters escaped (`'a'`, `' '`, `'\0'`, `'\x1b'`); this includes the
+  values written by the application `operator<<` functions to the
+  `expression_formatter` (write a separator as a string, `" "`). A zero
+  character in a message no longer ends it.
+- The `char8_t`, `char16_t`, `char32_t`, and `wchar_t` values are written
+  as quoted literals with their prefix (`u8'a'`, `u'a'`, `U'a'`, `L'a'`),
+  with universal character names or `\x` escapes for the values outside
+  ASCII, in the messages too; they were numbers.
+- The `signed char` values have the suffix `sc` (`5sc`), and the
+  `long double` values `ld` (`1.5ld`); the floating-point values with an
+  integral value have a decimal point (`42.0`, `42.0f`, `42.0ld`). The
+  messages added with `<<` are unchanged.
+- The non-`const` `char` pointers and arrays are written as strings, and
+  a null one as `nullptr`; they were addresses.
+- Where `long double` is wider than `double`, its values are written in
+  the shortest form that reads back unchanged, so a value converted from
+  `double` may show the digits of the conversion error
+  (`42.420000000000001705ld`); it was six significant digits.
 
-The runner no longer derives from the internal `detail::test_node`
-class, since it is not a node of the test tree: `runner::name()`, which
-always returned `"runner"`, is deprecated; the name shown at the
-beginning of the reports is that of the top suite, returned by
-`add_top_suite()`. The session
-totals are still available, via `runner::totals()`.
+##### Test cases, suites, and requirements
 
-The callable of a `static_suite` now receives a `suite&` reference, as
-the callable of a suite registered with `runner::add_suite()` does, so the
-same function can serve both kinds of suites; it previously received a
-`static_suite&`. Replace `mt::static_suite&` with `mt::suite&` in the
-parameter lists of the suite functions; the lambdas with an `auto&`
-parameter need no change.
+- An exception that escapes the body of a test case is reported as a
+  failed check at the location of the `test()` call, and one that escapes
+  the body of a suite as a failed check of the suite, without a location;
+  the run continues. It previously ended the program. The bodies must not
+  be `noexcept`.
+- A test case started on the suite (`ts.test()`) from the body of a
+  running test case, for example via a captured suite, runs nested in it,
+  as `t.test()`; it previously aborted the program or gave a malformed
+  report.
+- With exceptions enabled, a failed `require()` stops only the current
+  test case, and the run continues with the next one, as in GoogleTest,
+  Catch2, and Boost.Test; it previously aborted the program. The test
+  case is stopped with an exception not derived from `std::exception`, so
+  a `catch (...)` in its body must rethrow. The human reporter names the
+  effect, `- test case stopped` or `- test execution aborted`, in place of
+  `aborted...`, and the TAP reporter reports it as any failed check.
+- Without exceptions, a failed `require()` still aborts the test
+  execution, and so does `runner::abort()`, but the report is now
+  complete: it includes the results of the aborted test case, also in the
+  output file, and ends with `✗ Test execution aborted at <file>:<line>`
+  (human) or `Bail out! Requirement failed at <file>:<line>` (TAP) in
+  place of the totals; for `runner::abort()`, the TAP text is
+  `Bail out! Test execution aborted at <file>:<line>`. The error is no
+  longer written to `stderr`, except for an abort before `initialise()`
+  or after `run_suites()`.
+- An exception thrown by the abort handler is no longer caught by the
+  test cases and the suites; it reaches the application, from
+  `run_suites()` or from the `test()` call of a test case of the top
+  suite. The abort is final: afterwards no test case runs, and
+  `initialise()` and `run_suites()` report an error (`run_suites()`
+  returns 1).
 
-The additional arguments of `test()`, `runner::add_suite()`, and the
-`static_suite` constructor are now stored by a lambda, instead of
-`std::bind`, which adds less code. They are still copied, so a
-reference parameter refers to the copy, but a `std::ref()` argument is
-no longer unwrapped: it still converts to a parameter of type `T&`, but
-an `auto&` parameter now receives the `std::reference_wrapper` itself;
-call its `get()` function, or pass a pointer instead.
+##### Session and runner
 
-The runner function `suite()` is deprecated in favour of `add_suite()`,
-which does the same; the new name shows that the suite is only added
-to a list, to be run later by `run_suites()`, unlike the test cases started
-with `test()`, which run immediately. Likewise, `runner::verbosity()`
-is deprecated in favour of `verbosity_level()`, the name of the
-`runner_options` data member. The old names also hid, inside the runner, the
-`suite` class and the `verbosity` enumeration. Both are still available,
-as aliases, but marked `[[deprecated]]`, so the compiler warns where
-they are used; replace `tr.suite (...)` with `tr.add_suite (...)`, and
-`tr.verbosity ()` with `tr.verbosity_level ()`.
+- The session runs only once: later calls of `run_suites()` return the
+  same exit code without running the suites again, and a second
+  `initialise()` is reported and ignored.
+- Without `initialise()`, the default options are used; without
+  `add_top_suite()`, there is no top suite, and `run_suites()` runs only
+  the suites added with `add_suite()` and the static suites. A session
+  without any suite is an error, and `run_suites()` returns 1.
+- The option errors (an unknown `--reporter` name, a missing option
+  argument, an output file that cannot be opened) no longer terminate the
+  program: they are reported on `stderr`, the option is ignored, the
+  tests run, and `run_suites()` returns 2.
+- All the suites, the added ones and the `static_suite` objects, run in a
+  single order, by name; for equal names, the static suites constructed
+  before `main()` run first, then the added suites in the order of the
+  calls. The reports and the TAP numbers may change. To force an order,
+  start the names with zero-padded numbers (`"01 - Init"`).
 
-The runner function `suites_count()` is deprecated in favour of
-`added_suites_count()`, which counts only the suites added with
-`add_suite()`; the old function also counted the top suite, but not
-the static suites, while its name suggested that all the suites are
-counted. Replace `tr.suites_count ()` with
-`tr.added_suites_count () + 1`, or, to count all the suites, including
-the static ones, with `tr.total_suites_count ()`. Likewise, in
-`counters`, `successful_checks()` and `increment_successful_checks()`
-are deprecated in favour of `passed_checks()` and
-`increment_passed_checks()`, the word used by the reports and by
-`failed_checks()`. The old names are still available, as aliases, but
-marked `[[deprecated]]`.
+##### Reporters and TAP output
 
-The `static_runner` class is deprecated, and is now an alias of
-`runner`, since any runner also runs the `static_suite` objects that
-refer to it; the static suites are kept in a list independent of the
-runner object, so they may be constructed before it, in any order. The
-existing code compiles unchanged; replace `mt::static_runner` with
-`mt::runner` in the new code. The public static member
-`static_runner::register_static_suite()` was removed;
-`runner::static_suites_count()` is now available for any runner.
-
-All the suites, those added with `runner::add_suite()` and the
-`static_suite` objects, now run in a single order, by name; for equal
-names, the static suites constructed before `main()` run first, then
-the added suites, in the order of the calls. Previously, the added
-suites ran first, sorted by name, followed by the static suites, sorted
-separately. The two kinds of suites are now interleaved, so the order
-of the reports, and the numbers of the suites in the TAP output, may
-change. To run the suites in a given order, start their names with
-zero-padded numbers (`"01 - Init"`, `"02 - Run"`), as described in the
-User's Guide.
-
-The `runner()` function of the suites and the test cases, which
-returned the runner that owns them, is no longer public, since it is
-used only by the framework; it was renamed, so that it no longer hides
-the `runner` class in the derived classes. A test function that needs
-the runner can capture it, or receive it as an argument.
-
-The `subtest` class is renamed `test_case`, the term used by the
-documentation and by the reports, and the functions named after it are
-renamed accordingly. The old class name is still available, as an
-alias, but marked `[[deprecated]]`; replace `mt::subtest` with
-`mt::test_case`; the lambdas with an `auto&` parameter need no
-change. In `counters`, `executed_subtests()` and
-`increment_executed_subtests()` are deprecated in favour of
-`executed_test_cases()` and `increment_executed_test_cases()`, next to
-the new `failed_test_cases()` and `skipped_test_cases()`; the old names
-are also still available, as aliases, but marked `[[deprecated]]`.
-The output of the reporters is unchanged; the TAP reporter still
-introduces each test case with a `# Subtest:` line.
-
-The logical functions `_and()`, `_or()`, and `_not()` are deprecated
-in favour of `all_of()`, `any_of()`, and `negate()`, since a leading
-underscore is not used by the other public names, and `and`, `or`, and
-`not` are alternative tokens. The old names are still available, as
-aliases, but marked `[[deprecated]]`; replace `mt::_and (...)` with
-`mt::all_of (...)`. The overloaded `&&`, `||`, and `!` operators are
-unchanged.
-
-The type wrappers deprecated in v3.2, the `_b`, `_c`, `_sc`, `_s`,
-`_i`, `_l`, `_ll`, `_u`, `_uc`, `_us`, `_ul`, `_ull`, `_i8`, `_i16`,
-`_i32`, `_i64`, `_u8`, `_u16`, `_u32`, `_u64`, `_f`, `_d`, and `_ld`
-aliases, and the generic `_t<T>` wrapper, are now marked
-`[[deprecated]]`. They are still available, as aliases of the `to_*`
-forms, which take the same arguments; replace `mt::_i (expr)` with
-`mt::to_i (expr)`, and `mt::_t<T>{ expr }` with `mt::to_t<T>{ expr }`.
-GCC reports the deprecation only when the alias is the type of a
-declaration, not in expressions such as `mt::_i (expr)`, so search the
-sources for these names instead of relying on the warnings. The
-literals with the same suffixes (`42_i`, `1.5_d`) are unchanged.
-
-The `get()` function of the `to_*` wrappers and of the integer literals
-now returns a `const` reference to the wrapped value, instead of a copy,
-so that the comparators no longer copy the operands each time they
-compare or report them. A reference that stores its result is valid
-only as long as the wrapper: in
-`const auto& s = mt::to_t<std::string>{ str }.get ();`, `s` refers to a
-destroyed temporary. Store the result by value (`auto s = ...`) instead.
-
-The comparators no longer copy their operands: `eq()`, `ne()`,
-`gt()`, `ge()`, `lt()`, `le()`, `all_of()`, `any_of()`, `negate()`, and
-the operators of the `operators` namespace move the temporaries into the
-returned expression, and refer to the named operands of class type,
-like the strings and the containers, and to the nested expressions;
-the scalars are still copied. The checks are not affected, since an
-expression is evaluated and reported in the statement that builds it.
-An expression kept in a variable, as in `auto op = mt::eq (v, w);`, now
-refers to `v` and `w`, and must be checked before they are destroyed;
-an expression built from a temporary, as in
-`auto op = mt::eq (f (), w);`, owns the result of `f()`. The
-`extension::compare_op` and `extension::predicate_op` templates store
-their operands in the same way, so an expression that the application
-builds from the `const&` parameters of a function refers to the
-arguments of that function. Also, a double negation with the `not`
-operator, as in `not not (x == 1_i)`, was evaluated as a single
-negation, because the inner negation was copied; it is now negated
-twice.
-
-The deprecated entities, previously marked as such only in the
-documentation, now carry the `[[deprecated]]` attribute, so the
-compiler warns where they are used: the runner constructor with the top
-suite name (deprecated in v4.1), `exit_code()`, `assume()`, and
-`static_runner`. They still work as before, but a build with `-Werror`
-now fails. Replace them with, respectively, the constructor without
-arguments followed by `add_top_suite (name)`, `run_suites()`, `require()`, and
-`runner`.
-
-The `mut()` helper, not used by the framework, is deprecated; replace
-`mt::mut (x)` with `const_cast<T&> (x)`. The `type_traits::list`,
-`type_traits::identity`, and `type_traits::function_traits` templates,
-also not used by the framework, are deprecated, with their namespace
-(see below); `std::type_identity` (C++20) replaces
-`type_traits::identity`. The utility functions `utility::is_match()`
-and `utility::split()` are unchanged.
-
-The concepts of the `type_traits` namespace moved to the new
-`extension` namespace, named after its purpose: it holds the concepts
-that the applications use to write their own comparators, operators,
-and helpers (`is_op`, `any_op`, `has_epsilon`, `checkable`, and
-`printable`). Replace `type_traits::` with `extension::`. The concepts
-used only by the framework, `has_value`, `container_like`, and
-`has_npos`, moved to the `detail` namespace; to detect containers and
-strings, use the standard concepts and types, like
-`std::ranges::range` and `std::string_view`. The base of the
-expressions and the value wrapper templates (`op`, `value`,
-`value_base_`, now `value_base`, `integral_constant`, and
-`floating_point_constant`) also moved to the `detail` namespace, since
-they are internal; the value stored by the wrappers is now private,
-and is read with `get()`. The `type_traits` namespace is kept,
-deprecated, with the old names referring to the current concepts and
-templates, so with their current semantics: `is_op` detects the
-`op_type` member, not the inheritance from `op`; `has_epsilon` is
-satisfied only by the framework types, not by any type with an
-`epsilon` member; and `genuine_integral_value` is now `value`. The
-exception is `has_value`, no longer used by the framework, which is
-restored with its v5.0.1 definition, satisfied by any type with a
-`value` member. The `type-traits.h` header is
-now `extension.h`; it is included by `micro-test-plus.h`, as before.
-
-The applications can now write their own comparators, predicates, and
-operators that report their operands, as the built-in ones do: they
-return an `extension::compare_op` or an `extension::predicate_op`,
-parametrised by a tag that defines the operation and its symbol (see
-the User's Guide). A type that only declares the `op_type` marker of
-the framework expressions, without its own formatter, is now rejected
-at compile time; it previously compiled, and its failed checks overflowed
-the stack.
-
-The messages appended to the checks (`t.expect (...) << value`) now
-accept the same values as the operands of the comparators: the
-pointers, the containers, the scoped enumerations, the pairs, the
-tuples, the optionals, the value wrappers, and the application types
-with an `operator<<` for `mt::expression_formatter`; previously only the
-strings, the characters, the arithmetic types, and `nullptr` were
-accepted. The values that were already accepted are written as before,
-the numbers without the type suffixes of the reports (`2`, not `2u`),
-and the characters unquoted. The `extension::printable` concept, which
-constrains the message operator, now tells whether the formatter can
-write a type.
-
-The checks (`expect()` and `require()`) now also accept the values that
-are only explicitly convertible to `bool`, as the condition of an `if`
-statement does: `std::optional`, `std::unique_ptr`, `std::shared_ptr`,
-`std::function`, and the application types with an
-`explicit operator bool`; previously they had to be converted, for
-example with `has_value()` or `!= nullptr`. A passed check of such a
-value without a message is written as `true`, the result of the
-conversion. The `extension::checkable` concept, and the deprecated
-`type_traits::checkable`, are now satisfied by these types too.
-
-The messages now also accept the callable objects, such as the lambdas
-and the `std::function` objects, that return a value accepted by the
-message; they are called only if the check fails, and their result is
-appended, so that a message valid only after a failure (the error of a
-`std::expected`, for example) is not evaluated after a success. A
-lambda without captures was previously accepted, converted to `bool`,
-and written as `true`; it is now called. The function pointers are
-still written as addresses, not called.
-
-The output file of the human reporter now receives the complete report
-whatever the console verbosity, as the output file of the TAP reporter
-always did; with `--quiet` and `--silent`, it was previously
-incomplete. The programs that compared the file of a quiet run with the
-names of the test cases and the totals must now expect the complete
-report.
-
-With `--quiet`, both reporters now display the failed checks, with the
-names of the suite and of the test cases that contain them (the TAP
-reporter as comments, after a comment line with the names), before the
-totals; previously only the totals, and, with TAP, the test points of
-the suites, were displayed.
-
-With the normal verbosity, the TAP reporter now displays a passed test
-case as a single `ok` line, without its `# Subtest:` block, and a failed
-or outer test case as a complete block, whose plan counts all the
-displayed test points, with their original numbers. Previously, the plan
-of a passed test case counted only its nested test cases, so the console
-output was rejected by the strict TAP parsers when a test case had both
-checks and nested test cases. The output file is unchanged. The human
-reporter now displays the name of the outer test case before the line of
-a passed nested test case.
-
-The checks (`expect()` and `require()`) no longer accept the arguments
-that are always true and make the check pass silently, usually because
-the description was written instead of the condition: the arrays,
-including the string literals, the functions (a function name without
-the call), the pointers to functions and to members, and the pointers to
-the character types. The pointers to other objects are still accepted.
-For one release, such calls still compile, through overloads marked
-`[[deprecated]]`, which produce a warning; replace them with the
-condition, for example `mt::ne (p, nullptr)` for a character pointer.
-The `extension::checkable` concept no longer holds for these types, and
-the new `extension::suspicious_condition` concept tells which they are.
+- The output file of the human reporter always receives the complete
+  report; with `--quiet` and `--silent` it was incomplete.
+- With `--quiet`, both reporters display the failed checks, with the
+  names of their suite and test cases (the TAP reporter as comments),
+  before the totals, and the TAP reporter displays one `ok` or `not ok`
+  line per suite, followed by the plan `1..N`; it was `1..0`, which TAP
+  consumers read as all tests skipped, so successful.
+- With the normal verbosity, the TAP reporter displays a passed test case
+  as a single `ok` line, without its `# Subtest:` block, and a failed or
+  outer one as a complete block, whose plan counts all the displayed test
+  points; the strict TAP parsers rejected the previous plans. The human
+  reporter displays the name of the outer test case before a passed
+  nested one.
+- In the TAP `ok` and `not ok` lines, the `#` and `\` characters are
+  escaped (`\#`, `\\`) and the line breaks replaced by spaces, so that a
+  name such as `parser # TODO rework` is no longer read as a directive.
+- In the YAML diagnostics blocks, the `condition:` values are double
+  quoted with escapes (a plain scalar was rejected by the YAML parsers
+  when it started with `{` or `'`, or contained `: `, and truncated at
+  ` #`), and the location is written as `fileName:` and `lineNumber:`,
+  as node-tap does, instead of `filename:` and `line:`. The consumers
+  remove the quotes and the escapes; the tools that read the TAP lines
+  as plain text must be updated.
 
 ### v5.0 (2026-08-06)
 

@@ -31,6 +31,9 @@
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace.
  *
+ * The definitions are compiled only when
+ * `MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED` is defined.
+ *
  * This file must be included when building the µTest++ library.
  */
 

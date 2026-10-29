@@ -1,0 +1,19 @@
+@def MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED
+@brief Enables the deprecated definitions of the µTest++ Testing Framework.
+
+@details
+This option has no value, only its definition matters.
+
+Without it, the deprecated definitions (the old names of the functions,
+the classes, and the members, the overloaded operators, the user-defined
+literals, the type wrappers, and the deprecated overloads and
+constructors) are neither declared nor defined, so the applications that
+still use them fail to compile.
+
+With it, they are available, but marked `[[deprecated]]`, so the
+compiler reports their use; the applications that build with `-Werror`
+fail until the deprecated definitions are replaced.
+
+The macro must be defined for the library sources too, otherwise the
+link of an application that uses the non-inline deprecated members fails
+with undefined references.

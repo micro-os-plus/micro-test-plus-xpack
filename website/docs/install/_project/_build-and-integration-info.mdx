@@ -62,6 +62,7 @@ The build can be configured using the following preprocessor definitions:
 - `MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED` - to include and enable the µTest++ library in the build
 - `MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED` - to enable tracing messages specific to the µTest++ library
 - `MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED` – to enable tracing messages for object constructors and destructors
+- `MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED` - to enable the deprecated definitions, which are otherwise not available; define it for the library sources too
 
 The recommended way to define the `micro-test-plus` specific macros is to use a 
 separate header file,`micro-os-plus/micro-test-plus-defines.h`, and define the 
@@ -82,15 +83,21 @@ macros there (uncomment the desired lines).
 
 // Display trace messages in the µTest++ Testing Framework when TRACE is
 // enabled.
-// #if !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+#if !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
 // #define MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
-// #endif // !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
+#endif // !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
 
 // Display trace messages in constructors and destructors in the µTest++
 // testing framework when TRACE is enabled.
-// #if !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+#if !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
 // #define MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
-// #endif // !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+#endif // !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
+
+// Enable the deprecated definitions of the µTest++ Testing Framework, which
+// are otherwise not available; the compiler reports their use.
+#if !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
+// #define MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED
+#endif // !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
 // ----------------------------------------------------------------------------
 

@@ -52,7 +52,7 @@
         {
           "id": "deprecated",
           "display": "Enable deprecated features in µTest++",
-          "description": "Enable deprecated features in the µTest++ Testing Framework"
+          "description": "Make the deprecated definitions of the µTest++ Testing Framework (the old names of the functions, classes and members, the overloaded operators, the user-defined literals and the type wrappers) available; without it, the applications that still use them fail to compile, with it, the compiler reports their use as deprecated; the macro must be defined for the library sources too"
           // "defaultDefine": "MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED"
         }
       ],

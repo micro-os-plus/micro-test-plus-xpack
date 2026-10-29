@@ -63,6 +63,7 @@
   @include{doc} macros/micro-os-plus-micro-test-plus-enabled.dox
   @include{doc} macros/micro-os-plus-micro-test-plus-trace-enabled.dox
   @include{doc} macros/micro-os-plus-micro-test-plus-trace-constructors-enabled.dox
+  @include{doc} macros/micro-os-plus-micro-test-plus-deprecated-enabled.dox
 @}
 
 */

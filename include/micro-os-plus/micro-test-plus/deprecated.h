@@ -42,6 +42,11 @@
  * declarations of their classes, since C++ does not allow them to be
  * declared elsewhere.
  *
+ * All the deprecated definitions, in this header and in the classes, are
+ * available only when `MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED`
+ * is defined; without it, the applications that still use them fail to
+ * compile.
+ *
  * Keeping the deprecated definitions separate makes them easy to
  * identify and, in a future major release, to remove.
  *
