@@ -394,6 +394,16 @@
                         },
                         {
                           "type": "category",
+                          "label": "sign_mixed_integers",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/concepts/micro-os-plus-micro-test-plus-detail-sign-mixed-integers"
+                          },
+                          "collapsed": true,
+                          "items": []
+                        },
+                        {
+                          "type": "category",
                           "label": "static_suite_body",
                           "link": {
                             "type": "doc",

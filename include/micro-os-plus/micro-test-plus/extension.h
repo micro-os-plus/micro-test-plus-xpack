@@ -156,9 +156,11 @@ namespace micro_os_plus::micro_test_plus
     concept is_op
         = requires { requires std::same_as<typename T::op_type, detail::op>; };
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
-     * @brief C++20 concept satisfied when `T` is a framework floating-point
-     * wrapper with a tolerance.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
+     * @brief Deprecated C++20 concept satisfied when `T` is a framework
+     * floating-point wrapper with a tolerance.
      *
      * @tparam T The type to be checked.
      *
@@ -172,9 +174,17 @@ namespace micro_os_plus::micro_test_plus
      * The types of the application are excluded, even if they have a
      * member named `epsilon`, so that they are compared with their own
      * operators.
+     *
+     * Only the deprecated floating-point wrappers have a tolerance, so the
+     * concept is deprecated with them, and is available only when
+     * `MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED` is defined.
+     *
+     * @deprecated To be removed with the deprecated floating-point
+     * wrappers (since 6.0.0).
      */
     template <class T>
     concept has_epsilon = is_op<T> and requires (const T& t) { t.epsilon; };
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
     /**
      * @brief C++20 concept satisfied when at least one of two types is a

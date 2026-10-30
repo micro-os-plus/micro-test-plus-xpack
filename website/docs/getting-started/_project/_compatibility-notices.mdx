@@ -122,7 +122,8 @@ The concepts of `type_traits` moved to `extension` (`is_op`, `any_op`,
 `has_epsilon`, `checkable`, and `printable`), and `type-traits.h` is now
 `extension.h`. The `type_traits` names are kept, referring to the current
 concepts, so with their current semantics: `is_op` detects the `op_type`
-member, `has_epsilon` is satisfied only by the framework types, and
+member, `has_epsilon` is satisfied only by the framework types (and is
+available only with the deprecated functionality enabled), and
 `genuine_integral_value` is now `value`. The concepts and templates used
 only by the framework (`has_value`, `container_like`, `has_npos`, `op`,
 `value`, `integral_constant`, `floating_point_constant`) moved to

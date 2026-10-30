@@ -379,8 +379,9 @@ namespace micro_os_plus::micro_test_plus::detail
                   and detail::formattable_range<lhs_type>
                   and detail::formattable_range<rhs_type>
                   and requires (const lhs_type& l, const rhs_type& r) {
-                        { *std::begin (l) == *std::begin (r) }
-                        -> std::convertible_to<bool>;
+                        {
+                          *std::begin (l) == *std::begin (r)
+                        } -> std::convertible_to<bool>;
                       })
       {
         append_first_difference (op.lhs (), op.rhs ());

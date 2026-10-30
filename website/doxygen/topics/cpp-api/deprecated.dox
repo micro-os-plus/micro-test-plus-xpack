@@ -19,7 +19,6 @@ be migrated.
 @par Groups
 The deprecated definitions are documented together with the features they
 belong to:
-
 - the overloaded comparison and logical operators, in
   @ref micro-os-plus-micro-test-plus-cpp-api-deprecated-operators, replaced by the function
   comparators and the logical functions;

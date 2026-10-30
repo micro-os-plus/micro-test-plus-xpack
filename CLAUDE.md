@@ -75,10 +75,11 @@ The public API lives in the `micro_os_plus::micro_test_plus` namespace
   `compare_op` and `predicate_op`, parametrised by an application tag
   with `symbol` and `apply()` (using-declarations of the `detail`
   templates, at the end of `detail.h`), and the concepts `is_op`,
-  `any_op`, `has_epsilon`, `checkable`, and `printable`
-  (`extension.h`). It is deliberately a separate namespace, so that
-  `using namespace mt` does not bring its generic names into the
-  application code.
+  `any_op`, `checkable`, and `printable` (`extension.h`, which also has
+  `has_epsilon`, available only with the deprecated functionality, since
+  only the deprecated wrappers have a tolerance). It is deliberately a
+  separate namespace, so that `using namespace mt` does not bring its
+  generic names into the application code.
 
 `reflection::source_location` appears in the public signatures (as a
 defaulted parameter), but users rarely name it. Everything in `detail`

@@ -196,6 +196,7 @@ namespace micro_os_plus::micro_test_plus
 
     // ------------------------------------------------------------------------
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
      * @details
      * The tolerance is the smaller `epsilon` of the two operands, if both
@@ -239,6 +240,7 @@ namespace micro_os_plus::micro_test_plus
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
     }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
     // ------------------------------------------------------------------------
 
@@ -457,6 +459,7 @@ namespace micro_os_plus::micro_test_plus
           {
             return Compare_T::apply (lhs_type::value, rhs_type::value);
           }
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
         else if constexpr ((extension::has_epsilon<lhs_type>
                             or extension::has_epsilon<rhs_type>)
                            and requires {
@@ -468,6 +471,7 @@ namespace micro_os_plus::micro_test_plus
                        : Compare_T::apply (detail::unwrap (lhs),
                                            detail::unwrap (rhs));
           }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
         else
           {
             return Compare_T::apply (detail::unwrap (lhs),

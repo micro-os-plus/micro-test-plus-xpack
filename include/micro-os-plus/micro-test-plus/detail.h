@@ -165,15 +165,23 @@ namespace micro_os_plus::micro_test_plus
     // with the definition, reported as "no matching file member found".
     [[nodiscard]] decltype (auto) constexpr unwrap (const T& t);
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
-     * @brief Checks whether two operands are equal within the tolerance of
-     * the floating-point wrappers.
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
+     * @brief Deprecated check whether two operands are equal within the
+     * tolerance of the floating-point wrappers.
      *
      * @details
      * Used by `compare_op` for all six tags, so that a value within the
      * tolerance is equal, and neither less nor greater; at least one
      * operand must have an `epsilon` member (a floating-point literal, a
      * `to_f`, `to_d`, or `to_ld` wrapper, or `approx()`).
+     *
+     * Used only by the deprecated floating-point wrappers, it is available
+     * only when `MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED` is defined.
+     *
+     * @deprecated To be removed with the deprecated floating-point
+     * wrappers (since 6.0.0).
      *
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
@@ -188,6 +196,7 @@ namespace micro_os_plus::micro_test_plus
       requires (extension::has_epsilon<Lhs_T> or extension::has_epsilon<Rhs_T>)
     [[nodiscard]] constexpr bool
     within_tolerance (const Lhs_T& lhs, const Rhs_T& rhs);
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
     // ========================================================================
 
@@ -432,13 +441,23 @@ namespace micro_os_plus::micro_test_plus
        */
       static constexpr const char* symbol = " == ";
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
       /**
-       * @brief The result when the operands are within the tolerance.
+       * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
+       * @brief Deprecated result when the operands are within the
+       * tolerance.
        *
        * @details
        * Values within the tolerance are equal.
+       *
+       * Used only by the tolerance of the deprecated floating-point
+       * wrappers.
+       *
+       * @deprecated To be removed with the deprecated floating-point
+       * wrappers (since 6.0.0).
        */
       static constexpr bool within_tolerance_result = true;
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
       /**
        * @brief Compares the operands with `==`.
@@ -481,13 +500,23 @@ namespace micro_os_plus::micro_test_plus
        */
       static constexpr const char* symbol = " != ";
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
       /**
-       * @brief The result when the operands are within the tolerance.
+       * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
+       * @brief Deprecated result when the operands are within the
+       * tolerance.
        *
        * @details
        * Values within the tolerance are equal.
+       *
+       * Used only by the tolerance of the deprecated floating-point
+       * wrappers.
+       *
+       * @deprecated To be removed with the deprecated floating-point
+       * wrappers (since 6.0.0).
        */
       static constexpr bool within_tolerance_result = false;
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
       /**
        * @brief Compares the operands with `!=`.
@@ -530,13 +559,23 @@ namespace micro_os_plus::micro_test_plus
        */
       static constexpr const char* symbol = " > ";
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
       /**
-       * @brief The result when the operands are within the tolerance.
+       * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
+       * @brief Deprecated result when the operands are within the
+       * tolerance.
        *
        * @details
        * Values within the tolerance are equal, not ordered.
+       *
+       * Used only by the tolerance of the deprecated floating-point
+       * wrappers.
+       *
+       * @deprecated To be removed with the deprecated floating-point
+       * wrappers (since 6.0.0).
        */
       static constexpr bool within_tolerance_result = false;
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
       /**
        * @brief Compares the operands with `>`.
@@ -579,13 +618,23 @@ namespace micro_os_plus::micro_test_plus
        */
       static constexpr const char* symbol = " >= ";
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
       /**
-       * @brief The result when the operands are within the tolerance.
+       * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
+       * @brief Deprecated result when the operands are within the
+       * tolerance.
        *
        * @details
        * Values within the tolerance are equal.
+       *
+       * Used only by the tolerance of the deprecated floating-point
+       * wrappers.
+       *
+       * @deprecated To be removed with the deprecated floating-point
+       * wrappers (since 6.0.0).
        */
       static constexpr bool within_tolerance_result = true;
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
       /**
        * @brief Compares the operands with `>=`.
@@ -628,13 +677,23 @@ namespace micro_os_plus::micro_test_plus
        */
       static constexpr const char* symbol = " < ";
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
       /**
-       * @brief The result when the operands are within the tolerance.
+       * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
+       * @brief Deprecated result when the operands are within the
+       * tolerance.
        *
        * @details
        * Values within the tolerance are equal, not ordered.
+       *
+       * Used only by the tolerance of the deprecated floating-point
+       * wrappers.
+       *
+       * @deprecated To be removed with the deprecated floating-point
+       * wrappers (since 6.0.0).
        */
       static constexpr bool within_tolerance_result = false;
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
       /**
        * @brief Compares the operands with `<`.
@@ -677,13 +736,23 @@ namespace micro_os_plus::micro_test_plus
        */
       static constexpr const char* symbol = " <= ";
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
       /**
-       * @brief The result when the operands are within the tolerance.
+       * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
+       * @brief Deprecated result when the operands are within the
+       * tolerance.
        *
        * @details
        * Values within the tolerance are equal.
+       *
+       * Used only by the tolerance of the deprecated floating-point
+       * wrappers.
+       *
+       * @deprecated To be removed with the deprecated floating-point
+       * wrappers (since 6.0.0).
        */
       static constexpr bool within_tolerance_result = true;
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
       /**
        * @brief Compares the operands with `<=`.
