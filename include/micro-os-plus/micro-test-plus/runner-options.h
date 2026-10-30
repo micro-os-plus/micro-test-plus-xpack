@@ -234,11 +234,11 @@ namespace micro_os_plus::micro_test_plus
      * Starts from the defaults, and parses the µTest++ options
      * (`--reporter`, `--silent`, `--quiet`, `--verbose`, `--output-file`,
      * `--colour`, `--color`, `--use-colour`, `--use-color`, `--filter`,
-     * and `--list-tests`). The parsing ends at the first argument that
-     * does not start with `--` (an application argument, or a `-` option),
-     * or at the first `--` alone; that argument, and all the following
-     * ones, are left to the application, and are available from
-     * `application_arguments()`. An option argument given separately
+     * `--list-tests`, and `--help`). The parsing ends at the first
+     * argument that does not start with `--` (an application argument, or
+     * a `-` option), or at the first `--` alone; that argument, and all
+     * the following ones, are left to the application, and are available
+     * from `application_arguments()`. An option argument given separately
      * (`--reporter human`) belongs to its option and does not end the
      * parsing. Before that point, the arguments starting with `--` that
      * are not µTest++ options are reported as unknown options.
@@ -247,8 +247,9 @@ namespace micro_os_plus::micro_test_plus
      * colour mode, or an unknown option, is reported on `stderr`, kept
      * in `errors()`, and makes `has_errors()` true. The parsing continues,
      * to report all the errors, but `runner::initialise()` then runs no
-     * test: it writes the errors on the console, creates no output file,
-     * and `run_suites()` returns 2.
+     * test: it writes the errors on the console, followed, for an unknown
+     * option, by a line suggesting `--help`, creates no output file, and
+     * `run_suites()` returns 2.
      *
      * The `argv[]` strings are copied, so they need not outlive the
      * options.
@@ -455,6 +456,23 @@ namespace micro_os_plus::micro_test_plus
     bool list_tests{ false };
 
     /**
+     * @brief Whether to display the usage and the list of the options,
+     * instead of running the tests.
+     *
+     * @details
+     * Set by the `--help` option. The runner then writes, on the console,
+     * the usage and one line for each option, runs no test, creates no
+     * output file, and `run_suites()` returns 0, or 2 after an option
+     * error. The text is written also with the `silent` verbosity, since
+     * it was requested.
+     * Only the long form is accepted, since an argument that starts with
+     * a single dash ends the options.
+     *
+     * @since 6.0.0
+     */
+    bool help{ false };
+
+    /**
      * @brief Checks whether errors were found while parsing the command
      * line.
      *
@@ -469,6 +487,21 @@ namespace micro_os_plus::micro_test_plus
      */
     [[nodiscard]] bool
     has_errors (void) const noexcept;
+
+    /**
+     * @brief Checks whether an unknown option was found while parsing the
+     * command line.
+     *
+     * @details
+     * Set together with the corresponding error; the runner then adds a
+     * line suggesting `--help` to the errors it writes on the console.
+     *
+     * @return `true` if at least one unknown option was found.
+     *
+     * @since 6.0.0
+     */
+    [[nodiscard]] bool
+    has_unknown_option (void) const noexcept;
 
     /**
      * @brief Returns the errors found while parsing the command line.
@@ -536,6 +569,15 @@ namespace micro_os_plus::micro_test_plus
      * `has_errors()`.
      */
     std::vector<std::string> errors_{};
+
+    /**
+     * @brief Whether an unknown option was found.
+     *
+     * @details
+     * Set by the parsing constructor, with the error; tested by
+     * `has_unknown_option()`.
+     */
+    bool unknown_option_{ false };
 
     /**
      * @brief The index in `arguments` of the first argument left to the

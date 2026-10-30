@@ -155,8 +155,9 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
         local_counts.passed_checks++;
 
         t.expect (options.arguments.empty ()
-                  and options.filter_patterns.empty () and !options.list_tests)
-            << "no command line, no filter, no listing";
+                  and options.filter_patterns.empty () and !options.list_tests
+                  and !options.help)
+            << "no command line, no filter, no listing, no help";
         local_counts.passed_checks++;
 
         t.expect (!options.has_errors () and options.errors ().empty ())
@@ -333,6 +334,20 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
         t.expect (parse ({ "name", "--list" }).list_tests) << "--list";
         local_counts.passed_checks++;
 
+        const runner_options help_option = parse ({ "name", "--help" });
+
+        t.expect (help_option.help and !help_option.has_errors ())
+            << "--help";
+        local_counts.passed_checks++;
+
+        const runner_options short_help = parse ({ "name", "-h" });
+
+        t.expect (!short_help.help and !short_help.has_errors ()
+                  and same_arguments (short_help.application_arguments (),
+                                      { "-h" }))
+            << "-h is an application argument";
+        local_counts.passed_checks++;
+
         local_counts.executed_test_cases++;
       });
 
@@ -481,7 +496,13 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
             << "an unknown colour mode";
         local_counts.passed_checks++;
 
-        t.expect (parse ({ "name", "--verbos" }).has_errors ())
+        const runner_options unknown_option
+            = parse ({ "name", "--verbos" });
+
+        t.expect (unknown_option.has_errors ()
+                  and unknown_option.has_unknown_option ()
+                  and !missing_options.has_unknown_option ()
+                  and !reporter_options.has_unknown_option ())
             << "an unknown option";
         local_counts.passed_checks++;
 

@@ -408,7 +408,7 @@ not ok 2 - Miscellaneous suite # { FAILED, 188 checks passed, 8 failed, in 52 te
         ok 2 - the normal verbosity
         ok 3 - no output file
         ok 4 - automatic colours
-        ok 5 - no command line, no filter, no listing
+        ok 5 - no command line, no filter, no listing, no help
         ok 6 - no errors
         ok 7 - an empty command line is accepted
         1..7
@@ -439,8 +439,10 @@ not ok 2 - Miscellaneous suite # { FAILED, 188 checks passed, 8 failed, in 52 te
         ok 5 - the last verbosity wins
         ok 6 - --list-tests
         ok 7 - --list
-        1..7
-    ok 4 - Reporter, verbosity, and listing # { passed, 7 checks }
+        ok 8 - --help
+        ok 9 - -h is an application argument
+        1..9
+    ok 4 - Reporter, verbosity, and listing # { passed, 9 checks }
     # Subtest: Output file and filters
         ok 1 - --output-file=<path>
         ok 2 - --output-file <path>
@@ -490,7 +492,7 @@ not ok 2 - Miscellaneous suite # { FAILED, 188 checks passed, 8 failed, in 52 te
         1..5
     ok 9 - Copies and moves # { passed, 5 checks }
     1..9
-ok 3 - Runner options suite # { passed, 59 checks in 9 test cases }
+ok 3 - Runner options suite # { passed, 61 checks in 9 test cases }
 # Subtest: Stopwatch suite
     # Subtest: stopwatch::start() and stop()
         ok 1 - fresh: has_elapsed false
@@ -593,4 +595,4 @@ ok 4 - Stopwatch suite # { passed, 20 checks in 5 test cases }
     1..3
 not ok 5 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases }
 1..5
-# { total: 288 checks passed, 13 failed, in 69 test cases, 5 test suites }
+# { total: 290 checks passed, 13 failed, in 69 test cases, 5 test suites }

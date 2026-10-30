@@ -310,7 +310,7 @@ options.verbosity_level = mt::verbosity::verbose;
 tr.initialise (options);
 ```
 
-The members of `runner_options` correspond to the command-line options: `selected_reporter` to `--reporter`, `verbosity_level` to `--silent`, `--quiet`, and `--verbose`, `output_file_path` to `--output-file`, `colour` to `--color` (or `--use-colour`), `filter_patterns` to `--filter`, and `list_tests` to `--list-tests` (or `--list`).
+The members of `runner_options` correspond to the command-line options: `selected_reporter` to `--reporter`, `verbosity_level` to `--silent`, `--quiet`, and `--verbose`, `output_file_path` to `--output-file`, `colour` to `--color` (or `--use-colour`), `filter_patterns` to `--filter`, `list_tests` to `--list-tests` (or `--list`), and `help` to `--help`.
 
 The application can also construct the options from the main arguments itself, and adjust them before initialising the runner:
 
@@ -349,7 +349,7 @@ To run the registered suites, end the session, and return the test result as the
 return tr.run_suites ();
 ```
 
-The result is 0 if all checks passed, and 1 otherwise, including when a suite was added too late (see [Non-static test suites](#non-static-test-suites)), when `initialise()` or `add_top_suite()` was called twice, and when there is no suite at all (no top suite, no suite added with `add_suite()`, and no static suite), since a test program that runs nothing must not pass unnoticed. If the command-line options were not valid (an unknown option, an unknown reporter name, an unknown colour mode, or a missing option argument), the errors are reported on `stderr` when the options are parsed and written on the console by the reporter (for TAP, as `Bail out!` lines), no output file is created, no test is run, and the result is 2. If the output file cannot be opened, the error is reported in the same way, no test is run, and the result is 2.
+The result is 0 if all checks passed, and 1 otherwise, including when a suite was added too late (see [Non-static test suites](#non-static-test-suites)), when `initialise()` or `add_top_suite()` was called twice, and when there is no suite at all (no top suite, no suite added with `add_suite()`, and no static suite), since a test program that runs nothing must not pass unnoticed. If the command-line options were not valid (an unknown option, an unknown reporter name, an unknown colour mode, or a missing option argument), the errors are reported on `stderr` when the options are parsed and written on the console by the reporter (for TAP, as `Bail out!` lines, followed, for an unknown option, by a comment line suggesting `--help`), no output file is created, no test is run, and the result is 2. If the output file cannot be opened, the error is reported in the same way, no test is run, and the result is 2. With the `--help` option, the usage and the list of the options are written on the console, no test is run, and the result is 0.
 
 #### Aborting the test execution
 

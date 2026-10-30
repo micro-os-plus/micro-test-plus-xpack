@@ -72,6 +72,22 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
+  namespace
+  {
+    // The text displayed by `--help`, after the usage line.
+    constexpr const char* help_options
+        = "Options:\n"
+          "  --help\n"
+          "  --verbose | --quiet | --silent\n"
+          "  --list-tests\n"
+          "  --reporter=human|tap\n"
+          "  --output-file=<path>\n"
+          "  --colour[=always|never|auto]\n"
+          "  --filter=<pattern>\n";
+  } // namespace
+
+  // --------------------------------------------------------------------------
+
   /**
    * @details
    * The constructor initialises a new `runner` instance together with
@@ -250,9 +266,11 @@ namespace micro_os_plus::micro_test_plus
 
     // With errors in the options, do not proceed: no output file is created,
     // the errors are written on the console, no test is run, and
-    // `run_suites()` returns 2. A reporter without output file is still
-    // created, since the suites and the test cases refer to it.
-    if (options_.has_errors ())
+    // `run_suites()` returns 2. The same for `--help`, which writes the
+    // usage instead of the errors, and `run_suites()` returns 0. A reporter
+    // without output file is still created, since the suites and the test
+    // cases refer to it.
+    if (options_.has_errors () || options_.help)
       {
         runner_options console_options{ options_ };
         console_options.output_file_path.clear ();
@@ -273,9 +291,28 @@ namespace micro_os_plus::micro_test_plus
                 options_.verbosity_level != verbosity::silent, "%s%s\n",
                 reporter_->error_prefix (), error.c_str ());
           }
+        if (options_.has_unknown_option ())
+          {
+            reporter_->write_line (
+                options_.verbosity_level != verbosity::silent,
+                "%sUse --help to list the options.\n",
+                reporter_->comment_prefix ());
+          }
+        if (options_.help && !options_.has_errors ())
+          {
+            // Requested, so written also with the silent verbosity.
+            const char* program
+                = options_.arguments.empty ()
+                      ? "<program>"
+                      : utility::extract_file_name (
+                          options_.arguments[0].c_str ());
+            reporter_->write_line (true, "Usage: %s [options] [--] "
+                                         "[arguments]\n%s",
+                                   program, help_options);
+          }
         reporter_->flush_streams ();
 
-        exit_code_ = 2;
+        exit_code_ = options_.has_errors () ? 2 : 0;
         session_state_ = session_state::finished;
         return;
       }
@@ -368,7 +405,7 @@ namespace micro_os_plus::micro_test_plus
         initialise (runner_options{});
       }
 
-    if (has_option_errors ())
+    if (has_option_errors () || options_.help)
       {
         return top_suite_;
       }

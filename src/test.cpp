@@ -198,13 +198,15 @@ namespace micro_os_plus::micro_test_plus
      * report is complete, so the test case is neither run nor reported.
      * The same applies when the runner refused to run the tests because of
      * errors in the options, or because the output file could not be
-     * opened (see `runner::has_option_errors()`).
+     * opened (see `runner::has_option_errors()`), or because the options
+     * requested the usage (`--help`).
      */
     void
     runnable_base::after_test_case_create (class test_case& test_case,
                                            suite& suite)
     {
-      if (runner_.aborted_ || runner_.has_option_errors ())
+      if (runner_.aborted_ || runner_.has_option_errors ()
+          || runner_.options_.help)
         {
           return;
         }

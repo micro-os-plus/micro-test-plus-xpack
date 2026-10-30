@@ -76,6 +76,16 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
+   * Returns the `unknown_option_` member.
+   */
+  inline bool
+  runner_options::has_unknown_option (void) const noexcept
+  {
+    return unknown_option_;
+  }
+
+  /**
+   * @details
    * Returns the `errors_` member.
    */
   inline const std::vector<std::string>&

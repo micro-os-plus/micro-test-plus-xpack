@@ -45,7 +45,17 @@ starts with a single dash also ends the options. An option argument
 given separately (`--reporter human`) belongs to its option. An unknown
 `--` option before that point, an unknown reporter or colour mode, or an
 option with a missing argument, is an error: it is reported on `stderr`
-and on the console, no test is run, and the exit code is 2.
+and on the console, no test is run, and the exit code is 2. For an
+unknown option, the console also suggests `--help`.
+
+@section cli-help Help
+
+The `--help` option writes the usage and the list of the options on the
+console, also with the `silent` verbosity, runs no test, and the exit code
+is 0. Only the long form is accepted, since an argument that starts with
+a single dash ends the options and is left to the application. The errors
+in the other options have priority: they are reported as usual, and the
+exit code is 2.
 
 @section cli-reporter Reporter
 

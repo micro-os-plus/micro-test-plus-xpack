@@ -246,6 +246,10 @@ namespace micro_os_plus::micro_test_plus
           {
             list_tests = true;
           }
+        else if (argument == "--help")
+          {
+            help = true;
+          }
         else if (get_value (reporter_option, i, value))
           {
             if (value == "human")
@@ -295,6 +299,7 @@ namespace micro_os_plus::micro_test_plus
           {
             // A mistyped option must not silently disable the tests.
             add_error ("unknown option '", argument, "'");
+            unknown_option_ = true;
           }
       }
   }
