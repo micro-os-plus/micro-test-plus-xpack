@@ -141,21 +141,20 @@ namespace micro_os_plus::micro_test_plus
    * `initialise (argc, argv)` does, and adds the top suite.
    *
    * If the runner is already initialised, or the test execution was
-   * aborted, the error is reported by `initialise()`, and the top suite
-   * is returned without being added.
+   * aborted, the top suite is returned without other effects, as in the
+   * earlier versions; the call is not rejected.
    */
   // Deprecated since 6.0.0; use initialise (argc, argv) and
   // add_top_suite().
   suite&
   runner::initialise (int argc, char* argv[], const char* top_suite_name)
   {
-    bool is_first = !aborted_ && session_state_ == session_state::created;
-
-    initialise (argc, argv);
-    if (!is_first)
+    if (aborted_ || session_state_ != session_state::created)
       {
         return top_suite_;
       }
+
+    initialise (argc, argv);
 
     return add_top_suite (top_suite_name != nullptr ? top_suite_name : "");
   }
@@ -219,9 +218,10 @@ namespace micro_os_plus::micro_test_plus
    * as finished, so that no test is run, and `run_suites()` returns 2.
    * The same happens if the output file cannot be opened.
    *
-   * The runner is initialised only once; a later call, or a call after
-   * the test execution was aborted, reports an error on `stderr`, without
-   * other effects.
+   * The runner is initialised only once; a later call reports an error
+   * on `stderr` and is rejected, so that `run_suites()` returns 1 (or 2,
+   * if the options have errors); a call after the test execution was
+   * aborted reports an error on `stderr`, without other effects.
    */
   void
   runner::initialise (runner_options options)
@@ -239,6 +239,7 @@ namespace micro_os_plus::micro_test_plus
     if (session_state_ != session_state::created)
       {
         fprintf (stderr, "error: test runner already initialised\n");
+        mark_rejected ();
         return;
       }
 
@@ -339,10 +340,9 @@ namespace micro_os_plus::micro_test_plus
    * After the test execution was aborted, the error is reported on
    * `stderr`. With errors in the options or in the output file, the
    * session has already finished, and the top suite is returned without
-   * other effects. A
-   * second call, or a call once `run_suites()` has started, is reported on
-   * `stderr`; the latter also sets `has_rejected_suites_`, so that the
-   * exit code is not 0.
+   * other effects. A second call, or a call once `run_suites()` has
+   * started, is reported on `stderr` and rejected, so that the exit code
+   * is not 0.
    */
   suite&
   runner::add_top_suite (std::string_view top_suite_name)
@@ -370,6 +370,7 @@ namespace micro_os_plus::micro_test_plus
     if (has_top_suite_)
       {
         fprintf (stderr, "error: top suite already added\n");
+        mark_rejected ();
         return top_suite_;
       }
 
@@ -501,7 +502,7 @@ namespace micro_os_plus::micro_test_plus
    * never run: `run_child_suites()` takes the number of suites only once,
    * before running them, and after the session has ended nothing runs.
    * The error is reported on `stderr`, the suite is destroyed when the
-   * pointer goes out of scope, and `has_rejected_suites_` is set, so that
+   * pointer goes out of scope, and `has_rejected_calls_` is set, so that
    * the exit code is not 0; if the session has already ended, the stored
    * exit code is updated, for the later calls of `run_suites()`.
    */
@@ -534,7 +535,19 @@ namespace micro_os_plus::micro_test_plus
     fprintf (stderr,
              "error: suite '%s' added after run_suites() started, rejected\n",
              name);
-    has_rejected_suites_ = true;
+    mark_rejected ();
+  }
+
+  /**
+   * @details
+   * The flag is read by `run_suites()` when it computes the exit code.
+   * If the session has already finished, the stored exit code is changed
+   * too, unless it is already not 0.
+   */
+  void
+  runner::mark_rejected (void) noexcept
+  {
+    has_rejected_calls_ = true;
     if (session_state_ == session_state::finished && exit_code_ == 0)
       {
         exit_code_ = 1;
@@ -753,7 +766,7 @@ namespace micro_os_plus::micro_test_plus
     else
       {
         exit_code_
-            = (totals_.passed () && !has_rejected_suites_ && !has_no_suites)
+            = (totals_.passed () && !has_rejected_calls_ && !has_no_suites)
                   ? 0
                   : 1;
       }

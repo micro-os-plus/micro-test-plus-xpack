@@ -1043,12 +1043,21 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
             << "a top suite without test cases passes";
         local_counts.passed_checks++;
 
+        // A second call of `initialise()` or of `add_top_suite()` is
+        // rejected, and the session fails.
+        runner init_twice_runner;
+        init_twice_runner.initialise (options);
+        init_twice_runner.initialise (options);
+        init_twice_runner.add_top_suite ("Top");
+
         runner twice_runner;
         twice_runner.initialise (options);
         auto& first_ts = twice_runner.add_top_suite ("First");
 
         t.expect (&twice_runner.add_top_suite ("Second") == &first_ts
-                  and eq (first_ts.name (), "First"))
+                  and eq (first_ts.name (), "First")
+                  and eq (twice_runner.run_suites (), 1)
+                  and eq (init_twice_runner.run_suites (), 1))
             << "a second add_top_suite() returns the same suite";
         local_counts.passed_checks++;
 

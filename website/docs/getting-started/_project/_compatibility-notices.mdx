@@ -289,7 +289,8 @@ function of the reporters was removed.
 
 - The session runs only once: later calls of `run_suites()` return the
   same exit code without running the suites again, and a second
-  `initialise()` is reported and ignored.
+  `initialise()` or `add_top_suite()` is reported and ignored, but makes
+  `run_suites()` return 1.
 - Without `initialise()`, the default options are used; without
   `add_top_suite()`, there is no top suite, and `run_suites()` runs only
   the suites added with `add_suite()` and the static suites. A session

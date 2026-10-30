@@ -392,9 +392,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * The call is optional; without it, the runner is initialised with the
      * default options by the first call of `add_top_suite()` or `run_suites()`.
-     * If used, it must therefore precede them; a later call, or a call
-     * after the test execution was aborted, reports an error on `stderr`,
-     * without other effects.
+     * If used, it must therefore precede them; a later call reports an
+     * error on `stderr` and is rejected, so that `run_suites()` returns 1;
+     * a call after the test execution was aborted reports an error on
+     * `stderr`, without other effects.
      *
      * If the options have errors (see `runner_options::has_errors()`), or
      * if the output file cannot be opened, the errors are written on the
@@ -433,8 +434,9 @@ namespace micro_os_plus::micro_test_plus
      *
      * The top suite can be added only once, and before `run_suites()`; a second
      * call, or a call made once `run_suites()` has started, is reported on
-     * `stderr`, and the existing top suite is returned. With an unknown
-     * reporter name, the top suite is returned, but nothing is reported.
+     * `stderr` and rejected, so that `run_suites()` returns 1, and the
+     * existing top suite is returned. With errors in the options, the top
+     * suite is returned, but no test is run.
      *
      * @param top_suite_name The name of the top suite, used in reports; a
      * string literal, a `const char*`, a `std::string`, or a
@@ -478,10 +480,11 @@ namespace micro_os_plus::micro_test_plus
      *   None.
      * @return 0 if all checks passed, or if the test cases were listed;
      * 1 if a check failed, if a suite was rejected by `add_suite()` or
-     * `add_top_suite()`, if there was no suite, if the runner is running,
-     * or if the test execution was aborted; 2 if `initialise()` reported
-     * an option error, or if the filters selected no test case,
-     * regardless of the checks.
+     * `add_top_suite()`, if `initialise()` or `add_top_suite()` was called
+     * twice, if there was no suite, if the runner is running, or if the
+     * test execution was aborted; 2 if `initialise()` reported an option
+     * error, or if the filters selected no test case, regardless of the
+     * checks.
      *
      * @since 6.0.0
      */
@@ -958,7 +961,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Called by `add_suite()`. Once `run_suites()` has started, the suite is
      * rejected: it is destroyed, the error is reported on `stderr`, and
-     * `has_rejected_suites_` is set.
+     * `has_rejected_calls_` is set.
      *
      * @param suite Owning pointer to the test suite to register.
      * @par Returns
@@ -971,9 +974,8 @@ namespace micro_os_plus::micro_test_plus
      * @brief Reject a suite constructed after `run_suites()` has started.
      *
      * @details
-     * Reports the error on `stderr`, sets `has_rejected_suites_`, and,
-     * if the session has already ended, updates the stored exit code,
-     * for the later calls of `run_suites()`. Used by `register_suite()` and by
+     * Reports the error on `stderr`, and calls `mark_rejected()`. Used by
+     * `register_suite()`, by `add_top_suite()`, and by
      * `link_static_suite()`.
      *
      * @param [in] name The name of the rejected suite.
@@ -983,6 +985,24 @@ namespace micro_os_plus::micro_test_plus
      */
     void
     reject_suite (const char* name);
+
+    /**
+     * @brief Records that a call was rejected.
+     *
+     * @details
+     * Sets `has_rejected_calls_`, so that `run_suites()` returns 1 (unless
+     * an option error requires 2), and, if the session has already
+     * ended, updates the stored exit code, for the later calls of
+     * `run_suites()`. Used by `reject_suite()`, and by `initialise()` and
+     * `add_top_suite()` for the calls made twice.
+     *
+     * @par Parameters
+     *   None.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    mark_rejected (void) noexcept;
 
     /**
      * @brief Insert a static suite into the list of suites, or reject it.
@@ -1226,13 +1246,15 @@ namespace micro_os_plus::micro_test_plus
     int exit_code_ = 1;
 
     /**
-     * @brief Whether a suite was added after `run_suites()` had started.
+     * @brief Whether a call was rejected.
      *
      * @details
-     * Set by `register_suite()`, which rejects such a suite; `run_suites()`
-     * then returns 1, unless an option error requires 2.
+     * Set by `mark_rejected()`, for a suite added after `run_suites()`
+     * had started, and for a second call of `initialise()` or of
+     * `add_top_suite()`; `run_suites()` then returns 1, unless an option
+     * error requires 2.
      */
-    bool has_rejected_suites_ = false;
+    bool has_rejected_calls_ = false;
 
     /**
      * @brief The function called by `abort()`, if not null.

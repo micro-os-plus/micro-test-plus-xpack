@@ -337,7 +337,7 @@ ts.test ("Check something", [] (auto& t) {
 
 The test cases of the top suite run immediately, when `test()` is called; the top suite is always the first suite in the report. If no name is given, the top suite is named after the program (the file name of `argv[0]`, without the extension), or `default suite` when there is no command line.
 
-The top suite is optional; without `add_top_suite()`, there is no top suite, and `run_suites()` runs only the suites added with `add_suite()` and the static suites (see [Test suites](#test-suites)). It can be added only once, and before `run_suites()`; a second call returns the same suite, and a call once `run_suites()` has started is reported as an error.
+The top suite is optional; without `add_top_suite()`, there is no top suite, and `run_suites()` runs only the suites added with `add_suite()` and the static suites (see [Test suites](#test-suites)). It can be added only once, and before `run_suites()`; a second call returns the same suite, and a call once `run_suites()` has started is reported on `stderr` and rejected, so that the result is not 0. The same applies to a second call of `initialise()`.
 
 Until 5.0, `initialise (argc, argv, name)` also created and returned the top suite; it is deprecated, and is equivalent to `initialise (argc, argv)` followed by `add_top_suite (name)`.
 
@@ -349,7 +349,7 @@ To run the registered suites, end the session, and return the test result as the
 return tr.run_suites ();
 ```
 
-The result is 0 if all checks passed, and 1 otherwise, including when a suite was added too late (see [Non-static test suites](#non-static-test-suites)), and when there is no suite at all (no top suite, no suite added with `add_suite()`, and no static suite), since a test program that runs nothing must not pass unnoticed. If the command-line options were not valid (an unknown option, an unknown reporter name, an unknown colour mode, or a missing option argument), the errors are reported on `stderr` when the options are parsed and written on the console by the reporter (for TAP, as `Bail out!` lines), no output file is created, no test is run, and the result is 2. If the output file cannot be opened, the error is reported in the same way, no test is run, and the result is 2.
+The result is 0 if all checks passed, and 1 otherwise, including when a suite was added too late (see [Non-static test suites](#non-static-test-suites)), when `initialise()` or `add_top_suite()` was called twice, and when there is no suite at all (no top suite, no suite added with `add_suite()`, and no static suite), since a test program that runs nothing must not pass unnoticed. If the command-line options were not valid (an unknown option, an unknown reporter name, an unknown colour mode, or a missing option argument), the errors are reported on `stderr` when the options are parsed and written on the console by the reporter (for TAP, as `Bail out!` lines), no output file is created, no test is run, and the result is 2. If the output file cannot be opened, the error is reported in the same way, no test is run, and the result is 2.
 
 #### Aborting the test execution
 
