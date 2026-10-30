@@ -1688,15 +1688,17 @@ To list the test cases without running them, use the `--list-tests` option, or i
 
 ```console
 $ sample-test --list-tests
-All available test cases:
-  Sample
-    Check various conditions
-    Check strings
-  Explicit namespace suite
-    Check one
-    Check two
-4 test cases in 2 test suites
+# All available test cases:
+#   Sample
+#     Check various conditions
+#     Check strings
+#   Explicit namespace suite
+#     Check one
+#     Check two
+# 4 test cases in 2 test suites
 ```
+
+With the TAP reporter (the default), the list is made of TAP comment lines, as above; with `--reporter=human`, the same lines are written without the `# ` prefix.
 
 With `--filter`, the header is `Matching test cases:`, and only the selected test cases are listed; the suites without selected test cases are not listed, so the two options together show what a run with the same filter would run.
 

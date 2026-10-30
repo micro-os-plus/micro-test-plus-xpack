@@ -311,10 +311,11 @@ namespace micro_os_plus::micro_test_plus
     // list is written, and the test cases are listed as they are created.
     if (options_.list_tests)
       {
-        reporter_->write_line (
-            options_.verbosity_level != verbosity::silent, "%s\n",
-            options_.filter_patterns.empty () ? "All available test cases:"
-                                              : "Matching test cases:");
+        reporter_->write_line (options_.verbosity_level != verbosity::silent,
+                               "%s%s\n", reporter_->comment_prefix (),
+                               options_.filter_patterns.empty ()
+                                   ? "All available test cases:"
+                                   : "Matching test cases:");
         session_state_ = session_state::initialised;
         return;
       }
@@ -478,12 +479,14 @@ namespace micro_os_plus::micro_test_plus
         listed_suite_ = &suite;
         ++listed_suites_count_;
         reporter_->write_line (options_.verbosity_level != verbosity::silent,
-                               "  %s\n", suite.name ());
+                               "%s  %s\n", reporter_->comment_prefix (),
+                               suite.name ());
       }
 
     ++listed_test_cases_count_;
     reporter_->write_line (options_.verbosity_level != verbosity::silent,
-                           "    %s\n", test_case.name ());
+                           "%s    %s\n", reporter_->comment_prefix (),
+                           test_case.name ());
   }
 
   // --------------------------------------------------------------------------
@@ -715,9 +718,10 @@ namespace micro_os_plus::micro_test_plus
         const unsigned long test_cases = listed_test_cases_count_;
         const unsigned long suites = listed_suites_count_;
         reporter_->write_line (options_.verbosity_level != verbosity::silent,
-                               "%lu test case%s in %lu test suite%s\n",
-                               test_cases, (test_cases == 1) ? "" : "s",
-                               suites, (suites == 1) ? "" : "s");
+                               "%s%lu test case%s in %lu test suite%s\n",
+                               reporter_->comment_prefix (), test_cases,
+                               (test_cases == 1) ? "" : "s", suites,
+                               (suites == 1) ? "" : "s");
         reporter_->flush_streams ();
 
         exit_code_ = has_option_errors () ? 2 : 0;
