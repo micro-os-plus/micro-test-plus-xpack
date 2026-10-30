@@ -33,12 +33,17 @@ Options may also be set programmatically, on platforms without a command
 line, through `runner_options`.
 
 The µTest++ options come first. The parsing of the options ends at the
-first argument that does not start with `--`, or at the first `--` alone;
-that argument, and all the following ones, are left to the application,
-uninterpreted, and are available from `runner::application_arguments()`.
-The `--` itself is not passed on, and an option argument given
-separately (`--reporter human`) belongs to its option. An unknown `--`
-option before that point, an unknown reporter or colour mode, or an
+first argument that does not start with `--`, or at the first `--`
+alone; that argument, and all the following ones, are left to the
+application, uninterpreted, and are available from
+`runner::application_arguments()`. The first `--` alone is not passed on
+when it ends the options; it is needed in front of an application
+argument that starts with `--`, which would otherwise be taken for an
+unknown µTest++ option. After an application argument, a `--` is not a
+terminator, and is passed on like any other argument; an argument that
+starts with a single dash also ends the options. An option argument
+given separately (`--reporter human`) belongs to its option. An unknown
+`--` option before that point, an unknown reporter or colour mode, or an
 option with a missing argument, is an error: it is reported on `stderr`
 and on the console, no test is run, and the exit code is 2.
 

@@ -1625,14 +1625,17 @@ by µTest++.
 
 ## Command line options
 
-The µTest++ options come first, before the arguments of the application: the parsing of the options ends at the first argument that does not start with `--`, or at the first `--` alone, and that argument, and all the following ones, are left to the application, uninterpreted, so they may be options of the application. The `--` itself is not passed on. An option argument given separately (`--reporter human`) belongs to its option and does not end the parsing; an unknown `--` option before that point is an error.
+The µTest++ options come first, before the arguments of the application: the parsing of the options ends at the first argument that does not start with `--`, or at the first `--` alone, and that argument, and all the following ones, are left to the application, uninterpreted, so they may be options of the application. The first `--` alone, when it ends the options, is not passed on. An option argument given separately (`--reporter human`) belongs to its option and does not end the parsing; an unknown `--` option before that point is an error.
 
 ```sh
 sample-test --verbose --output-file=out.tap one --app-option
 sample-test --quiet -- --app-option
+sample-test --quiet one -- two
 ```
 
-In the first command, `one` and `--app-option` are left to the application; in the second, `--app-option` is. A µTest++ option written after an application argument (`sample-test one --verbose`) is not an option, but one of the arguments of the application.
+In the first command, `one` and `--app-option` are left to the application, and the parsing stops at `one`, so `--app-option` is not examined. In the second command, `--app-option` is left to the application; the `--` is needed because an argument that starts with `--` would otherwise be taken for a µTest++ option, and rejected as an unknown one. In the third command, the parsing already stopped at `one`, so the `--` is not a terminator but one of the arguments of the application, which are `one`, `--`, and `two`; the same applies to a second `--` after the first one.
+
+A µTest++ option written after an application argument (`sample-test one --verbose`) is not an option, but one of the arguments of the application. An argument that starts with a single dash (`-v`) is not a µTest++ option either, so it also ends the options, and is left to the application with the following ones.
 
 The application obtains its arguments from the runner, without `argv[0]` and without the µTest++ options:
 
