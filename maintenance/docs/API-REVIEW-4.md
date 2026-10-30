@@ -356,9 +356,9 @@ Tags:
   null check), so that the public `utility` namespace contains only what
   applications use.
 
-  Fixed (#205): the fix differs from the proposal. The function stays in
-  the public `utility` namespace; it now accepts `nullptr` and returns an
-  empty string.
+  Fixed in `5d621c32` (#205): the fix differs from the proposal. The
+  function stays in the public `utility` namespace; it now accepts
+  `nullptr` and returns an empty string.
 
 ## 4. Simplicity and duplication
 
@@ -373,6 +373,12 @@ Tags:
   the base class. Suggested change: move the loop to `reporter`, and let
   the derived classes provide only the formatting of one heading.
 
+  Fixed in `7fc46067` (#206): the loop is
+  `reporter::display_open_test_cases()`, and the derived classes
+  implement only the new pure virtual `display_open_heading()`; the
+  suite heading of the quiet verbosity stays in
+  `reporter_human::display_open_names()`.
+
 - **#14 — `runner_options::operator=` repeats what `= default` does.**
   [internal]
   `runner-options.h` lines 299 to 300, `inlines/runner-options-inlines.h`
@@ -381,6 +387,13 @@ Tags:
   assignment, and all its members are copyable. The hand-written version
   adds an extra move and is one more function to keep. Suggested change:
   `= default`.
+
+  Not applicable: the hand-written copy assignment is deliberate. It was
+  introduced by `a2f0ad33` (#188) because the defaulted one triggers
+  `-Waggregate-return` in the GCC standard library headers, through the
+  `std::copy` of the vector assignment, on some targets. The Doxygen
+  comment of the operator documents this. It can be revisited when the
+  affected GCC versions and targets are known to be out of support.
 
 ## 5. Modern C++
 
@@ -391,6 +404,8 @@ Tags:
   warning at `-Wall -Wextra` and exits with 0 even when checks fail. The
   two accessors next to it (`total_suites_count()`, `is_listing()`) are
   already `[[nodiscard]]`. Suggested change: add `[[nodiscard]]`.
+
+  Fixed in `7a3e2867` (#207).
 
 ## 6. Suitability for embedded targets
 
@@ -412,11 +427,22 @@ Tags:
   omit the type suffix for `unsigned char` and `signed char` elements of
   a range (they are bytes, not numbers with a type).
 
+  Fixed in `231e021c` (#208): the limit is a fixed 16 elements, followed by
+  `, ... (N elements)`, and the suffix is omitted for the `signed char`
+  and `unsigned char` elements of a range. The index of the first
+  difference is appended for an equality of two ranges, only when the
+  difference is beyond the elements written. A range of `std::byte`
+  still carries the suffix, since it is an enumeration.
+
 ## 7. Incidental observations
 
 - **#17 — One line exceeds 80 characters.** [internal]
   `src/runner.cpp` line 254 has 81 characters (a comment). All the other
   lines of `include/` and `src/` fit.
+
+  Already fixed: the comment was rewrapped by an earlier change, and no
+  line of `include/` or `src/` exceeds 80 characters (checked with the
+  characters of each line counted, not the bytes).
 
 - **#18 — Two comments produce `-Wdocumentation` warnings.** [internal]
   **[confirmed]**
@@ -425,12 +451,21 @@ Tags:
   reports as `empty paragraph passed to '@par' command`. No other
   warning is reported for the library at `-Weverything`.
 
+  Fixed in `e550feed`: removing the empty line was not enough, since Clang
+  also reports a `@par` directly followed by a code block; each example
+  now has a one-line introduction. The extract_file_name() example has
+  the same layout, but it is under a `-Wdocumentation` pragma, which
+  was left as it is.
+
 - **#19 — The metadata of the release is not updated.** [internal]
   `package.json` has the version `6.0.0-pre` at the commit titled
   `6.0.0` (`e9e79e78`); `CHANGELOG.md` ends its list at `v5.0.1`. The
   release contains breaking changes (the removal of mutable
   `totals()`, the `final` classes, the new `checkable` constraint, the
   rename of `run()`), which the log is meant to announce.
+
+  Not applicable: no change to the repository for this item. The
+  changelog is updated by the maintainer at release time.
 
 ## 8. Deprecated functionality
 
@@ -452,6 +487,14 @@ Tags:
   removed, remove with them these definitions and the branch of
   `compare_op`; until then, say in the documentation of `has_epsilon`
   that it is deprecated with the wrappers.
+
+  Fixed in `727842cb` (#209): the fix differs from the proposal. The
+  definitions are not removed; they are guarded with
+  `MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED` and documented as
+  deprecated, so `has_epsilon` is no longer offered to the applications
+  unless the deprecated functionality is enabled. They cannot move to
+  `deprecated.h`, since the tolerance branch is in the `compare_op`
+  constructor, which is defined before it.
 
 ## 9. Reviewed and found sound
 
