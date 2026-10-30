@@ -103,6 +103,8 @@ namespace micro_os_plus::micro_test_plus
   class runner;
   class test_case;
   class suite;
+  class top_suite;
+  class static_suite;
 
   // --------------------------------------------------------------------------
 
@@ -1485,10 +1487,14 @@ namespace micro_os_plus::micro_test_plus
    * receives a `suite&` reference as its first argument. Inside the body,
    * `suite::test()` is called to create and run individual test cases.
    *
-   * The constructor is protected, since a suite constructed elsewhere
+   * The constructor is private, since a suite constructed elsewhere
    * would not be registered with the runner; the suites are created only
    * by `runner::add_suite()`, by the derived `static_suite`, which registers
-   * itself, and by the runner, for its `top_suite`.
+   * itself, and by the runner, for its `top_suite`. The class is not
+   * meant to be derived from by the applications: `top_suite` and
+   * `static_suite` are its only derived classes, and are its friends, so
+   * a class derived from `suite` cannot be constructed, and has no access
+   * to the state of the suite.
    *
    * The class is non-copyable and non-movable to preserve unique ownership
    * and consistent state throughout the test session.
@@ -1522,12 +1528,28 @@ namespace micro_os_plus::micro_test_plus
      */
     friend class detail::reporter_tap;
 
-  protected:
+    /**
+     * @brief The top suite, which is constructed by the runner.
+     *
+     * @details
+     * It calls the constructor of this class.
+     */
+    friend class top_suite;
+
+    /**
+     * @brief The static suite, which registers itself.
+     *
+     * @details
+     * It calls the constructor of this class.
+     */
+    friend class static_suite;
+
+  private:
     /**
      * @brief Constructs a suite with a name, runner, and callable body.
      *
      * @details
-     * Protected, since the suite must be registered with the runner,
+     * Private, since the suite must be registered with the runner,
      * which only `runner::add_suite()` and the `static_suite` constructor
      * do.
      *
@@ -1757,7 +1779,7 @@ namespace micro_os_plus::micro_test_plus
     void
     run (void) override;
 
-  protected:
+  private:
 #if defined(__cpp_exceptions)
     /**
      * @brief Reports an exception that escaped the suite body as a failed
@@ -1813,7 +1835,7 @@ namespace micro_os_plus::micro_test_plus
     void
     unlink (void) noexcept;
 
-  protected:
+  private:
     /**
      * @brief Callable storing the suite body and any bound arguments.
      *

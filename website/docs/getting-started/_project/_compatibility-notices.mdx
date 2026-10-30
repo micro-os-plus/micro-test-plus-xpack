@@ -192,6 +192,10 @@ function of the reporters was removed.
 - The `extension::checkable` concept no longer holds for the always-true
   arguments; the new `extension::suspicious_condition` concept tells
   which they are.
+- The constructor of `suite` is private, and its members are private,
+  so a class derived from `suite` cannot be constructed any more; only
+  `top_suite` and `static_suite` derive from it. Create the suites with
+  `add_suite()` or `static_suite`.
 
 #### Changes of behaviour
 
