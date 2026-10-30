@@ -1711,21 +1711,21 @@ To list the test cases without running them, use the `--list-tests` option, or i
 
 ```console
 $ sample-test --list-tests
-# All available test cases:
-#   Sample
-#     Check various conditions
-#     Check strings
-#   Explicit namespace suite
-#     Check one
-#     Check two
-# 4 test cases in 2 test suites
+All available test cases:
+  Sample
+    Check various conditions
+    Check strings
+  Explicit namespace suite
+    Check one
+    Check two
+4 test cases in 2 test suites
 ```
 
-With the TAP reporter (the default), the list is made of TAP comment lines, as above; with `--reporter=human`, the same lines are written without the `# ` prefix.
+The list is made of plain lines, the same with both reporters and with all the verbosity levels; it is not a TAP report, so it is not formatted as one, even when the TAP reporter is selected.
 
 With `--filter`, the header is `Matching test cases:`, and only the selected test cases are listed; the suites without selected test cases are not listed, so the two options together show what a run with the same filter would run.
 
-The suite bodies run, as usual, since they create the test cases, but the bodies of the test cases do not run, so no check is evaluated; for the same reason, the nested test cases, created by the bodies of their parents, are not listed. No report is written: the list is written to the console, unless `--silent` is given, and to the output file, if any, and the exit code is 0 (or 2 after an option error).
+The suite bodies run, as usual, since they create the test cases, but the bodies of the test cases do not run, so no check is evaluated; for the same reason, the nested test cases, created by the bodies of their parents, are not listed. No report is written: the list is written to the console and to the output file, if any, and the exit code is 0 (or 2 after an option error).
 
 The code of `main()` and of the suite bodies also runs while listing, so the parts that depend on the results of the test cases (their totals, or the exit code of `run_suites()`), and the messages of the test program, which would be mixed with the list, should be skipped when `tr.is_listing ()` is true:
 

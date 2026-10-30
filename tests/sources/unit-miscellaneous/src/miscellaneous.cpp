@@ -1550,15 +1550,16 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
 
         std::string list;
         read_list (list);
-        // The listing is made of TAP comment lines.
-        t.expect (eq (list, "# All available test cases:\n"
-                            "#   Local\n"
-                            "#     Local test\n"
-                            "#   Added\n"
-                            "#     Added test\n"
-                            "#     Each (1)\n"
-                            "#     Each (2)\n"
-                            "# 4 test cases in 2 test suites\n"))
+        // The listing is made of plain lines, whatever the reporter (the
+        // default, TAP, here).
+        t.expect (eq (list, "All available test cases:\n"
+                            "  Local\n"
+                            "    Local test\n"
+                            "  Added\n"
+                            "    Added test\n"
+                            "    Each (1)\n"
+                            "    Each (2)\n"
+                            "4 test cases in 2 test suites\n"))
             << "all test cases listed";
         local_counts.passed_checks++;
 
@@ -1580,11 +1581,11 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         }
 
         read_list (list);
-        t.expect (eq (list, "# Matching test cases:\n"
-                            "#   Added\n"
-                            "#     Each (1)\n"
-                            "#     Each (2)\n"
-                            "# 2 test cases in 1 test suite\n"))
+        t.expect (eq (list, "Matching test cases:\n"
+                            "  Added\n"
+                            "    Each (1)\n"
+                            "    Each (2)\n"
+                            "2 test cases in 1 test suite\n"))
             << "matching test cases listed";
         local_counts.passed_checks++;
 

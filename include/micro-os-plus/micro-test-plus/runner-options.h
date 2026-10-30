@@ -449,9 +449,10 @@ namespace micro_os_plus::micro_test_plus
      * patterns, and the suites without selected test cases are not
      * listed. The nested test cases are not listed, since they are
      * created by the bodies of their parents, which do not run. The list
-     * is written to the console, unless the verbosity is `silent`, and to
-     * the output file, if any; no report is written, and `run_suites()` returns
-     * 0, or 2 after an option error.
+     * is made of plain lines, the same with both reporters and with all
+     * the verbosity levels, and is written to the console and to the
+     * output file, if any; no report is written, and `run_suites()`
+     * returns 0, or 2 after an option error.
      *
      * @since 6.0.0
      */

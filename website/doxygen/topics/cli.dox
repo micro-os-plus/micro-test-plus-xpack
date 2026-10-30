@@ -286,9 +286,10 @@ The suite bodies run, to create their test cases, but the test case
 bodies do not, so no check is evaluated. The selected test cases (see the
 filter above) are listed under the names of their suites; the nested test
 cases are not listed, since they are created by the bodies of their
-parents. The list is written to the console, unless the verbosity is
-`silent`, and to the output file, if any, and the exit code is 0 (or 2
-after an option error).
+parents. The list is made of plain lines, the same with both reporters
+and with all the verbosity levels, and is written to the console and to
+the output file, if any, and the exit code is 0 (or 2 after an option
+error).
 
 @code{.console}
 $ sample-test --list-tests

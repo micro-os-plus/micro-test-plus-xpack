@@ -75,15 +75,14 @@ namespace micro_os_plus::micro_test_plus
   namespace
   {
     // The text displayed by `--help`, after the usage line.
-    constexpr const char* help_options
-        = "Options:\n"
-          "  --help, -h\n"
-          "  --verbose | --quiet | --silent\n"
-          "  --list-tests\n"
-          "  --reporter=human|tap\n"
-          "  --output-file=<path>\n"
-          "  --colour[=always|never|auto]\n"
-          "  --filter=<pattern>\n";
+    constexpr const char* help_options = "Options:\n"
+                                         "  --help, -h\n"
+                                         "  --verbose | --quiet | --silent\n"
+                                         "  --list-tests\n"
+                                         "  --reporter=human|tap\n"
+                                         "  --output-file=<path>\n"
+                                         "  --colour[=always|never|auto]\n"
+                                         "  --filter=<pattern>\n";
   } // namespace
 
   // --------------------------------------------------------------------------
@@ -293,21 +292,21 @@ namespace micro_os_plus::micro_test_plus
           }
         if (options_.has_unknown_option ())
           {
-            reporter_->write_line (
-                options_.verbosity_level != verbosity::silent,
-                "%sUse --help to list the options.\n",
-                reporter_->comment_prefix ());
+            reporter_->write_line (options_.verbosity_level
+                                       != verbosity::silent,
+                                   "%sUse --help to list the options.\n",
+                                   reporter_->comment_prefix ());
           }
         if (options_.help && !options_.has_errors ())
           {
             // Requested, so written also with the silent verbosity.
-            const char* program
-                = options_.arguments.empty ()
-                      ? "<program>"
-                      : utility::extract_file_name (
-                          options_.arguments[0].c_str ());
-            reporter_->write_line (true, "Usage: %s [options] [--] "
-                                         "[arguments]\n%s",
+            const char* program = options_.arguments.empty ()
+                                      ? "<program>"
+                                      : utility::extract_file_name (
+                                            options_.arguments[0].c_str ());
+            reporter_->write_line (true,
+                                   "Usage: %s [options] [--] "
+                                   "[arguments]\n%s",
                                    program, help_options);
           }
         reporter_->flush_streams ();
@@ -348,8 +347,7 @@ namespace micro_os_plus::micro_test_plus
     // list is written, and the test cases are listed as they are created.
     if (options_.list_tests)
       {
-        reporter_->write_line (options_.verbosity_level != verbosity::silent,
-                               "%s%s\n", reporter_->comment_prefix (),
+        reporter_->write_line (true, "%s\n",
                                options_.filter_patterns.empty ()
                                    ? "All available test cases:"
                                    : "Matching test cases:");
@@ -531,15 +529,11 @@ namespace micro_os_plus::micro_test_plus
       {
         listed_suite_ = &suite;
         ++listed_suites_count_;
-        reporter_->write_line (options_.verbosity_level != verbosity::silent,
-                               "%s  %s\n", reporter_->comment_prefix (),
-                               suite.name ());
+        reporter_->write_line (true, "  %s\n", suite.name ());
       }
 
     ++listed_test_cases_count_;
-    reporter_->write_line (options_.verbosity_level != verbosity::silent,
-                           "%s    %s\n", reporter_->comment_prefix (),
-                           test_case.name ());
+    reporter_->write_line (true, "    %s\n", test_case.name ());
   }
 
   // --------------------------------------------------------------------------
@@ -770,11 +764,9 @@ namespace micro_os_plus::micro_test_plus
 
         const unsigned long test_cases = listed_test_cases_count_;
         const unsigned long suites = listed_suites_count_;
-        reporter_->write_line (options_.verbosity_level != verbosity::silent,
-                               "%s%lu test case%s in %lu test suite%s\n",
-                               reporter_->comment_prefix (), test_cases,
-                               (test_cases == 1) ? "" : "s", suites,
-                               (suites == 1) ? "" : "s");
+        reporter_->write_line (true, "%lu test case%s in %lu test suite%s\n",
+                               test_cases, (test_cases == 1) ? "" : "s",
+                               suites, (suites == 1) ? "" : "s");
         reporter_->flush_streams ();
 
         exit_code_ = has_option_errors () ? 2 : 0;
