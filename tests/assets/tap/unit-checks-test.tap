@@ -248,16 +248,16 @@ not ok 1 - Top suite # { FAILED, 39 checks passed, 6 failed, in 18 test cases, t
         1..8
     ok 5 - Approximate comparisons # { passed, 8 checks }
     # Subtest: Failed approximate comparisons
-        not ok 1 - actual ~ 44 +/- 2
+        not ok 1 - actual ~ 45 +/- 2
           ---
-          condition: "42 ~ (44 +/- 2)"
+          condition: "42 ~ (45 +/- 2)"
           at:
             fileName: comparisons.cpp
             lineNumber: 258
           ...
-        not ok 2 - 10 ~ 12 +/- 2
+        not ok 2 - 10 ~ 13 +/- 2
           ---
-          condition: "10 ~ (12 +/- 2)"
+          condition: "10 ~ (13 +/- 2)"
           at:
             fileName: comparisons.cpp
             lineNumber: 263

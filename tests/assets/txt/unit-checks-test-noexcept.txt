@@ -130,8 +130,8 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ not 10 ~ 20 +/- 5
     ✓ Approximate comparisons - passed (8 checks)
     • Failed approximate comparisons
-        ✗ actual ~ 44 +/- 2 FAILED (comparisons.cpp:258, 42 ~ (44 +/- 2))
-        ✗ 10 ~ 12 +/- 2 FAILED (comparisons.cpp:263, 10 ~ (12 +/- 2))
+        ✗ actual ~ 45 +/- 2 FAILED (comparisons.cpp:258, 42 ~ (45 +/- 2))
+        ✗ 10 ~ 13 +/- 2 FAILED (comparisons.cpp:263, 10 ~ (13 +/- 2))
         ✗ 3u ~ 5u +/- 1u FAILED (comparisons.cpp:267, 3u ~ (5u +/- 1u))
         ✗ 1 ~ 1 +/- -1 FAILED (comparisons.cpp:271, 1 ~ (1 +/- -1))
         ✗ actual ~ 42.1f +/- 0.01f FAILED (comparisons.cpp:274, 42.0f ~ (42.1f +/- 0.01f))

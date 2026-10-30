@@ -827,12 +827,12 @@ namespace micro_os_plus::micro_test_plus
                              and not std::is_same_v<unwrapped_t<T>, char32_t>;
 
     /**
-     * @brief Tells whether two numbers differ by less than a tolerance.
+     * @brief Tells whether two numbers differ by at most a tolerance.
      *
      * @details
      * If the three values are integers, the distance is computed exactly,
      * as an unsigned value, also for operands of mixed signedness, and
-     * compared with the tolerance with `std::cmp_less()`, so that neither
+     * compared with the tolerance with `std::cmp_less_equal()`, so that neither
      * overflows nor wraps around. Otherwise, the values are converted to
      * their common floating-point type, and the absolute value of the
      * difference is compared with the tolerance. A negative tolerance, or
@@ -845,13 +845,13 @@ namespace micro_os_plus::micro_test_plus
      * @param lhs The first value.
      * @param rhs The second value.
      * @param epsilon The tolerance.
-     * @retval true The distance between the values is less than the
-     * tolerance.
+     * @retval true The distance between the values is less than or equal
+     * to the tolerance.
      * @retval false Otherwise.
      */
     template <class Lhs_T, class Rhs_T, class Epsilon_T>
     [[nodiscard]] constexpr bool
-    differ_by_less_than (Lhs_T lhs, Rhs_T rhs, Epsilon_T epsilon);
+    differ_by_at_most (Lhs_T lhs, Rhs_T rhs, Epsilon_T epsilon);
 
     /**
      * @brief Approximate comparator struct template.
@@ -859,8 +859,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Derived from `binary_op`, this struct compares two numbers with an
      * explicit tolerance, given as a third operand: the comparison
-     * succeeds if the distance between the numbers is less than the
-     * tolerance (see `detail::differ_by_less_than()`). The result is
+     * succeeds if the distance between the numbers is at most the
+     * tolerance (see `detail::differ_by_at_most()`). The result is
      * computed at construction time. It is created by the
      * `approx (lhs, rhs, epsilon)` function comparator, and reported as
      * `lhs ~ (rhs +/- epsilon)`.

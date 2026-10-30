@@ -217,7 +217,8 @@ namespace micro_os_plus::micro_test_plus
    *
    * @details
    * The comparison succeeds if the distance between `lhs` and `rhs` is
-   * less than `epsilon`. The operands are numbers, integral or
+   * less than or equal to `epsilon`, so a tolerance of zero requires
+   * equal values. The operands are numbers, integral or
    * floating-point, possibly of different types, or the framework value
    * wrappers and numeric literals, whose own tolerance is not used. For
    * the integers, the distance is computed exactly, also for operands of
@@ -242,7 +243,7 @@ namespace micro_os_plus::micro_test_plus
    * @param rhs Right hand side operand.
    * @param epsilon The tolerance; a negative one fails all comparisons.
    * @return A comparator object that evaluates to true if `lhs` and `rhs`
-   * differ by less than `epsilon`.
+   * differ by at most `epsilon`.
    *
    * @since 6.0.0
    */

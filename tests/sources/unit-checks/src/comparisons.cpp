@@ -255,12 +255,12 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
 
     ts.test ("Failed approximate comparisons", [] (auto& t)
       {
-        t.expect (approx (my_actual_integral<int> (), 44, 2))
-            << "actual ~ 44 +/- 2";
+        t.expect (approx (my_actual_integral<int> (), 45, 2))
+            << "actual ~ 45 +/- 2";
         local_counts.failed_checks++;
 
-        // The distance is less than the tolerance, not equal to it.
-        t.expect (approx (10, 12, 2)) << "10 ~ 12 +/- 2";
+        // The distance is larger than the tolerance.
+        t.expect (approx (10, 13, 2)) << "10 ~ 13 +/- 2";
         local_counts.failed_checks++;
 
         // No wrap around of the unsigned difference.

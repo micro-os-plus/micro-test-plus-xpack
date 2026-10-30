@@ -749,10 +749,11 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     using uint64_limits = std::numeric_limits<std::uint64_t>;
 
     // The approximate comparator succeeds when the distance is less than
-    // the tolerance.
+    // or equal to the tolerance.
     static_assert (approx (10, 11, 2));
     static_assert (approx (12, 10, 3));
-    static_assert (not approx (10, 12, 2));
+    static_assert (approx (10, 12, 2));
+    static_assert (not approx (10, 13, 2));
     static_assert (approx (1.0, 1.05, 0.1));
     static_assert (not approx (1.0, 1.2, 0.1));
     static_assert (approx (10, 10.4, 0.5));
@@ -760,22 +761,30 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (approx (to_u16 (500), 512, 13));
     // The integer distance is exact, without wrap around or overflow.
     static_assert (approx (5u, 3u, 3));
-    static_assert (not approx (3u, 5u, 2u));
+    static_assert (approx (3u, 5u, 2u));
+    static_assert (not approx (3u, 6u, 2u));
     static_assert (approx (0u, -1, 2));
-    static_assert (not approx (0u, -1, 1));
-    static_assert (not approx (std::uint8_t{ 1 }, std::int8_t{ -128 }, 129));
+    static_assert (approx (0u, -1, 1));
+    static_assert (not approx (0u, -2, 1));
+    static_assert (not approx (std::uint8_t{ 1 }, std::int8_t{ -128 }, 128));
+    static_assert (approx (std::uint8_t{ 1 }, std::int8_t{ -128 }, 129));
     static_assert (approx (std::uint8_t{ 1 }, std::int8_t{ -128 }, 130));
     static_assert (
         approx (uint64_limits::max (), uint64_limits::max () - 1, 2));
     static_assert (approx (int64_limits::max (), int64_limits::min () + 1,
                            uint64_limits::max ()));
+    static_assert (approx (int64_limits::min (), int64_limits::max (),
+                           uint64_limits::max ()));
     static_assert (not approx (int64_limits::min (), int64_limits::max (),
-                               uint64_limits::max ()));
+                               uint64_limits::max () - 1));
     static_assert (not approx (uint64_limits::max (), std::int64_t{ -1 },
                                uint64_limits::max ()));
-    // A negative or zero tolerance fails.
+    // A negative tolerance fails; a zero one requires equal values.
     static_assert (not approx (1, 1, -1));
-    static_assert (not approx (1, 1, 0));
+    static_assert (not approx (1.0, 1.0, -1.0));
+    static_assert (approx (1, 1, 0));
+    static_assert (approx (1.0, 1.0, 0.0));
+    static_assert (not approx (1, 2, 0));
     static_assert (extension::is_op<decltype (approx (1, 2, 3))>);
 
     // The operands are numbers or framework wrappers.

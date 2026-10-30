@@ -26,7 +26,7 @@
  * `unwrap()` helper, the unary and binary operator base class templates,
  * the comparison tags, all relational, approximate, and logical comparator
  * constructors, the predicate constructor, the tolerance helpers
- * (`within_tolerance()`, `differ_by_less_than()`), the callable operator
+ * (`within_tolerance()`, `differ_by_at_most()`), the callable operator
  * types (`throws_op`, `nothrow_op`), the `append_number()` and
  * `append_pointer()` formatting helpers, the `c_string` operand and its
  * operators, and `as_operand()`.
@@ -486,24 +486,27 @@ namespace micro_os_plus::micro_test_plus
      * `std::uintmax_t`: when both values have the same sign, as the
      * modular difference of their conversions, which is exact; otherwise,
      * as the sum of the larger value and of the magnitude of the negative
-     * one, saturated at the maximum of the type, which is then larger than
-     * any tolerance, as the true distance is. The tolerance is compared
-     * with `std::cmp_less()`, so a negative one gives `false`.
+     * one. A sum that does not fit in `std::uintmax_t` is flagged as an
+     * overflow, and gives `false`, since the true distance is larger than
+     * any tolerance. The tolerance is compared with
+     * `std::cmp_less_equal()`, so a negative one gives `false`.
      *
      * For the other types, the values are converted to their common type,
      * which is a floating-point one, so `std::int64_t` values compared
-     * with a `float` tolerance lose precision; the comparison is strict,
-     * as in the tolerances of the floating-point wrappers.
+     * with a `float` tolerance lose precision; the comparison is inclusive,
+     * so a distance equal to the tolerance succeeds.
      */
     template <class Lhs_T, class Rhs_T, class Epsilon_T>
     constexpr bool
-    differ_by_less_than (Lhs_T lhs, Rhs_T rhs, Epsilon_T epsilon)
+    differ_by_at_most (Lhs_T lhs, Rhs_T rhs, Epsilon_T epsilon)
     {
       if constexpr (std::is_integral_v<Lhs_T> and std::is_integral_v<Rhs_T>
                     and std::is_integral_v<Epsilon_T>)
         {
+          bool overflow = false;
           const auto distance
-              = [] (auto larger, auto smaller) constexpr -> std::uintmax_t
+              = [&overflow] (auto larger,
+                             auto smaller) constexpr -> std::uintmax_t
             {
               if constexpr (std::is_signed_v<decltype (smaller)>)
                 {
@@ -517,6 +520,7 @@ namespace micro_os_plus::micro_test_plus
                       if (upper > std::numeric_limits<std::uintmax_t>::max ()
                                       - magnitude)
                         {
+                          overflow = true;
                           return std::numeric_limits<std::uintmax_t>::max ();
                         }
                       return upper + magnitude;
@@ -529,14 +533,14 @@ namespace micro_os_plus::micro_test_plus
           const std::uintmax_t difference = std::cmp_less (lhs, rhs)
                                                 ? distance (rhs, lhs)
                                                 : distance (lhs, rhs);
-          return std::cmp_less (difference, epsilon);
+          return !overflow && std::cmp_less_equal (difference, epsilon);
         }
       else
         {
           using float_type = std::common_type_t<Lhs_T, Rhs_T, Epsilon_T>;
           return math::abs (static_cast<float_type> (lhs)
                             - static_cast<float_type> (rhs))
-                 < static_cast<float_type> (epsilon);
+                 <= static_cast<float_type> (epsilon);
         }
     }
 
@@ -545,7 +549,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * The result is computed from the unwrapped arguments, with
-     * `detail::differ_by_less_than()`, before the operands are forwarded
+     * `detail::differ_by_at_most()`, before the operands are forwarded
      * to the base and the tolerance to its member.
      */
     template <class Lhs_T, class Rhs_T, class Epsilon_T>
@@ -554,7 +558,7 @@ namespace micro_os_plus::micro_test_plus
                                                              E&& epsilon)
         : binary_op<Lhs_T, Rhs_T>{ std::forward<L> (lhs),
                                    std::forward<R> (rhs),
-                                   detail::differ_by_less_than (
+                                   detail::differ_by_at_most (
                                        detail::unwrap (lhs),
                                        detail::unwrap (rhs),
                                        detail::unwrap (epsilon)) },

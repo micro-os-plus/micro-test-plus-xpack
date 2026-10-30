@@ -802,7 +802,8 @@ are compared by address. Convert them to `std::u8string_view`,
 to compare their content.
 
 The `approx()` comparator succeeds if its first two operands differ by
-less than the third one, the tolerance. The operands are numbers,
+at most the third one, the tolerance, so a tolerance of zero requires
+equal operands and a negative one always fails. The operands are numbers,
 integral or floating-point, possibly of different types. For
 the integers, the distance is computed exactly, also for operands of
 different signedness, without wrap-around; for the other types, in
@@ -811,7 +812,7 @@ their common floating-point type. A failure is reported as
 
 ```cpp
 t.expect (mt::approx (read_adc (), 512, 3)) << "ADC reading";
-// When it fails: 509 ~ (512 +/- 3)
+// When it fails: 508 ~ (512 +/- 3)
 ```
 
 Refer to the [Function Comparators](/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/) reference page.

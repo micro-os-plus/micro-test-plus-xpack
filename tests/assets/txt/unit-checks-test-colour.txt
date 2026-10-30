@@ -160,8 +160,8 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     [32m✓[0m Approximate comparisons - passed (8 checks)
 
     • Failed approximate comparisons
-        [31m✗[0m actual ~ 44 +/- 2 [31mFAILED[0m (comparisons.cpp:258, [31m42 ~ (44 +/- 2)[0m)
-        [31m✗[0m 10 ~ 12 +/- 2 [31mFAILED[0m (comparisons.cpp:263, [31m10 ~ (12 +/- 2)[0m)
+        [31m✗[0m actual ~ 45 +/- 2 [31mFAILED[0m (comparisons.cpp:258, [31m42 ~ (45 +/- 2)[0m)
+        [31m✗[0m 10 ~ 13 +/- 2 [31mFAILED[0m (comparisons.cpp:263, [31m10 ~ (13 +/- 2)[0m)
         [31m✗[0m 3u ~ 5u +/- 1u [31mFAILED[0m (comparisons.cpp:267, [31m3u ~ (5u +/- 1u)[0m)
         [31m✗[0m 1 ~ 1 +/- -1 [31mFAILED[0m (comparisons.cpp:271, [31m1 ~ (1 +/- -1)[0m)
         [31m✗[0m actual ~ 42.1f +/- 0.01f [31mFAILED[0m (comparisons.cpp:274, [31m42.0f ~ (42.1f +/- 0.01f)[0m)
