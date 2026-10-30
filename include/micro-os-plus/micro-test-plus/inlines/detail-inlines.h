@@ -242,8 +242,9 @@ namespace micro_os_plus::micro_test_plus
 
     // ------------------------------------------------------------------------
 
-    // The operands are compared as they are, including mixed signedness
-    // and mixed integer and floating-point types; the warnings would be
+    // The operands are compared as they are, including mixed integer and
+    // floating-point types (integers of different signedness are compared
+    // by value, see `sign_mixed_integers`); the warnings would be
     // reported in the test code of the application, not in the library.
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
@@ -258,6 +259,35 @@ namespace micro_os_plus::micro_test_plus
 #endif // defined(__GNUC__)
 
     /**
+     * @brief Concept satisfied by two integer types of different
+     * signedness.
+     *
+     * @details
+     * The built-in comparison of a signed and an unsigned operand
+     * converts the signed one to the unsigned type, so `-1 < 1u` is
+     * false. For these pairs the comparisons use the `std::cmp_*()`
+     * functions, which compare the mathematical values. `bool` and the
+     * character types are excluded, since `std::cmp_*()` do not accept
+     * them and their comparison with integers is not a sign problem.
+     */
+    template <class Lhs_T, class Rhs_T>
+    concept sign_mixed_integers
+        = std::is_integral_v<Lhs_T> and std::is_integral_v<Rhs_T>
+          and (std::is_signed_v<Lhs_T> != std::is_signed_v<Rhs_T>)
+          and (not std::is_same_v<Lhs_T, bool>)
+          and (not std::is_same_v<Rhs_T, bool>)
+          and (not std::is_same_v<Lhs_T, char>)
+          and (not std::is_same_v<Rhs_T, char>)
+          and (not std::is_same_v<Lhs_T, wchar_t>)
+          and (not std::is_same_v<Rhs_T, wchar_t>)
+          and (not std::is_same_v<Lhs_T, char8_t>)
+          and (not std::is_same_v<Rhs_T, char8_t>)
+          and (not std::is_same_v<Lhs_T, char16_t>)
+          and (not std::is_same_v<Rhs_T, char16_t>)
+          and (not std::is_same_v<Lhs_T, char32_t>)
+          and (not std::is_same_v<Rhs_T, char32_t>);
+
+    /**
      * @details
      * The using-declaration makes the standard operators visible to
      * unqualified lookup, in addition to those found by argument-dependent
@@ -268,7 +298,14 @@ namespace micro_os_plus::micro_test_plus
     equal_to::apply (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       using std::operator==;
-      return lhs == rhs;
+      if constexpr (sign_mixed_integers<Lhs_T, Rhs_T>)
+        {
+          return std::cmp_equal (lhs, rhs);
+        }
+      else
+        {
+          return lhs == rhs;
+        }
     }
 
     /**
@@ -284,7 +321,14 @@ namespace micro_os_plus::micro_test_plus
     {
       using std::operator==;
       using std::operator!=;
-      return lhs != rhs;
+      if constexpr (sign_mixed_integers<Lhs_T, Rhs_T>)
+        {
+          return std::cmp_not_equal (lhs, rhs);
+        }
+      else
+        {
+          return lhs != rhs;
+        }
     }
 
     /**
@@ -298,7 +342,14 @@ namespace micro_os_plus::micro_test_plus
     greater::apply (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       using std::operator>;
-      return lhs > rhs;
+      if constexpr (sign_mixed_integers<Lhs_T, Rhs_T>)
+        {
+          return std::cmp_greater (lhs, rhs);
+        }
+      else
+        {
+          return lhs > rhs;
+        }
     }
 
     /**
@@ -312,7 +363,14 @@ namespace micro_os_plus::micro_test_plus
     greater_equal::apply (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       using std::operator>=;
-      return lhs >= rhs;
+      if constexpr (sign_mixed_integers<Lhs_T, Rhs_T>)
+        {
+          return std::cmp_greater_equal (lhs, rhs);
+        }
+      else
+        {
+          return lhs >= rhs;
+        }
     }
 
     /**
@@ -326,7 +384,14 @@ namespace micro_os_plus::micro_test_plus
     less::apply (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       using std::operator<;
-      return lhs < rhs;
+      if constexpr (sign_mixed_integers<Lhs_T, Rhs_T>)
+        {
+          return std::cmp_less (lhs, rhs);
+        }
+      else
+        {
+          return lhs < rhs;
+        }
     }
 
     /**
@@ -340,7 +405,14 @@ namespace micro_os_plus::micro_test_plus
     less_equal::apply (const Lhs_T& lhs, const Rhs_T& rhs)
     {
       using std::operator<=;
-      return lhs <= rhs;
+      if constexpr (sign_mixed_integers<Lhs_T, Rhs_T>)
+        {
+          return std::cmp_less_equal (lhs, rhs);
+        }
+      else
+        {
+          return lhs <= rhs;
+        }
     }
 
 #if defined(__GNUC__)

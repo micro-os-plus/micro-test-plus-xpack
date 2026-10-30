@@ -217,6 +217,11 @@ function of the reporters was removed.
 - The relational comparisons (`<`, `<=`, `>`, `>=`, `lt()`, `le()`,
   `gt()`, `ge()`) apply the tolerance too, as `==` and `!=` did: the
   comparison `1.45 < 1.5_d` is false, and `1.45 <= 1.5_d` is true.
+- The comparators compare two integers of different signedness by value;
+  previously the signed operand was converted to the unsigned type, so
+  `mt::lt (-1, 1u)` failed and `mt::eq (-1, UINT_MAX)` passed. Checks
+  that relied on the old results now give the correct ones. `bool` and
+  the character types are unchanged.
 - The C strings (`char` arrays, string literals, and `char` pointers) are
   compared by content, also with `std::string`; two `const char*` were
   compared by address. To compare the addresses, cast the pointers to

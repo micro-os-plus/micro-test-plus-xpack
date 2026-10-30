@@ -788,6 +788,12 @@ a container such as a `std::vector`, and are written as ranges on
 failure; arrays of different sizes are never equal. The other pointers
 are compared by address.
 
+Two integers of different signedness are compared by value, not by
+converting the signed operand to the unsigned type, so
+`mt::lt (-1, 1u)` succeeds and `mt::eq (-1, UINT_MAX)` fails. This does
+not apply to `bool` and to the character types, which are compared as
+the language does.
+
 The pointers and arrays of `char8_t`, `char16_t`, `char32_t`, and
 `wchar_t` are not treated as strings: the arrays are compared element
 by element, including the terminating null character, and the pointers

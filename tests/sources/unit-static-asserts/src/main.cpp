@@ -893,6 +893,24 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
   }
 #endif // defined(__cpp_exceptions)
 
+  // Integers of different signedness are compared by value, not
+  // converted to the unsigned type (-1 < 1u, -1 != UINT_MAX).
+  {
+    constexpr unsigned int umax = std::numeric_limits<unsigned int>::max ();
+
+    static_assert (static_cast<bool> (lt (-1, 1u)));
+    static_assert (static_cast<bool> (le (-1, 1u)));
+    static_assert (static_cast<bool> (gt (1u, -1)));
+    static_assert (static_cast<bool> (ge (1u, -1)));
+    static_assert (static_cast<bool> (ne (-1, umax)));
+    static_assert (!static_cast<bool> (eq (-1, umax)));
+    static_assert (static_cast<bool> (lt (-5LL, 5ULL)));
+    static_assert (static_cast<bool> (eq (3, 3u)));
+    static_assert (static_cast<bool> (
+        lt (static_cast<signed char> (-1), static_cast<unsigned char> (1))));
+    static_assert (static_cast<bool> (eq ('a', 97)));
+  }
+
   return 0;
 }
 
