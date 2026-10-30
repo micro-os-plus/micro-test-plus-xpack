@@ -31,12 +31,14 @@
     "minimal",
     "suite",
     "sample",
+    "unit-common",
     "unit-static-asserts",
     "unit-checks",
     "unit-combinations",
     "unit-exceptions",    
     "unit-miscellaneous",    
-    "unit-deprecated"
+    "unit-deprecated",
+    "unit"
   ],
   "useStaticLibrary": true
 }

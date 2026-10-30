@@ -8,16 +8,25 @@
       "id": "test.unit-exceptions",
       "display": "Unit Exceptions Test",
       "description": "The source code for a unit test to exercise the exceptions features of the test framework",
-      "publicIncludeFolders": [
-        "include"
-      ],
       "sourceFiles": [
-        "src/main.cpp",
-        "src/exceptions.cpp",
-        "src/support.cpp"
+        "src/main.cpp"
       ],
-      "dependencies": [
-        "micro-os-plus.micro-test-plus.static-library"
+      "cdlComponents": [
+        {
+          "id": "body",
+          "display": "Unit Exceptions Test Body",
+          "description": "The test code of the exceptions unit test, without main()",
+          "publicIncludeFolders": [
+            "include"
+          ],
+          "sourceFiles": [
+            "src/exceptions.cpp"
+          ],
+          "dependencies": [
+            "micro-os-plus.micro-test-plus.static-library",
+            "test.unit-common"
+          ]
+        }
       ]
     }
   ]

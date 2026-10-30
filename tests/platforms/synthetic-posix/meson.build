@@ -20,6 +20,9 @@
 # Included from dependencies-folders.
 message('Including tests/platforms/' + xpack_platform_name + '/meson.build...')
 
+# This platform has enough memory for the combined unit test.
+xpack_enable_unit_test = true
+
 # -----------------------------------------------------------------------------
 
 if build_machine.system() == 'linux' or build_machine.system() == 'darwin'

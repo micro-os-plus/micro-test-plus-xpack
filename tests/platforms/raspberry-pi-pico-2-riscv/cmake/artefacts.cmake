@@ -232,7 +232,7 @@ endif ()
 
 # -----------------------------------------------------------------------------
 
-if (XPACK_ENABLE_STATIC_ASSERTS_TEST)
+if (XPACK_ENABLE_UNIT_STATIC_ASSERTS_TEST)
   add_cross_test_executable (unit-static-asserts-test)
   target_link_native_test_libraries (
     unit-static-asserts-test test::unit-static-asserts

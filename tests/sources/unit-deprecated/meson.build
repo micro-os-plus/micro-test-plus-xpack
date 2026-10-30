@@ -25,7 +25,6 @@
 # for production it might need some refinements.
 
 # -----------------------------------------------------------------------------
-
 message('Processing \'tests/sources/unit-deprecated/\'...')
 
 # -----------------------------------------------------------------------------
@@ -34,8 +33,6 @@ message('Processing \'tests/sources/unit-deprecated/\'...')
 # to retrieve their properties after creation. The `_local_*` variables
 # therefore serve a dual purpose: populating the dependency object and
 # iterating over its components for the `message()` calls at the end.
-
-# -----------------------------------------------------------------------------
 
 # The source code for a unit test to exercise the deprecated features of the test framework.
 
@@ -56,7 +53,6 @@ _local_include_directories += [
 _local_sources += [
   'src/main.cpp',
   'src/deprecated.cpp',
-  'src/support.cpp',
 ]
 
 _local_compile_definitions += [
@@ -67,12 +63,14 @@ _local_compile_definitions += [
 # to append them as elements of the list.
 _local_dependencies += [
   micro_os_plus_micro_test_plus_dependency,
+  test_unit_common_dependency,
 ]
-
 # The dependencies' C/C++ args are lists; add them without brackets,
 # to concatenate their elements rather than nest the lists.
 _local_compile_c_args += micro_os_plus_micro_test_plus_dependency_compile_c_args
 _local_compile_cpp_args += micro_os_plus_micro_test_plus_dependency_compile_cpp_args
+_local_compile_c_args += test_unit_common_dependency_compile_c_args
+_local_compile_cpp_args += test_unit_common_dependency_compile_cpp_args
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
 test_unit_deprecated_dependency = declare_dependency(

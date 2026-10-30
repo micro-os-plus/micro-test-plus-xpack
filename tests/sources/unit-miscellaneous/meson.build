@@ -19,13 +19,13 @@
 #
 # This creates dependencies that can be linked to a target with:
 #
+# `dependencies: [test_unit_miscellaneous_body_dependency],`
 # `dependencies: [test_unit_miscellaneous_dependency],`
 
 # Note: the Meson configuration is provided only as a proof of concept;
 # for production it might need some refinements.
 
 # -----------------------------------------------------------------------------
-
 message('Processing \'tests/sources/unit-miscellaneous/\'...')
 
 # -----------------------------------------------------------------------------
@@ -35,9 +35,7 @@ message('Processing \'tests/sources/unit-miscellaneous/\'...')
 # therefore serve a dual purpose: populating the dependency object and
 # iterating over its components for the `message()` calls at the end.
 
-# -----------------------------------------------------------------------------
-
-# The source code for a unit test to exercise the miscellaneous features of the test framework.
+# The test code of the miscellaneous unit test, without main().
 
 _local_compile_args = [] # Common C/C++ args.
 _local_compile_c_args = [] # C only args.
@@ -54,24 +52,76 @@ _local_include_directories += [
 ]
 
 _local_sources += [
-  'src/main.cpp',
   'src/miscellaneous.cpp',
   'src/runner-options.cpp',
   'src/stopwatch.cpp',
-  'src/support.cpp',
   'src/utility.cpp',
+  'src/allocations.cpp',
 ]
 
 # The dependencies are single objects; enclose them in brackets,
 # to append them as elements of the list.
 _local_dependencies += [
   micro_os_plus_micro_test_plus_dependency,
+  test_unit_common_dependency,
 ]
-
 # The dependencies' C/C++ args are lists; add them without brackets,
 # to concatenate their elements rather than nest the lists.
 _local_compile_c_args += micro_os_plus_micro_test_plus_dependency_compile_c_args
 _local_compile_cpp_args += micro_os_plus_micro_test_plus_dependency_compile_cpp_args
+_local_compile_c_args += test_unit_common_dependency_compile_c_args
+_local_compile_cpp_args += test_unit_common_dependency_compile_cpp_args
+
+# https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
+test_unit_miscellaneous_body_dependency = declare_dependency(
+  include_directories: include_directories(_local_include_directories),
+  compile_args: _local_compile_args + _local_compile_definitions,
+  sources: files(_local_sources),
+  dependencies: _local_dependencies,
+  link_args: _local_link_args,
+  link_with: _local_link_with,
+)
+
+# Meson dependencies cannot differentiate between C and C++ compile args;
+# they are therefore exposed as separate variables alongside the dependency.
+test_unit_miscellaneous_body_dependency_compile_c_args = _local_compile_c_args
+test_unit_miscellaneous_body_dependency_compile_cpp_args = _local_compile_cpp_args
+
+foreach name : _local_include_directories
+  message('+ -I ' + name)
+endforeach
+foreach name : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args + _local_link_args
+  message('+ ' + name)
+endforeach
+message('> test_unit_miscellaneous_body_dependency')
+
+# -----------------------------------------------------------------------------
+
+# The source code for a unit test to exercise the miscellaneous features of the test framework.
+
+_local_compile_args = [] # Common C/C++ args.
+_local_compile_c_args = [] # C only args.
+_local_compile_cpp_args = [] # C++ only args.
+_local_include_directories = []
+_local_sources = []
+_local_compile_definitions = []
+_local_dependencies = []
+_local_link_args = []
+_local_link_with = []
+
+_local_sources += [
+  'src/main.cpp',
+]
+
+# The dependencies are single objects; enclose them in brackets,
+# to append them as elements of the list.
+_local_dependencies += [
+  test_unit_miscellaneous_body_dependency,
+]
+# The dependencies' C/C++ args are lists; add them without brackets,
+# to concatenate their elements rather than nest the lists.
+_local_compile_c_args += test_unit_miscellaneous_body_dependency_compile_c_args
+_local_compile_cpp_args += test_unit_miscellaneous_body_dependency_compile_cpp_args
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
 test_unit_miscellaneous_dependency = declare_dependency(

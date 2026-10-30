@@ -1,12 +1,5 @@
 {%- assign packageScope = package.name | remove_first: '@' | split: '/' | first %}
-{%- assign packageName = package.name | remove_first: '@' | split: '/' | last %}
-{%- assign component = xcdl.cdlComponents[0] %}
-{%- assign nameDash = component.id | replace: '.', '-' %}
-{%- assign nameDoubleColon = component.id | replace_first: '.', '::' | replace: '.', '-' %}
-{%- assign staticArtefacts = component.cdlArtefacts | where: 'type', 'staticLibrary' %}
-{%- assign staticArtefact = staticArtefacts | first %}
-{%- assign objectsArtefacts = component.cdlArtefacts | where: 'type', 'objectFiles' %}
-{%- assign objectsArtefact = objectsArtefacts | first -%}
+{%- assign packageName = package.name | remove_first: '@' | split: '/' | last -%}
 # -----------------------------------------------------------------------------
 # DO NOT EDIT! Automatically generated from template file:
 # {{jsonFilePath}}
@@ -26,17 +19,28 @@
 #
 # `add_subdirectory("{{outputFolderPath}}")`
 #
-# This creates an interface library that can be linked to a target with:
+# This creates interface libraries that can be linked to a target with:
 #
-# `target_link_libraries(your-target PUBLIC {{nameDash}})`
+# ~~~
+{%- for component in xcdl.cdlComponents %}
+{%- assign nameDoubleColon = component.id | replace_first: '.', '::' | replace: '.', '-' %}
+# target_link_libraries(your-target PUBLIC {{nameDoubleColon}})
+{%- endfor %}
+# ~~~
 
 # -----------------------------------------------------------------------------
-{% if component.description %}
-# {{component.description}}.
-{%- endif %}
+
 message (VERBOSE "Processing 'tests/{{outputFolderPath}}/'...")
 
 # -----------------------------------------------------------------------------
+
+{%- for component in xcdl.cdlComponents %}
+{%- assign nameDash = component.id | replace: '.', '-' %}
+{%- assign nameDoubleColon = component.id | replace_first: '.', '::' | replace: '.', '-' %}
+{%- if component.description %}
+
+# {{component.description}}.
+{%- endif %}
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
 # Visibility keywords: INTERFACE passes properties up to targets that link
@@ -101,3 +105,4 @@ add_library ({{nameDoubleColon}} ALIAS {{nameDash}}-interface)
 message (VERBOSE "> {{nameDoubleColon}} -> {{nameDash}}-interface")
 
 # -----------------------------------------------------------------------------
+{%- endfor %}

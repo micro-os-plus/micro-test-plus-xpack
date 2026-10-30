@@ -21,14 +21,14 @@ TAP version 14
         not ok 1
           ---
           at:
-            fileName: main.cpp
-            lineNumber: 216
+            fileName: checks.cpp
+            lineNumber: 208
           ...
         not ok 2 - false
           ---
           at:
-            fileName: main.cpp
-            lineNumber: 219
+            fileName: checks.cpp
+            lineNumber: 211
           ...
         1..2
     not ok 4 - expect(false) # { FAILED, 0 checks passed, 2 failed }
@@ -78,8 +78,8 @@ TAP version 14
                   ---
                   condition: "1 == 2"
                   at:
-                    fileName: main.cpp
-                    lineNumber: 408
+                    fileName: checks.cpp
+                    lineNumber: 399
                   ...
                 1..1
             not ok 1 - inner subtest # { FAILED, 0 checks passed, 1 failed }
@@ -93,8 +93,8 @@ TAP version 14
           ---
           condition: "1 == 2"
           at:
-            fileName: main.cpp
-            lineNumber: 436
+            fileName: checks.cpp
+            lineNumber: 427
           ...
         1..2
     not ok 10 - Stored check result # { FAILED, 1 check passed, 1 failed }
@@ -122,15 +122,15 @@ TAP version 14
           ---
           condition: "'\\0' == 'a'"
           at:
-            fileName: main.cpp
-            lineNumber: 554
+            fileName: checks.cpp
+            lineNumber: 545
           ...
         not ok 2 - space is tab
           ---
           condition: "' ' == '\\t'"
           at:
-            fileName: main.cpp
-            lineNumber: 557
+            fileName: checks.cpp
+            lineNumber: 548
           ...
         ok 3 - 'x' == 'x'
         1..3
@@ -395,63 +395,63 @@ not ok 1 - Top suite # { FAILED, 39 checks passed, 6 failed, in 18 test cases }
     # Subtest: Failed pointer comparisons
         not ok 1 - ptr1 != &one
           ---
-          condition: "0x43fff2cc != 0x43fff2cc"
+          condition: "0x43fff57c != 0x43fff57c"
           at:
             fileName: comparisons.cpp
             lineNumber: 504
           ...
         not ok 2 - ptr1 != ptr2
           ---
-          condition: "0x43fff2cc != 0x43fff2cc"
+          condition: "0x43fff57c != 0x43fff57c"
           at:
             fileName: comparisons.cpp
             lineNumber: 507
           ...
         not ok 3 - ptr1 > ptr2
           ---
-          condition: "0x43fff2cc > 0x43fff2cc"
+          condition: "0x43fff57c > 0x43fff57c"
           at:
             fileName: comparisons.cpp
             lineNumber: 510
           ...
         not ok 4 - ptr1 < ptr2
           ---
-          condition: "0x43fff2cc < 0x43fff2cc"
+          condition: "0x43fff57c < 0x43fff57c"
           at:
             fileName: comparisons.cpp
             lineNumber: 513
           ...
         not ok 5 - ptr1 == a_non_nullptr
           ---
-          condition: "0x43fff2cc == 0x43fff2b0"
+          condition: "0x43fff57c == 0x43fff560"
           at:
             fileName: comparisons.cpp
             lineNumber: 516
           ...
         not ok 6 - pfunc != afunc
           ---
-          condition: "0x40013a8c != 0x40013a8c"
+          condition: "0x40002b60 != 0x40002b60"
           at:
             fileName: comparisons.cpp
             lineNumber: 519
           ...
         not ok 7 - pfunc == a_non_nullptr
           ---
-          condition: "0x40013a8c == 0x43fff2b0"
+          condition: "0x40002b60 == 0x43fff560"
           at:
             fileName: comparisons.cpp
             lineNumber: 522
           ...
         not ok 8 - pone >= ptwo
           ---
-          condition: "0x43fff298 >= 0x43fff29c"
+          condition: "0x43fff548 >= 0x43fff54c"
           at:
             fileName: comparisons.cpp
             lineNumber: 534
           ...
         not ok 9 - ptwo <= pone
           ---
-          condition: "0x43fff29c <= 0x43fff298"
+          condition: "0x43fff54c <= 0x43fff548"
           at:
             fileName: comparisons.cpp
             lineNumber: 537
@@ -474,7 +474,7 @@ not ok 1 - Top suite # { FAILED, 39 checks passed, 6 failed, in 18 test cases }
           ...
         not ok 2 - a_non_nullptr == nullptr
           ---
-          condition: "0x43fff528 == nullptr"
+          condition: "0x43fff7d8 == nullptr"
           at:
             fileName: comparisons.cpp
             lineNumber: 588
@@ -613,28 +613,28 @@ ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case }
           condition: "{42} != {42}"
           at:
             fileName: operands.cpp
-            lineNumber: 224
+            lineNumber: 225
           ...
         not ok 2 - array{ 42 } eq array{ 43 }
           ---
           condition: "{42} == {43}"
           at:
             fileName: operands.cpp
-            lineNumber: 228
+            lineNumber: 229
           ...
         not ok 3 - array{ 1, 2 } ne array{ 1, 2 }
           ---
           condition: "{1, 2} != {1, 2}"
           at:
             fileName: operands.cpp
-            lineNumber: 232
+            lineNumber: 233
           ...
         not ok 4 - array{ 1, 2, 3 } eq array{ 1, 2, 4 }
           ---
           condition: "{1, 2, 3} == {1, 2, 4}"
           at:
             fileName: operands.cpp
-            lineNumber: 236
+            lineNumber: 237
           ...
         1..4
     not ok 2 - Arrays bad # { FAILED, 0 checks passed, 4 failed }
@@ -653,42 +653,42 @@ ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case }
           condition: "{} != {}"
           at:
             fileName: operands.cpp
-            lineNumber: 288
+            lineNumber: 289
           ...
         not ok 2
           ---
           condition: "{} != {}"
           at:
             fileName: operands.cpp
-            lineNumber: 292
+            lineNumber: 293
           ...
         not ok 3 - vector{ 42 } != vector{ 42 }
           ---
           condition: "{42} != {42}"
           at:
             fileName: operands.cpp
-            lineNumber: 295
+            lineNumber: 296
           ...
         not ok 4 - vector{ 42 } == vector{ 43 }
           ---
           condition: "{42} == {43}"
           at:
             fileName: operands.cpp
-            lineNumber: 299
+            lineNumber: 300
           ...
         not ok 5 - vector{ 1, 2 } != vector{ 1, 2 }
           ---
           condition: "{1, 2} != {1, 2}"
           at:
             fileName: operands.cpp
-            lineNumber: 303
+            lineNumber: 304
           ...
         not ok 6 - vector{ 1, 2, 3 } == vector{ 1, 2, 4 }
           ---
           condition: "{1, 2, 3} == {1, 2, 4}"
           at:
             fileName: operands.cpp
-            lineNumber: 307
+            lineNumber: 308
           ...
         1..6
     not ok 4 - Vectors bad # { FAILED, 0 checks passed, 6 failed }
@@ -703,21 +703,21 @@ ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case }
           condition: "{ 1, 2 } == { 1, 3 }"
           at:
             fileName: operands.cpp
-            lineNumber: 344
+            lineNumber: 345
           ...
         not ok 2
           ---
           condition: "{ 1, 2 } == { 1, 3 }"
           at:
             fileName: operands.cpp
-            lineNumber: 349
+            lineNumber: 350
           ...
         not ok 3 - point{ 1, 2 } != point{ 1, 2 }
           ---
           condition: "{ 1, 2 } != { 1, 2 }"
           at:
             fileName: operands.cpp
-            lineNumber: 352
+            lineNumber: 353
           ...
         1..3
     not ok 6 - Custom types bad # { FAILED, 0 checks passed, 3 failed }
@@ -733,28 +733,28 @@ ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case }
           condition: "5 divides 12"
           at:
             fileName: operands.cpp
-            lineNumber: 390
+            lineNumber: 391
           ...
         not ok 2
           ---
           condition: "5 divides 12"
           at:
             fileName: operands.cpp
-            lineNumber: 393
+            lineNumber: 394
           ...
         not ok 3
           ---
           condition: "even 7"
           at:
             fileName: operands.cpp
-            lineNumber: 396
+            lineNumber: 397
           ...
         not ok 4
           ---
           condition: "(3 divides 12 and even 7)"
           at:
             fileName: operands.cpp
-            lineNumber: 399
+            lineNumber: 400
           ...
         1..4
     not ok 8 - Custom comparators bad # { FAILED, 0 checks passed, 4 failed }
@@ -780,35 +780,35 @@ ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case }
           condition: "0 == 1"
           at:
             fileName: operands.cpp
-            lineNumber: 475
+            lineNumber: 476
           ...
         not ok 2 - std::byte{ 1 } == std::byte{ 2 }
           ---
           condition: "1uc == 2uc"
           at:
             fileName: operands.cpp
-            lineNumber: 479
+            lineNumber: 480
           ...
         not ok 3 - pairs1 == pairs2
           ---
           condition: "{(1, 2)} == {(1, 3)}"
           at:
             fileName: operands.cpp
-            lineNumber: 485
+            lineNumber: 486
           ...
         not ok 4 - optional == nullopt
           ---
           condition: "42 == nullopt"
           at:
             fileName: operands.cpp
-            lineNumber: 488
+            lineNumber: 489
           ...
         not ok 5 - 5ms == 6ms
           ---
           condition: "5ms == 6ms"
           at:
             fileName: operands.cpp
-            lineNumber: 492
+            lineNumber: 493
           ...
         1..5
     not ok 10 - Standard types bad # { FAILED, 0 checks passed, 5 failed }
@@ -825,25 +825,25 @@ ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case }
           ---
           at:
             fileName: operands.cpp
-            lineNumber: 543
+            lineNumber: 544
           ...
         not ok 2 - null unique_ptr
           ---
           at:
             fileName: operands.cpp
-            lineNumber: 546
+            lineNumber: 547
           ...
         not ok 3 - empty function
           ---
           at:
             fileName: operands.cpp
-            lineNumber: 549
+            lineNumber: 550
           ...
         not ok 4
           ---
           at:
             fileName: operands.cpp
-            lineNumber: 552
+            lineNumber: 553
           ...
         1..4
     not ok 12 - Explicit conversions to bool bad # { FAILED, 0 checks passed, 4 failed }
@@ -877,7 +877,7 @@ ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case }
           condition: "{1, 2, 3} == {1, 2, 4}"
           at:
             fileName: operands.cpp
-            lineNumber: 661
+            lineNumber: 662
           ...
         1..1
     not ok 16 - Raw arrays bad # { FAILED, 0 checks passed, 1 failed }

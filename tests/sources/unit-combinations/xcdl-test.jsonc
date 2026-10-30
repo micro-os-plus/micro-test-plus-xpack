@@ -8,19 +8,28 @@
       "id": "test.unit-combinations",
       "display": "Combinations Unit Test",
       "description": "The source code for a unit test to exercise the combinations of the numeric types of the test framework",
-      "publicIncludeFolders": [
-        "include"
-      ],
       "sourceFiles": [
-        "src/main.cpp",
-        "src/float-failed-combinations.cpp",
-        "src/float-passed-combinations.cpp",
-        "src/integral-failed-combinations.cpp",
-        "src/integral-passed-combinations.cpp",
-        "src/support.cpp"
+        "src/main.cpp"
       ],
-      "dependencies": [
-        "micro-os-plus.micro-test-plus.static-library"
+      "cdlComponents": [
+        {
+          "id": "body",
+          "display": "Combinations Unit Test Body",
+          "description": "The test code of the combinations unit test, without main()",
+          "publicIncludeFolders": [
+            "include"
+          ],
+          "sourceFiles": [
+            "src/float-failed-combinations.cpp",
+            "src/float-passed-combinations.cpp",
+            "src/integral-failed-combinations.cpp",
+            "src/integral-passed-combinations.cpp"
+          ],
+          "dependencies": [
+            "micro-os-plus.micro-test-plus.static-library",
+            "test.unit-common"
+          ]
+        }
       ]
     }
   ]

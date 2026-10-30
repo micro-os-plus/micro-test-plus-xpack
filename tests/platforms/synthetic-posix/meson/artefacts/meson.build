@@ -176,3 +176,18 @@ if xpack_enable_unit_deprecated_test
 endif
 
 # -----------------------------------------------------------------------------
+
+if xpack_enable_unit_test
+
+  # https://mesonbuild.com/Reference-manual_functions.html#test
+  test(
+    'unit-test',
+    unit_test,
+    args: [ 'one', 'two' ],
+    env: xpack_environment
+  )
+  message('T> unit-test')
+
+endif
+
+# -----------------------------------------------------------------------------

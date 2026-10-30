@@ -8,19 +8,29 @@
       "id": "test.unit-miscellaneous",
       "display": "Miscellaneous Unit Test",
       "description": "The source code for a unit test to exercise the miscellaneous features of the test framework",
-      "publicIncludeFolders": [
-        "include"
-      ],
       "sourceFiles": [
-        "src/main.cpp",
-        "src/miscellaneous.cpp",
-        "src/runner-options.cpp",
-        "src/stopwatch.cpp",
-        "src/support.cpp",
-        "src/utility.cpp"
+        "src/main.cpp"
       ],
-      "dependencies": [
-        "micro-os-plus.micro-test-plus.static-library"
+      "cdlComponents": [
+        {
+          "id": "body",
+          "display": "Miscellaneous Unit Test Body",
+          "description": "The test code of the miscellaneous unit test, without main()",
+          "publicIncludeFolders": [
+            "include"
+          ],
+          "sourceFiles": [
+            "src/miscellaneous.cpp",
+            "src/runner-options.cpp",
+            "src/stopwatch.cpp",
+            "src/utility.cpp",
+            "src/allocations.cpp"
+          ],
+          "dependencies": [
+            "micro-os-plus.micro-test-plus.static-library",
+            "test.unit-common"
+          ]
+        }
       ]
     }
   ]

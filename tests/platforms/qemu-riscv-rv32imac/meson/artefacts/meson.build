@@ -188,3 +188,22 @@ if (xpack_enable_unit_deprecated_test)
 endif
 
 # -----------------------------------------------------------------------------
+
+if (xpack_enable_unit_test)
+
+  # https://mesonbuild.com/Reference-manual_functions.html#test
+  test(
+    'unit-test',
+    qemu,
+    args: qemu_machine_args +
+      [ '--kernel', unit_test ] +
+      qemu_extra_args +
+      [ '--semihosting-config',
+      'enable=on,target=native,arg=unit-test,arg=one,arg=two' ],
+    env: xpack_environment
+  )
+  message('T> unit-test')
+
+endif
+
+# -----------------------------------------------------------------------------

@@ -637,7 +637,7 @@ endif ()
 
 # -----------------------------------------------------------------------------
 
-if (XPACK_ENABLE_STATIC_ASSERTS_TEST)
+if (XPACK_ENABLE_UNIT_STATIC_ASSERTS_TEST)
   add_native_test_executable (unit-static-asserts-test)
   target_link_native_test_libraries (
     unit-static-asserts-test test::unit-static-asserts
@@ -1002,6 +1002,255 @@ if (XPACK_ENABLE_UNIT_DEPRECATED_TEST)
     DEPENDS "unit-deprecated-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-deprecated-test.tap"
           "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-deprecated-test.tap"
+  )
+
+  message (VERBOSE "") # Separator for readability
+endif ()
+
+# -----------------------------------------------------------------------------
+
+if (XPACK_ENABLE_UNIT_TEST)
+  add_native_test_executable (unit-test)
+  target_link_native_test_libraries (unit-test test::unit)
+
+  if (XPACK_ENABLE_COVERAGE)
+    add_compile_coverage_private_options (unit-test)
+    add_link_coverage_private_options (unit-test)
+  endif ()
+
+  xpack_display_target_lists (unit-test)
+  message (VERBOSE "A> unit-test")
+
+  # ---------------------------------------------------------------------------
+  # TAP reporter
+
+  # --verbose
+  add_test (NAME "unit-test-verbose"
+            COMMAND unit-test --output-file=unit-test-verbose.tap --verbose one
+                    two
+  )
+  message (VERBOSE "T> unit-test-verbose")
+
+  if (XPACK_ENABLE_COVERAGE)
+    set_tests_properties (
+      "unit-test-verbose"
+      PROPERTIES ENVIRONMENT "LLVM_PROFILE_FILE=unit-test-verbose.profraw"
+    )
+
+    add_test (
+      NAME "unit-test-verbose-coverage"
+      COMMAND bash "${CMAKE_CURRENT_SOURCE_DIR}/scripts/show-coverage.sh"
+              unit-test unit-test-verbose
+    )
+    message (VERBOSE "T> unit-test-verbose-coverage")
+    set_tests_properties (
+      "unit-test-verbose-coverage" PROPERTIES DEPENDS "unit-test-verbose"
+    )
+  endif ()
+
+  add_compare_files_test (
+    NAME "unit-test-verbose-compare"
+    DEPENDS "unit-test-verbose"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-verbose.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-test.tap"
+  )
+  add_validate_tap_test (
+    NAME "unit-test-verbose-validate" DEPENDS "unit-test-verbose" FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/unit-test-verbose.tap"
+  )
+
+  # default
+  add_test (NAME "unit-test" COMMAND unit-test --output-file=unit-test.tap one
+                                     two
+  )
+  message (VERBOSE "T> unit-test")
+  add_compare_files_test (
+    NAME "unit-test-compare"
+    DEPENDS "unit-test"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-test.tap"
+  )
+  add_validate_tap_test (
+    NAME "unit-test-validate" DEPENDS "unit-test" FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/unit-test.tap"
+  )
+
+  # --quiet
+  add_test (NAME "unit-test-quiet"
+            COMMAND unit-test --output-file=unit-test-quiet.tap --quiet one two
+  )
+  message (VERBOSE "T> unit-test-quiet")
+  add_compare_files_test (
+    NAME "unit-test-quiet-compare"
+    DEPENDS "unit-test-quiet"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-quiet.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-test.tap"
+  )
+  add_validate_tap_test (
+    NAME "unit-test-quiet-validate" DEPENDS "unit-test-quiet" FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/unit-test-quiet.tap"
+  )
+
+  # --silent
+  add_test (NAME "unit-test-silent"
+            COMMAND unit-test --output-file=unit-test-silent.tap --silent one
+                    two
+  )
+  message (VERBOSE "T> unit-test-silent")
+  add_compare_files_test (
+    NAME "unit-test-silent-compare"
+    DEPENDS "unit-test-silent"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-silent.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-test.tap"
+  )
+  add_validate_tap_test (
+    NAME "unit-test-silent-validate" DEPENDS "unit-test-silent" FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/unit-test-silent.tap"
+  )
+
+  # ---------------------------------------------------------------------------
+  # Human reporter
+
+  # --verbose
+  add_test (NAME "unit-test-reporter-human-verbose"
+            COMMAND unit-test --reporter=human
+                    --output-file=unit-test-verbose.txt --verbose one two
+  )
+  message (VERBOSE "T> unit-test-reporter-human-verbose")
+  add_compare_files_test (
+    NAME "unit-test-reporter-human-verbose-compare"
+    DEPENDS "unit-test-reporter-human-verbose"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-verbose.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test.txt"
+  )
+
+  # --verbose --color The output file never receives colours, so the console
+  # output is captured instead.
+  add_test (
+    NAME "unit-test-reporter-human-colour"
+    COMMAND
+      "${CMAKE_COMMAND}" -D "EXECUTABLE=$<TARGET_FILE:unit-test>" -D
+      "OUTPUT=unit-test-colour.txt" -P
+      "${CMAKE_CURRENT_LIST_DIR}/capture-stdout.cmake" -- --reporter human
+      --color --verbose one two
+  )
+  message (VERBOSE "T> unit-test-reporter-human-colour")
+  add_compare_files_test (
+    NAME "unit-test-reporter-human-colour-compare"
+    DEPENDS "unit-test-reporter-human-colour"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-colour.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test-colour.txt"
+  )
+
+  # The console output with the normal verbosity differs from the output file:
+  # the passed test cases are single lines, and the names of the outer test
+  # cases precede the nested ones.
+  add_test (
+    NAME "unit-test-reporter-human-console"
+    COMMAND
+      "${CMAKE_COMMAND}" -D "EXECUTABLE=$<TARGET_FILE:unit-test>" -D
+      "OUTPUT=unit-test-console.txt" -P
+      "${CMAKE_CURRENT_LIST_DIR}/capture-stdout.cmake" -- --reporter human one
+      two
+  )
+  message (VERBOSE "T> unit-test-reporter-human-console")
+  add_compare_files_test (
+    NAME "unit-test-reporter-human-console-compare"
+    DEPENDS "unit-test-reporter-human-console"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-console.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test-console.txt"
+  )
+
+  # --quiet The console output shows only the failed checks, with the names of
+  # the enclosing suite and test cases, and the totals.
+  add_test (
+    NAME "unit-test-reporter-human-console-quiet"
+    COMMAND
+      "${CMAKE_COMMAND}" -D "EXECUTABLE=$<TARGET_FILE:unit-test>" -D
+      "OUTPUT=unit-test-console-quiet.txt" -P
+      "${CMAKE_CURRENT_LIST_DIR}/capture-stdout.cmake" -- --reporter human
+      --quiet one two
+  )
+  message (VERBOSE "T> unit-test-reporter-human-console-quiet")
+  add_compare_files_test (
+    NAME "unit-test-reporter-human-console-quiet-compare"
+    DEPENDS "unit-test-reporter-human-console-quiet"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-console-quiet.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test-console-quiet.txt"
+  )
+
+  # The TAP console output with the normal verbosity; unlike the output file,
+  # the passed test cases are single test points, and the failed ones are
+  # complete blocks.
+  add_test (
+    NAME "unit-test-console"
+    COMMAND
+      "${CMAKE_COMMAND}" -D "EXECUTABLE=$<TARGET_FILE:unit-test>" -D
+      "OUTPUT=unit-test-console.tap" -P
+      "${CMAKE_CURRENT_LIST_DIR}/capture-stdout.cmake" -- one two
+  )
+  message (VERBOSE "T> unit-test-console")
+  add_compare_files_test (
+    NAME "unit-test-console-compare"
+    DEPENDS "unit-test-console"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-console.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-test-console.tap"
+  )
+
+  # --quiet The TAP console output has the suites as single test points, and the
+  # failed checks as comments.
+  add_test (
+    NAME "unit-test-console-quiet"
+    COMMAND
+      "${CMAKE_COMMAND}" -D "EXECUTABLE=$<TARGET_FILE:unit-test>" -D
+      "OUTPUT=unit-test-console-quiet.tap" -P
+      "${CMAKE_CURRENT_LIST_DIR}/capture-stdout.cmake" -- --quiet one two
+  )
+  message (VERBOSE "T> unit-test-console-quiet")
+  add_compare_files_test (
+    NAME "unit-test-console-quiet-compare"
+    DEPENDS "unit-test-console-quiet"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-console-quiet.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-test-console-quiet.tap"
+  )
+
+  # default
+  add_test (NAME "unit-test-reporter-human"
+            COMMAND unit-test --reporter=human --output-file=unit-test.txt one
+                    two
+  )
+  message (VERBOSE "T> unit-test-reporter-human")
+  add_compare_files_test (
+    NAME "unit-test-reporter-human-compare"
+    DEPENDS "unit-test-reporter-human"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test.txt"
+  )
+
+  # --quiet
+  add_test (NAME "unit-test-reporter-human-quiet"
+            COMMAND unit-test --reporter=human
+                    --output-file=unit-test-quiet.txt --quiet one two
+  )
+  message (VERBOSE "T> unit-test-reporter-human-quiet")
+  add_compare_files_test (
+    NAME "unit-test-reporter-human-quiet-compare"
+    DEPENDS "unit-test-reporter-human-quiet"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-quiet.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test.txt"
+  )
+
+  # --silent
+  add_test (NAME "unit-test-reporter-human-silent"
+            COMMAND unit-test --reporter=human
+                    --output-file=unit-test-silent.txt --silent one two
+  )
+  message (VERBOSE "T> unit-test-reporter-human-silent")
+  add_compare_files_test (
+    NAME "unit-test-reporter-human-silent-compare"
+    DEPENDS "unit-test-reporter-human-silent"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-silent.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test.txt"
   )
 
   message (VERBOSE "") # Separator for readability

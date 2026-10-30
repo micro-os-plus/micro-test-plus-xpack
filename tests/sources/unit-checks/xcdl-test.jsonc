@@ -8,17 +8,27 @@
       "id": "test.unit-checks",
       "display": "Checks Unit Test",
       "description": "The source code for a unit test to exercise the framework checks",
-      "publicIncludeFolders": [
-        "include"
-      ],
       "sourceFiles": [
-        "src/main.cpp",
-        "src/comparisons.cpp",
-        "src/operands.cpp",
-        "src/support.cpp"
+        "src/main.cpp"
       ],
-      "dependencies": [
-        "micro-os-plus.micro-test-plus.static-library"
+      "cdlComponents": [
+        {
+          "id": "body",
+          "display": "Checks Unit Test Body",
+          "description": "The test code of the checks unit test, without main()",
+          "publicIncludeFolders": [
+            "include"
+          ],
+          "sourceFiles": [
+            "src/comparisons.cpp",
+            "src/operands.cpp",
+            "src/checks.cpp"
+          ],
+          "dependencies": [
+            "micro-os-plus.micro-test-plus.static-library",
+            "test.unit-common"
+          ]
+        }
       ]
     }
   ]

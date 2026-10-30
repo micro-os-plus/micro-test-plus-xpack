@@ -17,17 +17,20 @@
 #
 # `add_subdirectory("sources/unit-deprecated")`
 #
-# This creates an interface library that can be linked to a target with:
+# This creates interface libraries that can be linked to a target with:
 #
-# `target_link_libraries(your-target PUBLIC test-unit-deprecated)`
+# ~~~
+# target_link_libraries(your-target PUBLIC test::unit-deprecated)
+# ~~~
+
+# -----------------------------------------------------------------------------
+
+message (VERBOSE "Processing 'tests/sources/unit-deprecated/'...")
 
 # -----------------------------------------------------------------------------
 
 # The source code for a unit test to exercise the deprecated features of the
 # test framework.
-message (VERBOSE "Processing 'tests/sources/unit-deprecated/'...")
-
-# -----------------------------------------------------------------------------
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
 # Visibility keywords: INTERFACE passes properties up to targets that link
@@ -38,7 +41,6 @@ target_include_directories (test-unit-deprecated-interface INTERFACE "include")
 
 target_sources (
   test-unit-deprecated-interface INTERFACE "src/main.cpp" "src/deprecated.cpp"
-                                           "src/support.cpp"
 )
 
 target_compile_definitions (
@@ -48,6 +50,7 @@ target_compile_definitions (
 
 target_link_libraries (
   test-unit-deprecated-interface INTERFACE "micro-os-plus::micro-test-plus"
+                                           "test::unit-common"
 )
 
 xpack_display_target_lists (test-unit-deprecated-interface)

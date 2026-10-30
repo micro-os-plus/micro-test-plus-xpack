@@ -13,14 +13,14 @@
       ],
       "sourceFiles": [
         "src/main.cpp",
-        "src/deprecated.cpp",
-        "src/support.cpp"
+        "src/deprecated.cpp"
       ],
       "publicDefines": [
         "MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED"
       ],
       "dependencies": [
-        "micro-os-plus.micro-test-plus"
+        "micro-os-plus.micro-test-plus",
+        "test.unit-common"
       ]
     }
   ]

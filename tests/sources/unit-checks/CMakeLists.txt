@@ -17,32 +17,68 @@
 #
 # `add_subdirectory("sources/unit-checks")`
 #
-# This creates an interface library that can be linked to a target with:
+# This creates interface libraries that can be linked to a target with:
 #
-# `target_link_libraries(your-target PUBLIC test-unit-checks)`
+# ~~~
+# target_link_libraries(your-target PUBLIC test::unit-checks-body)
+# target_link_libraries(your-target PUBLIC test::unit-checks)
+# ~~~
+
+# -----------------------------------------------------------------------------
+
+message (VERBOSE "Processing 'tests/sources/unit-checks/'...")
+
+# -----------------------------------------------------------------------------
+
+# The test code of the checks unit test, without main().
+
+# https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
+# Visibility keywords: INTERFACE passes properties up to targets that link
+# against it.
+add_library (test-unit-checks-body-interface INTERFACE EXCLUDE_FROM_ALL)
+
+target_include_directories (test-unit-checks-body-interface INTERFACE "include")
+
+target_sources (
+  test-unit-checks-body-interface INTERFACE "src/comparisons.cpp"
+                                            "src/operands.cpp" "src/checks.cpp"
+)
+
+target_link_libraries (
+  test-unit-checks-body-interface
+  INTERFACE "micro-os-plus::micro-test-plus-static-library" "test::unit-common"
+)
+
+xpack_display_target_lists (test-unit-checks-body-interface)
+
+# -----------------------------------------------------------------------------
+# Alias.
+
+# Export an alias target using namespaced syntax (Project::Target). This is the
+# canonical pattern for consumption via target_link_libraries(), whether the
+# dependency is added via add_subdirectory(), FetchContent, or an installed
+# package via find_package(). Using "::" lets CMake detect an invalid or
+# misspelled target name at configure time, rather than silently passing it
+# through to the linker as a plain string or flag. Note: alias targets are
+# read-only; properties must be set on the underlying target, not on the alias
+# itself.
+# https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
+add_library (test::unit-checks-body ALIAS test-unit-checks-body-interface)
+message (VERBOSE "> test::unit-checks-body -> test-unit-checks-body-interface")
 
 # -----------------------------------------------------------------------------
 
 # The source code for a unit test to exercise the framework checks.
-message (VERBOSE "Processing 'tests/sources/unit-checks/'...")
-
-# -----------------------------------------------------------------------------
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
 # Visibility keywords: INTERFACE passes properties up to targets that link
 # against it.
 add_library (test-unit-checks-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories (test-unit-checks-interface INTERFACE "include")
-
-target_sources (
-  test-unit-checks-interface INTERFACE "src/main.cpp" "src/comparisons.cpp"
-                                       "src/operands.cpp" "src/support.cpp"
-)
+target_sources (test-unit-checks-interface INTERFACE "src/main.cpp")
 
 target_link_libraries (
-  test-unit-checks-interface
-  INTERFACE "micro-os-plus::micro-test-plus-static-library"
+  test-unit-checks-interface INTERFACE "test::unit-checks-body"
 )
 
 xpack_display_target_lists (test-unit-checks-interface)

@@ -114,6 +114,15 @@ if xpack_enable_unit_deprecated_test
   }
 endif
 
+if xpack_enable_unit_test
+  tests += {
+    'name': 'unit-test',
+    'dependency': test_unit_dependency,
+    'compile_c_args': test_unit_dependency_compile_c_args,
+    'compile_cpp_args': test_unit_dependency_compile_cpp_args,
+  }
+endif
+
 # -----------------------------------------------------------------------------
 # Define the tests executables.
 

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://xpack.github.io/xcdl/schemas/xcdl-2.0.0.json",
+  "minimumXcdlRequired": "2.0.0",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Liviu Ionescu. All rights reserved.",
+  "cdlComponents": [
+    {
+      "id": "test.unit",
+      "display": "Unit Test",
+      "description": "The source code for a single program with all the unit tests that can be linked together, for platforms with large memory",
+      "sourceFiles": [
+        "src/main.cpp"
+      ],
+      "dependencies": [
+        "test.unit-checks.body",
+        "test.unit-combinations.body",
+        "test.unit-exceptions.body",
+        "test.unit-miscellaneous.body"
+      ]
+    }
+  ]
+}

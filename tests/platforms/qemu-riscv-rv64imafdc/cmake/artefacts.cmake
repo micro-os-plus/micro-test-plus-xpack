@@ -138,7 +138,7 @@ endif ()
 
 # -----------------------------------------------------------------------------
 
-if (XPACK_ENABLE_STATIC_ASSERTS_TEST)
+if (XPACK_ENABLE_UNIT_STATIC_ASSERTS_TEST)
   add_cross_test_executable (unit-static-asserts-test)
   target_link_native_test_libraries (
     unit-static-asserts-test test::unit-static-asserts
@@ -286,6 +286,41 @@ if (XPACK_ENABLE_UNIT_DEPRECATED_TEST)
     FILES
       "${CMAKE_CURRENT_BINARY_DIR}/unit-deprecated-test-noexcept.tap"
       "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-deprecated-test-noexcept.tap"
+  )
+
+  message (VERBOSE "") # Separator for readability
+endif ()
+
+# -----------------------------------------------------------------------------
+
+if (XPACK_ENABLE_UNIT_TEST)
+  add_cross_test_executable (unit-test)
+  target_link_cross_tests_libraries (unit-test test::unit)
+
+  xpack_display_target_lists (unit-test)
+  message (VERBOSE "A> unit-test")
+
+  add_qemu_test (
+    NAME "unit-test" COMMAND unit-test --output-file=unit-test-noexcept.tap one
+                             two
+  )
+  add_compare_files_test (
+    NAME "unit-test-compare"
+    DEPENDS "unit-test"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-noexcept.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-test-noexcept.tap"
+  )
+
+  add_qemu_test (
+    NAME "unit-test-reporter-human"
+    COMMAND unit-test --reporter=human --output-file=unit-test-noexcept.txt one
+            two
+  )
+  add_compare_files_test (
+    NAME "unit-test-reporter-human-compare"
+    DEPENDS "unit-test-reporter-human"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-noexcept.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test-noexcept.txt"
   )
 
   message (VERBOSE "") # Separator for readability

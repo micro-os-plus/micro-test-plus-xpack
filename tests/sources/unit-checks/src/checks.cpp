@@ -1,0 +1,649 @@
+/*
+ * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
+ * Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose is hereby granted, under the terms of the MIT license.
+ *
+ * If a copy of the license was not distributed with this file, it can be
+ * obtained from https://opensource.org/licenses/mit.
+ */
+
+// ----------------------------------------------------------------------------
+
+#include "unit-checks-test.h"
+
+#include <vector>
+#include <string_view>
+
+using namespace std::literals;
+
+// For this test only, make the namespaces globally visible.
+using namespace micro_os_plus;
+using namespace micro_os_plus::micro_test_plus;
+
+// ----------------------------------------------------------------------------
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic ignored "-Waggregate-return"
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wc++98-compat"
+#pragma clang diagnostic ignored "-Wexit-time-destructors"
+#pragma clang diagnostic ignored "-Wglobal-constructors"
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
+
+// ----------------------------------------------------------------------------
+
+// Application types used to check that the comparators do not use
+// functions of the application named `get`.
+namespace user_types
+{
+  // A type with a free `get()` function in its namespace, which
+  // argument-dependent lookup would find.
+  struct wrapped
+  {
+    int v;
+
+    bool
+    operator== (const wrapped&) const
+        = default;
+  };
+
+  constexpr int
+  get (const wrapped&)
+  {
+    return 999;
+  }
+
+  // A type with a `get()` member function that does not return its value.
+  struct handle
+  {
+    int id;
+
+    int
+    get () const
+    {
+      return 0;
+    }
+
+    bool
+    operator== (const handle& other) const
+    {
+      return id == other.id;
+    }
+  };
+
+  // A type with a data member named `value`, like the framework
+  // constants.
+  struct reading
+  {
+    int value;
+
+    bool
+    operator== (const reading&) const
+        = default;
+  };
+
+  // A type with a data member named `epsilon`, like the framework
+  // floating-point wrappers.
+  struct gauge
+  {
+    int level;
+    int epsilon;
+
+    bool
+    operator== (const gauge&) const
+        = default;
+  };
+
+  inline expression_formatter&
+  operator<< (expression_formatter& formatter, const wrapped& w)
+  {
+    return formatter << "wrapped{ " << w.v << " }";
+  }
+
+  inline expression_formatter&
+  operator<< (expression_formatter& formatter, const handle& h)
+  {
+    return formatter << "handle{ " << h.id << " }";
+  }
+
+  inline expression_formatter&
+  operator<< (expression_formatter& formatter, const reading& r)
+  {
+    return formatter << "reading{ " << r.value << " }";
+  }
+
+  inline expression_formatter&
+  operator<< (expression_formatter& formatter, const gauge& g)
+  {
+    return formatter << "gauge{ " << g.level << " }";
+  }
+} // namespace user_types
+
+// ----------------------------------------------------------------------------
+
+// A second runner, never initialised. Its static suite is constructed
+// before it, and is neither counted nor run by `tr`.
+extern runner other_runner;
+
+static static_suite other_suite{ "Other runner suite", other_runner,
+                                 [] (auto&) noexcept {} };
+
+runner other_runner;
+
+// ----------------------------------------------------------------------------
+
+// Registers and runs the test cases of the top suite, whose body is the
+// code of the caller, and checks the intermediate totals. It must be called
+// before `run_suites()`.
+void
+unit_checks_run_tests (suite& ts)
+{
+  const counters& current_suite_totals = ts.totals ();
+
+  ts.test ("require", [] (auto& t)
+    {
+      t.require (true) << "Requirement 1";
+      local_counts.passed_checks++;
+
+      // The failed requirements are checked in the unit-checks-exceptions test;
+      // without exceptions, they abort the test execution.
+      local_counts.executed_test_cases++;
+    });
+
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
+
+  ts.test ("Initial counters", [] ([[maybe_unused]] auto& t) noexcept
+    { local_counts.executed_test_cases++; });
+
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
+
+  // --------------------------------------------------------------------------
+
+  ts.test ("expect(true)", [] (auto& t)
+    {
+      t.expect (true);
+      local_counts.passed_checks++;
+
+      t.require (true) << "Requirement 2";
+      local_counts.passed_checks++;
+
+      t.expect (true) << "TRUE";
+      local_counts.passed_checks++;
+
+      // char branch in check_result::operator<<.
+      t.expect (true) << 'P';
+      local_counts.passed_checks++;
+
+      // Arithmetic (non-char) branch in check_result::operator<<.
+      t.expect (true) << 42;
+      local_counts.passed_checks++;
+
+      local_counts.executed_test_cases++;
+    });
+
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
+
+  // --------------------------------------------------------------------------
+
+  ts.test ("expect(false)", [] (auto& t)
+    {
+      t.expect (false);
+      local_counts.failed_checks++;
+
+      t.expect (false) << "false";
+      local_counts.failed_checks++;
+
+      local_counts.executed_test_cases++;
+    });
+
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
+
+  // --------------------------------------------------------------------------
+
+  ts.test ("reflection::type_name()", [] (auto& t)
+    {
+      using namespace std::literals::string_view_literals;
+
+#if 0
+    std::string_view sv = reflection::type_name<void> ();
+    printf ("|%*.s|\n", sv.length (), sv.data ());
+#endif // 0-1
+
+      t.expect (eq (reflection::type_name<void> (), "void"sv));
+      local_counts.passed_checks++;
+
+      t.expect (eq (reflection::type_name<int> (), "int"sv));
+      local_counts.passed_checks++;
+
+      t.expect (eq (reflection::type_name<unsigned int> (), "unsigned int"sv));
+      local_counts.passed_checks++;
+
+      t.expect (eq (reflection::type_name<float> (), "float"sv));
+      local_counts.passed_checks++;
+
+      local_counts.executed_test_cases++;
+    });
+
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
+
+  // --------------------------------------------------------------------------
+
+  ts.test ("Splits", [] (auto& t)
+    {
+      t.expect (std::vector<std::string_view>{}
+                == utility::split<std::string_view> ("", "."))
+          << "empty splits into []";
+      local_counts.passed_checks++;
+
+      t.expect (std::vector<std::string_view>{ "a" }
+                == utility::split<std::string_view> ("a.", "."))
+          << "a. splits into [a]";
+      local_counts.passed_checks++;
+
+      t.expect (std::vector<std::string_view>{ "a", "b" }
+                == utility::split<std::string_view> ("a.b", "."))
+          << "a.b splits into [a,b]";
+      local_counts.passed_checks++;
+
+      t.expect (std::vector<std::string_view>{ "a", "b", "cde" }
+                == utility::split<std::string_view> ("a.b.cde", "."))
+          << "a.b.cde splits into [a, b, cde]";
+      local_counts.passed_checks++;
+
+      t.expect (std::vector<std::string_view>{ "abc" }
+                == utility::split<std::string_view> ("abc", "."))
+          << "abc (no delimiter) splits into [abc]";
+      local_counts.passed_checks++;
+
+      t.expect (std::vector<std::string_view>{}
+                == utility::split<std::string_view> (".", "."))
+          << ". (only delimiter) splits into []";
+      local_counts.passed_checks++;
+
+      t.expect (std::vector<std::string_view>{ "a" }
+                == utility::split<std::string_view> (".a", "."))
+          << ".a (leading delimiter) splits into [a]";
+      local_counts.passed_checks++;
+
+      t.expect (std::vector<std::string_view>{ "a", "b" }
+                == utility::split<std::string_view> ("a..b", "."))
+          << "a..b (consecutive delimiters) splits into [a, b]";
+      local_counts.passed_checks++;
+
+      // The non-template overload, selected for literals.
+      t.expect (std::vector<std::string_view>{ "a", "b" }
+                == utility::split ("a.b", "."))
+          << "literal a.b splits into [a, b]";
+      local_counts.passed_checks++;
+
+      t.expect (std::vector<std::string_view>{ "a", "b", "c" }
+                == utility::split ("a.b,c", ".,"))
+          << "literal a.b,c splits on any delimiter";
+      local_counts.passed_checks++;
+
+      t.expect (std::vector<std::string_view>{} == utility::split ("", "."))
+          << "literal empty splits into []";
+      local_counts.passed_checks++;
+
+      // The template, selected for string views and strings.
+      t.expect (std::vector<std::string_view>{ "a", "b" }
+                == utility::split (std::string_view{ "a.b" }, "."))
+          << "string view a.b splits into [a, b]";
+      local_counts.passed_checks++;
+
+      t.expect (std::vector<std::string>{ "a", "b" }
+                == utility::split (std::string{ "a.b" }, "."))
+          << "string a.b splits into [a, b] strings";
+      local_counts.passed_checks++;
+
+      local_counts.executed_test_cases++;
+    });
+
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
+
+  // --------------------------------------------------------------------------
+
+  ts.test ("Nested subtests", [] (auto& t)
+    {
+      t.test ("inner subtest", [] (auto& t2)
+        {
+          t2.expect (eq (1, 1));
+          local_counts.passed_checks++;
+          local_counts.executed_test_cases++; // inner
+        });
+      local_counts.executed_test_cases++; // outer
+    });
+
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
+
+  // --------------------------------------------------------------------------
+
+  // A check in the outer test case before the nested one leaves the
+  // outer result in the reporter buffer when the nested test case begins.
+  ts.test ("Nested subtest after a check", [] (auto& t)
+    {
+      t.expect (eq (1, 1)) << "outer check before the nested subtest";
+      local_counts.passed_checks++;
+
+      t.test ("inner subtest after a check", [] (auto& t2)
+        {
+          t2.expect (eq (2, 2)) << "inner check";
+          local_counts.passed_checks++;
+          local_counts.executed_test_cases++; // inner
+        });
+      local_counts.executed_test_cases++; // outer
+    });
+
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
+
+  // --------------------------------------------------------------------------
+
+  // A failed check in a nested test case also fails all the outer test
+  // cases, as in node-tap, although their own checks passed.
+  {
+    const size_t failed_test_cases_before
+        = current_suite_totals.failed_test_cases ();
+
+    ts.test ("Failed nested subtest", [] (auto& t)
+      {
+        t.expect (eq (1, 1)) << "outer check passes";
+        local_counts.passed_checks++;
+
+        t.test ("middle subtest", [] (auto& t2)
+          {
+            t2.test ("inner subtest", [] (auto& t3)
+              {
+                t3.expect (eq (1, 2)) << "inner check fails";
+                local_counts.failed_checks++;
+                local_counts.executed_test_cases++; // inner
+              });
+            local_counts.executed_test_cases++; // middle
+          });
+        local_counts.executed_test_cases++; // outer
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+    // The inner, the middle, and the outer test cases failed.
+    test_assert (current_suite_totals.failed_test_cases ()
+                 == failed_test_cases_before + 3);
+  }
+
+  // --------------------------------------------------------------------------
+
+  // The result of a check kept in a variable is reported when the variable
+  // goes out of scope, after the later checks, with its own expression
+  // (here `1 == 2`), and numbered in the order of the output.
+  ts.test ("Stored check result", [] (auto& t)
+    {
+      {
+        auto stored = t.expect (eq (1, 2));
+        stored << "stored check fails";
+        local_counts.failed_checks++;
+
+        t.expect (eq (3, 3)) << "later check passes";
+        local_counts.passed_checks++;
+      } // The stored check is reported here.
+
+      local_counts.executed_test_cases++;
+    });
+
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
+
+  // --------------------------------------------------------------------------
+
+  // The comparators compare the application types with their own
+  // operators, ignoring the application functions named `get`, both free
+  // (found by argument-dependent lookup) and member.
+  ts.test ("Application types with get()", [] (auto& t)
+    {
+      t.expect (ne (user_types::wrapped{ 1 }, user_types::wrapped{ 2 }))
+          << "wrapped values differ";
+      local_counts.passed_checks++;
+
+      t.expect (eq (user_types::wrapped{ 3 }, user_types::wrapped{ 3 }))
+          << "wrapped values are equal";
+      local_counts.passed_checks++;
+
+      t.expect (ne (user_types::handle{ 1 }, user_types::handle{ 2 }))
+          << "handles differ";
+      local_counts.passed_checks++;
+
+      local_counts.executed_test_cases++;
+    });
+
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
+
+  // --------------------------------------------------------------------------
+
+  // The comparators compare the application types with their own
+  // operators, ignoring their members named `value` and `epsilon`, which
+  // only identify the framework constants and floating-point wrappers.
+  ts.test ("Application types with value and epsilon", [] (auto& t)
+    {
+      t.expect (ne (user_types::reading{ 1 }, user_types::reading{ 2 }))
+          << "readings differ";
+      local_counts.passed_checks++;
+
+      t.expect (eq (user_types::reading{ 3 }, user_types::reading{ 3 }))
+          << "readings are equal";
+      local_counts.passed_checks++;
+
+      t.expect (ne (user_types::gauge{ 1, 5 }, user_types::gauge{ 2, 5 }))
+          << "gauges differ";
+      local_counts.passed_checks++;
+
+      t.expect (eq (user_types::gauge{ 3, 5 }, user_types::gauge{ 3, 5 }))
+          << "gauges are equal";
+      local_counts.passed_checks++;
+
+      local_counts.executed_test_cases++;
+    });
+
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
+
+  // --------------------------------------------------------------------------
+
+  // Values of the fundamental types, including `bool`, can be streamed into
+  // the check messages.
+  ts.test ("Message values", [] (auto& t)
+    {
+      const bool flag = true;
+      t.expect (flag) << "flag is " << flag << ", not " << !flag;
+      local_counts.passed_checks++;
+
+      t.expect (true) << "int " << 42 << ", char " << 'x' << ", double "
+                      << 1.25;
+      local_counts.passed_checks++;
+
+      // Null C strings are written as `"nullptr"`.
+      char* null_string = nullptr;
+      const char* null_const_string = nullptr;
+      t.expect (true) << "null strings " << null_string << ", "
+                      << null_const_string << ", " << nullptr;
+      local_counts.passed_checks++;
+
+      local_counts.executed_test_cases++;
+    });
+
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
+
+  // --------------------------------------------------------------------------
+
+  // The character operands are reported as quoted literals, and a zero
+  // does not hide the rest of the output, including the next failed
+  // check.
+  ts.test ("Character operands", [] (auto& t)
+    {
+      t.expect (eq ('\0', 'a'));
+      local_counts.failed_checks++;
+
+      t.expect (eq (' ', '\t')) << "space is tab";
+      local_counts.failed_checks++;
+
+      t.expect (eq ('x', 'x'));
+      local_counts.passed_checks++;
+
+      local_counts.executed_test_cases++;
+    });
+
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
+
+  // --------------------------------------------------------------------------
+
+  {
+    counters fresh{};
+    test_assert (fresh.passed ());
+    test_assert (fresh.executed_checks () == 0);
+  }
+
+  // After a test case runs:
+  test_assert (current_suite_totals.executed_checks ()
+               == local_counts.passed_checks + local_counts.failed_checks);
+
+  // --------------------------------------------------------------------------
+
+  // Exercise the dynamic runner::add_suite() path (registers a child suite
+  // that is run lazily inside run_suites()).
+  test_assert (tr.added_suites_count () == 0);
+  tr.add_suite ("Dynamic suite", [] (auto& s)
+    {
+      s.test ("check in dynamic suite", [] (auto& t)
+        { t.expect (eq (1, 1)) << "1 == 1 in dynamic suite"; });
+    });
+  test_assert (tr.added_suites_count () == 1);
+
+  // The name of a dynamic suite is copied, so it can be a temporary string,
+  // destroyed before the suite runs; the name is longer than the short
+  // string buffer, so that AddressSanitizer would report a use after free.
+  tr.add_suite (
+      std::string ("Dynamic suite with a ").append ("temporary name").c_str (),
+      [] (auto& s)
+    {
+      s.test ("check in dynamic suite with a temporary name", [] (auto& t) {
+          t.expect (eq (2, 2)) << "2 == 2 in the suite with a temporary name";
+        });
+    });
+  test_assert (tr.added_suites_count () == 2);
+
+  // --------------------------------------------------------------------------
+
+  // The static suites are kept in a list independent of the runner
+  // objects; each runner counts and runs only its own, and a static suite
+  // leaves the list when it is destroyed.
+  {
+    const size_t static_suites_count = tr.static_suites_count ();
+    test_assert (static_suites_count > 0);
+    test_assert (tr.total_suites_count ()
+                 == 1 + tr.added_suites_count () + static_suites_count);
+
+    test_assert (other_runner.static_suites_count () == 1);
+    {
+      static_suite local_suite{ "Local static suite", other_runner,
+                                [] (auto&) noexcept {} };
+      test_assert (other_runner.static_suites_count () == 2);
+      test_assert (tr.static_suites_count () == static_suites_count);
+    }
+    test_assert (other_runner.static_suites_count () == 1);
+  }
+
+  // --------------------------------------------------------------------------
+}
+
+// ----------------------------------------------------------------------------
+
+// Checks the state of the session after `run_suites()` returned `code`.
+void
+unit_checks_verify_session (int argc, char* argv[], suite& ts,
+                                 int code)
+{
+  // The session runs only once; the later calls of run_suites() return the same
+  // code without running the suites again, and a second initialise() or
+  // add_top_suite() changes nothing.
+  {
+    const size_t executed_checks = tr.totals ().executed_checks ();
+    const size_t executed_test_cases = tr.totals ().executed_test_cases ();
+
+    test_assert (tr.run_suites () == code);
+    tr.initialise (argc, argv);
+    test_assert (&tr.add_top_suite () == &ts);
+    test_assert (tr.run_suites () == code);
+
+    test_assert (tr.totals ().executed_checks () == executed_checks);
+    test_assert (tr.totals ().executed_test_cases () == executed_test_cases);
+  }
+}
+
+// ----------------------------------------------------------------------------

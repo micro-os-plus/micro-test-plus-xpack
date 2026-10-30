@@ -91,6 +91,13 @@ subdir('meson/enable-all-warnings')
 # -----------------------------------------------------------------------------
 # Dependencies.
 
+# Optionally, override the project definitions with platform specific values.
+_local_definitions_folder = 'platforms/' + xpack_platform_name + '/meson/definitions'
+if fs.is_dir(_local_definitions_folder)
+  message('')  # Separator for readability
+  subdir(_local_definitions_folder)
+endif
+
 # Set `xpack_dependencies_folders` with the platform specific dependencies.
 message('')  # Separator for readability
 subdir('platforms/'+ xpack_platform_name + '/meson/dependencies-folders')

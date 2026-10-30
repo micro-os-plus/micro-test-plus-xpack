@@ -40,6 +40,14 @@ include ("cmake/common-options-library.cmake")
 # -----------------------------------------------------------------------------
 # Dependencies.
 
+# Optionally, override the project definitions with platform specific values.
+if (EXISTS
+    "${CMAKE_SOURCE_DIR}/platforms/${PLATFORM_NAME}/cmake/definitions.cmake"
+)
+  message (VERBOSE "") # Separator for readability
+  include ("platforms/${PLATFORM_NAME}/cmake/definitions.cmake")
+endif ()
+
 message (VERBOSE "") # Separator for readability
 # Set `xpack_dependencies_folders` with the platform specific dependencies.
 include ("platforms/${PLATFORM_NAME}/cmake/dependencies-folders.cmake")
