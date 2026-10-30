@@ -1,4 +1,4 @@
-Running: sample-test one two --reporter=human --output-file=sample-test.txt
+Running: sample-test --reporter=human --output-file=sample-test.txt one two
 Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 µTest++ human report
 • Sample
@@ -23,8 +23,8 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     ✓ Check multiple function invocations - passed (2 checks)
     • Check args
         ✓ argc >= 2
-        ✓ argv[1] is 'one'
-        ✓ argv[2] is 'two'
+        ✓ the next to last argument is 'one'
+        ✓ the last argument is 'two'
     ✓ Check args - passed (3 checks)
     • Check complex logic
         ✓ xyz passed

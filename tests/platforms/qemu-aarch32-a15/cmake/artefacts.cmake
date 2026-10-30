@@ -41,7 +41,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
   message (VERBOSE "A> empty-test")
 
   add_qemu_test (
-    NAME "empty-test" COMMAND empty-test one two --output-file=empty-test.tap
+    NAME "empty-test" COMMAND empty-test --output-file=empty-test.tap one two
   )
   add_compare_files_test (
     NAME "empty-test-compare"
@@ -63,8 +63,8 @@ if (XPACK_ENABLE_MINIMAL_TEST)
   message (VERBOSE "A> minimal-test")
 
   add_qemu_test (
-    NAME "minimal-test" COMMAND minimal-test one two
-                                --output-file=minimal-test.tap
+    NAME "minimal-test" COMMAND minimal-test --output-file=minimal-test.tap one
+                                two
   )
   add_compare_files_test (
     NAME "minimal-test-compare"
@@ -86,7 +86,7 @@ if (XPACK_ENABLE_SUITE_TEST)
   message (VERBOSE "A> suite-test")
 
   add_qemu_test (
-    NAME "suite-test" COMMAND suite-test one two --output-file=suite-test.tap
+    NAME "suite-test" COMMAND suite-test --output-file=suite-test.tap one two
   )
   add_compare_files_test (
     NAME "suite-test-compare"
@@ -108,8 +108,8 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   message (VERBOSE "A> sample-test")
 
   add_qemu_test (
-    NAME "sample-test" COMMAND sample-test one two
-                               --output-file=sample-test.tap
+    NAME "sample-test" COMMAND sample-test --output-file=sample-test.tap one
+                               two
   )
   add_compare_files_test (
     NAME "sample-test-compare"
@@ -146,8 +146,8 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
   message (VERBOSE "A> unit-checks-test")
 
   add_qemu_test (
-    NAME "unit-checks-test" COMMAND unit-checks-test one two
-                                    --output-file=unit-checks-test.tap
+    NAME "unit-checks-test" COMMAND unit-checks-test
+                                    --output-file=unit-checks-test.tap one two
   )
   add_compare_files_test (
     NAME "unit-checks-test-compare"
@@ -158,8 +158,8 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
 
   add_qemu_test (
     NAME "unit-checks-test-reporter-human"
-    COMMAND unit-checks-test one two --reporter=human
-            --output-file=unit-checks-test.txt
+    COMMAND unit-checks-test --reporter=human
+            --output-file=unit-checks-test.txt one two
   )
   add_compare_files_test (
     NAME "unit-checks-test-reporter-human-compare"
@@ -184,8 +184,8 @@ if (XPACK_ENABLE_UNIT_COMBINATIONS_TEST)
 
   add_qemu_test (
     NAME "unit-combinations-test"
-    COMMAND unit-combinations-test one two
-            --output-file=unit-combinations-test.tap
+    COMMAND unit-combinations-test --output-file=unit-combinations-test.tap one
+            two
   )
   add_compare_files_test (
     NAME "unit-combinations-test-compare"
@@ -207,8 +207,8 @@ if (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST)
   message (VERBOSE "A> unit-exceptions-test")
 
   add_qemu_test (
-    NAME "unit-exceptions-test" COMMAND unit-exceptions-test one two
-                                        --output-file=unit-exceptions-test.tap
+    NAME "unit-exceptions-test"
+    COMMAND unit-exceptions-test --output-file=unit-exceptions-test.tap one two
   )
   add_compare_files_test (
     NAME "unit-exceptions-test-compare"
@@ -233,8 +233,8 @@ if (XPACK_ENABLE_UNIT_MISCELLANEOUS_TEST)
 
   add_qemu_test (
     NAME "unit-miscellaneous-test"
-    COMMAND unit-miscellaneous-test one two
-            --output-file=unit-miscellaneous-test.tap
+    COMMAND unit-miscellaneous-test --output-file=unit-miscellaneous-test.tap
+            one two
   )
   add_compare_files_test (
     NAME "unit-miscellaneous-test-compare"
@@ -256,8 +256,8 @@ if (XPACK_ENABLE_UNIT_DEPRECATED_TEST)
   message (VERBOSE "A> unit-deprecated-test")
 
   add_qemu_test (
-    NAME "unit-deprecated-test" COMMAND unit-deprecated-test one two
-                                        --output-file=unit-deprecated-test.tap
+    NAME "unit-deprecated-test"
+    COMMAND unit-deprecated-test --output-file=unit-deprecated-test.tap one two
   )
   add_compare_files_test (
     NAME "unit-deprecated-test-compare"

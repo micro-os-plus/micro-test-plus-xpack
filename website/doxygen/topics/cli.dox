@@ -13,7 +13,7 @@ indicating the total number of passed and failed checks.
 @par Example
 
 @code{.console}
-$ minimal-test one two --reporter=tap
+$ minimal-test --reporter=tap one two
 
 TAP version 14
 # Subtest: Minimal
@@ -103,7 +103,7 @@ expectation, irrespective of whether it passes or fails.
 @par Example
 
 @code{.console}
-$ minimal-test one two --verbose --reporter=tap
+$ minimal-test --verbose --reporter=tap one two
 
 TAP version 14
 # Subtest: Minimal
@@ -132,7 +132,7 @@ failed.
 @par Example
 
 @code{.console}
-$ minimal-test one two --quiet --reporter=tap
+$ minimal-test --quiet --reporter=tap one two
 
 TAP version 14
 ok 1 - Minimal # { passed, 2 checks in 1 test case, time: X.XXX ms }
@@ -211,7 +211,7 @@ On platforms without a command line, the patterns can be set in
 @par Example
 
 @code{.console}
-$ sample-test one two --filter='*namespace*'
+$ sample-test --filter='*namespace*' one two
 
 TAP version 14
 # Subtest: Sample
@@ -235,7 +235,7 @@ ok 4 - Implicit namespace suite # { passed, 2 checks in 2 test cases, time: X.XX
 To run only the test cases named `Check one` of the same suites:
 
 @code{.console}
-$ sample-test one two --filter='*namespace*' --filter='Check one'
+$ sample-test --filter='*namespace*' --filter='Check one' one two
 ...
 # Subtest: Explicit namespace suite
 

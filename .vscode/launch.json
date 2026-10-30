@@ -14,9 +14,9 @@
       "request": "launch",
       "program": "${workspaceFolder}/tests/build/synthetic-posix-cmake-sys-debug/sample-test",
       "args": [
+        "--verbose",
         "one",
-        "two",
-        "--verbose"
+        "two"
       ],
       "stopAtEntry": true,
       "cwd": "${workspaceFolder}/tests/build/synthetic-posix-cmake-sys-debug/",
@@ -77,7 +77,7 @@
       "overrideLaunchCommands": [
         "monitor reset init",
         "monitor arm semihosting enable",
-        "monitor arm semihosting_cmdline sample-test one two --output-file=sample-test.tap",
+        "monitor arm semihosting_cmdline sample-test --output-file=sample-test.tap one two",
         "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-cmake-gcc-debug/sample-test.elf\"",
         "break Reset_Handler",
         // "break crt0.S:547"
@@ -111,7 +111,7 @@
       "overrideLaunchCommands": [
         "monitor reset init",
         "monitor arm semihosting enable",
-        "monitor arm semihosting_cmdline sample-test one two --output-file=sample-test.tap",
+        "monitor arm semihosting_cmdline sample-test --output-file=sample-test.tap one two",
         "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-sdk-cmake-gcc-debug/sample-test.elf\"",
         "break _reset_handler",
         // "break crt0.S:547"
@@ -145,7 +145,7 @@
       "overrideLaunchCommands": [
         "monitor reset init",
         "monitor arm semihosting enable",
-        "monitor arm semihosting_cmdline sample-test one two --output-file=sample-test.tap",
+        "monitor arm semihosting_cmdline sample-test --output-file=sample-test.tap one two",
         "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-2-arm-cmake-gcc-debug/sample-test.elf\"",
         "break _reset_handler",
         // "break crt0.S:547"
@@ -179,7 +179,7 @@
       "overrideLaunchCommands": [
         "monitor reset init",
         "monitor arm semihosting enable",
-        "monitor arm semihosting_cmdline sample-test one two --output-file=sample-test.tap",
+        "monitor arm semihosting_cmdline sample-test --output-file=sample-test.tap one two",
         "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug/sample-test.elf\"",
         "break _reset_handler",
         // "break crt0.S:547"
@@ -213,7 +213,7 @@
       "overrideLaunchCommands": [
         "monitor reset init",
         "monitor arm semihosting enable",
-        "monitor arm semihosting_cmdline empty-test one two --output-file=empty-test.tap",
+        "monitor arm semihosting_cmdline empty-test --output-file=empty-test.tap one two",
         "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/empty-test.elf\"",
         "break _reset_handler",
         "break _debugger_entry_point"
@@ -263,7 +263,7 @@
           "text": "monitor arm semihosting enable"
         },
         {
-          "text": "monitor arm semihosting_cmdline empty-test one two --output-file=empty-test.tap"
+          "text": "monitor arm semihosting_cmdline empty-test --output-file=empty-test.tap one two"
         },
         {
           "text": "load"
@@ -322,7 +322,7 @@
       "overrideLaunchCommands": [
         "monitor reset init",
         "monitor arm semihosting enable",
-        "monitor arm semihosting_cmdline minimal-test one two --output-file=minimal-test.tap",
+        "monitor arm semihosting_cmdline minimal-test --output-file=minimal-test.tap one two",
         "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/minimal-test.elf\"",
         "break _reset_handler",
         "break _debugger_entry_point"
@@ -356,7 +356,7 @@
       "overrideLaunchCommands": [
         "monitor reset init",
         "monitor arm semihosting enable",
-        "monitor arm semihosting_cmdline sample-test one two --output-file=sample-test.tap",
+        "monitor arm semihosting_cmdline sample-test --output-file=sample-test.tap one two",
         "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/sample-test.elf\"",
         "break _reset_handler",
         "break _debugger_entry_point"
@@ -390,7 +390,7 @@
       "overrideLaunchCommands": [
         "monitor reset init",
         "monitor arm semihosting enable",
-        "monitor arm semihosting_cmdline suite-test one two --output-file=suite-test.tap",
+        "monitor arm semihosting_cmdline suite-test --output-file=suite-test.tap one two",
         "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/suite-test.elf\"",
         "break _reset_handler",
         "break _debugger_entry_point"
@@ -424,7 +424,7 @@
       "overrideLaunchCommands": [
         "monitor reset init",
         "monitor arm semihosting enable",
-        "monitor arm semihosting_cmdline unit-test one two --output-file=unit-test.tap",
+        "monitor arm semihosting_cmdline unit-test --output-file=unit-test.tap one two",
         "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-cmake-gcc-debug/unit-test.elf\"",
         "break _reset_handler",
         "break _debugger_entry_point"
@@ -458,7 +458,7 @@
       "overrideLaunchCommands": [
         "monitor reset init",
         "monitor arm semihosting enable",
-        "monitor arm semihosting_cmdline empty-test one two --output-file=empty-test.tap",
+        "monitor arm semihosting_cmdline empty-test --output-file=empty-test.tap one two",
         "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug/empty-test.elf\"",
         // "break _reset_handler",
         // "break _entry_point"
@@ -492,7 +492,7 @@
       "overrideLaunchCommands": [
         "monitor reset init",
         "monitor arm semihosting enable",
-        "monitor arm semihosting_cmdline minimal-test one two --output-file=minimal-test.tap",
+        "monitor arm semihosting_cmdline minimal-test --output-file=minimal-test.tap one two",
         "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug/minimal-test.elf\"",
         // "break _reset_handler",
         // "break _entry_point"
@@ -526,7 +526,7 @@
       "overrideLaunchCommands": [
         "monitor reset init",
         "monitor arm semihosting enable",
-        "monitor arm semihosting_cmdline sample-test one two --output-file=sample-test.tap",
+        "monitor arm semihosting_cmdline sample-test --output-file=sample-test.tap one two",
         "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug/sample-test.elf\"",
         // "break _reset_handler",
         // "break _entry_point"
@@ -560,7 +560,7 @@
       "overrideLaunchCommands": [
         "monitor reset init",
         "monitor arm semihosting enable",
-        "monitor arm semihosting_cmdline suite-test one two --output-file=suite-test.tap",
+        "monitor arm semihosting_cmdline suite-test --output-file=suite-test.tap one two",
         "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug/suite-test.elf\"",
         // "break _reset_handler",
         // "break _entry_point"
@@ -594,7 +594,7 @@
       "overrideLaunchCommands": [
         "monitor reset init",
         "monitor arm semihosting enable",
-        "monitor arm semihosting_cmdline unit-test one two --output-file=unit-test.tap",
+        "monitor arm semihosting_cmdline unit-test --output-file=unit-test.tap one two",
         "load \"${workspaceRoot}/tests/build/raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug/unit-test.elf\"",
         // "break _reset_handler",
         // "break _entry_point"
@@ -629,7 +629,7 @@
       "overrideLaunchCommands": [
         "monitor reset init",
         "monitor arm semihosting enable",
-        "monitor arm semihosting_cmdline suite-test one two --output-file=suite-test.tap",
+        "monitor arm semihosting_cmdline suite-test --output-file=suite-test.tap one two",
         "load \"${workspaceRoot}/tests/build/nucleo-f411re-cmake-gcc-debug/suite-test.elf\"",
         // "break Reset_Handler"
       ],
@@ -662,7 +662,7 @@
       "overrideLaunchCommands": [
         "monitor reset init",
         "monitor arm semihosting enable",
-        "monitor arm semihosting_cmdline suite-test one two --output-file=suite-test.tap",
+        "monitor arm semihosting_cmdline suite-test --output-file=suite-test.tap one two",
         "load \"${workspaceRoot}/tests/build/nucleo-f767zi-cmake-gcc-debug/suite-test.elf\"",
         // "break Reset_Handler"
       ],
@@ -703,7 +703,7 @@
       "overrideLaunchCommands": [
         "monitor halt",
         "monitor arm semihosting enable",
-        "monitor arm semihosting_cmdline suite-test one two --output-file=suite-test.tap",
+        "monitor arm semihosting_cmdline suite-test --output-file=suite-test.tap one two",
         "load \"${workspaceRoot}/tests/build/nucleo-h533re-cmake-gcc-debug/suite-test.elf\"",
         "monitor reset init",
         "break Reset_Handler"
@@ -745,7 +745,7 @@
       "overrideLaunchCommands": [
         "monitor halt",
         "monitor arm semihosting enable",
-        "monitor arm semihosting_cmdline unit-test one two --output-file=unit-test.tap",
+        "monitor arm semihosting_cmdline unit-test --output-file=unit-test.tap one two",
         "load \"${workspaceRoot}/tests/build/nucleo-h533re-cmake-gcc-debug/unit-test.elf\"",
         "monitor reset init",
         "break Reset_Handler"
@@ -771,7 +771,7 @@
         "-d",
         "unimp,guest_errors,cpu_reset",
         "--semihosting-config",
-        "enable=on,target=native,arg=suite-test,arg=one,arg=two,arg=--output-file,arg=suite-test.tap"
+        "enable=on,target=native,arg=suite-test,arg=--output-file,arg=suite-test.tap,arg=one,arg=two"
       ],
       "gdbPath": "${workspaceRoot}/tests/build/qemu-cortex-m4f-cmake-gcc-debug/xpacks/.bin/arm-none-eabi-gdb",
       "runToEntryPoint": "main",
@@ -796,7 +796,7 @@
         "-d",
         "unimp,guest_errors,cpu_reset",
         "--semihosting-config",
-        "enable=on,target=native,arg=suite-test,arg=one,arg=two,arg=--output-file,arg=suite-test.tap"
+        "enable=on,target=native,arg=suite-test,arg=--output-file,arg=suite-test.tap,arg=one,arg=two"
       ],
       "gdbPath": "${workspaceRoot}/tests/build/qemu-cortex-m33-cmake-gcc-debug/xpacks/.bin/arm-none-eabi-gdb",
       "runToEntryPoint": "main",
@@ -823,7 +823,7 @@
         "-d",
         "unimp,guest_errors,cpu_reset",
         "--semihosting-config",
-        "enable=on,target=native,arg=suite-test,arg=one,arg=two,arg=--output-file,arg=suite-test.tap"
+        "enable=on,target=native,arg=suite-test,arg=--output-file,arg=suite-test.tap,arg=one,arg=two"
       ],
       "gdbPath": "${workspaceRoot}/tests/build/qemu-aarch32-a15-cmake-gcc-debug/xpacks/.bin/arm-none-eabi-gdb",
       "showDevDebugOutput": "raw",
@@ -851,7 +851,7 @@
         "-d",
         "unimp,guest_errors,cpu_reset",
         "--semihosting-config",
-        "enable=on,target=native,arg=suite-test,arg=one,arg=two,arg=--output-file,arg=suite-test.tap"
+        "enable=on,target=native,arg=suite-test,arg=--output-file,arg=suite-test.tap,arg=one,arg=two"
       ],
       "gdbPath": "${workspaceRoot}/tests/build/qemu-aarch64-a72-cmake-gcc-debug/xpacks/.bin/aarch64-none-elf-gdb",
       "showDevDebugOutput": "raw",

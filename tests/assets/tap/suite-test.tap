@@ -1,4 +1,4 @@
-# Running: suite-test one two --output-file=suite-test.tap
+# Running: suite-test --output-file=suite-test.tap one two
 # Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 TAP version 14
 # Subtest: Static top suite

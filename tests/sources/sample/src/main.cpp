@@ -176,16 +176,14 @@ main (int argc, char* argv[])
     {
       t.expect (mt::ge (_argc, 2)) << "argc >= 2";
 
-      if (_argc > 1)
-        {
-          t.expect (mt::eq (std::string_view{ _argv[1] }, "one"sv))
-              << "argv[1] is 'one'";
-        }
-
+      // The test program is run with the arguments 'one' and 'two' after
+      // the options, so they are the last ones.
       if (_argc > 2)
         {
-          t.expect (mt::eq (std::string_view{ _argv[2] }, "two"sv))
-              << "argv[2] is 'two'";
+          t.expect (mt::eq (std::string_view{ _argv[_argc - 2] }, "one"sv))
+              << "the next to last argument is 'one'";
+          t.expect (mt::eq (std::string_view{ _argv[_argc - 1] }, "two"sv))
+              << "the last argument is 'two'";
         }
     }, argc, argv);
   // The values passed after the body are the actual values to be passed
