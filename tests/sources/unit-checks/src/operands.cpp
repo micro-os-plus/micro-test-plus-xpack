@@ -19,6 +19,7 @@
 #include <cstdint>
 #include <functional>
 #include <memory>
+#include <numeric>
 #include <optional>
 #include <tuple>
 #include <utility>
@@ -659,6 +660,26 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
         const std::uint8_t other[]{ 1, 2, 4 };
 
         t.expect (eq (first, other)) << "bytes eq";
+        local_counts.failed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    ts.test ("Long ranges bad", [] (auto& t)
+      {
+        std::vector<int> numbers (20);
+        std::iota (numbers.begin (), numbers.end (), 1);
+        std::vector<int> other{ numbers };
+        other.back () = 0;
+
+        t.expect (eq (numbers, other)) << "long vector eq";
+        local_counts.failed_checks++;
+
+        const std::vector<std::uint8_t> exact (16, 7);
+        std::vector<std::uint8_t> exact_other{ exact };
+        exact_other.back () = 8;
+
+        t.expect (eq (exact, exact_other)) << "16 bytes eq";
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;

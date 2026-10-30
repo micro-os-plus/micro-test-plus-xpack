@@ -874,14 +874,31 @@ ok 4 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case }
     # Subtest: Raw arrays bad
         not ok 1 - bytes eq
           ---
-          condition: "{1uc, 2uc, 3uc} == {1uc, 2uc, 4uc}"
+          condition: "{1, 2, 3} == {1, 2, 4}"
           at:
             fileName: operands.cpp
             lineNumber: 661
           ...
         1..1
     not ok 16 - Raw arrays bad # { FAILED, 0 checks passed, 1 failed }
-    1..16
-not ok 5 - Operands suite # { FAILED, 48 checks passed, 27 failed, in 16 test cases }
+    # Subtest: Long ranges bad
+        not ok 1 - long vector eq
+          ---
+          condition: "{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} == {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} (first difference at index 19)"
+          at:
+            fileName: operands.cpp
+            lineNumber: 675
+          ...
+        not ok 2 - 16 bytes eq
+          ---
+          condition: "{7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8}"
+          at:
+            fileName: operands.cpp
+            lineNumber: 682
+          ...
+        1..2
+    not ok 17 - Long ranges bad # { FAILED, 0 checks passed, 2 failed }
+    1..17
+not ok 5 - Operands suite # { FAILED, 48 checks passed, 29 failed, in 17 test cases }
 1..5
-# { total: 157 checks passed, 80 failed, in 52 test cases, 5 test suites }
+# { total: 157 checks passed, 82 failed, in 53 test cases, 5 test suites }

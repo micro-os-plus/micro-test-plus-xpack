@@ -349,7 +349,11 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ vector == array
     ✓ Raw arrays - passed (7 checks)
     • Raw arrays bad
-        ✗ bytes eq FAILED (operands.cpp:661, {1uc, 2uc, 3uc} == {1uc, 2uc, 4uc})
+        ✗ bytes eq FAILED (operands.cpp:662, {1, 2, 3} == {1, 2, 4})
     ✗ Raw arrays bad - FAILED (0 checks passed, 1 failed)
-✗ Operands suite - FAILED (48 checks passed, 27 failed, in 16 test cases)
-✗ Total: 157 checks passed, 80 failed, in 52 test cases, 5 test suites
+    • Long ranges bad
+        ✗ long vector eq FAILED (operands.cpp:675, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} == {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} (first difference at index 19))
+        ✗ 16 bytes eq FAILED (operands.cpp:682, {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8})
+    ✗ Long ranges bad - FAILED (0 checks passed, 2 failed)
+✗ Operands suite - FAILED (48 checks passed, 29 failed, in 17 test cases)
+✗ Total: 157 checks passed, 82 failed, in 53 test cases, 5 test suites

@@ -413,11 +413,16 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     [32m✓[0m Raw arrays - passed (7 checks)
 
     • Raw arrays bad
-        [31m✗[0m bytes eq [31mFAILED[0m (operands.cpp:661, [31m{1uc, 2uc, 3uc} == {1uc, 2uc, 4uc}[0m)
+        [31m✗[0m bytes eq [31mFAILED[0m (operands.cpp:662, [31m{1, 2, 3} == {1, 2, 4}[0m)
     [31m✗[0m Raw arrays bad - [31mFAILED[0m (0 checks passed, 1 failed)
 
-[31m✗[0m Operands suite - [31mFAILED[0m (48 checks passed, 27 failed, in 16 test cases), time: 0.910 ms
+    • Long ranges bad
+        [31m✗[0m long vector eq [31mFAILED[0m (operands.cpp:675, [31m{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} == {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} (first difference at index 19)[0m)
+        [31m✗[0m 16 bytes eq [31mFAILED[0m (operands.cpp:682, [31m{7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8}[0m)
+    [31m✗[0m Long ranges bad - [31mFAILED[0m (0 checks passed, 2 failed)
 
-[31m✗[0m Total: 157 checks passed, 80 failed, in 52 test cases, 5 test suites, time: 3.010 ms
+[31m✗[0m Operands suite - [31mFAILED[0m (48 checks passed, 29 failed, in 17 test cases), time: 1.022 ms
+
+[31m✗[0m Total: 157 checks passed, 82 failed, in 53 test cases, 5 test suites, time: 3.102 ms
 Overall, the µTest++ unit tests were successful!
 

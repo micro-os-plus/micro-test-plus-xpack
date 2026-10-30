@@ -182,6 +182,14 @@ namespace micro_os_plus::micro_test_plus::detail
    * `", "`, surrounded by `{` and `}`. Each element is streamed
    * through `operator<<`, which recurses as needed for nested types.
    *
+   * Only the first `max_range_elements_` elements are written; if there
+   * are more, the elements are still counted, and the text
+   * `", ... (<count> elements)"` is written after the last one, so that
+   * a check on a large buffer neither exhausts the memory nor buries the
+   * report. The elements of the types `signed char` and `unsigned char`
+   * (such as `std::uint8_t`) are bytes, not numbers with a type, so they
+   * are written without the type suffix.
+   *
    * The range-based `for` statement uses the `begin()` and `end()`
    * members, or, if there are none, the functions found by
    * argument-dependent lookup, as `detail::formattable_range` does.
@@ -192,11 +200,30 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::operator<< (const T& t)
   {
     *this << "{";
-    auto first = true;
+    size_t count = 0;
     for (const auto& arg : t)
       {
-        *this << (first ? "" : ", ") << arg;
-        first = false;
+        if (count < max_range_elements_)
+          {
+            *this << (count == 0 ? "" : ", ");
+            using element_type = std::remove_cvref_t<decltype (arg)>;
+            if constexpr (std::is_same_v<element_type, signed char>
+                          or std::is_same_v<element_type, unsigned char>)
+              {
+                *this << static_cast<int> (arg);
+              }
+            else
+              {
+                *this << arg;
+              }
+          }
+        ++count;
+      }
+    if (count > max_range_elements_)
+      {
+        *this << ", ... (";
+        detail::append_number (buffer_, count);
+        *this << " elements)";
       }
     *this << "}";
     return *this;
@@ -335,14 +362,63 @@ namespace micro_os_plus::micro_test_plus::detail
    * `<`, or `<=` for the built-in tags, or the symbol of an application
    * tag), in the colour of the result (green for passed, red for failed,
    * when colours are enabled).
+   *
+   * If an equality compares two ranges that are written truncated, the
+   * index of the first difference is appended, if the elements written
+   * do not show it (see `append_first_difference()`).
    */
   template <class Lhs_T, class Rhs_T, class Compare_T>
   expression_formatter&
   expression_formatter::operator<< (
       const detail::compare_op<Lhs_T, Rhs_T, Compare_T>& op)
   {
-    return (*this << colour (op) << op.lhs () << Compare_T::symbol << op.rhs ()
-                  << colours_.none);
+    *this << colour (op) << op.lhs () << Compare_T::symbol << op.rhs ();
+    using lhs_type = std::remove_cvref_t<decltype (op.lhs ())>;
+    using rhs_type = std::remove_cvref_t<decltype (op.rhs ())>;
+    if constexpr (std::is_same_v<Compare_T, detail::equal_to>
+                  and detail::formattable_range<lhs_type>
+                  and detail::formattable_range<rhs_type>
+                  and requires (const lhs_type& l, const rhs_type& r) {
+                        { *std::begin (l) == *std::begin (r) }
+                        -> std::convertible_to<bool>;
+                      })
+      {
+        append_first_difference (op.lhs (), op.rhs ());
+      }
+    return (*this << colours_.none);
+  }
+
+  /**
+   * @details
+   * Walks both ranges in step up to the first pair of elements that
+   * differ, or up to the end of the shorter one.
+   */
+  template <class Lhs_T, class Rhs_T>
+  void
+  expression_formatter::append_first_difference (const Lhs_T& lhs,
+                                                 const Rhs_T& rhs)
+  {
+    auto l = std::begin (lhs);
+    const auto l_end = std::end (lhs);
+    auto r = std::begin (rhs);
+    const auto r_end = std::end (rhs);
+
+    size_t index = 0;
+    while (l != l_end and r != r_end and *l == *r)
+      {
+        l = std::next (l);
+        r = std::next (r);
+        ++index;
+      }
+
+    if (index < max_range_elements_ or (l == l_end and r == r_end))
+      {
+        return;
+      }
+
+    *this << " (first difference at index ";
+    detail::append_number (buffer_, index);
+    *this << ")";
   }
 
   /**

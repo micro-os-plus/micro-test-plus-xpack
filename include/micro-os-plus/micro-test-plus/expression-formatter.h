@@ -638,6 +638,10 @@ namespace micro_os_plus::micro_test_plus
        * @details
        * Elements are formatted as `{ e1, e2, … }` by iterating the
        * container and recursing through `operator<<` for each element.
+       * Only the first 16 elements are written, followed by
+       * `", ... (<count> elements)"` if there are more; the elements of
+       * the types `signed char` and `unsigned char` are written as
+       * plain numbers, without the type suffix.
        *
        * @tparam T A range type satisfying `detail::formattable_range`:
        * with `begin()` and `end()` members or functions, not an array,
@@ -936,6 +940,15 @@ namespace micro_os_plus::micro_test_plus
 
     private:
       /**
+       * @brief The maximum number of elements of a range written.
+       *
+       * @details
+       * Limits the size of the report of a check on a large container,
+       * which is held in memory (and, in TAP, copied) until reported.
+       */
+      static constexpr size_t max_range_elements_ = 16;
+
+      /**
        * @brief Constructs a formatter in the plain mode, for a message.
        *
        * @details
@@ -1078,6 +1091,30 @@ namespace micro_os_plus::micro_test_plus
       template <class Tuple_T, std::size_t... Is>
       void
       append_elements (const Tuple_T& t, std::index_sequence<Is...>);
+
+      /**
+       * @brief Appends the index of the first difference of two ranges,
+       * if it is not among the elements written.
+       *
+       * @details
+       * A range is written with at most `max_range_elements_` elements,
+       * so a difference after them is not visible in the report. The
+       * elements are compared in step, and, if the first difference is at
+       * an index not written, the text `" (first difference at index
+       * <index>)"` is appended. A range that is a prefix of the other
+       * differs at its size. Nothing is appended if the ranges do not
+       * differ, or if the difference is among the elements written.
+       *
+       * @tparam Lhs_T Left-hand range type.
+       * @tparam Rhs_T Right-hand range type.
+       * @param lhs The left-hand range.
+       * @param rhs The right-hand range.
+       * @par Returns
+       *   Nothing.
+       */
+      template <class Lhs_T, class Rhs_T>
+      void
+      append_first_difference (const Lhs_T& lhs, const Rhs_T& rhs);
 
       /**
        * @brief Appends an operand of a chain of logical ANDs.
