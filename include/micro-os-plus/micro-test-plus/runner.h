@@ -65,6 +65,7 @@
 
 #include <functional>
 #include <memory>
+#include <span>
 #include <string>
 #include <string_view>
 #include <vector>
@@ -868,6 +869,31 @@ namespace micro_os_plus::micro_test_plus
      */
     [[nodiscard]] const counters&
     totals (void) const noexcept;
+
+    /**
+     * @brief Gets the command-line arguments left to the application.
+     *
+     * @details
+     * The arguments that follow the µTest++ options: the first argument
+     * that does not start with `--` and all the following ones, or, if
+     * the µTest++ options were ended by a `--` alone, the arguments after
+     * it, which may start with `--`; see
+     * `runner_options::application_arguments()`. The `--` itself and
+     * `argv[0]` are not included. The arguments are not interpreted by
+     * the runner.
+     *
+     * The span refers to the options kept by the runner, so it is valid
+     * as long as the runner exists. It is empty before `initialise()`, or
+     * if the options were not parsed from a command line.
+     *
+     * @par Parameters
+     *   None.
+     * @return A span of the application arguments.
+     *
+     * @since 6.0.0
+     */
+    [[nodiscard]] std::span<const std::string>
+    application_arguments (void) const noexcept;
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**

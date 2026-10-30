@@ -123,6 +123,17 @@ namespace micro_os_plus::micro_test_plus
     return totals_;
   }
 
+  /**
+   * @details
+   * Returns the application arguments of the options kept by the
+   * runner.
+   */
+  inline std::span<const std::string>
+  runner::application_arguments (void) const noexcept
+  {
+    return options_.application_arguments ();
+  }
+
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details

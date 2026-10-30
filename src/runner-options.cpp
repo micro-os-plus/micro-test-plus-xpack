@@ -95,9 +95,13 @@ namespace micro_os_plus::micro_test_plus
    * level; `--color` and `--use-colour` set the same option. An option
    * argument given separately is the next argument, whatever its content;
    * `--color` accepts its value only after `=`.
-   * The other arguments are ignored. The whole command line is copied
-   * into `arguments`, to be listed by the reporter; the option values
-   * are copied from there.
+   *
+   * The parsing ends at the first argument that does not start with `--`,
+   * or at the first `--` alone; the arguments from there on are left to
+   * the application, and are not interpreted, so they can be options of
+   * the application. The `--` itself is not an application argument. The
+   * whole command line is copied into `arguments`, to be listed by the
+   * reporter; the option values are copied from there.
    *
    * A missing option argument, an unknown reporter name, an unknown
    * colour mode, or an unknown `--` option, is recorded by `add_error()`,
@@ -124,6 +128,9 @@ namespace micro_os_plus::micro_test_plus
       {
         arguments.emplace_back (argv[i] != nullptr ? argv[i] : "");
       }
+
+    // Unless the parsing stops earlier, there are no application arguments.
+    application_begin_ = arguments.size ();
 
     static constexpr std::string_view reporter_option{ "--reporter" };
     static constexpr std::string_view output_file_option{ "--output-file" };
@@ -205,6 +212,19 @@ namespace micro_os_plus::micro_test_plus
         const std::string_view argument{ arguments[i] };
         std::string_view value{};
 
+        // The application arguments start at the first argument that is not
+        // a `--` option, or after the first `--` alone.
+        if (argument == "--")
+          {
+            application_begin_ = i + 1;
+            break;
+          }
+        if (!argument.starts_with ("--"))
+          {
+            application_begin_ = i;
+            break;
+          }
+
         if (argument == "--verbose")
           {
             verbosity_level = verbosity::verbose;
@@ -262,8 +282,7 @@ namespace micro_os_plus::micro_test_plus
           }
         else if (argument.starts_with ("--") && !is_known_option (argument))
           {
-            // The other arguments are left to the application, but a
-            // mistyped option must not silently disable the tests.
+            // A mistyped option must not silently disable the tests.
             add_error ("unknown option '", argument, "'");
           }
       }

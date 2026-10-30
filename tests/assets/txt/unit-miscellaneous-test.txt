@@ -141,6 +141,11 @@ next line FAILED (miscellaneous.cpp:917)
         ✓ missing argument
         ✓ output file not opened
     ✓ Runner option errors - passed (5 checks)
+    • Runner application arguments
+        ✓ none without a command line
+        ✓ the arguments after the options
+        ✓ the arguments after the terminator
+    ✓ Runner application arguments - passed (3 checks)
     • Runner colour options
         ✓ valid colour modes
         ✓ --color alone keeps the next argument
@@ -307,7 +312,7 @@ next line FAILED (miscellaneous.cpp:917)
         ✓ string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (191 checks passed, 8 failed, in 51 test cases)
+✗ Miscellaneous suite - FAILED (194 checks passed, 8 failed, in 52 test cases)
 • Runner options suite
     • Default options
         ✓ the TAP reporter
@@ -323,6 +328,17 @@ next line FAILED (miscellaneous.cpp:917)
         ✓ the arguments without `--` are ignored
         ✓ the defaults are kept
     ✓ Command line without options - passed (3 checks)
+    • Application arguments
+        ✓ the application arguments follow the options
+        ✓ an option after an application argument is not an option
+        ✓ the arguments after -- are left to the application
+        ✓ the application options are not reported
+        ✓ the separate option arguments belong to their options
+        ✓ an unknown option before the application arguments
+        ✓ a single dash ends the options
+        ✓ no application arguments
+        ✓ the copies refer to their own arguments
+    ✓ Application arguments - passed (9 checks)
     • Reporter, verbosity, and listing
         ✓ --reporter=human
         ✓ the last --reporter wins
@@ -375,7 +391,7 @@ next line FAILED (miscellaneous.cpp:917)
         ✓ the move constructor moves all the members
         ✓ the move assignment moves all the members
     ✓ Copies and moves - passed (5 checks)
-✓ Runner options suite - passed (50 checks in 8 test cases)
+✓ Runner options suite - passed (59 checks in 9 test cases)
 • Stopwatch suite
     • stopwatch::start() and stop()
         ✓ fresh: has_elapsed false
@@ -442,4 +458,4 @@ next line FAILED (miscellaneous.cpp:917)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 282 checks passed, 13 failed, in 67 test cases, 5 test suites
+✗ Total: 294 checks passed, 13 failed, in 69 test cases, 5 test suites

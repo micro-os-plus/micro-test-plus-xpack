@@ -1625,6 +1625,26 @@ by µTest++.
 
 ## Command line options
 
+The µTest++ options come first, before the arguments of the application: the parsing of the options ends at the first argument that does not start with `--`, or at the first `--` alone, and that argument, and all the following ones, are left to the application, uninterpreted, so they may be options of the application. The `--` itself is not passed on. An option argument given separately (`--reporter human`) belongs to its option and does not end the parsing; an unknown `--` option before that point is an error.
+
+```sh
+sample-test --verbose --output-file=out.tap one --app-option
+sample-test --quiet -- --app-option
+```
+
+In the first command, `one` and `--app-option` are left to the application; in the second, `--app-option` is. A µTest++ option written after an application argument (`sample-test one --verbose`) is not an option, but one of the arguments of the application.
+
+The application obtains its arguments from the runner, without `argv[0]` and without the µTest++ options:
+
+```cpp
+tr.initialise (argc, argv);
+
+for (const std::string& argument : tr.application_arguments ())
+  {
+    // ...
+  }
+```
+
 ### Verbosity
 
 By default, µTest++ displays a **summary line for each test case**, and, for the failed ones, the **failed checks**; the passed checks are only counted.

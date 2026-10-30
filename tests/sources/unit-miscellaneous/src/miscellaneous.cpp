@@ -1166,6 +1166,56 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
+    // The arguments that follow the µTest++ options are left to the
+    // application, and are available from the runner.
+    ts.test ("Runner application arguments", [] (auto& t)
+      {
+        runner default_runner;
+
+        t.expect (default_runner.application_arguments ().empty ())
+            << "none without a command line";
+        local_counts.passed_checks++;
+
+        char arg_name[] = "local";
+        char arg_silent[] = "--silent";
+        char arg_one[] = "one";
+        char arg_option[] = "--verbose";
+        char arg_two[] = "two";
+
+        char* argv[]
+            = { arg_name, arg_silent, arg_one, arg_option, arg_two, nullptr };
+        runner local_runner;
+        local_runner.initialise (5, argv);
+        const auto application_arguments
+            = local_runner.application_arguments ();
+
+        t.expect (local_runner.verbosity_level () == verbosity::silent
+                  and eq (application_arguments.size (), 3u)
+                  and eq (application_arguments[0], "one")
+                  and eq (application_arguments[1], "--verbose")
+                  and eq (application_arguments[2], "two"))
+            << "the arguments after the options";
+        local_counts.passed_checks++;
+
+        char arg_terminator[] = "--";
+        char arg_app_option[] = "--app-option";
+
+        char* terminator_argv[] = { arg_name, arg_silent, arg_terminator,
+                                    arg_app_option, nullptr };
+        runner terminator_runner;
+        terminator_runner.initialise (4, terminator_argv);
+        const auto after_terminator
+            = terminator_runner.application_arguments ();
+
+        t.expect (terminator_runner.verbosity_level () == verbosity::silent
+                  and eq (after_terminator.size (), 1u)
+                  and eq (after_terminator[0], "--app-option"))
+            << "the arguments after the terminator";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
     // The colour modes of `--color` and `--use-colour`; an unknown mode is
     // an option error.
     ts.test ("Runner colour options", [] (auto& t)

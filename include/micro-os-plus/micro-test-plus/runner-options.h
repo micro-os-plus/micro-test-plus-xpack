@@ -55,6 +55,7 @@
 #include "micro-os-plus/micro-test-plus-defines.h"
 #endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
+#include <span>
 #include <string>
 #include <string_view>
 #include <utility>
@@ -232,9 +233,14 @@ namespace micro_os_plus::micro_test_plus
      * Starts from the defaults, and parses the µTest++ options
      * (`--reporter`, `--silent`, `--quiet`, `--verbose`, `--output-file`,
      * `--color`, `--use-colour`, `--filter`, and `--list-tests`). The
-     * other arguments are ignored, since the applications may define
-     * their own, except for those starting with `--`, which are reported
-     * as unknown options.
+     * parsing ends at the first argument that does not start with `--`
+     * (an application argument, or a `-` option), or at the first `--`
+     * alone; that argument, and all the following ones, are left to the
+     * application, and are available from `application_arguments()`. An
+     * option argument given separately (`--reporter human`) belongs to
+     * its option and does not end the parsing. Before that point, the
+     * arguments starting with `--` that are not µTest++ options are
+     * reported as unknown options.
      *
      * A missing option argument, an unknown reporter name, an unknown
      * colour mode, or an unknown option, is reported on `stderr`, kept
@@ -379,7 +385,8 @@ namespace micro_os_plus::micro_test_plus
      * are parsed from the command line. When not empty, the reporters
      * list it at the beginning of the report, and
      * `runner::add_top_suite()` derives the default name of the top suite
-     * from `arguments[0]`.
+     * from `arguments[0]`. The arguments left to the application are
+     * returned by `application_arguments()`.
      */
     std::vector<std::string> arguments{};
 
@@ -477,6 +484,28 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] const std::vector<std::string>&
     errors (void) const noexcept;
 
+    /**
+     * @brief Returns the arguments left to the application.
+     *
+     * @details
+     * The arguments that follow the µTest++ options on the command line:
+     * the first argument that does not start with `--`, if the parsing
+     * ended there, and all the following ones, unchanged, or, if the
+     * parsing ended at a `--` alone, the arguments after it, which may
+     * start with `--`. The `--` itself and `argv[0]` are not included.
+     * The span refers to `arguments`, so it is valid as long as the
+     * options are not modified or destroyed.
+     *
+     * @par Parameters
+     *   None.
+     * @return A span of the arguments; empty if there are none, or if the
+     * options were not parsed from a command line.
+     *
+     * @since 6.0.0
+     */
+    [[nodiscard]] std::span<const std::string>
+    application_arguments (void) const noexcept;
+
   private:
     /**
      * @brief Records and reports a command-line error.
@@ -504,6 +533,16 @@ namespace micro_os_plus::micro_test_plus
      * `has_errors()`.
      */
     std::vector<std::string> errors_{};
+
+    /**
+     * @brief The index in `arguments` of the first argument left to the
+     * application.
+     *
+     * @details
+     * Set by the parsing constructor, where the parsing of the µTest++
+     * options ends; used by `application_arguments()`.
+     */
+    std::size_t application_begin_{ 0 };
   };
 
   // --------------------------------------------------------------------------

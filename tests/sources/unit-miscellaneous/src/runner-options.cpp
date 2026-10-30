@@ -19,6 +19,7 @@
 #include "unit-miscellaneous-test.h"
 
 #include <initializer_list>
+#include <span>
 #include <string>
 #include <utility>
 #include <vector>
@@ -99,6 +100,28 @@ namespace
     command_line line{ arguments };
     return runner_options{ line.argc (), line.argv () };
   }
+
+  // Tell whether the arguments are exactly the expected ones.
+  bool
+  same_arguments (std::span<const std::string> actual,
+                  std::initializer_list<const char*> expected)
+  {
+    if (actual.size () != expected.size ())
+      {
+        return false;
+      }
+
+    std::size_t index = 0;
+    for (const char* argument : expected)
+      {
+        if (actual[index] != argument)
+          {
+            return false;
+          }
+        ++index;
+      }
+    return true;
+  }
 } // namespace
 
 // ----------------------------------------------------------------------------
@@ -167,6 +190,109 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
         t.expect (options.selected_reporter == reporter_kind::tap
                   and options.verbosity_level == verbosity::normal)
             << "the defaults are kept";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    // The parsing of the µTest++ options ends at the first argument that
+    // does not start with `--`, or at the first `--` alone; the arguments
+    // from there on are left to the application.
+    ts.test ("Application arguments", [] (auto& t)
+      {
+        const runner_options after_options
+            = parse ({ "name", "--verbose", "one", "two" });
+
+        t.expect (after_options.verbosity_level == verbosity::verbose
+                  and same_arguments (after_options.application_arguments (),
+                                      { "one", "two" }))
+            << "the application arguments follow the options";
+        local_counts.passed_checks++;
+
+        const runner_options option_after_argument
+            = parse ({ "name", "one", "--verbose" });
+
+        t.expect (
+            option_after_argument.verbosity_level == verbosity::normal
+            and !option_after_argument.has_errors ()
+            and same_arguments (option_after_argument.application_arguments (),
+                                { "one", "--verbose" }))
+            << "an option after an application argument is not an option";
+        local_counts.passed_checks++;
+
+        const runner_options terminator = parse (
+            { "name", "--quiet", "--", "--verbose", "--app-opt", "x" });
+
+        t.expect (terminator.verbosity_level == verbosity::quiet
+                  and !terminator.has_errors ()
+                  and same_arguments (terminator.application_arguments (),
+                                      { "--verbose", "--app-opt", "x" }))
+            << "the arguments after -- are left to the application";
+        local_counts.passed_checks++;
+
+        const runner_options application_options
+            = parse ({ "name", "one", "--app-opt", "--" });
+
+        t.expect (
+            !application_options.has_errors ()
+            and same_arguments (application_options.application_arguments (),
+                                { "one", "--app-opt", "--" }))
+            << "the application options are not reported";
+        local_counts.passed_checks++;
+
+        const runner_options separate_value
+            = parse ({ "name", "--reporter", "human", "--filter", "A*",
+                       "--output-file", "out.txt", "one" });
+
+        t.expect (separate_value.selected_reporter == reporter_kind::human
+                  and eq (separate_value.filter_patterns.size (), 1u)
+                  and eq (separate_value.output_file_path, "out.txt")
+                  and same_arguments (separate_value.application_arguments (),
+                                      { "one" }))
+            << "the separate option arguments belong to their options";
+        local_counts.passed_checks++;
+
+        const runner_options unknown_option
+            = parse ({ "name", "--bogus", "one" });
+
+        t.expect (unknown_option.has_errors ()
+                  and same_arguments (unknown_option.application_arguments (),
+                                      { "one" }))
+            << "an unknown option before the application arguments";
+        local_counts.passed_checks++;
+
+        const runner_options single_dash
+            = parse ({ "name", "-v", "--verbose" });
+
+        t.expect (single_dash.verbosity_level == verbosity::normal
+                  and same_arguments (single_dash.application_arguments (),
+                                      { "-v", "--verbose" }))
+            << "a single dash ends the options";
+        local_counts.passed_checks++;
+
+        t.expect (
+            parse ({ "name" }).application_arguments ().empty ()
+            and parse ({ "name", "--verbose" })
+                    .application_arguments ()
+                    .empty ()
+            and parse ({ "name", "--" }).application_arguments ().empty ()
+            and runner_options{}.application_arguments ().empty ()
+            and runner_options{ 0, nullptr }.application_arguments ().empty ())
+            << "no application arguments";
+        local_counts.passed_checks++;
+
+        const runner_options original
+            = parse ({ "name", "--silent", "one", "two" });
+        runner_options copy{ original };
+        runner_options moved{ std::move (copy) };
+
+        t.expect (same_arguments (original.application_arguments (),
+                                  { "one", "two" })
+                  and same_arguments (moved.application_arguments (),
+                                      { "one", "two" })
+                  and moved.application_arguments ().data ()
+                          != original.application_arguments ().data ())
+            << "the copies refer to their own arguments";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;

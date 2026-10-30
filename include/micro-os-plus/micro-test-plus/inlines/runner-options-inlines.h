@@ -39,6 +39,7 @@
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 
+#pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #endif // defined(__clang__)
@@ -81,6 +82,23 @@ namespace micro_os_plus::micro_test_plus
   runner_options::errors (void) const noexcept
   {
     return errors_;
+  }
+
+  /**
+   * @details
+   * Returns the part of `arguments` that starts at `application_begin_`,
+   * or an empty span if `arguments` was shortened after the parsing.
+   */
+  inline std::span<const std::string>
+  runner_options::application_arguments (void) const noexcept
+  {
+    if (application_begin_ >= arguments.size ())
+      {
+        return {};
+      }
+
+    return std::span<const std::string>{ arguments }.subspan (
+        application_begin_);
   }
 
   // --------------------------------------------------------------------------

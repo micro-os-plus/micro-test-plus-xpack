@@ -30,11 +30,17 @@ ok 1 - Minimal # { passed, 2 checks in 1 test case, time: X.XXX ms }
 @endcode
 
 Options may also be set programmatically, on platforms without a command
-line, through `runner_options`. The arguments that are not options are
-left to the application. An unknown `--` option, an unknown reporter or
-colour mode, or an option with a missing argument, is reported on
-`stderr` as an error, the option is ignored, and the exit code of the
-run is 2.
+line, through `runner_options`.
+
+The µTest++ options come first. The parsing of the options ends at the
+first argument that does not start with `--`, or at the first `--` alone;
+that argument, and all the following ones, are left to the application,
+uninterpreted, and are available from `runner::application_arguments()`.
+The `--` itself is not passed on, and an option argument given
+separately (`--reporter human`) belongs to its option. An unknown `--`
+option before that point, an unknown reporter or colour mode, or an
+option with a missing argument, is an error: it is reported on `stderr`
+and on the console, no test is run, and the exit code is 2.
 
 @section cli-reporter Reporter
 
