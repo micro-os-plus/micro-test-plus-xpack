@@ -285,6 +285,17 @@ namespace micro_os_plus::micro_test_plus::detail
     const char*
     comment_prefix (void) const noexcept override;
 
+    /**
+     * @brief Returns the TAP bail-out prefix string `"Bail out! "`.
+     *
+     * @par Parameters
+     *   None.
+     * @return The string `"Bail out! "`, used to start the lines that
+     * report an error and stop the session.
+     */
+    const char*
+    error_prefix (void) const noexcept override;
+
   private:
     /**
      * @brief Outputs the prefix for a passing condition.

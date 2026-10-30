@@ -396,10 +396,10 @@ namespace micro_os_plus::micro_test_plus
      * after the test execution was aborted, reports an error on `stderr`,
      * without other effects.
      *
-     * If the output file cannot be opened, the error is reported on
-     * `stderr` and the report is written only to the console; the tests
-     * are still run, but `run_suites()` returns 2. With an unknown reporter
-     * name, nothing is reported, no test is run, and `run_suites()` returns 2.
+     * If the options have errors (see `runner_options::has_errors()`), or
+     * if the output file cannot be opened, the errors are written on the
+     * console and on `stderr`, no test is run, and `run_suites()` returns
+     * 2; with errors in the options, no output file is created.
      *
      * The options are taken by value and moved into the runner, which
      * keeps them for the whole session; pass a temporary, or use

@@ -101,10 +101,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * A missing option argument, an unknown reporter name, an unknown
    * colour mode, or an unknown `--` option, is recorded by `add_error()`,
-   * and the option is ignored (for an unknown reporter,
-   * `has_invalid_reporter_` is also set, to stop the session in
-   * `runner::initialise()`); the parsing continues with the next
-   * argument.
+   * and the option is ignored; the parsing continues with the next
+   * argument, to record all the errors. The runner then refuses to run
+   * the tests.
    */
   runner_options::runner_options (int argc, char* argv[])
   {
@@ -235,7 +234,6 @@ namespace micro_os_plus::micro_test_plus
             else
               {
                 add_error ("unknown reporter '", value, "'");
-                has_invalid_reporter_ = true;
               }
           }
         else if (get_value (output_file_option, i, value))
@@ -277,8 +275,8 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * The message is written only on `stderr`, since the reporter does
-   * not exist yet.
+   * The message is written on `stderr` and kept in `errors_`, to be
+   * written by the runner, since the reporter does not exist yet.
    */
   void
   runner_options::add_error (std::string_view before, std::string_view value,
@@ -289,7 +287,7 @@ namespace micro_os_plus::micro_test_plus
     text.append (after);
 
     fprintf (stderr, "error: %s\n", text.c_str ());
-    has_errors_ = true;
+    errors_.push_back (std::move (text));
   }
 
   // --------------------------------------------------------------------------

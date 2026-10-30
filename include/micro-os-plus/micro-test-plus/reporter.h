@@ -735,6 +735,22 @@ namespace micro_os_plus::micro_test_plus
           = 0;
 
       /**
+       * @brief Returns the prefix of the lines that report an error.
+       *
+       * @details
+       * Used by the runner to write the command-line errors on the
+       * console when it refuses to run the tests, so that they are valid
+       * in the output format (for TAP, a `Bail out!` line). The default is
+       * `"error: "`, as the messages written on `stderr`.
+       *
+       * @par Parameters
+       *   None.
+       * @return A null-terminated prefix string.
+       */
+      virtual const char*
+      error_prefix (void) const noexcept;
+
+      /**
        * @brief Returns whether the passed checks are written anywhere.
        *
        * @details

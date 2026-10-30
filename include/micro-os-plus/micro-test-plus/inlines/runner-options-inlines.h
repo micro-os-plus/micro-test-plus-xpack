@@ -65,22 +65,22 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Returns the `has_errors_` member.
+   * Returns whether the `errors_` member is not empty.
    */
   inline bool
   runner_options::has_errors (void) const noexcept
   {
-    return has_errors_;
+    return !errors_.empty ();
   }
 
   /**
    * @details
-   * Returns the `has_invalid_reporter_` member.
+   * Returns the `errors_` member.
    */
-  inline bool
-  runner_options::has_invalid_reporter (void) const noexcept
+  inline const std::vector<std::string>&
+  runner_options::errors (void) const noexcept
   {
-    return has_invalid_reporter_;
+    return errors_;
   }
 
   // --------------------------------------------------------------------------

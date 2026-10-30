@@ -237,10 +237,11 @@ namespace micro_os_plus::micro_test_plus
      * as unknown options.
      *
      * A missing option argument, an unknown reporter name, an unknown
-     * colour mode, or an unknown option, is reported on `stderr`, the
-     * option is ignored, and `has_errors()` is set; `run_suites()` then returns
-     * 2. The errors are not written in the report, since the reporter
-     * does not exist yet.
+     * colour mode, or an unknown option, is reported on `stderr`, kept
+     * in `errors()`, and makes `has_errors()` true. The parsing continues,
+     * to report all the errors, but `runner::initialise()` then runs no
+     * test: it writes the errors on the console, creates no output file,
+     * and `run_suites()` returns 2.
      *
      * The `argv[]` strings are copied, so they need not outlive the
      * options.
@@ -449,8 +450,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The errors were already written on `stderr` by the constructor;
-     * when set, `runner::run_suites()` returns 2. Never set for the default
-     * options.
+     * when set, the runner runs no test and `runner::run_suites()` returns
+     * 2. Never set for the default options.
      *
      * @return `true` if at least one error was found.
      *
@@ -460,27 +461,29 @@ namespace micro_os_plus::micro_test_plus
     has_errors (void) const noexcept;
 
     /**
-     * @brief Checks whether the command line selected an unknown reporter.
+     * @brief Returns the errors found while parsing the command line.
      *
      * @details
-     * When set, `runner::initialise()` does not proceed: no output file
-     * is created, nothing is reported, no test is run, and `run_suites()`
-     * returns 2, even if `selected_reporter` was changed after the
-     * parsing.
+     * Each message is the text written on `stderr`, without the `error:`
+     * prefix and the newline, in the order of the arguments. The runner
+     * writes them on the console when it refuses to run the tests.
      *
-     * @return `true` if the reporter name was not recognised.
+     * @par Parameters
+     *   None.
+     * @return A reference to the messages; empty if there were no errors.
      *
      * @since 6.0.0
      */
-    [[nodiscard]] bool
-    has_invalid_reporter (void) const noexcept;
+    [[nodiscard]] const std::vector<std::string>&
+    errors (void) const noexcept;
 
   private:
     /**
      * @brief Records and reports a command-line error.
      *
      * @details
-     * Writes `error: <text>` on `stderr`, and sets `has_errors_`.
+     * Writes `error: <text>` on `stderr`, and appends the text to
+     * `errors_`.
      *
      * @param before The start of the message, without the `error:`
      * prefix.
@@ -494,21 +497,13 @@ namespace micro_os_plus::micro_test_plus
                std::string_view after = {});
 
     /**
-     * @brief Whether errors were found while parsing the command line.
+     * @brief The errors found while parsing the command line.
      *
      * @details
-     * Set by `add_error()`; returned by `has_errors()`.
+     * Appended by `add_error()`; returned by `errors()`, and tested by
+     * `has_errors()`.
      */
-    bool has_errors_{ false };
-
-    /**
-     * @brief Whether the reporter name was not recognised.
-     *
-     * @details
-     * Set by the parsing constructor; returned by
-     * `has_invalid_reporter()`.
-     */
-    bool has_invalid_reporter_{ false };
+    std::vector<std::string> errors_{};
   };
 
   // --------------------------------------------------------------------------

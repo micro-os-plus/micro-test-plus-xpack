@@ -136,7 +136,7 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
             << "no command line, no filter, no listing";
         local_counts.passed_checks++;
 
-        t.expect (!options.has_errors () and !options.has_invalid_reporter ())
+        t.expect (!options.has_errors () and options.errors ().empty ())
             << "no errors";
         local_counts.passed_checks++;
 
@@ -302,7 +302,7 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
             = parse ({ "name", "--silent", "--reporter" });
 
         t.expect (missing_options.has_errors ()
-                  and !missing_options.has_invalid_reporter ())
+                  and eq (missing_options.errors ().size (), 1u))
             << "a missing option argument";
         local_counts.passed_checks++;
 
@@ -313,9 +313,11 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
         const runner_options reporter_options
             = parse ({ "name", "--reporter=junit" });
 
-        t.expect (reporter_options.has_errors ()
-                  and reporter_options.has_invalid_reporter ()
-                  and reporter_options.selected_reporter == reporter_kind::tap)
+        t.expect (
+            reporter_options.has_errors ()
+            and eq (reporter_options.errors ().size (), 1u)
+            and eq (reporter_options.errors ()[0], "unknown reporter 'junit'")
+            and reporter_options.selected_reporter == reporter_kind::tap)
             << "an unknown reporter";
         local_counts.passed_checks++;
 
@@ -323,7 +325,7 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
             = parse ({ "name", "--color=maybe" });
 
         t.expect (colour_options.has_errors ()
-                  and !colour_options.has_invalid_reporter ()
+                  and eq (colour_options.errors ().size (), 1u)
                   and colour_options.colour == colour_mode::automatic)
             << "an unknown colour mode";
         local_counts.passed_checks++;
@@ -366,7 +368,7 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
 
         runner_options copy{ original };
 
-        t.expect (copy.has_errors () and copy.has_invalid_reporter ()
+        t.expect (copy.has_errors () and eq (copy.errors ().size (), 1u)
                   and copy.verbosity_level == verbosity::quiet
                   and eq (copy.filter_patterns.size (), 1u)
                   and eq (copy.arguments.size (), 4u))
@@ -402,7 +404,7 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
         runner_options move_assigned{};
         move_assigned = std::move (moved);
 
-        t.expect (move_assigned.has_invalid_reporter ()
+        t.expect (eq (move_assigned.errors ().size (), 1u)
                   and eq (move_assigned.filter_patterns.size (), 2u)
                   and eq (move_assigned.arguments[0], "name"))
             << "the move assignment moves all the members";

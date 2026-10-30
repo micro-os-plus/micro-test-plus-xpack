@@ -242,6 +242,17 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
+   * Returns `"error: "`, as the messages written on `stderr`; the TAP
+   * reporter overrides it with its bail-out marker.
+   */
+  const char*
+  reporter::error_prefix (void) const noexcept
+  {
+    return "error: ";
+  }
+
+  /**
+   * @details
    * The file receives all the records, when it is open, so that its
    * content does not depend on the verbosity (a file of a `silent` run is
    * as complete as that of a `verbose` one). The console follows the

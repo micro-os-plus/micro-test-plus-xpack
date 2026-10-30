@@ -65,7 +65,7 @@ results, whatever the console verbosity selected with `--verbose`,
 `--quiet`, or `--silent`. The TAP reporter (the default) writes a valid
 TAP document, so, for integration, use it. If the path is
 missing or the file cannot be opened, the error is reported on
-`stderr`, the tests are still run, but the program returns 2.
+`stderr` and on the console, no test is run, and the program returns 2.
 
 On embedded platforms, the file is created with `fopen()`, so the
 platform must support file operations, for example through
@@ -97,7 +97,7 @@ See [Verbosity](/docs/user/#verbosity).
 
 Use `--reporter=human` or `--reporter human`. The default is
 `--reporter=tap`, which produces TAP 14 output. Any other name is
-rejected with `error: unknown reporter '<name>'`.
+rejected with `error: unknown reporter '<name>'`, and no test is run.
 
 </details>
 

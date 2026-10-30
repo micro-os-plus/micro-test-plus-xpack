@@ -214,12 +214,10 @@ namespace micro_os_plus::micro_test_plus
    * While the test cases are listed, only the header of the list is
    * written; the session is not reported.
    *
-   * If the output file cannot be opened, the reporter writes only to the
-   * console, and `run_suites()` will return 2.
-   *
-   * If the reporter name is not recognised, nothing else is done: no
-   * output file is created, nothing is reported, the session is marked as
-   * finished, so that no test is run, and `run_suites()` returns 2.
+   * If the options have errors, nothing else is done: no output file is
+   * created, the errors are written on the console, the session is marked
+   * as finished, so that no test is run, and `run_suites()` returns 2.
+   * The same happens if the output file cannot be opened.
    *
    * The runner is initialised only once; a later call, or a call after
    * the test execution was aborted, reports an error on `stderr`, without
@@ -249,16 +247,33 @@ namespace micro_os_plus::micro_test_plus
     // targets.
     options_ = std::move (options);
 
-    // With an unknown reporter, do not proceed: no output file is created,
-    // nothing is reported, no test is run, and `run_suites()` returns 2. A
-    // silent reporter without output file is still created, since the suites and
-    // the test cases refer to it.
-    if (options_.has_invalid_reporter ())
+    // With errors in the options, do not proceed: no output file is created,
+    // the errors are written on the console, no test is run, and
+    // `run_suites()` returns 2. A reporter without output file is still
+    // created, since the suites and the test cases refer to it.
+    if (options_.has_errors ())
       {
-        runner_options silent_options{};
-        silent_options.verbosity_level = verbosity::silent;
-        options_.verbosity_level = verbosity::silent;
-        reporter_ = std::make_unique<detail::reporter_tap> (silent_options);
+        runner_options console_options{ options_ };
+        console_options.output_file_path.clear ();
+        if (console_options.selected_reporter == reporter_kind::human)
+          {
+            reporter_
+                = std::make_unique<detail::reporter_human> (console_options);
+          }
+        else
+          {
+            reporter_
+                = std::make_unique<detail::reporter_tap> (console_options);
+          }
+
+        for (const std::string& error : options_.errors ())
+          {
+            reporter_->write_line (
+                options_.verbosity_level != verbosity::silent, "%s%s\n",
+                reporter_->error_prefix (), error.c_str ());
+          }
+        reporter_->flush_streams ();
+
         exit_code_ = 2;
         session_state_ = session_state::finished;
         return;
@@ -273,6 +288,20 @@ namespace micro_os_plus::micro_test_plus
     else
       {
         reporter_ = std::make_unique<detail::reporter_tap> (options_);
+      }
+
+    // If the output file cannot be opened, do not run the tests either.
+    if (reporter_->has_output_file_error ())
+      {
+        reporter_->write_line (options_.verbosity_level != verbosity::silent,
+                               "%sfailed to open output file '%s'\n",
+                               reporter_->error_prefix (),
+                               options_.output_file_path.c_str ());
+        reporter_->flush_streams ();
+
+        exit_code_ = 2;
+        session_state_ = session_state::finished;
+        return;
       }
 
     // ------------------------------------------------------------------------
@@ -308,8 +337,9 @@ namespace micro_os_plus::micro_test_plus
    * defaults to "default suite".
    *
    * After the test execution was aborted, the error is reported on
-   * `stderr`. With an unknown reporter, the session has already
-   * finished, and the top suite is returned without other effects. A
+   * `stderr`. With errors in the options or in the output file, the
+   * session has already finished, and the top suite is returned without
+   * other effects. A
    * second call, or a call once `run_suites()` has started, is reported on
    * `stderr`; the latter also sets `has_rejected_suites_`, so that the
    * exit code is not 0.
@@ -332,7 +362,7 @@ namespace micro_os_plus::micro_test_plus
         initialise (runner_options{});
       }
 
-    if (options_.has_invalid_reporter ())
+    if (has_option_errors ())
       {
         return top_suite_;
       }

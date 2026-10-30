@@ -721,6 +721,17 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
+   * Returns `"Bail out! "`, the TAP line that tells the consumer that the
+   * session cannot continue.
+   */
+  const char*
+  reporter_tap::error_prefix (void) const noexcept
+  {
+    return "Bail out! ";
+  }
+
+  /**
+   * @details
    * This member function outputs the prefix for a passing check result, as a
    * TAP `"ok <n> - "` line, where `<n>` is the test point number of the
    * check, which counts the checks and the nested test cases of the test

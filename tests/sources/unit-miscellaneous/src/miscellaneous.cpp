@@ -1080,9 +1080,8 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
       });
 
     // An option error does not terminate the process; it is reported on
-    // stderr (the messages are expected in the test output), the tests are
-    // still run, and `run_suites()` returns 2; an unknown reporter stops the
-    // session, without running any test.
+    // stderr (the messages are expected in the test output), no test is
+    // run, and `run_suites()` returns 2.
     ts.test ("Runner option errors", [] (auto& t)
       {
         char arg_name[] = "local";
@@ -1095,14 +1094,19 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         runner bad_reporter_runner;
         bad_reporter_runner.initialise (3, bad_reporter_argv);
         auto& bad_reporter_ts = bad_reporter_runner.add_top_suite ();
-        bad_reporter_ts.test ("Local test",
-                              [] (auto& lt) { lt.expect (true); });
+        int bad_reporter_runs = 0;
+        bad_reporter_ts.test ("Local test", [&bad_reporter_runs] (auto& lt)
+          {
+            ++bad_reporter_runs;
+            lt.expect (true);
+          });
 
         t.expect (bad_reporter_runner.verbosity_level () == verbosity::silent)
             << "valid options still applied";
         local_counts.passed_checks++;
 
-        t.expect (eq (bad_reporter_runner.run_suites (), 2))
+        t.expect (eq (bad_reporter_runner.run_suites (), 2)
+                  and eq (bad_reporter_runs, 0))
             << "unknown reporter";
         local_counts.passed_checks++;
 
@@ -1111,9 +1115,16 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         runner unknown_runner;
         unknown_runner.initialise (3, unknown_argv);
         auto& unknown_ts = unknown_runner.add_top_suite ();
-        unknown_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
+        int unknown_runs = 0;
+        unknown_ts.test ("Local test", [&unknown_runs] (auto& lt)
+          {
+            ++unknown_runs;
+            lt.expect (true);
+          });
 
-        t.expect (eq (unknown_runner.run_suites (), 2)) << "unknown option";
+        t.expect (eq (unknown_runner.run_suites (), 2)
+                  and eq (unknown_runs, 0))
+            << "unknown option";
         local_counts.passed_checks++;
 
         char* missing_argv[] = { arg_name, arg_silent, arg_reporter, nullptr };
@@ -1132,9 +1143,14 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         runner file_runner;
         file_runner.initialise (options);
         auto& file_ts = file_runner.add_top_suite ();
-        file_ts.test ("Local test", [] (auto& lt) { lt.expect (true); });
+        int file_runs = 0;
+        file_ts.test ("Local test", [&file_runs] (auto& lt)
+          {
+            ++file_runs;
+            lt.expect (true);
+          });
 
-        t.expect (eq (file_runner.run_suites (), 2))
+        t.expect (eq (file_runner.run_suites (), 2) and eq (file_runs, 0))
             << "output file not opened";
         local_counts.passed_checks++;
 

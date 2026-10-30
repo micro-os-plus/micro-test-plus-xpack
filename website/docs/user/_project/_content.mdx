@@ -349,7 +349,7 @@ To run the registered suites, end the session, and return the test result as the
 return tr.run_suites ();
 ```
 
-The result is 0 if all checks passed, and 1 otherwise, including when a suite was added too late (see [Non-static test suites](#non-static-test-suites)), and when there is no suite at all (no top suite, no suite added with `add_suite()`, and no static suite), since a test program that runs nothing must not pass unnoticed. If the command-line options, or the `runner_options`, were not valid (an unknown reporter name, an unknown colour mode, a missing option argument, or an output file that cannot be opened), the error is reported on `stderr` when the options are parsed, or, for the output file, when the runner is initialised, the option is ignored, and the tests are still run, but the result is 2. With an unknown reporter name, no test is run.
+The result is 0 if all checks passed, and 1 otherwise, including when a suite was added too late (see [Non-static test suites](#non-static-test-suites)), and when there is no suite at all (no top suite, no suite added with `add_suite()`, and no static suite), since a test program that runs nothing must not pass unnoticed. If the command-line options were not valid (an unknown option, an unknown reporter name, an unknown colour mode, or a missing option argument), the errors are reported on `stderr` when the options are parsed and written on the console by the reporter (for TAP, as `Bail out!` lines), no output file is created, no test is run, and the result is 2. If the output file cannot be opened, the error is reported in the same way, no test is run, and the result is 2.
 
 #### Aborting the test execution
 
@@ -1760,7 +1760,7 @@ As in the GNU tools, the value must be attached with `=`; the argument that foll
 
 For compatibility with Catch2 and Boost UT, the alternative `--use-colour` option is also accepted, either as `--use-colour=<mode>` or as `--use-colour <mode>`, with the modes `yes`, `no`, and `auto` (and the other values of `--color`). When both options are given, the last one takes effect.
 
-The TAP reporter never uses colours, since the escape sequences are not part of the TAP syntax, and the output file never receives them, whatever the mode. An unknown mode is reported on `stderr`, the option is ignored, and the program returns 2.
+The TAP reporter never uses colours, since the escape sequences are not part of the TAP syntax, and the output file never receives them, whatever the mode. An unknown mode is an option error: no test is run and the program returns 2.
 
 ## Known problems
 

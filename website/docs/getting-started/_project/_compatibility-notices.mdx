@@ -294,10 +294,12 @@ function of the reporters was removed.
   `add_top_suite()`, there is no top suite, and `run_suites()` runs only
   the suites added with `add_suite()` and the static suites. A session
   without any suite is an error, and `run_suites()` returns 1.
-- The option errors (an unknown `--reporter` name, a missing option
-  argument, an output file that cannot be opened) no longer terminate the
-  program: they are reported on `stderr`, the option is ignored, the
-  tests run, and `run_suites()` returns 2.
+- The option errors (an unknown option, an unknown `--reporter` name or
+  colour mode, a missing option argument) no longer terminate the
+  program: they are reported on `stderr` and on the console (for TAP, as
+  `Bail out!` lines), no output file is created, no test is run, and
+  `run_suites()` returns 2. An output file that cannot be opened is
+  treated in the same way.
 - All the suites, the added ones and the `static_suite` objects, run in a
   single order, by name; for equal names, the static suites constructed
   before `main()` run first, then the added suites in the order of the
