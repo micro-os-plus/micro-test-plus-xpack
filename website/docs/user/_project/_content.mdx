@@ -907,6 +907,9 @@ elements must themselves be printable.
 The function comparators also accept the scoped enumerations
 (including `std::byte`), and the `std::pair`, `std::tuple`, and
 `std::optional` objects, so also the maps, whose elements are pairs.
+These are accepted only if their elements are printable (and a duration only
+if its count is a number), so a pair with a member that has no `operator<<`
+is rejected like that member.
 When a check fails, they are shown as follows:
 
 - a scoped enumeration by its underlying value, with the suffix of its

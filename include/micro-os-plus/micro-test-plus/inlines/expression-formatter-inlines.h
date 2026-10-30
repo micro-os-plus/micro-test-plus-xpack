@@ -223,6 +223,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * `append_elements()`, and the closing parenthesis.
    */
   template <class T1, class T2>
+    requires (extension::printable<T1> and extension::printable<T2>)
   expression_formatter&
   expression_formatter::operator<< (const std::pair<T1, T2>& p)
   {
@@ -238,6 +239,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * `append_elements()`, and the closing parenthesis.
    */
   template <class... Ts>
+    requires (extension::printable<Ts> and ...)
   expression_formatter&
   expression_formatter::operator<< (const std::tuple<Ts...>& t)
   {
@@ -253,6 +255,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * otherwise streams `std::nullopt`.
    */
   template <class T>
+    requires extension::printable<T>
   expression_formatter&
   expression_formatter::operator<< (const std::optional<T>& o)
   {
@@ -270,6 +273,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * unit are written as the ratio, `[N/D]s`.
    */
   template <class Rep, class Period>
+    requires std::is_arithmetic_v<Rep>
   expression_formatter&
   expression_formatter::operator<< (
       const std::chrono::duration<Rep, Period>& d)

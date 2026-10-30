@@ -682,6 +682,9 @@ namespace micro_os_plus::micro_test_plus
        * @details
        * Each member is formatted through `operator<<`, so the pairs
        * stored in the maps are also formatted, as `{(1, 2), (3, 4)}`.
+       * The overload takes part in the overload resolution only if both
+       * members are printable, so that `extension::printable` is false
+       * for a pair that cannot be written.
        *
        * @tparam T1 The type of the first member.
        * @tparam T2 The type of the second member.
@@ -689,6 +692,7 @@ namespace micro_os_plus::micro_test_plus
        * @return Reference to this instance.
        */
       template <class T1, class T2>
+        requires (extension::printable<T1> and extension::printable<T2>)
       expression_formatter&
       operator<< (const std::pair<T1, T2>& p);
 
@@ -697,13 +701,15 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * Each element is formatted through `operator<<`; an empty tuple is
-       * written as `()`.
+       * written as `()`. The overload takes part in the overload
+       * resolution only if all the elements are printable.
        *
        * @tparam Ts The types of the elements.
        * @param t The tuple.
        * @return Reference to this instance.
        */
       template <class... Ts>
+        requires (extension::printable<Ts> and ...)
       expression_formatter&
       operator<< (const std::tuple<Ts...>& t);
 
@@ -713,13 +719,16 @@ namespace micro_os_plus::micro_test_plus
        * @details
        * A value is formatted through `operator<<`, as the contained type,
        * so an optional with a value is written as the value alone; an
-       * optional without a value is written as `nullopt`.
+       * optional without a value is written as `nullopt`. The overload
+       * takes part in the overload resolution only if the contained type
+       * is printable.
        *
        * @tparam T The type of the contained value.
        * @param o The optional.
        * @return Reference to this instance.
        */
       template <class T>
+        requires extension::printable<T>
       expression_formatter&
       operator<< (const std::optional<T>& o);
 
@@ -729,7 +738,9 @@ namespace micro_os_plus::micro_test_plus
        * @details
        * The count is written without a type suffix, followed by the
        * unit: `ns`, `us`, `ms`, `s`, `min`, or `h` for the standard
-       * periods, or the ratio, as `[N/D]s`, for the other ones.
+       * periods, or the ratio, as `[N/D]s`, for the other ones. The
+       * overload takes part in the overload resolution only if the count
+       * is an arithmetic type.
        *
        * @tparam Rep The type of the count.
        * @tparam Period The period of the duration.
@@ -737,6 +748,7 @@ namespace micro_os_plus::micro_test_plus
        * @return Reference to this instance.
        */
       template <class Rep, class Period>
+        requires std::is_arithmetic_v<Rep>
       expression_formatter&
       operator<< (const std::chrono::duration<Rep, Period>& d);
 

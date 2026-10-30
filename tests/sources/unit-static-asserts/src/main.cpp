@@ -663,6 +663,30 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (extension::printable<std::pair<int, char>>);
     static_assert (extension::printable<to_i>);
     static_assert (not extension::printable<unformatted>);
+
+    // The pairs, tuples, optionals, and durations are printable only if
+    // their elements are.
+    static_assert (extension::printable<std::tuple<int, char>>);
+    static_assert (extension::printable<std::optional<int>>);
+    static_assert (extension::printable<std::optional<std::pair<int, char>>>);
+    static_assert (extension::printable<std::chrono::milliseconds>);
+    static_assert (extension::printable<std::chrono::duration<double>>);
+    static_assert (not extension::printable<std::pair<int, unformatted>>);
+    static_assert (not extension::printable<std::pair<unformatted, int>>);
+    static_assert (not extension::printable<std::tuple<int, unformatted>>);
+    static_assert (not extension::printable<std::optional<unformatted>>);
+    static_assert (
+        not extension::printable<std::vector<std::pair<int, unformatted>>>);
+    static_assert (
+        not extension::printable<std::chrono::duration<unformatted>>);
+
+    // The test cases of a range of elements that cannot be printed are
+    // numbered, instead of failing to compile; the function is not called.
+    [[maybe_unused]] auto test_each_of_unformatted = [] (suite& s)
+      {
+        s.test_each ("elements", std::vector<std::pair<int, unformatted>>{},
+                     [] (test_case&, const auto&) {});
+      };
     static_assert (not extension::printable<with_extension::marker_only>);
   }
 
