@@ -545,7 +545,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * written to the output file and, under verbose verbosity, to `stdout`
    * as well. With the other verbosity levels, the heading is displayed
    * later, only if something is displayed under it (see
-   * `display_open_headers()`).
+   * `display_open_test_cases()`).
    */
   void
   reporter_tap::begin_test_case (const test_case& test_case)
@@ -660,12 +660,12 @@ namespace micro_os_plus::micro_test_plus::detail
           {
             // The headings of the outer test cases, to keep the test point
             // in their block.
-            display_open_headers (false);
+            display_open_test_cases (false);
           }
         else
           {
             // The heading of this test case too, if not displayed yet.
-            display_open_headers (true);
+            display_open_test_cases (true);
 
             if (add_empty_line_)
               {
@@ -914,7 +914,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
     if (to_console)
       {
-        display_open_headers (true);
+        display_open_test_cases (true);
 
         if (add_empty_line_ && route (record_kind::test_case_heading).console)
           {
@@ -982,7 +982,7 @@ namespace micro_os_plus::micro_test_plus::detail
       {
         if (route (record_kind::suite_result).console)
           {
-            display_open_headers (true);
+            display_open_test_cases (true);
 
             if (add_empty_line_)
               {
@@ -1032,7 +1032,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
     if (route (record_kind::test_case_result).console)
       {
-        display_open_headers (true);
+        display_open_test_cases (true);
 
         if (add_empty_line_)
           {
@@ -1054,39 +1054,24 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Walks `open_test_cases_` from the outermost test case and writes, to
-   * `stdout`, the indented `"# Subtest: <name>"` line of each one whose
-   * heading was not displayed yet, with the line breaks in the name
-   * replaced by spaces, marking it as displayed. Each heading is preceded
-   * by a blank line when `add_empty_line_` is set; the flag is then
-   * cleared, so that the content of the block follows its heading.
+   * Writes, to `stdout`, the indented `"# Subtest: <name>"` line, with
+   * the line breaks in the name replaced by spaces, preceded by a blank
+   * line when `add_empty_line_` is set; the flag is then cleared, so that
+   * the content of the block follows its heading.
    */
   void
-  reporter_tap::display_open_headers (bool include_last)
+  reporter_tap::display_open_heading (const open_test_case& open, bool)
   {
-    const size_t count = include_last || open_test_cases_.empty ()
-                             ? open_test_cases_.size ()
-                             : open_test_cases_.size () - 1;
-    for (size_t i = 0; i < count; ++i)
+    if (add_empty_line_)
       {
-        open_test_case& open = open_test_cases_[i];
-        if (open.name_displayed)
-          {
-            continue;
-          }
-
-        if (add_empty_line_)
-          {
-            write_console ("\n");
-          }
-
-        std::string indent (indent_size_ * open.test->nesting_depth (), ' ');
-        const std::string name = tap_text (open.test->name (), false);
-        write_console ("%s# Subtest: %s\n", indent.c_str (), name.c_str ());
-
-        open.name_displayed = true;
-        add_empty_line_ = false;
+        write_console ("\n");
       }
+
+    std::string indent (indent_size_ * open.test->nesting_depth (), ' ');
+    const std::string name = tap_text (open.test->name (), false);
+    write_console ("%s# Subtest: %s\n", indent.c_str (), name.c_str ());
+
+    add_empty_line_ = false;
   }
 
   /**

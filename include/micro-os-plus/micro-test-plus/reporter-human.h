@@ -388,6 +388,23 @@ namespace micro_os_plus::micro_test_plus::detail
      */
     void
     display_open_names (bool include_last);
+
+    /**
+     * @brief Writes the heading of an open test case.
+     *
+     * @details
+     * Writes the indented `"• <name>"` line, preceded by an empty line
+     * before the first heading of a call, unless `add_empty_line_` is
+     * set, in which case the caller has already written it.
+     *
+     * @param open The open test case.
+     * @param is_first Whether this is the first heading written by the
+     * current call of `display_open_names()`.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    display_open_heading (const open_test_case& open, bool is_first) override;
   };
 
   // --------------------------------------------------------------------------

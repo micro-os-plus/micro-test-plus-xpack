@@ -1322,6 +1322,45 @@ namespace micro_os_plus::micro_test_plus
       std::vector<open_test_case> open_test_cases_{};
 
       /**
+       * @brief Displays the headings not yet displayed, of the open test
+       * cases.
+       *
+       * @details
+       * Walks `open_test_cases_` from the outermost test case and, for
+       * each one whose heading was not displayed yet, calls
+       * `display_open_heading()` and marks it as displayed. A failure in
+       * a nested test case also fails the outer ones, so their headings
+       * are displayed first, to show where the result is.
+       *
+       * @param include_last Whether to display the heading of the
+       * innermost open test case too; false for the result of a passed
+       * test case, which is not preceded by its own heading.
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      display_open_test_cases (bool include_last);
+
+      /**
+       * @brief Writes the heading of an open test case.
+       *
+       * @details
+       * Called by `display_open_test_cases()`, for each open test case
+       * whose heading was not displayed yet. The concrete reporters
+       * write the line in their own format, preceded by an empty line
+       * when they need one, and update `add_empty_line_` accordingly.
+       *
+       * @param open The open test case.
+       * @param is_first Whether this is the first heading written by the
+       * current call of `display_open_test_cases()`.
+       * @par Returns
+       *   Nothing.
+       */
+      virtual void
+      display_open_heading (const open_test_case& open, bool is_first)
+          = 0;
+
+      /**
        * @brief The suite that has begun and not yet ended.
        *
        * @details

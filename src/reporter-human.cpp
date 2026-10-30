@@ -855,13 +855,10 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * If the heading of the suite was not displayed (with quiet verbosity),
-   * it is displayed first, followed by an empty line. Then walks
-   * `open_test_cases_` from the outermost test case and displays, on
-   * `stdout`, the indented `"• <name>"` line of each one whose name was
-   * not displayed yet, marking it as displayed. The innermost one is
-   * skipped unless @p include_last is true. An empty line is written
-   * before the first name, unless `add_empty_line_` is set, in which case
-   * the caller has already written it.
+   * it is displayed first, followed by an empty line. Then displays, on
+   * `stdout`, the indented `"• <name>"` line of each open test case whose
+   * name was not displayed yet (see `display_open_test_cases()`). The
+   * innermost one is skipped unless @p include_last is true.
    */
   void
   reporter_human::display_open_names (bool include_last)
@@ -879,29 +876,26 @@ namespace micro_os_plus::micro_test_plus::detail
         add_empty_line_ = true;
       }
 
-    bool is_first = true;
-    const size_t count = include_last || open_test_cases_.empty ()
-                             ? open_test_cases_.size ()
-                             : open_test_cases_.size () - 1;
-    for (size_t i = 0; i < count; ++i)
+    display_open_test_cases (include_last);
+  }
+
+  /**
+   * @details
+   * Writes the indented `"• <name>"` line. An empty line is written
+   * before the first one, unless `add_empty_line_` is set, in which case
+   * the caller has already written it.
+   */
+  void
+  reporter_human::display_open_heading (const open_test_case& open,
+                                        bool is_first)
+  {
+    if (is_first && !add_empty_line_)
       {
-        open_test_case& open = open_test_cases_[i];
-        if (open.name_displayed)
-          {
-            continue;
-          }
-
-        if (is_first && !add_empty_line_)
-          {
-            write_console ("\n");
-          }
-        is_first = false;
-
-        std::string indent (indent_size_ * open.test->nesting_depth (), ' ');
-        write_console ("%s• %s\n", indent.c_str (), open.test->name ());
-
-        open.name_displayed = true;
+        write_console ("\n");
       }
+
+    std::string indent (indent_size_ * open.test->nesting_depth (), ' ');
+    write_console ("%s• %s\n", indent.c_str (), open.test->name ());
   }
 
   // --------------------------------------------------------------------------

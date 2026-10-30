@@ -302,6 +302,11 @@ namespace
     }
 
     void
+    display_open_heading (const open_test_case&, bool) override
+    {
+    }
+
+    void
     output_pass_prefix (const std::string&, const test_case&) override
     {
     }

@@ -366,8 +366,7 @@ namespace micro_os_plus::micro_test_plus::detail
     commit_buffer (void) override;
 
     /**
-     * @brief Displays the `# Subtest:` headings not yet displayed, of the
-     * open test cases.
+     * @brief Writes the `# Subtest:` heading of an open test case.
      *
      * @details
      * With normal verbosity, a test case is displayed as a single test
@@ -376,14 +375,14 @@ namespace micro_os_plus::micro_test_plus::detail
      * under it, outermost first, so that the displayed test points
      * remain the complete content of the block.
      *
-     * @param include_last Whether to display the heading of the
-     * innermost open test case too; false for the single test point of a
-     * passed test case, which has no block.
+     * @param open The open test case.
+     * @param is_first Not used; every heading is preceded by its own
+     * blank line.
      * @par Returns
      *   Nothing.
      */
     void
-    display_open_headers (bool include_last);
+    display_open_heading (const open_test_case& open, bool is_first) override;
 
     /**
      * @brief Writes the failed checks of the quiet verbosity, as

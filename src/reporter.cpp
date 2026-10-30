@@ -372,6 +372,33 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
+   * The innermost open test case is skipped unless @p include_last is
+   * true.
+   */
+  void
+  reporter::display_open_test_cases (bool include_last)
+  {
+    const size_t count = include_last || open_test_cases_.empty ()
+                             ? open_test_cases_.size ()
+                             : open_test_cases_.size () - 1;
+    bool is_first = true;
+    for (size_t i = 0; i < count; ++i)
+      {
+        open_test_case& open = open_test_cases_[i];
+        if (open.name_displayed)
+          {
+            continue;
+          }
+
+        display_open_heading (open, is_first);
+        is_first = false;
+
+        open.name_displayed = true;
+      }
+  }
+
+  /**
+   * @details
    * Records the suite and whether its heading was displayed; the
    * quiet verbosity displays it later, if the suite has a failure.
    */
