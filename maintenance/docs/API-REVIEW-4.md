@@ -40,7 +40,7 @@ from the earlier report. Because of the breach, the list of problems
 that this review did *not* find should be trusted somewhat less than
 it would be after a blind review.
 
-Summary: 20 problems (20 open, 0 fixed, 0 withdrawn).
+Summary: 20 problems (9 open, 11 fixed, 0 withdrawn).
 
 The most serious are the defects that make a check give the wrong
 answer, or make the output wrong for the tools that read it:
@@ -76,7 +76,7 @@ Tags:
 ## 1. Defects
 
 - **#1 — Mixed signed and unsigned operands compare wrongly, and the
-  warning is silenced.** [internal] **[confirmed]**
+  warning is silenced.** [internal] **[confirmed]** (fixed)
   `inlines/detail-inlines.h` lines 216, 253, and 266 to 344: the six
   `apply()` functions compare the operands with the built-in operators
   under `#pragma GCC diagnostic ignored "-Wsign-compare"`, so the usual
@@ -101,8 +101,14 @@ Tags:
   comparisons of mixed-sign integers have changed, since they are now
   correct.
 
+  Fixed in `c1f961a0` (#195): the `apply()` functions compare two
+  integers of different signedness with `std::cmp_*()`, excluding
+  `bool` and the character types; every other pair keeps the built-in
+  operators. The proposal was followed as written. Checked with
+  compile-time asserts in `unit-static-asserts`.
+
 - **#2 — `approx()` excludes the tolerance itself, so a tolerance of
-  zero never passes.** [internal] **[confirmed]**
+  zero never passes.** [internal] **[confirmed]** (fixed)
   `inlines/detail-inlines.h` lines 426 to 469: `differ_by_less_than()`
   returns `distance < epsilon` for integers and `abs (lhs - rhs) <
   epsilon` for floating-point values. The probes, all failing:
@@ -117,8 +123,14 @@ Tags:
   meaningless. The first option is the one most users expect (it is the
   one of `std::abs (a - b) <= eps` and of the other frameworks).
 
+  Fixed in `6484dfa7` (#196): the comparison is inclusive (`<=`), so a
+  tolerance of zero requires equal operands and a negative one still
+  fails. The first option was followed. The saturated integer distance
+  would have passed for the maximum tolerance, so the overflow is now
+  flagged explicitly; the function is named `differ_by_at_most()`.
+
 - **#3 — Command-line errors reach only `stderr` and the exit code.**
-  [internal] **[confirmed]**
+  [internal] **[confirmed]** (fixed)
   `src/runner-options.cpp` lines 284 to 293, `inlines/runner-inlines.h`
   lines 97 to 101, `src/runner.cpp` lines 680 and 719: `add_error()`
   prints the message on `stderr` and sets a flag; the message is not
@@ -135,8 +147,16 @@ Tags:
   (`# error: ...` in TAP) to the console and to the file, in addition to
   `stderr`.
 
+  Fixed in `832768b7` (#175): the fix differs from the proposal. The
+  maintainer chose to stop the run instead of continuing, so the
+  messages are kept in `runner_options::errors()`; when the options have
+  errors, or when the output file cannot be opened, the runner writes
+  them on the console (`Bail out!` lines for TAP), creates no output
+  file, runs no test, and returns 2.
+
 - **#4 — The TAP console is not valid TAP when an output file is used,
   and the note is printed from a destructor.** [internal] **[confirmed]**
+  (fixed)
   `src/reporter.cpp` lines 194 to 214: `~reporter()` writes `Test output
   written to 'p4.tap'.` with `write_console()`, without the comment
   prefix. The probe: `p4 --output-file=p4.tap > console`; the validator
@@ -148,9 +168,14 @@ Tags:
   `static` runner, after `main()` returns. Suggested change: write the
   note from `end_session()`, with `comment_prefix()`, after the totals.
 
+  Fixed in `a7ebaaa6` (#197): the note is written by the new
+  `reporter::announce_output_file()` at the end of the session and after
+  the abort report, after the totals and with the comment prefix, as
+  proposed.
+
 - **#5 — `printable` is true for containers of types that cannot be
   printed, so the error is a hard error and `test_each()` cannot fall
-  back.** [internal] **[confirmed]**
+  back.** [internal] **[confirmed]** (fixed)
   `expression-formatter.h` lines 691 to 741, `extension.h` lines 304 to
   306 and 457 to 462, `inlines/test-inlines.h` lines 758 to 767: the
   `operator<<` templates for `std::pair`, `std::tuple`, `std::optional`,
@@ -175,9 +200,13 @@ Tags:
   their elements (for `duration`, `std::is_arithmetic_v<Rep>`), as
   `formattable_range` already does for ranges.
 
+  Fixed in `71aa55ce` (#198): the four templates are constrained on the
+  printability of their elements (the count of the duration must be
+  arithmetic), as proposed.
+
 - **#6 — Errors in the call order change neither the exit code nor the
   reports.** [internal] **[confirmed]** for `initialise()`, derived from
-  reading for `add_top_suite()`
+  reading for `add_top_suite()` (fixed)
   `src/runner.cpp` lines 241 to 245 and 340 to 344: a second call of
   `initialise()` prints `error: test runner already initialised` on
   `stderr` and returns; a second call of `add_top_suite()` prints
@@ -192,8 +221,13 @@ Tags:
   the exit code non-zero, and report them with the command-line errors
   of #3.
 
+  Fixed in `7ab637d5` (#199): both calls are rejected, as proposed: they make
+  `run_suites()` return 1 (2 if the options have errors) and are still
+  reported on `stderr`, not on the console. The deprecated
+  `initialise (argc, argv, name)` keeps its earlier behaviour.
+
 - **#7 — `--list-tests` prints text that is not TAP on the TAP
-  reporter.** [internal] **[confirmed]**
+  reporter.** [internal] **[confirmed]** (fixed)
   `src/runner.cpp` lines 282 to 290, 449 to 455, and 672 to 678: the
   listing writes `All available test cases:`, indented suite and test
   case names, and `2 test cases in 1 test suite` as plain lines, whatever
@@ -203,11 +237,14 @@ Tags:
   listing as comment lines (`comment_prefix()`), which keeps it readable
   and makes it valid TAP.
 
+  Fixed in `d2275b4c` (#200): the listing is written with the comment prefix
+  of the reporter, as proposed.
+
 ## 2. Structure and layering
 
 - **#8 — The framework owns the whole `--` namespace of the command line,
   and offers no way to pass options to the application.** [internal]
-  **[confirmed]**
+  **[confirmed]** (fixed)
   `src/runner-options.cpp` lines 204 to 271: every argument that starts
   with `--` and is not one of the library's own is an error that makes
   the exit code 2. The probes: `p4 -- --app-opt` reports
@@ -224,8 +261,16 @@ Tags:
   for the application to declare its own options before `initialise()`.
   Not breaking.
 
+  Fixed in `3d004354` (#201): the fix differs from the proposal. The parsing
+  of the options ends at the first argument that does not start with
+  `--`, or at the first `--` alone, and the new
+  `runner::application_arguments()` returns the arguments left to the
+  application; `--help` and the declaration of application options were
+  not implemented. A µTest++ option written after an application
+  argument is no longer an option.
+
 - **#9 — `suite` can be derived from by user code, which then reaches
-  the protected state of the test tree.** [breaking] **[confirmed]**
+  the protected state of the test tree.** [breaking] **[confirmed]** (fixed)
   `test.h` lines 647 to 716 (`runnable_base::name_`, `totals_`,
   `runner_`, `own_index_`, `test_point_number_`,
   `child_test_cases_count_`), 1498 to 1869 (`suite`, the protected
@@ -246,11 +291,16 @@ Tags:
   Migration: none is possible for code that derived from `suite`; the
   release notes and the compatibility notices should say so.
 
+  Fixed in `d853c6ca` (#202): the constructor and the protected members of
+  `suite` are private, with `top_suite` and `static_suite` as friends,
+  as proposed; a class derived from `suite` cannot be constructed. There
+  is no automated regression test.
+
 ## 3. Naming and consistency
 
 - **#10 — Names are passed as three different types, and a
   `std::string_view` is not accepted for a test case.** [internal]
-  **[confirmed]**
+  **[confirmed]** (fixed)
   `inlines/test-inlines.h` lines 101 to 118, `runner.h` lines 447 and
   548 to 551, `test.h` lines 2064 to 2067: `test_case_name` accepts
   `const char*` and `const std::string&`; `runner::add_suite()` and
@@ -265,8 +315,16 @@ Tags:
   `test()`), and let `static_suite` also take a `std::string_view`;
   keep the `const char*` constructors for the null-pointer handling.
 
+  Fixed in `5239bd53` (#203): the fix differs from the proposal in one
+  point. The names of the suites, the top suite, and the static suites
+  are a `const char*` or a `std::string`, like those of the test cases,
+  and no name accepts a `std::string_view`; `test_case_name` was not
+  changed, since its rejection of `std::string_view` is deliberate (a
+  view may not be null-terminated), and the proposal to accept it was
+  dropped.
+
 - **#11 — The colour option has two prefixes, no British spelling, and
-  three synonyms for each value.** [internal] **[confirmed]**
+  three synonyms for each value.** [internal] **[confirmed]** (fixed)
   `src/runner-options.cpp` lines 129 to 133, 184 to 196, and 246 to 260:
   `--color` and `--use-colour` are accepted, `--colour` is not (the
   probe reports `unknown option '--colour=never'`), although the member
@@ -280,6 +338,12 @@ Tags:
   with other frameworks matters), and reduce the synonyms of the values
   to one or two.
 
+  Fixed in `ad6582aa` (#204): the fix differs from the proposal. Both
+  spellings of both options are accepted (`--colour` and `--color`,
+  `--use-colour` and `--use-color`), and the British spelling is the one
+  used in the documentation; the synonyms of the values were not
+  reduced.
+
 - **#12 — `utility::extract_file_name()` is a public helper of the
   framework, and has undefined behaviour for a null pointer.**
   [internal]
@@ -291,6 +355,10 @@ Tags:
   for `nullptr`. Suggested change: move it to `detail` (or give it a
   null check), so that the public `utility` namespace contains only what
   applications use.
+
+  Fixed (#205): the fix differs from the proposal. The function stays in
+  the public `utility` namespace; it now accepts `nullptr` and returns an
+  empty string.
 
 ## 4. Simplicity and duplication
 

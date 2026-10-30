@@ -77,6 +77,10 @@ namespace micro_os_plus::micro_test_plus
      * This utility is particularly useful for test reporting, allowing for
      * concise display of file names without full paths.
      *
+     * A `nullptr` path, which a default-constructed source location may
+     * provide, is accepted and yields an empty string, instead of
+     * reaching the `std::string_view` constructor, which does not allow it.
+     *
      * @par Example
      *
      * @code{.cpp}
@@ -88,6 +92,11 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] const char*
     extract_file_name (const char* path) noexcept
     {
+      if (path == nullptr)
+        {
+          return ""; // No path, return an empty string.
+        }
+
       const std::string_view sv{ path };
       const auto pos = sv.find_last_of ("/\\");
       if (pos == std::string_view::npos)
