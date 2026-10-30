@@ -155,8 +155,11 @@ function of the reporters was removed.
   is no longer unwrapped, so an `auto&` parameter receives the
   `std::reference_wrapper`; call its `get()`, or pass a pointer.
 - The name of `test()` is a `test_case_name` (a string literal,
-  `const char*`, or `std::string`), and that of `add_suite()` a
-  `std::string_view`. An argument that converts to `const char*` only
+  `const char*`, or `std::string`), and the names of `add_suite()`,
+  `add_top_suite()`, and `static_suite` are a `const char*` or a
+  `std::string`, so none of them accepts a `std::string_view`, which is
+  not guaranteed to be null-terminated; pass `std::string (view)`. An
+  argument that converts to `const char*` only
   through a user-defined conversion operator must be converted
   explicitly. GCC with `-Waggregate-return` now warns at the `test()`
   calls too.

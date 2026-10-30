@@ -346,8 +346,13 @@ namespace micro_os_plus::micro_test_plus
    * is not 0.
    */
   suite&
-  runner::add_top_suite (std::string_view top_suite_name)
+  runner::add_top_suite (const char* top_suite_name)
   {
+    // A null pointer is an empty name.
+    const std::string_view requested_name{ top_suite_name != nullptr
+                                               ? top_suite_name
+                                               : "" };
+
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
@@ -375,11 +380,11 @@ namespace micro_os_plus::micro_test_plus
         return top_suite_;
       }
 
-    if (!top_suite_name.empty ())
+    if (!requested_name.empty ())
       {
         // If provided by this call, use it, possibly override the
         // deprecated constructor.
-        top_suite_name_ = top_suite_name;
+        top_suite_name_ = requested_name;
         top_suite_.name_ = top_suite_name_.c_str ();
       }
     else if (strlen (top_suite_.name ()) == 0)
@@ -425,6 +430,17 @@ namespace micro_os_plus::micro_test_plus
       }
 
     return top_suite_;
+  }
+
+  /**
+   * @details
+   * Forwards the content of the string, as a C string, to the overload
+   * for `const char*`.
+   */
+  suite&
+  runner::add_top_suite (const std::string& top_suite_name)
+  {
+    return add_top_suite (top_suite_name.c_str ());
   }
 
 #if defined(__GNUC__)

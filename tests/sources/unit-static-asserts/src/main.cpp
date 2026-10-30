@@ -238,6 +238,20 @@ namespace with_ranges
 
 // ----------------------------------------------------------------------------
 
+namespace
+{
+  // Whether a suite can be added to a runner with a name of the given type.
+  template <class Name_T>
+  concept can_add_suite = requires (runner& r, Name_T name) {
+    r.add_suite (name, [] (suite&) {});
+  };
+
+  // Whether the top suite can be added with a name of the given type.
+  template <class Name_T>
+  concept can_add_top_suite
+      = requires (runner& r, Name_T name) { r.add_top_suite (name); };
+} // namespace
+
 int
 main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
 {
@@ -248,6 +262,28 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (std::is_convertible_v<std::string, test_case_name>);
     // Not null-terminated, so not accepted.
     static_assert (!std::is_convertible_v<std::string_view, test_case_name>);
+  }
+
+  // The names of the suites are accepted as those of the test cases:
+  // a C string or a `std::string`, but not a `std::string_view`.
+  {
+    static_assert (can_add_suite<const char*>);
+    static_assert (can_add_suite<const char (&)[5]>);
+    static_assert (can_add_suite<std::string>);
+    static_assert (can_add_suite<const std::string&>);
+    static_assert (!can_add_suite<std::string_view>);
+
+    static_assert (can_add_top_suite<const char*>);
+    static_assert (can_add_top_suite<const std::string&>);
+    static_assert (!can_add_top_suite<std::string_view>);
+
+    using body_t = void (*) (suite&);
+    static_assert (
+        std::is_constructible_v<static_suite, const char*, runner&, body_t>);
+    static_assert (std::is_constructible_v<static_suite, const std::string&,
+                                           runner&, body_t>);
+    static_assert (!std::is_constructible_v<static_suite, std::string_view,
+                                            runner&, body_t>);
   }
 
   {

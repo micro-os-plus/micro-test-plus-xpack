@@ -397,7 +397,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
         ok 4 - location of the caller
         ok 5 - local session passed
         ok 6 - string suite name copied
-        ok 7 - string view suite name copied
+        ok 7 - C string suite name copied
         1..7
     ok 49 - Test case and suite names # { passed, 7 checks }
     1..49

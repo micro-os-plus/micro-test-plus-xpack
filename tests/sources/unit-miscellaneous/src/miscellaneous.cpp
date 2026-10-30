@@ -2147,7 +2147,7 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
         local_counts.passed_checks++;
 
         std::string from_string;
-        std::string from_view;
+        std::string from_buffer;
 
         {
           // Destroyed before the suite runs.
@@ -2160,13 +2160,16 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
           suite_name = "Changed";
         }
 
-        // Not null-terminated after the first 15 characters.
-        const std::string_view view = "Suite from view, truncated";
-        local_runner.add_suite (view.substr (0, 15), [&from_view] (suite& s)
-          {
-            from_view = s.name ();
-            s.test ("Local test", [] (auto& lt) { lt.expect (true); });
-          });
+        {
+          // Overwritten before the suite runs.
+          char buffer[] = "Suite from buffer";
+          local_runner.add_suite (buffer, [&from_buffer] (suite& s)
+            {
+              from_buffer = s.name ();
+              s.test ("Local test", [] (auto& lt) { lt.expect (true); });
+            });
+          buffer[0] = 'X';
+        }
 
         t.expect (eq (local_runner.run_suites (), 0))
             << "local session passed";
@@ -2176,8 +2179,8 @@ static static_suite ts_miscellaneous{ "Miscellaneous suite", tr, [] (auto& ts)
             << "string suite name copied";
         local_counts.passed_checks++;
 
-        t.expect (eq (from_view, std::string{ "Suite from view" }))
-            << "string view suite name copied";
+        t.expect (eq (from_buffer, std::string{ "Suite from buffer" }))
+            << "C string suite name copied";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;

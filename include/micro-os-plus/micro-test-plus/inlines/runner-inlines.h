@@ -183,20 +183,38 @@ namespace micro_os_plus::micro_test_plus
    */
   template <typename Callable_T, typename... Args_T>
   void
-  runner::add_suite (std::string_view name, Callable_T&& callable,
+  runner::add_suite (const char* name, Callable_T&& callable,
                      Args_T&&... arguments)
   {
+    if (name == nullptr)
+      {
+        name = "";
+      }
+
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-    trace::printf ("%s '%.*s'\n", __PRETTY_FUNCTION__,
-                   static_cast<int> (name.size ()), name.data ());
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    // Not std::make_unique(), which cannot access the protected constructor.
+    // Not std::make_unique(), which cannot access the private constructor.
     std::unique_ptr<class suite> child_suite{ new class suite (
         name, *this, std::forward<Callable_T> (callable),
         std::forward<Args_T> (arguments)...) };
 
     register_suite (std::move (child_suite));
+  }
+
+  /**
+   * @details
+   * Forwards the content of the string, as a C string, to the overload
+   * for `const char*`, which copies it.
+   */
+  template <typename Callable_T, typename... Args_T>
+  void
+  runner::add_suite (const std::string& name, Callable_T&& callable,
+                     Args_T&&... arguments)
+  {
+    add_suite (name.c_str (), std::forward<Callable_T> (callable),
+               std::forward<Args_T> (arguments)...);
   }
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
@@ -210,7 +228,7 @@ namespace micro_os_plus::micro_test_plus
   runner::suite (std::string_view name, Callable_T&& callable,
                  Args_T&&... arguments)
   {
-    add_suite (name, std::forward<Callable_T> (callable),
+    add_suite (std::string{ name }, std::forward<Callable_T> (callable),
                std::forward<Args_T> (arguments)...);
   }
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)

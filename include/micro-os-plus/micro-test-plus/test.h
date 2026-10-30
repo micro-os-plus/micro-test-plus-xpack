@@ -2088,6 +2088,36 @@ namespace micro_os_plus::micro_test_plus
     static_suite (const char* name, runner& test_runner, Callable_T&& callable,
                   Args_T&&... arguments);
 
+    /**
+     * @brief Class template constructor for static_suite, with the name
+     * given as a string.
+     *
+     * @details
+     * Uses the content of the string, up to the first null character, as
+     * the name of the `const char*` constructor, which copies it. A
+     * `std::string_view` is not accepted, since it is not guaranteed to
+     * be null-terminated, as for the test cases.
+     *
+     * @tparam Callable_T The type of a callable object.
+     * @tparam Args_T The types of the callable arguments.
+     *
+     * @par Constraints
+     *   The callable is not a body written for v5.0.1, as for the
+     *   `const char*` constructor.
+     *
+     * @param name The test suite name or description, used in reports.
+     * @param test_runner The test runner that runs this suite.
+     * @param callable A generic callable object, usually a lambda or
+     * function, invoked to perform the test suite. Its first parameter
+     * must be `suite&`.
+     * @param arguments A possibly empty list of arguments forwarded to
+     * the callable after the leading `suite&` reference.
+     */
+    template <typename Callable_T, typename... Args_T>
+      requires (!detail::static_suite_body<Callable_T, Args_T...>)
+    static_suite (const std::string& name, runner& test_runner,
+                  Callable_T&& callable, Args_T&&... arguments);
+
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
      * @name Deprecated Functions

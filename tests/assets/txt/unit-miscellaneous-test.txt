@@ -310,7 +310,7 @@ next line FAILED (miscellaneous.cpp:917)
         ✓ location of the caller
         ✓ local session passed
         ✓ string suite name copied
-        ✓ string view suite name copied
+        ✓ C string suite name copied
     ✓ Test case and suite names - passed (7 checks)
 ✗ Miscellaneous suite - FAILED (194 checks passed, 8 failed, in 52 test cases)
 • Runner options suite

@@ -907,6 +907,21 @@ namespace micro_os_plus::micro_test_plus
     link_or_reject ();
   }
 
+  /**
+   * @details
+   * Delegates to the constructor for `const char*`, with the content of
+   * the string, which that constructor copies.
+   */
+  template <typename Callable_T, typename... Args_T>
+    requires (!detail::static_suite_body<Callable_T, Args_T...>)
+  static_suite::static_suite (const std::string& name, runner& test_runner,
+                              Callable_T&& callable, Args_T&&... arguments)
+      : static_suite{ name.c_str (), test_runner,
+                      std::forward<Callable_T> (callable),
+                      std::forward<Args_T> (arguments)... }
+  {
+  }
+
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details

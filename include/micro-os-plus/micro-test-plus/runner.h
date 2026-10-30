@@ -440,15 +440,32 @@ namespace micro_os_plus::micro_test_plus
      * suite is returned, but no test is run.
      *
      * @param top_suite_name The name of the top suite, used in reports; a
-     * string literal, a `const char*`, a `std::string`, or a
-     * `std::string_view`. It is copied, so the string need not outlive the
-     * call, nor be null-terminated. Defaults to an empty string.
+     * string literal or a `const char*`. It is copied, so the string need
+     * not outlive the call. A null pointer, like the default, is an empty
+     * name. A `std::string_view` is not accepted, since it is not
+     * guaranteed to be null-terminated, as for the test cases; pass
+     * `std::string (view)` instead.
      * @return Reference to the top suite.
      *
      * @since 6.0.0
      */
     class suite&
-    add_top_suite (std::string_view top_suite_name = {});
+    add_top_suite (const char* top_suite_name = nullptr);
+
+    /**
+     * @brief Adds the top suite, named with a string.
+     *
+     * @details
+     * Calls `add_top_suite (const char*)` with the content of the string,
+     * up to the first null character; the string is copied.
+     *
+     * @param top_suite_name The name of the top suite.
+     * @return Reference to the top suite.
+     *
+     * @since 6.0.0
+     */
+    class suite&
+    add_top_suite (const std::string& top_suite_name);
 
     /**
      * @brief Runs the registered suites, ends the session, and returns the
@@ -537,9 +554,11 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Args_T The types of the callable arguments.
      *
      * @param name The test suite name or description, used in reports; a
-     * string literal, a `const char*`, a `std::string`, or a
-     * `std::string_view`. It is copied, so the string need not outlive the
-     * call, nor be null-terminated.
+     * string literal or a `const char*`. It is copied, so the string need
+     * not outlive the call. A null pointer is an empty name. A
+     * `std::string_view` is not accepted, since it is not guaranteed to
+     * be null-terminated, as for the test cases; pass `std::string (view)`
+     * instead.
      * @param callable A generic callable object, usually a lambda,
      * invoked to perform the test suite.
      * @param arguments A possibly empty list of arguments to be passed to
@@ -551,7 +570,32 @@ namespace micro_os_plus::micro_test_plus
      */
     template <typename Callable_T, typename... Args_T>
     void
-    add_suite (std::string_view name, Callable_T&& callable,
+    add_suite (const char* name, Callable_T&& callable, Args_T&&... arguments);
+
+    /**
+     * @brief Adds a test suite to the runner, named with a string.
+     *
+     * @details
+     * Calls `add_suite (const char*, ...)` with the content of the
+     * string, up to the first null character; the string is copied, so it
+     * need not outlive the call.
+     *
+     * @tparam Callable_T The type of a callable object.
+     * @tparam Args_T The types of the callable arguments.
+     *
+     * @param name The test suite name or description, used in reports.
+     * @param callable A generic callable object, usually a lambda,
+     * invoked to perform the test suite.
+     * @param arguments A possibly empty list of arguments to be passed to
+     * the callable.
+     * @par Returns
+     *   Nothing.
+     *
+     * @since 6.0.0
+     */
+    template <typename Callable_T, typename... Args_T>
+    void
+    add_suite (const std::string& name, Callable_T&& callable,
                Args_T&&... arguments);
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
