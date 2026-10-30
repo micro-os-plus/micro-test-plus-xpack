@@ -67,21 +67,23 @@ To explicitly ask for a specific format:
 
 The human reporter highlights the results in colour. By default, the
 colours are used only when `stdout` is a terminal, which can be detected
-only on POSIX platforms. To select them explicitly, as in the GNU tools:
+only on POSIX platforms. To select them explicitly, with an option
+modelled on the `--color` option of the GNU tools, whose American
+spelling `--color` is also accepted:
 
-- `--color=auto` – use colours only when the output is a terminal
+- `--colour=auto` – use colours only when the output is a terminal
   (the default)
-- `--color=always`, or `--color` alone – always use colours, for example
-  in the CI systems that render the ANSI escape sequences but do not
-  provide a terminal
-- `--color=never` – never use colours
+- `--colour=always`, or `--colour` alone – always use colours, for
+  example in the CI systems that render the ANSI escape sequences but do
+  not provide a terminal
+- `--colour=never` – never use colours
 
 As in the GNU tools, the value must be attached with `=`, and the
 synonyms `yes` and `force` (for `always`), `no` and `none` (for
 `never`), and `tty` and `if-tty` (for `auto`) are also accepted. For
 compatibility with Catch2 and Boost UT, `--use-colour=<mode>` or
-`--use-colour <mode>`, with `yes`, `no`, or `auto` (or any other value
-of `--color`), is also accepted.
+`--use-colour <mode>`, also spelled `--use-color`, with `yes`, `no`, or `auto` (or any other value
+of `--colour`), is also accepted.
 The TAP reporter never uses colours, and the output file never receives
 them.
 

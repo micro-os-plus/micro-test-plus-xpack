@@ -1774,19 +1774,19 @@ The human reporter is intended for reading the console output. For the integrati
 
 The human reporter highlights the results in colour (green for the passed checks and red for the failed ones). By default, the colours are used only when the standard output is a terminal, which can be detected only on POSIX platforms (Linux, macOS); when the output is redirected to a file or a pipe, and on the other platforms, such as the embedded ones, the output is plain.
 
-To select the colours explicitly, use the `--color` option, as in the GNU tools (`ls`, `grep`, `diff`):
+To select the colours explicitly, use the `--colour` option, modelled on the `--color` option of the GNU tools (`ls`, `grep`, `diff`); the American spelling `--color` is accepted too, and has the same effect:
 
-- `--color=auto` – use colours only when the output is a terminal (the default)
-- `--color=always`, or `--color` alone – always use colours, for example in a CI system that renders the ANSI escape sequences but does not provide a terminal, or on an embedded target whose output is displayed by a terminal
-- `--color=never` – never use colours
+- `--colour=auto` – use colours only when the output is a terminal (the default)
+- `--colour=always`, or `--colour` alone – always use colours, for example in a CI system that renders the ANSI escape sequences but does not provide a terminal, or on an embedded target whose output is displayed by a terminal
+- `--colour=never` – never use colours
 
 ```sh
-sample-test --reporter=human --color
+sample-test --reporter=human --colour
 ```
 
-As in the GNU tools, the value must be attached with `=`; the argument that follows `--color` is never taken as its value. The GNU synonyms are also accepted: `yes` and `force` for `always`, `no` and `none` for `never`, and `tty` and `if-tty` for `auto`.
+As in the GNU tools, the value must be attached with `=`; the argument that follows `--colour` is never taken as its value. The GNU synonyms are also accepted: `yes` and `force` for `always`, `no` and `none` for `never`, and `tty` and `if-tty` for `auto`.
 
-For compatibility with Catch2 and Boost UT, the alternative `--use-colour` option is also accepted, either as `--use-colour=<mode>` or as `--use-colour <mode>`, with the modes `yes`, `no`, and `auto` (and the other values of `--color`). When both options are given, the last one takes effect.
+For compatibility with Catch2 and Boost UT, the alternative `--use-colour` option, also spelled `--use-color`, is accepted too, either as `--use-colour=<mode>` or as `--use-colour <mode>`, with the modes `yes`, `no`, and `auto` (and the other values of `--colour`). When both options are given, the last one takes effect.
 
 The TAP reporter never uses colours, since the escape sequences are not part of the TAP syntax, and the output file never receives them, whatever the mode. An unknown mode is an option error: no test is run and the program returns 2.
 

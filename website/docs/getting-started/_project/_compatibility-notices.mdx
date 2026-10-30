@@ -23,13 +23,13 @@ different output.
 - `runner::set_abort_handler()` replaces the final `::abort()` call, for
   example to reset an embedded target.
 - The command-line options `--filter=<pattern>` (or `--filter <pattern>`)
-  select the suites and the test cases to run by name; `--color`
-  (GNU style) and `--use-colour=<mode>` force the colours of the human
+  select the suites and the test cases to run by name; `--colour`
+  (or `--color`, GNU style) and `--use-colour=<mode>` force the colours of the human
   reporter on or off; `--list-tests`, or `--list`, lists the suites and
   the test cases instead of running them. An application that passes its
   whole command line to `initialise()` and uses its own option with one
   of these names must rename it or remove it from the arguments: `--filter`
-  now filters the tests, a `--color` or `--use-colour` value that is not
+  now filters the tests, a `--colour`, `--color`, or `--use-colour` value that is not
   a colour mode is an error (`run_suites()` returns 2), and `--list` lists
   instead of running.
 - New function comparators: `all_of()` and `any_of()` (two or more

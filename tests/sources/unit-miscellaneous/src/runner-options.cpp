@@ -378,45 +378,70 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
 
     ts.test ("Colours", [] (auto& t)
       {
-        // Check that the argument selects the mode, starting from a
-        // different mode.
-        auto check_colour = [&t] (const char* argument, colour_mode mode)
+        // Check that the option, in both its spellings, selects the mode,
+        // starting from a different mode; the message shows both.
+        auto check_spellings = [&t] (const char* british, const char* american,
+                                     const char* suffix, colour_mode mode)
           {
-            const char* const opposite = (mode == colour_mode::never)
-                                             ? "--color=always"
-                                             : "--color=never";
-            const runner_options options
-                = parse ({ "name", opposite, argument });
+            const char* const opposite
+                = (mode == colour_mode::never) ? "=always" : "=never";
+            bool passed = true;
+            for (const char* spelling : { british, american })
+              {
+                const std::string opposite_argument
+                    = std::string{ "--colour" } + opposite;
+                const std::string argument = std::string{ spelling } + suffix;
+                const runner_options options = parse (
+                    { "name", opposite_argument.c_str (), argument.c_str () });
 
-            t.expect (options.colour == mode and !options.has_errors ())
-                << argument;
+                passed = passed and options.colour == mode
+                         and !options.has_errors ();
+              }
+
+            t.expect (passed)
+                << british << suffix << ", " << american << suffix;
             local_counts.passed_checks++;
           };
 
-        check_colour ("--color", colour_mode::always);
-        check_colour ("--color=always", colour_mode::always);
-        check_colour ("--color=yes", colour_mode::always);
-        check_colour ("--color=force", colour_mode::always);
-        check_colour ("--color=never", colour_mode::never);
-        check_colour ("--color=no", colour_mode::never);
-        check_colour ("--color=none", colour_mode::never);
-        check_colour ("--color=auto", colour_mode::automatic);
-        check_colour ("--color=tty", colour_mode::automatic);
-        check_colour ("--color=if-tty", colour_mode::automatic);
-        check_colour ("--use-colour=yes", colour_mode::always);
-        check_colour ("--use-colour=no", colour_mode::never);
-        check_colour ("--use-colour=never", colour_mode::never);
+        auto check_colour
+            = [&check_spellings] (const char* suffix, colour_mode mode)
+          { check_spellings ("--colour", "--color", suffix, mode); };
+
+        check_colour ("", colour_mode::always);
+        check_colour ("=always", colour_mode::always);
+        check_colour ("=yes", colour_mode::always);
+        check_colour ("=force", colour_mode::always);
+        check_colour ("=never", colour_mode::never);
+        check_colour ("=no", colour_mode::never);
+        check_colour ("=none", colour_mode::never);
+        check_colour ("=auto", colour_mode::automatic);
+        check_colour ("=tty", colour_mode::automatic);
+        check_colour ("=if-tty", colour_mode::automatic);
+
+        check_spellings ("--use-colour", "--use-color", "=yes",
+                         colour_mode::always);
+        check_spellings ("--use-colour", "--use-color", "=no",
+                         colour_mode::never);
+        check_spellings ("--use-colour", "--use-color", "=never",
+                         colour_mode::never);
 
         t.expect (parse ({ "name", "--use-colour", "no" }).colour
-                  == colour_mode::never)
-            << "--use-colour <mode>";
+                      == colour_mode::never
+                  and parse ({ "name", "--use-color", "no" }).colour
+                          == colour_mode::never)
+            << "--use-colour <mode>, --use-color <mode>";
         local_counts.passed_checks++;
 
-        const runner_options options = parse ({ "name", "--color", "never" });
+        const runner_options colour_options
+            = parse ({ "name", "--colour", "never" });
+        const runner_options color_options
+            = parse ({ "name", "--color", "never" });
 
-        t.expect (options.colour == colour_mode::always
-                  and !options.has_errors ())
-            << "--color does not take a separate value";
+        t.expect (colour_options.colour == colour_mode::always
+                  and !colour_options.has_errors ()
+                  and color_options.colour == colour_mode::always
+                  and !color_options.has_errors ())
+            << "--colour and --color do not take a separate value";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;

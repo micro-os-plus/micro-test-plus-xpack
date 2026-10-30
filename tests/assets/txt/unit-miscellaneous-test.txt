@@ -356,21 +356,21 @@ next line FAILED (miscellaneous.cpp:917)
         ✓ a separate value is taken whatever its content
     ✓ Output file and filters - passed (5 checks)
     • Colours
-        ✓ --color
-        ✓ --color=always
-        ✓ --color=yes
-        ✓ --color=force
-        ✓ --color=never
-        ✓ --color=no
-        ✓ --color=none
-        ✓ --color=auto
-        ✓ --color=tty
-        ✓ --color=if-tty
-        ✓ --use-colour=yes
-        ✓ --use-colour=no
-        ✓ --use-colour=never
-        ✓ --use-colour <mode>
-        ✓ --color does not take a separate value
+        ✓ --colour, --color
+        ✓ --colour=always, --color=always
+        ✓ --colour=yes, --color=yes
+        ✓ --colour=force, --color=force
+        ✓ --colour=never, --color=never
+        ✓ --colour=no, --color=no
+        ✓ --colour=none, --color=none
+        ✓ --colour=auto, --color=auto
+        ✓ --colour=tty, --color=tty
+        ✓ --colour=if-tty, --color=if-tty
+        ✓ --use-colour=yes, --use-color=yes
+        ✓ --use-colour=no, --use-color=no
+        ✓ --use-colour=never, --use-color=never
+        ✓ --use-colour <mode>, --use-color <mode>
+        ✓ --colour and --color do not take a separate value
     ✓ Colours - passed (15 checks)
     • Option errors
         ✓ a missing option argument

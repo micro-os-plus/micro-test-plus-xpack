@@ -79,22 +79,24 @@ namespace micro_os_plus::micro_test_plus
    *   or `human`;
    * - `--verbose`, `--quiet`, and `--silent`;
    * - `--output-file=<path>` or `--output-file <path>`;
-   * - `--color[=<when>]`, as in the GNU tools, with `always`, `never`, or
-   *   `auto` (the default), and their GNU synonyms (`yes` and `force`,
-   *   `no` and `none`, `tty` and `if-tty`); `--color` alone means
-   *   `always`;
-   * - `--use-colour=<mode>` or `--use-colour <mode>`, the Catch2 and
-   *   Boost UT alternative to `--color`, with `yes`, `no`, or `auto`, or
-   *   any of the `--color` values;
+   * - `--colour[=<when>]`, or its American spelling `--color[=<when>]`,
+   *   as in the GNU tools, with `always`, `never`, or `auto` (the
+   *   default), and their GNU synonyms (`yes` and `force`, `no` and
+   *   `none`, `tty` and `if-tty`); `--colour` alone means `always`;
+   * - `--use-colour=<mode>` or `--use-colour <mode>`, or the American
+   *   spelling `--use-color`, the Catch2 and Boost UT alternative to
+   *   `--colour`, with `yes`, `no`, or `auto`, or any of the `--colour`
+   *   values;
    * - `--filter=<pattern>` or `--filter <pattern>`;
    * - `--list-tests`, or its short form `--list`, as in Catch2 and
    *   Boost UT, to list the test cases instead of running them.
    *
    * When an option is repeated, the last one takes effect, except
    * `--filter`, whose patterns are all kept, in order, one per nesting
-   * level; `--color` and `--use-colour` set the same option. An option
-   * argument given separately is the next argument, whatever its content;
-   * `--color` accepts its value only after `=`.
+   * level; `--colour`, `--color`, `--use-colour`, and `--use-color` set
+   * the same option. An option argument given separately is the next
+   * argument, whatever its content; `--colour` and `--color` accept their
+   * value only after `=`.
    *
    * The parsing ends at the first argument that does not start with `--`,
    * or at the first `--` alone; the arguments from there on are left to
@@ -134,8 +136,10 @@ namespace micro_os_plus::micro_test_plus
 
     static constexpr std::string_view reporter_option{ "--reporter" };
     static constexpr std::string_view output_file_option{ "--output-file" };
+    static constexpr std::string_view colour_option{ "--colour" };
     static constexpr std::string_view color_option{ "--color" };
     static constexpr std::string_view use_colour_option{ "--use-colour" };
+    static constexpr std::string_view use_color_option{ "--use-color" };
     static constexpr std::string_view filter_option{ "--filter" };
 
     // Get the value of an option given as `--option=<value>` or as
@@ -171,7 +175,7 @@ namespace micro_os_plus::micro_test_plus
       {
         for (const std::string_view option :
              { reporter_option, output_file_option, use_colour_option,
-               filter_option })
+               use_color_option, filter_option })
           {
             if (argument == option
                 || (argument.starts_with (option)
@@ -183,10 +187,11 @@ namespace micro_os_plus::micro_test_plus
         return false;
       };
 
-    // Set the colour mode from the value of `--color` or of
-    // `--use-colour`; both accept the values and the synonyms of the GNU
-    // tools, which include those of Catch2 and Boost UT (`yes`, `no`, and
-    // `auto`). An unknown mode is reported as an error.
+    // Set the colour mode from the value of `--colour`, `--color`,
+    // `--use-colour`, or `--use-color`; all accept the values and the
+    // synonyms of the GNU tools, which include those of Catch2 and Boost
+    // UT (`yes`, `no`, and `auto`). An unknown mode is reported as an
+    // error.
     auto set_colour_mode = [&] (std::string_view value)
       {
         if (value == "always" || value == "yes" || value == "force")
@@ -261,15 +266,21 @@ namespace micro_os_plus::micro_test_plus
             // An empty path disables the output file.
             output_file_path = value;
           }
-        else if (get_value (use_colour_option, i, value))
+        else if (get_value (use_colour_option, i, value)
+                 || get_value (use_color_option, i, value))
           {
             set_colour_mode (value);
           }
-        else if (argument == color_option)
+        else if (argument == colour_option || argument == color_option)
           {
             // As in the GNU tools, the option alone means `always`, and
             // the next argument is never taken as its value.
             colour = colour_mode::always;
+          }
+        else if (argument.starts_with (colour_option)
+                 && argument.substr (colour_option.size ()).starts_with ('='))
+          {
+            set_colour_mode (argument.substr (colour_option.size () + 1));
           }
         else if (argument.starts_with (color_option)
                  && argument.substr (color_option.size ()).starts_with ('='))

@@ -456,21 +456,21 @@ not ok 2 - Miscellaneous suite # { FAILED, 194 checks passed, 8 failed, in 52 te
         1..5
     ok 5 - Output file and filters # { passed, 5 checks }
     # Subtest: Colours
-        ok 1 - --color
-        ok 2 - --color=always
-        ok 3 - --color=yes
-        ok 4 - --color=force
-        ok 5 - --color=never
-        ok 6 - --color=no
-        ok 7 - --color=none
-        ok 8 - --color=auto
-        ok 9 - --color=tty
-        ok 10 - --color=if-tty
-        ok 11 - --use-colour=yes
-        ok 12 - --use-colour=no
-        ok 13 - --use-colour=never
-        ok 14 - --use-colour <mode>
-        ok 15 - --color does not take a separate value
+        ok 1 - --colour, --color
+        ok 2 - --colour=always, --color=always
+        ok 3 - --colour=yes, --color=yes
+        ok 4 - --colour=force, --color=force
+        ok 5 - --colour=never, --color=never
+        ok 6 - --colour=no, --color=no
+        ok 7 - --colour=none, --color=none
+        ok 8 - --colour=auto, --color=auto
+        ok 9 - --colour=tty, --color=tty
+        ok 10 - --colour=if-tty, --color=if-tty
+        ok 11 - --use-colour=yes, --use-color=yes
+        ok 12 - --use-colour=no, --use-color=no
+        ok 13 - --use-colour=never, --use-color=never
+        ok 14 - --use-colour <mode>, --use-color <mode>
+        ok 15 - --colour and --color do not take a separate value
         1..15
     ok 6 - Colours # { passed, 15 checks }
     # Subtest: Option errors

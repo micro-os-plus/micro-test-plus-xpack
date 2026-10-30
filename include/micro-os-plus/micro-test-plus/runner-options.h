@@ -137,8 +137,9 @@ namespace micro_os_plus::micro_test_plus
    * @brief The use of colours in the console output.
    *
    * @details
-   * Selected with the `--color` command-line option (or its alternative,
-   * `--use-colour`), or with `runner_options::colour`; the default is
+   * Selected with the `--colour` command-line option (or its American
+   * spelling `--color`, or its alternative `--use-colour`, also spelled
+   * `--use-color`), or with `runner_options::colour`; the default is
    * `automatic`. The names follow the values of `--color` in the GNU
    * tools.
    *
@@ -232,15 +233,15 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Starts from the defaults, and parses the µTest++ options
      * (`--reporter`, `--silent`, `--quiet`, `--verbose`, `--output-file`,
-     * `--color`, `--use-colour`, `--filter`, and `--list-tests`). The
-     * parsing ends at the first argument that does not start with `--`
-     * (an application argument, or a `-` option), or at the first `--`
-     * alone; that argument, and all the following ones, are left to the
-     * application, and are available from `application_arguments()`. An
-     * option argument given separately (`--reporter human`) belongs to
-     * its option and does not end the parsing. Before that point, the
-     * arguments starting with `--` that are not µTest++ options are
-     * reported as unknown options.
+     * `--colour`, `--color`, `--use-colour`, `--use-color`, `--filter`,
+     * and `--list-tests`). The parsing ends at the first argument that
+     * does not start with `--` (an application argument, or a `-` option),
+     * or at the first `--` alone; that argument, and all the following
+     * ones, are left to the application, and are available from
+     * `application_arguments()`. An option argument given separately
+     * (`--reporter human`) belongs to its option and does not end the
+     * parsing. Before that point, the arguments starting with `--` that
+     * are not µTest++ options are reported as unknown options.
      *
      * A missing option argument, an unknown reporter name, an unknown
      * colour mode, or an unknown option, is reported on `stderr`, kept
@@ -365,13 +366,15 @@ namespace micro_os_plus::micro_test_plus
      * @brief Whether the console output uses colours.
      *
      * @details
-     * Set by `--color[=<when>]`, as in the GNU tools, where `<when>` is
+     * Set by `--colour[=<when>]`, or by its American spelling
+     * `--color[=<when>]`, as in the GNU tools, where `<when>` is
      * `always`, `never`, or `auto`, or one of their GNU synonyms (`yes`
-     * and `force`, `no` and `none`, `tty` and `if-tty`), and `--color`
+     * and `force`, `no` and `none`, `tty` and `if-tty`), and `--colour`
      * alone means `always`; the value is accepted only after `=`. The
-     * alternative `--use-colour=<mode>` or `--use-colour <mode>`, as in
-     * Catch2 and Boost UT, takes `yes`, `no`, or `auto`, and also accepts
-     * the other values of `--color`. Used only by the human reporter.
+     * alternative `--use-colour=<mode>` or `--use-colour <mode>`, also
+     * spelled `--use-color`, as in Catch2 and Boost UT, takes `yes`, `no`,
+     * or `auto`, and also accepts the other values of `--colour`. Used
+     * only by the human reporter.
      *
      * @since 6.0.0
      */
