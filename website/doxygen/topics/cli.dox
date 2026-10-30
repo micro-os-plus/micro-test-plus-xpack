@@ -33,29 +33,28 @@ Options may also be set programmatically, on platforms without a command
 line, through `runner_options`.
 
 The µTest++ options come first. The parsing of the options ends at the
-first argument that does not start with `--`, or at the first `--`
+first argument that does not start with a dash, or at the first `--`
 alone; that argument, and all the following ones, are left to the
 application, uninterpreted, and are available from
 `runner::application_arguments()`. The first `--` alone is not passed on
 when it ends the options; it is needed in front of an application
-argument that starts with `--`, which would otherwise be taken for an
+argument that starts with a dash, which would otherwise be taken for an
 unknown µTest++ option. After an application argument, a `--` is not a
-terminator, and is passed on like any other argument; an argument that
-starts with a single dash also ends the options. An option argument
+terminator, and is passed on like any other argument. An option argument
 given separately (`--reporter human`) belongs to its option. An unknown
-`--` option before that point, an unknown reporter or colour mode, or an
+option before that point (an argument that starts with a dash, such as
+`-x`, `-` or `-verbose`), an unknown reporter or colour mode, or an
 option with a missing argument, is an error: it is reported on `stderr`
 and on the console, no test is run, and the exit code is 2. For an
 unknown option, the console also suggests `--help`.
 
 @section cli-help Help
 
-The `--help` option writes the usage and the list of the options on the
-console, also with the `silent` verbosity, runs no test, and the exit code
-is 0. Only the long form is accepted, since an argument that starts with
-a single dash ends the options and is left to the application. The errors
-in the other options have priority: they are reported as usual, and the
-exit code is 2.
+The `--help` option, or its short form `-h`, which is the only short
+option, writes the usage and the list of the options on the console,
+also with the `silent` verbosity, runs no test, and the exit code is 0.
+The errors in the other options have priority: they are reported as
+usual, and the exit code is 2.
 
 @section cli-reporter Reporter
 

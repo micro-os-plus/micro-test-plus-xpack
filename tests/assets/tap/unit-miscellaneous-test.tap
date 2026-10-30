@@ -432,11 +432,13 @@ not ok 2 - Miscellaneous suite # { FAILED, 194 checks passed, 8 failed, in 52 te
         ok 4 - the application options are not reported
         ok 5 - the separate option arguments belong to their options
         ok 6 - an unknown option before the application arguments
-        ok 7 - a single dash ends the options
-        ok 8 - no application arguments
-        ok 9 - the copies refer to their own arguments
-        1..9
-    ok 3 - Application arguments # { passed, 9 checks }
+        ok 7 - a single dash option is unknown, the parsing continues
+        ok 8 - a single - is an unknown option
+        ok 9 - a single dash option after -- is left to the application
+        ok 10 - no application arguments
+        ok 11 - the copies refer to their own arguments
+        1..11
+    ok 3 - Application arguments # { passed, 11 checks }
     # Subtest: Reporter, verbosity, and listing
         ok 1 - --reporter=human
         ok 2 - the last --reporter wins
@@ -446,7 +448,7 @@ not ok 2 - Miscellaneous suite # { FAILED, 194 checks passed, 8 failed, in 52 te
         ok 6 - --list-tests
         ok 7 - --list
         ok 8 - --help
-        ok 9 - -h is an application argument
+        ok 9 - -h is the short form of --help
         1..9
     ok 4 - Reporter, verbosity, and listing # { passed, 9 checks }
     # Subtest: Output file and filters
@@ -498,7 +500,7 @@ not ok 2 - Miscellaneous suite # { FAILED, 194 checks passed, 8 failed, in 52 te
         1..5
     ok 9 - Copies and moves # { passed, 5 checks }
     1..9
-ok 3 - Runner options suite # { passed, 61 checks in 9 test cases, time: 2.204 ms }
+ok 3 - Runner options suite # { passed, 63 checks in 9 test cases, time: 2.064 ms }
 # Subtest: Stopwatch suite
     # Subtest: stopwatch::start() and stop()
         ok 1 - fresh: has_elapsed false
@@ -601,4 +603,4 @@ ok 4 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.370 ms }
     1..3
 not ok 5 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.296 ms }
 1..5
-# { total: 296 checks passed, 13 failed, in 69 test cases, 5 test suites, time: 15.827 ms }
+# { total: 298 checks passed, 13 failed, in 69 test cases, 5 test suites, time: 11.708 ms }

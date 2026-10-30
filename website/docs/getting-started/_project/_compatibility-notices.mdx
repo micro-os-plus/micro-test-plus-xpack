@@ -296,11 +296,15 @@ function of the reporters was removed.
 ##### Session and runner
 
 - The parsing of the command-line options ends at the first argument that
-  does not start with `--`, or at the first `--` alone; the arguments from
-  there on are left to the application, which gets them from
+  does not start with a dash, or at the first `--` alone; the arguments
+  from there on are left to the application, which gets them from
   `runner::application_arguments()`. A µTest++ option written after an
   application argument (`test one --verbose`) was recognised and is now
-  one of the arguments of the application, so the options must come first.
+  one of the arguments of the application, so the options must come
+  first. An argument that starts with a dash and is not a µTest++ option,
+  before that point, is reported as an unknown option (`test -x`,
+  `test -verbose`), except `-h`, which is the short form of `--help`; an application that receives such arguments first
+  must precede them with `--`.
 - The session runs only once: later calls of `run_suites()` return the
   same exit code without running the suites again, and a second
   `initialise()` or `add_top_suite()` is reported and ignored, but makes

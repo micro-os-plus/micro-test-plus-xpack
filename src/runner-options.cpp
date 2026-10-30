@@ -98,10 +98,12 @@ namespace micro_os_plus::micro_test_plus
    * argument, whatever its content; `--colour` and `--color` accept their
    * value only after `=`.
    *
-   * The parsing ends at the first argument that does not start with `--`,
-   * or at the first `--` alone; the arguments from there on are left to
-   * the application, and are not interpreted, so they can be options of
-   * the application. The `--` itself is not an application argument. The
+   * The parsing ends at the first argument that does not start with a
+   * dash, or at the first `--` alone; the arguments from there on are
+   * left to the application, and are not interpreted, so they can be
+   * options of the application. The `--` itself is not an application
+   * argument. An argument that starts with a dash, before that point,
+   * and is not a µTest++ option, is reported as an unknown option. The
    * whole command line is copied into `arguments`, to be listed by the
    * reporter; the option values are copied from there.
    *
@@ -217,14 +219,14 @@ namespace micro_os_plus::micro_test_plus
         const std::string_view argument{ arguments[i] };
         std::string_view value{};
 
-        // The application arguments start at the first argument that is not
-        // a `--` option, or after the first `--` alone.
+        // The application arguments start at the first argument that does
+        // not start with a dash, or after the first `--` alone.
         if (argument == "--")
           {
             application_begin_ = i + 1;
             break;
           }
-        if (!argument.starts_with ("--"))
+        if (!argument.starts_with ('-'))
           {
             application_begin_ = i;
             break;
@@ -246,7 +248,7 @@ namespace micro_os_plus::micro_test_plus
           {
             list_tests = true;
           }
-        else if (argument == "--help")
+        else if (argument == "--help" || argument == "-h")
           {
             help = true;
           }
@@ -295,7 +297,7 @@ namespace micro_os_plus::micro_test_plus
           {
             filter_patterns.emplace_back (value);
           }
-        else if (argument.starts_with ("--") && !is_known_option (argument))
+        else if (!is_known_option (argument))
           {
             // A mistyped option must not silently disable the tests.
             add_error ("unknown option '", argument, "'");

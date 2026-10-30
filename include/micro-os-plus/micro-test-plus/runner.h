@@ -919,7 +919,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The arguments that follow the µTest++ options: the first argument
-     * that does not start with `--` and all the following ones, or, if
+     * that does not start with a dash and all the following ones, or, if
      * the µTest++ options were ended by a `--` alone, the arguments after
      * it, which may start with `--`; see
      * `runner_options::application_arguments()`. The `--` itself and

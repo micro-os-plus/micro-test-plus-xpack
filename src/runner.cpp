@@ -77,7 +77,7 @@ namespace micro_os_plus::micro_test_plus
     // The text displayed by `--help`, after the usage line.
     constexpr const char* help_options
         = "Options:\n"
-          "  --help\n"
+          "  --help, -h\n"
           "  --verbose | --quiet | --silent\n"
           "  --list-tests\n"
           "  --reporter=human|tap\n"

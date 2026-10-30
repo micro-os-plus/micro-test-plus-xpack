@@ -234,14 +234,16 @@ namespace micro_os_plus::micro_test_plus
      * Starts from the defaults, and parses the µTest++ options
      * (`--reporter`, `--silent`, `--quiet`, `--verbose`, `--output-file`,
      * `--colour`, `--color`, `--use-colour`, `--use-color`, `--filter`,
-     * `--list-tests`, and `--help`). The parsing ends at the first
-     * argument that does not start with `--` (an application argument, or
-     * a `-` option), or at the first `--` alone; that argument, and all
-     * the following ones, are left to the application, and are available
-     * from `application_arguments()`. An option argument given separately
-     * (`--reporter human`) belongs to its option and does not end the
-     * parsing. Before that point, the arguments starting with `--` that
-     * are not µTest++ options are reported as unknown options.
+     * `--list-tests`, `--help`, and `-h`). The parsing ends at the first
+     * argument that does not start with a dash (an application argument),
+     * or at the first `--` alone; that argument, and all the following
+     * ones, are left to the application, and are available from
+     * `application_arguments()`. An option argument given
+     * separately (`--reporter human`) belongs to its option and does not
+     * end the parsing. Before that point, the arguments starting with a
+     * dash that are not µTest++ options are reported as unknown options;
+     * an application that receives such arguments first must precede
+     * them with `--`.
      *
      * A missing option argument, an unknown reporter name, an unknown
      * colour mode, or an unknown option, is reported on `stderr`, kept
@@ -460,13 +462,12 @@ namespace micro_os_plus::micro_test_plus
      * instead of running the tests.
      *
      * @details
-     * Set by the `--help` option. The runner then writes, on the console,
+     * Set by the `--help` option, or by its short form `-h`, which is the
+     * only short option. The runner then writes, on the console,
      * the usage and one line for each option, runs no test, creates no
      * output file, and `run_suites()` returns 0, or 2 after an option
      * error. The text is written also with the `silent` verbosity, since
      * it was requested.
-     * Only the long form is accepted, since an argument that starts with
-     * a single dash ends the options.
      *
      * @since 6.0.0
      */
@@ -525,12 +526,12 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The arguments that follow the µTest++ options on the command line:
-     * the first argument that does not start with `--`, if the parsing
+     * the first argument that does not start with a dash, if the parsing
      * ended there, and all the following ones, unchanged, or, if the
      * parsing ended at a `--` alone, the arguments after it, which may
-     * start with `--`. The `--` itself and `argv[0]` are not included.
-     * The span refers to `arguments`, so it is valid as long as the
-     * options are not modified or destroyed.
+     * start with `--`. The `--` itself and `argv[0]`
+     * are not included. The span refers to `arguments`, so it is valid as
+     * long as the options are not modified or destroyed.
      *
      * @par Parameters
      *   None.

@@ -197,7 +197,7 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
       });
 
     // The parsing of the µTest++ options ends at the first argument that
-    // does not start with `--`, or at the first `--` alone; the arguments
+    // does not start with a dash, or at the first `--` alone; the arguments
     // from there on are left to the application.
     ts.test ("Application arguments", [] (auto& t)
       {
@@ -263,12 +263,34 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
         local_counts.passed_checks++;
 
         const runner_options single_dash
-            = parse ({ "name", "-v", "--verbose" });
+            = parse ({ "name", "-x", "--verbose" });
 
-        t.expect (single_dash.verbosity_level == verbosity::normal
-                  and same_arguments (single_dash.application_arguments (),
-                                      { "-v", "--verbose" }))
-            << "a single dash ends the options";
+        t.expect (single_dash.has_errors ()
+                  and single_dash.has_unknown_option ()
+                  and eq (single_dash.errors ().size (), 1u)
+                  and eq (single_dash.errors ()[0], "unknown option '-x'")
+                  and single_dash.verbosity_level == verbosity::verbose
+                  and single_dash.application_arguments ().empty ())
+            << "a single dash option is unknown, the parsing continues";
+        local_counts.passed_checks++;
+
+        const runner_options lone_dash
+            = parse ({ "name", "-", "--verbose" });
+
+        t.expect (lone_dash.has_unknown_option ()
+                  and eq (lone_dash.errors ()[0], "unknown option '-'")
+                  and lone_dash.verbosity_level == verbosity::verbose)
+            << "a single - is an unknown option";
+        local_counts.passed_checks++;
+
+        const runner_options after_terminator
+            = parse ({ "name", "--", "-h" });
+
+        t.expect (!after_terminator.has_errors ()
+                  and !after_terminator.help
+                  and same_arguments (after_terminator.application_arguments (),
+                                      { "-h" }))
+            << "a single dash option after -- is left to the application";
         local_counts.passed_checks++;
 
         t.expect (
@@ -342,10 +364,8 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
 
         const runner_options short_help = parse ({ "name", "-h" });
 
-        t.expect (!short_help.help and !short_help.has_errors ()
-                  and same_arguments (short_help.application_arguments (),
-                                      { "-h" }))
-            << "-h is an application argument";
+        t.expect (short_help.help and !short_help.has_errors ())
+            << "-h is the short form of --help";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
