@@ -324,6 +324,8 @@ namespace micro_os_plus::micro_test_plus::detail
                 message_totals, message_time);
 
     flush_streams ();
+
+    announce_output_file ();
   }
 
   // --------------------------------------------------------------------------
@@ -999,6 +1001,8 @@ namespace micro_os_plus::micro_test_plus::detail
                 file_name.c_str (), line);
 
     flush_streams ();
+
+    announce_output_file ();
 
     clear_buffer ();
 

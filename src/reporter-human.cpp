@@ -189,6 +189,7 @@ namespace micro_os_plus::micro_test_plus::detail
       }
 
     flush_streams ();
+    announce_output_file ();
   }
 
   // --------------------------------------------------------------------------
@@ -785,6 +786,8 @@ namespace micro_os_plus::micro_test_plus::detail
                 colours_.fail, colours_.none, file_name, line);
 
     flush_streams ();
+
+    announce_output_file ();
 
     clear_buffer ();
 

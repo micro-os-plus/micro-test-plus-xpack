@@ -966,6 +966,26 @@ namespace micro_os_plus::micro_test_plus
       write_info (const std::vector<std::string>& arguments);
 
       /**
+       * @brief Tells the console where the output file was written.
+       *
+       * @details
+       * Called by the derived classes at the end of the session, after
+       * the totals, or after the abort report. It writes a line that
+       * names the output file, prefixed with `comment_prefix()` so that
+       * it is valid in the output format, and flushes the streams, so
+       * that the file is complete when the line is displayed. Nothing is
+       * written if there is no output file, or with the `silent`
+       * verbosity.
+       *
+       * @par Parameters
+       *   None.
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      announce_output_file (void);
+
+      /**
        * @brief Clears the output buffer.
        *
        * @details
