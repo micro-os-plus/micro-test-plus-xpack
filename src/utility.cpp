@@ -132,6 +132,7 @@ namespace micro_os_plus::micro_test_plus
      * alternatives separated by `|`.
      *
      * @par Examples
+     * Both checks pass:
      *
      * @code{.cpp}
      * namespace mt = micro_os_plus::micro_test_plus;
@@ -198,6 +199,7 @@ namespace micro_os_plus::micro_test_plus
      * template cannot handle.
      *
      * @par Example
+     * The check passes:
      *
      * @code{.cpp}
      * namespace mt = micro_os_plus::micro_test_plus;
