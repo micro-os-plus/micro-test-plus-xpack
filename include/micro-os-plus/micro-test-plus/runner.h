@@ -506,7 +506,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @since 6.0.0
      */
-    int
+    [[nodiscard]] int
     run_suites (void);
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
