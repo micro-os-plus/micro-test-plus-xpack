@@ -156,16 +156,13 @@ function of the reporters was removed.
   are stored by a lambda instead of `std::bind`: a `std::ref()` argument
   is no longer unwrapped, so an `auto&` parameter receives the
   `std::reference_wrapper`; call its `get()`, or pass a pointer.
-- The name of `test()` is a `test_case_name` (a string literal,
-  `const char*`, or `std::string`), and the names of `add_suite()`,
-  `add_top_suite()`, and `static_suite` are a `const char*` or a
-  `std::string`, so none of them accepts a `std::string_view`: the test cases do
-  not copy the name, which must be null-terminated, and the suites follow
-  them; pass `std::string (view)`. An
-  argument that converts to `const char*` only
-  through a user-defined conversion operator must be converted
-  explicitly. GCC with `-Waggregate-return` now warns at the `test()`
-  calls too.
+- The names of `test()`, `test_each()`, `add_suite()`,
+  `add_top_suite()`, and `static_suite` are a `located_name` (a string
+  literal, `const char*`, `std::string`, or `std::string_view`), which
+  copies the name and records the location of the call. An argument
+  that converts to one of these types only through a user-defined
+  conversion operator must be converted explicitly. GCC with
+  `-Waggregate-return` now warns at these calls too.
 - The comparators require `extension::printable` operands, and reject
   with a short diagnostic those that cannot be reported, also when the
   comparator is not checked (for example in `static_assert()`; use the

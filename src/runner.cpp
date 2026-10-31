@@ -370,10 +370,11 @@ namespace micro_os_plus::micro_test_plus
    * timing, and emits the reporter notification for its beginning;
    * while the test cases are listed, the top suite is not reported.
    *
+   * A non-empty name is copied, with its location, into the top suite.
    * If the name is empty, the name given to the deprecated constructor
    * is kept; if there is none, the name is derived from the file name of
    * `arguments()[0]` (usually `argv[0]`), without the extension, or
-   * defaults to "default suite".
+   * defaults to "default suite", with the location of this call.
    *
    * After the test execution was aborted, the error is reported on
    * `stderr`. With errors in the options or in the output file, the
@@ -383,12 +384,9 @@ namespace micro_os_plus::micro_test_plus
    * is not 0.
    */
   suite&
-  runner::add_top_suite (const char* top_suite_name)
+  runner::add_top_suite (const located_name& top_suite_name)
   {
-    // A null pointer is an empty name.
-    const std::string_view requested_name{ top_suite_name != nullptr
-                                               ? top_suite_name
-                                               : "" };
+    const std::string_view requested_name{ top_suite_name.name () };
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s\n", __PRETTY_FUNCTION__);
@@ -421,8 +419,8 @@ namespace micro_os_plus::micro_test_plus
       {
         // If provided by this call, use it, possibly override the
         // deprecated constructor.
-        top_suite_name_ = requested_name;
-        top_suite_.name_ = top_suite_name_.c_str ();
+        top_suite_.located_name_ = top_suite_name;
+        top_suite_.name_ = top_suite_.located_name_.name ();
       }
     else if (strlen (top_suite_.name ()) == 0)
       {
@@ -440,13 +438,16 @@ namespace micro_os_plus::micro_test_plus
                 top_suite_name_view = top_suite_name_view.substr (0, dot_pos);
               }
 
-            top_suite_name_ = top_suite_name_view;
+            top_suite_.located_name_
+                = located_name{ top_suite_name_view,
+                                top_suite_name.location () };
           }
         else
           {
-            top_suite_name_ = "default suite";
+            top_suite_.located_name_
+                = located_name{ "default suite", top_suite_name.location () };
           }
-        top_suite_.name_ = top_suite_name_.c_str ();
+        top_suite_.name_ = top_suite_.located_name_.name ();
       }
 
     // Named first, so that the rejection names it.
@@ -471,13 +472,12 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Forwards the content of the string, as a C string, to the overload
-   * for `const char*`.
+   * Forwards an empty name to the overload for `const located_name&`.
    */
   suite&
-  runner::add_top_suite (const std::string& top_suite_name)
+  runner::add_top_suite (void)
   {
-    return add_top_suite (top_suite_name.c_str ());
+    return add_top_suite (located_name{ "" });
   }
 
 #if defined(__GNUC__)

@@ -284,11 +284,10 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
   // --------------------------------------------------------------------------
 
   {
-    static_assert (std::is_convertible_v<const char*, mt::test_case_name>);
-    static_assert (std::is_convertible_v<std::string, mt::test_case_name>);
+    static_assert (std::is_convertible_v<const char*, mt::located_name>);
+    static_assert (std::is_convertible_v<std::string, mt::located_name>);
     // Not null-terminated, so not accepted.
-    static_assert (
-        !std::is_convertible_v<std::string_view, mt::test_case_name>);
+    static_assert (std::is_convertible_v<std::string_view, mt::located_name>);
   }
 
   // The names of the suites are accepted as those of the test cases:
@@ -298,11 +297,11 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (can_add_suite<const char (&)[5]>);
     static_assert (can_add_suite<std::string>);
     static_assert (can_add_suite<const std::string&>);
-    static_assert (!can_add_suite<std::string_view>);
+    static_assert (can_add_suite<std::string_view>);
 
     static_assert (can_add_top_suite<const char*>);
     static_assert (can_add_top_suite<const std::string&>);
-    static_assert (!can_add_top_suite<std::string_view>);
+    static_assert (can_add_top_suite<std::string_view>);
 
     using body_t = void (*) (mt::suite&);
     static_assert (std::is_constructible_v<mt::static_suite, const char*,
@@ -310,8 +309,8 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (
         std::is_constructible_v<mt::static_suite, const std::string&,
                                 mt::runner&, body_t>);
-    static_assert (!std::is_constructible_v<mt::static_suite, std::string_view,
-                                            mt::runner&, body_t>);
+    static_assert (std::is_constructible_v<mt::static_suite, std::string_view,
+                                           mt::runner&, body_t>);
   }
 
   {

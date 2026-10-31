@@ -1039,13 +1039,15 @@ next line FAILED (miscellaneous.cpp:920)
     • Test case and suite names
         ✓ temporary string name
         ✓ string name
+        ✓ string view name
         ✓ helper test cases run
         ✓ location of the caller
         ✓ local session passed
         ✓ string suite name copied
         ✓ C string suite name copied
-    ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (195 checks passed, 8 failed, in 52 test cases)
+        ✓ string view suite name copied
+    ✓ Test case and suite names - passed (9 checks)
+✗ Miscellaneous suite - FAILED (197 checks passed, 8 failed, in 52 test cases)
 • Operands suite
     • Arrays
         ✓ array{ 42 } == array{ 42 }
@@ -1313,4 +1315,4 @@ next line FAILED (miscellaneous.cpp:920)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 658 checks passed, 338 failed, in 144 test cases, 13 test suites
+✗ Total: 660 checks passed, 338 failed, in 144 test cases, 13 test suites

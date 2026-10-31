@@ -330,9 +330,9 @@ their own types:
 ```
 
 µTest++: `test (name, callable, arguments...)` passes one fixed set of
-arguments to one test case. Since `test_case_name` accepts a
-`std::string`, and the test case runs before the temporary string is
-destroyed, a loop with generated names already works:
+arguments to one test case. Since `located_name` accepts a
+`std::string`, and moves a temporary one, a loop with generated names
+already works:
 
 ```c++
 for (int v : { 1, 2, 3 })
@@ -369,9 +369,9 @@ UT (commit `9873e7f`): the test name in `events::test` became a
 `std::string`, to fix a dangling reference with names built at run time
 (issue 569).
 
-µTest++: `test_case_name` accepts a `std::string`; the name is not
-copied, but this is safe, because the test case runs within the call
-to `test()`, while the temporary string is still alive.
+µTest++: `located_name` accepts a `std::string`, and copies the name
+(a temporary string is moved), so there is no dangling reference; the
+copy is freed when the test case ends.
 
 Verdict: **Covered**.
 

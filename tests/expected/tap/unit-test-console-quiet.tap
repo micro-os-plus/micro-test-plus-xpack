@@ -2212,6 +2212,7 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
 #             lineNumber: 935
 #           ...
 
+# Built with clang xPack x86_64 Clang 17.0.6 (https://github.com/xpack-dev-tools/clang-xpack fb0ec1566f6eeb0e50efb59b9d3309dbde2ee5de), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 TAP version 14
 # Subtest: default suite
 All available test cases:
@@ -2220,7 +2221,6 @@ All available test cases:
   Added
     Added test
     Each (1)
-# Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
     Each (2)
 4 test cases in 2 test suites
 Matching test cases:
@@ -2236,7 +2236,7 @@ Matching test cases:
 #             fileName: miscellaneous.cpp
 #             lineNumber: 1793
 #           ...
-not ok 11 - Miscellaneous suite # { FAILED, 201 checks passed, 8 failed, in 52 test cases, time: 4.581 ms }
+not ok 11 - Miscellaneous suite # { FAILED, 203 checks passed, 8 failed, in 52 test cases, time: 2.274 ms }
 # Operands suite > Arrays bad
 #         not ok 1 - array{ 42 } ne array{ 42 }
 #           ---
@@ -2495,4 +2495,4 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.078 ms }
 #           ...
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.110 ms }
 1..15
-# { total: 675 checks passed, 349 failed, in 158 test cases, 15 test suites, time: 17.489 ms }
+# { total: 677 checks passed, 349 failed, in 158 test cases, 15 test suites, time: 6.700 ms }

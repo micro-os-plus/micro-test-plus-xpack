@@ -324,7 +324,7 @@ namespace micro_os_plus::micro_test_plus
     detail::failure_info failure{ .kind = detail::check_kind::expectation,
                                   .message = "unexpected exception",
                                   .has_expression = false,
-                                  .location = location_ };
+                                  .location = located_name_.location () };
     if (what != nullptr)
       {
         failure.message.append (": ");
@@ -541,14 +541,14 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Initialises the base `suite` with @p name, the given @p test_runner, and
-   * a no-op callable. Sets `own_index_` to 1, since the top suite is
-   * always the first suite of the session; the runner numbers the other
-   * suites from 2. If tracing is enabled, the name is output for
-   * diagnostic purposes.
+   * Initialises the base `suite` with @p name, converted to a
+   * `located_name`, the given @p test_runner, and a no-op callable. Sets
+   * `own_index_` to 1, since the top suite is always the first suite of
+   * the session; the runner numbers the other suites from 2. If tracing
+   * is enabled, the name is output for diagnostic purposes.
    */
   top_suite::top_suite (const char* name, runner& test_runner)
-      : suite{ name, test_runner, [] (suite&) noexcept {} }
+      : suite{ located_name{ name }, test_runner, [] (suite&) noexcept {} }
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name);

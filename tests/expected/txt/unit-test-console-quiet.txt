@@ -405,10 +405,10 @@ next line FAILED (miscellaneous.cpp:920)
         ✗ FAILED (miscellaneous.cpp:931, "key: \"value\" # not a comment" == "a\\b")
         ✗ FAILED (miscellaneous.cpp:935, "line\nbreak\ttab" == "x")
 
+# Built with clang xPack x86_64 Clang 17.0.6 (https://github.com/xpack-dev-tools/clang-xpack fb0ec1566f6eeb0e50efb59b9d3309dbde2ee5de), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 TAP version 14
 # Subtest: default suite
 All available test cases:
-# Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
   Local
     Local test
   Added
@@ -485,4 +485,4 @@ Matching test cases:
         ✗ abc matches *C FAILED (utility.cpp:191)
         ✗ ab matches ??? FAILED (utility.cpp:195)
 
-✗ Total: 675 checks passed, 349 failed, in 158 test cases, 15 test suites, time: 14.307 ms
+✗ Total: 677 checks passed, 349 failed, in 158 test cases, 15 test suites, time: 3.473 ms

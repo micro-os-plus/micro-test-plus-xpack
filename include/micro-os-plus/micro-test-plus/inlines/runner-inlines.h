@@ -174,8 +174,9 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Constructs a `suite` object on the heap, binding the callable and any
-   * additional arguments, then transfers ownership to the runner via
+   * Constructs a `suite` object on the heap, moving the name into it and
+   * binding the callable and any additional arguments, then transfers
+   * ownership to the runner via
    * `register_suite()`. The suite is not run here; all registered suites
    * are run later by `run_suites()`, together with the static suites, sorted by
    * name. A suite added once `run_suites()` has started is rejected by
@@ -183,38 +184,19 @@ namespace micro_os_plus::micro_test_plus
    */
   template <typename Callable_T, typename... Args_T>
   void
-  runner::add_suite (const char* name, Callable_T&& callable,
+  runner::add_suite (located_name name, Callable_T&& callable,
                      Args_T&&... arguments)
   {
-    if (name == nullptr)
-      {
-        name = "";
-      }
-
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name);
+    trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
     // Not std::make_unique(), which cannot access the private constructor.
     std::unique_ptr<class suite> child_suite{ new class suite (
-        name, *this, std::forward<Callable_T> (callable),
+        std::move (name), *this, std::forward<Callable_T> (callable),
         std::forward<Args_T> (arguments)...) };
 
     register_suite (std::move (child_suite));
-  }
-
-  /**
-   * @details
-   * Forwards the content of the string, as a C string, to the overload
-   * for `const char*`, which copies it.
-   */
-  template <typename Callable_T, typename... Args_T>
-  void
-  runner::add_suite (const std::string& name, Callable_T&& callable,
-                     Args_T&&... arguments)
-  {
-    add_suite (name.c_str (), std::forward<Callable_T> (callable),
-               std::forward<Args_T> (arguments)...);
   }
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
@@ -228,7 +210,7 @@ namespace micro_os_plus::micro_test_plus
   runner::suite (std::string_view name, Callable_T&& callable,
                  Args_T&&... arguments)
   {
-    add_suite (std::string{ name }, std::forward<Callable_T> (callable),
+    add_suite (located_name{ name }, std::forward<Callable_T> (callable),
                std::forward<Args_T> (arguments)...);
   }
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)

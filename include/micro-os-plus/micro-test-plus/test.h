@@ -111,39 +111,38 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
-   * @brief The name of a test case, with the location of its definition.
+   * @brief A name of a suite or of a test case, with the location where
+   * it was given.
    *
    * @details
-   * The first parameter of `suite::test()` and `test_case::test()`. The
-   * constructors are not explicit, so a string literal, a `const char*`,
-   * or a `std::string` passed as the test case name converts implicitly;
-   * the default argument of the constructors is evaluated at the place of
-   * the conversion, which is the call to `test()` in the user code, so the
-   * location of the test case is captured without an additional argument
-   * (which could not follow the variadic arguments of `test()`).
+   * The name parameter of `suite::test()`, `test_case::test()`,
+   * `test_each()`, `runner::add_suite()`, `runner::add_top_suite()`, and
+   * the `static_suite` constructors. The constructors are not explicit,
+   * so a string literal, a `const char*`, a `std::string`, or a
+   * `std::string_view` passed as the name converts implicitly; the
+   * default argument of the constructors is evaluated at the place of the
+   * conversion, which is the call in the user code, so the location is
+   * captured without an additional argument (which could not follow the
+   * variadic arguments of these functions).
    *
-   * The location is used to report a failure that is not associated with
-   * a check, such as an exception escaping the test case body.
+   * The name is copied, so the argument need not outlive the call, and a
+   * `std::string_view` need not be null-terminated; a temporary
+   * `std::string` is moved. The copy of a test case name lives until the
+   * end of the call to `test()`, within which the test case runs, so the
+   * memory used does not grow with the number of test cases; the suites,
+   * which run later, keep their name, moved, until they are destroyed.
    *
-   * The name is not copied. Since the test cases run immediately, within
-   * the call to `test()`, a temporary string passed as the argument, which
-   * lives until the end of the full expression, remains valid while the
-   * test case runs; a named `test_case_name` object must not outlive the
-   * string it was constructed from.
-   *
-   * A `std::string_view` is not accepted: since the name is not copied,
-   * it must be null-terminated, which a view does not guarantee, and
-   * accepting it would require every test case to own a copy of its
-   * name. Pass `std::string (sv)` instead. The names of the suites, which
-   * are copied, follow the same rule, for uniformity.
+   * The location of a test case is used to report a failure that is not
+   * associated with a check, such as an exception escaping the test case
+   * body; the suites keep their location, but do not report it.
    *
    * Since a conversion sequence may include only one user-defined
-   * conversion, an argument that converts to `const char*` or to
-   * `std::string` via a user-defined conversion operator must be
-   * converted explicitly.
+   * conversion, an argument that converts to `const char*`, to
+   * `std::string`, or to `std::string_view` via a user-defined conversion
+   * operator must be converted explicitly.
    *
    * A helper function that adds test cases on behalf of its caller can
-   * take a `const test_case_name&` parameter and pass it to `test()`, so
+   * take a `const located_name&` parameter and pass it to `test()`, so
    * that the reported location is that of the call to the helper, not
    * that of the call to `test()` inside the helper.
    *
@@ -153,55 +152,81 @@ namespace micro_os_plus::micro_test_plus
    *   namespace mt = micro_os_plus::micro_test_plus;
    *
    *   void
-   *   check_answer (mt::suite& ts, const mt::test_case_name& name, int v)
+   *   check_answer (mt::suite& ts, const mt::located_name& name, int v)
    *   {
    *     ts.test (name, [v] (auto& t) { t.expect (mt::eq (v, 42)); });
    *   }
    * @endcode
    *
+   * @since 6.0.0
+   *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
-  class test_case_name
+  class located_name
   {
   public:
     /**
      * @brief Constructs the name from a C string, capturing the location
      * of the caller.
      *
-     * @param name The test case name or description, used in reports;
-     * it must remain valid while the test case runs.
+     * @param name The name or description, used in reports; copied. A
+     * null pointer is an empty name.
      * @param location The location of the conversion, defaulting to the
-     * call to `test()` in the user code.
+     * call in the user code.
      */
-    test_case_name (const char* name,
-                    const reflection::source_location& location
-                    = reflection::source_location::current ()) noexcept;
+    located_name (const char* name, const reflection::source_location& location
+                                    = reflection::source_location::current ());
 
     /**
      * @brief Constructs the name from a standard string, capturing the
      * location of the caller.
      *
-     * @param name The test case name or description, used in reports;
-     * it must remain valid, and not be modified, while the test case runs.
+     * @param name The name or description, used in reports; copied.
      * @param location The location of the conversion, defaulting to the
-     * call to `test()` in the user code.
+     * call in the user code.
      */
-    test_case_name (const std::string& name,
-                    const reflection::source_location& location
-                    = reflection::source_location::current ()) noexcept;
+    located_name (const std::string& name,
+                  const reflection::source_location& location
+                  = reflection::source_location::current ());
 
     /**
-     * @brief Gets the test case name.
+     * @brief Constructs the name from a temporary standard string,
+     * capturing the location of the caller.
+     *
+     * @param name The name or description, used in reports; moved.
+     * @param location The location of the conversion, defaulting to the
+     * call in the user code.
+     */
+    located_name (std::string&& name,
+                  const reflection::source_location& location
+                  = reflection::source_location::current ());
+
+    /**
+     * @brief Constructs the name from a string view, capturing the
+     * location of the caller.
+     *
+     * @param name The name or description, used in reports; copied, so
+     * the view need not be null-terminated.
+     * @param location The location of the conversion, defaulting to the
+     * call in the user code.
+     */
+    located_name (std::string_view name,
+                  const reflection::source_location& location
+                  = reflection::source_location::current ());
+
+    /**
+     * @brief Gets the name.
      *
      * @par Parameters
      *   None.
-     * @return A pointer to the null-terminated test case name.
+     * @return A pointer to the null-terminated name, valid while this
+     * object exists and is not modified.
      */
     [[nodiscard]] const char*
     name (void) const noexcept;
 
     /**
-     * @brief Gets the location of the call to `test()`.
+     * @brief Gets the location where the name was given.
      *
      * @par Parameters
      *   None.
@@ -212,19 +237,20 @@ namespace micro_os_plus::micro_test_plus
 
   private:
     /**
-     * @brief The test case name.
+     * @brief The copy of the name.
      *
      * @details
-     * Not owned; test cases run immediately, while the name is valid.
+     * Owned, so that the name does not depend on the lifetime of the
+     * argument; the name of the node points into it.
      */
-    const char* name_;
+    std::string name_;
 
     /**
-     * @brief The location of the call to `test()`.
+     * @brief The location where the name was given.
      *
      * @details
      * Captured by the default argument of the constructor, at the place
-     * of the conversion to `test_case_name`.
+     * of the conversion to `located_name`.
      */
     reflection::source_location location_;
   };
@@ -647,7 +673,7 @@ namespace micro_os_plus::micro_test_plus
        */
       template <typename Callable_T, typename... Args_T>
       [[gnu::always_inline]] void
-      create_test_case (const test_case_name& name, suite& parent_suite,
+      create_test_case (const located_name& name, suite& parent_suite,
                         size_t nesting_depth, Callable_T&& callable,
                         Args_T&&... arguments);
 
@@ -1017,8 +1043,8 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class Self_T, class Values_T, class Callable_T>
     void
-    test_each_value (Self_T& self, const test_case_name& name,
-                     Values_T&& values, Callable_T& callable);
+    test_each_value (Self_T& self, const located_name& name, Values_T&& values,
+                     Callable_T& callable);
 
     // ------------------------------------------------------------------------
   } // namespace detail
@@ -1086,7 +1112,7 @@ namespace micro_os_plus::micro_test_plus
      * bound, invoked when the test case executes; it must outlive the
      * test case.
      */
-    test_case (const test_case_name& name, runner& test_runner,
+    test_case (const located_name& name, runner& test_runner,
                suite& parent_suite, size_t own_index, size_t nesting_depth,
                detail::callable_ref<test_case> body);
 
@@ -1147,9 +1173,9 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Args_T The types of the callable arguments.
      *
      * @param name The test case name or description, used in reports; a
-     * string literal, a `const char*`, or a `std::string`, converted
-     * implicitly to `test_case_name`, which also captures the location of
-     * the call; it must remain valid while the test case runs.
+     * string literal, a `const char*`, a `std::string`, or a
+     * `std::string_view`, converted implicitly to `located_name`, which
+     * copies it and also captures the location of the call.
      * @param callable A generic callable object, usually a lambda,
      * invoked to perform the test.
      * @param arguments A possibly empty list of arguments to be passed to
@@ -1159,7 +1185,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <typename Callable_T, typename... Args_T>
     void
-    test (const test_case_name& name, Callable_T&& callable,
+    test (const located_name& name, Callable_T&& callable,
           Args_T&&... arguments);
 
     /**
@@ -1192,8 +1218,9 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Callable_T The type of a callable object.
      *
      * @param name The common name of the test cases; a string literal, a
-     * `const char*`, or a `std::string`, converted implicitly to
-     * `test_case_name`, which also captures the location of the call.
+     * `const char*`, a `std::string`, or a `std::string_view`, converted
+     * implicitly to `located_name`, which also captures the location of
+     * the call.
      * @param values The range or tuple of values.
      * @param callable A generic callable object, usually a lambda,
      * invoked with the test case and each value.
@@ -1206,7 +1233,7 @@ namespace micro_os_plus::micro_test_plus
       requires (detail::test_values_range<Values_T>
                 or detail::test_values_tuple<Values_T>)
     void
-    test_each (const test_case_name& name, Values_T&& values,
+    test_each (const located_name& name, Values_T&& values,
                Callable_T&& callable);
 
     /**
@@ -1232,7 +1259,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <typename T, typename Callable_T>
     void
-    test_each (const test_case_name& name, std::initializer_list<T> values,
+    test_each (const located_name& name, std::initializer_list<T> values,
                Callable_T&& callable);
 
     // ------------------------------------------------------------------------
@@ -1466,13 +1493,16 @@ namespace micro_os_plus::micro_test_plus
     detail::callable_ref<test_case> callable_;
 
     /**
-     * @brief The location of the call to `test()` that created this
-     * test case.
+     * @brief The name and the location of the call to `test()` that
+     * created this test case.
      *
      * @details
-     * Used to report the failures that are not associated with a check.
+     * The argument of `test()`, which lives until the end of that call,
+     * after the test case ends. The name of the node points into it; the
+     * location is used to report the failures that are not associated
+     * with a check.
      */
-    reflection::source_location location_;
+    const located_name& located_name_;
 
     /**
      * @brief Reference to the parent suite that owns this test case.
@@ -1587,8 +1617,8 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Callable_T The type of the callable object.
      * @tparam Args_T The types of any additional callable arguments.
      *
-     * @param name The suite name or description, used in reports; it is
-     * copied, so the string need not outlive the call.
+     * @param name The suite name or description, with the location where
+     * it was given; moved into the suite.
      * @param test_runner The test runner managing this suite.
      * @param callable A generic callable object, usually a lambda,
      * invoked when the suite executes. Its first parameter must be
@@ -1597,7 +1627,7 @@ namespace micro_os_plus::micro_test_plus
      * the callable after the leading `suite&` reference.
      */
     template <typename Callable_T, typename... Args_T>
-    suite (std::string_view name, runner& test_runner, Callable_T&& callable,
+    suite (located_name&& name, runner& test_runner, Callable_T&& callable,
            Args_T&&... arguments);
 
   public:
@@ -1658,9 +1688,9 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Args_T The types of the callable arguments.
      *
      * @param name The test case name or description, used in reports; a
-     * string literal, a `const char*`, or a `std::string`, converted
-     * implicitly to `test_case_name`, which also captures the location of
-     * the call; it must remain valid while the test case runs.
+     * string literal, a `const char*`, a `std::string`, or a
+     * `std::string_view`, converted implicitly to `located_name`, which
+     * copies it and also captures the location of the call.
      * @param callable A generic callable object, usually a lambda,
      * invoked to perform the test.
      * @param arguments A possibly empty list of arguments to be passed to
@@ -1670,7 +1700,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <typename Callable_T, typename... Args_T>
     void
-    test (const test_case_name& name, Callable_T&& callable,
+    test (const located_name& name, Callable_T&& callable,
           Args_T&&... arguments);
 
     /**
@@ -1703,8 +1733,9 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Callable_T The type of a callable object.
      *
      * @param name The common name of the test cases; a string literal, a
-     * `const char*`, or a `std::string`, converted implicitly to
-     * `test_case_name`, which also captures the location of the call.
+     * `const char*`, a `std::string`, or a `std::string_view`, converted
+     * implicitly to `located_name`, which also captures the location of
+     * the call.
      * @param values The range or tuple of values.
      * @param callable A generic callable object, usually a lambda,
      * invoked with the test case and each value.
@@ -1717,7 +1748,7 @@ namespace micro_os_plus::micro_test_plus
       requires (detail::test_values_range<Values_T>
                 or detail::test_values_tuple<Values_T>)
     void
-    test_each (const test_case_name& name, Values_T&& values,
+    test_each (const located_name& name, Values_T&& values,
                Callable_T&& callable);
 
     /**
@@ -1743,7 +1774,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <typename T, typename Callable_T>
     void
-    test_each (const test_case_name& name, std::initializer_list<T> values,
+    test_each (const located_name& name, std::initializer_list<T> values,
                Callable_T&& callable);
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
@@ -1888,16 +1919,16 @@ namespace micro_os_plus::micro_test_plus
     detail::stopwatch stopwatch_;
 
     /**
-     * @brief A copy of the suite name.
+     * @brief The name of the suite, with the location where it was given.
      *
      * @details
-     * The suites registered with `runner::add_suite()`, and the static suites,
-     * run later, when the string passed to the constructor may no longer
-     * exist; the name is therefore copied here, and the name of the node
-     * points to this copy. The test cases, which run immediately, do not
-     * copy their names.
+     * The suites registered with `runner::add_suite()`, and the static
+     * suites, run later, when the argument passed by the caller no longer
+     * exists; it is therefore moved here, and the name of the node points
+     * into it. The test cases, which run immediately, refer to the
+     * argument of `test()` instead.
      */
-    std::string owned_name_{};
+    located_name located_name_;
 
     /**
      * @brief The next suite in the list of suites.
@@ -2105,8 +2136,11 @@ namespace micro_os_plus::micro_test_plus
      *   `static_suite&` first parameter, which selects the deprecated
      *   constructor.
      *
-     * @param name The test suite name or description, used in reports; it
-     * is copied, so the string need not outlive the call.
+     * @param name The test suite name or description, used in reports; a
+     * string literal, a `const char*`, a `std::string`, or a
+     * `std::string_view`, converted implicitly to `located_name`, which
+     * copies it, so the string need not outlive the call; the suite keeps
+     * it.
      * @param test_runner The test runner that runs this suite.
      * @param callable A generic callable object, usually a lambda or
      * function, invoked to perform the test suite. Its first parameter
@@ -2116,37 +2150,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <typename Callable_T, typename... Args_T>
       requires (!detail::static_suite_body<Callable_T, Args_T...>)
-    static_suite (const char* name, runner& test_runner, Callable_T&& callable,
-                  Args_T&&... arguments);
-
-    /**
-     * @brief Class template constructor for static_suite, with the name
-     * given as a string.
-     *
-     * @details
-     * Uses the content of the string, up to the first null character, as
-     * the name of the `const char*` constructor, which copies it. A
-     * `std::string_view` is not accepted, for uniformity with the test
-     * cases, whose names are not copied, and so must be null-terminated.
-     *
-     * @tparam Callable_T The type of a callable object.
-     * @tparam Args_T The types of the callable arguments.
-     *
-     * @par Constraints
-     *   The callable is not a body written for v5.0.1, as for the
-     *   `const char*` constructor.
-     *
-     * @param name The test suite name or description, used in reports.
-     * @param test_runner The test runner that runs this suite.
-     * @param callable A generic callable object, usually a lambda or
-     * function, invoked to perform the test suite. Its first parameter
-     * must be `suite&`.
-     * @param arguments A possibly empty list of arguments forwarded to
-     * the callable after the leading `suite&` reference.
-     */
-    template <typename Callable_T, typename... Args_T>
-      requires (!detail::static_suite_body<Callable_T, Args_T...>)
-    static_suite (const std::string& name, runner& test_runner,
+    static_suite (located_name name, runner& test_runner,
                   Callable_T&& callable, Args_T&&... arguments);
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
@@ -2178,8 +2182,11 @@ namespace micro_os_plus::micro_test_plus
      *   The callable cannot be invoked with a `suite&` first argument,
      *   but can with a `static_suite&` one.
      *
-     * @param name The test suite name or description, used in reports; it
-     * is copied, so the string need not outlive the call.
+     * @param name The test suite name or description, used in reports; a
+     * string literal, a `const char*`, a `std::string`, or a
+     * `std::string_view`, converted implicitly to `located_name`, which
+     * copies it, so the string need not outlive the call; the suite keeps
+     * it.
      * @param test_runner The test runner that runs this suite.
      * @param callable A function or callable object whose first parameter
      * is `static_suite&`.
@@ -2189,8 +2196,8 @@ namespace micro_os_plus::micro_test_plus
     template <typename Callable_T, typename... Args_T>
       requires (detail::static_suite_body<Callable_T, Args_T...>)
     [[deprecated ("use a suite& first parameter (since 6.0.0)")]]
-    static_suite (const char* name, runner& test_runner, Callable_T&& callable,
-                  Args_T&&... arguments);
+    static_suite (located_name name, runner& test_runner,
+                  Callable_T&& callable, Args_T&&... arguments);
 
     /**
      * @}

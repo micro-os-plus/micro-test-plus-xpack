@@ -400,15 +400,17 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
     # Subtest: Test case and suite names
         ok 1 - temporary string name
         ok 2 - string name
-        ok 3 - helper test cases run
-        ok 4 - location of the caller
-        ok 5 - local session passed
-        ok 6 - string suite name copied
-        ok 7 - C string suite name copied
-        1..7
-    ok 49 - Test case and suite names # { passed, 7 checks }
+        ok 3 - string view name
+        ok 4 - helper test cases run
+        ok 5 - location of the caller
+        ok 6 - local session passed
+        ok 7 - string suite name copied
+        ok 8 - C string suite name copied
+        ok 9 - string view suite name copied
+        1..9
+    ok 49 - Test case and suite names # { passed, 9 checks }
     1..49
-not ok 2 - Miscellaneous suite # { FAILED, 195 checks passed, 8 failed, in 52 test cases }
+not ok 2 - Miscellaneous suite # { FAILED, 197 checks passed, 8 failed, in 52 test cases }
 # Subtest: Runner options suite
     # Subtest: Default options
         ok 1 - the TAP reporter
@@ -605,4 +607,4 @@ ok 4 - Stopwatch suite # { passed, 20 checks in 5 test cases }
     1..3
 not ok 5 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases }
 1..5
-# { total: 300 checks passed, 13 failed, in 69 test cases, 5 test suites }
+# { total: 302 checks passed, 13 failed, in 69 test cases, 5 test suites }

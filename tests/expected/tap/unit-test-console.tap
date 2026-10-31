@@ -2430,6 +2430,7 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
     not ok 10 - TAP condition values are quoted # { FAILED, 0 checks passed, 2 failed }
     ok 11 - Runner options # { passed, 7 checks }
 
+# Built with clang xPack x86_64 Clang 17.0.6 (https://github.com/xpack-dev-tools/clang-xpack fb0ec1566f6eeb0e50efb59b9d3309dbde2ee5de), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 TAP version 14
 # Subtest: default suite
     ok 12 - Optional top suite # { passed, 7 checks }
@@ -2441,7 +2442,6 @@ TAP version 14
     ok 18 - Runner filter patterns # { passed, 3 checks }
 All available test cases:
   Local
-# Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
     Local test
   Added
     Added test
@@ -2504,10 +2504,10 @@ Matching test cases:
     ok 46 - Formatting of passed checks # { passed, 6 checks }
     ok 47 - Abort handler # { passed, 3 checks }
     ok 48 - Abort during the session # { passed, 6 checks }
-    ok 49 - Test case and suite names # { passed, 7 checks }
+    ok 49 - Test case and suite names # { passed, 9 checks }
 
     1..49
-not ok 11 - Miscellaneous suite # { FAILED, 201 checks passed, 8 failed, in 52 test cases, time: 4.622 ms }
+not ok 11 - Miscellaneous suite # { FAILED, 203 checks passed, 8 failed, in 52 test cases, time: 2.698 ms }
 
 # Subtest: Operands suite
     ok 1 - Arrays # { passed, 4 checks }
@@ -2838,6 +2838,6 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.107 ms }
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.120 ms }
 
 1..15
-# { total: 675 checks passed, 349 failed, in 158 test cases, 15 test suites, time: 21.221 ms }
+# { total: 677 checks passed, 349 failed, in 158 test cases, 15 test suites, time: 7.425 ms }
 Overall, the µTest++ unit tests were successful!
 

@@ -94,38 +94,60 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Stores the name pointer, or an empty name if it is null, and the
-   * location; when called implicitly, the location is the place of the
-   * conversion, in the user code.
+   * Copies the name, or stores an empty name if the pointer is null, and
+   * the location; when called implicitly, the location is the place of
+   * the conversion, in the user code.
    */
-  inline test_case_name::test_case_name (
-      const char* name, const reflection::source_location& location) noexcept
+  inline located_name::located_name (
+      const char* name, const reflection::source_location& location)
       : name_{ name != nullptr ? name : "" }, location_{ location }
   {
   }
 
   /**
    * @details
-   * Stores the pointer returned by `name.c_str()`, which remains valid
-   * while the string is neither destroyed nor modified, and the location;
-   * when called implicitly, the location is the place of the conversion,
-   * in the user code.
+   * Copies the content of the string, and stores the location; when
+   * called implicitly, the location is the place of the conversion, in
+   * the user code.
    */
-  inline test_case_name::test_case_name (
-      const std::string& name,
-      const reflection::source_location& location) noexcept
-      : name_{ name.c_str () }, location_{ location }
+  inline located_name::located_name (
+      const std::string& name, const reflection::source_location& location)
+      : name_{ name }, location_{ location }
   {
   }
 
   /**
    * @details
-   * Returns the pointer stored in `name_`.
+   * Takes over the content of the string, without copying it, and stores
+   * the location; when called implicitly, the location is the place of
+   * the conversion, in the user code.
+   */
+  inline located_name::located_name (
+      std::string&& name, const reflection::source_location& location)
+      : name_{ std::move (name) }, location_{ location }
+  {
+  }
+
+  /**
+   * @details
+   * Copies the characters of the view, which need not be null-terminated,
+   * and stores the location; when called implicitly, the location is the
+   * place of the conversion, in the user code.
+   */
+  inline located_name::located_name (
+      std::string_view name, const reflection::source_location& location)
+      : name_{ name }, location_{ location }
+  {
+  }
+
+  /**
+   * @details
+   * Returns `name_.c_str()`.
    */
   inline const char*
-  test_case_name::name (void) const noexcept
+  located_name::name (void) const noexcept
   {
-    return name_;
+    return name_.c_str ();
   }
 
   /**
@@ -133,7 +155,7 @@ namespace micro_os_plus::micro_test_plus
    * Returns a reference to the location stored in `location_`.
    */
   inline const reflection::source_location&
-  test_case_name::location (void) const noexcept
+  located_name::location (void) const noexcept
   {
     return location_;
   }
@@ -241,7 +263,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <typename Callable_T, typename... Args_T>
     inline void
-    runnable_base::create_test_case (const test_case_name& name,
+    runnable_base::create_test_case (const located_name& name,
                                      suite& parent_suite, size_t nesting_depth,
                                      Callable_T&& callable,
                                      Args_T&&... arguments)
@@ -404,15 +426,17 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Stores the reference to the body, the location of the call to
-   * `test()`, the parent suite, and the nesting depth.
+   * Stores the reference to the body, the reference to the name and the
+   * location of the call to `test()`, which outlive the test case, the
+   * parent suite, and the nesting depth; the node name points into the
+   * name.
    */
-  inline test_case::test_case (const test_case_name& name, runner& test_runner,
+  inline test_case::test_case (const located_name& name, runner& test_runner,
                                suite& parent_suite, size_t own_index,
                                size_t nesting_depth,
                                detail::callable_ref<test_case> body)
       : runnable_base{ name.name (), test_runner, own_index },
-        callable_{ body }, location_{ name.location () },
+        callable_{ body }, located_name_{ name },
         parent_suite_{ parent_suite }, nesting_depth_{ nesting_depth }
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
@@ -430,7 +454,7 @@ namespace micro_os_plus::micro_test_plus
    */
   template <typename Callable_T, typename... Args_T>
   void
-  test_case::test (const test_case_name& name, Callable_T&& callable,
+  test_case::test (const located_name& name, Callable_T&& callable,
                    Args_T&&... arguments)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
@@ -636,22 +660,21 @@ namespace micro_os_plus::micro_test_plus
    * initially 0; the runner assigns the final index before running the
    * suite.
    *
-   * The name is copied into `owned_name_`, and the node name points to the
-   * copy, since the suite may run after the string passed by the caller
-   * was destroyed; the base is constructed with an empty name, since the
-   * copy does not exist yet. The copy is null-terminated, also when the
-   * view passed by the caller is not.
+   * The name, with its location, is moved into `located_name_`, and the
+   * node name points into it, since the suite may run after the argument
+   * of the caller was destroyed; the base is constructed with an empty
+   * name, since the member does not exist yet.
    */
   template <typename Callable_T, typename... Args_T>
-  suite::suite (std::string_view name, runner& test_runner,
+  suite::suite (located_name&& name, runner& test_runner,
                 Callable_T&& callable, Args_T&&... arguments)
       : runnable_base{ "", test_runner, 0 },
         callable_{ detail::bind_callable<suite> (
             std::forward<Callable_T> (callable),
             std::forward<Args_T> (arguments)...) },
-        owned_name_{ name }
+        located_name_{ std::move (name) }
   {
-    name_ = owned_name_.c_str ();
+    name_ = located_name_.name ();
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s '%s' %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "\n",
@@ -709,7 +732,7 @@ namespace micro_os_plus::micro_test_plus
 
   template <typename Callable_T, typename... Args_T>
   void
-  suite::test (const test_case_name& name, Callable_T&& callable,
+  suite::test (const located_name& name, Callable_T&& callable,
                Args_T&&... arguments)
   {
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
@@ -745,8 +768,8 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class Self_T, class Values_T, class Callable_T>
     void
-    test_each_value (Self_T& self, const test_case_name& name,
-                     Values_T&& values, Callable_T& callable)
+    test_each_value (Self_T& self, const located_name& name, Values_T&& values,
+                     Callable_T& callable)
     {
       std::size_t position = 0;
 
@@ -771,7 +794,7 @@ namespace micro_os_plus::micro_test_plus
 
           // The test case runs within this call, so the value and the
           // callable are captured by reference, not copied.
-          self.test (test_case_name{ text, name.location () },
+          self.test (located_name{ std::move (text), name.location () },
                      [&callable, &value] (auto& test_self)
             {
               if constexpr (std::is_member_pointer_v<
@@ -810,7 +833,7 @@ namespace micro_os_plus::micro_test_plus
     requires (detail::test_values_range<Values_T>
               or detail::test_values_tuple<Values_T>)
   void
-  test_case::test_each (const test_case_name& name, Values_T&& values,
+  test_case::test_each (const located_name& name, Values_T&& values,
                         Callable_T&& callable)
   {
     detail::test_each_value (*this, name, std::forward<Values_T> (values),
@@ -823,7 +846,7 @@ namespace micro_os_plus::micro_test_plus
    */
   template <typename T, typename Callable_T>
   void
-  test_case::test_each (const test_case_name& name,
+  test_case::test_each (const located_name& name,
                         std::initializer_list<T> values, Callable_T&& callable)
   {
     detail::test_each_value (*this, name, values, callable);
@@ -838,7 +861,7 @@ namespace micro_os_plus::micro_test_plus
     requires (detail::test_values_range<Values_T>
               or detail::test_values_tuple<Values_T>)
   void
-  suite::test_each (const test_case_name& name, Values_T&& values,
+  suite::test_each (const located_name& name, Values_T&& values,
                     Callable_T&& callable)
   {
     detail::test_each_value (*this, name, std::forward<Values_T> (values),
@@ -851,8 +874,8 @@ namespace micro_os_plus::micro_test_plus
    */
   template <typename T, typename Callable_T>
   void
-  suite::test_each (const test_case_name& name,
-                    std::initializer_list<T> values, Callable_T&& callable)
+  suite::test_each (const located_name& name, std::initializer_list<T> values,
+                    Callable_T&& callable)
   {
     detail::test_each_value (*this, name, values, callable);
   }
@@ -886,7 +909,7 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * Delegates to `suite`, which stores the callable and binds its
-   * arguments, if any; a null name is replaced by an empty name; the
+   * arguments, if any, and keeps the name, moved; the
    * callable receives a `suite&` reference, as
    * for the suites registered with `runner::add_suite()`. After
    * construction, the suite is inserted into the list of suites, to be
@@ -895,9 +918,9 @@ namespace micro_os_plus::micro_test_plus
    */
   template <typename Callable_T, typename... Args_T>
     requires (!detail::static_suite_body<Callable_T, Args_T...>)
-  static_suite::static_suite (const char* name, runner& test_runner,
+  static_suite::static_suite (located_name name, runner& test_runner,
                               Callable_T&& callable, Args_T&&... arguments)
-      : suite{ name != nullptr ? name : "", test_runner,
+      : suite{ std::move (name), test_runner,
                std::forward<Callable_T> (callable),
                std::forward<Args_T> (arguments)... }
   {
@@ -907,21 +930,6 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
     link_or_reject ();
-  }
-
-  /**
-   * @details
-   * Delegates to the constructor for `const char*`, with the content of
-   * the string, which that constructor copies.
-   */
-  template <typename Callable_T, typename... Args_T>
-    requires (!detail::static_suite_body<Callable_T, Args_T...>)
-  static_suite::static_suite (const std::string& name, runner& test_runner,
-                              Callable_T&& callable, Args_T&&... arguments)
-      : static_suite{ name.c_str (), test_runner,
-                      std::forward<Callable_T> (callable),
-                      std::forward<Args_T> (arguments)... }
-  {
   }
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
@@ -938,9 +946,9 @@ namespace micro_os_plus::micro_test_plus
   // Deprecated since 6.0.0; use a suite& first parameter.
   template <typename Callable_T, typename... Args_T>
     requires (detail::static_suite_body<Callable_T, Args_T...>)
-  static_suite::static_suite (const char* name, runner& test_runner,
+  static_suite::static_suite (located_name name, runner& test_runner,
                               Callable_T&& callable, Args_T&&... arguments)
-      : suite{ name != nullptr ? name : "", test_runner,
+      : suite{ std::move (name), test_runner,
                [stored_callable = std::forward<Callable_T> (callable)] (
                    suite& self, auto&... stored_arguments) mutable
     {

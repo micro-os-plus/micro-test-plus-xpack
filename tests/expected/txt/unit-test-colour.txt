@@ -1263,14 +1263,16 @@ Matching test cases:
     • Test case and suite names
         [32m✓[0m temporary string name
         [32m✓[0m string name
+        [32m✓[0m string view name
         [32m✓[0m helper test cases run
         [32m✓[0m location of the caller
         [32m✓[0m local session passed
         [32m✓[0m string suite name copied
         [32m✓[0m C string suite name copied
-    [32m✓[0m Test case and suite names - passed (7 checks)
+        [32m✓[0m string view suite name copied
+    [32m✓[0m Test case and suite names - passed (9 checks)
 
-[31m✗[0m Miscellaneous suite - [31mFAILED[0m (201 checks passed, 8 failed, in 52 test cases), time: 5.408 ms
+[31m✗[0m Miscellaneous suite - [31mFAILED[0m (203 checks passed, 8 failed, in 52 test cases), time: 2.074 ms
 
 • Operands suite
 
@@ -1582,6 +1584,6 @@ Matching test cases:
 
 [31m✗[0m Utility suite - [31mFAILED[0m (21 checks passed, 5 failed, in 3 test cases), time: 0.125 ms
 
-[31m✗[0m Total: 675 checks passed, 349 failed, in 158 test cases, 15 test suites, time: 25.781 ms
+[31m✗[0m Total: 677 checks passed, 349 failed, in 158 test cases, 15 test suites, time: 4.986 ms
 Overall, the µTest++ unit tests were successful!
 

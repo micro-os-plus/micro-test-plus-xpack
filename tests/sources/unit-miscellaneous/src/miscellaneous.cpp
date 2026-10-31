@@ -333,7 +333,7 @@ namespace
   // Adds a test case on behalf of its caller; the location of the test
   // case is that of the call to the helper.
   void
-  add_named_test_case (mt::suite& s, const mt::test_case_name& name, int* runs)
+  add_named_test_case (mt::suite& s, const mt::located_name& name, int* runs)
   {
     s.test (name, [runs] (auto& lt)
       {
@@ -344,7 +344,7 @@ namespace
 
   // Returns the line captured when the argument was converted.
   auto
-  converted_line (const mt::test_case_name& name)
+  converted_line (const mt::located_name& name)
   {
     return name.location ().line ();
   }
@@ -1212,9 +1212,7 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
         mt::runner file_suite_runner;
         file_suite_runner.initialise (options);
         file_suite_runner.add_suite ("Local suite", [] (auto& ls)
-          {
-            ls.test ("Local test", [] (auto& lt) { lt.expect (true); });
-          });
+          { ls.test ("Local test", [] (auto& lt) { lt.expect (true); }); });
 
         t.expect (mt::eq (file_suite_runner.run_suites (), 2))
             << "suite added after an output file error";
@@ -2168,9 +2166,10 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
         local_counts.executed_test_cases++;
       });
 
-    // The test case names can be standard strings, also temporary ones,
-    // and the suite names can also be string views; a helper can forward
-    // a test case name with the location of its caller.
+    // The test case and the suite names can be C strings, standard
+    // strings, also temporary ones, and string views, also not
+    // null-terminated; a helper can forward a name with the location of
+    // its caller.
     ts.test ("Test case and suite names", [] (auto& t)
       {
         mt::runner_options options{};
@@ -2204,6 +2203,18 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
         t.expect (mt::eq (reported, named)) << "string name";
         local_counts.passed_checks++;
 
+        // Not null-terminated after its 14 characters.
+        const std::string_view viewed{ "Name from view, not terminated", 14 };
+        local_ts.test (viewed, [&reported] (auto& lt)
+          {
+            reported = lt.name ();
+            lt.expect (true);
+          });
+
+        t.expect (mt::eq (reported, std::string{ "Name from view" }))
+            << "string view name";
+        local_counts.passed_checks++;
+
         int runs = 0;
         add_named_test_case (local_ts, "Name via helper", &runs);
         add_named_test_case (local_ts, prefix + " via helper", &runs);
@@ -2219,6 +2230,7 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
 
         std::string from_string;
         std::string from_buffer;
+        std::string from_view;
 
         {
           // Destroyed before the suite runs.
@@ -2242,6 +2254,19 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
           buffer[0] = 'X';
         }
 
+        {
+          // Not null-terminated after its 15 characters, and overwritten
+          // before the suite runs.
+          char buffer[] = "Suite from view, not terminated";
+          local_runner.add_suite (std::string_view{ buffer, 15 },
+                                  [&from_view] (mt::suite& s)
+            {
+              from_view = s.name ();
+              s.test ("Local test", [] (auto& lt) { lt.expect (true); });
+            });
+          buffer[0] = 'X';
+        }
+
         t.expect (mt::eq (local_runner.run_suites (), 0))
             << "local session passed";
         local_counts.passed_checks++;
@@ -2252,6 +2277,10 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
 
         t.expect (mt::eq (from_buffer, std::string{ "Suite from buffer" }))
             << "C string suite name copied";
+        local_counts.passed_checks++;
+
+        t.expect (mt::eq (from_view, std::string{ "Suite from view" }))
+            << "string view suite name copied";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;

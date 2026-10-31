@@ -313,13 +313,15 @@ next line FAILED (miscellaneous.cpp:922)
     • Test case and suite names
         ✓ temporary string name
         ✓ string name
+        ✓ string view name
         ✓ helper test cases run
         ✓ location of the caller
         ✓ local session passed
         ✓ string suite name copied
         ✓ C string suite name copied
-    ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (201 checks passed, 8 failed, in 52 test cases)
+        ✓ string view suite name copied
+    ✓ Test case and suite names - passed (9 checks)
+✗ Miscellaneous suite - FAILED (203 checks passed, 8 failed, in 52 test cases)
 • Runner options suite
     • Default options
         ✓ the TAP reporter
@@ -470,4 +472,4 @@ next line FAILED (miscellaneous.cpp:922)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 306 checks passed, 13 failed, in 69 test cases, 5 test suites
+✗ Total: 308 checks passed, 13 failed, in 69 test cases, 5 test suites
