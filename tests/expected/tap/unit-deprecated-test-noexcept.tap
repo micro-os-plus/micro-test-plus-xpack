@@ -503,7 +503,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
     not ok 33 - Failed custom comparators with wrappers # { FAILED, 0 checks passed, 2 failed }
     # Subtest: Operand copies of wrappers
         ok 1 - wrapped operand
-        ok 2 - wrapped operand not copied
+        ok 2 - wrapped operand copied
         1..2
     ok 34 - Operand copies of wrappers # { passed, 2 checks }
     # Subtest: Kept helpers

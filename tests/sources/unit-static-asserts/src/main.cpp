@@ -973,29 +973,27 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     [[maybe_unused]] int number = 1;
     [[maybe_unused]] const auto wrapped = mt::to_i{ 1 };
 
-    // The comparators refer to the named operands of class type, and
-    // store by value the temporaries, which are moved, and the scalars.
+    // The comparators store by value the named operands, which are
+    // copied, the temporaries, which are moved, and the scalars (#229).
     static_assert (
-        std::is_same_v<
-            decltype (mt::eq (str, str)),
-            mt::detail::compare_op<const std::string&, const std::string&,
-                                   mt::detail::equal_to>>);
+        std::is_same_v<decltype (mt::eq (str, str)),
+                       mt::detail::compare_op<std::string, std::string,
+                                              mt::detail::equal_to>>);
     static_assert (
         std::is_same_v<decltype (mt::eq (std::string{}, str)),
-                       mt::detail::compare_op<std::string, const std::string&,
+                       mt::detail::compare_op<std::string, std::string,
                                               mt::detail::equal_to>>);
     static_assert (std::is_same_v<
                    decltype (mt::eq (number, 1)),
                    mt::detail::compare_op<int, int, mt::detail::equal_to>>);
+    static_assert (std::is_same_v<
+                   decltype (mt::eq ("abc", str)),
+                   mt::detail::compare_op<mt::detail::c_string, std::string,
+                                          mt::detail::equal_to>>);
     static_assert (
         std::is_same_v<
-            decltype (mt::eq ("abc", str)),
-            mt::detail::compare_op<mt::detail::c_string, const std::string&,
-                                   mt::detail::equal_to>>);
-    static_assert (
-        std::is_same_v<decltype (wrapped == 1),
-                       mt::detail::compare_op<const mt::to_i&, int,
-                                              mt::detail::equal_to>>);
+            decltype (wrapped == 1),
+            mt::detail::compare_op<mt::to_i, int, mt::detail::equal_to>>);
     static_assert (
         std::is_same_v<decltype (mt::to_i{ 1 } == 1_i),
                        mt::detail::compare_op<mt::to_i, decltype (1_i),
@@ -1006,7 +1004,7 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (
         std::is_same_v<decltype (mt::all_of (std::declval<const inner_t&> (),
                                              mt::eq (number, 2))),
-                       mt::detail::and_op<const inner_t&, inner_t>>);
+                       mt::detail::and_op<inner_t, inner_t>>);
 
     // More than two operands are folded from the left, and the results
     // are known at compile time.

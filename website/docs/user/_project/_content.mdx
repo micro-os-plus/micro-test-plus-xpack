@@ -1211,14 +1211,12 @@ and the arrays among the operands are reported as the built-in
 comparators report them (quoted, and as ranges), while the tag receives
 the operands as they were passed.
 
-The expressions do not copy their operands: a temporary is moved into
-the expression, and a named operand of class type is referred to. The
-functions above receive their operands as `const&` parameters, which
-are named, so their expressions refer to the arguments of the call;
-this is safe when the expression is checked in the same statement, as
-in `t.expect (app::divides (5, x))`, but an expression kept in a
-variable, from a call with a temporary argument, would refer to a
-destroyed object. To also store such expressions, take the operands as
+A temporary operand is moved into the expression, and a named operand
+is copied, so an expression can be returned from the function that
+builds it, or kept in a variable, after the operands are destroyed. An
+operand whose class cannot be copied (for example a
+`std::unique_ptr`) is referred to instead, and must outlive the
+check. To move the temporaries, and not copy them, take the operands as
 forwarding references (`Lhs_T&& lhs`) and pass them on with
 `std::forward<Lhs_T> (lhs)`, as `eq()` does.
 

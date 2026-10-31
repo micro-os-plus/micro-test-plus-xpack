@@ -1665,7 +1665,8 @@ static mt::static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
 
-    // A wrapped operand is referred to, not copied.
+    // The operands are copied, so that a comparison can be returned from
+    // a function (#229); the wrapper copies the value that it holds.
     ts.test ("Operand copies of wrappers", [] (auto& t)
       {
         const counted a{ 1 };
@@ -1677,7 +1678,7 @@ static mt::static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         local_counts.passed_checks++;
         const int copies = counted_copies;
 
-        t.expect (mt::eq (copies, 0)) << "wrapped operand not copied";
+        t.expect (mt::eq (copies, 2)) << "wrapped operand copied";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;

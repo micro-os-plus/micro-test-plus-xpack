@@ -36,10 +36,9 @@
  * string literals, and `char` pointers) are compared by content, and so are
  * the other arrays (e.g. byte buffers), element by element; the other
  * pointers are compared by address.
- * The operands are not copied: the temporaries are moved into the
- * returned expressions, and the named operands of class type are
- * referred to, so the expressions must be checked before the named
- * operands are destroyed, as they are in `expect (eq (a, b))`.
+ * The temporaries are moved into the returned expressions, and the named
+ * operands are copied, so an expression can be returned from the function
+ * that builds it, and kept after the operands are destroyed.
  * The logical combinators have descriptive names, since `and`, `or`, and
  * `not` are alternative tokens and cannot be used as identifiers.
  *

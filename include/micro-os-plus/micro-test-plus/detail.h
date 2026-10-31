@@ -208,15 +208,16 @@ namespace micro_os_plus::micro_test_plus
      * type deduced for a forwarding reference: `X&` (or `const X&`) for
      * an lvalue, `X` for an rvalue.
      *
-     * An lvalue of class type is stored as a `const` reference, so that
-     * comparing two named containers does not copy them, and a nested
-     * expression stores a reference to its operand expressions. An
-     * rvalue is moved into the expression, so that an expression that
-     * outlives the statement, like `auto op = eq (f (), 1);`, does not
-     * refer to a destroyed temporary. The scalars are always stored by
-     * value, since a copy is as cheap as a reference.
+     * An lvalue is copied into the expression, so that an expression
+     * built in a function from its parameters, and returned, does not
+     * refer to the destroyed locals of that function. An rvalue is moved
+     * into the expression, so that an expression that outlives the
+     * statement, like `auto op = eq (f (), 1);`, does not refer to a
+     * destroyed temporary.
      *
-     * A reference remains valid only as long as the named operand; this
+     * Only an lvalue of a class type that cannot be copied (for example
+     * a `std::unique_ptr`) is stored as a `const` reference; such a
+     * reference remains valid only as long as the named operand, which
      * is always the case within the statement that checks the
      * expression.
      *
@@ -225,7 +226,7 @@ namespace micro_os_plus::micro_test_plus
     template <class T>
     using stored_operand_t = std::conditional_t<
         std::is_lvalue_reference_v<T>
-            and not std::is_scalar_v<std::remove_cvref_t<T>>,
+            and not std::is_copy_constructible_v<std::remove_cvref_t<T>>,
         const std::remove_reference_t<T>&, std::remove_cvref_t<T>>;
 
     // ========================================================================
@@ -838,11 +839,10 @@ namespace micro_os_plus::micro_test_plus
      * are written quoted, and the arrays as ranges; the tag still
      * receives the operands as they were passed, without this conversion.
      *
-     * The operands are not copied: the temporaries are moved into the
-     * comparator, and the named operands of class type are referred to
-     * (see `stored_operand_t`). A comparator built in a function from
-     * its `const&` parameters refers to the arguments of that function,
-     * so it must be checked in the statement that calls the function.
+     * The temporaries are moved into the comparator, and the named
+     * operands are copied (see `stored_operand_t`), so a comparator
+     * built in a function from its `const&` parameters can be returned
+     * from it.
      *
      * @tparam Lhs_T The type of the stored left-hand operand, either the
      * operand type, or a `const` reference to it.
@@ -1053,9 +1053,8 @@ namespace micro_os_plus::micro_test_plus
      * whole, with reporting that shows the combined result and individual
      * operand outcomes.
      *
-     * The sub-expressions are not copied: the temporaries are moved into
-     * the comparator, and the named ones are referred to (see
-     * `stored_operand_t`).
+     * The temporaries are moved into the comparator, and the named
+     * sub-expressions are copied (see `stored_operand_t`).
      *
      * @tparam Lhs_T The type of the stored left-hand sub-expression,
      * either its type, or a `const` reference to it.
@@ -1109,9 +1108,8 @@ namespace micro_os_plus::micro_test_plus
      * whole, with reporting that shows the combined result and individual
      * operand outcomes.
      *
-     * The sub-expressions are not copied: the temporaries are moved into
-     * the comparator, and the named ones are referred to (see
-     * `stored_operand_t`).
+     * The temporaries are moved into the comparator, and the named
+     * sub-expressions are copied (see `stored_operand_t`).
      *
      * @tparam Lhs_T The type of the stored left-hand sub-expression,
      * either its type, or a `const` reference to it.
@@ -1164,9 +1162,8 @@ namespace micro_os_plus::micro_test_plus
      * negation result is computed at construction time, ensuring consistent
      * reporting throughout the assertion framework.
      *
-     * The sub-expression is not copied: a temporary is moved into the
-     * comparator, and a named one is referred to (see
-     * `stored_operand_t`).
+     * A temporary is moved into the comparator, and a named
+     * sub-expression is copied (see `stored_operand_t`).
      *
      * There is no deduction guide: with a single argument that is itself
      * a `not_op`, the class template argument deduction prefers the copy
@@ -1224,11 +1221,9 @@ namespace micro_os_plus::micro_test_plus
      * template arguments are deduced, for example
      * `predicate_op{ value, even{} }`.
      *
-     * The operand is not copied: a temporary is moved into the
-     * predicate, and a named operand of class type is referred to (see
-     * `stored_operand_t`). A predicate built in a function from its
-     * `const&` parameter refers to the argument of that function, so it
-     * must be checked in the statement that calls the function.
+     * A temporary is moved into the predicate, and a named operand is
+     * copied (see `stored_operand_t`), so a predicate built in a
+     * function from its `const&` parameter can be returned from it.
      *
      * @tparam T The type of the stored operand, either the operand type,
      * or a `const` reference to it.

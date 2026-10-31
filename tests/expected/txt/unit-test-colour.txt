@@ -23,8 +23,8 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     [32m✓[0m expect(true) - passed (5 checks)
 
     • expect(false)
-        [31m✗[0m [31mFAILED[0m (checks.cpp:208)
-        [31m✗[0m false [31mFAILED[0m (checks.cpp:211)
+        [31m✗[0m [31mFAILED[0m (checks.cpp:206)
+        [31m✗[0m false [31mFAILED[0m (checks.cpp:209)
     [31m✗[0m expect(false) - [31mFAILED[0m (0 checks passed, 2 failed)
 
     • reflection::type_name()
@@ -96,12 +96,12 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     [32m✓[0m Message values - passed (3 checks)
 
     • Character operands
-        [31m✗[0m [31mFAILED[0m (checks.cpp:545, [31m'\0' == 'a'[0m)
-        [31m✗[0m space is tab [31mFAILED[0m (checks.cpp:548, [31m' ' == '\t'[0m)
+        [31m✗[0m [31mFAILED[0m (checks.cpp:530, [31m'\0' == 'a'[0m)
+        [31m✗[0m space is tab [31mFAILED[0m (checks.cpp:533, [31m' ' == '\t'[0m)
         [32m✓[0m [32m'x' == 'x'[0m
     [31m✗[0m Character operands - [31mFAILED[0m (1 check passed, 2 failed)
 
-[31m✗[0m Top suite - [31mFAILED[0m (38 checks passed, 5 failed, in 17 test cases), time: 1.456 ms
+[31m✗[0m Top suite - [31mFAILED[0m (38 checks passed, 5 failed, in 17 test cases), time: 0.919 ms
 
 • Combinatorial floats suite
 
@@ -153,7 +153,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m 42 == 42.0
     [32m✓[0m Combinatorial doubles - passed (21 checks)
 
-[32m✓[0m Combinatorial floats suite - passed (42 checks in 2 test cases), time: 0.414 ms
+[32m✓[0m Combinatorial floats suite - passed (42 checks in 2 test cases), time: 0.435 ms
 
 • Combinatorial integrals suite
 
@@ -341,7 +341,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m gt matches unsigned int
     [32m✓[0m Combinatorial integrals with unsigned char - passed (20 checks)
 
-[32m✓[0m Combinatorial integrals suite - passed (160 checks in 8 test cases), time: 1.413 ms
+[32m✓[0m Combinatorial integrals suite - passed (160 checks in 8 test cases), time: 1.670 ms
 
 • Comparisons suite
 
@@ -355,12 +355,12 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     [32m✓[0m Integer comparisons - passed (6 checks)
 
     • Failed integer comparisons
-        [31m✗[0m actual != 42 [31mFAILED[0m (comparisons.cpp:111, [31m42 != 42[0m)
-        [31m✗[0m actual+1 == 42 [31mFAILED[0m (comparisons.cpp:114, [31m43 == 42[0m)
-        [31m✗[0m actual-1 >= 42 [31mFAILED[0m (comparisons.cpp:118, [31m41 >= 42[0m)
-        [31m✗[0m actual > 42 [31mFAILED[0m (comparisons.cpp:122, [31m42 > 42[0m)
-        [31m✗[0m actual+1 <= 42 [31mFAILED[0m (comparisons.cpp:125, [31m43 <= 42[0m)
-        [31m✗[0m actual < 42 [31mFAILED[0m (comparisons.cpp:129, [31m42 < 42[0m)
+        [31m✗[0m actual != 42 [31mFAILED[0m (comparisons.cpp:113, [31m42 != 42[0m)
+        [31m✗[0m actual+1 == 42 [31mFAILED[0m (comparisons.cpp:116, [31m43 == 42[0m)
+        [31m✗[0m actual-1 >= 42 [31mFAILED[0m (comparisons.cpp:120, [31m41 >= 42[0m)
+        [31m✗[0m actual > 42 [31mFAILED[0m (comparisons.cpp:124, [31m42 > 42[0m)
+        [31m✗[0m actual+1 <= 42 [31mFAILED[0m (comparisons.cpp:127, [31m43 <= 42[0m)
+        [31m✗[0m actual < 42 [31mFAILED[0m (comparisons.cpp:131, [31m42 < 42[0m)
     [31m✗[0m Failed integer comparisons - [31mFAILED[0m (0 checks passed, 6 failed)
 
     • Float comparisons
@@ -377,10 +377,10 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     [32m✓[0m Float comparisons - passed (10 checks)
 
     • Failed float comparisons
-        [31m✗[0m actual != 42.0 [31mFAILED[0m (comparisons.cpp:188, [31m42.0f != 42.0f[0m)
-        [31m✗[0m actual == 43.0 [31mFAILED[0m (comparisons.cpp:191, [31m42.0f == 43.0f[0m)
-        [31m✗[0m actual != 42 [31mFAILED[0m (comparisons.cpp:194, [31m42.0f != 42[0m)
-        [31m✗[0m actual == 43 [31mFAILED[0m (comparisons.cpp:197, [31m42.0f == 43[0m)
+        [31m✗[0m actual != 42.0 [31mFAILED[0m (comparisons.cpp:198, [31m42.0f != 42.0f[0m)
+        [31m✗[0m actual == 43.0 [31mFAILED[0m (comparisons.cpp:202, [31m42.0f == 43.0f[0m)
+        [31m✗[0m actual != 42 [31mFAILED[0m (comparisons.cpp:206, [31m42.0f != 42[0m)
+        [31m✗[0m actual == 43 [31mFAILED[0m (comparisons.cpp:209, [31m42.0f == 43[0m)
     [31m✗[0m Failed float comparisons - [31mFAILED[0m (0 checks passed, 4 failed)
 
     • Approximate comparisons
@@ -395,12 +395,12 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     [32m✓[0m Approximate comparisons - passed (8 checks)
 
     • Failed approximate comparisons
-        [31m✗[0m actual ~ 45 +/- 2 [31mFAILED[0m (comparisons.cpp:258, [31m42 ~ (45 +/- 2)[0m)
-        [31m✗[0m 10 ~ 13 +/- 2 [31mFAILED[0m (comparisons.cpp:263, [31m10 ~ (13 +/- 2)[0m)
-        [31m✗[0m 3u ~ 5u +/- 1u [31mFAILED[0m (comparisons.cpp:267, [31m3u ~ (5u +/- 1u)[0m)
-        [31m✗[0m 1 ~ 1 +/- -1 [31mFAILED[0m (comparisons.cpp:271, [31m1 ~ (1 +/- -1)[0m)
-        [31m✗[0m actual ~ 42.1f +/- 0.01f [31mFAILED[0m (comparisons.cpp:274, [31m42.0f ~ (42.1f +/- 0.01f)[0m)
-        [31m✗[0m [31mFAILED[0m (comparisons.cpp:278, [31m1.0 ~ (1.2 +/- 0.1)[0m)
+        [31m✗[0m actual ~ 45 +/- 2 [31mFAILED[0m (comparisons.cpp:271, [31m42 ~ (45 +/- 2)[0m)
+        [31m✗[0m 10 ~ 13 +/- 2 [31mFAILED[0m (comparisons.cpp:276, [31m10 ~ (13 +/- 2)[0m)
+        [31m✗[0m 3u ~ 5u +/- 1u [31mFAILED[0m (comparisons.cpp:280, [31m3u ~ (5u +/- 1u)[0m)
+        [31m✗[0m 1 ~ 1 +/- -1 [31mFAILED[0m (comparisons.cpp:284, [31m1 ~ (1 +/- -1)[0m)
+        [31m✗[0m actual ~ 42.1f +/- 0.01f [31mFAILED[0m (comparisons.cpp:287, [31m42.0f ~ (42.1f +/- 0.01f)[0m)
+        [31m✗[0m [31mFAILED[0m (comparisons.cpp:291, [31m1.0 ~ (1.2 +/- 0.1)[0m)
     [31m✗[0m Failed approximate comparisons - [31mFAILED[0m (0 checks passed, 6 failed)
 
     • String comparisons
@@ -413,12 +413,12 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     [32m✓[0m String comparisons - passed (6 checks)
 
     • Failed string comparisons
-        [31m✗[0m actual_sv != abc_sv [31mFAILED[0m (comparisons.cpp:335, [31m"abc" != "abc"[0m)
-        [31m✗[0m actual_sv == abx_sv [31mFAILED[0m (comparisons.cpp:339, [31m"abc" == "abx"[0m)
-        [31m✗[0m actual_sv >= abd_sv [31mFAILED[0m (comparisons.cpp:343, [31m"abc" >= "abd"[0m)
-        [31m✗[0m actual_sv > abc_sv [31mFAILED[0m (comparisons.cpp:347, [31m"abc" > "abc"[0m)
-        [31m✗[0m actual_sv <= abb_sv [31mFAILED[0m (comparisons.cpp:351, [31m"abc" <= "abb"[0m)
-        [31m✗[0m actual_sv < abc_sv [31mFAILED[0m (comparisons.cpp:355, [31m"abc" < "abc"[0m)
+        [31m✗[0m actual_sv != abc_sv [31mFAILED[0m (comparisons.cpp:348, [31m"abc" != "abc"[0m)
+        [31m✗[0m actual_sv == abx_sv [31mFAILED[0m (comparisons.cpp:352, [31m"abc" == "abx"[0m)
+        [31m✗[0m actual_sv >= abd_sv [31mFAILED[0m (comparisons.cpp:356, [31m"abc" >= "abd"[0m)
+        [31m✗[0m actual_sv > abc_sv [31mFAILED[0m (comparisons.cpp:360, [31m"abc" > "abc"[0m)
+        [31m✗[0m actual_sv <= abb_sv [31mFAILED[0m (comparisons.cpp:364, [31m"abc" <= "abb"[0m)
+        [31m✗[0m actual_sv < abc_sv [31mFAILED[0m (comparisons.cpp:368, [31m"abc" < "abc"[0m)
     [31m✗[0m Failed string comparisons - [31mFAILED[0m (0 checks passed, 6 failed)
 
     • C string comparisons
@@ -439,8 +439,8 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     [32m✓[0m C string comparisons - passed (14 checks)
 
     • Failed C string comparisons
-        [31m✗[0m actual == "abx" [31mFAILED[0m (comparisons.cpp:420, [31m"abc" == "abx"[0m)
-        [31m✗[0m null_string == "abc" [31mFAILED[0m (comparisons.cpp:423, [31mnullptr == "abc"[0m)
+        [31m✗[0m actual == "abx" [31mFAILED[0m (comparisons.cpp:433, [31m"abc" == "abx"[0m)
+        [31m✗[0m null_string == "abc" [31mFAILED[0m (comparisons.cpp:436, [31mnullptr == "abc"[0m)
     [31m✗[0m Failed C string comparisons - [31mFAILED[0m (0 checks passed, 2 failed)
 
     • Pointer comparisons
@@ -456,15 +456,15 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     [32m✓[0m Pointer comparisons - passed (9 checks)
 
     • Failed pointer comparisons
-        [31m✗[0m ptr1 != &one [31mFAILED[0m (comparisons.cpp:504, [31m0x7ff7b4a06b20 != 0x7ff7b4a06b20[0m)
-        [31m✗[0m ptr1 != ptr2 [31mFAILED[0m (comparisons.cpp:507, [31m0x7ff7b4a06b20 != 0x7ff7b4a06b20[0m)
-        [31m✗[0m ptr1 > ptr2 [31mFAILED[0m (comparisons.cpp:510, [31m0x7ff7b4a06b20 > 0x7ff7b4a06b20[0m)
-        [31m✗[0m ptr1 < ptr2 [31mFAILED[0m (comparisons.cpp:513, [31m0x7ff7b4a06b20 < 0x7ff7b4a06b20[0m)
-        [31m✗[0m ptr1 == a_non_nullptr [31mFAILED[0m (comparisons.cpp:516, [31m0x7ff7b4a06b20 == 0x7ff7b4a06b70[0m)
-        [31m✗[0m pfunc != afunc [31mFAILED[0m (comparisons.cpp:519, [31m0x10b55b418 != 0x10b55b418[0m)
-        [31m✗[0m pfunc == a_non_nullptr [31mFAILED[0m (comparisons.cpp:522, [31m0x10b55b418 == 0x7ff7b4a06b70[0m)
-        [31m✗[0m pone >= ptwo [31mFAILED[0m (comparisons.cpp:534, [31m0x7ff7b4a071a0 >= 0x7ff7b4a071a4[0m)
-        [31m✗[0m ptwo <= pone [31mFAILED[0m (comparisons.cpp:537, [31m0x7ff7b4a071a4 <= 0x7ff7b4a071a0[0m)
+        [31m✗[0m ptr1 != &one [31mFAILED[0m (comparisons.cpp:517, [31m0x7ff7bc78f740 != 0x7ff7bc78f740[0m)
+        [31m✗[0m ptr1 != ptr2 [31mFAILED[0m (comparisons.cpp:520, [31m0x7ff7bc78f740 != 0x7ff7bc78f740[0m)
+        [31m✗[0m ptr1 > ptr2 [31mFAILED[0m (comparisons.cpp:523, [31m0x7ff7bc78f740 > 0x7ff7bc78f740[0m)
+        [31m✗[0m ptr1 < ptr2 [31mFAILED[0m (comparisons.cpp:526, [31m0x7ff7bc78f740 < 0x7ff7bc78f740[0m)
+        [31m✗[0m ptr1 == a_non_nullptr [31mFAILED[0m (comparisons.cpp:529, [31m0x7ff7bc78f740 == 0x7ff7bc78f790[0m)
+        [31m✗[0m pfunc != afunc [31mFAILED[0m (comparisons.cpp:532, [31m0x1037d4498 != 0x1037d4498[0m)
+        [31m✗[0m pfunc == a_non_nullptr [31mFAILED[0m (comparisons.cpp:535, [31m0x1037d4498 == 0x7ff7bc78f790[0m)
+        [31m✗[0m pone >= ptwo [31mFAILED[0m (comparisons.cpp:547, [31m0x7ff7bc78fdc0 >= 0x7ff7bc78fdc4[0m)
+        [31m✗[0m ptwo <= pone [31mFAILED[0m (comparisons.cpp:550, [31m0x7ff7bc78fdc4 <= 0x7ff7bc78fdc0[0m)
     [31m✗[0m Failed pointer comparisons - [31mFAILED[0m (0 checks passed, 9 failed)
 
     • Null pointer comparisons
@@ -474,24 +474,24 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     [32m✓[0m Null pointer comparisons - passed (3 checks)
 
     • Failed null pointer comparisons
-        [31m✗[0m a_nullptr != nullptr [31mFAILED[0m (comparisons.cpp:585, [31m0x0 != nullptr[0m)
-        [31m✗[0m a_non_nullptr == nullptr [31mFAILED[0m (comparisons.cpp:588, [31m0x7ff7b4a07160 == nullptr[0m)
-        [31m✗[0m pfunc != nullptr [31mFAILED[0m (comparisons.cpp:591, [31m0x0 != nullptr[0m)
+        [31m✗[0m a_nullptr != nullptr [31mFAILED[0m (comparisons.cpp:599, [31m0x0 != nullptr[0m)
+        [31m✗[0m a_non_nullptr == nullptr [31mFAILED[0m (comparisons.cpp:602, [31m0x7ff7bc78fde0 == nullptr[0m)
+        [31m✗[0m pfunc != nullptr [31mFAILED[0m (comparisons.cpp:606, [31m0x0 != nullptr[0m)
     [31m✗[0m Failed null pointer comparisons - [31mFAILED[0m (0 checks passed, 3 failed)
 
     • Logical operations
         [32m✓[0m not (actual != 42)
-        [31m✗[0m not (actual == 42) [31mFAILED[0m (comparisons.cpp:612, [31mnot [32m42 == 42[0m[0m)
+        [31m✗[0m not (actual == 42) [31mFAILED[0m (comparisons.cpp:627, [31mnot [32m42 == 42[0m[0m)
         [32m✓[0m (actual == 42) and (actual == 42.0)
-        [31m✗[0m (actual == 42) and (actual != 42.0) [31mFAILED[0m (comparisons.cpp:621, ([32m42 == 42[0m[31m and [0m[31m42.0f != 42.0[0m))
-        [31m✗[0m (actual != 42) and (actual == 42.0) [31mFAILED[0m (comparisons.cpp:626, ([31m42 != 42[0m[31m and [0m[32m42.0f == 42.0[0m))
-        [31m✗[0m (actual != 42) and (actual != 42.0) [31mFAILED[0m (comparisons.cpp:631, ([31m42 != 42[0m[31m and [0m[31m42.0f != 42.0[0m))
+        [31m✗[0m (actual == 42) and (actual != 42.0) [31mFAILED[0m (comparisons.cpp:636, ([32m42 == 42[0m[31m and [0m[31m42.0f != 42.0[0m))
+        [31m✗[0m (actual != 42) and (actual == 42.0) [31mFAILED[0m (comparisons.cpp:641, ([31m42 != 42[0m[31m and [0m[32m42.0f == 42.0[0m))
+        [31m✗[0m (actual != 42) and (actual != 42.0) [31mFAILED[0m (comparisons.cpp:646, ([31m42 != 42[0m[31m and [0m[31m42.0f != 42.0[0m))
         [32m✓[0m ([32m42 == 42[0m[32m and [0m[32m42.0f == 42.0[0m)
-        [31m✗[0m [31mFAILED[0m (comparisons.cpp:640, ([32m42 == 42[0m[31m and [0m[31m42.0f != 42.0[0m))
+        [31m✗[0m [31mFAILED[0m (comparisons.cpp:655, ([32m42 == 42[0m[31m and [0m[31m42.0f != 42.0[0m))
         [32m✓[0m (actual == 42) or (actual == 42.0)
         [32m✓[0m (actual == 42) or (actual != 42.0)
         [32m✓[0m (actual != 42) or (actual == 42.0)
-        [31m✗[0m (actual != 42) or (actual != 42.0) [31mFAILED[0m (comparisons.cpp:659, ([31m42 != 42[0m[31m or [0m[31m42.0f != 42.0[0m))
+        [31m✗[0m (actual != 42) or (actual != 42.0) [31mFAILED[0m (comparisons.cpp:674, ([31m42 != 42[0m[31m or [0m[31m42.0f != 42.0[0m))
     [31m✗[0m Logical operations - [31mFAILED[0m (6 checks passed, 6 failed)
 
     • Logical operations with more operands
@@ -501,14 +501,14 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m any_of three, the first true
         [32m✓[0m all_of with a nested all_of
         [32m✓[0m not all_of
-        [31m✗[0m all_of three, the second false [31mFAILED[0m (comparisons.cpp:709, ([32m42 == 42[0m[31m and [0m[31m42 < 41[0m[31m and [0m[32m42 > 41[0m))
-        [31m✗[0m all_of four, the last false [31mFAILED[0m (comparisons.cpp:713, ([32m42 == 42[0m[32m and [0m[32m42 == 42[0m[32m and [0m[32m42 == 42[0m[31m and [0m[31m42 == 0[0m))
-        [31m✗[0m any_of three false [31mFAILED[0m (comparisons.cpp:718, ([31m42 == 0[0m[31m or [0m[31m42 == 1[0m[31m or [0m[31m42 == 2[0m))
-        [31m✗[0m any_of of two all_of [31mFAILED[0m (comparisons.cpp:722, (([31m42 == 0[0m[31m and [0m[32m42 == 42[0m)[31m or [0m([31m42 == 1[0m[31m and [0m[32m42 == 42[0m[31m and [0m[31m42 == 2[0m)))
-        [31m✗[0m all_of with a nested any_of [31mFAILED[0m (comparisons.cpp:728, ([32m42 == 42[0m[31m and [0m([31m42 == 0[0m[31m or [0m[31m42 == 1[0m)))
+        [31m✗[0m all_of three, the second false [31mFAILED[0m (comparisons.cpp:729, ([32m42 == 42[0m[31m and [0m[31m42 < 41[0m[31m and [0m[32m42 > 41[0m))
+        [31m✗[0m all_of four, the last false [31mFAILED[0m (comparisons.cpp:734, ([32m42 == 42[0m[32m and [0m[32m42 == 42[0m[32m and [0m[32m42 == 42[0m[31m and [0m[31m42 == 0[0m))
+        [31m✗[0m any_of three false [31mFAILED[0m (comparisons.cpp:739, ([31m42 == 0[0m[31m or [0m[31m42 == 1[0m[31m or [0m[31m42 == 2[0m))
+        [31m✗[0m any_of of two all_of [31mFAILED[0m (comparisons.cpp:744, (([31m42 == 0[0m[31m and [0m[32m42 == 42[0m)[31m or [0m([31m42 == 1[0m[31m and [0m[32m42 == 42[0m[31m and [0m[31m42 == 2[0m)))
+        [31m✗[0m all_of with a nested any_of [31mFAILED[0m (comparisons.cpp:751, ([32m42 == 42[0m[31m and [0m([31m42 == 0[0m[31m or [0m[31m42 == 1[0m)))
     [31m✗[0m Logical operations with more operands - [31mFAILED[0m (6 checks passed, 5 failed)
 
-[31m✗[0m Comparisons suite - [31mFAILED[0m (68 checks passed, 47 failed, in 16 test cases), time: 1.025 ms
+[31m✗[0m Comparisons suite - [31mFAILED[0m (68 checks passed, 47 failed, in 16 test cases), time: 1.321 ms
 
 • Dynamic suite
 
@@ -516,7 +516,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m 1 == 1 in dynamic suite
     [32m✓[0m check in dynamic suite - passed (1 check)
 
-[32m✓[0m Dynamic suite - passed (1 check in 1 test case), time: 0.036 ms
+[32m✓[0m Dynamic suite - passed (1 check in 1 test case), time: 0.044 ms
 
 • Dynamic suite with a temporary name
 
@@ -524,7 +524,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m 2 == 2 in the suite with a temporary name
     [32m✓[0m check in dynamic suite with a temporary name - passed (1 check)
 
-[32m✓[0m Dynamic suite with a temporary name - passed (1 check in 1 test case), time: 0.033 ms
+[32m✓[0m Dynamic suite with a temporary name - passed (1 check in 1 test case), time: 0.044 ms
 
 • Exceptions suite
 
@@ -578,7 +578,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
 
     • Failed require during unwinding
         [31m✗[0m [31mFAILED[0m (exceptions.cpp:285) - test case stopped
-        [31m✗[0m unexpected exception: boom [31mFAILED[0m (exceptions.cpp:279)
+        [31m✗[0m unexpected exception: boom [31mFAILED[0m (exceptions.cpp:280)
     [31m✗[0m Failed require during unwinding - [31mFAILED[0m (0 checks passed, 2 failed)
 
     • Exception in a suite body
@@ -587,7 +587,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m exception counted as a failed check
     [32m✓[0m Exception in a suite body - passed (3 checks)
 
-[31m✗[0m Exceptions suite - [31mFAILED[0m (10 checks passed, 10 failed, in 13 test cases), time: 0.801 ms
+[31m✗[0m Exceptions suite - [31mFAILED[0m (10 checks passed, 10 failed, in 13 test cases), time: 0.916 ms
 
 • Exceptions suite body
 
@@ -596,7 +596,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     [32m✓[0m Test case before the exception - passed (1 check)
 
     [31m✗[0m unexpected exception in the suite body: boom [31mFAILED[0m
-[31m✗[0m Exceptions suite body - [31mFAILED[0m (1 check passed, 1 failed, in 1 test case), time: 0.063 ms
+[31m✗[0m Exceptions suite body - [31mFAILED[0m (1 check passed, 1 failed, in 1 test case), time: 0.115 ms
 
 • Failed combinatorial floats suite
 
@@ -604,51 +604,51 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [31m✗[0m 42.0 == 42 signed long long [31mFAILED[0m (float-failed-combinations.cpp:35, [31m42.0f != 42ll[0m)
         [31m✗[0m 42.0 == 42 unsigned long long [31mFAILED[0m (float-failed-combinations.cpp:40, [31m42.0f != 42ull[0m)
         [31m✗[0m 42.0 == 42 signed long [31mFAILED[0m (float-failed-combinations.cpp:45, [31m42.0f != 42l[0m)
-        [31m✗[0m 42.0 == 42 unsigned long [31mFAILED[0m (float-failed-combinations.cpp:49, [31m42.0f != 42ul[0m)
-        [31m✗[0m 42.0 == 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:53, [31m42.0f != 42[0m)
-        [31m✗[0m 42.0 == 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:57, [31m42.0f != 42u[0m)
+        [31m✗[0m 42.0 == 42 unsigned long [31mFAILED[0m (float-failed-combinations.cpp:50, [31m42.0f != 42ul[0m)
+        [31m✗[0m 42.0 == 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:55, [31m42.0f != 42[0m)
+        [31m✗[0m 42.0 == 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:60, [31m42.0f != 42u[0m)
         [31m✗[0m 42.0 == 42 signed short [31mFAILED[0m (float-failed-combinations.cpp:65, [31m42.0f != (short)42[0m)
         [31m✗[0m 42.0 == 42 unsigned short [31mFAILED[0m (float-failed-combinations.cpp:70, [31m42.0f != (unsigned short)42[0m)
         [31m✗[0m 42.0 == 42 signed char [31mFAILED[0m (float-failed-combinations.cpp:75, [31m42.0f != (signed char)42[0m)
         [31m✗[0m 42.0 == 42 unsigned char [31mFAILED[0m (float-failed-combinations.cpp:80, [31m42.0f != (unsigned char)42[0m)
-        [31m✗[0m 42.0 <= 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:80, [31m42.0f > 42[0m)
-        [31m✗[0m 42.0 >= 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:84, [31m42.0f < 42[0m)
-        [31m✗[0m 43.0 != 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:88, [31m43.0f == 42[0m)
-        [31m✗[0m 41.0 < 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:93, [31m41.0f >= 42[0m)
-        [31m✗[0m 43.0 > 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:98, [31m43.0f <= 42[0m)
-        [31m✗[0m 42.0 <= 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:105, [31m42.0f > 42u[0m)
-        [31m✗[0m 42.0 >= 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:109, [31m42.0f < 42u[0m)
-        [31m✗[0m 43.0 != 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:113, [31m43.0f == 42u[0m)
-        [31m✗[0m 41.0 < 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:118, [31m41.0f >= 42u[0m)
-        [31m✗[0m 43.0 > 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:123, [31m43.0f <= 42u[0m)
-        [31m✗[0m 42 == 42.0 [31mFAILED[0m (float-failed-combinations.cpp:130, [31m42 != 42.0f[0m)
+        [31m✗[0m 42.0 <= 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:87, [31m42.0f > 42[0m)
+        [31m✗[0m 42.0 >= 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:92, [31m42.0f < 42[0m)
+        [31m✗[0m 43.0 != 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:97, [31m43.0f == 42[0m)
+        [31m✗[0m 41.0 < 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:102, [31m41.0f >= 42[0m)
+        [31m✗[0m 43.0 > 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:107, [31m43.0f <= 42[0m)
+        [31m✗[0m 42.0 <= 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:114, [31m42.0f > 42u[0m)
+        [31m✗[0m 42.0 >= 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:119, [31m42.0f < 42u[0m)
+        [31m✗[0m 43.0 != 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:124, [31m43.0f == 42u[0m)
+        [31m✗[0m 41.0 < 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:129, [31m41.0f >= 42u[0m)
+        [31m✗[0m 43.0 > 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:134, [31m43.0f <= 42u[0m)
+        [31m✗[0m 42 == 42.0 [31mFAILED[0m (float-failed-combinations.cpp:141, [31m42 != 42.0f[0m)
     [31m✗[0m Combinatorial floats - [31mFAILED[0m (0 checks passed, 21 failed)
 
     • Combinatorial doubles
         [31m✗[0m 42.0 == 42 signed long long [31mFAILED[0m (float-failed-combinations.cpp:35, [31m42.0 != 42ll[0m)
         [31m✗[0m 42.0 == 42 unsigned long long [31mFAILED[0m (float-failed-combinations.cpp:40, [31m42.0 != 42ull[0m)
         [31m✗[0m 42.0 == 42 signed long [31mFAILED[0m (float-failed-combinations.cpp:45, [31m42.0 != 42l[0m)
-        [31m✗[0m 42.0 == 42 unsigned long [31mFAILED[0m (float-failed-combinations.cpp:49, [31m42.0 != 42ul[0m)
-        [31m✗[0m 42.0 == 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:53, [31m42.0 != 42[0m)
-        [31m✗[0m 42.0 == 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:57, [31m42.0 != 42u[0m)
+        [31m✗[0m 42.0 == 42 unsigned long [31mFAILED[0m (float-failed-combinations.cpp:50, [31m42.0 != 42ul[0m)
+        [31m✗[0m 42.0 == 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:55, [31m42.0 != 42[0m)
+        [31m✗[0m 42.0 == 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:60, [31m42.0 != 42u[0m)
         [31m✗[0m 42.0 == 42 signed short [31mFAILED[0m (float-failed-combinations.cpp:65, [31m42.0 != (short)42[0m)
         [31m✗[0m 42.0 == 42 unsigned short [31mFAILED[0m (float-failed-combinations.cpp:70, [31m42.0 != (unsigned short)42[0m)
         [31m✗[0m 42.0 == 42 signed char [31mFAILED[0m (float-failed-combinations.cpp:75, [31m42.0 != (signed char)42[0m)
         [31m✗[0m 42.0 == 42 unsigned char [31mFAILED[0m (float-failed-combinations.cpp:80, [31m42.0 != (unsigned char)42[0m)
-        [31m✗[0m 42.0 <= 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:80, [31m42.0 > 42[0m)
-        [31m✗[0m 42.0 >= 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:84, [31m42.0 < 42[0m)
-        [31m✗[0m 43.0 != 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:88, [31m43.0 == 42[0m)
-        [31m✗[0m 41.0 < 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:93, [31m41.0 >= 42[0m)
-        [31m✗[0m 43.0 > 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:98, [31m43.0 <= 42[0m)
-        [31m✗[0m 42.0 <= 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:105, [31m42.0 > 42u[0m)
-        [31m✗[0m 42.0 >= 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:109, [31m42.0 < 42u[0m)
-        [31m✗[0m 43.0 != 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:113, [31m43.0 == 42u[0m)
-        [31m✗[0m 41.0 < 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:118, [31m41.0 >= 42u[0m)
-        [31m✗[0m 43.0 > 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:123, [31m43.0 <= 42u[0m)
-        [31m✗[0m 42 == 42.0 [31mFAILED[0m (float-failed-combinations.cpp:130, [31m42 != 42.0[0m)
+        [31m✗[0m 42.0 <= 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:87, [31m42.0 > 42[0m)
+        [31m✗[0m 42.0 >= 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:92, [31m42.0 < 42[0m)
+        [31m✗[0m 43.0 != 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:97, [31m43.0 == 42[0m)
+        [31m✗[0m 41.0 < 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:102, [31m41.0 >= 42[0m)
+        [31m✗[0m 43.0 > 42 signed int [31mFAILED[0m (float-failed-combinations.cpp:107, [31m43.0 <= 42[0m)
+        [31m✗[0m 42.0 <= 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:114, [31m42.0 > 42u[0m)
+        [31m✗[0m 42.0 >= 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:119, [31m42.0 < 42u[0m)
+        [31m✗[0m 43.0 != 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:124, [31m43.0 == 42u[0m)
+        [31m✗[0m 41.0 < 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:129, [31m41.0 >= 42u[0m)
+        [31m✗[0m 43.0 > 42 unsigned int [31mFAILED[0m (float-failed-combinations.cpp:134, [31m43.0 <= 42u[0m)
+        [31m✗[0m 42 == 42.0 [31mFAILED[0m (float-failed-combinations.cpp:141, [31m42 != 42.0[0m)
     [31m✗[0m Combinatorial doubles - [31mFAILED[0m (0 checks passed, 21 failed)
 
-[31m✗[0m Failed combinatorial floats suite - [31mFAILED[0m (0 checks passed, 42 failed, in 2 test cases), time: 0.403 ms
+[31m✗[0m Failed combinatorial floats suite - [31mFAILED[0m (0 checks passed, 42 failed, in 2 test cases), time: 0.538 ms
 
 • Failed combinatorial integrals suite
 
@@ -658,21 +658,21 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [31m✗[0m ne matches signed long [31mFAILED[0m (integral-failed-combinations.cpp:45, [31m42ll != 42l[0m)
         [31m✗[0m ne matches unsigned long [31mFAILED[0m (integral-failed-combinations.cpp:50, [31m42ll != 42ul[0m)
         [31m✗[0m ne matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:55, [31m42ll != 42[0m)
-        [31m✗[0m ne matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:59, [31m42ll != 42u[0m)
+        [31m✗[0m ne matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:60, [31m42ll != 42u[0m)
         [31m✗[0m ne matches signed short [31mFAILED[0m (integral-failed-combinations.cpp:65, [31m42ll != (short)42[0m)
         [31m✗[0m ne matches unsigned short [31mFAILED[0m (integral-failed-combinations.cpp:70, [31m42ll != (unsigned short)42[0m)
         [31m✗[0m ne matches signed char [31mFAILED[0m (integral-failed-combinations.cpp:75, [31m42ll != (signed char)42[0m)
         [31m✗[0m ne matches unsigned char [31mFAILED[0m (integral-failed-combinations.cpp:80, [31m42ll != (unsigned char)42[0m)
-        [31m✗[0m gt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:86, [31m42ll > 42[0m)
-        [31m✗[0m lt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:90, [31m42ll < 42[0m)
-        [31m✗[0m eq matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:94, [31m43ll == 42[0m)
-        [31m✗[0m ge matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:99, [31m41ll >= 42[0m)
-        [31m✗[0m le matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:104, [31m43ll <= 42[0m)
-        [31m✗[0m gt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:109, [31m42ll > 42u[0m)
-        [31m✗[0m lt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:114, [31m42ll < 42u[0m)
-        [31m✗[0m eq matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:119, [31m43ll == 42u[0m)
-        [31m✗[0m ge matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:124, [31m41ll >= 42u[0m)
-        [31m✗[0m le matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:129, [31m43ll <= 42u[0m)
+        [31m✗[0m gt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:87, [31m42ll > 42[0m)
+        [31m✗[0m lt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:92, [31m42ll < 42[0m)
+        [31m✗[0m eq matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:97, [31m43ll == 42[0m)
+        [31m✗[0m ge matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:102, [31m41ll >= 42[0m)
+        [31m✗[0m le matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:107, [31m43ll <= 42[0m)
+        [31m✗[0m gt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:112, [31m42ll > 42u[0m)
+        [31m✗[0m lt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:117, [31m42ll < 42u[0m)
+        [31m✗[0m eq matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:122, [31m43ll == 42u[0m)
+        [31m✗[0m ge matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:127, [31m41ll >= 42u[0m)
+        [31m✗[0m le matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:132, [31m43ll <= 42u[0m)
     [31m✗[0m Combinatorial integrals with signed long long - [31mFAILED[0m (0 checks passed, 20 failed)
 
     • Combinatorial integrals unsigned long long
@@ -681,21 +681,21 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [31m✗[0m ne matches signed long [31mFAILED[0m (integral-failed-combinations.cpp:45, [31m42ull != 42l[0m)
         [31m✗[0m ne matches unsigned long [31mFAILED[0m (integral-failed-combinations.cpp:50, [31m42ull != 42ul[0m)
         [31m✗[0m ne matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:55, [31m42ull != 42[0m)
-        [31m✗[0m ne matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:59, [31m42ull != 42u[0m)
+        [31m✗[0m ne matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:60, [31m42ull != 42u[0m)
         [31m✗[0m ne matches signed short [31mFAILED[0m (integral-failed-combinations.cpp:65, [31m42ull != (short)42[0m)
         [31m✗[0m ne matches unsigned short [31mFAILED[0m (integral-failed-combinations.cpp:70, [31m42ull != (unsigned short)42[0m)
         [31m✗[0m ne matches signed char [31mFAILED[0m (integral-failed-combinations.cpp:75, [31m42ull != (signed char)42[0m)
         [31m✗[0m ne matches unsigned char [31mFAILED[0m (integral-failed-combinations.cpp:80, [31m42ull != (unsigned char)42[0m)
-        [31m✗[0m gt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:86, [31m42ull > 42[0m)
-        [31m✗[0m lt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:90, [31m42ull < 42[0m)
-        [31m✗[0m eq matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:94, [31m43ull == 42[0m)
-        [31m✗[0m ge matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:99, [31m41ull >= 42[0m)
-        [31m✗[0m le matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:104, [31m43ull <= 42[0m)
-        [31m✗[0m gt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:109, [31m42ull > 42u[0m)
-        [31m✗[0m lt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:114, [31m42ull < 42u[0m)
-        [31m✗[0m eq matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:119, [31m43ull == 42u[0m)
-        [31m✗[0m ge matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:124, [31m41ull >= 42u[0m)
-        [31m✗[0m le matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:129, [31m43ull <= 42u[0m)
+        [31m✗[0m gt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:87, [31m42ull > 42[0m)
+        [31m✗[0m lt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:92, [31m42ull < 42[0m)
+        [31m✗[0m eq matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:97, [31m43ull == 42[0m)
+        [31m✗[0m ge matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:102, [31m41ull >= 42[0m)
+        [31m✗[0m le matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:107, [31m43ull <= 42[0m)
+        [31m✗[0m gt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:112, [31m42ull > 42u[0m)
+        [31m✗[0m lt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:117, [31m42ull < 42u[0m)
+        [31m✗[0m eq matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:122, [31m43ull == 42u[0m)
+        [31m✗[0m ge matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:127, [31m41ull >= 42u[0m)
+        [31m✗[0m le matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:132, [31m43ull <= 42u[0m)
     [31m✗[0m Combinatorial integrals unsigned long long - [31mFAILED[0m (0 checks passed, 20 failed)
 
     • Combinatorial integrals with signed int
@@ -704,21 +704,21 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [31m✗[0m ne matches signed long [31mFAILED[0m (integral-failed-combinations.cpp:45, [31m42 != 42l[0m)
         [31m✗[0m ne matches unsigned long [31mFAILED[0m (integral-failed-combinations.cpp:50, [31m42 != 42ul[0m)
         [31m✗[0m ne matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:55, [31m42 != 42[0m)
-        [31m✗[0m ne matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:59, [31m42 != 42u[0m)
+        [31m✗[0m ne matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:60, [31m42 != 42u[0m)
         [31m✗[0m ne matches signed short [31mFAILED[0m (integral-failed-combinations.cpp:65, [31m42 != (short)42[0m)
         [31m✗[0m ne matches unsigned short [31mFAILED[0m (integral-failed-combinations.cpp:70, [31m42 != (unsigned short)42[0m)
         [31m✗[0m ne matches signed char [31mFAILED[0m (integral-failed-combinations.cpp:75, [31m42 != (signed char)42[0m)
         [31m✗[0m ne matches unsigned char [31mFAILED[0m (integral-failed-combinations.cpp:80, [31m42 != (unsigned char)42[0m)
-        [31m✗[0m gt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:86, [31m42 > 42[0m)
-        [31m✗[0m lt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:90, [31m42 < 42[0m)
-        [31m✗[0m eq matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:94, [31m43 == 42[0m)
-        [31m✗[0m ge matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:99, [31m41 >= 42[0m)
-        [31m✗[0m le matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:104, [31m43 <= 42[0m)
-        [31m✗[0m gt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:109, [31m42 > 42u[0m)
-        [31m✗[0m lt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:114, [31m42 < 42u[0m)
-        [31m✗[0m eq matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:119, [31m43 == 42u[0m)
-        [31m✗[0m ge matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:124, [31m41 >= 42u[0m)
-        [31m✗[0m le matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:129, [31m43 <= 42u[0m)
+        [31m✗[0m gt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:87, [31m42 > 42[0m)
+        [31m✗[0m lt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:92, [31m42 < 42[0m)
+        [31m✗[0m eq matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:97, [31m43 == 42[0m)
+        [31m✗[0m ge matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:102, [31m41 >= 42[0m)
+        [31m✗[0m le matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:107, [31m43 <= 42[0m)
+        [31m✗[0m gt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:112, [31m42 > 42u[0m)
+        [31m✗[0m lt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:117, [31m42 < 42u[0m)
+        [31m✗[0m eq matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:122, [31m43 == 42u[0m)
+        [31m✗[0m ge matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:127, [31m41 >= 42u[0m)
+        [31m✗[0m le matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:132, [31m43 <= 42u[0m)
     [31m✗[0m Combinatorial integrals with signed int - [31mFAILED[0m (0 checks passed, 20 failed)
 
     • Combinatorial integrals with unsigned int
@@ -727,21 +727,21 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [31m✗[0m ne matches signed long [31mFAILED[0m (integral-failed-combinations.cpp:45, [31m42u != 42l[0m)
         [31m✗[0m ne matches unsigned long [31mFAILED[0m (integral-failed-combinations.cpp:50, [31m42u != 42ul[0m)
         [31m✗[0m ne matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:55, [31m42u != 42[0m)
-        [31m✗[0m ne matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:59, [31m42u != 42u[0m)
+        [31m✗[0m ne matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:60, [31m42u != 42u[0m)
         [31m✗[0m ne matches signed short [31mFAILED[0m (integral-failed-combinations.cpp:65, [31m42u != (short)42[0m)
         [31m✗[0m ne matches unsigned short [31mFAILED[0m (integral-failed-combinations.cpp:70, [31m42u != (unsigned short)42[0m)
         [31m✗[0m ne matches signed char [31mFAILED[0m (integral-failed-combinations.cpp:75, [31m42u != (signed char)42[0m)
         [31m✗[0m ne matches unsigned char [31mFAILED[0m (integral-failed-combinations.cpp:80, [31m42u != (unsigned char)42[0m)
-        [31m✗[0m gt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:86, [31m42u > 42[0m)
-        [31m✗[0m lt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:90, [31m42u < 42[0m)
-        [31m✗[0m eq matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:94, [31m43u == 42[0m)
-        [31m✗[0m ge matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:99, [31m41u >= 42[0m)
-        [31m✗[0m le matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:104, [31m43u <= 42[0m)
-        [31m✗[0m gt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:109, [31m42u > 42u[0m)
-        [31m✗[0m lt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:114, [31m42u < 42u[0m)
-        [31m✗[0m eq matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:119, [31m43u == 42u[0m)
-        [31m✗[0m ge matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:124, [31m41u >= 42u[0m)
-        [31m✗[0m le matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:129, [31m43u <= 42u[0m)
+        [31m✗[0m gt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:87, [31m42u > 42[0m)
+        [31m✗[0m lt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:92, [31m42u < 42[0m)
+        [31m✗[0m eq matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:97, [31m43u == 42[0m)
+        [31m✗[0m ge matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:102, [31m41u >= 42[0m)
+        [31m✗[0m le matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:107, [31m43u <= 42[0m)
+        [31m✗[0m gt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:112, [31m42u > 42u[0m)
+        [31m✗[0m lt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:117, [31m42u < 42u[0m)
+        [31m✗[0m eq matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:122, [31m43u == 42u[0m)
+        [31m✗[0m ge matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:127, [31m41u >= 42u[0m)
+        [31m✗[0m le matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:132, [31m43u <= 42u[0m)
     [31m✗[0m Combinatorial integrals with unsigned int - [31mFAILED[0m (0 checks passed, 20 failed)
 
     • Combinatorial integrals with signed short
@@ -750,21 +750,21 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [31m✗[0m ne matches signed long [31mFAILED[0m (integral-failed-combinations.cpp:45, [31m42 != 42l[0m)
         [31m✗[0m ne matches unsigned long [31mFAILED[0m (integral-failed-combinations.cpp:50, [31m42 != 42ul[0m)
         [31m✗[0m ne matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:55, [31m42 != 42[0m)
-        [31m✗[0m ne matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:59, [31m42 != 42u[0m)
+        [31m✗[0m ne matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:60, [31m42 != 42u[0m)
         [31m✗[0m ne matches signed short [31mFAILED[0m (integral-failed-combinations.cpp:65, [31m42 != (short)42[0m)
         [31m✗[0m ne matches unsigned short [31mFAILED[0m (integral-failed-combinations.cpp:70, [31m42 != (unsigned short)42[0m)
         [31m✗[0m ne matches signed char [31mFAILED[0m (integral-failed-combinations.cpp:75, [31m42 != (signed char)42[0m)
         [31m✗[0m ne matches unsigned char [31mFAILED[0m (integral-failed-combinations.cpp:80, [31m42 != (unsigned char)42[0m)
-        [31m✗[0m gt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:86, [31m42 > 42[0m)
-        [31m✗[0m lt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:90, [31m42 < 42[0m)
-        [31m✗[0m eq matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:94, [31m43 == 42[0m)
-        [31m✗[0m ge matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:99, [31m41 >= 42[0m)
-        [31m✗[0m le matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:104, [31m43 <= 42[0m)
-        [31m✗[0m gt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:109, [31m42 > 42u[0m)
-        [31m✗[0m lt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:114, [31m42 < 42u[0m)
-        [31m✗[0m eq matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:119, [31m43 == 42u[0m)
-        [31m✗[0m ge matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:124, [31m41 >= 42u[0m)
-        [31m✗[0m le matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:129, [31m43 <= 42u[0m)
+        [31m✗[0m gt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:87, [31m42 > 42[0m)
+        [31m✗[0m lt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:92, [31m42 < 42[0m)
+        [31m✗[0m eq matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:97, [31m43 == 42[0m)
+        [31m✗[0m ge matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:102, [31m41 >= 42[0m)
+        [31m✗[0m le matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:107, [31m43 <= 42[0m)
+        [31m✗[0m gt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:112, [31m42 > 42u[0m)
+        [31m✗[0m lt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:117, [31m42 < 42u[0m)
+        [31m✗[0m eq matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:122, [31m43 == 42u[0m)
+        [31m✗[0m ge matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:127, [31m41 >= 42u[0m)
+        [31m✗[0m le matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:132, [31m43 <= 42u[0m)
     [31m✗[0m Combinatorial integrals with signed short - [31mFAILED[0m (0 checks passed, 20 failed)
 
     • Combinatorial integrals with unsigned short
@@ -773,21 +773,21 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [31m✗[0m ne matches signed long [31mFAILED[0m (integral-failed-combinations.cpp:45, [31m42u != 42l[0m)
         [31m✗[0m ne matches unsigned long [31mFAILED[0m (integral-failed-combinations.cpp:50, [31m42u != 42ul[0m)
         [31m✗[0m ne matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:55, [31m42u != 42[0m)
-        [31m✗[0m ne matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:59, [31m42u != 42u[0m)
+        [31m✗[0m ne matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:60, [31m42u != 42u[0m)
         [31m✗[0m ne matches signed short [31mFAILED[0m (integral-failed-combinations.cpp:65, [31m42u != (short)42[0m)
         [31m✗[0m ne matches unsigned short [31mFAILED[0m (integral-failed-combinations.cpp:70, [31m42u != (unsigned short)42[0m)
         [31m✗[0m ne matches signed char [31mFAILED[0m (integral-failed-combinations.cpp:75, [31m42u != (signed char)42[0m)
         [31m✗[0m ne matches unsigned char [31mFAILED[0m (integral-failed-combinations.cpp:80, [31m42u != (unsigned char)42[0m)
-        [31m✗[0m gt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:86, [31m42u > 42[0m)
-        [31m✗[0m lt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:90, [31m42u < 42[0m)
-        [31m✗[0m eq matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:94, [31m43u == 42[0m)
-        [31m✗[0m ge matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:99, [31m41u >= 42[0m)
-        [31m✗[0m le matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:104, [31m43u <= 42[0m)
-        [31m✗[0m gt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:109, [31m42u > 42u[0m)
-        [31m✗[0m lt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:114, [31m42u < 42u[0m)
-        [31m✗[0m eq matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:119, [31m43u == 42u[0m)
-        [31m✗[0m ge matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:124, [31m41u >= 42u[0m)
-        [31m✗[0m le matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:129, [31m43u <= 42u[0m)
+        [31m✗[0m gt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:87, [31m42u > 42[0m)
+        [31m✗[0m lt matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:92, [31m42u < 42[0m)
+        [31m✗[0m eq matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:97, [31m43u == 42[0m)
+        [31m✗[0m ge matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:102, [31m41u >= 42[0m)
+        [31m✗[0m le matches signed int [31mFAILED[0m (integral-failed-combinations.cpp:107, [31m43u <= 42[0m)
+        [31m✗[0m gt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:112, [31m42u > 42u[0m)
+        [31m✗[0m lt matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:117, [31m42u < 42u[0m)
+        [31m✗[0m eq matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:122, [31m43u == 42u[0m)
+        [31m✗[0m ge matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:127, [31m41u >= 42u[0m)
+        [31m✗[0m le matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:132, [31m43u <= 42u[0m)
     [31m✗[0m Combinatorial integrals with unsigned short - [31mFAILED[0m (0 checks passed, 20 failed)
 
     • Combinatorial integrals with signed short
@@ -882,7 +882,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [31m✗[0m le matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:132, [31m(unsigned char)43 <= 42u[0m)
     [31m✗[0m Combinatorial integrals with unsigned char - [31mFAILED[0m (0 checks passed, 20 failed)
 
-[31m✗[0m Failed combinatorial integrals suite - [31mFAILED[0m (0 checks passed, 200 failed, in 10 test cases), time: 1.528 ms
+[31m✗[0m Failed combinatorial integrals suite - [31mFAILED[0m (0 checks passed, 200 failed, in 10 test cases), time: 1.719 ms
 
 • Miscellaneous suite
 
@@ -981,22 +981,22 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
 
     • Message types
         [32m✓[0m numbers 1 2 3 1.5 2 true
-        [32m✓[0m pointer 0x10bb5ec60
+        [32m✓[0m pointer 0x103e27b20
         [32m✓[0m container {1, 2}
         [32m✓[0m standard types (1, a) nullopt 1
         [32m✓[0m custom type { 1, 2 } on
         [32m✓[0m wide characters u'x' U'x' L'x'
-        [31m✗[0m failed {3} [31mFAILED[0m (miscellaneous.cpp:854)
+        [31m✗[0m failed {3} [31mFAILED[0m (miscellaneous.cpp:873)
     [31m✗[0m Message types - [31mFAILED[0m (6 checks passed, 1 failed)
 
     • Lazy messages
         [32m✓[0m passed
         [32m✓[0m true
         [32m✓[0m not called after a success
-        [31m✗[0m failed and appended [31mFAILED[0m (miscellaneous.cpp:882)
+        [31m✗[0m failed and appended [31mFAILED[0m (miscellaneous.cpp:901)
         [32m✓[0m called after a failure
-        [31m✗[0m 42 [31mFAILED[0m (miscellaneous.cpp:893)
-        [31m✗[0m from a function [31mFAILED[0m (miscellaneous.cpp:898)
+        [31m✗[0m 42 [31mFAILED[0m (miscellaneous.cpp:912)
+        [31m✗[0m from a function [31mFAILED[0m (miscellaneous.cpp:917)
     [31m✗[0m Lazy messages - [31mFAILED[0m (4 checks passed, 3 failed)
 
     • TAP escapes # TODO in names \ messages
@@ -1005,12 +1005,12 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m first line
 second line
         [31m✗[0m failed # TODO not a directive
-next line [31mFAILED[0m (miscellaneous.cpp:920)
+next line [31mFAILED[0m (miscellaneous.cpp:939)
     [31m✗[0m TAP escapes # TODO in names \ messages - [31mFAILED[0m (3 checks passed, 1 failed)
 
     • TAP condition values are quoted
-        [31m✗[0m [31mFAILED[0m (miscellaneous.cpp:931, [31m"key: \"value\" # not a comment" == "a\\b"[0m)
-        [31m✗[0m [31mFAILED[0m (miscellaneous.cpp:935, [31m"line\nbreak\ttab" == "x"[0m)
+        [31m✗[0m [31mFAILED[0m (miscellaneous.cpp:950, [31m"key: \"value\" # not a comment" == "a\\b"[0m)
+        [31m✗[0m [31mFAILED[0m (miscellaneous.cpp:954, [31m"line\nbreak\ttab" == "x"[0m)
     [31m✗[0m TAP condition values are quoted - [31mFAILED[0m (0 checks passed, 2 failed)
 
     • Runner options
@@ -1213,7 +1213,7 @@ Matching test cases:
     [32m✓[0m Failed each value (1) - passed (1 check)
 
     • Failed each value (2)
-        [31m✗[0m value 2 == 1 [31mFAILED[0m (miscellaneous.cpp:1793, [31m2 == 1[0m)
+        [31m✗[0m value 2 == 1 [31mFAILED[0m (miscellaneous.cpp:1855, [31m2 == 1[0m)
     [31m✗[0m Failed each value (2) - [31mFAILED[0m (0 checks passed, 1 failed)
 
     • Callable arguments
@@ -1272,7 +1272,7 @@ Matching test cases:
         [32m✓[0m string view suite name copied
     [32m✓[0m Test case and suite names - passed (9 checks)
 
-[31m✗[0m Miscellaneous suite - [31mFAILED[0m (203 checks passed, 8 failed, in 52 test cases), time: 2.074 ms
+[31m✗[0m Miscellaneous suite - [31mFAILED[0m (203 checks passed, 8 failed, in 52 test cases), time: 4.946 ms
 
 • Operands suite
 
@@ -1284,10 +1284,10 @@ Matching test cases:
     [32m✓[0m Arrays - passed (4 checks)
 
     • Arrays bad
-        [31m✗[0m array{ 42 } ne array{ 42 } [31mFAILED[0m (operands.cpp:225, [31m{42} != {42}[0m)
-        [31m✗[0m array{ 42 } eq array{ 43 } [31mFAILED[0m (operands.cpp:229, [31m{42} == {43}[0m)
-        [31m✗[0m array{ 1, 2 } ne array{ 1, 2 } [31mFAILED[0m (operands.cpp:233, [31m{1, 2} != {1, 2}[0m)
-        [31m✗[0m array{ 1, 2, 3 } eq array{ 1, 2, 4 } [31mFAILED[0m (operands.cpp:237, [31m{1, 2, 3} == {1, 2, 4}[0m)
+        [31m✗[0m array{ 42 } ne array{ 42 } [31mFAILED[0m (operands.cpp:258, [31m{42} != {42}[0m)
+        [31m✗[0m array{ 42 } eq array{ 43 } [31mFAILED[0m (operands.cpp:262, [31m{42} == {43}[0m)
+        [31m✗[0m array{ 1, 2 } ne array{ 1, 2 } [31mFAILED[0m (operands.cpp:266, [31m{1, 2} != {1, 2}[0m)
+        [31m✗[0m array{ 1, 2, 3 } eq array{ 1, 2, 4 } [31mFAILED[0m (operands.cpp:270, [31m{1, 2, 3} == {1, 2, 4}[0m)
     [31m✗[0m Arrays bad - [31mFAILED[0m (0 checks passed, 4 failed)
 
     • Vectors
@@ -1300,12 +1300,12 @@ Matching test cases:
     [32m✓[0m Vectors - passed (6 checks)
 
     • Vectors bad
-        [31m✗[0m vector{ } != vector{ } [31mFAILED[0m (operands.cpp:289, [31m{} != {}[0m)
-        [31m✗[0m [31mFAILED[0m (operands.cpp:293, [31m{} != {}[0m)
-        [31m✗[0m vector{ 42 } != vector{ 42 } [31mFAILED[0m (operands.cpp:296, [31m{42} != {42}[0m)
-        [31m✗[0m vector{ 42 } == vector{ 43 } [31mFAILED[0m (operands.cpp:300, [31m{42} == {43}[0m)
-        [31m✗[0m vector{ 1, 2 } != vector{ 1, 2 } [31mFAILED[0m (operands.cpp:304, [31m{1, 2} != {1, 2}[0m)
-        [31m✗[0m vector{ 1, 2, 3 } == vector{ 1, 2, 4 } [31mFAILED[0m (operands.cpp:308, [31m{1, 2, 3} == {1, 2, 4}[0m)
+        [31m✗[0m vector{ } != vector{ } [31mFAILED[0m (operands.cpp:322, [31m{} != {}[0m)
+        [31m✗[0m [31mFAILED[0m (operands.cpp:326, [31m{} != {}[0m)
+        [31m✗[0m vector{ 42 } != vector{ 42 } [31mFAILED[0m (operands.cpp:329, [31m{42} != {42}[0m)
+        [31m✗[0m vector{ 42 } == vector{ 43 } [31mFAILED[0m (operands.cpp:333, [31m{42} == {43}[0m)
+        [31m✗[0m vector{ 1, 2 } != vector{ 1, 2 } [31mFAILED[0m (operands.cpp:337, [31m{1, 2} != {1, 2}[0m)
+        [31m✗[0m vector{ 1, 2, 3 } == vector{ 1, 2, 4 } [31mFAILED[0m (operands.cpp:341, [31m{1, 2, 3} == {1, 2, 4}[0m)
     [31m✗[0m Vectors bad - [31mFAILED[0m (0 checks passed, 6 failed)
 
     • Custom types
@@ -1314,9 +1314,9 @@ Matching test cases:
     [32m✓[0m Custom types - passed (2 checks)
 
     • Custom types bad
-        [31m✗[0m point{ 1, 2 } == point{ 1, 3 } [31mFAILED[0m (operands.cpp:345, [31m{ 1, 2 } == { 1, 3 }[0m)
-        [31m✗[0m [31mFAILED[0m (operands.cpp:350, [31m{ 1, 2 } == { 1, 3 }[0m)
-        [31m✗[0m point{ 1, 2 } != point{ 1, 2 } [31mFAILED[0m (operands.cpp:353, [31m{ 1, 2 } != { 1, 2 }[0m)
+        [31m✗[0m point{ 1, 2 } == point{ 1, 3 } [31mFAILED[0m (operands.cpp:378, [31m{ 1, 2 } == { 1, 3 }[0m)
+        [31m✗[0m [31mFAILED[0m (operands.cpp:383, [31m{ 1, 2 } == { 1, 3 }[0m)
+        [31m✗[0m point{ 1, 2 } != point{ 1, 2 } [31mFAILED[0m (operands.cpp:386, [31m{ 1, 2 } != { 1, 2 }[0m)
     [31m✗[0m Custom types bad - [31mFAILED[0m (0 checks passed, 3 failed)
 
     • Custom comparators
@@ -1326,15 +1326,15 @@ Matching test cases:
     [32m✓[0m Custom comparators - passed (3 checks)
 
     • Custom comparators bad
-        [31m✗[0m 5 divides 12 [31mFAILED[0m (operands.cpp:391, [31m5 divides 12[0m)
-        [31m✗[0m [31mFAILED[0m (operands.cpp:394, [31m5 divides 12[0m)
-        [31m✗[0m [31mFAILED[0m (operands.cpp:397, [31meven 7[0m)
-        [31m✗[0m [31mFAILED[0m (operands.cpp:400, ([32m3 divides 12[0m[31m and [0m[31meven 7[0m))
+        [31m✗[0m 5 divides 12 [31mFAILED[0m (operands.cpp:424, [31m5 divides 12[0m)
+        [31m✗[0m [31mFAILED[0m (operands.cpp:427, [31m5 divides 12[0m)
+        [31m✗[0m [31mFAILED[0m (operands.cpp:430, [31meven 7[0m)
+        [31m✗[0m [31mFAILED[0m (operands.cpp:433, ([32m3 divides 12[0m[31m and [0m[31meven 7[0m))
     [31m✗[0m Custom comparators bad - [31mFAILED[0m (0 checks passed, 4 failed)
 
     • Custom comparators with strings bad
-        [31m✗[0m [31mFAILED[0m (operands.cpp:433, [31m"hello" has prefix "help"[0m)
-        [31m✗[0m [31mFAILED[0m (operands.cpp:437, [31m"" has prefix "help"[0m)
+        [31m✗[0m [31mFAILED[0m (operands.cpp:444, [31m"hello" has prefix "help"[0m)
+        [31m✗[0m [31mFAILED[0m (operands.cpp:448, [31m"" has prefix "help"[0m)
     [31m✗[0m Custom comparators with strings bad - [31mFAILED[0m (0 checks passed, 2 failed)
 
     • Standard types
@@ -1354,11 +1354,11 @@ Matching test cases:
     [32m✓[0m Standard types - passed (13 checks)
 
     • Standard types bad
-        [31m✗[0m colour::red == colour::green [31mFAILED[0m (operands.cpp:476, [31m0 == 1[0m)
-        [31m✗[0m std::byte{ 1 } == std::byte{ 2 } [31mFAILED[0m (operands.cpp:518, [31m(unsigned char)1 == (unsigned char)2[0m)
-        [31m✗[0m pairs1 == pairs2 [31mFAILED[0m (operands.cpp:486, [31m{(1, 2)} == {(1, 3)}[0m)
-        [31m✗[0m optional == nullopt [31mFAILED[0m (operands.cpp:489, [31m42 == nullopt[0m)
-        [31m✗[0m 5ms == 6ms [31mFAILED[0m (operands.cpp:493, [31m5ms == 6ms[0m)
+        [31m✗[0m colour::red == colour::green [31mFAILED[0m (operands.cpp:525, [31m0 == 1[0m)
+        [31m✗[0m std::byte{ 1 } == std::byte{ 2 } [31mFAILED[0m (operands.cpp:529, [31m(unsigned char)1 == (unsigned char)2[0m)
+        [31m✗[0m pairs1 == pairs2 [31mFAILED[0m (operands.cpp:535, [31m{(1, 2)} == {(1, 3)}[0m)
+        [31m✗[0m optional == nullopt [31mFAILED[0m (operands.cpp:538, [31m42 == nullopt[0m)
+        [31m✗[0m 5ms == 6ms [31mFAILED[0m (operands.cpp:542, [31m5ms == 6ms[0m)
     [31m✗[0m Standard types bad - [31mFAILED[0m (0 checks passed, 5 failed)
 
     • Explicit conversions to bool
@@ -1370,10 +1370,10 @@ Matching test cases:
     [32m✓[0m Explicit conversions to bool - passed (5 checks)
 
     • Explicit conversions to bool bad
-        [31m✗[0m empty optional [31mFAILED[0m (operands.cpp:544)
-        [31m✗[0m null unique_ptr [31mFAILED[0m (operands.cpp:547)
-        [31m✗[0m empty function [31mFAILED[0m (operands.cpp:550)
-        [31m✗[0m [31mFAILED[0m (operands.cpp:553)
+        [31m✗[0m empty optional [31mFAILED[0m (operands.cpp:593)
+        [31m✗[0m null unique_ptr [31mFAILED[0m (operands.cpp:596)
+        [31m✗[0m empty function [31mFAILED[0m (operands.cpp:599)
+        [31m✗[0m [31mFAILED[0m (operands.cpp:602)
     [31m✗[0m Explicit conversions to bool bad - [31mFAILED[0m (0 checks passed, 4 failed)
 
     • Pointers to const
@@ -1383,12 +1383,15 @@ Matching test cases:
 
     • Operand copies
         [32m✓[0m plain operands
-        [32m✓[0m plain operands not copied
-        [32m✓[0m nested comparators
-        [32m✓[0m nested comparators not copied
+        [32m✓[0m plain operands copied once each
         [32m✓[0m stored comparator
-        [32m✓[0m temporary operand stored once
-    [32m✓[0m Operand copies - passed (6 checks)
+        [32m✓[0m operands stored once each
+    [32m✓[0m Operand copies - passed (4 checks)
+
+    • Returned comparators
+        [32m✓[0m returned comparator
+        [32m✓[0m operand of the returned comparator
+    [32m✓[0m Returned comparators - passed (2 checks)
 
     • Raw arrays
         [32m✓[0m bytes equal
@@ -1401,15 +1404,15 @@ Matching test cases:
     [32m✓[0m Raw arrays - passed (7 checks)
 
     • Raw arrays bad
-        [31m✗[0m bytes eq [31mFAILED[0m (operands.cpp:662, [31m{1, 2, 3} == {1, 2, 4}[0m)
+        [31m✗[0m bytes eq [31mFAILED[0m (operands.cpp:719, [31m{1, 2, 3} == {1, 2, 4}[0m)
     [31m✗[0m Raw arrays bad - [31mFAILED[0m (0 checks passed, 1 failed)
 
     • Long ranges bad
-        [31m✗[0m long vector eq [31mFAILED[0m (operands.cpp:675, [31m{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} == {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} (first difference at index 19)[0m)
-        [31m✗[0m 16 bytes eq [31mFAILED[0m (operands.cpp:682, [31m{7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8}[0m)
+        [31m✗[0m long vector eq [31mFAILED[0m (operands.cpp:732, [31m{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} == {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} (first difference at index 19)[0m)
+        [31m✗[0m 16 bytes eq [31mFAILED[0m (operands.cpp:739, [31m{7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8}[0m)
     [31m✗[0m Long ranges bad - [31mFAILED[0m (0 checks passed, 2 failed)
 
-[31m✗[0m Operands suite - [31mFAILED[0m (48 checks passed, 31 failed, in 18 test cases), time: 1.191 ms
+[31m✗[0m Operands suite - [31mFAILED[0m (48 checks passed, 31 failed, in 19 test cases), time: 0.933 ms
 
 • Runner options suite
 
@@ -1504,7 +1507,7 @@ Matching test cases:
         [32m✓[0m the move assignment moves all the members
     [32m✓[0m Copies and moves - passed (5 checks)
 
-[32m✓[0m Runner options suite - passed (64 checks in 9 test cases), time: 1.635 ms
+[32m✓[0m Runner options suite - passed (64 checks in 9 test cases), time: 1.409 ms
 
 • Stopwatch suite
 
@@ -1543,7 +1546,7 @@ Matching test cases:
         [32m✓[0m no stop -> 0 µs
     [32m✓[0m stopwatch::elapsed() - passed (7 checks)
 
-[32m✓[0m Stopwatch suite - passed (20 checks in 5 test cases), time: 0.160 ms
+[32m✓[0m Stopwatch suite - passed (20 checks in 5 test cases), time: 0.171 ms
 
 • Utility suite
 
@@ -1582,8 +1585,8 @@ Matching test cases:
         [31m✗[0m ab matches ??? [31mFAILED[0m (utility.cpp:195)
     [31m✗[0m utility::is_match() — failing - [31mFAILED[0m (0 checks passed, 5 failed)
 
-[31m✗[0m Utility suite - [31mFAILED[0m (21 checks passed, 5 failed, in 3 test cases), time: 0.125 ms
+[31m✗[0m Utility suite - [31mFAILED[0m (21 checks passed, 5 failed, in 3 test cases), time: 0.140 ms
 
-[31m✗[0m Total: 677 checks passed, 349 failed, in 158 test cases, 15 test suites, time: 4.986 ms
+[31m✗[0m Total: 677 checks passed, 349 failed, in 159 test cases, 15 test suites, time: 15.577 ms
 Overall, the µTest++ unit tests were successful!
 

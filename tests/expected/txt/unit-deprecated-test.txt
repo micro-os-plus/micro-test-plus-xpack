@@ -253,7 +253,7 @@ Built with GCC 15.2.1 20251203, with FP, with exceptions, with MICRO_OS_PLUS_DEB
     ✗ Failed custom comparators with wrappers - FAILED (0 checks passed, 2 failed)
     • Operand copies of wrappers
         ✓ wrapped operand
-        ✓ wrapped operand not copied
+        ✓ wrapped operand copied
     ✓ Operand copies of wrappers - passed (2 checks)
     • Kept helpers
         ✓ mut()

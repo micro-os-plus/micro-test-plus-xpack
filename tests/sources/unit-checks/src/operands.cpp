@@ -21,6 +21,7 @@
 #include <memory>
 #include <numeric>
 #include <optional>
+#include <string>
 #include <string_view>
 #include <tuple>
 #include <utility>
@@ -149,6 +150,16 @@ namespace
   operator<< (mt::expression_formatter& formatter, state s)
   {
     return formatter << (s == state::on ? "on" : "off");
+  }
+
+  // A check built from the locals of a function, and returned from it
+  // (#229).
+  auto
+  name_is_expected (const std::string& actual)
+  {
+    const std::string expected{ "an actual name, longer than the small "
+                                "string buffer of the library" };
+    return mt::eq (actual, expected);
   }
 
   // A user-defined type that counts its copies, to check that the
@@ -617,8 +628,8 @@ static mt::static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
-    // The named operands are referred to, and the temporaries are moved,
-    // so the comparators do not copy the operands.
+    // The named operands are copied into the comparators, so that a
+    // comparator can be returned from the function that builds it (#229).
     ts.test ("Operand copies", [] (auto& t)
       {
         const counted a{ 1 };
@@ -629,16 +640,7 @@ static mt::static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
         local_counts.passed_checks++;
         int copies = counted_copies;
 
-        t.expect (mt::eq (copies, 0)) << "plain operands not copied";
-        local_counts.passed_checks++;
-
-        counted_copies = 0;
-        t.expect (mt::all_of (mt::eq (a, b), mt::negate (mt::ne (a, b))))
-            << "nested comparators";
-        local_counts.passed_checks++;
-        copies = counted_copies;
-
-        t.expect (mt::eq (copies, 0)) << "nested comparators not copied";
+        t.expect (mt::eq (copies, 2)) << "plain operands copied once each";
         local_counts.passed_checks++;
 
         // A comparator that outlives the statement owns its temporary
@@ -651,7 +653,24 @@ static mt::static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
         t.expect (stored) << "stored comparator";
         local_counts.passed_checks++;
 
-        t.expect (mt::eq (copies, 1)) << "temporary operand stored once";
+        t.expect (mt::eq (copies, 2)) << "operands stored once each";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    // A comparator built from the locals of a function, and returned from
+    // it, must not refer to the destroyed locals (#229).
+    ts.test ("Returned comparators", [] (auto& t)
+      {
+        const std::string actual{ "an actual name, longer than the small "
+                                  "string buffer of the library" };
+        t.expect (name_is_expected (actual)) << "returned comparator";
+        local_counts.passed_checks++;
+
+        const auto stored = name_is_expected (actual);
+        t.expect (mt::eq (stored.rhs (), actual))
+            << "operand of the returned comparator";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
