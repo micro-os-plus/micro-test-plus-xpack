@@ -240,6 +240,22 @@ namespace
   template <class Name_T>
   concept can_add_top_suite
       = requires (mt::runner& r, Name_T name) { r.add_top_suite (name); };
+
+  // Whether the logical combinators accept operands of the given types.
+  template <class... Ts>
+  concept can_negate = requires (Ts&&... operands) {
+    mt::negate (std::forward<Ts> (operands)...);
+  };
+
+  template <class... Ts>
+  concept can_all_of = requires (Ts&&... operands) {
+    mt::all_of (std::forward<Ts> (operands)...);
+  };
+
+  template <class... Ts>
+  concept can_any_of = requires (Ts&&... operands) {
+    mt::any_of (std::forward<Ts> (operands)...);
+  };
 } // namespace
 
 int
@@ -772,6 +788,22 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (mt::extension::legacy_checkable<const char*>);
     static_assert (not mt::extension::legacy_checkable<bool>);
     static_assert (not mt::extension::legacy_checkable<no_conversion>);
+
+    // The logical combinators apply the same guard to their operands, so
+    // that wrapping an always true value does not bypass it.
+    using mt_eq_t = decltype (mt::eq (1, 1));
+    using literal_t = const char (&)[2];
+
+    static_assert (can_negate<bool>);
+    static_assert (can_negate<mt_eq_t>);
+    static_assert (can_all_of<bool, mt_eq_t>);
+    static_assert (can_any_of<int, mt_eq_t, bool>);
+    static_assert (not can_negate<literal_t>);
+    static_assert (not can_all_of<literal_t, bool>);
+    static_assert (not can_all_of<bool, literal_t>);
+    static_assert (not can_all_of<bool, bool, literal_t>);
+    static_assert (not can_any_of<bool, literal_t>);
+    static_assert (not can_any_of<bool, bool, literal_t>);
   }
 
   {

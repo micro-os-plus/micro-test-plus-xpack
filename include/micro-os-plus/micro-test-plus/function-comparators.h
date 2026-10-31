@@ -260,9 +260,14 @@ namespace micro_os_plus::micro_test_plus
    * @tparam Expr_T Type of the operand.
    *
    * @param expr Logical expression to be negated.
+   * @par Constraints
+   *   Enabled only if the operand satisfies `extension::checkable`, as
+   *   for `expect()`; the values that are always true (C strings, arrays,
+   *   function pointers) are rejected at compile time.
    * @return An object that evaluates to true if the operand is false.
    */
   template <class Expr_T>
+    requires extension::checkable<std::remove_cvref_t<Expr_T>>
   [[nodiscard]] constexpr auto
   negate (Expr_T&& expr);
 
@@ -277,10 +282,16 @@ namespace micro_os_plus::micro_test_plus
    * @param first First operand.
    * @param second Second operand.
    * @param rest The other operands, if any.
+   * @par Constraints
+   *   Enabled only if each operand satisfies `extension::checkable`, as
+   *   for `expect()`.
    * @return An object that evaluates to true if all the operand expressions
    * are true.
    */
   template <class First_T, class Second_T, class... Rest_T>
+    requires (extension::checkable<std::remove_cvref_t<First_T>>
+              and extension::checkable<std::remove_cvref_t<Second_T>>
+              and (extension::checkable<std::remove_cvref_t<Rest_T>> and ...))
   [[nodiscard]] constexpr auto
   all_of (First_T&& first, Second_T&& second, Rest_T&&... rest);
 
@@ -296,10 +307,16 @@ namespace micro_os_plus::micro_test_plus
    * @param first First operand.
    * @param second Second operand.
    * @param rest The other operands, if any.
+   * @par Constraints
+   *   Enabled only if each operand satisfies `extension::checkable`, as
+   *   for `expect()`.
    * @return An object that evaluates to true if at least one of the operand
    * expressions is true, including when all are.
    */
   template <class First_T, class Second_T, class... Rest_T>
+    requires (extension::checkable<std::remove_cvref_t<First_T>>
+              and extension::checkable<std::remove_cvref_t<Second_T>>
+              and (extension::checkable<std::remove_cvref_t<Rest_T>> and ...))
   [[nodiscard]] constexpr auto
   any_of (First_T&& first, Second_T&& second, Rest_T&&... rest);
 

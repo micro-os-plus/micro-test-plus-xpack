@@ -215,6 +215,7 @@ namespace micro_os_plus::micro_test_plus
    * `micro_test_plus::operators` namespace.
    */
   template <class Expr_T>
+    requires extension::checkable<std::remove_cvref_t<Expr_T>>
   constexpr auto
   negate (Expr_T&& expr)
   {
@@ -242,6 +243,9 @@ namespace micro_os_plus::micro_test_plus
    * be called as `mt::all_of()`.
    */
   template <class First_T, class Second_T, class... Rest_T>
+    requires (extension::checkable<std::remove_cvref_t<First_T>>
+              and extension::checkable<std::remove_cvref_t<Second_T>>
+              and (extension::checkable<std::remove_cvref_t<Rest_T>> and ...))
   constexpr auto
   all_of (First_T&& first, Second_T&& second, Rest_T&&... rest)
   {
@@ -274,6 +278,9 @@ namespace micro_os_plus::micro_test_plus
    * must be called as `mt::any_of()` after a `using namespace std`.
    */
   template <class First_T, class Second_T, class... Rest_T>
+    requires (extension::checkable<std::remove_cvref_t<First_T>>
+              and extension::checkable<std::remove_cvref_t<Second_T>>
+              and (extension::checkable<std::remove_cvref_t<Rest_T>> and ...))
   constexpr auto
   any_of (First_T&& first, Second_T&& second, Rest_T&&... rest)
   {

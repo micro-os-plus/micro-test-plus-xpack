@@ -257,9 +257,11 @@ namespace micro_os_plus::micro_test_plus
      * (the arrays, the functions, the pointers to functions, to members,
      * and to characters), which would make the check pass by mistake.
      * It is used to constrain the `expect()` and
-     * `require()` function templates, ensuring that only sensible
-     * expression types are accepted; an application helper that forwards
-     * its argument to them uses it for the same constraint.
+     * `require()` function templates, and the operands of `all_of()`,
+     * `any_of()`, and `negate()`, ensuring that only sensible
+     * expression types are accepted, also when they are wrapped in a
+     * logical combinator; an application helper that forwards its
+     * argument to them uses it for the same constraint.
      *
      * The condition of the conditional operator, which cannot be
      * overloaded, is used to test the contextual conversion, applied to

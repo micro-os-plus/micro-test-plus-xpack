@@ -757,25 +757,25 @@ are provided.
 
 ```cpp
 template <class Lhs_T, class Rhs_T>
-auto eq(const Lhs_T& lhs, const Rhs_T& rhs);
+auto eq(Lhs_T&& lhs, Rhs_T&& rhs);
 
 template <class Lhs_T, class Rhs_T>
-auto ne(const Lhs_T& lhs, const Rhs_T& rhs);
+auto ne(Lhs_T&& lhs, Rhs_T&& rhs);
 
 template <class Lhs_T, class Rhs_T>
-auto lt(const Lhs_T& lhs, const Rhs_T& rhs);
+auto lt(Lhs_T&& lhs, Rhs_T&& rhs);
 
 template <class Lhs_T, class Rhs_T>
-auto le(const Lhs_T& lhs, const Rhs_T& rhs);
+auto le(Lhs_T&& lhs, Rhs_T&& rhs);
 
 template <class Lhs_T, class Rhs_T>
-auto gt(const Lhs_T& lhs, const Rhs_T& rhs);
+auto gt(Lhs_T&& lhs, Rhs_T&& rhs);
 
 template <class Lhs_T, class Rhs_T>
-auto ge(const Lhs_T& lhs, const Rhs_T& rhs);
+auto ge(Lhs_T&& lhs, Rhs_T&& rhs);
 
 template <class Lhs_T, class Rhs_T, class Epsilon_T>
-auto approx(const Lhs_T& lhs, const Rhs_T& rhs, const Epsilon_T& epsilon);
+auto approx(Lhs_T&& lhs, Rhs_T&& rhs, Epsilon_T&& epsilon);
 ```
 
 The C strings (`char` arrays, including the string literals, and `char`
@@ -826,14 +826,18 @@ when all the operands are true.
 
 ```cpp
 template <class First_T, class Second_T, class... Rest_T>
-auto all_of (const First_T& first, const Second_T& second, const Rest_T&... rest);
+auto all_of (First_T&& first, Second_T&& second, Rest_T&&... rest);
 
 template <class First_T, class Second_T, class... Rest_T>
-auto any_of (const First_T& first, const Second_T& second, const Rest_T&... rest);
+auto any_of (First_T&& first, Second_T&& second, Rest_T&&... rest);
 
 template <class Expr_T>
-auto negate (const Expr_T& expr);
+auto negate (Expr_T&& expr);
 ```
+
+The operands must be accepted by `expect()`: the values that are always
+true, such as string literals, C strings, arrays, and pointers to functions,
+are rejected at compile time, also when wrapped in one of these functions.
 
 `all_of()` and `any_of()` take two or more operands. A chain of the same
 operation is reported as a single group, for example
