@@ -935,6 +935,14 @@ t.expect (mt::ne (find (42), std::nullopt)) << "42 is found";
 t.expect (mt::lt (elapsed (), 5ms)) << "completed within 5ms";
 ```
 
+The strings are shown quoted, whether they are `std::string` or
+`std::string_view` values, or `const char*` elements of a container, pair,
+tuple, or optional (a null pointer is shown as `nullptr`), so that an
+empty string or a trailing space is visible. The values that the
+`operator<<` of an application type writes are shown as that function
+writes them; to quote a `const char*` member there, write
+`formatter << std::string_view{ s }`.
+
 ### Deprecated operators, literals, and wrappers
 
 The overloaded operators of the `operators` namespace, the literals of the
@@ -1178,7 +1186,10 @@ The expressions can be combined with the logical comparators, and,
 being `constexpr`, also checked at compile time
 (`static_assert (app::divides (3, 12))`). The operands are written with
 the `operator<<` of the formatter, so the types of the application need
-one, as for the [custom types](#custom-types).
+one, as for the [custom types](#custom-types). The C strings
+and the arrays among the operands are reported as the built-in
+comparators report them (quoted, and as ranges), while the tag receives
+the operands as they were passed.
 
 The expressions do not copy their operands: a temporary is moved into
 the expression, and a named operand of class type is referred to. The

@@ -2652,16 +2652,19 @@ not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 3 - scoped enumeration with formatter
         ok 4 - std::byte
         ok 5 - pair
-        ok 6 - tuple
-        ok 7 - empty tuple
-        ok 8 - container of pairs
-        ok 9 - container of containers
-        ok 10 - range with begin() and end() functions
-        ok 11 - optional with value
-        ok 12 - optional without value
-        ok 13 - nullopt
-        1..13
-    ok 6 - Formatter standard types # { passed, 13 checks }
+        ok 6 - tuple with a C string
+        ok 7 - container of C strings
+        ok 8 - optional with a C string
+        ok 9 - pair with a C string
+        ok 10 - empty tuple
+        ok 11 - container of pairs
+        ok 12 - container of containers
+        ok 13 - range with begin() and end() functions
+        ok 14 - optional with value
+        ok 15 - optional without value
+        ok 16 - nullopt
+        1..16
+    ok 6 - Formatter standard types # { passed, 16 checks }
     # Subtest: Message types
         ok 1 - numbers 1 2 3 1.5 2 true
         ok 2 - pointer 0x4011d350
@@ -2972,7 +2975,7 @@ not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         1..7
     ok 49 - Test case and suite names # { passed, 7 checks }
     1..49
-not ok 9 - Miscellaneous suite # { FAILED, 190 checks passed, 8 failed, in 52 test cases }
+not ok 9 - Miscellaneous suite # { FAILED, 193 checks passed, 8 failed, in 52 test cases }
 # Subtest: Operands suite
     # Subtest: Arrays
         ok 1 - array{ 42 } == array{ 42 }
@@ -3132,6 +3135,23 @@ not ok 9 - Miscellaneous suite # { FAILED, 190 checks passed, 8 failed, in 52 te
           ...
         1..4
     not ok 8 - Custom comparators bad # { FAILED, 0 checks passed, 4 failed }
+    # Subtest: Custom comparators with strings bad
+        not ok 1
+          ---
+          condition: "\"hello\" has prefix \"help\""
+          at:
+            fileName: operands.cpp
+            lineNumber: 433
+          ...
+        not ok 2
+          ---
+          condition: "\"\" has prefix \"help\""
+          at:
+            fileName: operands.cpp
+            lineNumber: 437
+          ...
+        1..2
+    not ok 9 - Custom comparators with strings bad # { FAILED, 0 checks passed, 2 failed }
     # Subtest: Standard types
         ok 1 - colour::red == colour::red
         ok 2 - colour::red != colour::green
@@ -3147,7 +3167,7 @@ not ok 9 - Miscellaneous suite # { FAILED, 190 checks passed, 8 failed, in 52 te
         ok 12 - 250us < 1ms
         ok 13 - 1000ms == 1s
         1..13
-    ok 9 - Standard types # { passed, 13 checks }
+    ok 10 - Standard types # { passed, 13 checks }
     # Subtest: Standard types bad
         not ok 1 - colour::red == colour::green
           ---
@@ -3185,7 +3205,7 @@ not ok 9 - Miscellaneous suite # { FAILED, 190 checks passed, 8 failed, in 52 te
             lineNumber: 493
           ...
         1..5
-    not ok 10 - Standard types bad # { FAILED, 0 checks passed, 5 failed }
+    not ok 11 - Standard types bad # { FAILED, 0 checks passed, 5 failed }
     # Subtest: Explicit conversions to bool
         ok 1 - optional with a value
         ok 2 - true
@@ -3193,7 +3213,7 @@ not ok 9 - Miscellaneous suite # { FAILED, 190 checks passed, 8 failed, in 52 te
         ok 4 - function not empty
         ok 5 - required unique_ptr
         1..5
-    ok 11 - Explicit conversions to bool # { passed, 5 checks }
+    ok 12 - Explicit conversions to bool # { passed, 5 checks }
     # Subtest: Explicit conversions to bool bad
         not ok 1 - empty optional
           ---
@@ -3220,12 +3240,12 @@ not ok 9 - Miscellaneous suite # { FAILED, 190 checks passed, 8 failed, in 52 te
             lineNumber: 553
           ...
         1..4
-    not ok 12 - Explicit conversions to bool bad # { FAILED, 0 checks passed, 4 failed }
+    not ok 13 - Explicit conversions to bool bad # { FAILED, 0 checks passed, 4 failed }
     # Subtest: Pointers to const
         ok 1 - different const objects
         ok 2 - same const object
         1..2
-    ok 13 - Pointers to const # { passed, 2 checks }
+    ok 14 - Pointers to const # { passed, 2 checks }
     # Subtest: Operand copies
         ok 1 - plain operands
         ok 2 - plain operands not copied
@@ -3234,7 +3254,7 @@ not ok 9 - Miscellaneous suite # { FAILED, 190 checks passed, 8 failed, in 52 te
         ok 5 - stored comparator
         ok 6 - temporary operand stored once
         1..6
-    ok 14 - Operand copies # { passed, 6 checks }
+    ok 15 - Operand copies # { passed, 6 checks }
     # Subtest: Raw arrays
         ok 1 - bytes equal
         ok 2 - bytes not equal
@@ -3244,7 +3264,7 @@ not ok 9 - Miscellaneous suite # { FAILED, 190 checks passed, 8 failed, in 52 te
         ok 6 - array == vector
         ok 7 - vector == array
         1..7
-    ok 15 - Raw arrays # { passed, 7 checks }
+    ok 16 - Raw arrays # { passed, 7 checks }
     # Subtest: Raw arrays bad
         not ok 1 - bytes eq
           ---
@@ -3254,7 +3274,7 @@ not ok 9 - Miscellaneous suite # { FAILED, 190 checks passed, 8 failed, in 52 te
             lineNumber: 662
           ...
         1..1
-    not ok 16 - Raw arrays bad # { FAILED, 0 checks passed, 1 failed }
+    not ok 17 - Raw arrays bad # { FAILED, 0 checks passed, 1 failed }
     # Subtest: Long ranges bad
         not ok 1 - long vector eq
           ---
@@ -3271,9 +3291,9 @@ not ok 9 - Miscellaneous suite # { FAILED, 190 checks passed, 8 failed, in 52 te
             lineNumber: 682
           ...
         1..2
-    not ok 17 - Long ranges bad # { FAILED, 0 checks passed, 2 failed }
-    1..17
-not ok 10 - Operands suite # { FAILED, 48 checks passed, 29 failed, in 17 test cases }
+    not ok 18 - Long ranges bad # { FAILED, 0 checks passed, 2 failed }
+    1..18
+not ok 10 - Operands suite # { FAILED, 48 checks passed, 31 failed, in 18 test cases }
 # Subtest: Runner options suite
     # Subtest: Default options
         ok 1 - the TAP reporter
@@ -3469,4 +3489,4 @@ ok 12 - Stopwatch suite # { passed, 20 checks in 5 test cases }
     1..3
 not ok 13 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases }
 1..13
-# { total: 653 checks passed, 337 failed, in 144 test cases, 13 test suites }
+# { total: 656 checks passed, 339 failed, in 145 test cases, 13 test suites }

@@ -867,7 +867,10 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ scoped enumeration with formatter
         ✓ std::byte
         ✓ pair
-        ✓ tuple
+        ✓ tuple with a C string
+        ✓ container of C strings
+        ✓ optional with a C string
+        ✓ pair with a C string
         ✓ empty tuple
         ✓ container of pairs
         ✓ container of containers
@@ -875,7 +878,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ optional with value
         ✓ optional without value
         ✓ nullopt
-    ✓ Formatter standard types - passed (13 checks)
+    ✓ Formatter standard types - passed (16 checks)
     • Message types
         ✓ numbers 1 2 3 1.5 2 true
         ✓ pointer 0x10e9aac60
@@ -1104,7 +1107,7 @@ next line FAILED (miscellaneous.cpp:920)
         ✓ string suite name copied
         ✓ C string suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (196 checks passed, 8 failed, in 52 test cases), time: 8.729 ms
+✗ Miscellaneous suite - FAILED (199 checks passed, 8 failed, in 52 test cases), time: 12.001 ms
 • Operands suite
     • Arrays
         ✓ array{ 42 } == array{ 42 }
@@ -1154,6 +1157,10 @@ next line FAILED (miscellaneous.cpp:920)
         ✗ FAILED (operands.cpp:397, even 7)
         ✗ FAILED (operands.cpp:400, (3 divides 12 and even 7))
     ✗ Custom comparators bad - FAILED (0 checks passed, 4 failed)
+    • Custom comparators with strings bad
+        ✗ FAILED (operands.cpp:433, "hello" has prefix "help")
+        ✗ FAILED (operands.cpp:437, "" has prefix "help")
+    ✗ Custom comparators with strings bad - FAILED (0 checks passed, 2 failed)
     • Standard types
         ✓ colour::red == colour::red
         ✓ colour::red != colour::green
@@ -1217,7 +1224,7 @@ next line FAILED (miscellaneous.cpp:920)
         ✗ long vector eq FAILED (operands.cpp:675, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} == {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} (first difference at index 19))
         ✗ 16 bytes eq FAILED (operands.cpp:682, {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8})
     ✗ Long ranges bad - FAILED (0 checks passed, 2 failed)
-✗ Operands suite - FAILED (48 checks passed, 29 failed, in 17 test cases), time: 1.213 ms
+✗ Operands suite - FAILED (48 checks passed, 31 failed, in 18 test cases), time: 3.053 ms
 • Runner options suite
     • Default options
         ✓ the TAP reporter
@@ -1367,4 +1374,4 @@ next line FAILED (miscellaneous.cpp:920)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.213 ms
-✗ Total: 670 checks passed, 348 failed, in 158 test cases, 15 test suites, time: 26.771 ms
+✗ Total: 673 checks passed, 350 failed, in 159 test cases, 15 test suites, time: 38.509 ms

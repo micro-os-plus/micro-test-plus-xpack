@@ -526,7 +526,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     ✓ Formatter number suffixes - passed (21 checks)
     ✓ Formatter characters - passed (8 checks)
     ✓ Formatter wide characters - passed (10 checks)
-    ✓ Formatter standard types - passed (13 checks)
+    ✓ Formatter standard types - passed (16 checks)
 
     • Message types
         ✗ failed {3} FAILED (miscellaneous.cpp:854)
@@ -616,7 +616,7 @@ Matching test cases:
     ✓ Abort during the session - passed (6 checks)
     ✓ Test case and suite names - passed (7 checks)
 
-✗ Miscellaneous suite - FAILED (196 checks passed, 8 failed, in 52 test cases), time: 4.664 ms
+✗ Miscellaneous suite - FAILED (199 checks passed, 8 failed, in 52 test cases), time: 5.027 ms
 
 • Operands suite
 
@@ -657,6 +657,11 @@ Matching test cases:
         ✗ FAILED (operands.cpp:400, (3 divides 12 and even 7))
     ✗ Custom comparators bad - FAILED (0 checks passed, 4 failed)
 
+    • Custom comparators with strings bad
+        ✗ FAILED (operands.cpp:433, "hello" has prefix "help")
+        ✗ FAILED (operands.cpp:437, "" has prefix "help")
+    ✗ Custom comparators with strings bad - FAILED (0 checks passed, 2 failed)
+
     ✓ Standard types - passed (13 checks)
 
     • Standard types bad
@@ -689,7 +694,7 @@ Matching test cases:
         ✗ 16 bytes eq FAILED (operands.cpp:682, {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8})
     ✗ Long ranges bad - FAILED (0 checks passed, 2 failed)
 
-✗ Operands suite - FAILED (48 checks passed, 29 failed, in 17 test cases), time: 0.662 ms
+✗ Operands suite - FAILED (48 checks passed, 31 failed, in 18 test cases), time: 0.808 ms
 
 • Runner options suite
 
@@ -730,6 +735,6 @@ Matching test cases:
 
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.087 ms
 
-✗ Total: 670 checks passed, 348 failed, in 158 test cases, 15 test suites, time: 12.229 ms
+✗ Total: 673 checks passed, 350 failed, in 159 test cases, 15 test suites, time: 14.560 ms
 Overall, the µTest++ unit tests were successful!
 

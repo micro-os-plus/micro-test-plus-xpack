@@ -455,6 +455,10 @@ Matching test cases:
         ✗ FAILED (operands.cpp:397, even 7)
         ✗ FAILED (operands.cpp:400, (3 divides 12 and even 7))
 
+    • Custom comparators with strings bad
+        ✗ FAILED (operands.cpp:433, "hello" has prefix "help")
+        ✗ FAILED (operands.cpp:437, "" has prefix "help")
+
     • Standard types bad
         ✗ colour::red == colour::green FAILED (operands.cpp:476, 0 == 1)
         ✗ std::byte{ 1 } == std::byte{ 2 } FAILED (operands.cpp:480, 1uc == 2uc)
@@ -484,4 +488,4 @@ Matching test cases:
         ✗ abc matches *C FAILED (utility.cpp:191)
         ✗ ab matches ??? FAILED (utility.cpp:195)
 
-✗ Total: 670 checks passed, 348 failed, in 158 test cases, 15 test suites, time: 14.835 ms
+✗ Total: 673 checks passed, 350 failed, in 159 test cases, 15 test suites, time: 15.622 ms

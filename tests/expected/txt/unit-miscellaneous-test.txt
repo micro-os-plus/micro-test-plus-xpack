@@ -77,7 +77,10 @@ Built with GCC 15.2.1 20251203, with FP, with exceptions, with MICRO_OS_PLUS_DEB
         ✓ scoped enumeration with formatter
         ✓ std::byte
         ✓ pair
-        ✓ tuple
+        ✓ tuple with a C string
+        ✓ container of C strings
+        ✓ optional with a C string
+        ✓ pair with a C string
         ✓ empty tuple
         ✓ container of pairs
         ✓ container of containers
@@ -85,7 +88,7 @@ Built with GCC 15.2.1 20251203, with FP, with exceptions, with MICRO_OS_PLUS_DEB
         ✓ optional with value
         ✓ optional without value
         ✓ nullopt
-    ✓ Formatter standard types - passed (13 checks)
+    ✓ Formatter standard types - passed (16 checks)
     • Message types
         ✓ numbers 1 2 3 1.5 2 true
         ✓ pointer 0x804cc68
@@ -314,7 +317,7 @@ next line FAILED (miscellaneous.cpp:922)
         ✓ string suite name copied
         ✓ C string suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (196 checks passed, 8 failed, in 52 test cases)
+✗ Miscellaneous suite - FAILED (199 checks passed, 8 failed, in 52 test cases)
 • Runner options suite
     • Default options
         ✓ the TAP reporter
@@ -464,4 +467,4 @@ next line FAILED (miscellaneous.cpp:922)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 300 checks passed, 13 failed, in 69 test cases, 5 test suites
+✗ Total: 303 checks passed, 13 failed, in 69 test cases, 5 test suites

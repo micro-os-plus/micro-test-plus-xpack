@@ -83,16 +83,19 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.059 ms }
         ok 3 - scoped enumeration with formatter
         ok 4 - std::byte
         ok 5 - pair
-        ok 6 - tuple
-        ok 7 - empty tuple
-        ok 8 - container of pairs
-        ok 9 - container of containers
-        ok 10 - range with begin() and end() functions
-        ok 11 - optional with value
-        ok 12 - optional without value
-        ok 13 - nullopt
-        1..13
-    ok 6 - Formatter standard types # { passed, 13 checks }
+        ok 6 - tuple with a C string
+        ok 7 - container of C strings
+        ok 8 - optional with a C string
+        ok 9 - pair with a C string
+        ok 10 - empty tuple
+        ok 11 - container of pairs
+        ok 12 - container of containers
+        ok 13 - range with begin() and end() functions
+        ok 14 - optional with value
+        ok 15 - optional without value
+        ok 16 - nullopt
+        1..16
+    ok 6 - Formatter standard types # { passed, 16 checks }
     # Subtest: Message types
         ok 1 - numbers 1 2 3 1.5 2 true
         ok 2 - pointer 0x10fdf3e60
@@ -409,7 +412,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.059 ms }
         1..7
     ok 49 - Test case and suite names # { passed, 7 checks }
     1..49
-not ok 2 - Miscellaneous suite # { FAILED, 196 checks passed, 8 failed, in 52 test cases, time: 11.828 ms }
+not ok 2 - Miscellaneous suite # { FAILED, 199 checks passed, 8 failed, in 52 test cases, time: 11.828 ms }
 # Subtest: Runner options suite
     # Subtest: Default options
         ok 1 - the TAP reporter
@@ -605,4 +608,4 @@ ok 4 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.370 ms }
     1..3
 not ok 5 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.296 ms }
 1..5
-# { total: 300 checks passed, 13 failed, in 69 test cases, 5 test suites, time: 11.708 ms }
+# { total: 303 checks passed, 13 failed, in 69 test cases, 5 test suites, time: 11.708 ms }

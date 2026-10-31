@@ -445,8 +445,9 @@ namespace micro_os_plus::micro_test_plus
     constexpr compare_op<Lhs_T, Rhs_T, Compare_T>::compare_op (L&& lhs,
                                                                R&& rhs,
                                                                Compare_T)
-        : binary_op<Lhs_T, Rhs_T>{ std::forward<L> (lhs),
-                                   std::forward<R> (rhs), [&] () -> bool
+        : binary_op<Lhs_T, Rhs_T>{ detail::as_operand (std::forward<L> (lhs)),
+                                   detail::as_operand (std::forward<R> (rhs)),
+                                   [&] () -> bool
       {
         // The result is computed before the arguments are moved, since
         // the base constructor is entered only after all its arguments
@@ -637,12 +638,13 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Applies the predicate of the tag to the unwrapped operand, and passes
-     * the boolean result to the `unary_op` base class constructor.
+     * the boolean result, with the operand prepared by `as_operand()`, to
+     * the `unary_op` base class constructor.
      */
     template <class T, class Predicate_T>
     template <class U>
     constexpr predicate_op<T, Predicate_T>::predicate_op (U&& t, Predicate_T)
-        : unary_op<T>{ std::forward<U> (t),
+        : unary_op<T>{ detail::as_operand (std::forward<U> (t)),
                        static_cast<bool> (
                            Predicate_T::apply (detail::unwrap (t))) }
     {

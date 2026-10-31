@@ -2378,7 +2378,7 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
     ok 3 - Formatter number suffixes # { passed, 21 checks }
     ok 4 - Formatter characters # { passed, 8 checks }
     ok 5 - Formatter wide characters # { passed, 10 checks }
-    ok 6 - Formatter standard types # { passed, 13 checks }
+    ok 6 - Formatter standard types # { passed, 16 checks }
 
     # Subtest: Message types
         not ok 7 - failed {3}
@@ -2518,7 +2518,7 @@ Matching test cases:
     ok 49 - Test case and suite names # { passed, 7 checks }
 
     1..49
-not ok 11 - Miscellaneous suite # { FAILED, 196 checks passed, 8 failed, in 52 test cases, time: 5.011 ms }
+not ok 11 - Miscellaneous suite # { FAILED, 199 checks passed, 8 failed, in 52 test cases, time: 5.467 ms }
 
 # Subtest: Operands suite
     ok 1 - Arrays # { passed, 4 checks }
@@ -2660,7 +2660,25 @@ not ok 11 - Miscellaneous suite # { FAILED, 196 checks passed, 8 failed, in 52 t
           ...
         1..4
     not ok 8 - Custom comparators bad # { FAILED, 0 checks passed, 4 failed }
-    ok 9 - Standard types # { passed, 13 checks }
+
+    # Subtest: Custom comparators with strings bad
+        not ok 1
+          ---
+          condition: "\"hello\" has prefix \"help\""
+          at:
+            fileName: operands.cpp
+            lineNumber: 433
+          ...
+        not ok 2
+          ---
+          condition: "\"\" has prefix \"help\""
+          at:
+            fileName: operands.cpp
+            lineNumber: 437
+          ...
+        1..2
+    not ok 9 - Custom comparators with strings bad # { FAILED, 0 checks passed, 2 failed }
+    ok 10 - Standard types # { passed, 13 checks }
 
     # Subtest: Standard types bad
         not ok 1 - colour::red == colour::green
@@ -2699,8 +2717,8 @@ not ok 11 - Miscellaneous suite # { FAILED, 196 checks passed, 8 failed, in 52 t
             lineNumber: 493
           ...
         1..5
-    not ok 10 - Standard types bad # { FAILED, 0 checks passed, 5 failed }
-    ok 11 - Explicit conversions to bool # { passed, 5 checks }
+    not ok 11 - Standard types bad # { FAILED, 0 checks passed, 5 failed }
+    ok 12 - Explicit conversions to bool # { passed, 5 checks }
 
     # Subtest: Explicit conversions to bool bad
         not ok 1 - empty optional
@@ -2728,10 +2746,10 @@ not ok 11 - Miscellaneous suite # { FAILED, 196 checks passed, 8 failed, in 52 t
             lineNumber: 553
           ...
         1..4
-    not ok 12 - Explicit conversions to bool bad # { FAILED, 0 checks passed, 4 failed }
-    ok 13 - Pointers to const # { passed, 2 checks }
-    ok 14 - Operand copies # { passed, 6 checks }
-    ok 15 - Raw arrays # { passed, 7 checks }
+    not ok 13 - Explicit conversions to bool bad # { FAILED, 0 checks passed, 4 failed }
+    ok 14 - Pointers to const # { passed, 2 checks }
+    ok 15 - Operand copies # { passed, 6 checks }
+    ok 16 - Raw arrays # { passed, 7 checks }
 
     # Subtest: Raw arrays bad
         not ok 1 - bytes eq
@@ -2742,7 +2760,7 @@ not ok 11 - Miscellaneous suite # { FAILED, 196 checks passed, 8 failed, in 52 t
             lineNumber: 662
           ...
         1..1
-    not ok 16 - Raw arrays bad # { FAILED, 0 checks passed, 1 failed }
+    not ok 17 - Raw arrays bad # { FAILED, 0 checks passed, 1 failed }
 
     # Subtest: Long ranges bad
         not ok 1 - long vector eq
@@ -2760,10 +2778,10 @@ not ok 11 - Miscellaneous suite # { FAILED, 196 checks passed, 8 failed, in 52 t
             lineNumber: 682
           ...
         1..2
-    not ok 17 - Long ranges bad # { FAILED, 0 checks passed, 2 failed }
+    not ok 18 - Long ranges bad # { FAILED, 0 checks passed, 2 failed }
 
-    1..17
-not ok 12 - Operands suite # { FAILED, 48 checks passed, 29 failed, in 17 test cases, time: 0.844 ms }
+    1..18
+not ok 12 - Operands suite # { FAILED, 48 checks passed, 31 failed, in 18 test cases, time: 0.994 ms }
 
 # Subtest: Runner options suite
     ok 1 - Default options # { passed, 7 checks }
@@ -2831,6 +2849,6 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.107 ms }
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.120 ms }
 
 1..15
-# { total: 670 checks passed, 348 failed, in 158 test cases, 15 test suites, time: 15.955 ms }
+# { total: 673 checks passed, 350 failed, in 159 test cases, 15 test suites, time: 16.695 ms }
 Overall, the µTest++ unit tests were successful!
 

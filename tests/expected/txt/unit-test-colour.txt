@@ -969,7 +969,10 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m scoped enumeration with formatter
         [32m✓[0m std::byte
         [32m✓[0m pair
-        [32m✓[0m tuple
+        [32m✓[0m tuple with a C string
+        [32m✓[0m container of C strings
+        [32m✓[0m optional with a C string
+        [32m✓[0m pair with a C string
         [32m✓[0m empty tuple
         [32m✓[0m container of pairs
         [32m✓[0m container of containers
@@ -977,7 +980,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m optional with value
         [32m✓[0m optional without value
         [32m✓[0m nullopt
-    [32m✓[0m Formatter standard types - passed (13 checks)
+    [32m✓[0m Formatter standard types - passed (16 checks)
 
     • Message types
         [32m✓[0m numbers 1 2 3 1.5 2 true
@@ -1022,10 +1025,10 @@ next line [31mFAILED[0m (miscellaneous.cpp:920)
         [32m✓[0m total_suites_count() counts the top suite
         [32m✓[0m default name without arguments
     [32m✓[0m Runner options - passed (7 checks)
+# Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 
     • Optional top suite
 
-# Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 TAP version 14
 # Subtest: default suite
         [32m✓[0m without a top suite, only the added suites run
@@ -1270,7 +1273,7 @@ Matching test cases:
         [32m✓[0m C string suite name copied
     [32m✓[0m Test case and suite names - passed (7 checks)
 
-[31m✗[0m Miscellaneous suite - [31mFAILED[0m (196 checks passed, 8 failed, in 52 test cases), time: 6.320 ms
+[31m✗[0m Miscellaneous suite - [31mFAILED[0m (199 checks passed, 8 failed, in 52 test cases), time: 5.402 ms
 
 • Operands suite
 
@@ -1329,6 +1332,11 @@ Matching test cases:
         [31m✗[0m [31mFAILED[0m (operands.cpp:397, [31meven 7[0m)
         [31m✗[0m [31mFAILED[0m (operands.cpp:400, ([32m3 divides 12[0m[31m and [0m[31meven 7[0m))
     [31m✗[0m Custom comparators bad - [31mFAILED[0m (0 checks passed, 4 failed)
+
+    • Custom comparators with strings bad
+        [31m✗[0m [31mFAILED[0m (operands.cpp:433, [31m"hello" has prefix "help"[0m)
+        [31m✗[0m [31mFAILED[0m (operands.cpp:437, [31m"" has prefix "help"[0m)
+    [31m✗[0m Custom comparators with strings bad - [31mFAILED[0m (0 checks passed, 2 failed)
 
     • Standard types
         [32m✓[0m colour::red == colour::red
@@ -1402,7 +1410,7 @@ Matching test cases:
         [31m✗[0m 16 bytes eq [31mFAILED[0m (operands.cpp:682, [31m{7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8}[0m)
     [31m✗[0m Long ranges bad - [31mFAILED[0m (0 checks passed, 2 failed)
 
-[31m✗[0m Operands suite - [31mFAILED[0m (48 checks passed, 29 failed, in 17 test cases), time: 0.896 ms
+[31m✗[0m Operands suite - [31mFAILED[0m (48 checks passed, 31 failed, in 18 test cases), time: 1.191 ms
 
 • Runner options suite
 
@@ -1576,6 +1584,6 @@ Matching test cases:
 
 [31m✗[0m Utility suite - [31mFAILED[0m (21 checks passed, 5 failed, in 3 test cases), time: 0.125 ms
 
-[31m✗[0m Total: 670 checks passed, 348 failed, in 158 test cases, 15 test suites, time: 19.206 ms
+[31m✗[0m Total: 673 checks passed, 350 failed, in 159 test cases, 15 test suites, time: 17.157 ms
 Overall, the µTest++ unit tests were successful!
 

@@ -2244,7 +2244,7 @@ Matching test cases:
 #             fileName: miscellaneous.cpp
 #             lineNumber: 1793
 #           ...
-not ok 11 - Miscellaneous suite # { FAILED, 196 checks passed, 8 failed, in 52 test cases, time: 5.811 ms }
+not ok 11 - Miscellaneous suite # { FAILED, 199 checks passed, 8 failed, in 52 test cases, time: 6.948 ms }
 # Operands suite > Arrays bad
 #         not ok 1 - array{ 42 } ne array{ 42 }
 #           ---
@@ -2368,6 +2368,21 @@ not ok 11 - Miscellaneous suite # { FAILED, 196 checks passed, 8 failed, in 52 t
 #             fileName: operands.cpp
 #             lineNumber: 400
 #           ...
+# Operands suite > Custom comparators with strings bad
+#         not ok 1
+#           ---
+#           condition: "\"hello\" has prefix \"help\""
+#           at:
+#             fileName: operands.cpp
+#             lineNumber: 433
+#           ...
+#         not ok 2
+#           ---
+#           condition: "\"\" has prefix \"help\""
+#           at:
+#             fileName: operands.cpp
+#             lineNumber: 437
+#           ...
 # Operands suite > Standard types bad
 #         not ok 1 - colour::red == colour::green
 #           ---
@@ -2452,7 +2467,7 @@ not ok 11 - Miscellaneous suite # { FAILED, 196 checks passed, 8 failed, in 52 t
 #             fileName: operands.cpp
 #             lineNumber: 682
 #           ...
-not ok 12 - Operands suite # { FAILED, 48 checks passed, 29 failed, in 17 test cases, time: 0.807 ms }
+not ok 12 - Operands suite # { FAILED, 48 checks passed, 31 failed, in 18 test cases, time: 1.923 ms }
 ok 13 - Runner options suite # { passed, 63 checks in 9 test cases, time: 1.005 ms }
 ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.078 ms }
 # Utility suite > utility::is_match() — failing
@@ -2488,4 +2503,4 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.078 ms }
 #           ...
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.110 ms }
 1..15
-# { total: 670 checks passed, 348 failed, in 158 test cases, 15 test suites, time: 19.096 ms }
+# { total: 673 checks passed, 350 failed, in 159 test cases, 15 test suites, time: 32.918 ms }

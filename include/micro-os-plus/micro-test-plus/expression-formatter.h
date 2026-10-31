@@ -399,6 +399,15 @@ namespace micro_os_plus::micro_test_plus
        * the pointer template does not accept. A null pointer is rendered
        * as `"nullptr"`.
        *
+       * The text is appended unchanged, without quotes, since this is how
+       * the string literals are written by the `operator<<` functions of
+       * the applications, for example for separators. The `char` pointers
+       * that are values to be reported, such as the operands of the
+       * comparators and the elements of the ranges, pairs, tuples, and
+       * optionals, are written quoted, like the `std::string` values, by
+       * the overload for `c_string`; an application writes a quoted value
+       * with a `std::string_view`.
+       *
        * @param s The C string to append, or a null pointer.
        * @return Reference to this instance.
        */
@@ -1072,6 +1081,25 @@ namespace micro_os_plus::micro_test_plus
       void
       append_character (std::string_view prefix, char32_t code,
                         std::size_t size);
+
+      /**
+       * @brief Appends an element of a range, pair, tuple, or optional.
+       *
+       * @details
+       * Writes the `char` pointers as quoted C strings, so that an element
+       * is reported like a `std::string` one, and passes all the other
+       * values to their `operator<<`. The strings written by the
+       * `operator<<` of the application types are not affected.
+       *
+       * @tparam T The type of the element.
+       *
+       * @param value The element.
+       * @par Returns
+       *   Nothing.
+       */
+      template <class T>
+      void
+      append_value (const T& value);
 
       /**
        * @brief Appends the elements of a tuple-like object, separated by

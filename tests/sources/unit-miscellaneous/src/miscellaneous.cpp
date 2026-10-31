@@ -793,7 +793,16 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
         check ("(1, 'a')", "pair");
 
         f << std::tuple{ 1, 2u, "three" };
-        check ("(1, 2u, three)", "tuple");
+        check ("(1, 2u, \"three\")", "tuple with a C string");
+
+        f << std::vector<const char*>{ "a", "", nullptr };
+        check ("{\"a\", \"\", nullptr}", "container of C strings");
+
+        f << std::optional<const char*>{ "x" };
+        check ("\"x\"", "optional with a C string");
+
+        f << std::pair{ 1, "b" };
+        check ("(1, \"b\")", "pair with a C string");
 
         f << std::tuple<>{};
         check ("()", "empty tuple");

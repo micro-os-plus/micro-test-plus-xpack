@@ -21,6 +21,7 @@
 #include <memory>
 #include <numeric>
 #include <optional>
+#include <string_view>
 #include <tuple>
 #include <utility>
 #include <vector>
@@ -100,6 +101,27 @@ namespace
   even (const T& t)
   {
     return mt::extension::predicate_op{ t, even_tag{} };
+  }
+
+  // A comparator of the application on C strings, reported with the
+  // operands quoted, as the built-in comparators report them.
+  struct prefix_tag
+  {
+    static constexpr const char* symbol = " has prefix ";
+
+    template <class Lhs_T, class Rhs_T>
+    static constexpr bool
+    apply (const Lhs_T& lhs, const Rhs_T& rhs)
+    {
+      return std::string_view{ lhs }.starts_with (std::string_view{ rhs });
+    }
+  };
+
+  template <class Lhs_T, class Rhs_T>
+  constexpr auto
+  has_prefix (const Lhs_T& lhs, const Rhs_T& rhs)
+  {
+    return mt::extension::compare_op{ lhs, rhs, prefix_tag{} };
   }
 
   // Scoped enumerations, formatted by their underlying value.
@@ -398,6 +420,21 @@ static mt::static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
         local_counts.failed_checks++;
 
         t.expect (mt::all_of (divides (3, 12), even (7)));
+        local_counts.failed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    ts.test ("Custom comparators with strings bad", [] (auto& t)
+      {
+        // The C string operands are quoted, as for the built-in
+        // comparators, so that an empty one is visible.
+        const char* text = "hello";
+        t.expect (has_prefix (text, "help"));
+        local_counts.failed_checks++;
+
+        char buffer[8] = "";
+        t.expect (has_prefix (buffer, "help"));
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;

@@ -813,7 +813,10 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ scoped enumeration with formatter
         ✓ std::byte
         ✓ pair
-        ✓ tuple
+        ✓ tuple with a C string
+        ✓ container of C strings
+        ✓ optional with a C string
+        ✓ pair with a C string
         ✓ empty tuple
         ✓ container of pairs
         ✓ container of containers
@@ -821,7 +824,7 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
         ✓ optional with value
         ✓ optional without value
         ✓ nullopt
-    ✓ Formatter standard types - passed (13 checks)
+    ✓ Formatter standard types - passed (16 checks)
     • Message types
         ✓ numbers 1 2 3 1.5 2 true
         ✓ pointer 0x4011d350
@@ -1044,7 +1047,7 @@ next line FAILED (miscellaneous.cpp:920)
         ✓ string suite name copied
         ✓ C string suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (190 checks passed, 8 failed, in 52 test cases)
+✗ Miscellaneous suite - FAILED (193 checks passed, 8 failed, in 52 test cases)
 • Operands suite
     • Arrays
         ✓ array{ 42 } == array{ 42 }
@@ -1094,6 +1097,10 @@ next line FAILED (miscellaneous.cpp:920)
         ✗ FAILED (operands.cpp:397, even 7)
         ✗ FAILED (operands.cpp:400, (3 divides 12 and even 7))
     ✗ Custom comparators bad - FAILED (0 checks passed, 4 failed)
+    • Custom comparators with strings bad
+        ✗ FAILED (operands.cpp:433, "hello" has prefix "help")
+        ✗ FAILED (operands.cpp:437, "" has prefix "help")
+    ✗ Custom comparators with strings bad - FAILED (0 checks passed, 2 failed)
     • Standard types
         ✓ colour::red == colour::red
         ✓ colour::red != colour::green
@@ -1157,7 +1164,7 @@ next line FAILED (miscellaneous.cpp:920)
         ✗ long vector eq FAILED (operands.cpp:675, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} == {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} (first difference at index 19))
         ✗ 16 bytes eq FAILED (operands.cpp:682, {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8})
     ✗ Long ranges bad - FAILED (0 checks passed, 2 failed)
-✗ Operands suite - FAILED (48 checks passed, 29 failed, in 17 test cases)
+✗ Operands suite - FAILED (48 checks passed, 31 failed, in 18 test cases)
 • Runner options suite
     • Default options
         ✓ the TAP reporter
@@ -1307,4 +1314,4 @@ next line FAILED (miscellaneous.cpp:920)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 653 checks passed, 337 failed, in 144 test cases, 13 test suites
+✗ Total: 656 checks passed, 339 failed, in 145 test cases, 13 test suites

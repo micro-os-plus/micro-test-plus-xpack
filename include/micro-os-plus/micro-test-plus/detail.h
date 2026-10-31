@@ -776,6 +776,33 @@ namespace micro_os_plus::micro_test_plus
     // ========================================================================
 
     /**
+     * @brief Prepares an operand of a comparator.
+     *
+     * @details
+     * The `char` arrays and the `char` pointers (not those of `signed
+     * char` or `unsigned char`, which are byte buffers) are converted to
+     * `c_string`, so that they are compared by content; the other arrays
+     * are converted to `array_operand`, so that they are compared by
+     * content, the functions to function pointers, and all other operands
+     * are returned unchanged, so the other pointers and the functions are
+     * compared by address.
+     *
+     * The other operands are forwarded, so that the comparator moves a
+     * temporary, and refers to a named operand.
+     *
+     * @tparam T The type deduced for the forwarding reference.
+     *
+     * @param t The operand.
+     * @return A `c_string` for the C strings, an `array_operand` for the
+     * other arrays, otherwise `t`, forwarded.
+     */
+    template <class T>
+    [[nodiscard]] constexpr auto
+    as_operand (T&& t) noexcept -> decltype (auto);
+
+    // ========================================================================
+
+    /**
      * @brief Relational comparator struct template.
      *
      * @details
@@ -805,6 +832,11 @@ namespace micro_os_plus::micro_test_plus
      *   `extension::has_epsilon`), the operands within the tolerance give
      *   this result, as for the built-in comparators; when absent, the
      *   tolerance is ignored.
+     *
+     * The operands are reported as the built-in comparators report them:
+     * the stored operands are prepared by `as_operand()`, so the C strings
+     * are written quoted, and the arrays as ranges; the tag still
+     * receives the operands as they were passed, without this conversion.
      *
      * The operands are not copied: the temporaries are moved into the
      * comparator, and the named operands of class type are referred to
@@ -848,12 +880,15 @@ namespace micro_os_plus::micro_test_plus
      * Deduces `Lhs_T`, `Rhs_T`, and `Compare_T` from the constructor
      * arguments, so that `compare_op{ lhs, rhs, equal_to{} }` can be written
      * without explicit template arguments. The operand types are deduced
-     * as forwarding references, and stored as `stored_operand_t` selects.
+     * as forwarding references, prepared by `as_operand()`, and stored as
+     * `stored_operand_t` selects.
      */
     template <class Lhs_T, class Rhs_T, class Compare_T>
     compare_op (Lhs_T&&, Rhs_T&&, Compare_T)
-        -> compare_op<stored_operand_t<Lhs_T>, stored_operand_t<Rhs_T>,
-                      Compare_T>;
+        -> compare_op<
+            stored_operand_t<decltype (as_operand (std::declval<Lhs_T> ()))>,
+            stored_operand_t<decltype (as_operand (std::declval<Rhs_T> ()))>,
+            Compare_T>;
 
     // ========================================================================
 
@@ -1225,11 +1260,13 @@ namespace micro_os_plus::micro_test_plus
      * Deduces `T` and `Predicate_T` from the constructor arguments, so that
      * `predicate_op{ t, even{} }` can be written without explicit template
      * arguments. The operand type is deduced as a forwarding reference,
-     * and stored as `stored_operand_t` selects.
+     * prepared by `as_operand()`, and stored as `stored_operand_t` selects.
      */
     template <class T, class Predicate_T>
     predicate_op (T&&, Predicate_T)
-        -> predicate_op<stored_operand_t<T>, Predicate_T>;
+        -> predicate_op<
+            stored_operand_t<decltype (as_operand (std::declval<T> ()))>,
+            Predicate_T>;
 
     // ========================================================================
 
@@ -1652,30 +1689,6 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] constexpr auto
     operator<=> (const array_operand<T>& lhs, const R& rhs);
 
-    /**
-     * @brief Prepares an operand of a comparator.
-     *
-     * @details
-     * The `char` arrays and the `char` pointers (not those of `signed
-     * char` or `unsigned char`, which are byte buffers) are converted to
-     * `c_string`, so that they are compared by content; the other arrays
-     * are converted to `array_operand`, so that they are compared by
-     * content, the functions to function pointers, and all other operands
-     * are returned unchanged, so the other pointers and the functions are
-     * compared by address.
-     *
-     * The other operands are forwarded, so that the comparator moves a
-     * temporary, and refers to a named operand.
-     *
-     * @tparam T The type deduced for the forwarding reference.
-     *
-     * @param t The operand.
-     * @return A `c_string` for the C strings, an `array_operand` for the
-     * other arrays, otherwise `t`, forwarded.
-     */
-    template <class T>
-    [[nodiscard]] constexpr auto
-    as_operand (T&& t) noexcept -> decltype (auto);
 
     // ------------------------------------------------------------------------
   } // namespace detail

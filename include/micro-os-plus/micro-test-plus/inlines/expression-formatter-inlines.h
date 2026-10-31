@@ -214,7 +214,7 @@ namespace micro_os_plus::micro_test_plus::detail
               }
             else
               {
-                *this << arg;
+                append_value (arg);
               }
           }
         ++count;
@@ -288,7 +288,8 @@ namespace micro_os_plus::micro_test_plus::detail
   {
     if (o.has_value ())
       {
-        return *this << *o;
+        append_value (*o);
+        return *this;
       }
     return *this << std::nullopt;
   }
@@ -349,7 +350,31 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::append_elements ([[maybe_unused]] const Tuple_T& t,
                                          std::index_sequence<Is...>)
   {
-    ((*this << (Is == 0 ? "" : ", ") << std::get<Is> (t)), ...);
+    ((*this << (Is == 0 ? "" : ", "), append_value (std::get<Is> (t))), ...);
+  }
+
+  // --------------------------------------------------------------------------
+
+  /**
+   * @details
+   * The `char` pointers are written as C strings, quoted and escaped as
+   * the `std::string` values are, with a null pointer written as
+   * `nullptr`; all the other values are written by their own `operator<<`.
+   * In the plain mode, used for the messages, the strings are not quoted.
+   */
+  template <class T>
+  void
+  expression_formatter::append_value (const T& value)
+  {
+    using pointee_type = std::remove_cv_t<std::remove_pointer_t<T>>;
+    if constexpr (std::is_pointer_v<T> and std::is_same_v<pointee_type, char>)
+      {
+        *this << detail::c_string{ value };
+      }
+    else
+      {
+        *this << value;
+      }
   }
 
   // --------------------------------------------------------------------------
