@@ -1,6 +1,6 @@
 ---
 name: api-review
-description: 'Review the C++ API and implementation of the µTest++ Testing Framework from its source code alone (headers, inlines, and src/, ignoring the Doxygen comments): defects, structure and layering, naming and consistency, simplicity, modern C++ usage, and suitability for embedded targets. Confirm suspected defects with probe programs. Each review is fresh (the earlier reports are not read); report the problems found in a new numbered report, each with a permanent number, and suggest improvements in the source files. Use when the user asks for an "API review", an "API and code review", to "review the API", to "analyse the API design", or to review the design or implementation of the library (as a whole, or of a header or folder).'
+description: 'Review the C++ API and implementation of the µTest++ Testing Framework from its source code alone (headers, inlines, and src/, ignoring the Doxygen comments): defects, usability for a new user (programs written from the manual and the public headers alone, and the compiler diagnostics of common mistakes), structure and layering, naming and consistency, simplicity, modern C++ usage, and suitability for embedded targets. Confirm suspected defects with probe programs. Each review is fresh (the earlier reports are not read); report the problems found in a new numbered report, each with a permanent number, and suggest improvements in the source files. Use when the user asks for an "API review", an "API and code review", to "review the API", to "analyse the API design", or to review the design or implementation of the library (as a whole, or of a header or folder).'
 argument-hint: 'Optional: header, file, or folder to review (e.g. include/micro-os-plus/micro-test-plus/runner.h); defaults to include/ and src/'
 ---
 
@@ -44,7 +44,7 @@ The only use of the earlier reports is their file names, to choose
 the number of the new report (see "Report"). Never modify an earlier
 report as part of a new review. `maintenance/docs/SIZE-COMPARISON.md`
 is not a report but the description of a method, and may be followed
-(see section 6 of the checks); its results file may not be read.
+(see section 7 of the checks); its results file may not be read.
 
 ## Scope
 
@@ -66,6 +66,73 @@ cases the existing tests cover, and which they do not.
 
 State the scope, the branch, and the commit (`git rev-parse --short
 HEAD`) at the top of the report.
+
+## Using the API as a Newcomer
+
+Before reading the implementation, use the library as a new user
+would, to find what makes it hard to learn and to use. This exercise
+comes first: once the implementation has been read, it can no longer
+be done without that knowledge.
+
+If the agent can start a sub-agent, give the exercise to a fresh one,
+with only this section as its instructions, and use its notes.
+Otherwise do it before reading the stripped files.
+
+The newcomer reads only what a user reads: the user manual
+(`website/docs/user/`), the umbrella header, and the declarations of
+the public headers in `include/micro-os-plus/micro-test-plus/`,
+comments included (this is the only part of the review that reads the
+comments, because the users read them). The newcomer does not read the
+declarations in the `detail` namespace, the `inlines/` folder, `src/`,
+the tests, or the earlier reports. Every task that cannot be completed
+without them is a finding.
+
+Write one small program per task in `<scratch>/newcomer/`, and build
+it as the probes are built (see "Confirming Findings with Probes"):
+
+1. a suite with a few test cases that check a small application class;
+2. comparisons of integers, of floating-point values with a tolerance,
+   of strings of different types, and of standard containers;
+3. a check that a function throws a given exception, and one that it
+   does not throw;
+4. a failure message that prints an application type;
+5. an application comparator or predicate, written with the
+   `extension` namespace, that reports its operands as the built-in
+   ones do;
+6. a run configured entirely in code, with no command line, as on an
+   embedded target, with the TAP reporter;
+7. suites defined statically, in a separate translation unit.
+
+For each program, record:
+
+- what had to be looked up, and where it was found, or not found;
+- the code that every program repeats (the boilerplate of `main()`,
+  the namespaces, and the includes);
+- the places where several forms are offered for the same thing, with
+  nothing to tell which one to choose;
+- the places where the manual and the headers disagree;
+- whether the output of a failing check tells, without the source,
+  what was compared and why it failed.
+
+Then make the common mistakes on purpose, and build each with GCC and
+Clang:
+
+- `expect()` with a value that is neither a boolean nor a comparison;
+- a comparison of unrelated types;
+- an operand, and an argument streamed into a check message, of a
+  type that has no `operator<<`;
+- a test case body with the wrong parameters;
+- an `extension` comparator whose tag misses `symbol` or `apply()`.
+
+For each mistake, record the length of the first diagnostic, and
+whether it names the mistake in the user's terms, or shows only the
+internals (`detail` types, or a concept that fails deep in the
+instantiation stack).
+
+The findings go to section 2 of the checks ("Usability"). A problem
+whose only cause is the documentation (the manual or the Doxygen
+comments) goes to the incidental observations, with the skill that
+covers it (`website-review` or `doxygen-review`).
 
 ## Reading the Code
 
@@ -297,7 +364,25 @@ The questions that found real defects in this code base:
     only when the run was aborted).
 - **Header self-containment** (the script above).
 
-### 2. Structure and layering
+### 2. Usability
+
+The findings of "Using the API as a Newcomer":
+
+- tasks that cannot be completed from the manual and the public
+  declarations alone;
+- boilerplate that every program repeats, and that the library could
+  provide;
+- several forms for the same thing, with nothing to choose between
+  them;
+- diagnostics of common mistakes that are long, or that name only the
+  internals; a constraint or a `static_assert` with a message at the
+  boundary of the API often shortens them;
+- failure reports that do not show what was compared.
+
+Each finding cites the newcomer program, and the diagnostic or the
+output, as its evidence.
+
+### 3. Structure and layering
 
 - **Public and internal**: which members of the public classes exist
   only for the framework (setters, counters, mutable accessors)? Can a
@@ -338,7 +423,7 @@ The questions that found real defects in this code base:
   top-level `CMakeLists.txt` and `meson.build` matching the output of
   `xpm run xcdl-export` (they are never edited by hand).
 
-### 3. Naming and consistency
+### 4. Naming and consistency
 
 - **Case**: identifiers use `snake_case` (types, functions, variables,
   members); file names are lower-case words separated by dashes (e.g.
@@ -378,7 +463,7 @@ The questions that found real defects in this code base:
   exceeds 80 characters, except link URLs and the file path in a
   `DO NOT EDIT` comment of a generated file.
 
-### 4. Simplicity and duplication
+### 5. Simplicity and duplication
 
 - Favour readability over cleverness and compactness.
 - The same logic implemented twice or more (sorting, formatting of
@@ -391,7 +476,7 @@ The questions that found real defects in this code base:
 - Unnecessary copies (operands stored by value and returned by value
   several times).
 
-### 5. Modern C++
+### 6. Modern C++
 
 The code base targets C++20; flag code written in an older style where
 a modern equivalent is clearly preferable:
@@ -408,9 +493,9 @@ a modern equivalent is clearly preferable:
 - missing or incorrect `noexcept` (move operations, destructors, and
   functions that cannot throw);
 - raw pointers, casts, and macros where a standard facility would be
-  clearer and safer, within the constraints of section 6.
+  clearer and safer, within the constraints of section 7.
 
-### 6. Suitability for embedded targets
+### 7. Suitability for embedded targets
 
 Program size matters more than speed. The library may use the heap
 and the standard containers, but it must build without exceptions and
@@ -439,13 +524,13 @@ python3 -I maintenance/scripts/size-comparison/compare-sizes.py \
   --current-patch <scratch>/change.patch --work <scratch>/size
 ```
 
-### 7. Incidental observations
+### 8. Incidental observations
 
 Problems noticed along the way that are not API design: stale forward
 declarations, macros leaking into user code, casts, fragile
 compiler-specific code.
 
-### 8. Reviewed and found sound
+### 9. Reviewed and found sound
 
 List the parts that were checked and are good, so that the maintainer
 knows what was covered, and so that the report is not read as a list
@@ -512,7 +597,9 @@ Date: <date>, on branch `<branch>`, commit `<hash>`.
 Scope: <files reviewed; that the Doxygen comments were ignored>.
 
 Method: <how the code was read, the number of files and lines of code,
-the compiler and flags used for the probes, the sanitizers>.
+the compiler and flags used for the probes, the sanitizers, and who
+wrote the newcomer programs (a sub-agent, or the reviewer before
+reading the code)>.
 
 Independence: the earlier reports in `maintenance/docs/`, and the
 commits and issues that refer to them, were deliberately not
@@ -531,19 +618,21 @@ breaking changes, grouped for one major release.>
   `<file>` lines <n> to <m>: <what is wrong, the evidence, and the
   suggested change>
 
-## 2. Structure and layering
+## 2. Usability
 
-## 3. Naming and consistency
+## 3. Structure and layering
 
-## 4. Simplicity and duplication
+## 4. Naming and consistency
 
-## 5. Modern C++
+## 5. Simplicity and duplication
 
-## 6. Suitability for embedded targets
+## 6. Modern C++
 
-## 7. Incidental observations
+## 7. Suitability for embedded targets
 
-## 8. Reviewed and found sound
+## 8. Incidental observations
+
+## 9. Reviewed and found sound
 
 - <parts checked without problems>
 ```
@@ -560,17 +649,20 @@ tag `[deprecated]`, and group them at the end.
 
 1. Determine the scope, and the number of the new report (from the
    file names only; do not read the earlier reports).
-2. Strip the comments, check the headers, and check the formatting
+2. Do the newcomer exercise, or start the sub-agent that does it,
+   before reading anything else (see "Using the API as a Newcomer").
+3. Strip the comments, check the headers, and check the formatting
    (commands above).
-3. Read every stripped file in the order given, noting suspected
+4. Read every stripped file in the order given, noting suspected
    problems with their file and line.
-4. Read the sample programs in `tests/sources/` to see the intended
+5. Read the sample programs in `tests/sources/` to see the intended
    use and the existing coverage.
-5. Write probes for every suspected defect and every "does this
+6. Write probes for every suspected defect and every "does this
    compile/link" question; record the outcome.
-6. Classify, tag, and number the findings.
-7. Write the report to the new file.
-8. Give the user a short summary: the counts, the most serious
+7. Classify, tag, and number the findings, including those of the
+   newcomer exercise.
+8. Write the report to the new file.
+9. Give the user a short summary: the counts, the most serious
    problems by number, and the decisions needed. Do not change the code
    unless asked.
 
@@ -593,9 +685,12 @@ the most recent report, unless the user names another one:
 5. Run the tests required by the Testing section of
    `.github/copilot-instructions.md` (`test-selected` after major
    changes, `test` after minor ones), and report the outcome.
-6. Update the status of the item in the report that lists it.
-7. Commit only when the user asks, following
+6. Commit only when the user asks, following
    `.github/skills/github-commit/SKILL.md`, which also covers the
-   reference to the GitHub issue and the update of the report.
-8. After committing, update the api review file to reflect the 
-   fixed or improved items.
+   reference to the GitHub issue. Do not stage the report in the
+   commit of the fix.
+7. After the commit, mark the item `(fixed)` in the report that lists
+   it, with the hash of the commit, in the format given under "Review
+   Documents" in `.github/skills/github-commit/SKILL.md`. Leave the
+   report uncommitted; the user commits it separately, when they ask
+   (after one fix, or once after several).
