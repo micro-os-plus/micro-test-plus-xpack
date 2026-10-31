@@ -48,3 +48,205 @@
  
      // ------------------------------------------------------------------------
    } };
+--- a/tests/sources/empty/src/main.cpp
++++ b/tests/sources/empty/src/main.cpp
+@@ -77,7 +77,8 @@
+ 
+   {
+     mt::runner tr{ "Suite with subtest" };
+-    auto& ts = tr.initialise (argc, argv);
++    tr.initialise (argc, argv);
++    auto& ts = tr.add_top_suite ();
+ 
+     int xc = 0;
+     ts.test ("Empty subtest", [&xc] (auto& t)
+@@ -99,7 +100,8 @@
+ 
+   {
+     mt::runner tr{ "Suite with second subtest" };
+-    auto& ts = tr.initialise (argc, argv);
++    tr.initialise (argc, argv);
++    auto& ts = tr.add_top_suite ();
+ 
+     int xc = 0;
+     ts.test ("First subtest", [&xc] (auto& t)
+@@ -143,7 +145,8 @@
+ 
+   {
+     mt::runner tr{ "Top suite with nested subtests" };
+-    auto& ts = tr.initialise (argc, argv);
++    tr.initialise (argc, argv);
++    auto& ts = tr.add_top_suite ();
+     // printf ("in test suite '%s'\n", ts.name ());
+ 
+     int xc = 0;
+--- a/tests/sources/minimal/src/main.cpp
++++ b/tests/sources/minimal/src/main.cpp
+@@ -56,7 +56,8 @@
+ {
+   // Name the default test suite.
+   mt::runner tr;
+-  auto& ts = tr.initialise (argc, argv);
++  tr.initialise (argc, argv);
++  auto& ts = tr.add_top_suite ();
+ 
+   // --------------------------------------------------------------------------
+ 
+--- a/tests/sources/sample/src/main.cpp
++++ b/tests/sources/sample/src/main.cpp
+@@ -103,7 +103,8 @@
+ main (int argc, char* argv[])
+ {
+   // There is a default test suite automatically defined in main().
+-  auto& ts = tr.initialise (argc, argv);
++  tr.initialise (argc, argv);
++  auto& ts = tr.add_top_suite ();
+ 
+   // --------------------------------------------------------------------------
+ 
+--- a/tests/sources/unit/src/comparisons.cpp
++++ b/tests/sources/unit/src/comparisons.cpp
+@@ -65,7 +65,7 @@
+ 
+ static static_suite ts_exceptions{ "Comparisons suite", tr, [] (auto& ts)
+   {
+-    detail::runner_totals& current_suite_totals = ts.totals ();
++    const detail::runner_totals& current_suite_totals = ts.totals ();
+ 
+     local_counts = {};
+ 
+--- a/tests/sources/unit/src/exceptions.cpp
++++ b/tests/sources/unit/src/exceptions.cpp
+@@ -47,7 +47,7 @@
+ static static_suite ts_exceptions{ "Exceptions suite", tr,
+                                    [] (auto& ts) noexcept
+   {
+-    detail::runner_totals& current_suite_totals = ts.totals ();
++    const detail::runner_totals& current_suite_totals = ts.totals ();
+ 
+     local_counts = {};
+ 
+--- a/tests/sources/unit/src/float-failed-combinations.cpp
++++ b/tests/sources/unit/src/float-failed-combinations.cpp
+@@ -141,7 +141,7 @@
+ static static_suite ts_failed_floats{ "Failed combinatorial floats suite", tr,
+                                       [] (auto& ts)
+   {
+-    detail::runner_totals& current_suite_totals = ts.totals ();
++    const detail::runner_totals& current_suite_totals = ts.totals ();
+ 
+     local_counts = {};
+ 
+--- a/tests/sources/unit/src/float-passed-combinations.cpp
++++ b/tests/sources/unit/src/float-passed-combinations.cpp
+@@ -141,7 +141,7 @@
+ static static_suite ts_passed_floats{ "Combinatorial floats suite", tr,
+                                       [] (auto& ts)
+   {
+-    detail::runner_totals& current_suite_totals = ts.totals ();
++    const detail::runner_totals& current_suite_totals = ts.totals ();
+ 
+     local_counts = {};
+ 
+--- a/tests/sources/unit/src/integral-failed-combinations.cpp
++++ b/tests/sources/unit/src/integral-failed-combinations.cpp
+@@ -140,7 +140,7 @@
+ static static_suite ts_integral_failed{ "Failed combinatorial integrals suite",
+                                         tr, [] (auto& ts)
+   {
+-    detail::runner_totals& current_suite_totals = ts.totals ();
++    const detail::runner_totals& current_suite_totals = ts.totals ();
+ 
+     local_counts = {};
+ 
+--- a/tests/sources/unit/src/integral-passed-combinations.cpp
++++ b/tests/sources/unit/src/integral-passed-combinations.cpp
+@@ -142,7 +142,7 @@
+ static static_suite ts_passed_integral{ "Combinatorial integrals suite", tr,
+                                         [] (auto& ts)
+   {
+-    detail::runner_totals& current_suite_totals = ts.totals ();
++    const detail::runner_totals& current_suite_totals = ts.totals ();
+ 
+     local_counts = {};
+ 
+--- a/tests/sources/unit/src/main.cpp
++++ b/tests/sources/unit/src/main.cpp
+@@ -52,7 +52,7 @@
+ 
+   // --------------------------------------------------------------------------
+ 
+-  detail::runner_totals& current_suite_totals = ts.totals ();
++  const detail::runner_totals& current_suite_totals = ts.totals ();
+ 
+   ts.test ("assume", [] (auto& t)
+     {
+--- a/tests/sources/unit/src/miscellaneous.cpp
++++ b/tests/sources/unit/src/miscellaneous.cpp
+@@ -31,7 +31,7 @@
+ 
+ static static_suite ts_exceptions{ "Miscellaneous suite", tr, [] (auto& ts)
+   {
+-    detail::runner_totals& current_suite_totals = ts.totals ();
++    const detail::runner_totals& current_suite_totals = ts.totals ();
+ 
+     local_counts = {};
+ 
+--- a/tests/sources/unit/src/operators.cpp
++++ b/tests/sources/unit/src/operators.cpp
+@@ -33,7 +33,7 @@
+ 
+ static static_suite ts_exceptions{ "Operators suite", tr, [] (auto& ts)
+   {
+-    detail::runner_totals& current_suite_totals = ts.totals ();
++    const detail::runner_totals& current_suite_totals = ts.totals ();
+ 
+     local_counts = {};
+ 
+--- a/tests/sources/unit/src/timings.cpp
++++ b/tests/sources/unit/src/timings.cpp
+@@ -70,7 +70,7 @@
+ 
+ static static_suite ts_timings{ "Timings suite", tr, [] (auto& ts)
+   {
+-    detail::runner_totals& current_suite_totals = ts.totals ();
++    const detail::runner_totals& current_suite_totals = ts.totals ();
+ 
+     local_counts = {};
+ 
+--- a/tests/sources/unit/src/utility.cpp
++++ b/tests/sources/unit/src/utility.cpp
+@@ -34,7 +34,7 @@
+ 
+ static static_suite ts_utility{ "Utility suite", tr, [] (auto& ts)
+   {
+-    detail::runner_totals& current_suite_totals = ts.totals ();
++    const detail::runner_totals& current_suite_totals = ts.totals ();
+ 
+     local_counts = {};
+ 
+--- a/tests/sources/unit/src/timings.cpp
++++ b/tests/sources/unit/src/timings.cpp
+@@ -53,20 +53,8 @@
+ // Helper subclass of timestamps that allows injecting known timespec values
+ // and inspecting internal state for deterministic unit testing.
+ 
+-class test_timestamps : public detail::timestamps
+-{
+-public:
+-#if 0 // Disabled: uses the protected data members of the v5.0.1 timestamps.
+-  void
+-  set_times (const timespec& begin, const timespec& end) noexcept
+-  {
+-    begin_time_.emplace ();
+-    begin_time_->value () = begin;
+-    end_time_.emplace ();
+-    end_time_->value () = end;
+-  }
+-#endif
+-};
++// The stopwatch is final in the current library, so it cannot be derived from.
++using test_timestamps = detail::timestamps;
+ 
+ // ----------------------------------------------------------------------------
+ 

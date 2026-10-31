@@ -34,26 +34,42 @@ By default, the platform is `qemu-cortex-m33-cmake-gcc`, with the
 
 ## The patch to the v5.0.1 tests
 
-The v5.0.1 test sources compile with the current library, with
-deprecation warnings, except for 4 errors in
-`tests/sources/unit/src/timings.cpp`: a helper class derived from the
-internal `detail::timestamps` writes its protected data members
-(`begin_time_` and `end_time_`), which no longer exist, since the class
-is now an alias of the internal stopwatch.
+The v5.0.1 test sources compile with the current library only with the
+deprecated functionality enabled, which the script does by adding
+`-DMICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED` to every compile
+command (the v5.0.1 headers ignore it), and with some changes, which the
+patch `v5.0.1-tests.patch` makes:
 
-The patch `v5.0.1-tests.patch` disables, with `#if 0` / `#endif`:
-
-- the `set_times()` member of the helper class;
-- the last two checks of the "timestamps::has_timestamps() state" test
-  case, which call it;
-- the three test cases that depend on it ("timestamps::timestamp_begin()
+- in `tests/sources/unit/src/timings.cpp`, the helper class derived from
+  the internal `detail::timestamps`, which writes its protected data
+  members (`begin_time_` and `end_time_`), no longer exists, since the
+  class is now the final internal stopwatch; it becomes an alias of
+  `detail::timestamps`, and the `set_times()` member, the last two checks
+  of the "timestamps::has_timestamps() state" test case, which call it,
+  and the three test cases that depend on it ("timestamps::timestamp_begin()
   idempotency", "timestamps::timestamp_end() idempotency", and
-  "timestamps::compute_elapsed_time()"), with the checks of their
-  counts.
+  "timestamps::compute_elapsed_time()"), with the checks of their counts,
+  are disabled with `#if 0` / `#endif`: in total, 3 test cases and 16
+  checks are disabled;
+- in `empty`, `minimal`, and `sample`, `auto& ts = tr.initialise (argc,
+  argv);` is replaced by `tr.initialise (argc, argv);` followed by
+  `auto& ts = tr.add_top_suite ();`, since `initialise()` no longer
+  returns the top suite;
+- in the `unit` sources, the references to the totals of a suite are
+  `const`, since `totals()` returns a `const` reference.
 
-In total, 3 test cases and 16 checks are disabled. The test sources are
-the same for both builds, so the comparison remains fair. The patch is
-applied by default (`--tests-patch`).
+The test sources are the same for both builds, so the comparison remains
+fair. The patch is applied by default (`--tests-patch`). When the current
+library changes again, the patch may need further changes; the script
+shows the first compiler errors of the failed step.
+
+The `unit` program of the current tests is linked from several source
+folders; the script replaces all of them with the baseline `unit` sources
+in the link command, so it cannot compare the current tests as they are
+(`--tests HEAD` builds only `tests/sources/unit/src`, a thin `main`).
+To measure the effect of a change on the current test bodies, build and
+measure the programs of the build folders with and without the change
+(`arm-none-eabi-size` on `unit-test.elf`).
 
 ## The experimental patch to the current library
 

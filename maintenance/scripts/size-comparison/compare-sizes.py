@@ -50,12 +50,20 @@ REPO = os.path.abspath(os.path.join(SCRIPT_FOLDER, '..', '..', '..'))
 TESTS = os.path.join(REPO, 'tests')
 PROGRAMS = ['empty', 'minimal', 'sample', 'suite', 'unit']
 
+# The v5.0.1 test sources use the deprecated names, which the current
+# library defines only with this macro; the v5.0.1 headers ignore it.
+DEPRECATED_MACRO = '-DMICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED'
+
 
 def run(args, cwd, check=True):
     """Run a command; on failure, show its error output and stop."""
     result = subprocess.run(args, cwd=cwd, capture_output=True, text=True)
     if check and result.returncode != 0:
         sys.stderr.write(' '.join(args)[:400] + '\n')
+        # The errors may be followed by many warnings; show them first.
+        errors = [line for line in result.stderr.splitlines()
+                  if 'error' in line or 'undefined' in line]
+        sys.stderr.write('\n'.join(errors[:20]) + '\n')
         sys.stderr.write(result.stdout[-2000:] + result.stderr[-4000:] + '\n')
         raise SystemExit(1)
     return result
@@ -75,9 +83,10 @@ def export(revision, paths, destination):
 def compile_command(template, library_root, source, output, program, tests):
     """
     Adapt a compile command of the build folder: use the headers of the
-    given library and the include folder of the baseline test program, and
-    remove the dependency files and `-Werror` (the deprecated names used by
-    the baseline sources warn; the generated code is not affected).
+    given library and the include folder of the baseline test program,
+    enable the deprecated functionality of the library, and remove the
+    dependency files and `-Werror` (the deprecated names used by the
+    baseline sources warn; the generated code is not affected).
     """
     result = []
     skip = 0
@@ -96,6 +105,12 @@ def compile_command(template, library_root, source, output, program, tests):
                 TESTS, 'sources', program, 'include'):
             argument = '-I' + os.path.join(tests, program, 'include')
         result.append(argument)
+    result.insert(1, DEPRECATED_MACRO)
+    # The build folders may have no include folder for the baseline program
+    # (the v5.0.1 `unit` program has its own header, `unit-test.h`).
+    include = os.path.join(tests, program or '', 'include')
+    if program and os.path.isdir(include):
+        result.insert(1, '-I' + include)
     result[result.index('-o') + 1] = output
     result[result.index('-c') + 1] = source
     return result
@@ -236,8 +251,11 @@ def main():
                            build).stdout.strip().splitlines()[-1]
                 link = []
                 inserted = False
+                # The current `unit` program is linked from several source
+                # folders; all of them are replaced by the baseline ones.
+                objects_prefix = 'CMakeFiles/' + program + '-test.dir/sources/'
                 for argument in shlex.split(line.split(' && ')[1]):
-                    if argument.startswith(prefix):
+                    if argument.startswith(objects_prefix):
                         if not inserted:
                             link += test_objects
                             inserted = True
