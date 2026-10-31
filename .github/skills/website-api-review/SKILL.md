@@ -177,7 +177,7 @@ another.
   reporter, to `runner::abort()`);
 - command line options: every parser (`grep -n '"--' src/*.cpp`), the
   error paths (`exit()`), and what happens to unknown arguments;
-- sample outputs: `tests/assets/tap/` and `tests/assets/txt/`, and the
+- sample outputs: `tests/expected/tap/` and `tests/expected/txt/`, and the
   programs in `tests/sources/*/src/` (check the suite names, the file
   names, the line numbers, and the number format); remember that the
   reference files are written with `--output-file`, which may differ

@@ -250,7 +250,7 @@ These still describe an older layout.
 ## 4. Verified as consistent
 
 - The platform folder names match `tests/config/tests-templates.json`.
-- Every reference file in `tests/assets` is used.
+- Every reference file in `tests/expected` is used.
 - The `src/*.cpp` files pair up with their headers.
 - The device CMake target names and `.ioc` file names match their
   READMEs.

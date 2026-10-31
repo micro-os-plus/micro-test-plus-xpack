@@ -81,7 +81,7 @@ add_compare_files_test (
   NAME "unit-test-verbose-compare"
   DEPENDS "unit-test-verbose"
   FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-verbose.tap"
-        "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-test.tap"
+        "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-test.tap"
 )
 ```
 

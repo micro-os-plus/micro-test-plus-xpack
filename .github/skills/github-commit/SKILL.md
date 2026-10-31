@@ -40,7 +40,7 @@ it and requires the user approval before each commit.
    build-helper templates changed, the generated files
    (`CMakeLists.txt`, `meson.build`, the platform files in `tests/`)
    must be regenerated and included, not edited by hand. If the
-   reference outputs in `tests/assets/` are affected, they must be
+   reference outputs in `tests/expected/` are affected, they must be
    updated in the same commit.
 5. **Draft the message** (see "Message Format") and write it to a file
    in the scratchpad folder.

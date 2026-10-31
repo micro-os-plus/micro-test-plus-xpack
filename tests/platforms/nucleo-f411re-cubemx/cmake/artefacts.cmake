@@ -124,7 +124,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
     NAME "empty-test-compare"
     DEPENDS "empty-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/empty-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/empty-test.tap"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -153,7 +153,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
     NAME "minimal-test-compare"
     DEPENDS "minimal-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/minimal-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/minimal-test.tap"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -182,7 +182,7 @@ if (XPACK_ENABLE_SUITE_TEST)
     NAME "suite-test-compare"
     DEPENDS "suite-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/suite-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/suite-test.tap"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -211,7 +211,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
     NAME "sample-test-compare"
     DEPENDS "sample-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/sample-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/sample-test.tap"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -257,7 +257,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
       NAME "unit-checks-test-compare"
       DEPENDS "unit-checks-test"
       FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test.tap"
-            "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-checks-test.tap"
+            "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-checks-test.tap"
     )
   endif ()
 
@@ -276,7 +276,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     NAME "unit-checks-test-reporter-human-compare"
     DEPENDS "unit-checks-test-reporter-human"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-checks-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-checks-test.txt"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -308,7 +308,7 @@ if (XPACK_ENABLE_UNIT_COMBINATIONS_TEST)
     NAME "unit-combinations-test-reporter-human-compare"
     DEPENDS "unit-combinations-test-reporter-human"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-combinations-test.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-combinations-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-combinations-test.txt"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -338,7 +338,7 @@ if (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST)
     NAME "unit-exceptions-test-reporter-human-compare"
     DEPENDS "unit-exceptions-test-reporter-human"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-exceptions-test.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-exceptions-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-exceptions-test.txt"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -370,7 +370,7 @@ if (XPACK_ENABLE_UNIT_MISCELLANEOUS_TEST)
     NAME "unit-miscellaneous-test-reporter-human-compare"
     DEPENDS "unit-miscellaneous-test-reporter-human"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-miscellaneous-test.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-miscellaneous-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-miscellaneous-test.txt"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -400,7 +400,7 @@ if (XPACK_ENABLE_UNIT_DEPRECATED_TEST)
     NAME "unit-deprecated-test-reporter-human-compare"
     DEPENDS "unit-deprecated-test-reporter-human"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-deprecated-test.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-deprecated-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-deprecated-test.txt"
   )
 
   message (VERBOSE "") # Separator for readability

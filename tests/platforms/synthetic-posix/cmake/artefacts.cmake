@@ -91,7 +91,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
     NAME "empty-test-verbose-compare"
     DEPENDS "empty-test-verbose"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test-verbose.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/empty-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/empty-test.tap"
   )
   add_validate_tap_test (
     NAME "empty-test-verbose-validate" DEPENDS "empty-test-verbose" FILE
@@ -107,7 +107,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
     NAME "empty-test-compare"
     DEPENDS "empty-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/empty-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/empty-test.tap"
   )
   add_validate_tap_test (
     NAME "empty-test-validate" DEPENDS "empty-test" FILE
@@ -124,7 +124,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
     NAME "empty-test-quiet-compare"
     DEPENDS "empty-test-quiet"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test-quiet.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/empty-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/empty-test.tap"
   )
   add_validate_tap_test (
     NAME "empty-test-quiet-validate" DEPENDS "empty-test-quiet" FILE
@@ -141,7 +141,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
     NAME "empty-test-silent-compare"
     DEPENDS "empty-test-silent"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test-silent.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/empty-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/empty-test.tap"
   )
   add_validate_tap_test (
     NAME "empty-test-silent-validate" DEPENDS "empty-test-silent" FILE
@@ -161,7 +161,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
     NAME "empty-test-reporter-human-verbose-compare"
     DEPENDS "empty-test-reporter-human-verbose"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test-verbose.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/empty-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/empty-test.txt"
   )
 
   # default
@@ -174,7 +174,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
     NAME "empty-test-reporter-human-compare"
     DEPENDS "empty-test-reporter-human"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/empty-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/empty-test.txt"
   )
 
   # --quiet
@@ -187,7 +187,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
     NAME "empty-test-reporter-human-quiet-compare"
     DEPENDS "empty-test-reporter-human-quiet"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test-quiet.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/empty-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/empty-test.txt"
   )
 
   # --silent
@@ -200,7 +200,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
     NAME "empty-test-reporter-human-silent-compare"
     DEPENDS "empty-test-reporter-human-silent"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test-silent.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/empty-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/empty-test.txt"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -237,7 +237,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
     NAME "minimal-test-verbose-compare"
     DEPENDS "minimal-test-verbose"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-verbose.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/minimal-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/minimal-test.tap"
   )
   add_validate_tap_test (
     NAME "minimal-test-verbose-validate" DEPENDS "minimal-test-verbose" FILE
@@ -253,7 +253,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
     NAME "minimal-test-compare"
     DEPENDS "minimal-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/minimal-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/minimal-test.tap"
   )
   add_validate_tap_test (
     NAME "minimal-test-validate" DEPENDS "minimal-test" FILE
@@ -270,7 +270,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
     NAME "minimal-test-quiet-compare"
     DEPENDS "minimal-test-quiet"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-quiet.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/minimal-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/minimal-test.tap"
   )
   add_validate_tap_test (
     NAME "minimal-test-quiet-validate" DEPENDS "minimal-test-quiet" FILE
@@ -287,7 +287,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
     NAME "minimal-test-silent-compare"
     DEPENDS "minimal-test-silent"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-silent.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/minimal-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/minimal-test.tap"
   )
   add_validate_tap_test (
     NAME "minimal-test-silent-validate" DEPENDS "minimal-test-silent" FILE
@@ -307,7 +307,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
     NAME "minimal-test-reporter-human-verbose-compare"
     DEPENDS "minimal-test-reporter-human-verbose"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-verbose.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/minimal-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/minimal-test.txt"
   )
 
   # default
@@ -320,7 +320,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
     NAME "minimal-test-reporter-human-compare"
     DEPENDS "minimal-test-reporter-human"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/minimal-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/minimal-test.txt"
   )
 
   # --quiet
@@ -333,7 +333,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
     NAME "minimal-test-reporter-human-quiet-compare"
     DEPENDS "minimal-test-reporter-human-quiet"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-quiet.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/minimal-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/minimal-test.txt"
   )
 
   # --silent
@@ -346,7 +346,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
     NAME "minimal-test-reporter-human-silent-compare"
     DEPENDS "minimal-test-reporter-human-silent"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-silent.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/minimal-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/minimal-test.txt"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -375,7 +375,7 @@ if (XPACK_ENABLE_SUITE_TEST)
     NAME "suite-test-verbose-compare"
     DEPENDS "suite-test-verbose"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test-verbose.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/suite-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/suite-test.tap"
   )
   add_validate_tap_test (
     NAME "suite-test-verbose-validate" DEPENDS "suite-test-verbose" FILE
@@ -391,7 +391,7 @@ if (XPACK_ENABLE_SUITE_TEST)
     NAME "suite-test-compare"
     DEPENDS "suite-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/suite-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/suite-test.tap"
   )
   add_validate_tap_test (
     NAME "suite-test-validate" DEPENDS "suite-test" FILE
@@ -408,7 +408,7 @@ if (XPACK_ENABLE_SUITE_TEST)
     NAME "suite-test-quiet-compare"
     DEPENDS "suite-test-quiet"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test-quiet.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/suite-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/suite-test.tap"
   )
   add_validate_tap_test (
     NAME "suite-test-quiet-validate" DEPENDS "suite-test-quiet" FILE
@@ -425,7 +425,7 @@ if (XPACK_ENABLE_SUITE_TEST)
     NAME "suite-test-silent-compare"
     DEPENDS "suite-test-silent"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test-silent.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/suite-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/suite-test.tap"
   )
   add_validate_tap_test (
     NAME "suite-test-silent-validate" DEPENDS "suite-test-silent" FILE
@@ -445,7 +445,7 @@ if (XPACK_ENABLE_SUITE_TEST)
     NAME "suite-test-reporter-human-verbose-compare"
     DEPENDS "suite-test-reporter-human-verbose"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test-verbose.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/suite-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/suite-test.txt"
   )
 
   # default
@@ -458,7 +458,7 @@ if (XPACK_ENABLE_SUITE_TEST)
     NAME "suite-test-reporter-human-compare"
     DEPENDS "suite-test-reporter-human"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/suite-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/suite-test.txt"
   )
 
   # --quiet
@@ -471,7 +471,7 @@ if (XPACK_ENABLE_SUITE_TEST)
     NAME "suite-test-reporter-human-quiet-compare"
     DEPENDS "suite-test-reporter-human-quiet"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test-quiet.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/suite-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/suite-test.txt"
   )
 
   # --silent
@@ -484,7 +484,7 @@ if (XPACK_ENABLE_SUITE_TEST)
     NAME "suite-test-reporter-human-silent-compare"
     DEPENDS "suite-test-reporter-human-silent"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test-silent.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/suite-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/suite-test.txt"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -513,7 +513,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
     NAME "sample-test-verbose-compare"
     DEPENDS "sample-test-verbose"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test-verbose.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/sample-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/sample-test.tap"
   )
   add_validate_tap_test (
     NAME "sample-test-verbose-validate" DEPENDS "sample-test-verbose" FILE
@@ -529,7 +529,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
     NAME "sample-test-compare"
     DEPENDS "sample-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/sample-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/sample-test.tap"
   )
   add_validate_tap_test (
     NAME "sample-test-validate" DEPENDS "sample-test" FILE
@@ -553,7 +553,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
     NAME "sample-test-quiet-compare"
     DEPENDS "sample-test-quiet"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test-quiet.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/sample-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/sample-test.tap"
   )
   add_validate_tap_test (
     NAME "sample-test-quiet-validate" DEPENDS "sample-test-quiet" FILE
@@ -570,7 +570,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
     NAME "sample-test-silent-compare"
     DEPENDS "sample-test-silent"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test-silent.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/sample-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/sample-test.tap"
   )
   add_validate_tap_test (
     NAME "sample-test-silent-validate" DEPENDS "sample-test-silent" FILE
@@ -590,7 +590,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
     NAME "sample-test-reporter-human-verbose-compare"
     DEPENDS "sample-test-reporter-human-verbose"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test-verbose.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/sample-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/sample-test.txt"
   )
 
   # default
@@ -603,7 +603,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
     NAME "sample-test-reporter-human-compare"
     DEPENDS "sample-test-reporter-human"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/sample-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/sample-test.txt"
   )
 
   # --quiet
@@ -616,7 +616,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
     NAME "sample-test-reporter-human-quiet-compare"
     DEPENDS "sample-test-reporter-human-quiet"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test-quiet.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/sample-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/sample-test.txt"
   )
 
   # --silent
@@ -629,7 +629,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
     NAME "sample-test-reporter-human-silent-compare"
     DEPENDS "sample-test-reporter-human-silent"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test-silent.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/sample-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/sample-test.txt"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -699,7 +699,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     NAME "unit-checks-test-verbose-compare"
     DEPENDS "unit-checks-test-verbose"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-verbose.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-checks-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-checks-test.tap"
   )
   add_validate_tap_test (
     NAME "unit-checks-test-verbose-validate" DEPENDS "unit-checks-test-verbose"
@@ -715,7 +715,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     NAME "unit-checks-test-compare"
     DEPENDS "unit-checks-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-checks-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-checks-test.tap"
   )
   add_validate_tap_test (
     NAME "unit-checks-test-validate" DEPENDS "unit-checks-test" FILE
@@ -732,7 +732,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     NAME "unit-checks-test-quiet-compare"
     DEPENDS "unit-checks-test-quiet"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-quiet.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-checks-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-checks-test.tap"
   )
   add_validate_tap_test (
     NAME "unit-checks-test-quiet-validate" DEPENDS "unit-checks-test-quiet"
@@ -749,7 +749,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     NAME "unit-checks-test-silent-compare"
     DEPENDS "unit-checks-test-silent"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-silent.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-checks-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-checks-test.tap"
   )
   add_validate_tap_test (
     NAME "unit-checks-test-silent-validate" DEPENDS "unit-checks-test-silent"
@@ -770,7 +770,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     NAME "unit-checks-test-reporter-human-verbose-compare"
     DEPENDS "unit-checks-test-reporter-human-verbose"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-verbose.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-checks-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-checks-test.txt"
   )
 
   # --verbose --color The output file never receives colours, so the console
@@ -788,7 +788,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     NAME "unit-checks-test-reporter-human-colour-compare"
     DEPENDS "unit-checks-test-reporter-human-colour"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-colour.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-checks-test-colour.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-checks-test-colour.txt"
   )
 
   # The console output with the normal verbosity differs from the output file:
@@ -807,7 +807,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     NAME "unit-checks-test-reporter-human-console-compare"
     DEPENDS "unit-checks-test-reporter-human-console"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-console.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-checks-test-console.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-checks-test-console.txt"
   )
 
   # --quiet The console output shows only the failed checks, with the names of
@@ -826,7 +826,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     DEPENDS "unit-checks-test-reporter-human-console-quiet"
     FILES
       "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-console-quiet.txt"
-      "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-checks-test-console-quiet.txt"
+      "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-checks-test-console-quiet.txt"
   )
 
   # The TAP console output with the normal verbosity; unlike the output file,
@@ -844,7 +844,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     NAME "unit-checks-test-console-compare"
     DEPENDS "unit-checks-test-console"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-console.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-checks-test-console.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-checks-test-console.tap"
   )
 
   # --quiet The TAP console output has the suites as single test points, and the
@@ -862,7 +862,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     DEPENDS "unit-checks-test-console-quiet"
     FILES
       "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-console-quiet.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-checks-test-console-quiet.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-checks-test-console-quiet.tap"
   )
 
   # default
@@ -875,7 +875,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     NAME "unit-checks-test-reporter-human-compare"
     DEPENDS "unit-checks-test-reporter-human"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-checks-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-checks-test.txt"
   )
 
   # --quiet
@@ -888,7 +888,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     NAME "unit-checks-test-reporter-human-quiet-compare"
     DEPENDS "unit-checks-test-reporter-human-quiet"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-quiet.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-checks-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-checks-test.txt"
   )
 
   # --silent
@@ -901,7 +901,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     NAME "unit-checks-test-reporter-human-silent-compare"
     DEPENDS "unit-checks-test-reporter-human-silent"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-silent.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-checks-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-checks-test.txt"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -927,7 +927,7 @@ if (XPACK_ENABLE_UNIT_COMBINATIONS_TEST)
     NAME "unit-combinations-test-compare"
     DEPENDS "unit-combinations-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-combinations-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-combinations-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-combinations-test.tap"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -951,7 +951,7 @@ if (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST)
     NAME "unit-exceptions-test-compare"
     DEPENDS "unit-exceptions-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-exceptions-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-exceptions-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-exceptions-test.tap"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -977,7 +977,7 @@ if (XPACK_ENABLE_UNIT_MISCELLANEOUS_TEST)
     NAME "unit-miscellaneous-test-compare"
     DEPENDS "unit-miscellaneous-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-miscellaneous-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-miscellaneous-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-miscellaneous-test.tap"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -1001,7 +1001,7 @@ if (XPACK_ENABLE_UNIT_DEPRECATED_TEST)
     NAME "unit-deprecated-test-compare"
     DEPENDS "unit-deprecated-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-deprecated-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-deprecated-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-deprecated-test.tap"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -1052,7 +1052,7 @@ if (XPACK_ENABLE_UNIT_TEST)
     NAME "unit-test-verbose-compare"
     DEPENDS "unit-test-verbose"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-verbose.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-test.tap"
   )
   add_validate_tap_test (
     NAME "unit-test-verbose-validate" DEPENDS "unit-test-verbose" FILE
@@ -1068,7 +1068,7 @@ if (XPACK_ENABLE_UNIT_TEST)
     NAME "unit-test-compare"
     DEPENDS "unit-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-test.tap"
   )
   add_validate_tap_test (
     NAME "unit-test-validate" DEPENDS "unit-test" FILE
@@ -1084,7 +1084,7 @@ if (XPACK_ENABLE_UNIT_TEST)
     NAME "unit-test-quiet-compare"
     DEPENDS "unit-test-quiet"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-quiet.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-test.tap"
   )
   add_validate_tap_test (
     NAME "unit-test-quiet-validate" DEPENDS "unit-test-quiet" FILE
@@ -1101,7 +1101,7 @@ if (XPACK_ENABLE_UNIT_TEST)
     NAME "unit-test-silent-compare"
     DEPENDS "unit-test-silent"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-silent.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-test.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-test.tap"
   )
   add_validate_tap_test (
     NAME "unit-test-silent-validate" DEPENDS "unit-test-silent" FILE
@@ -1121,7 +1121,7 @@ if (XPACK_ENABLE_UNIT_TEST)
     NAME "unit-test-reporter-human-verbose-compare"
     DEPENDS "unit-test-reporter-human-verbose"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-verbose.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-test.txt"
   )
 
   # --verbose --color The output file never receives colours, so the console
@@ -1139,7 +1139,7 @@ if (XPACK_ENABLE_UNIT_TEST)
     NAME "unit-test-reporter-human-colour-compare"
     DEPENDS "unit-test-reporter-human-colour"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-colour.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test-colour.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-test-colour.txt"
   )
 
   # The console output with the normal verbosity differs from the output file:
@@ -1158,7 +1158,7 @@ if (XPACK_ENABLE_UNIT_TEST)
     NAME "unit-test-reporter-human-console-compare"
     DEPENDS "unit-test-reporter-human-console"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-console.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test-console.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-test-console.txt"
   )
 
   # --quiet The console output shows only the failed checks, with the names of
@@ -1176,7 +1176,7 @@ if (XPACK_ENABLE_UNIT_TEST)
     NAME "unit-test-reporter-human-console-quiet-compare"
     DEPENDS "unit-test-reporter-human-console-quiet"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-console-quiet.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test-console-quiet.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-test-console-quiet.txt"
   )
 
   # The TAP console output with the normal verbosity; unlike the output file,
@@ -1194,7 +1194,7 @@ if (XPACK_ENABLE_UNIT_TEST)
     NAME "unit-test-console-compare"
     DEPENDS "unit-test-console"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-console.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-test-console.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-test-console.tap"
   )
 
   # --quiet The TAP console output has the suites as single test points, and the
@@ -1211,7 +1211,7 @@ if (XPACK_ENABLE_UNIT_TEST)
     NAME "unit-test-console-quiet-compare"
     DEPENDS "unit-test-console-quiet"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-console-quiet.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-test-console-quiet.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-test-console-quiet.tap"
   )
 
   # default
@@ -1224,7 +1224,7 @@ if (XPACK_ENABLE_UNIT_TEST)
     NAME "unit-test-reporter-human-compare"
     DEPENDS "unit-test-reporter-human"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-test.txt"
   )
 
   # --quiet
@@ -1237,7 +1237,7 @@ if (XPACK_ENABLE_UNIT_TEST)
     NAME "unit-test-reporter-human-quiet-compare"
     DEPENDS "unit-test-reporter-human-quiet"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-quiet.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-test.txt"
   )
 
   # --silent
@@ -1250,7 +1250,7 @@ if (XPACK_ENABLE_UNIT_TEST)
     NAME "unit-test-reporter-human-silent-compare"
     DEPENDS "unit-test-reporter-human-silent"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-silent.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-test.txt"
   )
 
   message (VERBOSE "") # Separator for readability

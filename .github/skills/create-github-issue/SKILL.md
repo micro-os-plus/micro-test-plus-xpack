@@ -8,7 +8,7 @@ argument-hint: 'Short description of the problem or improvement, or a list of fi
 
 ## When to Use
 
-- The user asks to add, open, or file a GitHub issue for a bug or an
+- The user asks to add, open, create or file a GitHub issue for a bug or an
   enhancement.
 - The user asks to turn the findings of a review (code, API, Doxygen,
   website) into issues, one issue per finding.
@@ -135,6 +135,10 @@ the information is given as connected sentences, in this order:
 Keep the body as short as the facts allow; a simple finding may be a
 single paragraph of two lines.
 
+## Approval
+
+The text of the issue must be reviewed and approved before it is added to the repository.
+
 ## Example
 
 Title: `The quiet summary omits the count of the skipped test cases`
@@ -147,7 +151,7 @@ summary prints the passed and failed checks, but not the skipped test
 cases, which the normal verbosity reports; a session in which all the
 test cases are skipped is therefore reported as passed with no checks.
 Print the skipped count in the quiet summary as well, when it is not
-zero, and update `tests/assets/txt/unit-test-quiet.txt`.
+zero, and update `tests/expected/txt/unit-test-quiet.txt`.
 
 Found while fixing #NNN.
 ```

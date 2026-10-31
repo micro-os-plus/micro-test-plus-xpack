@@ -61,7 +61,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
     NAME "empty-test-compare"
     DEPENDS "empty-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/empty-test-noexcept.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/empty-test-noexcept.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/empty-test-noexcept.tap"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -84,7 +84,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
     NAME "minimal-test-compare"
     DEPENDS "minimal-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/minimal-test-noexcept.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/minimal-test-noexcept.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/minimal-test-noexcept.tap"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -107,7 +107,7 @@ if (XPACK_ENABLE_SUITE_TEST)
     NAME "suite-test-compare"
     DEPENDS "suite-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/suite-test-noexcept.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/suite-test-noexcept.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/suite-test-noexcept.tap"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -130,7 +130,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
     NAME "sample-test-compare"
     DEPENDS "sample-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/sample-test-noexcept.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/sample-test-noexcept.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/sample-test-noexcept.tap"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -169,7 +169,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     NAME "unit-checks-test-compare"
     DEPENDS "unit-checks-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-noexcept.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-checks-test-noexcept.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-checks-test-noexcept.tap"
   )
 
   add_qemu_test (
@@ -181,7 +181,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     NAME "unit-checks-test-reporter-human-compare"
     DEPENDS "unit-checks-test-reporter-human"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-noexcept.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-checks-test-noexcept.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-checks-test-noexcept.txt"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -208,7 +208,7 @@ if (XPACK_ENABLE_UNIT_COMBINATIONS_TEST)
     DEPENDS "unit-combinations-test"
     FILES
       "${CMAKE_CURRENT_BINARY_DIR}/unit-combinations-test-noexcept.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-combinations-test-noexcept.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-combinations-test-noexcept.tap"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -233,7 +233,7 @@ if (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST)
     DEPENDS "unit-exceptions-test"
     FILES
       "${CMAKE_CURRENT_BINARY_DIR}/unit-exceptions-test-noexcept.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-exceptions-test-noexcept.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-exceptions-test-noexcept.tap"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -260,7 +260,7 @@ if (XPACK_ENABLE_UNIT_MISCELLANEOUS_TEST)
     DEPENDS "unit-miscellaneous-test"
     FILES
       "${CMAKE_CURRENT_BINARY_DIR}/unit-miscellaneous-test-noexcept.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-miscellaneous-test-noexcept.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-miscellaneous-test-noexcept.tap"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -285,7 +285,7 @@ if (XPACK_ENABLE_UNIT_DEPRECATED_TEST)
     DEPENDS "unit-deprecated-test"
     FILES
       "${CMAKE_CURRENT_BINARY_DIR}/unit-deprecated-test-noexcept.tap"
-      "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-deprecated-test-noexcept.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-deprecated-test-noexcept.tap"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -308,7 +308,7 @@ if (XPACK_ENABLE_UNIT_TEST)
     NAME "unit-test-compare"
     DEPENDS "unit-test"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-noexcept.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/tap/unit-test-noexcept.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-test-noexcept.tap"
   )
 
   add_qemu_test (
@@ -320,7 +320,7 @@ if (XPACK_ENABLE_UNIT_TEST)
     NAME "unit-test-reporter-human-compare"
     DEPENDS "unit-test-reporter-human"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-noexcept.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/assets/txt/unit-test-noexcept.txt"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-test-noexcept.txt"
   )
 
   message (VERBOSE "") # Separator for readability

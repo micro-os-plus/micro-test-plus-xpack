@@ -104,8 +104,8 @@ Problems a reader would notice as broken or wrong. Report these first.
   - behaviour (what a failed assumption does, execution order, which
     command line options exist and their forms): `src/*.cpp`, in
     particular `runner.cpp` and `reporter.cpp`;
-  - sample outputs: the reference files in `tests/assets/tap/` and
-    `tests/assets/txt/`, and the programs in `tests/sources/*/src/`;
+  - sample outputs: the reference files in `tests/expected/tap/` and
+    `tests/expected/txt/`, and the programs in `tests/sources/*/src/`;
     check the format, the totals, the names, and the line numbers
     against the listing shown next to the output;
   - files, folders, and the package content: the repository tree and
