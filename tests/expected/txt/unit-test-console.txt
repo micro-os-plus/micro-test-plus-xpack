@@ -554,7 +554,7 @@ next line FAILED (miscellaneous.cpp:920)
 TAP version 14
 # Subtest: default suite
     ✓ Optional top suite - passed (7 checks)
-    ✓ Runner option errors - passed (5 checks)
+    ✓ Runner option errors - passed (7 checks)
     ✓ Runner application arguments - passed (3 checks)
     ✓ Runner colour options - passed (3 checks)
     ✓ Runner filter of the suites - passed (9 checks)
@@ -616,7 +616,7 @@ Matching test cases:
     ✓ Abort during the session - passed (6 checks)
     ✓ Test case and suite names - passed (7 checks)
 
-✗ Miscellaneous suite - FAILED (194 checks passed, 8 failed, in 52 test cases), time: 4.337 ms
+✗ Miscellaneous suite - FAILED (196 checks passed, 8 failed, in 52 test cases), time: 4.664 ms
 
 • Operands suite
 
@@ -730,6 +730,6 @@ Matching test cases:
 
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.087 ms
 
-✗ Total: 668 checks passed, 348 failed, in 158 test cases, 15 test suites, time: 11.725 ms
+✗ Total: 670 checks passed, 348 failed, in 158 test cases, 15 test suites, time: 12.229 ms
 Overall, the µTest++ unit tests were successful!
 

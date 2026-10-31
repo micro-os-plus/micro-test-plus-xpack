@@ -928,9 +928,11 @@ next line FAILED (miscellaneous.cpp:920)
         ✓ valid options still applied
         ✓ unknown reporter
         ✓ unknown option
+        ✓ suite added after an option error
         ✓ missing argument
         ✓ output file not opened
-    ✓ Runner option errors - passed (5 checks)
+        ✓ suite added after an output file error
+    ✓ Runner option errors - passed (7 checks)
     • Runner application arguments
         ✓ none without a command line
         ✓ the arguments after the options
@@ -1102,7 +1104,7 @@ next line FAILED (miscellaneous.cpp:920)
         ✓ string suite name copied
         ✓ C string suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (194 checks passed, 8 failed, in 52 test cases), time: 6.737 ms
+✗ Miscellaneous suite - FAILED (196 checks passed, 8 failed, in 52 test cases), time: 8.729 ms
 • Operands suite
     • Arrays
         ✓ array{ 42 } == array{ 42 }
@@ -1365,4 +1367,4 @@ next line FAILED (miscellaneous.cpp:920)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.213 ms
-✗ Total: 668 checks passed, 348 failed, in 158 test cases, 15 test suites, time: 18.731 ms
+✗ Total: 670 checks passed, 348 failed, in 158 test cases, 15 test suites, time: 26.771 ms

@@ -2445,7 +2445,7 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
 TAP version 14
 # Subtest: default suite
     ok 12 - Optional top suite # { passed, 7 checks }
-    ok 13 - Runner option errors # { passed, 5 checks }
+    ok 13 - Runner option errors # { passed, 7 checks }
     ok 14 - Runner application arguments # { passed, 3 checks }
     ok 15 - Runner colour options # { passed, 3 checks }
     ok 16 - Runner filter of the suites # { passed, 9 checks }
@@ -2518,7 +2518,7 @@ Matching test cases:
     ok 49 - Test case and suite names # { passed, 7 checks }
 
     1..49
-not ok 11 - Miscellaneous suite # { FAILED, 194 checks passed, 8 failed, in 52 test cases, time: 7.016 ms }
+not ok 11 - Miscellaneous suite # { FAILED, 196 checks passed, 8 failed, in 52 test cases, time: 5.011 ms }
 
 # Subtest: Operands suite
     ok 1 - Arrays # { passed, 4 checks }
@@ -2831,6 +2831,6 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.107 ms }
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.120 ms }
 
 1..15
-# { total: 668 checks passed, 348 failed, in 158 test cases, 15 test suites, time: 16.608 ms }
+# { total: 670 checks passed, 348 failed, in 158 test cases, 15 test suites, time: 15.955 ms }
 Overall, the µTest++ unit tests were successful!
 

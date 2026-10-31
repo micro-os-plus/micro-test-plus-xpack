@@ -484,4 +484,4 @@ Matching test cases:
         ✗ abc matches *C FAILED (utility.cpp:191)
         ✗ ab matches ??? FAILED (utility.cpp:195)
 
-✗ Total: 668 checks passed, 348 failed, in 158 test cases, 15 test suites, time: 12.666 ms
+✗ Total: 670 checks passed, 348 failed, in 158 test cases, 15 test suites, time: 14.835 ms

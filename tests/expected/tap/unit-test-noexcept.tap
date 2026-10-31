@@ -2755,10 +2755,12 @@ not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         ok 1 - valid options still applied
         ok 2 - unknown reporter
         ok 3 - unknown option
-        ok 4 - missing argument
-        ok 5 - output file not opened
-        1..5
-    ok 13 - Runner option errors # { passed, 5 checks }
+        ok 4 - suite added after an option error
+        ok 5 - missing argument
+        ok 6 - output file not opened
+        ok 7 - suite added after an output file error
+        1..7
+    ok 13 - Runner option errors # { passed, 7 checks }
     # Subtest: Runner application arguments
         ok 1 - none without a command line
         ok 2 - the arguments after the options
@@ -2970,7 +2972,7 @@ not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
         1..7
     ok 49 - Test case and suite names # { passed, 7 checks }
     1..49
-not ok 9 - Miscellaneous suite # { FAILED, 188 checks passed, 8 failed, in 52 test cases }
+not ok 9 - Miscellaneous suite # { FAILED, 190 checks passed, 8 failed, in 52 test cases }
 # Subtest: Operands suite
     # Subtest: Arrays
         ok 1 - array{ 42 } == array{ 42 }
@@ -3467,4 +3469,4 @@ ok 12 - Stopwatch suite # { passed, 20 checks in 5 test cases }
     1..3
 not ok 13 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases }
 1..13
-# { total: 651 checks passed, 337 failed, in 144 test cases, 13 test suites }
+# { total: 653 checks passed, 337 failed, in 144 test cases, 13 test suites }

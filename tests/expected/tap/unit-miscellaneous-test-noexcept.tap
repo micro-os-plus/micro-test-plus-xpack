@@ -186,10 +186,12 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
         ok 1 - valid options still applied
         ok 2 - unknown reporter
         ok 3 - unknown option
-        ok 4 - missing argument
-        ok 5 - output file not opened
-        1..5
-    ok 13 - Runner option errors # { passed, 5 checks }
+        ok 4 - suite added after an option error
+        ok 5 - missing argument
+        ok 6 - output file not opened
+        ok 7 - suite added after an output file error
+        1..7
+    ok 13 - Runner option errors # { passed, 7 checks }
     # Subtest: Runner application arguments
         ok 1 - none without a command line
         ok 2 - the arguments after the options
@@ -401,7 +403,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
         1..7
     ok 49 - Test case and suite names # { passed, 7 checks }
     1..49
-not ok 2 - Miscellaneous suite # { FAILED, 188 checks passed, 8 failed, in 52 test cases }
+not ok 2 - Miscellaneous suite # { FAILED, 190 checks passed, 8 failed, in 52 test cases }
 # Subtest: Runner options suite
     # Subtest: Default options
         ok 1 - the TAP reporter
@@ -597,4 +599,4 @@ ok 4 - Stopwatch suite # { passed, 20 checks in 5 test cases }
     1..3
 not ok 5 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases }
 1..5
-# { total: 292 checks passed, 13 failed, in 69 test cases, 5 test suites }
+# { total: 294 checks passed, 13 failed, in 69 test cases, 5 test suites }

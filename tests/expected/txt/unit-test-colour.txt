@@ -1041,9 +1041,11 @@ TAP version 14
         [32m✓[0m valid options still applied
         [32m✓[0m unknown reporter
         [32m✓[0m unknown option
+        [32m✓[0m suite added after an option error
         [32m✓[0m missing argument
         [32m✓[0m output file not opened
-    [32m✓[0m Runner option errors - passed (5 checks)
+        [32m✓[0m suite added after an output file error
+    [32m✓[0m Runner option errors - passed (7 checks)
 
     • Runner application arguments
         [32m✓[0m none without a command line
@@ -1268,7 +1270,7 @@ Matching test cases:
         [32m✓[0m C string suite name copied
     [32m✓[0m Test case and suite names - passed (7 checks)
 
-[31m✗[0m Miscellaneous suite - [31mFAILED[0m (194 checks passed, 8 failed, in 52 test cases), time: 4.846 ms
+[31m✗[0m Miscellaneous suite - [31mFAILED[0m (196 checks passed, 8 failed, in 52 test cases), time: 6.320 ms
 
 • Operands suite
 
@@ -1574,6 +1576,6 @@ Matching test cases:
 
 [31m✗[0m Utility suite - [31mFAILED[0m (21 checks passed, 5 failed, in 3 test cases), time: 0.125 ms
 
-[31m✗[0m Total: 668 checks passed, 348 failed, in 158 test cases, 15 test suites, time: 14.135 ms
+[31m✗[0m Total: 670 checks passed, 348 failed, in 158 test cases, 15 test suites, time: 19.206 ms
 Overall, the µTest++ unit tests were successful!
 

@@ -1147,6 +1147,22 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
             << "unknown option";
         local_counts.passed_checks++;
 
+        // The suites added after a declined `initialise()` are discarded
+        // silently; the exit code remains that of the option error.
+        mt::runner declined_runner;
+        declined_runner.initialise (3, unknown_argv);
+        int declined_runs = 0;
+        declined_runner.add_suite ("Local suite", [&declined_runs] (auto& ls)
+          {
+            ++declined_runs;
+            ls.test ("Local test", [] (auto& lt) { lt.expect (true); });
+          });
+
+        t.expect (mt::eq (declined_runner.run_suites (), 2)
+                  and mt::eq (declined_runs, 0))
+            << "suite added after an option error";
+        local_counts.passed_checks++;
+
         char* missing_argv[] = { arg_name, arg_silent, arg_reporter, nullptr };
         mt::runner missing_runner;
         missing_runner.initialise (3, missing_argv);
@@ -1174,6 +1190,17 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
         t.expect (mt::eq (file_runner.run_suites (), 2)
                   and mt::eq (file_runs, 0))
             << "output file not opened";
+        local_counts.passed_checks++;
+
+        mt::runner file_suite_runner;
+        file_suite_runner.initialise (options);
+        file_suite_runner.add_suite ("Local suite", [] (auto& ls)
+          {
+            ls.test ("Local test", [] (auto& lt) { lt.expect (true); });
+          });
+
+        t.expect (mt::eq (file_suite_runner.run_suites (), 2))
+            << "suite added after an output file error";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;

@@ -312,7 +312,7 @@ namespace micro_os_plus::micro_test_plus
         reporter_->flush_streams ();
 
         exit_code_ = options_.has_errors () ? 2 : 0;
-        session_state_ = session_state::finished;
+        session_state_ = session_state::declined;
         return;
       }
 
@@ -337,7 +337,7 @@ namespace micro_os_plus::micro_test_plus
         reporter_->flush_streams ();
 
         exit_code_ = 2;
-        session_state_ = session_state::finished;
+        session_state_ = session_state::declined;
         return;
       }
 
@@ -563,6 +563,12 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite->name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
+    if (session_state_ == session_state::declined)
+      {
+        // Nothing runs in a declined session; the suite is discarded.
+        return;
+      }
+
     if (session_state_ == session_state::running
         || session_state_ == session_state::finished)
       {
@@ -735,7 +741,8 @@ namespace micro_os_plus::micro_test_plus
         return 1;
       }
 
-    if (session_state_ == session_state::finished)
+    if (session_state_ == session_state::finished
+        || session_state_ == session_state::declined)
       {
         // The session has ended; do not run the suites again.
         return exit_code_;

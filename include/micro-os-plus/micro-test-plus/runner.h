@@ -1288,11 +1288,15 @@ namespace micro_os_plus::micro_test_plus
      * The session moves only forwards, from `created` to `initialised`
      * (by `initialise()`), to `running`, and to `finished` (both by
      * `run_suites()`); the calls made in another state are reported or ignored.
+     * When `initialise()` declines to run the session (`--help`, option
+     * errors, or an output file that cannot be opened), the state is
+     * `declined`, in which the suites are discarded silently.
      */
     enum class session_state
     {
       created, /**< Constructed; `initialise()` not yet called. */
       initialised, /**< Initialised; test cases may be added and run. */
+      declined, /**< Nothing runs (help or option errors); calls ignored. */
       running, /**< `run_suites()` runs the suites; no suite may be added. */
       finished /**< All suites run and the session ended. */
     };
@@ -1302,7 +1306,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Set by `initialise()` and `run_suites()`; read by `register_suite()`, to
-     * reject the suites added too late.
+     * reject the suites added too late and to discard silently those added
+     * to a declined session.
      */
     session_state session_state_ = session_state::created;
 

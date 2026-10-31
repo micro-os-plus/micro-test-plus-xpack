@@ -138,9 +138,11 @@ next line FAILED (miscellaneous.cpp:922)
         ✓ valid options still applied
         ✓ unknown reporter
         ✓ unknown option
+        ✓ suite added after an option error
         ✓ missing argument
         ✓ output file not opened
-    ✓ Runner option errors - passed (5 checks)
+        ✓ suite added after an output file error
+    ✓ Runner option errors - passed (7 checks)
     • Runner application arguments
         ✓ none without a command line
         ✓ the arguments after the options
@@ -312,7 +314,7 @@ next line FAILED (miscellaneous.cpp:922)
         ✓ string suite name copied
         ✓ C string suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (194 checks passed, 8 failed, in 52 test cases)
+✗ Miscellaneous suite - FAILED (196 checks passed, 8 failed, in 52 test cases)
 • Runner options suite
     • Default options
         ✓ the TAP reporter
@@ -462,4 +464,4 @@ next line FAILED (miscellaneous.cpp:922)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 298 checks passed, 13 failed, in 69 test cases, 5 test suites
+✗ Total: 300 checks passed, 13 failed, in 69 test cases, 5 test suites
