@@ -20,8 +20,8 @@ set (XPACK_ENABLE_EMPTY_TEST true)
 set (XPACK_ENABLE_MINIMAL_TEST true)
 set (XPACK_ENABLE_SUITE_TEST true)
 set (XPACK_ENABLE_SAMPLE_TEST true)
+set (XPACK_ENABLE_UNIT_COMMON_TEST true)
 set (XPACK_ENABLE_UNIT_STATIC_ASSERTS_TEST true)
-set (XPACK_ENABLE_UNIT_COMMON true)
 set (XPACK_ENABLE_UNIT_CHECKS_TEST true)
 set (XPACK_ENABLE_UNIT_COMBINATIONS_TEST true)
 set (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST true)
@@ -56,15 +56,15 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   )
 endif ()
 
-if (XPACK_ENABLE_UNIT_STATIC_ASSERTS_TEST)
+if (XPACK_ENABLE_UNIT_COMMON_TEST)
   list (APPEND xpack_dependencies_tests_folders
-        "${CMAKE_SOURCE_DIR}/sources/unit-static-asserts"
+        "${CMAKE_SOURCE_DIR}/sources/unit-common"
   )
 endif ()
 
-if (XPACK_ENABLE_UNIT_COMMON)
+if (XPACK_ENABLE_UNIT_STATIC_ASSERTS_TEST)
   list (APPEND xpack_dependencies_tests_folders
-        "${CMAKE_SOURCE_DIR}/sources/unit-common"
+        "${CMAKE_SOURCE_DIR}/sources/unit-static-asserts"
   )
 endif ()
 
@@ -98,7 +98,6 @@ if (XPACK_ENABLE_UNIT_DEPRECATED_TEST)
   )
 endif ()
 
-# The combined unit test must follow the tests it combines.
 if (XPACK_ENABLE_UNIT_TEST)
   list (APPEND xpack_dependencies_tests_folders
         "${CMAKE_SOURCE_DIR}/sources/unit"

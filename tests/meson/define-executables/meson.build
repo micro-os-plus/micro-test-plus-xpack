@@ -60,6 +60,15 @@ if xpack_enable_sample_test
   }
 endif
 
+if xpack_enable_unit_common_test
+  tests += {
+    'name': 'unit-common-test',
+    'dependency': test_unit_common_dependency,
+    'compile_c_args': test_unit_common_dependency_compile_c_args,
+    'compile_cpp_args': test_unit_common_dependency_compile_cpp_args,
+  }
+endif
+
 if xpack_enable_unit_static_asserts_test
   tests += {
     'name': 'unit-static-asserts-test',
