@@ -174,8 +174,9 @@ namespace micro_os_plus::micro_test_plus
      * `std::byte`), pairs, tuples, optionals, and framework expression
      * types (see `extension::is_op`).
      *
-     * The numeric overloads append a type suffix named after the µTest++
-     * literals (e.g., `42u`, `3l`, `5sc`, `1.5f`, `1.5ld`); `int` and
+     * The numeric overloads append a type suffix (e.g., `42u`, `3l`,
+     * `1.5f`, `1.5ld`) and write the types that have no standard
+     * literal suffix as a cast (`(unsigned short)3`); `int` and
      * `double` have no suffix, and the floating-point values always have
      * a decimal point or an exponent (`42.0`), so that they can be
      * distinguished from the integers.
@@ -468,7 +469,7 @@ namespace micro_os_plus::micro_test_plus
       expression_formatter& operator<< (std::nullopt_t);
 
       /**
-       * @brief Appends a signed char value with type suffix `"sc"`.
+       * @brief Appends a signed char value, as a cast.
        *
        * @param c The signed char value.
        * @return Reference to this instance.
@@ -477,7 +478,7 @@ namespace micro_os_plus::micro_test_plus
       operator<< (signed char c);
 
       /**
-       * @brief Appends an unsigned char value with type suffix `"uc"`.
+       * @brief Appends an unsigned char value, as a cast.
        *
        * @param c The unsigned char value.
        * @return Reference to this instance.
@@ -486,7 +487,7 @@ namespace micro_os_plus::micro_test_plus
       operator<< (unsigned char c);
 
       /**
-       * @brief Appends a signed short value with type suffix `"s"`.
+       * @brief Appends a signed short value, as a cast.
        *
        * @param v The signed short value.
        * @return Reference to this instance.
@@ -495,7 +496,7 @@ namespace micro_os_plus::micro_test_plus
       operator<< (signed short v);
 
       /**
-       * @brief Appends an unsigned short value with type suffix `"us"`.
+       * @brief Appends an unsigned short value, as a cast.
        *
        * @param v The unsigned short value.
        * @return Reference to this instance.
@@ -670,7 +671,8 @@ namespace micro_os_plus::micro_test_plus
        * @details
        * The value is converted to the underlying type and formatted as
        * that type, with its suffix (for example `1` for an `int` and
-       * `1uc` for `std::byte`, whose underlying type is `unsigned char`).
+       * `(unsigned char)1` for `std::byte`, whose underlying type is
+       * `unsigned char`).
        *
        * The unscoped enumerations are not selected, since they convert
        * implicitly to an integer, and are formatted as one.
@@ -1046,13 +1048,31 @@ namespace micro_os_plus::micro_test_plus
        * Called after a number was appended to the buffer; in the plain
        * mode, used for the messages, nothing is appended.
        *
-       * @param suffix The suffix, named after the µTest++ literal of the
-       * type (e.g. `"u"`, `"ll"`, `"f"`).
+       * @param suffix The suffix of the type (e.g. `"u"`, `"ll"`, `"f"`).
        * @par Returns
        *   Nothing.
        */
       void
       append_suffix (const char* suffix);
+
+      /**
+       * @brief Prefixes a number with its type, written as a cast.
+       *
+       * @details
+       * Called after a number was appended to the buffer, for the types
+       * that have no standard literal suffix (`signed char`, `unsigned
+       * char`, `short`, and `unsigned short`); in the plain mode, used for
+       * the messages, nothing is inserted.
+       *
+       * @param start The position of the first character of the number
+       * in the buffer.
+       * @param type The cast, with the parentheses (e.g.
+       * `"(unsigned short)"`).
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      prepend_cast (std::size_t start, const char* type);
 
       /**
        * @brief Appends a character, or a code unit, as a quoted literal.

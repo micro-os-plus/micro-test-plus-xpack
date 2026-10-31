@@ -32,27 +32,29 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.059 ms }
     # Subtest: Formatter number suffixes
         ok 1 - signed char
         ok 2 - unsigned char
-        ok 3 - int
-        ok 4 - long
-        ok 5 - integral float
-        ok 6 - integral double
-        ok 7 - integral long double
-        ok 8 - float
-        ok 9 - double
-        ok 10 - long double
-        ok 11 - long double with seven digits
-        ok 12 - long double with 15 digits
-        ok 13 - negative integral double
-        ok 14 - double with exponent
-        ok 15 - infinite double
-        ok 16 - infinite float
-        ok 17 - negative infinite float
-        ok 18 - float NaN
-        ok 19 - double NaN
-        ok 20 - infinite long double
-        ok 21 - long double NaN
-        1..21
-    ok 3 - Formatter number suffixes # { passed, 21 checks }
+        ok 3 - short
+        ok 4 - unsigned short
+        ok 5 - int
+        ok 6 - long
+        ok 7 - integral float
+        ok 8 - integral double
+        ok 9 - integral long double
+        ok 10 - float
+        ok 11 - double
+        ok 12 - long double
+        ok 13 - long double with seven digits
+        ok 14 - long double with 15 digits
+        ok 15 - negative integral double
+        ok 16 - double with exponent
+        ok 17 - infinite double
+        ok 18 - infinite float
+        ok 19 - negative infinite float
+        ok 20 - float NaN
+        ok 21 - double NaN
+        ok 22 - infinite long double
+        ok 23 - long double NaN
+        1..23
+    ok 3 - Formatter number suffixes # { passed, 23 checks }
     # Subtest: Formatter characters
         ok 1 - letter
         ok 2 - space
@@ -412,7 +414,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases, time: 0.059 ms }
         1..7
     ok 49 - Test case and suite names # { passed, 7 checks }
     1..49
-not ok 2 - Miscellaneous suite # { FAILED, 199 checks passed, 8 failed, in 52 test cases, time: 11.828 ms }
+not ok 2 - Miscellaneous suite # { FAILED, 201 checks passed, 8 failed, in 52 test cases, time: 11.828 ms }
 # Subtest: Runner options suite
     # Subtest: Default options
         ok 1 - the TAP reporter
@@ -609,4 +611,4 @@ ok 4 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.370 ms }
     1..3
 not ok 5 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.296 ms }
 1..5
-# { total: 304 checks passed, 13 failed, in 69 test cases, 5 test suites, time: 11.708 ms }
+# { total: 306 checks passed, 13 failed, in 69 test cases, 5 test suites, time: 11.708 ms }

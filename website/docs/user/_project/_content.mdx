@@ -916,9 +916,9 @@ if its count is a number), so a pair with a member that has no `operator<<`
 is rejected like that member.
 When a check fails, they are shown as follows:
 
-- a scoped enumeration by its underlying value, with the suffix of its
-  type, for example `1` for `int` and `1uc` for `std::byte`, whose
-  underlying type is `unsigned char`; to show the names of the
+- a scoped enumeration by its underlying value, written as that type
+  is, for example `1` for `int` and `(unsigned char)1` for `std::byte`,
+  whose underlying type is `unsigned char`; to show the names of the
   enumerators instead, define an `operator<<` for the enumeration, as
   for the [custom types](#custom-types);
 - a pair or a tuple as `(a, b)`, and a map as `{(1, 2), (3, 4)}`;

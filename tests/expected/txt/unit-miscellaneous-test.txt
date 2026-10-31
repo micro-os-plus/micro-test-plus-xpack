@@ -29,6 +29,8 @@ Built with GCC 15.2.1 20251203, with FP, with exceptions, with MICRO_OS_PLUS_DEB
     • Formatter number suffixes
         ✓ signed char
         ✓ unsigned char
+        ✓ short
+        ✓ unsigned short
         ✓ int
         ✓ long
         ✓ integral float
@@ -48,7 +50,7 @@ Built with GCC 15.2.1 20251203, with FP, with exceptions, with MICRO_OS_PLUS_DEB
         ✓ double NaN
         ✓ infinite long double
         ✓ long double NaN
-    ✓ Formatter number suffixes - passed (21 checks)
+    ✓ Formatter number suffixes - passed (23 checks)
     • Formatter characters
         ✓ letter
         ✓ space
@@ -317,7 +319,7 @@ next line FAILED (miscellaneous.cpp:922)
         ✓ string suite name copied
         ✓ C string suite name copied
     ✓ Test case and suite names - passed (7 checks)
-✗ Miscellaneous suite - FAILED (199 checks passed, 8 failed, in 52 test cases)
+✗ Miscellaneous suite - FAILED (201 checks passed, 8 failed, in 52 test cases)
 • Runner options suite
     • Default options
         ✓ the TAP reporter
@@ -468,4 +470,4 @@ next line FAILED (miscellaneous.cpp:922)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 304 checks passed, 13 failed, in 69 test cases, 5 test suites
+✗ Total: 306 checks passed, 13 failed, in 69 test cases, 5 test suites

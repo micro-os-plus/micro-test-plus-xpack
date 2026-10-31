@@ -556,10 +556,18 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
           };
 
         f << static_cast<signed char> (5);
-        check ("5sc", "signed char");
+        check ("(signed char)5", "signed char");
 
         f << static_cast<unsigned char> (5);
-        check ("5uc", "unsigned char");
+        check ("(unsigned char)5", "unsigned char");
+
+        // The types without a standard literal suffix are written as
+        // casts, so that `us` and `s` remain the duration units.
+        f << static_cast<short> (-3);
+        check ("(short)-3", "short");
+
+        f << static_cast<unsigned short> (3);
+        check ("(unsigned short)3", "unsigned short");
 
         f << 42;
         check ("42", "int");
@@ -781,13 +789,13 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
         check ("1", "scoped enumeration");
 
         f << level::high;
-        check ("2uc", "scoped enumeration with underlying type");
+        check ("(unsigned char)2", "scoped enumeration with underlying type");
 
         f << state::on;
         check ("on", "scoped enumeration with formatter");
 
         f << std::byte{ 0x2a };
-        check ("42uc", "std::byte");
+        check ("(unsigned char)42", "std::byte");
 
         f << std::pair{ 1, 'a' };
         check ("(1, 'a')", "pair");

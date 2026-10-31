@@ -375,54 +375,63 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Converts @p c to its decimal string representation via
-   * `append_number()` and appends the type suffix `"sc"`, the name of
-   * the `_sc` literal; the suffix `"c"` would suggest `char`, which is
-   * written as a character.
+   * `append_number()` and prefixes it with the cast `(signed char)`,
+   * since the type has no standard literal suffix, and the suffix `"c"`
+   * would suggest `char`, which is written as a character.
    */
   expression_formatter&
   expression_formatter::operator<< (signed char c)
   {
+    const auto start = buffer_.size ();
     detail::append_number (buffer_, c);
-    append_suffix ("sc");
+    prepend_cast (start, "(signed char)");
     return *this;
   }
 
   /**
    * @details
    * Converts @p c to its decimal string representation via
-   * `append_number()` and appends the type suffix `"uc"`.
+   * `append_number()` and prefixes it with the cast `(unsigned char)`,
+   * since the type has no standard literal suffix.
    */
   expression_formatter&
   expression_formatter::operator<< (unsigned char c)
   {
+    const auto start = buffer_.size ();
     detail::append_number (buffer_, c);
-    append_suffix ("uc");
+    prepend_cast (start, "(unsigned char)");
     return *this;
   }
 
   /**
    * @details
    * Converts @p v to its decimal string representation via
-   * `append_number()` and appends the type suffix `"s"`.
+   * `append_number()` and prefixes it with the cast `(short)`, since the
+   * type has no standard literal suffix, and the suffix `"s"` would be
+   * that of the `std::chrono::seconds` durations.
    */
   expression_formatter&
   expression_formatter::operator<< (signed short v)
   {
+    const auto start = buffer_.size ();
     detail::append_number (buffer_, v);
-    append_suffix ("s");
+    prepend_cast (start, "(short)");
     return *this;
   }
 
   /**
    * @details
    * Converts @p v to its decimal string representation via
-   * `append_number()` and appends the type suffix `"us"`.
+   * `append_number()` and prefixes it with the cast `(unsigned short)`,
+   * since the type has no standard literal suffix, and the suffix `"us"`
+   * would be that of the `std::chrono::microseconds` durations.
    */
   expression_formatter&
   expression_formatter::operator<< (unsigned short v)
   {
+    const auto start = buffer_.size ();
     detail::append_number (buffer_, v);
-    append_suffix ("us");
+    prepend_cast (start, "(unsigned short)");
     return *this;
   }
 
@@ -607,6 +616,21 @@ namespace micro_os_plus::micro_test_plus::detail
     if (not plain_)
       {
         buffer_.append (suffix);
+      }
+  }
+
+  /**
+   * @details
+   * Inserts @p type at the position @p start, before the number, unless
+   * the formatter is in the plain mode, used for the messages, which
+   * writes the numbers without type marks.
+   */
+  void
+  expression_formatter::prepend_cast (std::size_t start, const char* type)
+  {
+    if (not plain_)
+      {
+        buffer_.insert (start, type);
       }
   }
 

@@ -248,8 +248,11 @@ function of the reporters was removed.
   as quoted literals with their prefix (`u8'a'`, `u'a'`, `U'a'`, `L'a'`),
   with universal character names or `\x` escapes for the values outside
   ASCII, in the messages too; they were numbers.
-- The `signed char` values have the suffix `sc` (`5sc`), and the
-  `long double` values `ld` (`1.5ld`); the floating-point values with an
+- The `signed char`, `unsigned char`, `short`, and `unsigned short`
+  values, which have no standard literal suffix, are written as casts
+  (`(signed char)5`, `(unsigned short)3`), so that they cannot be taken
+  for the units of the durations (`3us`), and the `long double` values
+  have the suffix `ld` (`1.5ld`); the floating-point values with an
   integral value have a decimal point (`42.0`, `42.0f`, `42.0ld`). The
   messages added with `<<` are unchanged.
 - The non-`const` `char` pointers and arrays are written as strings, and
