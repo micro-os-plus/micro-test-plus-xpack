@@ -131,8 +131,11 @@ namespace micro_os_plus::micro_test_plus
    * test case runs; a named `test_case_name` object must not outlive the
    * string it was constructed from.
    *
-   * A `std::string_view` is not accepted, since it is not guaranteed to be
-   * null-terminated; pass `std::string (sv)` instead.
+   * A `std::string_view` is not accepted: since the name is not copied,
+   * it must be null-terminated, which a view does not guarantee, and
+   * accepting it would require every test case to own a copy of its
+   * name. Pass `std::string (sv)` instead. The names of the suites, which
+   * are copied, follow the same rule, for uniformity.
    *
    * Since a conversion sequence may include only one user-defined
    * conversion, an argument that converts to `const char*` or to
@@ -2123,8 +2126,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Uses the content of the string, up to the first null character, as
      * the name of the `const char*` constructor, which copies it. A
-     * `std::string_view` is not accepted, since it is not guaranteed to
-     * be null-terminated, as for the test cases.
+     * `std::string_view` is not accepted, for uniformity with the test
+     * cases, whose names are not copied, and so must be null-terminated.
      *
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.

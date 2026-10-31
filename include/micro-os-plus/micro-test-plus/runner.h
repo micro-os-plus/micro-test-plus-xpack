@@ -442,9 +442,9 @@ namespace micro_os_plus::micro_test_plus
      * @param top_suite_name The name of the top suite, used in reports; a
      * string literal or a `const char*`. It is copied, so the string need
      * not outlive the call. A null pointer, like the default, is an empty
-     * name. A `std::string_view` is not accepted, since it is not
-     * guaranteed to be null-terminated, as for the test cases; pass
-     * `std::string (view)` instead.
+     * name. A `std::string_view` is not accepted, for uniformity with the
+     * test cases, whose names are not copied, and so must be
+     * null-terminated; pass `std::string (view)` instead.
      * @return Reference to the top suite.
      *
      * @since 6.0.0
@@ -556,9 +556,9 @@ namespace micro_os_plus::micro_test_plus
      * @param name The test suite name or description, used in reports; a
      * string literal or a `const char*`. It is copied, so the string need
      * not outlive the call. A null pointer is an empty name. A
-     * `std::string_view` is not accepted, since it is not guaranteed to
-     * be null-terminated, as for the test cases; pass `std::string (view)`
-     * instead.
+     * `std::string_view` is not accepted, for uniformity with the test
+     * cases, whose names are not copied, and so must be null-terminated;
+     * pass `std::string (view)` instead.
      * @param callable A generic callable object, usually a lambda,
      * invoked to perform the test suite.
      * @param arguments A possibly empty list of arguments to be passed to

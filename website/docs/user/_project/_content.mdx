@@ -468,8 +468,9 @@ converted implicitly to `test_case_name`, which also records the
 location of the `test()` call. The name is not copied; since the test
 case runs within the call to `test()`, a temporary string, such as
 `prefix + " overflow"`, can be passed. A `std::string_view` is not
-accepted, since it may not be null-terminated; pass
-`std::string (view)` instead.
+accepted, since the name is not copied and a view may not be
+null-terminated; pass `std::string (view)` instead. The names of the
+suites follow the same rule, for uniformity, although they are copied.
 
 A helper function that adds test cases on behalf of its caller can take
 a `const mt::test_case_name&` parameter and pass it to `test()`, so that
