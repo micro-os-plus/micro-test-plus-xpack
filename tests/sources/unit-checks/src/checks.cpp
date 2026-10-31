@@ -418,32 +418,6 @@ unit_checks_run_tests (mt::suite& ts)
 
   // --------------------------------------------------------------------------
 
-  // The result of a check kept in a variable is reported when the variable
-  // goes out of scope, after the later checks, with its own expression
-  // (here `1 == 2`), and numbered in the order of the output.
-  ts.test ("Stored check result", [] (auto& t)
-    {
-      {
-        auto stored = t.expect (mt::eq (1, 2));
-        stored << "stored check fails";
-        local_counts.failed_checks++;
-
-        t.expect (mt::eq (3, 3)) << "later check passes";
-        local_counts.passed_checks++;
-      } // The stored check is reported here.
-
-      local_counts.executed_test_cases++;
-    });
-
-  test_assert (current_suite_totals.passed_checks ()
-               == local_counts.passed_checks);
-  test_assert (current_suite_totals.failed_checks ()
-               == local_counts.failed_checks);
-  test_assert (current_suite_totals.executed_test_cases ()
-               == local_counts.executed_test_cases);
-
-  // --------------------------------------------------------------------------
-
   // The comparators compare the application types with their own
   // operators, ignoring the application functions named `get`, both free
   // (found by argument-dependent lookup) and member.

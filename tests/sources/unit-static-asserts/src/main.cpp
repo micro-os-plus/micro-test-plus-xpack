@@ -807,6 +807,23 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
   }
 
   {
+    // A check result cannot be kept in a variable: `expect()` and
+    // `require()` return a reference to the temporary that the caller
+    // creates, which can be neither copied nor moved, so that
+    // `auto r = t.expect (...)` does not compile (#222).
+    using result_t = mt::detail::check_result;
+
+    static_assert (not std::is_copy_constructible_v<result_t>);
+    static_assert (not std::is_move_constructible_v<result_t>);
+    static_assert (std::is_same_v<
+                   decltype (std::declval<mt::test_case&> ().expect (true)),
+                   result_t&&>);
+    static_assert (std::is_same_v<
+                   decltype (std::declval<mt::test_case&> ().require (true)),
+                   result_t&&>);
+  }
+
+  {
     struct unformatted
     {
     };

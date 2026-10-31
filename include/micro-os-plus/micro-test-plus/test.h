@@ -61,6 +61,7 @@
 #include "micro-os-plus/micro-test-plus-defines.h"
 #endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
+#include "check-result.h"
 #include "counters.h"
 #include "extension.h"
 #include "stopwatch.h"
@@ -85,6 +86,7 @@
 #pragma GCC diagnostic ignored "-Wpadded"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
+#pragma clang diagnostic ignored "-Wc++98-compat-bind-to-temporary-copy"
 #pragma clang diagnostic ignored "-Wdocumentation"
 #else // GCC only
 #pragma GCC diagnostic ignored "-Wsuggest-final-types"
@@ -1246,15 +1248,21 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param expr Logical expression to evaluate.
      * @param sl Optional source location, defaulting to the current line.
-     * @return The check result, to which optional messages can be
-     * appended with `operator<<`; the check is reported when it is
-     * destroyed, at the end of the statement.
+     * @param result The check result, a temporary created by the caller as
+     * the default argument, which the applications do not pass; it is
+     * destroyed at the end of the statement.
+     * @return A reference to the check result, to which optional messages
+     * can be appended with `operator<<`; the check is reported when it is
+     * destroyed, at the end of the statement, so the result cannot be kept
+     * in a variable.
      */
     template <class Expr_T>
       requires extension::checkable<Expr_T>
-    auto
-    expect (const Expr_T& expr, const reflection::source_location& sl
-                                = reflection::source_location::current ());
+    detail::check_result&&
+    expect (const Expr_T& expr,
+            const reflection::source_location& sl
+            = reflection::source_location::current (),
+            detail::check_result&& result = detail::check_result{});
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-requirements
@@ -1283,15 +1291,21 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param expr Logical expression to evaluate.
      * @param sl Optional source location, defaulting to the current line.
-     * @return The check result, to which optional messages can be
-     * appended with `operator<<`; the check is reported when it is
-     * destroyed, at the end of the statement.
+     * @param result The check result, a temporary created by the caller as
+     * the default argument, which the applications do not pass; it is
+     * destroyed at the end of the statement.
+     * @return A reference to the check result, to which optional messages
+     * can be appended with `operator<<`; the check is reported when it is
+     * destroyed, at the end of the statement, so the result cannot be kept
+     * in a variable.
      */
     template <class Expr_T>
       requires extension::checkable<Expr_T>
-    auto
-    require (const Expr_T& expr, const reflection::source_location& sl
-                                 = reflection::source_location::current ());
+    detail::check_result&&
+    require (const Expr_T& expr,
+             const reflection::source_location& sl
+             = reflection::source_location::current (),
+             detail::check_result&& result = detail::check_result{});
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
@@ -1313,14 +1327,18 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param expr The argument.
      * @param sl Optional source location, defaulting to the current line.
-     * @return The check result.
+     * @param result The check result, a temporary created by the caller as
+     * the default argument, which the applications do not pass.
+     * @return A reference to the check result.
      */
     template <class Expr_T>
       requires extension::legacy_checkable<Expr_T>
     [[deprecated ("the argument is always true; write the condition "
-                  "(since 6.0.0)")]] auto
-    expect (const Expr_T& expr, const reflection::source_location& sl
-                                = reflection::source_location::current ());
+                  "(since 6.0.0)")]] detail::check_result&&
+    expect (const Expr_T& expr,
+            const reflection::source_location& sl
+            = reflection::source_location::current (),
+            detail::check_result&& result = detail::check_result{});
 
     /**
      * @brief Deprecated `require()` of a suspicious condition.
@@ -1333,14 +1351,18 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param expr The argument.
      * @param sl Optional source location, defaulting to the current line.
-     * @return The check result.
+     * @param result The check result, a temporary created by the caller as
+     * the default argument, which the applications do not pass.
+     * @return A reference to the check result.
      */
     template <class Expr_T>
       requires extension::legacy_checkable<Expr_T>
     [[deprecated ("the argument is always true; write the condition "
-                  "(since 6.0.0)")]] auto
-    require (const Expr_T& expr, const reflection::source_location& sl
-                                 = reflection::source_location::current ());
+                  "(since 6.0.0)")]] detail::check_result&&
+    require (const Expr_T& expr,
+             const reflection::source_location& sl
+             = reflection::source_location::current (),
+             detail::check_result&& result = detail::check_result{});
 
     /**
      * @brief Deprecated name of `require()`.
@@ -1354,15 +1376,21 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param expr Logical expression to evaluate.
      * @param sl Optional source location, defaulting to the current line.
-     * @return The check result, to which optional messages can be
-     * appended with `operator<<`; the check is reported when it is
-     * destroyed, at the end of the statement.
+     * @param result The check result, a temporary created by the caller as
+     * the default argument, which the applications do not pass; it is
+     * destroyed at the end of the statement.
+     * @return A reference to the check result, to which optional messages
+     * can be appended with `operator<<`; the check is reported when it is
+     * destroyed, at the end of the statement, so the result cannot be kept
+     * in a variable.
      */
     template <class Expr_T>
       requires extension::checkable<Expr_T>
-    [[deprecated ("use require() (since 6.0.0)")]] auto
-    assume (const Expr_T& expr, const reflection::source_location& sl
-                                = reflection::source_location::current ());
+    [[deprecated ("use require() (since 6.0.0)")]] detail::check_result&&
+    assume (const Expr_T& expr,
+            const reflection::source_location& sl
+            = reflection::source_location::current (),
+            detail::check_result&& result = detail::check_result{});
 
     /**
      * @}

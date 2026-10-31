@@ -79,7 +79,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The expression is evaluated, and the result is passed, together with
      * the kind of the check and whether the expression is a framework
-     * comparator, to the non-template constructor, which also stores the
+     * comparator, to the non-template `start()`, which also stores the
      * source location and the test case. The kind,
      * `check_kind::requirement` for `require()`, determines whether the
      * test case is stopped if the check fails.
@@ -99,22 +99,18 @@ namespace micro_os_plus::micro_test_plus
      * example) could contradict the outcome, and many such types cannot be
      * formatted at all.
      *
-     * The decision is taken here, while the operands are alive; a result
-     * kept in a variable outlives them.
+     * The decision is taken here, while the operands are alive.
      */
     template <class Expr_T>
-    check_result::check_result (const Expr_T& expr, check_kind kind,
-                                const reflection::source_location& location,
-                                test_case& test_case,
-                                expression_formatter& expression,
-                                bool writes_passed)
-        : check_result{ static_cast<bool> (expr),
-                        kind,
-                        extension::is_op<Expr_T>,
-                        location,
-                        test_case,
-                        writes_passed }
+    void
+    check_result::init (const Expr_T& expr, check_kind kind,
+                        const reflection::source_location& location,
+                        test_case& test_case, expression_formatter& expression,
+                        bool writes_passed)
     {
+      start (static_cast<bool> (expr), kind, extension::is_op<Expr_T>,
+             location, test_case, writes_passed);
+
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
       trace::printf ("%s\n", __PRETTY_FUNCTION__);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED

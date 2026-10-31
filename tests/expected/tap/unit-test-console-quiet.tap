@@ -21,14 +21,6 @@ TAP version 14
 #                     fileName: checks.cpp
 #                     lineNumber: 399
 #                   ...
-# Top suite > Stored check result
-#         not ok 2 - stored check fails
-#           ---
-#           condition: "1 == 2"
-#           at:
-#             fileName: checks.cpp
-#             lineNumber: 427
-#           ...
 # Top suite > Character operands
 #         not ok 1
 #           ---
@@ -44,7 +36,7 @@ TAP version 14
 #             fileName: checks.cpp
 #             lineNumber: 548
 #           ...
-not ok 1 - Top suite # { FAILED, 39 checks passed, 6 failed, in 18 test cases, time: 0.805 ms }
+not ok 1 - Top suite # { FAILED, 38 checks passed, 5 failed, in 17 test cases, time: 0.878 ms }
 ok 2 - Combinatorial floats suite # { passed, 42 checks in 2 test cases, time: 0.205 ms }
 ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, time: 0.686 ms }
 # Comparisons suite > Failed integer comparisons
@@ -447,7 +439,7 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
 #                 lineNumber: 266
 #               ...
 # Exceptions suite > Failed require during unwinding
-#         not ok 1 - failed kept requirement
+#         not ok 1
 #           ---
 #           at:
 #             fileName: exceptions.cpp
@@ -2220,7 +2212,6 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
 #             lineNumber: 935
 #           ...
 
-# Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 TAP version 14
 # Subtest: default suite
 All available test cases:
@@ -2229,6 +2220,7 @@ All available test cases:
   Added
     Added test
     Each (1)
+# Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
     Each (2)
 4 test cases in 2 test suites
 Matching test cases:
@@ -2503,4 +2495,4 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.078 ms }
 #           ...
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.110 ms }
 1..15
-# { total: 676 checks passed, 350 failed, in 159 test cases, 15 test suites, time: 15.196 ms }
+# { total: 675 checks passed, 349 failed, in 158 test cases, 15 test suites, time: 17.489 ms }

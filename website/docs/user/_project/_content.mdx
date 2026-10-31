@@ -575,6 +575,11 @@ t.expect (mt::eq (answer (), 42));   // Correct.
 A failed **expectation** is reported and counted, and the test case
 continues, so that all its checks are evaluated and reported in one run.
 
+The result of `t.expect (...)` and `t.require (...)` lives until the end of
+the statement, where the check is reported, so that the checks are
+reported in the order of the statements. It cannot be kept in a variable:
+`auto r = t.expect (...)` does not compile.
+
 The message accepts the same values as the operands of the
 [function comparators](#function-comparators), including the
 [custom types](#custom-types) with an `operator<<` for the formatter,

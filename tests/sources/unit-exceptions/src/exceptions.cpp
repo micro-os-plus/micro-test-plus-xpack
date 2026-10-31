@@ -274,18 +274,15 @@ static mt::static_suite ts_exceptions{ "Exceptions suite", tr,
         });
       local_counts.executed_test_cases++; // outer
 
-      // A kept result is reported during the stack unwinding caused by
-      // another exception; it must not throw, which would terminate.
+      // A result is reported during the stack unwinding caused by another
+      // exception, thrown by the argument of its message, evaluated while
+      // the result exists; it must not throw, which would terminate.
       ts.test ("Failed require during unwinding", [] (auto& t)
         {
-          // Bound directly to the returned temporary, which lives until
-          // the end of the body.
-          auto&& kept = t.require (false);
-          kept << "failed kept requirement";
+          // Reported as a failed requirement, and then as
+          // `unexpected exception: boom`.
           local_counts.failed_checks++;
-
-          // Reported as `unexpected exception: boom`.
-          exercise_throw_runtime_error (true);
+          t.require (false) << (exercise_throw_runtime_error (true), "boom");
         });
       local_counts.failed_checks++; // the exception
       local_counts.executed_test_cases++;

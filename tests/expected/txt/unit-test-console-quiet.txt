@@ -12,9 +12,6 @@
             • inner subtest
                 ✗ inner check fails FAILED (checks.cpp:399, 1 == 2)
 
-    • Stored check result
-        ✗ stored check fails FAILED (checks.cpp:427, 1 == 2)
-
     • Character operands
         ✗ FAILED (checks.cpp:545, '\0' == 'a')
         ✗ space is tab FAILED (checks.cpp:548, ' ' == '\t')
@@ -113,7 +110,7 @@
             ✗ failed nested requirement FAILED (exceptions.cpp:266) - test case stopped
 
     • Failed require during unwinding
-        ✗ failed kept requirement FAILED (exceptions.cpp:283) - test case stopped
+        ✗ FAILED (exceptions.cpp:285) - test case stopped
         ✗ unexpected exception: boom FAILED (exceptions.cpp:279)
 
 • Exceptions suite body
@@ -408,10 +405,10 @@ next line FAILED (miscellaneous.cpp:920)
         ✗ FAILED (miscellaneous.cpp:931, "key: \"value\" # not a comment" == "a\\b")
         ✗ FAILED (miscellaneous.cpp:935, "line\nbreak\ttab" == "x")
 
-# Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 TAP version 14
 # Subtest: default suite
 All available test cases:
+# Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
   Local
     Local test
   Added
@@ -488,4 +485,4 @@ Matching test cases:
         ✗ abc matches *C FAILED (utility.cpp:191)
         ✗ ab matches ??? FAILED (utility.cpp:195)
 
-✗ Total: 676 checks passed, 350 failed, in 159 test cases, 15 test suites, time: 12.570 ms
+✗ Total: 675 checks passed, 349 failed, in 158 test cases, 15 test suites, time: 14.307 ms

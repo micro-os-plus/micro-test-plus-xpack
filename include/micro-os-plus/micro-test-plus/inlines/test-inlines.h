@@ -444,45 +444,47 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Constructs and returns a `detail::check_result` of the kind
-   * `detail::check_kind::expectation`. The check result evaluates the
-   * condition when constructed, and records a pass or fail when it is
-   * destroyed, at the end of the expression statement.
+   * Initialises the `detail::check_result` received as the last argument,
+   * a temporary created by the caller, with the kind
+   * `detail::check_kind::expectation`, and returns a reference to it. The
+   * check result evaluates the condition when initialised, and records a
+   * pass or fail when it is destroyed, at the end of the expression
+   * statement.
    */
   template <class Expr_T>
     requires extension::checkable<Expr_T>
-  auto
-  test_case::expect (const Expr_T& expr, const reflection::source_location& sl)
+  detail::check_result&&
+  test_case::expect (const Expr_T& expr, const reflection::source_location& sl,
+                     detail::check_result&& result)
   {
-    return detail::check_result{ expr,
-                                 detail::check_kind::expectation,
-                                 sl,
-                                 *this,
-                                 test_reporter ().expression_,
-                                 test_reporter ().writes_passed_checks () };
+    result.init (expr, detail::check_kind::expectation, sl, *this,
+                 test_reporter ().expression_,
+                 test_reporter ().writes_passed_checks ());
+    return std::move (result);
   }
 
   /**
    * @details
-   * Constructs and returns a `detail::check_result` of the kind
-   * `detail::check_kind::requirement`. The check result evaluates the
-   * condition when constructed, records a pass or fail when it is
+   * Initialises the `detail::check_result` received as the last argument,
+   * a temporary created by the caller, with the kind
+   * `detail::check_kind::requirement`, and returns a reference to it. The
+   * check result evaluates the condition when initialised, records a pass
+   * or fail when it is
    * destroyed, and, if the condition is false, stops the test case by
    * throwing `detail::failed_requirement` (caught by `test_case::run()`),
    * or, without exceptions, aborts the test execution.
    */
   template <class Expr_T>
     requires extension::checkable<Expr_T>
-  auto
+  detail::check_result&&
   test_case::require (const Expr_T& expr,
-                      const reflection::source_location& sl)
+                      const reflection::source_location& sl,
+                      detail::check_result&& result)
   {
-    return detail::check_result{ expr,
-                                 detail::check_kind::requirement,
-                                 sl,
-                                 *this,
-                                 test_reporter ().expression_,
-                                 test_reporter ().writes_passed_checks () };
+    result.init (expr, detail::check_kind::requirement, sl, *this,
+                 test_reporter ().expression_,
+                 test_reporter ().writes_passed_checks ());
+    return std::move (result);
   }
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
@@ -493,15 +495,14 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Expr_T>
     requires extension::legacy_checkable<Expr_T>
-  auto
-  test_case::expect (const Expr_T& expr, const reflection::source_location& sl)
+  detail::check_result&&
+  test_case::expect (const Expr_T& expr, const reflection::source_location& sl,
+                     detail::check_result&& result)
   {
-    return detail::check_result{ expr,
-                                 detail::check_kind::expectation,
-                                 sl,
-                                 *this,
-                                 test_reporter ().expression_,
-                                 test_reporter ().writes_passed_checks () };
+    result.init (expr, detail::check_kind::expectation, sl, *this,
+                 test_reporter ().expression_,
+                 test_reporter ().writes_passed_checks ());
+    return std::move (result);
   }
 
   /**
@@ -511,30 +512,31 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Expr_T>
     requires extension::legacy_checkable<Expr_T>
-  auto
+  detail::check_result&&
   test_case::require (const Expr_T& expr,
-                      const reflection::source_location& sl)
+                      const reflection::source_location& sl,
+                      detail::check_result&& result)
   {
-    return detail::check_result{ expr,
-                                 detail::check_kind::requirement,
-                                 sl,
-                                 *this,
-                                 test_reporter ().expression_,
-                                 test_reporter ().writes_passed_checks () };
+    result.init (expr, detail::check_kind::requirement, sl, *this,
+                 test_reporter ().expression_,
+                 test_reporter ().writes_passed_checks ());
+    return std::move (result);
   }
 
   /**
    * @details
-   * Forwards to `require()`; the returned check result is neither copied
-   * nor moved, since a prvalue is returned (guaranteed copy elision).
+   * Forwards to `require()`, with the same check result temporary, which
+   * must be passed on, since it is destroyed at the end of the statement
+   * of the caller.
    */
   // Deprecated since 6.0.0; use require().
   template <class Expr_T>
     requires extension::checkable<Expr_T>
-  auto
-  test_case::assume (const Expr_T& expr, const reflection::source_location& sl)
+  detail::check_result&&
+  test_case::assume (const Expr_T& expr, const reflection::source_location& sl,
+                     detail::check_result&& result)
   {
-    return require (expr, sl);
+    return require (expr, sl, std::move (result));
   }
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 

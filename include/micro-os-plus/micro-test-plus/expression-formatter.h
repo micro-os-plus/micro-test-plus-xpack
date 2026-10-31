@@ -981,9 +981,10 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * If the text in the buffer belongs to a check that was not reported
-       * yet (its result was kept in a variable), the text is first moved
-       * aside, so that this check can still report it. The buffer is then
-       * cleared and assigned to @p owner.
+       * yet (it was created by a function called in the arguments of this
+       * check, and is reported at the end of the statement), the text is
+       * first moved aside, so that this check can still report it. The
+       * buffer is then cleared and assigned to @p owner.
        *
        * @param owner The check that will format its expression next.
        * @par Returns
@@ -1254,10 +1255,12 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * Normally empty: a check is reported at the end of its statement,
-       * before the next check begins. Only when the result of a check is
-       * kept in a variable does a later check move its text here, keyed by
-       * the check, so that the check objects themselves do not need to own
-       * a copy, which would increase the stack usage of the test functions.
+       * before the next check begins. Only when a check begins while an
+       * earlier one is not yet reported, as when the arguments of a check
+       * call a function that makes its own checks, is the text of the
+       * earlier check moved here, keyed by the check, so that the check
+       * objects themselves do not need to own a copy, which would increase
+       * the stack usage of the test functions.
        */
       std::vector<std::pair<const void*, std::string>> pending_{};
 

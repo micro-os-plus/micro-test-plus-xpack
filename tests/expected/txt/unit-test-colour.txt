@@ -76,11 +76,6 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
 
     [31m✗[0m Failed nested subtest - [31mFAILED[0m (1 check passed, 0 failed, 1 test case failed)
 
-    • Stored check result
-        [32m✓[0m later check passes
-        [31m✗[0m stored check fails [31mFAILED[0m (checks.cpp:427, [31m1 == 2[0m)
-    [31m✗[0m Stored check result - [31mFAILED[0m (1 check passed, 1 failed)
-
     • Application types with get()
         [32m✓[0m wrapped values differ
         [32m✓[0m wrapped values are equal
@@ -106,7 +101,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m [32m'x' == 'x'[0m
     [31m✗[0m Character operands - [31mFAILED[0m (1 check passed, 2 failed)
 
-[31m✗[0m Top suite - [31mFAILED[0m (39 checks passed, 6 failed, in 18 test cases), time: 0.924 ms
+[31m✗[0m Top suite - [31mFAILED[0m (38 checks passed, 5 failed, in 17 test cases), time: 1.456 ms
 
 • Combinatorial floats suite
 
@@ -582,7 +577,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     [31m✗[0m Failed require in nested test case - [31mFAILED[0m (1 check passed, 0 failed, 1 test case failed)
 
     • Failed require during unwinding
-        [31m✗[0m failed kept requirement [31mFAILED[0m (exceptions.cpp:283) - test case stopped
+        [31m✗[0m [31mFAILED[0m (exceptions.cpp:285) - test case stopped
         [31m✗[0m unexpected exception: boom [31mFAILED[0m (exceptions.cpp:279)
     [31m✗[0m Failed require during unwinding - [31mFAILED[0m (0 checks passed, 2 failed)
 
@@ -1025,12 +1020,12 @@ next line [31mFAILED[0m (miscellaneous.cpp:920)
         [32m✓[0m local session passed
         [32m✓[0m added suite ran
         [32m✓[0m total_suites_count() counts the top suite
-# Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
         [32m✓[0m default name without arguments
     [32m✓[0m Runner options - passed (7 checks)
 
     • Optional top suite
 
+# Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 TAP version 14
 # Subtest: default suite
         [32m✓[0m without a top suite, only the added suites run
@@ -1587,6 +1582,6 @@ Matching test cases:
 
 [31m✗[0m Utility suite - [31mFAILED[0m (21 checks passed, 5 failed, in 3 test cases), time: 0.125 ms
 
-[31m✗[0m Total: 676 checks passed, 350 failed, in 159 test cases, 15 test suites, time: 15.665 ms
+[31m✗[0m Total: 675 checks passed, 349 failed, in 158 test cases, 15 test suites, time: 25.781 ms
 Overall, the µTest++ unit tests were successful!
 

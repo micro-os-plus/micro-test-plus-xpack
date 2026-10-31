@@ -186,8 +186,14 @@ namespace micro_os_plus::micro_test_plus
      * @brief The result of one check, reported when destroyed.
      *
      * @details
-     * Returned by `expect()` and `require()`, it lives until the end of
-     * the expression statement. Its template constructor evaluates the
+     * Created by the caller of `expect()` and `require()` as a temporary,
+     * the defaulted last argument of these functions, it lives until the
+     * end of the expression statement, and the functions return a
+     * reference to it, so that a result cannot be kept in a variable
+     * (`auto r = t.expect (...)` does not compile). A result in the
+     * initial state, not yet initialised, reports nothing.
+     *
+     * Its template function `init()` evaluates the
      * expression and formats it, with the actual operand values, into the
      * expression formatter of the reporter, which keeps the text for this
      * check until it is reported, so that it can be displayed on failure.
@@ -199,8 +205,8 @@ namespace micro_os_plus::micro_test_plus
      * `reporter::writes_passed_checks()`) formats neither its expression
      * nor its messages, and is only counted.
      *
-     * Only the template constructor depends on the type of the expression;
-     * it delegates to a private non-template constructor, and the
+     * Only the template function `init()` depends on the type of the
+     * expression; it delegates to a private non-template function, and the
      * destructor, which does the reporting, is not a template either, so
      * this code is compiled once, in `src/check-result.cpp`, not for each
      * type of expression.
@@ -211,7 +217,18 @@ namespace micro_os_plus::micro_test_plus
     {
     public:
       /**
-       * @brief Constructs the result of a check of an expression.
+       * @brief Constructs a result in the initial state.
+       *
+       * @details
+       * Used for the temporary that the caller of `expect()` and
+       * `require()` creates as their defaulted argument; the result
+       * reports nothing unless it is initialised by `init()`. Defined in
+       * `src/check-result.cpp`, so that the call sites only call it.
+       */
+      check_result (void);
+
+      /**
+       * @brief Initialises the result with the check of an expression.
        *
        * @details
        * The expression is evaluated, and, if the outcome is written,
@@ -228,12 +245,14 @@ namespace micro_os_plus::micro_test_plus
        * text.
        * @param writes_passed Whether the reporter writes the passed checks;
        * if not, a passed check is not formatted.
+       * @par Returns
+       *   Nothing.
        */
       template <class Expr_T>
-      check_result (const Expr_T& expr, check_kind kind,
-                    const reflection::source_location& location,
-                    test_case& test_case, expression_formatter& expression,
-                    bool writes_passed);
+      void
+      init (const Expr_T& expr, check_kind kind,
+            const reflection::source_location& location, test_case& test_case,
+            expression_formatter& expression, bool writes_passed);
 
       /**
        * @brief Deleted copy constructor to prevent copying.
@@ -249,7 +268,8 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * The instance is a temporary that lives only until the end of the
-       * expression statement.
+       * expression statement; the functions that fill it return a
+       * reference to it, so that a result cannot be kept in a variable.
        */
       check_result (check_result&&) = delete;
 
@@ -310,11 +330,13 @@ namespace micro_os_plus::micro_test_plus
 
     private:
       /**
-       * @brief Constructs the result of a check from its parts.
+       * @brief Starts the result of a check from its parts.
        *
        * @details
-       * The non-template part of the construction, shared by all the
-       * instantiations of the template constructor, which delegates to it.
+       * The non-template part of the initialisation, shared by all the
+       * instantiations of the template function `init()`, which calls it.
+       * Marks the result as initialised, so that the destructor reports
+       * it.
        *
        * @param value The result of the evaluated expression.
        * @param kind The kind of the check.
@@ -323,37 +345,40 @@ namespace micro_os_plus::micro_test_plus
        * @param location The source location of the check.
        * @param test_case The test case that owns this check.
        * @param writes_passed Whether the reporter writes the passed checks.
+       * @par Returns
+       *   Nothing.
        */
-      check_result (bool value, check_kind kind, bool has_expression,
-                    const reflection::source_location& location,
-                    test_case& test_case, bool writes_passed);
+      void
+      start (bool value, check_kind kind, bool has_expression,
+             const reflection::source_location& location, test_case& test_case,
+             bool writes_passed);
 
       /**
        * @brief Stores the result value of the check.
        *
        * @details
        * The boolean value of the checked expression, computed by the
-       * template constructor.
+       * template function `init()`.
        */
-      const bool value_;
+      bool value_ = false;
 
       /**
        * @brief Whether the outcome of the check is written.
        *
        * @details
-       * Set by the constructor for a failed check, and for a passed one
-       * when the reporter writes the passed checks. When not set, the
-       * expression and the messages are not formatted, and the destructor
-       * only updates the counters.
+       * Set by `start()` for a failed check, and for a passed one when the
+       * reporter writes the passed checks. When not set, the expression
+       * and the messages are not formatted, and the destructor only
+       * updates the counters.
        */
-      const bool is_written_;
+      bool is_written_ = false;
 
       /**
        * @brief The details displayed when the check fails.
        *
        * @details
-       * The kind, the expression flag, and the location are set by the
-       * constructor; the message is collected via `operator<<()`. Passed
+       * The kind, the expression flag, and the location are set by
+       * `start()`; the message is collected via `operator<<()`. Passed
        * to the reporter by the destructor; the message is also displayed
        * when the check passes.
        */
@@ -364,21 +389,24 @@ namespace micro_os_plus::micro_test_plus
        * created.
        *
        * @details
-       * If the destructor finds more, it runs during stack unwinding (for
-       * a result kept in a variable), and must not throw. Present only
-       * when exceptions are enabled.
+       * If the destructor finds more, it runs during stack unwinding (an
+       * exception was thrown while the rest of the statement was
+       * evaluated, for example by the argument of a message), and must not
+       * throw. Present only when exceptions are enabled.
        */
 #if defined(__cpp_exceptions)
       int uncaught_exceptions_ = 0;
 #endif // defined(__cpp_exceptions)
 
       /**
-       * @brief Reference to the test case invoking this check.
+       * @brief Pointer to the test case invoking this check.
        *
        * @details
        * Provides access to the reporter and to the totals to be updated.
+       * Null in the initial state, which marks a result that was not
+       * initialised and reports nothing.
        */
-      test_case& test_case_;
+      test_case* test_case_ = nullptr;
     };
 
     // ------------------------------------------------------------------------

@@ -180,6 +180,10 @@ function of the reporters was removed.
   returns a `const` reference; in
   `const auto& s = mt::to_t<std::string>{ str }.get ();`, `s` refers to a
   destroyed temporary. Store the result by value.
+- The result of `expect()` and `require()` cannot be kept in a variable
+  (`auto r = t.expect (...)` does not compile); the check is reported at
+  the end of its statement, and the messages are appended to the result in
+  the same statement.
 - The comparators and the operators no longer copy their operands: the
   temporaries are moved into the expression, the named class-type
   operands and the nested expressions are referred to, and the scalars
