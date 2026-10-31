@@ -342,10 +342,10 @@ Build a table of the names used for the same thing and propose one:
 ### 6. Language and style
 
 The rules are those of `.github/copilot-instructions.md` (Language and
-Tone, Documentation): British English, formal tone, no contractions,
-the Oxford comma, "folder" rather than "directory", lines shorter than
-80 characters (also in the `.dox` sources), `@details` not repeating
-the `@brief`. In addition:
+Tone, and the Doxygen Documentation rules in the `doxygen-review` skill):
+British English, formal tone, no contractions, the Oxford comma, "folder"
+rather than "directory", lines shorter than 80 characters (also in the
+`.dox` sources), `@details` not repeating the `@brief`. In addition:
 
 - count the boilerplate sentences repeated in every comment ("ensuring
   clear separation from user code and minimising the risk of naming

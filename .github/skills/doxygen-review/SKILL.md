@@ -25,23 +25,36 @@ with a `DO NOT EDIT` header) are fixed in their templates, not in place.
 
 ## The Rules
 
-The rules are those in `.github/copilot-instructions.md` (Documentation,
-Language and Tone sections); in short:
+The documentation rules are defined here; `.github/copilot-instructions.md`
+("Doxygen Documentation") points to this skill and requires them to be
+applied with every code change. The language rules are shared with its
+"Language and Tone" section; if they differ, ask the user which one is
+right:
 
-- Every class, method, data member, type alias, macro, parameter, and
-  return value is documented, including `private` and `protected`
-  members, deleted and defaulted special members, and deduction guides.
+- The comments are comprehensive, in the Doxygen format, and cover
+  every class, method, data member, type alias, macro, parameter, and
+  return value, including `private` and `protected` members, deleted
+  and defaulted special members, and deduction guides.
+- The documentation is placed where the code is: the declarations and
+  their comments are in the headers, the non-inline definitions in
+  `src/`, and the inline and template definitions in `inlines/`.
 - Every entity has both a `@brief` and a `@details`. Declarations carry
   the `@brief` (plus `@param`, `@tparam`, `@return`); when the
   definition is in a separate file (`inlines/` or `src/`), its comment
   carries the `@details`. Doxygen merges the two.
-- `@details` expands on `@brief`, without repeating it.
+- The `@brief` and the `@details` are displayed one after the other, so
+  the `@brief` is a concise summary of the purpose of the entity, and
+  the `@details` expands on it, without repeating it, with the
+  implementation, the usage, and the edge cases.
 - Functions without parameters use `@par Parameters` / `None.`;
   functions returning `void` use `@par Returns` / `Nothing.`;
   `[[noreturn]]` functions use `Does not return.`
-- British English, formal tone, no contractions, the Oxford comma,
-  "folder" rather than "directory", and "program" (not "programme")
-  for computer programs.
+- Existing documentation is not trusted: it is reviewed against the
+  code, and improved where it is incomplete, inaccurate, or unclear.
+- British English, formal and professional tone, no colloquialisms,
+  slang, humour, or contractions, the Oxford comma, "folder" rather than
+  "directory", and "program" (not "programme") for computer programs;
+  the same term for the same concept throughout.
 - Lines shorter than 80 characters; no tab characters; comment lines
   aligned with their `/**`.
 

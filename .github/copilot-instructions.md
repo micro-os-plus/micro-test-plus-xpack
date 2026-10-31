@@ -39,6 +39,23 @@ This is the **µTest++ Testing Framework** project, part of
 - For C/C++, the naming convention is snake_case.
 - For C++, write multiple level namespaces on the same line.
 
+## Folder Structure
+
+- `/src`: Contains the C++ source code
+- `/include`: Contains the C++ header files
+- `/tests`: Contains the test suites and test cases
+- `/website`: Contains the project documentation and guides
+- `/maintenance`: Contains the project maintenance resources, which are
+  not published with the package: `/maintenance/config` (the formatter
+  configuration files), `/maintenance/scripts` (the maintenance scripts
+  and their templates), and `/maintenance/docs` (the developer notes)
+
+When adding new source files, place them in the appropriate `src` or `include`
+folder, and add corresponding entries in the top CMake and Meson configurations.
+
+Avoid running `find /` commands that search the entire filesystem, as this
+always times out.
+
 ## Includes order
 
 - Project-specific headers.
@@ -69,38 +86,17 @@ compiler-specific pragmas.
 
 Brace the whole group of pragmas by separator lines.
 
-## Documentation
+## Doxygen Documentation
 
-- Add comprehensive documentation comments accepted by Doxygen
-- Document all classes, methods, properties, parameters, and return types.
-- The declarations should be in the headers, the definitions in the `src`
-  folder, and the inline definitions in the `inlines` folder.
-- Add @details sections to all declarations and definitions.
-- The @brief and @details sections are displayed sequentially, so ensure the
-  @details section expands on the @brief without repeating it. The @brief
-  should be a concise summary of the member's purpose, whilst the @details
-  should provide a more in-depth explanation, including any relevant
-  information about the implementation, usage, or edge cases.
-- Document private and protected members as well
-- Keep the line length below 80 characters
-- If the code already includes documentation, review and possibly improve it.
-
-## Folder Structure
-
-- `/src`: Contains the C++ source code
-- `/include`: Contains the C++ header files
-- `/tests`: Contains the test suites and test cases
-- `/website`: Contains the project documentation and guides
-- `/maintenance`: Contains the project maintenance resources, which are
-  not published with the package: `/maintenance/config` (the formatter
-  configuration files), `/maintenance/scripts` (the maintenance scripts
-  and their templates), and `/maintenance/docs` (the developer notes)
-
-When adding new source files, place them in the appropriate `src` or `include`
-folder, and add corresponding entries in the top CMake and Meson configurations.
-
-Avoid running `find /` commands that search the entire filesystem, as this
-always times out.
+- With every change of the code, in the same edit, write or update the
+  Doxygen documentation comments of all the affected entities (classes,
+  members, parameters, return values, and the files in `inlines/` and
+  `src/`), so that the comments always match the code; never leave the
+  documentation for a later step.
+- Apply the rules and the checks described in
+  `.github/skills/doxygen-review/SKILL.md` to every edit that touches the
+  code or the comments, not only when asked for a documentation review.
+- Review and improve the existing comments of the entities that are edited.
 
 ## Tools binaries
 
@@ -136,50 +132,30 @@ powered up.
 
 ## Code Review
 
+- When asked for an API review, follow the separate instructions in
+  `.github/skills/api-review/SKILL.md` for a thorough and uncompromising
+  review of the codebase API.
 - When asked for a code review, follow the separate instructions in
   `.github/skills/code-review/SKILL.md` for a thorough and uncompromising
-  review of the codebase.
+  review of the codebase implementation.
 
-## Commit Message Guidelines
+## Git Commits
 
-When making changes to the codebase, follow these guidelines for version control:
-
-- Use the imperative mood in the subject line (e.g., "Fix bug" instead of 
-  "Fixed bug" or "Fixes bug").
-- Limit the subject line to 50 characters.
-- Capitalise the subject line.
-- Do not end the subject line with a period.
-- Use the body to explain what and why vs. how.
-- Wrap the body at 72 characters.
-- Include references to relevant issues or pull requests if applicable.
-- Start the subject line with the GitHub issue number (as `#N:`) followed by 
-  a capital letter.
+- When asked to commit (to Git), or to write a commit message, follow the
+  separate instructions in `.github/skills/github-commit/SKILL.md`, which
+  cover the commit message format, the issue references, and the issue comment.
 - Do not commit without user review and approval.
 
 ## Issue Updates
 
-After committing a fix for a GitHub issue (referenced in the commit
-message with `Fixes #N`), add a comment to that issue:
-
-- Briefly explain the changes made, and mention the commit hash;
-- End with a line `Fixed on YYYY-MM-DD.`, with the date of the commit;
-- Do not close the issue; it is closed when the commit reaches the
-  default branch.
-
-If the fix has no corresponding issue, ask for its number before
-committing.
+- After committing a fix for a GitHub issue, add the closing comment to that
+  issue, as described in `.github/skills/github-commit/SKILL.md` ("Issue
+  Comment"); that skill also covers the issues without a number.
 
 ## xcdl
 
-The `xcdl` tool is not yet available; `xcdl-package.jsonc` is used only to
-generate the top-level CMake and Meson files (`xpm run xcdl-export`). Only
-`publicIncludeFolders`, `sourceFiles`, and `dependencies` affect the
-generated files; all other properties (`generatedFile`, `activeIf`,
-`defaultValue`, `implements`, and the commented-out `defaultDefine`
-entries) are informative only.
-
-In particular, no `*-defines.h` file is generated, so a commented-out
-`defaultDefine` does not mean that the macro is disabled. Its name
-documents the macro that the application must define itself, either in
-`micro-os-plus/project-config.h` or in project specific header files
-(e.g., `micro-os-plus/startup-defines.h`).
+- When working with `xcdl-package.jsonc`, and `xcdl-test.jsonc`,
+  or when adding, removing, or
+  renaming a source file, an include folder, compiler/linker options,
+  or a dependency, follow
+  the separate instructions in `.github/skills/xcdl/SKILL.md`.

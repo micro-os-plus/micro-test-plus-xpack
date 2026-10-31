@@ -99,12 +99,14 @@ uncertain, say so and ask the user.
 
 ## Body
 
-Write the body as plain Markdown prose, in British English, formal, with
-no contractions, the Oxford comma, and the lines wrapped at 72
-characters. Use backticks for file names, identifiers, macros, options,
-configuration names, and commit hashes. Do not use headings or
-templates (no "Steps to reproduce" / "Expected" / "Actual" sections);
-the information is given as connected sentences, in this order:
+Write the body as plain Markdown prose, kept short (see "Length"), in
+British English, formal, with no contractions, the Oxford comma, and the
+lines wrapped at 72 characters. Use backticks for file names,
+identifiers, macros, options, configuration names, and commit hashes.
+Do not use headings or templates (no "Steps to reproduce" / "Expected" /
+"Actual" sections); the information is given as connected sentences, in
+this order, merged into the two paragraphs allowed by "Length", with
+only the parts that the issue needs:
 
 1. **Location.** Open with the files, line numbers, and functions,
    followed by a colon, for example:
@@ -132,8 +134,26 @@ the information is given as connected sentences, in this order:
 5. **References**, if any, as a final short paragraph, for example
    `Found while fixing #134.` or `Decide together with #118.`
 
-Keep the body as short as the facts allow; a simple finding may be a
-single paragraph of two lines.
+### Length
+
+Issues are read by the maintainer, who knows the code: keep them short.
+
+- The body has at most two paragraphs (the location and the observation
+  together, then the proposed change), plus the final reference line,
+  and normally no more than 12 lines of 72 characters.
+- Cite the location once, with the primary file and the first line or
+  the function name; do not list every affected line, file, or
+  declaration.
+- State the evidence in a clause (the failing expression and the
+  result, with the configuration in brackets), not as a narrative; give
+  the full output only when it is needed to understand the problem.
+- Omit what the reader can see in the code or in the title, the
+  background of the feature, the scope, and the trade-offs, unless they
+  change the decision; the proposal is a single sentence, or a short
+  list when there are several solutions.
+- Do not describe the work already done on the fix.
+
+A simple finding is a single paragraph of two to four lines.
 
 ## Approval
 
