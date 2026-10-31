@@ -100,8 +100,9 @@ Brace the whole group of pragmas by separator lines.
 
 ## Tools binaries
 
-The tools binaries required for the project are located in the `xpacks/.bin`
-folder within the build folders and the project root.
+The binary tools required for the project are located in the `xpacks/.bin`
+folder within the build folders and the project root, and the JavaScript 
+tools are in `node_modules/.bin`
 
 ## Testing
 
