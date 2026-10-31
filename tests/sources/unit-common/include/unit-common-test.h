@@ -62,6 +62,15 @@ extern local_counts_t local_counts;
 
 // ----------------------------------------------------------------------------
 
+// Check the state of the session after `run_suites()` returned `code`;
+// `ts` is the top suite and `argc`/`argv` the arguments of `main()`.
+void
+unit_common_verify_session (int argc, char* argv[],
+                            micro_os_plus::micro_test_plus::suite& ts,
+                            int code);
+
+// ----------------------------------------------------------------------------
+
 #endif // defined(__cplusplus)
 
 // ----------------------------------------------------------------------------

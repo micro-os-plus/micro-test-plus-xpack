@@ -31,7 +31,6 @@
     "minimal",
     "suite",
     "sample",
-    "unit-common",
     "unit-static-asserts",
     "unit-checks",
     "unit-combinations",

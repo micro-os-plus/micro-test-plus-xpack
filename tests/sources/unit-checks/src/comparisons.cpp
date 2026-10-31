@@ -16,7 +16,7 @@
 #include <cstdint>
 #include <limits>
 
-using namespace micro_os_plus::micro_test_plus;
+namespace mt = micro_os_plus::micro_test_plus;
 using namespace std::literals;
 
 // ----------------------------------------------------------------------------
@@ -65,31 +65,33 @@ compute_abc (void)
 
 // ----------------------------------------------------------------------------
 
-static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
+static mt::static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
   {
-    const counters& current_suite_totals = ts.totals ();
+    const mt::counters& current_suite_totals = ts.totals ();
 
     local_counts = {};
 
     ts.test ("Integer comparisons", [] (auto& t)
       {
-        t.expect (eq (my_actual_integral (), 42)) << "actual == 42";
+        t.expect (mt::eq (my_actual_integral (), 42)) << "actual == 42";
         local_counts.passed_checks++;
 
-        t.expect (ne (my_actual_integral_more<int> (), 42))
+        t.expect (mt::ne (my_actual_integral_more<int> (), 42))
             << "actual+1 != 42";
         local_counts.passed_checks++;
 
-        t.expect (lt (my_actual_integral_less<int> (), 42)) << "actual-1 < 42";
+        t.expect (mt::lt (my_actual_integral_less<int> (), 42))
+            << "actual-1 < 42";
         local_counts.passed_checks++;
 
-        t.expect (le (my_actual_integral (), 42)) << "actual <= 42";
+        t.expect (mt::le (my_actual_integral (), 42)) << "actual <= 42";
         local_counts.passed_checks++;
 
-        t.expect (gt (my_actual_integral_more<int> (), 42)) << "actual+1 > 42";
+        t.expect (mt::gt (my_actual_integral_more<int> (), 42))
+            << "actual+1 > 42";
         local_counts.passed_checks++;
 
-        t.expect (ge (my_actual_integral (), 42)) << "actual >= 42";
+        t.expect (mt::ge (my_actual_integral (), 42)) << "actual >= 42";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
@@ -108,25 +110,25 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
       {
         local_counts.executed_test_cases++;
 
-        t.expect (ne (my_actual_integral (), 42)) << "actual != 42";
+        t.expect (mt::ne (my_actual_integral (), 42)) << "actual != 42";
         local_counts.failed_checks++;
 
-        t.expect (eq (my_actual_integral_more<int> (), 42))
+        t.expect (mt::eq (my_actual_integral_more<int> (), 42))
             << "actual+1 == 42";
         local_counts.failed_checks++;
 
-        t.expect (ge (my_actual_integral_less<int> (), 42))
+        t.expect (mt::ge (my_actual_integral_less<int> (), 42))
             << "actual-1 >= 42";
         local_counts.failed_checks++;
 
-        t.expect (gt (my_actual_integral (), 42)) << "actual > 42";
+        t.expect (mt::gt (my_actual_integral (), 42)) << "actual > 42";
         local_counts.failed_checks++;
 
-        t.expect (le (my_actual_integral_more<int> (), 42))
+        t.expect (mt::le (my_actual_integral_more<int> (), 42))
             << "actual+1 <= 42";
         local_counts.failed_checks++;
 
-        t.expect (lt (my_actual_integral (), 42)) << "actual < 42";
+        t.expect (mt::lt (my_actual_integral (), 42)) << "actual < 42";
         local_counts.failed_checks++;
       });
 
@@ -141,34 +143,42 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
 
     ts.test ("Float comparisons", [] (auto& t)
       {
-        t.expect (eq (my_actual_float<float> (), 42.0f)) << "actual == 42.0f";
+        t.expect (mt::eq (my_actual_float<float> (), 42.0f))
+            << "actual == 42.0f";
         local_counts.passed_checks++;
 
-        t.expect (ne (my_actual_float<float> (), 43.0f)) << "actual != 43.0f";
+        t.expect (mt::ne (my_actual_float<float> (), 43.0f))
+            << "actual != 43.0f";
         local_counts.passed_checks++;
 
-        t.expect (eq (my_actual_float<double> (), 42.0)) << "actual == 42.0";
+        t.expect (mt::eq (my_actual_float<double> (), 42.0))
+            << "actual == 42.0";
         local_counts.passed_checks++;
 
-        t.expect (ne (my_actual_float<double> (), 43.0)) << "actual != 43.0";
+        t.expect (mt::ne (my_actual_float<double> (), 43.0))
+            << "actual != 43.0";
         local_counts.passed_checks++;
 
-        t.expect (eq (my_actual_float<float> (), 42.0)) << "actual == 42.0";
+        t.expect (mt::eq (my_actual_float<float> (), 42.0))
+            << "actual == 42.0";
         local_counts.passed_checks++;
 
-        t.expect (ne (my_actual_float<double> (), 43.0)) << "actual != 43.0";
+        t.expect (mt::ne (my_actual_float<double> (), 43.0))
+            << "actual != 43.0";
         local_counts.passed_checks++;
 
-        t.expect (eq (my_actual_float<double> (), 42.0f)) << "actual == 42.0f";
+        t.expect (mt::eq (my_actual_float<double> (), 42.0f))
+            << "actual == 42.0f";
         local_counts.passed_checks++;
 
-        t.expect (ne (my_actual_float<float> (), 43.0f)) << "actual != 43.0f";
+        t.expect (mt::ne (my_actual_float<float> (), 43.0f))
+            << "actual != 43.0f";
         local_counts.passed_checks++;
 
-        t.expect (eq (my_actual_float<float> (), 42)) << "actual == 42";
+        t.expect (mt::eq (my_actual_float<float> (), 42)) << "actual == 42";
         local_counts.passed_checks++;
 
-        t.expect (ne (my_actual_float<float> (), 43)) << "actual != 43";
+        t.expect (mt::ne (my_actual_float<float> (), 43)) << "actual != 43";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
@@ -185,16 +195,18 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
 
     ts.test ("Failed float comparisons", [] (auto& t)
       {
-        t.expect (ne (my_actual_float<float> (), 42.0f)) << "actual != 42.0";
+        t.expect (mt::ne (my_actual_float<float> (), 42.0f))
+            << "actual != 42.0";
         local_counts.failed_checks++;
 
-        t.expect (eq (my_actual_float<float> (), 43.0f)) << "actual == 43.0";
+        t.expect (mt::eq (my_actual_float<float> (), 43.0f))
+            << "actual == 43.0";
         local_counts.failed_checks++;
 
-        t.expect (ne (my_actual_float<float> (), 42)) << "actual != 42";
+        t.expect (mt::ne (my_actual_float<float> (), 42)) << "actual != 42";
         local_counts.failed_checks++;
 
-        t.expect (eq (my_actual_float<float> (), 43)) << "actual == 43";
+        t.expect (mt::eq (my_actual_float<float> (), 43)) << "actual == 43";
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;
@@ -213,32 +225,33 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
     // values, and the wrappers, of mixed types and signedness.
     ts.test ("Approximate comparisons", [] (auto& t)
       {
-        t.expect (approx (my_actual_integral<int> (), 43, 2))
+        t.expect (mt::approx (my_actual_integral<int> (), 43, 2))
             << "actual ~ 43 +/- 2";
         local_counts.passed_checks++;
 
-        t.expect (approx (510u, 512u, 3u)) << "510u ~ 512u +/- 3u";
+        t.expect (mt::approx (510u, 512u, 3u)) << "510u ~ 512u +/- 3u";
         local_counts.passed_checks++;
 
-        t.expect (approx (0u, -1, 2)) << "0u ~ -1 +/- 2";
+        t.expect (mt::approx (0u, -1, 2)) << "0u ~ -1 +/- 2";
         local_counts.passed_checks++;
 
-        t.expect (approx (std::numeric_limits<std::uint64_t>::max (),
-                          std::numeric_limits<std::uint64_t>::max () - 1, 2))
+        t.expect (mt::approx (std::numeric_limits<std::uint64_t>::max (),
+                              std::numeric_limits<std::uint64_t>::max () - 1,
+                              2))
             << "max ~ max - 1 +/- 2";
         local_counts.passed_checks++;
 
-        t.expect (approx (my_actual_float<float> (), 42.001f, 0.01f))
+        t.expect (mt::approx (my_actual_float<float> (), 42.001f, 0.01f))
             << "actual ~ 42.001f +/- 0.01f";
         local_counts.passed_checks++;
 
-        t.expect (approx (1.5, 1.25f, 0.5)) << "1.5 ~ 1.25f +/- 0.5";
+        t.expect (mt::approx (1.5, 1.25f, 0.5)) << "1.5 ~ 1.25f +/- 0.5";
         local_counts.passed_checks++;
 
-        t.expect (approx (10, 10.4, 0.5)) << "10 ~ 10.4 +/- 0.5";
+        t.expect (mt::approx (10, 10.4, 0.5)) << "10 ~ 10.4 +/- 0.5";
         local_counts.passed_checks++;
 
-        t.expect (negate (approx (10, 20, 5))) << "not 10 ~ 20 +/- 5";
+        t.expect (mt::negate (mt::approx (10, 20, 5))) << "not 10 ~ 20 +/- 5";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
@@ -255,27 +268,27 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
 
     ts.test ("Failed approximate comparisons", [] (auto& t)
       {
-        t.expect (approx (my_actual_integral<int> (), 45, 2))
+        t.expect (mt::approx (my_actual_integral<int> (), 45, 2))
             << "actual ~ 45 +/- 2";
         local_counts.failed_checks++;
 
         // The distance is larger than the tolerance.
-        t.expect (approx (10, 13, 2)) << "10 ~ 13 +/- 2";
+        t.expect (mt::approx (10, 13, 2)) << "10 ~ 13 +/- 2";
         local_counts.failed_checks++;
 
         // No wrap around of the unsigned difference.
-        t.expect (approx (3u, 5u, 1u)) << "3u ~ 5u +/- 1u";
+        t.expect (mt::approx (3u, 5u, 1u)) << "3u ~ 5u +/- 1u";
         local_counts.failed_checks++;
 
         // A negative tolerance fails.
-        t.expect (approx (1, 1, -1)) << "1 ~ 1 +/- -1";
+        t.expect (mt::approx (1, 1, -1)) << "1 ~ 1 +/- -1";
         local_counts.failed_checks++;
 
-        t.expect (approx (my_actual_float<float> (), 42.1f, 0.01f))
+        t.expect (mt::approx (my_actual_float<float> (), 42.1f, 0.01f))
             << "actual ~ 42.1f +/- 0.01f";
         local_counts.failed_checks++;
 
-        t.expect (approx (1.0, 1.2, 0.1));
+        t.expect (mt::approx (1.0, 1.2, 0.1));
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;
@@ -294,27 +307,27 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
     // To compare by content, use string_value{}.
     ts.test ("String comparisons", [] (auto& t)
       {
-        t.expect (eq (std::string_view{ compute_abc () }, "abc"sv))
+        t.expect (mt::eq (std::string_view{ compute_abc () }, "abc"sv))
             << "actual_sv == abc_sv";
         local_counts.passed_checks++;
 
-        t.expect (ne (std::string_view{ compute_abc () }, "abx"sv))
+        t.expect (mt::ne (std::string_view{ compute_abc () }, "abx"sv))
             << "actual_sv != abx_sv";
         local_counts.passed_checks++;
 
-        t.expect (lt (std::string_view{ compute_abc () }, "abd"sv))
+        t.expect (mt::lt (std::string_view{ compute_abc () }, "abd"sv))
             << "actual_sv < abd_sv";
         local_counts.passed_checks++;
 
-        t.expect (le (std::string_view{ compute_abc () }, "abc"sv))
+        t.expect (mt::le (std::string_view{ compute_abc () }, "abc"sv))
             << "actual_sv <= abc_sv";
         local_counts.passed_checks++;
 
-        t.expect (gt (std::string_view{ compute_abc () }, "abb"sv))
+        t.expect (mt::gt (std::string_view{ compute_abc () }, "abb"sv))
             << "actual_sv > abb_sv";
         local_counts.passed_checks++;
 
-        t.expect (ge (std::string_view{ compute_abc () }, "abc"sv))
+        t.expect (mt::ge (std::string_view{ compute_abc () }, "abc"sv))
             << "actual_sv >= abc_sv";
         local_counts.passed_checks++;
 
@@ -332,27 +345,27 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
 
     ts.test ("Failed string comparisons", [] (auto& t)
       {
-        t.expect (ne (std::string_view{ compute_abc () }, "abc"sv))
+        t.expect (mt::ne (std::string_view{ compute_abc () }, "abc"sv))
             << "actual_sv != abc_sv";
         local_counts.failed_checks++;
 
-        t.expect (eq (std::string_view{ compute_abc () }, "abx"sv))
+        t.expect (mt::eq (std::string_view{ compute_abc () }, "abx"sv))
             << "actual_sv == abx_sv";
         local_counts.failed_checks++;
 
-        t.expect (ge (std::string_view{ compute_abc () }, "abd"sv))
+        t.expect (mt::ge (std::string_view{ compute_abc () }, "abd"sv))
             << "actual_sv >= abd_sv";
         local_counts.failed_checks++;
 
-        t.expect (gt (std::string_view{ compute_abc () }, "abc"sv))
+        t.expect (mt::gt (std::string_view{ compute_abc () }, "abc"sv))
             << "actual_sv > abc_sv";
         local_counts.failed_checks++;
 
-        t.expect (le (std::string_view{ compute_abc () }, "abb"sv))
+        t.expect (mt::le (std::string_view{ compute_abc () }, "abb"sv))
             << "actual_sv <= abb_sv";
         local_counts.failed_checks++;
 
-        t.expect (lt (std::string_view{ compute_abc () }, "abc"sv))
+        t.expect (mt::lt (std::string_view{ compute_abc () }, "abc"sv))
             << "actual_sv < abc_sv";
         local_counts.failed_checks++;
 
@@ -378,25 +391,25 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         const char* null_string = nullptr;
         char unterminated[3] = { 'a', 'b', 'c' };
 
-        t.expect (eq (actual, "abc")) << "actual == \"abc\"";
-        t.expect (eq (array, actual)) << "array == actual";
-        t.expect (eq ("abc", std::string{ "abc" })) << "\"abc\" == string";
-        t.expect (eq (std::string{ "abc" }, actual)) << "string == actual";
-        t.expect (eq ("abc"sv, actual)) << "string_view == actual";
-        t.expect (ne (actual, "abx")) << "actual != \"abx\"";
-        t.expect (lt (actual, "abd")) << "actual < \"abd\"";
-        t.expect (le (actual, "abc")) << "actual <= \"abc\"";
-        t.expect (gt (actual, "abb")) << "actual > \"abb\"";
-        t.expect (ge (actual, "abc")) << "actual >= \"abc\"";
+        t.expect (mt::eq (actual, "abc")) << "actual == \"abc\"";
+        t.expect (mt::eq (array, actual)) << "array == actual";
+        t.expect (mt::eq ("abc", std::string{ "abc" })) << "\"abc\" == string";
+        t.expect (mt::eq (std::string{ "abc" }, actual)) << "string == actual";
+        t.expect (mt::eq ("abc"sv, actual)) << "string_view == actual";
+        t.expect (mt::ne (actual, "abx")) << "actual != \"abx\"";
+        t.expect (mt::lt (actual, "abd")) << "actual < \"abd\"";
+        t.expect (mt::le (actual, "abc")) << "actual <= \"abc\"";
+        t.expect (mt::gt (actual, "abb")) << "actual > \"abb\"";
+        t.expect (mt::ge (actual, "abc")) << "actual >= \"abc\"";
         local_counts.passed_checks += 10;
 
-        t.expect (eq (null_string, nullptr)) << "null_string == nullptr";
-        t.expect (ne (null_string, "")) << "null_string != \"\"";
-        t.expect (lt (null_string, "")) << "null_string < \"\"";
+        t.expect (mt::eq (null_string, nullptr)) << "null_string == nullptr";
+        t.expect (mt::ne (null_string, "")) << "null_string != \"\"";
+        t.expect (mt::lt (null_string, "")) << "null_string < \"\"";
         local_counts.passed_checks += 3;
 
         // An array without a terminator is not read beyond its end.
-        t.expect (eq (unterminated, "abc")) << "unterminated == \"abc\"";
+        t.expect (mt::eq (unterminated, "abc")) << "unterminated == \"abc\"";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
@@ -417,10 +430,10 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         const char* actual = compute_abc ();
         const char* null_string = nullptr;
 
-        t.expect (eq (actual, "abx")) << "actual == \"abx\"";
+        t.expect (mt::eq (actual, "abx")) << "actual == \"abx\"";
         local_counts.failed_checks++;
 
-        t.expect (eq (null_string, "abc")) << "null_string == \"abc\"";
+        t.expect (mt::eq (null_string, "abc")) << "null_string == \"abc\"";
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;
@@ -444,25 +457,25 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         void* a_non_nullptr = &a_nullptr;
         void (*pfunc) (void) = a_func;
 
-        t.expect (eq (ptr1, &one)) << "ptr1 == &one";
+        t.expect (mt::eq (ptr1, &one)) << "ptr1 == &one";
         local_counts.passed_checks++;
 
-        t.expect (eq (ptr1, ptr2)) << "ptr1 == ptr2";
+        t.expect (mt::eq (ptr1, ptr2)) << "ptr1 == ptr2";
         local_counts.passed_checks++;
 
-        t.expect (le (ptr1, ptr2)) << "ptr1 <= ptr2";
+        t.expect (mt::le (ptr1, ptr2)) << "ptr1 <= ptr2";
         local_counts.passed_checks++;
 
-        t.expect (ge (ptr1, ptr2)) << "ptr1 >= ptr2";
+        t.expect (mt::ge (ptr1, ptr2)) << "ptr1 >= ptr2";
         local_counts.passed_checks++;
 
-        t.expect (ne (ptr1, a_non_nullptr)) << "ptr1 != a_non_nullptr";
+        t.expect (mt::ne (ptr1, a_non_nullptr)) << "ptr1 != a_non_nullptr";
         local_counts.passed_checks++;
 
-        t.expect (eq (pfunc, a_func)) << "pfunc == afunc";
+        t.expect (mt::eq (pfunc, a_func)) << "pfunc == afunc";
         local_counts.passed_checks++;
 
-        t.expect (ne (pfunc, a_non_nullptr)) << "pfunc != a_non_nullptr";
+        t.expect (mt::ne (pfunc, a_non_nullptr)) << "pfunc != a_non_nullptr";
         local_counts.passed_checks++;
 
         struct
@@ -474,10 +487,10 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         int* pone = &pair.one;
         int* ptwo = &pair.two;
 
-        t.expect (lt (pone, ptwo)) << "pone < ptwo";
+        t.expect (mt::lt (pone, ptwo)) << "pone < ptwo";
         local_counts.passed_checks++;
 
-        t.expect (gt (ptwo, pone)) << "ptwo > pone";
+        t.expect (mt::gt (ptwo, pone)) << "ptwo > pone";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
@@ -501,25 +514,25 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         void* a_non_nullptr = &a_nullptr;
         void (*pfunc) (void) = a_func;
 
-        t.expect (ne (ptr1, &one)) << "ptr1 != &one";
+        t.expect (mt::ne (ptr1, &one)) << "ptr1 != &one";
         local_counts.failed_checks++;
 
-        t.expect (ne (ptr1, ptr2)) << "ptr1 != ptr2";
+        t.expect (mt::ne (ptr1, ptr2)) << "ptr1 != ptr2";
         local_counts.failed_checks++;
 
-        t.expect (gt (ptr1, ptr2)) << "ptr1 > ptr2";
+        t.expect (mt::gt (ptr1, ptr2)) << "ptr1 > ptr2";
         local_counts.failed_checks++;
 
-        t.expect (lt (ptr1, ptr2)) << "ptr1 < ptr2";
+        t.expect (mt::lt (ptr1, ptr2)) << "ptr1 < ptr2";
         local_counts.failed_checks++;
 
-        t.expect (eq (ptr1, a_non_nullptr)) << "ptr1 == a_non_nullptr";
+        t.expect (mt::eq (ptr1, a_non_nullptr)) << "ptr1 == a_non_nullptr";
         local_counts.failed_checks++;
 
-        t.expect (ne (pfunc, a_func)) << "pfunc != afunc";
+        t.expect (mt::ne (pfunc, a_func)) << "pfunc != afunc";
         local_counts.failed_checks++;
 
-        t.expect (eq (pfunc, a_non_nullptr)) << "pfunc == a_non_nullptr";
+        t.expect (mt::eq (pfunc, a_non_nullptr)) << "pfunc == a_non_nullptr";
         local_counts.failed_checks++;
 
         struct
@@ -531,10 +544,10 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         int* pone = &pair.one;
         int* ptwo = &pair.two;
 
-        t.expect (ge (pone, ptwo)) << "pone >= ptwo";
+        t.expect (mt::ge (pone, ptwo)) << "pone >= ptwo";
         local_counts.failed_checks++;
 
-        t.expect (le (ptwo, pone)) << "ptwo <= pone";
+        t.expect (mt::le (ptwo, pone)) << "ptwo <= pone";
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;
@@ -555,13 +568,14 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         void* a_non_nullptr = &a_nullptr;
         void (*pfunc) (void) = nullptr;
 
-        t.expect (eq (a_nullptr, nullptr)) << "a_nullptr == nullptr";
+        t.expect (mt::eq (a_nullptr, nullptr)) << "a_nullptr == nullptr";
         local_counts.passed_checks++;
 
-        t.expect (ne (a_non_nullptr, nullptr)) << "a_non_nullptr != nullptr";
+        t.expect (mt::ne (a_non_nullptr, nullptr))
+            << "a_non_nullptr != nullptr";
         local_counts.passed_checks++;
 
-        t.expect (eq (pfunc, nullptr)) << "pfunc == nullptr";
+        t.expect (mt::eq (pfunc, nullptr)) << "pfunc == nullptr";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
@@ -582,13 +596,14 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         void* a_non_nullptr = &a_nullptr;
         void (*pfunc) (void) = nullptr;
 
-        t.expect (ne (a_nullptr, nullptr)) << "a_nullptr != nullptr";
+        t.expect (mt::ne (a_nullptr, nullptr)) << "a_nullptr != nullptr";
         local_counts.failed_checks++;
 
-        t.expect (eq (a_non_nullptr, nullptr)) << "a_non_nullptr == nullptr";
+        t.expect (mt::eq (a_non_nullptr, nullptr))
+            << "a_non_nullptr == nullptr";
         local_counts.failed_checks++;
 
-        t.expect (ne (pfunc, nullptr)) << "pfunc != nullptr";
+        t.expect (mt::ne (pfunc, nullptr)) << "pfunc != nullptr";
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;
@@ -605,59 +620,59 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
 
     ts.test ("Logical operations", [] (auto& t)
       {
-        t.expect (negate (ne (my_actual_integral (), 42)))
+        t.expect (mt::negate (mt::ne (my_actual_integral (), 42)))
             << "not (actual != 42)";
         local_counts.passed_checks++;
 
-        t.expect (negate (eq (my_actual_integral (), 42)))
+        t.expect (mt::negate (mt::eq (my_actual_integral (), 42)))
             << "not (actual == 42)";
         local_counts.failed_checks++;
 
-        t.expect (all_of (eq (my_actual_integral (), 42),
-                          eq (my_actual_float<float> (), 42.0)))
+        t.expect (mt::all_of (mt::eq (my_actual_integral (), 42),
+                              mt::eq (my_actual_float<float> (), 42.0)))
             << "(actual == 42) and (actual == 42.0)";
         local_counts.passed_checks++;
 
-        t.expect (all_of (eq (my_actual_integral (), 42),
-                          ne (my_actual_float<float> (), 42.0)))
+        t.expect (mt::all_of (mt::eq (my_actual_integral (), 42),
+                              mt::ne (my_actual_float<float> (), 42.0)))
             << "(actual == 42) and (actual != 42.0)";
         local_counts.failed_checks++;
 
-        t.expect (all_of (ne (my_actual_integral (), 42),
-                          eq (my_actual_float<float> (), 42.0)))
+        t.expect (mt::all_of (mt::ne (my_actual_integral (), 42),
+                              mt::eq (my_actual_float<float> (), 42.0)))
             << "(actual != 42) and (actual == 42.0)";
         local_counts.failed_checks++;
 
-        t.expect (all_of (ne (my_actual_integral (), 42),
-                          ne (my_actual_float<float> (), 42.0)))
+        t.expect (mt::all_of (mt::ne (my_actual_integral (), 42),
+                              mt::ne (my_actual_float<float> (), 42.0)))
             << "(actual != 42) and (actual != 42.0)";
         local_counts.failed_checks++;
 
-        t.expect (all_of (eq (my_actual_integral (), 42),
-                          eq (my_actual_float<float> (), 42.0)));
+        t.expect (mt::all_of (mt::eq (my_actual_integral (), 42),
+                              mt::eq (my_actual_float<float> (), 42.0)));
         local_counts.passed_checks++;
 
-        t.expect (all_of (eq (my_actual_integral (), 42),
-                          ne (my_actual_float<float> (), 42.0)));
+        t.expect (mt::all_of (mt::eq (my_actual_integral (), 42),
+                              mt::ne (my_actual_float<float> (), 42.0)));
         local_counts.failed_checks++;
 
-        t.expect (any_of (eq (my_actual_integral (), 42),
-                          eq (my_actual_float<float> (), 42.0)))
+        t.expect (mt::any_of (mt::eq (my_actual_integral (), 42),
+                              mt::eq (my_actual_float<float> (), 42.0)))
             << "(actual == 42) or (actual == 42.0)";
         local_counts.passed_checks++;
 
-        t.expect (any_of (eq (my_actual_integral (), 42),
-                          ne (my_actual_float<float> (), 42.0)))
+        t.expect (mt::any_of (mt::eq (my_actual_integral (), 42),
+                              mt::ne (my_actual_float<float> (), 42.0)))
             << "(actual == 42) or (actual != 42.0)";
         local_counts.passed_checks++;
 
-        t.expect (any_of (ne (my_actual_integral (), 42),
-                          eq (my_actual_float<float> (), 42.0)))
+        t.expect (mt::any_of (mt::ne (my_actual_integral (), 42),
+                              mt::eq (my_actual_float<float> (), 42.0)))
             << "(actual != 42) or (actual == 42.0)";
         local_counts.passed_checks++;
 
-        t.expect (any_of (ne (my_actual_integral (), 42),
-                          ne (my_actual_float<float> (), 42.0)))
+        t.expect (mt::any_of (mt::ne (my_actual_integral (), 42),
+                              mt::ne (my_actual_float<float> (), 42.0)))
             << "(actual != 42) or (actual != 42.0)";
         local_counts.failed_checks++;
 
@@ -679,54 +694,63 @@ static static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
       {
         const int actual = my_actual_integral ();
 
-        t.expect (all_of (eq (actual, 42), lt (actual, 43), gt (actual, 41)))
+        t.expect (mt::all_of (mt::eq (actual, 42), mt::lt (actual, 43),
+                              mt::gt (actual, 41)))
             << "all_of three true";
         local_counts.passed_checks++;
 
-        t.expect (all_of (eq (actual, 42), ne (actual, 0), lt (actual, 43),
-                          le (actual, 42), ge (actual, 42)))
+        t.expect (mt::all_of (mt::eq (actual, 42), mt::ne (actual, 0),
+                              mt::lt (actual, 43), mt::le (actual, 42),
+                              mt::ge (actual, 42)))
             << "all_of five true";
         local_counts.passed_checks++;
 
-        t.expect (any_of (eq (actual, 0), eq (actual, 1), eq (actual, 42)))
+        t.expect (mt::any_of (mt::eq (actual, 0), mt::eq (actual, 1),
+                              mt::eq (actual, 42)))
             << "any_of three, the last true";
         local_counts.passed_checks++;
 
-        t.expect (any_of (eq (actual, 42), eq (actual, 0), eq (actual, 1)))
+        t.expect (mt::any_of (mt::eq (actual, 42), mt::eq (actual, 0),
+                              mt::eq (actual, 1)))
             << "any_of three, the first true";
         local_counts.passed_checks++;
 
         t.expect (
-            all_of (eq (actual, 42), all_of (lt (actual, 43), ne (actual, 0))))
+            mt::all_of (mt::eq (actual, 42),
+                        mt::all_of (mt::lt (actual, 43), mt::ne (actual, 0))))
             << "all_of with a nested all_of";
         local_counts.passed_checks++;
 
-        t.expect (
-            negate (all_of (eq (actual, 42), eq (actual, 0), eq (actual, 1))))
+        t.expect (mt::negate (mt::all_of (
+            mt::eq (actual, 42), mt::eq (actual, 0), mt::eq (actual, 1))))
             << "not all_of";
         local_counts.passed_checks++;
 
-        t.expect (all_of (eq (actual, 42), lt (actual, 41), gt (actual, 41)))
+        t.expect (mt::all_of (mt::eq (actual, 42), mt::lt (actual, 41),
+                              mt::gt (actual, 41)))
             << "all_of three, the second false";
         local_counts.failed_checks++;
 
-        t.expect (all_of (eq (actual, 42), eq (actual, 42), eq (actual, 42),
-                          eq (actual, 0)))
+        t.expect (mt::all_of (mt::eq (actual, 42), mt::eq (actual, 42),
+                              mt::eq (actual, 42), mt::eq (actual, 0)))
             << "all_of four, the last false";
         local_counts.failed_checks++;
 
-        t.expect (any_of (eq (actual, 0), eq (actual, 1), eq (actual, 2)))
+        t.expect (mt::any_of (mt::eq (actual, 0), mt::eq (actual, 1),
+                              mt::eq (actual, 2)))
             << "any_of three false";
         local_counts.failed_checks++;
 
         t.expect (
-            any_of (all_of (eq (actual, 0), eq (actual, 42)),
-                    all_of (eq (actual, 1), eq (actual, 42), eq (actual, 2))))
+            mt::any_of (mt::all_of (mt::eq (actual, 0), mt::eq (actual, 42)),
+                        mt::all_of (mt::eq (actual, 1), mt::eq (actual, 42),
+                                    mt::eq (actual, 2))))
             << "any_of of two all_of";
         local_counts.failed_checks++;
 
         t.expect (
-            all_of (eq (actual, 42), any_of (eq (actual, 0), eq (actual, 1))))
+            mt::all_of (mt::eq (actual, 42),
+                        mt::any_of (mt::eq (actual, 0), mt::eq (actual, 1))))
             << "all_of with a nested any_of";
         local_counts.failed_checks++;
 

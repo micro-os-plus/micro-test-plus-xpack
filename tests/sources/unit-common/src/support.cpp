@@ -41,3 +41,28 @@ local_test_assert (const char* failedexpr, const char* file, int line)
 }
 
 // ----------------------------------------------------------------------------
+
+// Checks the state of the session after `run_suites()` returned `code`.
+void
+unit_common_verify_session (int argc, char* argv[],
+                            micro_os_plus::micro_test_plus::suite& ts,
+                            int code)
+{
+  // The session runs only once; the later calls of run_suites() return the same
+  // code without running the suites again, and a second initialise() or
+  // add_top_suite() changes nothing.
+  {
+    const size_t executed_checks = tr.totals ().executed_checks ();
+    const size_t executed_test_cases = tr.totals ().executed_test_cases ();
+
+    test_assert (tr.run_suites () == code);
+    tr.initialise (argc, argv);
+    test_assert (&tr.add_top_suite () == &ts);
+    test_assert (tr.run_suites () == code);
+
+    test_assert (tr.totals ().executed_checks () == executed_checks);
+    test_assert (tr.totals ().executed_test_cases () == executed_test_cases);
+  }
+}
+
+// ----------------------------------------------------------------------------

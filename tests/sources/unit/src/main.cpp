@@ -15,8 +15,7 @@
 
 #include <stdio.h>
 
-// For this test only, make the namespaces globally visible.
-using namespace micro_os_plus::micro_test_plus;
+namespace mt = micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
 
@@ -37,7 +36,7 @@ using namespace micro_os_plus::micro_test_plus;
 // registered during the static initialisation; the checks tests run in the
 // top suite, around the single `run_suites()` call.
 
-runner tr;
+mt::runner tr;
 
 local_counts_t local_counts;
 
@@ -47,7 +46,7 @@ main (int argc, char* argv[])
   tr.initialise (argc, argv);
   auto& ts = tr.add_top_suite ("Top suite");
 
-  if (tr.verbosity_level () > verbosity::quiet && !tr.is_listing ())
+  if (tr.verbosity_level () > mt::verbosity::quiet && !tr.is_listing ())
     {
       printf ("\nµTest++ unit tests; some checks are expected to fail.\n");
     }
@@ -62,9 +61,9 @@ main (int argc, char* argv[])
   int code = tr.run_suites ();
   test_assert (code != 0);
 
-  unit_checks_verify_session (argc, argv, ts, code);
+  unit_common_verify_session (argc, argv, ts, code);
 
-  if (tr.verbosity_level () > verbosity::quiet && !tr.is_listing ())
+  if (tr.verbosity_level () > mt::verbosity::quiet && !tr.is_listing ())
     {
       // On failure it aborts before reaching this point.
       printf ("Overall, the µTest++ unit tests were successful!\n\n");

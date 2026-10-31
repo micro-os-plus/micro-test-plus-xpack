@@ -35,6 +35,7 @@ set (
   #
   # Portable dependencies.
   "${CMAKE_SOURCE_DIR}/xpacks/@micro-os-plus/diag-trace"
+  "${CMAKE_SOURCE_DIR}/sources/unit-common"
   #
   # Platform specific dependencies.
   "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/architecture-aarch64"

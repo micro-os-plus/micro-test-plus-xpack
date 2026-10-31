@@ -1,4 +1,4 @@
-Running: unit-miscellaneous-test --reporter=human --output-file=unit-miscellaneous-test.txt one two
+Running: unit-miscellaneous-test --reporter human --output-file=unit-miscellaneous-test.txt one two
 Built with GCC 15.2.1 20251203, with FP, with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 µTest++ human report
 • Top suite
@@ -88,21 +88,21 @@ Built with GCC 15.2.1 20251203, with FP, with exceptions, with MICRO_OS_PLUS_DEB
     ✓ Formatter standard types - passed (13 checks)
     • Message types
         ✓ numbers 1 2 3 1.5 2 true
-        ✓ pointer 0x804a298
+        ✓ pointer 0x804cc68
         ✓ container {1, 2}
         ✓ standard types (1, a) nullopt 1
         ✓ custom type { 1, 2 } on
         ✓ wide characters u'x' U'x' L'x'
-        ✗ failed {3} FAILED (miscellaneous.cpp:851)
+        ✗ failed {3} FAILED (miscellaneous.cpp:856)
     ✗ Message types - FAILED (6 checks passed, 1 failed)
     • Lazy messages
         ✓ passed
         ✓ true
         ✓ not called after a success
-        ✗ failed and appended FAILED (miscellaneous.cpp:879)
+        ✗ failed and appended FAILED (miscellaneous.cpp:884)
         ✓ called after a failure
-        ✗ 42 FAILED (miscellaneous.cpp:890)
-        ✗ from a function FAILED (miscellaneous.cpp:895)
+        ✗ 42 FAILED (miscellaneous.cpp:895)
+        ✗ from a function FAILED (miscellaneous.cpp:900)
     ✗ Lazy messages - FAILED (4 checks passed, 3 failed)
     • TAP escapes # TODO in names \ messages
         ✓ message with # hash and \ backslash
@@ -110,11 +110,11 @@ Built with GCC 15.2.1 20251203, with FP, with exceptions, with MICRO_OS_PLUS_DEB
         ✓ first line
 second line
         ✗ failed # TODO not a directive
-next line FAILED (miscellaneous.cpp:917)
+next line FAILED (miscellaneous.cpp:922)
     ✗ TAP escapes # TODO in names \ messages - FAILED (3 checks passed, 1 failed)
     • TAP condition values are quoted
-        ✗ FAILED (miscellaneous.cpp:928, "key: \"value\" # not a comment" == "a\\b")
-        ✗ FAILED (miscellaneous.cpp:932, "line\nbreak\ttab" == "x")
+        ✗ FAILED (miscellaneous.cpp:933, "key: \"value\" # not a comment" == "a\\b")
+        ✗ FAILED (miscellaneous.cpp:937, "line\nbreak\ttab" == "x")
     ✗ TAP condition values are quoted - FAILED (0 checks passed, 2 failed)
     • Runner options
         ✓ default verbosity before initialise()
@@ -263,7 +263,7 @@ next line FAILED (miscellaneous.cpp:917)
         ✓ value 1 == 1
     ✓ Failed each value (1) - passed (1 check)
     • Failed each value (2)
-        ✗ value 2 == 1 FAILED (miscellaneous.cpp:1707, 2 == 1)
+        ✗ value 2 == 1 FAILED (miscellaneous.cpp:1813, 2 == 1)
     ✗ Failed each value (2) - FAILED (0 checks passed, 1 failed)
     • Callable arguments
         ✓ reference parameter refers to a copy
@@ -319,7 +319,7 @@ next line FAILED (miscellaneous.cpp:917)
         ✓ the normal verbosity
         ✓ no output file
         ✓ automatic colours
-        ✓ no command line, no filter, no listing
+        ✓ no command line, no filter, no listing, no help
         ✓ no errors
         ✓ an empty command line is accepted
     ✓ Default options - passed (7 checks)
@@ -335,10 +335,12 @@ next line FAILED (miscellaneous.cpp:917)
         ✓ the application options are not reported
         ✓ the separate option arguments belong to their options
         ✓ an unknown option before the application arguments
-        ✓ a single dash ends the options
+        ✓ a single dash option is unknown, the parsing continues
+        ✓ a single - is an unknown option
+        ✓ a single dash option after -- is left to the application
         ✓ no application arguments
         ✓ the copies refer to their own arguments
-    ✓ Application arguments - passed (9 checks)
+    ✓ Application arguments - passed (11 checks)
     • Reporter, verbosity, and listing
         ✓ --reporter=human
         ✓ the last --reporter wins
@@ -347,10 +349,12 @@ next line FAILED (miscellaneous.cpp:917)
         ✓ the last verbosity wins
         ✓ --list-tests
         ✓ --list
-    ✓ Reporter, verbosity, and listing - passed (7 checks)
+        ✓ --help
+        ✓ -h is the short form of --help
+    ✓ Reporter, verbosity, and listing - passed (9 checks)
     • Output file and filters
         ✓ --output-file=<path>
-        ✓ --output-file=<path>
+        ✓ --output-file <path>
         ✓ an empty path disables the output file
         ✓ all the --filter patterns are kept, in order
         ✓ a separate value is taken whatever its content
@@ -391,7 +395,7 @@ next line FAILED (miscellaneous.cpp:917)
         ✓ the move constructor moves all the members
         ✓ the move assignment moves all the members
     ✓ Copies and moves - passed (5 checks)
-✓ Runner options suite - passed (59 checks in 9 test cases)
+✓ Runner options suite - passed (63 checks in 9 test cases)
 • Stopwatch suite
     • stopwatch::start() and stop()
         ✓ fresh: has_elapsed false
@@ -458,4 +462,4 @@ next line FAILED (miscellaneous.cpp:917)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 294 checks passed, 13 failed, in 69 test cases, 5 test suites
+✗ Total: 298 checks passed, 13 failed, in 69 test cases, 5 test suites

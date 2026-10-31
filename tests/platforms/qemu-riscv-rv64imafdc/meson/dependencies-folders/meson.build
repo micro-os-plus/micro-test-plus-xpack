@@ -25,6 +25,9 @@ xpack_dependencies_folders = [
   # Dependencies: none.
   'xpacks/@micro-os-plus/diag-trace',
 
+  # Dependencies: micro-test-plus.
+  'sources/unit-common',
+
   # Dependencies: none.
   # Hidden dependency: semihosting.
   xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/architecture-riscv',

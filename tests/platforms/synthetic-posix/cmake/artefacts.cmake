@@ -546,7 +546,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   set_tests_properties (
     "sample-test-quiet"
     PROPERTIES PASS_REGULAR_EXPRESSION
-               "\nok 4 - Implicit namespace suite # [^\n]*\n1\\.\\.4\r?\n"
+               "\nok 3 - Static suite # [^\n]*\n1\\.\\.3\r?\n"
   )
   message (VERBOSE "T> sample-test-quiet")
   add_compare_files_test (

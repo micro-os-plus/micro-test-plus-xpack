@@ -109,12 +109,6 @@ my_expected_float (void)
 void
 unit_checks_run_tests (micro_os_plus::micro_test_plus::suite& ts);
 
-// Check the state of the session after `run_suites()` returned `code`.
-void
-unit_checks_verify_session (
-    int argc, char* argv[], micro_os_plus::micro_test_plus::suite& ts,
-    int code);
-
 // ----------------------------------------------------------------------------
 
 #endif // defined(__cplusplus)

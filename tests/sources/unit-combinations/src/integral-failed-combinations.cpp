@@ -13,7 +13,7 @@
 
 #include "unit-combinations-test.h"
 
-using namespace micro_os_plus::micro_test_plus;
+namespace mt = micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
 
@@ -30,104 +30,107 @@ using namespace micro_os_plus::micro_test_plus;
 
 template <typename T>
 static void
-test_case_expect_integrals_failed_combinations (test_case& t)
+test_case_expect_integrals_failed_combinations (mt::test_case& t)
 {
-  t.expect (
-      ne (my_actual_integral<T> (), my_expected_integral<signed long long> ()))
+  t.expect (mt::ne (my_actual_integral<T> (),
+                    my_expected_integral<signed long long> ()))
       << "ne matches signed long long";
   local_counts.failed_checks++;
 
-  t.expect (ne (my_actual_integral<T> (),
-                my_expected_integral<unsigned long long> ()))
+  t.expect (mt::ne (my_actual_integral<T> (),
+                    my_expected_integral<unsigned long long> ()))
       << "ne matches unsigned long long";
   local_counts.failed_checks++;
 
   t.expect (
-      ne (my_actual_integral<T> (), my_expected_integral<signed long> ()))
+      mt::ne (my_actual_integral<T> (), my_expected_integral<signed long> ()))
       << "ne matches signed long";
   local_counts.failed_checks++;
 
-  t.expect (
-      ne (my_actual_integral<T> (), my_expected_integral<unsigned long> ()))
+  t.expect (mt::ne (my_actual_integral<T> (),
+                    my_expected_integral<unsigned long> ()))
       << "ne matches unsigned long";
   local_counts.failed_checks++;
 
-  t.expect (ne (my_actual_integral<T> (), my_expected_integral<signed int> ()))
+  t.expect (
+      mt::ne (my_actual_integral<T> (), my_expected_integral<signed int> ()))
       << "ne matches signed int";
   local_counts.failed_checks++;
 
   t.expect (
-      ne (my_actual_integral<T> (), my_expected_integral<unsigned int> ()))
+      mt::ne (my_actual_integral<T> (), my_expected_integral<unsigned int> ()))
       << "ne matches unsigned int";
   local_counts.failed_checks++;
 
   t.expect (
-      ne (my_actual_integral<T> (), my_expected_integral<signed short> ()))
+      mt::ne (my_actual_integral<T> (), my_expected_integral<signed short> ()))
       << "ne matches signed short";
   local_counts.failed_checks++;
 
-  t.expect (
-      ne (my_actual_integral<T> (), my_expected_integral<unsigned short> ()))
+  t.expect (mt::ne (my_actual_integral<T> (),
+                    my_expected_integral<unsigned short> ()))
       << "ne matches unsigned short";
   local_counts.failed_checks++;
 
   t.expect (
-      ne (my_actual_integral<T> (), my_expected_integral<signed char> ()))
+      mt::ne (my_actual_integral<T> (), my_expected_integral<signed char> ()))
       << "ne matches signed char";
   local_counts.failed_checks++;
 
-  t.expect (
-      ne (my_actual_integral<T> (), my_expected_integral<unsigned char> ()))
+  t.expect (mt::ne (my_actual_integral<T> (),
+                    my_expected_integral<unsigned char> ()))
       << "ne matches unsigned char";
   local_counts.failed_checks++;
 
   // --------------------------------------------------------------------------
 
-  t.expect (gt (my_actual_integral<T> (), my_expected_integral<signed int> ()))
+  t.expect (
+      mt::gt (my_actual_integral<T> (), my_expected_integral<signed int> ()))
       << "gt matches signed int";
   local_counts.failed_checks++;
 
-  t.expect (lt (my_actual_integral<T> (), my_expected_integral<signed int> ()))
+  t.expect (
+      mt::lt (my_actual_integral<T> (), my_expected_integral<signed int> ()))
       << "lt matches signed int";
   local_counts.failed_checks++;
 
-  t.expect (
-      eq (my_actual_integral_more<T> (), my_expected_integral<signed int> ()))
+  t.expect (mt::eq (my_actual_integral_more<T> (),
+                    my_expected_integral<signed int> ()))
       << "eq matches signed int";
   local_counts.failed_checks++;
 
-  t.expect (
-      ge (my_actual_integral_less<T> (), my_expected_integral<signed int> ()))
+  t.expect (mt::ge (my_actual_integral_less<T> (),
+                    my_expected_integral<signed int> ()))
       << "ge matches signed int";
   local_counts.failed_checks++;
 
-  t.expect (
-      le (my_actual_integral_more<T> (), my_expected_integral<signed int> ()))
+  t.expect (mt::le (my_actual_integral_more<T> (),
+                    my_expected_integral<signed int> ()))
       << "le matches signed int";
   local_counts.failed_checks++;
 
   t.expect (
-      gt (my_actual_integral<T> (), my_expected_integral<unsigned int> ()))
+      mt::gt (my_actual_integral<T> (), my_expected_integral<unsigned int> ()))
       << "gt matches unsigned int";
   local_counts.failed_checks++;
 
   t.expect (
-      lt (my_actual_integral<T> (), my_expected_integral<unsigned int> ()))
+      mt::lt (my_actual_integral<T> (), my_expected_integral<unsigned int> ()))
       << "lt matches unsigned int";
   local_counts.failed_checks++;
 
-  t.expect (eq (my_actual_integral_more<T> (),
-                my_expected_integral<unsigned int> ()))
+  t.expect (mt::eq (my_actual_integral_more<T> (),
+                    my_expected_integral<unsigned int> ()))
       << "eq matches unsigned int";
   local_counts.failed_checks++;
 
-  t.expect (ge (my_actual_integral_less<T> (),
-                my_expected_integral<unsigned int> ()))
+  t.expect (mt::ge (my_actual_integral_less<T> (),
+                    my_expected_integral<unsigned int> ()))
       << "ge matches unsigned int";
   local_counts.failed_checks++;
 
-  t.expect (le (my_actual_integral_more<T> (),
-                my_expected_integral<unsigned int> ()))
+  t.expect (mt::le (my_actual_integral_more<T> (),
+                    my_expected_integral<unsigned int> ()))
       << "le matches unsigned int";
   local_counts.failed_checks++;
 
@@ -136,11 +139,11 @@ test_case_expect_integrals_failed_combinations (test_case& t)
 
 // ----------------------------------------------------------------------------
 
-static static_suite ts_failed_integrals{
+static mt::static_suite ts_failed_integrals{
   "Failed combinatorial integrals suite", tr,
   [] (auto& ts)
   {
-    const counters& current_suite_totals = ts.totals ();
+    const mt::counters& current_suite_totals = ts.totals ();
 
     local_counts = {};
 

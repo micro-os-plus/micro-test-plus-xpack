@@ -16,7 +16,7 @@
 #include <string_view>
 
 using namespace std::literals;
-using namespace micro_os_plus::micro_test_plus;
+namespace mt = micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
 
@@ -31,9 +31,9 @@ using namespace micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
 
-static static_suite ts_utility{ "Utility suite", tr, [] (auto& ts)
+static mt::static_suite ts_utility{ "Utility suite", tr, [] (auto& ts)
   {
-    const counters& current_suite_totals = ts.totals ();
+    const mt::counters& current_suite_totals = ts.totals ();
 
     local_counts = {};
 
@@ -42,36 +42,36 @@ static static_suite ts_utility{ "Utility suite", tr, [] (auto& ts)
     ts.test ("utility::extract_file_name()", [] (auto& t)
       {
         // Unix-style path — returns filename component.
-        t.expect (eq (std::string_view{ utility::extract_file_name (
-                          "/home/user/project/test.cpp") },
-                      "test.cpp"sv))
+        t.expect (mt::eq (std::string_view{ mt::utility::extract_file_name (
+                              "/home/user/project/test.cpp") },
+                          "test.cpp"sv))
             << "Unix path returns filename";
         local_counts.passed_checks++;
 
         // Windows-style path — returns filename component.
-        t.expect (eq (std::string_view{ utility::extract_file_name (
-                          "C:\\Users\\user\\project\\test.cpp") },
-                      "test.cpp"sv))
+        t.expect (mt::eq (std::string_view{ mt::utility::extract_file_name (
+                              "C:\\Users\\user\\project\\test.cpp") },
+                          "test.cpp"sv))
             << "Windows path returns filename";
         local_counts.passed_checks++;
 
         // No separators — returns original string.
-        t.expect (
-            eq (std::string_view{ utility::extract_file_name ("test.cpp") },
-                "test.cpp"sv))
+        t.expect (mt::eq (
+            std::string_view{ mt::utility::extract_file_name ("test.cpp") },
+            "test.cpp"sv))
             << "No separator returns original";
         local_counts.passed_checks++;
 
         // Empty string — returns empty string.
-        t.expect (
-            eq (std::string_view{ utility::extract_file_name ("") }, ""sv))
+        t.expect (mt::eq (
+            std::string_view{ mt::utility::extract_file_name ("") }, ""sv))
             << "Empty string returns empty";
         local_counts.passed_checks++;
 
         // Mixed separators — last separator wins.
-        t.expect (eq (std::string_view{ utility::extract_file_name (
-                          "/some/path\\file.cpp") },
-                      "file.cpp"sv))
+        t.expect (mt::eq (std::string_view{ mt::utility::extract_file_name (
+                              "/some/path\\file.cpp") },
+                          "file.cpp"sv))
             << "Mixed separators, last wins";
         local_counts.passed_checks++;
 
@@ -90,74 +90,74 @@ static static_suite ts_utility{ "Utility suite", tr, [] (auto& ts)
     ts.test ("utility::is_match() — passing", [] (auto& t)
       {
         // Both empty — trivial match.
-        t.expect (utility::is_match ("", "")) << "\"\" matches \"\"";
+        t.expect (mt::utility::is_match ("", "")) << "\"\" matches \"\"";
         local_counts.passed_checks++;
 
         // Empty string against * wildcard.
-        t.expect (utility::is_match ("", "*")) << "\"\" matches \"*\"";
+        t.expect (mt::utility::is_match ("", "*")) << "\"\" matches \"*\"";
         local_counts.passed_checks++;
 
         // Exact match.
-        t.expect (utility::is_match ("abc", "abc")) << "abc matches abc";
+        t.expect (mt::utility::is_match ("abc", "abc")) << "abc matches abc";
         local_counts.passed_checks++;
 
         // Single-character wildcard.
-        t.expect (utility::is_match ("abc", "a?c")) << "abc matches a?c";
+        t.expect (mt::utility::is_match ("abc", "a?c")) << "abc matches a?c";
         local_counts.passed_checks++;
 
         // ? matches any single character.
-        t.expect (utility::is_match ("abc", "???")) << "abc matches ???";
+        t.expect (mt::utility::is_match ("abc", "???")) << "abc matches ???";
         local_counts.passed_checks++;
 
         // * at the end — matches any suffix.
-        t.expect (utility::is_match ("abc", "a*")) << "abc matches a*";
+        t.expect (mt::utility::is_match ("abc", "a*")) << "abc matches a*";
         local_counts.passed_checks++;
 
         // * in the middle — matches interior substring.
-        t.expect (utility::is_match ("abc", "a*c")) << "abc matches a*c";
+        t.expect (mt::utility::is_match ("abc", "a*c")) << "abc matches a*c";
         local_counts.passed_checks++;
 
         // * alone — matches any string.
-        t.expect (utility::is_match ("abc", "*")) << "abc matches *";
+        t.expect (mt::utility::is_match ("abc", "*")) << "abc matches *";
         local_counts.passed_checks++;
 
         // * at the start — matches any prefix.
-        t.expect (utility::is_match ("abc", "*bc")) << "abc matches *bc";
+        t.expect (mt::utility::is_match ("abc", "*bc")) << "abc matches *bc";
         local_counts.passed_checks++;
 
         // * on both sides — matches any string containing substring.
-        t.expect (utility::is_match ("abc", "*b*")) << "abc matches *b*";
+        t.expect (mt::utility::is_match ("abc", "*b*")) << "abc matches *b*";
         local_counts.passed_checks++;
 
         // Multiple consecutive * wildcards.
-        t.expect (utility::is_match ("abc", "**")) << "abc matches **";
+        t.expect (mt::utility::is_match ("abc", "**")) << "abc matches **";
         local_counts.passed_checks++;
 
         // A * that must retry after a partial match.
-        t.expect (utility::is_match ("aXbYbZc", "a*b*c"))
+        t.expect (mt::utility::is_match ("aXbYbZc", "a*b*c"))
             << "aXbYbZc matches a*b*c";
         local_counts.passed_checks++;
 
         // A * followed by ? at the end.
-        t.expect (utility::is_match ("ab", "*?")) << "ab matches *?";
+        t.expect (mt::utility::is_match ("ab", "*?")) << "ab matches *?";
         local_counts.passed_checks++;
 
         // A suite name, as selected by --filter.
         t.expect (
-            utility::is_match ("Explicit namespace suite", "*namespace*"))
+            mt::utility::is_match ("Explicit namespace suite", "*namespace*"))
             << "suite name matches *namespace*";
         local_counts.passed_checks++;
 
         // Many * wildcards against a long input, which do not match; the
         // iterative match does not backtrack exponentially.
-        t.expect (not utility::is_match (
+        t.expect (not mt::utility::is_match (
             "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
             "a*a*a*a*a*a*a*a*b"))
             << "long input does not match a*a*a*a*a*a*a*a*b";
         local_counts.passed_checks++;
 
         // The pattern must cover the whole input.
-        t.expect (not utility::is_match ("Alpha one", "Alpha"))
+        t.expect (not mt::utility::is_match ("Alpha one", "Alpha"))
             << "Alpha one does not match Alpha";
         local_counts.passed_checks++;
 
@@ -176,23 +176,23 @@ static static_suite ts_utility{ "Utility suite", tr, [] (auto& ts)
     ts.test ("utility::is_match() — failing", [] (auto& t)
       {
         // Non-empty string against a non-wildcard pattern that does not match.
-        t.expect (utility::is_match ("", "abc")) << "\"\" matches abc";
+        t.expect (mt::utility::is_match ("", "abc")) << "\"\" matches abc";
         local_counts.failed_checks++;
 
         // Wrong leading character — ? does not match first char.
-        t.expect (utility::is_match ("abc", "b??")) << "abc matches b??";
+        t.expect (mt::utility::is_match ("abc", "b??")) << "abc matches b??";
         local_counts.failed_checks++;
 
         // * matches prefix but trailing char prevents match.
-        t.expect (utility::is_match ("abc", "a*d")) << "abc matches a*d";
+        t.expect (mt::utility::is_match ("abc", "a*d")) << "abc matches a*d";
         local_counts.failed_checks++;
 
         // Case-sensitive mismatch.
-        t.expect (utility::is_match ("abc", "*C")) << "abc matches *C";
+        t.expect (mt::utility::is_match ("abc", "*C")) << "abc matches *C";
         local_counts.failed_checks++;
 
         // Too many ? wildcards.
-        t.expect (utility::is_match ("ab", "???")) << "ab matches ???";
+        t.expect (mt::utility::is_match ("ab", "???")) << "ab matches ???";
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;

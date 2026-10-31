@@ -24,7 +24,7 @@
 #include <utility>
 #include <vector>
 
-using namespace micro_os_plus::micro_test_plus;
+namespace mt = micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
 
@@ -94,11 +94,11 @@ namespace
   };
 
   // Parse the given command line.
-  runner_options
+  mt::runner_options
   parse (std::initializer_list<const char*> arguments)
   {
     command_line line{ arguments };
-    return runner_options{ line.argc (), line.argv () };
+    return mt::runner_options{ line.argc (), line.argv () };
   }
 
   // Tell whether the arguments are exactly the expected ones.
@@ -126,10 +126,10 @@ namespace
 
 // ----------------------------------------------------------------------------
 
-static static_suite ts_runner_options{ "Runner options suite", tr,
-                                       [] (auto& ts)
+static mt::static_suite ts_runner_options{ "Runner options suite", tr,
+                                           [] (auto& ts)
   {
-    const counters& current_suite_totals = ts.totals ();
+    const mt::counters& current_suite_totals = ts.totals ();
 
     local_counts = {};
 
@@ -137,20 +137,20 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
 
     ts.test ("Default options", [] (auto& t)
       {
-        const runner_options options{};
+        const mt::runner_options options{};
 
-        t.expect (options.selected_reporter == reporter_kind::tap)
+        t.expect (options.selected_reporter == mt::reporter_kind::tap)
             << "the TAP reporter";
         local_counts.passed_checks++;
 
-        t.expect (options.verbosity_level == verbosity::normal)
+        t.expect (options.verbosity_level == mt::verbosity::normal)
             << "the normal verbosity";
         local_counts.passed_checks++;
 
         t.expect (options.output_file_path.empty ()) << "no output file";
         local_counts.passed_checks++;
 
-        t.expect (options.colour == colour_mode::automatic)
+        t.expect (options.colour == mt::colour_mode::automatic)
             << "automatic colours";
         local_counts.passed_checks++;
 
@@ -164,7 +164,7 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
             << "no errors";
         local_counts.passed_checks++;
 
-        const runner_options empty_options{ 0, nullptr };
+        const mt::runner_options empty_options{ 0, nullptr };
 
         t.expect (empty_options.arguments.empty ()
                   and !empty_options.has_errors ())
@@ -176,11 +176,12 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
 
     ts.test ("Command line without options", [] (auto& t)
       {
-        const runner_options options = parse ({ "name", "one", "-v", "two" });
+        const mt::runner_options options
+            = parse ({ "name", "one", "-v", "two" });
 
-        t.expect (eq (options.arguments.size (), 4u)
-                  and eq (options.arguments[0], "name")
-                  and eq (options.arguments[3], "two"))
+        t.expect (mt::eq (options.arguments.size (), 4u)
+                  and mt::eq (options.arguments[0], "name")
+                  and mt::eq (options.arguments[3], "two"))
             << "the command line is kept";
         local_counts.passed_checks++;
 
@@ -188,8 +189,8 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
             << "the arguments without `--` are ignored";
         local_counts.passed_checks++;
 
-        t.expect (options.selected_reporter == reporter_kind::tap
-                  and options.verbosity_level == verbosity::normal)
+        t.expect (options.selected_reporter == mt::reporter_kind::tap
+                  and options.verbosity_level == mt::verbosity::normal)
             << "the defaults are kept";
         local_counts.passed_checks++;
 
@@ -201,37 +202,37 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
     // from there on are left to the application.
     ts.test ("Application arguments", [] (auto& t)
       {
-        const runner_options after_options
+        const mt::runner_options after_options
             = parse ({ "name", "--verbose", "one", "two" });
 
-        t.expect (after_options.verbosity_level == verbosity::verbose
+        t.expect (after_options.verbosity_level == mt::verbosity::verbose
                   and same_arguments (after_options.application_arguments (),
                                       { "one", "two" }))
             << "the application arguments follow the options";
         local_counts.passed_checks++;
 
-        const runner_options option_after_argument
+        const mt::runner_options option_after_argument
             = parse ({ "name", "one", "--verbose" });
 
         t.expect (
-            option_after_argument.verbosity_level == verbosity::normal
+            option_after_argument.verbosity_level == mt::verbosity::normal
             and !option_after_argument.has_errors ()
             and same_arguments (option_after_argument.application_arguments (),
                                 { "one", "--verbose" }))
             << "an option after an application argument is not an option";
         local_counts.passed_checks++;
 
-        const runner_options terminator = parse (
+        const mt::runner_options terminator = parse (
             { "name", "--quiet", "--", "--verbose", "--app-opt", "x" });
 
-        t.expect (terminator.verbosity_level == verbosity::quiet
+        t.expect (terminator.verbosity_level == mt::verbosity::quiet
                   and !terminator.has_errors ()
                   and same_arguments (terminator.application_arguments (),
                                       { "--verbose", "--app-opt", "x" }))
             << "the arguments after -- are left to the application";
         local_counts.passed_checks++;
 
-        const runner_options application_options
+        const mt::runner_options application_options
             = parse ({ "name", "one", "--app-opt", "--" });
 
         t.expect (
@@ -241,19 +242,19 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
             << "the application options are not reported";
         local_counts.passed_checks++;
 
-        const runner_options separate_value
+        const mt::runner_options separate_value
             = parse ({ "name", "--reporter", "human", "--filter", "A*",
                        "--output-file", "out.txt", "one" });
 
-        t.expect (separate_value.selected_reporter == reporter_kind::human
-                  and eq (separate_value.filter_patterns.size (), 1u)
-                  and eq (separate_value.output_file_path, "out.txt")
+        t.expect (separate_value.selected_reporter == mt::reporter_kind::human
+                  and mt::eq (separate_value.filter_patterns.size (), 1u)
+                  and mt::eq (separate_value.output_file_path, "out.txt")
                   and same_arguments (separate_value.application_arguments (),
                                       { "one" }))
             << "the separate option arguments belong to their options";
         local_counts.passed_checks++;
 
-        const runner_options unknown_option
+        const mt::runner_options unknown_option
             = parse ({ "name", "--bogus", "one" });
 
         t.expect (unknown_option.has_errors ()
@@ -262,28 +263,28 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
             << "an unknown option before the application arguments";
         local_counts.passed_checks++;
 
-        const runner_options single_dash
+        const mt::runner_options single_dash
             = parse ({ "name", "-x", "--verbose" });
 
         t.expect (single_dash.has_errors ()
                   and single_dash.has_unknown_option ()
-                  and eq (single_dash.errors ().size (), 1u)
-                  and eq (single_dash.errors ()[0], "unknown option '-x'")
-                  and single_dash.verbosity_level == verbosity::verbose
+                  and mt::eq (single_dash.errors ().size (), 1u)
+                  and mt::eq (single_dash.errors ()[0], "unknown option '-x'")
+                  and single_dash.verbosity_level == mt::verbosity::verbose
                   and single_dash.application_arguments ().empty ())
             << "a single dash option is unknown, the parsing continues";
         local_counts.passed_checks++;
 
-        const runner_options lone_dash
+        const mt::runner_options lone_dash
             = parse ({ "name", "-", "--verbose" });
 
         t.expect (lone_dash.has_unknown_option ()
-                  and eq (lone_dash.errors ()[0], "unknown option '-'")
-                  and lone_dash.verbosity_level == verbosity::verbose)
+                  and mt::eq (lone_dash.errors ()[0], "unknown option '-'")
+                  and lone_dash.verbosity_level == mt::verbosity::verbose)
             << "a single - is an unknown option";
         local_counts.passed_checks++;
 
-        const runner_options after_terminator
+        const mt::runner_options after_terminator
             = parse ({ "name", "--", "-h" });
 
         t.expect (!after_terminator.has_errors ()
@@ -299,15 +300,17 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
                     .application_arguments ()
                     .empty ()
             and parse ({ "name", "--" }).application_arguments ().empty ()
-            and runner_options{}.application_arguments ().empty ()
-            and runner_options{ 0, nullptr }.application_arguments ().empty ())
+            and mt::runner_options{}.application_arguments ().empty ()
+            and mt::runner_options{ 0, nullptr }
+                    .application_arguments ()
+                    .empty ())
             << "no application arguments";
         local_counts.passed_checks++;
 
-        const runner_options original
+        const mt::runner_options original
             = parse ({ "name", "--silent", "one", "two" });
-        runner_options copy{ original };
-        runner_options moved{ std::move (copy) };
+        mt::runner_options copy{ original };
+        mt::runner_options moved{ std::move (copy) };
 
         t.expect (same_arguments (original.application_arguments (),
                                   { "one", "two" })
@@ -324,28 +327,28 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
     ts.test ("Reporter, verbosity, and listing", [] (auto& t)
       {
         t.expect (parse ({ "name", "--reporter=human" }).selected_reporter
-                  == reporter_kind::human)
+                  == mt::reporter_kind::human)
             << "--reporter=human";
         local_counts.passed_checks++;
 
         t.expect (parse ({ "name", "--reporter", "human", "--reporter=tap" })
                       .selected_reporter
-                  == reporter_kind::tap)
+                  == mt::reporter_kind::tap)
             << "the last --reporter wins";
         local_counts.passed_checks++;
 
         t.expect (parse ({ "name", "--silent" }).verbosity_level
-                  == verbosity::silent)
+                  == mt::verbosity::silent)
             << "--silent";
         local_counts.passed_checks++;
 
         t.expect (parse ({ "name", "--verbose" }).verbosity_level
-                  == verbosity::verbose)
+                  == mt::verbosity::verbose)
             << "--verbose";
         local_counts.passed_checks++;
 
         t.expect (parse ({ "name", "--verbose", "--quiet" }).verbosity_level
-                  == verbosity::quiet)
+                  == mt::verbosity::quiet)
             << "the last verbosity wins";
         local_counts.passed_checks++;
 
@@ -356,13 +359,13 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
         t.expect (parse ({ "name", "--list" }).list_tests) << "--list";
         local_counts.passed_checks++;
 
-        const runner_options help_option = parse ({ "name", "--help" });
+        const mt::runner_options help_option = parse ({ "name", "--help" });
 
         t.expect (help_option.help and !help_option.has_errors ())
             << "--help";
         local_counts.passed_checks++;
 
-        const runner_options short_help = parse ({ "name", "-h" });
+        const mt::runner_options short_help = parse ({ "name", "-h" });
 
         t.expect (short_help.help and !short_help.has_errors ())
             << "-h is the short form of --help";
@@ -374,14 +377,14 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
     ts.test ("Output file and filters", [] (auto& t)
       {
         t.expect (
-            eq (parse ({ "name", "--output-file=a.tap" }).output_file_path,
-                "a.tap"))
+            mt::eq (parse ({ "name", "--output-file=a.tap" }).output_file_path,
+                    "a.tap"))
             << "--output-file=<path>";
         local_counts.passed_checks++;
 
-        t.expect (
-            eq (parse ({ "name", "--output-file", "b.tap" }).output_file_path,
-                "b.tap"))
+        t.expect (mt::eq (
+            parse ({ "name", "--output-file", "b.tap" }).output_file_path,
+            "b.tap"))
             << "--output-file <path>";
         local_counts.passed_checks++;
 
@@ -390,21 +393,21 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
             << "an empty path disables the output file";
         local_counts.passed_checks++;
 
-        const runner_options options
+        const mt::runner_options options
             = parse ({ "name", "--filter=A*", "--filter", "b|c" });
 
-        t.expect (eq (options.filter_patterns.size (), 2u)
-                  and eq (options.filter_patterns[0], "A*")
-                  and eq (options.filter_patterns[1], "b|c"))
+        t.expect (mt::eq (options.filter_patterns.size (), 2u)
+                  and mt::eq (options.filter_patterns[0], "A*")
+                  and mt::eq (options.filter_patterns[1], "b|c"))
             << "all the --filter patterns are kept, in order";
         local_counts.passed_checks++;
 
-        const runner_options taken_options
+        const mt::runner_options taken_options
             = parse ({ "name", "--filter", "--verbose" });
 
-        t.expect (eq (taken_options.filter_patterns.size (), 1u)
-                  and eq (taken_options.filter_patterns[0], "--verbose")
-                  and taken_options.verbosity_level == verbosity::normal)
+        t.expect (mt::eq (taken_options.filter_patterns.size (), 1u)
+                  and mt::eq (taken_options.filter_patterns[0], "--verbose")
+                  and taken_options.verbosity_level == mt::verbosity::normal)
             << "a separate value is taken whatever its content";
         local_counts.passed_checks++;
 
@@ -416,17 +419,17 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
         // Check that the option, in both its spellings, selects the mode,
         // starting from a different mode; the message shows both.
         auto check_spellings = [&t] (const char* british, const char* american,
-                                     const char* suffix, colour_mode mode)
+                                     const char* suffix, mt::colour_mode mode)
           {
             const char* const opposite
-                = (mode == colour_mode::never) ? "=always" : "=never";
+                = (mode == mt::colour_mode::never) ? "=always" : "=never";
             bool passed = true;
             for (const char* spelling : { british, american })
               {
                 const std::string opposite_argument
                     = std::string{ "--colour" } + opposite;
                 const std::string argument = std::string{ spelling } + suffix;
-                const runner_options options = parse (
+                const mt::runner_options options = parse (
                     { "name", opposite_argument.c_str (), argument.c_str () });
 
                 passed = passed and options.colour == mode
@@ -439,42 +442,42 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
           };
 
         auto check_colour
-            = [&check_spellings] (const char* suffix, colour_mode mode)
+            = [&check_spellings] (const char* suffix, mt::colour_mode mode)
           { check_spellings ("--colour", "--color", suffix, mode); };
 
-        check_colour ("", colour_mode::always);
-        check_colour ("=always", colour_mode::always);
-        check_colour ("=yes", colour_mode::always);
-        check_colour ("=force", colour_mode::always);
-        check_colour ("=never", colour_mode::never);
-        check_colour ("=no", colour_mode::never);
-        check_colour ("=none", colour_mode::never);
-        check_colour ("=auto", colour_mode::automatic);
-        check_colour ("=tty", colour_mode::automatic);
-        check_colour ("=if-tty", colour_mode::automatic);
+        check_colour ("", mt::colour_mode::always);
+        check_colour ("=always", mt::colour_mode::always);
+        check_colour ("=yes", mt::colour_mode::always);
+        check_colour ("=force", mt::colour_mode::always);
+        check_colour ("=never", mt::colour_mode::never);
+        check_colour ("=no", mt::colour_mode::never);
+        check_colour ("=none", mt::colour_mode::never);
+        check_colour ("=auto", mt::colour_mode::automatic);
+        check_colour ("=tty", mt::colour_mode::automatic);
+        check_colour ("=if-tty", mt::colour_mode::automatic);
 
         check_spellings ("--use-colour", "--use-color", "=yes",
-                         colour_mode::always);
+                         mt::colour_mode::always);
         check_spellings ("--use-colour", "--use-color", "=no",
-                         colour_mode::never);
+                         mt::colour_mode::never);
         check_spellings ("--use-colour", "--use-color", "=never",
-                         colour_mode::never);
+                         mt::colour_mode::never);
 
         t.expect (parse ({ "name", "--use-colour", "no" }).colour
-                      == colour_mode::never
+                      == mt::colour_mode::never
                   and parse ({ "name", "--use-color", "no" }).colour
-                          == colour_mode::never)
+                          == mt::colour_mode::never)
             << "--use-colour <mode>, --use-color <mode>";
         local_counts.passed_checks++;
 
-        const runner_options colour_options
+        const mt::runner_options colour_options
             = parse ({ "name", "--colour", "never" });
-        const runner_options color_options
+        const mt::runner_options color_options
             = parse ({ "name", "--color", "never" });
 
-        t.expect (colour_options.colour == colour_mode::always
+        t.expect (colour_options.colour == mt::colour_mode::always
                   and !colour_options.has_errors ()
-                  and color_options.colour == colour_mode::always
+                  and color_options.colour == mt::colour_mode::always
                   and !color_options.has_errors ())
             << "--colour and --color do not take a separate value";
         local_counts.passed_checks++;
@@ -484,39 +487,40 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
 
     ts.test ("Option errors", [] (auto& t)
       {
-        const runner_options missing_options
+        const mt::runner_options missing_options
             = parse ({ "name", "--silent", "--reporter" });
 
         t.expect (missing_options.has_errors ()
-                  and eq (missing_options.errors ().size (), 1u))
+                  and mt::eq (missing_options.errors ().size (), 1u))
             << "a missing option argument";
         local_counts.passed_checks++;
 
-        t.expect (missing_options.verbosity_level == verbosity::silent)
+        t.expect (missing_options.verbosity_level == mt::verbosity::silent)
             << "the valid options are still applied";
         local_counts.passed_checks++;
 
-        const runner_options reporter_options
+        const mt::runner_options reporter_options
             = parse ({ "name", "--reporter=junit" });
 
-        t.expect (
-            reporter_options.has_errors ()
-            and eq (reporter_options.errors ().size (), 1u)
-            and eq (reporter_options.errors ()[0], "unknown reporter 'junit'")
-            and reporter_options.selected_reporter == reporter_kind::tap)
+        t.expect (reporter_options.has_errors ()
+                  and mt::eq (reporter_options.errors ().size (), 1u)
+                  and mt::eq (reporter_options.errors ()[0],
+                              "unknown reporter 'junit'")
+                  and reporter_options.selected_reporter
+                          == mt::reporter_kind::tap)
             << "an unknown reporter";
         local_counts.passed_checks++;
 
-        const runner_options colour_options
+        const mt::runner_options colour_options
             = parse ({ "name", "--color=maybe" });
 
         t.expect (colour_options.has_errors ()
-                  and eq (colour_options.errors ().size (), 1u)
-                  and colour_options.colour == colour_mode::automatic)
+                  and mt::eq (colour_options.errors ().size (), 1u)
+                  and colour_options.colour == mt::colour_mode::automatic)
             << "an unknown colour mode";
         local_counts.passed_checks++;
 
-        const runner_options unknown_option
+        const mt::runner_options unknown_option
             = parse ({ "name", "--verbos" });
 
         t.expect (unknown_option.has_errors ()
@@ -533,20 +537,20 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
       {
         command_line line{ "/path/name.elf", "--output-file", "out.tap",
                            "--filter=Alpha" };
-        const runner_options options{ line.argc (), line.argv () };
+        const mt::runner_options options{ line.argc (), line.argv () };
 
         line.overwrite ();
 
-        t.expect (eq (options.arguments[0], "/path/name.elf")
-                  and eq (options.arguments[2], "out.tap"))
+        t.expect (mt::eq (options.arguments[0], "/path/name.elf")
+                  and mt::eq (options.arguments[2], "out.tap"))
             << "the command line is copied";
         local_counts.passed_checks++;
 
-        t.expect (eq (options.output_file_path, "out.tap"))
+        t.expect (mt::eq (options.output_file_path, "out.tap"))
             << "the output file path is copied";
         local_counts.passed_checks++;
 
-        t.expect (eq (options.filter_patterns[0], "Alpha"))
+        t.expect (mt::eq (options.filter_patterns[0], "Alpha"))
             << "the filter patterns are copied";
         local_counts.passed_checks++;
 
@@ -555,50 +559,50 @@ static static_suite ts_runner_options{ "Runner options suite", tr,
 
     ts.test ("Copies and moves", [] (auto& t)
       {
-        const runner_options original
+        const mt::runner_options original
             = parse ({ "name", "--reporter=junit", "--quiet", "--filter=A" });
 
-        runner_options copy{ original };
+        mt::runner_options copy{ original };
 
-        t.expect (copy.has_errors () and eq (copy.errors ().size (), 1u)
-                  and copy.verbosity_level == verbosity::quiet
-                  and eq (copy.filter_patterns.size (), 1u)
-                  and eq (copy.arguments.size (), 4u))
+        t.expect (copy.has_errors () and mt::eq (copy.errors ().size (), 1u)
+                  and copy.verbosity_level == mt::verbosity::quiet
+                  and mt::eq (copy.filter_patterns.size (), 1u)
+                  and mt::eq (copy.arguments.size (), 4u))
             << "the copy has all the members";
         local_counts.passed_checks++;
 
-        copy.verbosity_level = verbosity::verbose;
+        copy.verbosity_level = mt::verbosity::verbose;
         copy.filter_patterns.emplace_back ("B");
 
-        t.expect (original.verbosity_level == verbosity::quiet
-                  and eq (original.filter_patterns.size (), 1u))
+        t.expect (original.verbosity_level == mt::verbosity::quiet
+                  and mt::eq (original.filter_patterns.size (), 1u))
             << "the copy is independent of the original";
         local_counts.passed_checks++;
 
-        runner_options assigned{};
+        mt::runner_options assigned{};
         assigned = original;
 
         t.expect (assigned.has_errors ()
-                  and assigned.verbosity_level == verbosity::quiet
-                  and eq (assigned.filter_patterns.size (), 1u))
+                  and assigned.verbosity_level == mt::verbosity::quiet
+                  and mt::eq (assigned.filter_patterns.size (), 1u))
             << "the copy assignment copies all the members";
         local_counts.passed_checks++;
 
-        runner_options moved{ std::move (copy) };
+        mt::runner_options moved{ std::move (copy) };
 
         t.expect (moved.has_errors ()
-                  and moved.verbosity_level == verbosity::verbose
-                  and eq (moved.filter_patterns.size (), 2u)
-                  and eq (moved.filter_patterns[1], "B"))
+                  and moved.verbosity_level == mt::verbosity::verbose
+                  and mt::eq (moved.filter_patterns.size (), 2u)
+                  and mt::eq (moved.filter_patterns[1], "B"))
             << "the move constructor moves all the members";
         local_counts.passed_checks++;
 
-        runner_options move_assigned{};
+        mt::runner_options move_assigned{};
         move_assigned = std::move (moved);
 
-        t.expect (eq (move_assigned.errors ().size (), 1u)
-                  and eq (move_assigned.filter_patterns.size (), 2u)
-                  and eq (move_assigned.arguments[0], "name"))
+        t.expect (mt::eq (move_assigned.errors ().size (), 1u)
+                  and mt::eq (move_assigned.filter_patterns.size (), 2u)
+                  and mt::eq (move_assigned.arguments[0], "name"))
             << "the move assignment moves all the members";
         local_counts.passed_checks++;
 

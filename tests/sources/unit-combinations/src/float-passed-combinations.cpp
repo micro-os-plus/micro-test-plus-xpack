@@ -13,7 +13,7 @@
 
 #include "unit-combinations-test.h"
 
-using namespace micro_os_plus::micro_test_plus;
+namespace mt = micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
 
@@ -30,104 +30,115 @@ using namespace micro_os_plus::micro_test_plus;
 
 template <typename T>
 static void
-test_case_expect_floats_passed_combinatorial (test_case& t)
+test_case_expect_floats_passed_combinatorial (mt::test_case& t)
 {
-  t.expect (
-      eq (my_actual_float<T> (), my_expected_integral<signed long long> ()))
+  t.expect (mt::eq (my_actual_float<T> (),
+                    my_expected_integral<signed long long> ()))
       << "42.0 == 42 signed long long";
   local_counts.passed_checks++;
 
-  t.expect (
-      eq (my_actual_float<T> (), my_expected_integral<unsigned long long> ()))
+  t.expect (mt::eq (my_actual_float<T> (),
+                    my_expected_integral<unsigned long long> ()))
       << "42.0 == 42 unsigned long long";
   local_counts.passed_checks++;
 
-  t.expect (eq (my_actual_float<T> (), my_expected_integral<signed long> ()))
+  t.expect (
+      mt::eq (my_actual_float<T> (), my_expected_integral<signed long> ()))
       << "42.0 == 42 signed long";
   local_counts.passed_checks++;
 
-  t.expect (eq (my_actual_float<T> (), my_expected_integral<unsigned long> ()))
+  t.expect (
+      mt::eq (my_actual_float<T> (), my_expected_integral<unsigned long> ()))
       << "42.0 == 42 unsigned long";
   local_counts.passed_checks++;
 
-  t.expect (eq (my_actual_float<T> (), my_expected_integral<signed int> ()))
+  t.expect (
+      mt::eq (my_actual_float<T> (), my_expected_integral<signed int> ()))
       << "42.0 == 42 signed int";
   local_counts.passed_checks++;
 
-  t.expect (eq (my_actual_float<T> (), my_expected_integral<unsigned int> ()))
+  t.expect (
+      mt::eq (my_actual_float<T> (), my_expected_integral<unsigned int> ()))
       << "42.0 == 42 unsigned int";
   local_counts.passed_checks++;
 
-  t.expect (eq (my_actual_float<T> (), my_expected_integral<signed short> ()))
+  t.expect (
+      mt::eq (my_actual_float<T> (), my_expected_integral<signed short> ()))
       << "42.0 == 42 signed short";
   local_counts.passed_checks++;
 
   t.expect (
-      eq (my_actual_float<T> (), my_expected_integral<unsigned short> ()))
+      mt::eq (my_actual_float<T> (), my_expected_integral<unsigned short> ()))
       << "42.0 == 42 unsigned short";
   local_counts.passed_checks++;
 
-  t.expect (eq (my_actual_float<T> (), my_expected_integral<signed char> ()))
+  t.expect (
+      mt::eq (my_actual_float<T> (), my_expected_integral<signed char> ()))
       << "42.0 == 42 signed char";
   local_counts.passed_checks++;
 
-  t.expect (eq (my_actual_float<T> (), my_expected_integral<unsigned char> ()))
+  t.expect (
+      mt::eq (my_actual_float<T> (), my_expected_integral<unsigned char> ()))
       << "42.0 == 42 unsigned char";
   local_counts.passed_checks++;
 
   // --------------------------------------------------------------------------
 
-  t.expect (le (my_actual_float<T> (), my_expected_integral<signed int> ()))
+  t.expect (
+      mt::le (my_actual_float<T> (), my_expected_integral<signed int> ()))
       << "42.0 <= 42 signed int";
   local_counts.passed_checks++;
 
-  t.expect (ge (my_actual_float<T> (), my_expected_integral<signed int> ()))
+  t.expect (
+      mt::ge (my_actual_float<T> (), my_expected_integral<signed int> ()))
       << "42.0 >= 42 signed int";
   local_counts.passed_checks++;
 
   t.expect (
-      ne (my_actual_float_more<T> (), my_expected_integral<signed int> ()))
+      mt::ne (my_actual_float_more<T> (), my_expected_integral<signed int> ()))
       << "43.0 != 42 signed int";
   local_counts.passed_checks++;
 
   t.expect (
-      lt (my_actual_float_less<T> (), my_expected_integral<signed int> ()))
+      mt::lt (my_actual_float_less<T> (), my_expected_integral<signed int> ()))
       << "41.0 < 42 signed int";
   local_counts.passed_checks++;
 
   t.expect (
-      gt (my_actual_float_more<T> (), my_expected_integral<signed int> ()))
+      mt::gt (my_actual_float_more<T> (), my_expected_integral<signed int> ()))
       << "43.0 > 42 signed int";
   local_counts.passed_checks++;
 
   // --------------------------------------------------------------------------
 
-  t.expect (le (my_actual_float<T> (), my_expected_integral<unsigned int> ()))
+  t.expect (
+      mt::le (my_actual_float<T> (), my_expected_integral<unsigned int> ()))
       << "42.0 <= 42 unsigned int";
   local_counts.passed_checks++;
 
-  t.expect (ge (my_actual_float<T> (), my_expected_integral<unsigned int> ()))
+  t.expect (
+      mt::ge (my_actual_float<T> (), my_expected_integral<unsigned int> ()))
       << "42.0 >= 42 unsigned int";
   local_counts.passed_checks++;
 
-  t.expect (
-      ne (my_actual_float_more<T> (), my_expected_integral<unsigned int> ()))
+  t.expect (mt::ne (my_actual_float_more<T> (),
+                    my_expected_integral<unsigned int> ()))
       << "43.0 != 42 unsigned int";
   local_counts.passed_checks++;
 
-  t.expect (
-      lt (my_actual_float_less<T> (), my_expected_integral<unsigned int> ()))
+  t.expect (mt::lt (my_actual_float_less<T> (),
+                    my_expected_integral<unsigned int> ()))
       << "41.0 < 42 unsigned int";
   local_counts.passed_checks++;
 
-  t.expect (
-      gt (my_actual_float_more<T> (), my_expected_integral<unsigned int> ()))
+  t.expect (mt::gt (my_actual_float_more<T> (),
+                    my_expected_integral<unsigned int> ()))
       << "43.0 > 42 unsigned int";
   local_counts.passed_checks++;
 
   // ---
 
-  t.expect (eq (42, my_expected_float<T> ())) << "42 == 42.0";
+  t.expect (mt::eq (42, my_expected_float<T> ())) << "42 == 42.0";
   local_counts.passed_checks++;
 
   // ---
@@ -137,10 +148,10 @@ test_case_expect_floats_passed_combinatorial (test_case& t)
 
 // ----------------------------------------------------------------------------
 
-static static_suite ts_passed_floats{ "Combinatorial floats suite", tr,
-                                      [] (auto& ts)
+static mt::static_suite ts_passed_floats{ "Combinatorial floats suite", tr,
+                                          [] (auto& ts)
   {
-    const counters& current_suite_totals = ts.totals ();
+    const mt::counters& current_suite_totals = ts.totals ();
 
     local_counts = {};
 

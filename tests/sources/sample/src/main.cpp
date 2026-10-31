@@ -271,21 +271,9 @@ main (int argc, char* argv[])
 // ----------------------------------------------------------------------------
 // Additional test suites. They may be located in separate source files.
 
-static mt::static_suite ts_explicit
-    = { "Explicit namespace suite", tr, [] (auto& ts)
+static mt::static_suite ts_static
+    = { "Static suite", tr, [] (auto& ts)
   {
-    ts.test ("Check one", [] (auto& t) { t.expect (true) << "Passed"; });
-    ts.test ("Check two", [] (auto& t) { t.expect (true) << "Passed"; });
-  } };
-
-static mt::static_suite ts_separate
-    = { "Implicit namespace suite", tr, [] (auto& ts)
-  {
-    // For applications known to not conflict with the test
-    // framework names, it is possible to access the definitions
-    // directly, by including all namespace definitions.
-    using namespace micro_os_plus::micro_test_plus;
-
     ts.test ("Check one", [] (auto& t) { t.expect (true) << "Passed"; });
     ts.test ("Check two", [] (auto& t) { t.expect (true) << "Passed"; });
   } };

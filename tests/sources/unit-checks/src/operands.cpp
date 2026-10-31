@@ -25,7 +25,7 @@
 #include <utility>
 #include <vector>
 
-using namespace micro_os_plus::micro_test_plus;
+namespace mt = micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
 
@@ -56,8 +56,8 @@ namespace
   }
 
   // Found by argument-dependent lookup when the operands are reported.
-  expression_formatter&
-  operator<< (expression_formatter& formatter, const point& p)
+  mt::expression_formatter&
+  operator<< (mt::expression_formatter& formatter, const point& p)
   {
     return formatter << "{ " << p.x << ", " << p.y << " }";
   }
@@ -92,14 +92,14 @@ namespace
   constexpr auto
   divides (const Lhs_T& lhs, const Rhs_T& rhs)
   {
-    return extension::compare_op{ lhs, rhs, divides_tag{} };
+    return mt::extension::compare_op{ lhs, rhs, divides_tag{} };
   }
 
   template <class T>
   constexpr auto
   even (const T& t)
   {
-    return extension::predicate_op{ t, even_tag{} };
+    return mt::extension::predicate_op{ t, even_tag{} };
   }
 
   // Scoped enumerations, formatted by their underlying value.
@@ -123,8 +123,8 @@ namespace
     on
   };
 
-  expression_formatter&
-  operator<< (expression_formatter& formatter, state s)
+  mt::expression_formatter&
+  operator<< (mt::expression_formatter& formatter, state s)
   {
     return formatter << (s == state::on ? "on" : "off");
   }
@@ -161,8 +161,8 @@ namespace
     return lhs.number == rhs.number;
   }
 
-  expression_formatter&
-  operator<< (expression_formatter& formatter, const counted& c)
+  mt::expression_formatter&
+  operator<< (mt::expression_formatter& formatter, const counted& c)
   {
     return formatter << c.number;
   }
@@ -170,31 +170,31 @@ namespace
 
 // ----------------------------------------------------------------------------
 
-static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
+static mt::static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
   {
-    const counters& current_suite_totals = ts.totals ();
+    const mt::counters& current_suite_totals = ts.totals ();
 
     local_counts = {};
 
     // A copy of the counters is a snapshot, which is not updated by the
     // later checks.
-    const counters before = ts.totals ();
+    const mt::counters before = ts.totals ();
 
     ts.test ("Arrays", [] (auto& t)
       {
-        t.expect (eq (std::array<int, 1>{ 42 }, std::array<int, 1>{ 42 }))
+        t.expect (mt::eq (std::array<int, 1>{ 42 }, std::array<int, 1>{ 42 }))
             << "array{ 42 } == array{ 42 }";
         local_counts.passed_checks++;
 
-        t.expect (ne (std::array<int, 1>{ 42 }, std::array<int, 1>{ 43 }))
+        t.expect (mt::ne (std::array<int, 1>{ 42 }, std::array<int, 1>{ 43 }))
             << "array{ 42 } != array{ 43 }";
         local_counts.passed_checks++;
 
-        t.expect (eq (std::array{ 1, 2 }, std::array{ 1, 2 }))
+        t.expect (mt::eq (std::array{ 1, 2 }, std::array{ 1, 2 }))
             << "array{ 1, 2 } == array{ 1, 2 }";
         local_counts.passed_checks++;
 
-        t.expect (ne (std::array{ 1, 2, 3 }, std::array{ 1, 2, 4 }))
+        t.expect (mt::ne (std::array{ 1, 2, 3 }, std::array{ 1, 2, 4 }))
             << "array{ 1, 2, 3 } != array{ 1, 2, 4 }";
         local_counts.passed_checks++;
 
@@ -213,7 +213,7 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
     test_assert (current_suite_totals.passed_checks ()
                  > before.passed_checks ());
 
-    counters after{};
+    mt::counters after{};
     after = current_suite_totals;
     test_assert (after.passed_checks ()
                  == current_suite_totals.passed_checks ());
@@ -222,19 +222,19 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
 
     ts.test ("Arrays bad", [] (auto& t)
       {
-        t.expect (ne (std::array<int, 1>{ 42 }, std::array<int, 1>{ 42 }))
+        t.expect (mt::ne (std::array<int, 1>{ 42 }, std::array<int, 1>{ 42 }))
             << "array{ 42 } ne array{ 42 }";
         local_counts.failed_checks++;
 
-        t.expect (eq (std::array<int, 1>{ 42 }, std::array<int, 1>{ 43 }))
+        t.expect (mt::eq (std::array<int, 1>{ 42 }, std::array<int, 1>{ 43 }))
             << "array{ 42 } eq array{ 43 }";
         local_counts.failed_checks++;
 
-        t.expect (ne (std::array{ 1, 2 }, std::array{ 1, 2 }))
+        t.expect (mt::ne (std::array{ 1, 2 }, std::array{ 1, 2 }))
             << "array{ 1, 2 } ne array{ 1, 2 }";
         local_counts.failed_checks++;
 
-        t.expect (eq (std::array{ 1, 2, 3 }, std::array{ 1, 2, 4 }))
+        t.expect (mt::eq (std::array{ 1, 2, 3 }, std::array{ 1, 2, 4 }))
             << "array{ 1, 2, 3 } eq array{ 1, 2, 4 }";
         local_counts.failed_checks++;
 
@@ -250,27 +250,27 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
 
     ts.test ("Vectors", [] (auto& t)
       {
-        t.expect (eq (std::vector<int>{}, std::vector<int>{}))
+        t.expect (mt::eq (std::vector<int>{}, std::vector<int>{}))
             << "vector{ } == vector{ }";
         local_counts.passed_checks++;
 
-        t.expect (eq (std::vector<int>{}, std::vector<int>{}));
+        t.expect (mt::eq (std::vector<int>{}, std::vector<int>{}));
         local_counts.passed_checks++;
 
-        t.expect (eq (std::vector<int>{ 42 }, std::vector<int>{ 42 }))
+        t.expect (mt::eq (std::vector<int>{ 42 }, std::vector<int>{ 42 }))
             << "vector{ 42 } == vector{ 42 }";
         local_counts.passed_checks++;
 
-        t.expect (ne (std::vector<int>{ 42 }, std::vector<int>{ 43 }))
+        t.expect (mt::ne (std::vector<int>{ 42 }, std::vector<int>{ 43 }))
             << "vector{ 42 } != vector{ 43 }";
         local_counts.passed_checks++;
 
-        t.expect (eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
+        t.expect (mt::eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
             << "vector{ 1, 2 } == vector{ 1, 2 }";
         local_counts.passed_checks++;
 
         t.expect (
-            ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 }))
+            mt::ne (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 }))
             << "vector{ 1, 2, 3 } != vector{ 1, 2, 4 }";
         local_counts.passed_checks++;
 
@@ -286,27 +286,27 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
 
     ts.test ("Vectors bad", [] (auto& t)
       {
-        t.expect (ne (std::vector<int>{}, std::vector<int>{}))
+        t.expect (mt::ne (std::vector<int>{}, std::vector<int>{}))
             << "vector{ } != vector{ }";
         local_counts.failed_checks++;
 
-        t.expect (ne (std::vector<int>{}, std::vector<int>{}));
+        t.expect (mt::ne (std::vector<int>{}, std::vector<int>{}));
         local_counts.failed_checks++;
 
-        t.expect (ne (std::vector<int>{ 42 }, std::vector<int>{ 42 }))
+        t.expect (mt::ne (std::vector<int>{ 42 }, std::vector<int>{ 42 }))
             << "vector{ 42 } != vector{ 42 }";
         local_counts.failed_checks++;
 
-        t.expect (eq (std::vector<int>{ 42 }, std::vector<int>{ 43 }))
+        t.expect (mt::eq (std::vector<int>{ 42 }, std::vector<int>{ 43 }))
             << "vector{ 42 } == vector{ 43 }";
         local_counts.failed_checks++;
 
-        t.expect (ne (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
+        t.expect (mt::ne (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
             << "vector{ 1, 2 } != vector{ 1, 2 }";
         local_counts.failed_checks++;
 
         t.expect (
-            eq (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 }))
+            mt::eq (std::vector<int>{ 1, 2, 3 }, std::vector<int>{ 1, 2, 4 }))
             << "vector{ 1, 2, 3 } == vector{ 1, 2, 4 }";
         local_counts.failed_checks++;
 
@@ -322,11 +322,11 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
 
     ts.test ("Custom types", [] (auto& t)
       {
-        t.expect (eq (point{ 1, 2 }, point{ 1, 2 }))
+        t.expect (mt::eq (point{ 1, 2 }, point{ 1, 2 }))
             << "point{ 1, 2 } == point{ 1, 2 }";
         local_counts.passed_checks++;
 
-        t.expect (ne (point{ 1, 2 }, point{ 1, 3 }))
+        t.expect (mt::ne (point{ 1, 2 }, point{ 1, 3 }))
             << "point{ 1, 2 } != point{ 1, 3 }";
         local_counts.passed_checks++;
 
@@ -342,15 +342,15 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
 
     ts.test ("Custom types bad", [] (auto& t)
       {
-        t.expect (eq (point{ 1, 2 }, point{ 1, 3 }))
+        t.expect (mt::eq (point{ 1, 2 }, point{ 1, 3 }))
             << "point{ 1, 2 } == point{ 1, 3 }";
         local_counts.failed_checks++;
 
         // Without a message; the operands are reported in the condition.
-        t.expect (eq (point{ 1, 2 }, point{ 1, 3 }));
+        t.expect (mt::eq (point{ 1, 2 }, point{ 1, 3 }));
         local_counts.failed_checks++;
 
-        t.expect (ne (point{ 1, 2 }, point{ 1, 2 }))
+        t.expect (mt::ne (point{ 1, 2 }, point{ 1, 2 }))
             << "point{ 1, 2 } != point{ 1, 2 }";
         local_counts.failed_checks++;
 
@@ -372,7 +372,7 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
         t.expect (even (4)) << "even 4";
         local_counts.passed_checks++;
 
-        t.expect (all_of (divides (3, 12), even (4))) << "combined";
+        t.expect (mt::all_of (divides (3, 12), even (4))) << "combined";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
@@ -397,7 +397,7 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
         t.expect (even (7));
         local_counts.failed_checks++;
 
-        t.expect (all_of (divides (3, 12), even (7)));
+        t.expect (mt::all_of (divides (3, 12), even (7)));
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;
@@ -413,52 +413,53 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
     // The comparators accept the standard types that the formatter writes.
     ts.test ("Standard types", [] (auto& t)
       {
-        t.expect (eq (colour::red, colour::red))
+        t.expect (mt::eq (colour::red, colour::red))
             << "colour::red == colour::red";
         local_counts.passed_checks++;
 
-        t.expect (ne (colour::red, colour::green))
+        t.expect (mt::ne (colour::red, colour::green))
             << "colour::red != colour::green";
         local_counts.passed_checks++;
 
-        t.expect (lt (level::low, level::high)) << "level::low < level::high";
+        t.expect (mt::lt (level::low, level::high))
+            << "level::low < level::high";
         local_counts.passed_checks++;
 
-        t.expect (ne (state::off, state::on)) << "state::off != state::on";
+        t.expect (mt::ne (state::off, state::on)) << "state::off != state::on";
         local_counts.passed_checks++;
 
-        t.expect (ne (std::byte{ 1 }, std::byte{ 2 }))
+        t.expect (mt::ne (std::byte{ 1 }, std::byte{ 2 }))
             << "std::byte{ 1 } != std::byte{ 2 }";
         local_counts.passed_checks++;
 
-        t.expect (eq (std::pair{ 1, 2 }, std::pair{ 1, 2 }))
+        t.expect (mt::eq (std::pair{ 1, 2 }, std::pair{ 1, 2 }))
             << "pair{ 1, 2 } == pair{ 1, 2 }";
         local_counts.passed_checks++;
 
-        t.expect (ne (std::tuple{ 1, 'a' }, std::tuple{ 1, 'b' }))
+        t.expect (mt::ne (std::tuple{ 1, 'a' }, std::tuple{ 1, 'b' }))
             << "tuple{ 1, 'a' } != tuple{ 1, 'b' }";
         local_counts.passed_checks++;
 
         std::vector<std::pair<int, int>> pairs1{ { 1, 2 } };
         std::vector<std::pair<int, int>> pairs2{ { 1, 3 } };
-        t.expect (ne (pairs1, pairs2)) << "pairs1 != pairs2";
+        t.expect (mt::ne (pairs1, pairs2)) << "pairs1 != pairs2";
         local_counts.passed_checks++;
 
         std::optional<int> optional{ 42 };
-        t.expect (eq (optional, 42)) << "optional == 42";
+        t.expect (mt::eq (optional, 42)) << "optional == 42";
         local_counts.passed_checks++;
 
-        t.expect (ne (optional, std::nullopt)) << "optional != nullopt";
+        t.expect (mt::ne (optional, std::nullopt)) << "optional != nullopt";
         local_counts.passed_checks++;
 
         using namespace std::chrono_literals;
-        t.expect (eq (5ms, 5ms)) << "5ms == 5ms";
+        t.expect (mt::eq (5ms, 5ms)) << "5ms == 5ms";
         local_counts.passed_checks++;
 
-        t.expect (lt (250us, 1ms)) << "250us < 1ms";
+        t.expect (mt::lt (250us, 1ms)) << "250us < 1ms";
         local_counts.passed_checks++;
 
-        t.expect (eq (1000ms, 1s)) << "1000ms == 1s";
+        t.expect (mt::eq (1000ms, 1s)) << "1000ms == 1s";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
@@ -473,25 +474,25 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
 
     ts.test ("Standard types bad", [] (auto& t)
       {
-        t.expect (eq (colour::red, colour::green))
+        t.expect (mt::eq (colour::red, colour::green))
             << "colour::red == colour::green";
         local_counts.failed_checks++;
 
-        t.expect (eq (std::byte{ 1 }, std::byte{ 2 }))
+        t.expect (mt::eq (std::byte{ 1 }, std::byte{ 2 }))
             << "std::byte{ 1 } == std::byte{ 2 }";
         local_counts.failed_checks++;
 
         std::vector<std::pair<int, int>> pairs1{ { 1, 2 } };
         std::vector<std::pair<int, int>> pairs2{ { 1, 3 } };
-        t.expect (eq (pairs1, pairs2)) << "pairs1 == pairs2";
+        t.expect (mt::eq (pairs1, pairs2)) << "pairs1 == pairs2";
         local_counts.failed_checks++;
 
-        t.expect (eq (std::optional<int>{ 42 }, std::nullopt))
+        t.expect (mt::eq (std::optional<int>{ 42 }, std::nullopt))
             << "optional == nullopt";
         local_counts.failed_checks++;
 
-        t.expect (eq (std::chrono::milliseconds{ 5 },
-                      std::chrono::milliseconds{ 6 }))
+        t.expect (mt::eq (std::chrono::milliseconds{ 5 },
+                          std::chrono::milliseconds{ 6 }))
             << "5ms == 6ms";
         local_counts.failed_checks++;
 
@@ -570,10 +571,10 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
         static const int first = 1;
         static const int second = 2;
 
-        t.expect (ne (&first, &second)) << "different const objects";
+        t.expect (mt::ne (&first, &second)) << "different const objects";
         local_counts.passed_checks++;
 
-        t.expect (eq (&first, &first)) << "same const object";
+        t.expect (mt::eq (&first, &first)) << "same const object";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
@@ -587,33 +588,33 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
         const counted b{ 1 };
 
         counted_copies = 0;
-        t.expect (eq (a, b)) << "plain operands";
+        t.expect (mt::eq (a, b)) << "plain operands";
         local_counts.passed_checks++;
         int copies = counted_copies;
 
-        t.expect (eq (copies, 0)) << "plain operands not copied";
+        t.expect (mt::eq (copies, 0)) << "plain operands not copied";
         local_counts.passed_checks++;
 
         counted_copies = 0;
-        t.expect (all_of (eq (a, b), negate (ne (a, b))))
+        t.expect (mt::all_of (mt::eq (a, b), mt::negate (mt::ne (a, b))))
             << "nested comparators";
         local_counts.passed_checks++;
         copies = counted_copies;
 
-        t.expect (eq (copies, 0)) << "nested comparators not copied";
+        t.expect (mt::eq (copies, 0)) << "nested comparators not copied";
         local_counts.passed_checks++;
 
         // A comparator that outlives the statement owns its temporary
         // operands; `counted` has no move constructor, so the temporary
         // is copied, once.
         counted_copies = 0;
-        const auto stored = eq (counted{ 1 }, b);
+        const auto stored = mt::eq (counted{ 1 }, b);
         copies = counted_copies;
 
         t.expect (stored) << "stored comparator";
         local_counts.passed_checks++;
 
-        t.expect (eq (copies, 1)) << "temporary operand stored once";
+        t.expect (mt::eq (copies, 1)) << "temporary operand stored once";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
@@ -630,25 +631,25 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
         const int numbers[]{ 1, 2 };
         const std::vector<int> vector{ 1, 2 };
 
-        t.expect (eq (first, same)) << "bytes equal";
+        t.expect (mt::eq (first, same)) << "bytes equal";
         local_counts.passed_checks++;
 
-        t.expect (ne (first, other)) << "bytes not equal";
+        t.expect (mt::ne (first, other)) << "bytes not equal";
         local_counts.passed_checks++;
 
-        t.expect (ne (first, shorter)) << "different sizes";
+        t.expect (mt::ne (first, shorter)) << "different sizes";
         local_counts.passed_checks++;
 
-        t.expect (lt (first, other)) << "bytes less";
+        t.expect (mt::lt (first, other)) << "bytes less";
         local_counts.passed_checks++;
 
-        t.expect (gt (first, shorter)) << "prefix is less";
+        t.expect (mt::gt (first, shorter)) << "prefix is less";
         local_counts.passed_checks++;
 
-        t.expect (eq (numbers, vector)) << "array == vector";
+        t.expect (mt::eq (numbers, vector)) << "array == vector";
         local_counts.passed_checks++;
 
-        t.expect (eq (vector, numbers)) << "vector == array";
+        t.expect (mt::eq (vector, numbers)) << "vector == array";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
@@ -659,7 +660,7 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
         const std::uint8_t first[]{ 1, 2, 3 };
         const std::uint8_t other[]{ 1, 2, 4 };
 
-        t.expect (eq (first, other)) << "bytes eq";
+        t.expect (mt::eq (first, other)) << "bytes eq";
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;
@@ -672,14 +673,14 @@ static static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
         std::vector<int> other{ numbers };
         other.back () = 0;
 
-        t.expect (eq (numbers, other)) << "long vector eq";
+        t.expect (mt::eq (numbers, other)) << "long vector eq";
         local_counts.failed_checks++;
 
         const std::vector<std::uint8_t> exact (16, 7);
         std::vector<std::uint8_t> exact_other{ exact };
         exact_other.back () = 8;
 
-        t.expect (eq (exact, exact_other)) << "16 bytes eq";
+        t.expect (mt::eq (exact, exact_other)) << "16 bytes eq";
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;

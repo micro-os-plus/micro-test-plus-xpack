@@ -20,7 +20,6 @@ xpack_enable_empty_test = true
 xpack_enable_minimal_test = true
 xpack_enable_suite_test = true
 xpack_enable_sample_test = true
-xpack_enable_unit_common_test = true
 xpack_enable_unit_static_asserts_test = true
 xpack_enable_unit_checks_test = true
 xpack_enable_unit_combinations_test = true
@@ -46,10 +45,6 @@ endif
 
 if xpack_enable_sample_test
   xpack_dependencies_tests_folders += [ 'sources/sample' ]
-endif
-
-if xpack_enable_unit_common_test
-  xpack_dependencies_tests_folders += [ 'sources/unit-common' ]
 endif
 
 if xpack_enable_unit_static_asserts_test

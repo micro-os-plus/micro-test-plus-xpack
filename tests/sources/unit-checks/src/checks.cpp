@@ -18,9 +18,7 @@
 
 using namespace std::literals;
 
-// For this test only, make the namespaces globally visible.
-using namespace micro_os_plus;
-using namespace micro_os_plus::micro_test_plus;
+namespace mt = micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
 
@@ -97,26 +95,26 @@ namespace user_types
         = default;
   };
 
-  inline expression_formatter&
-  operator<< (expression_formatter& formatter, const wrapped& w)
+  inline mt::expression_formatter&
+  operator<< (mt::expression_formatter& formatter, const wrapped& w)
   {
     return formatter << "wrapped{ " << w.v << " }";
   }
 
-  inline expression_formatter&
-  operator<< (expression_formatter& formatter, const handle& h)
+  inline mt::expression_formatter&
+  operator<< (mt::expression_formatter& formatter, const handle& h)
   {
     return formatter << "handle{ " << h.id << " }";
   }
 
-  inline expression_formatter&
-  operator<< (expression_formatter& formatter, const reading& r)
+  inline mt::expression_formatter&
+  operator<< (mt::expression_formatter& formatter, const reading& r)
   {
     return formatter << "reading{ " << r.value << " }";
   }
 
-  inline expression_formatter&
-  operator<< (expression_formatter& formatter, const gauge& g)
+  inline mt::expression_formatter&
+  operator<< (mt::expression_formatter& formatter, const gauge& g)
   {
     return formatter << "gauge{ " << g.level << " }";
   }
@@ -126,12 +124,12 @@ namespace user_types
 
 // A second runner, never initialised. Its static suite is constructed
 // before it, and is neither counted nor run by `tr`.
-extern runner other_runner;
+extern mt::runner other_runner;
 
-static static_suite other_suite{ "Other runner suite", other_runner,
-                                 [] (auto&) noexcept {} };
+static mt::static_suite other_suite{ "Other runner suite", other_runner,
+                                     [] (auto&) noexcept {} };
 
-runner other_runner;
+mt::runner other_runner;
 
 // ----------------------------------------------------------------------------
 
@@ -139,9 +137,9 @@ runner other_runner;
 // code of the caller, and checks the intermediate totals. It must be called
 // before `run_suites()`.
 void
-unit_checks_run_tests (suite& ts)
+unit_checks_run_tests (mt::suite& ts)
 {
-  const counters& current_suite_totals = ts.totals ();
+  const mt::counters& current_suite_totals = ts.totals ();
 
   ts.test ("require", [] (auto& t)
     {
@@ -228,20 +226,21 @@ unit_checks_run_tests (suite& ts)
       using namespace std::literals::string_view_literals;
 
 #if 0
-    std::string_view sv = reflection::type_name<void> ();
+    std::string_view sv = mt::reflection::type_name<void> ();
     printf ("|%*.s|\n", sv.length (), sv.data ());
 #endif // 0-1
 
-      t.expect (eq (reflection::type_name<void> (), "void"sv));
+      t.expect (mt::eq (mt::reflection::type_name<void> (), "void"sv));
       local_counts.passed_checks++;
 
-      t.expect (eq (reflection::type_name<int> (), "int"sv));
+      t.expect (mt::eq (mt::reflection::type_name<int> (), "int"sv));
       local_counts.passed_checks++;
 
-      t.expect (eq (reflection::type_name<unsigned int> (), "unsigned int"sv));
+      t.expect (mt::eq (mt::reflection::type_name<unsigned int> (),
+                        "unsigned int"sv));
       local_counts.passed_checks++;
 
-      t.expect (eq (reflection::type_name<float> (), "float"sv));
+      t.expect (mt::eq (mt::reflection::type_name<float> (), "float"sv));
       local_counts.passed_checks++;
 
       local_counts.executed_test_cases++;
@@ -259,68 +258,69 @@ unit_checks_run_tests (suite& ts)
   ts.test ("Splits", [] (auto& t)
     {
       t.expect (std::vector<std::string_view>{}
-                == utility::split<std::string_view> ("", "."))
+                == mt::utility::split<std::string_view> ("", "."))
           << "empty splits into []";
       local_counts.passed_checks++;
 
       t.expect (std::vector<std::string_view>{ "a" }
-                == utility::split<std::string_view> ("a.", "."))
+                == mt::utility::split<std::string_view> ("a.", "."))
           << "a. splits into [a]";
       local_counts.passed_checks++;
 
       t.expect (std::vector<std::string_view>{ "a", "b" }
-                == utility::split<std::string_view> ("a.b", "."))
+                == mt::utility::split<std::string_view> ("a.b", "."))
           << "a.b splits into [a,b]";
       local_counts.passed_checks++;
 
       t.expect (std::vector<std::string_view>{ "a", "b", "cde" }
-                == utility::split<std::string_view> ("a.b.cde", "."))
+                == mt::utility::split<std::string_view> ("a.b.cde", "."))
           << "a.b.cde splits into [a, b, cde]";
       local_counts.passed_checks++;
 
       t.expect (std::vector<std::string_view>{ "abc" }
-                == utility::split<std::string_view> ("abc", "."))
+                == mt::utility::split<std::string_view> ("abc", "."))
           << "abc (no delimiter) splits into [abc]";
       local_counts.passed_checks++;
 
       t.expect (std::vector<std::string_view>{}
-                == utility::split<std::string_view> (".", "."))
+                == mt::utility::split<std::string_view> (".", "."))
           << ". (only delimiter) splits into []";
       local_counts.passed_checks++;
 
       t.expect (std::vector<std::string_view>{ "a" }
-                == utility::split<std::string_view> (".a", "."))
+                == mt::utility::split<std::string_view> (".a", "."))
           << ".a (leading delimiter) splits into [a]";
       local_counts.passed_checks++;
 
       t.expect (std::vector<std::string_view>{ "a", "b" }
-                == utility::split<std::string_view> ("a..b", "."))
+                == mt::utility::split<std::string_view> ("a..b", "."))
           << "a..b (consecutive delimiters) splits into [a, b]";
       local_counts.passed_checks++;
 
       // The non-template overload, selected for literals.
       t.expect (std::vector<std::string_view>{ "a", "b" }
-                == utility::split ("a.b", "."))
+                == mt::utility::split ("a.b", "."))
           << "literal a.b splits into [a, b]";
       local_counts.passed_checks++;
 
       t.expect (std::vector<std::string_view>{ "a", "b", "c" }
-                == utility::split ("a.b,c", ".,"))
+                == mt::utility::split ("a.b,c", ".,"))
           << "literal a.b,c splits on any delimiter";
       local_counts.passed_checks++;
 
-      t.expect (std::vector<std::string_view>{} == utility::split ("", "."))
+      t.expect (std::vector<std::string_view>{}
+                == mt::utility::split ("", "."))
           << "literal empty splits into []";
       local_counts.passed_checks++;
 
       // The template, selected for string views and strings.
       t.expect (std::vector<std::string_view>{ "a", "b" }
-                == utility::split (std::string_view{ "a.b" }, "."))
+                == mt::utility::split (std::string_view{ "a.b" }, "."))
           << "string view a.b splits into [a, b]";
       local_counts.passed_checks++;
 
       t.expect (std::vector<std::string>{ "a", "b" }
-                == utility::split (std::string{ "a.b" }, "."))
+                == mt::utility::split (std::string{ "a.b" }, "."))
           << "string a.b splits into [a, b] strings";
       local_counts.passed_checks++;
 
@@ -340,7 +340,7 @@ unit_checks_run_tests (suite& ts)
     {
       t.test ("inner subtest", [] (auto& t2)
         {
-          t2.expect (eq (1, 1));
+          t2.expect (mt::eq (1, 1));
           local_counts.passed_checks++;
           local_counts.executed_test_cases++; // inner
         });
@@ -360,12 +360,12 @@ unit_checks_run_tests (suite& ts)
   // outer result in the reporter buffer when the nested test case begins.
   ts.test ("Nested subtest after a check", [] (auto& t)
     {
-      t.expect (eq (1, 1)) << "outer check before the nested subtest";
+      t.expect (mt::eq (1, 1)) << "outer check before the nested subtest";
       local_counts.passed_checks++;
 
       t.test ("inner subtest after a check", [] (auto& t2)
         {
-          t2.expect (eq (2, 2)) << "inner check";
+          t2.expect (mt::eq (2, 2)) << "inner check";
           local_counts.passed_checks++;
           local_counts.executed_test_cases++; // inner
         });
@@ -389,14 +389,14 @@ unit_checks_run_tests (suite& ts)
 
     ts.test ("Failed nested subtest", [] (auto& t)
       {
-        t.expect (eq (1, 1)) << "outer check passes";
+        t.expect (mt::eq (1, 1)) << "outer check passes";
         local_counts.passed_checks++;
 
         t.test ("middle subtest", [] (auto& t2)
           {
             t2.test ("inner subtest", [] (auto& t3)
               {
-                t3.expect (eq (1, 2)) << "inner check fails";
+                t3.expect (mt::eq (1, 2)) << "inner check fails";
                 local_counts.failed_checks++;
                 local_counts.executed_test_cases++; // inner
               });
@@ -424,11 +424,11 @@ unit_checks_run_tests (suite& ts)
   ts.test ("Stored check result", [] (auto& t)
     {
       {
-        auto stored = t.expect (eq (1, 2));
+        auto stored = t.expect (mt::eq (1, 2));
         stored << "stored check fails";
         local_counts.failed_checks++;
 
-        t.expect (eq (3, 3)) << "later check passes";
+        t.expect (mt::eq (3, 3)) << "later check passes";
         local_counts.passed_checks++;
       } // The stored check is reported here.
 
@@ -449,15 +449,15 @@ unit_checks_run_tests (suite& ts)
   // (found by argument-dependent lookup) and member.
   ts.test ("Application types with get()", [] (auto& t)
     {
-      t.expect (ne (user_types::wrapped{ 1 }, user_types::wrapped{ 2 }))
+      t.expect (mt::ne (user_types::wrapped{ 1 }, user_types::wrapped{ 2 }))
           << "wrapped values differ";
       local_counts.passed_checks++;
 
-      t.expect (eq (user_types::wrapped{ 3 }, user_types::wrapped{ 3 }))
+      t.expect (mt::eq (user_types::wrapped{ 3 }, user_types::wrapped{ 3 }))
           << "wrapped values are equal";
       local_counts.passed_checks++;
 
-      t.expect (ne (user_types::handle{ 1 }, user_types::handle{ 2 }))
+      t.expect (mt::ne (user_types::handle{ 1 }, user_types::handle{ 2 }))
           << "handles differ";
       local_counts.passed_checks++;
 
@@ -478,19 +478,19 @@ unit_checks_run_tests (suite& ts)
   // only identify the framework constants and floating-point wrappers.
   ts.test ("Application types with value and epsilon", [] (auto& t)
     {
-      t.expect (ne (user_types::reading{ 1 }, user_types::reading{ 2 }))
+      t.expect (mt::ne (user_types::reading{ 1 }, user_types::reading{ 2 }))
           << "readings differ";
       local_counts.passed_checks++;
 
-      t.expect (eq (user_types::reading{ 3 }, user_types::reading{ 3 }))
+      t.expect (mt::eq (user_types::reading{ 3 }, user_types::reading{ 3 }))
           << "readings are equal";
       local_counts.passed_checks++;
 
-      t.expect (ne (user_types::gauge{ 1, 5 }, user_types::gauge{ 2, 5 }))
+      t.expect (mt::ne (user_types::gauge{ 1, 5 }, user_types::gauge{ 2, 5 }))
           << "gauges differ";
       local_counts.passed_checks++;
 
-      t.expect (eq (user_types::gauge{ 3, 5 }, user_types::gauge{ 3, 5 }))
+      t.expect (mt::eq (user_types::gauge{ 3, 5 }, user_types::gauge{ 3, 5 }))
           << "gauges are equal";
       local_counts.passed_checks++;
 
@@ -542,13 +542,13 @@ unit_checks_run_tests (suite& ts)
   // check.
   ts.test ("Character operands", [] (auto& t)
     {
-      t.expect (eq ('\0', 'a'));
+      t.expect (mt::eq ('\0', 'a'));
       local_counts.failed_checks++;
 
-      t.expect (eq (' ', '\t')) << "space is tab";
+      t.expect (mt::eq (' ', '\t')) << "space is tab";
       local_counts.failed_checks++;
 
-      t.expect (eq ('x', 'x'));
+      t.expect (mt::eq ('x', 'x'));
       local_counts.passed_checks++;
 
       local_counts.executed_test_cases++;
@@ -564,7 +564,7 @@ unit_checks_run_tests (suite& ts)
   // --------------------------------------------------------------------------
 
   {
-    counters fresh{};
+    mt::counters fresh{};
     test_assert (fresh.passed ());
     test_assert (fresh.executed_checks () == 0);
   }
@@ -581,7 +581,7 @@ unit_checks_run_tests (suite& ts)
   tr.add_suite ("Dynamic suite", [] (auto& s)
     {
       s.test ("check in dynamic suite", [] (auto& t)
-        { t.expect (eq (1, 1)) << "1 == 1 in dynamic suite"; });
+        { t.expect (mt::eq (1, 1)) << "1 == 1 in dynamic suite"; });
     });
   test_assert (tr.added_suites_count () == 1);
 
@@ -593,7 +593,8 @@ unit_checks_run_tests (suite& ts)
       [] (auto& s)
     {
       s.test ("check in dynamic suite with a temporary name", [] (auto& t) {
-          t.expect (eq (2, 2)) << "2 == 2 in the suite with a temporary name";
+          t.expect (mt::eq (2, 2))
+              << "2 == 2 in the suite with a temporary name";
         });
     });
   test_assert (tr.added_suites_count () == 2);
@@ -611,8 +612,8 @@ unit_checks_run_tests (suite& ts)
 
     test_assert (other_runner.static_suites_count () == 1);
     {
-      static_suite local_suite{ "Local static suite", other_runner,
-                                [] (auto&) noexcept {} };
+      mt::static_suite local_suite{ "Local static suite", other_runner,
+                                    [] (auto&) noexcept {} };
       test_assert (other_runner.static_suites_count () == 2);
       test_assert (tr.static_suites_count () == static_suites_count);
     }
@@ -620,30 +621,6 @@ unit_checks_run_tests (suite& ts)
   }
 
   // --------------------------------------------------------------------------
-}
-
-// ----------------------------------------------------------------------------
-
-// Checks the state of the session after `run_suites()` returned `code`.
-void
-unit_checks_verify_session (int argc, char* argv[], suite& ts,
-                                 int code)
-{
-  // The session runs only once; the later calls of run_suites() return the same
-  // code without running the suites again, and a second initialise() or
-  // add_top_suite() changes nothing.
-  {
-    const size_t executed_checks = tr.totals ().executed_checks ();
-    const size_t executed_test_cases = tr.totals ().executed_test_cases ();
-
-    test_assert (tr.run_suites () == code);
-    tr.initialise (argc, argv);
-    test_assert (&tr.add_top_suite () == &ts);
-    test_assert (tr.run_suites () == code);
-
-    test_assert (tr.totals ().executed_checks () == executed_checks);
-    test_assert (tr.totals ().executed_test_cases () == executed_test_cases);
-  }
 }
 
 // ----------------------------------------------------------------------------

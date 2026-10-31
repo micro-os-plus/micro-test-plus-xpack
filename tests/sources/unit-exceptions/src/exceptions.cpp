@@ -17,7 +17,7 @@
 
 #include <stdexcept>
 
-using namespace micro_os_plus::micro_test_plus;
+namespace mt = micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
 
@@ -53,10 +53,10 @@ exercise_throw_runtime_error (bool mustThrow)
 
 // ----------------------------------------------------------------------------
 
-static static_suite ts_exceptions{ "Exceptions suite", tr,
-                                   [] (auto& ts) noexcept
+static mt::static_suite ts_exceptions{ "Exceptions suite", tr,
+                                       [] (auto& ts) noexcept
   {
-    const counters& current_suite_totals = ts.totals ();
+    const mt::counters& current_suite_totals = ts.totals ();
 
     local_counts = {};
 
@@ -64,7 +64,7 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
 
     ts.test ("thrown exceptions", [] (auto& t)
       {
-        t.expect (throws ([] { exercise_throw (true); }))
+        t.expect (mt::throws ([] { exercise_throw (true); }))
             << "exception thrown";
         local_counts.passed_checks++;
 
@@ -76,7 +76,7 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
 
-        t.expect (throws<std::runtime_error> ([]
+        t.expect (mt::throws<std::runtime_error> ([]
           { throw std::runtime_error{ "" }; }))
             << "std::runtime_error thrown";
 
@@ -100,7 +100,7 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
 
     ts.test ("Failed thrown exceptions", [] (auto& t)
       {
-        t.expect (throws ([] { exercise_throw (false); }))
+        t.expect (mt::throws ([] { exercise_throw (false); }))
             << "exception thrown";
         local_counts.failed_checks++;
 
@@ -112,7 +112,7 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
 #endif // defined(__clang__)
 #endif // defined(__GNUC__)
 
-        t.expect (throws<std::runtime_error> ([] ()
+        t.expect (mt::throws<std::runtime_error> ([] ()
           { throw std::invalid_argument{ "" }; }))
             << "std::runtime_error thrown";
 
@@ -136,7 +136,7 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
 
     ts.test ("Not thrown exceptions", [] (auto& t)
       {
-        t.expect (nothrow ([] { exercise_throw (false); }))
+        t.expect (mt::nothrow ([] { exercise_throw (false); }))
             << "exception not thrown";
         local_counts.passed_checks++;
 
@@ -154,7 +154,7 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
 
     ts.test ("Failed not thrown exceptions", [] (auto& t)
       {
-        t.expect (nothrow ([] { exercise_throw (true); }))
+        t.expect (mt::nothrow ([] { exercise_throw (true); }))
             << "exception not thrown";
         local_counts.failed_checks++;
 
@@ -295,36 +295,38 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
       // still run.
       ts.test ("Exception in a suite body", [] (auto& t)
         {
-          runner_options options{};
-          options.selected_reporter = reporter_kind::human;
-          options.verbosity_level = verbosity::silent;
+          mt::runner_options options{};
+          options.selected_reporter = mt::reporter_kind::human;
+          options.verbosity_level = mt::verbosity::silent;
 
           int later_runs = 0;
 
           // The suites run sorted by name.
-          runner local_runner;
+          mt::runner local_runner;
           local_runner.initialise (options);
           local_runner.add_top_suite ("Local");
-          local_runner.add_suite ("A throwing suite", [] (suite& s)
+          local_runner.add_suite ("A throwing suite", [] (mt::suite& s)
             {
               s.test ("Local test", [] (auto& lt) { lt.expect (true); });
               throw 42;
             });
-          local_runner.add_suite ("B later suite", [&later_runs] (suite& s)
+          local_runner.add_suite ("B later suite", [&later_runs] (mt::suite& s)
             {
               ++later_runs;
               s.test ("Local test", [] (auto& lt) { lt.expect (true); });
             });
 
-          t.expect (eq (local_runner.run_suites (), 1)) << "session failed";
+          t.expect (mt::eq (local_runner.run_suites (), 1))
+              << "session failed";
           local_counts.passed_checks++;
 
-          t.expect (eq (later_runs, 1)) << "later suite run";
+          t.expect (mt::eq (later_runs, 1)) << "later suite run";
           local_counts.passed_checks++;
 
-          t.expect (eq (local_runner.totals ().passed_checks (), 2u)
-                    and eq (local_runner.totals ().failed_checks (), 1u)
-                    and eq (local_runner.totals ().executed_test_cases (), 2u))
+          t.expect (
+              mt::eq (local_runner.totals ().passed_checks (), 2u)
+              and mt::eq (local_runner.totals ().failed_checks (), 1u)
+              and mt::eq (local_runner.totals ().executed_test_cases (), 2u))
               << "exception counted as a failed check";
           local_counts.passed_checks++;
         });
@@ -347,8 +349,8 @@ static static_suite ts_exceptions{ "Exceptions suite", tr,
 // test cases already run; the following test cases are not run, and the
 // session continues with the next suite. The body must
 // not be declared `noexcept`, which would terminate the program.
-static static_suite ts_exceptions_body{ "Exceptions suite body", tr,
-                                        [] (auto& ts)
+static mt::static_suite ts_exceptions_body{ "Exceptions suite body", tr,
+                                            [] (auto& ts)
   {
     ts.test ("Test case before the exception", [] (auto& t)
       { t.expect (true) << "check before the exception"; });
