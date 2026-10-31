@@ -2789,13 +2789,13 @@ not ok 12 - Operands suite # { FAILED, 48 checks passed, 31 failed, in 18 test c
     ok 3 - Application arguments # { passed, 11 checks }
     ok 4 - Reporter, verbosity, and listing # { passed, 9 checks }
     ok 5 - Output file and filters # { passed, 5 checks }
-    ok 6 - Colours # { passed, 15 checks }
+    ok 6 - Colours # { passed, 16 checks }
     ok 7 - Option errors # { passed, 5 checks }
     ok 8 - Owned strings # { passed, 3 checks }
     ok 9 - Copies and moves # { passed, 5 checks }
 
     1..9
-ok 13 - Runner options suite # { passed, 63 checks in 9 test cases, time: 1.044 ms }
+ok 13 - Runner options suite # { passed, 64 checks in 9 test cases, time: 1.121 ms }
 
 # Subtest: Stopwatch suite
     ok 1 - stopwatch::start() and stop() # { passed, 5 checks }
@@ -2849,6 +2849,6 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.107 ms }
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.120 ms }
 
 1..15
-# { total: 673 checks passed, 350 failed, in 159 test cases, 15 test suites, time: 16.695 ms }
+# { total: 674 checks passed, 350 failed, in 159 test cases, 15 test suites, time: 14.284 ms }
 Overall, the µTest++ unit tests were successful!
 

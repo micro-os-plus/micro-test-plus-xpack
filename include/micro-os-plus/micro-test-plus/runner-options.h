@@ -374,7 +374,10 @@ namespace micro_os_plus::micro_test_plus
      * `--color[=<when>]`, as in the GNU tools, where `<when>` is
      * `always`, `never`, or `auto`, or one of their GNU synonyms (`yes`
      * and `force`, `no` and `none`, `tty` and `if-tty`), and `--colour`
-     * alone means `always`; the value is accepted only after `=`. The
+     * alone means `always`; the value is accepted only after `=`, and
+     * a mode word in the next argument, such as `--colour never`, is
+     * reported as an error, since it was probably meant as the value (an
+     * application argument of that kind can follow `--`). The
      * alternative `--use-colour=<mode>` or `--use-colour <mode>`, also
      * spelled `--use-color`, as in Catch2 and Boost UT, takes `yes`, `no`,
      * or `auto`, and also accepts the other values of `--colour`. Used

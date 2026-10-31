@@ -1799,7 +1799,7 @@ To select the colours explicitly, use the `--colour` option, modelled on the `--
 sample-test --reporter=human --colour
 ```
 
-As in the GNU tools, the value must be attached with `=`; the argument that follows `--colour` is never taken as its value. The GNU synonyms are also accepted: `yes` and `force` for `always`, `no` and `none` for `never`, and `tty` and `if-tty` for `auto`.
+As in the GNU tools, the value must be attached with `=`; the argument that follows `--colour` is never taken as its value. If it is one of the modes, as in `--colour never`, it was probably meant as the value, so it is reported as an option error (the program returns 2), instead of being passed to the application; an application argument of that kind can follow `--`. The GNU synonyms are also accepted: `yes` and `force` for `always`, `no` and `none` for `never`, and `tty` and `if-tty` for `auto`.
 
 For compatibility with Catch2 and Boost UT, the alternative `--use-colour` option, also spelled `--use-color`, is accepted too, either as `--use-colour=<mode>` or as `--use-colour <mode>`, with the modes `yes`, `no`, and `auto` (and the other values of `--colour`). When both options are given, the last one takes effect.
 

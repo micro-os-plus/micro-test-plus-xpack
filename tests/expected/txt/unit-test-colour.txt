@@ -1479,8 +1479,9 @@ Matching test cases:
         [32m✓[0m --use-colour=no, --use-color=no
         [32m✓[0m --use-colour=never, --use-color=never
         [32m✓[0m --use-colour <mode>, --use-color <mode>
-        [32m✓[0m --colour and --color do not take a separate value
-    [32m✓[0m Colours - passed (15 checks)
+        [32m✓[0m a mode after --colour or --color without =
+        [32m✓[0m --colour keeps the other words and the arguments after --
+    [32m✓[0m Colours - passed (16 checks)
 
     • Option errors
         [32m✓[0m a missing option argument
@@ -1504,7 +1505,7 @@ Matching test cases:
         [32m✓[0m the move assignment moves all the members
     [32m✓[0m Copies and moves - passed (5 checks)
 
-[32m✓[0m Runner options suite - passed (63 checks in 9 test cases), time: 1.236 ms
+[32m✓[0m Runner options suite - passed (64 checks in 9 test cases), time: 1.635 ms
 
 • Stopwatch suite
 
@@ -1584,6 +1585,6 @@ Matching test cases:
 
 [31m✗[0m Utility suite - [31mFAILED[0m (21 checks passed, 5 failed, in 3 test cases), time: 0.125 ms
 
-[31m✗[0m Total: 673 checks passed, 350 failed, in 159 test cases, 15 test suites, time: 17.157 ms
+[31m✗[0m Total: 674 checks passed, 350 failed, in 159 test cases, 15 test suites, time: 16.506 ms
 Overall, the µTest++ unit tests were successful!
 

@@ -108,7 +108,8 @@ namespace micro_os_plus::micro_test_plus
    * reporter; the option values are copied from there.
    *
    * A missing option argument, an unknown reporter name, an unknown
-   * colour mode, or an unknown `--` option, is recorded by `add_error()`,
+   * colour mode, a colour mode given separately after `--colour` or
+   * `--color`, or an unknown `--` option, is recorded by `add_error()`,
    * and the option is ignored; the parsing continues with the next
    * argument, to record all the errors. The runner then refuses to run
    * the tests.
@@ -214,6 +215,22 @@ namespace micro_os_plus::micro_test_plus
           }
       };
 
+    // Whether an argument is a value of `--colour`, to detect a value
+    // given separately, which the option does not take.
+    auto is_colour_mode = [] (std::string_view value) -> bool
+      {
+        for (const std::string_view mode :
+             { "always", "yes", "force", "never", "no", "none", "auto", "tty",
+               "if-tty" })
+          {
+            if (value == mode)
+              {
+                return true;
+              }
+          }
+        return false;
+      };
+
     for (size_t i = 1; i < arguments_.size (); ++i)
       {
         const std::string_view argument{ arguments_[i] };
@@ -280,8 +297,22 @@ namespace micro_os_plus::micro_test_plus
         else if (argument == colour_option || argument == color_option)
           {
             // As in the GNU tools, the option alone means `always`, and
-            // the next argument is never taken as its value.
+            // the next argument is never taken as its value. If it looks
+            // like a mode, it was probably meant to be the value, so
+            // report it instead of silently passing it to the application.
             colour = colour_mode::always;
+            if (i + 1 < arguments_.size ()
+                && is_colour_mode (arguments_[i + 1]))
+              {
+                std::string text{ "'" };
+                text.append (argument);
+                text.append ("' takes its value only after '='; write '");
+                text.append (argument);
+                text.append ("=");
+                text.append (arguments_[i + 1]);
+                text.append ("', or put '--' before the application argument");
+                add_error (text);
+              }
           }
         else if (argument.starts_with (colour_option)
                  && argument.substr (colour_option.size ()).starts_with ('='))

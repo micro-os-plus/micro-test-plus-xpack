@@ -470,16 +470,41 @@ static mt::static_suite ts_runner_options{ "Runner options suite", tr,
             << "--use-colour <mode>, --use-color <mode>";
         local_counts.passed_checks++;
 
+        // The value is not taken from the next argument, so a mode word
+        // there is reported, instead of being passed to the application.
         const mt::runner_options colour_options
             = parse ({ "name", "--colour", "never" });
         const mt::runner_options color_options
-            = parse ({ "name", "--color", "never" });
+            = parse ({ "name", "--color", "auto", "--verbose" });
 
-        t.expect (colour_options.colour == mt::colour_mode::always
-                  and !colour_options.has_errors ()
-                  and color_options.colour == mt::colour_mode::always
-                  and !color_options.has_errors ())
-            << "--colour and --color do not take a separate value";
+        t.expect (colour_options.has_errors ()
+                  and mt::eq (colour_options.errors ().size (), 1u)
+                  and mt::eq (colour_options.errors ()[0],
+                              "'--colour' takes its value only after '='; "
+                              "write '--colour=never', or put '--' before "
+                              "the application argument")
+                  and color_options.has_errors ()
+                  and !color_options.has_unknown_option ())
+            << "a mode after --colour or --color without =";
+        local_counts.passed_checks++;
+
+        // Other words, and a mode after the terminator, are application
+        // arguments.
+        const mt::runner_options word_options
+            = parse ({ "name", "--colour", "one" });
+        const mt::runner_options terminator_options
+            = parse ({ "name", "--colour", "--", "never" });
+
+        t.expect (word_options.colour == mt::colour_mode::always
+                  and !word_options.has_errors ()
+                  and same_arguments (word_options.application_arguments (),
+                                      { "one" })
+                  and terminator_options.colour == mt::colour_mode::always
+                  and !terminator_options.has_errors ()
+                  and same_arguments (
+                      terminator_options.application_arguments (),
+                      { "never" }))
+            << "--colour keeps the other words and the arguments after --";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;

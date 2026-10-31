@@ -379,8 +379,9 @@ next line FAILED (miscellaneous.cpp:922)
         ✓ --use-colour=no, --use-color=no
         ✓ --use-colour=never, --use-color=never
         ✓ --use-colour <mode>, --use-color <mode>
-        ✓ --colour and --color do not take a separate value
-    ✓ Colours - passed (15 checks)
+        ✓ a mode after --colour or --color without =
+        ✓ --colour keeps the other words and the arguments after --
+    ✓ Colours - passed (16 checks)
     • Option errors
         ✓ a missing option argument
         ✓ the valid options are still applied
@@ -400,7 +401,7 @@ next line FAILED (miscellaneous.cpp:922)
         ✓ the move constructor moves all the members
         ✓ the move assignment moves all the members
     ✓ Copies and moves - passed (5 checks)
-✓ Runner options suite - passed (63 checks in 9 test cases)
+✓ Runner options suite - passed (64 checks in 9 test cases)
 • Stopwatch suite
     • stopwatch::start() and stop()
         ✓ fresh: has_elapsed false
@@ -467,4 +468,4 @@ next line FAILED (miscellaneous.cpp:922)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 303 checks passed, 13 failed, in 69 test cases, 5 test suites
+✗ Total: 304 checks passed, 13 failed, in 69 test cases, 5 test suites

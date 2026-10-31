@@ -703,12 +703,12 @@ Matching test cases:
     ✓ Application arguments - passed (11 checks)
     ✓ Reporter, verbosity, and listing - passed (9 checks)
     ✓ Output file and filters - passed (5 checks)
-    ✓ Colours - passed (15 checks)
+    ✓ Colours - passed (16 checks)
     ✓ Option errors - passed (5 checks)
     ✓ Owned strings - passed (3 checks)
     ✓ Copies and moves - passed (5 checks)
 
-✓ Runner options suite - passed (63 checks in 9 test cases), time: 1.113 ms
+✓ Runner options suite - passed (64 checks in 9 test cases), time: 1.329 ms
 
 • Stopwatch suite
 
@@ -735,6 +735,6 @@ Matching test cases:
 
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.087 ms
 
-✗ Total: 673 checks passed, 350 failed, in 159 test cases, 15 test suites, time: 14.560 ms
+✗ Total: 674 checks passed, 350 failed, in 159 test cases, 15 test suites, time: 12.955 ms
 Overall, the µTest++ unit tests were successful!
 
