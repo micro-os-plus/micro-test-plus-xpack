@@ -39,5 +39,6 @@
     "unit-deprecated",
     "unit"
   ],
-  "useStaticLibrary": true
+  "useStaticLibrary": true,
+  "hasUnitCommon": true
 }
