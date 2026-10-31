@@ -247,10 +247,11 @@ namespace micro_os_plus::micro_test_plus
      * them with `--`.
      *
      * A missing option argument, an unknown reporter name, an unknown
-     * colour mode, or an unknown option, is reported on `stderr`, kept
-     * in `errors()`, and makes `has_errors()` true. The parsing continues,
-     * to report all the errors, but `runner::initialise()` then runs no
-     * test: it writes the errors on the console, followed, for an unknown
+     * colour mode, or an unknown option, is recorded in
+     * `errors()`, and makes `has_errors()` true; the constructor writes
+     * nothing. The parsing continues, to record all the errors, but
+     * `runner::initialise()` then runs no test: it writes the errors on
+     * `stderr` and on the console, followed, for an unknown
      * option, by a line suggesting `--help`, creates no output file, and
      * `run_suites()` returns 2.
      *
@@ -470,9 +471,9 @@ namespace micro_os_plus::micro_test_plus
      * line.
      *
      * @details
-     * The errors were already written on `stderr` by the constructor;
-     * when set, the runner runs no test and `runner::run_suites()` returns
-     * 2. Never set for the default options.
+     * The constructor only records the errors; when set, the runner runs
+     * no test and `runner::run_suites()` returns 2. Never set for the
+     * default options.
      *
      * @return `true` if at least one error was found.
      *
@@ -500,9 +501,10 @@ namespace micro_os_plus::micro_test_plus
      * @brief Returns the errors found while parsing the command line.
      *
      * @details
-     * Each message is the text written on `stderr`, without the `error:`
+     * Each message is the text of the error, without the `error:`
      * prefix and the newline, in the order of the arguments. The runner
-     * writes them on the console when it refuses to run the tests.
+     * writes them on `stderr` and on the console when it refuses to run
+     * the tests.
      *
      * @par Parameters
      *   None.
@@ -563,11 +565,11 @@ namespace micro_os_plus::micro_test_plus
 
   private:
     /**
-     * @brief Records and reports a command-line error.
+     * @brief Records a command-line error.
      *
      * @details
-     * Writes `error: <text>` on `stderr`, and appends the text to
-     * `errors_`.
+     * Appends the text to `errors_`; nothing is written, so that
+     * parsing the command line has no output.
      *
      * @param before The start of the message, without the `error:`
      * prefix.

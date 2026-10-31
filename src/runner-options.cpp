@@ -36,7 +36,6 @@
 #include "micro-os-plus/diag/trace.h"
 #endif // __has_include("micro-os-plus/diag/trace.h")
 
-#include <cstdio>
 #include <string>
 
 // ----------------------------------------------------------------------------
@@ -111,7 +110,8 @@ namespace micro_os_plus::micro_test_plus
    * colour mode, a colour mode given separately after `--colour` or
    * `--color`, or an unknown `--` option, is recorded by `add_error()`,
    * and the option is ignored; the parsing continues with the next
-   * argument, to record all the errors. The runner then refuses to run
+   * argument, to record all the errors. Nothing is written by the
+   * constructor; the runner then writes the errors and refuses to run
    * the tests.
    */
   runner_options::runner_options (int argc, char* argv[])
@@ -343,8 +343,9 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * The message is written on `stderr` and kept in `errors_`, to be
-   * written by the runner, since the reporter does not exist yet.
+   * The message is only kept in `errors_`, so that the constructor has
+   * no output; the runner writes it on `stderr` and on the console,
+   * since the reporter does not exist yet.
    */
   void
   runner_options::add_error (std::string_view before, std::string_view value,
@@ -354,7 +355,6 @@ namespace micro_os_plus::micro_test_plus
     text.append (value);
     text.append (after);
 
-    fprintf (stderr, "error: %s\n", text.c_str ());
     errors_.push_back (std::move (text));
   }
 

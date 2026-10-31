@@ -229,8 +229,9 @@ namespace micro_os_plus::micro_test_plus
    * written; the session is not reported.
    *
    * If the options have errors, nothing else is done: no output file is
-   * created, the errors are written on the console, the session is marked
-   * as finished, so that no test is run, and `run_suites()` returns 2.
+   * created, the errors are written on `stderr` and on the console, the
+   * session is marked as finished, so that no test is run, and
+   * `run_suites()` returns 2.
    * The same happens if the output file cannot be opened.
    *
    * The runner is initialised only once; a later call reports an error
@@ -286,6 +287,7 @@ namespace micro_os_plus::micro_test_plus
 
         for (const std::string& error : options_.errors ())
           {
+            fprintf (stderr, "error: %s\n", error.c_str ());
             reporter_->write_line (
                 options_.verbosity_level != verbosity::silent, "%s%s\n",
                 reporter_->error_prefix (), error.c_str ());
