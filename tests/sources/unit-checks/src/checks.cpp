@@ -447,6 +447,17 @@ unit_checks_run_tests (mt::suite& ts)
 
   // --------------------------------------------------------------------------
 
+  // The application operator<< functions can be tested with a formatter
+  // constructed by the application, without a runner.
+  {
+    mt::expression_formatter formatter;
+    formatter << user_types::wrapped{ 7 } << " " << user_types::handle{ 2 }
+              << " " << 5u << " " << 1.5;
+    test_assert (formatter.str () == "wrapped{ 7 } handle{ 2 } 5u 1.5");
+  }
+
+  // --------------------------------------------------------------------------
+
   // The comparators compare the application types with their own
   // operators, ignoring their members named `value` and `epsilon`, which
   // only identify the framework constants and floating-point wrappers.

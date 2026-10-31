@@ -74,6 +74,16 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
+   * Refers to the `colours_none` set, so that nothing is coloured; the
+   * internal buffer is empty and the mode is not plain.
+   */
+  inline expression_formatter::expression_formatter (void) noexcept
+      : colours_ (colours_none)
+  {
+  }
+
+  /**
+   * @details
    * Initialises the `colours_` reference with the provided `colours`
    * instance. The internal buffer is default-initialised to an empty string.
    */

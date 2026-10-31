@@ -693,6 +693,14 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
   }
 
   {
+    // An application can construct a formatter to test its operator<<
+    // functions, without naming the internal colours.
+    static_assert (
+        std::is_nothrow_default_constructible_v<mt::expression_formatter>);
+    static_assert (not std::is_copy_constructible_v<mt::expression_formatter>);
+  }
+
+  {
     struct unformatted
     {
     };

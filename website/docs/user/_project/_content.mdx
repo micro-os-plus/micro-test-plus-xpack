@@ -1093,6 +1093,15 @@ pointers, are written as addresses. A plain boolean check, such as
 the source location. The same `operator<<` also writes the values
 appended to the messages (`t.expect (p == q) << "p is " << p`).
 
+To test such an `operator<<` on its own, construct a formatter, write
+the value, and compare `str()` with the expected text:
+
+```cpp
+mt::expression_formatter formatter;
+formatter << app::point{ 1, 2 };
+// formatter.str () is "{ 1, 2 }".
+```
+
 ### Custom Comparators
 
 When the relation to check is not one of the built-in comparisons, a

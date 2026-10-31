@@ -193,7 +193,7 @@ namespace micro_os_plus::micro_test_plus
      * The class is non-copyable and non-movable to avoid accidental copying
      * of the internal buffer.
      *
-     * Apart from the constructor, the public members are the
+     * Apart from the constructors, the public members are the
      * `operator<<` overloads and the read-only `str()`, so that the
      * application `operator<<` functions for user-defined types can only
      * append text. The functions that assign the buffer to a check, and
@@ -225,6 +225,21 @@ namespace micro_os_plus::micro_test_plus
       friend struct plain_text;
 
     public:
+      /**
+       * @brief Constructs a formatter without colours.
+       *
+       * @details
+       * Writes the values as in the expressions of the reports, with the
+       * type suffixes, but without colours. Intended for the
+       * applications that test their own `operator<<` functions
+       * without a runner: construct a formatter, write a value, and
+       * compare `str()` with the expected text.
+       *
+       * @par Parameters
+       *   None.
+       */
+      expression_formatter (void) noexcept;
+
       /**
        * @brief Constructor with colour configuration.
        *
