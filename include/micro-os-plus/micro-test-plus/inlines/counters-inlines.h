@@ -60,19 +60,6 @@ namespace micro_os_plus::micro_test_plus
     passed_checks_ += count;
   }
 
-#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
-  /**
-   * @details
-   * Forwards to `increment_passed_checks()`.
-   */
-  // Deprecated since 6.0.0; use increment_passed_checks().
-  inline void
-  counters::increment_successful_checks (size_t count) noexcept
-  {
-    increment_passed_checks (count);
-  }
-#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
-
   /**
    * @details
    * Adds `count` to the `failed_checks_` counter.
@@ -92,19 +79,6 @@ namespace micro_os_plus::micro_test_plus
   {
     executed_test_cases_ += count;
   }
-
-#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
-  /**
-   * @details
-   * Forwards to `increment_executed_test_cases()`.
-   */
-  // Deprecated since 6.0.0; use increment_executed_test_cases().
-  inline void
-  counters::increment_executed_subtests (size_t count) noexcept
-  {
-    increment_executed_test_cases (count);
-  }
-#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   /**
    * @details

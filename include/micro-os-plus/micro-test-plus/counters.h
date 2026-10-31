@@ -67,6 +67,18 @@ namespace micro_os_plus::micro_test_plus
 {
   // ==========================================================================
 
+  class runner;
+  class suite;
+  class test_case;
+
+  namespace detail
+  {
+    class check_result;
+    class runnable_base;
+  } // namespace detail
+
+  // ==========================================================================
+
   /**
    * @brief Aggregated check and test case counters for a node in the test
    * tree.
@@ -92,16 +104,17 @@ namespace micro_os_plus::micro_test_plus
    * totals up to the parent node, or to the runner.
    *
    * The tests can read the counters of the runner, of a suite, or of a
-   * test case through the `totals()` accessor.
+   * test case through the `totals()` accessor. The functions that update
+   * the counters are private, and called only by the framework classes,
+   * which are friends.
    *
    * The class is a copyable value type, so that a test can take a
    * snapshot of the counters (`counters before = ts.totals ();`) and
    * compare it later with the current values. The copy is independent:
    * it is not updated when the original counters change. The nodes that
    * own the live counters are themselves neither copyable nor movable.
-   * The runner returns only a `const` reference; the suites and the test
-   * cases also have a non-`const` overload, kept for v5.0.1, but the
-   * counters of the nodes are meant to be read only.
+   * The runner, the suites, and the test cases return only a `const`
+   * reference, so that the counters of the nodes are read only.
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
@@ -180,123 +193,6 @@ namespace micro_os_plus::micro_test_plus
      * Trivial; the counters own no resources.
      */
     ~counters () = default;
-
-    /**
-     * @brief Accumulates the totals from another instance into this one.
-     *
-     * @param other The instance whose totals are to be added.
-     * @return Reference to this instance.
-     */
-    counters&
-    operator+= (const counters& other) noexcept;
-
-    /**
-     * @brief Increments the passed-checks counter.
-     *
-     * @details
-     * Called for each check that passed; the opposite count is
-     * incremented by `increment_failed_checks()`.
-     *
-     * @param count The number of passed checks to add (default 1).
-     * @par Returns
-     *   Nothing.
-     *
-     * @since 6.0.0
-     */
-    void
-    increment_passed_checks (size_t count = 1) noexcept;
-
-#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
-    /**
-     * @name Deprecated Functions
-     * @{
-     */
-
-    /**
-     * @brief Deprecated name of `increment_passed_checks()`.
-     *
-     * @details
-     * Calls `increment_passed_checks()`. The old name called the checks
-     * "successful", while the reporters print them as "passed".
-     *
-     * @param count The number of passed checks to add (default 1).
-     * @par Returns
-     *   Nothing.
-     */
-    [[deprecated ("use increment_passed_checks() (since 6.0.0)")]] void
-    increment_successful_checks (size_t count = 1) noexcept;
-
-    /**
-     * @}
-     */
-#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
-
-    /**
-     * @brief Increments the failed-checks counter.
-     *
-     * @param count The number of failed checks to add (default 1).
-     * @par Returns
-     *   Nothing.
-     */
-    void
-    increment_failed_checks (size_t count = 1) noexcept;
-
-    /**
-     * @brief Increments the executed test cases counter.
-     *
-     * @param count The number of test cases to add (default 1).
-     * @par Returns
-     *   Nothing.
-     */
-    void
-    increment_executed_test_cases (size_t count = 1) noexcept;
-
-#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
-    /**
-     * @name Deprecated Functions
-     * @{
-     */
-
-    /**
-     * @brief Deprecated name of `increment_executed_test_cases()`.
-     *
-     * @details
-     * Calls `increment_executed_test_cases()`. The old name referred to
-     * the `subtest` class, which is now `test_case`.
-     *
-     * @param count The number of test cases to add (default 1).
-     * @par Returns
-     *   Nothing.
-     */
-    [[deprecated ("use increment_executed_test_cases() (since 6.0.0)")]] void
-    increment_executed_subtests (size_t count = 1) noexcept;
-
-    /**
-     * @}
-     */
-#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
-
-    /**
-     * @brief Increments the failed test cases counter.
-     *
-     * @param count The number of failed test cases to add (default 1).
-     * @par Returns
-     *   Nothing.
-     */
-    void
-    increment_failed_test_cases (size_t count = 1) noexcept;
-
-    /**
-     * @brief Increments the skipped test cases counter.
-     *
-     * @param count The number of skipped test cases to add (default 1).
-     * @par Returns
-     *   Nothing.
-     *
-     * @since 6.0.0
-     */
-    void
-    increment_skipped_test_cases (size_t count = 1) noexcept;
 
     /**
      * @brief Returns the number of checks that passed.
@@ -458,6 +354,87 @@ namespace micro_os_plus::micro_test_plus
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   private:
+    /**
+     * @brief The classes that maintain the counters.
+     *
+     * @details
+     * The nodes of the test tree and the check result update their
+     * counters, and the runner accumulates the totals of the suites; the
+     * applications only read them.
+     */
+    friend class runner;
+    friend class suite;
+    friend class test_case;
+    friend class detail::check_result;
+    friend class detail::runnable_base;
+
+    /**
+     * @brief Accumulates the totals from another instance into this one.
+     *
+     * @param other The instance whose totals are to be added.
+     * @return Reference to this instance.
+     */
+    counters&
+    operator+= (const counters& other) noexcept;
+
+    /**
+     * @brief Increments the passed-checks counter.
+     *
+     * @details
+     * Called for each check that passed; the opposite count is
+     * incremented by `increment_failed_checks()`.
+     *
+     * @param count The number of passed checks to add (default 1).
+     * @par Returns
+     *   Nothing.
+     *
+     * @since 6.0.0
+     */
+    void
+    increment_passed_checks (size_t count = 1) noexcept;
+
+    /**
+     * @brief Increments the failed-checks counter.
+     *
+     * @param count The number of failed checks to add (default 1).
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    increment_failed_checks (size_t count = 1) noexcept;
+
+    /**
+     * @brief Increments the executed test cases counter.
+     *
+     * @param count The number of test cases to add (default 1).
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    increment_executed_test_cases (size_t count = 1) noexcept;
+
+    /**
+     * @brief Increments the failed test cases counter.
+     *
+     * @param count The number of failed test cases to add (default 1).
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    increment_failed_test_cases (size_t count = 1) noexcept;
+
+    /**
+     * @brief Increments the skipped test cases counter.
+     *
+     * @param count The number of skipped test cases to add (default 1).
+     * @par Returns
+     *   Nothing.
+     *
+     * @since 6.0.0
+     */
+    void
+    increment_skipped_test_cases (size_t count = 1) noexcept;
+
     /**
      * @brief Total number of passed checks.
      *

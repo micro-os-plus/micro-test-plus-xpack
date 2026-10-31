@@ -79,8 +79,9 @@ old names instead of relying on the warnings.
 | `initialise (argc, argv, name)` | `initialise (argc, argv)` and `add_top_suite (name)` |
 | `assume()` | `require()` |
 | `subtest` | `test_case` |
-| `executed_subtests()`, `increment_executed_subtests()` | `executed_test_cases()`, `increment_executed_test_cases()` |
-| `successful_checks()`, `increment_successful_checks()` | `passed_checks()`, `increment_passed_checks()` |
+| `executed_subtests()` | `executed_test_cases()` |
+| `successful_checks()` | `passed_checks()` |
+| the public `increment_*()` functions of the counters (`detail::runner_totals`) | none, the counters are updated only by the framework |
 | `detail::runner_totals`, `was_successful()` | `counters`, `passed()` |
 | `timings()`, `detail::timestamps`, `detail::timestamp` | none, the reporters show the elapsed times |
 | `_and()`, `_or()`, `_not()` | `all_of()`, `any_of()`, `negate()` |

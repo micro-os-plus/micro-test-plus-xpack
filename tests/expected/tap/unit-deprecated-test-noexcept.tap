@@ -48,14 +48,12 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
         1..2
     ok 7 - subtest # { passed, 2 checks }
     # Subtest: counters
-        ok 1 - successful_checks()
-        ok 2 - increment_successful_checks()
+        ok 1 - a passed check
+        ok 2 - successful_checks()
         ok 3 - executed_subtests()
-        ok 4 - increment_executed_subtests()
-        ok 5 - was_successful() without failures
-        ok 6 - was_successful() with a failed check
-        1..6
-    ok 8 - counters # { passed, 6 checks }
+        ok 4 - was_successful() without failures
+        1..4
+    ok 8 - counters # { passed, 4 checks }
     # Subtest: read-only totals()
         ok 1 - both refer to the live totals
         1..1
@@ -521,6 +519,6 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
         1..9
     ok 35 - Kept helpers # { passed, 9 checks }
     1..35
-not ok 2 - Deprecated suite # { FAILED, 154 checks passed, 37 failed, in 35 test cases }
+not ok 2 - Deprecated suite # { FAILED, 152 checks passed, 37 failed, in 35 test cases }
 1..2
-# { total: 154 checks passed, 37 failed, in 35 test cases, 2 test suites }
+# { total: 152 checks passed, 37 failed, in 35 test cases, 2 test suites }

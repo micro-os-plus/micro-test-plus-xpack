@@ -40,13 +40,11 @@ Built with GCC 15.2.1 20251203, with FP, with exceptions, with MICRO_OS_PLUS_DEB
         ✓ the function ran in the suite and in the lambda
     ✓ subtest - passed (2 checks)
     • counters
+        ✓ a passed check
         ✓ successful_checks()
-        ✓ increment_successful_checks()
         ✓ executed_subtests()
-        ✓ increment_executed_subtests()
         ✓ was_successful() without failures
-        ✓ was_successful() with a failed check
-    ✓ counters - passed (6 checks)
+    ✓ counters - passed (4 checks)
     • read-only totals()
         ✓ both refer to the live totals
     ✓ read-only totals() - passed (1 check)
@@ -268,5 +266,5 @@ Built with GCC 15.2.1 20251203, with FP, with exceptions, with MICRO_OS_PLUS_DEB
         ✓ c_str()
         ✓ not empty
     ✓ Kept helpers - passed (9 checks)
-✗ Deprecated suite - FAILED (154 checks passed, 38 failed, in 36 test cases)
-✗ Total: 154 checks passed, 38 failed, in 36 test cases, 2 test suites
+✗ Deprecated suite - FAILED (152 checks passed, 38 failed, in 36 test cases)
+✗ Total: 152 checks passed, 38 failed, in 36 test cases, 2 test suites

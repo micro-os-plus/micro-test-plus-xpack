@@ -173,12 +173,13 @@ is not listed here because it did not exist in v5.0.1.
 
 #### 8. `successful_checks()` and `increment_successful_checks()`
 
-- **Current:** deprecated members of `counters`, in favour of
-  `passed_checks()` and `increment_passed_checks()`. The `unit` tests
-  call `successful_checks()` through a `detail::runner_totals&`
+- **Current:** `successful_checks()` is a deprecated member of
+  `counters`, in favour of `passed_checks()`;
+  `increment_successful_checks()` was removed with the other mutators,
+  which are now private (#226). The `unit` tests call `successful_checks()` through a `detail::runner_totals&`
   reference, which compiles since items 14 and 28 were aliased.
-- **Tested:** yes, "counters": both names, on a local `counters`
-  object.
+- **Tested:** yes, "counters": the deprecated name, on a snapshot of
+  the totals of a test case.
 
 ### I.B. Changes that break the build, without aliases
 
@@ -280,18 +281,17 @@ is not listed here because it did not exist in v5.0.1.
 - **Current:** renamed: `increment_executed_subtests()` →
   `increment_executed_test_cases()`, `executed_subtests()` →
   `executed_test_cases()`, `was_successful()` → `passed()`. The
-  successful/passed pair has aliases (item 8). The rename of the class
-  itself is item 28.
+  successful/passed getter has an alias (item 8). The `increment_*()`
+  functions are now private (#226). The rename of the class itself is
+  item 28.
 - **Breaks:** `unit` (`executed_subtests()` in 11 files,
   `was_successful()` in `main.cpp`); previously hidden behind the
   errors of items 14 and 28, now aliased.
-- **Alias:** trivial, three deprecated forwarding members. Done, in
-  `counters.h`: `increment_executed_subtests()`, `executed_subtests()`,
-  and `was_successful()`, marked `[[deprecated]]`, forward to the
-  current members.
+- **Alias:** trivial, two deprecated forwarding members. Done, in
+  `counters.h`: `executed_subtests()` and `was_successful()`, marked
+  `[[deprecated]]`, forward to the current members.
 - **Tested:** yes, "counters", together with item 8: each old name
-  reads or increments the same counter as the new one, and
-  `was_successful()` returns false after a failed check.
+  reads the same counter as the new one.
 
 #### 14. `totals()` returns only a `const` reference
 

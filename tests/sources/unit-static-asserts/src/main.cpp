@@ -48,6 +48,26 @@ namespace with_operators
 
 // ----------------------------------------------------------------------------
 
+// Satisfied when the application can update the counters; the template
+// makes the access check part of the substitution.
+template <class Counters_T>
+concept increments_passed
+    = requires (Counters_T& c) { c.increment_passed_checks (); };
+
+template <class Counters_T>
+concept increments_failed
+    = requires (Counters_T& c) { c.increment_failed_checks (); };
+
+template <class Counters_T>
+concept increments_executed
+    = requires (Counters_T& c) { c.increment_executed_test_cases (); };
+
+template <class Counters_T>
+concept adds_counters
+    = requires (Counters_T& c, const Counters_T& o) { c += o; };
+
+// ----------------------------------------------------------------------------
+
 namespace with_extension
 {
   // Satisfied when `t` can be written to the expression formatter.
@@ -690,6 +710,15 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (std::is_nothrow_copy_assignable_v<mt::counters>);
     static_assert (std::is_nothrow_move_constructible_v<mt::counters>);
     static_assert (std::is_nothrow_move_assignable_v<mt::counters>);
+  }
+
+  {
+    // The functions that update the counters are private, called only by
+    // the framework.
+    static_assert (not increments_passed<mt::counters>);
+    static_assert (not increments_failed<mt::counters>);
+    static_assert (not increments_executed<mt::counters>);
+    static_assert (not adds_counters<mt::counters>);
   }
 
   {

@@ -494,45 +494,29 @@ static mt::static_suite ts_deprecated{ "Deprecated suite", tr, [] (auto& ts)
         local_counts.executed_test_cases++;
       });
 
-    // The deprecated names of `passed_checks()`,
-    // `increment_passed_checks()`, `executed_test_cases()`,
-    // `increment_executed_test_cases()`, and `passed()`.
+    // The deprecated names of `passed_checks()`, `executed_test_cases()`,
+    // and `passed()`, read from a snapshot of the totals of the test case;
+    // the functions that update the counters are private.
     ts.test ("counters", [] (auto& t)
       {
-        mt::counters local_counters{};
-        local_counters.increment_passed_checks (3);
+        t.expect (true) << "a passed check";
+        local_counts.passed_checks++;
 
-        t.expect (mt::eq (local_counters.successful_checks (), 3u))
+        const mt::counters snapshot = t.totals ();
+
+        t.expect (
+            mt::eq (snapshot.successful_checks (), snapshot.passed_checks ())
+            and mt::eq (snapshot.successful_checks (), 1u))
             << "successful_checks()";
         local_counts.passed_checks++;
 
-        local_counters.increment_successful_checks (2);
-
-        t.expect (mt::eq (local_counters.passed_checks (), 5u))
-            << "increment_successful_checks()";
-        local_counts.passed_checks++;
-
-        local_counters.increment_executed_test_cases (3);
-
-        t.expect (mt::eq (local_counters.executed_subtests (), 3u))
+        t.expect (mt::eq (snapshot.executed_subtests (),
+                          snapshot.executed_test_cases ()))
             << "executed_subtests()";
         local_counts.passed_checks++;
 
-        local_counters.increment_executed_subtests (2);
-
-        t.expect (mt::eq (local_counters.executed_test_cases (), 5u))
-            << "increment_executed_subtests()";
-        local_counts.passed_checks++;
-
-        t.expect (local_counters.was_successful ())
+        t.expect (snapshot.was_successful () and snapshot.passed ())
             << "was_successful() without failures";
-        local_counts.passed_checks++;
-
-        local_counters.increment_failed_checks ();
-
-        t.expect (!local_counters.was_successful ()
-                  and !local_counters.passed ())
-            << "was_successful() with a failed check";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
