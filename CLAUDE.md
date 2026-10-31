@@ -23,11 +23,12 @@ programs against it on many toolchains and platforms.
 - `include/micro-os-plus/micro-test-plus.h` — single public entry header;
   users include only this file.
 - `include/micro-os-plus/micro-test-plus/*.h` — public headers, one per
-  concern (`runner.h`, `test.h`, `reporter.h`, `reporter-human.h`,
-  `reporter-tap.h`, `check-result.h`, `function-comparators.h`,
-  `expression-formatter.h`, `reflection.h`, `extension.h`,
-  `stopwatch.h`, `counters.h`, `math.h`, `utility.h`, `exceptions.h`,
-  `detail.h`, and `deprecated.h`, which groups the deprecated
+  concern (`runner.h`, `runner-options.h`, `test.h`, `reporter.h`,
+  `reporter-human.h`, `reporter-tap.h`, `check-result.h`,
+  `function-comparators.h`, `expression-formatter.h`, `reflection.h`,
+  `extension.h`, `values.h`, `stopwatch.h`, `counters.h`, `math.h`,
+  `utility.h`, `exceptions.h`, `detail.h`, and `deprecated.h`, which
+  groups the deprecated
   definitions that are not class members, including the operators, the
   literals, and the type wrappers).
 - `include/micro-os-plus/micro-test-plus/inlines/*.h` — inline/template
@@ -38,6 +39,11 @@ programs against it on many toolchains and platforms.
   builds and runs sample test programs against the library across many
   toolchains and platforms; see "Testing" below.
 - `website/` — Docusaurus-based project documentation/guides.
+- `.github/skills/` — the agent skills of the project (API review, code
+  review, Doxygen review, commits, issues, xcdl, and others), shared by
+  Copilot and Claude Code: `.claude/skills` is a symlink to this folder.
+  `.github/copilot-instructions.md` points to them from the sections
+  where they apply; follow them when the task matches.
 - `maintenance/` — project maintenance resources, not part of the
   published package: `maintenance/config/` (formatter configurations
   `.clang-format`, `.cmake-format.py`, `.prettierrc.json`,
@@ -54,10 +60,12 @@ programs against it on many toolchains and platforms.
 The public API lives in the `micro_os_plus::micro_test_plus` namespace
 (usually aliased as `mt`) and in four of its sub-namespaces:
 
-- the top namespace: the runner (`runner`, with `runner_options`,
-  `verbosity`, and `reporter_kind`; `static_runner` is a deprecated
-  alias), the test hierarchy (`test_case`, `suite`, `static_suite`,
-  `top_suite`, `test_case_name`), `counters`, the function comparators
+- the top namespace: the runner (`runner`, with `runner_options`
+  (`runner-options.h`, which also defines `verbosity`, `reporter_kind`,
+  and `colour_mode`; the command line it was parsed from is private,
+  read with `arguments()`); `static_runner` is a deprecated alias), the
+  test hierarchy (`test_case`, `suite`, `static_suite`, `top_suite`,
+  `test_case_name`), `counters`, the function comparators
   (`eq()`, `ne()`, `gt()`, `ge()`, `lt()`, `le()`, `approx()`,
   `negate()`, `all_of()`, `any_of()`), `throws()` and `nothrow()` (with
   exceptions), the deprecated value wrappers (`to_i`, `to_f`, ...,
@@ -68,7 +76,7 @@ The public API lives in the `micro_os_plus::micro_test_plus` namespace
   `"..."_b`);
 - `operators` (deprecated) — the comparison and logical operators,
   enabled with `using namespace mt::operators`;
-- `utility` — `is_match()` and `split()`;
+- `utility` — `extract_file_name()`, `is_match()`, and `split()`;
 - `extension` — what the applications use to write their own
   comparators, predicates, operators, and helpers that report their
   operands as the built-in ones do: the expression templates
@@ -84,8 +92,9 @@ The public API lives in the `micro_os_plus::micro_test_plus` namespace
 `reflection::source_location` appears in the public signatures (as a
 defaulted parameter), but users rarely name it. Everything in `detail`
 (including `detail::math`, the reporters, `check_result`, the value
-wrapper templates, and the concepts `has_value`, `container_like`, and
-`has_npos`) is internal; the applications must not need to name it.
+wrapper templates of `values.h`, and the concepts `has_value`,
+`container_like`, and `has_npos`) is internal; the applications must not
+need to name it.
 
 - `runner` (in `runner.h`, defined in `src/runner.cpp`) is the top-level
   test session driver: it owns the tree of suites/tests, tracks pass/fail
@@ -173,6 +182,15 @@ manager) and GitHub Actions matrices. Sample test programs live under
 `CMakeLists.txt`, `meson.build` and `xcdl-test.jsonc`, and are built and
 executed for each platform/toolchain combination — not run through a
 single `ctest`/`meson test` command from the top level.
+
+The `unit` program is a single executable that links the bodies of the
+`unit-checks`, `unit-combinations`, `unit-exceptions`, and
+`unit-miscellaneous` folders; `unit-common` holds their shared header,
+and `unit-deprecated` and `unit-static-asserts` are separate programs.
+The output of each program is compared with the reference files in
+`tests/expected/{tap,txt}` (the `-noexcept` variants are for the builds
+without exceptions): a change that alters the reports, or adds or removes
+checks, must update them in the same commit.
 
 Common commands (run from the repository root):
 
