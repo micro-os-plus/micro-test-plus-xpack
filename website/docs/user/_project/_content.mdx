@@ -1187,6 +1187,11 @@ The failed checks report the operands, with the symbols of the tags:
         ✗ FAILED (main.cpp:60, (3 divides 12 and even 7))
 ```
 
+The tag is stateless, so it cannot carry a parameter, such as a
+tolerance, to be reported with the operands. A parameter is passed as an
+operand, usually the right one, as the divisor of `divides` above, and
+is then written in the report like any other operand.
+
 The expressions can be combined with the logical comparators, and,
 being `constexpr`, also checked at compile time
 (`static_assert (app::divides (3, 12))`). The operands are written with

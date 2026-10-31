@@ -848,7 +848,10 @@ namespace micro_os_plus::micro_test_plus
      * operand type, or a `const` reference to it.
      * @tparam Rhs_T The type of the stored right-hand operand, either the
      * operand type, or a `const` reference to it.
-     * @tparam Compare_T The tag that defines the comparison.
+     * @tparam Compare_T The tag that defines the comparison. It is
+     * stateless, with a static `symbol` and a static `apply()`, so a
+     * parameter, such as a tolerance, is passed as an operand, usually
+     * the right one, and reported with the operands.
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
@@ -1229,7 +1232,10 @@ namespace micro_os_plus::micro_test_plus
      *
      * @tparam T The type of the stored operand, either the operand type,
      * or a `const` reference to it.
-     * @tparam Predicate_T The tag that defines the predicate.
+     * @tparam Predicate_T The tag that defines the predicate. It is
+     * stateless, with a static `symbol` and a static `apply()`; a
+     * predicate that needs a parameter is a comparison of two operands
+     * (see `compare_op`).
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
