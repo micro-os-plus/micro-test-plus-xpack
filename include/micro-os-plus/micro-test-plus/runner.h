@@ -430,7 +430,7 @@ namespace micro_os_plus::micro_test_plus
      * initialised, it is initialised with the default options.
      *
      * If no name is given, here or by the deprecated constructor, the top
-     * suite is named after the file name of `runner_options::arguments[0]`,
+     * suite is named after the file name of `runner_options::arguments()[0]`,
      * without the extension, when available, or "default suite".
      *
      * The top suite can be added only once, and before `run_suites()`; a second
@@ -1256,7 +1256,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Set by `add_top_suite()`, either from its argument or derived from
-     * `arguments[0]` of the session options.
+     * `arguments()[0]` of the session options.
      */
     std::string top_suite_name_;
 

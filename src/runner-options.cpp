@@ -104,7 +104,7 @@ namespace micro_os_plus::micro_test_plus
    * options of the application. The `--` itself is not an application
    * argument. An argument that starts with a dash, before that point,
    * and is not a µTest++ option, is reported as an unknown option. The
-   * whole command line is copied into `arguments`, to be listed by the
+   * whole command line is copied into `arguments_`, to be listed by the
    * reporter; the option values are copied from there.
    *
    * A missing option argument, an unknown reporter name, an unknown
@@ -127,14 +127,14 @@ namespace micro_os_plus::micro_test_plus
     // Copy the strings one by one, since the vector assignment uses
     // std::copy, which triggers -Waggregate-return in the standard library
     // headers on some targets.
-    arguments.reserve (static_cast<size_t> (argc));
+    arguments_.reserve (static_cast<size_t> (argc));
     for (int i = 0; i < argc; ++i)
       {
-        arguments.emplace_back (argv[i] != nullptr ? argv[i] : "");
+        arguments_.emplace_back (argv[i] != nullptr ? argv[i] : "");
       }
 
     // Unless the parsing stops earlier, there are no application arguments.
-    application_begin_ = arguments.size ();
+    application_begin_ = arguments_.size ();
 
     static constexpr std::string_view reporter_option{ "--reporter" };
     static constexpr std::string_view output_file_option{ "--output-file" };
@@ -151,15 +151,15 @@ namespace micro_os_plus::micro_test_plus
     auto get_value = [&] (std::string_view option, size_t& i,
                           std::string_view& value) -> bool
       {
-        const std::string_view argument{ arguments[i] };
+        const std::string_view argument{ arguments_[i] };
         if (argument == option)
           {
-            if (i + 1 >= arguments.size ())
+            if (i + 1 >= arguments_.size ())
               {
                 add_error ("", option, " option requires an argument");
                 return false;
               }
-            value = arguments[++i];
+            value = arguments_[++i];
             return true;
           }
         if (argument.starts_with (option)
@@ -214,9 +214,9 @@ namespace micro_os_plus::micro_test_plus
           }
       };
 
-    for (size_t i = 1; i < arguments.size (); ++i)
+    for (size_t i = 1; i < arguments_.size (); ++i)
       {
-        const std::string_view argument{ arguments[i] };
+        const std::string_view argument{ arguments_[i] };
         std::string_view value{};
 
         // The application arguments start at the first argument that does

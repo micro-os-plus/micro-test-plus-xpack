@@ -300,10 +300,10 @@ namespace micro_os_plus::micro_test_plus
         if (options_.help && !options_.has_errors ())
           {
             // Requested, so written also with the silent verbosity.
-            const char* program = options_.arguments.empty ()
+            const char* program = options_.arguments ().empty ()
                                       ? "<program>"
                                       : utility::extract_file_name (
-                                            options_.arguments[0].c_str ());
+                                            options_.arguments ()[0].c_str ());
             reporter_->write_line (true,
                                    "Usage: %s [options] [--] "
                                    "[arguments]\n%s",
@@ -370,7 +370,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * If the name is empty, the name given to the deprecated constructor
    * is kept; if there is none, the name is derived from the file name of
-   * `arguments[0]` (usually `argv[0]`), without the extension, or
+   * `arguments()[0]` (usually `argv[0]`), without the extension, or
    * defaults to "default suite".
    *
    * After the test execution was aborted, the error is reported on
@@ -427,10 +427,10 @@ namespace micro_os_plus::micro_test_plus
         // If not provided by the constructor or by this call, try to extract a
         // name from argv[0], which is commonly the executable name. If that
         // fails, use a default name.
-        if (!options_.arguments.empty ())
+        if (!options_.arguments ().empty ())
           {
             std::string_view top_suite_name_view{ utility::extract_file_name (
-                options_.arguments[0].c_str ()) };
+                options_.arguments ()[0].c_str ()) };
 
             const auto dot_pos = top_suite_name_view.rfind ('.');
             if (dot_pos != std::string_view::npos)

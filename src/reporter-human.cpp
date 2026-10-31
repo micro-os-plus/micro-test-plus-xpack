@@ -137,7 +137,7 @@ namespace micro_os_plus::micro_test_plus::detail
         write_console ("\n");
       }
 
-    write_info (runner.options_.arguments);
+    write_info (runner.options_.arguments ());
 
     write_line (to_console, "µTest++ human report\n");
 

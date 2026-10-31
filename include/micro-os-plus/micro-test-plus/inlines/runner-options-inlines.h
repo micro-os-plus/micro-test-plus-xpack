@@ -96,18 +96,30 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * Returns the part of `arguments` that starts at `application_begin_`,
-   * or an empty span if `arguments` was shortened after the parsing.
+   * Returns the member `arguments_`, which is filled only by the parsing
+   * constructor.
+   */
+  inline const std::vector<std::string>&
+  runner_options::arguments (void) const noexcept
+  {
+    return arguments_;
+  }
+
+  /**
+   * @details
+   * Returns the part of `arguments_` that starts at `application_begin_`,
+   * or an empty span if there are none, including when the options were
+   * not parsed from a command line.
    */
   inline std::span<const std::string>
   runner_options::application_arguments (void) const noexcept
   {
-    if (application_begin_ >= arguments.size ())
+    if (application_begin_ >= arguments_.size ())
       {
         return {};
       }
 
-    return std::span<const std::string>{ arguments }.subspan (
+    return std::span<const std::string>{ arguments_ }.subspan (
         application_begin_);
   }
 

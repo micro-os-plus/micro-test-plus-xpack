@@ -154,7 +154,7 @@ static mt::static_suite ts_runner_options{ "Runner options suite", tr,
             << "automatic colours";
         local_counts.passed_checks++;
 
-        t.expect (options.arguments.empty ()
+        t.expect (options.arguments ().empty ()
                   and options.filter_patterns.empty () and !options.list_tests
                   and !options.help)
             << "no command line, no filter, no listing, no help";
@@ -166,7 +166,7 @@ static mt::static_suite ts_runner_options{ "Runner options suite", tr,
 
         const mt::runner_options empty_options{ 0, nullptr };
 
-        t.expect (empty_options.arguments.empty ()
+        t.expect (empty_options.arguments ().empty ()
                   and !empty_options.has_errors ())
             << "an empty command line is accepted";
         local_counts.passed_checks++;
@@ -179,9 +179,9 @@ static mt::static_suite ts_runner_options{ "Runner options suite", tr,
         const mt::runner_options options
             = parse ({ "name", "one", "-v", "two" });
 
-        t.expect (mt::eq (options.arguments.size (), 4u)
-                  and mt::eq (options.arguments[0], "name")
-                  and mt::eq (options.arguments[3], "two"))
+        t.expect (mt::eq (options.arguments ().size (), 4u)
+                  and mt::eq (options.arguments ()[0], "name")
+                  and mt::eq (options.arguments ()[3], "two"))
             << "the command line is kept";
         local_counts.passed_checks++;
 
@@ -541,8 +541,8 @@ static mt::static_suite ts_runner_options{ "Runner options suite", tr,
 
         line.overwrite ();
 
-        t.expect (mt::eq (options.arguments[0], "/path/name.elf")
-                  and mt::eq (options.arguments[2], "out.tap"))
+        t.expect (mt::eq (options.arguments ()[0], "/path/name.elf")
+                  and mt::eq (options.arguments ()[2], "out.tap"))
             << "the command line is copied";
         local_counts.passed_checks++;
 
@@ -567,7 +567,7 @@ static mt::static_suite ts_runner_options{ "Runner options suite", tr,
         t.expect (copy.has_errors () and mt::eq (copy.errors ().size (), 1u)
                   and copy.verbosity_level == mt::verbosity::quiet
                   and mt::eq (copy.filter_patterns.size (), 1u)
-                  and mt::eq (copy.arguments.size (), 4u))
+                  and mt::eq (copy.arguments ().size (), 4u))
             << "the copy has all the members";
         local_counts.passed_checks++;
 
@@ -602,7 +602,7 @@ static mt::static_suite ts_runner_options{ "Runner options suite", tr,
 
         t.expect (mt::eq (move_assigned.errors ().size (), 1u)
                   and mt::eq (move_assigned.filter_patterns.size (), 2u)
-                  and mt::eq (move_assigned.arguments[0], "name"))
+                  and mt::eq (move_assigned.arguments ()[0], "name"))
             << "the move assignment moves all the members";
         local_counts.passed_checks++;
 

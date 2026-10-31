@@ -201,9 +201,10 @@ namespace micro_os_plus::micro_test_plus
    * @endcode
    *
    * The configuration members are public, since any combination of their
-   * values is valid; only the results of the parsing (whether errors
-   * were found, and whether the reporter was unknown) are private, and
-   * are read by the runner.
+   * values is valid; the command line and the results of the parsing
+   * (whether errors were found, whether the reporter was unknown, and
+   * where the application arguments start) are private, since they
+   * depend on one another, and are read with the accessors.
    *
    * The options own their strings (the command line, the path of the
    * output file, and the filter patterns), so they do not depend on the
@@ -384,19 +385,6 @@ namespace micro_os_plus::micro_test_plus
     colour_mode colour{ colour_mode::automatic };
 
     /**
-     * @brief The complete command line, including `argv[0]`, if any.
-     *
-     * @details
-     * A copy of the `argv[]` strings of `main()`, set when the options
-     * are parsed from the command line. When not empty, the reporters
-     * list it at the beginning of the report, and
-     * `runner::add_top_suite()` derives the default name of the top suite
-     * from `arguments[0]`. The arguments left to the application are
-     * returned by `application_arguments()`.
-     */
-    std::vector<std::string> arguments{};
-
-    /**
      * @brief The patterns that select the suites and the test cases to
      * run, one per nesting level.
      *
@@ -523,6 +511,32 @@ namespace micro_os_plus::micro_test_plus
     errors (void) const noexcept;
 
     /**
+     * @brief Returns the complete command line, including `argv[0]`, if
+     * any.
+     *
+     * @details
+     * A copy of the `argv[]` strings of `main()`, set when the options
+     * are parsed from the command line; empty for the default options.
+     * When not empty, the reporters list it at the beginning of the
+     * report, and `runner::add_top_suite()` derives the default name of
+     * the top suite from its first element. The arguments left to the
+     * application are returned by `application_arguments()`.
+     *
+     * The command line is read-only, since `application_arguments()`
+     * depends on the position where the parsing ended, which would be
+     * stale if the strings were changed afterwards.
+     *
+     * @par Parameters
+     *   None.
+     * @return A reference to the strings; empty if the options were not
+     * parsed from a command line.
+     *
+     * @since 6.0.0
+     */
+    [[nodiscard]] const std::vector<std::string>&
+    arguments (void) const noexcept;
+
+    /**
      * @brief Returns the arguments left to the application.
      *
      * @details
@@ -531,8 +545,8 @@ namespace micro_os_plus::micro_test_plus
      * ended there, and all the following ones, unchanged, or, if the
      * parsing ended at a `--` alone, the arguments after it, which may
      * start with `--`. The `--` itself and `argv[0]`
-     * are not included. The span refers to `arguments`, so it is valid as
-     * long as the options are not modified or destroyed.
+     * are not included. The span refers to the command line, so it is valid
+     * as long as the options are not modified or destroyed.
      *
      * @par Parameters
      *   None.
@@ -582,7 +596,17 @@ namespace micro_os_plus::micro_test_plus
     bool unknown_option_{ false };
 
     /**
-     * @brief The index in `arguments` of the first argument left to the
+     * @brief The complete command line, including `argv[0]`, if any.
+     *
+     * @details
+     * Filled by the parsing constructor with a copy of the `argv[]`
+     * strings; returned by `arguments()`, and used by
+     * `application_arguments()`.
+     */
+    std::vector<std::string> arguments_{};
+
+    /**
+     * @brief The index in `arguments_` of the first argument left to the
      * application.
      *
      * @details
