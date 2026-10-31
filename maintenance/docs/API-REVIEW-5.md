@@ -37,7 +37,7 @@ against `top-bin/libmicro-test-plus.a`.
 | [L4](#l4) | Low | The extension operators lack the operand normalisation (fixed, #219, #224) |
 | [L5](#l5) | Low | No way to construct a formatter without `detail` (fixed, #225) |
 | [L6](#l6) | Low | Public mutators on `counters` (fixed, #226) |
-| [L7](#l7) | Low | Suite names reject `std::string_view` for a reason that does not apply (fixed, #227) |
+| [L7](#l7) | Low | Suite names reject `std::string_view` for a reason that does not apply (fixed, #227, #228) |
 | [L8](#l8) | Low | Documentation drift (fixed; remainder withdrawn) |
 
 ---
@@ -462,6 +462,10 @@ the recommendation: the comments state the real reasons. A
 `std::string_view` was not accepted for the suites only, to keep the
 uniformity of #203; an owning test case was prototyped and not adopted,
 since it increases the size of every program.
+
+**Superseded by** `48776691` (#228), on 2026-10-31: the names of the
+suites and of the test cases are now a `located_name`, which owns a
+copy, so a `std::string_view` is accepted everywhere.
 
 <a id="l8"></a>
 
