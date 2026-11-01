@@ -59,7 +59,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>The <span class="doxyComputerOutput">suspicious_condition</span> concept is satisfied by the arrays (including the string literals), the functions, the pointers to functions and to members, and the pointers to the character types. All of them are contextually convertible to <span class="doxyComputerOutput">bool</span>, so, when passed to <span class="doxyComputerOutput">expect()</span> or <span class="doxyComputerOutput">require()</span>, the check silently passes, usually because the description was written instead of the condition, or because a function name was written without the call. The pointers to other object types are not included, since checking a pointer for null is a legitimate use.</p>
 
 
-<p>Definition at line 217 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 268 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">

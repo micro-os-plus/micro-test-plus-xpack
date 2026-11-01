@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03" kind="namespace" language="C++">
     <compoundname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}</compoundname>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name" prot="public">micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name</innerclass>
     <sectiondef kind="func">
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1aec79a35b7936b91bee63d9baf4f8c861" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::string</type>
@@ -47,6 +48,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" line="104" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" bodystart="104" bodyend="133"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1aec79a35b7936b91bee63d9baf4f8c861" compoundref="reporter-tap_8cpp" startline="104" endline="133">tap_text</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a5d67972734913f25068fffc292670c0c" compoundref="reporter-tap_8cpp" startline="166" endline="177">micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name::tap_name</referencedby>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1aec79a35b7936b91bee63d9baf4f8c861" compoundref="reporter-tap_8cpp" startline="104" endline="133">tap_text</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1ae344ed13847263c08e39a3e9266c0109" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -79,9 +81,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" line="154" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" bodystart="154" bodyend="218"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1ae344ed13847263c08e39a3e9266c0109" compoundref="reporter-tap_8cpp" startline="154" endline="218">yaml_double_quoted</references>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1ae344ed13847263c08e39a3e9266c0109" compoundref="reporter-tap_8cpp" startline="154" endline="218">yaml_double_quoted</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" line="294" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" bodystart="294" bodyend="358"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1ae344ed13847263c08e39a3e9266c0109" compoundref="reporter-tap_8cpp" startline="294" endline="358">yaml_double_quoted</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1ae344ed13847263c08e39a3e9266c0109" compoundref="reporter-tap_8cpp" startline="294" endline="358">yaml_double_quoted</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

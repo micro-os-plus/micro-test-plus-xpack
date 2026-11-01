@@ -46,10 +46,10 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>The <span class="doxyComputerOutput">is_op</span> concept is satisfied when <span class="doxyComputerOutput">T</span> has the <span class="doxyComputerOutput">op_type</span> member type alias of <span class="doxyComputerOutput">detail::op</span>, either inherited from the <span class="doxyComputerOutput">detail::op</span> base struct, or declared directly, like in <span class="doxyComputerOutput">detail::value_base</span>, which avoids the empty base. It is used throughout the framework, both as a constraint and as a boolean expression in <span class="doxyComputerOutput">if constexpr</span> contexts.</p>
 
 
-<p>A custom comparator or operator uses it to tell the framework operands, like <span class="doxyComputerOutput">to_i</span> or the <span class="doxyComputerOutput">_i</span> literals, from the types of the application. The applications build their own expressions with <span class="doxyComputerOutput">extension::compare_op</span> and <span class="doxyComputerOutput">extension::predicate_op</span>, not by declaring the <span class="doxyComputerOutput">op_type</span> marker, which the formatter could not report.</p>
+<p>A custom comparator or operator uses it to tell the framework expressions, like the result of <span class="doxyComputerOutput">eq()</span> or <span class="doxyComputerOutput">lt()</span>, from the values of the application. The applications build their own expressions with <span class="doxyComputerOutput">extension::compare_op</span> and <span class="doxyComputerOutput">extension::predicate_op</span>, not by declaring the <span class="doxyComputerOutput">op_type</span> marker, which the formatter could not report.</p>
 
 
-<p>Definition at line 156 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 197 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">

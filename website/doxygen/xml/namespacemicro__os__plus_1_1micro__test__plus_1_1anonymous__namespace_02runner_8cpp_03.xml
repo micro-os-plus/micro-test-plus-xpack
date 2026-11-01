@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="namespacemicro__os__plus_1_1micro__test__plus_1_1anonymous__namespace_02runner_8cpp_03" kind="namespace" language="C++">
+    <compoundname>micro_os_plus::micro_test_plus::anonymous_namespace{runner.cpp}</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1_1anonymous__namespace_02runner_8cpp_03_1a93bc763e06193fa6de523088f09a8816" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* micro_os_plus::micro_test_plus::anonymous_namespace{runner.cpp}::help_options</definition>
+        <argsstring></argsstring>
+        <name>help_options</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::anonymous_namespace{runner.cpp}::help_options</qualifiedname>
+        <initializer>= &quot;Options:\n&quot;
+  &quot;  --help, -h\n&quot;
+  &quot;  --verbose | --quiet | --silent\n&quot;
+  &quot;  --list-tests, --list\n&quot;
+  &quot;  --reporter=human|tap\n&quot;
+  &quot;  --output-file=&lt;path&gt;\n&quot;
+  &quot;  --colour[=always|never|auto], --color[=...]\n&quot;
+  &quot;  --use-colour=yes|no|auto, --use-color=...\n&quot;
+  &quot;  --filter=&lt;pattern&gt;\n&quot;
+  &quot;      Run only the matching names; repeat the option for each\n&quot;
+  &quot;      nesting level: the first pattern applies to the suite\n&quot;
+  &quot;      names, the second to the test case names, and each\n&quot;
+  &quot;      further one to the nested test cases. The patterns use\n&quot;
+  &quot;      &apos;*&apos; and &apos;?&apos;, and &apos;|&apos; separates alternatives.\n&quot;</initializer>
+        <briefdescription>
+<para>The text displayed by <computeroutput>--help</computeroutput>, after the usage line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Lists the options recognised by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options" kindref="compound">runner_options</ref></computeroutput>, one per line, with the description of the <computeroutput>--filter</computeroutput> levels. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/runner.cpp" line="84" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/runner.cpp" bodystart="85" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/runner.cpp" line="75" column="3"/>
+  </compounddef>
+</doxygen>

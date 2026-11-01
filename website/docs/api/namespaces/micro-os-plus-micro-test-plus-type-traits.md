@@ -191,6 +191,20 @@ namespace micro_os_plus::micro_test_plus::type_traits { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">concept</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-npos">has_npos</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Deprecated C++20 concept satisfied when <span class="doxyComputerOutput">T</span> provides a <span class="doxyComputerOutput">npos</span> member. <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-npos/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">concept</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-value">has_value</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -267,7 +281,7 @@ namespace micro_os_plus::micro_test_plus::type_traits { ... }
 <p>In v5.0.1, the concepts, the base of the expressions, and the value wrapper templates were outside <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">detail</a></span>, in the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">type_traits</a></span> namespace. The namespace is kept for compatibility with the existing applications: the names that still exist refer to their current definitions, in the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/extension">extension</a></span> and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">detail</a></span> namespaces, and the removed helpers are restored here.</p>
 
 
-<p>The concepts refer to the current ones, so their semantics are the current ones: <span class="doxyComputerOutput">is_op</span> detects the <span class="doxyComputerOutput">op_type</span> member, not the inheritance from <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">op</a></span>; <span class="doxyComputerOutput">has_epsilon</span> also requires <span class="doxyComputerOutput">is_op</span>; <span class="doxyComputerOutput">checkable</span> also accepts the types with an <span class="doxyComputerOutput">explicit operator bool</span>; <span class="doxyComputerOutput">printable</span> accepts everything the formatter can print. The exception is <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-value">has_value</a></span>, which is not used by the framework any more, and is restored with its v5.0.1 definition.</p>
+<p>The concepts refer to the current ones, so their semantics are the current ones: <span class="doxyComputerOutput">is_op</span> detects the <span class="doxyComputerOutput">op_type</span> member, not the inheritance from <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/op">op</a></span>; <span class="doxyComputerOutput">has_epsilon</span> also requires <span class="doxyComputerOutput">is_op</span>; <span class="doxyComputerOutput">checkable</span> also accepts the types with an <span class="doxyComputerOutput">explicit operator bool</span>; <span class="doxyComputerOutput">printable</span> accepts everything the formatter can print. The exceptions are <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-value">has_value</a></span> and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-npos">has_npos</a></span>, which are not used by the framework any more, and are restored with their v5.0.1 definitions.</p>
 
 
 <p>The concepts cannot be deprecated individually, so the attribute is on the namespace. Clang reports the deprecation at every qualified use. GCC reports it only for the names declared in the namespace itself (the restored helpers and the alias templates), and, for the alias templates, only when they name the type of a declaration; it does not report the concepts, nor the names introduced by the using-declarations.</p>
@@ -278,7 +292,7 @@ namespace micro_os_plus::micro_test_plus::type_traits { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000061>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000059>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>use the extension namespace (since 6.0.0)</p>
 </dd>

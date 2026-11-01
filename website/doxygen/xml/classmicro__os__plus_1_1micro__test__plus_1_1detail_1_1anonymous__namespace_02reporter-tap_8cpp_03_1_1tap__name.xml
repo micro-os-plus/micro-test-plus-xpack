@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name" kind="class" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a360ffa2b5b4fe5ae936f5f2b8060975f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name::is_copy_</definition>
+        <argsstring></argsstring>
+        <name>is_copy_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name::is_copy_</qualifiedname>
+        <initializer>{ false }</initializer>
+        <briefdescription>
+<para>Whether the name was copied into <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a7c9c0f8a9f13ff4c258c1d9a55bed42c" kindref="member">prepared_</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Set by the constructor, when the name contains a character that <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1aec79a35b7936b91bee63d9baf4f8c861" kindref="member">tap_text()</ref></computeroutput> changes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" line="269" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" bodystart="269" bodyend="269"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a5d67972734913f25068fffc292670c0c" compoundref="reporter-tap_8cpp" startline="166" endline="177">tap_name</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1af66d5eee86e8fa54fb3d8f36177fb60b" compoundref="reporter-tap_8cpp" startline="240" endline="243">c_str</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a7c9c0f8a9f13ff4c258c1d9a55bed42c" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name::prepared_</definition>
+        <argsstring></argsstring>
+        <name>prepared_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name::prepared_</qualifiedname>
+        <initializer>{}</initializer>
+        <briefdescription>
+<para>The changed copy of the name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Empty, and not allocated, unless <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a360ffa2b5b4fe5ae936f5f2b8060975f" kindref="member">is_copy_</ref></computeroutput> is true. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" line="260" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" bodystart="260" bodyend="260"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a5d67972734913f25068fffc292670c0c" compoundref="reporter-tap_8cpp" startline="166" endline="177">tap_name</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1af66d5eee86e8fa54fb3d8f36177fb60b" compoundref="reporter-tap_8cpp" startline="240" endline="243">c_str</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1adc5d421bac64d88b6c95a71e8b293f75" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name::text_</definition>
+        <argsstring></argsstring>
+        <name>text_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name::text_</qualifiedname>
+        <briefdescription>
+<para>The original name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Not owned; it must outlive the object. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" line="252" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" bodystart="252" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a5d67972734913f25068fffc292670c0c" compoundref="reporter-tap_8cpp" startline="166" endline="177">tap_name</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1af66d5eee86e8fa54fb3d8f36177fb60b" compoundref="reporter-tap_8cpp" startline="240" endline="243">c_str</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a5d67972734913f25068fffc292670c0c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name::tap_name</definition>
+        <argsstring>(const char *text, bool escape)</argsstring>
+        <name>tap_name</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name::tap_name</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>escape</declname>
+        </param>
+        <briefdescription>
+<para>Prepares a name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The null-terminated name. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>escape</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to escape the <computeroutput>\\</computeroutput> and <computeroutput>#</computeroutput> characters, as <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1aec79a35b7936b91bee63d9baf4f8c861" kindref="member">tap_text()</ref></computeroutput> does.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The name is copied, through <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1aec79a35b7936b91bee63d9baf4f8c861" kindref="member">tap_text()</ref></computeroutput>, only when it contains a line break, or, when escaping, a <computeroutput>\\</computeroutput> or a <computeroutput>#</computeroutput>; otherwise the original pointer is kept, and nothing is allocated. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" line="166" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" bodystart="166" bodyend="177"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a360ffa2b5b4fe5ae936f5f2b8060975f" compoundref="reporter-tap_8cpp" startline="269" endline="269">is_copy_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a7c9c0f8a9f13ff4c258c1d9a55bed42c" compoundref="reporter-tap_8cpp" startline="260" endline="260">prepared_</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1aec79a35b7936b91bee63d9baf4f8c861" compoundref="reporter-tap_8cpp" startline="104" endline="133">micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_text</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1adc5d421bac64d88b6c95a71e8b293f75" compoundref="reporter-tap_8cpp" startline="252">text_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1ada9eea869bd2c020b98f2c8c84938c0f">tap_name</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a73f04109ab5fc0fc89bd037fe6b7fb15">tap_name</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a2814604e457add60ac5c972e9c8f4cb6">operator=</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a253f1d04193ed5db07d73b5772d4902b">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1ada9eea869bd2c020b98f2c8c84938c0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name::tap_name</definition>
+        <argsstring>(const tap_name &amp;)=delete</argsstring>
+        <name>tap_name</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name::tap_name</qualifiedname>
+        <param>
+          <type>const tap_name &amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The object is used only as a local variable of the function that writes the line. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" line="186" column="7"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a5d67972734913f25068fffc292670c0c" compoundref="reporter-tap_8cpp" startline="166" endline="177">tap_name</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a73f04109ab5fc0fc89bd037fe6b7fb15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name::tap_name</definition>
+        <argsstring>(tap_name &amp;&amp;)=delete</argsstring>
+        <name>tap_name</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name::tap_name</qualifiedname>
+        <param>
+          <type>tap_name &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted move constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The object is used only as a local variable of the function that writes the line. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" line="195" column="7"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a5d67972734913f25068fffc292670c0c" compoundref="reporter-tap_8cpp" startline="166" endline="177">tap_name</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a630092ea31f96be1d69badce5091e561" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name::~tap_name</definition>
+        <argsstring>()=default</argsstring>
+        <name>~tap_name</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name::~tap_name</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Releases the copy of the name, if one was made. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" line="225" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1af66d5eee86e8fa54fb3d8f36177fb60b" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name::c_str</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>c_str</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name::c_str</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Retrieves the prepared name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The null-terminated name, valid as long as this object and the original name.</para>
+</simplesect>
+Returns the copy, when the name had to be changed, or the original name otherwise. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" line="240" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" bodystart="240" bodyend="243"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a360ffa2b5b4fe5ae936f5f2b8060975f" compoundref="reporter-tap_8cpp" startline="269" endline="269">is_copy_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a7c9c0f8a9f13ff4c258c1d9a55bed42c" compoundref="reporter-tap_8cpp" startline="260" endline="260">prepared_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1adc5d421bac64d88b6c95a71e8b293f75" compoundref="reporter-tap_8cpp" startline="252">text_</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a2814604e457add60ac5c972e9c8f4cb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a5d67972734913f25068fffc292670c0c" kindref="member">tap_name</ref> &amp;</type>
+        <definition>tap_name &amp; micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name::operator=</definition>
+        <argsstring>(const tap_name &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a5d67972734913f25068fffc292670c0c" kindref="member">tap_name</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted copy assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The object is used only as a local variable of the function that writes the line. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" line="205" column="7"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a5d67972734913f25068fffc292670c0c" compoundref="reporter-tap_8cpp" startline="166" endline="177">tap_name</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a253f1d04193ed5db07d73b5772d4902b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a5d67972734913f25068fffc292670c0c" kindref="member">tap_name</ref> &amp;</type>
+        <definition>tap_name &amp; micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name::operator=</definition>
+        <argsstring>(tap_name &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a5d67972734913f25068fffc292670c0c" kindref="member">tap_name</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted move assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The object is used only as a local variable of the function that writes the line. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" line="216" column="7"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a5d67972734913f25068fffc292670c0c" compoundref="reporter-tap_8cpp" startline="166" endline="177">tap_name</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A name prepared for a single TAP line, without a copy when it needs no change. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The names of the suites and of the test cases rarely contain a character that <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1aec79a35b7936b91bee63d9baf4f8c861" kindref="member">tap_text()</ref></computeroutput> changes, so the name is searched, and only copied (with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1aec79a35b7936b91bee63d9baf4f8c861" kindref="member">tap_text()</ref></computeroutput>) when it must be changed; otherwise <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1af66d5eee86e8fa54fb3d8f36177fb60b" kindref="member">c_str()</ref></computeroutput> returns the original name, which must outlive the object. The object is neither copyable nor movable. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" line="151" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" bodystart="152" bodyend="270"/>
+    <listofallmembers>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1af66d5eee86e8fa54fb3d8f36177fb60b" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name</scope><name>c_str</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a360ffa2b5b4fe5ae936f5f2b8060975f" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name</scope><name>is_copy_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a2814604e457add60ac5c972e9c8f4cb6" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name</scope><name>operator=</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a253f1d04193ed5db07d73b5772d4902b" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name</scope><name>operator=</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a7c9c0f8a9f13ff4c258c1d9a55bed42c" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name</scope><name>prepared_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a5d67972734913f25068fffc292670c0c" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name</scope><name>tap_name</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1ada9eea869bd2c020b98f2c8c84938c0f" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name</scope><name>tap_name</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a73f04109ab5fc0fc89bd037fe6b7fb15" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name</scope><name>tap_name</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1adc5d421bac64d88b6c95a71e8b293f75" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name</scope><name>text_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a630092ea31f96be1d69badce5091e561" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name</scope><name>~tap_name</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

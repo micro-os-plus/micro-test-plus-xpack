@@ -129,12 +129,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('expression-for
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;string_view&gt;</code><br />
+<code>#include &lt;version&gt;</code><br />
 <code>#include &quot;<a class="el" href="expression-formatter-inlines_8h_source.html">inlines/expression-formatter-inlines.h</a>&quot;</code><br />
 </div>
 <p><a href="expression-formatter_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Aexpression_5Fformatter_3A_3Acolour_5Fcode" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Aexpression_5Fformatter_3A_3Acolour_5Fcode"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1_1colour__code.html">micro_os_plus::micro_test_plus::detail::expression_formatter::colour_code</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An ANSI colour escape sequence, to be written as it is.  <a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1_1colour__code.html#details">More...</a><br /></td></tr>
 <tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Acolours" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Acolours"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours.html">micro_os_plus::micro_test_plus::detail::colours</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Colours used to highlight pass and fail results in test reports.  <a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours.html#details">More...</a><br /></td></tr>
 <tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Aexpression_5Fformatter" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Aexpression_5Fformatter"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter.html">micro_os_plus::micro_test_plus::detail::expression_formatter</a></td></tr>
@@ -151,10 +154,20 @@ Namespaces</h2></td></tr>
 <tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html">micro_os_plus::micro_test_plus::detail</a></td></tr>
 <tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1detail"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal implementation details for the µTest++ framework. <br /></td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-concepts" class="groupheader"><a id="concepts" name="concepts"></a>
+Concepts</h2></td></tr>
+<tr class="memitem:micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Amember_5Fprintable" id="r_micro_5Fos_5Fplus_3A_3Amicro_5Ftest_5Fplus_3A_3Adetail_3A_3Amember_5Fprintable"><td class="memItemLeft">concept &#160;</td><td class="memItemRight"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1member__printable.html">micro_os_plus::micro_test_plus::detail::member_printable</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concept satisfied by the types that the formatter writes with one of its own member functions <span class="tt">operator&lt;&lt;</span>. <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:gabecc05360d0941067222d827ff8e3f08" id="r_gabecc05360d0941067222d827ff8e3f08"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gabecc05360d0941067222d827ff8e3f08">micro_os_plus::micro_test_plus::expression_formatter</a> = <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter.html">detail::expression_formatter</a></td></tr>
 <tr class="memdesc:gabecc05360d0941067222d827ff8e3f08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public name of the formatter used to report operand values.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a1fd5e3a96e759c76038572203aa988c8" id="r_a1fd5e3a96e759c76038572203aa988c8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a1fd5e3a96e759c76038572203aa988c8">micro_os_plus::micro_test_plus::detail::append_control_escape</a> (std::string &amp;text, char c)</td></tr>
+<tr class="memdesc:a1fd5e3a96e759c76038572203aa988c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends the escape sequence of a control character.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>

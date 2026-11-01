@@ -36,7 +36,7 @@ keywords:
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">$ minimal-test one two --reporter=tap</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">$ minimal-test --reporter=tap one two</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">TAP version 14</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight"># Subtest: Minimal</span></span></div>
@@ -54,7 +54,16 @@ keywords:
 </div>
 
 
-<p>Options may also be set programmatically, on platforms without a command line, through <span class="doxyComputerOutput">runner_options</span>. The arguments that are not options are left to the application. An unknown <span class="doxyComputerOutput">--</span> option, an unknown reporter or colour mode, or an option with a missing argument, is reported on <span class="doxyComputerOutput">stderr</span> as an error, the option is ignored, and the exit code of the run is 2.</p>
+<p>Options may also be set programmatically, on platforms without a command line, through <span class="doxyComputerOutput">runner_options</span>.</p>
+
+
+<p>The µTest++ options come first. The parsing of the options ends at the first argument that does not start with a dash, or at the first <span class="doxyComputerOutput">--</span> alone; that argument, and all the following ones, are left to the application, uninterpreted, and are available from <span class="doxyComputerOutput">runner::application_arguments()</span>. The first <span class="doxyComputerOutput">--</span> alone is not passed on when it ends the options; it is needed in front of an application argument that starts with a dash, which would otherwise be taken for an unknown µTest++ option. After an application argument, a <span class="doxyComputerOutput">--</span> is not a terminator, and is passed on like any other argument. An option argument given separately (<span class="doxyComputerOutput">--reporter human</span>) belongs to its option. An unknown option before that point (an argument that starts with a dash, such as <span class="doxyComputerOutput">-x</span>, <span class="doxyComputerOutput">-</span> or <span class="doxyComputerOutput">-verbose</span>), an unknown reporter or colour mode, or an option with a missing argument, is an error: it is reported on <span class="doxyComputerOutput">stderr</span>, on the console, and in the output file, if any, no test is run, and the exit code is 2. For an unknown option, the console also suggests <span class="doxyComputerOutput">--help</span>.</p>
+
+
+## Help {#cli-help}
+
+
+<p>The <span class="doxyComputerOutput">--help</span> option, or its short form <span class="doxyComputerOutput">-h</span>, which is the only short option, writes the usage and the list of the options on the console, also with the <span class="doxyComputerOutput">silent</span> verbosity, runs no test, and the exit code is 0. The errors in the other options have priority: they are reported as usual, and the exit code is 2.</p>
 
 
 ## Reporter {#cli-reporter}
@@ -80,16 +89,16 @@ keywords:
 ## Colours {#cli-colours}
 
 
-<p>The human reporter highlights the results in colour. By default, the colours are used only when <span class="doxyComputerOutput">stdout</span> is a terminal, which can be detected only on POSIX platforms. To select them explicitly, as in the GNU tools:</p>
+<p>The human reporter highlights the results in colour. By default, the colours are used only when <span class="doxyComputerOutput">stdout</span> is a terminal, which can be detected only on POSIX platforms. To select them explicitly, with an option modelled on the <span class="doxyComputerOutput">--color</span> option of the GNU tools, whose American spelling <span class="doxyComputerOutput">--color</span> is also accepted:</p>
 
 
 <ul class="doxyList ">
-<li><span class="doxyComputerOutput">--color=auto</span> – use colours only when the output is a terminal (the default)</li>
-<li><span class="doxyComputerOutput">--color=always</span>, or <span class="doxyComputerOutput">--color</span> alone – always use colours, for example in the CI systems that render the ANSI escape sequences but do not provide a terminal</li>
-<li><span class="doxyComputerOutput">--color=never</span> – never use colours</li>
+<li><span class="doxyComputerOutput">--colour=auto</span> – use colours only when the output is a terminal (the default)</li>
+<li><span class="doxyComputerOutput">--colour=always</span>, or <span class="doxyComputerOutput">--colour</span> alone – always use colours, for example in the CI systems that render the ANSI escape sequences but do not provide a terminal</li>
+<li><span class="doxyComputerOutput">--colour=never</span> – never use colours</li>
 </ul>
 
-<p>As in the GNU tools, the value must be attached with <span class="doxyComputerOutput">=</span>, and the synonyms <span class="doxyComputerOutput">yes</span> and <span class="doxyComputerOutput">force</span> (for <span class="doxyComputerOutput">always</span>), <span class="doxyComputerOutput">no</span> and <span class="doxyComputerOutput">none</span> (for <span class="doxyComputerOutput">never</span>), and <span class="doxyComputerOutput">tty</span> and <span class="doxyComputerOutput">if-tty</span> (for <span class="doxyComputerOutput">auto</span>) are also accepted. For compatibility with Catch2 and Boost UT, <span class="doxyComputerOutput">--use-colour=&lt;mode&gt;</span> or <span class="doxyComputerOutput">--use-colour &lt;mode&gt;</span>, with <span class="doxyComputerOutput">yes</span>, <span class="doxyComputerOutput">no</span>, or <span class="doxyComputerOutput">auto</span> (or any other value of <span class="doxyComputerOutput">--color</span>), is also accepted. The TAP reporter never uses colours, and the output file never receives them.</p>
+<p>As in the GNU tools, the value must be attached with <span class="doxyComputerOutput">=</span>, and the synonyms <span class="doxyComputerOutput">yes</span> and <span class="doxyComputerOutput">force</span> (for <span class="doxyComputerOutput">always</span>), <span class="doxyComputerOutput">no</span> and <span class="doxyComputerOutput">none</span> (for <span class="doxyComputerOutput">never</span>), and <span class="doxyComputerOutput">tty</span> and <span class="doxyComputerOutput">if-tty</span> (for <span class="doxyComputerOutput">auto</span>) are also accepted. For compatibility with Catch2 and Boost UT, <span class="doxyComputerOutput">--use-colour=&lt;mode&gt;</span> or <span class="doxyComputerOutput">--use-colour &lt;mode&gt;</span>, also spelled <span class="doxyComputerOutput">--use-color</span>, with <span class="doxyComputerOutput">yes</span>, <span class="doxyComputerOutput">no</span>, or <span class="doxyComputerOutput">auto</span> (or any other value of <span class="doxyComputerOutput">--colour</span>), is also accepted. The TAP reporter never uses colours, and the output file never receives them.</p>
 
 
 <p>On platforms without a command line, the mode can be set in <span class="doxyComputerOutput">runner_options::colour</span>.</p>
@@ -106,7 +115,7 @@ keywords:
 
 <ul class="doxyList ">
 <li><span class="doxyComputerOutput">--verbose</span> – display all expectations, regardless of outcome</li>
-<li><span class="doxyComputerOutput">--quiet</span> – display only the session totals and, with the TAP reporter, one result line per test suite; the failed checks are not displayed</li>
+<li><span class="doxyComputerOutput">--quiet</span> – display only the failed checks, with the names of their suites and test cases, and the session totals (and, with the TAP reporter, one result line per test suite)</li>
 <li><span class="doxyComputerOutput">--silent</span> – suppress all console output and return only the exit code</li>
 </ul>
 
@@ -130,7 +139,7 @@ keywords:
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">$ minimal-test one two --verbose --reporter=tap</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">$ minimal-test --verbose --reporter=tap one two</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">TAP version 14</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight"># Subtest: Minimal</span></span></div>
@@ -153,7 +162,7 @@ keywords:
 ### Quiet mode {#cli-verbosity-quiet}
 
 
-<p>In quiet mode, the µTest++ reporter displays only the overall session totals. The TAP reporter also displays one <span class="doxyComputerOutput">ok</span>/<span class="doxyComputerOutput">not ok</span> line per test suite, with the plan counting them, so that the output remains a valid TAP document, which the TAP consumers read as failed when a suite failed.</p>
+<p>In quiet mode, the µTest++ reporter displays only the failed checks and the overall session totals; a run without failures displays only the totals. The TAP reporter also displays one <span class="doxyComputerOutput">ok</span>/<span class="doxyComputerOutput">not ok</span> line per test suite, with the plan counting them, so that the output remains a valid TAP document, which the TAP consumers read as failed when a suite failed.</p>
 
 
 <dl class="doxySectionUser">
@@ -164,7 +173,7 @@ keywords:
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">$ minimal-test one two --quiet --reporter=tap</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">$ minimal-test --quiet --reporter=tap one two</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">TAP version 14</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">ok 1 - Minimal # { passed, 2 checks in 1 test case, time: X.XXX ms }</span></span></div>
@@ -174,7 +183,24 @@ keywords:
 </div>
 
 
-<p>Quiet mode tells whether the run failed, not what failed: the failed checks, their locations, and their test cases are not displayed. This is by design, since displaying in full only the failed test cases is what the default mode does. To learn what failed, run without <span class="doxyComputerOutput">--quiet</span>, or keep <span class="doxyComputerOutput">--quiet</span> and add <span class="doxyComputerOutput">--output-file</span> with the TAP reporter, whose file always receives the complete report, whatever the verbosity:</p>
+<p>When a check fails, it is displayed with its location, after the names of its suite and of its test cases. The human reporter writes them as the headings of the default mode, but only for the suites and the test cases with failures. The TAP reporter writes each failure as a TAP comment, after a <span class="doxyComputerOutput"># &lt;suite&gt; &gt; &lt;test case&gt;</span> line, so that the output remains a valid TAP document with only the suite result lines as test points:</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight"># Top suite &gt; Failed nested subtest &gt; middle subtest &gt; inner subtest</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">#                 not ok 1 - inner check fails</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">#                   ---</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">#                   condition: "1 == 2"</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">#                   at:</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">#                     fileName: checks.cpp</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">#                     lineNumber: 399</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">#                   ...</span></span></div>
+
+</div>
+
+
+<p>The passed checks, and the test cases without failures, are not displayed. To keep the complete report while the console shows only the failures, add <span class="doxyComputerOutput">--output-file</span>, whose file always receives the complete report, whatever the verbosity:</p>
 
 
 <div class="doxyProgramListing">
@@ -182,9 +208,6 @@ keywords:
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">$ sample-test --quiet --output-file=sample-test.tap</span></span></div>
 
 </div>
-
-
-<p>With the human reporter, the output file is complete only in the default and verbose modes, so in quiet mode neither the console nor the file shows the failures.</p>
 
 
 <p>When exceptions are not enabled and a failed requirement aborts the test execution, the results of the aborted test case are displayed in quiet mode as well, since the totals are never reached.</p>
@@ -203,7 +226,7 @@ keywords:
 <li><span class="doxyComputerOutput">--output-file=&lt;path&gt;</span> or <span class="doxyComputerOutput">--output-file &lt;path&gt;</span> – write a copy of the report to a file</li>
 </ul>
 
-<p>The file never receives colours. With the TAP reporter, it always receives the complete report, whatever the verbosity, so it can be passed to other tools; with the human reporter, it is complete only in the default and verbose modes. If the file cannot be opened, the error is reported on <span class="doxyComputerOutput">stderr</span>, the report is written only to the console, and the exit code is 2. On platforms without a command line, the path can be set in <span class="doxyComputerOutput">runner_options::output_file_path</span>.</p>
+<p>The file never receives colours. With both reporters, it always receives the complete report, whatever the verbosity, so it can be passed to other tools. If the file cannot be opened, the error is reported on <span class="doxyComputerOutput">stderr</span> and on the console, no test is run, and the exit code is 2. The option errors are also written to the file, which is truncated, so that it never keeps the results of an earlier run. On platforms without a command line, the path can be set in <span class="doxyComputerOutput">runner_options::output_file_path</span>.</p>
 
 
 ## Filter {#cli-filter}
@@ -236,7 +259,7 @@ keywords:
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">$ sample-test one two --filter='*namespace*'</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">$ sample-test --filter='*namespace*' one two</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">TAP version 14</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight"># Subtest: Sample</span></span></div>
@@ -264,7 +287,7 @@ keywords:
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">$ sample-test one two --filter='*namespace*' --filter='Check one'</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">$ sample-test --filter='*namespace*' --filter='Check one' one two</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">...</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight"># Subtest: Explicit namespace suite</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
@@ -293,7 +316,7 @@ keywords:
 <li><span class="doxyComputerOutput">--list-tests</span>, or <span class="doxyComputerOutput">--list</span> – list the test cases instead of running them, as in Catch2 and Boost UT</li>
 </ul>
 
-<p>The suite bodies run, to create their test cases, but the test case bodies do not, so no check is evaluated. The selected test cases (see the filter above) are listed under the names of their suites; the nested test cases are not listed, since they are created by the bodies of their parents. The list is written to the console, unless the verbosity is <span class="doxyComputerOutput">silent</span>, and to the output file, if any, and the exit code is 0 (or 2 after an option error).</p>
+<p>The suite bodies run, to create their test cases, but the test case bodies do not, so no check is evaluated. The selected test cases (see the filter above) are listed under the names of their suites; the nested test cases are not listed, since they are created by the bodies of their parents. The list is made of plain lines, the same with both reporters and with all the verbosity levels, and is written to the console and to the output file, if any, and the exit code is 0 (or 2 after an option error).</p>
 
 
 <div class="doxyProgramListing">

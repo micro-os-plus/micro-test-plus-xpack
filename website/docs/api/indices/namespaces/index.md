@@ -47,6 +47,17 @@ Primary namespace for the µTest++ testing framework
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/anonymous-runner-cpp-">anonymous{runner.cpp}</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 36px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
 <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">detail</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -84,6 +95,17 @@ Local helpers of the TAP reporter
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Local helpers of the reporter base class
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/comparison-lookup">comparison_lookup</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Names for the checks of the comparison operators, looked up as the <span class="doxyComputerOutput">apply()</span> functions look them up
 </td>
 </tr>
 

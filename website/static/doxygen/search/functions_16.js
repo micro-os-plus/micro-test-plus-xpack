@@ -12,7 +12,8 @@ var searchData=
   ['_7estatic_5fsuite_9',['~static_suite',['../classmicro__os__plus_1_1micro__test__plus_1_1static__suite.html#a88ca9975daf7b7b1e509114944151675',1,'micro_os_plus::micro_test_plus::static_suite']]],
   ['_7estopwatch_10',['~stopwatch',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html#addee5d2a57a6465734840797ff23cdc2',1,'micro_os_plus::micro_test_plus::detail::stopwatch']]],
   ['_7esuite_11',['~suite',['../classmicro__os__plus_1_1micro__test__plus_1_1suite.html#aa25d7d2a11b7c893d9260d562beb96fb',1,'micro_os_plus::micro_test_plus::suite']]],
-  ['_7etest_5fcase_12',['~test_case',['../classmicro__os__plus_1_1micro__test__plus_1_1test__case.html#a26a1b913fdcece44668b56200298218a',1,'micro_os_plus::micro_test_plus::test_case']]],
-  ['_7etimestamp_13',['~timestamp',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp.html#a1edc35b9931f3fdb714daf9cae3da73e',1,'micro_os_plus::micro_test_plus::detail::timestamp']]],
-  ['_7etop_5fsuite_14',['~top_suite',['../classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#aae4ef52e5ceaa29d20cf7e3be848c528',1,'micro_os_plus::micro_test_plus::top_suite']]]
+  ['_7etap_5fname_12',['~tap_name',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name.html#a630092ea31f96be1d69badce5091e561',1,'micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name']]],
+  ['_7etest_5fcase_13',['~test_case',['../classmicro__os__plus_1_1micro__test__plus_1_1test__case.html#a26a1b913fdcece44668b56200298218a',1,'micro_os_plus::micro_test_plus::test_case']]],
+  ['_7etimestamp_14',['~timestamp',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp.html#a1edc35b9931f3fdb714daf9cae3da73e',1,'micro_os_plus::micro_test_plus::detail::timestamp']]],
+  ['_7etop_5fsuite_15',['~top_suite',['../classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#aae4ef52e5ceaa29d20cf7e3be848c528',1,'micro_os_plus::micro_test_plus::top_suite']]]
 ];

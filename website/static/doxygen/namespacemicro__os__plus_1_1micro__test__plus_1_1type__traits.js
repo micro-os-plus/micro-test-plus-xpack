@@ -11,6 +11,7 @@ var namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits =
     [ "list", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list.html", null ],
     [ "op", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" ],
     [ "value", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" ],
+    [ "has_npos", "conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__npos.html", null ],
     [ "has_value", "conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__value.html", null ],
     [ "is_floating_point", "conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__floating__point.html", null ],
     [ "genuine_integral_value", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga67890916b8d3d8cbaab893cc6b599745", null ],

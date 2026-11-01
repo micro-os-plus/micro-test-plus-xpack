@@ -47,6 +47,12 @@ keywords:
 </ul>
 <p>24 entries</p>
 
+## - C -
+
+<ul>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a6bdf1e117e085a41c16e2dae63e72e52"><b>comparison_operand_t</b></a>: as typedef in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
+</ul>
+
 ## - E -
 
 <ul>
@@ -69,7 +75,7 @@ keywords:
 
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga47d2c99f85fc5597b82da402d4687e75"><b>static_runner</b></a>: as typedef in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">include/micro-os-plus/micro-test-plus/deprecated.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a85cd019d0861a4b6d62c3424f4a8931d"><b>stored_operand_t</b></a>: as typedef in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ae9fe49cb0d38724533e9a27a2232bf09"><b>stored_operand_t</b></a>: as typedef in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga1424c18b26d5fdaed11439c77e6bf561"><b>subtest</b></a>: as typedef in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">include/micro-os-plus/micro-test-plus/deprecated.h</a></li>
 </ul>
 <p>3 entries</p>
@@ -116,7 +122,7 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga65ad920b21a6c0df6848aa939659b92e"><b>value_base_</b></a>: as typedef in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">include/micro-os-plus/micro-test-plus/deprecated.h</a></li>
 </ul>
 <br/>
-<p>Total: 56 entries.</p>
+<p>Total: 57 entries.</p>
 
 <hr/>
 

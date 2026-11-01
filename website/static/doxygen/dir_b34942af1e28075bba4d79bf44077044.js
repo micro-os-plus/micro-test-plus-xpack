@@ -14,6 +14,5 @@ var dir_b34942af1e28075bba4d79bf44077044 =
     [ "runner-options-inlines.h", "runner-options-inlines_8h.html", null ],
     [ "stopwatch-inlines.h", "stopwatch-inlines_8h.html", null ],
     [ "test-inlines.h", "test-inlines_8h.html", "test-inlines_8h" ],
-    [ "utility-inlines.h", "utility-inlines_8h.html", "utility-inlines_8h" ],
-    [ "values-inlines.h", "values-inlines_8h.html", "values-inlines_8h" ]
+    [ "utility-inlines.h", "utility-inlines_8h.html", "utility-inlines_8h" ]
 ];

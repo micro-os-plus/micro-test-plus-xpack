@@ -17,7 +17,7 @@ keywords:
 
 # `has_epsilon` Concept
 
-<p>C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a framework floating-point wrapper with a tolerance. <a href="#details">More...</a></p>
+<p>Deprecated C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a framework floating-point wrapper with a tolerance. <a href="#details">More...</a></p>
 
 ## Definition
 
@@ -28,7 +28,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 ## Description {#details}
 
-<p>C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a framework floating-point wrapper with a tolerance.</p>
+<p>Deprecated C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a framework floating-point wrapper with a tolerance.</p>
 
 
 <dl class="doxyParamsList">
@@ -49,7 +49,19 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>The types of the application are excluded, even if they have a member named <span class="doxyComputerOutput">epsilon</span>, so that they are compared with their own operators.</p>
 
 
-<p>Definition at line 177 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Only the deprecated floating-point wrappers have a tolerance, so the concept is deprecated with them, and is available only when <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-config/#ga67c701de5426ac340584ed038494a873">MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</a></span> is defined.</p>
+
+
+<div class="doxyXrefSect">
+<dl class="doxyXrefSectList">
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000117>Deprecated</a></dt>
+<dd class="doxyXrefSectDescription">
+<p>To be removed with the deprecated floating-point wrappers (since 6.0.0).</p>
+</dd>
+</dl>
+</div>
+
+<p>Definition at line 227 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">

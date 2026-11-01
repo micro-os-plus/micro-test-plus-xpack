@@ -188,7 +188,7 @@ struct micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;</div><dl cl
 <p>It declares the <span class="tt"><a class="el" href="#a4d0554be18a449d7b9176e868e631846" title="Marker identifying the framework expression types.">op_type</a></span> marker, so that all derived types satisfy the <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="C++20 concept satisfied when a type is a framework expression type.">extension::is_op</a></span> concept without each struct needing to declare it.</p>
 <p>It does not derive from the empty <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op.html" title="Empty base struct for the framework expression types.">op</a></span> struct: a type with an empty base and only floating point members, like <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">value</a>&lt;float&gt;</span>, is a homogeneous floating point aggregate whose parameter passing with C++17 and later changed in GCC 10.1, and GCC emits a <span class="tt">-Wpsabi</span> note for each function passing or returning it by value, like <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a></span>, on AArch64 and on 32-bit Arm with the hard-float ABI. </p>
 
-<p class="definition">Definition at line <a class="el" href="values_8h_source.html#l00153">153</a> of file <a class="el" href="values_8h_source.html">values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l00356">356</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a4d0554be18a449d7b9176e868e631846" name="a4d0554be18a449d7b9176e868e631846"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4d0554be18a449d7b9176e868e631846">&#9670;&#160;</a></span>op_type</h2>
@@ -205,7 +205,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Declared directly rather than inherited from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op.html" title="Empty base struct for the framework expression types.">op</a></span>, to avoid the empty base; detected by the <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="C++20 concept satisfied when a type is a framework expression type.">extension::is_op</a></span> concept. </p>
 
-<p class="definition">Definition at line <a class="el" href="values_8h_source.html#l00162">162</a> of file <a class="el" href="values_8h_source.html">values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l00365">365</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
 
 </div>
 </div>
@@ -224,7 +224,7 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Exposed for use by generic code that inspects wrapper types. </p>
 
-<p class="definition">Definition at line <a class="el" href="values_8h_source.html#l00170">170</a> of file <a class="el" href="values_8h_source.html">values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l00373">373</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
 
 </div>
 </div>
@@ -261,16 +261,16 @@ template&lt;class T&gt; </div>
 </dl>
 <p>Stores the supplied value in the <span class="tt"><a class="el" href="#a5a34518dbc973dee068c7e4ae03cd217" title="The stored value.">value_</a></span> member. </p>
 
-<p class="definition">Definition at line <a class="el" href="values-inlines_8h_source.html#l00078">78</a> of file <a class="el" href="values-inlines_8h_source.html">values-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   78</span>                                                            : <a class="code hl_variable" href="#a5a34518dbc973dee068c7e4ae03cd217">value_</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html">v</a> }</div>
-<div class="line"><span class="lineno">   79</span>    {</div>
-<div class="line"><span class="lineno">   80</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html">micro_os_plus::micro_test_plus::detail::value_base</a></div><div class="ttdoc">Base struct template providing common storage and accessors for runtime value-wrapper types.</div><div class="ttdef"><b>Definition</b> <a href="values_8h_source.html#l00153">values.h:154</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_html_a5a34518dbc973dee068c7e4ae03cd217"><div class="ttname"><a href="#a5a34518dbc973dee068c7e4ae03cd217">micro_os_plus::micro_test_plus::detail::value_base::value_</a></div><div class="ttdeci">T value_</div><div class="ttdoc">The stored value.</div><div class="ttdef"><b>Definition</b> <a href="values_8h_source.html#l00210">values.h:210</a></div></div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00487">487</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  487</span>                                                            : <a class="code hl_variable" href="#a5a34518dbc973dee068c7e4ae03cd217">value_</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html">v</a> }</div>
+<div class="line"><span class="lineno">  488</span>    {</div>
+<div class="line"><span class="lineno">  489</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html">micro_os_plus::micro_test_plus::detail::value_base</a></div><div class="ttdoc">Base struct template providing common storage and accessors for runtime value-wrapper types.</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00356">deprecated.h:357</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_html_a5a34518dbc973dee068c7e4ae03cd217"><div class="ttname"><a href="#a5a34518dbc973dee068c7e4ae03cd217">micro_os_plus::micro_test_plus::detail::value_base::value_</a></div><div class="ttdeci">T value_</div><div class="ttdoc">The stored value.</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00413">deprecated.h:413</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="values_8h_source.html#l00210">value_</a>.</p>
+<p class="reference">References <a class="el" href="deprecated_8h_source.html#l00413">value_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="values_8h_source.html#l00494">micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::value()</a>, and <a class="el" href="values-inlines_8h_source.html#l00088">operator T()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated_8h_source.html#l00697">micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::value()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00497">operator T()</a>.</p>
 
 </div>
 </div>
@@ -304,12 +304,12 @@ template&lt;class T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the stored value.</dd></dl>
 <p>Returns a <span class="tt">const</span> reference to the stored value, valid as long as the wrapper. </p>
 
-<p class="definition">Definition at line <a class="el" href="values-inlines_8h_source.html#l00100">100</a> of file <a class="el" href="values-inlines_8h_source.html">values-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  101</span>    {</div>
-<div class="line"><span class="lineno">  102</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a5a34518dbc973dee068c7e4ae03cd217">value_</a>;</div>
-<div class="line"><span class="lineno">  103</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00509">509</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  510</span>    {</div>
+<div class="line"><span class="lineno">  511</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a5a34518dbc973dee068c7e4ae03cd217">value_</a>;</div>
+<div class="line"><span class="lineno">  512</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="values_8h_source.html#l00210">value_</a>.</p>
+<p class="reference">References <a class="el" href="deprecated_8h_source.html#l00413">value_</a>.</p>
 
 </div>
 </div>
@@ -340,12 +340,12 @@ template&lt;class T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The stored value as type <span class="tt">T</span>.</dd></dl>
 <p>Allows explicit conversion to the encapsulated value. </p>
 
-<p class="definition">Definition at line <a class="el" href="values-inlines_8h_source.html#l00087">87</a> of file <a class="el" href="values-inlines_8h_source.html">values-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   89</span>    {</div>
-<div class="line"><span class="lineno">   90</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a5a34518dbc973dee068c7e4ae03cd217">value_</a>;</div>
-<div class="line"><span class="lineno">   91</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00496">496</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  498</span>    {</div>
+<div class="line"><span class="lineno">  499</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a5a34518dbc973dee068c7e4ae03cd217">value_</a>;</div>
+<div class="line"><span class="lineno">  500</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="values-inlines_8h_source.html#l00078">value_base()</a>, and <a class="el" href="values_8h_source.html#l00210">value_</a>.</p>
+<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00487">value_base()</a>, and <a class="el" href="deprecated_8h_source.html#l00413">value_</a>.</p>
 
 </div>
 </div>
@@ -373,15 +373,15 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 <p>Set by the constructor. Derived wrappers and comparators access it via <span class="tt"><a class="el" href="#a9199f28db3a365b60ca6ef17053cec2a" title="Getter for the stored value.">get()</a></span> or the explicit conversion operator. </p>
 
-<p class="definition">Definition at line <a class="el" href="values_8h_source.html#l00210">210</a> of file <a class="el" href="values_8h_source.html">values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l00413">413</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="values-inlines_8h_source.html#l00078">value_base()</a>, <a class="el" href="values-inlines_8h_source.html#l00100">get()</a>, and <a class="el" href="values-inlines_8h_source.html#l00088">operator T()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00487">value_base()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00509">get()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00497">operator T()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
-<li><a class="el" href="values_8h_source.html">values.h</a></li>
-<li><a class="el" href="values-inlines_8h_source.html">values-inlines.h</a></li>
+<li><a class="el" href="deprecated_8h_source.html">deprecated.h</a></li>
+<li><a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

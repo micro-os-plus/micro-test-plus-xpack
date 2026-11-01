@@ -17,7 +17,6 @@
     <innerfile refid="stopwatch-inlines_8h">stopwatch-inlines.h</innerfile>
     <innerfile refid="test-inlines_8h">test-inlines.h</innerfile>
     <innerfile refid="utility-inlines_8h">utility-inlines.h</innerfile>
-    <innerfile refid="values-inlines_8h">values-inlines.h</innerfile>
     <briefdescription>
 <para>Folder with C++ header files containing inline µTest++ implementations. </para>
     </briefdescription>

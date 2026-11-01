@@ -126,7 +126,7 @@ Functions for verifying exceptions in test cases
 <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-utility-functions">Utility Functions</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Utility functions for advanced string handling in tests
+Utility functions for handling strings in tests
 </td>
 </tr>
 

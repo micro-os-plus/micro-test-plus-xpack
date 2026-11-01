@@ -8,13 +8,13 @@
     <templateparamlist>
     </templateparamlist>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_3_01void_01_4_1a54a89c2421143a7eb159030be6334851" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_3_01void_01_4_1ad6ee51ce2ea730d1cd0d791b1ca97992" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Callable_T</type>
           </param>
         </templateparamlist>
-        <type>constexpr</type>
+        <type></type>
         <definition>micro_os_plus::micro_test_plus::detail::throws_op&lt; void &gt;::throws_op</definition>
         <argsstring>(const Callable_T &amp;func)</argsstring>
         <name>throws_op</name>
@@ -45,13 +45,15 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-Invokes <computeroutput>func</computeroutput> inside a try/catch block. If <computeroutput>func</computeroutput> throws any exception the result is <computeroutput>true</computeroutput>; if no exception is thrown the result is <computeroutput>false</computeroutput>. The result is passed to the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op" kindref="compound">callable_op</ref></computeroutput> base class constructor. </para>
+Invokes <computeroutput>func</computeroutput> inside a try/catch block. If <computeroutput>func</computeroutput> throws any exception the result is <computeroutput>true</computeroutput>; if no exception is thrown the result is <computeroutput>false</computeroutput>. The result is passed to the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op" kindref="compound">callable_op</ref></computeroutput> base class constructor.</para>
+<para>The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1failed__requirement" kindref="compound">failed_requirement</ref></computeroutput> thrown to stop the test case after a failed <computeroutput>require()</computeroutput> in <computeroutput>func</computeroutput> is not an exception of <computeroutput>func</computeroutput>, and is rethrown. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1275" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="637" bodyend="651"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a094d51da3318c5f2bfa36121aac44829" compoundref="detail-inlines_8h" startline="580" endline="582">micro_os_plus::micro_test_plus::detail::callable_op::callable_op</references>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_1ac13b6739cd841151bb9208df58e546c3" compoundref="detail-inlines_8h" startline="607" endline="625">micro_os_plus::micro_test_plus::detail::throws_op&lt; Exception_T &gt;::throws_op</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1486" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="931" bodyend="949"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a10bbade95c4d4446127d7bdf3bd58176" compoundref="detail-inlines_8h" startline="822" endline="826">micro_os_plus::micro_test_plus::detail::callable_op::callable_op</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_1a2f66d3b08e35734f7e38e5e4c924192a" compoundref="detail-inlines_8h" startline="884" endline="911">micro_os_plus::micro_test_plus::detail::throws_op&lt; Exception_T &gt;::throws_op</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a879f218299b32f5eb9fe68e15dfe0edfa334c4a4c42fdb79d7ebc3e73b517e6f8" compoundref="detail_8h" startline="1290">micro_os_plus::micro_test_plus::detail::none</references>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a086d26c7329afc11e6a8b2664d753494" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr</type>
@@ -67,14 +69,76 @@ Invokes <computeroutput>func</computeroutput> inside a try/catch block. If <comp
 </simplesect>
 <simplesect kind="return"><para>The result of the callable invocation.</para>
 </simplesect>
-Returns the pre-computed boolean result stored by the derived operator&apos;s constructor. </para>
+Returns the result computed by the constructor of the derived operator; the callable is not invoked again. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1200" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="590" bodyend="593"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1370" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="834" bodyend="837"/>
+      </memberdef>
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a69618b39f260cbd032e271881430e45c" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a879f218299b32f5eb9fe68e15dfe0edf" kindref="member">throw_outcome</ref></type>
+        <definition>throw_outcome micro_os_plus::micro_test_plus::detail::callable_op::outcome</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>outcome</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::throws_op&lt; void &gt;::outcome</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Retrieves what the invocation threw. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The kind of the exception thrown, <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a879f218299b32f5eb9fe68e15dfe0edfa334c4a4c42fdb79d7ebc3e73b517e6f8" kindref="member">throw_outcome::none</ref></computeroutput> if the callable completed, or if the expected exception was thrown.</para>
+</simplesect>
+Returns what was recorded when the check failed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1382" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="844" bodyend="847"/>
+      </memberdef>
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a996c2d87a98606a33f4e80ae62337bcb" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; micro_os_plus::micro_test_plus::detail::callable_op::what</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>what</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::throws_op&lt; void &gt;::what</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Retrieves the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a996c2d87a98606a33f4e80ae62337bcb" kindref="member">what()</ref></computeroutput> of the <computeroutput>std::exception</computeroutput> thrown. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The text, empty unless the outcome is <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a879f218299b32f5eb9fe68e15dfe0edfa1702c8950d15f035273a3f192a9da2dc" kindref="member">throw_outcome::std_exception</ref></computeroutput>.</para>
+</simplesect>
+Returns the text recorded when a <computeroutput>std::exception</computeroutput> was thrown. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1393" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="854" bodyend="857"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a5be2409b067dc5a12d19f26067327c82" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a879f218299b32f5eb9fe68e15dfe0edf" kindref="member">throw_outcome</ref></type>
+        <definition>throw_outcome micro_os_plus::micro_test_plus::detail::callable_op::outcome_</definition>
+        <argsstring></argsstring>
+        <name>outcome_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::throws_op&lt; void &gt;::outcome_</qualifiedname>
+        <briefdescription>
+<para>Stores what the invocation threw, when the check failed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Copied from the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result" kindref="compound">callable_result</ref></computeroutput> by the constructor. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1411" column="21" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1411" bodyend="1411"/>
+      </memberdef>
       <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1ad464d00d1f7b4add47e7e6258dd5164d" prot="private" static="no" mutable="no">
         <type>const bool</type>
         <definition>const bool micro_os_plus::micro_test_plus::detail::callable_op::value_</definition>
@@ -89,7 +153,23 @@ Returns the pre-computed boolean result stored by the derived operator&apos;s co
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1210" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1210" bodyend="1210"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1403" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1403" bodyend="1403"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a2e115acd4ddc044f458192bef80a2569" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string micro_os_plus::micro_test_plus::detail::callable_op::what_</definition>
+        <argsstring></argsstring>
+        <name>what_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::throws_op&lt; void &gt;::what_</qualifiedname>
+        <briefdescription>
+<para>Stores the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a996c2d87a98606a33f4e80ae62337bcb" kindref="member">what()</ref></computeroutput> of the <computeroutput>std::exception</computeroutput> thrown, when the check failed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Moved from the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result" kindref="compound">callable_result</ref></computeroutput> by the constructor; empty in the usual case, so nothing is allocated. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1421" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1421" bodyend="1421"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-type">
@@ -107,7 +187,7 @@ Returns the pre-computed boolean result stored by the derived operator&apos;s co
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" line="121" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/values.h" bodystart="121" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="131" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="131" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -156,13 +236,17 @@ Returns the pre-computed boolean result stored by the derived operator&apos;s co
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1265" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1266" bodyend="1276"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1476" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1477" bodyend="1487"/>
     <listofallmembers>
-      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a094d51da3318c5f2bfa36121aac44829" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::throws_op&lt; void &gt;</scope><name>callable_op</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a10bbade95c4d4446127d7bdf3bd58176" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::throws_op&lt; void &gt;</scope><name>callable_op</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op_1a384b1d115e493d6a554ebda4e3089b19" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::throws_op&lt; void &gt;</scope><name>op_type</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a086d26c7329afc11e6a8b2664d753494" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::throws_op&lt; void &gt;</scope><name>operator bool</name></member>
-      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_3_01void_01_4_1a54a89c2421143a7eb159030be6334851" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::throws_op&lt; void &gt;</scope><name>throws_op</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a69618b39f260cbd032e271881430e45c" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::throws_op&lt; void &gt;</scope><name>outcome</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a5be2409b067dc5a12d19f26067327c82" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::throws_op&lt; void &gt;</scope><name>outcome_</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_3_01void_01_4_1ad6ee51ce2ea730d1cd0d791b1ca97992" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::throws_op&lt; void &gt;</scope><name>throws_op</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1ad464d00d1f7b4add47e7e6258dd5164d" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::throws_op&lt; void &gt;</scope><name>value_</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a996c2d87a98606a33f4e80ae62337bcb" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::throws_op&lt; void &gt;</scope><name>what</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a2e115acd4ddc044f458192bef80a2569" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::throws_op&lt; void &gt;</scope><name>what_</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

@@ -23,6 +23,12 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a081c4bd4495097c8c7f913ef837899baae2fa538867c3830a859a5b17ab24644b"><b>created</b></a>: as enum value in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">micro_os_plus::micro_test_plus::runner</a></li>
 </ul>
 
+## - D -
+
+<ul>
+<li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a081c4bd4495097c8c7f913ef837899baa59e6b9e272eca41f44360ca9b264e57e"><b>declined</b></a>: as enum value in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">micro_os_plus::micro_test_plus::runner</a></li>
+</ul>
+
 ## - F -
 
 <ul>
@@ -41,7 +47,7 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a081c4bd4495097c8c7f913ef837899baa75101dcdfc88455bcafc9e53e0b06689"><b>running</b></a>: as enum value in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">micro_os_plus::micro_test_plus::runner</a></li>
 </ul>
 <br/>
-<p>Total: 4 entries.</p>
+<p>Total: 5 entries.</p>
 
 <hr/>
 

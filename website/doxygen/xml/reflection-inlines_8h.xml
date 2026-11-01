@@ -29,7 +29,9 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
         </childnode>
       </node>
       <node id="14">
@@ -37,25 +39,27 @@
         <link refid="deprecated_8h"/>
         <childnode refid="15" relation="include">
         </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="20">
+      <node id="21">
         <label>expression-formatter.h</label>
         <link refid="expression-formatter_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="19">
+      <node id="20">
         <label>expression-formatter-inlines.h</label>
         <link refid="expression-formatter-inlines_8h"/>
-        <childnode refid="20" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -64,10 +68,10 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="17">
+      <node id="18">
         <label>test-inlines.h</label>
         <link refid="test-inlines_8h"/>
-        <childnode refid="18" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -77,7 +81,7 @@
         </childnode>
         <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
@@ -89,7 +93,7 @@
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
       </node>
       <node id="7">
@@ -125,7 +129,7 @@
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
       <node id="13">
@@ -143,10 +147,10 @@
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
-      <node id="18">
+      <node id="19">
         <label>test.h</label>
         <link refid="test_8h"/>
         <childnode refid="4" relation="include">
@@ -163,7 +167,7 @@
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
       <node id="4">
@@ -174,7 +178,7 @@
         <label>deprecated.cpp</label>
         <link refid="deprecated_8cpp"/>
       </node>
-      <node id="21">
+      <node id="16">
         <label>expression-formatter.cpp</label>
         <link refid="expression-formatter_8cpp"/>
       </node>
@@ -194,7 +198,7 @@
         <label>runner.cpp</label>
         <link refid="runner_8cpp"/>
       </node>
-      <node id="16">
+      <node id="17">
         <label>test.cpp</label>
         <link refid="test_8cpp"/>
       </node>
@@ -230,7 +234,7 @@
 </para>
 <para>If the marker is not found, or the compiler is not supported (e.g. MSVC, which uses <computeroutput>__FUNCSIG__</computeroutput> instead of <computeroutput>__PRETTY_FUNCTION__</computeroutput>), the function returns <computeroutput>"unknown"</computeroutput> rather than failing to compile, since the name is used only to improve the test output.</para>
 <para>The expected layouts are verified at compile time by the <computeroutput>static_assert</computeroutput> checks that follow the definition.</para>
-<para>The name is spelled as the compiler prints it, and is used to identify the expected exception type in the <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kindref="member">throws</ref>&lt;E&gt;</computeroutput> failure messages. Only clang and GCC are supported; with other compilers the function returns <computeroutput>"unknown"</computeroutput>.</para>
+<para>The name is spelled as the compiler prints it, and is used to identify the expected exception type in the <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga63345b69c376caae707262748aa6aea1" kindref="member">throws</ref>&lt;E&gt;</computeroutput> failure messages. Only clang and GCC are supported; with other compilers the function returns <computeroutput>"unknown"</computeroutput>.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>T</parametername>
@@ -250,7 +254,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" line="154" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" bodystart="154" bodyend="185" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="227" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" compoundref="reflection-inlines_8h" startline="154" endline="185">micro_os_plus::micro_test_plus::reflection::type_name</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6734ab254c188ce23514b5e84dd1232f" compoundref="expression-formatter-inlines_8h" startline="477" endline="490">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6734ab254c188ce23514b5e84dd1232f" compoundref="expression-formatter-inlines_8h" startline="693" endline="708">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" compoundref="reflection-inlines_8h" startline="154" endline="185">micro_os_plus::micro_test_plus::reflection::type_name</referencedby>
       </memberdef>
     </sectiondef>

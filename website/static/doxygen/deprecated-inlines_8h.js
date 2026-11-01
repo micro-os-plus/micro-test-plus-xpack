@@ -4,7 +4,15 @@ var deprecated_inlines_8h =
     [ "micro_os_plus::micro_test_plus::_not", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions.html#gaa465723bc4fe309f15d30a4e7207d40f", null ],
     [ "micro_os_plus::micro_test_plus::_or", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions.html#ga1c7ddbf53764ab67240f1cf0e0fb4b8d", null ],
     [ "micro_os_plus::micro_test_plus::approx", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gafe47800a219b00fcccf0a1dc596dbe20", null ],
+    [ "micro_os_plus::micro_test_plus::detail::math::count_decimals", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#accba38bf51d261f330b594ca121e6f75", null ],
+    [ "micro_os_plus::micro_test_plus::detail::math::count_literal_digits", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#af295fc92026927f8a453248655e7862e", null ],
+    [ "micro_os_plus::micro_test_plus::detail::math::decimal_epsilon", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#ae474285acf7f49d66bb721b8ab5f8fa8", null ],
+    [ "micro_os_plus::micro_test_plus::detail::math::den", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a154910632d01b827ab1b67f309064211", null ],
+    [ "micro_os_plus::micro_test_plus::detail::math::den_size", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a3557a9ea7ea89e94be133fb78edcd01f", null ],
+    [ "micro_os_plus::micro_test_plus::detail::math::integer_magnitude", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a4f5af9be6a23a49f942e72de92adc91e", null ],
+    [ "micro_os_plus::micro_test_plus::detail::integral_literal", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8e476a4d97076ce7f016a18821d66c40", null ],
     [ "micro_os_plus::micro_test_plus::mut", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga00ea8f3dfb7cb0ef39919065321cf62f", null ],
+    [ "micro_os_plus::micro_test_plus::detail::math::num", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a6b03b257bb18615448fe9b4fca4a8402", null ],
     [ "micro_os_plus::micro_test_plus::operators::operator and", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators.html#gad47ea22957940a08ff56104d3c0c16f7", null ],
     [ "micro_os_plus::micro_test_plus::operators::operator not", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators.html#ga1d79c807e0d12684f1a850d7269c077b", null ],
     [ "micro_os_plus::micro_test_plus::operators::operator or", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators.html#gac008174d3b00512dc53b3e9e26ed45ec", null ],
@@ -36,5 +44,7 @@ var deprecated_inlines_8h =
     [ "micro_os_plus::micro_test_plus::operators::operator<=", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators.html#gaa0bcc006277ab947cf9ff7f13ab9b8ed", null ],
     [ "micro_os_plus::micro_test_plus::operators::operator==", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators.html#ga6f2d36e79581db77f3aa9f8d7a958c78", null ],
     [ "micro_os_plus::micro_test_plus::operators::operator>", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators.html#gaa7e34201bb41a287742c3c08a88924d3", null ],
-    [ "micro_os_plus::micro_test_plus::operators::operator>=", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators.html#ga9d9f5f30c7d8973ef7ccd6f52f0cbd21", null ]
+    [ "micro_os_plus::micro_test_plus::operators::operator>=", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators.html#ga9d9f5f30c7d8973ef7ccd6f52f0cbd21", null ],
+    [ "micro_os_plus::micro_test_plus::detail::math::parse_integer_literal", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a9292deab69ef8584bc2604e76316ecfd", null ],
+    [ "micro_os_plus::micro_test_plus::detail::math::pow", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a121fbc662b8263c3b9ce605456fbc7d5", null ]
 ];

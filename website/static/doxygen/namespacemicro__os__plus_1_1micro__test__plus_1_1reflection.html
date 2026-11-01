@@ -167,7 +167,7 @@ template&lt;class T&gt; </div>
 </ul>
 <p>If the marker is not found, or the compiler is not supported (e.g. MSVC, which uses <span class="tt">__FUNCSIG__</span> instead of <span class="tt">__PRETTY_FUNCTION__</span>), the function returns <span class="tt">"unknown"</span> rather than failing to compile, since the name is used only to improve the test output.</p>
 <p>The expected layouts are verified at compile time by the <span class="tt">static_assert</span> checks that follow the definition.</p>
-<p>The name is spelled as the compiler prints it, and is used to identify the expected exception type in the <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#gaf8f7602f40119da514be2a0bfc4b70f5" title="Checks whether a callable throws a specific exception, for expect() or require().">throws</a>&lt;E&gt;</span> failure messages. Only clang and GCC are supported; with other compilers the function returns <span class="tt">"unknown"</span>.</p>
+<p>The name is spelled as the compiler prints it, and is used to identify the expected exception type in the <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#ga63345b69c376caae707262748aa6aea1" title="Checks whether a callable throws a specific exception, for expect() or require().">throws</a>&lt;E&gt;</span> failure messages. Only clang and GCC are supported; with other compilers the function returns <span class="tt">"unknown"</span>.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>The type whose name is to be extracted.</td></tr>
@@ -212,7 +212,7 @@ template&lt;class T&gt; </div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="reflection-inlines_8h_source.html#l00154">type_name()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="expression-formatter-inlines_8h_source.html#l00477">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, and <a class="el" href="reflection-inlines_8h_source.html#l00154">type_name()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="expression-formatter-inlines_8h_source.html#l00693">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, and <a class="el" href="reflection-inlines_8h_source.html#l00154">type_name()</a>.</p>
 
 </div>
 </div>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1_1colour__code" kind="struct" language="C++" prot="private">
+    <compoundname>micro_os_plus::micro_test_plus::detail::expression_formatter::colour_code</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1_1colour__code_1abe37e07d7dc9e783e4ee15e78198c331" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* micro_os_plus::micro_test_plus::detail::expression_formatter::colour_code::sequence</definition>
+        <argsstring></argsstring>
+        <name>sequence</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::expression_formatter::colour_code::sequence</qualifiedname>
+        <briefdescription>
+<para>The null-terminated escape sequence, possibly empty. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Not owned; it points into the <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours" kindref="compound">colours</ref></computeroutput> of the formatter. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="1155" column="20" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" bodystart="1155" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2223390eeb8d50b088480853f158405b" compoundref="expression-formatter-inlines_8h" startline="136" endline="140">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>An ANSI colour escape sequence, to be written as it is. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A distinct type, so that the sequences are not written by the overloads for strings, which escape the control characters, ESC included. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="1147" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" bodystart="1148" bodyend="1156"/>
+    <listofallmembers>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1_1colour__code_1abe37e07d7dc9e783e4ee15e78198c331" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::expression_formatter::colour_code</scope><name>sequence</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -3,6 +3,9 @@ var annotated_dup =
     [ "micro_os_plus", "namespacemicro__os__plus.html", [
       [ "micro_test_plus", "namespacemicro__os__plus_1_1micro__test__plus.html", [
         [ "detail", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html", [
+          [ "anonymous_namespace{reporter-tap.cpp}", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03.html", [
+            [ "tap_name", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name.html", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name" ]
+          ] ],
           [ "math", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html", [
             [ "integer_literal", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal" ]
           ] ],
@@ -14,6 +17,7 @@ var annotated_dup =
           [ "c_string", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string" ],
           [ "callable_op", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op" ],
           [ "callable_ref", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref" ],
+          [ "callable_result", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result" ],
           [ "check_result", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result.html", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result" ],
           [ "colours", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours" ],
           [ "compare_op", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" ],
@@ -74,12 +78,12 @@ var annotated_dup =
           [ "value", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" ]
         ] ],
         [ "counters", "classmicro__os__plus_1_1micro__test__plus_1_1counters.html", "classmicro__os__plus_1_1micro__test__plus_1_1counters" ],
+        [ "located_name", "classmicro__os__plus_1_1micro__test__plus_1_1located__name.html", "classmicro__os__plus_1_1micro__test__plus_1_1located__name" ],
         [ "runner", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html", "classmicro__os__plus_1_1micro__test__plus_1_1runner" ],
         [ "runner_options", "classmicro__os__plus_1_1micro__test__plus_1_1runner__options.html", "classmicro__os__plus_1_1micro__test__plus_1_1runner__options" ],
         [ "static_suite", "classmicro__os__plus_1_1micro__test__plus_1_1static__suite.html", "classmicro__os__plus_1_1micro__test__plus_1_1static__suite" ],
         [ "suite", "classmicro__os__plus_1_1micro__test__plus_1_1suite.html", "classmicro__os__plus_1_1micro__test__plus_1_1suite" ],
         [ "test_case", "classmicro__os__plus_1_1micro__test__plus_1_1test__case.html", "classmicro__os__plus_1_1micro__test__plus_1_1test__case" ],
-        [ "test_case_name", "classmicro__os__plus_1_1micro__test__plus_1_1test__case__name.html", "classmicro__os__plus_1_1micro__test__plus_1_1test__case__name" ],
         [ "to_t", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html", "structmicro__os__plus_1_1micro__test__plus_1_1to__t" ],
         [ "top_suite", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite" ]
       ] ]

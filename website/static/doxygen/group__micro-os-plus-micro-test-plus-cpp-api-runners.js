@@ -5,6 +5,7 @@ var group__micro_os_plus_micro_test_plus_cpp_api_runners =
       [ "session_state", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a081c4bd4495097c8c7f913ef837899ba", [
         [ "created", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a081c4bd4495097c8c7f913ef837899baae2fa538867c3830a859a5b17ab24644b", null ],
         [ "initialised", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a081c4bd4495097c8c7f913ef837899baadb1687e1890c33928fe61b7cb4ac2f0e", null ],
+        [ "declined", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a081c4bd4495097c8c7f913ef837899baa59e6b9e272eca41f44360ca9b264e57e", null ],
         [ "running", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a081c4bd4495097c8c7f913ef837899baa75101dcdfc88455bcafc9e53e0b06689", null ],
         [ "finished", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a081c4bd4495097c8c7f913ef837899baaa5d7ceb2c59b8cee46c2953fec9abc19", null ]
       ] ],
@@ -15,9 +16,11 @@ var group__micro_os_plus_micro_test_plus_cpp_api_runners =
       [ "~runner", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#aea1a1eff9cac943c1cd84e48b9add92f", null ],
       [ "abort", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#af0682165f5d07b13fd21e3f6f8da546c", null ],
       [ "abort", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a7bc806540e65c21095ef1ea1ef970db2", null ],
-      [ "add_suite", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a4069fe957bbc7a9217ca2dd4d2034a97", null ],
-      [ "add_top_suite", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#aac24d1193ac0579dd6ac3c523a32015f", null ],
+      [ "add_suite", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#abdb31c03509a40a041b8f0ea8e12ebd1", null ],
+      [ "add_top_suite", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a7170624ca4a3a92b17ced71472726529", null ],
+      [ "add_top_suite", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a9ec7d561fe8eab9df03da792f62518ae", null ],
       [ "added_suites_count", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a9484b22aa909151712144cd39130187a", null ],
+      [ "application_arguments", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a7ec833574071080a76dfddb01983dea9", null ],
       [ "exit_code", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a7f8403f1ccc6a0e8171ef077bcd9cbd4", null ],
       [ "has_option_errors", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a11cfc0285b39ae765ccf3082c1eadebe", null ],
       [ "initialise", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#aba1f6140138ba802f91f8f025258b63d", null ],
@@ -27,6 +30,7 @@ var group__micro_os_plus_micro_test_plus_cpp_api_runners =
       [ "is_selected", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a2b0adeef059676a455d9506ba8a06d26", null ],
       [ "link_static_suite", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a19160679a4fe484fc9f8f76ed3408762", null ],
       [ "list_test_case", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a0e478c394741ff78f65a7e2c0822ba50", null ],
+      [ "mark_rejected", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a5d3ac1449fc0d04014dfd46d59392cbb", null ],
       [ "name", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a5f1698a93a8b09c39b87c23452335646", null ],
       [ "operator=", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a549524d15dc1eb5e6b4eb4bdd2af7b6b", null ],
       [ "operator=", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#aa34a0418d54c633630a089eb2b5a61ee", null ],
@@ -54,13 +58,14 @@ var group__micro_os_plus_micro_test_plus_cpp_api_runners =
       [ "aborted_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#ad107cec6e32daac2da4cd665c7444e51", null ],
       [ "children_suites_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#abacf53ab658e289ae89051531c0cddad", null ],
       [ "exit_code_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a1aa6f3fec517a49f9cdc70ec79b9d1e5", null ],
-      [ "has_rejected_suites_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a999d64ffbd12dcacb59c34fbea4452ba", null ],
+      [ "has_rejected_calls_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a97e4cdd2eb8a2bf9a3714b29825683eb", null ],
       [ "has_top_suite_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a4a43729c815ce9b3e3f15a650f011f66", null ],
       [ "listed_suite_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#af8ce5a496dba305f6fbd45005d580321", null ],
       [ "listed_suites_count_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#acb06cb7ebf949b8af5c5d57645c56e4a", null ],
       [ "listed_test_cases_count_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a90900e7d0a4571407b3727e031e46685", null ],
       [ "options_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#acea30e98ccf65d97e8c0e0d0ff8edda0", null ],
       [ "reporter_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a67205181c73d11d12964bb324f1dc902", null ],
+      [ "running_suite_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a02f2771f40d1e67f7cd3b50511f7d4dc", null ],
       [ "running_test_case_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#acf5727abb4e4b23e1a2d7d3320f5dec9", null ],
       [ "session_state_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a70dad6c927a59d5459c2edfdb40fdece", null ],
       [ "skipped_suites_count_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#ae815c0c97245032223f4c1523e1d35fe", null ],
@@ -68,7 +73,6 @@ var group__micro_os_plus_micro_test_plus_cpp_api_runners =
       [ "started_next_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a291ce3303f40804df4fd99f0f7d40d6c", null ],
       [ "stopwatch_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a13b3cf196a1b12cb90a12c4b84223d15", null ],
       [ "top_suite_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a93a3afb222db1fcaa87cd1ba7fa15bc0", null ],
-      [ "top_suite_name_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a401e4e098f0ceba7f21a3a5bf1ea89e3", null ],
       [ "totals_", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a04b52f3243abe3a9b08b44efd03e4b57", null ]
     ] ]
 ];

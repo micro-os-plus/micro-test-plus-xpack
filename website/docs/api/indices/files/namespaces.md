@@ -23,8 +23,15 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-expression-formatter-cpp-"><b>anonymous{expression-formatter.cpp}</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp">src/expression-formatter.cpp</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-tap-cpp-"><b>anonymous{reporter-tap.cpp}</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-tap-cpp">src/reporter-tap.cpp</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-cpp-"><b>anonymous{reporter.cpp}</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">src/reporter.cpp</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/anonymous-runner-cpp-"><b>anonymous{runner.cpp}</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/runner-cpp">src/runner.cpp</a></li>
 </ul>
-<p>3 entries</p>
+<p>4 entries</p>
+
+## - C -
+
+<ul>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/comparison-lookup"><b>comparison_lookup</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
+</ul>
 
 ## - D -
 
@@ -77,7 +84,7 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/utility"><b>utility</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/src/utility-cpp">src/utility.cpp</a></li>
 </ul>
 <br/>
-<p>Total: 13 entries.</p>
+<p>Total: 15 entries.</p>
 
 <hr/>
 

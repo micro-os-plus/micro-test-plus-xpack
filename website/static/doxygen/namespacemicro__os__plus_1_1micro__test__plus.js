@@ -1,5 +1,8 @@
 var namespacemicro__os__plus_1_1micro__test__plus =
 [
+    [ "anonymous_namespace{runner.cpp}", "namespacemicro__os__plus_1_1micro__test__plus_1_1anonymous__namespace_02runner_8cpp_03.html", [
+      [ "help_options", "namespacemicro__os__plus_1_1micro__test__plus_1_1anonymous__namespace_02runner_8cpp_03.html#a93bc763e06193fa6de523088f09a8816", null ]
+    ] ],
     [ "detail", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail" ],
     [ "extension", "namespacemicro__os__plus_1_1micro__test__plus_1_1extension.html", "namespacemicro__os__plus_1_1micro__test__plus_1_1extension" ],
     [ "literals", "namespacemicro__os__plus_1_1micro__test__plus_1_1literals.html", [
@@ -47,12 +50,12 @@ var namespacemicro__os__plus_1_1micro__test__plus =
       [ "split", "group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html#ga15af76191aa8ac1c6d679c55cc8847ff", null ]
     ] ],
     [ "counters", "classmicro__os__plus_1_1micro__test__plus_1_1counters.html", "classmicro__os__plus_1_1micro__test__plus_1_1counters" ],
+    [ "located_name", "classmicro__os__plus_1_1micro__test__plus_1_1located__name.html", "classmicro__os__plus_1_1micro__test__plus_1_1located__name" ],
     [ "runner", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html", "classmicro__os__plus_1_1micro__test__plus_1_1runner" ],
     [ "runner_options", "classmicro__os__plus_1_1micro__test__plus_1_1runner__options.html", "classmicro__os__plus_1_1micro__test__plus_1_1runner__options" ],
     [ "static_suite", "classmicro__os__plus_1_1micro__test__plus_1_1static__suite.html", "classmicro__os__plus_1_1micro__test__plus_1_1static__suite" ],
     [ "suite", "classmicro__os__plus_1_1micro__test__plus_1_1suite.html", "classmicro__os__plus_1_1micro__test__plus_1_1suite" ],
     [ "test_case", "classmicro__os__plus_1_1micro__test__plus_1_1test__case.html", "classmicro__os__plus_1_1micro__test__plus_1_1test__case" ],
-    [ "test_case_name", "classmicro__os__plus_1_1micro__test__plus_1_1test__case__name.html", "classmicro__os__plus_1_1micro__test__plus_1_1test__case__name" ],
     [ "to_t", "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html", "structmicro__os__plus_1_1micro__test__plus_1_1to__t" ],
     [ "top_suite", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite" ],
     [ "_b", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gad4203783cfbe141f41ee8515f7b2ea94", null ],
@@ -123,19 +126,19 @@ var namespacemicro__os__plus_1_1micro__test__plus =
     [ "_and", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions.html#ga9998cd63972fac8b24a2f0138322e7c1", null ],
     [ "_not", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions.html#gaa465723bc4fe309f15d30a4e7207d40f", null ],
     [ "_or", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions.html#ga1c7ddbf53764ab67240f1cf0e0fb4b8d", null ],
-    [ "all_of", "group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gab9b9c26860ceafc1288ecb415f52aaaf", null ],
-    [ "any_of", "group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gae6395736f05626ba6dcf79ecc523486c", null ],
-    [ "approx", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gacae776e46a799b81af859ba9bb74e7d0", null ],
+    [ "all_of", "group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#ga0a385c59a2f7d3c4cfef77d2d3b4f3d6", null ],
+    [ "any_of", "group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gadc2224d07a9bf118c8772518a7d3c4fd", null ],
+    [ "approx", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga0d374ffc56933dccd3ffba008ab7eaa5", null ],
     [ "approx", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gafe47800a219b00fcccf0a1dc596dbe20", null ],
-    [ "eq", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa7c7b6a7ad32856edc235a05e77d8c7f", null ],
-    [ "ge", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gab8da4228bc9a820546753b018a129a7e", null ],
-    [ "gt", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga9ae8e4747ff029faa7378110c8680278", null ],
-    [ "le", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gae695dd46840f76a156aee70ff4df33fa", null ],
-    [ "lt", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga714ff07cd77e05898de4fd315770f901", null ],
+    [ "eq", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gada610d1d5701b79f3df916f6e397ea06", null ],
+    [ "ge", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga989e5966794d5c5487477aa782d844b1", null ],
+    [ "gt", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaf32fd09749f18635233613fa48f91b56", null ],
+    [ "le", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaf9e47a6e18771f969cdd840ec187734a", null ],
+    [ "lt", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaea39573e23de35872ace5b08d2514327", null ],
     [ "mut", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga00ea8f3dfb7cb0ef39919065321cf62f", null ],
-    [ "ne", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga5bf176ef730172592095657417e5f039", null ],
-    [ "negate", "group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#ga6a0bb2654eb89c1b0a35134e8738eeb1", null ],
-    [ "nothrow", "group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#ga798bd28001c3938784073e60dd904148", null ],
-    [ "throws", "group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#ga8bf54756e4122c6a0bd123b4621e60e2", null ],
-    [ "throws", "group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#gaf8f7602f40119da514be2a0bfc4b70f5", null ]
+    [ "ne", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa77076edd474fc10d8c0bd6da623e284", null ],
+    [ "negate", "group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gae82d39ac86167bb4bfa6624676f3729e", null ],
+    [ "nothrow", "group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#gacbf45f8ba39c0653bbf1035c70dd9529", null ],
+    [ "throws", "group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#gadf818920a5a7ba9905466c521deb342e", null ],
+    [ "throws", "group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#ga63345b69c376caae707262748aa6aea1", null ]
 ];

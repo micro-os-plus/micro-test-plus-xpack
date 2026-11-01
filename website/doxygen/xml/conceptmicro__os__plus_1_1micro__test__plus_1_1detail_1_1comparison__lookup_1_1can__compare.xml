@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparison__lookup_1_1can__compare" kind="concept">
+    <compoundname>micro_os_plus::micro_test_plus::detail::comparison_lookup::can_compare</compoundname>
+    <includes refid="detail-inlines_8h" local="no">detail-inlines.h</includes>
+    <templateparamlist>
+      <param>
+        <type><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0b" kindref="member">comparison</ref></type>
+        <declname>Op</declname>
+        <defname>Op</defname>
+      </param>
+      <param>
+        <type>class Lhs_T</type>
+      </param>
+      <param>
+        <type>class Rhs_T</type>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0b" kindref="member">comparison</ref> Op, class Lhs_T, class Rhs_T&gt;
+concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparison__lookup_1_1can__compare" kindref="compound">micro_os_plus::micro_test_plus::detail::comparison_lookup::can_compare</ref> =  (Op == <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba465289687a70db7aa7217cc240c29f0f" kindref="member">comparison::equal</ref>
+             and requires (const Lhs_T&amp; lhs, const Rhs_T&amp; rhs) { lhs == rhs; })
+            or (Op == <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba96ee5c0e2a7149613e7fd0b83316486e" kindref="member">comparison::not_equal</ref>
+                and requires (const Lhs_T&amp; lhs,
+                              const Rhs_T&amp; rhs) { lhs != rhs; })
+            or (Op == <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba7b8dc4fb0fb55fc8eb69ff080c45ed7e" kindref="member">comparison::greater</ref>
+                and requires (const Lhs_T&amp; lhs,
+                              const Rhs_T&amp; rhs) { lhs &gt; rhs; })
+            or (Op == <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2" kindref="member">comparison::greater_equal</ref>
+                and requires (const Lhs_T&amp; lhs,
+                              const Rhs_T&amp; rhs) { lhs &gt;= rhs; })
+            or (Op == <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0bae37e8d912e8f7b8f9b5ef9452ba47ff1" kindref="member">comparison::less</ref>
+                and requires (const Lhs_T&amp; lhs,
+                              const Rhs_T&amp; rhs) { lhs &lt; rhs; })
+            or (Op == <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba77932225fb35fc4b74dc8fabf0992dac" kindref="member">comparison::less_equal</ref>
+                and requires (const Lhs_T&amp; lhs, const Rhs_T&amp; rhs) {
+                      lhs &lt;= rhs;
+                    })</initializer>
+    <conceptparts>
+      <codepart line="387">    <programlisting>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;comparison<sp/>Op,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">can_compare<sp/>=<sp/>(Op<sp/>==<sp/>comparison::equal</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Lhs_T&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Rhs_T&amp;<sp/>rhs)<sp/>{<sp/>lhs<sp/>==<sp/>rhs;<sp/>})</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>or<sp/>(Op<sp/>==<sp/>comparison::not_equal</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Lhs_T&amp;<sp/>lhs,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Rhs_T&amp;<sp/>rhs)<sp/>{<sp/>lhs<sp/>!=<sp/>rhs;<sp/>})</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>or<sp/>(Op<sp/>==<sp/>comparison::greater</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Lhs_T&amp;<sp/>lhs,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Rhs_T&amp;<sp/>rhs)<sp/>{<sp/>lhs<sp/>&gt;<sp/>rhs;<sp/>})</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>or<sp/>(Op<sp/>==<sp/>comparison::greater_equal</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Lhs_T&amp;<sp/>lhs,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Rhs_T&amp;<sp/>rhs)<sp/>{<sp/>lhs<sp/>&gt;=<sp/>rhs;<sp/>})</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>or<sp/>(Op<sp/>==<sp/>comparison::less</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Lhs_T&amp;<sp/>lhs,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Rhs_T&amp;<sp/>rhs)<sp/>{<sp/>lhs<sp/>&lt;<sp/>rhs;<sp/>})</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>or<sp/>(Op<sp/>==<sp/>comparison::less_equal</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Lhs_T&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Rhs_T&amp;<sp/>rhs)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lhs<sp/>&lt;=<sp/>rhs;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>})</highlight></codeline>
+    </programlisting>
+</codepart>
+    </conceptparts>
+    <briefdescription>
+<para>Satisfied if the comparison selected by <computeroutput>Op</computeroutput> of two <computeroutput>const</computeroutput> objects is well-formed. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Only the requirement of the selected operator is checked, so that, for example, <computeroutput>eq()</computeroutput> accepts the types that have only an <computeroutput>operator==</computeroutput>.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Op</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The comparison. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="386" column="7"/>
+  </compounddef>
+</doxygen>

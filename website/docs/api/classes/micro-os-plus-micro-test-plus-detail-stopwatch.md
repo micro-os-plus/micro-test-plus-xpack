@@ -924,7 +924,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 <p>References <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a60dcef812e43e13d1e30f602a572e27a">micro_os_plus::micro_test_plus::detail::read_clock</a>, <a href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a> and <a href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a>.</p>
 
 
-<p>Referenced by <a href="#addee5d2a57a6465734840797ff23cdc2">~stopwatch</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#aac24d1193ac0579dd6ac3c523a32015f">micro_os_plus::micro_test_plus::runner::add_top_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#ae87c4a8f0e08e069b6d1a393f88e040e">micro_os_plus::micro_test_plus::runner::initialise</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite/#a432deda5a8721472e8775cbc98451722">micro_os_plus::micro_test_plus::suite::run</a>.</p>
+<p>Referenced by <a href="#addee5d2a57a6465734840797ff23cdc2">~stopwatch</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a7170624ca4a3a92b17ced71472726529">micro_os_plus::micro_test_plus::runner::add_top_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#ae87c4a8f0e08e069b6d1a393f88e040e">micro_os_plus::micro_test_plus::runner::initialise</a> and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite/#a432deda5a8721472e8775cbc98451722">micro_os_plus::micro_test_plus::suite::run</a>.</p>
 
 </div>
 </div>
@@ -1226,7 +1226,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000125>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000132>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>use <a href="#a3719382123c6741054a89e4f76b55d90">elapsed()</a> (since 6.0.0)</p>
 </dd>
@@ -1315,7 +1315,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000122>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000129>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>use <a href="#a3f84d3511f9130c9daefac85e2a772d7">has_elapsed()</a> (since 6.0.0)</p>
 </dd>
@@ -1401,7 +1401,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000123>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000130>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>use <a href="#a3f84d3511f9130c9daefac85e2a772d7">has_elapsed()</a> (since 6.0.0)</p>
 </dd>
@@ -1477,7 +1477,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000124>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000131>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>use <a href="#a3f84d3511f9130c9daefac85e2a772d7">has_elapsed()</a> (since 6.0.0)</p>
 </dd>
@@ -1551,7 +1551,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000126>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000133>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>use <a href="#af5ebb1e454867633db12fef45db9788d">start()</a> (since 6.0.0)</p>
 </dd>
@@ -1635,7 +1635,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000127>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000134>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>use <a href="#af5ebb1e454867633db12fef45db9788d">start()</a> (since 6.0.0)</p>
 </dd>
@@ -1709,7 +1709,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000128>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000135>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>use <a href="#a83ab4e25e25a4a81ed1d3277ac09390d">stop()</a> (since 6.0.0)</p>
 </dd>
@@ -1793,7 +1793,7 @@ class micro_os_plus::micro_test_plus::detail::stopwatch { ... }
 
 <div class="doxyXrefSect">
 <dl class="doxyXrefSectList">
-<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000129>Deprecated</a></dt>
+<dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000136>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
 <p>use <a href="#a83ab4e25e25a4a81ed1d3277ac09390d">stop()</a> (since 6.0.0)</p>
 </dd>

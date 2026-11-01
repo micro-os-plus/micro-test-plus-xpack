@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result" kind="struct" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::detail::callable_result</compoundname>
+    <includes refid="detail_8h" local="no">detail.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result_1abd77c787fde5f5d9b90a883849d9a76b" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a879f218299b32f5eb9fe68e15dfe0edf" kindref="member">throw_outcome</ref></type>
+        <definition>throw_outcome micro_os_plus::micro_test_plus::detail::callable_result::outcome</definition>
+        <argsstring></argsstring>
+        <name>outcome</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::callable_result::outcome</qualifiedname>
+        <briefdescription>
+<para>What was thrown, when the check failed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a879f218299b32f5eb9fe68e15dfe0edfa334c4a4c42fdb79d7ebc3e73b517e6f8" kindref="member">throw_outcome::none</ref></computeroutput> when the check passed, or when nothing was thrown but an exception was expected. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1329" column="21" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result_1af4bafb957cc53a478f741f3e0048b293" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::callable_result::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::callable_result::value</qualifiedname>
+        <briefdescription>
+<para>The result of the check. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>True if the expected exception was thrown (<computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op" kindref="compound">throws_op</ref></computeroutput>), or if nothing was thrown (<computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op" kindref="compound">nothrow_op</ref></computeroutput>). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1320" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1320" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result_1a5118df01280af3f6094bb718716b422c" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string micro_os_plus::micro_test_plus::detail::callable_result::what</definition>
+        <argsstring></argsstring>
+        <name>what</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::callable_result::what</qualifiedname>
+        <briefdescription>
+<para>The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result_1a5118df01280af3f6094bb718716b422c" kindref="member">what()</ref></computeroutput> of the <computeroutput>std::exception</computeroutput> thrown, if any. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Empty unless <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result_1abd77c787fde5f5d9b90a883849d9a76b" kindref="member">outcome</ref></computeroutput> is <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a879f218299b32f5eb9fe68e15dfe0edfa1702c8950d15f035273a3f192a9da2dc" kindref="member">throw_outcome::std_exception</ref></computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1337" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1337" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The result of the invocation of the callable of a check. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Returned by the lambda that the constructors of <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op" kindref="compound">throws_op</ref></computeroutput> and <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op" kindref="compound">nothrow_op</ref></computeroutput> pass to <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op" kindref="compound">callable_op</ref></computeroutput>. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1311" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1312" bodyend="1338"/>
+    <listofallmembers>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result_1abd77c787fde5f5d9b90a883849d9a76b" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::callable_result</scope><name>outcome</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result_1af4bafb957cc53a478f741f3e0048b293" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::callable_result</scope><name>value</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result_1a5118df01280af3f6094bb718716b422c" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::callable_result</scope><name>what</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

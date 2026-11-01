@@ -55,9 +55,13 @@
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1ae80c2a30d372f12aac55094520d6f68b" kind="function"><name>view</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op" kind="struct"><name>micro_os_plus::micro_test_plus::detail::callable_op</name>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a5be2409b067dc5a12d19f26067327c82" kind="variable"><name>outcome_</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1ad464d00d1f7b4add47e7e6258dd5164d" kind="variable"><name>value_</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a094d51da3318c5f2bfa36121aac44829" kind="function"><name>callable_op</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a2e115acd4ddc044f458192bef80a2569" kind="variable"><name>what_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a10bbade95c4d4446127d7bdf3bd58176" kind="function"><name>callable_op</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a086d26c7329afc11e6a8b2664d753494" kind="function"><name>operator bool</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a69618b39f260cbd032e271881430e45c" kind="function"><name>outcome</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a996c2d87a98606a33f4e80ae62337bcb" kind="function"><name>what</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op_1a384b1d115e493d6a554ebda4e3089b19" kind="typedef"><name>op_type</name></member>
   </compound>
   <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref" kind="class"><name>micro_os_plus::micro_test_plus::detail::callable_ref</name>
@@ -67,21 +71,30 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1a10148eb90e3393d8166e8712468d32e2" kind="function"><name>operator()</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref_1affde2e2f927df6b5ada7f5578f8d5c36" kind="function"><name>invoke_callable</name></member>
   </compound>
+  <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result" kind="struct"><name>micro_os_plus::micro_test_plus::detail::callable_result</name>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result_1abd77c787fde5f5d9b90a883849d9a76b" kind="variable"><name>outcome</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result_1af4bafb957cc53a478f741f3e0048b293" kind="variable"><name>value</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result_1a5118df01280af3f6094bb718716b422c" kind="variable"><name>what</name></member>
+  </compound>
   <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result" kind="class"><name>micro_os_plus::micro_test_plus::detail::check_result</name>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1af96f9a6d186ff05253e33d088cab8106" kind="variable"><name>info_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1af0281b8df34411a8e9e45fa7f7c83d4b" kind="variable"><name>is_written_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1acfffc3c834c3a59408fcfae3a20f2dc1" kind="variable"><name>test_case_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1a9afc896b5f793149c125544eebbae21d" kind="variable"><name>is_written_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1a577a4b3a4a8ed4c1fd86c288636646a8" kind="variable"><name>test_case_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1a4a9f64710ef24d140b065ae5666badeb" kind="variable"><name>uncaught_exceptions_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1a5e3cca5a1c660bc576184ca200f73cc7" kind="variable"><name>value_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1af07b63cd05745cf1c4ce1b2e26ea7f45" kind="variable"><name>value_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1ac5423d6f891819a4bf2f0bb0d4df8996" kind="function"><name>check_result</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1adc3eb4dbb45d2dfa7b88aac996247f10" kind="function"><name>check_result</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1a3c6ef4e73f3bf898f1682187dc86919d" kind="function"><name>check_result</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1a7f59d6943d0ad491a270cd6edea64c46" kind="function"><name>check_result</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1ae3b88e57597f9fcd04536b894bebef5e" kind="function"><name>~check_result</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1a44b0e35cd70af1cd0bfe333ffd6629e9" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1ab81139f2b0c47e93b7d488976fcbbd66" kind="function"><name>init</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1a39f8e849a894792a4fd57c87504f9c5d" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1a26da353e3ea2577e00106c8f1f7b316b" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1a231681600fe29544efcdba22c56d5740" kind="function"><name>operator=</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1a683d05f5acadf26be1ef2303c4670039" kind="function"><name>value</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1aae72a4be3b00dd0af05eb50c65ae1815" kind="function"><name>check_result</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1a08d2a668e966f9914c1953658b4491b3" kind="function"><name>value</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1a5fcb3f51a91f775a688a4e1fce55486a" kind="function"><name>start</name></member>
+  </compound>
+  <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1_1colour__code" kind="struct"><name>micro_os_plus::micro_test_plus::detail::expression_formatter::colour_code</name>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1_1colour__code_1abe37e07d7dc9e783e4ee15e78198c331" kind="variable"><name>sequence</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours" kind="struct"><name>micro_os_plus::micro_test_plus::detail::colours</name>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours_1a7cd442bbb5af0f5d53632101d5c2eb0b" kind="variable"><name>fail</name></member>
@@ -89,7 +102,7 @@
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours_1ac3953ba58fbf322bd310c857844d17fe" kind="variable"><name>pass</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" kind="struct"><name>micro_os_plus::micro_test_plus::detail::compare_op</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op_1a72f34185e1d681ad6874c8564c03a2a4" kind="function"><name>compare_op</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op_1a7e864eeb2250a0e6b7f4b11c2eeae663" kind="function"><name>compare_op</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1a27b015b0e2b40e0f0bbb1b08588e1c20" kind="function"><name>lhs</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1ae9bf4f9ead2b8a63695988d37aa6f6f7" kind="function"><name>operator bool</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1ae1436f1b38c1062f7c733d3e8cb39b87" kind="function"><name>rhs</name></member>
@@ -99,7 +112,7 @@
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op_1a384b1d115e493d6a554ebda4e3089b19" kind="typedef"><name>op_type</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1compare__op" kind="struct"><name>micro_os_plus::micro_test_plus::extension::compare_op</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1compare__op_1a72f34185e1d681ad6874c8564c03a2a4" kind="function"><name>compare_op</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1compare__op_1a7e864eeb2250a0e6b7f4b11c2eeae663" kind="function"><name>compare_op</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1a27b015b0e2b40e0f0bbb1b08588e1c20" kind="function"><name>lhs</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1ae9bf4f9ead2b8a63695988d37aa6f6f7" kind="function"><name>operator bool</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1ae1436f1b38c1062f7c733d3e8cb39b87" kind="function"><name>rhs</name></member>
@@ -109,11 +122,14 @@
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op_1a384b1d115e493d6a554ebda4e3089b19" kind="typedef"><name>op_type</name></member>
   </compound>
   <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1counters" kind="class"><name>micro_os_plus::micro_test_plus::counters</name>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a4d3d1d6dfcc6a3a8c61c8c0326799533" kind="function"><name>increment_successful_checks</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a082c78df2d5f6b10b6ac8c246caae6c5" kind="function"><name>increment_executed_subtests</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2e1ed349fc1d936b5de5929fa1a62650" kind="function"><name>successful_checks</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3cd85c566bdf2b3b92e27db4c29c7bc5" kind="function"><name>executed_subtests</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ae27ffc4d38a71b5c7d54f4a3b56c2203" kind="function"><name>was_successful</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ae2855201952c0fea1e451227271b9821" kind="friend"><name>detail::check_result</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a484008ed66130a2bf334948841099943" kind="friend"><name>detail::runnable_base</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ab557a695c16fbf3b7e6127a4da385a52" kind="friend"><name>runner</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1abce5d3239999169dcf885b1c6dbcd27a" kind="friend"><name>suite</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a8ea72fd9dfce61d8dd0379ec719fec50" kind="friend"><name>test_case</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a72fb6b1038be0ac8b09b4da60aa292e8" kind="variable"><name>executed_test_cases_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a903b0e792447e149a032a7e46570bfc1" kind="variable"><name>failed_checks_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a09550bb4fd851f9b704904311bba27b6" kind="variable"><name>failed_test_cases_</name></member>
@@ -127,21 +143,21 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3d33b96c8d1a299929ead1f830e91853" kind="function"><name>executed_test_cases</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ab1684c7c6101a4d534356d9d16807bee" kind="function"><name>failed_checks</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a85981e2e55a820cb49ee04aa82bbde56" kind="function"><name>failed_test_cases</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1adc5390a03d6f674bf7b3f6111a6ab356" kind="function"><name>operator=</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ac746889e15b5b360a354bdedcae1637e" kind="function"><name>operator=</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a14690f9880df505f9dd90a9f2c3dfc96" kind="function"><name>passed</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a6d478407d2416d3d19a4041fa1c12c9b" kind="function"><name>passed_checks</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2e5ea7bbb9bd5a05213dee741f08599d" kind="function"><name>skipped_test_cases</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a21c6250b78a96ae1448a7fa93608d2d3" kind="function"><name>increment_executed_test_cases</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1aceea5d97d4ae5cd25f077d0349465062" kind="function"><name>increment_failed_checks</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a80c4365daa5804dc8ea52c7a5531e4cd" kind="function"><name>increment_failed_test_cases</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2805c82d9f1e97c61c538eb78381119d" kind="function"><name>increment_passed_checks</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a0fdafd0ee8aa838ecc833365d2b0eebb" kind="function"><name>increment_skipped_test_cases</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ad41430bc47f5539370b82ae9b8caf863" kind="function"><name>operator+=</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1adc5390a03d6f674bf7b3f6111a6ab356" kind="function"><name>operator=</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ac746889e15b5b360a354bdedcae1637e" kind="function"><name>operator=</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a14690f9880df505f9dd90a9f2c3dfc96" kind="function"><name>passed</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a6d478407d2416d3d19a4041fa1c12c9b" kind="function"><name>passed_checks</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2e5ea7bbb9bd5a05213dee741f08599d" kind="function"><name>skipped_test_cases</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to" kind="struct"><name>micro_os_plus::micro_test_plus::detail::equal_to</name>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to_1af0429303e918e797e7bca18d1de34f9e" kind="variable"><name>symbol</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to_1ad1e3d2d57c0ed04d4bb90eb72dd89b71" kind="variable"><name>within_tolerance_result</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gad1e3d2d57c0ed04d4bb90eb72dd89b71" kind="variable"><name>within_tolerance_result</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to_1a3e079e0cfd481086f5e722d8619963af" kind="function"><name>apply</name></member>
   </compound>
   <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter" kind="class"><name>micro_os_plus::micro_test_plus::detail::expression_formatter</name>
@@ -149,6 +165,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1c8635cbb51fea4f2b1ef839c85599e8" kind="function"><name>empty</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1aec75a9652b7e98188d506c462aa73e19" kind="friend"><name>check_result</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a97203c5c0e22fec0ca6a7cff1f911862" kind="friend"><name>plain_text</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae4a31fc9acc2024948ddf0445c99acd5" kind="variable"><name>max_range_elements_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1e8f6c298a6a12d07bdb9afd47c9c52c" kind="variable"><name>buffer_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a566350d8ec85e4c0b5d8a27ef61f819f" kind="variable"><name>colours_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1aaa185fbbc82e45621ca924efea6c8a3c" kind="variable"><name>owner_</name></member>
@@ -157,6 +174,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4c72fc8eae7aab4545122235816eb03e" kind="function"><name>expression_formatter</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1aed6149e163549956985e23a3ee9e6282" kind="function"><name>expression_formatter</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a7de3044d562926e79a6039bed6230794" kind="function"><name>expression_formatter</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a362a8657c869b398a19cd0959fb06033" kind="function"><name>expression_formatter</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a421fc77a0d2c9939ca7d2fdc1ba13358" kind="function"><name>~expression_formatter</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a4b24176d3597d73506e5bf0b71bdab2a" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6df410b7ec951a5563b1fae75ed31350" kind="function"><name>operator&lt;&lt;</name></member>
@@ -164,6 +182,8 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1aa273723118d3fc995eb3e2929d78f280" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a984d2b715e58437c9e2bd3455174ae60" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1afd1a0e24d72c0525f04e102fc2e6fb78" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a8e8bda279988a58e7812e881f9f2cf84" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a74a2fb2ea8cebdd9e5618d9a68e0e940" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ac7bb8541495fe98975132f546f5529bc" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a7dbef1dcdbb8e4187ec4f28b41ed32fc" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a91cd5a527853b70e7523e3180cb883f0" kind="function"><name>operator&lt;&lt;</name></member>
@@ -173,12 +193,13 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1af68e85825621bce88f656ced9be5396e" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6734ab254c188ce23514b5e84dd1232f" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a46392700e7eabfa2e18655ac6b04c670" kind="function"><name>operator&lt;&lt;</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a533424913419f7a9a763cd4db9d1f87e" kind="function"><name>operator&lt;&lt;</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a0f70445853f493e198a1fcf11177823d" kind="function"><name>operator&lt;&lt;</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2ca994c99c86ce1d5fdef788f9ece933" kind="function"><name>operator&lt;&lt;</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a277c1153e2afdb1a09df62f9858e4976" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2164ee9d09127bf1b2f7f43cd1d120ea" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae872f625f8ab299706bc4c87e85642d1" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a89d079db621006f899f250107e02b78d" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2d6c05ccf11857d92d68a6be31f22fe8" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a0f53d49c9cf2bcbf4b5b35f136f769ce" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a667715506ffe8f42c3243b7e290a9768" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1acfc1bb36c5b0b84d653431eb7f360555" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae35ae1fef3c1b19f78d9d01c46e389e5" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a28f6feb880950d846e9d527254e019cd" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1addfdc62bee977a9bec102e7babec03e1" kind="function"><name>operator&lt;&lt;</name></member>
@@ -190,6 +211,9 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1afedb833a4ea9bd720a9c9f471ea8ab34" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a9f9170708f0763a39314e19902843b4b" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a937600e01855336e5ef437104e7ee688" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a501c257d69ecbbb30f58f25ff8bc8470" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1aa60e58e4d87358dbfa4efb34e9bfa3bf" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a9cf366f45855f1c0c4ce201baa2229c8" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a965d6164f8c6d50cfb29545e794e9615" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a8499cebf8c9b3815b189c0e6e8ca2920" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a41d15d145121a646d3ec8e2a53626658" kind="function"><name>operator&lt;&lt;</name></member>
@@ -207,13 +231,23 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a1af5c2ffe3cd4eacad21667c2d4e3914" kind="function"><name>append_character</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a7b397504fbb760801d70b1a06186a599" kind="function"><name>append_decimal_point</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2966189c9d09d874a21e069c10a23b44" kind="function"><name>append_elements</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a5568c08ff7a8d29614a288da787d81c2" kind="function"><name>append_first_difference</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1af6fd39562ff70bf518bc5ef39bcc2da8" kind="function"><name>append_not_operand</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a473f4b285827bfb0e6e85d333ae8e000" kind="function"><name>append_not_operand</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a25abea26700b5b891f2b25674a38f3d1" kind="function"><name>append_not_operand</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a8987a12f8b3d5bb6785ccfb4763963e3" kind="function"><name>append_operand</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a0f5470c06633dea5bd77ad15a578a380" kind="function"><name>append_or_operand</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1abca8031b08daa1101165c0ba47709d8b" kind="function"><name>append_or_operand</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a07bd2bc6c72722228701c2e5f3bfeed8" kind="function"><name>append_suffix</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2835213b70dc5f7b1748a6c27a848108" kind="function"><name>append_throw_reason</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1aa572d402f40d4b39e257484f466b1225" kind="function"><name>append_value</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a433e0e309292ccc3e42a35076e32d6c3" kind="function"><name>begin_check</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae0068f2e9d46a29c71fcc812f505fbce" kind="function"><name>check_text</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2440544fb5674da8853708f9af9ccc14" kind="function"><name>colour</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a85355434311848f8aef7c1eb4871cb6c" kind="function"><name>colour</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a37d42d5ea2c454220cc432663b2ccbec" kind="function"><name>colour_none</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1aa568154ec1095196010a66fec43a393f" kind="function"><name>end_check</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2223390eeb8d50b088480853f158405b" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a3a9dbf882eb4e65385eef75726500477" kind="function"><name>prepend_cast</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1failed__requirement" kind="struct"><name>micro_os_plus::micro_test_plus::detail::failed_requirement</name>
   </compound>
@@ -261,12 +295,12 @@
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater" kind="struct"><name>micro_os_plus::micro_test_plus::detail::greater</name>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater_1a95a4bc88029b08f41fc35e6341718356" kind="variable"><name>symbol</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater_1a3770982b9b7025e79d30c44f8b6de981" kind="variable"><name>within_tolerance_result</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga3770982b9b7025e79d30c44f8b6de981" kind="variable"><name>within_tolerance_result</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater_1a160a3a53085ef4de1cbe0d391df9c20a" kind="function"><name>apply</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal" kind="struct"><name>micro_os_plus::micro_test_plus::detail::greater_equal</name>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal_1a0822d00105a592a54f384fb194347822" kind="variable"><name>symbol</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal_1a1e6e1923184c1e15b8dfe69053010c83" kind="variable"><name>within_tolerance_result</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga1e6e1923184c1e15b8dfe69053010c83" kind="variable"><name>within_tolerance_result</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal_1a51ffacf87f7c030f4b289f9f53ddeccd" kind="function"><name>apply</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1identity" kind="struct"><name>micro_os_plus::micro_test_plus::type_traits::identity</name>
@@ -305,15 +339,25 @@
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less" kind="struct"><name>micro_os_plus::micro_test_plus::detail::less</name>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less_1a6bbc5d5eb2e2f9b1b0836a1aeee7f20a" kind="variable"><name>symbol</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less_1af95d91c9cae67c4ce138146b2cdab25e" kind="variable"><name>within_tolerance_result</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gaf95d91c9cae67c4ce138146b2cdab25e" kind="variable"><name>within_tolerance_result</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less_1a81b6505b5400ccbe838e50d06bee8af2" kind="function"><name>apply</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal" kind="struct"><name>micro_os_plus::micro_test_plus::detail::less_equal</name>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal_1a24d43417c2c93a282f3fee53ad91a893" kind="variable"><name>symbol</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal_1adcaedd85e07d96bd7230d06c5c258df7" kind="variable"><name>within_tolerance_result</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gadcaedd85e07d96bd7230d06c5c258df7" kind="variable"><name>within_tolerance_result</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal_1ad24b05cbbdc8672cb13e0f126a9c9802" kind="function"><name>apply</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list" kind="struct"><name>micro_os_plus::micro_test_plus::type_traits::list</name>
+  </compound>
+  <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1located__name" kind="class"><name>micro_os_plus::micro_test_plus::located_name</name>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1located__name_1a199094a3c03b40d8621279a30a152784" kind="variable"><name>location_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1located__name_1a73d82df6b0bafcf4dfef0f15433185ca" kind="variable"><name>name_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1located__name_1a872675dbace4d708aa65e8443c3733c0" kind="function"><name>located_name</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1located__name_1a49ca2791ea42fc17bd4f9de133c8adbb" kind="function"><name>located_name</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1located__name_1a2be70223f532513d9f1ce311b436b72f" kind="function"><name>located_name</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1located__name_1a030144fd43957ba5e2c9a660d2dd33be" kind="function"><name>located_name</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1located__name_1ade35aacdde746abad6be66a9fcab251b" kind="function"><name>location</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1located__name_1aa2ec3a20974c59b2f5a64a50b41db444" kind="function"><name>name</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool" kind="struct"><name>micro_os_plus::micro_test_plus::detail::named_bool</name>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op_1a384b1d115e493d6a554ebda4e3089b19" kind="typedef"><name>op_type</name></member>
@@ -325,7 +369,7 @@
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to" kind="struct"><name>micro_os_plus::micro_test_plus::detail::not_equal_to</name>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to_1ababd5d29f7521518a978c737f2d481ec" kind="variable"><name>symbol</name></member>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to_1a8decf36d3e0e7cc8242c6a2170743422" kind="variable"><name>within_tolerance_result</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga8decf36d3e0e7cc8242c6a2170743422" kind="variable"><name>within_tolerance_result</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to_1a6911d4baf097b704280eebbead545ba1" kind="function"><name>apply</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__op" kind="struct"><name>micro_os_plus::micro_test_plus::detail::not_op</name>
@@ -337,9 +381,13 @@
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op_1a384b1d115e493d6a554ebda4e3089b19" kind="typedef"><name>op_type</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op" kind="struct"><name>micro_os_plus::micro_test_plus::detail::nothrow_op</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op_1aadecd7994227046918629f744bde73e0" kind="function"><name>nothrow_op</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op_1a0ed21cd3cb2e069450240260df778b78" kind="function"><name>nothrow_op</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a086d26c7329afc11e6a8b2664d753494" kind="function"><name>operator bool</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a69618b39f260cbd032e271881430e45c" kind="function"><name>outcome</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a996c2d87a98606a33f4e80ae62337bcb" kind="function"><name>what</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a5be2409b067dc5a12d19f26067327c82" kind="variable"><name>outcome_</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1ad464d00d1f7b4add47e7e6258dd5164d" kind="variable"><name>value_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a2e115acd4ddc044f458192bef80a2569" kind="variable"><name>what_</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op_1a384b1d115e493d6a554ebda4e3089b19" kind="typedef"><name>op_type</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op" kind="struct"><name>micro_os_plus::micro_test_plus::detail::op</name>
@@ -370,7 +418,7 @@
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text_1a63b3cc3a8e725c2921787180f1244824" kind="function"><name>append</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1predicate__op" kind="struct"><name>micro_os_plus::micro_test_plus::detail::predicate_op</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1predicate__op_1a79e1800ae175d868f234497f72848794" kind="function"><name>predicate_op</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1predicate__op_1ab1d700c6cde6b75a6d96e113b00824cb" kind="function"><name>predicate_op</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op_1a1c076678ac794ab6216dd967496dd904" kind="function"><name>operand</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op_1aa3c42cbce24fe0857a8b20aa88611569" kind="function"><name>operator bool</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op_1a910628335fd0ff17244787a515b8ad2f" kind="variable"><name>t_</name></member>
@@ -378,7 +426,7 @@
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op_1a384b1d115e493d6a554ebda4e3089b19" kind="typedef"><name>op_type</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__op" kind="struct"><name>micro_os_plus::micro_test_plus::extension::predicate_op</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__op_1a79e1800ae175d868f234497f72848794" kind="function"><name>predicate_op</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__op_1ab1d700c6cde6b75a6d96e113b00824cb" kind="function"><name>predicate_op</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op_1a1c076678ac794ab6216dd967496dd904" kind="function"><name>operand</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op_1aa3c42cbce24fe0857a8b20aa88611569" kind="function"><name>operator bool</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op_1a910628335fd0ff17244787a515b8ad2f" kind="variable"><name>t_</name></member>
@@ -423,6 +471,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a1f1495d610d01955c8f8634810b54bb4" kind="function"><name>end_session</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a89358dc17ea470ab4e829136284cd896" kind="function"><name>end_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a145971ca001d89162c435f87b4cfeece" kind="function"><name>end_test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a9cf0f0b5601d19cb6e68c8b97f053c85" kind="function"><name>error_prefix</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a406cf77b7adcd5fe9417ce7bce4f3afb" kind="function"><name>fail</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a1bf7be6972ddc4f81cecb1552452db10" kind="function"><name>fail_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a804b593aefa158d92a72da43de57d242" kind="function"><name>flush_streams</name></member>
@@ -440,10 +489,13 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a01df0bb54bda2662826e84e685374ce0" kind="function"><name>skip_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a1986653001ad23e18de13822bbcd022f" kind="function"><name>skip_test_case</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a0e6f0a129d495a7e9d57ef71412cd88f" kind="function"><name>writes_passed_checks</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a388b0308cfe82a025b8e1fa7e9a969a5" kind="function"><name>announce_output_file</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a5859ce31641330b243cfb5d1c6080859" kind="function"><name>clear_buffer</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a844e80839c81133b52ee3beabf64d942" kind="function"><name>commit_buffer</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a5cf73aaf67484b50c25ef42363d49337" kind="function"><name>commit_outer_results</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1adb473d2a466c856bfe8151c7558383c1" kind="function"><name>console_lines</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1af5fdc59140d1d58c4bdb903c9ec6d9a7" kind="function"><name>display_open_heading</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1ae0a4d6478487a011e331e653d1a618b3" kind="function"><name>display_open_test_cases</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a5ddd6ca6ce847ca89d7a3fcf9751f97d" kind="function"><name>enter_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a2d5e5125b8c71fe0dedbe92d730647ec" kind="function"><name>mark_failure</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a24888ee49f3e3abb1a849e309a099189" kind="function"><name>output_fail_prefix</name></member>
@@ -477,6 +529,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1ace9c2dfffc49a97516b96dacaf87b943" kind="function"><name>end_session</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1af8dc976373fc0976c8486693d9b9f835" kind="function"><name>end_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a7987c7a524058211a73d048d28943fb9" kind="function"><name>end_test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a9cf0f0b5601d19cb6e68c8b97f053c85" kind="function"><name>error_prefix</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a406cf77b7adcd5fe9417ce7bce4f3afb" kind="function"><name>fail</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1afd98d9a322823d67448d4ba301846392" kind="function"><name>fail_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a804b593aefa158d92a72da43de57d242" kind="function"><name>flush_streams</name></member>
@@ -497,6 +550,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1af28ab5a9448645fb8976c0b139bf302b" kind="function"><name>skip_test_case</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a0e6f0a129d495a7e9d57ef71412cd88f" kind="function"><name>writes_passed_checks</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1adf27b1d3d7cb168f295e4bf198bb0dbf" kind="function"><name>commit_buffer</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a5c1cab1018f0e1f5b070ee327faef4ca" kind="function"><name>display_open_heading</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1abcfa63d8c5ca8acd458383102b7e99e9" kind="function"><name>display_open_names</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a032be7e38aad40c8bc44b2376ad90e29" kind="function"><name>output_fail_prefix</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1ab9fdb57e1a5497af22de7cf4a252ce4b" kind="function"><name>output_fail_suffix</name></member>
@@ -518,9 +572,11 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1ac3878d2e85ed2cae4c71c793d7a8f52e" kind="variable"><name>output_file_path_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a6b07e60aa8baeb90821690d1ff9c65e6" kind="variable"><name>suite_displayed_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a2560a0f1cf935e420a2e584ccddf1a1e" kind="variable"><name>verbosity_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a388b0308cfe82a025b8e1fa7e9a969a5" kind="function"><name>announce_output_file</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a5859ce31641330b243cfb5d1c6080859" kind="function"><name>clear_buffer</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a5cf73aaf67484b50c25ef42363d49337" kind="function"><name>commit_outer_results</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1adb473d2a466c856bfe8151c7558383c1" kind="function"><name>console_lines</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1ae0a4d6478487a011e331e653d1a618b3" kind="function"><name>display_open_test_cases</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a5ddd6ca6ce847ca89d7a3fcf9751f97d" kind="function"><name>enter_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a2d5e5125b8c71fe0dedbe92d730647ec" kind="function"><name>mark_failure</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1af33f2f6498a97383cdb75020e32ccf23" kind="function"><name>route</name></member>
@@ -552,6 +608,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a7033819609bfad2db2ecc7a024e91b2c" kind="function"><name>end_session</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a2d5ddae3195ab52a957927a1b455f7b8" kind="function"><name>end_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1ad15f7dbbf6a683441df40c502125adc3" kind="function"><name>end_test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a8c18a91935833ae7ce66e5356b39c087" kind="function"><name>error_prefix</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a406cf77b7adcd5fe9417ce7bce4f3afb" kind="function"><name>fail</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a314df80e98fe6fa5de008d6708a14925" kind="function"><name>fail_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a804b593aefa158d92a72da43de57d242" kind="function"><name>flush_streams</name></member>
@@ -572,7 +629,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a31ccd7af941d06241ce16df9274abc38" kind="function"><name>skip_test_case</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a0e6f0a129d495a7e9d57ef71412cd88f" kind="function"><name>writes_passed_checks</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1af80ba6907c9f13b08f8cb8726d65c510" kind="function"><name>commit_buffer</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1aec7a63f892ff631e659c28607bf31242" kind="function"><name>display_open_headers</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a4930462ea6e25d0adeedd50a405c25ab" kind="function"><name>display_open_heading</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a3bd1c7d455abc782062d0e23a3ef1015" kind="function"><name>output_fail_prefix</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1aaea110287f115fbaf80b0248f724c5b6" kind="function"><name>output_fail_suffix</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1ac6c05f92e47ad71f72b44f9beb0b98f1" kind="function"><name>output_pass_prefix</name></member>
@@ -594,9 +651,11 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1ac3878d2e85ed2cae4c71c793d7a8f52e" kind="variable"><name>output_file_path_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a6b07e60aa8baeb90821690d1ff9c65e6" kind="variable"><name>suite_displayed_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a2560a0f1cf935e420a2e584ccddf1a1e" kind="variable"><name>verbosity_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a388b0308cfe82a025b8e1fa7e9a969a5" kind="function"><name>announce_output_file</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a5859ce31641330b243cfb5d1c6080859" kind="function"><name>clear_buffer</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a5cf73aaf67484b50c25ef42363d49337" kind="function"><name>commit_outer_results</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1adb473d2a466c856bfe8151c7558383c1" kind="function"><name>console_lines</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1ae0a4d6478487a011e331e653d1a618b3" kind="function"><name>display_open_test_cases</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a5ddd6ca6ce847ca89d7a3fcf9751f97d" kind="function"><name>enter_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a2d5e5125b8c71fe0dedbe92d730647ec" kind="function"><name>mark_failure</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1af33f2f6498a97383cdb75020e32ccf23" kind="function"><name>route</name></member>
@@ -635,8 +694,10 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aa83553cf6bf351153328304ebc71e545" kind="function"><name>totals</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a5fec64d9b300277d56e02193bb7d0a46" kind="function"><name>abort</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a1bffa5c8f05ffb464857521badd6ecef" kind="function"><name>run</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a9fe5d6e7a066b514e33fa4f2550e6a2e" kind="function"><name>accepts_test_case</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a38cf903fb0ba5b76b1eb2350b6385962" kind="function"><name>after_test_case_create</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ad4ac49522cfd6e1608d9ac64ab7a8b91" kind="function"><name>create_test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a6d375bb7425b231aa3605642289d2f44" kind="function"><name>create_test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a6df38c720d659b6a53dfd2b65c5d25e4" kind="function"><name>exchange_running_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aaec8b378e1d1639a5fa0e6dec20d6a46" kind="function"><name>is_aborted</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a58c3051635ce2389a8afc2222cd6b30d" kind="function"><name>is_listing</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a0d131770fe8aed387ca6da982f1ff60e" kind="function"><name>next_test_point_number</name></member>
@@ -658,6 +719,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a081c4bd4495097c8c7f913ef837899ba" kind="enum"><name>session_state</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a081c4bd4495097c8c7f913ef837899baae2fa538867c3830a859a5b17ab24644b" kind="enumvalue"><name>created</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a081c4bd4495097c8c7f913ef837899baadb1687e1890c33928fe61b7cb4ac2f0e" kind="enumvalue"><name>initialised</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a081c4bd4495097c8c7f913ef837899baa59e6b9e272eca41f44360ca9b264e57e" kind="enumvalue"><name>declined</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a081c4bd4495097c8c7f913ef837899baa75101dcdfc88455bcafc9e53e0b06689" kind="enumvalue"><name>running</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a081c4bd4495097c8c7f913ef837899baaa5d7ceb2c59b8cee46c2953fec9abc19" kind="enumvalue"><name>finished</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ab5b0711c5f1ab3063c410c1b9a76707b" kind="typedef"><name>abort_handler_t</name></member>
@@ -670,29 +732,31 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ad107cec6e32daac2da4cd665c7444e51" kind="variable"><name>aborted_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1abacf53ab658e289ae89051531c0cddad" kind="variable"><name>children_suites_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1aa6f3fec517a49f9cdc70ec79b9d1e5" kind="variable"><name>exit_code_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a999d64ffbd12dcacb59c34fbea4452ba" kind="variable"><name>has_rejected_suites_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a97e4cdd2eb8a2bf9a3714b29825683eb" kind="variable"><name>has_rejected_calls_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a4a43729c815ce9b3e3f15a650f011f66" kind="variable"><name>has_top_suite_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1af8ce5a496dba305f6fbd45005d580321" kind="variable"><name>listed_suite_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1acb06cb7ebf949b8af5c5d57645c56e4a" kind="variable"><name>listed_suites_count_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a90900e7d0a4571407b3727e031e46685" kind="variable"><name>listed_test_cases_count_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1acea30e98ccf65d97e8c0e0d0ff8edda0" kind="variable"><name>options_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a67205181c73d11d12964bb324f1dc902" kind="variable"><name>reporter_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a02f2771f40d1e67f7cd3b50511f7d4dc" kind="variable"><name>running_suite_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1acf5727abb4e4b23e1a2d7d3320f5dec9" kind="variable"><name>running_test_case_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a70dad6c927a59d5459c2edfdb40fdece" kind="variable"><name>session_state_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ae815c0c97245032223f4c1523e1d35fe" kind="variable"><name>skipped_suites_count_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a291ce3303f40804df4fd99f0f7d40d6c" kind="variable"><name>started_next_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a13b3cf196a1b12cb90a12c4b84223d15" kind="variable"><name>stopwatch_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a93a3afb222db1fcaa87cd1ba7fa15bc0" kind="variable"><name>top_suite_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a401e4e098f0ceba7f21a3a5bf1ea89e3" kind="variable"><name>top_suite_name_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a04b52f3243abe3a9b08b44efd03e4b57" kind="variable"><name>totals_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1adbe02fed3c414adf001d856ab390e000" kind="function"><name>runner</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a09acf1e03953d8017e56c8b5e38b879a" kind="function"><name>runner</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a5e2001730fd3659e9045fcc5cc668f07" kind="function"><name>runner</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1aea1a1eff9cac943c1cd84e48b9add92f" kind="function"><name>~runner</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a7bc806540e65c21095ef1ea1ef970db2" kind="function"><name>abort</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a4069fe957bbc7a9217ca2dd4d2034a97" kind="function"><name>add_suite</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1aac24d1193ac0579dd6ac3c523a32015f" kind="function"><name>add_top_suite</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1abdb31c03509a40a041b8f0ea8e12ebd1" kind="function"><name>add_suite</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a7170624ca4a3a92b17ced71472726529" kind="function"><name>add_top_suite</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a9ec7d561fe8eab9df03da792f62518ae" kind="function"><name>add_top_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a9484b22aa909151712144cd39130187a" kind="function"><name>added_suites_count</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a7ec833574071080a76dfddb01983dea9" kind="function"><name>application_arguments</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1aba1f6140138ba802f91f8f025258b63d" kind="function"><name>initialise</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ae87c4a8f0e08e069b6d1a393f88e040e" kind="function"><name>initialise</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ae5df469f7aaccc8e24bfadff4c209688" kind="function"><name>is_listing</name></member>
@@ -709,28 +773,34 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a11cfc0285b39ae765ccf3082c1eadebe" kind="function"><name>has_option_errors</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a2b0adeef059676a455d9506ba8a06d26" kind="function"><name>is_selected</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a0e478c394741ff78f65a7e2c0822ba50" kind="function"><name>list_test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a5d3ac1449fc0d04014dfd46d59392cbb" kind="function"><name>mark_rejected</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1dcc8f8d7f80044c67c492a1aebe3043" kind="function"><name>register_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a964febc11fcd08a4437e11d16544ca7b" kind="function"><name>reject_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a061939d61f7f2d4a4523c427b0dc98f2" kind="function"><name>run_child_suites</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a19160679a4fe484fc9f8f76ed3408762" kind="function"><name>link_static_suite</name></member>
   </compound>
   <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options" kind="class"><name>micro_os_plus::micro_test_plus::runner_options</name>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1ae26cb575ce2e252eef06b7b124a6400a" kind="variable"><name>arguments</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a48ed4dd71eff02911c2d6943ba616850" kind="variable"><name>colour</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a62b0a05ad2be4f3a5131aaf8bb523910" kind="variable"><name>filter_patterns</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a36b690e87d69f1124c8fff4d4a59f90c" kind="variable"><name>help</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1ac4f95336439b329d0f3731a5dcafb6f9" kind="variable"><name>list_tests</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a86bc6ef13bb488a933f6001c98aa2c6e" kind="variable"><name>output_file_path</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1ad22d04df014c5b0658b6e7bd239f15b0" kind="variable"><name>selected_reporter</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1aff30f0303a958a549a2f4b6e67db00d5" kind="variable"><name>verbosity_level</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a34e9ffd5e17176de9c845f71fb0f399c" kind="variable"><name>has_errors_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a29f60856a79601eaa48a2bb7a3a615ff" kind="variable"><name>has_invalid_reporter_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a0c0fd379f4e9fe53937856c8b79ce76f" kind="variable"><name>application_begin_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1af6b062e15df8f4a1903c2346afa08b08" kind="variable"><name>arguments_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a444295471a1fcc38cca319f4c6c731d5" kind="variable"><name>errors_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a767f197820d565e99ab249c26554b7a2" kind="variable"><name>unknown_option_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a01ea0d0319a60701968fbfea120ce767" kind="function"><name>runner_options</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a561d969dc26eb39663173a4a6684b0d9" kind="function"><name>runner_options</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a16a3fae931e45f0803e9d28b174ab615" kind="function"><name>runner_options</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a1cd0deb2811e578a7e767414b1092eec" kind="function"><name>runner_options</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1af70c67dedde76ad2c47f73d1cffbf354" kind="function"><name>~runner_options</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1ab94dfa73cbbf89b5408036c06718f0d7" kind="function"><name>application_arguments</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a8782919e89d6ee79cceb06365a779146" kind="function"><name>arguments</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a4bea6b19bad696b128758d8a19a71f6c" kind="function"><name>errors</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a4ed347422b26dded0244c3926ef384a8" kind="function"><name>has_errors</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1acd0e6a20ac7d916592945346f29654ad" kind="function"><name>has_invalid_reporter</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a117509554a3549c7a7c836506050b8ef" kind="function"><name>has_unknown_option</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a7df40b87a2471732f9a411bdb1e5db52" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1aa8399af15f4ab63f8208f9a4775cd650" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1abe865fdd65296f743fd11bdf5ef79a14" kind="function"><name>add_error</name></member>
@@ -743,48 +813,50 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_1aab9d006004611ac0526852a09f675c66" kind="function"><name>line</name></member>
   </compound>
   <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kind="class"><name>micro_os_plus::micro_test_plus::static_suite</name>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a7890c9db0d4a64f53164857a4d034435" kind="function"><name>static_suite</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a7a9804ad5f348b9b63e0a5f72597f997" kind="function"><name>static_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a06c121fc0e8e87451a718846a11fc853" kind="function"><name>timings</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a431faae19127cec8fbc9ebce59709f31" kind="function"><name>timings</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a8def9cddbb5bc877918104c785271753" kind="function"><name>own_index</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a7ad637d38c035d54c872f72e1b9ac358" kind="function"><name>current_subtest_index</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aaf838b03cddfb039d1295611be8a5e32" kind="function"><name>children_subtests_count</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1aee03f72ebd3b2ff8e670b00e07d7f729" kind="function"><name>static_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1ae6e593e9cb04f52067b131da4a4c3db3" kind="function"><name>static_suite</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1abab764fadfeef6a609abaacadbce515e" kind="function"><name>static_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a441e44ba0fdf43efc58992a9e3e8ce74" kind="function"><name>static_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a88ca9975daf7b7b1e509114944151675" kind="function"><name>~static_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a6c652cd5dc8194269c1cc5f0dc1945e0" kind="function"><name>name</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1ae050e143c88fb99eddf2060d37ad4340" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a9715939a3717861be374ce1a884fd7fa" kind="function"><name>operator=</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a402696dc4d4978ff3c050427890cfe01" kind="function"><name>test</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a86d654e9059b1acecbf49f2725419320" kind="function"><name>test_each</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a08e3a26d6e032a580f095f8dcf8b2b41" kind="function"><name>test_each</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a0cfa76ba0ba0c308d246b2b5d506ab19" kind="function"><name>test</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1adc0f91f958d943f505dac6f73c2c240d" kind="function"><name>test_each</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a61a886b526fef82564a3e4ec1ea0dee4" kind="function"><name>test_each</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aa83553cf6bf351153328304ebc71e545" kind="function"><name>totals</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a5fec64d9b300277d56e02193bb7d0a46" kind="function"><name>abort</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a1d15dd97c94c3dabccb9e5a7444af0ec" kind="function"><name>fail_unexpected_exception</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a532459c0a6362991282548f4f845cb97" kind="function"><name>link</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite_1a7ac8520c7d0761e54e7482ca5d7e26f2" kind="function"><name>link_or_reject</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a432deda5a8721472e8775cbc98451722" kind="function"><name>run</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a20ca7721bdf59488ed0713378235cfd2" kind="function"><name>unlink</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1aec447d7b5763ffca58738813bad2e805" kind="variable"><name>callable_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a6ddd1c0721a1f0ce3c9e92870ef358ff" kind="variable"><name>located_name_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a65d1fed18566774295fcbc7df44c216e" kind="variable"><name>next_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a95145ab410f5c0b6e514ac366aff8d84" kind="variable"><name>stopwatch_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a612f5529e08321a2e44c714d60c2ba1e" kind="variable"><name>first_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aff1a81aff41ab5dc80e2fac1c5a78a31" kind="variable"><name>child_test_cases_count_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad830bd92e4f6e4239d2bb5b75d5bf50" kind="variable"><name>name_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a65d1fed18566774295fcbc7df44c216e" kind="variable"><name>next_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a69687627342981d42471b17f1d83311f" kind="variable"><name>own_index_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1abcc884f846957ce43a2e076ba6c7c129" kind="variable"><name>owned_name_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ab7513249cc0aac30e3edd7008d08d355" kind="variable"><name>runner_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a95145ab410f5c0b6e514ac366aff8d84" kind="variable"><name>stopwatch_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1abc92cbb8ab8d04e7c75bf18aa7189d98" kind="variable"><name>test_point_number_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a87091ad4653e9db854ba9d5a64b30738" kind="variable"><name>totals_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a612f5529e08321a2e44c714d60c2ba1e" kind="variable"><name>first_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a9fe5d6e7a066b514e33fa4f2550e6a2e" kind="function"><name>accepts_test_case</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a38cf903fb0ba5b76b1eb2350b6385962" kind="function"><name>after_test_case_create</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ad4ac49522cfd6e1608d9ac64ab7a8b91" kind="function"><name>create_test_case</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a1d15dd97c94c3dabccb9e5a7444af0ec" kind="function"><name>fail_unexpected_exception</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a6d375bb7425b231aa3605642289d2f44" kind="function"><name>create_test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a6df38c720d659b6a53dfd2b65c5d25e4" kind="function"><name>exchange_running_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aaec8b378e1d1639a5fa0e6dec20d6a46" kind="function"><name>is_aborted</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a58c3051635ce2389a8afc2222cd6b30d" kind="function"><name>is_listing</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a532459c0a6362991282548f4f845cb97" kind="function"><name>link</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a0d131770fe8aed387ca6da982f1ff60e" kind="function"><name>next_test_point_number</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a3fd5730af8bd449cc56e29d5d14509e9" kind="function"><name>running_test_case</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a7e4a578732a0464480e211f6591fa69f" kind="function"><name>test_reporter</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a0224080b4433f538798354eca0f4c8c5" kind="function"><name>test_runner</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a20ca7721bdf59488ed0713378235cfd2" kind="function"><name>unlink</name></member>
   </compound>
   <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch" kind="class"><name>micro_os_plus::micro_test_plus::detail::stopwatch</name>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a306d33023758a96948a6b24ea7a5dc06" kind="function"><name>has_begin</name></member>
@@ -819,28 +891,18 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a099a369b6d1f67c296baf9d22be40ba2" kind="friend"><name>detail::reporter_human</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a6cd3b3f893312fe43fa2d7b5018646e9" kind="friend"><name>detail::reporter_tap</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a68a030feff1f481126e9a6d170331420" kind="friend"><name>micro_test_plus::runner</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1af153e90c6ef7fad5fe7f059fced9f423" kind="friend"><name>static_suite</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a79695ebe99eace27c6a3e1eb651a8522" kind="friend"><name>top_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1aec447d7b5763ffca58738813bad2e805" kind="variable"><name>callable_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aff1a81aff41ab5dc80e2fac1c5a78a31" kind="variable"><name>child_test_cases_count_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad830bd92e4f6e4239d2bb5b75d5bf50" kind="variable"><name>name_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a6ddd1c0721a1f0ce3c9e92870ef358ff" kind="variable"><name>located_name_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a65d1fed18566774295fcbc7df44c216e" kind="variable"><name>next_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a69687627342981d42471b17f1d83311f" kind="variable"><name>own_index_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1abcc884f846957ce43a2e076ba6c7c129" kind="variable"><name>owned_name_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ab7513249cc0aac30e3edd7008d08d355" kind="variable"><name>runner_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a95145ab410f5c0b6e514ac366aff8d84" kind="variable"><name>stopwatch_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1abc92cbb8ab8d04e7c75bf18aa7189d98" kind="variable"><name>test_point_number_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a87091ad4653e9db854ba9d5a64b30738" kind="variable"><name>totals_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a612f5529e08321a2e44c714d60c2ba1e" kind="variable"><name>first_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a0232c48687da2eb3a2171d8647ffb0a6" kind="function"><name>suite</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a38cf903fb0ba5b76b1eb2350b6385962" kind="function"><name>after_test_case_create</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ad4ac49522cfd6e1608d9ac64ab7a8b91" kind="function"><name>create_test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1ad7c1d86bb59a42c67848ec6d9482c42b" kind="function"><name>suite</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a5fec64d9b300277d56e02193bb7d0a46" kind="function"><name>abort</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a1d15dd97c94c3dabccb9e5a7444af0ec" kind="function"><name>fail_unexpected_exception</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aaec8b378e1d1639a5fa0e6dec20d6a46" kind="function"><name>is_aborted</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a58c3051635ce2389a8afc2222cd6b30d" kind="function"><name>is_listing</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a532459c0a6362991282548f4f845cb97" kind="function"><name>link</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a0d131770fe8aed387ca6da982f1ff60e" kind="function"><name>next_test_point_number</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a3fd5730af8bd449cc56e29d5d14509e9" kind="function"><name>running_test_case</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a7e4a578732a0464480e211f6591fa69f" kind="function"><name>test_reporter</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a0224080b4433f538798354eca0f4c8c5" kind="function"><name>test_runner</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a432deda5a8721472e8775cbc98451722" kind="function"><name>run</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a20ca7721bdf59488ed0713378235cfd2" kind="function"><name>unlink</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a56a0f7e480793aa3a55f49544187d12a" kind="function"><name>suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1aa8dac776abb9f904d1d148bf07fedbab" kind="function"><name>suite</name></member>
@@ -848,41 +910,9 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a6c652cd5dc8194269c1cc5f0dc1945e0" kind="function"><name>name</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a744cbf6c937041b6f8a5d6530479c3af" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1aaaa545978a454f1ae63fc06ac5169efe" kind="function"><name>operator=</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a402696dc4d4978ff3c050427890cfe01" kind="function"><name>test</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a86d654e9059b1acecbf49f2725419320" kind="function"><name>test_each</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a08e3a26d6e032a580f095f8dcf8b2b41" kind="function"><name>test_each</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aa83553cf6bf351153328304ebc71e545" kind="function"><name>totals</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a5fec64d9b300277d56e02193bb7d0a46" kind="function"><name>abort</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a432deda5a8721472e8775cbc98451722" kind="function"><name>run</name></member>
-  </compound>
-  <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" kind="class"><name>micro_os_plus::micro_test_plus::test_case</name>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a0fbd378373bbda24c9d574904268bc94" kind="function"><name>expect</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a51f15ed441451eb5809559a54a1c7a73" kind="function"><name>require</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1ad25dc8d5d657ace9d47d3a95b3341802" kind="function"><name>assume</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a8def9cddbb5bc877918104c785271753" kind="function"><name>own_index</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a7ad637d38c035d54c872f72e1b9ac358" kind="function"><name>current_subtest_index</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aaf838b03cddfb039d1295611be8a5e32" kind="function"><name>children_subtests_count</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a484008ed66130a2bf334948841099943" kind="friend"><name>detail::runnable_base</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1aad4b8f6b15291abb5dc6602784fa7bad" kind="variable"><name>callable_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a1c0173e5186060d94f09db00552f44b4" kind="variable"><name>location_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a3da31fa70e1009cfde8a13a7ffaad036" kind="variable"><name>nesting_depth_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a3f1717ee8c04af1181f6dff2966b3d34" kind="variable"><name>parent_suite_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a0ffeed47bd9ecd07bda3a2f33f062b71" kind="function"><name>test_case</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a5fec64d9b300277d56e02193bb7d0a46" kind="function"><name>abort</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a1980019eed5ac5b1eef65302eb9cc9cd" kind="function"><name>fail_unexpected_exception</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1adb4333ecb107fee477156b661f0b1512" kind="function"><name>run</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1ab7f67423b68a596e6a31ffc7ba261345" kind="function"><name>test_case</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a13ad0f433d3a8189cb806ddb38c2a56c" kind="function"><name>test_case</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a26a1b913fdcece44668b56200298218a" kind="function"><name>~test_case</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-expectations_1gaf4f5f9632b5a290c1894984661a41a86" kind="function"><name>expect</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a6c652cd5dc8194269c1cc5f0dc1945e0" kind="function"><name>name</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1af2b6792d06fa335f2b617e4d39bbba3c" kind="function"><name>nesting_depth</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a556bbac39502797d52241f481e021847" kind="function"><name>operator=</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1ac2e310ec902a0c3e786d4c415269c23e" kind="function"><name>operator=</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-requirements_1gace68a1bd4dd258082f4b1fc01fcd008a" kind="function"><name>require</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1aac23ee148d8e5946cd87e0de036e9fb8" kind="function"><name>test</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a018224e675db634b3b9898c72d1c8655" kind="function"><name>test_each</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1afe716dc1b9245d7761b1fd6e6e854c5c" kind="function"><name>test_each</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a0cfa76ba0ba0c308d246b2b5d506ab19" kind="function"><name>test</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1adc0f91f958d943f505dac6f73c2c240d" kind="function"><name>test_each</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a61a886b526fef82564a3e4ec1ea0dee4" kind="function"><name>test_each</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aa83553cf6bf351153328304ebc71e545" kind="function"><name>totals</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aff1a81aff41ab5dc80e2fac1c5a78a31" kind="variable"><name>child_test_cases_count_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad830bd92e4f6e4239d2bb5b75d5bf50" kind="variable"><name>name_</name></member>
@@ -890,8 +920,10 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ab7513249cc0aac30e3edd7008d08d355" kind="variable"><name>runner_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1abc92cbb8ab8d04e7c75bf18aa7189d98" kind="variable"><name>test_point_number_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a87091ad4653e9db854ba9d5a64b30738" kind="variable"><name>totals_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a9fe5d6e7a066b514e33fa4f2550e6a2e" kind="function"><name>accepts_test_case</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a38cf903fb0ba5b76b1eb2350b6385962" kind="function"><name>after_test_case_create</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ad4ac49522cfd6e1608d9ac64ab7a8b91" kind="function"><name>create_test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a6d375bb7425b231aa3605642289d2f44" kind="function"><name>create_test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a6df38c720d659b6a53dfd2b65c5d25e4" kind="function"><name>exchange_running_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aaec8b378e1d1639a5fa0e6dec20d6a46" kind="function"><name>is_aborted</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a58c3051635ce2389a8afc2222cd6b30d" kind="function"><name>is_listing</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a0d131770fe8aed387ca6da982f1ff60e" kind="function"><name>next_test_point_number</name></member>
@@ -899,24 +931,86 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a7e4a578732a0464480e211f6591fa69f" kind="function"><name>test_reporter</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a0224080b4433f538798354eca0f4c8c5" kind="function"><name>test_runner</name></member>
   </compound>
-  <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case__name" kind="class"><name>micro_os_plus::micro_test_plus::test_case_name</name>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case__name_1ab9ecf89d495d71f224e182228eaec66e" kind="variable"><name>location_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case__name_1a2941ef285834b5d22e0300238473e648" kind="variable"><name>name_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case__name_1a86534273fcfac3a3edd7fbae2f04e5ea" kind="function"><name>test_case_name</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case__name_1ae590d4402a8065342fa591ff78b81797" kind="function"><name>test_case_name</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case__name_1abfb91a55df657bbfbfb5fe774f46329b" kind="function"><name>location</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case__name_1a624bdd72fd18db434a64993818bb5466" kind="function"><name>name</name></member>
+  <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name" kind="class"><name>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name</name>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a360ffa2b5b4fe5ae936f5f2b8060975f" kind="variable"><name>is_copy_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a7c9c0f8a9f13ff4c258c1d9a55bed42c" kind="variable"><name>prepared_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1adc5d421bac64d88b6c95a71e8b293f75" kind="variable"><name>text_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a5d67972734913f25068fffc292670c0c" kind="function"><name>tap_name</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1ada9eea869bd2c020b98f2c8c84938c0f" kind="function"><name>tap_name</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a73f04109ab5fc0fc89bd037fe6b7fb15" kind="function"><name>tap_name</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a630092ea31f96be1d69badce5091e561" kind="function"><name>~tap_name</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1af66d5eee86e8fa54fb3d8f36177fb60b" kind="function"><name>c_str</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a2814604e457add60ac5c972e9c8f4cb6" kind="function"><name>operator=</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name_1a253f1d04193ed5db07d73b5772d4902b" kind="function"><name>operator=</name></member>
+  </compound>
+  <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" kind="class"><name>micro_os_plus::micro_test_plus::test_case</name>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1abcfa0118136eb7b0585a2267b60a58ba" kind="function"><name>expect</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a1897c6abd96fbdf1f00eae5420e56e66" kind="function"><name>require</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1adeccc20d1919ae7f8fc697997dc9bb98" kind="function"><name>assume</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a8def9cddbb5bc877918104c785271753" kind="function"><name>own_index</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a7ad637d38c035d54c872f72e1b9ac358" kind="function"><name>current_subtest_index</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aaf838b03cddfb039d1295611be8a5e32" kind="function"><name>children_subtests_count</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a484008ed66130a2bf334948841099943" kind="friend"><name>detail::runnable_base</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1aad4b8f6b15291abb5dc6602784fa7bad" kind="variable"><name>callable_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a9446f32cf9f22cb3deeaff451b1e7d95" kind="variable"><name>located_name_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a3da31fa70e1009cfde8a13a7ffaad036" kind="variable"><name>nesting_depth_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a3f1717ee8c04af1181f6dff2966b3d34" kind="variable"><name>parent_suite_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a65cc2035c29d22461b92da2bdf0f3e66" kind="function"><name>test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a5fec64d9b300277d56e02193bb7d0a46" kind="function"><name>abort</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a1980019eed5ac5b1eef65302eb9cc9cd" kind="function"><name>fail_unexpected_exception</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a82e48e546c5a5034be69412c1641482d" kind="function"><name>is_misdirected</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a9b25dc50ced0df2821d7a984eb142c1a" kind="function"><name>report_misdirected</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1adb4333ecb107fee477156b661f0b1512" kind="function"><name>run</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1ab7f67423b68a596e6a31ffc7ba261345" kind="function"><name>test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a13ad0f433d3a8189cb806ddb38c2a56c" kind="function"><name>test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a26a1b913fdcece44668b56200298218a" kind="function"><name>~test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a89f3e55fd73a5568ce85d7620bb1b2f7" kind="function"><name>expect</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-expectations_1ga6db7427ada09e476aec67306ca5c0b74" kind="function"><name>expect</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a6c652cd5dc8194269c1cc5f0dc1945e0" kind="function"><name>name</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1af2b6792d06fa335f2b617e4d39bbba3c" kind="function"><name>nesting_depth</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a556bbac39502797d52241f481e021847" kind="function"><name>operator=</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1ac2e310ec902a0c3e786d4c415269c23e" kind="function"><name>operator=</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1aa86f960d3010029c707cfbec2876cda5" kind="function"><name>require</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-requirements_1gaad1feafeef2f3cea336be3ebe0b27e14" kind="function"><name>require</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a9b497f0911a0abe12a341a560ba79e1d" kind="function"><name>test</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a5fdc1f162d725c6e01b0858c5efecfa7" kind="function"><name>test_each</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a419000e72526d0d251d7e28f48d656d2" kind="function"><name>test_each</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aa83553cf6bf351153328304ebc71e545" kind="function"><name>totals</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aff1a81aff41ab5dc80e2fac1c5a78a31" kind="variable"><name>child_test_cases_count_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad830bd92e4f6e4239d2bb5b75d5bf50" kind="variable"><name>name_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a69687627342981d42471b17f1d83311f" kind="variable"><name>own_index_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ab7513249cc0aac30e3edd7008d08d355" kind="variable"><name>runner_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1abc92cbb8ab8d04e7c75bf18aa7189d98" kind="variable"><name>test_point_number_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a87091ad4653e9db854ba9d5a64b30738" kind="variable"><name>totals_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a9fe5d6e7a066b514e33fa4f2550e6a2e" kind="function"><name>accepts_test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a38cf903fb0ba5b76b1eb2350b6385962" kind="function"><name>after_test_case_create</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a6d375bb7425b231aa3605642289d2f44" kind="function"><name>create_test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a6df38c720d659b6a53dfd2b65c5d25e4" kind="function"><name>exchange_running_suite</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aaec8b378e1d1639a5fa0e6dec20d6a46" kind="function"><name>is_aborted</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a58c3051635ce2389a8afc2222cd6b30d" kind="function"><name>is_listing</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a0d131770fe8aed387ca6da982f1ff60e" kind="function"><name>next_test_point_number</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a3fd5730af8bd449cc56e29d5d14509e9" kind="function"><name>running_test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a7e4a578732a0464480e211f6591fa69f" kind="function"><name>test_reporter</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a0224080b4433f538798354eca0f4c8c5" kind="function"><name>test_runner</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op" kind="struct"><name>micro_os_plus::micro_test_plus::detail::throws_op</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_1ac13b6739cd841151bb9208df58e546c3" kind="function"><name>throws_op</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_1a2f66d3b08e35734f7e38e5e4c924192a" kind="function"><name>throws_op</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a086d26c7329afc11e6a8b2664d753494" kind="function"><name>operator bool</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a69618b39f260cbd032e271881430e45c" kind="function"><name>outcome</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a996c2d87a98606a33f4e80ae62337bcb" kind="function"><name>what</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a5be2409b067dc5a12d19f26067327c82" kind="variable"><name>outcome_</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1ad464d00d1f7b4add47e7e6258dd5164d" kind="variable"><name>value_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a2e115acd4ddc044f458192bef80a2569" kind="variable"><name>what_</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op_1a384b1d115e493d6a554ebda4e3089b19" kind="typedef"><name>op_type</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_3_01void_01_4" kind="struct"><name>micro_os_plus::micro_test_plus::detail::throws_op&lt; void &gt;</name>
-    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_3_01void_01_4_1a54a89c2421143a7eb159030be6334851" kind="function"><name>throws_op</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_3_01void_01_4_1ad6ee51ce2ea730d1cd0d791b1ca97992" kind="function"><name>throws_op</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a086d26c7329afc11e6a8b2664d753494" kind="function"><name>operator bool</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a69618b39f260cbd032e271881430e45c" kind="function"><name>outcome</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a996c2d87a98606a33f4e80ae62337bcb" kind="function"><name>what</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a5be2409b067dc5a12d19f26067327c82" kind="variable"><name>outcome_</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1ad464d00d1f7b4add47e7e6258dd5164d" kind="variable"><name>value_</name></member>
+    <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a2e115acd4ddc044f458192bef80a2569" kind="variable"><name>what_</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op_1a384b1d115e493d6a554ebda4e3089b19" kind="typedef"><name>op_type</name></member>
   </compound>
   <compound refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp" kind="class"><name>micro_os_plus::micro_test_plus::detail::timestamp</name>
@@ -950,39 +1044,41 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite_1a68a030feff1f481126e9a6d170331420" kind="friend"><name>micro_test_plus::runner</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite_1ac10e4f707de47389f43c38d420ce13e9" kind="function"><name>top_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a5fec64d9b300277d56e02193bb7d0a46" kind="function"><name>abort</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a1d15dd97c94c3dabccb9e5a7444af0ec" kind="function"><name>fail_unexpected_exception</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a532459c0a6362991282548f4f845cb97" kind="function"><name>link</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a432deda5a8721472e8775cbc98451722" kind="function"><name>run</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a20ca7721bdf59488ed0713378235cfd2" kind="function"><name>unlink</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite_1ae653f09197ac9342cbb52efc386e96df" kind="function"><name>top_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite_1a04740b417d9571048cbee2125275acce" kind="function"><name>top_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite_1aae4ef52e5ceaa29d20cf7e3be848c528" kind="function"><name>~top_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a6c652cd5dc8194269c1cc5f0dc1945e0" kind="function"><name>name</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite_1a7601ca8102a7b4b3d7e7f8b33a0728a3" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite_1a809ba320392c0ced46977d0b7d371543" kind="function"><name>operator=</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a402696dc4d4978ff3c050427890cfe01" kind="function"><name>test</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a86d654e9059b1acecbf49f2725419320" kind="function"><name>test_each</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a08e3a26d6e032a580f095f8dcf8b2b41" kind="function"><name>test_each</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a0cfa76ba0ba0c308d246b2b5d506ab19" kind="function"><name>test</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1adc0f91f958d943f505dac6f73c2c240d" kind="function"><name>test_each</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a61a886b526fef82564a3e4ec1ea0dee4" kind="function"><name>test_each</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aa83553cf6bf351153328304ebc71e545" kind="function"><name>totals</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1aec447d7b5763ffca58738813bad2e805" kind="variable"><name>callable_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a6ddd1c0721a1f0ce3c9e92870ef358ff" kind="variable"><name>located_name_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a65d1fed18566774295fcbc7df44c216e" kind="variable"><name>next_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a95145ab410f5c0b6e514ac366aff8d84" kind="variable"><name>stopwatch_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a612f5529e08321a2e44c714d60c2ba1e" kind="variable"><name>first_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aff1a81aff41ab5dc80e2fac1c5a78a31" kind="variable"><name>child_test_cases_count_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aad830bd92e4f6e4239d2bb5b75d5bf50" kind="variable"><name>name_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a65d1fed18566774295fcbc7df44c216e" kind="variable"><name>next_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a69687627342981d42471b17f1d83311f" kind="variable"><name>own_index_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1abcc884f846957ce43a2e076ba6c7c129" kind="variable"><name>owned_name_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ab7513249cc0aac30e3edd7008d08d355" kind="variable"><name>runner_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a95145ab410f5c0b6e514ac366aff8d84" kind="variable"><name>stopwatch_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1abc92cbb8ab8d04e7c75bf18aa7189d98" kind="variable"><name>test_point_number_</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a87091ad4653e9db854ba9d5a64b30738" kind="variable"><name>totals_</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a612f5529e08321a2e44c714d60c2ba1e" kind="variable"><name>first_</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a9fe5d6e7a066b514e33fa4f2550e6a2e" kind="function"><name>accepts_test_case</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a38cf903fb0ba5b76b1eb2350b6385962" kind="function"><name>after_test_case_create</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1ad4ac49522cfd6e1608d9ac64ab7a8b91" kind="function"><name>create_test_case</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a1d15dd97c94c3dabccb9e5a7444af0ec" kind="function"><name>fail_unexpected_exception</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a6d375bb7425b231aa3605642289d2f44" kind="function"><name>create_test_case</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a6df38c720d659b6a53dfd2b65c5d25e4" kind="function"><name>exchange_running_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aaec8b378e1d1639a5fa0e6dec20d6a46" kind="function"><name>is_aborted</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a58c3051635ce2389a8afc2222cd6b30d" kind="function"><name>is_listing</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a532459c0a6362991282548f4f845cb97" kind="function"><name>link</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a0d131770fe8aed387ca6da982f1ff60e" kind="function"><name>next_test_point_number</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a3fd5730af8bd449cc56e29d5d14509e9" kind="function"><name>running_test_case</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a7e4a578732a0464480e211f6591fa69f" kind="function"><name>test_reporter</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a0224080b4433f538798354eca0f4c8c5" kind="function"><name>test_runner</name></member>
-    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a20ca7721bdf59488ed0713378235cfd2" kind="function"><name>unlink</name></member>
   </compound>
   <compound refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op" kind="struct"><name>micro_os_plus::micro_test_plus::detail::unary_op</name>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op_1a910628335fd0ff17244787a515b8ad2f" kind="variable"><name>t_</name></member>
@@ -1037,7 +1133,9 @@
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a9199f28db3a365b60ca6ef17053cec2a" kind="function"><name>get</name></member>
     <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad81a4f621493097416d74f16aa458c6f" kind="function"><name>operator T</name></member>
   </compound>
-  <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__operand" kind="concept"><name>micro_os_plus::micro_test_plus::detail::approx_operand</name>
+  <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable" kind="concept"><name>micro_os_plus::micro_test_plus::detail::comparable</name>
+  </compound>
+  <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparison__lookup_1_1can__compare" kind="concept"><name>micro_os_plus::micro_test_plus::detail::comparison_lookup::can_compare</name>
   </compound>
   <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1container__like" kind="concept"><name>micro_os_plus::micro_test_plus::detail::container_like</name>
   </compound>
@@ -1045,21 +1143,39 @@
   </compound>
   <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1free__range" kind="concept"><name>micro_os_plus::micro_test_plus::detail::free_range</name>
   </compound>
-  <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1has__npos" kind="concept"><name>micro_os_plus::micro_test_plus::detail::has_npos</name>
+  <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1function__pointer__pair" kind="concept"><name>micro_os_plus::micro_test_plus::detail::function_pointer_pair</name>
+  </compound>
+  <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1generic__callable" kind="concept"><name>micro_os_plus::micro_test_plus::detail::generic_callable</name>
   </compound>
   <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1has__value" kind="concept"><name>micro_os_plus::micro_test_plus::detail::has_value</name>
   </compound>
   <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lazy__message" kind="concept"><name>micro_os_plus::micro_test_plus::detail::lazy_message</name>
   </compound>
+  <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1member__printable" kind="concept"><name>micro_os_plus::micro_test_plus::detail::member_printable</name>
+  </compound>
+  <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1sign__mixed__integers" kind="concept"><name>micro_os_plus::micro_test_plus::detail::sign_mixed_integers</name>
+  </compound>
   <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1static__suite__body" kind="concept"><name>micro_os_plus::micro_test_plus::detail::static_suite_body</name>
+  </compound>
+  <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1string__like" kind="concept"><name>micro_os_plus::micro_test_plus::detail::string_like</name>
+  </compound>
+  <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1suite__body" kind="concept"><name>micro_os_plus::micro_test_plus::detail::suite_body</name>
+  </compound>
+  <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__body" kind="concept"><name>micro_os_plus::micro_test_plus::detail::test_body</name>
   </compound>
   <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__range" kind="concept"><name>micro_os_plus::micro_test_plus::detail::test_values_range</name>
   </compound>
   <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__tuple" kind="concept"><name>micro_os_plus::micro_test_plus::detail::test_values_tuple</name>
   </compound>
+  <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unsupported__condition" kind="concept"><name>micro_os_plus::micro_test_plus::detail::unsupported_condition</name>
+  </compound>
   <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1any__op" kind="concept"><name>micro_os_plus::micro_test_plus::extension::any_op</name>
   </compound>
+  <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1approx__operand" kind="concept"><name>micro_os_plus::micro_test_plus::extension::approx_operand</name>
+  </compound>
   <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable" kind="concept"><name>micro_os_plus::micro_test_plus::extension::checkable</name>
+  </compound>
+  <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1compare__tag" kind="concept"><name>micro_os_plus::micro_test_plus::extension::compare_tag</name>
   </compound>
   <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon" kind="concept"><name>micro_os_plus::micro_test_plus::extension::has_epsilon</name>
   </compound>
@@ -1067,9 +1183,13 @@
   </compound>
   <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1legacy__checkable" kind="concept"><name>micro_os_plus::micro_test_plus::extension::legacy_checkable</name>
   </compound>
+  <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__tag" kind="concept"><name>micro_os_plus::micro_test_plus::extension::predicate_tag</name>
+  </compound>
   <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable" kind="concept"><name>micro_os_plus::micro_test_plus::extension::printable</name>
   </compound>
   <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1suspicious__condition" kind="concept"><name>micro_os_plus::micro_test_plus::extension::suspicious_condition</name>
+  </compound>
+  <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__npos" kind="concept"><name>micro_os_plus::micro_test_plus::type_traits::has_npos</name>
   </compound>
   <compound refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__value" kind="concept"><name>micro_os_plus::micro_test_plus::type_traits::has_value</name>
   </compound>
@@ -1143,26 +1263,36 @@
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" kind="function"><name>_and</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" kind="function"><name>_not</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" kind="function"><name>_or</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kind="function"><name>all_of</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kind="function"><name>any_of</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gacae776e46a799b81af859ba9bb74e7d0" kind="function"><name>approx</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" kind="function"><name>all_of</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" kind="function"><name>any_of</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0d374ffc56933dccd3ffba008ab7eaa5" kind="function"><name>approx</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kind="function"><name>eq</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kind="function"><name>ge</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kind="function"><name>gt</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kind="function"><name>le</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kind="function"><name>lt</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kind="function"><name>eq</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga989e5966794d5c5487477aa782d844b1" kind="function"><name>ge</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf32fd09749f18635233613fa48f91b56" kind="function"><name>gt</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf9e47a6e18771f969cdd840ec187734a" kind="function"><name>le</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaea39573e23de35872ace5b08d2514327" kind="function"><name>lt</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga00ea8f3dfb7cb0ef39919065321cf62f" kind="function"><name>mut</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga5bf176ef730172592095657417e5f039" kind="function"><name>ne</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kind="function"><name>negate</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa77076edd474fc10d8c0bd6da623e284" kind="function"><name>ne</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" kind="function"><name>negate</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gacbf45f8ba39c0653bbf1035c70dd9529" kind="function"><name>nothrow</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gadf818920a5a7ba9905466c521deb342e" kind="function"><name>throws</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga63345b69c376caae707262748aa6aea1" kind="function"><name>throws</name></member>
+  </compound>
+  <compound refid="namespacemicro__os__plus_1_1micro__test__plus_1_1anonymous__namespace_02runner_8cpp_03" kind="namespace"><name>micro_os_plus::micro_test_plus::anonymous_namespace{runner.cpp}</name>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1anonymous__namespace_02runner_8cpp_03_1a93bc763e06193fa6de523088f09a8816" kind="variable"><name>help_options</name></member>
   </compound>
   <compound refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail" kind="namespace"><name>micro_os_plus::micro_test_plus::detail</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a0726a1bc3b6f16245cb8a4b42fe0e70c" kind="enum"><name>check_kind</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a0726a1bc3b6f16245cb8a4b42fe0e70cae15c5d274bf9fa6571890c731d88bc37" kind="enumvalue"><name>expectation</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a0726a1bc3b6f16245cb8a4b42fe0e70caba12fb48e2d23bb2bd2819f64d02ec7e" kind="enumvalue"><name>requirement</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0b" kind="enum"><name>comparison</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba465289687a70db7aa7217cc240c29f0f" kind="enumvalue"><name>equal</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba96ee5c0e2a7149613e7fd0b83316486e" kind="enumvalue"><name>not_equal</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba7b8dc4fb0fb55fc8eb69ff080c45ed7e" kind="enumvalue"><name>greater</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2" kind="enumvalue"><name>greater_equal</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0bae37e8d912e8f7b8f9b5ef9452ba47ff1" kind="enumvalue"><name>less</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba77932225fb35fc4b74dc8fabf0992dac" kind="enumvalue"><name>less_equal</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1af25a23e4451135649a8207c3a0ea30b5" kind="enum"><name>record_kind</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1af25a23e4451135649a8207c3a0ea30b5acaf9b6b99962bf5c2264824231d7a40c" kind="enumvalue"><name>info</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1af25a23e4451135649a8207c3a0ea30b5abd97c2ef5f66e470bc30d4fd1c3b1f08" kind="enumvalue"><name>suite_heading</name></member>
@@ -1174,21 +1304,28 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1af25a23e4451135649a8207c3a0ea30b5ae3a1f45168c36de6c9f4a81f84aaa640" kind="enumvalue"><name>failed_check</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1af25a23e4451135649a8207c3a0ea30b5afbb44b4487415b134bce9c790a27fe5e" kind="enumvalue"><name>total</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1af25a23e4451135649a8207c3a0ea30b5a5bb94a1c12413a2e5d14deabab29f2aa" kind="enumvalue"><name>abort</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a879f218299b32f5eb9fe68e15dfe0edf" kind="enum"><name>throw_outcome</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a879f218299b32f5eb9fe68e15dfe0edfa334c4a4c42fdb79d7ebc3e73b517e6f8" kind="enumvalue"><name>none</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a879f218299b32f5eb9fe68e15dfe0edfa1702c8950d15f035273a3f192a9da2dc" kind="enumvalue"><name>std_exception</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a879f218299b32f5eb9fe68e15dfe0edfa35ca4bfe08665ccd918e291b82a4d5ba" kind="enumvalue"><name>unknown_exception</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6bdf1e117e085a41c16e2dae63e72e52" kind="typedef"><name>comparison_operand_t</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gaf123417aafc76c826760101bcc517dfa" kind="typedef"><name>runner_totals</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a85cd019d0861a4b6d62c3424f4a8931d" kind="typedef"><name>stored_operand_t</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ae9fe49cb0d38724533e9a27a2232bf09" kind="typedef"><name>stored_operand_t</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga53a6bc7f86b15378c8296b3647e7013f" kind="typedef"><name>timestamps</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a2c197674df5b07499a4ea40d124f1082" kind="typedef"><name>unwrapped_t</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a48c790000ed3d766b705c6c5223d8767" kind="variable"><name>colours_none</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ad59e204218aa41581652a072be0e8a8a" kind="variable"><name>colours_red_green</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1abaf649db5561610c2f8bea816f2683d3" kind="function"><name>and_op</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a1fd5e3a96e759c76038572203aa988c8" kind="function"><name>append_control_escape</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" kind="function"><name>append_number</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a622a2bb23e2c98ecfa3a2ccb53e19910" kind="function"><name>append_pointer</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a933e64cbdd20aa8b1f0968965cf260a4" kind="function"><name>approx_op</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kind="function"><name>as_operand</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6abb44ef8226b1f80aad8010b5ef1a5c" kind="function"><name>bind_callable</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ab32427ede730747da86165a2965903a2" kind="function"><name>compare_op</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a7ce90ae12eac430cf58becac530b92b2" kind="function"><name>differ_by_less_than</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a5d35f4ca3b52088e8a64b9afd88a0ce0" kind="function"><name>compare_op</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ad3e5817bc88a8b60b769b39a5fefee94" kind="function"><name>differ_by_at_most</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a18e81b3839468cd82ad9c394d88a0e02" kind="function"><name>endl</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1afe0adb93e576b2c11ba933ec65245d91" kind="function"><name>escape_control_characters</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac6a624fe83a51361f31de016875fdb27" kind="function"><name>indent</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kind="function"><name>integral_literal</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ade4fe4b187a8ded1bb42910536d86235" kind="function"><name>operator&lt;=&gt;</name></member>
@@ -1199,16 +1336,21 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a81530e9e1a17d43a930a16a504af9912" kind="function"><name>operator==</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a28646b3e1ddd2792546f303b6b65ad92" kind="function"><name>operator==</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a92a38209445666c9fdab2d9fb189cff0" kind="function"><name>or_op</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a5be372c9ff2b04cef7d12f215d0a194f" kind="function"><name>predicate_op</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a659c9f826bd40c03800576825e5ff709" kind="function"><name>predicate_op</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a60dcef812e43e13d1e30f602a572e27a" kind="function"><name>read_clock</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1acb0858a0ba8b635ff89c4cb00c532ce8" kind="function"><name>test_each_value</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3178150c77ae33d100e18e157436b04b" kind="function"><name>test_each_value</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a59eb53c96f68d26635c13df53b358ac8" kind="function"><name>unwrap</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a5ab08a688b0f89e017e0d90a6a18ff8d" kind="function"><name>unwrap</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6c5237ff6944278e8c5e3294cf99a3b9" kind="function"><name>within_tolerance</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga6c5237ff6944278e8c5e3294cf99a3b9" kind="function"><name>within_tolerance</name></member>
   </compound>
   <compound refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03" kind="namespace"><name>micro_os_plus::micro_test_plus::detail::anonymous_namespace{expression-formatter.cpp}</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1a2736611c9676822f8e948dc473f748f1" kind="function"><name>append_hex</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1aa9d532379d86e8eee8a5227fe929abc8" kind="function"><name>append_plain</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1a82575d5d4e13eb8c54fd209ab830cd7d" kind="function"><name>append_quoted</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1ae1dbe79a083ee23b9946e621e72b4191" kind="function"><name>append_utf8</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1adacbf3f149b33729d20193f0057e51e9" kind="function"><name>is_escaped_in_plain</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1ac857348d4c53f704f9f424ff78a3220e" kind="function"><name>utf16_to_utf8</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1ab0fcacdcde6203ee5fc0a95808abec62" kind="function"><name>utf32_to_utf8</name></member>
   </compound>
   <compound refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03" kind="namespace"><name>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1aec79a35b7936b91bee63d9baf4f8c861" kind="function"><name>tap_text</name></member>
@@ -1219,6 +1361,8 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_1a0d696f5039163e76ec2e4005980ca285" kind="function"><name>format_skipped</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_1a25afc917399bf6d116b401e47ca8a4d5" kind="function"><name>plural</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter_8cpp_03_1a78d7c9fe8e59d559bf67bc55e7c52040" kind="function"><name>write_without_colours</name></member>
+  </compound>
+  <compound refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparison__lookup" kind="namespace"><name>micro_os_plus::micro_test_plus::detail::comparison_lookup</name>
   </compound>
   <compound refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math" kind="namespace"><name>micro_os_plus::micro_test_plus::detail::math</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a515f68bbb31d64d07810f45f3b1118f6" kind="function"><name>abs</name></member>
@@ -1356,7 +1500,15 @@
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" kind="function"><name>_not</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" kind="function"><name>_or</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1accba38bf51d261f330b594ca121e6f75" kind="function"><name>count_decimals</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1af295fc92026927f8a453248655e7862e" kind="function"><name>count_literal_digits</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1ae474285acf7f49d66bb721b8ab5f8fa8" kind="function"><name>decimal_epsilon</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a154910632d01b827ab1b67f309064211" kind="function"><name>den</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" kind="function"><name>den_size</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" kind="function"><name>integer_magnitude</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kind="function"><name>integral_literal</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga00ea8f3dfb7cb0ef39919065321cf62f" kind="function"><name>mut</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" kind="function"><name>num</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gad47ea22957940a08ff56104d3c0c16f7" kind="function"><name>operator and</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga1d79c807e0d12684f1a850d7269c077b" kind="function"><name>operator not</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gac008174d3b00512dc53b3e9e26ed45ec" kind="function"><name>operator or</name></member>
@@ -1389,19 +1541,25 @@
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga6f2d36e79581db77f3aa9f8d7a958c78" kind="function"><name>operator==</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gaa7e34201bb41a287742c3c08a88924d3" kind="function"><name>operator&gt;</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga9d9f5f30c7d8973ef7ccd6f52f0cbd21" kind="function"><name>operator&gt;=</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a9292deab69ef8584bc2604e76316ecfd" kind="function"><name>parse_integer_literal</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a121fbc662b8263c3b9ce605456fbc7d5" kind="function"><name>pow</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gafc93799846770e521c4721d0de0a81cc" kind="function"><name>short_name</name></member>
   </compound>
   <compound refid="detail_8h" kind="file"><name>detail.h</name>
     <member refid="detail_8h_1aaec16ed032c8fc52ba753a273b788381" kind="define"><name>MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a85cd019d0861a4b6d62c3424f4a8931d" kind="typedef"><name>stored_operand_t</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a879f218299b32f5eb9fe68e15dfe0edf" kind="enum"><name>throw_outcome</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a879f218299b32f5eb9fe68e15dfe0edfa334c4a4c42fdb79d7ebc3e73b517e6f8" kind="enumvalue"><name>none</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a879f218299b32f5eb9fe68e15dfe0edfa1702c8950d15f035273a3f192a9da2dc" kind="enumvalue"><name>std_exception</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a879f218299b32f5eb9fe68e15dfe0edfa35ca4bfe08665ccd918e291b82a4d5ba" kind="enumvalue"><name>unknown_exception</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ae9fe49cb0d38724533e9a27a2232bf09" kind="typedef"><name>stored_operand_t</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a2c197674df5b07499a4ea40d124f1082" kind="typedef"><name>unwrapped_t</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1abaf649db5561610c2f8bea816f2683d3" kind="function"><name>and_op</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" kind="function"><name>append_number</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a622a2bb23e2c98ecfa3a2ccb53e19910" kind="function"><name>append_pointer</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a933e64cbdd20aa8b1f0968965cf260a4" kind="function"><name>approx_op</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kind="function"><name>as_operand</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ab32427ede730747da86165a2965903a2" kind="function"><name>compare_op</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a7ce90ae12eac430cf58becac530b92b2" kind="function"><name>differ_by_less_than</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a5d35f4ca3b52088e8a64b9afd88a0ce0" kind="function"><name>compare_op</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ad3e5817bc88a8b60b769b39a5fefee94" kind="function"><name>differ_by_at_most</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ade4fe4b187a8ded1bb42910536d86235" kind="function"><name>operator&lt;=&gt;</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1afa8a96f9fca4c7dceae1ee9e02a9861c" kind="function"><name>operator&lt;=&gt;</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3a06e7992caa3dfc9355a34369486c86" kind="function"><name>operator&lt;=&gt;</name></member>
@@ -1410,33 +1568,34 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a81530e9e1a17d43a930a16a504af9912" kind="function"><name>operator==</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a28646b3e1ddd2792546f303b6b65ad92" kind="function"><name>operator==</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a92a38209445666c9fdab2d9fb189cff0" kind="function"><name>or_op</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a5be372c9ff2b04cef7d12f215d0a194f" kind="function"><name>predicate_op</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a659c9f826bd40c03800576825e5ff709" kind="function"><name>predicate_op</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a59eb53c96f68d26635c13df53b358ac8" kind="function"><name>unwrap</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6c5237ff6944278e8c5e3294cf99a3b9" kind="function"><name>within_tolerance</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga6c5237ff6944278e8c5e3294cf99a3b9" kind="function"><name>within_tolerance</name></member>
   </compound>
   <compound refid="exceptions_8h" kind="file"><name>exceptions.h</name>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gacbf45f8ba39c0653bbf1035c70dd9529" kind="function"><name>nothrow</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gadf818920a5a7ba9905466c521deb342e" kind="function"><name>throws</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga63345b69c376caae707262748aa6aea1" kind="function"><name>throws</name></member>
   </compound>
   <compound refid="expression-formatter_8h" kind="file"><name>expression-formatter.h</name>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gabecc05360d0941067222d827ff8e3f08" kind="typedef"><name>expression_formatter</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a48c790000ed3d766b705c6c5223d8767" kind="variable"><name>colours_none</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ad59e204218aa41581652a072be0e8a8a" kind="variable"><name>colours_red_green</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a1fd5e3a96e759c76038572203aa988c8" kind="function"><name>append_control_escape</name></member>
   </compound>
   <compound refid="extension_8h" kind="file"><name>extension.h</name>
   </compound>
   <compound refid="function-comparators_8h" kind="file"><name>function-comparators.h</name>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kind="function"><name>all_of</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kind="function"><name>any_of</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gacae776e46a799b81af859ba9bb74e7d0" kind="function"><name>approx</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kind="function"><name>eq</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kind="function"><name>ge</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kind="function"><name>gt</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kind="function"><name>le</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kind="function"><name>lt</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga5bf176ef730172592095657417e5f039" kind="function"><name>ne</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kind="function"><name>negate</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" kind="function"><name>all_of</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" kind="function"><name>any_of</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0d374ffc56933dccd3ffba008ab7eaa5" kind="function"><name>approx</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kind="function"><name>eq</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga989e5966794d5c5487477aa782d844b1" kind="function"><name>ge</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf32fd09749f18635233613fa48f91b56" kind="function"><name>gt</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf9e47a6e18771f969cdd840ec187734a" kind="function"><name>le</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaea39573e23de35872ace5b08d2514327" kind="function"><name>lt</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa77076edd474fc10d8c0bd6da623e284" kind="function"><name>ne</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" kind="function"><name>negate</name></member>
   </compound>
   <compound refid="check-result-inlines_8h" kind="file"><name>check-result-inlines.h</name>
   </compound>
@@ -1447,7 +1606,15 @@
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" kind="function"><name>_not</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" kind="function"><name>_or</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1accba38bf51d261f330b594ca121e6f75" kind="function"><name>count_decimals</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1af295fc92026927f8a453248655e7862e" kind="function"><name>count_literal_digits</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1ae474285acf7f49d66bb721b8ab5f8fa8" kind="function"><name>decimal_epsilon</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a154910632d01b827ab1b67f309064211" kind="function"><name>den</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" kind="function"><name>den_size</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" kind="function"><name>integer_magnitude</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kind="function"><name>integral_literal</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga00ea8f3dfb7cb0ef39919065321cf62f" kind="function"><name>mut</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" kind="function"><name>num</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gad47ea22957940a08ff56104d3c0c16f7" kind="function"><name>operator and</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga1d79c807e0d12684f1a850d7269c077b" kind="function"><name>operator not</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gac008174d3b00512dc53b3e9e26ed45ec" kind="function"><name>operator or</name></member>
@@ -1480,12 +1647,22 @@
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga6f2d36e79581db77f3aa9f8d7a958c78" kind="function"><name>operator==</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gaa7e34201bb41a287742c3c08a88924d3" kind="function"><name>operator&gt;</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga9d9f5f30c7d8973ef7ccd6f52f0cbd21" kind="function"><name>operator&gt;=</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a9292deab69ef8584bc2604e76316ecfd" kind="function"><name>parse_integer_literal</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a121fbc662b8263c3b9ce605456fbc7d5" kind="function"><name>pow</name></member>
   </compound>
   <compound refid="detail-inlines_8h" kind="file"><name>detail-inlines.h</name>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0b" kind="enum"><name>comparison</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba465289687a70db7aa7217cc240c29f0f" kind="enumvalue"><name>equal</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba96ee5c0e2a7149613e7fd0b83316486e" kind="enumvalue"><name>not_equal</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba7b8dc4fb0fb55fc8eb69ff080c45ed7e" kind="enumvalue"><name>greater</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2" kind="enumvalue"><name>greater_equal</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0bae37e8d912e8f7b8f9b5ef9452ba47ff1" kind="enumvalue"><name>less</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba77932225fb35fc4b74dc8fabf0992dac" kind="enumvalue"><name>less_equal</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6bdf1e117e085a41c16e2dae63e72e52" kind="typedef"><name>comparison_operand_t</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" kind="function"><name>append_number</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a622a2bb23e2c98ecfa3a2ccb53e19910" kind="function"><name>append_pointer</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kind="function"><name>as_operand</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a7ce90ae12eac430cf58becac530b92b2" kind="function"><name>differ_by_less_than</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ad3e5817bc88a8b60b769b39a5fefee94" kind="function"><name>differ_by_at_most</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ade4fe4b187a8ded1bb42910536d86235" kind="function"><name>operator&lt;=&gt;</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1afa8a96f9fca4c7dceae1ee9e02a9861c" kind="function"><name>operator&lt;=&gt;</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3a06e7992caa3dfc9355a34369486c86" kind="function"><name>operator&lt;=&gt;</name></member>
@@ -1494,39 +1671,30 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a81530e9e1a17d43a930a16a504af9912" kind="function"><name>operator==</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a28646b3e1ddd2792546f303b6b65ad92" kind="function"><name>operator==</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a5ab08a688b0f89e017e0d90a6a18ff8d" kind="function"><name>unwrap</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6c5237ff6944278e8c5e3294cf99a3b9" kind="function"><name>within_tolerance</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga6c5237ff6944278e8c5e3294cf99a3b9" kind="function"><name>within_tolerance</name></member>
   </compound>
   <compound refid="exceptions-inlines_8h" kind="file"><name>exceptions-inlines.h</name>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gacbf45f8ba39c0653bbf1035c70dd9529" kind="function"><name>nothrow</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gadf818920a5a7ba9905466c521deb342e" kind="function"><name>throws</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga63345b69c376caae707262748aa6aea1" kind="function"><name>throws</name></member>
   </compound>
   <compound refid="expression-formatter-inlines_8h" kind="file"><name>expression-formatter-inlines.h</name>
   </compound>
   <compound refid="function-comparators-inlines_8h" kind="file"><name>function-comparators-inlines.h</name>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kind="function"><name>all_of</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kind="function"><name>any_of</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gacae776e46a799b81af859ba9bb74e7d0" kind="function"><name>approx</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kind="function"><name>eq</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kind="function"><name>ge</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kind="function"><name>gt</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kind="function"><name>le</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kind="function"><name>lt</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga5bf176ef730172592095657417e5f039" kind="function"><name>ne</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kind="function"><name>negate</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" kind="function"><name>all_of</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" kind="function"><name>any_of</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0d374ffc56933dccd3ffba008ab7eaa5" kind="function"><name>approx</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kind="function"><name>eq</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga989e5966794d5c5487477aa782d844b1" kind="function"><name>ge</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf32fd09749f18635233613fa48f91b56" kind="function"><name>gt</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf9e47a6e18771f969cdd840ec187734a" kind="function"><name>le</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaea39573e23de35872ace5b08d2514327" kind="function"><name>lt</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa77076edd474fc10d8c0bd6da623e284" kind="function"><name>ne</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" kind="function"><name>negate</name></member>
   </compound>
   <compound refid="math-inlines_8h" kind="file"><name>math-inlines.h</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a515f68bbb31d64d07810f45f3b1118f6" kind="function"><name>abs</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1accba38bf51d261f330b594ca121e6f75" kind="function"><name>count_decimals</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1af295fc92026927f8a453248655e7862e" kind="function"><name>count_literal_digits</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1ae474285acf7f49d66bb721b8ab5f8fa8" kind="function"><name>decimal_epsilon</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a154910632d01b827ab1b67f309064211" kind="function"><name>den</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" kind="function"><name>den_size</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" kind="function"><name>integer_magnitude</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a67e71e2dce0120ad4839635830e80de8" kind="function"><name>min_value</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" kind="function"><name>num</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a9292deab69ef8584bc2604e76316ecfd" kind="function"><name>parse_integer_literal</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a121fbc662b8263c3b9ce605456fbc7d5" kind="function"><name>pow</name></member>
   </compound>
   <compound refid="reflection-inlines_8h" kind="file"><name>reflection-inlines.h</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" kind="function"><name>type_name</name></member>
@@ -1542,26 +1710,14 @@
   </compound>
   <compound refid="test-inlines_8h" kind="file"><name>test-inlines.h</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6abb44ef8226b1f80aad8010b5ef1a5c" kind="function"><name>bind_callable</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1acb0858a0ba8b635ff89c4cb00c532ce8" kind="function"><name>test_each_value</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3178150c77ae33d100e18e157436b04b" kind="function"><name>test_each_value</name></member>
   </compound>
   <compound refid="utility-inlines_8h" kind="file"><name>utility-inlines.h</name>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" kind="function"><name>split</name></member>
   </compound>
-  <compound refid="values-inlines_8h" kind="file"><name>values-inlines.h</name>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kind="function"><name>integral_literal</name></member>
-  </compound>
   <compound refid="math_8h" kind="file"><name>math.h</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a515f68bbb31d64d07810f45f3b1118f6" kind="function"><name>abs</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1accba38bf51d261f330b594ca121e6f75" kind="function"><name>count_decimals</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1af295fc92026927f8a453248655e7862e" kind="function"><name>count_literal_digits</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1ae474285acf7f49d66bb721b8ab5f8fa8" kind="function"><name>decimal_epsilon</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a154910632d01b827ab1b67f309064211" kind="function"><name>den</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" kind="function"><name>den_size</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" kind="function"><name>integer_magnitude</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a67e71e2dce0120ad4839635830e80de8" kind="function"><name>min_value</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" kind="function"><name>num</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a9292deab69ef8584bc2604e76316ecfd" kind="function"><name>parse_integer_literal</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a121fbc662b8263c3b9ce605456fbc7d5" kind="function"><name>pow</name></member>
   </compound>
   <compound refid="reflection_8h" kind="file"><name>reflection.h</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" kind="function"><name>type_name</name></member>
@@ -1606,16 +1762,14 @@
   </compound>
   <compound refid="test_8h" kind="file"><name>test.h</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6abb44ef8226b1f80aad8010b5ef1a5c" kind="function"><name>bind_callable</name></member>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1acb0858a0ba8b635ff89c4cb00c532ce8" kind="function"><name>test_each_value</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1afe0adb93e576b2c11ba933ec65245d91" kind="function"><name>escape_control_characters</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3178150c77ae33d100e18e157436b04b" kind="function"><name>test_each_value</name></member>
   </compound>
   <compound refid="utility_8h" kind="file"><name>utility.h</name>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kind="function"><name>extract_file_name</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" kind="function"><name>is_match</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gac17bb0b9be9a1ca01854c8bbbabc5def" kind="function"><name>split</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" kind="function"><name>split</name></member>
-  </compound>
-  <compound refid="values_8h" kind="file"><name>values.h</name>
-    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kind="function"><name>integral_literal</name></member>
   </compound>
   <compound refid="check-result_8cpp" kind="file"><name>check-result.cpp</name>
   </compound>
@@ -1625,8 +1779,14 @@
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gafc93799846770e521c4721d0de0a81cc" kind="function"><name>short_name</name></member>
   </compound>
   <compound refid="expression-formatter_8cpp" kind="file"><name>expression-formatter.cpp</name>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a1fd5e3a96e759c76038572203aa988c8" kind="function"><name>append_control_escape</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1a2736611c9676822f8e948dc473f748f1" kind="function"><name>append_hex</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1aa9d532379d86e8eee8a5227fe929abc8" kind="function"><name>append_plain</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1a82575d5d4e13eb8c54fd209ab830cd7d" kind="function"><name>append_quoted</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1ae1dbe79a083ee23b9946e621e72b4191" kind="function"><name>append_utf8</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1adacbf3f149b33729d20193f0057e51e9" kind="function"><name>is_escaped_in_plain</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1ac857348d4c53f704f9f424ff78a3220e" kind="function"><name>utf16_to_utf8</name></member>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1ab0fcacdcde6203ee5fc0a95808abec62" kind="function"><name>utf32_to_utf8</name></member>
   </compound>
   <compound refid="reporter-human_8cpp" kind="file"><name>reporter-human.cpp</name>
   </compound>
@@ -1644,11 +1804,13 @@
   <compound refid="runner-options_8cpp" kind="file"><name>runner-options.cpp</name>
   </compound>
   <compound refid="runner_8cpp" kind="file"><name>runner.cpp</name>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1anonymous__namespace_02runner_8cpp_03_1a93bc763e06193fa6de523088f09a8816" kind="variable"><name>help_options</name></member>
   </compound>
   <compound refid="stopwatch_8cpp" kind="file"><name>stopwatch.cpp</name>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a60dcef812e43e13d1e30f602a572e27a" kind="function"><name>read_clock</name></member>
   </compound>
   <compound refid="test_8cpp" kind="file"><name>test.cpp</name>
+    <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1afe0adb93e576b2c11ba933ec65245d91" kind="function"><name>escape_control_characters</name></member>
   </compound>
   <compound refid="utility_8cpp" kind="file"><name>utility.cpp</name>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kind="function"><name>extract_file_name</name></member>
@@ -1680,30 +1842,30 @@
   <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-test-case" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-test-case</name>
   </compound>
   <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-expectations" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-expectations</name>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-expectations_1gaf4f5f9632b5a290c1894984661a41a86" kind="function"><name>expect</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-expectations_1ga6db7427ada09e476aec67306ca5c0b74" kind="function"><name>expect</name></member>
   </compound>
   <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-requirements" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-requirements</name>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-requirements_1gace68a1bd4dd258082f4b1fc01fcd008a" kind="function"><name>require</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-requirements_1gaad1feafeef2f3cea336be3ebe0b27e14" kind="function"><name>require</name></member>
   </compound>
   <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-function-comparators</name>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gabecc05360d0941067222d827ff8e3f08" kind="typedef"><name>expression_formatter</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gacae776e46a799b81af859ba9bb74e7d0" kind="function"><name>approx</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa7c7b6a7ad32856edc235a05e77d8c7f" kind="function"><name>eq</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gab8da4228bc9a820546753b018a129a7e" kind="function"><name>ge</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9ae8e4747ff029faa7378110c8680278" kind="function"><name>gt</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gae695dd46840f76a156aee70ff4df33fa" kind="function"><name>le</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga714ff07cd77e05898de4fd315770f901" kind="function"><name>lt</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga5bf176ef730172592095657417e5f039" kind="function"><name>ne</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0d374ffc56933dccd3ffba008ab7eaa5" kind="function"><name>approx</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kind="function"><name>eq</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga989e5966794d5c5487477aa782d844b1" kind="function"><name>ge</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf32fd09749f18635233613fa48f91b56" kind="function"><name>gt</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf9e47a6e18771f969cdd840ec187734a" kind="function"><name>le</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaea39573e23de35872ace5b08d2514327" kind="function"><name>lt</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa77076edd474fc10d8c0bd6da623e284" kind="function"><name>ne</name></member>
   </compound>
   <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-logical-functions</name>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gab9b9c26860ceafc1288ecb415f52aaaf" kind="function"><name>all_of</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae6395736f05626ba6dcf79ecc523486c" kind="function"><name>any_of</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga6a0bb2654eb89c1b0a35134e8738eeb1" kind="function"><name>negate</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" kind="function"><name>all_of</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" kind="function"><name>any_of</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" kind="function"><name>negate</name></member>
   </compound>
   <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-exceptions</name>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga798bd28001c3938784073e60dd904148" kind="function"><name>nothrow</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga8bf54756e4122c6a0bd123b4621e60e2" kind="function"><name>throws</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gaf8f7602f40119da514be2a0bfc4b70f5" kind="function"><name>throws</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gacbf45f8ba39c0653bbf1035c70dd9529" kind="function"><name>nothrow</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gadf818920a5a7ba9905466c521deb342e" kind="function"><name>throws</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga63345b69c376caae707262748aa6aea1" kind="function"><name>throws</name></member>
   </compound>
   <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-utility-functions</name>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kind="function"><name>extract_file_name</name></member>
@@ -1720,8 +1882,15 @@
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga1424c18b26d5fdaed11439c77e6bf561" kind="typedef"><name>subtest</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga53a6bc7f86b15378c8296b3647e7013f" kind="typedef"><name>timestamps</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga65ad920b21a6c0df6848aa939659b92e" kind="typedef"><name>value_base_</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gad1e3d2d57c0ed04d4bb90eb72dd89b71" kind="variable"><name>within_tolerance_result</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga3770982b9b7025e79d30c44f8b6de981" kind="variable"><name>within_tolerance_result</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga1e6e1923184c1e15b8dfe69053010c83" kind="variable"><name>within_tolerance_result</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gaf95d91c9cae67c4ce138146b2cdab25e" kind="variable"><name>within_tolerance_result</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gadcaedd85e07d96bd7230d06c5c258df7" kind="variable"><name>within_tolerance_result</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga8decf36d3e0e7cc8242c6a2170743422" kind="variable"><name>within_tolerance_result</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga00ea8f3dfb7cb0ef39919065321cf62f" kind="function"><name>mut</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gafc93799846770e521c4721d0de0a81cc" kind="function"><name>short_name</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga6c5237ff6944278e8c5e3294cf99a3b9" kind="function"><name>within_tolerance</name></member>
   </compound>
   <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-deprecated-operators</name>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gad47ea22957940a08ff56104d3c0c16f7" kind="function"><name>operator and</name></member>

@@ -135,7 +135,7 @@ struct micro_os_plus::micro_test_plus::detail::integral_min_magnitude&lt; T &gt;
 </dl>
 <p>The absolute value of the minimum of a signed type (e.g. 128 for <span class="tt">int8_t</span>) does not fit in the type, but the literal must be accepted to write the minimum with the unary minus (e.g. <span class="tt">-128<a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga265f8609ef3d6ead78c7a66825553e24" title="Deprecated strongly-typed wrapper for std::int8_t values, the v5.0.1 name of to_i8.">_i8</a></span>). The literal operators return this type for such a literal; its only operation is the unary minus, so any other use of the literal fails to compile. </p>
 
-<p class="definition">Definition at line <a class="el" href="values_8h_source.html#l00281">281</a> of file <a class="el" href="values_8h_source.html">values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l00484">484</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a30671e3b97a6c4c108d47358e9e40b35" name="a30671e3b97a6c4c108d47358e9e40b35"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a30671e3b97a6c4c108d47358e9e40b35">&#9670;&#160;</a></span>operator-()</h2>
@@ -165,17 +165,17 @@ template&lt;class T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>An <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html" title="Struct template representing a generic integral constant.">integral_constant</a></span> with the minimum value of <span class="tt">T</span>.</dd></dl>
 <p>Returns the minimum of <span class="tt">T</span>, which is the negation of the absolute value represented by this type. </p>
 
-<p class="definition">Definition at line <a class="el" href="values-inlines_8h_source.html#l00159">159</a> of file <a class="el" href="values-inlines_8h_source.html">values-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  160</span>    {</div>
-<div class="line"><span class="lineno">  161</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__min__magnitude.html">integral_constant&lt;std::numeric_limits&lt;T&gt;::min</a> ()&gt;{};</div>
-<div class="line"><span class="lineno">  162</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__min__magnitude_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__min__magnitude.html">micro_os_plus::micro_test_plus::detail::integral_min_magnitude</a></div><div class="ttdoc">Struct template representing the absolute value of the minimum of a signed integral type,...</div><div class="ttdef"><b>Definition</b> <a href="values_8h_source.html#l00281">values.h:282</a></div></div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00568">568</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  569</span>    {</div>
+<div class="line"><span class="lineno">  570</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__min__magnitude.html">integral_constant&lt;std::numeric_limits&lt;T&gt;::min</a> ()&gt;{};</div>
+<div class="line"><span class="lineno">  571</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__min__magnitude_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__min__magnitude.html">micro_os_plus::micro_test_plus::detail::integral_min_magnitude</a></div><div class="ttdoc">Struct template representing the absolute value of the minimum of a signed integral type,...</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00484">deprecated.h:485</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
-<li><a class="el" href="values_8h_source.html">values.h</a></li>
-<li><a class="el" href="values-inlines_8h_source.html">values-inlines.h</a></li>
+<li><a class="el" href="deprecated_8h_source.html">deprecated.h</a></li>
+<li><a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

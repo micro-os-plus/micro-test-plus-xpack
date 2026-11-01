@@ -128,7 +128,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Utility functions for advanced string handling in tests. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-utility-functions/#details">More...</a></p>
+<p>Utility functions for handling strings in tests. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-utility-functions/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">

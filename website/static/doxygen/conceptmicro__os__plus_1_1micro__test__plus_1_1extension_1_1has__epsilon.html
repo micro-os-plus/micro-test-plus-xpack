@@ -111,19 +111,19 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">micro_os_plus::micro_test_plus::extension::has_epsilon Concept Reference</div></div>
+  <div class="headertitle"><div class="title">micro_os_plus::micro_test_plus::extension::has_epsilon Concept Reference<div class="ingroups"><a class="el" href="group__micro-os-plus.html">µOS++ Topics</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus.html">µTest++</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api.html">C++ API</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html">Deprecated</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>C++20 concept satisfied when <span class="tt">T</span> is a framework floating-point wrapper with a tolerance.  
+<p>Deprecated C++20 concept satisfied when <span class="tt">T</span> is a framework floating-point wrapper with a tolerance.  
 <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="extension_8h_source.html">extension.h</a>&gt;</code></p>
 <h2 id="header-conceptdef" class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line">    <span class="keyword">concept </span><a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html">has_epsilon</a> = <a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html">is_op&lt;T&gt;</a> and <span class="keyword">requires</span> (<span class="keyword">const</span> T&amp; t) { t.epsilon; }</div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html">micro_os_plus::micro_test_plus::extension::has_epsilon</a></div><div class="ttdoc">C++20 concept satisfied when T is a framework floating-point wrapper with a tolerance.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00177">extension.h:177</a></div></div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html">micro_os_plus::micro_test_plus::extension::is_op</a></div><div class="ttdoc">C++20 concept satisfied when a type is a framework expression type.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00156">extension.h:157</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html">micro_os_plus::micro_test_plus::extension::has_epsilon</a></div><div class="ttdoc">Deprecated C++20 concept satisfied when T is a framework floating-point wrapper with a tolerance.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00227">extension.h:227</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html">micro_os_plus::micro_test_plus::extension::is_op</a></div><div class="ttdoc">C++20 concept satisfied when a type is a framework expression type.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00197">extension.h:198</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -132,9 +132,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
   </dd>
 </dl>
 <p>The <span class="tt">has_epsilon</span> concept is satisfied when <span class="tt">T</span> is a framework expression type (see <span class="tt">is_op</span>) with an <span class="tt">epsilon</span> member, like <span class="tt">floating_point_constant</span> and the floating-point specialisation of <span class="tt">value&lt;T&gt;</span>. The comparators treat the operands within this tolerance as equal; a custom comparator uses it to do the same.</p>
-<p>The types of the application are excluded, even if they have a member named <span class="tt">epsilon</span>, so that they are compared with their own operators. </p>
+<p>The types of the application are excluded, even if they have a member named <span class="tt">epsilon</span>, so that they are compared with their own operators.</p>
+<p>Only the deprecated floating-point wrappers have a tolerance, so the concept is deprecated with them, and is available only when <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-config.html#ga67c701de5426ac340584ed038494a873" title="Enables the deprecated definitions of the µTest++ Testing Framework.">MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</a></span> is defined.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000117">Deprecated</a></b></dt><dd>To be removed with the deprecated floating-point wrappers (since 6.0.0). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00177">177</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00227">227</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

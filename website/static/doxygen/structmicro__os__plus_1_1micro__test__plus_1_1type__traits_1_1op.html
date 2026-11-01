@@ -153,7 +153,7 @@ Public Types</h2></td></tr>
 <div class="textblock"><p>The <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html" title="Empty base struct for the framework expression types.">op</a></span> struct is the common base of the comparators defined in <span class="tt"><a class="el" href="detail_8h.html" title="C++ header file with declarations for the µTest++ internals.">detail.h</a></span>, of <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html" title="Struct template representing a generic floating point constant with custom size and precision.">floating_point_constant</a></span>, and of <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html" title="Struct representing a named boolean constant, created by the _b literal.">named_bool</a></span>. It provides the <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op.html#a384b1d115e493d6a554ebda4e3089b19" title="Marker identifying the framework expression types.">op_type</a></span> marker, which the <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="C++20 concept satisfied when a type is a framework expression type.">extension::is_op</a></span> and <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1any__op.html" title="C++20 concept satisfied when at least one of two types is a framework expression type.">extension::any_op</a></span> concepts use to distinguish the framework types from the user types, so that <span class="tt">expect()</span>, <span class="tt">require()</span>, and the operators in the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1operators.html" title="Custom operator overloads for expressive and type-safe test assertions.">operators</a></span> namespace accept them.</p>
 <p>The types that must not have an empty base, like <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html" title="Base struct template providing common storage and accessors for runtime value-wrapper types.">value_base</a></span>, declare the <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op.html#a384b1d115e493d6a554ebda4e3089b19" title="Marker identifying the framework expression types.">op_type</a></span> marker directly instead of deriving from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html" title="Empty base struct for the framework expression types.">op</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="values_8h_source.html#l00112">112</a> of file <a class="el" href="values_8h_source.html">values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00122">122</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a384b1d115e493d6a554ebda4e3089b19" name="a384b1d115e493d6a554ebda4e3089b19"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a384b1d115e493d6a554ebda4e3089b19">&#9670;&#160;</a></span>op_type</h2>
@@ -168,12 +168,12 @@ Public Types</h2></td></tr>
 </div><div class="memdoc">
 <p>Detected by the <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="C++20 concept satisfied when a type is a framework expression type.">extension::is_op</a></span> concept, and inherited by all types derived from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html" title="Empty base struct for the framework expression types.">op</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="values_8h_source.html#l00121">121</a> of file <a class="el" href="values_8h_source.html">values.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00131">131</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li><a class="el" href="values_8h_source.html">values.h</a></li>
+<li><a class="el" href="extension_8h_source.html">extension.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

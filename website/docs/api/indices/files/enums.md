@@ -22,8 +22,9 @@ keywords:
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a0726a1bc3b6f16245cb8a4b42fe0e70c"><b>check_kind</b></a>: as enum in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">include/micro-os-plus/micro-test-plus/check-result.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a603af2d1c9643caa351305180b2e905b"><b>colour_mode</b></a>: as enum in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">include/micro-os-plus/micro-test-plus/runner-options.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ada744f2df815ad518c8b897608907c0b"><b>comparison</b></a>: as enum in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
 </ul>
-<p>2 entries</p>
+<p>3 entries</p>
 
 ## - R -
 
@@ -33,13 +34,19 @@ keywords:
 </ul>
 <p>2 entries</p>
 
+## - T -
+
+<ul>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a879f218299b32f5eb9fe68e15dfe0edf"><b>throw_outcome</b></a>: as enum in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
+</ul>
+
 ## - V -
 
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914b"><b>verbosity</b></a>: as enum in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">include/micro-os-plus/micro-test-plus/runner-options.h</a></li>
 </ul>
 <br/>
-<p>Total: 5 entries.</p>
+<p>Total: 7 entries.</p>
 
 <hr/>
 

@@ -19,25 +19,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="482" column="35" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="482" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="504" column="35" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="504" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to_1a8decf36d3e0e7cc8242c6a2170743422" prot="public" static="yes" constexpr="yes" mutable="no">
-        <type>bool</type>
-        <definition>bool micro_os_plus::micro_test_plus::detail::not_equal_to::within_tolerance_result</definition>
-        <argsstring></argsstring>
-        <name>within_tolerance_result</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::detail::not_equal_to::within_tolerance_result</qualifiedname>
-        <initializer>= false</initializer>
-        <briefdescription>
-<para>The result when the operands are within the tolerance. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>Values within the tolerance are equal. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="490" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="490" bodyend="-1"/>
-      </memberdef>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga8decf36d3e0e7cc8242c6a2170743422" kind="variable"><name>within_tolerance_result</name></member>
     </sectiondef>
     <sectiondef kind="public-static-func">
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to_1a6911d4baf097b704280eebbead545ba1" prot="public" static="yes" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -107,7 +91,7 @@ The using-declarations make the standard operators visible to unqualified lookup
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="508" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="283" bodyend="288"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="540" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="465" bodyend="477"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -116,11 +100,11 @@ The using-declarations make the standard operators visible to unqualified lookup
     <detaileddescription>
 <para>Defines the operator applied by <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" kindref="compound">compare_op</ref></computeroutput>, its symbol in the failure reports, and the result when the operands are within the tolerance of the floating-point wrappers. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="472" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="473" bodyend="509"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="494" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="495" bodyend="541"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to_1a6911d4baf097b704280eebbead545ba1" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::not_equal_to</scope><name>apply</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to_1ababd5d29f7521518a978c737f2d481ec" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::not_equal_to</scope><name>symbol</name></member>
-      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to_1a8decf36d3e0e7cc8242c6a2170743422" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::not_equal_to</scope><name>within_tolerance_result</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga8decf36d3e0e7cc8242c6a2170743422" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::not_equal_to</scope><name>within_tolerance_result</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

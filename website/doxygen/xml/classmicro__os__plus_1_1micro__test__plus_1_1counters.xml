@@ -5,80 +5,6 @@
     <includes refid="micro-test-plus_8h" local="yes">micro-os-plus/micro-test-plus.h</includes>
     <sectiondef kind="user-defined">
       <header>Deprecated Functions</header>
-      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a4d3d1d6dfcc6a3a8c61c8c0326799533" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void micro_os_plus::micro_test_plus::counters::increment_successful_checks</definition>
-        <argsstring>(size_t count=1) noexcept</argsstring>
-        <name>increment_successful_checks</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::counters::increment_successful_checks</qualifiedname>
-        <param>
-          <type>size_t</type>
-          <declname>count</declname>
-          <defval>1</defval>
-        </param>
-        <briefdescription>
-<para>Deprecated name of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2805c82d9f1e97c61c538eb78381119d" kindref="member">increment_passed_checks()</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>Calls <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2805c82d9f1e97c61c538eb78381119d" kindref="member">increment_passed_checks()</ref></computeroutput>. The old name called the checks &quot;successful&quot;, while the reporters print them as &quot;passed&quot;.</para>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>count</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The number of passed checks to add (default 1). </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="par"><title>Returns</title><para>Nothing. </para>
-</simplesect>
-<xrefsect id="deprecated_1_deprecated000001"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2805c82d9f1e97c61c538eb78381119d" kindref="member">increment_passed_checks()</ref> (since 6.0.0)</para>
-</xrefdescription></xrefsect></para>
-<para>Forwards to <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2805c82d9f1e97c61c538eb78381119d" kindref="member">increment_passed_checks()</ref></computeroutput>. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="227" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="70" bodyend="73"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2805c82d9f1e97c61c538eb78381119d" compoundref="counters-inlines_8h" startline="58" endline="61">increment_passed_checks</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a7e957314ea5aa3c064741c42336d1ee7">~counters</referencedby>
-      </memberdef>
-      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a082c78df2d5f6b10b6ac8c246caae6c5" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void micro_os_plus::micro_test_plus::counters::increment_executed_subtests</definition>
-        <argsstring>(size_t count=1) noexcept</argsstring>
-        <name>increment_executed_subtests</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::counters::increment_executed_subtests</qualifiedname>
-        <param>
-          <type>size_t</type>
-          <declname>count</declname>
-          <defval>1</defval>
-        </param>
-        <briefdescription>
-<para>Deprecated name of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a21c6250b78a96ae1448a7fa93608d2d3" kindref="member">increment_executed_test_cases()</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>Calls <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a21c6250b78a96ae1448a7fa93608d2d3" kindref="member">increment_executed_test_cases()</ref></computeroutput>. The old name referred to the <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga1424c18b26d5fdaed11439c77e6bf561" kindref="member">subtest</ref></computeroutput> class, which is now <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" kindref="compound">test_case</ref></computeroutput>.</para>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>count</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The number of test cases to add (default 1). </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="par"><title>Returns</title><para>Nothing. </para>
-</simplesect>
-<xrefsect id="deprecated_1_deprecated000002"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a21c6250b78a96ae1448a7fa93608d2d3" kindref="member">increment_executed_test_cases()</ref> (since 6.0.0)</para>
-</xrefdescription></xrefsect></para>
-<para>Forwards to <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a21c6250b78a96ae1448a7fa93608d2d3" kindref="member">increment_executed_test_cases()</ref></computeroutput>. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="272" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="103" bodyend="106"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a21c6250b78a96ae1448a7fa93608d2d3" compoundref="counters-inlines_8h" startline="91" endline="94">increment_executed_test_cases</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a7e957314ea5aa3c064741c42336d1ee7">~counters</referencedby>
-      </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2e1ed349fc1d936b5de5929fa1a62650" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>size_t</type>
         <definition>size_t micro_os_plus::micro_test_plus::counters::successful_checks</definition>
@@ -97,14 +23,14 @@
 </simplesect>
 <simplesect kind="return"><para>The value returned by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a6d478407d2416d3d19a4041fa1c12c9b" kindref="member">passed_checks()</ref></computeroutput>. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000003"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a6d478407d2416d3d19a4041fa1c12c9b" kindref="member">passed_checks()</ref> (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000001"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a6d478407d2416d3d19a4041fa1c12c9b" kindref="member">passed_checks()</ref> (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Forwards to <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a6d478407d2416d3d19a4041fa1c12c9b" kindref="member">passed_checks()</ref></computeroutput>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="335" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="146" bodyend="149"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a6d478407d2416d3d19a4041fa1c12c9b" compoundref="counters-inlines_8h" startline="134" endline="137">passed_checks</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="231" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="120" bodyend="123"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a6d478407d2416d3d19a4041fa1c12c9b" compoundref="counters-inlines_8h" startline="108" endline="111">passed_checks</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a7e957314ea5aa3c064741c42336d1ee7">~counters</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3cd85c566bdf2b3b92e27db4c29c7bc5" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
@@ -125,14 +51,14 @@
 </simplesect>
 <simplesect kind="return"><para>The value returned by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3d33b96c8d1a299929ead1f830e91853" kindref="member">executed_test_cases()</ref></computeroutput>. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000004"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3d33b96c8d1a299929ead1f830e91853" kindref="member">executed_test_cases()</ref> (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000002"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3d33b96c8d1a299929ead1f830e91853" kindref="member">executed_test_cases()</ref> (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Forwards to <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3d33b96c8d1a299929ead1f830e91853" kindref="member">executed_test_cases()</ref></computeroutput>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="391" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="189" bodyend="192"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3d33b96c8d1a299929ead1f830e91853" compoundref="counters-inlines_8h" startline="177" endline="180">executed_test_cases</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="287" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="163" bodyend="166"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3d33b96c8d1a299929ead1f830e91853" compoundref="counters-inlines_8h" startline="151" endline="154">executed_test_cases</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a7e957314ea5aa3c064741c42336d1ee7">~counters</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ae27ffc4d38a71b5c7d54f4a3b56c2203" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
@@ -153,15 +79,124 @@
 </simplesect>
 <simplesect kind="return"><para>The value returned by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a14690f9880df505f9dd90a9f2c3dfc96" kindref="member">passed()</ref></computeroutput>. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000005"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a14690f9880df505f9dd90a9f2c3dfc96" kindref="member">passed()</ref> (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000003"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a14690f9880df505f9dd90a9f2c3dfc96" kindref="member">passed()</ref> (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Forwards to <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a14690f9880df505f9dd90a9f2c3dfc96" kindref="member">passed()</ref></computeroutput>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="453" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="235" bodyend="238"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a14690f9880df505f9dd90a9f2c3dfc96" compoundref="counters-inlines_8h" startline="223" endline="226">passed</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="349" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="209" bodyend="212"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a14690f9880df505f9dd90a9f2c3dfc96" compoundref="counters-inlines_8h" startline="197" endline="200">passed</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a7e957314ea5aa3c064741c42336d1ee7">~counters</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="friend">
+      <memberdef kind="friend" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ae2855201952c0fea1e451227271b9821" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class detail::check_result</definition>
+        <argsstring></argsstring>
+        <name>detail::check_result</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::counters::check_result</qualifiedname>
+        <param>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result" kindref="compound">detail::check_result</ref></type>
+        </param>
+        <briefdescription>
+<para>The check result, which counts the outcome of each check. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>See the friend declaration of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref></computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="391" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" bodystart="391" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a484008ed66130a2bf334948841099943" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class detail::runnable_base</definition>
+        <argsstring></argsstring>
+        <name>detail::runnable_base</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::counters::runnable_base</qualifiedname>
+        <param>
+          <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base" kindref="compound">detail::runnable_base</ref></type>
+        </param>
+        <briefdescription>
+<para>The base of the test tree nodes, which counts the test cases, adds their totals to those of the suite, and counts a test case started on a suite that is not running as a failed check. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>See the friend declaration of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref></computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="401" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" bodystart="401" bodyend="-1"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a41b64371f0a6066ab9082b9a19a2ff0c">counters</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a21c6250b78a96ae1448a7fa93608d2d3" compoundref="counters-inlines_8h" startline="78" endline="81">increment_executed_test_cases</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1aceea5d97d4ae5cd25f077d0349465062" compoundref="counters-inlines_8h" startline="68" endline="71">increment_failed_checks</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a80c4365daa5804dc8ea52c7a5531e4cd" compoundref="counters-inlines_8h" startline="88" endline="91">increment_failed_test_cases</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2805c82d9f1e97c61c538eb78381119d" compoundref="counters-inlines_8h" startline="58" endline="61">increment_passed_checks</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a0fdafd0ee8aa838ecc833365d2b0eebb" compoundref="counters-inlines_8h" startline="98" endline="101">increment_skipped_test_cases</references>
+      </memberdef>
+      <memberdef kind="friend" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ab557a695c16fbf3b7e6127a4da385a52" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class runner</definition>
+        <argsstring></argsstring>
+        <name>runner</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::counters::runner</qualifiedname>
+        <param>
+          <type>runner</type>
+        </param>
+        <briefdescription>
+<para>The classes that maintain the counters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The nodes of the test tree and the check result update their counters, and the runner accumulates the totals of the suites; the applications only read them. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="365" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" bodystart="365" bodyend="-1"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ab557a695c16fbf3b7e6127a4da385a52" compoundref="counters_8h" startline="365">runner</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ab557a695c16fbf3b7e6127a4da385a52" compoundref="counters_8h" startline="365">runner</referencedby>
+      </memberdef>
+      <memberdef kind="friend" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1abce5d3239999169dcf885b1c6dbcd27a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class suite</definition>
+        <argsstring></argsstring>
+        <name>suite</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::counters::suite</qualifiedname>
+        <param>
+          <type>suite</type>
+        </param>
+        <briefdescription>
+<para>The suite, which counts an unexpected exception as a failed check. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>See the friend declaration of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref></computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="374" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" bodystart="374" bodyend="-1"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1abce5d3239999169dcf885b1c6dbcd27a" compoundref="counters_8h" startline="374">suite</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1abce5d3239999169dcf885b1c6dbcd27a" compoundref="counters_8h" startline="374">suite</referencedby>
+      </memberdef>
+      <memberdef kind="friend" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a8ea72fd9dfce61d8dd0379ec719fec50" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class</type>
+        <definition>friend class test_case</definition>
+        <argsstring></argsstring>
+        <name>test_case</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::counters::test_case</qualifiedname>
+        <param>
+          <type>test_case</type>
+        </param>
+        <briefdescription>
+<para>The test case, which counts an unexpected exception as a failed check. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>See the friend declaration of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref></computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="383" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" bodystart="383" bodyend="-1"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a8ea72fd9dfce61d8dd0379ec719fec50" compoundref="counters_8h" startline="383">test_case</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a8ea72fd9dfce61d8dd0379ec719fec50" compoundref="counters_8h" startline="383">test_case</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-attrib">
@@ -180,9 +215,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="484" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" bodystart="484" bodyend="-1"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3d33b96c8d1a299929ead1f830e91853" compoundref="counters-inlines_8h" startline="177" endline="180">executed_test_cases</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a21c6250b78a96ae1448a7fa93608d2d3" compoundref="counters-inlines_8h" startline="91" endline="94">increment_executed_test_cases</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="493" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" bodystart="493" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3d33b96c8d1a299929ead1f830e91853" compoundref="counters-inlines_8h" startline="151" endline="154">executed_test_cases</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a21c6250b78a96ae1448a7fa93608d2d3" compoundref="counters-inlines_8h" startline="78" endline="81">increment_executed_test_cases</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ad41430bc47f5539370b82ae9b8caf863" compoundref="counters_8cpp" startline="71" endline="89">operator+=</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a903b0e792447e149a032a7e46570bfc1" prot="private" static="no" mutable="no">
@@ -200,12 +235,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="475" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" bodystart="475" bodyend="-1"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a5909350d1852fa54f2cf4c260d99b820" compoundref="counters-inlines_8h" startline="167" endline="170">executed_checks</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ab1684c7c6101a4d534356d9d16807bee" compoundref="counters-inlines_8h" startline="157" endline="160">failed_checks</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1aceea5d97d4ae5cd25f077d0349465062" compoundref="counters-inlines_8h" startline="81" endline="84">increment_failed_checks</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="484" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" bodystart="484" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a5909350d1852fa54f2cf4c260d99b820" compoundref="counters-inlines_8h" startline="141" endline="144">executed_checks</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ab1684c7c6101a4d534356d9d16807bee" compoundref="counters-inlines_8h" startline="131" endline="134">failed_checks</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1aceea5d97d4ae5cd25f077d0349465062" compoundref="counters-inlines_8h" startline="68" endline="71">increment_failed_checks</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ad41430bc47f5539370b82ae9b8caf863" compoundref="counters_8cpp" startline="71" endline="89">operator+=</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a14690f9880df505f9dd90a9f2c3dfc96" compoundref="counters-inlines_8h" startline="223" endline="226">passed</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a14690f9880df505f9dd90a9f2c3dfc96" compoundref="counters-inlines_8h" startline="197" endline="200">passed</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a09550bb4fd851f9b704904311bba27b6" prot="private" static="no" mutable="no">
         <type>size_t</type>
@@ -222,11 +257,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="496" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" bodystart="496" bodyend="-1"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a85981e2e55a820cb49ee04aa82bbde56" compoundref="counters-inlines_8h" startline="200" endline="203">failed_test_cases</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a80c4365daa5804dc8ea52c7a5531e4cd" compoundref="counters-inlines_8h" startline="114" endline="117">increment_failed_test_cases</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="505" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" bodystart="505" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a85981e2e55a820cb49ee04aa82bbde56" compoundref="counters-inlines_8h" startline="174" endline="177">failed_test_cases</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a80c4365daa5804dc8ea52c7a5531e4cd" compoundref="counters-inlines_8h" startline="88" endline="91">increment_failed_test_cases</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ad41430bc47f5539370b82ae9b8caf863" compoundref="counters_8cpp" startline="71" endline="89">operator+=</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a14690f9880df505f9dd90a9f2c3dfc96" compoundref="counters-inlines_8h" startline="223" endline="226">passed</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a14690f9880df505f9dd90a9f2c3dfc96" compoundref="counters-inlines_8h" startline="197" endline="200">passed</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a454de640619adaeeb5cbc2ada7144946" prot="private" static="no" mutable="no">
         <type>size_t</type>
@@ -243,11 +278,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="467" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" bodystart="467" bodyend="-1"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a5909350d1852fa54f2cf4c260d99b820" compoundref="counters-inlines_8h" startline="167" endline="170">executed_checks</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="476" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" bodystart="476" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a5909350d1852fa54f2cf4c260d99b820" compoundref="counters-inlines_8h" startline="141" endline="144">executed_checks</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2805c82d9f1e97c61c538eb78381119d" compoundref="counters-inlines_8h" startline="58" endline="61">increment_passed_checks</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ad41430bc47f5539370b82ae9b8caf863" compoundref="counters_8cpp" startline="71" endline="89">operator+=</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a6d478407d2416d3d19a4041fa1c12c9b" compoundref="counters-inlines_8h" startline="134" endline="137">passed_checks</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a6d478407d2416d3d19a4041fa1c12c9b" compoundref="counters-inlines_8h" startline="108" endline="111">passed_checks</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a4399ece2b4eb697927d7cf205d5b18d9" prot="private" static="no" mutable="no">
         <type>size_t</type>
@@ -264,10 +299,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="506" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" bodystart="506" bodyend="-1"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a0fdafd0ee8aa838ecc833365d2b0eebb" compoundref="counters-inlines_8h" startline="124" endline="127">increment_skipped_test_cases</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="515" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" bodystart="515" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a0fdafd0ee8aa838ecc833365d2b0eebb" compoundref="counters-inlines_8h" startline="98" endline="101">increment_skipped_test_cases</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ad41430bc47f5539370b82ae9b8caf863" compoundref="counters_8cpp" startline="71" endline="89">operator+=</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2e5ea7bbb9bd5a05213dee741f08599d" compoundref="counters-inlines_8h" startline="210" endline="213">skipped_test_cases</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2e5ea7bbb9bd5a05213dee741f08599d" compoundref="counters-inlines_8h" startline="184" endline="187">skipped_test_cases</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -301,7 +336,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="130" column="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="143" column="5"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a41b64371f0a6066ab9082b9a19a2ff0c">counters</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a46914cfe88effd6c4e9b798c56435348" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -334,7 +369,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="143" column="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="156" column="5"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a41b64371f0a6066ab9082b9a19a2ff0c">counters</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a41b64371f0a6066ab9082b9a19a2ff0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -354,10 +389,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="117" column="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="130" column="5"/>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1afbfc8d79b7a94ed779989108669bd4c3">counters</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a46914cfe88effd6c4e9b798c56435348">counters</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a7e957314ea5aa3c064741c42336d1ee7">~counters</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a484008ed66130a2bf334948841099943" compoundref="counters_8h" startline="401">detail::runnable_base</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ad41430bc47f5539370b82ae9b8caf863" compoundref="counters_8cpp" startline="71" endline="89">operator+=</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1adc5390a03d6f674bf7b3f6111a6ab356">operator=</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ac746889e15b5b360a354bdedcae1637e">operator=</referencedby>
@@ -376,25 +411,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="182" column="5"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a41b64371f0a6066ab9082b9a19a2ff0c">counters</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a5909350d1852fa54f2cf4c260d99b820" compoundref="counters-inlines_8h" startline="167" endline="170">executed_checks</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3cd85c566bdf2b3b92e27db4c29c7bc5" compoundref="counters-inlines_8h" startline="189" endline="192">executed_subtests</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3d33b96c8d1a299929ead1f830e91853" compoundref="counters-inlines_8h" startline="177" endline="180">executed_test_cases</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ab1684c7c6101a4d534356d9d16807bee" compoundref="counters-inlines_8h" startline="157" endline="160">failed_checks</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a85981e2e55a820cb49ee04aa82bbde56" compoundref="counters-inlines_8h" startline="200" endline="203">failed_test_cases</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a082c78df2d5f6b10b6ac8c246caae6c5" compoundref="counters-inlines_8h" startline="103" endline="106">increment_executed_subtests</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a21c6250b78a96ae1448a7fa93608d2d3" compoundref="counters-inlines_8h" startline="91" endline="94">increment_executed_test_cases</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1aceea5d97d4ae5cd25f077d0349465062" compoundref="counters-inlines_8h" startline="81" endline="84">increment_failed_checks</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a80c4365daa5804dc8ea52c7a5531e4cd" compoundref="counters-inlines_8h" startline="114" endline="117">increment_failed_test_cases</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2805c82d9f1e97c61c538eb78381119d" compoundref="counters-inlines_8h" startline="58" endline="61">increment_passed_checks</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a0fdafd0ee8aa838ecc833365d2b0eebb" compoundref="counters-inlines_8h" startline="124" endline="127">increment_skipped_test_cases</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a4d3d1d6dfcc6a3a8c61c8c0326799533" compoundref="counters-inlines_8h" startline="70" endline="73">increment_successful_checks</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a14690f9880df505f9dd90a9f2c3dfc96" compoundref="counters-inlines_8h" startline="223" endline="226">passed</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a6d478407d2416d3d19a4041fa1c12c9b" compoundref="counters-inlines_8h" startline="134" endline="137">passed_checks</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2e5ea7bbb9bd5a05213dee741f08599d" compoundref="counters-inlines_8h" startline="210" endline="213">skipped_test_cases</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2e1ed349fc1d936b5de5929fa1a62650" compoundref="counters-inlines_8h" startline="146" endline="149">successful_checks</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ae27ffc4d38a71b5c7d54f4a3b56c2203" compoundref="counters-inlines_8h" startline="235" endline="238">was_successful</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="195" column="5"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a5909350d1852fa54f2cf4c260d99b820" compoundref="counters-inlines_8h" startline="141" endline="144">executed_checks</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3cd85c566bdf2b3b92e27db4c29c7bc5" compoundref="counters-inlines_8h" startline="163" endline="166">executed_subtests</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3d33b96c8d1a299929ead1f830e91853" compoundref="counters-inlines_8h" startline="151" endline="154">executed_test_cases</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ab1684c7c6101a4d534356d9d16807bee" compoundref="counters-inlines_8h" startline="131" endline="134">failed_checks</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a85981e2e55a820cb49ee04aa82bbde56" compoundref="counters-inlines_8h" startline="174" endline="177">failed_test_cases</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a14690f9880df505f9dd90a9f2c3dfc96" compoundref="counters-inlines_8h" startline="197" endline="200">passed</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a6d478407d2416d3d19a4041fa1c12c9b" compoundref="counters-inlines_8h" startline="108" endline="111">passed_checks</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2e5ea7bbb9bd5a05213dee741f08599d" compoundref="counters-inlines_8h" startline="184" endline="187">skipped_test_cases</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2e1ed349fc1d936b5de5929fa1a62650" compoundref="counters-inlines_8h" startline="120" endline="123">successful_checks</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ae27ffc4d38a71b5c7d54f4a3b56c2203" compoundref="counters-inlines_8h" startline="209" endline="212">was_successful</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a5909350d1852fa54f2cf4c260d99b820" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>size_t</type>
@@ -417,12 +444,12 @@ Returns the sum of <computeroutput><ref refid="classmicro__os__plus_1_1micro__te
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="360" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="167" bodyend="170"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a903b0e792447e149a032a7e46570bfc1" compoundref="counters_8h" startline="475">failed_checks_</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a454de640619adaeeb5cbc2ada7144946" compoundref="counters_8h" startline="467">passed_checks_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="256" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="141" bodyend="144"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a903b0e792447e149a032a7e46570bfc1" compoundref="counters_8h" startline="484">failed_checks_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a454de640619adaeeb5cbc2ada7144946" compoundref="counters_8h" startline="476">passed_checks_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a7e957314ea5aa3c064741c42336d1ee7">~counters</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a2d5ddae3195ab52a957927a1b455f7b8" compoundref="reporter-tap_8cpp" startline="386" endline="466">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1ad15f7dbbf6a683441df40c502125adc3" compoundref="reporter-tap_8cpp" startline="606" endline="706">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a2d5ddae3195ab52a957927a1b455f7b8" compoundref="reporter-tap_8cpp" startline="528" endline="608">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1ad15f7dbbf6a683441df40c502125adc3" compoundref="reporter-tap_8cpp" startline="748" endline="848">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3d33b96c8d1a299929ead1f830e91853" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>size_t</type>
@@ -445,16 +472,16 @@ Returns the value of the <computeroutput><ref refid="classmicro__os__plus_1_1mic
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="370" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="177" bodyend="180"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a72fb6b1038be0ac8b09b4da60aa292e8" compoundref="counters_8h" startline="484">executed_test_cases_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="266" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="151" bodyend="154"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a72fb6b1038be0ac8b09b4da60aa292e8" compoundref="counters_8h" startline="493">executed_test_cases_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a7e957314ea5aa3c064741c42336d1ee7">~counters</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1af8dc976373fc0976c8486693d9b9f835" compoundref="reporter-human_8cpp" startline="254" endline="322">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a2d5ddae3195ab52a957927a1b455f7b8" compoundref="reporter-tap_8cpp" startline="386" endline="466">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1ad15f7dbbf6a683441df40c502125adc3" compoundref="reporter-tap_8cpp" startline="606" endline="706">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3cd85c566bdf2b3b92e27db4c29c7bc5" compoundref="counters-inlines_8h" startline="189" endline="192">executed_subtests</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a6bf3aac88a5e66e2f93eb32c54dbdd14" compoundref="reporter_8cpp" startline="839" endline="868">micro_os_plus::micro_test_plus::detail::reporter::format_session_totals</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a570030599ccc9f4133ed6a9eda2c2a1c" compoundref="reporter_8cpp" startline="876" endline="905">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a700e3ef1f955492cd84235bd388dcdf2" compoundref="runner_8cpp" startline="633" endline="737">micro_os_plus::micro_test_plus::runner::run_suites</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1af8dc976373fc0976c8486693d9b9f835" compoundref="reporter-human_8cpp" startline="255" endline="323">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a2d5ddae3195ab52a957927a1b455f7b8" compoundref="reporter-tap_8cpp" startline="528" endline="608">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1ad15f7dbbf6a683441df40c502125adc3" compoundref="reporter-tap_8cpp" startline="748" endline="848">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3cd85c566bdf2b3b92e27db4c29c7bc5" compoundref="counters-inlines_8h" startline="163" endline="166">executed_subtests</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a6bf3aac88a5e66e2f93eb32c54dbdd14" compoundref="reporter_8cpp" startline="895" endline="924">micro_os_plus::micro_test_plus::detail::reporter::format_session_totals</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a570030599ccc9f4133ed6a9eda2c2a1c" compoundref="reporter_8cpp" startline="932" endline="961">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a700e3ef1f955492cd84235bd388dcdf2" compoundref="runner_8cpp" startline="760" endline="878">micro_os_plus::micro_test_plus::runner::run_suites</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ab1684c7c6101a4d534356d9d16807bee" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>size_t</type>
@@ -477,14 +504,14 @@ Returns the value of the <computeroutput><ref refid="classmicro__os__plus_1_1mic
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="350" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="157" bodyend="160"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a903b0e792447e149a032a7e46570bfc1" compoundref="counters_8h" startline="475">failed_checks_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="246" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="131" bodyend="134"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a903b0e792447e149a032a7e46570bfc1" compoundref="counters_8h" startline="484">failed_checks_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a7e957314ea5aa3c064741c42336d1ee7">~counters</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a2d5ddae3195ab52a957927a1b455f7b8" compoundref="reporter-tap_8cpp" startline="386" endline="466">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1ad15f7dbbf6a683441df40c502125adc3" compoundref="reporter-tap_8cpp" startline="606" endline="706">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a6bf3aac88a5e66e2f93eb32c54dbdd14" compoundref="reporter_8cpp" startline="839" endline="868">micro_os_plus::micro_test_plus::detail::reporter::format_session_totals</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a570030599ccc9f4133ed6a9eda2c2a1c" compoundref="reporter_8cpp" startline="876" endline="905">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a60b8564f54a6a1230e6d4ce110de93f5" compoundref="reporter_8cpp" startline="913" endline="943">micro_os_plus::micro_test_plus::detail::reporter::format_test_case_totals</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a2d5ddae3195ab52a957927a1b455f7b8" compoundref="reporter-tap_8cpp" startline="528" endline="608">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1ad15f7dbbf6a683441df40c502125adc3" compoundref="reporter-tap_8cpp" startline="748" endline="848">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a6bf3aac88a5e66e2f93eb32c54dbdd14" compoundref="reporter_8cpp" startline="895" endline="924">micro_os_plus::micro_test_plus::detail::reporter::format_session_totals</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a570030599ccc9f4133ed6a9eda2c2a1c" compoundref="reporter_8cpp" startline="932" endline="961">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a60b8564f54a6a1230e6d4ce110de93f5" compoundref="reporter_8cpp" startline="969" endline="999">micro_os_plus::micro_test_plus::detail::reporter::format_test_case_totals</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a85981e2e55a820cb49ee04aa82bbde56" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>size_t</type>
@@ -507,230 +534,10 @@ Returns the value of the <computeroutput><ref refid="classmicro__os__plus_1_1mic
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="406" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="200" bodyend="203"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a09550bb4fd851f9b704904311bba27b6" compoundref="counters_8h" startline="496">failed_test_cases_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="302" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="174" bodyend="177"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a09550bb4fd851f9b704904311bba27b6" compoundref="counters_8h" startline="505">failed_test_cases_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a7e957314ea5aa3c064741c42336d1ee7">~counters</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a60b8564f54a6a1230e6d4ce110de93f5" compoundref="reporter_8cpp" startline="913" endline="943">micro_os_plus::micro_test_plus::detail::reporter::format_test_case_totals</referencedby>
-      </memberdef>
-      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a21c6250b78a96ae1448a7fa93608d2d3" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void micro_os_plus::micro_test_plus::counters::increment_executed_test_cases</definition>
-        <argsstring>(size_t count=1) noexcept</argsstring>
-        <name>increment_executed_test_cases</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::counters::increment_executed_test_cases</qualifiedname>
-        <param>
-          <type>size_t</type>
-          <declname>count</declname>
-          <defval>1</defval>
-        </param>
-        <briefdescription>
-<para>Increments the executed test cases counter. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>count</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The number of test cases to add (default 1). </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
-</simplesect>
-Adds <computeroutput>count</computeroutput> to the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a72fb6b1038be0ac8b09b4da60aa292e8" kindref="member">executed_test_cases_</ref></computeroutput> counter. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="252" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="91" bodyend="94"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a72fb6b1038be0ac8b09b4da60aa292e8" compoundref="counters_8h" startline="484">executed_test_cases_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a7e957314ea5aa3c064741c42336d1ee7">~counters</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a38cf903fb0ba5b76b1eb2350b6385962" compoundref="test_8cpp" startline="201" endline="280">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a082c78df2d5f6b10b6ac8c246caae6c5" compoundref="counters-inlines_8h" startline="103" endline="106">increment_executed_subtests</referencedby>
-      </memberdef>
-      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1aceea5d97d4ae5cd25f077d0349465062" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void micro_os_plus::micro_test_plus::counters::increment_failed_checks</definition>
-        <argsstring>(size_t count=1) noexcept</argsstring>
-        <name>increment_failed_checks</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::counters::increment_failed_checks</qualifiedname>
-        <param>
-          <type>size_t</type>
-          <declname>count</declname>
-          <defval>1</defval>
-        </param>
-        <briefdescription>
-<para>Increments the failed-checks counter. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>count</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The number of failed checks to add (default 1). </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
-</simplesect>
-Adds <computeroutput>count</computeroutput> to the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a903b0e792447e149a032a7e46570bfc1" kindref="member">failed_checks_</ref></computeroutput> counter. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="242" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="81" bodyend="84"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a903b0e792447e149a032a7e46570bfc1" compoundref="counters_8h" startline="475">failed_checks_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a7e957314ea5aa3c064741c42336d1ee7">~counters</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a1d15dd97c94c3dabccb9e5a7444af0ec" compoundref="test_8cpp" startline="463" endline="480">micro_os_plus::micro_test_plus::suite::fail_unexpected_exception</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a1980019eed5ac5b1eef65302eb9cc9cd" compoundref="test_8cpp" startline="315" endline="336">micro_os_plus::micro_test_plus::test_case::fail_unexpected_exception</referencedby>
-      </memberdef>
-      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a80c4365daa5804dc8ea52c7a5531e4cd" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void micro_os_plus::micro_test_plus::counters::increment_failed_test_cases</definition>
-        <argsstring>(size_t count=1) noexcept</argsstring>
-        <name>increment_failed_test_cases</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::counters::increment_failed_test_cases</qualifiedname>
-        <param>
-          <type>size_t</type>
-          <declname>count</declname>
-          <defval>1</defval>
-        </param>
-        <briefdescription>
-<para>Increments the failed test cases counter. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>count</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The number of failed test cases to add (default 1). </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
-</simplesect>
-Adds <computeroutput>count</computeroutput> to the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a09550bb4fd851f9b704904311bba27b6" kindref="member">failed_test_cases_</ref></computeroutput> counter. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="287" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="114" bodyend="117"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a09550bb4fd851f9b704904311bba27b6" compoundref="counters_8h" startline="496">failed_test_cases_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a7e957314ea5aa3c064741c42336d1ee7">~counters</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a38cf903fb0ba5b76b1eb2350b6385962" compoundref="test_8cpp" startline="201" endline="280">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create</referencedby>
-      </memberdef>
-      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2805c82d9f1e97c61c538eb78381119d" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void micro_os_plus::micro_test_plus::counters::increment_passed_checks</definition>
-        <argsstring>(size_t count=1) noexcept</argsstring>
-        <name>increment_passed_checks</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::counters::increment_passed_checks</qualifiedname>
-        <param>
-          <type>size_t</type>
-          <declname>count</declname>
-          <defval>1</defval>
-        </param>
-        <briefdescription>
-<para>Increments the passed-checks counter. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>Called for each check that passed; the opposite count is incremented by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1aceea5d97d4ae5cd25f077d0349465062" kindref="member">increment_failed_checks()</ref></computeroutput>.</para>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>count</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The number of passed checks to add (default 1). </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
-</simplesect>
-<simplesect kind="since"><para>6.0.0</para>
-</simplesect>
-Adds <computeroutput>count</computeroutput> to the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a454de640619adaeeb5cbc2ada7144946" kindref="member">passed_checks_</ref></computeroutput> counter. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="207" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="58" bodyend="61"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a454de640619adaeeb5cbc2ada7144946" compoundref="counters_8h" startline="467">passed_checks_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a7e957314ea5aa3c064741c42336d1ee7">~counters</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a4d3d1d6dfcc6a3a8c61c8c0326799533" compoundref="counters-inlines_8h" startline="70" endline="73">increment_successful_checks</referencedby>
-      </memberdef>
-      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a0fdafd0ee8aa838ecc833365d2b0eebb" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void micro_os_plus::micro_test_plus::counters::increment_skipped_test_cases</definition>
-        <argsstring>(size_t count=1) noexcept</argsstring>
-        <name>increment_skipped_test_cases</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::counters::increment_skipped_test_cases</qualifiedname>
-        <param>
-          <type>size_t</type>
-          <declname>count</declname>
-          <defval>1</defval>
-        </param>
-        <briefdescription>
-<para>Increments the skipped test cases counter. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>count</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The number of skipped test cases to add (default 1). </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
-</simplesect>
-<simplesect kind="since"><para>6.0.0</para>
-</simplesect>
-Adds <computeroutput>count</computeroutput> to the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a4399ece2b4eb697927d7cf205d5b18d9" kindref="member">skipped_test_cases_</ref></computeroutput> counter. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="299" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="124" bodyend="127"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a4399ece2b4eb697927d7cf205d5b18d9" compoundref="counters_8h" startline="506">skipped_test_cases_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a7e957314ea5aa3c064741c42336d1ee7">~counters</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a38cf903fb0ba5b76b1eb2350b6385962" compoundref="test_8cpp" startline="201" endline="280">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create</referencedby>
-      </memberdef>
-      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ad41430bc47f5539370b82ae9b8caf863" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a41b64371f0a6066ab9082b9a19a2ff0c" kindref="member">counters</ref> &amp;</type>
-        <definition>counters &amp; micro_os_plus::micro_test_plus::counters::operator+=</definition>
-        <argsstring>(const counters &amp;other) noexcept</argsstring>
-        <name>operator+=</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::counters::operator+=</qualifiedname>
-        <param>
-          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a41b64371f0a6066ab9082b9a19a2ff0c" kindref="member">counters</ref> &amp;</type>
-          <declname>other</declname>
-        </param>
-        <briefdescription>
-<para>Accumulates the totals from another instance into this one. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>other</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The instance whose totals are to be added. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>Reference to this instance.</para>
-</simplesect>
-Adds the passed check count, failed check count, executed test case count, failed test case count, and skipped test case count of <computeroutput>other</computeroutput> to the corresponding members of this instance. Returns a reference to <computeroutput>*this</computeroutput> to support chaining. When tracing is enabled, the updated totals are output for diagnostic purposes. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="191" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/counters.cpp" bodystart="71" bodyend="89"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a41b64371f0a6066ab9082b9a19a2ff0c">counters</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a72fb6b1038be0ac8b09b4da60aa292e8" compoundref="counters_8h" startline="484">executed_test_cases_</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a903b0e792447e149a032a7e46570bfc1" compoundref="counters_8h" startline="475">failed_checks_</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a09550bb4fd851f9b704904311bba27b6" compoundref="counters_8h" startline="496">failed_test_cases_</references>
-        <references refid="detail_8h_1aaec16ed032c8fc52ba753a273b788381" compoundref="detail_8h" startline="96">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a454de640619adaeeb5cbc2ada7144946" compoundref="counters_8h" startline="467">passed_checks_</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a4399ece2b4eb697927d7cf205d5b18d9" compoundref="counters_8h" startline="506">skipped_test_cases_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a60b8564f54a6a1230e6d4ce110de93f5" compoundref="reporter_8cpp" startline="969" endline="999">micro_os_plus::micro_test_plus::detail::reporter::format_test_case_totals</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1adc5390a03d6f674bf7b3f6111a6ab356" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a41b64371f0a6066ab9082b9a19a2ff0c" kindref="member">counters</ref> &amp;</type>
@@ -764,7 +571,7 @@ Adds the passed check count, failed check count, executed test case count, faile
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="157" column="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="170" column="5"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a41b64371f0a6066ab9082b9a19a2ff0c">counters</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ac746889e15b5b360a354bdedcae1637e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -799,7 +606,7 @@ Adds the passed check count, failed check count, executed test case count, faile
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="173" column="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="186" column="5"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a41b64371f0a6066ab9082b9a19a2ff0c">counters</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a14690f9880df505f9dd90a9f2c3dfc96" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
@@ -838,20 +645,20 @@ A node with no checks at all is considered successful, as it did not fail any ch
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="433" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="223" bodyend="226"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a903b0e792447e149a032a7e46570bfc1" compoundref="counters_8h" startline="475">failed_checks_</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a09550bb4fd851f9b704904311bba27b6" compoundref="counters_8h" startline="496">failed_test_cases_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="329" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="197" bodyend="200"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a903b0e792447e149a032a7e46570bfc1" compoundref="counters_8h" startline="484">failed_checks_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a09550bb4fd851f9b704904311bba27b6" compoundref="counters_8h" startline="505">failed_test_cases_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a7e957314ea5aa3c064741c42336d1ee7">~counters</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a38cf903fb0ba5b76b1eb2350b6385962" compoundref="test_8cpp" startline="201" endline="280">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1ace9c2dfffc49a97516b96dacaf87b943" compoundref="reporter-human_8cpp" startline="161" endline="192">micro_os_plus::micro_test_plus::detail::reporter_human::end_session</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1af8dc976373fc0976c8486693d9b9f835" compoundref="reporter-human_8cpp" startline="254" endline="322">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a2d5ddae3195ab52a957927a1b455f7b8" compoundref="reporter-tap_8cpp" startline="386" endline="466">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a7987c7a524058211a73d048d28943fb9" compoundref="reporter-human_8cpp" startline="451" endline="527">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1ad15f7dbbf6a683441df40c502125adc3" compoundref="reporter-tap_8cpp" startline="606" endline="706">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a570030599ccc9f4133ed6a9eda2c2a1c" compoundref="reporter_8cpp" startline="876" endline="905">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a60b8564f54a6a1230e6d4ce110de93f5" compoundref="reporter_8cpp" startline="913" endline="943">micro_os_plus::micro_test_plus::detail::reporter::format_test_case_totals</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a700e3ef1f955492cd84235bd388dcdf2" compoundref="runner_8cpp" startline="633" endline="737">micro_os_plus::micro_test_plus::runner::run_suites</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ae27ffc4d38a71b5c7d54f4a3b56c2203" compoundref="counters-inlines_8h" startline="235" endline="238">was_successful</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a38cf903fb0ba5b76b1eb2350b6385962" compoundref="test_8cpp" startline="307" endline="387">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1ace9c2dfffc49a97516b96dacaf87b943" compoundref="reporter-human_8cpp" startline="161" endline="193">micro_os_plus::micro_test_plus::detail::reporter_human::end_session</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1af8dc976373fc0976c8486693d9b9f835" compoundref="reporter-human_8cpp" startline="255" endline="323">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a2d5ddae3195ab52a957927a1b455f7b8" compoundref="reporter-tap_8cpp" startline="528" endline="608">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a7987c7a524058211a73d048d28943fb9" compoundref="reporter-human_8cpp" startline="452" endline="528">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1ad15f7dbbf6a683441df40c502125adc3" compoundref="reporter-tap_8cpp" startline="748" endline="848">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a570030599ccc9f4133ed6a9eda2c2a1c" compoundref="reporter_8cpp" startline="932" endline="961">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a60b8564f54a6a1230e6d4ce110de93f5" compoundref="reporter_8cpp" startline="969" endline="999">micro_os_plus::micro_test_plus::detail::reporter::format_test_case_totals</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a700e3ef1f955492cd84235bd388dcdf2" compoundref="runner_8cpp" startline="760" endline="878">micro_os_plus::micro_test_plus::runner::run_suites</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ae27ffc4d38a71b5c7d54f4a3b56c2203" compoundref="counters-inlines_8h" startline="209" endline="212">was_successful</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a6d478407d2416d3d19a4041fa1c12c9b" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>size_t</type>
@@ -877,15 +684,15 @@ Returns the value of the <computeroutput><ref refid="classmicro__os__plus_1_1mic
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="315" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="134" bodyend="137"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a454de640619adaeeb5cbc2ada7144946" compoundref="counters_8h" startline="467">passed_checks_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="211" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="108" bodyend="111"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a454de640619adaeeb5cbc2ada7144946" compoundref="counters_8h" startline="476">passed_checks_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a7e957314ea5aa3c064741c42336d1ee7">~counters</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a2d5ddae3195ab52a957927a1b455f7b8" compoundref="reporter-tap_8cpp" startline="386" endline="466">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1ad15f7dbbf6a683441df40c502125adc3" compoundref="reporter-tap_8cpp" startline="606" endline="706">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a6bf3aac88a5e66e2f93eb32c54dbdd14" compoundref="reporter_8cpp" startline="839" endline="868">micro_os_plus::micro_test_plus::detail::reporter::format_session_totals</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a570030599ccc9f4133ed6a9eda2c2a1c" compoundref="reporter_8cpp" startline="876" endline="905">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a60b8564f54a6a1230e6d4ce110de93f5" compoundref="reporter_8cpp" startline="913" endline="943">micro_os_plus::micro_test_plus::detail::reporter::format_test_case_totals</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2e1ed349fc1d936b5de5929fa1a62650" compoundref="counters-inlines_8h" startline="146" endline="149">successful_checks</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a2d5ddae3195ab52a957927a1b455f7b8" compoundref="reporter-tap_8cpp" startline="528" endline="608">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1ad15f7dbbf6a683441df40c502125adc3" compoundref="reporter-tap_8cpp" startline="748" endline="848">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a6bf3aac88a5e66e2f93eb32c54dbdd14" compoundref="reporter_8cpp" startline="895" endline="924">micro_os_plus::micro_test_plus::detail::reporter::format_session_totals</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a570030599ccc9f4133ed6a9eda2c2a1c" compoundref="reporter_8cpp" startline="932" endline="961">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a60b8564f54a6a1230e6d4ce110de93f5" compoundref="reporter_8cpp" startline="969" endline="999">micro_os_plus::micro_test_plus::detail::reporter::format_test_case_totals</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2e1ed349fc1d936b5de5929fa1a62650" compoundref="counters-inlines_8h" startline="120" endline="123">successful_checks</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2e5ea7bbb9bd5a05213dee741f08599d" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>size_t</type>
@@ -911,12 +718,235 @@ Returns the value of the <computeroutput><ref refid="classmicro__os__plus_1_1mic
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="421" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="210" bodyend="213"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a4399ece2b4eb697927d7cf205d5b18d9" compoundref="counters_8h" startline="506">skipped_test_cases_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="317" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="184" bodyend="187"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a4399ece2b4eb697927d7cf205d5b18d9" compoundref="counters_8h" startline="515">skipped_test_cases_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a7e957314ea5aa3c064741c42336d1ee7">~counters</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1ad15f7dbbf6a683441df40c502125adc3" compoundref="reporter-tap_8cpp" startline="606" endline="706">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a6bf3aac88a5e66e2f93eb32c54dbdd14" compoundref="reporter_8cpp" startline="839" endline="868">micro_os_plus::micro_test_plus::detail::reporter::format_session_totals</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a570030599ccc9f4133ed6a9eda2c2a1c" compoundref="reporter_8cpp" startline="876" endline="905">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1ad15f7dbbf6a683441df40c502125adc3" compoundref="reporter-tap_8cpp" startline="748" endline="848">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a6bf3aac88a5e66e2f93eb32c54dbdd14" compoundref="reporter_8cpp" startline="895" endline="924">micro_os_plus::micro_test_plus::detail::reporter::format_session_totals</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a570030599ccc9f4133ed6a9eda2c2a1c" compoundref="reporter_8cpp" startline="932" endline="961">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a21c6250b78a96ae1448a7fa93608d2d3" prot="private" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::counters::increment_executed_test_cases</definition>
+        <argsstring>(size_t count=1) noexcept</argsstring>
+        <name>increment_executed_test_cases</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::counters::increment_executed_test_cases</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>count</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Increments the executed test cases counter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of test cases to add (default 1). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+Adds <computeroutput>count</computeroutput> to the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a72fb6b1038be0ac8b09b4da60aa292e8" kindref="member">executed_test_cases_</ref></computeroutput> counter. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="446" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="78" bodyend="81"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a72fb6b1038be0ac8b09b4da60aa292e8" compoundref="counters_8h" startline="493">executed_test_cases_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a38cf903fb0ba5b76b1eb2350b6385962" compoundref="test_8cpp" startline="307" endline="387">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a484008ed66130a2bf334948841099943" compoundref="counters_8h" startline="401">detail::runnable_base</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1aceea5d97d4ae5cd25f077d0349465062" prot="private" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::counters::increment_failed_checks</definition>
+        <argsstring>(size_t count=1) noexcept</argsstring>
+        <name>increment_failed_checks</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::counters::increment_failed_checks</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>count</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Increments the failed-checks counter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of failed checks to add (default 1). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+Adds <computeroutput>count</computeroutput> to the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a903b0e792447e149a032a7e46570bfc1" kindref="member">failed_checks_</ref></computeroutput> counter. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="436" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="68" bodyend="71"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a903b0e792447e149a032a7e46570bfc1" compoundref="counters_8h" startline="484">failed_checks_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1ae3b88e57597f9fcd04536b894bebef5e" compoundref="check-result_8cpp" startline="138" endline="189">micro_os_plus::micro_test_plus::detail::check_result::~check_result</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a9fe5d6e7a066b514e33fa4f2550e6a2e" compoundref="test_8cpp" startline="222" endline="253">micro_os_plus::micro_test_plus::detail::runnable_base::accepts_test_case</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a484008ed66130a2bf334948841099943" compoundref="counters_8h" startline="401">detail::runnable_base</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a1d15dd97c94c3dabccb9e5a7444af0ec" compoundref="test_8cpp" startline="620" endline="637">micro_os_plus::micro_test_plus::suite::fail_unexpected_exception</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a1980019eed5ac5b1eef65302eb9cc9cd" compoundref="test_8cpp" startline="452" endline="473">micro_os_plus::micro_test_plus::test_case::fail_unexpected_exception</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a80c4365daa5804dc8ea52c7a5531e4cd" prot="private" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::counters::increment_failed_test_cases</definition>
+        <argsstring>(size_t count=1) noexcept</argsstring>
+        <name>increment_failed_test_cases</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::counters::increment_failed_test_cases</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>count</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Increments the failed test cases counter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of failed test cases to add (default 1). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+Adds <computeroutput>count</computeroutput> to the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a09550bb4fd851f9b704904311bba27b6" kindref="member">failed_test_cases_</ref></computeroutput> counter. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="456" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="88" bodyend="91"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a09550bb4fd851f9b704904311bba27b6" compoundref="counters_8h" startline="505">failed_test_cases_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a38cf903fb0ba5b76b1eb2350b6385962" compoundref="test_8cpp" startline="307" endline="387">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a484008ed66130a2bf334948841099943" compoundref="counters_8h" startline="401">detail::runnable_base</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2805c82d9f1e97c61c538eb78381119d" prot="private" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::counters::increment_passed_checks</definition>
+        <argsstring>(size_t count=1) noexcept</argsstring>
+        <name>increment_passed_checks</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::counters::increment_passed_checks</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>count</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Increments the passed-checks counter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Called for each check that passed; the opposite count is incremented by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1aceea5d97d4ae5cd25f077d0349465062" kindref="member">increment_failed_checks()</ref></computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of passed checks to add (default 1). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+<simplesect kind="since"><para>6.0.0</para>
+</simplesect>
+Adds <computeroutput>count</computeroutput> to the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a454de640619adaeeb5cbc2ada7144946" kindref="member">passed_checks_</ref></computeroutput> counter. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="426" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="58" bodyend="61"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a454de640619adaeeb5cbc2ada7144946" compoundref="counters_8h" startline="476">passed_checks_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1ae3b88e57597f9fcd04536b894bebef5e" compoundref="check-result_8cpp" startline="138" endline="189">micro_os_plus::micro_test_plus::detail::check_result::~check_result</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a484008ed66130a2bf334948841099943" compoundref="counters_8h" startline="401">detail::runnable_base</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a0fdafd0ee8aa838ecc833365d2b0eebb" prot="private" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::counters::increment_skipped_test_cases</definition>
+        <argsstring>(size_t count=1) noexcept</argsstring>
+        <name>increment_skipped_test_cases</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::counters::increment_skipped_test_cases</qualifiedname>
+        <param>
+          <type>size_t</type>
+          <declname>count</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Increments the skipped test cases counter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of skipped test cases to add (default 1). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+<simplesect kind="since"><para>6.0.0</para>
+</simplesect>
+Adds <computeroutput>count</computeroutput> to the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a4399ece2b4eb697927d7cf205d5b18d9" kindref="member">skipped_test_cases_</ref></computeroutput> counter. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="468" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/counters-inlines.h" bodystart="98" bodyend="101"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a4399ece2b4eb697927d7cf205d5b18d9" compoundref="counters_8h" startline="515">skipped_test_cases_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a38cf903fb0ba5b76b1eb2350b6385962" compoundref="test_8cpp" startline="307" endline="387">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a484008ed66130a2bf334948841099943" compoundref="counters_8h" startline="401">detail::runnable_base</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ad41430bc47f5539370b82ae9b8caf863" prot="private" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a41b64371f0a6066ab9082b9a19a2ff0c" kindref="member">counters</ref> &amp;</type>
+        <definition>counters &amp; micro_os_plus::micro_test_plus::counters::operator+=</definition>
+        <argsstring>(const counters &amp;other) noexcept</argsstring>
+        <name>operator+=</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::counters::operator+=</qualifiedname>
+        <param>
+          <type>const <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a41b64371f0a6066ab9082b9a19a2ff0c" kindref="member">counters</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Accumulates the totals from another instance into this one. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The instance whose totals are to be added. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to this instance.</para>
+</simplesect>
+Adds the passed check count, failed check count, executed test case count, failed test case count, and skipped test case count of <computeroutput>other</computeroutput> to the corresponding members of this instance. Returns a reference to <computeroutput>*this</computeroutput> to support chaining. When tracing is enabled, the updated totals are output for diagnostic purposes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="410" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/counters.cpp" bodystart="71" bodyend="89"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a41b64371f0a6066ab9082b9a19a2ff0c">counters</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a72fb6b1038be0ac8b09b4da60aa292e8" compoundref="counters_8h" startline="493">executed_test_cases_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a903b0e792447e149a032a7e46570bfc1" compoundref="counters_8h" startline="484">failed_checks_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a09550bb4fd851f9b704904311bba27b6" compoundref="counters_8h" startline="505">failed_test_cases_</references>
+        <references refid="detail_8h_1aaec16ed032c8fc52ba753a273b788381" compoundref="detail_8h" startline="97">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a454de640619adaeeb5cbc2ada7144946" compoundref="counters_8h" startline="476">passed_checks_</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a4399ece2b4eb697927d7cf205d5b18d9" compoundref="counters_8h" startline="515">skipped_test_cases_</references>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -933,14 +963,16 @@ Returns the value of the <computeroutput><ref refid="classmicro__os__plus_1_1mic
 </para>
 <para>For a test case, the test case counters refer only to its direct nested test cases; for a suite or the runner, they refer to the test cases at all nesting levels.</para>
 <para>The runner and every node of the test tree (<computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref></computeroutput>, <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" kindref="compound">test_case</ref></computeroutput>) own a <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters" kindref="compound">counters</ref></computeroutput> member and accumulate their counts in place. At the end of each suite or session the operator <computeroutput>+=</computeroutput> propagates the child totals up to the parent node, or to the runner.</para>
-<para>The tests can read the counters of the runner, of a suite, or of a test case through the <computeroutput>totals()</computeroutput> accessor.</para>
-<para>The class is a copyable value type, so that a test can take a snapshot of the counters (<computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters" kindref="compound">counters</ref> before = ts.totals ();</computeroutput>) and compare it later with the current values. The copy is independent: it is not updated when the original counters change. The nodes that own the live counters are themselves neither copyable nor movable. The runner returns only a <computeroutput>const</computeroutput> reference; the suites and the test cases also have a non-<computeroutput>const</computeroutput> overload, kept for v5.0.1, but the counters of the nodes are meant to be read only. </para>
+<para>The tests can read the counters of the runner, of a suite, or of a test case through the <computeroutput>totals()</computeroutput> accessor. The functions that update the counters are private, and called only by the framework classes, which are friends.</para>
+<para>The class is a copyable value type, so that a test can take a snapshot of the counters (<computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters" kindref="compound">counters</ref> before = ts.totals ();</computeroutput>) and compare it later with the current values. The copy is independent: it is not updated when the original counters change. The nodes that own the live counters are themselves neither copyable nor movable. The runner, the suites, and the test cases return only a <computeroutput>const</computeroutput> reference, so that the counters of the nodes are read only. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="108" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" bodystart="109" bodyend="507"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" line="121" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/counters.h" bodystart="122" bodyend="516"/>
     <listofallmembers>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a41b64371f0a6066ab9082b9a19a2ff0c" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>counters</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1afbfc8d79b7a94ed779989108669bd4c3" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>counters</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a46914cfe88effd6c4e9b798c56435348" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>counters</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ae2855201952c0fea1e451227271b9821" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>detail::check_result</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a484008ed66130a2bf334948841099943" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>detail::runnable_base</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a5909350d1852fa54f2cf4c260d99b820" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>executed_checks</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3cd85c566bdf2b3b92e27db4c29c7bc5" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>executed_subtests</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3d33b96c8d1a299929ead1f830e91853" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>executed_test_cases</name></member>
@@ -949,22 +981,23 @@ Returns the value of the <computeroutput><ref refid="classmicro__os__plus_1_1mic
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a903b0e792447e149a032a7e46570bfc1" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>failed_checks_</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a85981e2e55a820cb49ee04aa82bbde56" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>failed_test_cases</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a09550bb4fd851f9b704904311bba27b6" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>failed_test_cases_</name></member>
-      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a082c78df2d5f6b10b6ac8c246caae6c5" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>increment_executed_subtests</name></member>
-      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a21c6250b78a96ae1448a7fa93608d2d3" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>increment_executed_test_cases</name></member>
-      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1aceea5d97d4ae5cd25f077d0349465062" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>increment_failed_checks</name></member>
-      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a80c4365daa5804dc8ea52c7a5531e4cd" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>increment_failed_test_cases</name></member>
-      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2805c82d9f1e97c61c538eb78381119d" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>increment_passed_checks</name></member>
-      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a0fdafd0ee8aa838ecc833365d2b0eebb" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>increment_skipped_test_cases</name></member>
-      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a4d3d1d6dfcc6a3a8c61c8c0326799533" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>increment_successful_checks</name></member>
-      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ad41430bc47f5539370b82ae9b8caf863" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>operator+=</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a21c6250b78a96ae1448a7fa93608d2d3" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>increment_executed_test_cases</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1aceea5d97d4ae5cd25f077d0349465062" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>increment_failed_checks</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a80c4365daa5804dc8ea52c7a5531e4cd" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>increment_failed_test_cases</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2805c82d9f1e97c61c538eb78381119d" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>increment_passed_checks</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a0fdafd0ee8aa838ecc833365d2b0eebb" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>increment_skipped_test_cases</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ad41430bc47f5539370b82ae9b8caf863" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>operator+=</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1adc5390a03d6f674bf7b3f6111a6ab356" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>operator=</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ac746889e15b5b360a354bdedcae1637e" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>operator=</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a14690f9880df505f9dd90a9f2c3dfc96" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>passed</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a6d478407d2416d3d19a4041fa1c12c9b" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>passed_checks</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a454de640619adaeeb5cbc2ada7144946" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>passed_checks_</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ab557a695c16fbf3b7e6127a4da385a52" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>runner</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2e5ea7bbb9bd5a05213dee741f08599d" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>skipped_test_cases</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a4399ece2b4eb697927d7cf205d5b18d9" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>skipped_test_cases_</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a2e1ed349fc1d936b5de5929fa1a62650" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>successful_checks</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1abce5d3239999169dcf885b1c6dbcd27a" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>suite</name></member>
+      <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a8ea72fd9dfce61d8dd0379ec719fec50" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>test_case</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ae27ffc4d38a71b5c7d54f4a3b56c2203" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>was_successful</name></member>
       <member refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a7e957314ea5aa3c064741c42336d1ee7" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::counters</scope><name>~counters</name></member>
     </listofallmembers>

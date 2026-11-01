@@ -47,7 +47,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>Satisfied by the types that are contextually convertible to <span class="doxyComputerOutput">bool</span> but are not <span class="doxyComputerOutput">checkable</span>, i.e. the <span class="doxyComputerOutput">suspicious_condition</span> types. It constrains the deprecated overloads of <span class="doxyComputerOutput">expect()</span> and <span class="doxyComputerOutput">require()</span>, which keep such code compiling for one release, with a warning.</p>
 
 
-<p>Definition at line 278 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 331 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">

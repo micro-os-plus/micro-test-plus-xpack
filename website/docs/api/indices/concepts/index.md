@@ -60,10 +60,10 @@ Internal implementation details for the µTest++ framework
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
-<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/approx-operand">approx_operand</a>
+<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/comparable">comparable</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a valid operand of the approximate comparator
+Concept satisfied when two operands can be compared by the comparator selected by <span class="doxyComputerOutput">Op</span>
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -100,10 +100,20 @@ C++20 concept satisfied when <span class="doxyComputerOutput">T</span> provides 
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
-<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/has-npos">has_npos</a>
+<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/function-pointer-pair">function_pointer_pair</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied when <span class="doxyComputerOutput">T</span> provides a <span class="doxyComputerOutput">npos</span> member
+Concept satisfied by two pointers, one of which points to a function
+</td>
+</tr>
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
+<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/generic-callable">generic_callable</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Concept satisfied by a callable object whose call operator is not a single non-template member function
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -130,10 +140,60 @@ C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a call
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
+<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/member-printable">member_printable</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Concept satisfied by the types that the formatter writes with one of its own member functions <span class="doxyComputerOutput">operator&lt;&lt;</span>
+</td>
+</tr>
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
+<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/sign-mixed-integers">sign_mixed_integers</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Concept satisfied by two integer types of different signedness
+</td>
+</tr>
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/static-suite-body">static_suite_body</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 The body of a static suite written for v5.0.1, whose first parameter is a <span class="doxyComputerOutput">static_suite&amp;</span> reference
+</td>
+</tr>
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
+<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/string-like">string_like</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a string, convertible to a <span class="doxyComputerOutput">std::basic_string_view</span> of a character type
+</td>
+</tr>
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
+<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/suite-body">suite_body</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Concept satisfied by a callable object that can be the body of a suite
+</td>
+</tr>
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
+<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/test-body">test_body</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Concept satisfied by a callable object that can be the body of a test case
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -154,6 +214,38 @@ C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a rang
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a tuple of values for <span class="doxyComputerOutput">test_each()</span>
+</td>
+</tr>
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
+<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/unsupported-condition">unsupported_condition</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Concept satisfied by a value that <span class="doxyComputerOutput">expect()</span> and <span class="doxyComputerOutput">require()</span> do not accept
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">N</span></span>
+<a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/comparison-lookup">comparison_lookup</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Names for the checks of the comparison operators, looked up as the <span class="doxyComputerOutput">apply()</span> functions look them up
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 60px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
+<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/comparison-lookup/can-compare">can_compare</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Satisfied if the comparison selected by <span class="doxyComputerOutput">Op</span> of two <span class="doxyComputerOutput">const</span> objects is well-formed
 </td>
 </tr>
 
@@ -182,6 +274,16 @@ C++20 concept satisfied when at least one of two types is a framework expression
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
+<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/approx-operand">approx_operand</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a valid operand of the approximate comparator
+</td>
+</tr>
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/checkable">checkable</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
@@ -192,10 +294,20 @@ C++20 concept satisfied when a type can be used as a test expression in <span cl
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
+<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/compare-tag">compare_tag</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Concept satisfied by a tag that defines a custom comparator
+</td>
+</tr>
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/has-epsilon">has_epsilon</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a framework floating-point wrapper with a tolerance
+Deprecated C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a framework floating-point wrapper with a tolerance
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -216,6 +328,16 @@ C++20 concept satisfied when a type is a framework expression type
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++20 concept satisfied when a type was accepted by <span class="doxyComputerOutput">expect()</span> and <span class="doxyComputerOutput">require()</span> before the exclusion of the suspicious conditions
+</td>
+</tr>
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
+<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/predicate-tag">predicate_tag</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Concept satisfied by a tag that defines a custom predicate
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -250,6 +372,16 @@ Deprecated v5.0.1 namespace of the concepts and of the value wrapper templates
 </td>
 </tr>
 
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">R</span></span>
+<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-npos">has_npos</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Deprecated C++20 concept satisfied when <span class="doxyComputerOutput">T</span> provides a <span class="doxyComputerOutput">npos</span> member
+</td>
+</tr>
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>

@@ -130,13 +130,13 @@ Static Public Member Functions</h2></td></tr>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a0822d00105a592a54f384fb194347822" id="r_a0822d00105a592a54f384fb194347822"><td class="memItemLeft">static constexpr const char *&#160;</td><td class="memItemRight"><a class="el" href="#a0822d00105a592a54f384fb194347822">symbol</a> = &quot; &gt;= &quot;</td></tr>
 <tr class="memdesc:a0822d00105a592a54f384fb194347822"><td class="mdescLeft">&#160;</td><td class="mdescRight">The operator symbol, as displayed in the failure reports.  <br /></td></tr>
-<tr class="memitem:a1e6e1923184c1e15b8dfe69053010c83" id="r_a1e6e1923184c1e15b8dfe69053010c83"><td class="memItemLeft">static constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#a1e6e1923184c1e15b8dfe69053010c83">within_tolerance_result</a> = true</td></tr>
-<tr class="memdesc:a1e6e1923184c1e15b8dfe69053010c83"><td class="mdescLeft">&#160;</td><td class="mdescRight">The result when the operands are within the tolerance.  <br /></td></tr>
+<tr class="memitem:ga1e6e1923184c1e15b8dfe69053010c83" id="r_ga1e6e1923184c1e15b8dfe69053010c83"><td class="memItemLeft">static constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga1e6e1923184c1e15b8dfe69053010c83">within_tolerance_result</a> = true</td></tr>
+<tr class="memdesc:ga1e6e1923184c1e15b8dfe69053010c83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated result when the operands are within the tolerance.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines the operator applied by <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html" title="Relational comparator struct template.">compare_op</a></span>, its symbol in the failure reports, and the result when the operands are within the tolerance of the floating-point wrappers. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00570">570</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00612">612</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a51ffacf87f7c030f4b289f9f53ddeccd" name="a51ffacf87f7c030f4b289f9f53ddeccd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a51ffacf87f7c030f4b289f9f53ddeccd">&#9670;&#160;</a></span>apply()</h2>
@@ -184,11 +184,17 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The result of <span class="tt">lhs &gt;= rhs</span>, converted to <span class="tt">bool</span>.</dd></dl>
 <p>The using-declaration makes the standard operators visible to unqualified lookup, in addition to those found by argument-dependent lookup, and hides any <span class="tt">operator&gt;=</span> of the enclosing namespaces. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00312">312</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  313</span>    {</div>
-<div class="line"><span class="lineno">  314</span>      <span class="keyword">using </span>std::operator&gt;=;</div>
-<div class="line"><span class="lineno">  315</span>      <span class="keywordflow">return</span> lhs &gt;= rhs;</div>
-<div class="line"><span class="lineno">  316</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00508">508</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  510</span>    {</div>
+<div class="line"><span class="lineno">  511</span>      <span class="keyword">using </span>std::operator&gt;=;</div>
+<div class="line"><span class="lineno">  512</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (sign_mixed_integers&lt;Lhs_T, Rhs_T&gt;)</div>
+<div class="line"><span class="lineno">  513</span>        {</div>
+<div class="line"><span class="lineno">  514</span>          <span class="keywordflow">return</span> std::cmp_greater_equal (lhs, rhs);</div>
+<div class="line"><span class="lineno">  515</span>        }</div>
+<div class="line"><span class="lineno">  516</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  517</span>        {</div>
+<div class="line"><span class="lineno">  518</span>          <span class="keywordflow">return</span> lhs &gt;= rhs;</div>
+<div class="line"><span class="lineno">  519</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -214,32 +220,7 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 </div><div class="memdoc">
 <p>Includes the surrounding spaces, so that the formatter appends it with a single call; a C string, not a <span class="tt">std::string_view</span>, which would take two registers at each call site and enlarge the code. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00580">580</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
-
-</div>
-</div>
-<a id="a1e6e1923184c1e15b8dfe69053010c83" name="a1e6e1923184c1e15b8dfe69053010c83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e6e1923184c1e15b8dfe69053010c83">&#9670;&#160;</a></span>within_tolerance_result</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool micro_os_plus::micro_test_plus::detail::greater_equal::within_tolerance_result = true</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Values within the tolerance are equal. </p>
-
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00588">588</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00622">622</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
 </div>
 </div>

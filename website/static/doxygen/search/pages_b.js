@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['verbose_20mode_0',['Verbose mode',['../group__micro-os-plus-micro-test-plus-cli.html#cli-verbosity-verbose',1,'']]],
-  ['verbosity_1',['Verbosity',['../group__micro-os-plus-micro-test-plus-cli.html#cli-verbosity',1,'']]]
+  ['test_20cases_0',['Listing the Test Cases',['../group__micro-os-plus-micro-test-plus-cli.html#cli-list-tests',1,'']]],
+  ['test_20plus_1',['micro-test-plus',['../index.html',1,'']]],
+  ['the_20test_20cases_2',['Listing the Test Cases',['../group__micro-os-plus-micro-test-plus-cli.html#cli-list-tests',1,'']]]
 ];

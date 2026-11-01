@@ -4,7 +4,7 @@
     <compoundname>stopwatch-inlines.h</compoundname>
     <includedby refid="stopwatch_8h" local="yes">stopwatch.h</includedby>
     <invincdepgraph>
-      <node id="5">
+      <node id="6">
         <label>micro-test-plus.h</label>
         <link refid="micro-test-plus_8h"/>
       </node>
@@ -15,6 +15,8 @@
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>stopwatch-inlines.h</label>
@@ -22,22 +24,22 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="7">
+      <node id="8">
         <label>runner.h</label>
         <link refid="runner_8h"/>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
         <childnode refid="10" relation="include">
         </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
         <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -47,36 +49,36 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
         <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-      </node>
-      <node id="13">
-        <label>test.h</label>
-        <link refid="test_8h"/>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="14" relation="include">
         </childnode>
       </node>
       <node id="14">
+        <label>test.h</label>
+        <link refid="test_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
         <label>check-result.cpp</label>
         <link refid="check-result_8cpp"/>
       </node>
@@ -84,27 +86,31 @@
         <label>deprecated.cpp</label>
         <link refid="deprecated_8cpp"/>
       </node>
-      <node id="8">
+      <node id="5">
+        <label>expression-formatter.cpp</label>
+        <link refid="expression-formatter_8cpp"/>
+      </node>
+      <node id="9">
         <label>reporter-human.cpp</label>
         <link refid="reporter-human_8cpp"/>
       </node>
-      <node id="9">
+      <node id="10">
         <label>reporter-tap.cpp</label>
         <link refid="reporter-tap_8cpp"/>
       </node>
-      <node id="6">
+      <node id="7">
         <label>reporter.cpp</label>
         <link refid="reporter_8cpp"/>
       </node>
-      <node id="10">
+      <node id="11">
         <label>runner.cpp</label>
         <link refid="runner_8cpp"/>
       </node>
-      <node id="12">
+      <node id="13">
         <label>stopwatch.cpp</label>
         <link refid="stopwatch_8cpp"/>
       </node>
-      <node id="11">
+      <node id="12">
         <label>test.cpp</label>
         <link refid="test_8cpp"/>
       </node>

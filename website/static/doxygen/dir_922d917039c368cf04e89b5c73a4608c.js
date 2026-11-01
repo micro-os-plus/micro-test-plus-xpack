@@ -18,6 +18,5 @@ var dir_922d917039c368cf04e89b5c73a4608c =
     [ "runner.h", "runner_8h.html", null ],
     [ "stopwatch.h", "stopwatch_8h.html", "stopwatch_8h" ],
     [ "test.h", "test_8h.html", "test_8h" ],
-    [ "utility.h", "utility_8h.html", "utility_8h" ],
-    [ "values.h", "values_8h.html", "values_8h" ]
+    [ "utility.h", "utility_8h.html", "utility_8h" ]
 ];

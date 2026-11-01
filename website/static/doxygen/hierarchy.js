@@ -4,7 +4,9 @@ var hierarchy =
     [ "micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::c_string", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html", null ],
+    [ "micro_os_plus::micro_test_plus::detail::callable_result", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::check_result", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result.html", null ],
+    [ "micro_os_plus::micro_test_plus::detail::expression_formatter::colour_code", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1_1colour__code.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::colours", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours.html", null ],
     [ "micro_os_plus::micro_test_plus::counters", "classmicro__os__plus_1_1micro__test__plus_1_1counters.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::equal_to", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to.html", null ],
@@ -25,6 +27,7 @@ var hierarchy =
     [ "micro_os_plus::micro_test_plus::detail::less", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::less_equal", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal.html", null ],
     [ "micro_os_plus::micro_test_plus::type_traits::list&lt; Types &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1list.html", null ],
+    [ "micro_os_plus::micro_test_plus::located_name", "classmicro__os__plus_1_1micro__test__plus_1_1located__name.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::not_equal_to", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::op", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op.html", [
       [ "micro_os_plus::micro_test_plus::detail::binary_op< Lhs_T, Rhs_T >", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html", [
@@ -73,7 +76,7 @@ var hierarchy =
     [ "micro_os_plus::micro_test_plus::runner_options", "classmicro__os__plus_1_1micro__test__plus_1_1runner__options.html", null ],
     [ "micro_os_plus::micro_test_plus::reflection::source_location", "classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::stopwatch", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html", null ],
-    [ "micro_os_plus::micro_test_plus::test_case_name", "classmicro__os__plus_1_1micro__test__plus_1_1test__case__name.html", null ],
+    [ "micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::tap_name", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1_1tap__name.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::timestamp", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html", [
       [ "micro_os_plus::micro_test_plus::detail::value< bool >", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html", null ],

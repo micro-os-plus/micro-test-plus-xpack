@@ -18,23 +18,25 @@
         <link refid="detail_8h"/>
         <childnode refid="6" relation="include">
         </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
         <childnode refid="19" relation="include">
         </childnode>
         <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="3" relation="include">
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
         </childnode>
       </node>
       <node id="6">
@@ -42,54 +44,8 @@
         <link refid="extension_8h"/>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-      </node>
-      <node id="4">
-        <label>inlines/counters-inlines.h</label>
-        <link refid="counters-inlines_8h"/>
-      </node>
-      <node id="23">
-        <label>inlines/detail-inlines.h</label>
-        <link refid="detail-inlines_8h"/>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
-        <childnode refid="26" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-      </node>
-      <node id="11">
-        <label>inlines/math-inlines.h</label>
-        <link refid="math-inlines_8h"/>
-        <childnode refid="12" relation="include">
-        </childnode>
-      </node>
-      <node id="16">
-        <label>inlines/values-inlines.h</label>
-        <link refid="values-inlines_8h"/>
-      </node>
-      <node id="8">
-        <label>math.h</label>
-        <link refid="math_8h"/>
         <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
@@ -97,20 +53,46 @@
         <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="7">
-        <label>values.h</label>
-        <link refid="values_8h"/>
-        <childnode refid="8" relation="include">
+      <node id="4">
+        <label>inlines/counters-inlines.h</label>
+        <link refid="counters-inlines_8h"/>
+      </node>
+      <node id="21">
+        <label>inlines/detail-inlines.h</label>
+        <link refid="detail-inlines_8h"/>
+        <childnode refid="17" relation="include">
         </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>inlines/math-inlines.h</label>
+        <link refid="math-inlines_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>math.h</label>
+        <link refid="math_8h"/>
         <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
         </childnode>
         <childnode refid="14" relation="include">
         </childnode>
         <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -121,55 +103,58 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="19">
+      <node id="17">
         <label>algorithm</label>
       </node>
-      <node id="9">
+      <node id="13">
         <label>array</label>
       </node>
-      <node id="24">
+      <node id="22">
         <label>cerrno</label>
       </node>
-      <node id="25">
+      <node id="23">
         <label>cfloat</label>
       </node>
-      <node id="26">
+      <node id="24">
         <label>charconv</label>
       </node>
-      <node id="20">
+      <node id="18">
         <label>compare</label>
       </node>
-      <node id="13">
+      <node id="7">
         <label>concepts</label>
       </node>
       <node id="3">
         <label>cstddef</label>
       </node>
-      <node id="12">
+      <node id="16">
         <label>cstdint</label>
       </node>
-      <node id="21">
+      <node id="19">
         <label>cstdio</label>
       </node>
-      <node id="27">
+      <node id="25">
         <label>cstdlib</label>
       </node>
-      <node id="17">
+      <node id="26">
+        <label>exception</label>
+      </node>
+      <node id="8">
         <label>iterator</label>
       </node>
-      <node id="10">
+      <node id="14">
         <label>limits</label>
       </node>
-      <node id="22">
+      <node id="20">
         <label>string</label>
       </node>
-      <node id="14">
+      <node id="9">
         <label>string_view</label>
       </node>
-      <node id="15">
+      <node id="10">
         <label>type_traits</label>
       </node>
-      <node id="18">
+      <node id="11">
         <label>utility</label>
       </node>
     </incdepgraph>

@@ -21,7 +21,6 @@
     <innerfile refid="stopwatch_8h">stopwatch.h</innerfile>
     <innerfile refid="test_8h">test.h</innerfile>
     <innerfile refid="utility_8h">utility.h</innerfile>
-    <innerfile refid="values_8h">values.h</innerfile>
     <briefdescription>
 <para>Folder with C++ header files for the µTest++ Testing Framework. </para>
     </briefdescription>

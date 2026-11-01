@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__body" kind="concept">
+    <compoundname>micro_os_plus::micro_test_plus::detail::test_body</compoundname>
+    <includes refid="test_8h" local="no">test.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename Callable_T</type>
+      </param>
+      <param>
+        <type>typename...</type>
+        <declname>Args_T</declname>
+        <defname>Args_T</defname>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;typename Callable_T, typename... Args_T&gt;
+concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__body" kindref="compound">micro_os_plus::micro_test_plus::detail::test_body</ref> =  generic_callable&lt;Callable_T&gt;
+          || std::is_invocable_v&lt;std::decay_t&lt;Callable_T&gt;&amp;, <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" kindref="compound">test_case</ref>&amp;,
+                                 std::decay_t&lt;Args_T&gt;&amp;...&gt;</initializer>
+    <conceptparts>
+      <codepart line="1123">    <programlisting>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Callable_T,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>Args_T&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">test_body<sp/>=<sp/>generic_callable&lt;Callable_T&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/>std::is_invocable_v&lt;std::decay_t&lt;Callable_T&gt;&amp;,<sp/>test_case&amp;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::decay_t&lt;Args_T&gt;&amp;...&gt;</highlight></codeline>
+    </programlisting>
+</codepart>
+    </conceptparts>
+    <briefdescription>
+<para>Concept satisfied by a callable object that can be the body of a test case. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The body is stored decayed, and invoked as an lvalue with a <computeroutput>test_case&amp;</computeroutput> reference as the first argument, followed by the stored arguments, as lvalues, as <computeroutput>bind_callable()</computeroutput> invokes it. A body that does not satisfy it, for example a lambda with the wrong parameters, is rejected at the call of <computeroutput>test()</computeroutput>, not inside the framework. The generic callables (see <computeroutput>generic_callable</computeroutput>) are accepted without the check.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Callable_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the callable object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Args_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The types of the callable arguments. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="1122" column="5"/>
+  </compounddef>
+</doxygen>

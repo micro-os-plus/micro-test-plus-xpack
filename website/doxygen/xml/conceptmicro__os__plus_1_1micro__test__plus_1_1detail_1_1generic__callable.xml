@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1generic__callable" kind="concept">
+    <compoundname>micro_os_plus::micro_test_plus::detail::generic_callable</compoundname>
+    <includes refid="test_8h" local="no">test.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename Callable_T</type>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;typename Callable_T&gt;
+concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1generic__callable" kindref="compound">micro_os_plus::micro_test_plus::detail::generic_callable</ref> =  std::is_class_v&lt;std::decay_t&lt;Callable_T&gt;&gt;
+          &amp;&amp; (!requires { &amp;std::decay_t&lt;Callable_T&gt;::operator(); })</initializer>
+    <conceptparts>
+      <codepart line="1102">    <programlisting>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Callable_T&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">generic_callable<sp/>=<sp/>std::is_class_v&lt;std::decay_t&lt;Callable_T&gt;&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/>(!</highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>{<sp/>&amp;std::decay_t&lt;Callable_T&gt;::operator();<sp/>})</highlight></codeline>
+    </programlisting>
+</codepart>
+    </conceptparts>
+    <briefdescription>
+<para>Concept satisfied by a callable object whose call operator is not a single non-template member function. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The generic lambdas (<computeroutput>[] (auto&amp; t) { ... }</computeroutput>), the function objects with a template or an overloaded call operator, and the classes without a call operator. To find out whether such an object can be invoked, the compiler must instantiate its body to deduce the return type, and an error in the body becomes an error of the check, with its own long trace; so the bodies of the tests and of the suites that satisfy this concept are not checked for invocability, and an error is reported where the body is invoked.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Callable_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the callable object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="1101" column="5"/>
+  </compounddef>
+</doxygen>

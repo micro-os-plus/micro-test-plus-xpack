@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparison__lookup" kind="namespace" language="C++">
+    <compoundname>micro_os_plus::micro_test_plus::detail::comparison_lookup</compoundname>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparison__lookup_1_1can__compare">micro_os_plus::micro_test_plus::detail::comparison_lookup::can_compare</innerconcept>
+    <briefdescription>
+<para>Names for the checks of the comparison operators, looked up as the <computeroutput>apply()</computeroutput> functions look them up. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The using-declarations make the standard operators visible to unqualified lookup, in addition to those found by argument-dependent lookup, as in the bodies of the <computeroutput>apply()</computeroutput> functions; the concept checks that the comparison is well-formed, without instantiating the bodies. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="363" column="5"/>
+  </compounddef>
+</doxygen>

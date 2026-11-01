@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable" kind="concept">
+    <compoundname>micro_os_plus::micro_test_plus::detail::comparable</compoundname>
+    <includes refid="detail-inlines_8h" local="no">detail-inlines.h</includes>
+    <templateparamlist>
+      <param>
+        <type><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0b" kindref="member">comparison</ref></type>
+        <declname>Op</declname>
+        <defname>Op</defname>
+      </param>
+      <param>
+        <type>class Lhs_T</type>
+      </param>
+      <param>
+        <type>class Rhs_T</type>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0b" kindref="member">comparison</ref> Op, class Lhs_T, class Rhs_T&gt;
+concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable" kindref="compound">micro_os_plus::micro_test_plus::detail::comparable</ref> =  comparison_lookup::can_compare&lt;Op, <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6bdf1e117e085a41c16e2dae63e72e52" kindref="member">comparison_operand_t</ref>&lt;Lhs_T&gt;,
+                                         <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6bdf1e117e085a41c16e2dae63e72e52" kindref="member">comparison_operand_t</ref>&lt;Rhs_T&gt;&gt;
+          or sign_mixed_integers&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6bdf1e117e085a41c16e2dae63e72e52" kindref="member">comparison_operand_t</ref>&lt;Lhs_T&gt;,
+                                 <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6bdf1e117e085a41c16e2dae63e72e52" kindref="member">comparison_operand_t</ref>&lt;Rhs_T&gt;&gt;
+          or function_pointer_pair&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6bdf1e117e085a41c16e2dae63e72e52" kindref="member">comparison_operand_t</ref>&lt;Lhs_T&gt;,
+                                   <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6bdf1e117e085a41c16e2dae63e72e52" kindref="member">comparison_operand_t</ref>&lt;Rhs_T&gt;&gt;</initializer>
+    <conceptparts>
+      <codepart line="428">    <programlisting>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;comparison<sp/>Op,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">comparable<sp/>=<sp/>comparison_lookup::can_compare&lt;Op,<sp/>comparison_operand_t&lt;Lhs_T&gt;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comparison_operand_t&lt;Rhs_T&gt;&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>or<sp/>sign_mixed_integers&lt;comparison_operand_t&lt;Lhs_T&gt;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comparison_operand_t&lt;Rhs_T&gt;&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>or<sp/>function_pointer_pair&lt;comparison_operand_t&lt;Lhs_T&gt;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comparison_operand_t&lt;Rhs_T&gt;&gt;</highlight></codeline>
+    </programlisting>
+</codepart>
+    </conceptparts>
+    <briefdescription>
+<para>Concept satisfied when two operands can be compared by the comparator selected by <computeroutput>Op</computeroutput>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The comparison is the one made by the <computeroutput>apply()</computeroutput> function of the comparison tag: by value for the integers of different signedness (see <computeroutput>sign_mixed_integers</computeroutput>), otherwise with the operator of the language. A function pointer compared with an object pointer is also accepted (see <computeroutput>function_pointer_pair</computeroutput>). Used to reject the call of <computeroutput>eq()</computeroutput> and of the other comparators at the call site, with a short diagnostic; the operator check is the first alternative, so that the Clang diagnostic names the invalid operator and the two types first (GCC reports only that no alternative is satisfied).</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Op</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The comparison. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type deduced for the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type deduced for the right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="427" column="5"/>
+  </compounddef>
+</doxygen>

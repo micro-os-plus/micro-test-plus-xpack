@@ -68,11 +68,33 @@ Non-owning reference to a callable invoked with a <span class="doxyComputerOutpu
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-result">callable_result</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+The result of the invocation of the callable of a check
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
 <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/check-result">check_result</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 The result of one check, reported when destroyed
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/expression-formatter/colour-code">colour_code</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+An ANSI colour escape sequence, to be written as it is
 </td>
 </tr>
 
@@ -293,6 +315,17 @@ Less than or equal tag for <span class="doxyComputerOutput"><a href="/micro-test
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Deprecated empty type list
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/located-name">located_name</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+A name of a suite or of a test case, with the location where it was given
 </td>
 </tr>
 
@@ -707,10 +740,10 @@ Measures the elapsed time of an operation
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case-name">test_case_name</a>
+<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/anonymous-reporter-tap-cpp-/tap-name">tap_name</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-The name of a test case, with the location of its definition
+A name prepared for a single TAP line, without a copy when it needs no change
 </td>
 </tr>
 

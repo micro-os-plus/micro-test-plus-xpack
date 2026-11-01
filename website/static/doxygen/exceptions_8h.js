@@ -1,6 +1,6 @@
 var exceptions_8h =
 [
-    [ "micro_os_plus::micro_test_plus::nothrow", "group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#ga798bd28001c3938784073e60dd904148", null ],
-    [ "micro_os_plus::micro_test_plus::throws", "group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#ga8bf54756e4122c6a0bd123b4621e60e2", null ],
-    [ "micro_os_plus::micro_test_plus::throws", "group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#gaf8f7602f40119da514be2a0bfc4b70f5", null ]
+    [ "micro_os_plus::micro_test_plus::nothrow", "group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#gacbf45f8ba39c0653bbf1035c70dd9529", null ],
+    [ "micro_os_plus::micro_test_plus::throws", "group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#gadf818920a5a7ba9905466c521deb342e", null ],
+    [ "micro_os_plus::micro_test_plus::throws", "group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#ga63345b69c376caae707262748aa6aea1", null ]
 ];

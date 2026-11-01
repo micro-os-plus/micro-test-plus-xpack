@@ -214,16 +214,6 @@ C++ header file with inline implementations for the µTest++ utility functions
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/values-inlines-h"><span class="doxyIconFile">values-inlines.h</span></a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-C++ header file with inline implementations for the µTest++ value wrappers
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
 <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h"><span class="doxyIconFile">check-result.h</span></a>
 </td>
@@ -399,16 +389,6 @@ C++ header file with declarations for the µTest++ test hierarchy
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++ header file with declarations for the µTest++ utility helpers
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/values-h"><span class="doxyIconFile">values.h</span></a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-C++ header file with declarations for the µTest++ value wrappers
 </td>
 </tr>
 

@@ -30,8 +30,14 @@ keywords:
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-cpp-/#a1ffff9ae8f2024f3bff18ec45b2baaf9"><b>fragment_size</b></a>: as variable in file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">src/reporter.cpp</a></li>
 </ul>
+
+## - H -
+
+<ul>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/anonymous-runner-cpp-/#a93bc763e06193fa6de523088f09a8816"><b>help_options</b></a>: as variable in file <a href="/micro-test-plus-xpack/docs/api/files/src/runner-cpp">src/runner.cpp</a></li>
+</ul>
 <br/>
-<p>Total: 3 entries.</p>
+<p>Total: 4 entries.</p>
 
 <hr/>
 

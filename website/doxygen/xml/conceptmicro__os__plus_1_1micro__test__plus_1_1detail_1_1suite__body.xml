@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1suite__body" kind="concept">
+    <compoundname>micro_os_plus::micro_test_plus::detail::suite_body</compoundname>
+    <includes refid="test_8h" local="no">test.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename Callable_T</type>
+      </param>
+      <param>
+        <type>typename...</type>
+        <declname>Args_T</declname>
+        <defname>Args_T</defname>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;typename Callable_T, typename... Args_T&gt;
+concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1suite__body" kindref="compound">micro_os_plus::micro_test_plus::detail::suite_body</ref> =  (generic_callable&lt;Callable_T&gt;
+           || std::is_invocable_v&lt;std::decay_t&lt;Callable_T&gt;&amp;, <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" kindref="compound">suite</ref>&amp;,
+                                  std::decay_t&lt;Args_T&gt;&amp;...&gt;)
+          &amp;&amp; std::is_copy_constructible_v&lt;std::decay_t&lt;Callable_T&gt;&gt;
+          &amp;&amp; (std::is_copy_constructible_v&lt;std::decay_t&lt;Args_T&gt;&gt; &amp;&amp; ...)</initializer>
+    <conceptparts>
+      <codepart line="1142">    <programlisting>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Callable_T,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>Args_T&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">suite_body<sp/>=<sp/>(generic_callable&lt;Callable_T&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/>std::is_invocable_v&lt;std::decay_t&lt;Callable_T&gt;&amp;,<sp/>suite&amp;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::decay_t&lt;Args_T&gt;&amp;...&gt;)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/>std::is_copy_constructible_v&lt;std::decay_t&lt;Callable_T&gt;&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/>(std::is_copy_constructible_v&lt;std::decay_t&lt;Args_T&gt;&gt;<sp/>&amp;&amp;<sp/>...)</highlight></codeline>
+    </programlisting>
+</codepart>
+    </conceptparts>
+    <briefdescription>
+<para>Concept satisfied by a callable object that can be the body of a suite. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Like <computeroutput>test_body</computeroutput>, with a <computeroutput>suite&amp;</computeroutput> reference as the first argument. The body is stored in a <computeroutput>std::function</computeroutput>, so the callable object and the arguments must also be copyable; this is checked for the generic callables too.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Callable_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the callable object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Args_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The types of the callable arguments. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="1141" column="5"/>
+  </compounddef>
+</doxygen>

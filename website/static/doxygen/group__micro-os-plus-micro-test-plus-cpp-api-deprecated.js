@@ -4,6 +4,8 @@ var group__micro_os_plus_micro_test_plus_cpp_api_deprecated =
     [ "Logical Functions", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions.html", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions" ],
     [ "Literals and Wrappers", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals" ],
     [ "micro_os_plus::micro_test_plus::type_traits", "namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html", null ],
+    [ "micro_os_plus::micro_test_plus::extension::has_epsilon", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html", null ],
+    [ "micro_os_plus::micro_test_plus::type_traits::has_npos", "conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__npos.html", null ],
     [ "micro_os_plus::micro_test_plus::type_traits::has_value", "conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__value.html", null ],
     [ "micro_os_plus::micro_test_plus::type_traits::is_floating_point", "conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__floating__point.html", null ],
     [ "micro_os_plus::micro_test_plus::type_traits::function_traits&lt; T &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1function__traits.html", null ],
@@ -47,5 +49,12 @@ var group__micro_os_plus_micro_test_plus_cpp_api_deprecated =
     [ "micro_os_plus::micro_test_plus::detail::timestamps", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga53a6bc7f86b15378c8296b3647e7013f", null ],
     [ "micro_os_plus::micro_test_plus::type_traits::value_base_", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga65ad920b21a6c0df6848aa939659b92e", null ],
     [ "micro_os_plus::micro_test_plus::mut", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga00ea8f3dfb7cb0ef39919065321cf62f", null ],
-    [ "micro_os_plus::micro_test_plus::reflection::short_name", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#gafc93799846770e521c4721d0de0a81cc", null ]
+    [ "micro_os_plus::micro_test_plus::reflection::short_name", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#gafc93799846770e521c4721d0de0a81cc", null ],
+    [ "micro_os_plus::micro_test_plus::detail::within_tolerance", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga6c5237ff6944278e8c5e3294cf99a3b9", null ],
+    [ "micro_os_plus::micro_test_plus::detail::equal_to::within_tolerance_result", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#gad1e3d2d57c0ed04d4bb90eb72dd89b71", null ],
+    [ "micro_os_plus::micro_test_plus::detail::greater::within_tolerance_result", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga3770982b9b7025e79d30c44f8b6de981", null ],
+    [ "micro_os_plus::micro_test_plus::detail::greater_equal::within_tolerance_result", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga1e6e1923184c1e15b8dfe69053010c83", null ],
+    [ "micro_os_plus::micro_test_plus::detail::less::within_tolerance_result", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#gaf95d91c9cae67c4ce138146b2cdab25e", null ],
+    [ "micro_os_plus::micro_test_plus::detail::less_equal::within_tolerance_result", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#gadcaedd85e07d96bd7230d06c5c258df7", null ],
+    [ "micro_os_plus::micro_test_plus::detail::not_equal_to::within_tolerance_result", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga8decf36d3e0e7cc8242c6a2170743422", null ]
 ];

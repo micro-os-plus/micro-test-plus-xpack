@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['micro_20test_20plus_0',['micro-test-plus',['../index.html',1,'']]],
-  ['mode_1',['mode',['../group__micro-os-plus-micro-test-plus-cli.html#cli-verbosity-quiet',1,'Quiet mode'],['../group__micro-os-plus-micro-test-plus-cli.html#cli-verbosity-silent',1,'Silent mode'],['../group__micro-os-plus-micro-test-plus-cli.html#cli-verbosity-verbose',1,'Verbose mode']]]
+  ['list_0',['Deprecated List',['../deprecated.html',1,'']]],
+  ['listing_20the_20test_20cases_1',['Listing the Test Cases',['../group__micro-os-plus-micro-test-plus-cli.html#cli-list-tests',1,'']]]
 ];
