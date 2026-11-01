@@ -226,8 +226,9 @@ namespace micro_os_plus::micro_test_plus
    * The comparison succeeds if the distance between `lhs` and `rhs` is
    * less than or equal to `epsilon`, so a tolerance of zero requires
    * equal values. The operands are numbers, integral or
-   * floating-point, possibly of different types, or the framework value
-   * wrappers and numeric literals, whose own tolerance is not used. For
+   * floating-point, possibly of different types (the deprecated value
+   * wrappers and numeric literals are also accepted, and their own
+   * tolerance is not used). For
    * the integers, the distance is computed exactly, also for operands of
    * different signedness, so `approx (0u, -1, 2)` succeeds; for the other
    * types, in their common floating-point type. A failure is reported as
@@ -238,9 +239,10 @@ namespace micro_os_plus::micro_test_plus
    * t.expect (mt::approx (compute_float (), 42.0f, 0.001f));
    * @endcode
    *
-   * The `approx (value, epsilon)` form is a value wrapper instead, which
-   * applies its tolerance to the six comparisons and to the operators;
-   * it accepts only floating-point values.
+   * The deprecated `approx (value, epsilon)` form, available only with
+   * `MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED`, is a value
+   * wrapper instead, which applies its tolerance to the six comparisons
+   * and to the operators; it accepts only floating-point values.
    *
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.

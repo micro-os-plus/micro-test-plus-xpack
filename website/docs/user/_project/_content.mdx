@@ -90,6 +90,13 @@ The second argument passed to the `test()` function is a **C++ lambda**, which i
 µTest++ recommends using lambdas whenever possible, but also supports passing any C++ callable object, such as pointers to functions, functors, `std::function`, etc.
 :::
 
+The program must be built with the sources of the library and with
+`MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED` defined; without that macro the
+umbrella header is empty, and the first error is
+`use of undeclared identifier 'micro_os_plus'`. The sources and the
+other macros are listed in the
+[Build & Integration Information](../install/#build--integration-information).
+
 ### TAP output
 
 By default, when a test is executed, the output conforms to the **TAP14 (Test Anything Protocol version 14)** [specification](https://testanything.org/tap-version-14-specification.html), a well-established protocol for communication between tested logic and test harnesses.
@@ -97,16 +104,21 @@ By default, when a test is executed, the output conforms to the **TAP14 (Test An
 For the above test, the verbose output would look like:
 
 ```console
+# Running: main --verbose
+# Built with GCC 15.2.1, with exceptions
 TAP version 14
 # Subtest: Minimal
+
     # Subtest: Check truth
         ok 1 - true
         1..1
-    ok 1 - Check truth # { test case passed, 1 check }
+    ok 1 - Check truth # { passed, 1 check }
+
     1..1
-ok 1 - Minimal # { test suite passed, 1 check in 1 test case, time: 0.007 ms }
+ok 1 - Minimal # { passed, 1 check in 1 test case, time: 0.04 ms }
+
 1..1
-# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.030 ms }
+# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.04 ms }
 ```
 
 In the `ok`/`not ok` lines, the names of the suites and test cases, the messages, and the expressions are escaped as the specification recommends: each `#` is written as `\#`, and each `\` as `\\`, so that a `#` in a name (for example `parser # TODO rework`) is not read as a `TODO` or `SKIP` directive, which would hide a failure; the TAP consumers remove the escapes. The line breaks are replaced by spaces, so that a name or a message always fits on its line. The `# Subtest:` lines, which are comments, show the names as they are, with only the line breaks replaced.
@@ -144,17 +156,21 @@ main(int argc, char* argv[])
 ```
 
 ```console
+# Running: main --verbose
+# Built with GCC 15.2.1, with exceptions
 TAP version 14
-
 # Subtest: The Answer
+
     # Subtest: Check answer
         ok 1 - answer is 42
         1..1
-    ok 1 - Check answer # { test case passed, 1 check }
+    ok 1 - Check answer # { passed, 1 check }
+
     1..1
-ok 1 - The Answer # { test suite passed, 1 check in 1 test case, time: 0.007 ms }
+ok 1 - The Answer # { passed, 1 check in 1 test case, time: 0.04 ms }
+
 1..1
-# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.030 ms }
+# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.04 ms }
 ```
 
 If the function returns an incorrect value, the test will fail; for example:
@@ -170,26 +186,29 @@ compute_answer()
 In this case, the test output will be as follows:
 
 ```console
+# Running: main --verbose
+# Built with GCC 15.2.1, with exceptions
 TAP version 14
-
 # Subtest: The Answer
 
     # Subtest: Check answer
         not ok 1 - answer is 42
-            ---
-            at:
-              fileName: main.cpp
-              lineNumber: 17
-            ...
+          ---
+          at:
+            fileName: main.cpp
+            lineNumber: 21
+          ...
         1..1
-    not ok 1 - Check answer # { test case FAILED, 0 checks passed, 1 failed }
+    not ok 1 - Check answer # { FAILED, 0 checks passed, 1 failed }
+
     1..1
-not ok 1 - The Answer # { test suite FAILED, 0 checks passed, 1 failed, in 1 test case, time: 0.039 ms }
+not ok 1 - The Answer # { FAILED, 0 checks passed, 1 failed, in 1 test case, time: 0.04 ms }
+
 1..1
-# { total: 1 check passed, 1 failed, in 1 test case, 1 test suite, time: 0.077 ms }
+# { total: 0 checks passed, 1 failed, in 1 test case, 1 test suite, time: 0.04 ms }
 ```
 
-The output identifies the failed test at line 17, but does not provide further details, such as the actual incorrect value.
+The output identifies the failed test at line 21, but does not provide further details, such as the actual incorrect value.
 
 ### More advanced comparators
 
@@ -225,24 +244,27 @@ main(int argc, char* argv[])
 The output would be:
 
 ```console
+# Running: main --verbose
+# Built with GCC 15.2.1, with exceptions
 TAP version 14
-
 # Subtest: The Answer
 
     # Subtest: Check answer with comparator
         not ok 1 - answer is 42
-            ---
-            expect: 43 == 42
-            at:
-              fileName: main.cpp
-              lineNumber: 69
-            ...
+          ---
+          condition: "43 == 42"
+          at:
+            fileName: main.cpp
+            lineNumber: 20
+          ...
         1..1
-    not ok 1 - Check answer with comparator # { test case FAILED, 0 checks passed, 1 failed }
+    not ok 1 - Check answer with comparator # { FAILED, 0 checks passed, 1 failed }
+
     1..1
-not ok 1 - The Answer # { test suite FAILED, 0 checks passed, 1 failed, in 1 test case, time: 0.036 ms }
+not ok 1 - The Answer # { FAILED, 0 checks passed, 1 failed, in 1 test case, time: 0.04 ms }
+
 1..1
-# { total: 0 checks passed, 1 failed, in 1 test case, 1 test suite, time: 0.067 ms }
+# { total: 0 checks passed, 1 failed, in 1 test case, 1 test suite, time: 0.04 ms }
 ```
 
 Here, `eq()` is a **function comparator**, a function not only capable of comparing almost any type but also of recording the values of its operands. Similar functions exist for all types of comparisons (`ne()`, `lt()`, `le()`, `gt()`, `ge()`, and `approx()`).
@@ -265,6 +287,8 @@ The definitions are organised within several namespaces under `micro_os_plus`:
 - `micro_os_plus::micro_test_plus::operators` (deprecated)
 - `micro_os_plus::micro_test_plus::literals` (deprecated)
 - `micro_os_plus::micro_test_plus::utility`
+- `micro_os_plus::micro_test_plus::extension` (see [Custom Comparators](#custom-comparators))
+- `micro_os_plus::micro_test_plus::reflection` (the `source_location` of the signatures, rarely named by the applications)
 
 `micro_os_plus` is the primary µOS++ namespace, and `micro_test_plus` is the
 namespace for µTest++.
@@ -463,6 +487,11 @@ template <typename Callable_T, typename... Args_T>
 void test (const located_name& name, Callable_T&& func, Args_T&&... arguments);
 ```
 
+The body is called with a reference to the test case. It is usually
+written with `auto&`, as in the examples; the parameter may be declared
+as `mt::test_case&` instead, which gives much shorter compiler
+diagnostics when the body has a mistake.
+
 The name is a string literal, a `const char*`, a `std::string`, or a
 `std::string_view`, converted implicitly to `located_name`, which copies
 it and also records the location of the `test()` call. A temporary
@@ -540,12 +569,21 @@ reported at the end of the statement:
 ```cpp
 template <class Expr_T>
   requires extension::checkable<Expr_T>
-auto expect (const Expr_T& expr);
+auto expect (const Expr_T& expr,
+             const reflection::source_location& sl
+             = reflection::source_location::current ());
 
 template <class Expr_T>
   requires extension::checkable<Expr_T>
-auto require (const Expr_T& expr);
+auto require (const Expr_T& expr,
+              const reflection::source_location& sl
+              = reflection::source_location::current ());
 ```
+
+The source location defaults to that of the call, so a check helper
+that takes a `const mt::reflection::source_location&` parameter, with
+the same default, and passes it on, makes the failures report the line
+of the caller of the helper.
 
 The expression is either a framework expression (a comparator, an
 operator, or a logical function), whose operands are reported on
@@ -721,6 +759,12 @@ running test case (for example via a captured suite reference), cannot
 follow it in the report, since the running test case has not ended; it
 runs nested in the innermost running test case, as if `t.test()` had
 been called.
+
+The counts of the outer test case do not include the checks of its
+nested test cases, which are reported on their own lines, while the
+counts of the suite and of the totals include them; an outer test case
+with no checks of its own and a failed nested one is therefore reported
+as `FAILED (0 checks passed, 0 failed, 1 test case failed)`.
 
 The checks of a nested test case are made on its own parameter (`nt` in
 the example). A check made on the outer test case (`t`, captured by
@@ -904,7 +948,9 @@ t.expect (mt::eq (actual, "fortytwo"sv))
 
 Containers are compared with `eq()` and `ne()`, which use the standard
 operators, and show their elements when the check fails. The containers
-must be of the same type, as for the standard operators:
+must be comparable with the standard operators, which for the standard
+containers means the same type; a C array is also accepted against a
+container:
 
 ```cpp
 t.expect (mt::eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
@@ -1228,6 +1274,8 @@ one, as for the [custom types](#custom-types). The C strings
 and the arrays among the operands are reported as the built-in
 comparators report them (quoted, and as ranges), while the tag receives
 the operands as they were passed.
+
+For brevity, the example above takes its operands as `const&`.
 
 A temporary operand is moved into the expression, and a named operand
 is copied, so an expression can be returned from the function that
@@ -1791,7 +1839,7 @@ if (!tr.is_listing ())
 
 ### Output file
 
-To also write the report to a file, use the `--output-file` option, either as `--output-file=<path>` or as `--output-file=<path>`.
+To also write the report to a file, use the `--output-file` option, either as `--output-file=<path>` or as `--output-file <path>`.
 
 The two outputs have different purposes: the console is intended for the people who watch the tests run, and its content is selected with the verbosity options, while the output file is intended for the integration with other tools (for example a CI pipeline, or a TAP consumer such as node-tap).
 

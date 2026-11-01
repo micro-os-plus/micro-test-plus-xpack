@@ -55,6 +55,11 @@ projects. The files are:
 - `test.cpp`
 - `utility.cpp`
 
+The library must be built with the same exception setting as the
+application: the layout of the object returned by `expect()` and
+`require()` depends on whether exceptions are enabled, so the
+translation units compiled with and without exceptions cannot be mixed.
+
 ### Preprocessor Definitions
 
 The build can be configured using the following preprocessor definitions:

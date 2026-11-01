@@ -149,10 +149,12 @@ namespace micro_os_plus::micro_test_plus
    *   parametrised by a tag that defines the operation and its symbol in
    *   the failure reports;
    * - the C++20 concepts with the same constraints as the framework
-   *   itself: whether a type is a framework expression or value wrapper
-   *   (`is_op`, `any_op`), whether it carries a floating-point tolerance
-   *   (`has_epsilon`), and whether it is accepted by `expect()` and
-   *   `require()` (`checkable`) or by the message operator (`printable`).
+   *   itself: whether a type is a framework expression (`is_op`,
+   *   `any_op`), and whether it is accepted by `expect()` and
+   *   `require()` (`checkable`) or by the message operator (`printable`);
+   *   with the deprecated functionality enabled, they also tell whether a
+   *   deprecated value wrapper carries a floating-point tolerance
+   *   (`has_epsilon`).
    *
    * The namespace is separate from the top namespace, so that
    * `using namespace micro_os_plus::micro_test_plus` does not bring these
