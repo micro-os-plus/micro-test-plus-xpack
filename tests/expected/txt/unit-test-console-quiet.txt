@@ -65,19 +65,19 @@ feed FAILED (checks.cpp:390)
         ✗ null_string == "abc" FAILED (comparisons.cpp:461, nullptr == "abc")
 
     • Failed pointer comparisons
-        ✗ ptr1 != &one FAILED (comparisons.cpp:542, 0x7ff7bf9b8740 != 0x7ff7bf9b8740)
-        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:545, 0x7ff7bf9b8740 != 0x7ff7bf9b8740)
-        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:548, 0x7ff7bf9b8740 > 0x7ff7bf9b8740)
-        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:551, 0x7ff7bf9b8740 < 0x7ff7bf9b8740)
-        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:554, 0x7ff7bf9b8740 == 0x7ff7bf9b8790)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:557, 0x1005b1ac8 != 0x1005b1ac8)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:560, 0x1005b1ac8 == 0x7ff7bf9b8790)
-        ✗ pone >= ptwo FAILED (comparisons.cpp:572, 0x7ff7bf9b8dc0 >= 0x7ff7bf9b8dc4)
-        ✗ ptwo <= pone FAILED (comparisons.cpp:575, 0x7ff7bf9b8dc4 <= 0x7ff7bf9b8dc0)
+        ✗ ptr1 != &one FAILED (comparisons.cpp:542, 0x7ff7b329e6c0 != 0x7ff7b329e6c0)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:545, 0x7ff7b329e6c0 != 0x7ff7b329e6c0)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:548, 0x7ff7b329e6c0 > 0x7ff7b329e6c0)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:551, 0x7ff7b329e6c0 < 0x7ff7b329e6c0)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:554, 0x7ff7b329e6c0 == 0x7ff7b329e710)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:557, 0x10cccbac8 != 0x10cccbac8)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:560, 0x10cccbac8 == 0x7ff7b329e710)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:572, 0x7ff7b329ed40 >= 0x7ff7b329ed44)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:575, 0x7ff7b329ed44 <= 0x7ff7b329ed40)
 
     • Failed null pointer comparisons
         ✗ a_nullptr != nullptr FAILED (comparisons.cpp:624, 0x0 != nullptr)
-        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:627, 0x7ff7bf9b8de0 == nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:627, 0x7ff7b329ed60 == nullptr)
         ✗ pfunc != nullptr FAILED (comparisons.cpp:631, 0x0 != nullptr)
 
     • Logical operations
@@ -450,9 +450,11 @@ Matching test cases:
     Each (1)
     Each (2)
 2 test cases in 1 test suite
+Matching test cases:
+0 test cases in 0 test suites
 
     • Failed each value (2)
-        ✗ value 2 == 1 FAILED (miscellaneous.cpp:1902, 2 == 1)
+        ✗ value 2 == 1 FAILED (miscellaneous.cpp:1929, 2 == 1)
 
 • Operands suite
 
@@ -525,4 +527,4 @@ Matching test cases:
         ✗ abc matches *C FAILED (utility.cpp:191)
         ✗ ab matches ??? FAILED (utility.cpp:195)
 
-✗ Total: 690 checks passed, 373 failed, in 169 test cases, 15 test suites, time: 13.588 ms
+✗ Total: 692 checks passed, 373 failed, in 169 test cases, 15 test suites, time: 14.533 ms

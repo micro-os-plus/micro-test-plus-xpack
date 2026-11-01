@@ -786,9 +786,22 @@ namespace micro_os_plus::micro_test_plus
         reporter_->write_line (true, "%lu test case%s in %lu test suite%s\n",
                                test_cases, (test_cases == 1) ? "" : "s",
                                suites, (suites == 1) ? "" : "s");
+
+        // As for a run, filters that select no test case are an error.
+        const bool listed_nothing = total_suites_count () != 0
+                                    && !options_.filter_patterns.empty ()
+                                    && listed_test_cases_count_ == 0;
+        if (listed_nothing)
+          {
+            fprintf (stderr, "error: the filters selected no test case\n");
+            reporter_->write_line (
+                options_.verbosity_level != verbosity::silent,
+                "%serror: the filters selected no test case\n",
+                reporter_->comment_prefix ());
+          }
         reporter_->flush_streams ();
 
-        exit_code_ = has_option_errors () ? 2 : 0;
+        exit_code_ = (listed_nothing || has_option_errors ()) ? 2 : 0;
         session_state_ = session_state::finished;
         return exit_code_;
       }

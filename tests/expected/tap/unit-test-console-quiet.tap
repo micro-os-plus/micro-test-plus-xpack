@@ -50,9 +50,9 @@ TAP version 14
 #             fileName: checks.cpp
 #             lineNumber: 588
 #           ...
-not ok 1 - Top suite # { FAILED, 40 checks passed, 7 failed, in 21 test cases, time: 1.134 ms }
-ok 2 - Combinatorial floats suite # { passed, 42 checks in 2 test cases, time: 0.239 ms }
-ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, time: 0.824 ms }
+not ok 1 - Top suite # { FAILED, 40 checks passed, 7 failed, in 21 test cases, time: 1.057 ms }
+ok 2 - Combinatorial floats suite # { passed, 42 checks in 2 test cases, time: 0.228 ms }
+ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, time: 0.796 ms }
 # Comparisons suite > Failed integer comparisons
 #         not ok 1 - actual != 42
 #           ---
@@ -257,63 +257,63 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
 # Comparisons suite > Failed pointer comparisons
 #         not ok 1 - ptr1 != &one
 #           ---
-#           condition: "0x7ff7b6c2d760 != 0x7ff7b6c2d760"
+#           condition: "0x7ff7b70c06e0 != 0x7ff7b70c06e0"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 542
 #           ...
 #         not ok 2 - ptr1 != ptr2
 #           ---
-#           condition: "0x7ff7b6c2d760 != 0x7ff7b6c2d760"
+#           condition: "0x7ff7b70c06e0 != 0x7ff7b70c06e0"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 545
 #           ...
 #         not ok 3 - ptr1 > ptr2
 #           ---
-#           condition: "0x7ff7b6c2d760 > 0x7ff7b6c2d760"
+#           condition: "0x7ff7b70c06e0 > 0x7ff7b70c06e0"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 548
 #           ...
 #         not ok 4 - ptr1 < ptr2
 #           ---
-#           condition: "0x7ff7b6c2d760 < 0x7ff7b6c2d760"
+#           condition: "0x7ff7b70c06e0 < 0x7ff7b70c06e0"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 551
 #           ...
 #         not ok 5 - ptr1 == a_non_nullptr
 #           ---
-#           condition: "0x7ff7b6c2d760 == 0x7ff7b6c2d7b0"
+#           condition: "0x7ff7b70c06e0 == 0x7ff7b70c0730"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 554
 #           ...
 #         not ok 6 - pfunc != afunc
 #           ---
-#           condition: "0x10933cac8 != 0x10933cac8"
+#           condition: "0x108ea9ac8 != 0x108ea9ac8"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 557
 #           ...
 #         not ok 7 - pfunc == a_non_nullptr
 #           ---
-#           condition: "0x10933cac8 == 0x7ff7b6c2d7b0"
+#           condition: "0x108ea9ac8 == 0x7ff7b70c0730"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 560
 #           ...
 #         not ok 8 - pone >= ptwo
 #           ---
-#           condition: "0x7ff7b6c2dde0 >= 0x7ff7b6c2dde4"
+#           condition: "0x7ff7b70c0d60 >= 0x7ff7b70c0d64"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 572
 #           ...
 #         not ok 9 - ptwo <= pone
 #           ---
-#           condition: "0x7ff7b6c2dde4 <= 0x7ff7b6c2dde0"
+#           condition: "0x7ff7b70c0d64 <= 0x7ff7b70c0d60"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 575
@@ -328,7 +328,7 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
 #           ...
 #         not ok 2 - a_non_nullptr == nullptr
 #           ---
-#           condition: "0x7ff7b6c2de00 == nullptr"
+#           condition: "0x7ff7b70c0d80 == nullptr"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 627
@@ -454,9 +454,9 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
 #             fileName: comparisons.cpp
 #             lineNumber: 797
 #           ...
-not ok 4 - Comparisons suite # { FAILED, 71 checks passed, 56 failed, in 16 test cases, time: 1.500 ms }
-ok 5 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.026 ms }
-ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, time: 0.036 ms }
+not ok 4 - Comparisons suite # { FAILED, 71 checks passed, 56 failed, in 16 test cases, time: 1.547 ms }
+ok 5 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.028 ms }
+ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, time: 0.035 ms }
 # Exceptions suite > Failed thrown exceptions
 #         not ok 1 - exception thrown
 #           ---
@@ -570,7 +570,7 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
 #             fileName: exceptions.cpp
 #             lineNumber: 343
 #           ...
-not ok 7 - Exceptions suite # { FAILED, 10 checks passed, 16 failed, in 16 test cases, time: 1.459 ms }
+not ok 7 - Exceptions suite # { FAILED, 10 checks passed, 16 failed, in 16 test cases, time: 1.520 ms }
 # Exceptions suite body
 #     not ok 2 - unexpected exception in the suite body: boom
 not ok 8 - Exceptions suite body # { FAILED, 1 check passed, 1 failed, in 1 test case, time: 0.072 ms }
@@ -870,7 +870,7 @@ not ok 8 - Exceptions suite body # { FAILED, 1 check passed, 1 failed, in 1 test
 #             fileName: float-failed-combinations.cpp
 #             lineNumber: 141
 #           ...
-not ok 9 - Failed combinatorial floats suite # { FAILED, 0 checks passed, 42 failed, in 2 test cases, time: 0.730 ms }
+not ok 9 - Failed combinatorial floats suite # { FAILED, 0 checks passed, 42 failed, in 2 test cases, time: 0.700 ms }
 # Failed combinatorial integrals suite > Combinatorial integrals with signed long long
 #         not ok 1 - ne matches signed long long
 #           ---
@@ -2281,7 +2281,7 @@ not ok 9 - Failed combinatorial floats suite # { FAILED, 0 checks passed, 42 fai
 #             fileName: integral-failed-combinations.cpp
 #             lineNumber: 132
 #           ...
-not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200 failed, in 10 test cases, time: 3.399 ms }
+not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200 failed, in 10 test cases, time: 3.074 ms }
 # Miscellaneous suite > Message types
 #         not ok 7 - failed {3}
 #           ---
@@ -2347,15 +2347,17 @@ Matching test cases:
     Each (1)
     Each (2)
 2 test cases in 1 test suite
+Matching test cases:
+0 test cases in 0 test suites
 # Miscellaneous suite > Failed each value (2)
 #         not ok 1 - value 2 == 1
 #           ---
 #           condition: "2 == 1"
 #           at:
 #             fileName: miscellaneous.cpp
-#             lineNumber: 1902
+#             lineNumber: 1929
 #           ...
-not ok 11 - Miscellaneous suite # { FAILED, 206 checks passed, 8 failed, in 52 test cases, time: 4.756 ms }
+not ok 11 - Miscellaneous suite # { FAILED, 208 checks passed, 8 failed, in 52 test cases, time: 5.107 ms }
 # Operands suite > Arrays bad
 #         not ok 1 - array{ 42 } ne array{ 42 }
 #           ---
@@ -2628,9 +2630,9 @@ not ok 11 - Miscellaneous suite # { FAILED, 206 checks passed, 8 failed, in 52 t
 #             fileName: operands.cpp
 #             lineNumber: 843
 #           ...
-not ok 12 - Operands suite # { FAILED, 53 checks passed, 38 failed, in 22 test cases, time: 1.145 ms }
-ok 13 - Runner options suite # { passed, 64 checks in 9 test cases, time: 1.071 ms }
-ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.103 ms }
+not ok 12 - Operands suite # { FAILED, 53 checks passed, 38 failed, in 22 test cases, time: 1.120 ms }
+ok 13 - Runner options suite # { passed, 64 checks in 9 test cases, time: 1.007 ms }
+ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.098 ms }
 # Utility suite > utility::is_match() — failing
 #         not ok 1 - "" matches abc
 #           ---
@@ -2662,6 +2664,6 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.103 ms }
 #             fileName: utility.cpp
 #             lineNumber: 195
 #           ...
-not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.127 ms }
+not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.123 ms }
 1..15
-# { total: 690 checks passed, 373 failed, in 169 test cases, 15 test suites, time: 16.821 ms }
+# { total: 692 checks passed, 373 failed, in 169 test cases, 15 test suites, time: 16.705 ms }

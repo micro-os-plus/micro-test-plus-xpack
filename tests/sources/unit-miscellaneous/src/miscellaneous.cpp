@@ -1695,6 +1695,33 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
         t.expect (mt::eq (bodies_run, 0)) << "still no test case body run";
         local_counts.passed_checks++;
 
+        // Filters that select no test case are an error, as for a run
+        // (#245).
+        {
+          mt::runner_options options{};
+          options.verbosity_level = mt::verbosity::silent;
+          options.output_file_path = list_path;
+          options.list_tests = true;
+          options.filter_patterns = { "NoSuchSuite*" };
+
+          mt::runner nothing_runner;
+          nothing_runner.initialise (options);
+          auto& nothing_ts = nothing_runner.add_top_suite ("Local");
+          add_tests (nothing_runner, nothing_ts);
+
+          t.expect (mt::eq (nothing_runner.run_suites (), 2))
+              << "nothing selected, exit code 2";
+          local_counts.passed_checks++;
+        }
+
+        read_list (list);
+        t.expect (mt::eq (list, "Matching test cases:\n"
+                                "0 test cases in 0 test suites\n"
+                                "# error: the filters selected no test "
+                                "case\n"))
+            << "nothing selected, error listed";
+        local_counts.passed_checks++;
+
         local_counts.executed_test_cases++;
       });
 

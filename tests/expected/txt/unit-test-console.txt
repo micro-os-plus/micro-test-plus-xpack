@@ -60,14 +60,14 @@ feed FAILED (checks.cpp:390)
         ✗ space is tab FAILED (checks.cpp:588, ' ' == '\t')
     ✗ Character operands - FAILED (1 check passed, 2 failed)
 
-✗ Top suite - FAILED (40 checks passed, 7 failed, in 21 test cases), time: 0.892 ms
+✗ Top suite - FAILED (40 checks passed, 7 failed, in 21 test cases), time: 1.246 ms
 
 • Combinatorial floats suite
 
     ✓ Combinatorial floats - passed (21 checks)
     ✓ Combinatorial doubles - passed (21 checks)
 
-✓ Combinatorial floats suite - passed (42 checks in 2 test cases), time: 0.242 ms
+✓ Combinatorial floats suite - passed (42 checks in 2 test cases), time: 0.330 ms
 
 • Combinatorial integrals suite
 
@@ -80,7 +80,7 @@ feed FAILED (checks.cpp:390)
     ✓ Combinatorial integrals with signed char - passed (20 checks)
     ✓ Combinatorial integrals with unsigned char - passed (20 checks)
 
-✓ Combinatorial integrals suite - passed (160 checks in 8 test cases), time: 0.766 ms
+✓ Combinatorial integrals suite - passed (160 checks in 8 test cases), time: 0.859 ms
 
 • Comparisons suite
 
@@ -140,22 +140,22 @@ feed FAILED (checks.cpp:390)
     ✓ Pointer comparisons - passed (9 checks)
 
     • Failed pointer comparisons
-        ✗ ptr1 != &one FAILED (comparisons.cpp:542, 0x7ff7b11bb760 != 0x7ff7b11bb760)
-        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:545, 0x7ff7b11bb760 != 0x7ff7b11bb760)
-        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:548, 0x7ff7b11bb760 > 0x7ff7b11bb760)
-        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:551, 0x7ff7b11bb760 < 0x7ff7b11bb760)
-        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:554, 0x7ff7b11bb760 == 0x7ff7b11bb7b0)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:557, 0x10edaeac8 != 0x10edaeac8)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:560, 0x10edaeac8 == 0x7ff7b11bb7b0)
-        ✗ pone >= ptwo FAILED (comparisons.cpp:572, 0x7ff7b11bbde0 >= 0x7ff7b11bbde4)
-        ✗ ptwo <= pone FAILED (comparisons.cpp:575, 0x7ff7b11bbde4 <= 0x7ff7b11bbde0)
+        ✗ ptr1 != &one FAILED (comparisons.cpp:542, 0x7ff7b76126e0 != 0x7ff7b76126e0)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:545, 0x7ff7b76126e0 != 0x7ff7b76126e0)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:548, 0x7ff7b76126e0 > 0x7ff7b76126e0)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:551, 0x7ff7b76126e0 < 0x7ff7b76126e0)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:554, 0x7ff7b76126e0 == 0x7ff7b7612730)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:557, 0x108957ac8 != 0x108957ac8)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:560, 0x108957ac8 == 0x7ff7b7612730)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:572, 0x7ff7b7612d60 >= 0x7ff7b7612d64)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:575, 0x7ff7b7612d64 <= 0x7ff7b7612d60)
     ✗ Failed pointer comparisons - FAILED (0 checks passed, 9 failed)
 
     ✓ Null pointer comparisons - passed (3 checks)
 
     • Failed null pointer comparisons
         ✗ a_nullptr != nullptr FAILED (comparisons.cpp:624, 0x0 != nullptr)
-        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:627, 0x7ff7b11bbe00 == nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:627, 0x7ff7b7612d80 == nullptr)
         ✗ pfunc != nullptr FAILED (comparisons.cpp:631, 0x0 != nullptr)
     ✗ Failed null pointer comparisons - FAILED (0 checks passed, 3 failed)
 
@@ -181,13 +181,13 @@ feed FAILED (checks.cpp:390)
         ✗ all_of with a nested any_of FAILED (comparisons.cpp:797, (42 == 42 and (42 == 0 or 42 == 1)))
     ✗ Logical operations with more operands - FAILED (6 checks passed, 5 failed)
 
-✗ Comparisons suite - FAILED (71 checks passed, 56 failed, in 16 test cases), time: 0.907 ms
+✗ Comparisons suite - FAILED (71 checks passed, 56 failed, in 16 test cases), time: 0.978 ms
 
 • Dynamic suite
 
     ✓ check in dynamic suite - passed (1 check)
 
-✓ Dynamic suite - passed (1 check in 1 test case), time: 0.030 ms
+✓ Dynamic suite - passed (1 check in 1 test case), time: 0.031 ms
 
 • Dynamic suite with a temporary name
 
@@ -258,7 +258,7 @@ feed FAILED (checks.cpp:390)
 
     ✓ Exception in a suite body - passed (3 checks)
 
-✗ Exceptions suite - FAILED (10 checks passed, 16 failed, in 16 test cases), time: 1.080 ms
+✗ Exceptions suite - FAILED (10 checks passed, 16 failed, in 16 test cases), time: 1.236 ms
 
 • Exceptions suite body
 
@@ -317,7 +317,7 @@ feed FAILED (checks.cpp:390)
         ✗ 42 == 42.0 FAILED (float-failed-combinations.cpp:141, 42 != 42.0)
     ✗ Combinatorial doubles - FAILED (0 checks passed, 21 failed)
 
-✗ Failed combinatorial floats suite - FAILED (0 checks passed, 42 failed, in 2 test cases), time: 0.451 ms
+✗ Failed combinatorial floats suite - FAILED (0 checks passed, 42 failed, in 2 test cases), time: 0.463 ms
 
 • Failed combinatorial integrals suite
 
@@ -551,7 +551,7 @@ feed FAILED (checks.cpp:390)
         ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:132, (unsigned char)43 <= 42u)
     ✗ Combinatorial integrals with unsigned char - FAILED (0 checks passed, 20 failed)
 
-✗ Failed combinatorial integrals suite - FAILED (0 checks passed, 200 failed, in 10 test cases), time: 1.849 ms
+✗ Failed combinatorial integrals suite - FAILED (0 checks passed, 200 failed, in 10 test cases), time: 2.215 ms
 
 • Miscellaneous suite
 
@@ -607,7 +607,9 @@ Matching test cases:
     Each (1)
     Each (2)
 2 test cases in 1 test suite
-    ✓ List test cases - passed (7 checks)
+Matching test cases:
+0 test cases in 0 test suites
+    ✓ List test cases - passed (9 checks)
     ✓ Late suites - passed (7 checks)
 
     • Test case started on the suite
@@ -639,7 +641,7 @@ Matching test cases:
     ✓ Failed each value (1) - passed (1 check)
 
     • Failed each value (2)
-        ✗ value 2 == 1 FAILED (miscellaneous.cpp:1902, 2 == 1)
+        ✗ value 2 == 1 FAILED (miscellaneous.cpp:1929, 2 == 1)
     ✗ Failed each value (2) - FAILED (0 checks passed, 1 failed)
 
     ✓ Callable arguments - passed (5 checks)
@@ -650,7 +652,7 @@ Matching test cases:
     ✓ Abort during the session - passed (6 checks)
     ✓ Test case and suite names - passed (9 checks)
 
-✗ Miscellaneous suite - FAILED (206 checks passed, 8 failed, in 52 test cases), time: 5.173 ms
+✗ Miscellaneous suite - FAILED (208 checks passed, 8 failed, in 52 test cases), time: 5.566 ms
 
 • Operands suite
 
@@ -744,7 +746,7 @@ Matching test cases:
         ✗ 16 bytes eq FAILED (operands.cpp:843, {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8})
     ✗ Long ranges bad - FAILED (0 checks passed, 2 failed)
 
-✗ Operands suite - FAILED (53 checks passed, 38 failed, in 22 test cases), time: 1.245 ms
+✗ Operands suite - FAILED (53 checks passed, 38 failed, in 22 test cases), time: 0.934 ms
 
 • Runner options suite
 
@@ -758,7 +760,7 @@ Matching test cases:
     ✓ Owned strings - passed (3 checks)
     ✓ Copies and moves - passed (5 checks)
 
-✓ Runner options suite - passed (64 checks in 9 test cases), time: 1.547 ms
+✓ Runner options suite - passed (64 checks in 9 test cases), time: 1.235 ms
 
 • Stopwatch suite
 
@@ -768,7 +770,7 @@ Matching test cases:
     ✓ stopwatch::stop() replacement - passed (2 checks)
     ✓ stopwatch::elapsed() - passed (7 checks)
 
-✓ Stopwatch suite - passed (20 checks in 5 test cases), time: 0.126 ms
+✓ Stopwatch suite - passed (20 checks in 5 test cases), time: 0.120 ms
 
 • Utility suite
 
@@ -783,8 +785,8 @@ Matching test cases:
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 
-✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.128 ms
+✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.102 ms
 
-✗ Total: 690 checks passed, 373 failed, in 169 test cases, 15 test suites, time: 14.780 ms
+✗ Total: 692 checks passed, 373 failed, in 169 test cases, 15 test suites, time: 15.688 ms
 Overall, the µTest++ unit tests were successful!
 
