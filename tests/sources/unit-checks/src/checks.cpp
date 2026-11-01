@@ -356,6 +356,32 @@ unit_checks_run_tests (mt::suite& ts)
 
   // --------------------------------------------------------------------------
 
+  // A check on an outer test case while a nested one runs is reported as a
+  // failure of the running one, to keep the plan of its subtest valid
+  // (#231).
+  ts.test ("Outer check in a nested subtest bad", [] (auto& t)
+    {
+      t.test ("inner subtest with an outer check", [&t] (auto& t2)
+        {
+          t.expect (mt::eq (1, 1)) << "outer check";
+          local_counts.failed_checks++;
+
+          t2.expect (mt::eq (2, 2)) << "inner check";
+          local_counts.passed_checks++;
+          local_counts.executed_test_cases++; // inner
+        });
+      local_counts.executed_test_cases++; // outer
+    });
+
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
+
+  // --------------------------------------------------------------------------
+
   // A check in the outer test case before the nested one leaves the
   // outer result in the reporter buffer when the nested test case begins.
   ts.test ("Nested subtest after a check", [] (auto& t)

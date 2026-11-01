@@ -722,6 +722,12 @@ follow it in the report, since the running test case has not ended; it
 runs nested in the innermost running test case, as if `t.test()` had
 been called.
 
+The checks of a nested test case are made on its own parameter (`nt` in
+the example). A check made on the outer test case (`t`, captured by
+reference) while the nested one runs would be written inside the report
+of the nested test case; it is reported instead as a failure of the
+running test case, with a message that names the two test cases.
+
 Each nesting level adds to the stack used by the test; see
 [Stack usage](#stack-usage).
 

@@ -289,6 +289,36 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
+   * The check is attributed to the running test case, as a failure whose
+   * message names the two test cases, so that the checks stay in the
+   * subtest of the test case that runs, and its plan stays valid.
+   * The failing condition is a constant, so that the check is always
+   * reported as failed, even if the condition of the caller held.
+   */
+  detail::check_result&&
+  test_case::report_misdirected (detail::check_kind kind,
+                                 const reflection::source_location& sl,
+                                 detail::check_result&& result)
+  {
+    test_case& running = *running_test_case ();
+
+    std::string message{ "[check on test case '" };
+    message.append (name ());
+    message.append ("' while '");
+    message.append (running.name ());
+    message.append ("' runs] ");
+
+    result.init (false, kind, sl, running,
+                 running.test_reporter ().expression_,
+                 running.test_reporter ().writes_passed_checks ());
+
+    return std::move (std::move (result) << message);
+  }
+
+  // ==========================================================================
+
+  /**
+   * @details
    * No resources are owned by `test_case`; it only refers to its body,
    * which is destroyed after it, when the `test()` call that created
    * both returns. If tracing is enabled, the name is output for

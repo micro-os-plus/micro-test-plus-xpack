@@ -468,6 +468,18 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
+   * Another test case is running when this one is not the running test
+   * case recorded by the runner, and the runner has one.
+   */
+  inline bool
+  test_case::is_misdirected (void) const noexcept
+  {
+    const test_case* running = running_test_case ();
+    return running != nullptr && running != this;
+  }
+
+  /**
+   * @details
    * Initialises the `detail::check_result` received as the last argument,
    * a temporary created by the caller, with the kind
    * `detail::check_kind::expectation`, and returns a reference to it. The
@@ -481,6 +493,12 @@ namespace micro_os_plus::micro_test_plus
   test_case::expect (const Expr_T& expr, const reflection::source_location& sl,
                      detail::check_result&& result)
   {
+    if (is_misdirected ()) [[unlikely]]
+      {
+        return report_misdirected (detail::check_kind::expectation, sl,
+                                   std::move (result));
+      }
+
     result.init (expr, detail::check_kind::expectation, sl, *this,
                  test_reporter ().expression_,
                  test_reporter ().writes_passed_checks ());
@@ -505,6 +523,12 @@ namespace micro_os_plus::micro_test_plus
                       const reflection::source_location& sl,
                       detail::check_result&& result)
   {
+    if (is_misdirected ()) [[unlikely]]
+      {
+        return report_misdirected (detail::check_kind::requirement, sl,
+                                   std::move (result));
+      }
+
     result.init (expr, detail::check_kind::requirement, sl, *this,
                  test_reporter ().expression_,
                  test_reporter ().writes_passed_checks ());

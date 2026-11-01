@@ -1441,6 +1441,44 @@ namespace micro_os_plus::micro_test_plus
 
   private:
     /**
+     * @brief Tells whether another test case is running.
+     *
+     * @details
+     * A check on this test case while a nested one runs, for example from
+     * a nested body that captured the outer test case by reference, would
+     * be written inside the subtest of the nested one, and break its TAP
+     * plan.
+     *
+     * @par Parameters
+     *   None.
+     * @retval true Another test case is running.
+     * @retval false This test case is running, or none is.
+     */
+    [[nodiscard]] bool
+    is_misdirected (void) const noexcept;
+
+    /**
+     * @brief Reports a check on this test case as a failure of the running
+     * one.
+     *
+     * @details
+     * Initialises @p result as a failed check of the running test case,
+     * with a message that names the two test cases; the message of the
+     * caller, if any, is appended after it. A failed requirement stops the
+     * running test case. Non-template, defined in `src/test.cpp`, so that
+     * the call sites of `expect()` and `require()` only call it.
+     *
+     * @param kind The kind of the check.
+     * @param sl The source location of the check.
+     * @param result The check result, a temporary created by the caller.
+     * @return A reference to the check result.
+     */
+    detail::check_result&&
+    report_misdirected (detail::check_kind kind,
+                        const reflection::source_location& sl,
+                        detail::check_result&& result);
+
+    /**
      * @brief Executes the test case body by invoking the referred
      * callable.
      *
