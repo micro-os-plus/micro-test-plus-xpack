@@ -75,14 +75,20 @@ namespace micro_os_plus::micro_test_plus
   namespace
   {
     // The text displayed by `--help`, after the usage line.
-    constexpr const char* help_options = "Options:\n"
-                                         "  --help, -h\n"
-                                         "  --verbose | --quiet | --silent\n"
-                                         "  --list-tests\n"
-                                         "  --reporter=human|tap\n"
-                                         "  --output-file=<path>\n"
-                                         "  --colour[=always|never|auto]\n"
-                                         "  --filter=<pattern>\n";
+    constexpr const char* help_options
+        = "Options:\n"
+          "  --help, -h\n"
+          "  --verbose | --quiet | --silent\n"
+          "  --list-tests\n"
+          "  --reporter=human|tap\n"
+          "  --output-file=<path>\n"
+          "  --colour[=always|never|auto]\n"
+          "  --filter=<pattern>\n"
+          "      Run only the matching names; repeat the option for each\n"
+          "      nesting level: the first pattern applies to the suite\n"
+          "      names, the second to the test case names, and each\n"
+          "      further one to the nested test cases. The patterns use\n"
+          "      '*' and '?', and '|' separates alternatives.\n";
   } // namespace
 
   // --------------------------------------------------------------------------
