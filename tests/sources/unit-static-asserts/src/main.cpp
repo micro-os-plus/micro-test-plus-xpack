@@ -15,6 +15,7 @@
 #include "micro-os-plus/micro-test-plus.h"
 
 #include <array>
+#include <memory>
 #include <optional>
 #include <string>
 #include <string_view>
@@ -297,6 +298,29 @@ namespace
   concept can_le = requires (L&& l, R&& r) {
     mt::le (std::forward<L> (l), std::forward<R> (r));
   };
+
+  // Whether the bodies of the given types, with the given arguments, are
+  // accepted by the test cases and the suites (#239).
+  template <class Body_T, class... Args_T>
+  concept can_test_in_test_case
+      = requires (mt::test_case& t, Body_T&& body, Args_T&&... arguments) {
+          t.test ("t", std::forward<Body_T> (body),
+                  std::forward<Args_T> (arguments)...);
+        };
+
+  template <class Body_T, class... Args_T>
+  concept can_test_in_suite
+      = requires (mt::suite& s, Body_T&& body, Args_T&&... arguments) {
+          s.test ("t", std::forward<Body_T> (body),
+                  std::forward<Args_T> (arguments)...);
+        };
+
+  template <class Body_T, class... Args_T>
+  concept can_add_suite_body
+      = requires (mt::runner& r, Body_T&& body, Args_T&&... arguments) {
+          r.add_suite ("s", std::forward<Body_T> (body),
+                       std::forward<Args_T> (arguments)...);
+        };
 
   // Whether the logical combinators accept operands of the given types.
   template <class... Ts>
@@ -914,6 +938,40 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (not can_lt<std::string, int>);
     static_assert (not can_le<std::string, int>);
     static_assert (not can_lt<std::optional<int>, std::string>);
+  }
+
+  {
+    // The bodies of the test cases and of the suites are checked at the
+    // call site, with the arguments that are passed on (#239).
+    [[maybe_unused]] auto generic_test = [] (auto& t) { t.expect (true); };
+    [[maybe_unused]] auto typed_test = [] (mt::test_case&) {};
+    [[maybe_unused]] auto args_test = [] (mt::test_case&, int, char*) {};
+    [[maybe_unused]] auto no_parameter = [] () {};
+    [[maybe_unused]] auto integer_parameter = [] (int) {};
+    [[maybe_unused]] auto suite_parameter = [] (mt::suite&) {};
+    [[maybe_unused]] auto typed_suite = [] (mt::suite&, int) {};
+    [[maybe_unused]] auto move_only
+        = [p = std::unique_ptr<int>{}] (mt::suite&) { (void)p; };
+
+    static_assert (can_test_in_test_case<decltype (generic_test)>);
+    static_assert (can_test_in_test_case<decltype (typed_test)>);
+    static_assert (can_test_in_test_case<decltype (args_test), int, char*>);
+    static_assert (can_test_in_suite<decltype (generic_test)>);
+    static_assert (can_test_in_suite<decltype (typed_test)>);
+
+    static_assert (not can_test_in_test_case<decltype (no_parameter)>);
+    static_assert (not can_test_in_test_case<decltype (integer_parameter)>);
+    static_assert (not can_test_in_test_case<decltype (suite_parameter)>);
+    static_assert (not can_test_in_test_case<decltype (args_test)>);
+    static_assert (not can_test_in_suite<decltype (suite_parameter)>);
+    static_assert (not can_test_in_suite<decltype (args_test), int>);
+
+    static_assert (can_add_suite_body<decltype (suite_parameter)>);
+    static_assert (can_add_suite_body<decltype (typed_suite), int>);
+    static_assert (not can_add_suite_body<decltype (typed_test)>);
+    static_assert (not can_add_suite_body<decltype (no_parameter)>);
+    static_assert (not can_add_suite_body<decltype (typed_suite)>);
+    static_assert (not can_add_suite_body<decltype (move_only)>);
   }
 
   {

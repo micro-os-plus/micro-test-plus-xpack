@@ -457,6 +457,7 @@ namespace micro_os_plus::micro_test_plus
    * this test case.
    */
   template <typename Callable_T, typename... Args_T>
+    requires detail::test_body<Callable_T, Args_T...>
   void
   test_case::test (const located_name& name, Callable_T&& callable,
                    Args_T&&... arguments)
@@ -759,6 +760,7 @@ namespace micro_os_plus::micro_test_plus
    */
 
   template <typename Callable_T, typename... Args_T>
+    requires detail::test_body<Callable_T, Args_T...>
   void
   suite::test (const located_name& name, Callable_T&& callable,
                Args_T&&... arguments)
@@ -945,7 +947,8 @@ namespace micro_os_plus::micro_test_plus
    * suite is rejected; a runner that has not started is not accessed.
    */
   template <typename Callable_T, typename... Args_T>
-    requires (!detail::static_suite_body<Callable_T, Args_T...>)
+    requires (!detail::static_suite_body<Callable_T, Args_T...>
+              && detail::suite_body<Callable_T, Args_T...>)
   static_suite::static_suite (located_name name, runner& test_runner,
                               Callable_T&& callable, Args_T&&... arguments)
       : suite{ std::move (name), test_runner,

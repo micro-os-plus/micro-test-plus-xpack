@@ -1039,6 +1039,45 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
+     * @brief Concept satisfied by a callable object that can be the body
+     * of a test case.
+     *
+     * @details
+     * The body is stored decayed, and invoked as an lvalue with a
+     * `test_case&` reference as the first argument, followed by the
+     * stored arguments, as lvalues, as `bind_callable()` invokes it. A
+     * body that does not satisfy it, for example one with the wrong
+     * parameters, is rejected at the call of `test()`, not inside the
+     * framework.
+     *
+     * @tparam Callable_T The type of the callable object.
+     * @tparam Args_T The types of the callable arguments.
+     */
+    template <typename Callable_T, typename... Args_T>
+    concept test_body
+        = std::is_invocable_v<std::decay_t<Callable_T>&, test_case&,
+                              std::decay_t<Args_T>&...>;
+
+    /**
+     * @brief Concept satisfied by a callable object that can be the body
+     * of a suite.
+     *
+     * @details
+     * Like `test_body`, with a `suite&` reference as the first argument.
+     * The body is stored in a `std::function`, so the callable object and
+     * the arguments must also be copyable.
+     *
+     * @tparam Callable_T The type of the callable object.
+     * @tparam Args_T The types of the callable arguments.
+     */
+    template <typename Callable_T, typename... Args_T>
+    concept suite_body
+        = std::is_invocable_v<std::decay_t<Callable_T>&, suite&,
+                              std::decay_t<Args_T>&...>
+          && std::is_copy_constructible_v<std::decay_t<Callable_T>>
+          && (std::is_copy_constructible_v<std::decay_t<Args_T>> && ...);
+
+    /**
      * @brief Adds and runs a test case for each value.
      *
      * @details
@@ -1201,6 +1240,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     template <typename Callable_T, typename... Args_T>
+      requires detail::test_body<Callable_T, Args_T...>
     void
     test (const located_name& name, Callable_T&& callable,
           Args_T&&... arguments);
@@ -1754,6 +1794,7 @@ namespace micro_os_plus::micro_test_plus
      *   Nothing.
      */
     template <typename Callable_T, typename... Args_T>
+      requires detail::test_body<Callable_T, Args_T...>
     void
     test (const located_name& name, Callable_T&& callable,
           Args_T&&... arguments);
@@ -2204,7 +2245,8 @@ namespace micro_os_plus::micro_test_plus
      * the callable after the leading `suite&` reference.
      */
     template <typename Callable_T, typename... Args_T>
-      requires (!detail::static_suite_body<Callable_T, Args_T...>)
+      requires (!detail::static_suite_body<Callable_T, Args_T...>
+                && detail::suite_body<Callable_T, Args_T...>)
     static_suite (located_name name, runner& test_runner,
                   Callable_T&& callable, Args_T&&... arguments);
 

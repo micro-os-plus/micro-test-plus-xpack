@@ -570,6 +570,7 @@ namespace micro_os_plus::micro_test_plus
      * @since 6.0.0
      */
     template <typename Callable_T, typename... Args_T>
+      requires detail::suite_body<Callable_T, Args_T...>
     void
     add_suite (located_name name, Callable_T&& callable,
                Args_T&&... arguments);
