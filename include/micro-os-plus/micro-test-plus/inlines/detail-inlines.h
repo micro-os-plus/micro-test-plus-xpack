@@ -599,6 +599,8 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class Lhs_T, class Rhs_T, class Compare_T>
     template <class L, class R>
+      requires extension::compare_tag<Compare_T, unwrapped_t<L>,
+                                      unwrapped_t<R>>
     constexpr compare_op<Lhs_T, Rhs_T, Compare_T>::compare_op (L&& lhs,
                                                                R&& rhs,
                                                                Compare_T)
@@ -814,6 +816,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T, class Predicate_T>
     template <class U>
+      requires extension::predicate_tag<Predicate_T, unwrapped_t<U>>
     constexpr predicate_op<T, Predicate_T>::predicate_op (U&& t, Predicate_T)
         : unary_op<T>{ detail::as_operand (std::forward<U> (t)),
                        static_cast<bool> (

@@ -317,6 +317,50 @@ namespace micro_os_plus::micro_test_plus
     concept printable = requires (detail::expression_formatter& formatter,
                                   const T& value) { formatter << value; };
 
+    /**
+     * @brief Concept satisfied by a tag that defines a custom comparator.
+     *
+     * @details
+     * The tag of `extension::compare_op` is a structure with a static
+     * `symbol`, which the failure reports write between the two operands,
+     * and a static `apply()` member function template, which receives the
+     * operands, unwrapped, and returns the result of the comparison. The
+     * `symbol` must be printable, usually a `const char*` that includes
+     * the surrounding spaces; the result of `apply()` must be convertible
+     * to `bool`.
+     *
+     * @tparam Tag_T The type of the tag.
+     * @tparam Lhs_T The type of the left hand side operand, as `apply()`
+     * receives it.
+     * @tparam Rhs_T The type of the right hand side operand, as `apply()`
+     * receives it.
+     */
+    template <class Tag_T, class Lhs_T, class Rhs_T>
+    concept compare_tag = requires (const Lhs_T& lhs, const Rhs_T& rhs) {
+      requires printable<std::remove_cvref_t<decltype (Tag_T::symbol)>>;
+      { Tag_T::apply (lhs, rhs) } -> std::convertible_to<bool>;
+    };
+
+    /**
+     * @brief Concept satisfied by a tag that defines a custom predicate.
+     *
+     * @details
+     * The tag of `extension::predicate_op` is a structure with a static
+     * `symbol`, which the failure reports write before the operand, and
+     * a static `apply()` member function template, which receives the
+     * operand, unwrapped, and returns the result of the predicate. The
+     * `symbol` must be printable; the result of `apply()` must be
+     * convertible to `bool`.
+     *
+     * @tparam Tag_T The type of the tag.
+     * @tparam T The type of the operand, as `apply()` receives it.
+     */
+    template <class Tag_T, class T>
+    concept predicate_tag = requires (const T& operand) {
+      requires printable<std::remove_cvref_t<decltype (Tag_T::symbol)>>;
+      { Tag_T::apply (operand) } -> std::convertible_to<bool>;
+    };
+
     // ------------------------------------------------------------------------
   } // namespace extension
 

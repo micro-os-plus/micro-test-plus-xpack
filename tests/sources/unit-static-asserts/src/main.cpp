@@ -299,6 +299,87 @@ namespace
     mt::le (std::forward<L> (l), std::forward<R> (r));
   };
 
+  // The tags of the custom comparators and predicates, with and without
+  // the members that the framework requires (#240).
+  struct tag_compare
+  {
+    static constexpr const char* symbol = " tag ";
+
+    template <class Lhs_T, class Rhs_T>
+    [[maybe_unused]] static constexpr bool
+    apply (const Lhs_T& lhs, const Rhs_T& rhs)
+    {
+      return lhs == rhs;
+    }
+  };
+
+  struct tag_compare_view
+  {
+    static constexpr std::string_view symbol = " tag ";
+
+    template <class Lhs_T, class Rhs_T>
+    [[maybe_unused]] static constexpr int
+    apply (const Lhs_T& lhs, const Rhs_T& rhs)
+    {
+      return lhs == rhs;
+    }
+  };
+
+  struct tag_predicate
+  {
+    static constexpr const char* symbol = "tag ";
+
+    template <class T>
+    [[maybe_unused]] static constexpr bool
+    apply (const T& value)
+    {
+      return value != T{};
+    }
+  };
+
+  struct tag_without_symbol
+  {
+    template <class Lhs_T, class Rhs_T>
+    [[maybe_unused]] static constexpr bool
+    apply (const Lhs_T& lhs, const Rhs_T& rhs)
+    {
+      return lhs == rhs;
+    }
+  };
+
+  struct tag_without_apply
+  {
+    static constexpr const char* symbol = " tag ";
+  };
+
+  struct tag_unprintable_symbol
+  {
+    struct opaque
+    {
+    };
+
+    static constexpr opaque symbol{};
+
+    template <class Lhs_T, class Rhs_T>
+    [[maybe_unused]] static constexpr bool
+    apply (const Lhs_T&, const Rhs_T&)
+    {
+      return true;
+    }
+  };
+
+  struct tag_unusable_result
+  {
+    static constexpr const char* symbol = " tag ";
+
+    template <class Lhs_T, class Rhs_T>
+    [[maybe_unused]] static constexpr std::nullptr_t
+    apply (const Lhs_T&, const Rhs_T&)
+    {
+      return nullptr;
+    }
+  };
+
   // Whether the bodies of the given types, with the given arguments, are
   // accepted by the test cases and the suites (#239).
   template <class Body_T, class... Args_T>
@@ -938,6 +1019,30 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (not can_lt<std::string, int>);
     static_assert (not can_le<std::string, int>);
     static_assert (not can_lt<std::optional<int>, std::string>);
+  }
+
+  {
+    // The tags of the custom comparators and predicates are checked where
+    // the expressions are built (#240).
+    static_assert (mt::extension::compare_tag<tag_compare, int, int>);
+    static_assert (
+        mt::extension::compare_tag<tag_compare, std::string, const char*>);
+    static_assert (mt::extension::compare_tag<tag_compare_view, int, long>);
+    static_assert (mt::extension::predicate_tag<tag_predicate, int>);
+    static_assert (mt::extension::predicate_tag<tag_predicate, std::string>);
+
+    static_assert (
+        not mt::extension::compare_tag<tag_without_symbol, int, int>);
+    static_assert (
+        not mt::extension::compare_tag<tag_without_apply, int, int>);
+    static_assert (
+        not mt::extension::compare_tag<tag_unprintable_symbol, int, int>);
+    static_assert (
+        not mt::extension::compare_tag<tag_unusable_result, int, int>);
+    static_assert (not mt::extension::compare_tag<tag_predicate, int, int>);
+    static_assert (not mt::extension::predicate_tag<tag_without_symbol, int>);
+    static_assert (not mt::extension::predicate_tag<tag_without_apply, int>);
+    static_assert (not mt::extension::predicate_tag<tag_compare, int>);
   }
 
   {

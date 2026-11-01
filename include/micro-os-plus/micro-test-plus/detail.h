@@ -801,6 +801,21 @@ namespace micro_os_plus::micro_test_plus
     [[nodiscard]] constexpr auto
     as_operand (T&& t) noexcept -> decltype (auto);
 
+    /**
+     * @brief The type of an operand, after the framework wrappers are
+     * removed by `detail::unwrap()`.
+     *
+     * @tparam T The type of the operand, possibly a reference.
+     *
+     * @details
+     * Without references and qualifiers; for example `int` for a `to_i`
+     * wrapper and for a `42_i` literal, and the type itself for the other
+     * operands. Used by `approx_operand`.
+     */
+    template <class T>
+    using unwrapped_t = std::remove_cvref_t<decltype (detail::unwrap (
+        std::declval<const std::remove_cvref_t<T>&> ()))>;
+
     // ========================================================================
 
     /**
@@ -873,6 +888,8 @@ namespace micro_os_plus::micro_test_plus
        * @param rhs The right-hand operand.
        */
       template <class L, class R>
+        requires extension::compare_tag<Compare_T, unwrapped_t<L>,
+                                        unwrapped_t<R>>
       constexpr compare_op (L&& lhs, R&& rhs, Compare_T);
     };
 
@@ -893,21 +910,6 @@ namespace micro_os_plus::micro_test_plus
         Compare_T>;
 
     // ========================================================================
-
-    /**
-     * @brief The type of an operand, after the framework wrappers are
-     * removed by `detail::unwrap()`.
-     *
-     * @tparam T The type of the operand, possibly a reference.
-     *
-     * @details
-     * Without references and qualifiers; for example `int` for a `to_i`
-     * wrapper and for a `42_i` literal, and the type itself for the other
-     * operands. Used by `approx_operand`.
-     */
-    template <class T>
-    using unwrapped_t = std::remove_cvref_t<decltype (detail::unwrap (
-        std::declval<const std::remove_cvref_t<T>&> ()))>;
 
     /**
      * @brief C++20 concept satisfied when `T` is a valid operand of the
@@ -1250,6 +1252,7 @@ namespace micro_os_plus::micro_test_plus
        * @param t The operand.
        */
       template <class U>
+        requires extension::predicate_tag<Predicate_T, unwrapped_t<U>>
       constexpr predicate_op (U&& t, Predicate_T);
     };
 
