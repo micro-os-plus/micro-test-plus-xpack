@@ -251,6 +251,14 @@ static mt::static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         t.expect (mt::approx (10, 10.4, 0.5)) << "10 ~ 10.4 +/- 0.5";
         local_counts.passed_checks++;
 
+        // Two equal infinities are at the distance zero (#235).
+        constexpr double infinity = std::numeric_limits<double>::infinity ();
+        t.expect (mt::approx (infinity, infinity, 0.1)) << "inf ~ inf";
+        local_counts.passed_checks++;
+
+        t.expect (mt::approx (-infinity, -infinity, 0.1)) << "-inf ~ -inf";
+        local_counts.passed_checks++;
+
         t.expect (mt::negate (mt::approx (10, 20, 5))) << "not 10 ~ 20 +/- 5";
         local_counts.passed_checks++;
 
@@ -289,6 +297,23 @@ static mt::static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         local_counts.failed_checks++;
 
         t.expect (mt::approx (1.0, 1.2, 0.1));
+        local_counts.failed_checks++;
+
+        // The infinity of the other sign, a finite value, a NaN, and a
+        // negative tolerance fail (#235).
+        constexpr double infinity = std::numeric_limits<double>::infinity ();
+        t.expect (mt::approx (infinity, -infinity, 0.1)) << "inf ~ -inf";
+        local_counts.failed_checks++;
+
+        t.expect (mt::approx (infinity, 1.0, 0.1)) << "inf ~ 1.0";
+        local_counts.failed_checks++;
+
+        t.expect (mt::approx (std::numeric_limits<double>::quiet_NaN (),
+                              std::numeric_limits<double>::quiet_NaN (), 0.1))
+            << "NaN ~ NaN";
+        local_counts.failed_checks++;
+
+        t.expect (mt::approx (1.0, 1.0, -0.1)) << "1.0 ~ 1.0 +/- -0.1";
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;

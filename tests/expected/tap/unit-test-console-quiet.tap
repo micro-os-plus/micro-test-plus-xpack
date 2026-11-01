@@ -43,9 +43,9 @@ TAP version 14
 #             fileName: checks.cpp
 #             lineNumber: 559
 #           ...
-not ok 1 - Top suite # { FAILED, 39 checks passed, 6 failed, in 19 test cases, time: 1.126 ms }
-ok 2 - Combinatorial floats suite # { passed, 42 checks in 2 test cases, time: 0.302 ms }
-ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, time: 0.791 ms }
+not ok 1 - Top suite # { FAILED, 39 checks passed, 6 failed, in 19 test cases, time: 0.944 ms }
+ok 2 - Combinatorial floats suite # { passed, 42 checks in 2 test cases, time: 0.226 ms }
+ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, time: 0.861 ms }
 # Comparisons suite > Failed integer comparisons
 #         not ok 1 - actual != 42
 #           ---
@@ -124,42 +124,70 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
 #           condition: "42 ~ (45 +/- 2)"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 271
+#             lineNumber: 279
 #           ...
 #         not ok 2 - 10 ~ 13 +/- 2
 #           ---
 #           condition: "10 ~ (13 +/- 2)"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 276
+#             lineNumber: 284
 #           ...
 #         not ok 3 - 3u ~ 5u +/- 1u
 #           ---
 #           condition: "3u ~ (5u +/- 1u)"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 280
+#             lineNumber: 288
 #           ...
 #         not ok 4 - 1 ~ 1 +/- -1
 #           ---
 #           condition: "1 ~ (1 +/- -1)"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 284
+#             lineNumber: 292
 #           ...
 #         not ok 5 - actual ~ 42.1f +/- 0.01f
 #           ---
 #           condition: "42.0f ~ (42.1f +/- 0.01f)"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 287
+#             lineNumber: 295
 #           ...
 #         not ok 6
 #           ---
 #           condition: "1.0 ~ (1.2 +/- 0.1)"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 291
+#             lineNumber: 299
+#           ...
+#         not ok 7 - inf ~ -inf
+#           ---
+#           condition: "inf ~ (-inf +/- 0.1)"
+#           at:
+#             fileName: comparisons.cpp
+#             lineNumber: 305
+#           ...
+#         not ok 8 - inf ~ 1.0
+#           ---
+#           condition: "inf ~ (1.0 +/- 0.1)"
+#           at:
+#             fileName: comparisons.cpp
+#             lineNumber: 308
+#           ...
+#         not ok 9 - NaN ~ NaN
+#           ---
+#           condition: "nan ~ (nan +/- 0.1)"
+#           at:
+#             fileName: comparisons.cpp
+#             lineNumber: 311
+#           ...
+#         not ok 10 - 1.0 ~ 1.0 +/- -0.1
+#           ---
+#           condition: "1.0 ~ (1.0 +/- -0.1)"
+#           at:
+#             fileName: comparisons.cpp
+#             lineNumber: 316
 #           ...
 # Comparisons suite > Failed string comparisons
 #         not ok 1 - actual_sv != abc_sv
@@ -167,42 +195,42 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
 #           condition: "\"abc\" != \"abc\""
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 348
+#             lineNumber: 373
 #           ...
 #         not ok 2 - actual_sv == abx_sv
 #           ---
 #           condition: "\"abc\" == \"abx\""
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 352
+#             lineNumber: 377
 #           ...
 #         not ok 3 - actual_sv >= abd_sv
 #           ---
 #           condition: "\"abc\" >= \"abd\""
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 356
+#             lineNumber: 381
 #           ...
 #         not ok 4 - actual_sv > abc_sv
 #           ---
 #           condition: "\"abc\" > \"abc\""
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 360
+#             lineNumber: 385
 #           ...
 #         not ok 5 - actual_sv <= abb_sv
 #           ---
 #           condition: "\"abc\" <= \"abb\""
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 364
+#             lineNumber: 389
 #           ...
 #         not ok 6 - actual_sv < abc_sv
 #           ---
 #           condition: "\"abc\" < \"abc\""
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 368
+#             lineNumber: 393
 #           ...
 # Comparisons suite > Failed C string comparisons
 #         not ok 1 - actual == "abx"
@@ -210,78 +238,78 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
 #           condition: "\"abc\" == \"abx\""
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 433
+#             lineNumber: 458
 #           ...
 #         not ok 2 - null_string == "abc"
 #           ---
 #           condition: "nullptr == \"abc\""
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 436
+#             lineNumber: 461
 #           ...
 # Comparisons suite > Failed pointer comparisons
 #         not ok 1 - ptr1 != &one
 #           ---
-#           condition: "0x7ff7bac76760 != 0x7ff7bac76760"
+#           condition: "0x7ff7b80e0760 != 0x7ff7b80e0760"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 517
+#             lineNumber: 542
 #           ...
 #         not ok 2 - ptr1 != ptr2
 #           ---
-#           condition: "0x7ff7bac76760 != 0x7ff7bac76760"
+#           condition: "0x7ff7b80e0760 != 0x7ff7b80e0760"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 520
+#             lineNumber: 545
 #           ...
 #         not ok 3 - ptr1 > ptr2
 #           ---
-#           condition: "0x7ff7bac76760 > 0x7ff7bac76760"
+#           condition: "0x7ff7b80e0760 > 0x7ff7b80e0760"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 523
+#             lineNumber: 548
 #           ...
 #         not ok 4 - ptr1 < ptr2
 #           ---
-#           condition: "0x7ff7bac76760 < 0x7ff7bac76760"
+#           condition: "0x7ff7b80e0760 < 0x7ff7b80e0760"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 526
+#             lineNumber: 551
 #           ...
 #         not ok 5 - ptr1 == a_non_nullptr
 #           ---
-#           condition: "0x7ff7bac76760 == 0x7ff7bac767b0"
+#           condition: "0x7ff7b80e0760 == 0x7ff7b80e07b0"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 529
+#             lineNumber: 554
 #           ...
 #         not ok 6 - pfunc != afunc
 #           ---
-#           condition: "0x1052f0c68 != 0x1052f0c68"
+#           condition: "0x107e899f8 != 0x107e899f8"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 532
+#             lineNumber: 557
 #           ...
 #         not ok 7 - pfunc == a_non_nullptr
 #           ---
-#           condition: "0x1052f0c68 == 0x7ff7bac767b0"
+#           condition: "0x107e899f8 == 0x7ff7b80e07b0"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 535
+#             lineNumber: 560
 #           ...
 #         not ok 8 - pone >= ptwo
 #           ---
-#           condition: "0x7ff7bac76de0 >= 0x7ff7bac76de4"
+#           condition: "0x7ff7b80e0de0 >= 0x7ff7b80e0de4"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 547
+#             lineNumber: 572
 #           ...
 #         not ok 9 - ptwo <= pone
 #           ---
-#           condition: "0x7ff7bac76de4 <= 0x7ff7bac76de0"
+#           condition: "0x7ff7b80e0de4 <= 0x7ff7b80e0de0"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 550
+#             lineNumber: 575
 #           ...
 # Comparisons suite > Failed null pointer comparisons
 #         not ok 1 - a_nullptr != nullptr
@@ -289,21 +317,21 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
 #           condition: "0x0 != nullptr"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 599
+#             lineNumber: 624
 #           ...
 #         not ok 2 - a_non_nullptr == nullptr
 #           ---
-#           condition: "0x7ff7bac76e00 == nullptr"
+#           condition: "0x7ff7b80e0e00 == nullptr"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 602
+#             lineNumber: 627
 #           ...
 #         not ok 3 - pfunc != nullptr
 #           ---
 #           condition: "0x0 != nullptr"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 606
+#             lineNumber: 631
 #           ...
 # Comparisons suite > Logical operations
 #         not ok 2 - not (actual == 42)
@@ -311,42 +339,42 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
 #           condition: "not 42 == 42"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 627
+#             lineNumber: 652
 #           ...
 #         not ok 4 - (actual == 42) and (actual != 42.0)
 #           ---
 #           condition: "(42 == 42 and 42.0f != 42.0)"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 636
+#             lineNumber: 661
 #           ...
 #         not ok 5 - (actual != 42) and (actual == 42.0)
 #           ---
 #           condition: "(42 != 42 and 42.0f == 42.0)"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 641
+#             lineNumber: 666
 #           ...
 #         not ok 6 - (actual != 42) and (actual != 42.0)
 #           ---
 #           condition: "(42 != 42 and 42.0f != 42.0)"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 646
+#             lineNumber: 671
 #           ...
 #         not ok 8
 #           ---
 #           condition: "(42 == 42 and 42.0f != 42.0)"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 655
+#             lineNumber: 680
 #           ...
 #         not ok 12 - (actual != 42) or (actual != 42.0)
 #           ---
 #           condition: "(42 != 42 or 42.0f != 42.0)"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 674
+#             lineNumber: 699
 #           ...
 # Comparisons suite > Logical operations with more operands
 #         not ok 7 - all_of three, the second false
@@ -354,39 +382,39 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
 #           condition: "(42 == 42 and 42 < 41 and 42 > 41)"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 729
+#             lineNumber: 754
 #           ...
 #         not ok 8 - all_of four, the last false
 #           ---
 #           condition: "(42 == 42 and 42 == 42 and 42 == 42 and 42 == 0)"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 734
+#             lineNumber: 759
 #           ...
 #         not ok 9 - any_of three false
 #           ---
 #           condition: "(42 == 0 or 42 == 1 or 42 == 2)"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 739
+#             lineNumber: 764
 #           ...
 #         not ok 10 - any_of of two all_of
 #           ---
 #           condition: "((42 == 0 and 42 == 42) or (42 == 1 and 42 == 42 and 42 == 2))"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 744
+#             lineNumber: 769
 #           ...
 #         not ok 11 - all_of with a nested any_of
 #           ---
 #           condition: "(42 == 42 and (42 == 0 or 42 == 1))"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 751
+#             lineNumber: 776
 #           ...
-not ok 4 - Comparisons suite # { FAILED, 68 checks passed, 47 failed, in 16 test cases, time: 1.273 ms }
-ok 5 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.026 ms }
-ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, time: 0.032 ms }
+not ok 4 - Comparisons suite # { FAILED, 70 checks passed, 51 failed, in 16 test cases, time: 1.361 ms }
+ok 5 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.027 ms }
+ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, time: 0.095 ms }
 # Exceptions suite > Failed thrown exceptions
 #         not ok 1 - exception thrown
 #           ---
@@ -479,10 +507,10 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
 #             fileName: exceptions.cpp
 #             lineNumber: 314
 #           ...
-not ok 7 - Exceptions suite # { FAILED, 10 checks passed, 13 failed, in 16 test cases, time: 1.230 ms }
+not ok 7 - Exceptions suite # { FAILED, 10 checks passed, 13 failed, in 16 test cases, time: 1.236 ms }
 # Exceptions suite body
 #     not ok 2 - unexpected exception in the suite body: boom
-not ok 8 - Exceptions suite body # { FAILED, 1 check passed, 1 failed, in 1 test case, time: 0.072 ms }
+not ok 8 - Exceptions suite body # { FAILED, 1 check passed, 1 failed, in 1 test case, time: 0.068 ms }
 # Failed combinatorial floats suite > Combinatorial floats
 #         not ok 1 - 42.0 == 42 signed long long
 #           ---
@@ -779,7 +807,7 @@ not ok 8 - Exceptions suite body # { FAILED, 1 check passed, 1 failed, in 1 test
 #             fileName: float-failed-combinations.cpp
 #             lineNumber: 141
 #           ...
-not ok 9 - Failed combinatorial floats suite # { FAILED, 0 checks passed, 42 failed, in 2 test cases, time: 0.727 ms }
+not ok 9 - Failed combinatorial floats suite # { FAILED, 0 checks passed, 42 failed, in 2 test cases, time: 0.748 ms }
 # Failed combinatorial integrals suite > Combinatorial integrals with signed long long
 #         not ok 1 - ne matches signed long long
 #           ---
@@ -2190,7 +2218,7 @@ not ok 9 - Failed combinatorial floats suite # { FAILED, 0 checks passed, 42 fai
 #             fileName: integral-failed-combinations.cpp
 #             lineNumber: 132
 #           ...
-not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200 failed, in 10 test cases, time: 3.307 ms }
+not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200 failed, in 10 test cases, time: 2.998 ms }
 # Miscellaneous suite > Message types
 #         not ok 7 - failed {3}
 #           ---
@@ -2264,7 +2292,7 @@ Matching test cases:
 #             fileName: miscellaneous.cpp
 #             lineNumber: 1902
 #           ...
-not ok 11 - Miscellaneous suite # { FAILED, 206 checks passed, 8 failed, in 52 test cases, time: 4.715 ms }
+not ok 11 - Miscellaneous suite # { FAILED, 206 checks passed, 8 failed, in 52 test cases, time: 4.812 ms }
 # Operands suite > Arrays bad
 #         not ok 1 - array{ 42 } ne array{ 42 }
 #           ---
@@ -2502,9 +2530,9 @@ not ok 11 - Miscellaneous suite # { FAILED, 206 checks passed, 8 failed, in 52 t
 #             fileName: operands.cpp
 #             lineNumber: 783
 #           ...
-not ok 12 - Operands suite # { FAILED, 48 checks passed, 33 failed, in 20 test cases, time: 0.951 ms }
-ok 13 - Runner options suite # { passed, 64 checks in 9 test cases, time: 1.012 ms }
-ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.083 ms }
+not ok 12 - Operands suite # { FAILED, 48 checks passed, 33 failed, in 20 test cases, time: 0.984 ms }
+ok 13 - Runner options suite # { passed, 64 checks in 9 test cases, time: 1.068 ms }
+ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.091 ms }
 # Utility suite > utility::is_match() — failing
 #         not ok 1 - "" matches abc
 #           ---
@@ -2536,6 +2564,6 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.083 ms }
 #             fileName: utility.cpp
 #             lineNumber: 195
 #           ...
-not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.124 ms }
+not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.126 ms }
 1..15
-# { total: 681 checks passed, 355 failed, in 165 test cases, 15 test suites, time: 15.983 ms }
+# { total: 683 checks passed, 359 failed, in 165 test cases, 15 test suites, time: 15.840 ms }

@@ -499,7 +499,9 @@ namespace micro_os_plus::micro_test_plus
      * For the other types, the values are converted to their common type,
      * which is a floating-point one, so `std::int64_t` values compared
      * with a `float` tolerance lose precision; the comparison is inclusive,
-     * so a distance equal to the tolerance succeeds.
+     * so a distance equal to the tolerance succeeds. Two equal values,
+     * including two infinities of the same sign, whose difference would be
+     * NaN, are at the distance zero; a NaN operand always fails.
      */
     template <class Lhs_T, class Rhs_T, class Epsilon_T>
     constexpr bool
@@ -543,9 +545,21 @@ namespace micro_os_plus::micro_test_plus
       else
         {
           using float_type = std::common_type_t<Lhs_T, Rhs_T, Epsilon_T>;
-          return math::abs (static_cast<float_type> (lhs)
-                            - static_cast<float_type> (rhs))
-                 <= static_cast<float_type> (epsilon);
+          const auto left = static_cast<float_type> (lhs);
+          const auto right = static_cast<float_type> (rhs);
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wfloat-equal"
+#endif // defined(__GNUC__)
+          // The exact comparison is deliberate, for the infinities.
+          const float_type distance
+              = (left == right) ? float_type{} : math::abs (left - right);
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
+
+          return distance <= static_cast<float_type> (epsilon);
         }
     }
 

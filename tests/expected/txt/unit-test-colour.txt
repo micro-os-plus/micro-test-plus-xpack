@@ -109,7 +109,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m [32m'x' == 'x'[0m
     [31m✗[0m Character operands - [31mFAILED[0m (1 check passed, 2 failed)
 
-[31m✗[0m Top suite - [31mFAILED[0m (39 checks passed, 6 failed, in 19 test cases), time: 0.960 ms
+[31m✗[0m Top suite - [31mFAILED[0m (39 checks passed, 6 failed, in 19 test cases), time: 0.954 ms
 
 • Combinatorial floats suite
 
@@ -161,7 +161,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m 42 == 42.0
     [32m✓[0m Combinatorial doubles - passed (21 checks)
 
-[32m✓[0m Combinatorial floats suite - passed (42 checks in 2 test cases), time: 0.422 ms
+[32m✓[0m Combinatorial floats suite - passed (42 checks in 2 test cases), time: 0.413 ms
 
 • Combinatorial integrals suite
 
@@ -349,7 +349,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m gt matches unsigned int
     [32m✓[0m Combinatorial integrals with unsigned char - passed (20 checks)
 
-[32m✓[0m Combinatorial integrals suite - passed (160 checks in 8 test cases), time: 1.460 ms
+[32m✓[0m Combinatorial integrals suite - passed (160 checks in 8 test cases), time: 1.565 ms
 
 • Comparisons suite
 
@@ -399,17 +399,23 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m actual ~ 42.001f +/- 0.01f
         [32m✓[0m 1.5 ~ 1.25f +/- 0.5
         [32m✓[0m 10 ~ 10.4 +/- 0.5
+        [32m✓[0m inf ~ inf
+        [32m✓[0m -inf ~ -inf
         [32m✓[0m not 10 ~ 20 +/- 5
-    [32m✓[0m Approximate comparisons - passed (8 checks)
+    [32m✓[0m Approximate comparisons - passed (10 checks)
 
     • Failed approximate comparisons
-        [31m✗[0m actual ~ 45 +/- 2 [31mFAILED[0m (comparisons.cpp:271, [31m42 ~ (45 +/- 2)[0m)
-        [31m✗[0m 10 ~ 13 +/- 2 [31mFAILED[0m (comparisons.cpp:276, [31m10 ~ (13 +/- 2)[0m)
-        [31m✗[0m 3u ~ 5u +/- 1u [31mFAILED[0m (comparisons.cpp:280, [31m3u ~ (5u +/- 1u)[0m)
-        [31m✗[0m 1 ~ 1 +/- -1 [31mFAILED[0m (comparisons.cpp:284, [31m1 ~ (1 +/- -1)[0m)
-        [31m✗[0m actual ~ 42.1f +/- 0.01f [31mFAILED[0m (comparisons.cpp:287, [31m42.0f ~ (42.1f +/- 0.01f)[0m)
-        [31m✗[0m [31mFAILED[0m (comparisons.cpp:291, [31m1.0 ~ (1.2 +/- 0.1)[0m)
-    [31m✗[0m Failed approximate comparisons - [31mFAILED[0m (0 checks passed, 6 failed)
+        [31m✗[0m actual ~ 45 +/- 2 [31mFAILED[0m (comparisons.cpp:279, [31m42 ~ (45 +/- 2)[0m)
+        [31m✗[0m 10 ~ 13 +/- 2 [31mFAILED[0m (comparisons.cpp:284, [31m10 ~ (13 +/- 2)[0m)
+        [31m✗[0m 3u ~ 5u +/- 1u [31mFAILED[0m (comparisons.cpp:288, [31m3u ~ (5u +/- 1u)[0m)
+        [31m✗[0m 1 ~ 1 +/- -1 [31mFAILED[0m (comparisons.cpp:292, [31m1 ~ (1 +/- -1)[0m)
+        [31m✗[0m actual ~ 42.1f +/- 0.01f [31mFAILED[0m (comparisons.cpp:295, [31m42.0f ~ (42.1f +/- 0.01f)[0m)
+        [31m✗[0m [31mFAILED[0m (comparisons.cpp:299, [31m1.0 ~ (1.2 +/- 0.1)[0m)
+        [31m✗[0m inf ~ -inf [31mFAILED[0m (comparisons.cpp:305, [31minf ~ (-inf +/- 0.1)[0m)
+        [31m✗[0m inf ~ 1.0 [31mFAILED[0m (comparisons.cpp:308, [31minf ~ (1.0 +/- 0.1)[0m)
+        [31m✗[0m NaN ~ NaN [31mFAILED[0m (comparisons.cpp:311, [31mnan ~ (nan +/- 0.1)[0m)
+        [31m✗[0m 1.0 ~ 1.0 +/- -0.1 [31mFAILED[0m (comparisons.cpp:316, [31m1.0 ~ (1.0 +/- -0.1)[0m)
+    [31m✗[0m Failed approximate comparisons - [31mFAILED[0m (0 checks passed, 10 failed)
 
     • String comparisons
         [32m✓[0m actual_sv == abc_sv
@@ -421,12 +427,12 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     [32m✓[0m String comparisons - passed (6 checks)
 
     • Failed string comparisons
-        [31m✗[0m actual_sv != abc_sv [31mFAILED[0m (comparisons.cpp:348, [31m"abc" != "abc"[0m)
-        [31m✗[0m actual_sv == abx_sv [31mFAILED[0m (comparisons.cpp:352, [31m"abc" == "abx"[0m)
-        [31m✗[0m actual_sv >= abd_sv [31mFAILED[0m (comparisons.cpp:356, [31m"abc" >= "abd"[0m)
-        [31m✗[0m actual_sv > abc_sv [31mFAILED[0m (comparisons.cpp:360, [31m"abc" > "abc"[0m)
-        [31m✗[0m actual_sv <= abb_sv [31mFAILED[0m (comparisons.cpp:364, [31m"abc" <= "abb"[0m)
-        [31m✗[0m actual_sv < abc_sv [31mFAILED[0m (comparisons.cpp:368, [31m"abc" < "abc"[0m)
+        [31m✗[0m actual_sv != abc_sv [31mFAILED[0m (comparisons.cpp:373, [31m"abc" != "abc"[0m)
+        [31m✗[0m actual_sv == abx_sv [31mFAILED[0m (comparisons.cpp:377, [31m"abc" == "abx"[0m)
+        [31m✗[0m actual_sv >= abd_sv [31mFAILED[0m (comparisons.cpp:381, [31m"abc" >= "abd"[0m)
+        [31m✗[0m actual_sv > abc_sv [31mFAILED[0m (comparisons.cpp:385, [31m"abc" > "abc"[0m)
+        [31m✗[0m actual_sv <= abb_sv [31mFAILED[0m (comparisons.cpp:389, [31m"abc" <= "abb"[0m)
+        [31m✗[0m actual_sv < abc_sv [31mFAILED[0m (comparisons.cpp:393, [31m"abc" < "abc"[0m)
     [31m✗[0m Failed string comparisons - [31mFAILED[0m (0 checks passed, 6 failed)
 
     • C string comparisons
@@ -447,8 +453,8 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     [32m✓[0m C string comparisons - passed (14 checks)
 
     • Failed C string comparisons
-        [31m✗[0m actual == "abx" [31mFAILED[0m (comparisons.cpp:433, [31m"abc" == "abx"[0m)
-        [31m✗[0m null_string == "abc" [31mFAILED[0m (comparisons.cpp:436, [31mnullptr == "abc"[0m)
+        [31m✗[0m actual == "abx" [31mFAILED[0m (comparisons.cpp:458, [31m"abc" == "abx"[0m)
+        [31m✗[0m null_string == "abc" [31mFAILED[0m (comparisons.cpp:461, [31mnullptr == "abc"[0m)
     [31m✗[0m Failed C string comparisons - [31mFAILED[0m (0 checks passed, 2 failed)
 
     • Pointer comparisons
@@ -464,15 +470,15 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     [32m✓[0m Pointer comparisons - passed (9 checks)
 
     • Failed pointer comparisons
-        [31m✗[0m ptr1 != &one [31mFAILED[0m (comparisons.cpp:517, [31m0x7ff7be13d740 != 0x7ff7be13d740[0m)
-        [31m✗[0m ptr1 != ptr2 [31mFAILED[0m (comparisons.cpp:520, [31m0x7ff7be13d740 != 0x7ff7be13d740[0m)
-        [31m✗[0m ptr1 > ptr2 [31mFAILED[0m (comparisons.cpp:523, [31m0x7ff7be13d740 > 0x7ff7be13d740[0m)
-        [31m✗[0m ptr1 < ptr2 [31mFAILED[0m (comparisons.cpp:526, [31m0x7ff7be13d740 < 0x7ff7be13d740[0m)
-        [31m✗[0m ptr1 == a_non_nullptr [31mFAILED[0m (comparisons.cpp:529, [31m0x7ff7be13d740 == 0x7ff7be13d790[0m)
-        [31m✗[0m pfunc != afunc [31mFAILED[0m (comparisons.cpp:532, [31m0x101e29c68 != 0x101e29c68[0m)
-        [31m✗[0m pfunc == a_non_nullptr [31mFAILED[0m (comparisons.cpp:535, [31m0x101e29c68 == 0x7ff7be13d790[0m)
-        [31m✗[0m pone >= ptwo [31mFAILED[0m (comparisons.cpp:547, [31m0x7ff7be13ddc0 >= 0x7ff7be13ddc4[0m)
-        [31m✗[0m ptwo <= pone [31mFAILED[0m (comparisons.cpp:550, [31m0x7ff7be13ddc4 <= 0x7ff7be13ddc0[0m)
+        [31m✗[0m ptr1 != &one [31mFAILED[0m (comparisons.cpp:542, [31m0x7ff7b95df740 != 0x7ff7b95df740[0m)
+        [31m✗[0m ptr1 != ptr2 [31mFAILED[0m (comparisons.cpp:545, [31m0x7ff7b95df740 != 0x7ff7b95df740[0m)
+        [31m✗[0m ptr1 > ptr2 [31mFAILED[0m (comparisons.cpp:548, [31m0x7ff7b95df740 > 0x7ff7b95df740[0m)
+        [31m✗[0m ptr1 < ptr2 [31mFAILED[0m (comparisons.cpp:551, [31m0x7ff7b95df740 < 0x7ff7b95df740[0m)
+        [31m✗[0m ptr1 == a_non_nullptr [31mFAILED[0m (comparisons.cpp:554, [31m0x7ff7b95df740 == 0x7ff7b95df790[0m)
+        [31m✗[0m pfunc != afunc [31mFAILED[0m (comparisons.cpp:557, [31m0x10698a9f8 != 0x10698a9f8[0m)
+        [31m✗[0m pfunc == a_non_nullptr [31mFAILED[0m (comparisons.cpp:560, [31m0x10698a9f8 == 0x7ff7b95df790[0m)
+        [31m✗[0m pone >= ptwo [31mFAILED[0m (comparisons.cpp:572, [31m0x7ff7b95dfdc0 >= 0x7ff7b95dfdc4[0m)
+        [31m✗[0m ptwo <= pone [31mFAILED[0m (comparisons.cpp:575, [31m0x7ff7b95dfdc4 <= 0x7ff7b95dfdc0[0m)
     [31m✗[0m Failed pointer comparisons - [31mFAILED[0m (0 checks passed, 9 failed)
 
     • Null pointer comparisons
@@ -482,24 +488,24 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     [32m✓[0m Null pointer comparisons - passed (3 checks)
 
     • Failed null pointer comparisons
-        [31m✗[0m a_nullptr != nullptr [31mFAILED[0m (comparisons.cpp:599, [31m0x0 != nullptr[0m)
-        [31m✗[0m a_non_nullptr == nullptr [31mFAILED[0m (comparisons.cpp:602, [31m0x7ff7be13dde0 == nullptr[0m)
-        [31m✗[0m pfunc != nullptr [31mFAILED[0m (comparisons.cpp:606, [31m0x0 != nullptr[0m)
+        [31m✗[0m a_nullptr != nullptr [31mFAILED[0m (comparisons.cpp:624, [31m0x0 != nullptr[0m)
+        [31m✗[0m a_non_nullptr == nullptr [31mFAILED[0m (comparisons.cpp:627, [31m0x7ff7b95dfde0 == nullptr[0m)
+        [31m✗[0m pfunc != nullptr [31mFAILED[0m (comparisons.cpp:631, [31m0x0 != nullptr[0m)
     [31m✗[0m Failed null pointer comparisons - [31mFAILED[0m (0 checks passed, 3 failed)
 
     • Logical operations
         [32m✓[0m not (actual != 42)
-        [31m✗[0m not (actual == 42) [31mFAILED[0m (comparisons.cpp:627, [31mnot [32m42 == 42[0m[0m)
+        [31m✗[0m not (actual == 42) [31mFAILED[0m (comparisons.cpp:652, [31mnot [32m42 == 42[0m[0m)
         [32m✓[0m (actual == 42) and (actual == 42.0)
-        [31m✗[0m (actual == 42) and (actual != 42.0) [31mFAILED[0m (comparisons.cpp:636, ([32m42 == 42[0m[31m and [0m[31m42.0f != 42.0[0m))
-        [31m✗[0m (actual != 42) and (actual == 42.0) [31mFAILED[0m (comparisons.cpp:641, ([31m42 != 42[0m[31m and [0m[32m42.0f == 42.0[0m))
-        [31m✗[0m (actual != 42) and (actual != 42.0) [31mFAILED[0m (comparisons.cpp:646, ([31m42 != 42[0m[31m and [0m[31m42.0f != 42.0[0m))
+        [31m✗[0m (actual == 42) and (actual != 42.0) [31mFAILED[0m (comparisons.cpp:661, ([32m42 == 42[0m[31m and [0m[31m42.0f != 42.0[0m))
+        [31m✗[0m (actual != 42) and (actual == 42.0) [31mFAILED[0m (comparisons.cpp:666, ([31m42 != 42[0m[31m and [0m[32m42.0f == 42.0[0m))
+        [31m✗[0m (actual != 42) and (actual != 42.0) [31mFAILED[0m (comparisons.cpp:671, ([31m42 != 42[0m[31m and [0m[31m42.0f != 42.0[0m))
         [32m✓[0m ([32m42 == 42[0m[32m and [0m[32m42.0f == 42.0[0m)
-        [31m✗[0m [31mFAILED[0m (comparisons.cpp:655, ([32m42 == 42[0m[31m and [0m[31m42.0f != 42.0[0m))
+        [31m✗[0m [31mFAILED[0m (comparisons.cpp:680, ([32m42 == 42[0m[31m and [0m[31m42.0f != 42.0[0m))
         [32m✓[0m (actual == 42) or (actual == 42.0)
         [32m✓[0m (actual == 42) or (actual != 42.0)
         [32m✓[0m (actual != 42) or (actual == 42.0)
-        [31m✗[0m (actual != 42) or (actual != 42.0) [31mFAILED[0m (comparisons.cpp:674, ([31m42 != 42[0m[31m or [0m[31m42.0f != 42.0[0m))
+        [31m✗[0m (actual != 42) or (actual != 42.0) [31mFAILED[0m (comparisons.cpp:699, ([31m42 != 42[0m[31m or [0m[31m42.0f != 42.0[0m))
     [31m✗[0m Logical operations - [31mFAILED[0m (6 checks passed, 6 failed)
 
     • Logical operations with more operands
@@ -509,14 +515,14 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m any_of three, the first true
         [32m✓[0m all_of with a nested all_of
         [32m✓[0m not all_of
-        [31m✗[0m all_of three, the second false [31mFAILED[0m (comparisons.cpp:729, ([32m42 == 42[0m[31m and [0m[31m42 < 41[0m[31m and [0m[32m42 > 41[0m))
-        [31m✗[0m all_of four, the last false [31mFAILED[0m (comparisons.cpp:734, ([32m42 == 42[0m[32m and [0m[32m42 == 42[0m[32m and [0m[32m42 == 42[0m[31m and [0m[31m42 == 0[0m))
-        [31m✗[0m any_of three false [31mFAILED[0m (comparisons.cpp:739, ([31m42 == 0[0m[31m or [0m[31m42 == 1[0m[31m or [0m[31m42 == 2[0m))
-        [31m✗[0m any_of of two all_of [31mFAILED[0m (comparisons.cpp:744, (([31m42 == 0[0m[31m and [0m[32m42 == 42[0m)[31m or [0m([31m42 == 1[0m[31m and [0m[32m42 == 42[0m[31m and [0m[31m42 == 2[0m)))
-        [31m✗[0m all_of with a nested any_of [31mFAILED[0m (comparisons.cpp:751, ([32m42 == 42[0m[31m and [0m([31m42 == 0[0m[31m or [0m[31m42 == 1[0m)))
+        [31m✗[0m all_of three, the second false [31mFAILED[0m (comparisons.cpp:754, ([32m42 == 42[0m[31m and [0m[31m42 < 41[0m[31m and [0m[32m42 > 41[0m))
+        [31m✗[0m all_of four, the last false [31mFAILED[0m (comparisons.cpp:759, ([32m42 == 42[0m[32m and [0m[32m42 == 42[0m[32m and [0m[32m42 == 42[0m[31m and [0m[31m42 == 0[0m))
+        [31m✗[0m any_of three false [31mFAILED[0m (comparisons.cpp:764, ([31m42 == 0[0m[31m or [0m[31m42 == 1[0m[31m or [0m[31m42 == 2[0m))
+        [31m✗[0m any_of of two all_of [31mFAILED[0m (comparisons.cpp:769, (([31m42 == 0[0m[31m and [0m[32m42 == 42[0m)[31m or [0m([31m42 == 1[0m[31m and [0m[32m42 == 42[0m[31m and [0m[31m42 == 2[0m)))
+        [31m✗[0m all_of with a nested any_of [31mFAILED[0m (comparisons.cpp:776, ([32m42 == 42[0m[31m and [0m([31m42 == 0[0m[31m or [0m[31m42 == 1[0m)))
     [31m✗[0m Logical operations with more operands - [31mFAILED[0m (6 checks passed, 5 failed)
 
-[31m✗[0m Comparisons suite - [31mFAILED[0m (68 checks passed, 47 failed, in 16 test cases), time: 1.075 ms
+[31m✗[0m Comparisons suite - [31mFAILED[0m (70 checks passed, 51 failed, in 16 test cases), time: 1.159 ms
 
 • Dynamic suite
 
@@ -524,7 +530,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m 1 == 1 in dynamic suite
     [32m✓[0m check in dynamic suite - passed (1 check)
 
-[32m✓[0m Dynamic suite - passed (1 check in 1 test case), time: 0.040 ms
+[32m✓[0m Dynamic suite - passed (1 check in 1 test case), time: 0.043 ms
 
 • Dynamic suite with a temporary name
 
@@ -532,7 +538,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m 2 == 2 in the suite with a temporary name
     [32m✓[0m check in dynamic suite with a temporary name - passed (1 check)
 
-[32m✓[0m Dynamic suite with a temporary name - passed (1 check in 1 test case), time: 0.037 ms
+[32m✓[0m Dynamic suite with a temporary name - passed (1 check in 1 test case), time: 0.035 ms
 
 • Exceptions suite
 
@@ -607,7 +613,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m exception counted as a failed check
     [32m✓[0m Exception in a suite body - passed (3 checks)
 
-[31m✗[0m Exceptions suite - [31mFAILED[0m (10 checks passed, 13 failed, in 16 test cases), time: 1.017 ms
+[31m✗[0m Exceptions suite - [31mFAILED[0m (10 checks passed, 13 failed, in 16 test cases), time: 1.025 ms
 
 • Exceptions suite body
 
@@ -616,7 +622,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     [32m✓[0m Test case before the exception - passed (1 check)
 
     [31m✗[0m unexpected exception in the suite body: boom [31mFAILED[0m
-[31m✗[0m Exceptions suite body - [31mFAILED[0m (1 check passed, 1 failed, in 1 test case), time: 0.071 ms
+[31m✗[0m Exceptions suite body - [31mFAILED[0m (1 check passed, 1 failed, in 1 test case), time: 0.072 ms
 
 • Failed combinatorial floats suite
 
@@ -668,7 +674,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [31m✗[0m 42 == 42.0 [31mFAILED[0m (float-failed-combinations.cpp:141, [31m42 != 42.0[0m)
     [31m✗[0m Combinatorial doubles - [31mFAILED[0m (0 checks passed, 21 failed)
 
-[31m✗[0m Failed combinatorial floats suite - [31mFAILED[0m (0 checks passed, 42 failed, in 2 test cases), time: 0.404 ms
+[31m✗[0m Failed combinatorial floats suite - [31mFAILED[0m (0 checks passed, 42 failed, in 2 test cases), time: 0.402 ms
 
 • Failed combinatorial integrals suite
 
@@ -902,7 +908,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [31m✗[0m le matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:132, [31m(unsigned char)43 <= 42u[0m)
     [31m✗[0m Combinatorial integrals with unsigned char - [31mFAILED[0m (0 checks passed, 20 failed)
 
-[31m✗[0m Failed combinatorial integrals suite - [31mFAILED[0m (0 checks passed, 200 failed, in 10 test cases), time: 1.854 ms
+[31m✗[0m Failed combinatorial integrals suite - [31mFAILED[0m (0 checks passed, 200 failed, in 10 test cases), time: 1.601 ms
 
 • Miscellaneous suite
 
@@ -1001,7 +1007,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
 
     • Message types
         [32m✓[0m numbers 1 2 3 1.5 2 true
-        [32m✓[0m pointer 0x1024b2ac0
+        [32m✓[0m pointer 0x107013060
         [32m✓[0m container {1, 2}
         [32m✓[0m standard types (1, a) nullopt 1
         [32m✓[0m custom type { 1, 2 } on
@@ -1295,7 +1301,7 @@ Matching test cases:
         [32m✓[0m string view suite name copied
     [32m✓[0m Test case and suite names - passed (9 checks)
 
-[31m✗[0m Miscellaneous suite - [31mFAILED[0m (206 checks passed, 8 failed, in 52 test cases), time: 5.368 ms
+[31m✗[0m Miscellaneous suite - [31mFAILED[0m (206 checks passed, 8 failed, in 52 test cases), time: 5.690 ms
 
 • Operands suite
 
@@ -1440,7 +1446,7 @@ Matching test cases:
         [31m✗[0m 16 bytes eq [31mFAILED[0m (operands.cpp:783, [31m{7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8}[0m)
     [31m✗[0m Long ranges bad - [31mFAILED[0m (0 checks passed, 2 failed)
 
-[31m✗[0m Operands suite - [31mFAILED[0m (48 checks passed, 33 failed, in 20 test cases), time: 0.969 ms
+[31m✗[0m Operands suite - [31mFAILED[0m (48 checks passed, 33 failed, in 20 test cases), time: 0.960 ms
 
 • Runner options suite
 
@@ -1535,7 +1541,7 @@ Matching test cases:
         [32m✓[0m the move assignment moves all the members
     [32m✓[0m Copies and moves - passed (5 checks)
 
-[32m✓[0m Runner options suite - passed (64 checks in 9 test cases), time: 1.249 ms
+[32m✓[0m Runner options suite - passed (64 checks in 9 test cases), time: 1.273 ms
 
 • Stopwatch suite
 
@@ -1574,7 +1580,7 @@ Matching test cases:
         [32m✓[0m no stop -> 0 µs
     [32m✓[0m stopwatch::elapsed() - passed (7 checks)
 
-[32m✓[0m Stopwatch suite - passed (20 checks in 5 test cases), time: 0.162 ms
+[32m✓[0m Stopwatch suite - passed (20 checks in 5 test cases), time: 0.149 ms
 
 • Utility suite
 
@@ -1613,8 +1619,8 @@ Matching test cases:
         [31m✗[0m ab matches ??? [31mFAILED[0m (utility.cpp:195)
     [31m✗[0m utility::is_match() — failing - [31mFAILED[0m (0 checks passed, 5 failed)
 
-[31m✗[0m Utility suite - [31mFAILED[0m (21 checks passed, 5 failed, in 3 test cases), time: 0.166 ms
+[31m✗[0m Utility suite - [31mFAILED[0m (21 checks passed, 5 failed, in 3 test cases), time: 0.135 ms
 
-[31m✗[0m Total: 681 checks passed, 355 failed, in 165 test cases, 15 test suites, time: 15.500 ms
+[31m✗[0m Total: 683 checks passed, 359 failed, in 165 test cases, 15 test suites, time: 15.713 ms
 Overall, the µTest++ unit tests were successful!
 
