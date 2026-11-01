@@ -111,10 +111,32 @@ namespace micro_os_plus::micro_test_plus::detail
    * Returns the ANSI colour code for pass or fail, depending on the boolean
    * condition provided.
    */
-  inline auto
+  inline expression_formatter::colour_code
   expression_formatter::colour (const bool cond) const
   {
-    return cond ? colours_.pass : colours_.fail;
+    return colour_code{ cond ? colours_.pass : colours_.fail };
+  }
+
+  /**
+   * @details
+   * Returns the reset code of the colours of the formatter.
+   */
+  inline expression_formatter::colour_code
+  expression_formatter::colour_none (void) const
+  {
+    return colour_code{ colours_.none };
+  }
+
+  /**
+   * @details
+   * Appends the escape sequence to the buffer as it is, without the
+   * escaping of the control characters that the string overloads apply.
+   */
+  inline expression_formatter&
+  expression_formatter::operator<< (colour_code code)
+  {
+    buffer_.append (code.sequence);
+    return *this;
   }
 
   // --------------------------------------------------------------------------
@@ -447,7 +469,7 @@ namespace micro_os_plus::micro_test_plus::detail
       {
         append_first_difference (op.lhs (), op.rhs ());
       }
-    return (*this << colours_.none);
+    return (*this << colour_none ());
   }
 
   /**
@@ -495,7 +517,7 @@ namespace micro_os_plus::micro_test_plus::detail
       const detail::approx_op<Lhs_T, Rhs_T, Epsilon_T>& op)
   {
     return (*this << colour (op) << op.lhs () << " ~ (" << op.rhs () << " +/- "
-                  << op.epsilon () << ")" << colours_.none);
+                  << op.epsilon () << ")" << colour_none ());
   }
 
   /**
@@ -537,7 +559,7 @@ namespace micro_os_plus::micro_test_plus::detail
       const detail::and_op<Lhs_T, Rhs_T>& op)
   {
     append_and_operand (op.lhs ());
-    *this << colour (op) << " and " << colours_.none;
+    *this << colour (op) << " and " << colour_none ();
     append_operand (op.rhs ());
   }
 
@@ -580,7 +602,7 @@ namespace micro_os_plus::micro_test_plus::detail
       const detail::or_op<Lhs_T, Rhs_T>& op)
   {
     append_or_operand (op.lhs ());
-    *this << colour (op) << " or " << colours_.none;
+    *this << colour (op) << " or " << colour_none ();
     append_operand (op.rhs ());
   }
 
@@ -596,7 +618,7 @@ namespace micro_os_plus::micro_test_plus::detail
   {
     *this << colour (op) << "not ";
     append_not_operand (op.operand ());
-    return (*this << colours_.none);
+    return (*this << colour_none ());
   }
 
   /**
@@ -651,7 +673,7 @@ namespace micro_os_plus::micro_test_plus::detail
   {
     *this << colour (op) << Predicate_T::symbol;
     append_operand (op.operand ());
-    return (*this << colours_.none);
+    return (*this << colour_none ());
   }
 
 #if defined(__cpp_exceptions)
@@ -677,7 +699,7 @@ namespace micro_os_plus::micro_test_plus::detail
         *this << ">";
       }
     append_throw_reason (op);
-    return (*this << colours_.none);
+    return (*this << colour_none ());
   }
 
   /**
@@ -693,7 +715,7 @@ namespace micro_os_plus::micro_test_plus::detail
   {
     *this << colour (op) << "nothrow";
     append_throw_reason (op);
-    return (*this << colours_.none);
+    return (*this << colour_none ());
   }
 
   /**

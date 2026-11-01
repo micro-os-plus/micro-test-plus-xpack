@@ -1137,6 +1137,25 @@ namespace micro_os_plus::micro_test_plus
 
     private:
       /**
+       * @brief An ANSI colour escape sequence, to be written as it is.
+       *
+       * @details
+       * A distinct type, so that the sequences are not written by the
+       * overloads for strings, which escape the control characters, ESC
+       * included.
+       */
+      struct colour_code
+      {
+        /**
+         * @brief The null-terminated escape sequence, possibly empty.
+         *
+         * @details
+         * Not owned; it points into the `colours` of the formatter.
+         */
+        const char* sequence;
+      };
+
+      /**
        * @brief The maximum number of elements of a range written.
        *
        * @details
@@ -1208,10 +1227,33 @@ namespace micro_os_plus::micro_test_plus
        * @brief Selects the appropriate colour code based on a condition.
        *
        * @param cond Boolean value indicating pass (true) or fail (false).
-       * @return The corresponding ANSI colour code as a string.
+       * @return The corresponding ANSI colour code.
        */
-      [[nodiscard]] inline auto
+      [[nodiscard]] inline colour_code
       colour (const bool cond) const;
+
+      /**
+       * @brief Returns the colour code that resets the colour.
+       *
+       * @par Parameters
+       *   None.
+       * @return The reset code of the colours of the formatter.
+       */
+      [[nodiscard]] inline colour_code
+      colour_none (void) const;
+
+      /**
+       * @brief Appends a colour code, as it is.
+       *
+       * @details
+       * The escape sequence is not escaped, unlike the text of the
+       * strings; the sequences are empty when the colours are not used.
+       *
+       * @param code The colour code to append.
+       * @return Reference to this instance.
+       */
+      expression_formatter&
+      operator<< (colour_code code);
 
       /**
        * @brief Adds a decimal point to a floating-point value formatted
