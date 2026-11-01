@@ -132,6 +132,78 @@ namespace micro_os_plus::micro_test_plus::detail
       return result;
     }
 
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+
+#pragma GCC diagnostic ignored "-Wpadded"
+#endif // defined(__GNUC__)
+    /**
+     * @brief A name prepared for a single TAP line, without a copy when
+     * it needs no change.
+     *
+     * @details
+     * The names of the suites and of the test cases rarely contain a
+     * character that `tap_text()` changes, so the name is searched, and
+     * only copied (with `tap_text()`) when it must be changed; otherwise
+     * `c_str()` returns the original name, which must outlive the object.
+     * The object is neither copyable nor movable.
+     */
+    class tap_name
+    {
+    public:
+      /**
+       * @brief Prepares a name.
+       *
+       * @param text The null-terminated name.
+       * @param escape Whether to escape the `\\` and `#` characters, as
+       * `tap_text()` does.
+       */
+      tap_name (const char* text, bool escape) : text_{ text }
+      {
+        // The line breaks are always changed; the other two characters
+        // only when escaping.
+        if (std::string_view{ text }.find_first_of (escape ? "\r\n\\#"
+                                                           : "\r\n")
+            != std::string_view::npos)
+          {
+            prepared_ = tap_text (text, escape);
+            is_copy_ = true;
+          }
+      }
+
+      tap_name (const tap_name&) = delete;
+      tap_name (tap_name&&) = delete;
+      tap_name&
+      operator= (const tap_name&)
+          = delete;
+      tap_name&
+      operator= (tap_name&&)
+          = delete;
+      ~tap_name () = default;
+
+      /**
+       * @brief Retrieves the prepared name.
+       *
+       * @par Parameters
+       *   None.
+       * @return The null-terminated name, valid as long as this object
+       * and the original name.
+       */
+      [[nodiscard]] const char*
+      c_str (void) const noexcept
+      {
+        return is_copy_ ? prepared_.c_str () : text_;
+      }
+
+    private:
+      const char* text_;
+      std::string prepared_{};
+      bool is_copy_{ false };
+    };
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
+
     /**
      * @brief Formats a text as a YAML double-quoted scalar.
      *
@@ -346,7 +418,7 @@ namespace micro_os_plus::micro_test_plus::detail
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    const std::string name = tap_text (suite.name (), false);
+    const tap_name name{ suite.name (), false };
 
     const bool to_console = route (record_kind::suite_heading).console;
 
@@ -413,7 +485,7 @@ namespace micro_os_plus::micro_test_plus::detail
     char message_time[elapsed_time_size_];
     format_elapsed_time (suite.stopwatch_, message_time);
 
-    const std::string name = tap_text (suite.name (), true);
+    const tap_name name{ suite.name (), true };
 
     write_buffer_to_file ();
 
@@ -485,7 +557,7 @@ namespace micro_os_plus::micro_test_plus::detail
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, suite.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    const std::string name = tap_text (suite.name (), true);
+    const tap_name name{ suite.name (), true };
 
     // The skipped suites are counted by the session plan, so they are
     // displayed with quiet verbosity too.
@@ -562,7 +634,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
     std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
 
-    const std::string name = tap_text (test_case.name (), false);
+    const tap_name name{ test_case.name (), false };
 
     if (to_console && add_empty_line_)
       {
@@ -641,7 +713,7 @@ namespace micro_os_plus::micro_test_plus::detail
     char message_totals[totals_size_];
     format_test_case_totals (test_case, message_totals);
 
-    const std::string name = tap_text (test_case.name (), true);
+    const tap_name name{ test_case.name (), true };
 
     write_buffer_to_file ();
 
@@ -908,7 +980,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
     std::string indent (indent_size_ * test_case.nesting_depth (), ' ');
 
-    const std::string name = tap_text (test_case.name (), true);
+    const tap_name name{ test_case.name (), true };
 
     const bool to_console = route (record_kind::skipped).console;
 
@@ -1068,7 +1140,7 @@ namespace micro_os_plus::micro_test_plus::detail
       }
 
     std::string indent (indent_size_ * open.test->nesting_depth (), ' ');
-    const std::string name = tap_text (open.test->name (), false);
+    const tap_name name{ open.test->name (), false };
     write_console ("%s# Subtest: %s\n", indent.c_str (), name.c_str ());
 
     add_empty_line_ = false;
@@ -1094,7 +1166,7 @@ namespace micro_os_plus::micro_test_plus::detail
     std::string path;
     if (current_suite_ != nullptr)
       {
-        path = tap_text (current_suite_->name (), false);
+        path = tap_name{ current_suite_->name (), false }.c_str ();
       }
     for (const open_test_case& open : open_test_cases_)
       {
@@ -1102,7 +1174,7 @@ namespace micro_os_plus::micro_test_plus::detail
           {
             path.append (" > ");
           }
-        path.append (tap_text (open.test->name (), false));
+        path.append (tap_name{ open.test->name (), false }.c_str ());
       }
     write_console ("%s%s\n", comment_prefix (), path.c_str ());
 
