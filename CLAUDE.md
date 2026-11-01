@@ -65,7 +65,9 @@ The public API lives in the `micro_os_plus::micro_test_plus` namespace
   and `colour_mode`; the command line it was parsed from is private,
   read with `arguments()`); `static_runner` is a deprecated alias), the
   test hierarchy (`test_case`, `suite`, `static_suite`, `top_suite`,
-  `test_case_name`), `counters`, the function comparators
+  and `located_name`, the name parameter of the functions that create
+  them, which captures the source location), `counters`, the function
+  comparators
   (`eq()`, `ne()`, `gt()`, `ge()`, `lt()`, `le()`, `approx()`,
   `negate()`, `all_of()`, `any_of()`), `throws()` and `nothrow()` (with
   exceptions), the deprecated value wrappers (`to_i`, `to_f`, ...,
@@ -94,9 +96,13 @@ The public API lives in the `micro_os_plus::micro_test_plus` namespace
 `reflection::source_location` appears in the public signatures (as a
 defaulted parameter), but users rarely name it. Everything in `detail`
 (including `detail::math`, the reporters, `check_result`, the value
-wrapper templates of `deprecated.h`, and the concepts `has_value`,
-`container_like`, and `has_npos`) is internal; the applications must not
-need to name it.
+wrapper templates of `deprecated.h`, the concepts `has_value`,
+`container_like`, `string_like`, and `formattable_range`, defined in
+`extension.h`, and the concept `comparable`, which constrains the
+comparators, in `inlines/detail-inlines.h`) is internal; the applications
+must not need to name it. The deprecated `type_traits` namespace keeps
+the v5.0.1 concepts, including `has_npos` and `has_value` with their
+v5.0.1 definitions, which the framework no longer uses.
 
 - `runner` (in `runner.h`, defined in `src/runner.cpp`) is the top-level
   test session driver: it owns the tree of suites/tests, tracks pass/fail
@@ -108,8 +114,12 @@ need to name it.
   may be constructed before it. `static_runner` is a deprecated alias
   of `runner`.
 - Test hierarchy (`test.h`, `src/test.cpp`), all deriving from the
-  internal `detail::runnable_base` base (`suite` and `test_case` each store
-  their body in a `std::function` taking a reference to their own class):
+  internal `detail::runnable_base` base (a `suite` stores its body in a
+  `std::function<void (suite&)>`, since it runs later; a `test_case`,
+  which runs within the `test()` call that creates it, refers to its
+  body through the non-owning `detail::callable_ref`, so the body is
+  never allocated). A test case can be created only on the suite whose
+  body is running; the runner tracks it in `running_suite_`:
   - `top_suite` — the optional suite whose body is the code of `main()`,
     owned by each `runner` and added to the session by
     `runner::add_top_suite()`, which returns it; users do not construct
@@ -144,7 +154,8 @@ need to name it.
   (`detail::compare_op` with the tags `equal_to`, `less`, ..., and the
   logical `and_op`, `or_op`, `not_op`), which the formatter reports.
   `extension.h` holds the concepts that constrain them, and `math.h`
-  (`detail::math`) supports the floating-point comparisons. The
+  (`detail::math`) has the small `abs()` and `min_value()` helpers of
+  the approximate comparisons. The
   application extensions reuse the same templates, through the
   `extension` namespace, so they need no formatter of their own.
 - `deprecated.h` also holds the deprecated user-defined literals, type
@@ -191,8 +202,10 @@ The `unit` program is a single executable that links the bodies of the
 and `unit-deprecated` and `unit-static-asserts` are separate programs.
 The output of each program is compared with the reference files in
 `tests/expected/{tap,txt}` (the `-noexcept` variants are for the builds
-without exceptions): a change that alters the reports, or adds or removes
-checks, must update them in the same commit.
+without exceptions, and the `-console`, `-console-quiet`, and `-colour`
+variants hold the console output of the `unit` programs, captured on
+the synthetic-posix platform): a change that alters the reports, or adds
+or removes checks, must update them in the same commit.
 
 Common commands (run from the repository root):
 
