@@ -290,6 +290,163 @@ namespace micro_os_plus::micro_test_plus
           and (not std::is_same_v<Rhs_T, char32_t>);
 
     /**
+     * @brief The type with which an operand of a comparator is compared.
+     *
+     * @details
+     * The type of the operand after `as_operand()` and `unwrap()`, without
+     * references and qualifiers; for example `detail::c_string` for a
+     * string literal.
+     *
+     * @tparam T The type deduced for the operand, possibly a reference.
+     */
+    template <class T>
+    using comparison_operand_t
+        = unwrapped_t<decltype (as_operand (std::declval<T> ()))>;
+
+    /**
+     * @brief Concept satisfied by two pointers, one of which points to a
+     * function.
+     *
+     * @details
+     * The comparison of a function pointer with an object pointer, such as
+     * a `void*`, is an extension of the compilers, accepted with a
+     * warning, which the library silences, but not by the checks of the
+     * concepts that follow; the comparators keep accepting it.
+     *
+     * @tparam Lhs_T The type of the left hand side operand.
+     * @tparam Rhs_T The type of the right hand side operand.
+     */
+    template <class Lhs_T, class Rhs_T>
+    concept function_pointer_pair
+        = std::is_pointer_v<Lhs_T> and std::is_pointer_v<Rhs_T>
+          and (std::is_function_v<std::remove_pointer_t<Lhs_T>>
+               or std::is_function_v<std::remove_pointer_t<Rhs_T>>);
+
+    /**
+     * @brief Names for the checks of the comparison operators, looked up
+     * as the `apply()` functions look them up.
+     *
+     * @details
+     * The using-declarations make the standard operators visible to
+     * unqualified lookup, in addition to those found by argument-dependent
+     * lookup, as in the bodies of the `apply()` functions; the concepts
+     * check that the comparison is well-formed, without instantiating the
+     * bodies.
+     */
+    namespace comparison_lookup
+    {
+      using std::operator==;
+      using std::operator!=;
+      using std::operator<;
+      using std::operator>;
+      using std::operator<=;
+      using std::operator>=;
+
+      /** @brief Satisfied if `lhs == rhs` is well-formed. */
+      template <class Lhs_T, class Rhs_T>
+      concept can_equal
+          = requires (const Lhs_T& lhs, const Rhs_T& rhs) { lhs == rhs; };
+
+      /** @brief Satisfied if `lhs != rhs` is well-formed. */
+      template <class Lhs_T, class Rhs_T>
+      concept can_not_equal
+          = requires (const Lhs_T& lhs, const Rhs_T& rhs) { lhs != rhs; };
+
+      /** @brief Satisfied if `lhs > rhs` is well-formed. */
+      template <class Lhs_T, class Rhs_T>
+      concept can_greater
+          = requires (const Lhs_T& lhs, const Rhs_T& rhs) { lhs > rhs; };
+
+      /** @brief Satisfied if `lhs >= rhs` is well-formed. */
+      template <class Lhs_T, class Rhs_T>
+      concept can_greater_equal
+          = requires (const Lhs_T& lhs, const Rhs_T& rhs) { lhs >= rhs; };
+
+      /** @brief Satisfied if `lhs < rhs` is well-formed. */
+      template <class Lhs_T, class Rhs_T>
+      concept can_less
+          = requires (const Lhs_T& lhs, const Rhs_T& rhs) { lhs < rhs; };
+
+      /** @brief Satisfied if `lhs <= rhs` is well-formed. */
+      template <class Lhs_T, class Rhs_T>
+      concept can_less_equal
+          = requires (const Lhs_T& lhs, const Rhs_T& rhs) { lhs <= rhs; };
+    } // namespace comparison_lookup
+
+    /**
+     * @brief Concepts satisfied when two operands can be compared by the
+     * corresponding comparator.
+     *
+     * @details
+     * The comparison is the one made by the `apply()` function of the
+     * comparison tag: by value for the integers of different signedness
+     * (see `sign_mixed_integers`), otherwise with the operator of the
+     * language. Used to reject the call of `eq()` and of the other
+     * comparators at the call site, with a short diagnostic.
+     *
+     * @tparam Lhs_T The type deduced for the left hand side operand.
+     * @tparam Rhs_T The type deduced for the right hand side operand.
+     */
+    template <class Lhs_T, class Rhs_T>
+    concept equal_operands
+        = sign_mixed_integers<comparison_operand_t<Lhs_T>,
+                              comparison_operand_t<Rhs_T>>
+          or function_pointer_pair<comparison_operand_t<Lhs_T>,
+                                   comparison_operand_t<Rhs_T>>
+          or comparison_lookup::can_equal<comparison_operand_t<Lhs_T>,
+                                          comparison_operand_t<Rhs_T>>;
+
+    /** @copydoc equal_operands */
+    template <class Lhs_T, class Rhs_T>
+    concept not_equal_operands
+        = sign_mixed_integers<comparison_operand_t<Lhs_T>,
+                              comparison_operand_t<Rhs_T>>
+          or function_pointer_pair<comparison_operand_t<Lhs_T>,
+                                   comparison_operand_t<Rhs_T>>
+          or comparison_lookup::can_not_equal<comparison_operand_t<Lhs_T>,
+                                              comparison_operand_t<Rhs_T>>;
+
+    /** @copydoc equal_operands */
+    template <class Lhs_T, class Rhs_T>
+    concept greater_operands
+        = sign_mixed_integers<comparison_operand_t<Lhs_T>,
+                              comparison_operand_t<Rhs_T>>
+          or function_pointer_pair<comparison_operand_t<Lhs_T>,
+                                   comparison_operand_t<Rhs_T>>
+          or comparison_lookup::can_greater<comparison_operand_t<Lhs_T>,
+                                            comparison_operand_t<Rhs_T>>;
+
+    /** @copydoc equal_operands */
+    template <class Lhs_T, class Rhs_T>
+    concept greater_equal_operands
+        = sign_mixed_integers<comparison_operand_t<Lhs_T>,
+                              comparison_operand_t<Rhs_T>>
+          or function_pointer_pair<comparison_operand_t<Lhs_T>,
+                                   comparison_operand_t<Rhs_T>>
+          or comparison_lookup::can_greater_equal<comparison_operand_t<Lhs_T>,
+                                                  comparison_operand_t<Rhs_T>>;
+
+    /** @copydoc equal_operands */
+    template <class Lhs_T, class Rhs_T>
+    concept less_operands
+        = sign_mixed_integers<comparison_operand_t<Lhs_T>,
+                              comparison_operand_t<Rhs_T>>
+          or function_pointer_pair<comparison_operand_t<Lhs_T>,
+                                   comparison_operand_t<Rhs_T>>
+          or comparison_lookup::can_less<comparison_operand_t<Lhs_T>,
+                                         comparison_operand_t<Rhs_T>>;
+
+    /** @copydoc equal_operands */
+    template <class Lhs_T, class Rhs_T>
+    concept less_equal_operands
+        = sign_mixed_integers<comparison_operand_t<Lhs_T>,
+                              comparison_operand_t<Rhs_T>>
+          or function_pointer_pair<comparison_operand_t<Lhs_T>,
+                                   comparison_operand_t<Rhs_T>>
+          or comparison_lookup::can_less_equal<comparison_operand_t<Lhs_T>,
+                                               comparison_operand_t<Rhs_T>>;
+
+    /**
      * @details
      * The using-declaration makes the standard operators visible to
      * unqualified lookup, in addition to those found by argument-dependent

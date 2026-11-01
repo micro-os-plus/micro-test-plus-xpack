@@ -14,6 +14,12 @@
 #include "micro-os-plus/platform.h"
 #include "micro-os-plus/micro-test-plus.h"
 
+#include <array>
+#include <optional>
+#include <string>
+#include <string_view>
+#include <vector>
+
 namespace mt = micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
@@ -260,6 +266,37 @@ namespace
   template <class Name_T>
   concept can_add_top_suite
       = requires (mt::runner& r, Name_T name) { r.add_top_suite (name); };
+
+  // Whether the comparators accept operands of the given types (#238).
+  template <class L, class R>
+  concept can_eq = requires (L&& l, R&& r) {
+    mt::eq (std::forward<L> (l), std::forward<R> (r));
+  };
+
+  template <class L, class R>
+  concept can_ne = requires (L&& l, R&& r) {
+    mt::ne (std::forward<L> (l), std::forward<R> (r));
+  };
+
+  template <class L, class R>
+  concept can_gt = requires (L&& l, R&& r) {
+    mt::gt (std::forward<L> (l), std::forward<R> (r));
+  };
+
+  template <class L, class R>
+  concept can_ge = requires (L&& l, R&& r) {
+    mt::ge (std::forward<L> (l), std::forward<R> (r));
+  };
+
+  template <class L, class R>
+  concept can_lt = requires (L&& l, R&& r) {
+    mt::lt (std::forward<L> (l), std::forward<R> (r));
+  };
+
+  template <class L, class R>
+  concept can_le = requires (L&& l, R&& r) {
+    mt::le (std::forward<L> (l), std::forward<R> (r));
+  };
 
   // Whether the logical combinators accept operands of the given types.
   template <class... Ts>
@@ -850,6 +887,33 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (not can_all_of<bool, bool, literal_t>);
     static_assert (not can_any_of<bool, literal_t>);
     static_assert (not can_any_of<bool, bool, literal_t>);
+  }
+
+  {
+    // The comparators reject the operands that cannot be compared, at the
+    // call site, instead of inside the comparison (#238).
+    static_assert (can_eq<int, long>);
+    static_assert (can_eq<int, unsigned>);
+    static_assert (can_eq<std::string, const char (&)[4]>);
+    static_assert (can_eq<const char*, std::string_view>);
+    static_assert (can_eq<std::vector<int>, std::vector<int>>);
+    static_assert (can_eq<std::vector<int>&, int (&)[3]>);
+    static_assert (can_eq<std::optional<int>, int>);
+    static_assert (can_ne<std::string, std::string>);
+    static_assert (can_lt<int, double>);
+    static_assert (can_le<std::string, const char*>);
+    static_assert (can_gt<std::vector<int>, std::vector<int>>);
+    static_assert (can_ge<double, float>);
+
+    static_assert (not can_eq<int, const char (&)[4]>);
+    static_assert (not can_eq<std::string, int>);
+    static_assert (not can_eq<std::vector<int>, std::array<int, 2>>);
+    static_assert (not can_ne<std::string, int>);
+    static_assert (not can_gt<std::string, int>);
+    static_assert (not can_ge<std::string, int>);
+    static_assert (not can_lt<std::string, int>);
+    static_assert (not can_le<std::string, int>);
+    static_assert (not can_lt<std::optional<int>, std::string>);
   }
 
   {

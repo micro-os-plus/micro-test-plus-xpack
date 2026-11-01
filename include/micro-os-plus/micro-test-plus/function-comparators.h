@@ -111,7 +111,9 @@ namespace micro_os_plus::micro_test_plus
    * Both operands must satisfy `extension::printable`, since they are
    * reported on failure; an application type needs an `operator<<` for
    * `mt::expression_formatter`, otherwise the call is rejected, with a
-   * diagnostic that names the operand type.
+   * diagnostic that names the operand type. The operands must also be
+   * comparable with the operator of the comparator, otherwise the call is
+   * rejected in the same way.
    *
    * The same rules apply to `ne()`, `gt()`, `ge()`, `lt()`, and `le()`.
    *
@@ -123,7 +125,8 @@ namespace micro_os_plus::micro_test_plus
    * equal.
    */
   template <class Lhs_T, class Rhs_T>
-    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
+    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>
+              and detail::equal_operands<Lhs_T, Rhs_T>)
   [[nodiscard]] constexpr auto
   eq (Lhs_T&& lhs, Rhs_T&& rhs);
 
@@ -139,7 +142,8 @@ namespace micro_os_plus::micro_test_plus
    * equal.
    */
   template <class Lhs_T, class Rhs_T>
-    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
+    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>
+              and detail::not_equal_operands<Lhs_T, Rhs_T>)
   [[nodiscard]] constexpr auto
   ne (Lhs_T&& lhs, Rhs_T&& rhs);
 
@@ -155,7 +159,8 @@ namespace micro_os_plus::micro_test_plus
    * than `rhs`.
    */
   template <class Lhs_T, class Rhs_T>
-    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
+    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>
+              and detail::greater_operands<Lhs_T, Rhs_T>)
   [[nodiscard]] constexpr auto
   gt (Lhs_T&& lhs, Rhs_T&& rhs);
 
@@ -172,7 +177,8 @@ namespace micro_os_plus::micro_test_plus
    * than or equal to `rhs`.
    */
   template <class Lhs_T, class Rhs_T>
-    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
+    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>
+              and detail::greater_equal_operands<Lhs_T, Rhs_T>)
   [[nodiscard]] constexpr auto
   ge (Lhs_T&& lhs, Rhs_T&& rhs);
 
@@ -189,7 +195,8 @@ namespace micro_os_plus::micro_test_plus
    * `rhs`.
    */
   template <class Lhs_T, class Rhs_T>
-    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
+    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>
+              and detail::less_operands<Lhs_T, Rhs_T>)
   [[nodiscard]] constexpr auto
   lt (Lhs_T&& lhs, Rhs_T&& rhs);
 
@@ -206,7 +213,8 @@ namespace micro_os_plus::micro_test_plus
    * or equal to `rhs`.
    */
   template <class Lhs_T, class Rhs_T>
-    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>)
+    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>
+              and detail::less_equal_operands<Lhs_T, Rhs_T>)
   [[nodiscard]] constexpr auto
   le (Lhs_T&& lhs, Rhs_T&& rhs);
 
