@@ -178,6 +178,108 @@ namespace micro_os_plus::micro_test_plus::detail
         }
       buffer.push_back ('"');
     }
+
+    /**
+     * @brief Appends a code point to a text, as UTF-8.
+     *
+     * @details
+     * A value that is not a Unicode scalar value (a surrogate, or a value
+     * above U+10FFFF) is written as the replacement character U+FFFD.
+     *
+     * @param text The text to append to.
+     * @param code The code point.
+     */
+    void
+    append_utf8 (std::string& text, char32_t code)
+    {
+      if ((code >= 0xD800 && code <= 0xDFFF) || code > 0x10FFFF)
+        {
+          code = 0xFFFD;
+        }
+
+      if (code < 0x80)
+        {
+          text.push_back (static_cast<char> (code));
+        }
+      else if (code < 0x800)
+        {
+          text.push_back (static_cast<char> (0xC0 | (code >> 6)));
+          text.push_back (static_cast<char> (0x80 | (code & 0x3F)));
+        }
+      else if (code < 0x10000)
+        {
+          text.push_back (static_cast<char> (0xE0 | (code >> 12)));
+          text.push_back (static_cast<char> (0x80 | ((code >> 6) & 0x3F)));
+          text.push_back (static_cast<char> (0x80 | (code & 0x3F)));
+        }
+      else
+        {
+          text.push_back (static_cast<char> (0xF0 | (code >> 18)));
+          text.push_back (static_cast<char> (0x80 | ((code >> 12) & 0x3F)));
+          text.push_back (static_cast<char> (0x80 | ((code >> 6) & 0x3F)));
+          text.push_back (static_cast<char> (0x80 | (code & 0x3F)));
+        }
+    }
+
+    /**
+     * @brief Converts a UTF-16 text to UTF-8.
+     *
+     * @details
+     * The surrogate pairs are combined; an unpaired surrogate is written
+     * as the replacement character.
+     *
+     * @tparam Char_T A character type of at least 16 bits, holding UTF-16
+     * code units.
+     *
+     * @param sv The text to convert.
+     * @return The UTF-8 text.
+     */
+    template <class Char_T>
+    std::string
+    utf16_to_utf8 (std::basic_string_view<Char_T> sv)
+    {
+      std::string text;
+      text.reserve (sv.size ());
+      for (std::size_t i = 0; i < sv.size (); ++i)
+        {
+          const auto unit = static_cast<char32_t> (sv[i]) & 0xFFFFu;
+          if (unit >= 0xD800 && unit <= 0xDBFF && i + 1 < sv.size ())
+            {
+              const auto next = static_cast<char32_t> (sv[i + 1]) & 0xFFFFu;
+              if (next >= 0xDC00 && next <= 0xDFFF)
+                {
+                  append_utf8 (text, 0x10000 + ((unit - 0xD800) << 10)
+                                         + (next - 0xDC00));
+                  ++i;
+                  continue;
+                }
+            }
+          append_utf8 (text, unit);
+        }
+      return text;
+    }
+
+    /**
+     * @brief Converts a UTF-32 text to UTF-8.
+     *
+     * @tparam Char_T A character type of at least 32 bits, holding UTF-32
+     * code units.
+     *
+     * @param sv The text to convert.
+     * @return The UTF-8 text.
+     */
+    template <class Char_T>
+    std::string
+    utf32_to_utf8 (std::basic_string_view<Char_T> sv)
+    {
+      std::string text;
+      text.reserve (sv.size ());
+      for (const Char_T unit : sv)
+        {
+          append_utf8 (text, static_cast<char32_t> (unit));
+        }
+      return text;
+    }
   } // namespace
 
   // --------------------------------------------------------------------------
@@ -202,6 +304,59 @@ namespace micro_os_plus::micro_test_plus::detail
         append_quoted (buffer_, sv);
       }
     return *this;
+  }
+
+  /**
+   * @details
+   * Converted to UTF-8, as UTF-16 where `wchar_t` has 16 bits, and as
+   * UTF-32 otherwise, and written as a `std::string_view` is.
+   */
+  expression_formatter&
+  expression_formatter::operator<< (std::wstring_view sv)
+  {
+    if constexpr (sizeof (wchar_t) == 2)
+      {
+        return *this << std::string_view{ utf16_to_utf8 (sv) };
+      }
+    else
+      {
+        return *this << std::string_view{ utf32_to_utf8 (sv) };
+      }
+  }
+
+#if defined(__cpp_lib_char8_t)
+  /**
+   * @details
+   * The code units are the bytes of the UTF-8 text, written as a
+   * `std::string_view` is.
+   */
+  expression_formatter&
+  expression_formatter::operator<< (std::u8string_view sv)
+  {
+    return *this << std::string_view{
+      reinterpret_cast<const char*> (sv.data ()), sv.size ()
+    };
+  }
+#endif // defined(__cpp_lib_char8_t)
+
+  /**
+   * @details
+   * Converted to UTF-8, and written as a `std::string_view` is.
+   */
+  expression_formatter&
+  expression_formatter::operator<< (std::u16string_view sv)
+  {
+    return *this << std::string_view{ utf16_to_utf8 (sv) };
+  }
+
+  /**
+   * @details
+   * Converted to UTF-8, and written as a `std::string_view` is.
+   */
+  expression_formatter&
+  expression_formatter::operator<< (std::u32string_view sv)
+  {
+    return *this << std::string_view{ utf32_to_utf8 (sv) };
   }
 
   /**
@@ -302,6 +457,90 @@ namespace micro_os_plus::micro_test_plus::detail
         buffer_.append (s);
       }
     return *this;
+  }
+
+  /**
+   * @details
+   * In the plain mode, the text, as UTF-8, unchanged, with a null pointer
+   * written as `nullptr`; otherwise the address, since the pointers of
+   * the wide character types are compared by address.
+   */
+  expression_formatter&
+  expression_formatter::operator<< (const wchar_t* s)
+  {
+    if (!plain_)
+      {
+        detail::append_pointer (buffer_, s);
+        return *this;
+      }
+    if (s == nullptr)
+      {
+        buffer_.append ("nullptr");
+        return *this;
+      }
+    return *this << std::wstring_view{ s };
+  }
+
+#if defined(__cpp_lib_char8_t)
+  /**
+   * @details
+   * Written as the overload for `const wchar_t*` is.
+   */
+  expression_formatter&
+  expression_formatter::operator<< (const char8_t* s)
+  {
+    if (!plain_)
+      {
+        detail::append_pointer (buffer_, s);
+        return *this;
+      }
+    if (s == nullptr)
+      {
+        buffer_.append ("nullptr");
+        return *this;
+      }
+    return *this << std::u8string_view{ s };
+  }
+#endif // defined(__cpp_lib_char8_t)
+
+  /**
+   * @details
+   * Written as the overload for `const wchar_t*` is.
+   */
+  expression_formatter&
+  expression_formatter::operator<< (const char16_t* s)
+  {
+    if (!plain_)
+      {
+        detail::append_pointer (buffer_, s);
+        return *this;
+      }
+    if (s == nullptr)
+      {
+        buffer_.append ("nullptr");
+        return *this;
+      }
+    return *this << std::u16string_view{ s };
+  }
+
+  /**
+   * @details
+   * Written as the overload for `const wchar_t*` is.
+   */
+  expression_formatter&
+  expression_formatter::operator<< (const char32_t* s)
+  {
+    if (!plain_)
+      {
+        detail::append_pointer (buffer_, s);
+        return *this;
+      }
+    if (s == nullptr)
+      {
+        buffer_.append ("nullptr");
+        return *this;
+      }
+    return *this << std::u32string_view{ s };
   }
 
   /**

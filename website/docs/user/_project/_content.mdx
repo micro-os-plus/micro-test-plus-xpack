@@ -813,7 +813,10 @@ The pointers and arrays of `char8_t`, `char16_t`, `char32_t`, and
 by element, including the terminating null character, and the pointers
 are compared by address. Convert them to `std::u8string_view`,
 `std::u16string_view`, `std::u32string_view`, or `std::wstring_view`
-to compare their content.
+to compare their content; these views and the corresponding strings are
+reported as text, converted to UTF-8, quoted as the `std::string` values
+are. The messages write the text of the pointers and arrays of these
+types, converted to UTF-8 in the same way.
 
 The `approx()` comparator succeeds if its first two operands differ by
 at most the third one, the tolerance, so a tolerance of zero requires

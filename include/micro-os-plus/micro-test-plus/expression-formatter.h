@@ -76,6 +76,7 @@
 #include <utility>
 #include <vector>
 #include <string_view>
+#include <version>
 
 // ----------------------------------------------------------------------------
 
@@ -310,6 +311,63 @@ namespace micro_os_plus::micro_test_plus
       operator<< (std::string_view sv);
 
       /**
+       * @brief Appends a wide string view to the buffer, as UTF-8.
+       *
+       * @details
+       * The text is converted to UTF-8 and written as a `std::string_view`
+       * is: between double quotes, with the control characters, the double
+       * quote, and the backslash escaped, or, in the plain mode, used for
+       * the messages, unchanged. The code units that are not valid, such
+       * as an unpaired surrogate, are written as the replacement
+       * character U+FFFD. The `wchar_t` units are taken as UTF-16 where
+       * `wchar_t` has 16 bits, and as UTF-32 otherwise.
+       *
+       * @param sv The string view to append.
+       * @return Reference to this instance.
+       */
+      expression_formatter&
+      operator<< (std::wstring_view sv);
+
+#if defined(__cpp_lib_char8_t)
+      /**
+       * @brief Appends a UTF-8 string view to the buffer.
+       *
+       * @details
+       * Written as the overload for `std::wstring_view` writes the text,
+       * the code units being the bytes of the UTF-8 text.
+       *
+       * @param sv The string view to append.
+       * @return Reference to this instance.
+       */
+      expression_formatter&
+      operator<< (std::u8string_view sv);
+#endif // defined(__cpp_lib_char8_t)
+
+      /**
+       * @brief Appends a UTF-16 string view to the buffer, as UTF-8.
+       *
+       * @details
+       * Written as the overload for `std::wstring_view` writes the text.
+       *
+       * @param sv The string view to append.
+       * @return Reference to this instance.
+       */
+      expression_formatter&
+      operator<< (std::u16string_view sv);
+
+      /**
+       * @brief Appends a UTF-32 string view to the buffer, as UTF-8.
+       *
+       * @details
+       * Written as the overload for `std::wstring_view` writes the text.
+       *
+       * @param sv The string view to append.
+       * @return Reference to this instance.
+       */
+      expression_formatter&
+      operator<< (std::u32string_view sv);
+
+      /**
        * @brief Appends a character, as a quoted literal, to the buffer.
        *
        * @details
@@ -429,6 +487,66 @@ namespace micro_os_plus::micro_test_plus
        */
       expression_formatter&
       operator<< (const char* s);
+
+      /**
+       * @brief Appends a null-terminated wide C string in the plain mode,
+       * or the address of the pointer otherwise.
+       *
+       * @details
+       * The pointers and arrays of the wide character types are not
+       * strings for the comparators, which compare the addresses, so, as
+       * operands, they are reported as addresses. In the plain mode, used
+       * for the messages and for the values written by the applications,
+       * the text is written as UTF-8, unchanged, and a null pointer as
+       * `"nullptr"`. Also selected for the string literals, which decay
+       * to a pointer.
+       *
+       * @param s The wide C string, or a null pointer.
+       * @return Reference to this instance.
+       */
+      expression_formatter&
+      operator<< (const wchar_t* s);
+
+#if defined(__cpp_lib_char8_t)
+      /**
+       * @brief Appends a null-terminated UTF-8 C string in the plain mode,
+       * or the address of the pointer otherwise.
+       *
+       * @details
+       * Written as the overload for `const wchar_t*` writes the text.
+       *
+       * @param s The UTF-8 C string, or a null pointer.
+       * @return Reference to this instance.
+       */
+      expression_formatter&
+      operator<< (const char8_t* s);
+#endif // defined(__cpp_lib_char8_t)
+
+      /**
+       * @brief Appends a null-terminated UTF-16 C string in the plain mode,
+       * or the address of the pointer otherwise.
+       *
+       * @details
+       * Written as the overload for `const wchar_t*` writes the text.
+       *
+       * @param s The UTF-16 C string, or a null pointer.
+       * @return Reference to this instance.
+       */
+      expression_formatter&
+      operator<< (const char16_t* s);
+
+      /**
+       * @brief Appends a null-terminated UTF-32 C string in the plain mode,
+       * or the address of the pointer otherwise.
+       *
+       * @details
+       * Written as the overload for `const wchar_t*` writes the text.
+       *
+       * @param s The UTF-32 C string, or a null pointer.
+       * @return Reference to this instance.
+       */
+      expression_formatter&
+      operator<< (const char32_t* s);
 
       /**
        * @brief Appends a C string operand of a comparator.

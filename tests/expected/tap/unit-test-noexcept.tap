@@ -2701,7 +2701,7 @@ not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
     ok 6 - Formatter standard types # { passed, 16 checks }
     # Subtest: Message types
         ok 1 - numbers 1 2 3 1.5 2 true
-        ok 2 - pointer 0x4012ee50
+        ok 2 - pointer 0x40137820
         ok 3 - container {1, 2}
         ok 4 - standard types (1, a) nullopt 1
         ok 5 - custom type { 1, 2 } on
@@ -3137,77 +3137,122 @@ not ok 9 - Miscellaneous suite # { FAILED, 200 checks passed, 8 failed, in 52 te
           ...
         1..3
     not ok 6 - Custom types bad # { FAILED, 0 checks passed, 3 failed }
+    # Subtest: Wide strings
+        ok 1 - wide string
+        ok 2 - "café" == "café"
+        ok 3 - "😀" == "😀"
+        ok 4 - "café" == "café"
+        ok 5 - "abc" != "abd"
+        1..5
+    ok 7 - Wide strings # { passed, 5 checks }
+    # Subtest: Wide strings bad
+        not ok 1
+          ---
+          condition: "\"café\" == \"cafe\""
+          at:
+            fileName: operands.cpp
+            lineNumber: 452
+          ...
+        not ok 2
+          ---
+          condition: "\"a\\tb\" == \"a b\""
+          at:
+            fileName: operands.cpp
+            lineNumber: 456
+          ...
+        not ok 3
+          ---
+          condition: "\"😀\" == \"x\""
+          at:
+            fileName: operands.cpp
+            lineNumber: 460
+          ...
+        not ok 4
+          ---
+          condition: "\"naïve\" == \"naive\""
+          at:
+            fileName: operands.cpp
+            lineNumber: 464
+          ...
+        not ok 5 - utf-16 utf-32 utf-8 wide
+          ---
+          at:
+            fileName: operands.cpp
+            lineNumber: 469
+          ...
+        1..5
+    not ok 8 - Wide strings bad # { FAILED, 0 checks passed, 5 failed }
     # Subtest: Custom types with members bad
         not ok 1
           ---
           condition: "119.10 EUR == 119.0 EUR"
           at:
             fileName: operands.cpp
-            lineNumber: 427
+            lineNumber: 487
           ...
         not ok 2
           ---
           condition: "(1, 0.10 RON) == (1, 0.20 RON)"
           at:
             fileName: operands.cpp
-            lineNumber: 430
+            lineNumber: 490
           ...
         1..2
-    not ok 7 - Custom types with members bad # { FAILED, 0 checks passed, 2 failed }
+    not ok 9 - Custom types with members bad # { FAILED, 0 checks passed, 2 failed }
     # Subtest: Custom comparators
         ok 1 - 3 divides 12
         ok 2 - even 4
         ok 3 - combined
         1..3
-    ok 8 - Custom comparators # { passed, 3 checks }
+    ok 10 - Custom comparators # { passed, 3 checks }
     # Subtest: Custom comparators bad
         not ok 1 - 5 divides 12
           ---
           condition: "5 divides 12"
           at:
             fileName: operands.cpp
-            lineNumber: 468
+            lineNumber: 528
           ...
         not ok 2
           ---
           condition: "5 divides 12"
           at:
             fileName: operands.cpp
-            lineNumber: 471
+            lineNumber: 531
           ...
         not ok 3
           ---
           condition: "even 7"
           at:
             fileName: operands.cpp
-            lineNumber: 474
+            lineNumber: 534
           ...
         not ok 4
           ---
           condition: "(3 divides 12 and even 7)"
           at:
             fileName: operands.cpp
-            lineNumber: 477
+            lineNumber: 537
           ...
         1..4
-    not ok 9 - Custom comparators bad # { FAILED, 0 checks passed, 4 failed }
+    not ok 11 - Custom comparators bad # { FAILED, 0 checks passed, 4 failed }
     # Subtest: Custom comparators with strings bad
         not ok 1
           ---
           condition: "\"hello\" has prefix \"help\""
           at:
             fileName: operands.cpp
-            lineNumber: 488
+            lineNumber: 548
           ...
         not ok 2
           ---
           condition: "\"\" has prefix \"help\""
           at:
             fileName: operands.cpp
-            lineNumber: 492
+            lineNumber: 552
           ...
         1..2
-    not ok 10 - Custom comparators with strings bad # { FAILED, 0 checks passed, 2 failed }
+    not ok 12 - Custom comparators with strings bad # { FAILED, 0 checks passed, 2 failed }
     # Subtest: Standard types
         ok 1 - colour::red == colour::red
         ok 2 - colour::red != colour::green
@@ -3223,45 +3268,45 @@ not ok 9 - Miscellaneous suite # { FAILED, 200 checks passed, 8 failed, in 52 te
         ok 12 - 250us < 1ms
         ok 13 - 1000ms == 1s
         1..13
-    ok 11 - Standard types # { passed, 13 checks }
+    ok 13 - Standard types # { passed, 13 checks }
     # Subtest: Standard types bad
         not ok 1 - colour::red == colour::green
           ---
           condition: "0 == 1"
           at:
             fileName: operands.cpp
-            lineNumber: 569
+            lineNumber: 629
           ...
         not ok 2 - std::byte{ 1 } == std::byte{ 2 }
           ---
           condition: "(unsigned char)1 == (unsigned char)2"
           at:
             fileName: operands.cpp
-            lineNumber: 573
+            lineNumber: 633
           ...
         not ok 3 - pairs1 == pairs2
           ---
           condition: "{(1, 2)} == {(1, 3)}"
           at:
             fileName: operands.cpp
-            lineNumber: 579
+            lineNumber: 639
           ...
         not ok 4 - optional == nullopt
           ---
           condition: "42 == nullopt"
           at:
             fileName: operands.cpp
-            lineNumber: 582
+            lineNumber: 642
           ...
         not ok 5 - 5ms == 6ms
           ---
           condition: "5ms == 6ms"
           at:
             fileName: operands.cpp
-            lineNumber: 586
+            lineNumber: 646
           ...
         1..5
-    not ok 12 - Standard types bad # { FAILED, 0 checks passed, 5 failed }
+    not ok 14 - Standard types bad # { FAILED, 0 checks passed, 5 failed }
     # Subtest: Explicit conversions to bool
         ok 1 - optional with a value
         ok 2 - true
@@ -3269,51 +3314,51 @@ not ok 9 - Miscellaneous suite # { FAILED, 200 checks passed, 8 failed, in 52 te
         ok 4 - function not empty
         ok 5 - required unique_ptr
         1..5
-    ok 13 - Explicit conversions to bool # { passed, 5 checks }
+    ok 15 - Explicit conversions to bool # { passed, 5 checks }
     # Subtest: Explicit conversions to bool bad
         not ok 1 - empty optional
           ---
           at:
             fileName: operands.cpp
-            lineNumber: 637
+            lineNumber: 697
           ...
         not ok 2 - null unique_ptr
           ---
           at:
             fileName: operands.cpp
-            lineNumber: 640
+            lineNumber: 700
           ...
         not ok 3 - empty function
           ---
           at:
             fileName: operands.cpp
-            lineNumber: 643
+            lineNumber: 703
           ...
         not ok 4
           ---
           at:
             fileName: operands.cpp
-            lineNumber: 646
+            lineNumber: 706
           ...
         1..4
-    not ok 14 - Explicit conversions to bool bad # { FAILED, 0 checks passed, 4 failed }
+    not ok 16 - Explicit conversions to bool bad # { FAILED, 0 checks passed, 4 failed }
     # Subtest: Pointers to const
         ok 1 - different const objects
         ok 2 - same const object
         1..2
-    ok 15 - Pointers to const # { passed, 2 checks }
+    ok 17 - Pointers to const # { passed, 2 checks }
     # Subtest: Operand copies
         ok 1 - plain operands
         ok 2 - plain operands copied once each
         ok 3 - stored comparator
         ok 4 - operands stored once each
         1..4
-    ok 16 - Operand copies # { passed, 4 checks }
+    ok 18 - Operand copies # { passed, 4 checks }
     # Subtest: Returned comparators
         ok 1 - returned comparator
         ok 2 - operand of the returned comparator
         1..2
-    ok 17 - Returned comparators # { passed, 2 checks }
+    ok 19 - Returned comparators # { passed, 2 checks }
     # Subtest: Raw arrays
         ok 1 - bytes equal
         ok 2 - bytes not equal
@@ -3323,36 +3368,36 @@ not ok 9 - Miscellaneous suite # { FAILED, 200 checks passed, 8 failed, in 52 te
         ok 6 - array == vector
         ok 7 - vector == array
         1..7
-    ok 18 - Raw arrays # { passed, 7 checks }
+    ok 20 - Raw arrays # { passed, 7 checks }
     # Subtest: Raw arrays bad
         not ok 1 - bytes eq
           ---
           condition: "{1, 2, 3} == {1, 2, 4}"
           at:
             fileName: operands.cpp
-            lineNumber: 763
+            lineNumber: 823
           ...
         1..1
-    not ok 19 - Raw arrays bad # { FAILED, 0 checks passed, 1 failed }
+    not ok 21 - Raw arrays bad # { FAILED, 0 checks passed, 1 failed }
     # Subtest: Long ranges bad
         not ok 1 - long vector eq
           ---
           condition: "{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} == {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} (first difference at index 19)"
           at:
             fileName: operands.cpp
-            lineNumber: 776
+            lineNumber: 836
           ...
         not ok 2 - 16 bytes eq
           ---
           condition: "{7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8}"
           at:
             fileName: operands.cpp
-            lineNumber: 783
+            lineNumber: 843
           ...
         1..2
-    not ok 20 - Long ranges bad # { FAILED, 0 checks passed, 2 failed }
-    1..20
-not ok 10 - Operands suite # { FAILED, 48 checks passed, 33 failed, in 20 test cases }
+    not ok 22 - Long ranges bad # { FAILED, 0 checks passed, 2 failed }
+    1..22
+not ok 10 - Operands suite # { FAILED, 53 checks passed, 38 failed, in 22 test cases }
 # Subtest: Runner options suite
     # Subtest: Default options
         ok 1 - the TAP reporter
@@ -3549,4 +3594,4 @@ ok 12 - Stopwatch suite # { passed, 20 checks in 5 test cases }
     1..3
 not ok 13 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases }
 1..13
-# { total: 666 checks passed, 345 failed, in 148 test cases, 13 test suites }
+# { total: 671 checks passed, 350 failed, in 150 test cases, 13 test suites }

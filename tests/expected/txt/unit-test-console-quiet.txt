@@ -61,19 +61,19 @@
         ✗ null_string == "abc" FAILED (comparisons.cpp:461, nullptr == "abc")
 
     • Failed pointer comparisons
-        ✗ ptr1 != &one FAILED (comparisons.cpp:542, 0x7ff7bac7e740 != 0x7ff7bac7e740)
-        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:545, 0x7ff7bac7e740 != 0x7ff7bac7e740)
-        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:548, 0x7ff7bac7e740 > 0x7ff7bac7e740)
-        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:551, 0x7ff7bac7e740 < 0x7ff7bac7e740)
-        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:554, 0x7ff7bac7e740 == 0x7ff7bac7e790)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:557, 0x1052eb9f8 != 0x1052eb9f8)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:560, 0x1052eb9f8 == 0x7ff7bac7e790)
-        ✗ pone >= ptwo FAILED (comparisons.cpp:572, 0x7ff7bac7edc0 >= 0x7ff7bac7edc4)
-        ✗ ptwo <= pone FAILED (comparisons.cpp:575, 0x7ff7bac7edc4 <= 0x7ff7bac7edc0)
+        ✗ ptr1 != &one FAILED (comparisons.cpp:542, 0x7ff7bc9d5740 != 0x7ff7bc9d5740)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:545, 0x7ff7bc9d5740 != 0x7ff7bc9d5740)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:548, 0x7ff7bc9d5740 > 0x7ff7bc9d5740)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:551, 0x7ff7bc9d5740 < 0x7ff7bc9d5740)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:554, 0x7ff7bc9d5740 == 0x7ff7bc9d5790)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:557, 0x1035949f8 != 0x1035949f8)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:560, 0x1035949f8 == 0x7ff7bc9d5790)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:572, 0x7ff7bc9d5dc0 >= 0x7ff7bc9d5dc4)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:575, 0x7ff7bc9d5dc4 <= 0x7ff7bc9d5dc0)
 
     • Failed null pointer comparisons
         ✗ a_nullptr != nullptr FAILED (comparisons.cpp:624, 0x0 != nullptr)
-        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:627, 0x7ff7bac7ede0 == nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:627, 0x7ff7bc9d5de0 == nullptr)
         ✗ pfunc != nullptr FAILED (comparisons.cpp:631, 0x0 != nullptr)
 
     • Logical operations
@@ -463,39 +463,46 @@ Matching test cases:
         ✗ FAILED (operands.cpp:405, { 1, 2 } == { 1, 3 })
         ✗ point{ 1, 2 } != point{ 1, 2 } FAILED (operands.cpp:408, { 1, 2 } != { 1, 2 })
 
+    • Wide strings bad
+        ✗ FAILED (operands.cpp:452, "café" == "cafe")
+        ✗ FAILED (operands.cpp:456, "a\tb" == "a b")
+        ✗ FAILED (operands.cpp:460, "😀" == "x")
+        ✗ FAILED (operands.cpp:464, "naïve" == "naive")
+        ✗ utf-16 utf-32 utf-8 wide FAILED (operands.cpp:469)
+
     • Custom types with members bad
-        ✗ FAILED (operands.cpp:427, 119.10 EUR == 119.0 EUR)
-        ✗ FAILED (operands.cpp:430, (1, 0.10 RON) == (1, 0.20 RON))
+        ✗ FAILED (operands.cpp:487, 119.10 EUR == 119.0 EUR)
+        ✗ FAILED (operands.cpp:490, (1, 0.10 RON) == (1, 0.20 RON))
 
     • Custom comparators bad
-        ✗ 5 divides 12 FAILED (operands.cpp:468, 5 divides 12)
-        ✗ FAILED (operands.cpp:471, 5 divides 12)
-        ✗ FAILED (operands.cpp:474, even 7)
-        ✗ FAILED (operands.cpp:477, (3 divides 12 and even 7))
+        ✗ 5 divides 12 FAILED (operands.cpp:528, 5 divides 12)
+        ✗ FAILED (operands.cpp:531, 5 divides 12)
+        ✗ FAILED (operands.cpp:534, even 7)
+        ✗ FAILED (operands.cpp:537, (3 divides 12 and even 7))
 
     • Custom comparators with strings bad
-        ✗ FAILED (operands.cpp:488, "hello" has prefix "help")
-        ✗ FAILED (operands.cpp:492, "" has prefix "help")
+        ✗ FAILED (operands.cpp:548, "hello" has prefix "help")
+        ✗ FAILED (operands.cpp:552, "" has prefix "help")
 
     • Standard types bad
-        ✗ colour::red == colour::green FAILED (operands.cpp:569, 0 == 1)
-        ✗ std::byte{ 1 } == std::byte{ 2 } FAILED (operands.cpp:573, (unsigned char)1 == (unsigned char)2)
-        ✗ pairs1 == pairs2 FAILED (operands.cpp:579, {(1, 2)} == {(1, 3)})
-        ✗ optional == nullopt FAILED (operands.cpp:582, 42 == nullopt)
-        ✗ 5ms == 6ms FAILED (operands.cpp:586, 5ms == 6ms)
+        ✗ colour::red == colour::green FAILED (operands.cpp:629, 0 == 1)
+        ✗ std::byte{ 1 } == std::byte{ 2 } FAILED (operands.cpp:633, (unsigned char)1 == (unsigned char)2)
+        ✗ pairs1 == pairs2 FAILED (operands.cpp:639, {(1, 2)} == {(1, 3)})
+        ✗ optional == nullopt FAILED (operands.cpp:642, 42 == nullopt)
+        ✗ 5ms == 6ms FAILED (operands.cpp:646, 5ms == 6ms)
 
     • Explicit conversions to bool bad
-        ✗ empty optional FAILED (operands.cpp:637)
-        ✗ null unique_ptr FAILED (operands.cpp:640)
-        ✗ empty function FAILED (operands.cpp:643)
-        ✗ FAILED (operands.cpp:646)
+        ✗ empty optional FAILED (operands.cpp:697)
+        ✗ null unique_ptr FAILED (operands.cpp:700)
+        ✗ empty function FAILED (operands.cpp:703)
+        ✗ FAILED (operands.cpp:706)
 
     • Raw arrays bad
-        ✗ bytes eq FAILED (operands.cpp:763, {1, 2, 3} == {1, 2, 4})
+        ✗ bytes eq FAILED (operands.cpp:823, {1, 2, 3} == {1, 2, 4})
 
     • Long ranges bad
-        ✗ long vector eq FAILED (operands.cpp:776, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} == {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} (first difference at index 19))
-        ✗ 16 bytes eq FAILED (operands.cpp:783, {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8})
+        ✗ long vector eq FAILED (operands.cpp:836, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} == {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} (first difference at index 19))
+        ✗ 16 bytes eq FAILED (operands.cpp:843, {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8})
 
 • Utility suite
 
@@ -506,4 +513,4 @@ Matching test cases:
         ✗ abc matches *C FAILED (utility.cpp:191)
         ✗ ab matches ??? FAILED (utility.cpp:195)
 
-✗ Total: 683 checks passed, 359 failed, in 165 test cases, 15 test suites, time: 12.893 ms
+✗ Total: 688 checks passed, 364 failed, in 167 test cases, 15 test suites, time: 13.064 ms
