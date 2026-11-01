@@ -197,7 +197,7 @@ feed FAILED (checks.cpp:390)
 
 • Exceptions suite
 
-    ✓ thrown exceptions - passed (2 checks)
+    ✓ thrown exceptions - passed (3 checks)
 
     • Failed thrown exceptions
         ✗ exception thrown FAILED (exceptions.cpp:103, throws, but nothing was thrown)
@@ -258,7 +258,7 @@ feed FAILED (checks.cpp:390)
 
     ✓ Exception in a suite body - passed (3 checks)
 
-✗ Exceptions suite - FAILED (10 checks passed, 16 failed, in 16 test cases), time: 1.130 ms
+✗ Exceptions suite - FAILED (11 checks passed, 16 failed, in 16 test cases), time: 1.106 ms
 
 • Exceptions suite body
 
@@ -789,6 +789,6 @@ Matching test cases:
 
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.102 ms
 
-✗ Total: 696 checks passed, 373 failed, in 171 test cases, 15 test suites, time: 20.704 ms
+✗ Total: 697 checks passed, 373 failed, in 171 test cases, 15 test suites, time: 13.987 ms
 Overall, the µTest++ unit tests were successful!
 

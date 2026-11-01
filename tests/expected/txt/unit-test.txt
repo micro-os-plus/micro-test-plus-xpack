@@ -494,7 +494,8 @@ feed FAILED (checks.cpp:390)
     • thrown exceptions
         ✓ exception thrown
         ✓ std::runtime_error thrown
-    ✓ thrown exceptions - passed (2 checks)
+        ✓ std::exception thrown
+    ✓ thrown exceptions - passed (3 checks)
     • Failed thrown exceptions
         ✗ exception thrown FAILED (exceptions.cpp:103, throws, but nothing was thrown)
         ✗ std::runtime_error thrown FAILED (exceptions.cpp:115, throws<std::runtime_error>, but a std::exception was thrown: "")
@@ -549,7 +550,7 @@ feed FAILED (checks.cpp:390)
         ✓ later suite run
         ✓ exception counted as a failed check
     ✓ Exception in a suite body - passed (3 checks)
-✗ Exceptions suite - FAILED (10 checks passed, 16 failed, in 16 test cases), time: 1.338 ms
+✗ Exceptions suite - FAILED (11 checks passed, 16 failed, in 16 test cases), time: 1.414 ms
 • Exceptions suite body
     • Test case before the exception
         ✓ check before the exception
@@ -1445,4 +1446,4 @@ next line FAILED (miscellaneous.cpp:939)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.235 ms
-✗ Total: 696 checks passed, 373 failed, in 171 test cases, 15 test suites, time: 28.460 ms
+✗ Total: 697 checks passed, 373 failed, in 171 test cases, 15 test suites, time: 20.276 ms

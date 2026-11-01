@@ -560,7 +560,8 @@ feed [31mFAILED[0m (checks.cpp:390)
     • thrown exceptions
         [32m✓[0m exception thrown
         [32m✓[0m std::runtime_error thrown
-    [32m✓[0m thrown exceptions - passed (2 checks)
+        [32m✓[0m std::exception thrown
+    [32m✓[0m thrown exceptions - passed (3 checks)
 
     • Failed thrown exceptions
         [31m✗[0m exception thrown [31mFAILED[0m (exceptions.cpp:103, \x1b[31mthrows, but nothing was thrown\x1b[0m)
@@ -631,7 +632,7 @@ feed [31mFAILED[0m (checks.cpp:390)
         [32m✓[0m exception counted as a failed check
     [32m✓[0m Exception in a suite body - passed (3 checks)
 
-[31m✗[0m Exceptions suite - [31mFAILED[0m (10 checks passed, 16 failed, in 16 test cases), time: 1.230 ms
+[31m✗[0m Exceptions suite - [31mFAILED[0m (11 checks passed, 16 failed, in 16 test cases), time: 1.283 ms
 
 • Exceptions suite body
 
@@ -1669,6 +1670,6 @@ Matching test cases:
 
 [31m✗[0m Utility suite - [31mFAILED[0m (21 checks passed, 5 failed, in 3 test cases), time: 0.161 ms
 
-[31m✗[0m Total: 696 checks passed, 373 failed, in 171 test cases, 15 test suites, time: 25.506 ms
+[31m✗[0m Total: 697 checks passed, 373 failed, in 171 test cases, 15 test suites, time: 18.605 ms
 Overall, the µTest++ unit tests were successful!
 

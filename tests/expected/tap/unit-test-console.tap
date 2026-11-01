@@ -580,7 +580,7 @@ ok 5 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.039 ms }
 ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, time: 0.034 ms }
 
 # Subtest: Exceptions suite
-    ok 1 - thrown exceptions # { passed, 2 checks }
+    ok 1 - thrown exceptions # { passed, 3 checks }
 
     # Subtest: Failed thrown exceptions
         not ok 1 - exception thrown
@@ -739,7 +739,7 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
     ok 14 - Exception in a suite body # { passed, 3 checks }
 
     1..14
-not ok 7 - Exceptions suite # { FAILED, 10 checks passed, 16 failed, in 16 test cases, time: 1.467 ms }
+not ok 7 - Exceptions suite # { FAILED, 11 checks passed, 16 failed, in 16 test cases, time: 1.304 ms }
 
 # Subtest: Exceptions suite body
     ok 1 - Test case before the exception # { passed, 1 check }
@@ -3039,6 +3039,6 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.114 ms }
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.123 ms }
 
 1..15
-# { total: 696 checks passed, 373 failed, in 171 test cases, 15 test suites, time: 18.875 ms }
+# { total: 697 checks passed, 373 failed, in 171 test cases, 15 test suites, time: 17.685 ms }
 Overall, the µTest++ unit tests were successful!
 

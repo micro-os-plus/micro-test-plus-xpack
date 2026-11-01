@@ -80,11 +80,18 @@ static mt::static_suite ts_exceptions{ "Exceptions suite", tr,
           { throw std::runtime_error{ "" }; }))
             << "std::runtime_error thrown";
 
+        // A base class of the standard exceptions matches all of them, and
+        // must not make the handlers of the library report a warning (the
+        // handler of std::exception is then unreachable).
+        t.expect (mt::throws<std::exception> ([]
+          { throw std::runtime_error{ "" }; }))
+            << "std::exception thrown";
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
 
-        local_counts.passed_checks++;
+        local_counts.passed_checks += 2;
 
         local_counts.executed_test_cases++;
       });

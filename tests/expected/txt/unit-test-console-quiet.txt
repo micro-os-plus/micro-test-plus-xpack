@@ -527,4 +527,4 @@ Matching test cases:
         ✗ abc matches *C FAILED (utility.cpp:191)
         ✗ ab matches ??? FAILED (utility.cpp:195)
 
-✗ Total: 696 checks passed, 373 failed, in 171 test cases, 15 test suites, time: 16.431 ms
+✗ Total: 697 checks passed, 373 failed, in 171 test cases, 15 test suites, time: 14.545 ms

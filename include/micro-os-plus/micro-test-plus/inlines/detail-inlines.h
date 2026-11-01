@@ -848,6 +848,13 @@ namespace micro_os_plus::micro_test_plus
      * `require()` in `func` is not an exception of `func`, and is
      * rethrown.
      */
+    // When `Exception_T` is `std::exception`, or one of its bases, the
+    // handler of `std::exception` is unreachable, which is not an error.
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wexceptions"
+#endif // defined(__GNUC__)
+
     template <class Exception_T>
     template <class Callable_T>
     throws_op<Exception_T>::throws_op (const Callable_T& func)
@@ -878,6 +885,10 @@ namespace micro_os_plus::micro_test_plus
       }() }
     {
     }
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
 
     // ------------------------------------------------------------------------
 

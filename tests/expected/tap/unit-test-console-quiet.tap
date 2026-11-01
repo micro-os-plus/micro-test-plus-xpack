@@ -570,7 +570,7 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
 #             fileName: exceptions.cpp
 #             lineNumber: 343
 #           ...
-not ok 7 - Exceptions suite # { FAILED, 10 checks passed, 16 failed, in 16 test cases, time: 1.355 ms }
+not ok 7 - Exceptions suite # { FAILED, 11 checks passed, 16 failed, in 16 test cases, time: 1.366 ms }
 # Exceptions suite body
 #     not ok 2 - unexpected exception in the suite body: boom
 not ok 8 - Exceptions suite body # { FAILED, 1 check passed, 1 failed, in 1 test case, time: 0.073 ms }
@@ -2666,4 +2666,4 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.102 ms }
 #           ...
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.126 ms }
 1..15
-# { total: 696 checks passed, 373 failed, in 171 test cases, 15 test suites, time: 25.955 ms }
+# { total: 697 checks passed, 373 failed, in 171 test cases, 15 test suites, time: 16.651 ms }
