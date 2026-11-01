@@ -122,6 +122,31 @@ static mt::static_suite ts_exceptions{ "Exceptions suite", tr,
 
         local_counts.failed_checks++;
 
+        // The reports tell what was thrown instead (#241): an exception of
+        // another type than the expected one, which is not a
+        // `std::exception`, and a `std::exception` with a text that needs
+        // escapes.
+        t.expect (
+            mt::throws<std::runtime_error> ([] { exercise_throw (true); }))
+            << "int thrown";
+        local_counts.failed_checks++;
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wmissing-noreturn"
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
+
+        t.expect (mt::throws<std::runtime_error> ([] ()
+          { throw std::invalid_argument{ "bad \"value\"\n" }; }));
+        local_counts.failed_checks++;
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
+
         local_counts.executed_test_cases++;
       });
 
@@ -156,6 +181,10 @@ static mt::static_suite ts_exceptions{ "Exceptions suite", tr,
       {
         t.expect (mt::nothrow ([] { exercise_throw (true); }))
             << "exception not thrown";
+        local_counts.failed_checks++;
+
+        t.expect (mt::nothrow ([] { exercise_throw_runtime_error (true); }))
+            << "std::exception not thrown";
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;

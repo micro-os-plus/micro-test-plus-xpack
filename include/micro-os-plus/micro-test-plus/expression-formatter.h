@@ -1021,6 +1021,10 @@ namespace micro_os_plus::micro_test_plus
        * @brief Formats a throws expression as `throws<TypeName>`, or as
        * `throws` when any exception is expected.
        *
+       * @details
+       * If the check failed, the reason is appended (see
+       * `append_throw_reason()`).
+       *
        * @tparam Exception_T The expected exception type, or `void` for
        * any exception.
        * @param op The throws expression.
@@ -1032,6 +1036,10 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Formats a nothrow expression as `nothrow`.
+       *
+       * @details
+       * If the check failed, the reason is appended (see
+       * `append_throw_reason()`).
        *
        * @param op The nothrow expression.
        * @return Reference to this instance.
@@ -1336,6 +1344,24 @@ namespace micro_os_plus::micro_test_plus
       template <class Lhs_T, class Rhs_T>
       void
       append_first_difference (const Lhs_T& lhs, const Rhs_T& rhs);
+
+#if defined(__cpp_exceptions)
+      /**
+       * @brief Appends the reason why a check of the exceptions failed.
+       *
+       * @details
+       * Nothing if the check passed. Otherwise `, but nothing was thrown`,
+       * `, but a std::exception was thrown: "what"`, or `, but an
+       * exception of unknown type was thrown`. Defined inline, like the
+       * `operator<<` overloads that call it.
+       *
+       * @param op The expression of the check.
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      append_throw_reason (const detail::callable_op& op);
+#endif // defined(__cpp_exceptions)
 
       /**
        * @brief Appends an operand of a chain of logical ANDs.

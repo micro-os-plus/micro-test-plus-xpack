@@ -59,6 +59,7 @@
 #include <cstdint>
 #include <cstdio>
 #include <cstdlib>
+#include <exception>
 #include <limits>
 
 // ----------------------------------------------------------------------------
@@ -830,22 +831,39 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Stores the pre-computed boolean result in the private `value_`
-     * member.
+     * Stores the pre-computed boolean result, and, when the check failed,
+     * what the invocation threw and the `what()` of the exception.
      */
-    constexpr callable_op::callable_op (bool value) : value_{ value }
+    inline callable_op::callable_op (callable_result&& result)
+        : value_{ result.value }, outcome_{ result.outcome },
+          what_{ std::move (result.what) }
     {
     }
 
-    /**
-     * @details
-     * Returns the pre-computed boolean result stored by the derived
-     * operator's constructor.
-     */
     constexpr callable_op::
     operator bool () const
     {
       return value_;
+    }
+
+    /**
+     * @details
+     * Returns what was recorded when the check failed.
+     */
+    inline throw_outcome
+    callable_op::outcome (void) const noexcept
+    {
+      return outcome_;
+    }
+
+    /**
+     * @details
+     * Returns the text recorded when a `std::exception` was thrown.
+     */
+    inline const std::string&
+    callable_op::what (void) const noexcept
+    {
+      return what_;
     }
 
     // ------------------------------------------------------------------------
@@ -856,7 +874,9 @@ namespace micro_os_plus::micro_test_plus
      * exception of type `Exception_T`, the result is `true`; if it throws
      * any other exception the result is `false`; if no exception is thrown
      * the result is `false`. The result is passed to the `callable_op`
-     * base class constructor.
+     * base class constructor, with what was thrown, if the result is
+     * `false`, to be written in the report: nothing, a `std::exception`,
+     * with its `what()`, or another exception.
      *
      * The `failed_requirement` thrown to stop the test case after a failed
      * `require()` in `func` is not an exception of `func`, and is
@@ -864,8 +884,8 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class Exception_T>
     template <class Callable_T>
-    constexpr throws_op<Exception_T>::throws_op (const Callable_T& func)
-        : callable_op{ [&func]
+    throws_op<Exception_T>::throws_op (const Callable_T& func)
+        : callable_op{ [&func] () -> callable_result
       {
         try
           {
@@ -877,13 +897,18 @@ namespace micro_os_plus::micro_test_plus
           }
         catch (const Exception_T&)
           {
-            return true;
+            return { true, throw_outcome::none, {} };
+          }
+        catch (const std::exception& e)
+          {
+            return { false, throw_outcome::std_exception,
+                     e.what () != nullptr ? e.what () : "" };
           }
         catch (...)
           {
-            return false;
+            return { false, throw_outcome::unknown_exception, {} };
           }
-        return false;
+        return { false, throw_outcome::none, {} };
       }() }
     {
     }
@@ -902,8 +927,8 @@ namespace micro_os_plus::micro_test_plus
      * rethrown.
      */
     template <class Callable_T>
-    constexpr throws_op<void>::throws_op (const Callable_T& func)
-        : callable_op{ [&func]
+    throws_op<void>::throws_op (const Callable_T& func)
+        : callable_op{ [&func] () -> callable_result
       {
         try
           {
@@ -915,9 +940,9 @@ namespace micro_os_plus::micro_test_plus
           }
         catch (...)
           {
-            return true;
+            return { true, throw_outcome::none, {} };
           }
-        return false;
+        return { false, throw_outcome::none, {} };
       }() }
     {
     }
@@ -929,15 +954,17 @@ namespace micro_os_plus::micro_test_plus
      * Invokes `func` inside a try/catch block. If `func` completes without
      * throwing, the result is `true`; if any exception is thrown the result
      * is `false`. The result is passed to the `callable_op` base class
-     * constructor.
+     * constructor, with what was thrown, if the result is `false`, to be
+     * written in the report: a `std::exception`, with its `what()`, or
+     * another exception.
      *
      * The `failed_requirement` thrown to stop the test case after a failed
      * `require()` in `func` is not an exception of `func`, and is
      * rethrown.
      */
     template <class Callable_T>
-    constexpr nothrow_op::nothrow_op (const Callable_T& func)
-        : callable_op{ [&func]
+    nothrow_op::nothrow_op (const Callable_T& func)
+        : callable_op{ [&func] () -> callable_result
       {
         try
           {
@@ -947,11 +974,16 @@ namespace micro_os_plus::micro_test_plus
           {
             throw;
           }
+        catch (const std::exception& e)
+          {
+            return { false, throw_outcome::std_exception,
+                     e.what () != nullptr ? e.what () : "" };
+          }
         catch (...)
           {
-            return false;
+            return { false, throw_outcome::unknown_exception, {} };
           }
-        return true;
+        return { true, throw_outcome::none, {} };
       }() }
     {
     }

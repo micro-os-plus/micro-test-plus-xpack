@@ -623,15 +623,17 @@ namespace micro_os_plus::micro_test_plus::detail
   {
     if constexpr (std::is_void_v<Exception_T>)
       {
-        return (*this << colour (op) << "throws" << colours_.none);
+        *this << colour (op) << "throws";
       }
     else
       {
         // The type name is not a string operand, so it is not quoted.
         *this << colour (op) << "throws<";
         buffer_.append (reflection::type_name<Exception_T> ());
-        return (*this << ">" << colours_.none);
+        *this << ">";
       }
+    append_throw_reason (op);
+    return (*this << colours_.none);
   }
 
   /**
@@ -645,7 +647,38 @@ namespace micro_os_plus::micro_test_plus::detail
   inline expression_formatter&
   expression_formatter::operator<< (const detail::nothrow_op& op)
   {
-    return (*this << colour (op) << "nothrow" << colours_.none);
+    *this << colour (op) << "nothrow";
+    append_throw_reason (op);
+    return (*this << colours_.none);
+  }
+
+  /**
+   * @details
+   * The `what()` of the exception is written as a string operand, quoted
+   * and escaped. Defined inline, not in the library sources, for the same
+   * reason as the `operator<<` overloads that call it.
+   */
+  inline void
+  expression_formatter::append_throw_reason (const detail::callable_op& op)
+  {
+    if (static_cast<bool> (op))
+      {
+        return;
+      }
+
+    if (op.outcome () == detail::throw_outcome::std_exception)
+      {
+        buffer_.append (", but a std::exception was thrown: ");
+        *this << std::string_view{ op.what () };
+      }
+    else if (op.outcome () == detail::throw_outcome::unknown_exception)
+      {
+        buffer_.append (", but an exception of unknown type was thrown");
+      }
+    else
+      {
+        buffer_.append (", but nothing was thrown");
+      }
   }
 #endif // defined(__cpp_exceptions)
 

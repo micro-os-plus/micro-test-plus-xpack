@@ -88,7 +88,7 @@ namespace micro_os_plus::micro_test_plus
    * passed to `expect()` or `require()`.
    */
   template <class Exception_T, class Callable_T>
-  [[nodiscard]] constexpr auto
+  [[nodiscard]] auto
   throws (const Callable_T& func);
 
   /**
@@ -103,7 +103,7 @@ namespace micro_os_plus::micro_test_plus
    * passed to `expect()` or `require()`.
    */
   template <class Callable_T>
-  [[nodiscard]] constexpr auto
+  [[nodiscard]] auto
   throws (const Callable_T& func);
 
   /**
@@ -117,7 +117,7 @@ namespace micro_os_plus::micro_test_plus
    * to be passed to `expect()` or `require()`.
    */
   template <class Callable_T>
-  [[nodiscard]] constexpr auto
+  [[nodiscard]] auto
   nothrow (const Callable_T& func);
 
 #endif // defined(__cpp_exceptions)

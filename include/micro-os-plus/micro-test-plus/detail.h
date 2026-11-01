@@ -1295,6 +1295,56 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__cpp_exceptions)
 
     /**
+     * @brief The kind of exception thrown by the callable of a check.
+     *
+     * @details
+     * Kept only when the check failed, to be written in the report.
+     */
+    enum class throw_outcome : unsigned char
+    {
+      /**
+       * @brief Nothing was thrown, or the expected exception was thrown.
+       */
+      none,
+
+      /**
+       * @brief A `std::exception` that was not the expected one was
+       * thrown; its `what()` is kept.
+       */
+      std_exception,
+
+      /**
+       * @brief Another exception was thrown.
+       */
+      unknown_exception
+    };
+
+    /**
+     * @brief The result of the invocation of the callable of a check.
+     *
+     * @details
+     * Returned by the lambda that the constructors of `throws_op` and
+     * `nothrow_op` pass to `callable_op`.
+     */
+    struct callable_result
+    {
+      /**
+       * @brief The result of the check.
+       */
+      bool value;
+
+      /**
+       * @brief What was thrown, when the check failed.
+       */
+      throw_outcome outcome;
+
+      /**
+       * @brief The `what()` of the `std::exception` thrown, if any.
+       */
+      std::string what;
+    };
+
+    /**
      * @brief Common base struct for callable-wrapping operators.
      *
      * @details
@@ -1311,11 +1361,11 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief Constructs a callable operator with the pre-computed
-       * boolean result.
+       * result.
        *
-       * @param value The pre-computed boolean result of the invocation.
+       * @param result The result of the invocation, with what was thrown.
        */
-      constexpr explicit callable_op (bool value);
+      explicit callable_op (callable_result&& result);
 
       /**
        * @brief Conversion operator to boolean.
@@ -1327,6 +1377,29 @@ namespace micro_os_plus::micro_test_plus
       [[nodiscard]] constexpr
       operator bool () const;
 
+      /**
+       * @brief Retrieves what the invocation threw.
+       *
+       * @par Parameters
+       *   None.
+       * @return The kind of the exception thrown, `throw_outcome::none`
+       * if the callable completed, or if the expected exception was
+       * thrown.
+       */
+      [[nodiscard]] throw_outcome
+      outcome (void) const noexcept;
+
+      /**
+       * @brief Retrieves the `what()` of the `std::exception` thrown.
+       *
+       * @par Parameters
+       *   None.
+       * @return The text, empty unless the outcome is
+       * `throw_outcome::std_exception`.
+       */
+      [[nodiscard]] const std::string&
+      what (void) const noexcept;
+
     private:
       /**
        * @brief Stores the result of the callable invocation.
@@ -1336,6 +1409,17 @@ namespace micro_os_plus::micro_test_plus
        * the callable.
        */
       const bool value_{};
+
+      /**
+       * @brief Stores what the invocation threw, when the check failed.
+       */
+      throw_outcome outcome_{ throw_outcome::none };
+
+      /**
+       * @brief Stores the `what()` of the `std::exception` thrown, when
+       * the check failed.
+       */
+      std::string what_{};
     };
 
     // ========================================================================
@@ -1371,7 +1455,7 @@ namespace micro_os_plus::micro_test_plus
        * @param func The callable object to be invoked.
        */
       template <class Callable_T>
-      constexpr explicit throws_op (const Callable_T& func);
+      explicit throws_op (const Callable_T& func);
     };
 
     // ========================================================================
@@ -1400,7 +1484,7 @@ namespace micro_os_plus::micro_test_plus
        * @param func The callable object to be invoked.
        */
       template <class Callable_T>
-      constexpr explicit throws_op (const Callable_T& func);
+      explicit throws_op (const Callable_T& func);
     };
 
     // ========================================================================
@@ -1430,7 +1514,7 @@ namespace micro_os_plus::micro_test_plus
        * @param func The callable object to be invoked.
        */
       template <class Callable_T>
-      constexpr explicit nothrow_op (const Callable_T& func);
+      explicit nothrow_op (const Callable_T& func);
     };
 
 #endif // defined(__cpp_exceptions)

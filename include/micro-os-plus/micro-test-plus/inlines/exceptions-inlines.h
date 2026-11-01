@@ -78,7 +78,7 @@ namespace micro_os_plus::micro_test_plus
    * `expect()` or `require()`, which also accept optional messages.
    */
   template <class Exception_T, class Callable_T>
-  constexpr auto
+  auto
   throws (const Callable_T& func)
   {
     return detail::throws_op<Exception_T>{ func };
@@ -96,7 +96,7 @@ namespace micro_os_plus::micro_test_plus
    * `expect()` or `require()`, which also accept optional messages.
    */
   template <class Callable_T>
-  constexpr auto
+  auto
   throws (const Callable_T& func)
   {
     return detail::throws_op<>{ func };
@@ -114,7 +114,7 @@ namespace micro_os_plus::micro_test_plus
    * `expect()` or `require()`, which also accept optional messages.
    */
   template <class Callable_T>
-  constexpr auto
+  auto
   nothrow (const Callable_T& func)
   {
     return detail::nothrow_op{ func };

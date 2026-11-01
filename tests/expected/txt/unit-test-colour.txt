@@ -118,7 +118,7 @@ feed [31mFAILED[0m (checks.cpp:390)
         [32m✓[0m \x1b[32m'x' == 'x'\x1b[0m
     [31m✗[0m Character operands - [31mFAILED[0m (1 check passed, 2 failed)
 
-[31m✗[0m Top suite - [31mFAILED[0m (40 checks passed, 7 failed, in 21 test cases), time: 1.067 ms
+[31m✗[0m Top suite - [31mFAILED[0m (40 checks passed, 7 failed, in 21 test cases), time: 1.189 ms
 
 • Combinatorial floats suite
 
@@ -170,7 +170,7 @@ feed [31mFAILED[0m (checks.cpp:390)
         [32m✓[0m 42 == 42.0
     [32m✓[0m Combinatorial doubles - passed (21 checks)
 
-[32m✓[0m Combinatorial floats suite - passed (42 checks in 2 test cases), time: 0.445 ms
+[32m✓[0m Combinatorial floats suite - passed (42 checks in 2 test cases), time: 0.481 ms
 
 • Combinatorial integrals suite
 
@@ -358,7 +358,7 @@ feed [31mFAILED[0m (checks.cpp:390)
         [32m✓[0m gt matches unsigned int
     [32m✓[0m Combinatorial integrals with unsigned char - passed (20 checks)
 
-[32m✓[0m Combinatorial integrals suite - passed (160 checks in 8 test cases), time: 1.570 ms
+[32m✓[0m Combinatorial integrals suite - passed (160 checks in 8 test cases), time: 1.654 ms
 
 • Comparisons suite
 
@@ -479,15 +479,15 @@ feed [31mFAILED[0m (checks.cpp:390)
     [32m✓[0m Pointer comparisons - passed (9 checks)
 
     • Failed pointer comparisons
-        [31m✗[0m ptr1 != &one [31mFAILED[0m (comparisons.cpp:542, \x1b[31m0x7ff7b78e9740 != 0x7ff7b78e9740\x1b[0m)
-        [31m✗[0m ptr1 != ptr2 [31mFAILED[0m (comparisons.cpp:545, \x1b[31m0x7ff7b78e9740 != 0x7ff7b78e9740\x1b[0m)
-        [31m✗[0m ptr1 > ptr2 [31mFAILED[0m (comparisons.cpp:548, \x1b[31m0x7ff7b78e9740 > 0x7ff7b78e9740\x1b[0m)
-        [31m✗[0m ptr1 < ptr2 [31mFAILED[0m (comparisons.cpp:551, \x1b[31m0x7ff7b78e9740 < 0x7ff7b78e9740\x1b[0m)
-        [31m✗[0m ptr1 == a_non_nullptr [31mFAILED[0m (comparisons.cpp:554, \x1b[31m0x7ff7b78e9740 == 0x7ff7b78e9790\x1b[0m)
-        [31m✗[0m pfunc != afunc [31mFAILED[0m (comparisons.cpp:557, \x1b[31m0x108680a48 != 0x108680a48\x1b[0m)
-        [31m✗[0m pfunc == a_non_nullptr [31mFAILED[0m (comparisons.cpp:560, \x1b[31m0x108680a48 == 0x7ff7b78e9790\x1b[0m)
-        [31m✗[0m pone >= ptwo [31mFAILED[0m (comparisons.cpp:572, \x1b[31m0x7ff7b78e9dc0 >= 0x7ff7b78e9dc4\x1b[0m)
-        [31m✗[0m ptwo <= pone [31mFAILED[0m (comparisons.cpp:575, \x1b[31m0x7ff7b78e9dc4 <= 0x7ff7b78e9dc0\x1b[0m)
+        [31m✗[0m ptr1 != &one [31mFAILED[0m (comparisons.cpp:542, \x1b[31m0x7ff7bdb66740 != 0x7ff7bdb66740\x1b[0m)
+        [31m✗[0m ptr1 != ptr2 [31mFAILED[0m (comparisons.cpp:545, \x1b[31m0x7ff7bdb66740 != 0x7ff7bdb66740\x1b[0m)
+        [31m✗[0m ptr1 > ptr2 [31mFAILED[0m (comparisons.cpp:548, \x1b[31m0x7ff7bdb66740 > 0x7ff7bdb66740\x1b[0m)
+        [31m✗[0m ptr1 < ptr2 [31mFAILED[0m (comparisons.cpp:551, \x1b[31m0x7ff7bdb66740 < 0x7ff7bdb66740\x1b[0m)
+        [31m✗[0m ptr1 == a_non_nullptr [31mFAILED[0m (comparisons.cpp:554, \x1b[31m0x7ff7bdb66740 == 0x7ff7bdb66790\x1b[0m)
+        [31m✗[0m pfunc != afunc [31mFAILED[0m (comparisons.cpp:557, \x1b[31m0x102403a48 != 0x102403a48\x1b[0m)
+        [31m✗[0m pfunc == a_non_nullptr [31mFAILED[0m (comparisons.cpp:560, \x1b[31m0x102403a48 == 0x7ff7bdb66790\x1b[0m)
+        [31m✗[0m pone >= ptwo [31mFAILED[0m (comparisons.cpp:572, \x1b[31m0x7ff7bdb66dc0 >= 0x7ff7bdb66dc4\x1b[0m)
+        [31m✗[0m ptwo <= pone [31mFAILED[0m (comparisons.cpp:575, \x1b[31m0x7ff7bdb66dc4 <= 0x7ff7bdb66dc0\x1b[0m)
     [31m✗[0m Failed pointer comparisons - [31mFAILED[0m (0 checks passed, 9 failed)
 
     • Null pointer comparisons
@@ -498,7 +498,7 @@ feed [31mFAILED[0m (checks.cpp:390)
 
     • Failed null pointer comparisons
         [31m✗[0m a_nullptr != nullptr [31mFAILED[0m (comparisons.cpp:624, \x1b[31m0x0 != nullptr\x1b[0m)
-        [31m✗[0m a_non_nullptr == nullptr [31mFAILED[0m (comparisons.cpp:627, \x1b[31m0x7ff7b78e9de0 == nullptr\x1b[0m)
+        [31m✗[0m a_non_nullptr == nullptr [31mFAILED[0m (comparisons.cpp:627, \x1b[31m0x7ff7bdb66de0 == nullptr\x1b[0m)
         [31m✗[0m pfunc != nullptr [31mFAILED[0m (comparisons.cpp:631, \x1b[31m0x0 != nullptr\x1b[0m)
     [31m✗[0m Failed null pointer comparisons - [31mFAILED[0m (0 checks passed, 3 failed)
 
@@ -531,7 +531,7 @@ feed [31mFAILED[0m (checks.cpp:390)
         [31m✗[0m all_of with a nested any_of [31mFAILED[0m (comparisons.cpp:776, (\x1b[32m42 == 42\x1b[0m\x1b[31m and \x1b[0m(\x1b[31m42 == 0\x1b[0m\x1b[31m or \x1b[0m\x1b[31m42 == 1\x1b[0m)))
     [31m✗[0m Logical operations with more operands - [31mFAILED[0m (6 checks passed, 5 failed)
 
-[31m✗[0m Comparisons suite - [31mFAILED[0m (70 checks passed, 51 failed, in 16 test cases), time: 1.273 ms
+[31m✗[0m Comparisons suite - [31mFAILED[0m (70 checks passed, 51 failed, in 16 test cases), time: 1.349 ms
 
 • Dynamic suite
 
@@ -539,7 +539,7 @@ feed [31mFAILED[0m (checks.cpp:390)
         [32m✓[0m 1 == 1 in dynamic suite
     [32m✓[0m check in dynamic suite - passed (1 check)
 
-[32m✓[0m Dynamic suite - passed (1 check in 1 test case), time: 0.040 ms
+[32m✓[0m Dynamic suite - passed (1 check in 1 test case), time: 0.043 ms
 
 • Dynamic suite with a temporary name
 
@@ -547,7 +547,7 @@ feed [31mFAILED[0m (checks.cpp:390)
         [32m✓[0m 2 == 2 in the suite with a temporary name
     [32m✓[0m check in dynamic suite with a temporary name - passed (1 check)
 
-[32m✓[0m Dynamic suite with a temporary name - passed (1 check in 1 test case), time: 0.042 ms
+[32m✓[0m Dynamic suite with a temporary name - passed (1 check in 1 test case), time: 0.043 ms
 
 • Exceptions suite
 
@@ -557,30 +557,33 @@ feed [31mFAILED[0m (checks.cpp:390)
     [32m✓[0m thrown exceptions - passed (2 checks)
 
     • Failed thrown exceptions
-        [31m✗[0m exception thrown [31mFAILED[0m (exceptions.cpp:103, \x1b[31mthrows\x1b[0m)
-        [31m✗[0m std::runtime_error thrown [31mFAILED[0m (exceptions.cpp:115, \x1b[31mthrows<std::runtime_error>\x1b[0m)
-    [31m✗[0m Failed thrown exceptions - [31mFAILED[0m (0 checks passed, 2 failed)
+        [31m✗[0m exception thrown [31mFAILED[0m (exceptions.cpp:103, \x1b[31mthrows, but nothing was thrown\x1b[0m)
+        [31m✗[0m std::runtime_error thrown [31mFAILED[0m (exceptions.cpp:115, \x1b[31mthrows<std::runtime_error>, but a std::exception was thrown: ""\x1b[0m)
+        [31m✗[0m int thrown [31mFAILED[0m (exceptions.cpp:129, \x1b[31mthrows<std::runtime_error>, but an exception of unknown type was thrown\x1b[0m)
+        [31m✗[0m [31mFAILED[0m (exceptions.cpp:134, \x1b[31mthrows<std::runtime_error>, but a std::exception was thrown: "bad \"value\"\n"\x1b[0m)
+    [31m✗[0m Failed thrown exceptions - [31mFAILED[0m (0 checks passed, 4 failed)
 
     • Not thrown exceptions
         [32m✓[0m exception not thrown
     [32m✓[0m Not thrown exceptions - passed (1 check)
 
     • Failed not thrown exceptions
-        [31m✗[0m exception not thrown [31mFAILED[0m (exceptions.cpp:157, \x1b[31mnothrow\x1b[0m)
-    [31m✗[0m Failed not thrown exceptions - [31mFAILED[0m (0 checks passed, 1 failed)
+        [31m✗[0m exception not thrown [31mFAILED[0m (exceptions.cpp:170, \x1b[31mnothrow, but an exception of unknown type was thrown\x1b[0m)
+        [31m✗[0m std::exception not thrown [31mFAILED[0m (exceptions.cpp:174, \x1b[31mnothrow, but a std::exception was thrown: "boom"\x1b[0m)
+    [31m✗[0m Failed not thrown exceptions - [31mFAILED[0m (0 checks passed, 2 failed)
 
     • Unexpected std::exception
         [32m✓[0m check before the exception
-        [31m✗[0m unexpected exception: boom [31mFAILED[0m (exceptions.cpp:180)
+        [31m✗[0m unexpected exception: boom [31mFAILED[0m (exceptions.cpp:197)
     [31m✗[0m Unexpected std::exception - [31mFAILED[0m (1 check passed, 1 failed)
 
     • Unexpected exception of unknown type
-        [31m✗[0m unexpected exception of unknown type [31mFAILED[0m (exceptions.cpp:194)
+        [31m✗[0m unexpected exception of unknown type [31mFAILED[0m (exceptions.cpp:211)
     [31m✗[0m Unexpected exception of unknown type - [31mFAILED[0m (0 checks passed, 1 failed)
 
     • Unexpected exception in nested test case
         • nested test case
-            [31m✗[0m unexpected exception: boom [31mFAILED[0m (exceptions.cpp:208)
+            [31m✗[0m unexpected exception: boom [31mFAILED[0m (exceptions.cpp:225)
         [31m✗[0m nested test case - [31mFAILED[0m (0 checks passed, 1 failed)
 
         [32m✓[0m check after the nested test case
@@ -588,32 +591,32 @@ feed [31mFAILED[0m (checks.cpp:390)
 
     • Failed require
         [32m✓[0m check before the requirement
-        [31m✗[0m failed requirement [31mFAILED[0m (exceptions.cpp:247) - test case stopped
+        [31m✗[0m failed requirement [31mFAILED[0m (exceptions.cpp:264) - test case stopped
     [31m✗[0m Failed require - [31mFAILED[0m (1 check passed, 1 failed)
 
     • Failed require in nested test case
         • nested test case
-            [31m✗[0m failed nested requirement [31mFAILED[0m (exceptions.cpp:266) - test case stopped
+            [31m✗[0m failed nested requirement [31mFAILED[0m (exceptions.cpp:283) - test case stopped
         [31m✗[0m nested test case - [31mFAILED[0m (0 checks passed, 1 failed)
 
         [32m✓[0m check after the nested test case
     [31m✗[0m Failed require in nested test case - [31mFAILED[0m (1 check passed, 0 failed, 1 test case failed)
 
     • Failed require in throws
-        [31m✗[0m in throws [31mFAILED[0m (exceptions.cpp:283) - test case stopped
+        [31m✗[0m in throws [31mFAILED[0m (exceptions.cpp:300) - test case stopped
     [31m✗[0m Failed require in throws - [31mFAILED[0m (0 checks passed, 1 failed)
 
     • Failed require in throws with a type
-        [31m✗[0m in typed throws [31mFAILED[0m (exceptions.cpp:294) - test case stopped
+        [31m✗[0m in typed throws [31mFAILED[0m (exceptions.cpp:311) - test case stopped
     [31m✗[0m Failed require in throws with a type - [31mFAILED[0m (0 checks passed, 1 failed)
 
     • Failed require in nothrow
-        [31m✗[0m in nothrow [31mFAILED[0m (exceptions.cpp:304) - test case stopped
+        [31m✗[0m in nothrow [31mFAILED[0m (exceptions.cpp:321) - test case stopped
     [31m✗[0m Failed require in nothrow - [31mFAILED[0m (0 checks passed, 1 failed)
 
     • Failed require during unwinding
-        [31m✗[0m [31mFAILED[0m (exceptions.cpp:319) - test case stopped
-        [31m✗[0m unexpected exception: boom [31mFAILED[0m (exceptions.cpp:314)
+        [31m✗[0m [31mFAILED[0m (exceptions.cpp:336) - test case stopped
+        [31m✗[0m unexpected exception: boom [31mFAILED[0m (exceptions.cpp:331)
     [31m✗[0m Failed require during unwinding - [31mFAILED[0m (0 checks passed, 2 failed)
 
     • Exception in a suite body
@@ -622,7 +625,7 @@ feed [31mFAILED[0m (checks.cpp:390)
         [32m✓[0m exception counted as a failed check
     [32m✓[0m Exception in a suite body - passed (3 checks)
 
-[31m✗[0m Exceptions suite - [31mFAILED[0m (10 checks passed, 13 failed, in 16 test cases), time: 1.039 ms
+[31m✗[0m Exceptions suite - [31mFAILED[0m (10 checks passed, 16 failed, in 16 test cases), time: 1.185 ms
 
 • Exceptions suite body
 
@@ -631,7 +634,7 @@ feed [31mFAILED[0m (checks.cpp:390)
     [32m✓[0m Test case before the exception - passed (1 check)
 
     [31m✗[0m unexpected exception in the suite body: boom [31mFAILED[0m
-[31m✗[0m Exceptions suite body - [31mFAILED[0m (1 check passed, 1 failed, in 1 test case), time: 0.066 ms
+[31m✗[0m Exceptions suite body - [31mFAILED[0m (1 check passed, 1 failed, in 1 test case), time: 0.089 ms
 
 • Failed combinatorial floats suite
 
@@ -683,7 +686,7 @@ feed [31mFAILED[0m (checks.cpp:390)
         [31m✗[0m 42 == 42.0 [31mFAILED[0m (float-failed-combinations.cpp:141, \x1b[31m42 != 42.0\x1b[0m)
     [31m✗[0m Combinatorial doubles - [31mFAILED[0m (0 checks passed, 21 failed)
 
-[31m✗[0m Failed combinatorial floats suite - [31mFAILED[0m (0 checks passed, 42 failed, in 2 test cases), time: 0.432 ms
+[31m✗[0m Failed combinatorial floats suite - [31mFAILED[0m (0 checks passed, 42 failed, in 2 test cases), time: 0.446 ms
 
 • Failed combinatorial integrals suite
 
@@ -917,7 +920,7 @@ feed [31mFAILED[0m (checks.cpp:390)
         [31m✗[0m le matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:132, \x1b[31m(unsigned char)43 <= 42u\x1b[0m)
     [31m✗[0m Combinatorial integrals with unsigned char - [31mFAILED[0m (0 checks passed, 20 failed)
 
-[31m✗[0m Failed combinatorial integrals suite - [31mFAILED[0m (0 checks passed, 200 failed, in 10 test cases), time: 1.925 ms
+[31m✗[0m Failed combinatorial integrals suite - [31mFAILED[0m (0 checks passed, 200 failed, in 10 test cases), time: 1.825 ms
 
 • Miscellaneous suite
 
@@ -1016,7 +1019,7 @@ feed [31mFAILED[0m (checks.cpp:390)
 
     • Message types
         [32m✓[0m numbers 1 2 3 1.5 2 true
-        [32m✓[0m pointer 0x108d379e0
+        [32m✓[0m pointer 0x102ac0fe0
         [32m✓[0m container {1, 2}
         [32m✓[0m standard types (1, a) nullopt 1
         [32m✓[0m custom type { 1, 2 } on
@@ -1310,7 +1313,7 @@ Matching test cases:
         [32m✓[0m string view suite name copied
     [32m✓[0m Test case and suite names - passed (9 checks)
 
-[31m✗[0m Miscellaneous suite - [31mFAILED[0m (206 checks passed, 8 failed, in 52 test cases), time: 5.633 ms
+[31m✗[0m Miscellaneous suite - [31mFAILED[0m (206 checks passed, 8 failed, in 52 test cases), time: 5.766 ms
 
 • Operands suite
 
@@ -1471,7 +1474,7 @@ Matching test cases:
         [31m✗[0m 16 bytes eq [31mFAILED[0m (operands.cpp:843, \x1b[31m{7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8}\x1b[0m)
     [31m✗[0m Long ranges bad - [31mFAILED[0m (0 checks passed, 2 failed)
 
-[31m✗[0m Operands suite - [31mFAILED[0m (53 checks passed, 38 failed, in 22 test cases), time: 1.193 ms
+[31m✗[0m Operands suite - [31mFAILED[0m (53 checks passed, 38 failed, in 22 test cases), time: 1.195 ms
 
 • Runner options suite
 
@@ -1566,7 +1569,7 @@ Matching test cases:
         [32m✓[0m the move assignment moves all the members
     [32m✓[0m Copies and moves - passed (5 checks)
 
-[32m✓[0m Runner options suite - passed (64 checks in 9 test cases), time: 1.400 ms
+[32m✓[0m Runner options suite - passed (64 checks in 9 test cases), time: 1.409 ms
 
 • Stopwatch suite
 
@@ -1605,7 +1608,7 @@ Matching test cases:
         [32m✓[0m no stop -> 0 µs
     [32m✓[0m stopwatch::elapsed() - passed (7 checks)
 
-[32m✓[0m Stopwatch suite - passed (20 checks in 5 test cases), time: 0.196 ms
+[32m✓[0m Stopwatch suite - passed (20 checks in 5 test cases), time: 0.180 ms
 
 • Utility suite
 
@@ -1644,8 +1647,8 @@ Matching test cases:
         [31m✗[0m ab matches ??? [31mFAILED[0m (utility.cpp:195)
     [31m✗[0m utility::is_match() — failing - [31mFAILED[0m (0 checks passed, 5 failed)
 
-[31m✗[0m Utility suite - [31mFAILED[0m (21 checks passed, 5 failed, in 3 test cases), time: 0.219 ms
+[31m✗[0m Utility suite - [31mFAILED[0m (21 checks passed, 5 failed, in 3 test cases), time: 0.148 ms
 
-[31m✗[0m Total: 689 checks passed, 365 failed, in 169 test cases, 15 test suites, time: 16.767 ms
+[31m✗[0m Total: 689 checks passed, 368 failed, in 169 test cases, 15 test suites, time: 17.236 ms
 Overall, the µTest++ unit tests were successful!
 
