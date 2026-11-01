@@ -1138,6 +1138,27 @@ namespace micro_os_plus::micro_test_plus
       append_value (const T& value);
 
       /**
+       * @brief Appends an operand of an expression.
+       *
+       * @details
+       * An operand that the formatter has a member `operator<<` for is
+       * written by it. An operand of an application type, found by
+       * argument-dependent lookup, is written in the plain mode, as the
+       * messages are, so that the values that its `operator<<` writes
+       * are shown as it writes them, without the type suffixes and the
+       * quotes.
+       *
+       * @tparam T The type of the operand.
+       *
+       * @param value The operand.
+       * @par Returns
+       *   Nothing.
+       */
+      template <class T>
+      void
+      append_operand (const T& value);
+
+      /**
        * @brief Appends the elements of a tuple-like object, separated by
        * commas.
        *
@@ -1327,6 +1348,25 @@ namespace micro_os_plus::micro_test_plus
       static void
       append (std::string& text, const T& value);
     };
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * @brief Concept satisfied by the types that the formatter writes
+     * with one of its own member functions `operator<<`.
+     *
+     * @details
+     * The types that satisfy `extension::printable` but not this concept
+     * are the application types, written by a free `operator<<` found by
+     * argument-dependent lookup.
+     *
+     * @tparam T The type to check.
+     */
+    template <class T>
+    concept member_printable
+        = requires (expression_formatter& formatter, const T& value) {
+            formatter.operator<< (value);
+          };
 
     // ------------------------------------------------------------------------
   } // namespace detail

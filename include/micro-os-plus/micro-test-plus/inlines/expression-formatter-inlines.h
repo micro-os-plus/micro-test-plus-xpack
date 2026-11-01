@@ -383,7 +383,28 @@ namespace micro_os_plus::micro_test_plus::detail
       }
     else
       {
+        append_operand (value);
+      }
+  }
+
+  /**
+   * @details
+   * The operands of the types that the formatter writes itself are
+   * passed to its `operator<<`; the other ones, the application types,
+   * are written by `plain_text::append()`, which hands to their
+   * `operator<<` a formatter in the plain mode.
+   */
+  template <class T>
+  void
+  expression_formatter::append_operand (const T& value)
+  {
+    if constexpr (detail::member_printable<T>)
+      {
         *this << value;
+      }
+    else
+      {
+        plain_text::append (buffer_, value);
       }
   }
 
@@ -407,7 +428,10 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::operator<< (
       const detail::compare_op<Lhs_T, Rhs_T, Compare_T>& op)
   {
-    *this << colour (op) << op.lhs () << Compare_T::symbol << op.rhs ();
+    *this << colour (op);
+    append_operand (op.lhs ());
+    *this << Compare_T::symbol;
+    append_operand (op.rhs ());
     using lhs_type = std::remove_cvref_t<decltype (op.lhs ())>;
     using rhs_type = std::remove_cvref_t<decltype (op.rhs ())>;
     if constexpr (std::is_same_v<Compare_T, detail::equal_to>
@@ -495,7 +519,7 @@ namespace micro_os_plus::micro_test_plus::detail
   void
   expression_formatter::append_and_operand (const T& t)
   {
-    *this << t;
+    append_operand (t);
   }
 
   /**
@@ -510,7 +534,8 @@ namespace micro_os_plus::micro_test_plus::detail
       const detail::and_op<Lhs_T, Rhs_T>& op)
   {
     append_and_operand (op.lhs ());
-    *this << colour (op) << " and " << colours_.none << op.rhs ();
+    *this << colour (op) << " and " << colours_.none;
+    append_operand (op.rhs ());
   }
 
   /**
@@ -536,7 +561,7 @@ namespace micro_os_plus::micro_test_plus::detail
   void
   expression_formatter::append_or_operand (const T& t)
   {
-    *this << t;
+    append_operand (t);
   }
 
   /**
@@ -551,7 +576,8 @@ namespace micro_os_plus::micro_test_plus::detail
       const detail::or_op<Lhs_T, Rhs_T>& op)
   {
     append_or_operand (op.lhs ());
-    *this << colour (op) << " or " << colours_.none << op.rhs ();
+    *this << colour (op) << " or " << colours_.none;
+    append_operand (op.rhs ());
   }
 
   /**
@@ -563,7 +589,9 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter&
   expression_formatter::operator<< (const detail::not_op<T>& op)
   {
-    return (*this << colour (op) << "not " << op.operand () << colours_.none);
+    *this << colour (op) << "not ";
+    append_operand (op.operand ());
+    return (*this << colours_.none);
   }
 
   /**
@@ -577,8 +605,9 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::operator<< (
       const detail::predicate_op<T, Predicate_T>& op)
   {
-    return (*this << colour (op) << Predicate_T::symbol << op.operand ()
-                  << colours_.none);
+    *this << colour (op) << Predicate_T::symbol;
+    append_operand (op.operand ());
+    return (*this << colours_.none);
   }
 
 #if defined(__cpp_exceptions)

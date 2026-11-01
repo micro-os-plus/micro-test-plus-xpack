@@ -85,7 +85,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✗ space is tab FAILED (checks.cpp:559, ' ' == '\t')
         ✓ 'x' == 'x'
     ✗ Character operands - FAILED (1 check passed, 2 failed)
-✗ Top suite - FAILED (39 checks passed, 6 failed, in 19 test cases), time: 1.229 ms
+✗ Top suite - FAILED (39 checks passed, 6 failed, in 19 test cases), time: 1.247 ms
 • Combinatorial floats suite
     • Combinatorial floats
         ✓ 42.0 == 42 signed long long
@@ -133,7 +133,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ 43.0 > 42 unsigned int
         ✓ 42 == 42.0
     ✓ Combinatorial doubles - passed (21 checks)
-✓ Combinatorial floats suite - passed (42 checks in 2 test cases), time: 0.468 ms
+✓ Combinatorial floats suite - passed (42 checks in 2 test cases), time: 0.475 ms
 • Combinatorial integrals suite
     • Combinatorial integrals with signed long long
         ✓ eq matches signed long long
@@ -311,7 +311,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ lt matches unsigned int
         ✓ gt matches unsigned int
     ✓ Combinatorial integrals with unsigned char - passed (20 checks)
-✓ Combinatorial integrals suite - passed (160 checks in 8 test cases), time: 1.663 ms
+✓ Combinatorial integrals suite - passed (160 checks in 8 test cases), time: 1.733 ms
 • Comparisons suite
     • Integer comparisons
         ✓ actual == 42
@@ -413,15 +413,15 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ ptwo > pone
     ✓ Pointer comparisons - passed (9 checks)
     • Failed pointer comparisons
-        ✗ ptr1 != &one FAILED (comparisons.cpp:517, 0x7ff7b12bb720 != 0x7ff7b12bb720)
-        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:520, 0x7ff7b12bb720 != 0x7ff7b12bb720)
-        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:523, 0x7ff7b12bb720 > 0x7ff7b12bb720)
-        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:526, 0x7ff7b12bb720 < 0x7ff7b12bb720)
-        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:529, 0x7ff7b12bb720 == 0x7ff7b12bb770)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:532, 0x10ecac758 != 0x10ecac758)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:535, 0x10ecac758 == 0x7ff7b12bb770)
-        ✗ pone >= ptwo FAILED (comparisons.cpp:547, 0x7ff7b12bbda0 >= 0x7ff7b12bbda4)
-        ✗ ptwo <= pone FAILED (comparisons.cpp:550, 0x7ff7b12bbda4 <= 0x7ff7b12bbda0)
+        ✗ ptr1 != &one FAILED (comparisons.cpp:517, 0x7ff7bd1cb720 != 0x7ff7bd1cb720)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:520, 0x7ff7bd1cb720 != 0x7ff7bd1cb720)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:523, 0x7ff7bd1cb720 > 0x7ff7bd1cb720)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:526, 0x7ff7bd1cb720 < 0x7ff7bd1cb720)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:529, 0x7ff7bd1cb720 == 0x7ff7bd1cb770)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:532, 0x102d9bc68 != 0x102d9bc68)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:535, 0x102d9bc68 == 0x7ff7bd1cb770)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:547, 0x7ff7bd1cbda0 >= 0x7ff7bd1cbda4)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:550, 0x7ff7bd1cbda4 <= 0x7ff7bd1cbda0)
     ✗ Failed pointer comparisons - FAILED (0 checks passed, 9 failed)
     • Null pointer comparisons
         ✓ a_nullptr == nullptr
@@ -430,7 +430,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     ✓ Null pointer comparisons - passed (3 checks)
     • Failed null pointer comparisons
         ✗ a_nullptr != nullptr FAILED (comparisons.cpp:599, 0x0 != nullptr)
-        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:602, 0x7ff7b12bbdc0 == nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:602, 0x7ff7bd1cbdc0 == nullptr)
         ✗ pfunc != nullptr FAILED (comparisons.cpp:606, 0x0 != nullptr)
     ✗ Failed null pointer comparisons - FAILED (0 checks passed, 3 failed)
     • Logical operations
@@ -460,12 +460,12 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✗ any_of of two all_of FAILED (comparisons.cpp:744, ((42 == 0 and 42 == 42) or (42 == 1 and 42 == 42 and 42 == 2)))
         ✗ all_of with a nested any_of FAILED (comparisons.cpp:751, (42 == 42 and (42 == 0 or 42 == 1)))
     ✗ Logical operations with more operands - FAILED (6 checks passed, 5 failed)
-✗ Comparisons suite - FAILED (68 checks passed, 47 failed, in 16 test cases), time: 1.281 ms
+✗ Comparisons suite - FAILED (68 checks passed, 47 failed, in 16 test cases), time: 1.235 ms
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
     ✓ check in dynamic suite - passed (1 check)
-✓ Dynamic suite - passed (1 check in 1 test case), time: 0.051 ms
+✓ Dynamic suite - passed (1 check in 1 test case), time: 0.054 ms
 • Dynamic suite with a temporary name
     • check in dynamic suite with a temporary name
         ✓ 2 == 2 in the suite with a temporary name
@@ -518,13 +518,13 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✓ later suite run
         ✓ exception counted as a failed check
     ✓ Exception in a suite body - passed (3 checks)
-✗ Exceptions suite - FAILED (10 checks passed, 10 failed, in 13 test cases), time: 1.047 ms
+✗ Exceptions suite - FAILED (10 checks passed, 10 failed, in 13 test cases), time: 1.036 ms
 • Exceptions suite body
     • Test case before the exception
         ✓ check before the exception
     ✓ Test case before the exception - passed (1 check)
     ✗ unexpected exception in the suite body: boom FAILED
-✗ Exceptions suite body - FAILED (1 check passed, 1 failed, in 1 test case), time: 0.888 ms
+✗ Exceptions suite body - FAILED (1 check passed, 1 failed, in 1 test case), time: 0.088 ms
 • Failed combinatorial floats suite
     • Combinatorial floats
         ✗ 42.0 == 42 signed long long FAILED (float-failed-combinations.cpp:35, 42.0f != 42ll)
@@ -572,7 +572,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✗ 43.0 > 42 unsigned int FAILED (float-failed-combinations.cpp:134, 43.0 <= 42u)
         ✗ 42 == 42.0 FAILED (float-failed-combinations.cpp:141, 42 != 42.0)
     ✗ Combinatorial doubles - FAILED (0 checks passed, 21 failed)
-✗ Failed combinatorial floats suite - FAILED (0 checks passed, 42 failed, in 2 test cases), time: 0.498 ms
+✗ Failed combinatorial floats suite - FAILED (0 checks passed, 42 failed, in 2 test cases), time: 0.444 ms
 • Failed combinatorial integrals suite
     • Combinatorial integrals with signed long long
         ✗ ne matches signed long long FAILED (integral-failed-combinations.cpp:35, 42ll != 42ll)
@@ -794,7 +794,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✗ ge matches unsigned int FAILED (integral-failed-combinations.cpp:127, (unsigned char)41 >= 42u)
         ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:132, (unsigned char)43 <= 42u)
     ✗ Combinatorial integrals with unsigned char - FAILED (0 checks passed, 20 failed)
-✗ Failed combinatorial integrals suite - FAILED (0 checks passed, 200 failed, in 10 test cases), time: 1.993 ms
+✗ Failed combinatorial integrals suite - FAILED (0 checks passed, 200 failed, in 10 test cases), time: 1.851 ms
 • Miscellaneous suite
     • Reporter stream operators
         ✓ const char*
@@ -885,7 +885,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     ✓ Formatter standard types - passed (16 checks)
     • Message types
         ✓ numbers 1 2 3 1.5 2 true
-        ✓ pointer 0x10f32f8e0
+        ✓ pointer 0x10341b620
         ✓ container {1, 2}
         ✓ standard types (1, a) nullopt 1
         ✓ custom type { 1, 2 } on
@@ -1116,7 +1116,7 @@ next line FAILED (miscellaneous.cpp:939)
         ✓ C string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (9 checks)
-✗ Miscellaneous suite - FAILED (206 checks passed, 8 failed, in 52 test cases), time: 6.863 ms
+✗ Miscellaneous suite - FAILED (206 checks passed, 8 failed, in 52 test cases), time: 6.721 ms
 • Operands suite
     • Arrays
         ✓ array{ 42 } == array{ 42 }
@@ -1125,10 +1125,10 @@ next line FAILED (miscellaneous.cpp:939)
         ✓ array{ 1, 2, 3 } != array{ 1, 2, 4 }
     ✓ Arrays - passed (4 checks)
     • Arrays bad
-        ✗ array{ 42 } ne array{ 42 } FAILED (operands.cpp:258, {42} != {42})
-        ✗ array{ 42 } eq array{ 43 } FAILED (operands.cpp:262, {42} == {43})
-        ✗ array{ 1, 2 } ne array{ 1, 2 } FAILED (operands.cpp:266, {1, 2} != {1, 2})
-        ✗ array{ 1, 2, 3 } eq array{ 1, 2, 4 } FAILED (operands.cpp:270, {1, 2, 3} == {1, 2, 4})
+        ✗ array{ 42 } ne array{ 42 } FAILED (operands.cpp:280, {42} != {42})
+        ✗ array{ 42 } eq array{ 43 } FAILED (operands.cpp:284, {42} == {43})
+        ✗ array{ 1, 2 } ne array{ 1, 2 } FAILED (operands.cpp:288, {1, 2} != {1, 2})
+        ✗ array{ 1, 2, 3 } eq array{ 1, 2, 4 } FAILED (operands.cpp:292, {1, 2, 3} == {1, 2, 4})
     ✗ Arrays bad - FAILED (0 checks passed, 4 failed)
     • Vectors
         ✓ vector{ } == vector{ }
@@ -1139,36 +1139,40 @@ next line FAILED (miscellaneous.cpp:939)
         ✓ vector{ 1, 2, 3 } != vector{ 1, 2, 4 }
     ✓ Vectors - passed (6 checks)
     • Vectors bad
-        ✗ vector{ } != vector{ } FAILED (operands.cpp:322, {} != {})
-        ✗ FAILED (operands.cpp:326, {} != {})
-        ✗ vector{ 42 } != vector{ 42 } FAILED (operands.cpp:329, {42} != {42})
-        ✗ vector{ 42 } == vector{ 43 } FAILED (operands.cpp:333, {42} == {43})
-        ✗ vector{ 1, 2 } != vector{ 1, 2 } FAILED (operands.cpp:337, {1, 2} != {1, 2})
-        ✗ vector{ 1, 2, 3 } == vector{ 1, 2, 4 } FAILED (operands.cpp:341, {1, 2, 3} == {1, 2, 4})
+        ✗ vector{ } != vector{ } FAILED (operands.cpp:344, {} != {})
+        ✗ FAILED (operands.cpp:348, {} != {})
+        ✗ vector{ 42 } != vector{ 42 } FAILED (operands.cpp:351, {42} != {42})
+        ✗ vector{ 42 } == vector{ 43 } FAILED (operands.cpp:355, {42} == {43})
+        ✗ vector{ 1, 2 } != vector{ 1, 2 } FAILED (operands.cpp:359, {1, 2} != {1, 2})
+        ✗ vector{ 1, 2, 3 } == vector{ 1, 2, 4 } FAILED (operands.cpp:363, {1, 2, 3} == {1, 2, 4})
     ✗ Vectors bad - FAILED (0 checks passed, 6 failed)
     • Custom types
         ✓ point{ 1, 2 } == point{ 1, 2 }
         ✓ point{ 1, 2 } != point{ 1, 3 }
     ✓ Custom types - passed (2 checks)
     • Custom types bad
-        ✗ point{ 1, 2 } == point{ 1, 3 } FAILED (operands.cpp:378, { 1, 2 } == { 1, 3 })
-        ✗ FAILED (operands.cpp:383, { 1, 2 } == { 1, 3 })
-        ✗ point{ 1, 2 } != point{ 1, 2 } FAILED (operands.cpp:386, { 1, 2 } != { 1, 2 })
+        ✗ point{ 1, 2 } == point{ 1, 3 } FAILED (operands.cpp:400, { 1, 2 } == { 1, 3 })
+        ✗ FAILED (operands.cpp:405, { 1, 2 } == { 1, 3 })
+        ✗ point{ 1, 2 } != point{ 1, 2 } FAILED (operands.cpp:408, { 1, 2 } != { 1, 2 })
     ✗ Custom types bad - FAILED (0 checks passed, 3 failed)
+    • Custom types with members bad
+        ✗ FAILED (operands.cpp:427, 119.10 EUR == 119.0 EUR)
+        ✗ FAILED (operands.cpp:430, (1, 0.10 RON) == (1, 0.20 RON))
+    ✗ Custom types with members bad - FAILED (0 checks passed, 2 failed)
     • Custom comparators
         ✓ 3 divides 12
         ✓ even 4
         ✓ combined
     ✓ Custom comparators - passed (3 checks)
     • Custom comparators bad
-        ✗ 5 divides 12 FAILED (operands.cpp:424, 5 divides 12)
-        ✗ FAILED (operands.cpp:427, 5 divides 12)
-        ✗ FAILED (operands.cpp:430, even 7)
-        ✗ FAILED (operands.cpp:433, (3 divides 12 and even 7))
+        ✗ 5 divides 12 FAILED (operands.cpp:468, 5 divides 12)
+        ✗ FAILED (operands.cpp:471, 5 divides 12)
+        ✗ FAILED (operands.cpp:474, even 7)
+        ✗ FAILED (operands.cpp:477, (3 divides 12 and even 7))
     ✗ Custom comparators bad - FAILED (0 checks passed, 4 failed)
     • Custom comparators with strings bad
-        ✗ FAILED (operands.cpp:444, "hello" has prefix "help")
-        ✗ FAILED (operands.cpp:448, "" has prefix "help")
+        ✗ FAILED (operands.cpp:488, "hello" has prefix "help")
+        ✗ FAILED (operands.cpp:492, "" has prefix "help")
     ✗ Custom comparators with strings bad - FAILED (0 checks passed, 2 failed)
     • Standard types
         ✓ colour::red == colour::red
@@ -1186,11 +1190,11 @@ next line FAILED (miscellaneous.cpp:939)
         ✓ 1000ms == 1s
     ✓ Standard types - passed (13 checks)
     • Standard types bad
-        ✗ colour::red == colour::green FAILED (operands.cpp:525, 0 == 1)
-        ✗ std::byte{ 1 } == std::byte{ 2 } FAILED (operands.cpp:529, (unsigned char)1 == (unsigned char)2)
-        ✗ pairs1 == pairs2 FAILED (operands.cpp:535, {(1, 2)} == {(1, 3)})
-        ✗ optional == nullopt FAILED (operands.cpp:538, 42 == nullopt)
-        ✗ 5ms == 6ms FAILED (operands.cpp:542, 5ms == 6ms)
+        ✗ colour::red == colour::green FAILED (operands.cpp:569, 0 == 1)
+        ✗ std::byte{ 1 } == std::byte{ 2 } FAILED (operands.cpp:573, (unsigned char)1 == (unsigned char)2)
+        ✗ pairs1 == pairs2 FAILED (operands.cpp:579, {(1, 2)} == {(1, 3)})
+        ✗ optional == nullopt FAILED (operands.cpp:582, 42 == nullopt)
+        ✗ 5ms == 6ms FAILED (operands.cpp:586, 5ms == 6ms)
     ✗ Standard types bad - FAILED (0 checks passed, 5 failed)
     • Explicit conversions to bool
         ✓ optional with a value
@@ -1200,10 +1204,10 @@ next line FAILED (miscellaneous.cpp:939)
         ✓ required unique_ptr
     ✓ Explicit conversions to bool - passed (5 checks)
     • Explicit conversions to bool bad
-        ✗ empty optional FAILED (operands.cpp:593)
-        ✗ null unique_ptr FAILED (operands.cpp:596)
-        ✗ empty function FAILED (operands.cpp:599)
-        ✗ FAILED (operands.cpp:602)
+        ✗ empty optional FAILED (operands.cpp:637)
+        ✗ null unique_ptr FAILED (operands.cpp:640)
+        ✗ empty function FAILED (operands.cpp:643)
+        ✗ FAILED (operands.cpp:646)
     ✗ Explicit conversions to bool bad - FAILED (0 checks passed, 4 failed)
     • Pointers to const
         ✓ different const objects
@@ -1229,13 +1233,13 @@ next line FAILED (miscellaneous.cpp:939)
         ✓ vector == array
     ✓ Raw arrays - passed (7 checks)
     • Raw arrays bad
-        ✗ bytes eq FAILED (operands.cpp:719, {1, 2, 3} == {1, 2, 4})
+        ✗ bytes eq FAILED (operands.cpp:763, {1, 2, 3} == {1, 2, 4})
     ✗ Raw arrays bad - FAILED (0 checks passed, 1 failed)
     • Long ranges bad
-        ✗ long vector eq FAILED (operands.cpp:732, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} == {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} (first difference at index 19))
-        ✗ 16 bytes eq FAILED (operands.cpp:739, {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8})
+        ✗ long vector eq FAILED (operands.cpp:776, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} == {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} (first difference at index 19))
+        ✗ 16 bytes eq FAILED (operands.cpp:783, {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8})
     ✗ Long ranges bad - FAILED (0 checks passed, 2 failed)
-✗ Operands suite - FAILED (48 checks passed, 31 failed, in 19 test cases), time: 1.235 ms
+✗ Operands suite - FAILED (48 checks passed, 33 failed, in 20 test cases), time: 1.319 ms
 • Runner options suite
     • Default options
         ✓ the TAP reporter
@@ -1319,7 +1323,7 @@ next line FAILED (miscellaneous.cpp:939)
         ✓ the move constructor moves all the members
         ✓ the move assignment moves all the members
     ✓ Copies and moves - passed (5 checks)
-✓ Runner options suite - passed (64 checks in 9 test cases), time: 1.678 ms
+✓ Runner options suite - passed (64 checks in 9 test cases), time: 1.444 ms
 • Stopwatch suite
     • stopwatch::start() and stop()
         ✓ fresh: has_elapsed false
@@ -1351,7 +1355,7 @@ next line FAILED (miscellaneous.cpp:939)
         ✓ zero elapsed -> 0 µs
         ✓ no stop -> 0 µs
     ✓ stopwatch::elapsed() - passed (7 checks)
-✓ Stopwatch suite - passed (20 checks in 5 test cases), time: 0.257 ms
+✓ Stopwatch suite - passed (20 checks in 5 test cases), time: 0.239 ms
 • Utility suite
     • utility::extract_file_name()
         ✓ Unix path returns filename
@@ -1385,5 +1389,5 @@ next line FAILED (miscellaneous.cpp:939)
         ✗ abc matches *C FAILED (utility.cpp:191)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
-✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.181 ms
-✗ Total: 681 checks passed, 350 failed, in 161 test cases, 15 test suites, time: 19.874 ms
+✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.179 ms
+✗ Total: 681 checks passed, 352 failed, in 162 test cases, 15 test suites, time: 18.538 ms

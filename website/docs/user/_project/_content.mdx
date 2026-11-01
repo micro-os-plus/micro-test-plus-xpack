@@ -1111,6 +1111,13 @@ formatter << app::point{ 1, 2 };
 // formatter.str () is "{ 1, 2 }".
 ```
 
+A formatter constructed in this way writes the values as the reports of
+the failed comparisons of the built-in types do, with the type suffixes
+of the numbers (`1l`, `2u`) and the strings quoted. In the reports of the
+comparisons of the application types, the values written by the
+`operator<<` of the application are shown as it writes them, without the
+suffixes and the quotes, as in the messages.
+
 ### Custom Comparators
 
 When the relation to check is not one of the built-in comparisons, a

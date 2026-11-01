@@ -64,6 +64,28 @@ namespace
     return formatter << "{ " << p.x << ", " << p.y << " }";
   }
 
+  // A user-defined type with members whose types the formatter decorates
+  // (the `long` suffix, the quotes of the strings), written by the
+  // application as it wants, and reported so (#233).
+  struct money
+  {
+    long cents;
+    std::string currency;
+  };
+
+  bool
+  operator== (const money& lhs, const money& rhs)
+  {
+    return lhs.cents == rhs.cents && lhs.currency == rhs.currency;
+  }
+
+  mt::expression_formatter&
+  operator<< (mt::expression_formatter& formatter, const money& m)
+  {
+    return formatter << m.cents / 100 << "." << m.cents % 100 << " "
+                     << m.currency;
+  }
+
   // A comparator, a predicate, and an operator of the application, built
   // only with public names, and reported as the built-in ones (#149).
   struct divides_tag
@@ -385,6 +407,28 @@ static mt::static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
 
         t.expect (mt::ne (point{ 1, 2 }, point{ 1, 2 }))
             << "point{ 1, 2 } != point{ 1, 2 }";
+        local_counts.failed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    // The values written by the `operator<<` of the application are
+    // reported as it writes them, in the operands and in the elements of
+    // the standard types (#233).
+    ts.test ("Custom types with members bad", [] (auto& t)
+      {
+        t.expect (mt::eq (money{ 11910, "EUR" }, money{ 11900, "EUR" }));
+        local_counts.failed_checks++;
+
+        t.expect (mt::eq (std::pair{ 1, money{ 10, "RON" } },
+                          std::pair{ 1, money{ 20, "RON" } }));
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;
