@@ -246,7 +246,7 @@ ok 1 - Top suite # { passed, 0 checks in 0 test cases }
           ...
         not ok 12 - 42.42 == 42.42_ld
           ---
-          condition: "42.42ld != 42.42ld"
+          condition: "42.42L != 42.42L"
           at:
             fileName: deprecated.cpp
             lineNumber: 1210

@@ -146,7 +146,7 @@ Built with GCC 15.2.1 20251203, with FP, with exceptions, with MICRO_OS_PLUS_DEB
         ✗ 42.42 == 42.420_d FAILED (deprecated.cpp:1201, 42.42 != 42.42)
         ✗ 42.0 == 42.0_d FAILED (deprecated.cpp:1204, 42.0 != 42.0)
         ✗ 42. == 42._d FAILED (deprecated.cpp:1207, 42.0 != 42.0)
-        ✗ 42.42 == 42.42_ld FAILED (deprecated.cpp:1210, 42.42ld != 42.42ld)
+        ✗ 42.42 == 42.42_ld FAILED (deprecated.cpp:1210, 42.42L != 42.42L)
         ✗ 1234._f == 1234.f FAILED (deprecated.cpp:1213, 1234.0f != 1234.0f)
         ✗ 1234.56_f == 1234.56f FAILED (deprecated.cpp:1216, 1234.56f != 1234.56f)
         ✗ 12345678.9f == 12345678.9_f FAILED (deprecated.cpp:1219, 12345679.0f != 12345679.0f)

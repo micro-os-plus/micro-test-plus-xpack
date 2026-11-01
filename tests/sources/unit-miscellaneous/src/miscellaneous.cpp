@@ -582,7 +582,7 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
         check ("42.0", "integral double");
 
         f << 42.0L;
-        check ("42.0ld", "integral long double");
+        check ("42.0L", "integral long double");
 
         f << 1.5f;
         check ("1.5f", "float");
@@ -591,17 +591,17 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
         check ("1.5", "double");
 
         f << 1.5L;
-        check ("1.5ld", "long double");
+        check ("1.5L", "long double");
 
         // The `long double` values are written in the shortest exact form,
         // as the other floating-point values, not with six digits. With at
         // most 15 digits, the text is the same where `long double` is as
         // wide as `double`.
         f << 0.1000001L;
-        check ("0.1000001ld", "long double with seven digits");
+        check ("0.1000001L", "long double with seven digits");
 
         f << 3.14159265358979L;
-        check ("3.14159265358979ld", "long double with 15 digits");
+        check ("3.14159265358979L", "long double with 15 digits");
 
         f << -2.0;
         check ("-2.0", "negative integral double");

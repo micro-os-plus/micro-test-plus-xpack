@@ -884,10 +884,11 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * Converts @p v to its string representation via `append_number()`,
    * adds the decimal point if needed (via `append_decimal_point()`),
-   * and appends the type suffix `"ld"`, the name of the `_ld` literal;
-   * the C++ suffix `"l"` would suggest `long`. The suffix is not
+   * and appends the type suffix `"L"`, the C++ suffix of the
+   * `long double` literals (there is no suffix `"ld"`), written in
+   * upper case, since `"l"` would suggest `long`. The suffix is not
    * appended to an infinity or a NaN, which would read as a
-   * misspelling (`infld`).
+   * misspelling (`infL`).
    */
   expression_formatter&
   expression_formatter::operator<< (long double v)
@@ -897,7 +898,7 @@ namespace micro_os_plus::micro_test_plus::detail
     append_decimal_point (start);
     if (std::isfinite (v))
       {
-        append_suffix ("ld");
+        append_suffix ("L");
       }
     return *this;
   }

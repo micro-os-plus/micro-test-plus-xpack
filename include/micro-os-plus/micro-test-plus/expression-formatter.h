@@ -197,7 +197,7 @@ namespace micro_os_plus::micro_test_plus
      * types (see `extension::is_op`).
      *
      * The numeric overloads append a type suffix (e.g., `42u`, `3l`,
-     * `1.5f`, `1.5ld`) and write the types that have no standard
+     * `1.5f`, `1.5L`) and write the types that have no standard
      * literal suffix as a cast (`(unsigned short)3`); `int` and
      * `double` have no suffix, and the floating-point values always have
      * a decimal point or an exponent (`42.0`), so that they can be
@@ -740,10 +740,10 @@ namespace micro_os_plus::micro_test_plus
       operator<< (double v);
 
       /**
-       * @brief Appends a long double value with type suffix `"ld"`.
+       * @brief Appends a long double value with type suffix `"L"`.
        *
        * @details
-       * An integral value is written with a decimal point (`42.0ld`).
+       * An integral value is written with a decimal point (`42.0L`).
        *
        * @param v The long double value.
        * @return Reference to this instance.
