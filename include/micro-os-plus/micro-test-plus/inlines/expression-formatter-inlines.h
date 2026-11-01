@@ -616,8 +616,9 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter&
   expression_formatter::operator<< (const detail::not_op<T>& op)
   {
-    *this << colour (op) << "not ";
-    append_not_operand (op.operand ());
+    const colour_code not_colour = colour (op);
+    *this << not_colour << "not ";
+    append_not_operand (op.operand (), not_colour);
     return (*this << colour_none ());
   }
 
@@ -627,7 +628,8 @@ namespace micro_os_plus::micro_test_plus::detail
    */
   template <class T>
   void
-  expression_formatter::append_not_operand (const T& t)
+  expression_formatter::append_not_operand (const T& t,
+                                            [[maybe_unused]] colour_code)
   {
     append_operand (t);
   }
@@ -635,29 +637,32 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * The comparison writes its own colours; the opening parenthesis is
-   * written in the colour of the negation, but the comparison resets
-   * the colour at its end, so the closing parenthesis is written
-   * without colour.
+   * written in the colour of the negation, which is still active, and,
+   * since the comparison resets the colour at its end, the colour is
+   * written again before the closing parenthesis.
    */
   template <class Lhs_T, class Rhs_T, class Compare_T>
   void
   expression_formatter::append_not_operand (
-      const detail::compare_op<Lhs_T, Rhs_T, Compare_T>& op)
+      const detail::compare_op<Lhs_T, Rhs_T, Compare_T>& op,
+      colour_code outer_colour)
   {
-    *this << "(" << op << ")";
+    *this << "(" << op << outer_colour << ")";
   }
 
   /**
    * @details
-   * As for the relational comparisons, the closing parenthesis is
-   * written without colour, since the comparison resets it.
+   * As for the relational comparisons, the colour of the negation is
+   * written again before the closing parenthesis, since the comparison
+   * resets it.
    */
   template <class Lhs_T, class Rhs_T, class Epsilon_T>
   void
   expression_formatter::append_not_operand (
-      const detail::approx_op<Lhs_T, Rhs_T, Epsilon_T>& op)
+      const detail::approx_op<Lhs_T, Rhs_T, Epsilon_T>& op,
+      colour_code outer_colour)
   {
-    *this << "(" << op << ")";
+    *this << "(" << op << outer_colour << ")";
   }
 
   /**

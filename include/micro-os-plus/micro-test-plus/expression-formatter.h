@@ -1505,12 +1505,14 @@ namespace micro_os_plus::micro_test_plus
        * @tparam T The type of the operand.
        *
        * @param t The operand.
+       * @param outer_colour The colour of the negation, used by the
+       * overloads that write parentheses; ignored here.
        * @par Returns
        *   Nothing.
        */
       template <class T>
       void
-      append_not_operand (const T& t);
+      append_not_operand (const T& t, colour_code outer_colour);
 
       /**
        * @brief Appends a comparison that is the operand of a negation,
@@ -1521,13 +1523,16 @@ namespace micro_os_plus::micro_test_plus
        * @tparam Compare_T The tag of the comparison.
        *
        * @param op The comparison.
+       * @param outer_colour The colour of the negation, in which the
+       * parentheses are written.
        * @par Returns
        *   Nothing.
        */
       template <class Lhs_T, class Rhs_T, class Compare_T>
       void
       append_not_operand (
-          const detail::compare_op<Lhs_T, Rhs_T, Compare_T>& op);
+          const detail::compare_op<Lhs_T, Rhs_T, Compare_T>& op,
+          colour_code outer_colour);
 
       /**
        * @brief Appends an approximate comparison that is the operand of a
@@ -1538,13 +1543,15 @@ namespace micro_os_plus::micro_test_plus
        * @tparam Epsilon_T The type of the tolerance.
        *
        * @param op The approximate comparison.
+       * @param outer_colour The colour of the negation, in which the
+       * parentheses are written.
        * @par Returns
        *   Nothing.
        */
       template <class Lhs_T, class Rhs_T, class Epsilon_T>
       void
-      append_not_operand (
-          const detail::approx_op<Lhs_T, Rhs_T, Epsilon_T>& op);
+      append_not_operand (const detail::approx_op<Lhs_T, Rhs_T, Epsilon_T>& op,
+                          colour_code outer_colour);
 
       /**
        * @brief ANSI colour codes for output formatting.

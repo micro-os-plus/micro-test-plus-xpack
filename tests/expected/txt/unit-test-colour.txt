@@ -479,15 +479,15 @@ feed [31mFAILED[0m (checks.cpp:390)
     [32m✓[0m Pointer comparisons - passed (9 checks)
 
     • Failed pointer comparisons
-        [31m✗[0m ptr1 != &one [31mFAILED[0m (comparisons.cpp:542, [31m0x7ff7bac4d580 != 0x7ff7bac4d580[0m)
-        [31m✗[0m ptr1 != ptr2 [31mFAILED[0m (comparisons.cpp:545, [31m0x7ff7bac4d580 != 0x7ff7bac4d580[0m)
-        [31m✗[0m ptr1 > ptr2 [31mFAILED[0m (comparisons.cpp:548, [31m0x7ff7bac4d580 > 0x7ff7bac4d580[0m)
-        [31m✗[0m ptr1 < ptr2 [31mFAILED[0m (comparisons.cpp:551, [31m0x7ff7bac4d580 < 0x7ff7bac4d580[0m)
-        [31m✗[0m ptr1 == a_non_nullptr [31mFAILED[0m (comparisons.cpp:554, [31m0x7ff7bac4d580 == 0x7ff7bac4d5d0[0m)
-        [31m✗[0m pfunc != afunc [31mFAILED[0m (comparisons.cpp:557, [31m0x10531ced8 != 0x10531ced8[0m)
-        [31m✗[0m pfunc == a_non_nullptr [31mFAILED[0m (comparisons.cpp:560, [31m0x10531ced8 == 0x7ff7bac4d5d0[0m)
-        [31m✗[0m pone >= ptwo [31mFAILED[0m (comparisons.cpp:572, [31m0x7ff7bac4dc00 >= 0x7ff7bac4dc04[0m)
-        [31m✗[0m ptwo <= pone [31mFAILED[0m (comparisons.cpp:575, [31m0x7ff7bac4dc04 <= 0x7ff7bac4dc00[0m)
+        [31m✗[0m ptr1 != &one [31mFAILED[0m (comparisons.cpp:542, [31m0x7ff7baff0580 != 0x7ff7baff0580[0m)
+        [31m✗[0m ptr1 != ptr2 [31mFAILED[0m (comparisons.cpp:545, [31m0x7ff7baff0580 != 0x7ff7baff0580[0m)
+        [31m✗[0m ptr1 > ptr2 [31mFAILED[0m (comparisons.cpp:548, [31m0x7ff7baff0580 > 0x7ff7baff0580[0m)
+        [31m✗[0m ptr1 < ptr2 [31mFAILED[0m (comparisons.cpp:551, [31m0x7ff7baff0580 < 0x7ff7baff0580[0m)
+        [31m✗[0m ptr1 == a_non_nullptr [31mFAILED[0m (comparisons.cpp:554, [31m0x7ff7baff0580 == 0x7ff7baff05d0[0m)
+        [31m✗[0m pfunc != afunc [31mFAILED[0m (comparisons.cpp:557, [31m0x104f79f48 != 0x104f79f48[0m)
+        [31m✗[0m pfunc == a_non_nullptr [31mFAILED[0m (comparisons.cpp:560, [31m0x104f79f48 == 0x7ff7baff05d0[0m)
+        [31m✗[0m pone >= ptwo [31mFAILED[0m (comparisons.cpp:572, [31m0x7ff7baff0c00 >= 0x7ff7baff0c04[0m)
+        [31m✗[0m ptwo <= pone [31mFAILED[0m (comparisons.cpp:575, [31m0x7ff7baff0c04 <= 0x7ff7baff0c00[0m)
     [31m✗[0m Failed pointer comparisons - [31mFAILED[0m (0 checks passed, 9 failed)
 
     • Null pointer comparisons
@@ -498,17 +498,17 @@ feed [31mFAILED[0m (checks.cpp:390)
 
     • Failed null pointer comparisons
         [31m✗[0m a_nullptr != nullptr [31mFAILED[0m (comparisons.cpp:624, [31m0x0 != nullptr[0m)
-        [31m✗[0m a_non_nullptr == nullptr [31mFAILED[0m (comparisons.cpp:627, [31m0x7ff7bac4dc20 == nullptr[0m)
+        [31m✗[0m a_non_nullptr == nullptr [31mFAILED[0m (comparisons.cpp:627, [31m0x7ff7baff0c20 == nullptr[0m)
         [31m✗[0m pfunc != nullptr [31mFAILED[0m (comparisons.cpp:631, [31m0x0 != nullptr[0m)
     [31m✗[0m Failed null pointer comparisons - [31mFAILED[0m (0 checks passed, 3 failed)
 
     • Logical operations
         [32m✓[0m not (actual != 42)
-        [31m✗[0m not (actual == 42) [31mFAILED[0m (comparisons.cpp:652, [31mnot ([32m42 == 42[0m)[0m)
-        [31m✗[0m [31mFAILED[0m (comparisons.cpp:659, [31mnot ([32m42 ~ (42 +/- 1)[0m)[0m)
-        [31m✗[0m [31mFAILED[0m (comparisons.cpp:662, [31mnot ([32m"abc" == "abc"[0m)[0m)
-        [32m✓[0m [32mnot [31mnot ([32m42 == 42[0m)[0m[0m
-        [31m✗[0m [31mFAILED[0m (comparisons.cpp:668, [31mnot [32mnot ([31m42 != 42[0m)[0m[0m)
+        [31m✗[0m not (actual == 42) [31mFAILED[0m (comparisons.cpp:652, [31mnot ([32m42 == 42[0m[31m)[0m)
+        [31m✗[0m [31mFAILED[0m (comparisons.cpp:659, [31mnot ([32m42 ~ (42 +/- 1)[0m[31m)[0m)
+        [31m✗[0m [31mFAILED[0m (comparisons.cpp:662, [31mnot ([32m"abc" == "abc"[0m[31m)[0m)
+        [32m✓[0m [32mnot [31mnot ([32m42 == 42[0m[31m)[0m[0m
+        [31m✗[0m [31mFAILED[0m (comparisons.cpp:668, [31mnot [32mnot ([31m42 != 42[0m[32m)[0m[0m)
         [31m✗[0m [31mFAILED[0m (comparisons.cpp:671, [31mnot ([32m42 == 42[0m[32m or [0m[31m1 != 1[0m)[0m)
         [31m✗[0m [31mFAILED[0m (comparisons.cpp:674, [31mnot true[0m)
         [32m✓[0m (actual == 42) and (actual == 42.0)
