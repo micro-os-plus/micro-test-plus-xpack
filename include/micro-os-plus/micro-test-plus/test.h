@@ -1039,6 +1039,27 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
+     * @brief Concept satisfied by a callable object whose call operator
+     * is not a single non-template member function.
+     *
+     * @details
+     * The generic lambdas (`[] (auto& t) { ... }`), the function objects
+     * with a template or an overloaded call operator, and the classes
+     * without a call operator. To find out whether such an object can be
+     * invoked, the compiler must instantiate its body to deduce the
+     * return type, and an error in the body becomes an error of the
+     * check, with its own long trace; so the bodies of the tests and of
+     * the suites that satisfy this concept are not checked for
+     * invocability, and an error is reported where the body is invoked.
+     *
+     * @tparam Callable_T The type of the callable object.
+     */
+    template <typename Callable_T>
+    concept generic_callable
+        = std::is_class_v<std::decay_t<Callable_T>>
+          && (!requires { &std::decay_t<Callable_T>::operator(); });
+
+    /**
      * @brief Concept satisfied by a callable object that can be the body
      * of a test case.
      *
@@ -1046,17 +1067,19 @@ namespace micro_os_plus::micro_test_plus
      * The body is stored decayed, and invoked as an lvalue with a
      * `test_case&` reference as the first argument, followed by the
      * stored arguments, as lvalues, as `bind_callable()` invokes it. A
-     * body that does not satisfy it, for example one with the wrong
+     * body that does not satisfy it, for example a lambda with the wrong
      * parameters, is rejected at the call of `test()`, not inside the
-     * framework.
+     * framework. The generic callables (see `generic_callable`) are
+     * accepted without the check.
      *
      * @tparam Callable_T The type of the callable object.
      * @tparam Args_T The types of the callable arguments.
      */
     template <typename Callable_T, typename... Args_T>
     concept test_body
-        = std::is_invocable_v<std::decay_t<Callable_T>&, test_case&,
-                              std::decay_t<Args_T>&...>;
+        = generic_callable<Callable_T>
+          || std::is_invocable_v<std::decay_t<Callable_T>&, test_case&,
+                                 std::decay_t<Args_T>&...>;
 
     /**
      * @brief Concept satisfied by a callable object that can be the body
@@ -1065,15 +1088,17 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Like `test_body`, with a `suite&` reference as the first argument.
      * The body is stored in a `std::function`, so the callable object and
-     * the arguments must also be copyable.
+     * the arguments must also be copyable; this is checked for the
+     * generic callables too.
      *
      * @tparam Callable_T The type of the callable object.
      * @tparam Args_T The types of the callable arguments.
      */
     template <typename Callable_T, typename... Args_T>
     concept suite_body
-        = std::is_invocable_v<std::decay_t<Callable_T>&, suite&,
-                              std::decay_t<Args_T>&...>
+        = (generic_callable<Callable_T>
+           || std::is_invocable_v<std::decay_t<Callable_T>&, suite&,
+                                  std::decay_t<Args_T>&...>)
           && std::is_copy_constructible_v<std::decay_t<Callable_T>>
           && (std::is_copy_constructible_v<std::decay_t<Args_T>> && ...);
 

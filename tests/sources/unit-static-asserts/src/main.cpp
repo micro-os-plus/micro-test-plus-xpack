@@ -1099,6 +1099,24 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (not can_test_in_suite<decltype (suite_parameter)>);
     static_assert (not can_test_in_suite<decltype (args_test), int>);
 
+    // The generic callables are not checked for invocability, since the
+    // check would instantiate their bodies and mix the errors of the
+    // bodies with the check (#246); the copy of the suite bodies is
+    // still checked.
+    [[maybe_unused]] auto generic_with_argument = [] (auto&, int) {};
+    [[maybe_unused]] auto generic_move_only
+        = [p = std::unique_ptr<int>{}] (auto&) { (void)p; };
+
+    static_assert (mt::detail::generic_callable<decltype (generic_test)>);
+    static_assert (
+        mt::detail::generic_callable<decltype (generic_with_argument)>);
+    static_assert (not mt::detail::generic_callable<decltype (typed_test)>);
+    static_assert (
+        not mt::detail::generic_callable<void (*) (mt::test_case&)>);
+    static_assert (can_test_in_test_case<decltype (generic_with_argument)>);
+    static_assert (can_add_suite_body<decltype (generic_test)>);
+    static_assert (not can_add_suite_body<decltype (generic_move_only)>);
+
     static_assert (can_add_suite_body<decltype (suite_parameter)>);
     static_assert (can_add_suite_body<decltype (typed_suite), int>);
     static_assert (not can_add_suite_body<decltype (typed_test)>);
