@@ -775,53 +775,89 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
         ok 1 - not (actual != 42)
         not ok 2 - not (actual == 42)
           ---
-          condition: "not 42 == 42"
+          condition: "not (42 == 42)"
           at:
             fileName: comparisons.cpp
             lineNumber: 652
           ...
-        ok 3 - (actual == 42) and (actual == 42.0)
-        not ok 4 - (actual == 42) and (actual != 42.0)
+        not ok 3
           ---
-          condition: "(42 == 42 and 42.0f != 42.0)"
+          condition: "not (42 ~ (42 +/- 1))"
           at:
             fileName: comparisons.cpp
-            lineNumber: 661
+            lineNumber: 659
           ...
-        not ok 5 - (actual != 42) and (actual == 42.0)
+        not ok 4
           ---
-          condition: "(42 != 42 and 42.0f == 42.0)"
+          condition: "not (\"abc\" == \"abc\")"
           at:
             fileName: comparisons.cpp
-            lineNumber: 666
+            lineNumber: 662
           ...
-        not ok 6 - (actual != 42) and (actual != 42.0)
+        ok 5 - not not (42 == 42)
+        not ok 6
           ---
-          condition: "(42 != 42 and 42.0f != 42.0)"
+          condition: "not not (42 != 42)"
+          at:
+            fileName: comparisons.cpp
+            lineNumber: 668
+          ...
+        not ok 7
+          ---
+          condition: "not (42 == 42 or 1 != 1)"
           at:
             fileName: comparisons.cpp
             lineNumber: 671
           ...
-        ok 7 - (42 == 42 and 42.0f == 42.0)
         not ok 8
+          ---
+          condition: "not true"
+          at:
+            fileName: comparisons.cpp
+            lineNumber: 674
+          ...
+        ok 9 - (actual == 42) and (actual == 42.0)
+        not ok 10 - (actual == 42) and (actual != 42.0)
           ---
           condition: "(42 == 42 and 42.0f != 42.0)"
           at:
             fileName: comparisons.cpp
-            lineNumber: 680
+            lineNumber: 682
           ...
-        ok 9 - (actual == 42) or (actual == 42.0)
-        ok 10 - (actual == 42) or (actual != 42.0)
-        ok 11 - (actual != 42) or (actual == 42.0)
-        not ok 12 - (actual != 42) or (actual != 42.0)
+        not ok 11 - (actual != 42) and (actual == 42.0)
+          ---
+          condition: "(42 != 42 and 42.0f == 42.0)"
+          at:
+            fileName: comparisons.cpp
+            lineNumber: 687
+          ...
+        not ok 12 - (actual != 42) and (actual != 42.0)
+          ---
+          condition: "(42 != 42 and 42.0f != 42.0)"
+          at:
+            fileName: comparisons.cpp
+            lineNumber: 692
+          ...
+        ok 13 - (42 == 42 and 42.0f == 42.0)
+        not ok 14
+          ---
+          condition: "(42 == 42 and 42.0f != 42.0)"
+          at:
+            fileName: comparisons.cpp
+            lineNumber: 701
+          ...
+        ok 15 - (actual == 42) or (actual == 42.0)
+        ok 16 - (actual == 42) or (actual != 42.0)
+        ok 17 - (actual != 42) or (actual == 42.0)
+        not ok 18 - (actual != 42) or (actual != 42.0)
           ---
           condition: "(42 != 42 or 42.0f != 42.0)"
           at:
             fileName: comparisons.cpp
-            lineNumber: 699
+            lineNumber: 720
           ...
-        1..12
-    not ok 15 - Logical operations # { FAILED, 6 checks passed, 6 failed }
+        1..18
+    not ok 15 - Logical operations # { FAILED, 7 checks passed, 11 failed }
     # Subtest: Logical operations with more operands
         ok 1 - all_of three true
         ok 2 - all_of five true
@@ -834,40 +870,40 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases }
           condition: "(42 == 42 and 42 < 41 and 42 > 41)"
           at:
             fileName: comparisons.cpp
-            lineNumber: 754
+            lineNumber: 775
           ...
         not ok 8 - all_of four, the last false
           ---
           condition: "(42 == 42 and 42 == 42 and 42 == 42 and 42 == 0)"
           at:
             fileName: comparisons.cpp
-            lineNumber: 759
+            lineNumber: 780
           ...
         not ok 9 - any_of three false
           ---
           condition: "(42 == 0 or 42 == 1 or 42 == 2)"
           at:
             fileName: comparisons.cpp
-            lineNumber: 764
+            lineNumber: 785
           ...
         not ok 10 - any_of of two all_of
           ---
           condition: "((42 == 0 and 42 == 42) or (42 == 1 and 42 == 42 and 42 == 2))"
           at:
             fileName: comparisons.cpp
-            lineNumber: 769
+            lineNumber: 790
           ...
         not ok 11 - all_of with a nested any_of
           ---
           condition: "(42 == 42 and (42 == 0 or 42 == 1))"
           at:
             fileName: comparisons.cpp
-            lineNumber: 776
+            lineNumber: 797
           ...
         1..11
     not ok 16 - Logical operations with more operands # { FAILED, 6 checks passed, 5 failed }
     1..16
-not ok 4 - Comparisons suite # { FAILED, 70 checks passed, 51 failed, in 16 test cases }
+not ok 4 - Comparisons suite # { FAILED, 71 checks passed, 56 failed, in 16 test cases }
 # Subtest: Dynamic suite
     # Subtest: check in dynamic suite
         ok 1 - 1 == 1 in dynamic suite
@@ -2714,7 +2750,7 @@ not ok 8 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200
     ok 6 - Formatter standard types # { passed, 16 checks }
     # Subtest: Message types
         ok 1 - numbers 1 2 3 1.5 2 true
-        ok 2 - pointer 0x40138720
+        ok 2 - pointer 0x40139d54
         ok 3 - container {1, 2}
         ok 4 - standard types (1, a) nullopt 1
         ok 5 - custom type { 1, 2 } on
@@ -3607,4 +3643,4 @@ ok 12 - Stopwatch suite # { passed, 20 checks in 5 test cases }
     1..3
 not ok 13 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases }
 1..13
-# { total: 672 checks passed, 351 failed, in 152 test cases, 13 test suites }
+# { total: 673 checks passed, 356 failed, in 152 test cases, 13 test suites }

@@ -448,18 +448,24 @@ feed FAILED (checks.cpp:390)
     ✗ Failed null pointer comparisons - FAILED (0 checks passed, 3 failed)
     • Logical operations
         ✓ not (actual != 42)
-        ✗ not (actual == 42) FAILED (comparisons.cpp:652, not 42 == 42)
+        ✗ not (actual == 42) FAILED (comparisons.cpp:652, not (42 == 42))
+        ✗ FAILED (comparisons.cpp:659, not (42 ~ (42 +/- 1)))
+        ✗ FAILED (comparisons.cpp:662, not ("abc" == "abc"))
+        ✓ not not (42 == 42)
+        ✗ FAILED (comparisons.cpp:668, not not (42 != 42))
+        ✗ FAILED (comparisons.cpp:671, not (42 == 42 or 1 != 1))
+        ✗ FAILED (comparisons.cpp:674, not true)
         ✓ (actual == 42) and (actual == 42.0)
-        ✗ (actual == 42) and (actual != 42.0) FAILED (comparisons.cpp:661, (42 == 42 and 42.0f != 42.0))
-        ✗ (actual != 42) and (actual == 42.0) FAILED (comparisons.cpp:666, (42 != 42 and 42.0f == 42.0))
-        ✗ (actual != 42) and (actual != 42.0) FAILED (comparisons.cpp:671, (42 != 42 and 42.0f != 42.0))
+        ✗ (actual == 42) and (actual != 42.0) FAILED (comparisons.cpp:682, (42 == 42 and 42.0f != 42.0))
+        ✗ (actual != 42) and (actual == 42.0) FAILED (comparisons.cpp:687, (42 != 42 and 42.0f == 42.0))
+        ✗ (actual != 42) and (actual != 42.0) FAILED (comparisons.cpp:692, (42 != 42 and 42.0f != 42.0))
         ✓ (42 == 42 and 42.0f == 42.0)
-        ✗ FAILED (comparisons.cpp:680, (42 == 42 and 42.0f != 42.0))
+        ✗ FAILED (comparisons.cpp:701, (42 == 42 and 42.0f != 42.0))
         ✓ (actual == 42) or (actual == 42.0)
         ✓ (actual == 42) or (actual != 42.0)
         ✓ (actual != 42) or (actual == 42.0)
-        ✗ (actual != 42) or (actual != 42.0) FAILED (comparisons.cpp:699, (42 != 42 or 42.0f != 42.0))
-    ✗ Logical operations - FAILED (6 checks passed, 6 failed)
+        ✗ (actual != 42) or (actual != 42.0) FAILED (comparisons.cpp:720, (42 != 42 or 42.0f != 42.0))
+    ✗ Logical operations - FAILED (7 checks passed, 11 failed)
     • Logical operations with more operands
         ✓ all_of three true
         ✓ all_of five true
@@ -467,13 +473,13 @@ feed FAILED (checks.cpp:390)
         ✓ any_of three, the first true
         ✓ all_of with a nested all_of
         ✓ not all_of
-        ✗ all_of three, the second false FAILED (comparisons.cpp:754, (42 == 42 and 42 < 41 and 42 > 41))
-        ✗ all_of four, the last false FAILED (comparisons.cpp:759, (42 == 42 and 42 == 42 and 42 == 42 and 42 == 0))
-        ✗ any_of three false FAILED (comparisons.cpp:764, (42 == 0 or 42 == 1 or 42 == 2))
-        ✗ any_of of two all_of FAILED (comparisons.cpp:769, ((42 == 0 and 42 == 42) or (42 == 1 and 42 == 42 and 42 == 2)))
-        ✗ all_of with a nested any_of FAILED (comparisons.cpp:776, (42 == 42 and (42 == 0 or 42 == 1)))
+        ✗ all_of three, the second false FAILED (comparisons.cpp:775, (42 == 42 and 42 < 41 and 42 > 41))
+        ✗ all_of four, the last false FAILED (comparisons.cpp:780, (42 == 42 and 42 == 42 and 42 == 42 and 42 == 0))
+        ✗ any_of three false FAILED (comparisons.cpp:785, (42 == 0 or 42 == 1 or 42 == 2))
+        ✗ any_of of two all_of FAILED (comparisons.cpp:790, ((42 == 0 and 42 == 42) or (42 == 1 and 42 == 42 and 42 == 2)))
+        ✗ all_of with a nested any_of FAILED (comparisons.cpp:797, (42 == 42 and (42 == 0 or 42 == 1)))
     ✗ Logical operations with more operands - FAILED (6 checks passed, 5 failed)
-✗ Comparisons suite - FAILED (70 checks passed, 51 failed, in 16 test cases)
+✗ Comparisons suite - FAILED (71 checks passed, 56 failed, in 16 test cases)
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
@@ -844,7 +850,7 @@ feed FAILED (checks.cpp:390)
     ✓ Formatter standard types - passed (16 checks)
     • Message types
         ✓ numbers 1 2 3 1.5 2 true
-        ✓ pointer 0x40138720
+        ✓ pointer 0x40139d54
         ✓ container {1, 2}
         ✓ standard types (1, a) nullopt 1
         ✓ custom type { 1, 2 } on
@@ -1357,4 +1363,4 @@ next line FAILED (miscellaneous.cpp:939)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 672 checks passed, 351 failed, in 152 test cases, 13 test suites
+✗ Total: 673 checks passed, 356 failed, in 152 test cases, 13 test suites

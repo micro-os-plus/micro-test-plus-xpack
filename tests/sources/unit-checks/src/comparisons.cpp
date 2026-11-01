@@ -653,6 +653,27 @@ static mt::static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
             << "not (actual == 42)";
         local_counts.failed_checks++;
 
+        // The comparisons are written between parentheses, so that the
+        // negation is not read as applying to the first operand only
+        // (#242); the other operands are not changed.
+        t.expect (mt::negate (mt::approx (42, 42, 1)));
+        local_counts.failed_checks++;
+
+        t.expect (mt::negate (mt::eq ("abc", "abc")));
+        local_counts.failed_checks++;
+
+        t.expect (mt::negate (mt::negate (mt::eq (42, 42))));
+        local_counts.passed_checks++;
+
+        t.expect (mt::negate (mt::negate (mt::ne (42, 42))));
+        local_counts.failed_checks++;
+
+        t.expect (mt::negate (mt::any_of (mt::eq (42, 42), mt::ne (1, 1))));
+        local_counts.failed_checks++;
+
+        t.expect (mt::negate (true));
+        local_counts.failed_checks++;
+
         t.expect (mt::all_of (mt::eq (my_actual_integral (), 42),
                               mt::eq (my_actual_float<float> (), 42.0)))
             << "(actual == 42) and (actual == 42.0)";

@@ -94,7 +94,7 @@ Built with GCC 15.2.1 20251203, with FP, with exceptions, with MICRO_OS_PLUS_DEB
     • _and(), _or(), _not()
         ✓ (1 == 1 and 1 != 2)
         ✓ (1 == 2 or 1 == 1)
-        ✓ not 1 == 2
+        ✓ not (1 == 2)
         ✓ false results
     ✓ _and(), _or(), _not() - passed (4 checks)
     • _i, _f, ..., _t<T>
@@ -203,7 +203,7 @@ Built with GCC 15.2.1 20251203, with FP, with exceptions, with MICRO_OS_PLUS_DEB
         ✓ actual+1 > 42
         ✓ actual >= 42
         ✓ not (actual != 42)
-        ✗ not (actual == 42) FAILED (deprecated.cpp:1394, not 42 == 42)
+        ✗ not (actual == 42) FAILED (deprecated.cpp:1394, not (42 == 42))
         ✓ not not (actual == 42)
         ✓ (actual == 42) and (actual == 42.0)
         ✗ (actual == 42) and (actual != 42.0) FAILED (deprecated.cpp:1408, (42 == 42 and 42.0f != 42.0))

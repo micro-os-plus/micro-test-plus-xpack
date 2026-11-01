@@ -1422,6 +1422,61 @@ namespace micro_os_plus::micro_test_plus
       append_or_operand (const detail::or_op<Lhs_T, Rhs_T>& op);
 
       /**
+       * @brief Appends the operand of a negation.
+       *
+       * @details
+       * Written as `append_operand()` writes it. A comparison, which has
+       * its operator between the operands, is written between
+       * parentheses, so that `not (a == b)` is not read as
+       * `(not a) == b`. The logical combinations write their own
+       * parentheses, and the predicates, written as a prefix, and the
+       * plain Boolean values do not need them.
+       *
+       * @tparam T The type of the operand.
+       *
+       * @param t The operand.
+       * @par Returns
+       *   Nothing.
+       */
+      template <class T>
+      void
+      append_not_operand (const T& t);
+
+      /**
+       * @brief Appends a comparison that is the operand of a negation,
+       * between parentheses.
+       *
+       * @tparam Lhs_T The type of the left hand side operand.
+       * @tparam Rhs_T The type of the right hand side operand.
+       * @tparam Compare_T The tag of the comparison.
+       *
+       * @param op The comparison.
+       * @par Returns
+       *   Nothing.
+       */
+      template <class Lhs_T, class Rhs_T, class Compare_T>
+      void
+      append_not_operand (
+          const detail::compare_op<Lhs_T, Rhs_T, Compare_T>& op);
+
+      /**
+       * @brief Appends an approximate comparison that is the operand of a
+       * negation, between parentheses.
+       *
+       * @tparam Lhs_T The type of the left hand side operand.
+       * @tparam Rhs_T The type of the right hand side operand.
+       * @tparam Epsilon_T The type of the tolerance.
+       *
+       * @param op The approximate comparison.
+       * @par Returns
+       *   Nothing.
+       */
+      template <class Lhs_T, class Rhs_T, class Epsilon_T>
+      void
+      append_not_operand (
+          const detail::approx_op<Lhs_T, Rhs_T, Epsilon_T>& op);
+
+      /**
        * @brief ANSI colour codes for output formatting.
        *
        * @details

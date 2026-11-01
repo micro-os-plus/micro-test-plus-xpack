@@ -50,9 +50,9 @@ TAP version 14
 #             fileName: checks.cpp
 #             lineNumber: 588
 #           ...
-not ok 1 - Top suite # { FAILED, 40 checks passed, 7 failed, in 21 test cases, time: 1.100 ms }
-ok 2 - Combinatorial floats suite # { passed, 42 checks in 2 test cases, time: 0.228 ms }
-ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, time: 0.853 ms }
+not ok 1 - Top suite # { FAILED, 40 checks passed, 7 failed, in 21 test cases, time: 1.134 ms }
+ok 2 - Combinatorial floats suite # { passed, 42 checks in 2 test cases, time: 0.239 ms }
+ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, time: 0.824 ms }
 # Comparisons suite > Failed integer comparisons
 #         not ok 1 - actual != 42
 #           ---
@@ -257,63 +257,63 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
 # Comparisons suite > Failed pointer comparisons
 #         not ok 1 - ptr1 != &one
 #           ---
-#           condition: "0x7ff7b4f53760 != 0x7ff7b4f53760"
+#           condition: "0x7ff7b6c2d760 != 0x7ff7b6c2d760"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 542
 #           ...
 #         not ok 2 - ptr1 != ptr2
 #           ---
-#           condition: "0x7ff7b4f53760 != 0x7ff7b4f53760"
+#           condition: "0x7ff7b6c2d760 != 0x7ff7b6c2d760"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 545
 #           ...
 #         not ok 3 - ptr1 > ptr2
 #           ---
-#           condition: "0x7ff7b4f53760 > 0x7ff7b4f53760"
+#           condition: "0x7ff7b6c2d760 > 0x7ff7b6c2d760"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 548
 #           ...
 #         not ok 4 - ptr1 < ptr2
 #           ---
-#           condition: "0x7ff7b4f53760 < 0x7ff7b4f53760"
+#           condition: "0x7ff7b6c2d760 < 0x7ff7b6c2d760"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 551
 #           ...
 #         not ok 5 - ptr1 == a_non_nullptr
 #           ---
-#           condition: "0x7ff7b4f53760 == 0x7ff7b4f537b0"
+#           condition: "0x7ff7b6c2d760 == 0x7ff7b6c2d7b0"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 554
 #           ...
 #         not ok 6 - pfunc != afunc
 #           ---
-#           condition: "0x10b016a48 != 0x10b016a48"
+#           condition: "0x10933cac8 != 0x10933cac8"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 557
 #           ...
 #         not ok 7 - pfunc == a_non_nullptr
 #           ---
-#           condition: "0x10b016a48 == 0x7ff7b4f537b0"
+#           condition: "0x10933cac8 == 0x7ff7b6c2d7b0"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 560
 #           ...
 #         not ok 8 - pone >= ptwo
 #           ---
-#           condition: "0x7ff7b4f53de0 >= 0x7ff7b4f53de4"
+#           condition: "0x7ff7b6c2dde0 >= 0x7ff7b6c2dde4"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 572
 #           ...
 #         not ok 9 - ptwo <= pone
 #           ---
-#           condition: "0x7ff7b4f53de4 <= 0x7ff7b4f53de0"
+#           condition: "0x7ff7b6c2dde4 <= 0x7ff7b6c2dde0"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 575
@@ -328,7 +328,7 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
 #           ...
 #         not ok 2 - a_non_nullptr == nullptr
 #           ---
-#           condition: "0x7ff7b4f53e00 == nullptr"
+#           condition: "0x7ff7b6c2de00 == nullptr"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 627
@@ -343,45 +343,80 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
 # Comparisons suite > Logical operations
 #         not ok 2 - not (actual == 42)
 #           ---
-#           condition: "not 42 == 42"
+#           condition: "not (42 == 42)"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 652
 #           ...
-#         not ok 4 - (actual == 42) and (actual != 42.0)
+#         not ok 3
 #           ---
-#           condition: "(42 == 42 and 42.0f != 42.0)"
+#           condition: "not (42 ~ (42 +/- 1))"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 661
+#             lineNumber: 659
 #           ...
-#         not ok 5 - (actual != 42) and (actual == 42.0)
+#         not ok 4
 #           ---
-#           condition: "(42 != 42 and 42.0f == 42.0)"
+#           condition: "not (\"abc\" == \"abc\")"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 666
+#             lineNumber: 662
 #           ...
-#         not ok 6 - (actual != 42) and (actual != 42.0)
+#         not ok 6
 #           ---
-#           condition: "(42 != 42 and 42.0f != 42.0)"
+#           condition: "not not (42 != 42)"
+#           at:
+#             fileName: comparisons.cpp
+#             lineNumber: 668
+#           ...
+#         not ok 7
+#           ---
+#           condition: "not (42 == 42 or 1 != 1)"
 #           at:
 #             fileName: comparisons.cpp
 #             lineNumber: 671
 #           ...
 #         not ok 8
 #           ---
+#           condition: "not true"
+#           at:
+#             fileName: comparisons.cpp
+#             lineNumber: 674
+#           ...
+#         not ok 10 - (actual == 42) and (actual != 42.0)
+#           ---
 #           condition: "(42 == 42 and 42.0f != 42.0)"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 680
+#             lineNumber: 682
 #           ...
-#         not ok 12 - (actual != 42) or (actual != 42.0)
+#         not ok 11 - (actual != 42) and (actual == 42.0)
+#           ---
+#           condition: "(42 != 42 and 42.0f == 42.0)"
+#           at:
+#             fileName: comparisons.cpp
+#             lineNumber: 687
+#           ...
+#         not ok 12 - (actual != 42) and (actual != 42.0)
+#           ---
+#           condition: "(42 != 42 and 42.0f != 42.0)"
+#           at:
+#             fileName: comparisons.cpp
+#             lineNumber: 692
+#           ...
+#         not ok 14
+#           ---
+#           condition: "(42 == 42 and 42.0f != 42.0)"
+#           at:
+#             fileName: comparisons.cpp
+#             lineNumber: 701
+#           ...
+#         not ok 18 - (actual != 42) or (actual != 42.0)
 #           ---
 #           condition: "(42 != 42 or 42.0f != 42.0)"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 699
+#             lineNumber: 720
 #           ...
 # Comparisons suite > Logical operations with more operands
 #         not ok 7 - all_of three, the second false
@@ -389,39 +424,39 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
 #           condition: "(42 == 42 and 42 < 41 and 42 > 41)"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 754
+#             lineNumber: 775
 #           ...
 #         not ok 8 - all_of four, the last false
 #           ---
 #           condition: "(42 == 42 and 42 == 42 and 42 == 42 and 42 == 0)"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 759
+#             lineNumber: 780
 #           ...
 #         not ok 9 - any_of three false
 #           ---
 #           condition: "(42 == 0 or 42 == 1 or 42 == 2)"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 764
+#             lineNumber: 785
 #           ...
 #         not ok 10 - any_of of two all_of
 #           ---
 #           condition: "((42 == 0 and 42 == 42) or (42 == 1 and 42 == 42 and 42 == 2))"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 769
+#             lineNumber: 790
 #           ...
 #         not ok 11 - all_of with a nested any_of
 #           ---
 #           condition: "(42 == 42 and (42 == 0 or 42 == 1))"
 #           at:
 #             fileName: comparisons.cpp
-#             lineNumber: 776
+#             lineNumber: 797
 #           ...
-not ok 4 - Comparisons suite # { FAILED, 70 checks passed, 51 failed, in 16 test cases, time: 1.367 ms }
-ok 5 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.025 ms }
-ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, time: 0.034 ms }
+not ok 4 - Comparisons suite # { FAILED, 71 checks passed, 56 failed, in 16 test cases, time: 1.500 ms }
+ok 5 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.026 ms }
+ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, time: 0.036 ms }
 # Exceptions suite > Failed thrown exceptions
 #         not ok 1 - exception thrown
 #           ---
@@ -449,7 +484,7 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
 #           condition: "throws<std::runtime_error>, but a std::exception was thrown: \"bad \\\"value\\\"\\n\""
 #           at:
 #             fileName: exceptions.cpp
-#             lineNumber: 134
+#             lineNumber: 142
 #           ...
 # Exceptions suite > Failed not thrown exceptions
 #         not ok 1 - exception not thrown
@@ -457,88 +492,88 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
 #           condition: "nothrow, but an exception of unknown type was thrown"
 #           at:
 #             fileName: exceptions.cpp
-#             lineNumber: 170
+#             lineNumber: 182
 #           ...
 #         not ok 2 - std::exception not thrown
 #           ---
 #           condition: "nothrow, but a std::exception was thrown: \"boom\""
 #           at:
 #             fileName: exceptions.cpp
-#             lineNumber: 174
+#             lineNumber: 186
 #           ...
 # Exceptions suite > Unexpected std::exception
 #         not ok 2 - unexpected exception: boom
 #           ---
 #           at:
 #             fileName: exceptions.cpp
-#             lineNumber: 197
+#             lineNumber: 209
 #           ...
 # Exceptions suite > Unexpected exception of unknown type
 #         not ok 1 - unexpected exception of unknown type
 #           ---
 #           at:
 #             fileName: exceptions.cpp
-#             lineNumber: 211
+#             lineNumber: 223
 #           ...
 # Exceptions suite > Unexpected exception in nested test case > nested test case
 #             not ok 1 - unexpected exception: boom
 #               ---
 #               at:
 #                 fileName: exceptions.cpp
-#                 lineNumber: 225
+#                 lineNumber: 237
 #               ...
 # Exceptions suite > Failed require
 #         not ok 2 - failed requirement
 #           ---
 #           at:
 #             fileName: exceptions.cpp
-#             lineNumber: 264
+#             lineNumber: 276
 #           ...
 # Exceptions suite > Failed require in nested test case > nested test case
 #             not ok 1 - failed nested requirement
 #               ---
 #               at:
 #                 fileName: exceptions.cpp
-#                 lineNumber: 283
+#                 lineNumber: 295
 #               ...
 # Exceptions suite > Failed require in throws
 #         not ok 1 - in throws
 #           ---
 #           at:
 #             fileName: exceptions.cpp
-#             lineNumber: 300
+#             lineNumber: 312
 #           ...
 # Exceptions suite > Failed require in throws with a type
 #         not ok 1 - in typed throws
 #           ---
 #           at:
 #             fileName: exceptions.cpp
-#             lineNumber: 311
+#             lineNumber: 323
 #           ...
 # Exceptions suite > Failed require in nothrow
 #         not ok 1 - in nothrow
 #           ---
 #           at:
 #             fileName: exceptions.cpp
-#             lineNumber: 321
+#             lineNumber: 333
 #           ...
 # Exceptions suite > Failed require during unwinding
 #         not ok 1
 #           ---
 #           at:
 #             fileName: exceptions.cpp
-#             lineNumber: 336
+#             lineNumber: 348
 #           ...
 #         not ok 2 - unexpected exception: boom
 #           ---
 #           at:
 #             fileName: exceptions.cpp
-#             lineNumber: 331
+#             lineNumber: 343
 #           ...
-not ok 7 - Exceptions suite # { FAILED, 10 checks passed, 16 failed, in 16 test cases, time: 1.417 ms }
+not ok 7 - Exceptions suite # { FAILED, 10 checks passed, 16 failed, in 16 test cases, time: 1.459 ms }
 # Exceptions suite body
 #     not ok 2 - unexpected exception in the suite body: boom
-not ok 8 - Exceptions suite body # { FAILED, 1 check passed, 1 failed, in 1 test case, time: 0.067 ms }
+not ok 8 - Exceptions suite body # { FAILED, 1 check passed, 1 failed, in 1 test case, time: 0.072 ms }
 # Failed combinatorial floats suite > Combinatorial floats
 #         not ok 1 - 42.0 == 42 signed long long
 #           ---
@@ -835,7 +870,7 @@ not ok 8 - Exceptions suite body # { FAILED, 1 check passed, 1 failed, in 1 test
 #             fileName: float-failed-combinations.cpp
 #             lineNumber: 141
 #           ...
-not ok 9 - Failed combinatorial floats suite # { FAILED, 0 checks passed, 42 failed, in 2 test cases, time: 0.714 ms }
+not ok 9 - Failed combinatorial floats suite # { FAILED, 0 checks passed, 42 failed, in 2 test cases, time: 0.730 ms }
 # Failed combinatorial integrals suite > Combinatorial integrals with signed long long
 #         not ok 1 - ne matches signed long long
 #           ---
@@ -2246,7 +2281,7 @@ not ok 9 - Failed combinatorial floats suite # { FAILED, 0 checks passed, 42 fai
 #             fileName: integral-failed-combinations.cpp
 #             lineNumber: 132
 #           ...
-not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200 failed, in 10 test cases, time: 3.022 ms }
+not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 200 failed, in 10 test cases, time: 3.399 ms }
 # Miscellaneous suite > Message types
 #         not ok 7 - failed {3}
 #           ---
@@ -2320,7 +2355,7 @@ Matching test cases:
 #             fileName: miscellaneous.cpp
 #             lineNumber: 1902
 #           ...
-not ok 11 - Miscellaneous suite # { FAILED, 206 checks passed, 8 failed, in 52 test cases, time: 4.658 ms }
+not ok 11 - Miscellaneous suite # { FAILED, 206 checks passed, 8 failed, in 52 test cases, time: 4.756 ms }
 # Operands suite > Arrays bad
 #         not ok 1 - array{ 42 } ne array{ 42 }
 #           ---
@@ -2593,9 +2628,9 @@ not ok 11 - Miscellaneous suite # { FAILED, 206 checks passed, 8 failed, in 52 t
 #             fileName: operands.cpp
 #             lineNumber: 843
 #           ...
-not ok 12 - Operands suite # { FAILED, 53 checks passed, 38 failed, in 22 test cases, time: 1.120 ms }
-ok 13 - Runner options suite # { passed, 64 checks in 9 test cases, time: 1.045 ms }
-ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.110 ms }
+not ok 12 - Operands suite # { FAILED, 53 checks passed, 38 failed, in 22 test cases, time: 1.145 ms }
+ok 13 - Runner options suite # { passed, 64 checks in 9 test cases, time: 1.071 ms }
+ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.103 ms }
 # Utility suite > utility::is_match() — failing
 #         not ok 1 - "" matches abc
 #           ---
@@ -2627,6 +2662,6 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.110 ms }
 #             fileName: utility.cpp
 #             lineNumber: 195
 #           ...
-not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.126 ms }
+not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.127 ms }
 1..15
-# { total: 689 checks passed, 368 failed, in 169 test cases, 15 test suites, time: 16.109 ms }
+# { total: 690 checks passed, 373 failed, in 169 test cases, 15 test suites, time: 16.821 ms }

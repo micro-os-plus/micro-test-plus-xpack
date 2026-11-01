@@ -583,15 +583,53 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Writes the word `not`, followed by the operand, in the colour of the
-   * result of the negation.
+   * result of the negation. A comparison is written between parentheses
+   * (see `append_not_operand()`).
    */
   template <class T>
   expression_formatter&
   expression_formatter::operator<< (const detail::not_op<T>& op)
   {
     *this << colour (op) << "not ";
-    append_operand (op.operand ());
+    append_not_operand (op.operand ());
     return (*this << colours_.none);
+  }
+
+  /**
+   * @details
+   * Written as `append_operand()` writes it.
+   */
+  template <class T>
+  void
+  expression_formatter::append_not_operand (const T& t)
+  {
+    append_operand (t);
+  }
+
+  /**
+   * @details
+   * The comparison writes its own colours; the parentheses are written
+   * in the colour of the negation.
+   */
+  template <class Lhs_T, class Rhs_T, class Compare_T>
+  void
+  expression_formatter::append_not_operand (
+      const detail::compare_op<Lhs_T, Rhs_T, Compare_T>& op)
+  {
+    *this << "(" << op << ")";
+  }
+
+  /**
+   * @details
+   * The comparison writes its own colours; the parentheses are written
+   * in the colour of the negation.
+   */
+  template <class Lhs_T, class Rhs_T, class Epsilon_T>
+  void
+  expression_formatter::append_not_operand (
+      const detail::approx_op<Lhs_T, Rhs_T, Epsilon_T>& op)
+  {
+    *this << "(" << op << ")";
   }
 
   /**
