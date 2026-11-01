@@ -305,20 +305,32 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Appends a message to the check.
        *
+       * @details
+       * Callable only on a temporary, like the result of `expect()` and
+       * `require()`, which is destroyed at the end of the statement: a
+       * result bound to a name (`auto&& r = t.expect (...)`) is not
+       * usable, since it would refer to a destroyed object after the
+       * statement.
+       *
        * @tparam T The type of the message to append: a value that the
        * formatter can write, or a callable object that returns one.
        *
        * @param msg The message to append, or the callable object that
        * returns it, called only if the check fails.
-       * @return Reference to the current check result.
+       * @return The current check result, as an rvalue reference, so that
+       * further messages can be appended in the same expression.
        */
       template <class T>
         requires (extension::printable<T> or detail::lazy_message<T>)
-      auto&
-      operator<< (const T& msg);
+      check_result&&
+      operator<< (const T& msg) &&;
 
       /**
        * @brief Retrieves the result value.
+       *
+       * @details
+       * Callable only on a temporary, for the reason given for
+       * `operator<<()`.
        *
        * @par Parameters
        *   None.
@@ -326,7 +338,7 @@ namespace micro_os_plus::micro_test_plus
        * @retval false The checked condition was not met.
        */
       [[nodiscard]] bool
-      value (void) const noexcept;
+      value (void) const&& noexcept;
 
     private:
       /**

@@ -579,7 +579,9 @@ continues, so that all its checks are evaluated and reported in one run.
 The result of `t.expect (...)` and `t.require (...)` lives until the end of
 the statement, where the check is reported, so that the checks are
 reported in the order of the statements. It cannot be kept in a variable:
-`auto r = t.expect (...)` does not compile.
+`auto r = t.expect (...)` does not compile, and a result bound to a
+reference (`auto&& r = t.expect (...)`) cannot be used, since the message
+operator and `value()` can be called only on the temporary.
 
 The message accepts the same values as the operands of the
 [function comparators](#function-comparators), including the

@@ -267,6 +267,16 @@ namespace
     mt::negate (std::forward<Ts> (operands)...);
   };
 
+  // Whether a message can be appended to, and the value retrieved from, an
+  // object of the given type, an lvalue or an rvalue (#230).
+  template <class T>
+  concept can_append_message
+      = requires (T&& result) { std::forward<T> (result) << "message"; };
+
+  template <class T>
+  concept can_get_value
+      = requires (T&& result) { std::forward<T> (result).value (); };
+
   template <class... Ts>
   concept can_all_of = requires (Ts&&... operands) {
     mt::all_of (std::forward<Ts> (operands)...);
@@ -857,6 +867,15 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (std::is_same_v<
                    decltype (std::declval<mt::test_case&> ().require (true)),
                    result_t&&>);
+
+    // The result is destroyed at the end of the statement, so a result
+    // bound to a name (`auto&& r = t.expect (...)`) cannot be used: the
+    // members can be called only on a temporary (#230).
+    static_assert (can_append_message<result_t>);
+    static_assert (can_get_value<result_t>);
+    static_assert (not can_append_message<result_t&>);
+    static_assert (not can_get_value<result_t&>);
+    static_assert (not can_get_value<const result_t&>);
   }
 
   {

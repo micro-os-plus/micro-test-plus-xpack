@@ -140,7 +140,7 @@ namespace micro_os_plus::micro_test_plus
      * Returns the result value stored in `value_`.
      */
     inline bool
-    check_result::value (void) const noexcept
+    check_result::value (void) const&& noexcept
     {
       return value_;
     }
@@ -176,21 +176,21 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
       requires (extension::printable<T> or detail::lazy_message<T>)
-    auto&
-    check_result::operator<< (const T& msg)
+    check_result&&
+    check_result::operator<< (const T& msg) &&
     {
       if constexpr (detail::lazy_message<T>)
         {
           if (value_)
             {
-              return *this;
+              return std::move (*this);
             }
         }
       else
         {
           if (!is_written_)
             {
-              return *this;
+              return std::move (*this);
             }
         }
 
@@ -204,7 +204,7 @@ namespace micro_os_plus::micro_test_plus
           formatter << msg;
         }
       info_.message = std::move (formatter.buffer_);
-      return *this;
+      return std::move (*this);
     }
 
     // ------------------------------------------------------------------------
