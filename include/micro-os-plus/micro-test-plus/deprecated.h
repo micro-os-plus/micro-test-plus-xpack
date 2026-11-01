@@ -2521,8 +2521,8 @@ namespace micro_os_plus::micro_test_plus
    * inheritance from `op`; `has_epsilon` also requires `is_op`;
    * `checkable` also accepts the types with an `explicit operator bool`;
    * `printable` accepts everything the formatter can print. The
-   * exception is `has_value`, which is not used by the framework any
-   * more, and is restored with its v5.0.1 definition.
+   * exceptions are `has_value` and `has_npos`, which are not used by the
+   * framework any more, and are restored with their v5.0.1 definitions.
    *
    * The concepts cannot be deprecated individually, so the attribute is
    * on the namespace. Clang reports the deprecation at every qualified
@@ -2560,7 +2560,26 @@ namespace micro_os_plus::micro_test_plus
     using extension::printable;
 
     using detail::container_like;
-    using detail::has_npos;
+
+    /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
+     * @brief Deprecated C++20 concept satisfied when `T` provides a
+     * `npos` member.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * Restored with its v5.0.1 definition, satisfied by any type with a
+     * member named `npos`. It is not used by the framework any more,
+     * which detects the strings with `detail::string_like`, so that the
+     * containers with a member named `npos` are compared element by
+     * element.
+     *
+     * @deprecated There is no replacement; the concept used by the
+     * framework is internal (since 6.0.0).
+     */
+    template <class T>
+    concept has_npos = requires { T::npos; };
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated

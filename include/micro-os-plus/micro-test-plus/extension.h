@@ -431,18 +431,27 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
-     * @brief C++20 concept satisfied when `T` provides a `npos` member.
+     * @brief C++20 concept satisfied when `T` is a string, convertible to
+     * a `std::basic_string_view` of a character type.
      *
      * @tparam T The type to be checked.
      *
      * @details
-     * The `has_npos` concept is satisfied when `T` exposes a static `npos`
-     * member, as provided by `std::string_view` and similar types. It is
-     * used to detect the string-like types, which the formatter writes as
-     * text, not element by element (see `formattable_range`).
+     * The `string_like` concept is satisfied when a `const` object of
+     * type `T` is implicitly convertible to a `std::basic_string_view`
+     * of `char`, `wchar_t`, `char8_t`, `char16_t`, or `char32_t`, as the
+     * standard strings and the string views are. It is used to detect the
+     * strings, which the formatter writes as text, not element by element
+     * (see `formattable_range`). A container that has only a member named
+     * `npos`, or that is not convertible, is not a string.
      */
     template <class T>
-    concept has_npos = requires { T::npos; };
+    concept string_like
+        = std::convertible_to<const T&, std::basic_string_view<char>>
+          or std::convertible_to<const T&, std::basic_string_view<wchar_t>>
+          or std::convertible_to<const T&, std::basic_string_view<char8_t>>
+          or std::convertible_to<const T&, std::basic_string_view<char16_t>>
+          or std::convertible_to<const T&, std::basic_string_view<char32_t>>;
 
     /**
      * @brief C++20 concept satisfied when `T` provides `begin()` and
@@ -534,7 +543,7 @@ namespace micro_os_plus::micro_test_plus
      * and:
      * - is not an array, since the arrays are compared by address, and
      *   are written as addresses, as the pointers they decay to;
-     * - is not a string (see `has_npos`), which is written as text;
+     * - is not a string (see `string_like`), which is written as text;
      * - does not have elements of its own type, like
      *   `std::filesystem::path`, whose elements are paths, so that
      *   formatting it would recurse without end;
@@ -548,7 +557,7 @@ namespace micro_os_plus::micro_test_plus
     template <class T>
     concept formattable_range
         = (container_like<T> or free_range<T>) and (not std::is_array_v<T>)
-          and (not has_npos<T>)
+          and (not string_like<T>)
           and (not std::is_same_v<typename range_element<T>::type, T>)
           and extension::printable<typename range_element<T>::type>;
 

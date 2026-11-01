@@ -246,6 +246,19 @@ namespace with_ranges
     int numbers[2];
   };
 
+  // A container with a member named `npos`, which is not a string.
+  struct npos_buffer
+  {
+    static constexpr unsigned long npos = static_cast<unsigned long> (-1);
+    int numbers[2];
+
+    const int*
+    begin () const;
+
+    const int*
+    end () const;
+  };
+
   const int*
   begin (const number_pair& p);
 
@@ -512,6 +525,7 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
 
   {
     using with_comparators::unreported;
+    using with_ranges::npos_buffer;
     using with_ranges::number_pair;
     using with_ranges::self_range;
     using with_ranges::transaction;
@@ -525,6 +539,14 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
         mt::detail::formattable_range<std::vector<std::vector<int>>>);
     static_assert (mt::detail::formattable_range<std::array<bool, 0>>);
     static_assert (mt::detail::formattable_range<number_pair>);
+    static_assert (mt::detail::formattable_range<npos_buffer>);
+    static_assert (mt::extension::printable<npos_buffer>);
+    static_assert (not mt::detail::string_like<npos_buffer>);
+    static_assert (mt::detail::string_like<std::string>);
+    static_assert (mt::detail::string_like<std::string_view>);
+    static_assert (mt::detail::string_like<std::wstring>);
+    static_assert (mt::detail::string_like<std::u16string_view>);
+    static_assert (not mt::detail::string_like<std::vector<char>>);
     static_assert (mt::detail::free_range<number_pair>);
     static_assert (not mt::detail::formattable_range<int[2]>);
     static_assert (not mt::detail::formattable_range<std::string[2]>);
