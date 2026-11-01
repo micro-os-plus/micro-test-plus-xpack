@@ -371,7 +371,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * The `char` pointers are written as C strings, quoted and escaped as
    * the `std::string` values are, with a null pointer written as
-   * `nullptr`; all the other values are written by their own `operator<<`.
+   * `nullptr`; all the other values are written by `append_operand()`.
    * In the plain mode, used for the messages, the strings are not quoted.
    */
   template <class T>
@@ -500,9 +500,10 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * The left-hand side and right-hand side expressions are formatted as
-   * they are, enclosed in parentheses, and separated by the word `and`,
-   * written in the colour of the result of the conjunction.
+   * The operands, written by `append_and_operand()`, are separated by
+   * the word `and`, in the colour of the result of each conjunction; a
+   * chain of conjunctions is enclosed in a single pair of parentheses,
+   * which are not coloured.
    */
   template <class Lhs_T, class Rhs_T>
   expression_formatter&
@@ -542,9 +543,10 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * The left-hand side and right-hand side expressions are formatted as
-   * they are, enclosed in parentheses, and separated by the word `or`,
-   * written in the colour of the result of the disjunction.
+   * The operands, written by `append_or_operand()`, are separated by
+   * the word `or`, in the colour of the result of each disjunction; a
+   * chain of disjunctions is enclosed in a single pair of parentheses,
+   * which are not coloured.
    */
   template <class Lhs_T, class Rhs_T>
   expression_formatter&
@@ -610,8 +612,10 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * The comparison writes its own colours; the parentheses are written
-   * in the colour of the negation.
+   * The comparison writes its own colours; the opening parenthesis is
+   * written in the colour of the negation, but the comparison resets
+   * the colour at its end, so the closing parenthesis is written
+   * without colour.
    */
   template <class Lhs_T, class Rhs_T, class Compare_T>
   void
@@ -623,8 +627,8 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * The comparison writes its own colours; the parentheses are written
-   * in the colour of the negation.
+   * As for the relational comparisons, the closing parenthesis is
+   * written without colour, since the comparison resets it.
    */
   template <class Lhs_T, class Rhs_T, class Epsilon_T>
   void

@@ -268,6 +268,11 @@ namespace micro_os_plus::micro_test_plus::detail
      *
      * @param sv The text to convert.
      * @return The UTF-8 text.
+     *
+     * @details
+     * Unlike UTF-16, UTF-32 needs no decoding: each code unit is
+     * encoded by `append_utf8()`, which writes the values that are not
+     * Unicode scalar values as U+FFFD.
      */
     template <class Char_T>
     std::string
@@ -307,6 +312,11 @@ namespace micro_os_plus::micro_test_plus::detail
      *
      * @param buffer The buffer to append to.
      * @param sv The text.
+     *
+     * @details
+     * The characters selected by `is_escaped_in_plain()` are written by
+     * `append_control_escape()`; all the others, including the tab, the
+     * line feed, and the bytes of the UTF-8 sequences, unchanged.
      */
     void
     append_plain (std::string& buffer, std::string_view sv)
@@ -374,8 +384,10 @@ namespace micro_os_plus::micro_test_plus::detail
    * The string is written as a C++ string literal, between double
    * quotes, by `append_quoted()`, so that the empty and blank strings
    * are visible, and the control characters are escaped. In the plain
-   * mode, used for the messages, the contents are appended unchanged,
-   * using `buffer_.append(sv)`.
+   * mode, used for the messages, the contents are appended without
+   * quotes, by `append_plain()`, with only the control characters that
+   * can change the state of a terminal, or truncate a text, escaped
+   * (all except the tab and the line feed, and DEL).
    */
   expression_formatter&
   expression_formatter::operator<< (std::string_view sv)
@@ -454,7 +466,9 @@ namespace micro_os_plus::micro_test_plus::detail
    * (`'\\xc3'`).
    *
    * In the plain mode, used for the messages, the character is appended
-   * unchanged, as text, without quotes and escapes.
+   * as text, without quotes, and escaped only if it is a control
+   * character other than the tab and the line feed, or DEL, as
+   * `append_plain()` does for the strings.
    */
   expression_formatter&
   expression_formatter::operator<< (char c)
@@ -532,10 +546,11 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Appends the null-terminated C string @p s to the internal buffer
-   * using `buffer_.append(s)`, or `"nullptr"` for a null pointer, as the
-   * `c_string` overload does; the `char*` values also reach this
-   * overload, and `std::string::append()` must not be called with a
-   * null pointer.
+   * as `append_plain()` does, with the control characters other than
+   * the tab and the line feed, and DEL, escaped, or `"nullptr"` for a
+   * null pointer, as the `c_string` overload does; the `char*` values
+   * also reach this overload, so the null pointer must be checked
+   * before the text is read.
    */
   expression_formatter&
   expression_formatter::operator<< (const char* s)
@@ -553,9 +568,10 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * In the plain mode, the text, as UTF-8, unchanged, with a null pointer
-   * written as `nullptr`; otherwise the address, since the pointers of
-   * the wide character types are compared by address.
+   * In the plain mode, the text, converted to UTF-8 and written as a
+   * `std::wstring_view` is, with a null pointer written as `nullptr`;
+   * otherwise the address, since the pointers of the wide character
+   * types are compared by address.
    */
   expression_formatter&
   expression_formatter::operator<< (const wchar_t* s)
@@ -638,7 +654,8 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Appends the characters of the string, quoted and escaped as the
-   * `std::string_view` overload does (unchanged in the plain mode), or
+   * `std::string_view` overload does (without quotes in the plain mode,
+   * with only the control characters escaped), or
    * `"nullptr"` for a null pointer, as the other operator overloads do
    * for these values.
    */
@@ -659,8 +676,8 @@ namespace micro_os_plus::micro_test_plus::detail
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
-   * Appends the name, as the `std::string_view` overload does, so that
-   * the comparison is reported with the name instead of `true`.
+   * Appends the name as it is, without quotes, so that the comparison
+   * is reported with the name instead of `true`.
    */
   expression_formatter&
   expression_formatter::operator<< (const named_bool& b)

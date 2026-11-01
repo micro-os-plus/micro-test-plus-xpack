@@ -43,16 +43,27 @@ The C strings (`char` arrays, including the string literals, and `char`
 pointers) are compared by content, also with `std::string` and
 `std::string_view`, so `mt::eq (actual, "abc")` checks the characters,
 not the addresses; a null `char` pointer is equal only to another null
-pointer (or `nullptr`), not to an empty string. The other pointers and
-arrays (including `uint8_t` buffers) are compared by address.
+pointer (or `nullptr`), not to an empty string. The other arrays
+(including `uint8_t` buffers) are compared by content, element by
+element, also with a container; the other pointers are compared by
+address.
+
+The operands must be comparable with the operator of the comparator; for
+example, `mt::eq (a, b)` does not compile when `a == b` would not. The
+comparison of integers of different signedness is made by value, as by
+`std::cmp_equal()`, so that `mt::eq (-1, static_cast<unsigned> (-1))`
+fails, although `-1 == static_cast<unsigned> (-1)` is true.
 
 @par Comparing Containers
 
 Containers can be compared for equality or inequality using the same
-comparator functions. The comparison is performed with the standard
-`==` operator, so the containers must be of the same type. The standard
-`==` and `!=` operators return a plain `bool`, so a failed check could
-not show the elements.
+comparator functions. The comparison is performed with the `==`
+operator of the containers, so they must be of types that can be
+compared, usually of the same type. The standard `==` and `!=` operators
+return a plain `bool`, so a failed check written with them could not
+show the elements. Only the first 16 elements of a container are shown;
+when two longer containers differ after them, the report adds the index
+of the first difference.
 
 @par Examples
 

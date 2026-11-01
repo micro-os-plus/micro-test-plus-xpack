@@ -152,8 +152,10 @@ namespace micro_os_plus::micro_test_plus::detail
    * Copies the verbosity and the view of the command-line arguments from
    * the session options, and opens the output file, if a non-empty path
    * was given, keeping a copy of the path. If the file cannot be opened,
-   * an error message is written to `stderr`, the report is written only to
-   * the console, and `has_output_file_error()` returns `true`. The
+   * an error message is written to `stderr`, and
+   * `has_output_file_error()` returns `true`, after which
+   * `runner::initialise()` declines the session, so that no test is
+   * run. The
    * internal string buffer is pre-allocated to reduce dynamic allocation
    * overhead.
    */

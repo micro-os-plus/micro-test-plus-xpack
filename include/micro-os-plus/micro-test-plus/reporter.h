@@ -226,6 +226,9 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief Whether the record is written to the console.
+       *
+       * @details
+       * Depends on the kind of the record and on the verbosity.
        */
       bool console;
 
@@ -456,8 +459,9 @@ namespace micro_os_plus::micro_test_plus
        * @brief Returns whether the output file could not be opened.
        *
        * @details
-       * Checked by `runner::initialise()`, which reports it as an option
-       * error; the report is then written only to the console.
+       * Checked by `runner::initialise()`, which reports it on the
+       * console, as the option errors are, and declines the session, so
+       * that no test is run and `runner::run_suites()` returns 2.
        *
        * @par Parameters
        *   None.

@@ -11,6 +11,16 @@ expected, improving the reliability and safety of software components. The
 framework supports both generic checks and type-specific verification,
 allowing precise and expressive test cases.
 
+When such a check fails, the report states why: for example
+`throws<std::runtime_error>, but nothing was thrown`,
+`throws<std::runtime_error>, but a std::exception was thrown: "what"`
+(with the text returned by its `what()`), or
+`nothrow, but an exception of unknown type was thrown`.
+
+A failed `require()` inside the callable is not an exception of the
+callable: it stops the test case, as it does elsewhere, and does not
+satisfy `throws()` or fail `nothrow()`.
+
 For advanced scenarios, such as handling multiple expected exception types,
 use explicit `try` blocks with multiple `catch` statements and report
 results with `expect(true)` or `expect(false)`. This approach enables

@@ -77,10 +77,11 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * The `eq` function template provides a generic equality comparator for any
    * types. The operands are first passed to `detail::as_operand()`, which
-   * converts the C strings to `detail::c_string`, so that they are
-   * compared by content. It constructs a comparator object, with the
-   * `detail::equal_to` tag, which evaluates to `true` if the two values are
-   * equal, and which is reported with both values if not.
+   * converts the C strings to `detail::c_string`, and the other arrays to
+   * `detail::array_operand`, so that they are compared by content. It
+   * constructs a comparator object, with the `detail::equal_to` tag, which
+   * evaluates to `true` if the two values are equal, and which is reported
+   * with both values if not.
    *
    * The operands are forwarded, so that the comparator moves the
    * temporaries and refers to the named operands, without copying them.
@@ -99,9 +100,10 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * The operands are passed to `detail::as_operand()`, as for `eq()`, so that
-   * the C strings are compared by content. It constructs a comparator object,
-   * with the `detail::not_equal_to` tag, which evaluates to `true` if the two
-   * values are not equal, and which is reported with both values if not.
+   * the C strings and the arrays are compared by content. It constructs a
+   * comparator object, with the `detail::not_equal_to` tag, which evaluates to
+   * `true` if the two values are not equal, and which is reported with both
+   * values if not.
    */
   template <class Lhs_T, class Rhs_T>
     requires (
@@ -118,9 +120,10 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * The operands are passed to `detail::as_operand()`, as for `eq()`, so that
-   * the C strings are compared by content. It constructs a comparator object,
-   * with the `detail::greater` tag, which evaluates to `true` if `lhs` is
-   * greater than `rhs`, and which is reported with both values if not.
+   * the C strings and the arrays are compared by content. It constructs a
+   * comparator object, with the `detail::greater` tag, which evaluates to
+   * `true` if `lhs` is greater than `rhs`, and which is reported with both
+   * values if not.
    */
   template <class Lhs_T, class Rhs_T>
     requires (
@@ -137,10 +140,10 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * The operands are passed to `detail::as_operand()`, as for `eq()`, so that
-   * the C strings are compared by content. It constructs a comparator object,
-   * with the `detail::greater_equal` tag, which evaluates to `true` if `lhs`
-   * is greater than or equal to `rhs`, and which is reported with both values
-   * if not.
+   * the C strings and the arrays are compared by content. It constructs a
+   * comparator object, with the `detail::greater_equal` tag, which evaluates
+   * to `true` if `lhs` is greater than or equal to `rhs`, and which is
+   * reported with both values if not.
    */
   template <class Lhs_T, class Rhs_T>
     requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>
@@ -157,9 +160,10 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * The operands are passed to `detail::as_operand()`, as for `eq()`, so that
-   * the C strings are compared by content. It constructs a comparator object,
-   * with the `detail::less` tag, which evaluates to `true` if `lhs` is less
-   * than `rhs`, and which is reported with both values if not.
+   * the C strings and the arrays are compared by content. It constructs a
+   * comparator object, with the `detail::less` tag, which evaluates to `true`
+   * if `lhs` is less than `rhs`, and which is reported with both values if
+   * not.
    */
   template <class Lhs_T, class Rhs_T>
     requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>
@@ -175,10 +179,10 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * The operands are passed to `detail::as_operand()`, as for `eq()`, so that
-   * the C strings are compared by content. It constructs a comparator object,
-   * with the `detail::less_equal` tag, which evaluates to `true` if `lhs` is
-   * less than or equal to `rhs`, and which is reported with both values if
-   * not.
+   * the C strings and the arrays are compared by content. It constructs a
+   * comparator object, with the `detail::less_equal` tag, which evaluates to
+   * `true` if `lhs` is less than or equal to `rhs`, and which is reported with
+   * both values if not.
    */
   template <class Lhs_T, class Rhs_T>
     requires (

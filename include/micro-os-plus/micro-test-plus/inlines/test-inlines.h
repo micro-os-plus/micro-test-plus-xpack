@@ -563,8 +563,9 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * Stops the compilation with the message of the `static_assert`, which
-   * states what `require()` takes. The condition of the `static_assert` depends
-   * on the type, so it is evaluated only when the function is selected.
+   * states what `require()` takes. The condition of the `static_assert`
+   * depends on the type, so it is evaluated only when the function is
+   * selected.
    */
   template <class Expr_T>
     requires detail::unsupported_condition<Expr_T>
@@ -684,8 +685,8 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__cpp_exceptions)
     try
       {
-        // Invoke the callable, passing the self reference followed by the
-        // variadic arguments.
+        // Invoke the callable, passing the self reference; the arguments
+        // of test() are bound to it, by bind_callable().
         callable_ (*this);
       }
     catch (const detail::failed_requirement&)
@@ -711,8 +712,8 @@ namespace micro_os_plus::micro_test_plus
         fail_unexpected_exception (nullptr);
       }
 #else
-    // Invoke the callable, passing the self reference followed by the variadic
-    // arguments.
+    // Invoke the callable, passing the self reference; the arguments of
+    // test() are bound to it, by bind_callable().
     callable_ (*this);
 #endif // defined(__cpp_exceptions)
 

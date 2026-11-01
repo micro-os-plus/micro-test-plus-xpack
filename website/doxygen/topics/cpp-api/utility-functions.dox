@@ -1,9 +1,10 @@
 @defgroup micro-os-plus-micro-test-plus-cpp-api-utility-functions Utility Functions
-@brief Utility functions for advanced string handling in tests.
+@brief Utility functions for handling strings in tests.
 
 @details
-These utilities simplify advanced string operations commonly required
-during test development. They support tasks such as partial string
-matching, splitting long
-strings for improved readability, and related manipulations that enhance
-the clarity and effectiveness of test code.
+The functions of the `utility` namespace help with the strings that the
+tests often check: `utility::is_match()` matches a string against a
+pattern with the `*` and `?` wildcards, `utility::split()` splits a
+string into a vector of the non-empty sub-strings separated by any of the
+delimiter characters, and
+`utility::extract_file_name()` returns the file name part of a path.

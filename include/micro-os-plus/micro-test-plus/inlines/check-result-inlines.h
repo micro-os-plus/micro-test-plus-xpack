@@ -157,8 +157,10 @@ namespace micro_os_plus::micro_test_plus
      * operands of the expressions, so that both accept the same types,
      * including the application types with an `operator<<` for the
      * formatter. The message is moved into a local formatter in the plain
-     * mode, which writes the numbers without the type suffixes and the
-     * `char` values unchanged, and is moved back after the value is
+     * mode, which writes the numbers without the type suffixes, and the
+     * strings and the `char` values without quotes, with only the control
+     * characters that can change the state of a terminal escaped, and is
+     * moved back after the value is
      * appended, so that no other buffer is allocated. The formatter of the
      * reporter is not used, since it may hold the expression of this
      * check, or of a pending one.

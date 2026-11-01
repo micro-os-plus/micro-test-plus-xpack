@@ -82,11 +82,6 @@ namespace micro_os_plus::micro_test_plus
    * @brief The verbosity levels for test reporting.
    *
    * @details
-   * The `verbosity` enumeration defines the available levels of detail for
-   * test output produced by the reporting system. These levels control the
-   * amount and type of information displayed during test execution, allowing
-   * users to tailor the output to their specific requirements.
-   *
    * The level is selected with the `--silent`, `--quiet`, and `--verbose`
    * command-line options, or with `runner_options::verbosity_level`; the
    * default is `normal`. The console output is intended for the people
@@ -235,10 +230,10 @@ namespace micro_os_plus::micro_test_plus
      * Starts from the defaults, and parses the µTest++ options
      * (`--reporter`, `--silent`, `--quiet`, `--verbose`, `--output-file`,
      * `--colour`, `--color`, `--use-colour`, `--use-color`, `--filter`,
-     * `--list-tests`, `--list`, `--help`, and `-h`). The parsing ends at the first
-     * argument that does not start with a dash (an application argument),
-     * or at the first `--` alone; that argument, and all the following
-     * ones, are left to the application, and are available from
+     * `--list-tests`, `--list`, `--help`, and `-h`). The parsing ends at the
+     * first argument that does not start with a dash (an application
+     * argument), or at the first `--` alone; that argument, and all the
+     * following ones, are left to the application, and are available from
      * `application_arguments()`. An option argument given
      * separately (`--reporter human`) belongs to its option and does not
      * end the parsing. Before that point, the arguments starting with a
@@ -247,13 +242,14 @@ namespace micro_os_plus::micro_test_plus
      * them with `--`.
      *
      * A missing option argument, an unknown reporter name, an unknown
-     * colour mode, or an unknown option, is recorded in
-     * `errors()`, and makes `has_errors()` true; the constructor writes
-     * nothing. The parsing continues, to record all the errors, but
+     * colour mode, a colour mode given separately after `--colour` or
+     * `--color`, or an unknown option, is recorded in `errors()`, and
+     * makes `has_errors()` true; the constructor writes nothing. The
+     * parsing continues, to record all the errors, but
      * `runner::initialise()` then runs no test: it writes the errors on
-     * `stderr` and on the console, followed, for an unknown
-     * option, by a line suggesting `--help`, creates no output file, and
-     * `run_suites()` returns 2.
+     * `stderr`, on the console, and in the output file, if any,
+     * followed, for an unknown option, by a line suggesting `--help`,
+     * and `run_suites()` returns 2.
      *
      * The `argv[]` strings are copied, so they need not outlive the
      * options.
@@ -362,8 +358,8 @@ namespace micro_os_plus::micro_test_plus
      * Set by `--output-file=<path>` or `--output-file <path>`. When it
      * is empty (the default), no file is written. The reporter opens the
      * file when it is created by `initialise()`; if the file cannot be
-     * opened, the error is reported on `stderr`, the report is written
-     * only to the console, and `runner::run_suites()` returns 2.
+     * opened, the error is reported on `stderr` and on the console, no
+     * test is run, and `runner::run_suites()` returns 2.
      */
     std::string output_file_path{};
 

@@ -363,9 +363,41 @@ namespace micro_os_plus::micro_test_plus
      * applications only read them.
      */
     friend class runner;
+
+    /**
+     * @brief The suite, which counts an unexpected exception as a
+     * failed check.
+     *
+     * @details
+     * See the friend declaration of `runner`.
+     */
     friend class suite;
+
+    /**
+     * @brief The test case, which counts an unexpected exception as a
+     * failed check.
+     *
+     * @details
+     * See the friend declaration of `runner`.
+     */
     friend class test_case;
+
+    /**
+     * @brief The check result, which counts the outcome of each check.
+     *
+     * @details
+     * See the friend declaration of `runner`.
+     */
     friend class detail::check_result;
+
+    /**
+     * @brief The base of the test tree nodes, which counts the test
+     * cases, adds their totals to those of the suite, and counts a test
+     * case started on a suite that is not running as a failed check.
+     *
+     * @details
+     * See the friend declaration of `runner`.
+     */
     friend class detail::runnable_base;
 
     /**

@@ -4,7 +4,12 @@
 @details
 By default, all test cases defined in `main()` are included in the
 top-level test suite, which is owned by the runner and returned by
-`runner::add_top_suite()`; its test cases run immediately. For more complex
+`runner::add_top_suite()`; its test cases run immediately, until
+`runner::run_suites()` is called. A test case can be created only on the
+suite whose body is running (the top suite, from `main()`, or, in the
+body of another suite, that suite); a call on another suite,
+for example on the top suite captured from the body of another suite, is
+reported as a failure, and the test case is not run. For more complex
 projects, additional test suites can be defined, typically in separate
 source files.
 

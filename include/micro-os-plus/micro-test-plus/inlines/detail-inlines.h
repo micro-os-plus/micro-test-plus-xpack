@@ -328,14 +328,25 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief The comparison operators, as the template argument of the
      * `comparable` concept.
+     *
+     * @details
+     * A single concept, parametrised by the operator, checks the operands
+     * of all the comparators (`eq()`, `ne()`, `gt()`, `ge()`, `lt()`, and
+     * `le()`).
      */
     enum class comparison : unsigned char
     {
+      /** @brief The `==` operator, checked by `eq()`. */
       equal,
+      /** @brief The `!=` operator, checked by `ne()`. */
       not_equal,
+      /** @brief The `>` operator, checked by `gt()`. */
       greater,
+      /** @brief The `>=` operator, checked by `ge()`. */
       greater_equal,
+      /** @brief The `<` operator, checked by `lt()`. */
       less,
+      /** @brief The `<=` operator, checked by `le()`. */
       less_equal
     };
 
@@ -362,6 +373,11 @@ namespace micro_os_plus::micro_test_plus
       /**
        * @brief Satisfied if the comparison selected by `Op` of two
        * `const` objects is well-formed.
+       *
+       * @details
+       * Only the requirement of the selected operator is checked, so
+       * that, for example, `eq()` accepts the types that have only an
+       * `operator==`.
        *
        * @tparam Op The comparison.
        * @tparam Lhs_T The type of the left hand side operand.
@@ -397,8 +413,12 @@ namespace micro_os_plus::micro_test_plus
      * The comparison is the one made by the `apply()` function of the
      * comparison tag: by value for the integers of different signedness
      * (see `sign_mixed_integers`), otherwise with the operator of the
-     * language. Used to reject the call of `eq()` and of the other
-     * comparators at the call site, with a short diagnostic.
+     * language. A function pointer compared with an object pointer is
+     * also accepted (see `function_pointer_pair`). Used to reject the
+     * call of `eq()` and of the other comparators at the call site, with
+     * a short diagnostic; the operator check is the first alternative, so
+     * that the Clang diagnostic names the invalid operator and the two
+     * types first (GCC reports only that no alternative is satisfied).
      *
      * @tparam Op The comparison.
      * @tparam Lhs_T The type deduced for the left hand side operand.
@@ -806,6 +826,11 @@ namespace micro_os_plus::micro_test_plus
     {
     }
 
+    /**
+     * @details
+     * Returns the result computed by the constructor of the derived
+     * operator; the callable is not invoked again.
+     */
     constexpr callable_op::
     operator bool () const
     {

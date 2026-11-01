@@ -942,8 +942,8 @@ namespace micro_os_plus::micro_test_plus
   {
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-operators
-     * @brief Deprecated equality operator. Matches only if at least one operand
-     * is a framework type (see `extension::is_op`).
+     * @brief Deprecated equality operator. Matches only if at least one
+     * operand is a framework type (see `extension::is_op`).
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -1094,8 +1094,8 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-operators
-     * @brief Deprecated logical `!` (not) operator. Matches only if the operand
-     * is a framework type (see `extension::is_op`).
+     * @brief Deprecated logical `!` (not) operator. Matches only if the
+     * operand is a framework type (see `extension::is_op`).
      *
      * @tparam T Type of the operand, constrained to the framework types.
      *
@@ -1247,7 +1247,8 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
-     * @brief Deprecated user-defined literal operator to convert to `unsigned`.
+     * @brief Deprecated user-defined literal operator to convert to
+     * `unsigned`.
      *
      * @tparam Cs The character pack representing the digits of the unsigned
      * integer constant.
@@ -1411,7 +1412,8 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
-     * @brief Deprecated user-defined literal operator to convert to `uint16_t`.
+     * @brief Deprecated user-defined literal operator to convert to
+     * `uint16_t`.
      *
      * @tparam Cs The character pack representing the digits of the `uint16_t`
      * constant.
@@ -1427,7 +1429,8 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
-     * @brief Deprecated user-defined literal operator to convert to `uint32_t`.
+     * @brief Deprecated user-defined literal operator to convert to
+     * `uint32_t`.
      *
      * @tparam Cs The character pack representing the digits of the `uint32_t`
      * constant.
@@ -1443,7 +1446,8 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
-     * @brief Deprecated user-defined literal operator to convert to `uint64_t`.
+     * @brief Deprecated user-defined literal operator to convert to
+     * `uint64_t`.
      *
      * @tparam Cs The character pack representing the digits of the `uint64_t`
      * constant.
@@ -1505,8 +1509,8 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
-     * @brief Deprecated user-defined literal operator to create a named boolean
-     * constant.
+     * @brief Deprecated user-defined literal operator to create a named
+     * boolean constant.
      *
      * @param name Pointer to the character sequence representing the literal.
      * @param size The size of the character sequence.
@@ -1990,8 +1994,8 @@ namespace micro_os_plus::micro_test_plus
    */
 
   /**
-   * @brief Deprecated strongly-typed wrapper for `bool` values, the v5.0.1 name
-   * of `to_b`.
+   * @brief Deprecated strongly-typed wrapper for `bool` values, the v5.0.1
+   * name of `to_b`.
    *
    * @details
    * The same type as `to_b`; kept for backwards compatibility.
@@ -2001,8 +2005,8 @@ namespace micro_os_plus::micro_test_plus
   = to_b;
 
   /**
-   * @brief Deprecated strongly-typed wrapper for `char` values, the v5.0.1 name
-   * of `to_c`.
+   * @brief Deprecated strongly-typed wrapper for `char` values, the v5.0.1
+   * name of `to_c`.
    *
    * @details
    * The same type as `to_c`; kept for backwards compatibility.
@@ -2045,8 +2049,8 @@ namespace micro_os_plus::micro_test_plus
   = to_i;
 
   /**
-   * @brief Deprecated strongly-typed wrapper for `long` values, the v5.0.1 name
-   * of `to_l`.
+   * @brief Deprecated strongly-typed wrapper for `long` values, the v5.0.1
+   * name of `to_l`.
    *
    * @details
    * The same type as `to_l`; kept for backwards compatibility.
@@ -2056,8 +2060,8 @@ namespace micro_os_plus::micro_test_plus
   = to_l;
 
   /**
-   * @brief Deprecated strongly-typed wrapper for `long long` values, the v5.0.1
-   * name of `to_ll`.
+   * @brief Deprecated strongly-typed wrapper for `long long` values, the
+   * v5.0.1 name of `to_ll`.
    *
    * @details
    * The same type as `to_ll`; kept for backwards compatibility.

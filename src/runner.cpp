@@ -74,7 +74,13 @@ namespace micro_os_plus::micro_test_plus
 
   namespace
   {
-    // The text displayed by `--help`, after the usage line.
+    /**
+     * @brief The text displayed by `--help`, after the usage line.
+     *
+     * @details
+     * Lists the options recognised by `runner_options`, one per line,
+     * with the description of the `--filter` levels.
+     */
     constexpr const char* help_options
         = "Options:\n"
           "  --help, -h\n"
@@ -234,11 +240,16 @@ namespace micro_os_plus::micro_test_plus
    * While the test cases are listed, only the header of the list is
    * written; the session is not reported.
    *
-   * If the options have errors, nothing else is done: no output file is
-   * created, the errors are written on `stderr` and on the console, the
-   * session is marked as finished, so that no test is run, and
+   * If the options have errors, nothing else is done: the errors are
+   * written on `stderr`, on the console, and in the output file, if
+   * any, which is truncated, so that it never keeps the results of an
+   * earlier run; the session is marked as declined, so that no test is
+   * run, and `run_suites()` returns 2. With `--help`, and no errors, the
+   * usage is written only on the console, no output file is created,
+   * the session is declined, and `run_suites()` returns 0. If the output
+   * file cannot be opened, the error is written on `stderr` (by the
+   * reporter) and on the console, the session is declined, and
    * `run_suites()` returns 2.
-   * The same happens if the output file cannot be opened.
    *
    * The runner is initialised only once; a later call reports an error
    * on `stderr` and is rejected, so that `run_suites()` returns 1 (or 2,
@@ -868,8 +879,8 @@ namespace micro_os_plus::micro_test_plus
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
-   * Kept for compatibility; it calls `run_suites()`, so the first call runs the
-   * session and the later ones return the stored exit code.
+   * Kept for compatibility; it calls `run_suites()`, so the first call runs
+   * the session and the later ones return the stored exit code.
    */
   // Deprecated since 6.0.0; use run_suites().
   int
@@ -909,8 +920,8 @@ namespace micro_os_plus::micro_test_plus
    * test cases of the top suite run from then on), to the end of
    * `run_suites()`, the reporter writes the buffered results and the
    * location of the abort, with `abort_session()`, to the console and to
-   * the output file, since the totals are never reached. Otherwise, there is no
-   * report to complete, and the location is written to `stderr`. The
+   * the output file, since the totals are never reached. Otherwise, there is
+   * no report to complete, and the location is written to `stderr`. The
    * standard streams are then flushed, and the handler set by
    * `set_abort_handler()` is called, if any. If there is no handler, or
    * if it returns, the process is terminated via `::abort()`.

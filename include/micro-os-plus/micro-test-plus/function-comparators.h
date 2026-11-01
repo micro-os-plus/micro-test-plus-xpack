@@ -106,7 +106,10 @@ namespace micro_os_plus::micro_test_plus
    * other pointers are compared by address. The pointers and arrays of
    * `char8_t`, `char16_t`, `char32_t`, and `wchar_t` are not treated as
    * strings: the arrays are compared element by element, including the
-   * terminating null character, and the pointers by address.
+   * terminating null character, and the pointers by address. The
+   * integers of different signedness are compared by value, as by
+   * `std::cmp_equal()`, not after the usual arithmetic conversions, so
+   * `eq (-1, static_cast<unsigned> (-1))` fails.
    *
    * Both operands must satisfy `extension::printable`, since they are
    * reported on failure; an application type needs an `operator<<` for

@@ -88,7 +88,9 @@ namespace micro_os_plus::micro_test_plus
    *   values;
    * - `--filter=<pattern>` or `--filter <pattern>`;
    * - `--list-tests`, or its short form `--list`, as in Catch2 and
-   *   Boost UT, to list the test cases instead of running them.
+   *   Boost UT, to list the test cases instead of running them;
+   * - `--help`, or its short form `-h`, to display the usage instead of
+   *   running the tests.
    *
    * When an option is repeated, the last one takes effect, except
    * `--filter`, whose patterns are all kept, in order, one per nesting
@@ -108,8 +110,9 @@ namespace micro_os_plus::micro_test_plus
    *
    * A missing option argument, an unknown reporter name, an unknown
    * colour mode, a colour mode given separately after `--colour` or
-   * `--color`, or an unknown `--` option, is recorded by `add_error()`,
-   * and the option is ignored; the parsing continues with the next
+   * `--color`, or an unknown option (any other argument that starts with
+   * a dash, including a single one), is recorded by `add_error()`, and
+   * the option is ignored; the parsing continues with the next
    * argument, to record all the errors. Nothing is written by the
    * constructor; the runner then writes the errors and refuses to run
    * the tests.

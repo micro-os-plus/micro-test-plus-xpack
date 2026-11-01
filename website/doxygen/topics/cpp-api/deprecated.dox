@@ -47,11 +47,11 @@ belong to:
 - `runner::timings()` and `test_case::timings()`, and the members of
   `detail::stopwatch` kept from the v5.0.1 timestamps, which are
   internal and not replaced;
-- the `counters` members `increment_successful_checks()`,
-  `increment_executed_subtests()`, `successful_checks()`,
-  `executed_subtests()`, and `was_successful()`, replaced by
-  `increment_passed_checks()`, `increment_executed_test_cases()`,
-  `passed_checks()`, `executed_test_cases()`, and `passed()`;
+- the `counters` members `successful_checks()`, `executed_subtests()`,
+  and `was_successful()`, replaced by `passed_checks()`,
+  `executed_test_cases()`, and `passed()` (the deprecated mutators
+  `increment_successful_checks()` and `increment_executed_subtests()`
+  were removed, since the counters are updated only by the framework);
 - `test_case::assume()`, replaced by `test_case::require()`;
 - the overloads of `test_case::expect()` and `test_case::require()` that
   accept an argument that is always true (a string literal or a function

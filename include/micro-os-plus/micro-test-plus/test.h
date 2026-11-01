@@ -661,8 +661,8 @@ namespace micro_os_plus::micro_test_plus
        * the running suite, or, when no suite runs, on `stderr`, and the
        * rejection is remembered by the runner, which makes the exit code
        * non-zero. When the session was declined (option errors, or
-       * `--help`), the test cases are ignored silently, as in all
-       * other cases.
+       * `--help`), or aborted, the test cases are ignored silently, as
+       * `after_test_case_create()` ignores them.
        *
        * @param target The suite on which the test case is created.
        * @param name The name of the test case, for the message.

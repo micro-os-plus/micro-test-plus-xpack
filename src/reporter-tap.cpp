@@ -157,6 +157,11 @@ namespace micro_os_plus::micro_test_plus::detail
        * @param text The null-terminated name.
        * @param escape Whether to escape the `\\` and `#` characters, as
        * `tap_text()` does.
+       *
+       * @details
+       * The name is copied, through `tap_text()`, only when it contains
+       * a line break, or, when escaping, a `\\` or a `#`; otherwise the
+       * original pointer is kept, and nothing is allocated.
        */
       tap_name (const char* text, bool escape) : text_{ text }
       {
@@ -171,14 +176,52 @@ namespace micro_os_plus::micro_test_plus::detail
           }
       }
 
+      /**
+       * @brief Deleted copy constructor.
+       *
+       * @details
+       * The object is used only as a local variable of the function
+       * that writes the line.
+       */
       tap_name (const tap_name&) = delete;
+
+      /**
+       * @brief Deleted move constructor.
+       *
+       * @details
+       * The object is used only as a local variable of the function
+       * that writes the line.
+       */
       tap_name (tap_name&&) = delete;
+
+      /**
+       * @brief Deleted copy assignment operator.
+       *
+       * @details
+       * The object is used only as a local variable of the function
+       * that writes the line.
+       */
       tap_name&
       operator= (const tap_name&)
           = delete;
+
+      /**
+       * @brief Deleted move assignment operator.
+       *
+       * @details
+       * The object is used only as a local variable of the function
+       * that writes the line.
+       */
       tap_name&
       operator= (tap_name&&)
           = delete;
+
+      /**
+       * @brief Destructor.
+       *
+       * @details
+       * Releases the copy of the name, if one was made.
+       */
       ~tap_name () = default;
 
       /**
@@ -188,6 +231,10 @@ namespace micro_os_plus::micro_test_plus::detail
        *   None.
        * @return The null-terminated name, valid as long as this object
        * and the original name.
+       *
+       * @details
+       * Returns the copy, when the name had to be changed, or the
+       * original name otherwise.
        */
       [[nodiscard]] const char*
       c_str (void) const noexcept
@@ -196,8 +243,29 @@ namespace micro_os_plus::micro_test_plus::detail
       }
 
     private:
+      /**
+       * @brief The original name.
+       *
+       * @details
+       * Not owned; it must outlive the object.
+       */
       const char* text_;
+
+      /**
+       * @brief The changed copy of the name.
+       *
+       * @details
+       * Empty, and not allocated, unless `is_copy_` is true.
+       */
       std::string prepared_{};
+
+      /**
+       * @brief Whether the name was copied into `prepared_`.
+       *
+       * @details
+       * Set by the constructor, when the name contains a character that
+       * `tap_text()` changes.
+       */
       bool is_copy_{ false };
     };
 #if defined(__GNUC__)

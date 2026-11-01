@@ -44,8 +44,9 @@ terminator, and is passed on like any other argument. An option argument
 given separately (`--reporter human`) belongs to its option. An unknown
 option before that point (an argument that starts with a dash, such as
 `-x`, `-` or `-verbose`), an unknown reporter or colour mode, or an
-option with a missing argument, is an error: it is reported on `stderr`
-and on the console, no test is run, and the exit code is 2. For an
+option with a missing argument, is an error: it is reported on `stderr`,
+on the console, and in the output file, if any, no test is run, and the
+exit code is 2. For an
 unknown option, the console also suggests `--help`.
 
 @section cli-help Help
@@ -107,8 +108,9 @@ full expectation details for each failing one.
 To adjust the verbosity, the following command-line options are available:
 
 - `--verbose` – display all expectations, regardless of outcome
-- `--quiet` – display only the session totals and, with the TAP reporter,
-  one result line per test suite; the failed checks are not displayed
+- `--quiet` – display only the failed checks, with the names of their
+  suites and test cases, and the session totals (and, with the TAP
+  reporter, one result line per test suite)
 - `--silent` – suppress all console output and return only the exit code
 
 On platforms without a command line, the level can be set in
@@ -145,7 +147,8 @@ ok 1 - Minimal # { passed, 2 checks in 1 test case, time: X.XXX ms }
 
 @subsection cli-verbosity-quiet Quiet mode
 
-In quiet mode, the µTest++ reporter displays only the overall session
+In quiet mode, the µTest++ reporter displays only the failed checks and
+the overall session totals; a run without failures displays only the
 totals. The TAP reporter also displays one `ok`/`not ok` line per test
 suite, with the plan counting them, so that the output remains a valid
 TAP document, which the TAP consumers read as failed when a suite
@@ -162,20 +165,33 @@ ok 1 - Minimal # { passed, 2 checks in 1 test case, time: X.XXX ms }
 # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: X.XXX ms }
 @endcode
 
-Quiet mode tells whether the run failed, not what failed: the failed
-checks, their locations, and their test cases are not displayed. This is
-by design, since displaying in full only the failed test cases is what
-the default mode does. To learn what failed, run without `--quiet`, or
-keep `--quiet` and add `--output-file` with the TAP reporter, whose file
-always receives the complete report, whatever the verbosity:
+When a check fails, it is displayed with its location, after the names
+of its suite and of its test cases. The human reporter writes them as
+the headings of the default mode, but only for the suites and the test
+cases with failures. The TAP reporter writes each failure as a TAP
+comment, after a `# <suite> > <test case>` line, so that the output
+remains a valid TAP document with only the suite result lines as test
+points:
+
+@code{.console}
+# Top suite > Failed nested subtest > middle subtest > inner subtest
+#                 not ok 1 - inner check fails
+#                   ---
+#                   condition: "1 == 2"
+#                   at:
+#                     fileName: checks.cpp
+#                     lineNumber: 399
+#                   ...
+@endcode
+
+The passed checks, and the test cases without failures, are not
+displayed. To keep the complete report while the console shows only the
+failures, add `--output-file`, whose file always receives the complete
+report, whatever the verbosity:
 
 @code{.console}
 $ sample-test --quiet --output-file=sample-test.tap
 @endcode
-
-With the human reporter, the output file is complete only in the default
-and verbose modes, so in quiet mode neither the console nor the file
-shows the failures.
 
 When exceptions are not enabled and a failed requirement aborts the test
 execution, the results of the aborted test case are displayed in quiet
@@ -192,13 +208,13 @@ still written.
 - `--output-file=<path>` or `--output-file <path>` – write a copy of the
   report to a file
 
-The file never receives colours. With the TAP reporter, it always receives
+The file never receives colours. With both reporters, it always receives
 the complete report, whatever the verbosity, so it can be passed to other
-tools; with the human reporter, it is complete only in the default and
-verbose modes. If the file cannot be opened, the error is reported on
-`stderr`, the report is written only to the console, and the exit code
-is 2. On platforms without a command line, the path can be set in
-`runner_options::output_file_path`.
+tools. If the file cannot be opened, the error is reported on `stderr`
+and on the console, no test is run, and the exit code is 2. The option
+errors are also written to the file, which is truncated, so that it never
+keeps the results of an earlier run. On platforms without a command line,
+the path can be set in `runner_options::output_file_path`.
 
 @section cli-filter Filter
 

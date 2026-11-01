@@ -493,7 +493,16 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * Invokes the stored callable with this suite, surrounded by
-   * reporter calls to begin and end the suite.
+   * reporter calls to begin and end the suite. While the body runs, this
+   * suite is marked, in the runner, as the one that accepts new test
+   * cases (see `accepts_test_case()`); the previous one is restored when
+   * the body returns, also when it throws.
+   *
+   * While the test cases are listed (see `runner_options::list_tests`),
+   * the body is called only to create its test cases, which are listed;
+   * the suite is neither reported nor timed, and an exception that
+   * escapes the body is written to `stderr`, and the listing continues
+   * with the next suite.
    *
    * When exceptions are enabled, an exception that escapes the callable,
    * which can be thrown only outside the test cases, since they catch
@@ -563,8 +572,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(__cpp_exceptions)
     try
       {
-        // Invoke the callable, passing the self reference followed by the
-        // variadic arguments.
+        // Invoke the callable, passing the self reference.
         callable_ (*this);
       }
     catch (const std::exception& e)
@@ -586,8 +594,7 @@ namespace micro_os_plus::micro_test_plus
         fail_unexpected_exception (nullptr);
       }
 #else
-    // Invoke the callable, passing the self reference followed by the variadic
-    // arguments.
+    // Invoke the callable, passing the self reference.
     callable_ (*this);
 #endif // defined(__cpp_exceptions)
 

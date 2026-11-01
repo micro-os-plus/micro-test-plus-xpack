@@ -178,8 +178,8 @@ namespace micro_os_plus::micro_test_plus
    * binding the callable and any additional arguments, then transfers
    * ownership to the runner via
    * `register_suite()`. The suite is not run here; all registered suites
-   * are run later by `run_suites()`, together with the static suites, sorted by
-   * name. A suite added once `run_suites()` has started is rejected by
+   * are run later by `run_suites()`, together with the static suites, sorted
+   * by name. A suite added once `run_suites()` has started is rejected by
    * `register_suite()`.
    */
   template <typename Callable_T, typename... Args_T>

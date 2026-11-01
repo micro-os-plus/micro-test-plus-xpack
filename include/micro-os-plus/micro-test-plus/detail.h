@@ -812,7 +812,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Without references and qualifiers; for example `int` for a `to_i`
      * wrapper and for a `42_i` literal, and the type itself for the other
-     * operands. Used by `approx_operand`.
+     * operands. Used by `extension::approx_operand` and by
+     * `comparison_operand_t`.
      */
     template <class T>
     using unwrapped_t = std::remove_cvref_t<decltype (detail::unwrap (
@@ -921,9 +922,9 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * If the three values are integers, the distance is computed exactly,
      * as an unsigned value, also for operands of mixed signedness, and
-     * compared with the tolerance with `std::cmp_less_equal()`, so that neither
-     * overflows nor wraps around. Otherwise, the values are converted to
-     * their common floating-point type, and the absolute value of the
+     * compared with the tolerance with `std::cmp_less_equal()`, so that
+     * neither overflows nor wraps around. Otherwise, the values are converted
+     * to their common floating-point type, and the absolute value of the
      * difference is compared with the tolerance. A negative tolerance, or
      * a NaN, makes the result `false`.
      *
@@ -1311,16 +1312,27 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief The result of the check.
+       *
+       * @details
+       * True if the expected exception was thrown (`throws_op`), or if
+       * nothing was thrown (`nothrow_op`).
        */
       bool value;
 
       /**
        * @brief What was thrown, when the check failed.
+       *
+       * @details
+       * `throw_outcome::none` when the check passed, or when nothing was
+       * thrown but an exception was expected.
        */
       throw_outcome outcome;
 
       /**
        * @brief The `what()` of the `std::exception` thrown, if any.
+       *
+       * @details
+       * Empty unless `outcome` is `throw_outcome::std_exception`.
        */
       std::string what;
     };
@@ -1329,12 +1341,11 @@ namespace micro_os_plus::micro_test_plus
      * @brief Common base struct for callable-wrapping operators.
      *
      * @details
-     * This base struct provides common functionality for operators that wrap
-     * callable invocations, particularly for exception-checking operations.
-     * Derived structs (such as `throws_op` and `nothrow_op`) use this base to
-     * store and manage the pre-computed boolean result of a callable
-     * invocation, enabling consistent reporting and composition of
-     * exception-checking assertions.
+     * The base of the exception-checking operators, `throws_op` and
+     * `nothrow_op`, which invoke the callable in their constructors. It
+     * stores the pre-computed boolean result, and, when the check
+     * failed, what was thrown, so that the report can state why
+     * (see `expression_formatter::append_throw_reason()`).
      *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
@@ -1393,12 +1404,19 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief Stores what the invocation threw, when the check failed.
+       *
+       * @details
+       * Copied from the `callable_result` by the constructor.
        */
       throw_outcome outcome_{ throw_outcome::none };
 
       /**
        * @brief Stores the `what()` of the `std::exception` thrown, when
        * the check failed.
+       *
+       * @details
+       * Moved from the `callable_result` by the constructor; empty in
+       * the usual case, so nothing is allocated.
        */
       std::string what_{};
     };
@@ -1737,6 +1755,9 @@ namespace micro_os_plus::micro_test_plus
 
       /**
        * @brief The number of elements.
+       *
+       * @details
+       * The extent of the array passed to the comparator.
        */
       std::size_t count_;
     };

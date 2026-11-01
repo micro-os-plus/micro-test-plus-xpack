@@ -361,11 +361,11 @@ namespace micro_os_plus::micro_test_plus
      * them; equivalent to `initialise (runner_options{ argc, argv })`.
      *
      * The call is optional; without it, the runner is initialised with the
-     * default options by the first call of `add_top_suite()` or `run_suites()`.
-     * If used, it must therefore precede them; a later call, or a call
-     * after the test execution was aborted, reports an error on `stderr`,
-     * without other effects; the options are then not parsed, so their
-     * errors do not change the exit code.
+     * default options by the first call of `add_top_suite()` or
+     * `run_suites()`. If used, it must therefore precede them; a later
+     * call, or a call after the test execution was aborted, reports an
+     * error on `stderr`, without other effects; the options are then not
+     * parsed, so their errors do not change the exit code.
      *
      * @param argc The argument count from main().
      * @param argv The argument vector from main().
@@ -392,16 +392,18 @@ namespace micro_os_plus::micro_test_plus
      * @endcode
      *
      * The call is optional; without it, the runner is initialised with the
-     * default options by the first call of `add_top_suite()` or `run_suites()`.
-     * If used, it must therefore precede them; a later call reports an
-     * error on `stderr` and is rejected, so that `run_suites()` returns 1;
-     * a call after the test execution was aborted reports an error on
-     * `stderr`, without other effects.
+     * default options by the first call of `add_top_suite()` or
+     * `run_suites()`. If used, it must therefore precede them; a later
+     * call reports an error on `stderr` and is rejected, so that
+     * `run_suites()` returns 1; a call after the test execution was
+     * aborted reports an error on `stderr`, without other effects.
      *
      * If the options have errors (see `runner_options::has_errors()`), or
      * if the output file cannot be opened, the errors are written on the
      * console and on `stderr`, no test is run, and `run_suites()` returns
-     * 2; with errors in the options, no output file is created.
+     * 2; the errors in the options are also written in the output file,
+     * if one is given and can be opened, which is truncated, so that it
+     * never keeps the results of an earlier run.
      *
      * The options are taken by value and moved into the runner, which
      * keeps them for the whole session; pass a temporary, or use
@@ -433,9 +435,9 @@ namespace micro_os_plus::micro_test_plus
      * suite is named after the file name of `runner_options::arguments()[0]`,
      * without the extension, when available, or "default suite".
      *
-     * The top suite can be added only once, and before `run_suites()`; a second
-     * call, or a call made once `run_suites()` has started, is reported on
-     * `stderr` and rejected, so that `run_suites()` returns 1, and the
+     * The top suite can be added only once, and before `run_suites()`; a
+     * second call, or a call made once `run_suites()` has started, is reported
+     * on `stderr` and rejected, so that `run_suites()` returns 1, and the
      * existing top suite is returned. With errors in the options, the top
      * suite is returned, but no test is run.
      *
@@ -881,8 +883,8 @@ namespace micro_os_plus::micro_test_plus
      * The counters include the checks and the test cases of all the
      * suites that were run, including the top suite, if any; they are
      * complete only after `run_suites()` has returned. The totals are
-     * read-only; there is no non-const overload, so that the counters cannot be
-     * modified from the test code.
+     * read-only; there is no non-const overload, so that the counters cannot
+     * be modified from the test code.
      *
      * @par Parameters
      *   None.
@@ -927,8 +929,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Returns the internal stopwatch of the session, started by
-     * `initialise()` and stopped at the end of `run_suites()`; the elapsed time
-     * is complete only after `run_suites()` has returned. In v5.0.1, the
+     * `initialise()` and stopped at the end of `run_suites()`; the elapsed
+     * time is complete only after `run_suites()` has returned. In v5.0.1, the
      * returned class was `detail::timestamps`, now a deprecated alias;
      * only its read-only members are kept. The timings are internal; the
      * elapsed times are shown by the reporters.
@@ -1235,8 +1237,8 @@ namespace micro_os_plus::micro_test_plus
      * Moved in by `initialise()`, and kept for the whole session: the
      * verbosity is returned by `verbosity_level()`, the filter patterns
      * are read by `is_selected()`, the listing of the test cases by
-     * `run_suites()` and `is_listing()`, and the command line by the reporters,
-     * which are friends. The defaults until then.
+     * `run_suites()` and `is_listing()`, and the command line by the
+     * reporters, which are friends. The defaults until then.
      */
     runner_options options_{};
 
@@ -1255,9 +1257,9 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The session moves only forwards, from `created` to `initialised`
      * (by `initialise()`), to `running`, and to `finished` (both by
-     * `run_suites()`); the calls made in another state are reported or ignored.
-     * When `initialise()` declines to run the session (`--help`, option
-     * errors, or an output file that cannot be opened), the state is
+     * `run_suites()`); the calls made in another state are reported or
+     * ignored. When `initialise()` declines to run the session (`--help`,
+     * option errors, or an output file that cannot be opened), the state is
      * `declined`, in which the suites are discarded silently.
      */
     enum class session_state
@@ -1335,10 +1337,11 @@ namespace micro_os_plus::micro_test_plus
      * @brief The suite whose body is running, if any.
      *
      * @details
-     * Set by `detail::runnable_base`, a friend, to the top suite from
-     * `add_top_suite()` until `run_suites()` ends it, and to each suite
-     * while its body is called. `suite::test()` accepts new test cases
-     * only on this suite (see `runnable_base::accepts_test_case()`).
+     * Set to the top suite by `add_top_suite()`, and cleared when
+     * `run_suites()` starts; set by `detail::runnable_base`, a friend, to
+     * each suite while its body is called, and restored when the body
+     * returns. `suite::test()` accepts new test cases only on this suite
+     * (see `runnable_base::accepts_test_case()`).
      */
     class suite* running_suite_ = nullptr;
 
