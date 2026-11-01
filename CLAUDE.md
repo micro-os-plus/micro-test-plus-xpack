@@ -82,10 +82,12 @@ The public API lives in the `micro_os_plus::micro_test_plus` namespace
   operands as the built-in ones do: the expression templates
   `compare_op` and `predicate_op`, parametrised by an application tag
   with `symbol` and `apply()` (using-declarations of the `detail`
-  templates, at the end of `detail.h`), and the concepts `is_op`,
-  `any_op`, `checkable`, and `printable` (`extension.h`, which also has
-  `has_epsilon`, available only with the deprecated functionality, since
-  only the deprecated wrappers have a tolerance). It is deliberately a
+  templates, at the end of `detail.h`, which also has the concept
+  `approx_operand`), and the concepts `is_op`, `any_op`, `checkable`,
+  `printable`, `compare_tag`, and `predicate_tag` (`extension.h`, which
+  also has `has_epsilon`, available only with the deprecated
+  functionality, since only the deprecated wrappers have a tolerance).
+  It is deliberately a
   separate namespace, so that `using namespace mt` does not bring its
   generic names into the application code.
 

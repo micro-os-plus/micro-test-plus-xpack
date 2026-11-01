@@ -914,29 +914,6 @@ namespace micro_os_plus::micro_test_plus
     // ========================================================================
 
     /**
-     * @brief C++20 concept satisfied when `T` is a valid operand of the
-     * approximate comparator.
-     *
-     * @tparam T The type to be checked, possibly a reference.
-     *
-     * @details
-     * The `approx_operand` concept is satisfied when `T`, or the value it
-     * wraps (for the framework value wrappers and the numeric literals), is
-     * an arithmetic type other than `bool` and the character types (`char`,
-     * `wchar_t`, `char8_t`, `char16_t`, and `char32_t`), which are not
-     * numbers; `signed char` and `unsigned char` are accepted, as the
-     * integer types they are.
-     */
-    template <class T>
-    concept approx_operand = std::is_arithmetic_v<unwrapped_t<T>>
-                             and not std::is_same_v<unwrapped_t<T>, bool>
-                             and not std::is_same_v<unwrapped_t<T>, char>
-                             and not std::is_same_v<unwrapped_t<T>, wchar_t>
-                             and not std::is_same_v<unwrapped_t<T>, char8_t>
-                             and not std::is_same_v<unwrapped_t<T>, char16_t>
-                             and not std::is_same_v<unwrapped_t<T>, char32_t>;
-
-    /**
      * @brief Tells whether two numbers differ by at most a tolerance.
      *
      * @details
@@ -1814,6 +1791,34 @@ namespace micro_os_plus::micro_test_plus
 
     using detail::compare_op;
     using detail::predicate_op;
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * @brief C++20 concept satisfied when `T` is a valid operand of the
+     * approximate comparator.
+     *
+     * @tparam T The type to be checked, possibly a reference.
+     *
+     * @details
+     * The `approx_operand` concept is satisfied when `T`, or the value it
+     * wraps (for the deprecated value wrappers and the numeric literals), is
+     * an arithmetic type other than `bool` and the character types (`char`,
+     * `wchar_t`, `char8_t`, `char16_t`, and `char32_t`), which are not
+     * numbers; `signed char` and `unsigned char` are accepted, as the
+     * integer types they are. It constrains `approx()`; an application
+     * helper that forwards its operands to `approx()` can use it for the
+     * same constraint.
+     */
+    template <class T>
+    concept approx_operand
+        = std::is_arithmetic_v<detail::unwrapped_t<T>>
+          and not std::is_same_v<detail::unwrapped_t<T>, bool>
+          and not std::is_same_v<detail::unwrapped_t<T>, char>
+          and not std::is_same_v<detail::unwrapped_t<T>, wchar_t>
+          and not std::is_same_v<detail::unwrapped_t<T>, char8_t>
+          and not std::is_same_v<detail::unwrapped_t<T>, char16_t>
+          and not std::is_same_v<detail::unwrapped_t<T>, char32_t>;
 
     // ------------------------------------------------------------------------
   } // namespace extension

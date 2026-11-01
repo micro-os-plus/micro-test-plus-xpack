@@ -1226,16 +1226,16 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (mt::extension::is_op<decltype (mt::approx (1, 2, 3))>);
 
     // The operands are numbers or framework wrappers.
-    static_assert (mt::detail::approx_operand<int>);
-    static_assert (mt::detail::approx_operand<const double&>);
-    static_assert (mt::detail::approx_operand<signed char>);
-    static_assert (mt::detail::approx_operand<mt::to_i>);
-    static_assert (mt::detail::approx_operand<decltype (1.5_d)>);
-    static_assert (not mt::detail::approx_operand<bool>);
-    static_assert (not mt::detail::approx_operand<char>);
-    static_assert (not mt::detail::approx_operand<char32_t>);
-    static_assert (not mt::detail::approx_operand<const char*>);
-    static_assert (not mt::detail::approx_operand<std::string>);
+    static_assert (mt::extension::approx_operand<int>);
+    static_assert (mt::extension::approx_operand<const double&>);
+    static_assert (mt::extension::approx_operand<signed char>);
+    static_assert (mt::extension::approx_operand<mt::to_i>);
+    static_assert (mt::extension::approx_operand<decltype (1.5_d)>);
+    static_assert (not mt::extension::approx_operand<bool>);
+    static_assert (not mt::extension::approx_operand<char>);
+    static_assert (not mt::extension::approx_operand<char32_t>);
+    static_assert (not mt::extension::approx_operand<const char*>);
+    static_assert (not mt::extension::approx_operand<std::string>);
   }
 
   {

@@ -196,8 +196,9 @@ namespace micro_os_plus::micro_test_plus
    * needed.
    */
   template <class Lhs_T, class Rhs_T, class Epsilon_T>
-    requires (detail::approx_operand<Lhs_T> and detail::approx_operand<Rhs_T>
-              and detail::approx_operand<Epsilon_T>)
+    requires (extension::approx_operand<Lhs_T>
+              and extension::approx_operand<Rhs_T>
+              and extension::approx_operand<Epsilon_T>)
   constexpr auto
   approx (Lhs_T&& lhs, Rhs_T&& rhs, Epsilon_T&& epsilon)
   {
