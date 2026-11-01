@@ -326,14 +326,28 @@ namespace micro_os_plus::micro_test_plus
                or std::is_function_v<std::remove_pointer_t<Rhs_T>>);
 
     /**
+     * @brief The comparison operators, as the template argument of the
+     * `comparable` concept.
+     */
+    enum class comparison : unsigned char
+    {
+      equal,
+      not_equal,
+      greater,
+      greater_equal,
+      less,
+      less_equal
+    };
+
+    /**
      * @brief Names for the checks of the comparison operators, looked up
      * as the `apply()` functions look them up.
      *
      * @details
      * The using-declarations make the standard operators visible to
      * unqualified lookup, in addition to those found by argument-dependent
-     * lookup, as in the bodies of the `apply()` functions; the concepts
-     * check that the comparison is well-formed, without instantiating the
+     * lookup, as in the bodies of the `apply()` functions; the concept
+     * checks that the comparison is well-formed, without instantiating the
      * bodies.
      */
     namespace comparison_lookup
@@ -345,40 +359,39 @@ namespace micro_os_plus::micro_test_plus
       using std::operator<=;
       using std::operator>=;
 
-      /** @brief Satisfied if `lhs == rhs` is well-formed. */
-      template <class Lhs_T, class Rhs_T>
-      concept can_equal
-          = requires (const Lhs_T& lhs, const Rhs_T& rhs) { lhs == rhs; };
-
-      /** @brief Satisfied if `lhs != rhs` is well-formed. */
-      template <class Lhs_T, class Rhs_T>
-      concept can_not_equal
-          = requires (const Lhs_T& lhs, const Rhs_T& rhs) { lhs != rhs; };
-
-      /** @brief Satisfied if `lhs > rhs` is well-formed. */
-      template <class Lhs_T, class Rhs_T>
-      concept can_greater
-          = requires (const Lhs_T& lhs, const Rhs_T& rhs) { lhs > rhs; };
-
-      /** @brief Satisfied if `lhs >= rhs` is well-formed. */
-      template <class Lhs_T, class Rhs_T>
-      concept can_greater_equal
-          = requires (const Lhs_T& lhs, const Rhs_T& rhs) { lhs >= rhs; };
-
-      /** @brief Satisfied if `lhs < rhs` is well-formed. */
-      template <class Lhs_T, class Rhs_T>
-      concept can_less
-          = requires (const Lhs_T& lhs, const Rhs_T& rhs) { lhs < rhs; };
-
-      /** @brief Satisfied if `lhs <= rhs` is well-formed. */
-      template <class Lhs_T, class Rhs_T>
-      concept can_less_equal
-          = requires (const Lhs_T& lhs, const Rhs_T& rhs) { lhs <= rhs; };
+      /**
+       * @brief Satisfied if the comparison selected by `Op` of two
+       * `const` objects is well-formed.
+       *
+       * @tparam Op The comparison.
+       * @tparam Lhs_T The type of the left hand side operand.
+       * @tparam Rhs_T The type of the right hand side operand.
+       */
+      template <comparison Op, class Lhs_T, class Rhs_T>
+      concept can_compare
+          = (Op == comparison::equal
+             and requires (const Lhs_T& lhs, const Rhs_T& rhs) { lhs == rhs; })
+            or (Op == comparison::not_equal
+                and requires (const Lhs_T& lhs,
+                              const Rhs_T& rhs) { lhs != rhs; })
+            or (Op == comparison::greater
+                and requires (const Lhs_T& lhs,
+                              const Rhs_T& rhs) { lhs > rhs; })
+            or (Op == comparison::greater_equal
+                and requires (const Lhs_T& lhs,
+                              const Rhs_T& rhs) { lhs >= rhs; })
+            or (Op == comparison::less
+                and requires (const Lhs_T& lhs,
+                              const Rhs_T& rhs) { lhs < rhs; })
+            or (Op == comparison::less_equal
+                and requires (const Lhs_T& lhs, const Rhs_T& rhs) {
+                      lhs <= rhs;
+                    });
     } // namespace comparison_lookup
 
     /**
-     * @brief Concepts satisfied when two operands can be compared by the
-     * corresponding comparator.
+     * @brief Concept satisfied when two operands can be compared by the
+     * comparator selected by `Op`.
      *
      * @details
      * The comparison is the one made by the `apply()` function of the
@@ -387,67 +400,18 @@ namespace micro_os_plus::micro_test_plus
      * language. Used to reject the call of `eq()` and of the other
      * comparators at the call site, with a short diagnostic.
      *
+     * @tparam Op The comparison.
      * @tparam Lhs_T The type deduced for the left hand side operand.
      * @tparam Rhs_T The type deduced for the right hand side operand.
      */
-    template <class Lhs_T, class Rhs_T>
-    concept equal_operands
+    template <comparison Op, class Lhs_T, class Rhs_T>
+    concept comparable
         = sign_mixed_integers<comparison_operand_t<Lhs_T>,
                               comparison_operand_t<Rhs_T>>
           or function_pointer_pair<comparison_operand_t<Lhs_T>,
                                    comparison_operand_t<Rhs_T>>
-          or comparison_lookup::can_equal<comparison_operand_t<Lhs_T>,
-                                          comparison_operand_t<Rhs_T>>;
-
-    /** @copydoc equal_operands */
-    template <class Lhs_T, class Rhs_T>
-    concept not_equal_operands
-        = sign_mixed_integers<comparison_operand_t<Lhs_T>,
-                              comparison_operand_t<Rhs_T>>
-          or function_pointer_pair<comparison_operand_t<Lhs_T>,
-                                   comparison_operand_t<Rhs_T>>
-          or comparison_lookup::can_not_equal<comparison_operand_t<Lhs_T>,
-                                              comparison_operand_t<Rhs_T>>;
-
-    /** @copydoc equal_operands */
-    template <class Lhs_T, class Rhs_T>
-    concept greater_operands
-        = sign_mixed_integers<comparison_operand_t<Lhs_T>,
-                              comparison_operand_t<Rhs_T>>
-          or function_pointer_pair<comparison_operand_t<Lhs_T>,
-                                   comparison_operand_t<Rhs_T>>
-          or comparison_lookup::can_greater<comparison_operand_t<Lhs_T>,
+          or comparison_lookup::can_compare<Op, comparison_operand_t<Lhs_T>,
                                             comparison_operand_t<Rhs_T>>;
-
-    /** @copydoc equal_operands */
-    template <class Lhs_T, class Rhs_T>
-    concept greater_equal_operands
-        = sign_mixed_integers<comparison_operand_t<Lhs_T>,
-                              comparison_operand_t<Rhs_T>>
-          or function_pointer_pair<comparison_operand_t<Lhs_T>,
-                                   comparison_operand_t<Rhs_T>>
-          or comparison_lookup::can_greater_equal<comparison_operand_t<Lhs_T>,
-                                                  comparison_operand_t<Rhs_T>>;
-
-    /** @copydoc equal_operands */
-    template <class Lhs_T, class Rhs_T>
-    concept less_operands
-        = sign_mixed_integers<comparison_operand_t<Lhs_T>,
-                              comparison_operand_t<Rhs_T>>
-          or function_pointer_pair<comparison_operand_t<Lhs_T>,
-                                   comparison_operand_t<Rhs_T>>
-          or comparison_lookup::can_less<comparison_operand_t<Lhs_T>,
-                                         comparison_operand_t<Rhs_T>>;
-
-    /** @copydoc equal_operands */
-    template <class Lhs_T, class Rhs_T>
-    concept less_equal_operands
-        = sign_mixed_integers<comparison_operand_t<Lhs_T>,
-                              comparison_operand_t<Rhs_T>>
-          or function_pointer_pair<comparison_operand_t<Lhs_T>,
-                                   comparison_operand_t<Rhs_T>>
-          or comparison_lookup::can_less_equal<comparison_operand_t<Lhs_T>,
-                                               comparison_operand_t<Rhs_T>>;
 
     /**
      * @details

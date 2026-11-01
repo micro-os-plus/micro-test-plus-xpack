@@ -126,7 +126,7 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Lhs_T, class Rhs_T>
     requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>
-              and detail::equal_operands<Lhs_T, Rhs_T>)
+              and detail::comparable<detail::comparison::equal, Lhs_T, Rhs_T>)
   [[nodiscard]] constexpr auto
   eq (Lhs_T&& lhs, Rhs_T&& rhs);
 
@@ -142,8 +142,9 @@ namespace micro_os_plus::micro_test_plus
    * equal.
    */
   template <class Lhs_T, class Rhs_T>
-    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>
-              and detail::not_equal_operands<Lhs_T, Rhs_T>)
+    requires (
+        extension::printable<Lhs_T> and extension::printable<Rhs_T>
+        and detail::comparable<detail::comparison::not_equal, Lhs_T, Rhs_T>)
   [[nodiscard]] constexpr auto
   ne (Lhs_T&& lhs, Rhs_T&& rhs);
 
@@ -159,8 +160,9 @@ namespace micro_os_plus::micro_test_plus
    * than `rhs`.
    */
   template <class Lhs_T, class Rhs_T>
-    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>
-              and detail::greater_operands<Lhs_T, Rhs_T>)
+    requires (
+        extension::printable<Lhs_T> and extension::printable<Rhs_T>
+        and detail::comparable<detail::comparison::greater, Lhs_T, Rhs_T>)
   [[nodiscard]] constexpr auto
   gt (Lhs_T&& lhs, Rhs_T&& rhs);
 
@@ -178,7 +180,8 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Lhs_T, class Rhs_T>
     requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>
-              and detail::greater_equal_operands<Lhs_T, Rhs_T>)
+              and detail::comparable<detail::comparison::greater_equal, Lhs_T,
+                                     Rhs_T>)
   [[nodiscard]] constexpr auto
   ge (Lhs_T&& lhs, Rhs_T&& rhs);
 
@@ -196,7 +199,7 @@ namespace micro_os_plus::micro_test_plus
    */
   template <class Lhs_T, class Rhs_T>
     requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>
-              and detail::less_operands<Lhs_T, Rhs_T>)
+              and detail::comparable<detail::comparison::less, Lhs_T, Rhs_T>)
   [[nodiscard]] constexpr auto
   lt (Lhs_T&& lhs, Rhs_T&& rhs);
 
@@ -213,8 +216,9 @@ namespace micro_os_plus::micro_test_plus
    * or equal to `rhs`.
    */
   template <class Lhs_T, class Rhs_T>
-    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>
-              and detail::less_equal_operands<Lhs_T, Rhs_T>)
+    requires (
+        extension::printable<Lhs_T> and extension::printable<Rhs_T>
+        and detail::comparable<detail::comparison::less_equal, Lhs_T, Rhs_T>)
   [[nodiscard]] constexpr auto
   le (Lhs_T&& lhs, Rhs_T&& rhs);
 
