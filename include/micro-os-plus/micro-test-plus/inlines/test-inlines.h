@@ -512,6 +512,25 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
+   * Stops the compilation with the message of the `static_assert`, which
+   * states what `expect()` takes. The condition of the `static_assert` depends
+   * on the type, so it is evaluated only when the function is selected.
+   */
+  template <class Expr_T>
+    requires detail::unsupported_condition<Expr_T>
+  detail::check_result&&
+  test_case::expect ([[maybe_unused]] const Expr_T& expr,
+                     [[maybe_unused]] const reflection::source_location& sl,
+                     detail::check_result&& result)
+  {
+    static_assert (extension::checkable<Expr_T>,
+                   "expect() takes a Boolean condition or a comparison, "
+                   "such as eq (); a value of this type is neither");
+    return std::move (result);
+  }
+
+  /**
+   * @details
    * Initialises the `detail::check_result` received as the last argument,
    * a temporary created by the caller, with the kind
    * `detail::check_kind::requirement`, and returns a reference to it. The
@@ -537,6 +556,25 @@ namespace micro_os_plus::micro_test_plus
     result.init (expr, detail::check_kind::requirement, sl, *this,
                  test_reporter ().expression_,
                  test_reporter ().writes_passed_checks ());
+    return std::move (result);
+  }
+
+  /**
+   * @details
+   * Stops the compilation with the message of the `static_assert`, which
+   * states what `require()` takes. The condition of the `static_assert` depends
+   * on the type, so it is evaluated only when the function is selected.
+   */
+  template <class Expr_T>
+    requires detail::unsupported_condition<Expr_T>
+  detail::check_result&&
+  test_case::require ([[maybe_unused]] const Expr_T& expr,
+                      [[maybe_unused]] const reflection::source_location& sl,
+                      detail::check_result&& result)
+  {
+    static_assert (extension::checkable<Expr_T>,
+                   "require() takes a Boolean condition or a comparison, "
+                   "such as eq (); a value of this type is neither");
     return std::move (result);
   }
 

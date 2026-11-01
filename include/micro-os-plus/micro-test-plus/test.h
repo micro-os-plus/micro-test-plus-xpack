@@ -1078,6 +1078,29 @@ namespace micro_os_plus::micro_test_plus
           && (std::is_copy_constructible_v<std::decay_t<Args_T>> && ...);
 
     /**
+     * @brief Concept satisfied by a value that `expect()` and `require()`
+     * do not accept.
+     *
+     * @details
+     * A value that is neither a framework expression nor contextually
+     * convertible to `bool`, for example a `std::string`, and, if the
+     * deprecated functionality is not enabled, the string literals, the
+     * arrays, and the function names, which only the deprecated
+     * overloads accept. Selects the overloads that stop the compilation
+     * with a message that states what the functions take.
+     *
+     * @tparam T The type of the value.
+     */
+    template <class T>
+    concept unsupported_condition
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
+        = (not extension::checkable<T>)
+          and (not extension::legacy_checkable<T>);
+#else
+        = not extension::checkable<T>;
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
+
+    /**
      * @brief Adds and runs a test case for each value.
      *
      * @details
@@ -1352,6 +1375,30 @@ namespace micro_os_plus::micro_test_plus
             detail::check_result&& result = detail::check_result{});
 
     /**
+     * @brief Rejects a value that is not a condition.
+     *
+     * @details
+     * Selected for the values that `expect()` does not accept (see
+     * `detail::unsupported_condition`); it stops the compilation with a
+     * message that states what the function takes, instead of the trace
+     * of the concepts. Never called.
+     *
+     * @tparam Expr_T The type of the value.
+     *
+     * @param expr The value.
+     * @param sl The source location.
+     * @param result The check result.
+     * @return A reference to the check result.
+     */
+    template <class Expr_T>
+      requires detail::unsupported_condition<Expr_T>
+    detail::check_result&&
+    expect (const Expr_T& expr,
+            const reflection::source_location& sl
+            = reflection::source_location::current (),
+            detail::check_result&& result = detail::check_result{});
+
+    /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-requirements
      * @brief Checks a condition and, if false, stops the test case.
      *
@@ -1388,6 +1435,30 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class Expr_T>
       requires extension::checkable<Expr_T>
+    detail::check_result&&
+    require (const Expr_T& expr,
+             const reflection::source_location& sl
+             = reflection::source_location::current (),
+             detail::check_result&& result = detail::check_result{});
+
+    /**
+     * @brief Rejects a value that is not a condition.
+     *
+     * @details
+     * Selected for the values that `require()` does not accept (see
+     * `detail::unsupported_condition`); it stops the compilation with a
+     * message that states what the function takes, instead of the trace
+     * of the concepts. Never called.
+     *
+     * @tparam Expr_T The type of the value.
+     *
+     * @param expr The value.
+     * @param sl The source location.
+     * @param result The check result.
+     * @return A reference to the check result.
+     */
+    template <class Expr_T>
+      requires detail::unsupported_condition<Expr_T>
     detail::check_result&&
     require (const Expr_T& expr,
              const reflection::source_location& sl

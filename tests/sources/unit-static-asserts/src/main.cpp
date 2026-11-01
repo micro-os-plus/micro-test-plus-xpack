@@ -1022,6 +1022,34 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
   }
 
   {
+    // The values that are not conditions select the overloads of `expect()`
+    // and `require()` that state what they take (#243).
+    static_assert (mt::detail::unsupported_condition<std::string>);
+    static_assert (mt::detail::unsupported_condition<std::string_view>);
+    static_assert (mt::detail::unsupported_condition<std::vector<int>>);
+
+    static_assert (not mt::detail::unsupported_condition<bool>);
+    static_assert (not mt::detail::unsupported_condition<int>);
+    static_assert (not mt::detail::unsupported_condition<int*>);
+    static_assert (not mt::detail::unsupported_condition<std::nullptr_t>);
+    static_assert (not mt::detail::unsupported_condition<std::optional<int>>);
+    static_assert (
+        not mt::detail::unsupported_condition<std::unique_ptr<int>>);
+    static_assert (
+        not mt::detail::unsupported_condition<decltype (mt::eq (1, 1))>);
+
+    // The string literals, the arrays, and the function names are accepted
+    // only by the deprecated overloads.
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
+    static_assert (not mt::detail::unsupported_condition<const char*>);
+    static_assert (not mt::detail::unsupported_condition<char[4]>);
+#else
+    static_assert (mt::detail::unsupported_condition<const char*>);
+    static_assert (mt::detail::unsupported_condition<char[4]>);
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
+  }
+
+  {
     // The tags of the custom comparators and predicates are checked where
     // the expressions are built (#240).
     static_assert (mt::extension::compare_tag<tag_compare, int, int>);
