@@ -8,7 +8,7 @@ argument-hint: 'Optional: file or folder to review; defaults to include/ and src
 
 ## When to Use
 
-- The user asks to verify, review, or fix the Doxygen comments, or the
+- The user asks to verify, review, update or fix the Doxygen comments, or the
   API documentation in general.
 - After significant code changes, to bring the documentation back in line
   with the code.
@@ -20,8 +20,9 @@ separately.
 ## Scope
 
 If the user specifies a path, review only that path. Otherwise review
-`include/` (including `inlines/`) and `src/`. Generated files (those
-with a `DO NOT EDIT` header) are fixed in their templates, not in place.
+`include/` (including `inlines/`), `src/` and `website/doxygen`.
+Fix generated files (those with a `DO NOT EDIT` header) locally,
+they'll be fixed in their templates later.
 
 ## The Rules
 
