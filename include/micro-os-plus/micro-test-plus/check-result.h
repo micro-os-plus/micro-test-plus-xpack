@@ -83,26 +83,6 @@ namespace micro_os_plus::micro_test_plus
     // ========================================================================
 
     /**
-     * @brief The exception thrown to stop a test case after a failed
-     * `require()`.
-     *
-     * @details
-     * Thrown by the destructor of `check_result`, after the
-     * failure was reported and counted, when exceptions are enabled, and
-     * caught by `test_case::run()`, which ends the test case normally; the
-     * run continues with the next test case.
-     *
-     * It is deliberately not derived from `std::exception`, so that a
-     * `catch (const std::exception&)` in the test case body does not stop
-     * it; a `catch (...)` does, and should rethrow it.
-     */
-    struct failed_requirement
-    {
-    };
-
-    // ========================================================================
-
-    /**
      * @brief The kind of a check, which determines what happens when it
      * fails.
      *

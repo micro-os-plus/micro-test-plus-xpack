@@ -53,14 +53,14 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✗ space is tab FAILED (checks.cpp:559, ' ' == '\t')
     ✗ Character operands - FAILED (1 check passed, 2 failed)
 
-✗ Top suite - FAILED (39 checks passed, 6 failed, in 19 test cases), time: 0.777 ms
+✗ Top suite - FAILED (39 checks passed, 6 failed, in 19 test cases), time: 0.862 ms
 
 • Combinatorial floats suite
 
     ✓ Combinatorial floats - passed (21 checks)
     ✓ Combinatorial doubles - passed (21 checks)
 
-✓ Combinatorial floats suite - passed (42 checks in 2 test cases), time: 0.232 ms
+✓ Combinatorial floats suite - passed (42 checks in 2 test cases), time: 0.237 ms
 
 • Combinatorial integrals suite
 
@@ -73,7 +73,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     ✓ Combinatorial integrals with signed char - passed (20 checks)
     ✓ Combinatorial integrals with unsigned char - passed (20 checks)
 
-✓ Combinatorial integrals suite - passed (160 checks in 8 test cases), time: 0.754 ms
+✓ Combinatorial integrals suite - passed (160 checks in 8 test cases), time: 0.746 ms
 
 • Comparisons suite
 
@@ -129,22 +129,22 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     ✓ Pointer comparisons - passed (9 checks)
 
     • Failed pointer comparisons
-        ✗ ptr1 != &one FAILED (comparisons.cpp:517, 0x7ff7b4332760 != 0x7ff7b4332760)
-        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:520, 0x7ff7b4332760 != 0x7ff7b4332760)
-        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:523, 0x7ff7b4332760 > 0x7ff7b4332760)
-        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:526, 0x7ff7b4332760 < 0x7ff7b4332760)
-        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:529, 0x7ff7b4332760 == 0x7ff7b43327b0)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:532, 0x10bc34c68 != 0x10bc34c68)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:535, 0x10bc34c68 == 0x7ff7b43327b0)
-        ✗ pone >= ptwo FAILED (comparisons.cpp:547, 0x7ff7b4332de0 >= 0x7ff7b4332de4)
-        ✗ ptwo <= pone FAILED (comparisons.cpp:550, 0x7ff7b4332de4 <= 0x7ff7b4332de0)
+        ✗ ptr1 != &one FAILED (comparisons.cpp:517, 0x7ff7b01e1760 != 0x7ff7b01e1760)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:520, 0x7ff7b01e1760 != 0x7ff7b01e1760)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:523, 0x7ff7b01e1760 > 0x7ff7b01e1760)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:526, 0x7ff7b01e1760 < 0x7ff7b01e1760)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:529, 0x7ff7b01e1760 == 0x7ff7b01e17b0)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:532, 0x10fd85c68 != 0x10fd85c68)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:535, 0x10fd85c68 == 0x7ff7b01e17b0)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:547, 0x7ff7b01e1de0 >= 0x7ff7b01e1de4)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:550, 0x7ff7b01e1de4 <= 0x7ff7b01e1de0)
     ✗ Failed pointer comparisons - FAILED (0 checks passed, 9 failed)
 
     ✓ Null pointer comparisons - passed (3 checks)
 
     • Failed null pointer comparisons
         ✗ a_nullptr != nullptr FAILED (comparisons.cpp:599, 0x0 != nullptr)
-        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:602, 0x7ff7b4332e00 == nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:602, 0x7ff7b01e1e00 == nullptr)
         ✗ pfunc != nullptr FAILED (comparisons.cpp:606, 0x0 != nullptr)
     ✗ Failed null pointer comparisons - FAILED (0 checks passed, 3 failed)
 
@@ -165,19 +165,19 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✗ all_of with a nested any_of FAILED (comparisons.cpp:751, (42 == 42 and (42 == 0 or 42 == 1)))
     ✗ Logical operations with more operands - FAILED (6 checks passed, 5 failed)
 
-✗ Comparisons suite - FAILED (68 checks passed, 47 failed, in 16 test cases), time: 0.790 ms
+✗ Comparisons suite - FAILED (68 checks passed, 47 failed, in 16 test cases), time: 0.787 ms
 
 • Dynamic suite
 
     ✓ check in dynamic suite - passed (1 check)
 
-✓ Dynamic suite - passed (1 check in 1 test case), time: 0.027 ms
+✓ Dynamic suite - passed (1 check in 1 test case), time: 0.026 ms
 
 • Dynamic suite with a temporary name
 
     ✓ check in dynamic suite with a temporary name - passed (1 check)
 
-✓ Dynamic suite with a temporary name - passed (1 check in 1 test case), time: 0.029 ms
+✓ Dynamic suite with a temporary name - passed (1 check in 1 test case), time: 0.031 ms
 
 • Exceptions suite
 
@@ -220,21 +220,33 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
 
     ✗ Failed require in nested test case - FAILED (1 check passed, 0 failed, 1 test case failed)
 
+    • Failed require in throws
+        ✗ in throws FAILED (exceptions.cpp:283) - test case stopped
+    ✗ Failed require in throws - FAILED (0 checks passed, 1 failed)
+
+    • Failed require in throws with a type
+        ✗ in typed throws FAILED (exceptions.cpp:294) - test case stopped
+    ✗ Failed require in throws with a type - FAILED (0 checks passed, 1 failed)
+
+    • Failed require in nothrow
+        ✗ in nothrow FAILED (exceptions.cpp:304) - test case stopped
+    ✗ Failed require in nothrow - FAILED (0 checks passed, 1 failed)
+
     • Failed require during unwinding
-        ✗ FAILED (exceptions.cpp:285) - test case stopped
-        ✗ unexpected exception: boom FAILED (exceptions.cpp:280)
+        ✗ FAILED (exceptions.cpp:319) - test case stopped
+        ✗ unexpected exception: boom FAILED (exceptions.cpp:314)
     ✗ Failed require during unwinding - FAILED (0 checks passed, 2 failed)
 
     ✓ Exception in a suite body - passed (3 checks)
 
-✗ Exceptions suite - FAILED (10 checks passed, 10 failed, in 13 test cases), time: 0.787 ms
+✗ Exceptions suite - FAILED (10 checks passed, 13 failed, in 16 test cases), time: 1.056 ms
 
 • Exceptions suite body
 
     ✓ Test case before the exception - passed (1 check)
 
     ✗ unexpected exception in the suite body: boom FAILED
-✗ Exceptions suite body - FAILED (1 check passed, 1 failed, in 1 test case), time: 0.065 ms
+✗ Exceptions suite body - FAILED (1 check passed, 1 failed, in 1 test case), time: 0.061 ms
 
 • Failed combinatorial floats suite
 
@@ -286,7 +298,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✗ 42 == 42.0 FAILED (float-failed-combinations.cpp:141, 42 != 42.0)
     ✗ Combinatorial doubles - FAILED (0 checks passed, 21 failed)
 
-✗ Failed combinatorial floats suite - FAILED (0 checks passed, 42 failed, in 2 test cases), time: 0.425 ms
+✗ Failed combinatorial floats suite - FAILED (0 checks passed, 42 failed, in 2 test cases), time: 0.437 ms
 
 • Failed combinatorial integrals suite
 
@@ -520,7 +532,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:132, (unsigned char)43 <= 42u)
     ✗ Combinatorial integrals with unsigned char - FAILED (0 checks passed, 20 failed)
 
-✗ Failed combinatorial integrals suite - FAILED (0 checks passed, 200 failed, in 10 test cases), time: 1.748 ms
+✗ Failed combinatorial integrals suite - FAILED (0 checks passed, 200 failed, in 10 test cases), time: 2.026 ms
 
 • Miscellaneous suite
 
@@ -619,7 +631,7 @@ Matching test cases:
     ✓ Abort during the session - passed (6 checks)
     ✓ Test case and suite names - passed (9 checks)
 
-✗ Miscellaneous suite - FAILED (206 checks passed, 8 failed, in 52 test cases), time: 5.176 ms
+✗ Miscellaneous suite - FAILED (206 checks passed, 8 failed, in 52 test cases), time: 4.945 ms
 
 • Operands suite
 
@@ -703,7 +715,7 @@ Matching test cases:
         ✗ 16 bytes eq FAILED (operands.cpp:783, {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8})
     ✗ Long ranges bad - FAILED (0 checks passed, 2 failed)
 
-✗ Operands suite - FAILED (48 checks passed, 33 failed, in 20 test cases), time: 0.818 ms
+✗ Operands suite - FAILED (48 checks passed, 33 failed, in 20 test cases), time: 0.805 ms
 
 • Runner options suite
 
@@ -717,7 +729,7 @@ Matching test cases:
     ✓ Owned strings - passed (3 checks)
     ✓ Copies and moves - passed (5 checks)
 
-✓ Runner options suite - passed (64 checks in 9 test cases), time: 1.119 ms
+✓ Runner options suite - passed (64 checks in 9 test cases), time: 1.214 ms
 
 • Stopwatch suite
 
@@ -727,7 +739,7 @@ Matching test cases:
     ✓ stopwatch::stop() replacement - passed (2 checks)
     ✓ stopwatch::elapsed() - passed (7 checks)
 
-✓ Stopwatch suite - passed (20 checks in 5 test cases), time: 0.100 ms
+✓ Stopwatch suite - passed (20 checks in 5 test cases), time: 0.096 ms
 
 • Utility suite
 
@@ -742,8 +754,8 @@ Matching test cases:
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 
-✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.104 ms
+✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.108 ms
 
-✗ Total: 681 checks passed, 352 failed, in 162 test cases, 15 test suites, time: 13.172 ms
+✗ Total: 681 checks passed, 355 failed, in 165 test cases, 15 test suites, time: 13.666 ms
 Overall, the µTest++ unit tests were successful!
 

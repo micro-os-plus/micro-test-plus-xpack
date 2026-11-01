@@ -109,7 +109,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m [32m'x' == 'x'[0m
     [31m✗[0m Character operands - [31mFAILED[0m (1 check passed, 2 failed)
 
-[31m✗[0m Top suite - [31mFAILED[0m (39 checks passed, 6 failed, in 19 test cases), time: 0.991 ms
+[31m✗[0m Top suite - [31mFAILED[0m (39 checks passed, 6 failed, in 19 test cases), time: 0.960 ms
 
 • Combinatorial floats suite
 
@@ -161,7 +161,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m 42 == 42.0
     [32m✓[0m Combinatorial doubles - passed (21 checks)
 
-[32m✓[0m Combinatorial floats suite - passed (42 checks in 2 test cases), time: 0.431 ms
+[32m✓[0m Combinatorial floats suite - passed (42 checks in 2 test cases), time: 0.422 ms
 
 • Combinatorial integrals suite
 
@@ -349,7 +349,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m gt matches unsigned int
     [32m✓[0m Combinatorial integrals with unsigned char - passed (20 checks)
 
-[32m✓[0m Combinatorial integrals suite - passed (160 checks in 8 test cases), time: 1.461 ms
+[32m✓[0m Combinatorial integrals suite - passed (160 checks in 8 test cases), time: 1.460 ms
 
 • Comparisons suite
 
@@ -464,15 +464,15 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     [32m✓[0m Pointer comparisons - passed (9 checks)
 
     • Failed pointer comparisons
-        [31m✗[0m ptr1 != &one [31mFAILED[0m (comparisons.cpp:517, [31m0x7ff7bd31f740 != 0x7ff7bd31f740[0m)
-        [31m✗[0m ptr1 != ptr2 [31mFAILED[0m (comparisons.cpp:520, [31m0x7ff7bd31f740 != 0x7ff7bd31f740[0m)
-        [31m✗[0m ptr1 > ptr2 [31mFAILED[0m (comparisons.cpp:523, [31m0x7ff7bd31f740 > 0x7ff7bd31f740[0m)
-        [31m✗[0m ptr1 < ptr2 [31mFAILED[0m (comparisons.cpp:526, [31m0x7ff7bd31f740 < 0x7ff7bd31f740[0m)
-        [31m✗[0m ptr1 == a_non_nullptr [31mFAILED[0m (comparisons.cpp:529, [31m0x7ff7bd31f740 == 0x7ff7bd31f790[0m)
-        [31m✗[0m pfunc != afunc [31mFAILED[0m (comparisons.cpp:532, [31m0x102c47c68 != 0x102c47c68[0m)
-        [31m✗[0m pfunc == a_non_nullptr [31mFAILED[0m (comparisons.cpp:535, [31m0x102c47c68 == 0x7ff7bd31f790[0m)
-        [31m✗[0m pone >= ptwo [31mFAILED[0m (comparisons.cpp:547, [31m0x7ff7bd31fdc0 >= 0x7ff7bd31fdc4[0m)
-        [31m✗[0m ptwo <= pone [31mFAILED[0m (comparisons.cpp:550, [31m0x7ff7bd31fdc4 <= 0x7ff7bd31fdc0[0m)
+        [31m✗[0m ptr1 != &one [31mFAILED[0m (comparisons.cpp:517, [31m0x7ff7be13d740 != 0x7ff7be13d740[0m)
+        [31m✗[0m ptr1 != ptr2 [31mFAILED[0m (comparisons.cpp:520, [31m0x7ff7be13d740 != 0x7ff7be13d740[0m)
+        [31m✗[0m ptr1 > ptr2 [31mFAILED[0m (comparisons.cpp:523, [31m0x7ff7be13d740 > 0x7ff7be13d740[0m)
+        [31m✗[0m ptr1 < ptr2 [31mFAILED[0m (comparisons.cpp:526, [31m0x7ff7be13d740 < 0x7ff7be13d740[0m)
+        [31m✗[0m ptr1 == a_non_nullptr [31mFAILED[0m (comparisons.cpp:529, [31m0x7ff7be13d740 == 0x7ff7be13d790[0m)
+        [31m✗[0m pfunc != afunc [31mFAILED[0m (comparisons.cpp:532, [31m0x101e29c68 != 0x101e29c68[0m)
+        [31m✗[0m pfunc == a_non_nullptr [31mFAILED[0m (comparisons.cpp:535, [31m0x101e29c68 == 0x7ff7be13d790[0m)
+        [31m✗[0m pone >= ptwo [31mFAILED[0m (comparisons.cpp:547, [31m0x7ff7be13ddc0 >= 0x7ff7be13ddc4[0m)
+        [31m✗[0m ptwo <= pone [31mFAILED[0m (comparisons.cpp:550, [31m0x7ff7be13ddc4 <= 0x7ff7be13ddc0[0m)
     [31m✗[0m Failed pointer comparisons - [31mFAILED[0m (0 checks passed, 9 failed)
 
     • Null pointer comparisons
@@ -483,7 +483,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
 
     • Failed null pointer comparisons
         [31m✗[0m a_nullptr != nullptr [31mFAILED[0m (comparisons.cpp:599, [31m0x0 != nullptr[0m)
-        [31m✗[0m a_non_nullptr == nullptr [31mFAILED[0m (comparisons.cpp:602, [31m0x7ff7bd31fde0 == nullptr[0m)
+        [31m✗[0m a_non_nullptr == nullptr [31mFAILED[0m (comparisons.cpp:602, [31m0x7ff7be13dde0 == nullptr[0m)
         [31m✗[0m pfunc != nullptr [31mFAILED[0m (comparisons.cpp:606, [31m0x0 != nullptr[0m)
     [31m✗[0m Failed null pointer comparisons - [31mFAILED[0m (0 checks passed, 3 failed)
 
@@ -516,7 +516,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [31m✗[0m all_of with a nested any_of [31mFAILED[0m (comparisons.cpp:751, ([32m42 == 42[0m[31m and [0m([31m42 == 0[0m[31m or [0m[31m42 == 1[0m)))
     [31m✗[0m Logical operations with more operands - [31mFAILED[0m (6 checks passed, 5 failed)
 
-[31m✗[0m Comparisons suite - [31mFAILED[0m (68 checks passed, 47 failed, in 16 test cases), time: 1.093 ms
+[31m✗[0m Comparisons suite - [31mFAILED[0m (68 checks passed, 47 failed, in 16 test cases), time: 1.075 ms
 
 • Dynamic suite
 
@@ -524,7 +524,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m 1 == 1 in dynamic suite
     [32m✓[0m check in dynamic suite - passed (1 check)
 
-[32m✓[0m Dynamic suite - passed (1 check in 1 test case), time: 0.037 ms
+[32m✓[0m Dynamic suite - passed (1 check in 1 test case), time: 0.040 ms
 
 • Dynamic suite with a temporary name
 
@@ -584,9 +584,21 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m check after the nested test case
     [31m✗[0m Failed require in nested test case - [31mFAILED[0m (1 check passed, 0 failed, 1 test case failed)
 
+    • Failed require in throws
+        [31m✗[0m in throws [31mFAILED[0m (exceptions.cpp:283) - test case stopped
+    [31m✗[0m Failed require in throws - [31mFAILED[0m (0 checks passed, 1 failed)
+
+    • Failed require in throws with a type
+        [31m✗[0m in typed throws [31mFAILED[0m (exceptions.cpp:294) - test case stopped
+    [31m✗[0m Failed require in throws with a type - [31mFAILED[0m (0 checks passed, 1 failed)
+
+    • Failed require in nothrow
+        [31m✗[0m in nothrow [31mFAILED[0m (exceptions.cpp:304) - test case stopped
+    [31m✗[0m Failed require in nothrow - [31mFAILED[0m (0 checks passed, 1 failed)
+
     • Failed require during unwinding
-        [31m✗[0m [31mFAILED[0m (exceptions.cpp:285) - test case stopped
-        [31m✗[0m unexpected exception: boom [31mFAILED[0m (exceptions.cpp:280)
+        [31m✗[0m [31mFAILED[0m (exceptions.cpp:319) - test case stopped
+        [31m✗[0m unexpected exception: boom [31mFAILED[0m (exceptions.cpp:314)
     [31m✗[0m Failed require during unwinding - [31mFAILED[0m (0 checks passed, 2 failed)
 
     • Exception in a suite body
@@ -595,7 +607,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [32m✓[0m exception counted as a failed check
     [32m✓[0m Exception in a suite body - passed (3 checks)
 
-[31m✗[0m Exceptions suite - [31mFAILED[0m (10 checks passed, 10 failed, in 13 test cases), time: 0.808 ms
+[31m✗[0m Exceptions suite - [31mFAILED[0m (10 checks passed, 13 failed, in 16 test cases), time: 1.017 ms
 
 • Exceptions suite body
 
@@ -604,7 +616,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
     [32m✓[0m Test case before the exception - passed (1 check)
 
     [31m✗[0m unexpected exception in the suite body: boom [31mFAILED[0m
-[31m✗[0m Exceptions suite body - [31mFAILED[0m (1 check passed, 1 failed, in 1 test case), time: 0.080 ms
+[31m✗[0m Exceptions suite body - [31mFAILED[0m (1 check passed, 1 failed, in 1 test case), time: 0.071 ms
 
 • Failed combinatorial floats suite
 
@@ -656,7 +668,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [31m✗[0m 42 == 42.0 [31mFAILED[0m (float-failed-combinations.cpp:141, [31m42 != 42.0[0m)
     [31m✗[0m Combinatorial doubles - [31mFAILED[0m (0 checks passed, 21 failed)
 
-[31m✗[0m Failed combinatorial floats suite - [31mFAILED[0m (0 checks passed, 42 failed, in 2 test cases), time: 0.412 ms
+[31m✗[0m Failed combinatorial floats suite - [31mFAILED[0m (0 checks passed, 42 failed, in 2 test cases), time: 0.404 ms
 
 • Failed combinatorial integrals suite
 
@@ -890,7 +902,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
         [31m✗[0m le matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:132, [31m(unsigned char)43 <= 42u[0m)
     [31m✗[0m Combinatorial integrals with unsigned char - [31mFAILED[0m (0 checks passed, 20 failed)
 
-[31m✗[0m Failed combinatorial integrals suite - [31mFAILED[0m (0 checks passed, 200 failed, in 10 test cases), time: 1.776 ms
+[31m✗[0m Failed combinatorial integrals suite - [31mFAILED[0m (0 checks passed, 200 failed, in 10 test cases), time: 1.854 ms
 
 • Miscellaneous suite
 
@@ -989,7 +1001,7 @@ Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MIC
 
     • Message types
         [32m✓[0m numbers 1 2 3 1.5 2 true
-        [32m✓[0m pointer 0x1032c7620
+        [32m✓[0m pointer 0x1024b2ac0
         [32m✓[0m container {1, 2}
         [32m✓[0m standard types (1, a) nullopt 1
         [32m✓[0m custom type { 1, 2 } on
@@ -1283,7 +1295,7 @@ Matching test cases:
         [32m✓[0m string view suite name copied
     [32m✓[0m Test case and suite names - passed (9 checks)
 
-[31m✗[0m Miscellaneous suite - [31mFAILED[0m (206 checks passed, 8 failed, in 52 test cases), time: 5.325 ms
+[31m✗[0m Miscellaneous suite - [31mFAILED[0m (206 checks passed, 8 failed, in 52 test cases), time: 5.368 ms
 
 • Operands suite
 
@@ -1428,7 +1440,7 @@ Matching test cases:
         [31m✗[0m 16 bytes eq [31mFAILED[0m (operands.cpp:783, [31m{7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8}[0m)
     [31m✗[0m Long ranges bad - [31mFAILED[0m (0 checks passed, 2 failed)
 
-[31m✗[0m Operands suite - [31mFAILED[0m (48 checks passed, 33 failed, in 20 test cases), time: 0.945 ms
+[31m✗[0m Operands suite - [31mFAILED[0m (48 checks passed, 33 failed, in 20 test cases), time: 0.969 ms
 
 • Runner options suite
 
@@ -1523,7 +1535,7 @@ Matching test cases:
         [32m✓[0m the move assignment moves all the members
     [32m✓[0m Copies and moves - passed (5 checks)
 
-[32m✓[0m Runner options suite - passed (64 checks in 9 test cases), time: 1.356 ms
+[32m✓[0m Runner options suite - passed (64 checks in 9 test cases), time: 1.249 ms
 
 • Stopwatch suite
 
@@ -1562,7 +1574,7 @@ Matching test cases:
         [32m✓[0m no stop -> 0 µs
     [32m✓[0m stopwatch::elapsed() - passed (7 checks)
 
-[32m✓[0m Stopwatch suite - passed (20 checks in 5 test cases), time: 0.165 ms
+[32m✓[0m Stopwatch suite - passed (20 checks in 5 test cases), time: 0.162 ms
 
 • Utility suite
 
@@ -1601,8 +1613,8 @@ Matching test cases:
         [31m✗[0m ab matches ??? [31mFAILED[0m (utility.cpp:195)
     [31m✗[0m utility::is_match() — failing - [31mFAILED[0m (0 checks passed, 5 failed)
 
-[31m✗[0m Utility suite - [31mFAILED[0m (21 checks passed, 5 failed, in 3 test cases), time: 0.134 ms
+[31m✗[0m Utility suite - [31mFAILED[0m (21 checks passed, 5 failed, in 3 test cases), time: 0.166 ms
 
-[31m✗[0m Total: 681 checks passed, 352 failed, in 162 test cases, 15 test suites, time: 15.277 ms
+[31m✗[0m Total: 681 checks passed, 355 failed, in 165 test cases, 15 test suites, time: 15.500 ms
 Overall, the µTest++ unit tests were successful!
 

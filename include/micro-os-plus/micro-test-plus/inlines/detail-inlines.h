@@ -683,6 +683,10 @@ namespace micro_os_plus::micro_test_plus
      * any other exception the result is `false`; if no exception is thrown
      * the result is `false`. The result is passed to the `callable_op`
      * base class constructor.
+     *
+     * The `failed_requirement` thrown to stop the test case after a failed
+     * `require()` in `func` is not an exception of `func`, and is
+     * rethrown.
      */
     template <class Exception_T>
     template <class Callable_T>
@@ -692,6 +696,10 @@ namespace micro_os_plus::micro_test_plus
         try
           {
             func ();
+          }
+        catch (const failed_requirement&)
+          {
+            throw;
           }
         catch (const Exception_T&)
           {
@@ -714,6 +722,10 @@ namespace micro_os_plus::micro_test_plus
      * exception the result is `true`; if no exception is thrown the result
      * is `false`. The result is passed to the `callable_op` base class
      * constructor.
+     *
+     * The `failed_requirement` thrown to stop the test case after a failed
+     * `require()` in `func` is not an exception of `func`, and is
+     * rethrown.
      */
     template <class Callable_T>
     constexpr throws_op<void>::throws_op (const Callable_T& func)
@@ -722,6 +734,10 @@ namespace micro_os_plus::micro_test_plus
         try
           {
             func ();
+          }
+        catch (const failed_requirement&)
+          {
+            throw;
           }
         catch (...)
           {
@@ -740,6 +756,10 @@ namespace micro_os_plus::micro_test_plus
      * throwing, the result is `true`; if any exception is thrown the result
      * is `false`. The result is passed to the `callable_op` base class
      * constructor.
+     *
+     * The `failed_requirement` thrown to stop the test case after a failed
+     * `require()` in `func` is not an exception of `func`, and is
+     * rethrown.
      */
     template <class Callable_T>
     constexpr nothrow_op::nothrow_op (const Callable_T& func)
@@ -748,6 +768,10 @@ namespace micro_os_plus::micro_test_plus
         try
           {
             func ();
+          }
+        catch (const failed_requirement&)
+          {
+            throw;
           }
         catch (...)
           {

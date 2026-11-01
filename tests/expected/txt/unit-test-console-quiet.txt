@@ -57,19 +57,19 @@
         ✗ null_string == "abc" FAILED (comparisons.cpp:436, nullptr == "abc")
 
     • Failed pointer comparisons
-        ✗ ptr1 != &one FAILED (comparisons.cpp:517, 0x7ff7bec8b740 != 0x7ff7bec8b740)
-        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:520, 0x7ff7bec8b740 != 0x7ff7bec8b740)
-        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:523, 0x7ff7bec8b740 > 0x7ff7bec8b740)
-        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:526, 0x7ff7bec8b740 < 0x7ff7bec8b740)
-        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:529, 0x7ff7bec8b740 == 0x7ff7bec8b790)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:532, 0x1012dbc68 != 0x1012dbc68)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:535, 0x1012dbc68 == 0x7ff7bec8b790)
-        ✗ pone >= ptwo FAILED (comparisons.cpp:547, 0x7ff7bec8bdc0 >= 0x7ff7bec8bdc4)
-        ✗ ptwo <= pone FAILED (comparisons.cpp:550, 0x7ff7bec8bdc4 <= 0x7ff7bec8bdc0)
+        ✗ ptr1 != &one FAILED (comparisons.cpp:517, 0x7ff7b9d62740 != 0x7ff7b9d62740)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:520, 0x7ff7b9d62740 != 0x7ff7b9d62740)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:523, 0x7ff7b9d62740 > 0x7ff7b9d62740)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:526, 0x7ff7b9d62740 < 0x7ff7b9d62740)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:529, 0x7ff7b9d62740 == 0x7ff7b9d62790)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:532, 0x106204c68 != 0x106204c68)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:535, 0x106204c68 == 0x7ff7b9d62790)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:547, 0x7ff7b9d62dc0 >= 0x7ff7b9d62dc4)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:550, 0x7ff7b9d62dc4 <= 0x7ff7b9d62dc0)
 
     • Failed null pointer comparisons
         ✗ a_nullptr != nullptr FAILED (comparisons.cpp:599, 0x0 != nullptr)
-        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:602, 0x7ff7bec8bde0 == nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:602, 0x7ff7b9d62de0 == nullptr)
         ✗ pfunc != nullptr FAILED (comparisons.cpp:606, 0x0 != nullptr)
 
     • Logical operations
@@ -113,9 +113,18 @@
         • nested test case
             ✗ failed nested requirement FAILED (exceptions.cpp:266) - test case stopped
 
+    • Failed require in throws
+        ✗ in throws FAILED (exceptions.cpp:283) - test case stopped
+
+    • Failed require in throws with a type
+        ✗ in typed throws FAILED (exceptions.cpp:294) - test case stopped
+
+    • Failed require in nothrow
+        ✗ in nothrow FAILED (exceptions.cpp:304) - test case stopped
+
     • Failed require during unwinding
-        ✗ FAILED (exceptions.cpp:285) - test case stopped
-        ✗ unexpected exception: boom FAILED (exceptions.cpp:280)
+        ✗ FAILED (exceptions.cpp:319) - test case stopped
+        ✗ unexpected exception: boom FAILED (exceptions.cpp:314)
 
 • Exceptions suite body
 
@@ -493,4 +502,4 @@ Matching test cases:
         ✗ abc matches *C FAILED (utility.cpp:191)
         ✗ ab matches ??? FAILED (utility.cpp:195)
 
-✗ Total: 681 checks passed, 352 failed, in 162 test cases, 15 test suites, time: 12.936 ms
+✗ Total: 681 checks passed, 355 failed, in 165 test cases, 15 test suites, time: 13.503 ms

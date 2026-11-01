@@ -274,6 +274,40 @@ static mt::static_suite ts_exceptions{ "Exceptions suite", tr,
         });
       local_counts.executed_test_cases++; // outer
 
+      // A failed requirement inside the callable of throws() and nothrow()
+      // stops the test case; it is not an exception of the callable, so
+      // the check around it is not made (#234).
+      ts.test ("Failed require in throws", [] (auto& t)
+        {
+          local_counts.failed_checks++;
+          t.expect (mt::throws ([&t] { t.require (false) << "in throws"; }))
+              << "check not made";
+
+          t.expect (false) << "check after throws";
+        });
+      local_counts.executed_test_cases++;
+
+      ts.test ("Failed require in throws with a type", [] (auto& t)
+        {
+          local_counts.failed_checks++;
+          t.expect (mt::throws<std::runtime_error> ([&t]
+            { t.require (false) << "in typed throws"; }))
+              << "check not made";
+
+          t.expect (false) << "check after typed throws";
+        });
+      local_counts.executed_test_cases++;
+
+      ts.test ("Failed require in nothrow", [] (auto& t)
+        {
+          local_counts.failed_checks++;
+          t.expect (mt::nothrow ([&t] { t.require (false) << "in nothrow"; }))
+              << "check not made";
+
+          t.expect (false) << "check after nothrow";
+        });
+      local_counts.executed_test_cases++;
+
       // A result is reported during the stack unwinding caused by another
       // exception, thrown by the argument of its message, evaluated while
       // the result exists; it must not throw, which would terminate.
@@ -335,9 +369,10 @@ static mt::static_suite ts_exceptions{ "Exceptions suite", tr,
                    == local_counts.failed_checks);
       test_assert (current_suite_totals.executed_test_cases ()
                    == local_counts.executed_test_cases);
-      // Two test cases, and the nested and the outer test cases.
+      // Two test cases, the nested and the outer test cases, and the three
+      // test cases of the requirements in throws() and nothrow().
       test_assert (current_suite_totals.failed_test_cases ()
-                   == failed_test_cases_before + 4);
+                   == failed_test_cases_before + 7);
     }
   } };
 
