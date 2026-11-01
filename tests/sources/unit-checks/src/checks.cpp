@@ -382,6 +382,35 @@ unit_checks_run_tests (mt::suite& ts)
 
   // --------------------------------------------------------------------------
 
+  // The control characters of the messages and of the names are escaped,
+  // except the tab and, in the messages, the line feed, so that they
+  // cannot change the state of the terminal or truncate the text (#237).
+  ts.test ("Control characters in a message", [] (auto& t)
+    {
+      t.expect (false) << "escape \x1b[0m" << '\0' << std::string ("a\0b", 3)
+                       << " tab\t and line\nfeed";
+      local_counts.failed_checks++;
+
+      local_counts.executed_test_cases++;
+    });
+
+  ts.test (std::string{ "Control\x01 name\nsecond line\ttab" }, [] (auto& t)
+    {
+      t.expect (true) << "check in the test case with control characters";
+      local_counts.passed_checks++;
+
+      local_counts.executed_test_cases++;
+    });
+
+  test_assert (current_suite_totals.passed_checks ()
+               == local_counts.passed_checks);
+  test_assert (current_suite_totals.failed_checks ()
+               == local_counts.failed_checks);
+  test_assert (current_suite_totals.executed_test_cases ()
+               == local_counts.executed_test_cases);
+
+  // --------------------------------------------------------------------------
+
   // A check in the outer test case before the nested one leaves the
   // outer result in the reporter buffer when the nested test case begins.
   ts.test ("Nested subtest after a check", [] (auto& t)

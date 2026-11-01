@@ -280,7 +280,91 @@ namespace micro_os_plus::micro_test_plus::detail
         }
       return text;
     }
+
+    /**
+     * @brief Tells whether a character is escaped in the plain mode.
+     *
+     * @details
+     * The control characters other than the tab and the line feed, and
+     * the DEL character, which can change the state of a terminal, and
+     * truncate a text.
+     *
+     * @param c The character.
+     * @retval true The character is escaped.
+     * @retval false The character is written unchanged.
+     */
+    constexpr bool
+    is_escaped_in_plain (char c) noexcept
+    {
+      const auto unit = static_cast<unsigned char> (c);
+      return (unit < 0x20 && c != '\t' && c != '\n') || unit == 0x7F;
+    }
+
+    /**
+     * @brief Appends a text in the plain mode, with the control characters
+     * escaped.
+     *
+     * @param buffer The buffer to append to.
+     * @param sv The text.
+     */
+    void
+    append_plain (std::string& buffer, std::string_view sv)
+    {
+      for (const char c : sv)
+        {
+          if (is_escaped_in_plain (c))
+            {
+              append_control_escape (buffer, c);
+            }
+          else
+            {
+              buffer.push_back (c);
+            }
+        }
+    }
   } // namespace
+
+  // --------------------------------------------------------------------------
+
+  /**
+   * @details
+   * The usual escapes for the characters that have one; the other ones,
+   * including DEL, as `\\xHH`.
+   */
+  void
+  append_control_escape (std::string& text, char c)
+  {
+    switch (c)
+      {
+      case '\0':
+        text.append ("\\0");
+        break;
+      case '\a':
+        text.append ("\\a");
+        break;
+      case '\b':
+        text.append ("\\b");
+        break;
+      case '\t':
+        text.append ("\\t");
+        break;
+      case '\n':
+        text.append ("\\n");
+        break;
+      case '\v':
+        text.append ("\\v");
+        break;
+      case '\f':
+        text.append ("\\f");
+        break;
+      case '\r':
+        text.append ("\\r");
+        break;
+      default:
+        append_hex (text, static_cast<unsigned char> (c), "\\x", 2);
+        break;
+      }
+  }
 
   // --------------------------------------------------------------------------
 
@@ -297,7 +381,7 @@ namespace micro_os_plus::micro_test_plus::detail
   {
     if (plain_)
       {
-        buffer_.append (sv);
+        append_plain (buffer_, sv);
       }
     else
       {
@@ -376,7 +460,14 @@ namespace micro_os_plus::micro_test_plus::detail
   {
     if (plain_)
       {
-        buffer_.push_back (c);
+        if (is_escaped_in_plain (c))
+          {
+            append_control_escape (buffer_, c);
+          }
+        else
+          {
+            buffer_.push_back (c);
+          }
         return *this;
       }
 
@@ -454,7 +545,7 @@ namespace micro_os_plus::micro_test_plus::detail
       }
     else
       {
-        buffer_.append (s);
+        append_plain (buffer_, s);
       }
     return *this;
   }

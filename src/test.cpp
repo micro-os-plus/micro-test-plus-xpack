@@ -71,6 +71,47 @@ namespace micro_os_plus::micro_test_plus
 {
   namespace detail
   {
+    /**
+     * @details
+     * The text is scanned first, so that a name without control characters
+     * is not touched. The tab is kept; all the other control characters,
+     * including the line feed and the NUL, and DEL, are replaced.
+     */
+    void
+    escape_control_characters (std::string& name)
+    {
+      const auto is_control = [] (char c)
+        {
+          const auto unit = static_cast<unsigned char> (c);
+          return (unit < 0x20 && c != '\t') || unit == 0x7F;
+        };
+
+      std::size_t first = 0;
+      while (first < name.size () && !is_control (name[first]))
+        {
+          ++first;
+        }
+      if (first == name.size ())
+        {
+          return;
+        }
+
+      std::string escaped (name, 0, first);
+      escaped.reserve (name.size () + 8);
+      for (std::size_t i = first; i < name.size (); ++i)
+        {
+          if (is_control (name[i]))
+            {
+              append_control_escape (escaped, name[i]);
+            }
+          else
+            {
+              escaped.push_back (name[i]);
+            }
+        }
+      name = std::move (escaped);
+    }
+
     // ========================================================================
 
     /**

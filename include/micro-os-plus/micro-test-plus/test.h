@@ -104,6 +104,23 @@ namespace micro_os_plus::micro_test_plus
   class counters;
   class runner;
   class test_case;
+
+  namespace detail
+  {
+    /**
+     * @brief Escapes the control characters of a name.
+     *
+     * @details
+     * Replaces, in place, the control characters other than the tab,
+     * including the line feed and the NUL, with their escape sequences, so
+     * that the names reach the console and the output files as one line of
+     * visible text. Defined in `src/test.cpp`.
+     *
+     * @param name The name to escape.
+     */
+    void
+    escape_control_characters (std::string& name);
+  } // namespace detail
   class suite;
   class top_suite;
   class static_suite;

@@ -106,6 +106,24 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
     /**
+     * @brief Appends the escape sequence of a control character.
+     *
+     * @details
+     * Writes the usual escape of the character (`\\0`, `\\a`, `\\b`, `\\t`,
+     * `\\n`, `\\v`, `\\f`, or `\\r`), or `\\xHH` for the other ones. Used for
+     * the characters of the messages and of the names that would otherwise
+     * reach the console and the output files unchanged. Defined in
+     * `src/expression-formatter.cpp`.
+     *
+     * @param text The text to append to.
+     * @param c The control character.
+     */
+    void
+    append_control_escape (std::string& text, char c);
+
+    // ------------------------------------------------------------------------
+
+    /**
      * @struct colours
      * @brief Colours used to highlight pass and fail results in test reports.
      *
