@@ -193,6 +193,67 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
+     * Sets the pointer of the runner, a friend, and returns the previous
+     * value, so that the caller can restore it when the body returns.
+     */
+    suite*
+    runnable_base::exchange_running_suite (suite* running) noexcept
+    {
+      suite* previous = runner_.running_suite_;
+      runner_.running_suite_ = running;
+      return previous;
+    }
+
+    /**
+     * @details
+     * The suite whose body runs accepts the test case. When the session
+     * was declined, or aborted, the test case is ignored, as
+     * `after_test_case_create()` ignores it.
+     *
+     * Otherwise the call is rejected. If a suite runs (and the test
+     * cases are not only listed), the failure is reported as a check of
+     * that suite, with the same numbering and counting as the
+     * unexpected exceptions of the suite body. Otherwise (the runner
+     * has not started the suites, or has finished them) the message is
+     * written to `stderr`, and `runner::mark_rejected()` makes the exit
+     * code non-zero, as for the suites added too late.
+     */
+    bool
+    runnable_base::accepts_test_case (const suite& target, const char* name)
+    {
+      if (runner_.running_suite_ == &target)
+        {
+          return true;
+        }
+
+      if (runner_.aborted_ || runner_.has_option_errors ()
+          || runner_.options_.help)
+        {
+          return false;
+        }
+
+      std::string message{ "test case '" };
+      message.append (name);
+      message.append ("' started on suite '");
+      message.append (target.name ());
+      message.append ("', which is not running");
+
+      suite* running = runner_.running_suite_;
+      if (running != nullptr && !runner_.options_.list_tests)
+        {
+          running->next_test_point_number ();
+          running->test_reporter ().fail_suite (message, *running);
+          running->totals_.increment_failed_checks ();
+          return false;
+        }
+
+      fprintf (stderr, "error: %s\n", message.c_str ());
+      runner_.mark_rejected ();
+      return false;
+    }
+
+    /**
+     * @details
      * Delegates to the private `runner::abort()`, as caused by a failed
      * requirement, passing the supplied source location, so that the
      * report identifies it. The runner then calls the abort handler, if
@@ -452,6 +513,19 @@ namespace micro_os_plus::micro_test_plus
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name_);
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
+
+    // Marks this suite as the one that accepts new test cases, until the
+    // body returns.
+    struct running_guard
+    {
+      suite& self;
+      suite* outer;
+
+      ~running_guard ()
+      {
+        self.exchange_running_suite (outer);
+      }
+    } guard{ *this, exchange_running_suite (this) };
 
     // While the test cases are listed, the body only creates them, so
     // that they are listed; the suite is not reported. An exception

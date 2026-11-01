@@ -630,6 +630,49 @@ namespace micro_os_plus::micro_test_plus
       is_listing (void) const noexcept;
 
       /**
+       * @brief Replaces the suite whose body is running in the owning
+       * runner, and returns the previous one.
+       *
+       * @details
+       * Protected, since it is used only by `suite::run()`, to mark the
+       * suite whose body is being called, and to restore the previous
+       * value when the body returns.
+       *
+       * @param running The suite that starts to run, or the previous
+       * one, to restore it.
+       * @return The suite that was marked as running before the call,
+       * or `nullptr` when none was.
+       */
+      suite*
+      exchange_running_suite (suite* running) noexcept;
+
+      /**
+       * @brief Checks whether a test case can be created on a suite.
+       *
+       * @details
+       * Protected, since it is used only by `suite::test()`. A test case
+       * can be created only on the suite whose body is running (the top
+       * suite, between `runner::add_top_suite()` and
+       * `runner::run_suites()`, or the suite being run). A call on any
+       * other suite, for example on the top suite from the body of
+       * another suite, or after `runner::run_suites()` returned, would
+       * run the test case where its results cannot be reported
+       * correctly. Such a call is rejected: the failure is reported in
+       * the running suite, or, when no suite runs, on `stderr`, and the
+       * rejection is remembered by the runner, which makes the exit code
+       * non-zero. When the session was declined (option errors, or
+       * `--help`), the test cases are ignored silently, as in all
+       * other cases.
+       *
+       * @param target The suite on which the test case is created.
+       * @param name The name of the test case, for the message.
+       * @retval true The test case can be created.
+       * @retval false The test case must not be created.
+       */
+      [[nodiscard]] bool
+      accepts_test_case (const suite& target, const char* name);
+
+      /**
        * @brief Advances to the next child test point, and returns its
        * number.
        *

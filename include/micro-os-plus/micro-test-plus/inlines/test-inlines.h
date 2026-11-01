@@ -786,6 +786,15 @@ namespace micro_os_plus::micro_test_plus
    * and runs nested in it, as if `test()` had been called on that test
    * case.
    *
+   * The test case can be created only on the suite whose body is
+   * running. A call on another suite (for example on the top suite,
+   * captured by reference, from the body of a suite added with
+   * `runner::add_suite()`, or on any suite after `runner::run_suites()`
+   * returned) is rejected: the test case is not run, a failure is
+   * reported in the running suite, or, when none runs, an error is
+   * written to `stderr`, and the later calls of `runner::run_suites()`
+   * return a non-zero exit code.
+   *
    * @par Example
    *
    * @code{.cpp}
@@ -812,6 +821,11 @@ namespace micro_os_plus::micro_test_plus
       {
         running->test (name, std::forward<Callable_T> (callable),
                        std::forward<Args_T> (arguments)...);
+        return;
+      }
+
+    if (!accepts_test_case (*this, name.name ()))
+      {
         return;
       }
 

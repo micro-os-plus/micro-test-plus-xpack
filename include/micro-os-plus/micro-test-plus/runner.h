@@ -1332,6 +1332,17 @@ namespace micro_os_plus::micro_test_plus
     test_case* running_test_case_ = nullptr;
 
     /**
+     * @brief The suite whose body is running, if any.
+     *
+     * @details
+     * Set by `detail::runnable_base`, a friend, to the top suite from
+     * `add_top_suite()` until `run_suites()` ends it, and to each suite
+     * while its body is called. `suite::test()` accepts new test cases
+     * only on this suite (see `runnable_base::accepts_test_case()`).
+     */
+    class suite* running_suite_ = nullptr;
+
+    /**
      * @brief The suite whose name was listed last, if any.
      *
      * @details

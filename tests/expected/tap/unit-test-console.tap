@@ -2572,7 +2572,7 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
 # Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 TAP version 14
 # Subtest: default suite
-    ok 12 - Optional top suite # { passed, 7 checks }
+    ok 12 - Optional top suite # { passed, 9 checks }
     ok 13 - Runner option errors # { passed, 10 checks }
     ok 14 - Runner application arguments # { passed, 3 checks }
     ok 15 - Runner colour options # { passed, 3 checks }
@@ -2648,7 +2648,7 @@ Matching test cases:
     ok 49 - Test case and suite names # { passed, 9 checks }
 
     1..49
-not ok 11 - Miscellaneous suite # { FAILED, 208 checks passed, 8 failed, in 52 test cases, time: 5.139 ms }
+not ok 11 - Miscellaneous suite # { FAILED, 210 checks passed, 8 failed, in 52 test cases, time: 6.572 ms }
 
 # Subtest: Operands suite
     ok 1 - Arrays # { passed, 4 checks }
@@ -3038,6 +3038,6 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.114 ms }
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.123 ms }
 
 1..15
-# { total: 694 checks passed, 373 failed, in 170 test cases, 15 test suites, time: 16.244 ms }
+# { total: 696 checks passed, 373 failed, in 170 test cases, 15 test suites, time: 22.295 ms }
 Overall, the µTest++ unit tests were successful!
 

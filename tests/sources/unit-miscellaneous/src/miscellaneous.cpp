@@ -1101,6 +1101,33 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
             << "a top suite added after run_suites() is rejected";
         local_counts.passed_checks++;
 
+        // A test case started on a suite that is not running is not run;
+        // the failure is reported in the running suite, and the session
+        // fails. After the end of the session, the call is rejected too.
+        mt::runner wrong_runner;
+        wrong_runner.initialise (options);
+        auto& wrong_top = wrong_runner.add_top_suite ("Top");
+        wrong_runner.add_suite ("Child", [&wrong_top] (mt::suite& s)
+          {
+            s.test ("Added test", [] (auto& lt) { lt.expect (true); });
+            wrong_top.test ("Wrong test", [] (auto& lt) { lt.expect (false); });
+          });
+
+        t.expect (mt::eq (wrong_runner.run_suites (), 1)
+                  and mt::eq (wrong_runner.totals ().failed_checks (), 1u)
+                  and mt::eq (wrong_runner.totals ().executed_test_cases (),
+                              1u))
+            << "a test case started on a suite that is not running fails";
+        local_counts.passed_checks++;
+
+        wrong_top.test ("Too late", [] (auto& lt) { lt.expect (false); });
+
+        t.expect (mt::eq (wrong_runner.run_suites (), 1)
+                  and mt::eq (wrong_runner.totals ().executed_test_cases (),
+                              1u))
+            << "a test case started after run_suites() is not run";
+        local_counts.passed_checks++;
+
         // Without `initialise()`, the default options are used; the
         // session header is written to the console.
         mt::runner default_runner;

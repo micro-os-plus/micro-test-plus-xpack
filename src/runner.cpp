@@ -469,6 +469,10 @@ namespace micro_os_plus::micro_test_plus
 
     has_top_suite_ = true;
 
+    // The top suite runs until run_suites() is called; its test cases
+    // are accepted only meanwhile.
+    running_suite_ = &top_suite_;
+
     // When listing, the top suite is not reported; its test cases are
     // listed as they are created.
     if (!options_.list_tests)
@@ -772,6 +776,7 @@ namespace micro_os_plus::micro_test_plus
       }
 
     session_state_ = session_state::running;
+    running_suite_ = nullptr;
     started_next_ = started_first_;
     started_first_ = this;
 

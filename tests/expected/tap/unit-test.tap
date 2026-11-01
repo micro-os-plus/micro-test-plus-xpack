@@ -3005,9 +3005,11 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         ok 4 - a second add_top_suite() returns the same suite
         ok 5 - the session passes
         ok 6 - a top suite added after run_suites() is rejected
-        ok 7 - without initialise(), the default options are used
-        1..7
-    ok 12 - Optional top suite # { passed, 7 checks }
+        ok 7 - a test case started on a suite that is not running fails
+        ok 8 - a test case started after run_suites() is not run
+        ok 9 - without initialise(), the default options are used
+        1..9
+    ok 12 - Optional top suite # { passed, 9 checks }
     # Subtest: Runner option errors
         ok 1 - valid options still applied
         ok 2 - unknown reporter
@@ -3242,7 +3244,7 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         1..9
     ok 49 - Test case and suite names # { passed, 9 checks }
     1..49
-not ok 11 - Miscellaneous suite # { FAILED, 208 checks passed, 8 failed, in 52 test cases, time: 6.932 ms }
+not ok 11 - Miscellaneous suite # { FAILED, 210 checks passed, 8 failed, in 52 test cases, time: 8.072 ms }
 # Subtest: Operands suite
     # Subtest: Arrays
         ok 1 - array{ 42 } == array{ 42 }
@@ -3827,4 +3829,4 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.379 ms }
     1..3
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.246 ms }
 1..15
-# { total: 694 checks passed, 373 failed, in 170 test cases, 15 test suites, time: 22.515 ms }
+# { total: 696 checks passed, 373 failed, in 170 test cases, 15 test suites, time: 32.482 ms }

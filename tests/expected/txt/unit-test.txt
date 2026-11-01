@@ -960,8 +960,10 @@ next line FAILED (miscellaneous.cpp:939)
         ✓ a second add_top_suite() returns the same suite
         ✓ the session passes
         ✓ a top suite added after run_suites() is rejected
+        ✓ a test case started on a suite that is not running fails
+        ✓ a test case started after run_suites() is not run
         ✓ without initialise(), the default options are used
-    ✓ Optional top suite - passed (7 checks)
+    ✓ Optional top suite - passed (9 checks)
     • Runner option errors
         ✓ valid options still applied
         ✓ unknown reporter
@@ -1149,7 +1151,7 @@ next line FAILED (miscellaneous.cpp:939)
         ✓ C string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (9 checks)
-✗ Miscellaneous suite - FAILED (208 checks passed, 8 failed, in 52 test cases), time: 7.032 ms
+✗ Miscellaneous suite - FAILED (210 checks passed, 8 failed, in 52 test cases), time: 8.349 ms
 • Operands suite
     • Arrays
         ✓ array{ 42 } == array{ 42 }
@@ -1441,4 +1443,4 @@ next line FAILED (miscellaneous.cpp:939)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.235 ms
-✗ Total: 694 checks passed, 373 failed, in 170 test cases, 15 test suites, time: 20.186 ms
+✗ Total: 696 checks passed, 373 failed, in 170 test cases, 15 test suites, time: 28.219 ms
