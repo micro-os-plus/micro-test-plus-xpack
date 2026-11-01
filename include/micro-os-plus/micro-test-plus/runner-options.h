@@ -235,7 +235,7 @@ namespace micro_os_plus::micro_test_plus
      * Starts from the defaults, and parses the µTest++ options
      * (`--reporter`, `--silent`, `--quiet`, `--verbose`, `--output-file`,
      * `--colour`, `--color`, `--use-colour`, `--use-color`, `--filter`,
-     * `--list-tests`, `--help`, and `-h`). The parsing ends at the first
+     * `--list-tests`, `--list`, `--help`, and `-h`). The parsing ends at the first
      * argument that does not start with a dash (an application argument),
      * or at the first `--` alone; that argument, and all the following
      * ones, are left to the application, and are available from

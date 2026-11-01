@@ -564,7 +564,9 @@ yielding boolean values; they differ in what happens after a failure.
 
 Both are created with member functions of the test case objects, and return an
 object to which a message can be appended with `<<`; the check is
-reported at the end of the statement:
+reported at the end of the statement, so the returned object cannot be
+kept in a variable. The declarations below show the parameters that an
+application passes; the return type is internal:
 
 ```cpp
 template <class Expr_T>
@@ -940,7 +942,7 @@ operators return a plain `bool`, so a failed check could not show the
 strings):
 
 ```cpp
-t.expect (mt::eq (actual, "fortytwo"sv))
+t.expect (mt::eq (actual, "fortytwo"))
     << "actual eq 'fortytwo'";
 ```
 

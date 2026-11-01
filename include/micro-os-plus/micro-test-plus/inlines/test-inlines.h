@@ -95,8 +95,9 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * Copies the name, or stores an empty name if the pointer is null, and
-   * the location; the control characters of the name are escaped; when called implicitly, the location is the place of
-   * the conversion, in the user code.
+   * the location; the control characters of the name are escaped. When
+   * called implicitly, the location is the place of the conversion, in
+   * the user code.
    */
   inline located_name::located_name (
       const char* name, const reflection::source_location& location)

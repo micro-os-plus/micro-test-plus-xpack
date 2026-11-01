@@ -144,14 +144,20 @@ namespace micro_os_plus::micro_test_plus
    * The `extension` namespace holds what the applications use to write
    * their own comparators, predicates, operators, and helpers, reported
    * as the built-in ones are:
-   * - `compare_op` and `predicate_op` (declared in `detail.h`), the
+   * - `compare_op` and `predicate_op` (defined in `detail.h`), the
    *   expressions of the binary comparisons and of the unary predicates,
    *   parametrised by a tag that defines the operation and its symbol in
-   *   the failure reports;
+   *   the failure reports; they are built from the operands and a tag
+   *   object, for example `compare_op{ lhs, rhs, my_tag{} }`, with the
+   *   template arguments deduced, and the tag satisfies `compare_tag`
+   *   (`predicate_tag` for the predicates);
    * - the C++20 concepts with the same constraints as the framework
    *   itself: whether a type is a framework expression (`is_op`,
    *   `any_op`), and whether it is accepted by `expect()` and
-   *   `require()` (`checkable`) or by the message operator (`printable`);
+   *   `require()` (`checkable`) or by the message operator (`printable`),
+   *   and the constraints of the tags (`compare_tag`, `predicate_tag`)
+   *   and of the operands of the approximate comparator
+   *   (`approx_operand`);
    *   with the deprecated functionality enabled, they also tell whether a
    *   deprecated value wrapper carries a floating-point tolerance
    *   (`has_epsilon`).
@@ -181,8 +187,8 @@ namespace micro_os_plus::micro_test_plus
      * contexts.
      *
      * A custom comparator or operator uses it to tell the framework
-     * operands, like `to_i` or the `_i` literals, from the types of the
-     * application. The applications build their own expressions with
+     * expressions, like the result of `eq()` or `lt()`, from the values of
+     * the application. The applications build their own expressions with
      * `extension::compare_op` and `extension::predicate_op`, not by
      * declaring the `op_type` marker, which the formatter could not
      * report.
