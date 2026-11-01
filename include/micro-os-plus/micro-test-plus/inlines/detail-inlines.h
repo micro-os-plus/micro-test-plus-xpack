@@ -304,7 +304,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
     using comparison_operand_t
-        = unwrapped_t<decltype (as_operand (std::declval<T> ()))>;
+        = unwrapped_t<decltype (detail::as_operand (std::declval<T> ()))>;
 
     /**
      * @brief Concept satisfied by two pointers, one of which points to a

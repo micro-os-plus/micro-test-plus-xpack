@@ -112,6 +112,50 @@ namespace
     }
   };
 
+  // A type of the application whose namespace has functions with the names
+  // of the internal ones, better matches than the templates, which must
+  // not be found by argument-dependent lookup (#251).
+  struct hijacker
+  {
+    int value;
+  };
+
+  bool
+  operator== (const hijacker& lhs, const hijacker& rhs)
+  {
+    return lhs.value == rhs.value;
+  }
+
+  mt::expression_formatter&
+  operator<< (mt::expression_formatter& formatter, const hijacker& h)
+  {
+    return formatter << h.value;
+  }
+
+  [[maybe_unused]] int
+  as_operand (hijacker&)
+  {
+    return 0;
+  }
+
+  [[maybe_unused]] int
+  as_operand (hijacker&&)
+  {
+    return 0;
+  }
+
+  struct same_tag
+  {
+    static constexpr const char* symbol = " same ";
+
+    template <class Lhs_T, class Rhs_T>
+    static constexpr bool
+    apply (const Lhs_T& lhs, const Rhs_T& rhs)
+    {
+      return lhs == rhs;
+    }
+  };
+
   template <class Lhs_T, class Rhs_T>
   constexpr auto
   divides (const Lhs_T& lhs, const Rhs_T& rhs)
@@ -521,6 +565,21 @@ static mt::static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
+
+    ts.test ("Operand deduction", [] (auto& t)
+      {
+        hijacker a{ 1 };
+        hijacker b{ 1 };
+        t.expect (mt::extension::compare_op{ a, b, same_tag{} }) << "lvalues";
+        local_counts.passed_checks++;
+
+        t.expect (mt::extension::compare_op{ hijacker{ 2 }, hijacker{ 2 },
+                                             same_tag{} })
+            << "temporaries";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
 
     ts.test ("Custom comparators bad", [] (auto& t)
       {

@@ -83,7 +83,7 @@ namespace micro_os_plus::micro_test_plus::detail
   reporter&
   reporter::operator<< (T* v)
   {
-    append_pointer (buffer_, v);
+    detail::append_pointer (buffer_, v);
     return *this;
   }
 
@@ -100,7 +100,7 @@ namespace micro_os_plus::micro_test_plus::detail
   reporter&
   reporter::operator<< (T v)
   {
-    append_number (buffer_, v);
+    detail::append_number (buffer_, v);
     return *this;
   }
 

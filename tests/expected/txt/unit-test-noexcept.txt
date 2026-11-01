@@ -850,7 +850,7 @@ feed FAILED (checks.cpp:390)
     ✓ Formatter standard types - passed (16 checks)
     • Message types
         ✓ numbers 1 2 3 1.5 2 true
-        ✓ pointer 0x4013a244
+        ✓ pointer 0x4013aa30
         ✓ container {1, 2}
         ✓ standard types (1, a) nullopt 1
         ✓ custom type { 1, 2 } on
@@ -1086,10 +1086,10 @@ next line FAILED (miscellaneous.cpp:939)
         ✓ array{ 1, 2, 3 } != array{ 1, 2, 4 }
     ✓ Arrays - passed (4 checks)
     • Arrays bad
-        ✗ array{ 42 } ne array{ 42 } FAILED (operands.cpp:280, {42} != {42})
-        ✗ array{ 42 } eq array{ 43 } FAILED (operands.cpp:284, {42} == {43})
-        ✗ array{ 1, 2 } ne array{ 1, 2 } FAILED (operands.cpp:288, {1, 2} != {1, 2})
-        ✗ array{ 1, 2, 3 } eq array{ 1, 2, 4 } FAILED (operands.cpp:292, {1, 2, 3} == {1, 2, 4})
+        ✗ array{ 42 } ne array{ 42 } FAILED (operands.cpp:324, {42} != {42})
+        ✗ array{ 42 } eq array{ 43 } FAILED (operands.cpp:328, {42} == {43})
+        ✗ array{ 1, 2 } ne array{ 1, 2 } FAILED (operands.cpp:332, {1, 2} != {1, 2})
+        ✗ array{ 1, 2, 3 } eq array{ 1, 2, 4 } FAILED (operands.cpp:336, {1, 2, 3} == {1, 2, 4})
     ✗ Arrays bad - FAILED (0 checks passed, 4 failed)
     • Vectors
         ✓ vector{ } == vector{ }
@@ -1100,21 +1100,21 @@ next line FAILED (miscellaneous.cpp:939)
         ✓ vector{ 1, 2, 3 } != vector{ 1, 2, 4 }
     ✓ Vectors - passed (6 checks)
     • Vectors bad
-        ✗ vector{ } != vector{ } FAILED (operands.cpp:344, {} != {})
-        ✗ FAILED (operands.cpp:348, {} != {})
-        ✗ vector{ 42 } != vector{ 42 } FAILED (operands.cpp:351, {42} != {42})
-        ✗ vector{ 42 } == vector{ 43 } FAILED (operands.cpp:355, {42} == {43})
-        ✗ vector{ 1, 2 } != vector{ 1, 2 } FAILED (operands.cpp:359, {1, 2} != {1, 2})
-        ✗ vector{ 1, 2, 3 } == vector{ 1, 2, 4 } FAILED (operands.cpp:363, {1, 2, 3} == {1, 2, 4})
+        ✗ vector{ } != vector{ } FAILED (operands.cpp:388, {} != {})
+        ✗ FAILED (operands.cpp:392, {} != {})
+        ✗ vector{ 42 } != vector{ 42 } FAILED (operands.cpp:395, {42} != {42})
+        ✗ vector{ 42 } == vector{ 43 } FAILED (operands.cpp:399, {42} == {43})
+        ✗ vector{ 1, 2 } != vector{ 1, 2 } FAILED (operands.cpp:403, {1, 2} != {1, 2})
+        ✗ vector{ 1, 2, 3 } == vector{ 1, 2, 4 } FAILED (operands.cpp:407, {1, 2, 3} == {1, 2, 4})
     ✗ Vectors bad - FAILED (0 checks passed, 6 failed)
     • Custom types
         ✓ point{ 1, 2 } == point{ 1, 2 }
         ✓ point{ 1, 2 } != point{ 1, 3 }
     ✓ Custom types - passed (2 checks)
     • Custom types bad
-        ✗ point{ 1, 2 } == point{ 1, 3 } FAILED (operands.cpp:400, { 1, 2 } == { 1, 3 })
-        ✗ FAILED (operands.cpp:405, { 1, 2 } == { 1, 3 })
-        ✗ point{ 1, 2 } != point{ 1, 2 } FAILED (operands.cpp:408, { 1, 2 } != { 1, 2 })
+        ✗ point{ 1, 2 } == point{ 1, 3 } FAILED (operands.cpp:444, { 1, 2 } == { 1, 3 })
+        ✗ FAILED (operands.cpp:449, { 1, 2 } == { 1, 3 })
+        ✗ point{ 1, 2 } != point{ 1, 2 } FAILED (operands.cpp:452, { 1, 2 } != { 1, 2 })
     ✗ Custom types bad - FAILED (0 checks passed, 3 failed)
     • Wide strings
         ✓ wide string
@@ -1124,30 +1124,34 @@ next line FAILED (miscellaneous.cpp:939)
         ✓ "abc" != "abd"
     ✓ Wide strings - passed (5 checks)
     • Wide strings bad
-        ✗ FAILED (operands.cpp:452, "café" == "cafe")
-        ✗ FAILED (operands.cpp:456, "a\tb" == "a b")
-        ✗ FAILED (operands.cpp:460, "😀" == "x")
-        ✗ FAILED (operands.cpp:464, "naïve" == "naive")
-        ✗ utf-16 utf-32 utf-8 wide FAILED (operands.cpp:469)
+        ✗ FAILED (operands.cpp:496, "café" == "cafe")
+        ✗ FAILED (operands.cpp:500, "a\tb" == "a b")
+        ✗ FAILED (operands.cpp:504, "😀" == "x")
+        ✗ FAILED (operands.cpp:508, "naïve" == "naive")
+        ✗ utf-16 utf-32 utf-8 wide FAILED (operands.cpp:513)
     ✗ Wide strings bad - FAILED (0 checks passed, 5 failed)
     • Custom types with members bad
-        ✗ FAILED (operands.cpp:487, 119.10 EUR == 119.0 EUR)
-        ✗ FAILED (operands.cpp:490, (1, 0.10 RON) == (1, 0.20 RON))
+        ✗ FAILED (operands.cpp:531, 119.10 EUR == 119.0 EUR)
+        ✗ FAILED (operands.cpp:534, (1, 0.10 RON) == (1, 0.20 RON))
     ✗ Custom types with members bad - FAILED (0 checks passed, 2 failed)
     • Custom comparators
         ✓ 3 divides 12
         ✓ even 4
         ✓ combined
     ✓ Custom comparators - passed (3 checks)
+    • Operand deduction
+        ✓ lvalues
+        ✓ temporaries
+    ✓ Operand deduction - passed (2 checks)
     • Custom comparators bad
-        ✗ 5 divides 12 FAILED (operands.cpp:528, 5 divides 12)
-        ✗ FAILED (operands.cpp:531, 5 divides 12)
-        ✗ FAILED (operands.cpp:534, even 7)
-        ✗ FAILED (operands.cpp:537, (3 divides 12 and even 7))
+        ✗ 5 divides 12 FAILED (operands.cpp:587, 5 divides 12)
+        ✗ FAILED (operands.cpp:590, 5 divides 12)
+        ✗ FAILED (operands.cpp:593, even 7)
+        ✗ FAILED (operands.cpp:596, (3 divides 12 and even 7))
     ✗ Custom comparators bad - FAILED (0 checks passed, 4 failed)
     • Custom comparators with strings bad
-        ✗ FAILED (operands.cpp:548, "hello" has prefix "help")
-        ✗ FAILED (operands.cpp:552, "" has prefix "help")
+        ✗ FAILED (operands.cpp:607, "hello" has prefix "help")
+        ✗ FAILED (operands.cpp:611, "" has prefix "help")
     ✗ Custom comparators with strings bad - FAILED (0 checks passed, 2 failed)
     • Standard types
         ✓ colour::red == colour::red
@@ -1165,11 +1169,11 @@ next line FAILED (miscellaneous.cpp:939)
         ✓ 1000ms == 1s
     ✓ Standard types - passed (13 checks)
     • Standard types bad
-        ✗ colour::red == colour::green FAILED (operands.cpp:629, 0 == 1)
-        ✗ std::byte{ 1 } == std::byte{ 2 } FAILED (operands.cpp:633, (unsigned char)1 == (unsigned char)2)
-        ✗ pairs1 == pairs2 FAILED (operands.cpp:639, {(1, 2)} == {(1, 3)})
-        ✗ optional == nullopt FAILED (operands.cpp:642, 42 == nullopt)
-        ✗ 5ms == 6ms FAILED (operands.cpp:646, 5ms == 6ms)
+        ✗ colour::red == colour::green FAILED (operands.cpp:688, 0 == 1)
+        ✗ std::byte{ 1 } == std::byte{ 2 } FAILED (operands.cpp:692, (unsigned char)1 == (unsigned char)2)
+        ✗ pairs1 == pairs2 FAILED (operands.cpp:698, {(1, 2)} == {(1, 3)})
+        ✗ optional == nullopt FAILED (operands.cpp:701, 42 == nullopt)
+        ✗ 5ms == 6ms FAILED (operands.cpp:705, 5ms == 6ms)
     ✗ Standard types bad - FAILED (0 checks passed, 5 failed)
     • Explicit conversions to bool
         ✓ optional with a value
@@ -1179,10 +1183,10 @@ next line FAILED (miscellaneous.cpp:939)
         ✓ required unique_ptr
     ✓ Explicit conversions to bool - passed (5 checks)
     • Explicit conversions to bool bad
-        ✗ empty optional FAILED (operands.cpp:697)
-        ✗ null unique_ptr FAILED (operands.cpp:700)
-        ✗ empty function FAILED (operands.cpp:703)
-        ✗ FAILED (operands.cpp:706)
+        ✗ empty optional FAILED (operands.cpp:756)
+        ✗ null unique_ptr FAILED (operands.cpp:759)
+        ✗ empty function FAILED (operands.cpp:762)
+        ✗ FAILED (operands.cpp:765)
     ✗ Explicit conversions to bool bad - FAILED (0 checks passed, 4 failed)
     • Pointers to const
         ✓ different const objects
@@ -1208,13 +1212,13 @@ next line FAILED (miscellaneous.cpp:939)
         ✓ vector == array
     ✓ Raw arrays - passed (7 checks)
     • Raw arrays bad
-        ✗ bytes eq FAILED (operands.cpp:823, {1, 2, 3} == {1, 2, 4})
+        ✗ bytes eq FAILED (operands.cpp:882, {1, 2, 3} == {1, 2, 4})
     ✗ Raw arrays bad - FAILED (0 checks passed, 1 failed)
     • Long ranges bad
-        ✗ long vector eq FAILED (operands.cpp:836, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} == {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} (first difference at index 19))
-        ✗ 16 bytes eq FAILED (operands.cpp:843, {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8})
+        ✗ long vector eq FAILED (operands.cpp:895, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} == {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} (first difference at index 19))
+        ✗ 16 bytes eq FAILED (operands.cpp:902, {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8})
     ✗ Long ranges bad - FAILED (0 checks passed, 2 failed)
-✗ Operands suite - FAILED (53 checks passed, 38 failed, in 22 test cases)
+✗ Operands suite - FAILED (55 checks passed, 38 failed, in 23 test cases)
 • Runner options suite
     • Default options
         ✓ the TAP reporter
@@ -1365,4 +1369,4 @@ next line FAILED (miscellaneous.cpp:939)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 675 checks passed, 356 failed, in 152 test cases, 13 test suites
+✗ Total: 677 checks passed, 356 failed, in 153 test cases, 13 test suites

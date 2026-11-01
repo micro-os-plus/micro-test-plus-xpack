@@ -906,10 +906,12 @@ namespace micro_os_plus::micro_test_plus
      * `stored_operand_t` selects.
      */
     template <class Lhs_T, class Rhs_T, class Compare_T>
-    compare_op (Lhs_T&&, Rhs_T&&, Compare_T) -> compare_op<
-        stored_operand_t<decltype (as_operand (std::declval<Lhs_T> ()))>,
-        stored_operand_t<decltype (as_operand (std::declval<Rhs_T> ()))>,
-        Compare_T>;
+    compare_op (Lhs_T&&, Rhs_T&&, Compare_T)
+        -> compare_op<stored_operand_t<decltype (detail::as_operand (
+                          std::declval<Lhs_T> ()))>,
+                      stored_operand_t<decltype (detail::as_operand (
+                          std::declval<Rhs_T> ()))>,
+                      Compare_T>;
 
     // ========================================================================
 
@@ -1246,7 +1248,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T, class Predicate_T>
     predicate_op (T&&, Predicate_T) -> predicate_op<
-        stored_operand_t<decltype (as_operand (std::declval<T> ()))>,
+        stored_operand_t<decltype (detail::as_operand (std::declval<T> ()))>,
         Predicate_T>;
 
     // ========================================================================
