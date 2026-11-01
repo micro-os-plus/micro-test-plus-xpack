@@ -160,3 +160,9 @@ powered up.
   renaming a source file, an include folder, compiler/linker options,
   or a dependency, follow
   the separate instructions in `.github/skills/xcdl/SKILL.md`.
+
+## Verbal questions
+
+If the agent requires more input from the user, in addition to writing the
+full question in the chat window, the agent must also prompt the user verbally,
+by passing a short question via the macOS `say` pprogram.

@@ -264,6 +264,21 @@ c++ -std=c++20 $W -DMICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED -Iinclude \
   not tests. When a defect is later fixed, the probe becomes the
   regression test in `tests/sources/unit/`.
 
+## Restrictions
+
+### Immediate reporting
+
+The result of each test must be reported right when the test is executed, 
+not deferred until later. This also means that the result cannot be stored
+in a variable, since it would delay the reporting until the variable goes
+out of scope.
+
+### Utilities
+
+The `utilities` namespace is intended for helper functions and types that
+assist in writing and running tests, but are not directly used in the
+library. Do not suggest removal or deprecations for them.
+
 ## Checks
 
 ### 1. Defects
