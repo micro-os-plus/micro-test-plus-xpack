@@ -163,8 +163,8 @@ inwards:
    `require()` return and do);
 4. `function-comparators.h`, `exceptions.h`, `detail.h` (the checks and
    the comparison structures);
-5. `values.h`, `extension.h`, `math.h` (the wrappers and the extension
-   interface);
+5. `extension.h`, `math.h` (the extension interface and the math
+   helper);
 6. `expression-formatter.h`, `reflection.h` (the failure messages);
 7. `reporter.h`, `reporter-human.h`, `reporter-tap.h`, and their
    `src/` files (the output protocol);

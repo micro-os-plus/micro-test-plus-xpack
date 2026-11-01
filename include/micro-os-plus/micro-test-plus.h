@@ -88,10 +88,7 @@
 // No deps.
 #include "micro-test-plus/math.h"
 
-// Requires math.h.
-#include "micro-test-plus/values.h"
-
-// Requires values.h.
+// No deps.
 #include "micro-test-plus/extension.h"
 
 // No deps.

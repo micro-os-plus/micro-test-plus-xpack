@@ -38,8 +38,9 @@
  * constants, the containers, and the strings, reside within the `detail`
  * namespace.
  *
- * The value wrappers themselves are declared in `values.h`, in the `detail`
- * namespace.
+ * The marker base `detail::op` of the framework expression types is
+ * defined here; the deprecated value wrappers, in the `detail` namespace,
+ * are declared in `deprecated.h`.
  *
  * The deprecated v5.0.1 `type_traits` namespace, which refers to these
  * concepts and to the value wrappers, is declared in `deprecated.h`.
@@ -69,8 +70,6 @@
 #include "micro-os-plus/micro-test-plus-defines.h"
 #endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
-#include "values.h"
-
 #include <concepts>
 #include <iterator>
 #include <string_view>
@@ -99,6 +98,40 @@ namespace micro_os_plus::micro_test_plus
   {
     // Forward definitions.
     class expression_formatter;
+
+    // ========================================================================
+
+    /**
+     * @brief Empty base struct for the framework expression types.
+     *
+     * @details
+     * The `op` struct is the common base of the comparators defined in
+     * `detail.h`, of `floating_point_constant`, and of `named_bool`. It
+     * provides the
+     * `op_type` marker, which the `extension::is_op` and
+     * `extension::any_op` concepts use to distinguish the framework
+     * types from the user types, so that `expect()`, `require()`, and the
+     * operators in the `operators` namespace accept them.
+     *
+     * The types that must not have an empty base, like `value_base`,
+     * declare the `op_type` marker directly instead of deriving from
+     * `op`.
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     */
+    struct op
+    {
+      /**
+       * @brief Marker identifying the framework expression types.
+       *
+       * @details
+       * Detected by the `extension::is_op` concept, and inherited by
+       * all types derived from `op`.
+       */
+      using op_type = op;
+    };
+
+    // ------------------------------------------------------------------------
   } // namespace detail
 
   // --------------------------------------------------------------------------
@@ -544,6 +577,7 @@ namespace micro_os_plus::micro_test_plus
           and (not std::is_void_v<std::invoke_result_t<const T&>>)
           and extension::printable<std::invoke_result_t<const T&>>;
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
      * @brief C++20 concept satisfied when `T` is a framework compile-time
      * constant.
@@ -563,6 +597,7 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
     concept has_value = extension::is_op<T> and requires { T::value; };
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
     // ------------------------------------------------------------------------
   } // namespace detail

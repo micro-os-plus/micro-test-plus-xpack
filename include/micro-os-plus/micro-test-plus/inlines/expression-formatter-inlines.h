@@ -169,6 +169,7 @@ namespace micro_os_plus::micro_test_plus::detail
     return *this;
   }
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
    * Delegates to `detail::unwrap(t)` to obtain the displayable value
@@ -185,6 +186,7 @@ namespace micro_os_plus::micro_test_plus::detail
     *this << detail::unwrap (t);
     return *this;
   }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   /**
    * @details

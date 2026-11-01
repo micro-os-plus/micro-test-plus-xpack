@@ -26,7 +26,7 @@ programs against it on many toolchains and platforms.
   concern (`runner.h`, `runner-options.h`, `test.h`, `reporter.h`,
   `reporter-human.h`, `reporter-tap.h`, `check-result.h`,
   `function-comparators.h`, `expression-formatter.h`, `reflection.h`,
-  `extension.h`, `values.h`, `stopwatch.h`, `counters.h`, `math.h`,
+  `extension.h`, `stopwatch.h`, `counters.h`, `math.h`,
   `utility.h`, `exceptions.h`, `detail.h`, and `deprecated.h`, which
   groups the deprecated
   definitions that are not class members, including the operators, the
@@ -92,7 +92,7 @@ The public API lives in the `micro_os_plus::micro_test_plus` namespace
 `reflection::source_location` appears in the public signatures (as a
 defaulted parameter), but users rarely name it. Everything in `detail`
 (including `detail::math`, the reporters, `check_result`, the value
-wrapper templates of `values.h`, and the concepts `has_value`,
+wrapper templates of `deprecated.h`, and the concepts `has_value`,
 `container_like`, and `has_npos`) is internal; the applications must not
 need to name it.
 

@@ -102,6 +102,9 @@ namespace micro_os_plus::micro_test_plus
     // Forward definitions.
     class check_result;
     struct plain_text;
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
+    struct named_bool;
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
     // ------------------------------------------------------------------------
 
@@ -579,6 +582,7 @@ namespace micro_os_plus::micro_test_plus
       expression_formatter&
       operator<< (const c_string& s);
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
       /**
        * @brief Appends the name of a named boolean constant.
        *
@@ -591,6 +595,7 @@ namespace micro_os_plus::micro_test_plus
        */
       expression_formatter&
       operator<< (const named_bool& b);
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
       /**
        * @brief Appends the string representation of a boolean value.
@@ -770,6 +775,7 @@ namespace micro_os_plus::micro_test_plus
       expression_formatter&
       operator<< (T* v);
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
       /**
        * @brief Appends the value of a framework value wrapper via
        * `detail::unwrap()`.
@@ -792,6 +798,7 @@ namespace micro_os_plus::micro_test_plus
         requires (extension::is_op<T> and requires (const T& v) { v.get (); })
       expression_formatter&
       operator<< (const T& t);
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
       /**
        * @brief Appends a container's elements enclosed in braces.

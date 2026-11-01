@@ -39,6 +39,7 @@
 // ----------------------------------------------------------------------------
 
 #include "micro-os-plus/micro-test-plus/expression-formatter.h"
+#include "micro-os-plus/micro-test-plus/deprecated.h"
 
 #include <cmath>
 
@@ -655,6 +656,7 @@ namespace micro_os_plus::micro_test_plus::detail
     return *this;
   }
 
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details
    * Appends the name, as the `std::string_view` overload does, so that
@@ -666,6 +668,7 @@ namespace micro_os_plus::micro_test_plus::detail
     buffer_.append (b.name ());
     return *this;
   }
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
   /**
    * @details

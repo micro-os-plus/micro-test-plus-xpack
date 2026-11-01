@@ -98,9 +98,11 @@ namespace micro_os_plus::micro_test_plus
     constexpr decltype (auto)
     unwrap (const T& t)
     {
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
       if constexpr (extension::is_op<T> && requires { t.get (); })
         return t.get ();
       else
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
         return t;
     }
 
@@ -609,9 +611,10 @@ namespace micro_os_plus::micro_test_plus
                                    detail::as_operand (std::forward<R> (rhs)),
                                    [&] () -> bool
       {
-        // The result is computed before the arguments are moved, since
-        // the base constructor is entered only after all its arguments
-        // are evaluated.
+    // The result is computed before the arguments are moved, since
+    // the base constructor is entered only after all its arguments
+    // are evaluated.
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
         using lhs_type = std::remove_cvref_t<L>;
         using rhs_type = std::remove_cvref_t<R>;
 
@@ -620,7 +623,6 @@ namespace micro_os_plus::micro_test_plus
           {
             return Compare_T::apply (lhs_type::value, rhs_type::value);
           }
-#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
         else if constexpr ((extension::has_epsilon<lhs_type>
                             or extension::has_epsilon<rhs_type>)
                            and requires {
@@ -632,8 +634,8 @@ namespace micro_os_plus::micro_test_plus
                        : Compare_T::apply (detail::unwrap (lhs),
                                            detail::unwrap (rhs));
           }
-#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
         else
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
           {
             return Compare_T::apply (detail::unwrap (lhs),
                                      detail::unwrap (rhs));

@@ -57,6 +57,7 @@
 #endif // __has_include("micro-os-plus/micro-test-plus-defines.h")
 
 #include "extension.h"
+#include "math.h"
 
 #include <algorithm>
 #include <compare>
@@ -123,8 +124,9 @@ namespace micro_os_plus::micro_test_plus
    * framework. These components do not form part of the public API and may be
    * modified without prior notice.
    *
-   * Within this namespace, one will find the value wrappers (declared in
-   * `values.h`), the value unwrapping helper, comparator structures for
+   * Within this namespace, one will find the deprecated value wrappers
+   * (declared in `deprecated.h`), the value unwrapping helper, comparator
+   * structures for
    * logical and relational operations, mechanisms for exception checking,
    * the reporters, the check result, and the expression formatter.
    *

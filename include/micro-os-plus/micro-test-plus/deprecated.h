@@ -82,14 +82,18 @@
 #include "counters.h"
 #include "extension.h"
 #include "function-comparators.h"
+#include "math.h"
 #include "reflection.h"
 #include "runner.h"
 #include "stopwatch.h"
 #include "test.h"
 
+#include <array>
 #include <concepts>
 #include <cstdint>
 #include <ctime>
+#include <limits>
+#include <string_view>
 #include <type_traits>
 
 // ----------------------------------------------------------------------------
@@ -100,10 +104,12 @@
 #pragma GCC diagnostic push
 
 #pragma GCC diagnostic ignored "-Waggregate-return"
+#pragma GCC diagnostic ignored "-Wconversion"
 #pragma GCC diagnostic ignored "-Wpadded"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
+#pragma clang diagnostic ignored "-Wc++20-compat"
 #pragma clang diagnostic ignored "-Wdocumentation"
 #pragma clang diagnostic ignored "-Wpre-c++17-compat"
 #endif // defined(__clang__)
@@ -113,6 +119,679 @@
 
 namespace micro_os_plus::micro_test_plus
 {
+  // --------------------------------------------------------------------------
+  // The value wrappers and the parsing of the numeric literals, used only
+  // by the deprecated literals and type wrappers, and the constants that
+  // they define (moved here from `values.h` and `math.h`).
+
+  namespace detail::math
+  {
+    /**
+     * @brief Generic exponentiation function to compute the power of a base
+     * raised to an exponent.
+     *
+     * @tparam T The type of the base value. Must support multiplication
+     * assignment and construction from an integer.
+     * @tparam Exp_T The type of the exponent. Must be default-constructible
+     * (to zero), and support the `<` and prefix `++` operators.
+     *
+     * @param base The base value to be raised to the power of \p exp.
+     * @param exp The exponent value.
+     * @return The result of raising \p base to the power of \p exp.
+     */
+    template <class T, class Exp_T>
+    [[nodiscard]] constexpr auto
+    pow (const T base, const Exp_T exp) noexcept -> T;
+
+    /**
+     * @brief Counts the decimal digits of a floating-point literal, before
+     * or after the decimal point.
+     *
+     * @details
+     * The digit separators (`'`) are not counted.
+     *
+     * @tparam Fraction `true` to count the digits after the decimal point,
+     * `false` to count those before it.
+     * @tparam Cs The characters of the literal.
+     *
+     * @par Parameters
+     *   None.
+     * @return The number of digits.
+     */
+    template <bool Fraction, char... Cs>
+    [[nodiscard]] consteval auto
+    count_literal_digits (void) -> std::size_t;
+
+    /**
+     * @brief Computes the integral part of a decimal floating-point number
+     * represented as an array of characters.
+     *
+     * @details
+     * Used by the floating-point literal operators; the integer literals
+     * use `integer_magnitude()`, which also accepts the C++ prefixes and
+     * checks the range.
+     *
+     * @tparam T The target integral type for the result.
+     * @tparam Cs The character pack representing the numeric value.
+     *
+     * @par Parameters
+     *   None.
+     * @return The parsed integral value of type \c T.
+     */
+    template <class T, char... Cs>
+    [[nodiscard]] consteval auto
+    num (void) -> T;
+
+    /**
+     * @brief Computes the decimal part of a number represented as an array
+     * of characters.
+     *
+     * @tparam T The target integral type for the result.
+     * @tparam Cs The character pack representing the numeric value; it must
+     * contain a decimal point.
+     *
+     * @par Parameters
+     *   None.
+     * @return The digits after the decimal point, as an integral value of
+     * type \c T (e.g. 25 for `1.25`), to be divided by ten raised to the
+     * power returned by `den_size()`.
+     */
+    template <class T, char... Cs>
+    [[nodiscard]] consteval auto
+    den (void) -> T;
+
+    /**
+     * @brief Counts the decimal places of a number represented as an array
+     * of characters.
+     *
+     * @tparam T The integral type for the result.
+     * @tparam Cs The character pack representing the numeric value; it must
+     * contain a decimal point.
+     *
+     * @par Parameters
+     *   None.
+     * @return The number of decimal places (e.g. 2 for `1.25`), as a value
+     * of type \c T; it is the scale of the value returned by `den()`.
+     */
+    template <class T, char... Cs>
+    [[nodiscard]] consteval auto
+    den_size (void) -> T;
+
+    /**
+     * @brief Computes the number of decimal places of a value, with a
+     * precision of about seven digits.
+     *
+     * @tparam T The integral type for the result.
+     * @tparam Value_T The type of the input value, a floating-point type.
+     *
+     * @param value The value whose decimal precision is to be determined;
+     * it may be negative, infinite, or a NaN.
+     * @return The number of decimal places, as a value of type \c T, at
+     * least one, or zero for a zero value; the leading zeros of a value
+     * below one are counted; it is limited by the magnitude from which
+     * `Value_T` represents only integers.
+     */
+    template <class T, class Value_T>
+    [[nodiscard]] constexpr auto
+    count_decimals (Value_T value) -> T;
+
+    /**
+     * @brief Computes the default comparison tolerance of a floating-point
+     * value, one unit of its last decimal.
+     *
+     * @tparam Value_T The type of the value, a floating-point type.
+     *
+     * @param value The value whose tolerance is to be determined; it may
+     * be negative, infinite, or a NaN.
+     * @return Ten raised to minus the number of decimal places returned by
+     * `count_decimals()` (0.01 for `1.25`, 1e-12 for `1e-12`), or zero, which
+     * means an exact comparison, for a zero value and for a value whose
+     * tolerance would be below the range of `Value_T`.
+     */
+    template <class Value_T>
+    [[nodiscard]] constexpr auto
+    decimal_epsilon (Value_T value) -> Value_T;
+
+    /**
+     * @brief The result of parsing the characters of an integer literal.
+     *
+     * @details
+     * Returned by `parse_integer_literal()`; the checks of
+     * `integer_magnitude()` are based on it.
+     */
+    struct integer_literal
+    {
+      /**
+       * @brief The value of the literal.
+       *
+       * @details
+       * Valid only if `is_integer` is true and `is_too_large` is false.
+       */
+      unsigned long long value;
+
+      /**
+       * @brief Whether the characters form an integer literal.
+       *
+       * @details
+       * False for the floating-point literals (with a decimal point or an
+       * exponent), which the literal operator templates also receive.
+       */
+      bool is_integer;
+
+      /**
+       * @brief Whether the value exceeds `unsigned long long`.
+       *
+       * @details
+       * Detected while the digits are accumulated.
+       */
+      bool is_too_large;
+    };
+
+    /**
+     * @brief Parses the characters of an integer literal.
+     *
+     * @tparam Cs The characters of the literal, as received by a literal
+     * operator template.
+     *
+     * @par Parameters
+     *   None.
+     * @return The value, and whether the characters form an integer literal
+     * and whether its value fits in `unsigned long long`.
+     */
+    template <char... Cs>
+    [[nodiscard]] consteval auto
+    parse_integer_literal (void) -> integer_literal;
+
+    /**
+     * @brief Computes the value of an integer literal of type @c T, before
+     * any negation.
+     *
+     * @tparam T The integral type of the literal.
+     * @tparam Cs The characters of the literal, as received by a literal
+     * operator template.
+     *
+     * @par Parameters
+     *   None.
+     * @return The value of the literal, up to `max ()` of \c T, or, for the
+     * signed types, up to `max () + 1`, the absolute value of the minimum.
+     */
+    template <class T, char... Cs>
+    [[nodiscard]] consteval auto
+    integer_magnitude (void) -> unsigned long long;
+
+    // ------------------------------------------------------------------------
+  } // namespace detail::math
+
+  namespace detail
+  {
+    // ------------------------------------------------------------------------
+
+    /**
+     * @brief Base struct template providing common storage and accessors
+     * for runtime value-wrapper types.
+     *
+     * @tparam T The type of the stored value.
+     *
+     * @details
+     * The `value_base` struct template stores the value in a private
+     * member, and provides an explicit `operator T()` conversion and a
+     * `get()` accessor, shared by `integral_constant`, `value<T>`, and the
+     * floating point specialisation of `value<T>`.
+     *
+     * It declares the `op_type` marker, so that all derived types satisfy
+     * the `extension::is_op` concept without each struct needing to
+     * declare it.
+     *
+     * It does not derive from the empty `op` struct: a type with an
+     * empty base and only floating point members, like `value<float>`,
+     * is a homogeneous floating point aggregate whose parameter passing
+     * with C++17 and later changed in GCC 10.1, and GCC emits a
+     * `-Wpsabi` note for each function passing or returning it by value,
+     * like `approx()`, on AArch64 and on 32-bit Arm with the hard-float
+     * ABI.
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     */
+    template <class T>
+    struct value_base
+    {
+      /**
+       * @brief Marker identifying the framework expression types.
+       *
+       * @details
+       * Declared directly rather than inherited from `op`, to avoid the
+       * empty base; detected by the `extension::is_op` concept.
+       */
+      using op_type = op;
+
+      /**
+       * @brief The type of the stored value.
+       *
+       * @details
+       * Exposed for use by generic code that inspects wrapper types.
+       */
+      using value_type = T;
+
+      /**
+       * @brief Constructs a `value_base` with the given value.
+       *
+       * @param v The value to be stored.
+       */
+      constexpr explicit value_base (const T& v) noexcept;
+
+      /**
+       * @brief Explicit conversion operator to the underlying value type.
+       *
+       * @return The stored value as type `T`.
+       */
+      [[nodiscard]] constexpr explicit
+      operator T () const noexcept;
+
+      /**
+       * @brief Getter for the stored value.
+       *
+       * @details
+       * Returns a reference, so that a wrapped object (for example a
+       * `to_t<std::string>`) is not copied each time it is compared or
+       * formatted.
+       *
+       * @par Parameters
+       *   None.
+       * @return A reference to the stored value.
+       */
+      [[nodiscard]] constexpr const T&
+      get (void) const noexcept;
+
+    private:
+      /**
+       * @brief The stored value.
+       *
+       * @details
+       * Set by the constructor. Derived wrappers and comparators access
+       * it via `get()` or the explicit conversion operator.
+       */
+      T value_{};
+    };
+
+    /**
+     * @brief Struct template representing a generic integral constant.
+     *
+     * @tparam N The compile-time constant value.
+     *
+     * @details
+     * The `integral_constant` struct template provides a compile-time constant
+     * value of an integral type, created by the integer literals. It inherits
+     * from `value_base<decltype(N)>`, which supplies the `value_type` alias,
+     * the runtime value storage, the explicit conversion operator, and the
+     * `get()` accessor.
+     *
+     * This struct retains the compile-time `value` constant and provides a
+     * unary minus operator to obtain the negative value as a new
+     * `integral_constant` instance, of the same type.
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     */
+    template <auto N>
+    struct integral_constant : value_base<decltype (N)>
+    {
+      /**
+       * @brief The compile-time constant value.
+       *
+       * @details
+       * Equal to `N`; also available at run time via `get()`.
+       */
+      static constexpr auto value = N;
+
+      /**
+       * @brief Default constructor. Initialises the base with `N`.
+       */
+      constexpr integral_constant (void) noexcept;
+
+      /**
+       * @brief Unary minus operator.
+       *
+       * @details
+       * The result has the type of `N`, not the type promoted by the
+       * built-in unary minus, so `-1_i8` is an `int8_t`. The negation of an
+       * unsigned value wraps around, as for `unsigned int` in C++ (`-1_u8`
+       * is 255). The negation of the minimum of a signed type does not fit
+       * in the type, so it is a compilation error.
+       *
+       * @return An `integral_constant` with value `-N`, converted to the
+       * type of `N`.
+       */
+      [[nodiscard]] constexpr auto
+      operator- () const noexcept;
+    };
+
+    /**
+     * @brief Struct template representing the absolute value of the
+     * minimum of a signed integral type, as written in a literal.
+     *
+     * @tparam T The signed integral type of the literal.
+     *
+     * @details
+     * The absolute value of the minimum of a signed type (e.g. 128 for
+     * `int8_t`) does not fit in the type, but the literal must be accepted
+     * to write the minimum with the unary minus (e.g. `-128_i8`). The
+     * literal operators return this type for such a literal; its only
+     * operation is the unary minus, so any other use of the literal fails
+     * to compile.
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     */
+    template <class T>
+    struct integral_min_magnitude
+    {
+      /**
+       * @brief Unary minus operator.
+       *
+       * @details
+       * The only operation of the type, the one that makes the literal
+       * valid.
+       *
+       * @return An `integral_constant` with the minimum value of `T`.
+       */
+      [[nodiscard]] constexpr auto
+      operator- () const noexcept;
+    };
+
+    /**
+     * @brief Creates the compile-time constant of an integer literal.
+     *
+     * @tparam T The integral type of the literal.
+     * @tparam Cs The characters of the literal, as received by a literal
+     * operator template.
+     *
+     * @details
+     * Used by the integer literal operators (`_i`, `_u8`, etc.).
+     *
+     * @par Parameters
+     *   None.
+     * @return An `integral_constant` with the value of the literal, or,
+     * when the value is the absolute value of the minimum of a signed `T`,
+     * an `integral_min_magnitude<T>`, valid only when negated.
+     */
+    template <class T, char... Cs>
+    [[nodiscard]] constexpr auto
+    integral_literal (void);
+
+    /**
+     * @brief Struct template representing a generic floating point constant
+     * with custom size and precision.
+     *
+     * @tparam T The floating point type (e.g., float, double).
+     * @tparam N The integral part of the constant value.
+     * @tparam D The digits of the fractional part of the constant value,
+     * as returned by `math::den()` (e.g. 25 for `1.25`).
+     * @tparam Size The number of decimal digits, the scale of `D`, as
+     * returned by `math::den_size()` (e.g. 2 for `1.25`).
+     * @tparam P The sign of the value (1 for positive, -1 for negative).
+     * Defaults to 1.
+     *
+     * @details
+     * The `floating_point_constant` struct template provides a compile-time
+     * constant value of a floating point type, supporting custom size and
+     * precision. It inherits from `op` directly rather than from
+     * `value_base<T>`, since its value is the compile-time `value`
+     * constant, and it needs no run-time storage; the struct is empty, and
+     * the literal operators create it with `{}`, without a constructor.
+     * Having no non-static floating point members, it is not a
+     * homogeneous floating point aggregate, so the `-Wpsabi` note
+     * described for `value_base` does not apply to it, despite its empty
+     * base. On 32-bit Arm, GCC emits another note, about a change in GCC
+     * 7.1, for each function passing a `double` or `long double` constant
+     * by value, since the earlier versions computed its alignment from its
+     * static `double` members; the framework does not pass the constants
+     * by value.
+     *
+     * The `value_type` alias, explicit conversion operator, and `get()`
+     * accessor are provided directly by this struct. The compile-time
+     * `epsilon` and `value` static constants are retained, and a unary
+     * minus operator is provided to obtain the negative value as a new
+     * `floating_point_constant` instance.
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     */
+    template <class T, auto N, auto D, auto Size, auto P = 1>
+    struct floating_point_constant : op
+    {
+      static_assert (P == 1 || P == -1,
+                     "floating_point_constant: P must be +1 or -1");
+
+      /**
+       * @brief The type of the stored value.
+       *
+       * @details
+       * Provided directly, since this struct does not derive from
+       * `value_base`.
+       */
+      using value_type = T;
+
+      /**
+       * @brief The epsilon value used for floating point comparisons.
+       *
+       * @details
+       * Calculated as 1 divided by 10 raised to the power of `Size`, i.e.
+       * one unit of the last decimal digit of the literal.
+       */
+      static constexpr auto epsilon = T (1) / math::pow (T (10), Size);
+
+      /**
+       * @brief The compile-time constant value.
+       *
+       * @details
+       * Computed as `P * (N + D / 10^Size)`.
+       */
+      static constexpr auto value
+          = T (P) * (T (N) + (T (D) / math::pow (T (10), Size)));
+
+      /**
+       * @brief Explicit conversion operator to the underlying value type.
+       *
+       * @return The compile-time constant as type `T`.
+       */
+      [[nodiscard]] constexpr explicit
+      operator T () const noexcept;
+
+      /**
+       * @brief Getter for the compile-time constant value.
+       *
+       * @par Parameters
+       *   None.
+       * @return The compile-time constant as type `T`.
+       */
+      [[nodiscard]] constexpr T
+      get (void) const noexcept;
+
+      /**
+       * @brief Unary minus operator.
+       *
+       * @return A `floating_point_constant` with negated sign parameter.
+       */
+      [[nodiscard]] constexpr auto
+      operator- () const noexcept;
+    };
+
+    /**
+     * @brief Struct template representing a generic value, accessible via a
+     * getter.
+     *
+     * @tparam T The type of the value to be encapsulated.
+     *
+     * @details
+     * The `value` struct template encapsulates a value of type `T`. The
+     * stored value, explicit conversion operator, and getter are provided
+     * by the `value_base` base.
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     */
+    template <class T>
+    struct value : value_base<T>
+    {
+      /**
+       * @brief Constructs a value object with the specified value.
+       *
+       * @param _value The value to be stored.
+       *
+       * @details
+       * Delegates to `value_base<T>{ _value }` to initialise the base.
+       */
+      constexpr value (const T& _value) noexcept;
+    };
+
+    /**
+     * @brief Struct template representing a floating point value with
+     * precision control.
+     *
+     * @tparam T The floating point type to be encapsulated.
+     *
+     * @details
+     * The `value` struct template specialisation for floating point types
+     * encapsulates a value of type `T` and provides an associated `epsilon`
+     * for precision control during comparisons. The stored value, explicit
+     * conversion operator, and getter are provided by the `value_base` base.
+     *
+     * The `epsilon` member defines the precision used for floating point
+     * comparisons and can be set explicitly (by `approx()`) or computed as
+     * a default based on the number of decimal digits in the value (by
+     * the `to_f`, `to_d`, and `to_ld` wrappers).
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     */
+    template <class T>
+      requires std::floating_point<T>
+    struct value<T> : value_base<T>
+    {
+      /**
+       * @brief The epsilon value used for floating-point comparisons.
+       *
+       * @details
+       * This instance member defines the precision for comparisons. It
+       * is set via the constructor, either explicitly or computed as a
+       * default based on the number of decimal digits in the value.
+       * Each instance carries its own epsilon, so two `value<T>` objects
+       * with different precisions do not interfere with each other.
+       */
+      T epsilon = T{};
+
+      // Note: These constructor bodies are defined inline rather than
+      // out-of-line in deprecated-inlines.h. Clang 16 has a deficiency where
+      // it fails to match out-of-line constructor definitions to a
+      // `requires`-constrained partial specialisation: it either rejects
+      // the `requires` clause on the definition as differing from the
+      // declaration, or — when the clause is omitted — incorrectly matches
+      // the definition against the primary template instead of this
+      // specialisation. Keeping the bodies here avoids both failure modes.
+
+      /**
+       * @brief Constructs a floating-point value with a specified precision.
+       *
+       * @param _value The floating-point value to be stored.
+       * @param precision The epsilon value to be used for comparisons.
+       *
+       * @details
+       * Delegates to `value_base<T>{ _value }` and stores the supplied
+       * precision in `epsilon`.
+       */
+      constexpr value (const T& _value, const T precision) noexcept
+          : value_base<T>{ _value }, epsilon{ precision }
+      {
+      }
+
+      /**
+       * @brief Constructs a floating point value with default precision.
+       *
+       * @param val The floating point value to be stored.
+       *
+       * @details
+       * The epsilon is computed by `math::decimal_epsilon()` as 1 divided
+       * by 10 raised to the number of decimal digits in the value, with
+       * the leading zeros of a value below one counted (1e-12 for
+       * `1e-12`); a zero value gets a zero epsilon, so that it is compared
+       * exactly.
+       */
+      constexpr value (const T& val)
+          : value{ val, math::decimal_epsilon (val) }
+      {
+      }
+    };
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * @brief Struct representing a named boolean constant, created by the
+     * `_b` literal.
+     *
+     * @details
+     * The `named_bool` struct holds the constant `true`, together with a
+     * name, which the expression formatter prints instead of the value, so
+     * that a failed comparison like `"flag"_b == flag`, with the operators
+     * in the `operators` namespace, is reported as `flag == false`.
+     *
+     * The value is available only via the implicit conversion to `bool`,
+     * and the struct has neither a `get()` accessor nor comparison
+     * operators. Thus `detail::unwrap()` returns the object itself, so that
+     * the formatter receives the name, the comparators compare it as the
+     * `bool` value `true`, and the generic operators in the `operators`
+     * namespace, not a better matching operator of this struct, are
+     * selected for it.
+     *
+     * The name is not owned; it refers to the string literal, which has
+     * static storage duration.
+     *
+     * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
+     */
+    struct named_bool : op
+    {
+      /**
+       * @brief The type of the value.
+       *
+       * @details
+       * The named literal behaves as a boolean value.
+       */
+      using value_type = bool;
+
+      /**
+       * @brief Constructs a named boolean constant with the given name.
+       *
+       * @param name The name, printed in place of the value.
+       */
+      constexpr explicit named_bool (std::string_view name) noexcept;
+
+      /**
+       * @brief Conversion operator to `bool`.
+       *
+       * @par Parameters
+       *   None.
+       * @return `true`.
+       */
+      [[nodiscard]] constexpr
+      operator value_type () const noexcept;
+
+      /**
+       * @brief Returns the name of the constant.
+       *
+       * @par Parameters
+       *   None.
+       * @return The name passed to the constructor.
+       */
+      [[nodiscard]] constexpr std::string_view
+      name (void) const noexcept;
+
+    private:
+      /**
+       * @brief The name of the constant.
+       *
+       * @details
+       * Not owned; refers to the characters of the string literal.
+       */
+      std::string_view name_;
+    };
+
+    // ------------------------------------------------------------------------
+  } // namespace detail
+
   // --------------------------------------------------------------------------
   // The logical functions, now `negate()`, `all_of()`, and `any_of()`, in
   // `function-comparators.h`.
