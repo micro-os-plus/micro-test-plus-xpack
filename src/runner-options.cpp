@@ -137,58 +137,44 @@ namespace micro_os_plus::micro_test_plus
     // Unless the parsing stops earlier, there are no application arguments.
     application_begin_ = arguments_.size ();
 
-    static constexpr std::string_view reporter_option{ "--reporter" };
-    static constexpr std::string_view output_file_option{ "--output-file" };
-    static constexpr std::string_view colour_option{ "--colour" };
-    static constexpr std::string_view color_option{ "--color" };
-    static constexpr std::string_view use_colour_option{ "--use-colour" };
-    static constexpr std::string_view use_color_option{ "--use-color" };
-    static constexpr std::string_view filter_option{ "--filter" };
+    // What an option with a value sets.
+    enum class setting
+    {
+      set_reporter,
+      set_output_file,
+      set_colour,
+      add_filter
+    };
 
-    // Get the value of an option given as `--option=<value>` or as
-    // `--option <value>`; the latter advances the index past the value.
-    // Return false if the argument is not this option, or if its value is
-    // missing, which is reported as an error.
-    auto get_value = [&] (std::string_view option, size_t& i,
-                          std::string_view& value) -> bool
-      {
-        const std::string_view argument{ arguments_[i] };
-        if (argument == option)
-          {
-            if (i + 1 >= arguments_.size ())
-              {
-                add_error ("", option, " option requires an argument");
-                return false;
-              }
-            value = arguments_[++i];
-            return true;
-          }
-        if (argument.starts_with (option)
-            && argument.substr (option.size ()).starts_with ('='))
-          {
-            value = argument.substr (option.size () + 1);
-            return true;
-          }
-        return false;
-      };
+    // The options with a value, which is given as `--option=<value>`,
+    // or, if `value_may_follow`, also as `--option <value>`. As in the GNU
+    // tools, `--colour` and `--color` alone mean `always`, and the next
+    // argument is never taken as their value.
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
 
-    // Whether the argument is one of the options with a value, possibly
-    // with the value missing, which was already reported.
-    auto is_known_option = [&] (std::string_view argument) -> bool
-      {
-        for (const std::string_view option :
-             { reporter_option, output_file_option, use_colour_option,
-               use_color_option, filter_option })
-          {
-            if (argument == option
-                || (argument.starts_with (option)
-                    && argument.substr (option.size ()).starts_with ('=')))
-              {
-                return true;
-              }
-          }
-        return false;
-      };
+#pragma GCC diagnostic ignored "-Wpadded"
+#endif // defined(__GNUC__)
+
+    struct value_option
+    {
+      std::string_view name;
+      setting what;
+      bool value_may_follow;
+    };
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
+
+    static constexpr value_option value_options[]
+        = { { "--reporter", setting::set_reporter, true },
+            { "--output-file", setting::set_output_file, true },
+            { "--use-colour", setting::set_colour, true },
+            { "--use-color", setting::set_colour, true },
+            { "--colour", setting::set_colour, false },
+            { "--color", setting::set_colour, false },
+            { "--filter", setting::add_filter, true } };
 
     // Set the colour mode from the value of `--colour`, `--color`,
     // `--use-colour`, or `--use-color`; all accept the values and the
@@ -231,10 +217,43 @@ namespace micro_os_plus::micro_test_plus
         return false;
       };
 
+    // Apply the value of an option with a value; an invalid value is
+    // reported as an error.
+    auto apply_value = [&] (setting what, std::string_view value)
+      {
+        if (what == setting::set_reporter)
+          {
+            if (value == "human")
+              {
+                selected_reporter = reporter_kind::human;
+              }
+            else if (value == "tap")
+              {
+                selected_reporter = reporter_kind::tap;
+              }
+            else
+              {
+                add_error ("unknown reporter '", value, "'");
+              }
+          }
+        else if (what == setting::set_output_file)
+          {
+            // An empty path disables the output file.
+            output_file_path = value;
+          }
+        else if (what == setting::set_colour)
+          {
+            set_colour_mode (value);
+          }
+        else
+          {
+            filter_patterns.emplace_back (value);
+          }
+      };
+
     for (size_t i = 1; i < arguments_.size (); ++i)
       {
         const std::string_view argument{ arguments_[i] };
-        std::string_view value{};
 
         // The application arguments start at the first argument that does
         // not start with a dash, or after the first `--` alone.
@@ -252,88 +271,92 @@ namespace micro_os_plus::micro_test_plus
         if (argument == "--verbose")
           {
             verbosity_level = verbosity::verbose;
+            continue;
           }
-        else if (argument == "--quiet")
+        if (argument == "--quiet")
           {
             verbosity_level = verbosity::quiet;
+            continue;
           }
-        else if (argument == "--silent")
+        if (argument == "--silent")
           {
             verbosity_level = verbosity::silent;
+            continue;
           }
-        else if (argument == "--list-tests" || argument == "--list")
+        if (argument == "--list-tests" || argument == "--list")
           {
             list_tests = true;
+            continue;
           }
-        else if (argument == "--help" || argument == "-h")
+        if (argument == "--help" || argument == "-h")
           {
             help = true;
+            continue;
           }
-        else if (get_value (reporter_option, i, value))
+
+        // Match the options with a value, alone or followed by `=`.
+        const value_option* matched = nullptr;
+        bool has_inline_value = false;
+        std::string_view value{};
+        for (const value_option& option : value_options)
           {
-            if (value == "human")
+            if (argument == option.name)
               {
-                selected_reporter = reporter_kind::human;
+                matched = &option;
+                break;
               }
-            else if (value == "tap")
+            if (argument.starts_with (option.name)
+                && argument.substr (option.name.size ()).starts_with ('='))
               {
-                selected_reporter = reporter_kind::tap;
-              }
-            else
-              {
-                add_error ("unknown reporter '", value, "'");
-              }
-          }
-        else if (get_value (output_file_option, i, value))
-          {
-            // An empty path disables the output file.
-            output_file_path = value;
-          }
-        else if (get_value (use_colour_option, i, value)
-                 || get_value (use_color_option, i, value))
-          {
-            set_colour_mode (value);
-          }
-        else if (argument == colour_option || argument == color_option)
-          {
-            // As in the GNU tools, the option alone means `always`, and
-            // the next argument is never taken as its value. If it looks
-            // like a mode, it was probably meant to be the value, so
-            // report it instead of silently passing it to the application.
-            colour = colour_mode::always;
-            if (i + 1 < arguments_.size ()
-                && is_colour_mode (arguments_[i + 1]))
-              {
-                std::string text{ "'" };
-                text.append (argument);
-                text.append ("' takes its value only after '='; write '");
-                text.append (argument);
-                text.append ("=");
-                text.append (arguments_[i + 1]);
-                text.append ("', or put '--' before the application argument");
-                add_error (text);
+                matched = &option;
+                has_inline_value = true;
+                value = argument.substr (option.name.size () + 1);
+                break;
               }
           }
-        else if (argument.starts_with (colour_option)
-                 && argument.substr (colour_option.size ()).starts_with ('='))
-          {
-            set_colour_mode (argument.substr (colour_option.size () + 1));
-          }
-        else if (argument.starts_with (color_option)
-                 && argument.substr (color_option.size ()).starts_with ('='))
-          {
-            set_colour_mode (argument.substr (color_option.size () + 1));
-          }
-        else if (get_value (filter_option, i, value))
-          {
-            filter_patterns.emplace_back (value);
-          }
-        else if (!is_known_option (argument))
+
+        if (matched == nullptr)
           {
             // A mistyped option must not silently disable the tests.
             add_error ("unknown option '", argument, "'");
             unknown_option_ = true;
+            continue;
           }
+
+        if (!has_inline_value)
+          {
+            if (!matched->value_may_follow)
+              {
+                // The option alone means `always`. If the next argument
+                // looks like a mode, it was probably meant to be the
+                // value, so report it instead of silently passing it to
+                // the application.
+                colour = colour_mode::always;
+                if (i + 1 < arguments_.size ()
+                    && is_colour_mode (arguments_[i + 1]))
+                  {
+                    std::string text{ "'" };
+                    text.append (argument);
+                    text.append ("' takes its value only after '='; write '");
+                    text.append (argument);
+                    text.append ("=");
+                    text.append (arguments_[i + 1]);
+                    text.append (
+                        "', or put '--' before the application argument");
+                    add_error (text);
+                  }
+                continue;
+              }
+
+            if (i + 1 >= arguments_.size ())
+              {
+                add_error ("", matched->name, " option requires an argument");
+                continue;
+              }
+            value = arguments_[++i];
+          }
+
+        apply_value (matched->what, value);
       }
   }
 
