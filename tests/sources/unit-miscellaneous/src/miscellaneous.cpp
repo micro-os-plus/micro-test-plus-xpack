@@ -1101,6 +1101,28 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
             << "a top suite added after run_suites() is rejected";
         local_counts.passed_checks++;
 
+        // Without `initialise()`, the default options are used; the
+        // session header is written to the console.
+        mt::runner default_runner;
+        auto& default_ts = default_runner.add_top_suite ();
+
+        t.expect (mt::eq (default_ts.name (), "default suite")
+                  and default_runner.verbosity_level ()
+                          == mt::verbosity::normal)
+            << "without initialise(), the default options are used";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    // The test cases that are started on a suite that is not running
+    // (kept separate, to keep the frame of the test cases with local
+    // runners small, see the note on the stack usage above).
+    ts.test ("Misplaced test cases", [] (auto& t)
+      {
+        mt::runner_options options{};
+        options.verbosity_level = mt::verbosity::silent;
+
         // A test case started on a suite that is not running is not run;
         // the failure is reported in the running suite, and the session
         // fails. After the end of the session, the call is rejected too.
@@ -1126,17 +1148,6 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
                   and mt::eq (wrong_runner.totals ().executed_test_cases (),
                               1u))
             << "a test case started after run_suites() is not run";
-        local_counts.passed_checks++;
-
-        // Without `initialise()`, the default options are used; the
-        // session header is written to the console.
-        mt::runner default_runner;
-        auto& default_ts = default_runner.add_top_suite ();
-
-        t.expect (mt::eq (default_ts.name (), "default suite")
-                  and default_runner.verbosity_level ()
-                          == mt::verbosity::normal)
-            << "without initialise(), the default options are used";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
