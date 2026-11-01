@@ -406,12 +406,12 @@ namespace micro_os_plus::micro_test_plus
      */
     template <comparison Op, class Lhs_T, class Rhs_T>
     concept comparable
-        = sign_mixed_integers<comparison_operand_t<Lhs_T>,
-                              comparison_operand_t<Rhs_T>>
+        = comparison_lookup::can_compare<Op, comparison_operand_t<Lhs_T>,
+                                         comparison_operand_t<Rhs_T>>
+          or sign_mixed_integers<comparison_operand_t<Lhs_T>,
+                                 comparison_operand_t<Rhs_T>>
           or function_pointer_pair<comparison_operand_t<Lhs_T>,
-                                   comparison_operand_t<Rhs_T>>
-          or comparison_lookup::can_compare<Op, comparison_operand_t<Lhs_T>,
-                                            comparison_operand_t<Rhs_T>>;
+                                   comparison_operand_t<Rhs_T>>;
 
     /**
      * @details
