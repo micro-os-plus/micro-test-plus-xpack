@@ -57,19 +57,19 @@
         ✗ null_string == "abc" FAILED (comparisons.cpp:436, nullptr == "abc")
 
     • Failed pointer comparisons
-        ✗ ptr1 != &one FAILED (comparisons.cpp:517, 0x7ff7b47db740 != 0x7ff7b47db740)
-        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:520, 0x7ff7b47db740 != 0x7ff7b47db740)
-        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:523, 0x7ff7b47db740 > 0x7ff7b47db740)
-        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:526, 0x7ff7b47db740 < 0x7ff7b47db740)
-        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:529, 0x7ff7b47db740 == 0x7ff7b47db790)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:532, 0x10b78c758 != 0x10b78c758)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:535, 0x10b78c758 == 0x7ff7b47db790)
-        ✗ pone >= ptwo FAILED (comparisons.cpp:547, 0x7ff7b47dbdc0 >= 0x7ff7b47dbdc4)
-        ✗ ptwo <= pone FAILED (comparisons.cpp:550, 0x7ff7b47dbdc4 <= 0x7ff7b47dbdc0)
+        ✗ ptr1 != &one FAILED (comparisons.cpp:517, 0x7ff7bf7a0740 != 0x7ff7bf7a0740)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:520, 0x7ff7bf7a0740 != 0x7ff7bf7a0740)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:523, 0x7ff7bf7a0740 > 0x7ff7bf7a0740)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:526, 0x7ff7bf7a0740 < 0x7ff7bf7a0740)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:529, 0x7ff7bf7a0740 == 0x7ff7bf7a0790)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:532, 0x1007c7758 != 0x1007c7758)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:535, 0x1007c7758 == 0x7ff7bf7a0790)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:547, 0x7ff7bf7a0dc0 >= 0x7ff7bf7a0dc4)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:550, 0x7ff7bf7a0dc4 <= 0x7ff7bf7a0dc0)
 
     • Failed null pointer comparisons
         ✗ a_nullptr != nullptr FAILED (comparisons.cpp:599, 0x0 != nullptr)
-        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:602, 0x7ff7b47dbde0 == nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:602, 0x7ff7bf7a0de0 == nullptr)
         ✗ pfunc != nullptr FAILED (comparisons.cpp:606, 0x0 != nullptr)
 
     • Logical operations
@@ -427,7 +427,7 @@ Matching test cases:
 2 test cases in 1 test suite
 
     • Failed each value (2)
-        ✗ value 2 == 1 FAILED (miscellaneous.cpp:1855, 2 == 1)
+        ✗ value 2 == 1 FAILED (miscellaneous.cpp:1902, 2 == 1)
 
 • Operands suite
 
@@ -489,4 +489,4 @@ Matching test cases:
         ✗ abc matches *C FAILED (utility.cpp:191)
         ✗ ab matches ??? FAILED (utility.cpp:195)
 
-✗ Total: 678 checks passed, 350 failed, in 161 test cases, 15 test suites, time: 13.323 ms
+✗ Total: 681 checks passed, 350 failed, in 161 test cases, 15 test suites, time: 13.459 ms

@@ -1180,6 +1180,53 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
             << "suite added after an option error";
         local_counts.passed_checks++;
 
+        // The output file of an earlier run does not survive an option
+        // error: it is truncated, and receives the error (#232).
+        {
+          const char error_path[] = "option-error-output.txt";
+          if (std::FILE* stale = std::fopen (error_path, "w");
+              stale != nullptr)
+            {
+              std::fputs ("stale output of an earlier run\n", stale);
+              std::fclose (stale);
+            }
+
+          char arg_error_output[] = "--output-file=option-error-output.txt";
+          char* error_argv[] = { arg_name, arg_silent, arg_unknown,
+                                 arg_error_output, nullptr };
+          {
+            mt::runner error_runner;
+            error_runner.initialise (4, error_argv);
+
+            t.expect (mt::eq (error_runner.run_suites (), 2))
+                << "option error with an output file";
+            local_counts.passed_checks++;
+          }
+
+          std::string error_text;
+          if (std::FILE* file = std::fopen (error_path, "r"); file != nullptr)
+            {
+              char buffer[128];
+              std::size_t count;
+              while ((count = std::fread (buffer, 1, sizeof (buffer), file))
+                     > 0)
+                {
+                  error_text.append (buffer, count);
+                }
+              std::fclose (file);
+            }
+          std::remove (error_path);
+
+          t.expect (mt::eq (error_text.find ("stale"), std::string::npos))
+              << "earlier content removed";
+          local_counts.passed_checks++;
+
+          t.expect (mt::ne (error_text.find ("unknown option '--verbos'"),
+                            std::string::npos))
+              << "error written to the output file";
+          local_counts.passed_checks++;
+        }
+
         char* missing_argv[] = { arg_name, arg_silent, arg_reporter, nullptr };
         mt::runner missing_runner;
         missing_runner.initialise (3, missing_argv);

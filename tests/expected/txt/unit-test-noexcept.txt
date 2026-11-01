@@ -831,7 +831,7 @@ Built with GCC 15.2.1 20251203, with FP, no exceptions, with MICRO_OS_PLUS_DEBUG
     ✓ Formatter standard types - passed (16 checks)
     • Message types
         ✓ numbers 1 2 3 1.5 2 true
-        ✓ pointer 0x4012e380
+        ✓ pointer 0x4012eec0
         ✓ container {1, 2}
         ✓ standard types (1, a) nullopt 1
         ✓ custom type { 1, 2 } on
@@ -882,10 +882,13 @@ next line FAILED (miscellaneous.cpp:939)
         ✓ unknown reporter
         ✓ unknown option
         ✓ suite added after an option error
+        ✓ option error with an output file
+        ✓ earlier content removed
+        ✓ error written to the output file
         ✓ missing argument
         ✓ output file not opened
         ✓ suite added after an output file error
-    ✓ Runner option errors - passed (7 checks)
+    ✓ Runner option errors - passed (10 checks)
     • Runner application arguments
         ✓ none without a command line
         ✓ the arguments after the options
@@ -1008,7 +1011,7 @@ next line FAILED (miscellaneous.cpp:939)
         ✓ value 1 == 1
     ✓ Failed each value (1) - passed (1 check)
     • Failed each value (2)
-        ✗ value 2 == 1 FAILED (miscellaneous.cpp:1855, 2 == 1)
+        ✗ value 2 == 1 FAILED (miscellaneous.cpp:1902, 2 == 1)
     ✗ Failed each value (2) - FAILED (0 checks passed, 1 failed)
     • Callable arguments
         ✓ reference parameter refers to a copy
@@ -1053,7 +1056,7 @@ next line FAILED (miscellaneous.cpp:939)
         ✓ C string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (9 checks)
-✗ Miscellaneous suite - FAILED (197 checks passed, 8 failed, in 52 test cases)
+✗ Miscellaneous suite - FAILED (200 checks passed, 8 failed, in 52 test cases)
 • Operands suite
     • Arrays
         ✓ array{ 42 } == array{ 42 }
@@ -1323,4 +1326,4 @@ next line FAILED (miscellaneous.cpp:939)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 661 checks passed, 339 failed, in 147 test cases, 13 test suites
+✗ Total: 664 checks passed, 339 failed, in 147 test cases, 13 test suites

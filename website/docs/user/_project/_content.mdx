@@ -1646,9 +1646,11 @@ then forwarded together with the `printf()` family.
 
 The configuration errors (a missing option argument, an unknown
 reporter, an output file that cannot be opened, a suite added too
-late) are written to `stderr`, not through the reporter, so the
-platform should forward `stderr` as well; these errors are not
-written to the output file.
+late) are written to `stderr`, so the platform should forward `stderr`
+as well. The errors of the command line options are also written
+through the reporter, to the console and to the output file, which is
+truncated, so that it never keeps the report of an earlier run; the
+other errors are not written to the output file.
 
 Semihosting requires a debugger or an emulator (such as QEMU) connected
 to the target; without one, the first semihosting call faults, and the

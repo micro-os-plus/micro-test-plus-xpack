@@ -264,16 +264,20 @@ namespace micro_os_plus::micro_test_plus
     // targets.
     options_ = std::move (options);
 
-    // With errors in the options, do not proceed: no output file is created,
-    // the errors are written on the console, no test is run, and
+    // With errors in the options, do not proceed: the errors are written on
+    // the console and in the output file, if any, which is truncated, so
+    // that it never keeps the results of an earlier run; no test is run, and
     // `run_suites()` returns 2. The same for `--help`, which writes the
-    // usage instead of the errors, and `run_suites()` returns 0. A reporter
-    // without output file is still created, since the suites and the test
+    // usage instead of the errors, only on the console, and `run_suites()`
+    // returns 0. A reporter is still created, since the suites and the test
     // cases refer to it.
     if (options_.has_errors () || options_.help)
       {
         runner_options console_options{ options_ };
-        console_options.output_file_path.clear ();
+        if (!options_.has_errors ())
+          {
+            console_options.output_file_path.clear ();
+          }
         if (console_options.selected_reporter == reporter_kind::human)
           {
             reporter_
