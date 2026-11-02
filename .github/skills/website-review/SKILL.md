@@ -23,28 +23,67 @@ comments) are **out of scope**; they are reviewed separately (see the
 
 ## Scope
 
-If the user specifies a page or a folder, review only that. Otherwise
-review:
+If the user specifies a URL, a page, or a folder, review only that.
+Otherwise review the whole site published at
+<https://micro-os-plus.github.io/micro-test-plus-xpack-webpreview/>,
+except the API reference pages under `/docs/api/`: the home page,
+every page under `/docs/`, the blog (`/blog/`), the navigation bar, the
+sidebars, and the footer. The list of the published pages is in the
+site's
+[`sitemap.xml`](https://micro-os-plus.github.io/micro-test-plus-xpack-webpreview/sitemap.xml).
 
-- the home page (`website/src/pages/index.tsx` and
-  `website/src/components/HomepageFeatures/`);
-- every page under `website/docs/`, except `docs/api/`, with all the
-  partials it imports;
-- the blog (`website/blog/`), including `_common/` and `_templates/`;
-- the navigation: `website/docusaurus.config.ts` (navigation bar and
-  footer), `website/sidebars.ts`, and the `sidebar-*-custom.*` files;
-- the site configuration in `website/config/` that feeds the pages
+The review reads the published text, but reports every finding against
+the source file in `website/` that produces it, since that is where
+the fixes go (see "The Site Sources").
+
+## The Published Version
+
+The webpreview site is built from the `webpreview` branch, which may
+lag behind the branch being worked on. Before starting:
+
+1. Run `git fetch origin webpreview` and compare
+   `git rev-parse --short origin/webpreview` with
+   `git rev-parse --short HEAD`.
+2. List the differences in the sources of the pages in scope:
+   `git diff --stat origin/webpreview HEAD -- website
+   ':!website/docs/api'` and `git status --short website`.
+3. If there are differences, tell the user (naming the files) and ask
+   whether to wait until the webpreview site is updated or to proceed.
+   When proceeding, review the pages built from the changed files from
+   their local sources, and list those pages in the Method paragraph
+   of the report.
+
+The publish workflow takes a few minutes after a push to `webpreview`;
+a page that does not yet show a pushed change is not a finding.
+
+## Reading the Published Pages
+
+Download each page with `curl` and read the text of its `<article>`
+element (the navigation bar, the sidebar, and the footer are the same
+on every page; read them once). Do not use `WebFetch`: it returns a
+summary made by a model, not the full text, and the review must read
+every sentence.
+
+The site is a static build, so `curl` returns the rendered text. This
+does not hold for the Docusaurus development server (`npm run start`
+in `website/`), which returns only the client-side shell.
+
+## The Site Sources
+
+For each published page, find its sources in `website/`:
+
+- the home page: `website/src/pages/index.tsx` and
+  `website/src/components/HomepageFeatures/`;
+- a page under `/docs/<path>/`: `website/docs/<path>/index.mdx`, with
+  every partial it imports;
+- the blog: `website/blog/`, including `_common/` and `_templates/`;
+- the navigation bar and the footer: `website/docusaurus.config.ts`;
+- the sidebars: `website/sidebars.ts` and the
+  `website/sidebar-*-custom.*` files;
+- the site configuration that feeds the pages: `website/config/`
   (e.g. `website-templates.json`).
 
-State the scope, the branch, and the commit (`git rev-parse --short
-HEAD`) at the top of the report.
-
-## Reading the Site
-
-The server at <http://localhost:3000/micro-test-plus-xpack/> is
-usually the Docusaurus development server (`npm run start` in
-`website/`). It returns only the client-side shell, not the page text,
-so `curl` or `WebFetch` on it is useless. Work from the sources:
+Read them as follows:
 
 1. Start from each page's `index.mdx`, read its front matter, and
    follow every `import` of a partial (`_common/`, `_project/`,
@@ -54,15 +93,15 @@ so `curl` or `WebFetch` on it is useless. Work from the sources:
 2. Note the properties passed to partials (e.g.
    `<CommonPrerequisites nodeVersion="…"/>`); check whether the partial
    actually uses them.
-3. To know which pages are **published**, use the built site:
-   `website/build/sitemap.xml` (run `npm run build` in `website/` if
-   the build is missing or older than the sources; this also reports
-   broken internal links). Pages present in the sitemap but absent
-   from the sidebar and navigation bar are suspect. Front matter
-   `unlisted: true` hides a page from the sitemap; `draft: true`
-   excludes it from production.
+3. Pages present in the sitemap but absent from the sidebar and the
+   navigation bar are suspect. Front matter `unlisted: true` hides a
+   page from the sitemap; `draft: true` excludes it from production.
 4. Partials that no page imports are dead; find them with `grep` over
    the `import` lines.
+5. The build fails on broken internal links and anchors
+   (`onBrokenLinks: 'throw'` in `docusaurus.config.ts`), so the
+   published site has none. When local changes are not yet published,
+   run `npm run build` in `website/` to check them.
 
 ## Generated Files
 
@@ -97,7 +136,7 @@ Problems a reader would notice as broken or wrong. Report these first.
   leftovers (e.g. `description: TODO`, "TODO new/maintenance
   release"), sample content in another language, empty sections.
 - **Published by mistake**: test pages, empty pages, pages without
-  front matter (see "Reading the Site").
+  front matter (see "The Site Sources").
 - **Wrong facts**, checked against the sources of truth:
   - API names, signatures, constraints, and return types: the headers
     in `include/micro-os-plus/micro-test-plus/` and their `inlines/`;
@@ -239,33 +278,53 @@ files) and the "Reviewed and found correct" list are not numbered.
   move separately, so that each can be accepted or rejected on its own.
 - The summary and the proposed order of work refer to the items by
   number, not by section.
-- The numbers never change once assigned. When the report already
-  exists, read it first: keep the numbers of the problems already
-  listed, mark those fixed meanwhile with `(fixed)` and a one-line note,
-  keep those still open, and number the new problems after the highest
-  existing number. Never reuse a number.
+- Each review writes a new report (see "Report"), numbered from `#1`.
+  The numbers of a report never change once assigned, and are never
+  reused within it.
+- Read the latest earlier report first. Carry its problems that are
+  still open into the new report, as new items, each citing the
+  earlier one (e.g. "(WEBSITE-REVIEW-2 #14)", or the section number
+  for `WEBSITE-REVIEW-1.md`, which predates this numbering). Do not
+  carry over the problems fixed meanwhile; give their count in the
+  Method paragraph.
 - If a problem turns out to be wrong, mark it `(withdrawn)` with the
   reason; do not delete it.
-- If the existing report predates this numbering (it uses section
-  numbers only), number its items once, in order, say so at the top,
-  and keep those numbers from then on.
-- When the user later refers to a number (e.g. "fix #7"), act on that
-  item and update its status in the report.
+- When the user later refers to a number (e.g. "fix #7"), it means the
+  latest report, unless another is named; act on that item and mark
+  it `(fixed)` in that report, with a one-line note (and the commit,
+  once there is one).
+- In Markdown, a wrapped line must not start with `#` followed by a
+  number (it becomes a heading); rewrap the paragraph.
+- Check the numbering before finishing (set `f` to the new report):
+
+  ```sh
+  f=maintenance/docs/WEBSITE-REVIEW-2.md
+  { grep -oE '^- \*\*#[0-9]+' $f | grep -oE '[0-9]+'
+    grep -oE '^\| #[0-9]+' $f | grep -oE '[0-9]+'; } | sort -n |
+    awk '$1 != NR { print "mismatch at", NR, "found", $1; exit }
+         END { print NR, "items" }'
+  ```
 
 ## Report
 
-Write the report to `maintenance/docs/WEBSITE-REVIEW.md`, in British
-English and in a formal tone, with lines shorter than 80 characters:
+Write the report to the next `maintenance/docs/WEBSITE-REVIEW-N.md`
+file (after `WEBSITE-REVIEW-1.md` comes `WEBSITE-REVIEW-2.md`), in
+British English and in a formal tone, with lines shorter than 80
+characters:
 
 ```markdown
 # Website review
 
-Date: <date>, on branch `<branch>`, commit `<hash>`.
+Date: <date>, on branch `<branch>`, commit `<hash>`; published site
+built from `webpreview` commit `<hash>`.
 
 Scope: <pages reviewed; exclusions, always including docs/api/>.
 
-Method: <sources read, whether the site was built, what the
-statements were checked against>.
+Method: <pages read from the published site, and those read from the
+local sources because they differ from the published version; the
+sources followed; whether the site was built locally; what the
+statements were checked against; the earlier report read, and the
+number of its problems fixed meanwhile>.
 
 Summary: <n> problems (<open> open, <fixed> fixed, <withdrawn>
 withdrawn). <The most serious problems, by number, and the suggested
@@ -324,16 +383,20 @@ options, rather than choosing silently.
 
 ## Procedure
 
-1. Determine the scope; read the existing report, if any.
-2. List the pages (sidebar, navigation bar, sitemap) and the sources in
-   scope; build the site if needed.
-3. Read each page through its imports, in render order, noting
-   findings as you go.
-4. Verify every technical finding against the sources of truth listed
+1. Determine the scope; read the latest earlier report.
+2. Compare the published version with the local sources (see "The
+   Published Version"); if they differ, ask the user before
+   continuing.
+3. List the pages (sitemap, sidebar, navigation bar) and their sources
+   in `website/`; build the site locally only if local changes are not
+   yet published.
+4. Read each published page, and its sources through their imports, in
+   render order, noting findings as you go.
+5. Verify every technical finding against the sources of truth listed
    in check 1, and every generated-file finding against its template.
-5. Do the cross-page checks (version history, consistency table,
+6. Do the cross-page checks (version history, consistency table,
    duplication, navigation).
-6. Number the findings and write the report.
-7. Give the user a short summary: the counts, the most serious problems
+7. Number the findings, check the numbering, and write the report.
+8. Give the user a short summary: the counts, the most serious problems
    by number, and the decisions needed. Do not fix anything unless
    asked.

@@ -238,7 +238,7 @@ checks of this kind found:
 - the pointer overloads of `eq()` compare C strings by address;
 - the overloaded `&&` and `||` evaluate both operands;
 - `"false"_b` is true;
-- the human reporter filters the output file by verbosity, the TAP
+- the human-readable reporter filters the output file by verbosity, the TAP
   reporter does not, while the shared `verbosity` documentation
   describes only one of them.
 
@@ -279,7 +279,7 @@ Problems a reader would notice as broken or wrong. Report these first.
   `type_traits::op`);
 - statements contradicted by the code, by the probes, or by another
   statement of the reference (e.g. two topics giving opposite advice
-  about the human reporter);
+  about the human-readable reporter);
 - descriptions of entities that are unused or describe a design that
   no longer exists (e.g. an "evaluator"); check with `grep` over
   `include/`, `src/`, and `tests/sources/`;
@@ -476,8 +476,8 @@ markers [topic], [header], [config], [template], [converter], [code]>
 
 ## 5. Consistency
 
-| # | Concept | Variants found (where) | Suggested |
-| --- | --- | --- | --- |
+| #   | Concept | Variants found (where) | Suggested |
+| --- | ------- | ---------------------- | --------- |
 
 ## 6. Language and style
 
@@ -499,9 +499,7 @@ silently.
 
 ## Procedure
 
-1. Determine the scope; read the existing `WEBSITE-API-REVIEW.md`, if
-   any, and the other reports in `maintenance/docs/`
-   (`API-REVIEW.md`, `WEBSITE-REVIEW.md`).
+1. Determine the scope; ignore existing `WEBSITE-API-REVIEW.md`
 2. Establish the baseline (Step 1); start the site build in the
    background.
 3. Read the pages in the order of Step 2, each with its sources.
@@ -511,7 +509,8 @@ silently.
    the topic tree, the indices.
 6. Classify, mark, and number the findings; cross-reference the other
    reports; check the numbering and the line lengths.
-7. Write the report.
+7. Write the report. Leave it in the next `WEBSITE-API-REVIEW-N.md` file
+   in the `maintenance/docs/` folder.
 8. Give the user a short summary: the counts, the most serious
    problems by number, and the decisions needed. Do not change the
    sources or regenerate the pages unless asked.
