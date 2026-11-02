@@ -60,7 +60,10 @@ belong to:
   replaced by a callable taking a `suite&`;
 - `reflection::short_name()`, replaced by `utility::extract_file_name()`;
 - the `type_traits` namespace, with the concepts and the value wrapper
-  templates of v5.0.1, replaced by the `extension` namespace.
+  templates of v5.0.1, replaced by the `extension` namespace;
+- the traits of the `type_traits` namespace: `function_traits` and
+  `list`, which are not replaced, and `identity`, replaced by
+  `std::type_identity`.
 
 @par Migration
 Build once with the deprecation warnings enabled, and rewrite each

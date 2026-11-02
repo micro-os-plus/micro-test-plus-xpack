@@ -44,7 +44,7 @@ explicitly, use `mt::approx (lhs, rhs, epsilon)`.
 namespace mt = micro_os_plus::micro_test_plus;
 
 ts.test ("Check operands", [] (auto& t) {
-  t.expect (mt::eq (answer, 42));
-  t.expect (mt::approx (measured, 42.0f, 0.01f));
+  t.expect (mt::eq (compute_answer (), 42));
+  t.expect (mt::approx (compute_float (), 42.0, 0.01));
 });
 @endcode

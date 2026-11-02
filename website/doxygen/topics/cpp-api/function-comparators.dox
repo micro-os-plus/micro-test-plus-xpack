@@ -30,13 +30,15 @@ ts.test ("Check various conditions", [] (auto& t) {
 @endcode
 
 If a comparator check fails, the output clearly indicates the actual and
-expected values:
+expected values. For example, when `compute_answer()` returns 41, the
+human reporter displays:
 
 @code{.console}
-  Check failed comparisons
-    ✗ actual != 42 FAILED (unit-test.cpp:286, 42 != 42)
-    ✗ FAILED (unit-test.cpp:307, 42 != 42)
-    ✗ (actual == 42) and (actual != 42.0) FAILED (unit-test.cpp:781, (42 == 42 and 42.0 != 42.0))
+    • Check various conditions
+        ✗ answer is 42 FAILED (main.cpp:21, 41 == 42)
+        ✗ answer is > 41 FAILED (main.cpp:25, 41 > 41)
+        ✗ answer is >= 42 FAILED (main.cpp:26, 41 >= 42)
+    ✗ Check various conditions - FAILED (3 checks passed, 3 failed)
 @endcode
 
 The C strings (`char` arrays, including the string literals, and `char`
@@ -49,10 +51,32 @@ element, also with a container; the other pointers are compared by
 address.
 
 The operands must be comparable with the operator of the comparator; for
-example, `mt::eq (a, b)` does not compile when `a == b` would not. The
+example, `mt::eq (a, b)` does not compile when `a == b` would not. For the
+values of the application types to be displayed in the reports, see
+@ref micro-os-plus-micro-test-plus-cpp-api-customisation. The
 comparison of integers of different signedness is made by value, as by
 `std::cmp_equal()`, so that `mt::eq (-1, static_cast<unsigned> (-1))`
 fails, although `-1 == static_cast<unsigned> (-1)` is true.
+
+@par Comparing Approximately
+
+The comparison of floating-point values with `eq()` is exact, so
+`mt::eq (0.1 + 0.2, 0.3)` fails. To accept a difference, use
+`mt::approx (lhs, rhs, epsilon)`, which is true when the operands differ
+by at most the explicit tolerance `epsilon`, the limit included. The
+operands and the tolerance are integral or floating-point numbers, of any
+type; the distance of integers is computed exactly, also for operands of
+different signedness. A negative tolerance fails all the comparisons. A
+failed check shows the operands and the tolerance, as in
+`1.0 ~ (1.5 +/- 0.1)`.
+
+@code{.cpp}
+ts.test ("Check approximate values", [] (auto& t) {
+  t.expect (mt::approx (read_adc (), 512, 3)) << "ADC reading";
+  t.expect (mt::approx (compute_float (), 42.0f, 0.001f))
+      << "result is about 42";
+});
+@endcode
 
 @par Comparing Containers
 

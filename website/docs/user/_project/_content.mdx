@@ -72,8 +72,8 @@ main(int argc, char* argv[])
   // Initialise the runner with the command-line options.
   tr.initialise (argc, argv);
 
-  // Add the top suite, named "Minimal", and get a reference to it.
-  auto& ts = tr.add_top_suite ("Minimal");
+  // Add the top suite and get a reference to it.
+  auto& ts = tr.add_top_suite ();
 
   // Perform a simple test, with a single expectation.
   ts.test ("Check truth", [] (auto& t) {
@@ -107,7 +107,7 @@ For the above test, the verbose output would look like:
 # Running: main --verbose
 # Built with GCC 15.2.1, with exceptions
 TAP version 14
-# Subtest: Minimal
+# Subtest: minimal-test
 
     # Subtest: Check truth
         ok 1 - true
@@ -115,7 +115,7 @@ TAP version 14
     ok 1 - Check truth # { passed, 1 check }
 
     1..1
-ok 1 - Minimal # { passed, 1 check in 1 test case, time: 0.04 ms }
+ok 1 - minimal-test # { passed, 1 check in 1 test case, time: 0.04 ms }
 
 1..1
 # { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.04 ms }
@@ -148,7 +148,7 @@ main(int argc, char* argv[])
   auto& ts = tr.add_top_suite ("The Answer");
 
   ts.test ("Check answer", [] (auto& t) {
-    t.expect (compute_answer() == 42) << "answer is 42";
+    t.expect (compute_answer() == 42) << "the answer is 42";
   });
 
   return tr.run_suites ();
@@ -162,7 +162,7 @@ TAP version 14
 # Subtest: The Answer
 
     # Subtest: Check answer
-        ok 1 - answer is 42
+        ok 1 - the answer is 42
         1..1
     ok 1 - Check answer # { passed, 1 check }
 
@@ -192,7 +192,7 @@ TAP version 14
 # Subtest: The Answer
 
     # Subtest: Check answer
-        not ok 1 - answer is 42
+        not ok 1 - the answer is 42
           ---
           at:
             fileName: main.cpp
@@ -250,7 +250,7 @@ TAP version 14
 # Subtest: The Answer
 
     # Subtest: Check answer with comparator
-        not ok 1 - answer is 42
+        not ok 1 - the answer is 42
           ---
           condition: "43 == 42"
           at:

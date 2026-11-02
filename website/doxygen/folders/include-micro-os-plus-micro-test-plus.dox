@@ -2,21 +2,25 @@
 @brief Folder with C++ header files for the µTest++ Testing Framework.
 
 @details
-This folder provides the headers included by the primary public header,
-`micro-os-plus/micro-test-plus.h`, which defines the core functionality of
-the µTest++ Testing Framework.
+This folder holds the headers included by the primary public header,
+`micro-os-plus/micro-test-plus.h`, which is the only one that the
+applications include.
 
-It includes declarations for essential library components, including
-test suite and test case management, the test runner and its options,
-the reporter classes, function comparators, the exception checks, the
-expression formatter, the extension templates and concepts, mathematical
-utilities, value helpers, reflection utilities, and supporting internal
-mechanisms.
+Most of the headers declare what the applications use: the runner
+(`runner.h`) and its options (`runner-options.h`), the test suites and
+test cases (`test.h`), the counters (`counters.h`), the function
+comparators (`function-comparators.h`), the exception checks
+(`exceptions.h`), the string utilities (`utility.h`), the concepts and
+templates for the application extensions (`extension.h`), the formatter
+of the operand values (`expression-formatter.h`), and the deprecated
+definitions (`deprecated.h`).
 
-By consolidating public API definitions in this folder, the project
-maintains a clear separation from implementation details (located in the
-`src` folder), thereby promoting modularity, maintainability, and
-straightforward integration.
+The other headers belong to the implementation, in the `detail`
+namespace and the like, and the applications do not need to name their
+contents: the check results (`check-result.h`), the reporters
+(`reporter.h`, `reporter-human.h`, and `reporter-tap.h`), the shared
+templates (`detail.h`), the source location (`reflection.h`), the
+mathematical helpers (`math.h`), and the stopwatch (`stopwatch.h`).
 
-To access the full capabilities of the µTest++ Testing Framework, include
-only the top `micro-os-plus/micro-test-plus.h` in user projects.
+The definitions of the inline functions and of the templates are in the
+`inlines` subfolder, and the non-inline definitions in the `src` folder.

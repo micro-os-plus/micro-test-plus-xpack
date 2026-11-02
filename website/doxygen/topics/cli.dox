@@ -15,15 +15,14 @@ indicating the total number of passed and failed checks.
 @code{.console}
 $ minimal-test --reporter=tap one two
 
+# Running: minimal-test --reporter=tap one two
+# Built with ...
 TAP version 14
-# Subtest: Minimal
-
-    # Subtest: Check various conditions
-        1..0
+# Subtest: minimal-test
     ok 1 - Check various conditions # { passed, 2 checks }
 
     1..1
-ok 1 - Minimal # { passed, 2 checks in 1 test case, time: X.XXX ms }
+ok 1 - minimal-test # { passed, 2 checks in 1 test case, time: X.XXX ms }
 
 1..1
 # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: X.XXX ms }
@@ -129,8 +128,10 @@ expectation, irrespective of whether it passes or fails.
 @code{.console}
 $ minimal-test --verbose --reporter=tap one two
 
+# Running: minimal-test --verbose --reporter=tap one two
+# Built with ...
 TAP version 14
-# Subtest: Minimal
+# Subtest: minimal-test
 
     # Subtest: Check various conditions
         ok 1 - answer is 42
@@ -139,7 +140,7 @@ TAP version 14
     ok 1 - Check various conditions # { passed, 2 checks }
 
     1..1
-ok 1 - Minimal # { passed, 2 checks in 1 test case, time: X.XXX ms }
+ok 1 - minimal-test # { passed, 2 checks in 1 test case, time: X.XXX ms }
 
 1..1
 # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: X.XXX ms }
@@ -160,7 +161,7 @@ failed.
 $ minimal-test --quiet --reporter=tap one two
 
 TAP version 14
-ok 1 - Minimal # { passed, 2 checks in 1 test case, time: X.XXX ms }
+ok 1 - minimal-test # { passed, 2 checks in 1 test case, time: X.XXX ms }
 1..1
 # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: X.XXX ms }
 @endcode

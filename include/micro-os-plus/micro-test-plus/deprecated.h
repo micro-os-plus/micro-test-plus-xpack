@@ -2316,7 +2316,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param name The path, as a C-string.
      * @return A pointer to the file name within the input string, after
-     * the last `/` or `\` separator, or the string itself if there is
+     * the last `/` or backslash separator, or the string itself if there is
      * no separator.
      */
     [[deprecated ("use utility::extract_file_name() (since 6.0.0)"),

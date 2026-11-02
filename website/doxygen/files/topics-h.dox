@@ -10,18 +10,13 @@ it is intended exclusively as a documentation resource for Doxygen. Due to
 Doxygen processing requirements, it cannot be provided as a Markdown file
 or as a `.doxyfile`.
 
-It introduces and organises the main documentation groups for the
-library, covering the C++ API, command-line options, expectations,
-requirements, function comparators, logical functions, exception checks,
-utility functions, and test suite management.
+It defines the tree and the order of the documentation topics, which is
+also the order of the sidebar, by including with `@include{doc}` the
+hand-written Doxygen sources of the `website/doxygen` folder: the main
+page (`pages/`), the file and folder pages (`files/` and `folders/`), the
+topics (`topics/`, with the C++ API topics in `topics/cpp-api/`), and the
+configuration macros (`macros/`).
 
-The documentation is structured to provide a comprehensive overview of the
-library's features, usage patterns, and configuration options. It
-includes detailed explanations, usage examples, and descriptions of the
-available reporters, verbosity modes, and filters, along with
-representative output for various scenarios.
-
-All documentation topics and group definitions are maintained in this file
-to ensure a consistent and modular structure. The file is located in the
-`website/doxygen/files` folder to facilitate integration with the Doxygen
-system.
+The text of the topics is not in this file, but in the included files; this
+page, for example, is `files/topics-h.dox`, whereas `topics.h` is in the
+`website/doxygen` folder.

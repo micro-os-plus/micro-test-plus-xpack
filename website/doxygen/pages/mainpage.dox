@@ -23,3 +23,48 @@ information to best suit their workflow.
 By adopting µTest++, you can achieve robust and maintainable code through
 systematic and automated testing, supporting professional software
 engineering practices across your entire project.
+
+@section mainpage-start Getting started
+
+The applications include a single header, `micro-os-plus/micro-test-plus.h`.
+The header declares nothing unless the macro
+`MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED` is defined, preferably in
+`micro-os-plus/micro-test-plus-defines.h`, for the application and for
+the library sources (see @ref micro-os-plus-micro-test-plus-config).
+
+A complete test program has a runner, initialised with the command line
+arguments, a top suite created in `main()` (optional, since the suites can
+be added to the runner instead), test cases with checks, and returns the
+exit code of the session:
+
+@code{.cpp}
+#include <micro-os-plus/micro-test-plus.h>
+
+namespace mt = micro_os_plus::micro_test_plus;
+
+mt::runner tr;
+
+int
+main (int argc, char* argv[])
+{
+  tr.initialise (argc, argv);
+
+  auto& ts = tr.add_top_suite ();
+
+  ts.test ("Check truth", [] (auto& t) {
+    t.expect (mt::eq (6 * 7, 42)) << "the answer";
+  });
+
+  return tr.run_suites ();
+}
+@endcode
+
+The topics of the @ref micro-os-plus-micro-test-plus-cpp-api group
+describe the runner, the suites, the test cases, and the checks, and the
+@ref micro-os-plus-micro-test-plus-cli group the options of the test
+programs. The installation, the first project, and the user manual are
+in the
+<a href="../getting-started/">Getting Started</a>
+and
+<a href="../user/">User's Guide</a>
+pages of the site.

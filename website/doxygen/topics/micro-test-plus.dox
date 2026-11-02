@@ -7,9 +7,10 @@ a **lightweight and efficient**, **macro free**, **TAP based** testing
 framework, purpose-built for embedded systems development.
 
 The **C++ API** is the primary interface for writing test suites and
-test cases. It is centred on the `runner` and `test_case` classes, which
-provide methods for registering tests, evaluating expectations and
-requirements, and collecting results. Function comparators
+test cases. It is centred on three classes: the `runner` drives the test
+session, runs the suites, and collects the results; a `suite` groups test
+cases, which it creates with `test()`; and a `test_case` evaluates the
+expectations and the requirements. Function comparators
 and logical functions complement the core API to enable expressive,
 type-safe assertions with no macro dependencies. The API is documented in the
 @ref micro-os-plus-micro-test-plus-cpp-api group.

@@ -70,9 +70,10 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * The `extract_file_name` function extracts the file name from a given
-     * file path, handling both Unix-style (`/`) and Windows-style (`\`) path
-     * separators. It returns a pointer to the start of the file name within
-     * the input string, or the original string if no separators are found.
+     * file path, handling both Unix-style (`/`) and Windows-style (the
+     * backslash) path separators. It returns a pointer to the start of the
+     * file name within the input string, or the original string if no
+     * separators are found.
      *
      * This utility is particularly useful for test reporting, allowing for
      * concise display of file names without full paths.

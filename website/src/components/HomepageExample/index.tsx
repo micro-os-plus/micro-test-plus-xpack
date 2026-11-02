@@ -16,14 +16,12 @@ main (int argc, char* argv[])
   tr.initialise (argc, argv);
 
   // Add the default test suite.
-  auto& ts = tr.add_top_suite ("Minimal test");
+  auto& ts = tr.add_top_suite ();
 
   // Add test cases to the test suite.
-  ts.test ("Check various conditions", [] (auto& t)
+  ts.test ("Check truth", [] (auto& t)
     {
-      // Check various conditions.
-      t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
-      t.expect (compute_condition ()) << "condition is true";
+      t.expect (mt::eq (6 * 7, 42)) << "the answer";
     });
 
   // Run the tests and return the test result.
@@ -31,14 +29,13 @@ main (int argc, char* argv[])
 }`;
 
 const output = `TAP version 14
-# Subtest: Minimal test
-    # Subtest: Check various conditions
-        ok 1 - answer is 42
-        ok 2 - condition is true
-        1..2
-    ok 1 - Check various conditions # { passed, 2 checks }
+# Subtest: minimal-test
+    # Subtest: Check truth
+        ok 1 - the answer
+        1..1
+    ok 1 - Check truth # { passed, 1 check }
     1..1
-ok 1 - Minimal test # { passed, 2 checks in 1 test case }
+ok 1 - minimal-test # { passed, 1 check in 1 test case }
 1..1`;
 
 export default function HomepageExample(): JSX.Element {

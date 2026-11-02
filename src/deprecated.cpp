@@ -69,9 +69,9 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Delegates to `utility::extract_file_name()`, the single
-     * implementation used by the framework, so both the `/` and the `\`
-     * separators are recognised. If no separator is present, the original
-     * input string is returned.
+     * implementation used by the framework, so both the `/` and the
+     * backslash separators are recognised. If no separator is present,
+     * the original input string is returned.
      */
     // Deprecated since 6.0.0; use utility::extract_file_name().
     const char*

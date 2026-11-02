@@ -48,6 +48,7 @@
     @include{doc} topics/cpp-api/exceptions.dox
     @include{doc} topics/cpp-api/utility-functions.dox
     @include{doc} topics/cpp-api/test-suites.dox
+    @include{doc} topics/cpp-api/customisation.dox
     @include{doc} topics/cpp-api/deprecated.dox
 @}
 

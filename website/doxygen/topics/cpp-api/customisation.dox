@@ -1,0 +1,100 @@
+@defgroup micro-os-plus-micro-test-plus-cpp-api-customisation Customisation
+@brief Reporting the application types, and writing application comparators.
+
+@details
+The applications extend the framework in two ways, both with public names
+only: they teach the formatter to write the values of their own types, and
+they write their own comparators and predicates, which are reported as the
+built-in ones.
+
+@par Application types
+The function comparators report the values of their operands when a check
+fails. The scalars, the strings, the containers, and the scoped
+enumerations are written by the framework. For any other type, the
+application provides an `operator<<` that writes the value to the
+`expression_formatter`, declared in the namespace of the type, so that it
+is found by argument-dependent lookup. Without it, a comparator such as
+`eq()` does not compile for that type. The same operator writes the values
+appended to the messages of the checks.
+
+@par Application comparators and predicates
+A comparator is an expression template, parametrised by a tag of the
+application: a type with a `symbol` text, which separates the operands in
+the report, and a static `apply()` function, which returns the result.
+`extension::compare_op` takes two operands and a tag, and
+`extension::predicate_op` takes one operand and a tag. The result is an
+expression like those returned by `eq()` and `negate()`, so it can be
+combined with `all_of()`, `any_of()`, and `negate()`, and a failed check
+displays the operands and the symbol.
+
+The concepts of the `extension` namespace (`is_op`, `any_op`, `checkable`,
+`printable`, `compare_tag`, and `predicate_tag`) describe the types that
+these templates and the checks accept.
+
+@par Example
+
+@code{.cpp}
+namespace mt = micro_os_plus::micro_test_plus;
+
+namespace app
+{
+  struct point
+  {
+    int x;
+    int y;
+  };
+
+  constexpr bool
+  operator== (const point& lhs, const point& rhs)
+  {
+    return lhs.x == rhs.x && lhs.y == rhs.y;
+  }
+
+  // Found by argument-dependent lookup.
+  inline mt::expression_formatter&
+  operator<< (mt::expression_formatter& formatter, const point& p)
+  {
+    return formatter << "{ " << p.x << ", " << p.y << " }";
+  }
+
+  struct divides_tag
+  {
+    static constexpr const char* symbol = " divides ";
+
+    template <class Lhs_T, class Rhs_T>
+    static constexpr bool
+    apply (const Lhs_T& lhs, const Rhs_T& rhs)
+    {
+      return rhs % lhs == 0;
+    }
+  };
+
+  template <class Lhs_T, class Rhs_T>
+  constexpr auto
+  divides (const Lhs_T& lhs, const Rhs_T& rhs)
+  {
+    return mt::extension::compare_op{ lhs, rhs, divides_tag{} };
+  }
+} // namespace app
+
+ts.test ("Check points", [] (auto& t) {
+  t.expect (mt::eq (app::point{ 1, 2 }, app::point{ 1, 3 })) << "differ";
+});
+
+ts.test ("Check divisors", [] (auto& t) {
+  t.expect (app::divides (5, 12)) << "5 divides 12";
+});
+@endcode
+
+The failed checks are reported with the values and the symbol:
+
+@code{.console}
+    • Check points
+        ✗ differ FAILED (main.cpp:75, { 1, 2 } == { 1, 3 })
+    • Check divisors
+        ✗ 5 divides 12 FAILED (main.cpp:80, 5 divides 12)
+@endcode
+
+A predicate is written in the same way, with a tag that has a `symbol`
+and an `apply()` function of one operand, and the template
+`extension::predicate_op`.

@@ -28,3 +28,38 @@ ts.test ("Check various conditions", [] (auto& t) {
   t.expect (mt::ne (compute_answer (), 43)) << "answer ne 43";
 });
 @endcode
+
+@par Test cases for several values
+
+`test_each()`, called on a suite or on a test case, creates and runs a
+test case for each value of a range (a container, an array, a span, or a
+view), of a list written in place, or of a tuple, whose values may have
+different types. The callable receives the test case and the value, and a
+generic lambda is needed for a tuple. Each test case is named after the
+common name, followed by the value in parentheses, such as `Sizes (16)`;
+a value that cannot be written, such as an application type without an
+`operator<<`, is replaced by its position, starting at 1, such as
+`Records (#2)`.
+
+@code{.cpp}
+namespace mt = micro_os_plus::micro_test_plus;
+
+ts.test_each ("Sizes", std::vector<int>{ 1, 16, 512 },
+              [] (auto& t, int size) { t.expect (mt::gt (size, 0)); });
+
+ts.test_each ("Limits", { 3, 4 },
+              [] (auto& t, int limit) { t.expect (mt::gt (limit, 2)); });
+
+ts.test_each ("Types", std::tuple{ 42, 1.5, "text" },
+              [] (auto& t, const auto& value) {
+                t.expect (mt::eq (value, value));
+              });
+@endcode
+
+With the TAP reporter, the first call is reported as:
+
+@code{.console}
+    ok 1 - Sizes (1) # { passed, 1 check }
+    ok 2 - Sizes (16) # { passed, 1 check }
+    ok 3 - Sizes (512) # { passed, 1 check }
+@endcode

@@ -89,8 +89,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param path A null-terminated file path string, or `nullptr`.
      * @return A pointer to the first character of the file name within
-     * `path`, or `path` itself if no path separator (`/` or `\`) is found;
-     * an empty string if `path` is `nullptr`.
+     * `path`, or `path` itself if no path separator (`/` or the backslash)
+     * is found; an empty string if `path` is `nullptr`.
      */
     [[nodiscard]] const char*
     extract_file_name (const char* path) noexcept;

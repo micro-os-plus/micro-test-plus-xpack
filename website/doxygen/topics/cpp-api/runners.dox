@@ -1,6 +1,5 @@
 @defgroup micro-os-plus-micro-test-plus-cpp-api-runners Test Runners
-@brief Classes for initialising the framework and returning an
-exit code.
+@brief The runner initialises the framework and returns the exit code.
 
 @details
 Proper initialisation ensures that µTest++ is correctly configured
@@ -33,19 +32,21 @@ main (int argc, char* argv[])
 }
 @endcode
 
-When this test is executed, the output is as follows:
+When this test is executed, the output is as follows (the passed checks
+are displayed only with the `--verbose` option):
 
 @code{.console}
+# Running: minimal
+# Built with ...
 TAP version 14
 # Subtest: Minimal
-    # Subtest: Check truth
-        ok 1 - true
-        1..1
     ok 1 - Check truth # { passed, 1 check }
+
     1..1
-ok 1 - Minimal # { passed, 1 check in 1 test case, time: 0.065 ms }
+ok 1 - Minimal # { passed, 1 check in 1 test case, time: 0.039 ms }
+
 1..1
-# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.136 ms }
+# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.074 ms }
 @endcode
 
 The name passed to the top suite is optional; if missing, it will attempt to

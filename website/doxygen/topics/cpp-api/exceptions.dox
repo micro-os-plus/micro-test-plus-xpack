@@ -11,7 +11,13 @@ expected, improving the reliability and safety of software components. The
 framework supports both generic checks and type-specific verification,
 allowing precise and expressive test cases.
 
-When such a check fails, the report states why: for example
+These functions are declared only when the compiler defines
+`__cpp_exceptions`. In a build without exceptions (for example with
+`-fno-exceptions`), the code under test cannot throw, the functions do
+not exist, and a test case that calls them does not compile; guard such
+test cases with `#if defined(__cpp_exceptions)`.
+
+When an exception check fails, the report states why: for example
 `throws<std::runtime_error>, but nothing was thrown`,
 `throws<std::runtime_error>, but a std::exception was thrown: "what"`
 (with the text returned by its `what()`), or
@@ -47,6 +53,7 @@ ts.test ("Check exceptions explicitly", [] (auto& t) {
   try
     {
       compute_answer ();
+      t.expect (false) << "no exception thrown";
     }
   catch (const std::overflow_error& e)
     {
