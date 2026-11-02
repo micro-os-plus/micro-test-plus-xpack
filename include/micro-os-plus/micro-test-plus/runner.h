@@ -195,7 +195,7 @@ namespace micro_os_plus::micro_test_plus
   class runner
   {
     /**
-     * @brief The human reporter, which displays the session.
+     * @brief The human-readable reporter, which displays the session.
      *
      * @details
      * It reads the stopwatch, to display the duration of the session.

@@ -379,14 +379,14 @@ The result is 0 if all checks passed, and 1 otherwise, including when a suite wa
 
 When exceptions are not enabled, a failed requirement cannot stop only its test case (see [Requirements](#requirements)), so it aborts the whole test execution: the remaining test cases and suites do not run, `run_suites()` does not return, and no totals are written. The test execution can also be aborted explicitly, from a test case, from a suite, or from the application, by calling `tr.abort ()`. Before the process is terminated, the reporter completes the report, in place of the totals:
 
-1. it displays the results of the running test case, if any; after a failed requirement, they end with it, and the human reporter marks it as `test execution aborted` (the TAP reporter adds no marker, since its `Bail out!` line, below, reports the abort); they are preceded by the name of the test case, and by those of the outer test cases, unless already displayed, so that a failure cannot be attributed to the previous test case;
-2. it ends the output with a line with the location of the failed requirement, or of the `abort()` call: `✗ Test execution aborted at <file>:<line>` for the human reporter, and `Bail out! Requirement failed at <file>:<line>` (or `Bail out! Test execution aborted at <file>:<line>`, for an explicit abort) for the TAP reporter, which tells the TAP consumers that the run stopped early, not that the output was truncated.
+1. it displays the results of the running test case, if any; after a failed requirement, they end with it, and the human-readable reporter marks it as `test execution aborted` (the TAP reporter adds no marker, since its `Bail out!` line, below, reports the abort); they are preceded by the name of the test case, and by those of the outer test cases, unless already displayed, so that a failure cannot be attributed to the previous test case;
+2. it ends the output with a line with the location of the failed requirement, or of the `abort()` call: `✗ Test execution aborted at <file>:<line>` for the human-readable reporter, and `Bail out! Requirement failed at <file>:<line>` (or `Bail out! Test execution aborted at <file>:<line>`, for an explicit abort) for the TAP reporter, which tells the TAP consumers that the run stopped early, not that the output was truncated.
 
 Then `runner::abort()` flushes the standard streams, calls the abort handler, if one was set (see below), and then `::abort()`. An abort before `initialise()`, or after `run_suites()`, when there is no report to complete, is reported on `stderr`, as `error: test execution aborted at <file>:<line>`.
 
 With `--quiet`, which otherwise displays only the failed checks and the totals, the failed checks of the aborted test case are displayed as well, since the totals are never reached. With `--silent`, nothing is displayed. If an output file is used, the results and the final line are written to it too, whatever the verbosity.
 
-For example, with the human reporter, the end of the output is:
+For example, with the human-readable reporter, the end of the output is:
 
 ```
     ✓ Check various conditions - passed (2 checks)
@@ -678,7 +678,7 @@ body does not intercept it; a `catch (...)` does, and must rethrow it
 with `throw;`. The test case body must not be `noexcept`, since the
 exception would call `std::terminate()`.
 
-The human reporter marks the failed requirement with
+The human-readable reporter marks the failed requirement with
 `- test case stopped`, after the location; the TAP reporter reports it
 like any other failed check, as node-tap does, and the stop is shown by
 the plan of the test case, which follows it:
@@ -1778,7 +1778,7 @@ In short, the levels differ as follows:
 
 The passed checks are not formatted at the quiet and normal levels, unless an output file is used, so they cost only a counter increment.
 
-With the TAP reporter and the normal verbosity, the passed test cases are displayed as single `ok` lines, and the failed ones as complete `# Subtest:` blocks; the nested passed test cases appear inside the block of their outer test case. With the human reporter, the line of a passed nested test case is preceded by the name of its outer test case.
+With the TAP reporter and the normal verbosity, the passed test cases are displayed as single `ok` lines, and the failed ones as complete `# Subtest:` blocks; the nested passed test cases appear inside the block of their outer test case. With the human-readable reporter, the line of a passed nested test case is preceded by the name of its outer test case.
 
 When the test execution is aborted, the totals are replaced by a line with the location of the abort, also with `--quiet`, and there is no exit code, since `run_suites()` does not return; see [Aborting the test execution](#aborting-the-test-execution).
 
@@ -1845,7 +1845,7 @@ To also write the report to a file, use the `--output-file` option, either as `-
 
 The two outputs have different purposes: the console is intended for the people who watch the tests run, and its content is selected with the verbosity options, while the output file is intended for the integration with other tools (for example a CI pipeline, or a TAP consumer such as node-tap).
 
-The output file always receives the **complete report**, whatever the console verbosity, with both reporters; the verbosity selects only what is displayed on the console. The TAP reporter is the one to use for integration, since its file is a valid TAP document, which the TAP consumers read. The file of the human reporter is intended for people, to keep the details of a run whose console output is short (see [Verbosity](#verbosity)).
+The output file always receives the **complete report**, whatever the console verbosity, with both reporters; the verbosity selects only what is displayed on the console. The TAP reporter is the one to use for integration, since its file is a valid TAP document, which the TAP consumers read. The file of the human-readable reporter is intended for people, to keep the details of a run whose console output is short (see [Verbosity](#verbosity)).
 
 ### The _human_ reporter
 
@@ -1871,11 +1871,11 @@ The output is slightly more compact, for example:
 ✓ Total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.082 ms
 ```
 
-The human reporter is intended for reading the console output. For the integration with other tools, use the TAP reporter, whose output file is always complete (see [Output file](#output-file)).
+The human-readable reporter is intended for reading the console output. For the integration with other tools, use the TAP reporter, whose output file is always complete (see [Output file](#output-file)).
 
 ### Colours
 
-The human reporter highlights the results in colour (green for the passed checks and red for the failed ones). By default, the colours are used only when the standard output is a terminal, which can be detected only on POSIX platforms (Linux, macOS); when the output is redirected to a file or a pipe, and on the other platforms, such as the embedded ones, the output is plain.
+The human-readable reporter highlights the results in colour (green for the passed checks and red for the failed ones). By default, the colours are used only when the standard output is a terminal, which can be detected only on POSIX platforms (Linux, macOS); when the output is redirected to a file or a pipe, and on the other platforms, such as the embedded ones, the output is plain.
 
 To select the colours explicitly, use the `--colour` option, modelled on the `--color` option of the GNU tools (`ls`, `grep`, `diff`); the American spelling `--color` is accepted too, and has the same effect:
 

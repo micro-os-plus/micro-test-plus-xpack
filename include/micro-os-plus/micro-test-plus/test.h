@@ -340,7 +340,7 @@ namespace micro_os_plus::micro_test_plus
       friend class check_result;
 
       /**
-       * @brief The human reporter, which displays the nodes.
+       * @brief The human-readable reporter, which displays the nodes.
        *
        * @details
        * It currently uses only the public members of the nodes; the
@@ -1808,7 +1808,7 @@ namespace micro_os_plus::micro_test_plus
     friend class micro_test_plus::runner;
 
     /**
-     * @brief The human reporter, which displays the suites.
+     * @brief The human-readable reporter, which displays the suites.
      *
      * @details
      * It reads the stopwatch, to display the duration of the suite.

@@ -149,7 +149,7 @@ if (XPACK_ENABLE_EMPTY_TEST)
   )
 
   # ---------------------------------------------------------------------------
-  # Human reporter
+  # Human-readable reporter
 
   # --verbose
   add_test (NAME "empty-test-reporter-human-verbose"
@@ -295,7 +295,7 @@ if (XPACK_ENABLE_MINIMAL_TEST)
   )
 
   # ---------------------------------------------------------------------------
-  # Human reporter
+  # Human-readable reporter
 
   # --verbose
   add_test (NAME "minimal-test-reporter-human-verbose"
@@ -433,7 +433,7 @@ if (XPACK_ENABLE_SUITE_TEST)
   )
 
   # ---------------------------------------------------------------------------
-  # Human reporter
+  # Human-readable reporter
 
   # --verbose
   add_test (NAME "suite-test-reporter-human-verbose"
@@ -578,7 +578,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   )
 
   # ---------------------------------------------------------------------------
-  # Human reporter
+  # Human-readable reporter
 
   # --verbose
   add_test (NAME "sample-test-reporter-human-verbose"
@@ -757,7 +757,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
   )
 
   # ---------------------------------------------------------------------------
-  # Human reporter
+  # Human-readable reporter
 
   # --verbose
   add_test (
@@ -806,8 +806,9 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
   add_compare_files_test (
     NAME "unit-checks-test-reporter-human-console-compare"
     DEPENDS "unit-checks-test-reporter-human-console"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-console.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-checks-test-console.txt"
+    FILES
+      "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-console.txt"
+      "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-checks-test-console.txt"
   )
 
   # --quiet The console output shows only the failed checks, with the names of
@@ -843,8 +844,9 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
   add_compare_files_test (
     NAME "unit-checks-test-console-compare"
     DEPENDS "unit-checks-test-console"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-console.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-checks-test-console.tap"
+    FILES
+      "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-console.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-checks-test-console.tap"
   )
 
   # --quiet The TAP console output has the suites as single test points, and the
@@ -1109,7 +1111,7 @@ if (XPACK_ENABLE_UNIT_TEST)
   )
 
   # ---------------------------------------------------------------------------
-  # Human reporter
+  # Human-readable reporter
 
   # --verbose
   add_test (NAME "unit-test-reporter-human-verbose"

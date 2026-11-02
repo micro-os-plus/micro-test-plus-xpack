@@ -13,7 +13,7 @@
 
 /**
  * @file
- * @brief C++ source file with implementations for the µTest++ human test
+ * @brief C++ source file with implementations for the µTest++ human-readable
  * reporter member functions.
  *
  * @details
@@ -118,7 +118,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * If verbosity is not silent, a blank line is printed to `stdout`
    * before the build-information block emitted by `write_info()`. A
-   * fixed "µTest++ human report" heading is then written to the output
+   * fixed "µTest++ human-readable report" heading is then written to the output
    * file (if open) and, unless verbosity is silent, to `stdout`. The
    * `add_empty_line_` flag is set so that subsequent suite output is
    * visually separated.
@@ -139,7 +139,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
     write_info (runner.options_.arguments ());
 
-    write_line (to_console, "µTest++ human report\n");
+    write_line (to_console, "µTest++ human-readable report\n");
 
     flush_streams ();
 
@@ -531,7 +531,7 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Returns an empty string. The human reporter does not prefix comment
+   * Returns an empty string. The human-readable reporter does not prefix comment
    * lines; the `write_info()` output appears as plain text.
    */
   const char*

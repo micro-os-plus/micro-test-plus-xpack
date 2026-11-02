@@ -74,7 +74,7 @@ To explicitly ask for a specific format:
 
 @section cli-colours Colours
 
-The human reporter highlights the results in colour. By default, the
+The human-readable reporter highlights the results in colour. By default, the
 colours are used only when `stdout` is a terminal, which can be detected
 only on POSIX platforms. To select them explicitly, with an option
 modelled on the `--color` option of the GNU tools, whose American
@@ -167,7 +167,7 @@ ok 1 - minimal-test # { passed, 2 checks in 1 test case, time: X.XXX ms }
 @endcode
 
 When a check fails, it is displayed with its location, after the names
-of its suite and of its test cases. The human reporter writes them as
+of its suite and of its test cases. The human-readable reporter writes them as
 the headings of the default mode, but only for the suites and the test
 cases with failures. The TAP reporter writes each failure as a TAP
 comment, after a `# <suite> > <test case>` line, so that the output

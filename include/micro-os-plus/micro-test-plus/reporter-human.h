@@ -13,7 +13,7 @@
 
 /**
  * @file
- * @brief C++ header file with declarations for the µTest++ human test
+ * @brief C++ header file with declarations for the µTest++ human-readable
  * reporter.
  *
  * @details

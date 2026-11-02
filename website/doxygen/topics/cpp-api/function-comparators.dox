@@ -31,7 +31,7 @@ ts.test ("Check various conditions", [] (auto& t) {
 
 If a comparator check fails, the output clearly indicates the actual and
 expected values. For example, when `compute_answer()` returns 41, the
-human reporter displays:
+human-readable reporter displays:
 
 @code{.console}
     • Check various conditions

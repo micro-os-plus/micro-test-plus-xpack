@@ -40,7 +40,7 @@ ending with the failed requirement, are first displayed after its name
 `--silent`) and written to the output file, followed, in place of the
 totals, by a line with the
 location of the failure (`✗ Test execution aborted at <file>:<line>`
-with the human reporter, `Bail out! Requirement failed at
+with the human-readable reporter, `Bail out! Requirement failed at
 <file>:<line>` with the TAP reporter). Then `runner::abort()` calls the
 handler set with `runner::set_abort_handler()`, if any, and then
 `abort()`. The remaining test cases and suites do not run, and no final
@@ -104,7 +104,7 @@ rejected with `error: unknown reporter '<name>'`, and no test is run.
 <details>
 <summary>Why is the human-readable output not coloured in CI?</summary>
 
-By default, the human reporter uses colours only when `stdout` is a
+By default, the human-readable reporter uses colours only when `stdout` is a
 terminal, which is not the case in most CI systems, or when the output
 is piped. To force them, for example when the CI log renders the ANSI
 escape sequences, use `--colour` (or `--colour=always`); to disable

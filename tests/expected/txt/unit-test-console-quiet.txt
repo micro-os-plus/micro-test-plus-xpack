@@ -1,5 +1,5 @@
 
-µTest++ human report
+µTest++ human-readable report
 
 • Top suite
 

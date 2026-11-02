@@ -138,7 +138,7 @@ namespace micro_os_plus::micro_test_plus
    * `automatic`. The names follow the values of `--color` in the GNU
    * tools.
    *
-   * Only the human reporter uses colours; the TAP reporter never does,
+   * Only the human-readable reporter uses colours; the TAP reporter never does,
    * since the ANSI escape sequences are not part of the TAP syntax. The
    * output file never receives colours, whatever the mode.
    *
@@ -378,7 +378,7 @@ namespace micro_os_plus::micro_test_plus
      * alternative `--use-colour=<mode>` or `--use-colour <mode>`, also
      * spelled `--use-color`, as in Catch2 and Boost UT, takes `yes`, `no`,
      * or `auto`, and also accepts the other values of `--colour`. Used
-     * only by the human reporter.
+     * only by the human-readable reporter.
      *
      * @since 6.0.0
      */

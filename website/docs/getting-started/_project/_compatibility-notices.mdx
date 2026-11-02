@@ -280,7 +280,7 @@ function of the reporters was removed.
   test case, and the run continues with the next one, as in GoogleTest,
   Catch2, and Boost.Test; it previously aborted the program. The test
   case is stopped with an exception not derived from `std::exception`, so
-  a `catch (...)` in its body must rethrow. The human reporter names the
+  a `catch (...)` in its body must rethrow. The human-readable reporter names the
   effect, `- test case stopped` or `- test execution aborted`, in place of
   `aborted...`, and the TAP reporter reports it as any failed check.
 - Without exceptions, a failed `require()` still aborts the test
@@ -333,7 +333,7 @@ function of the reporters was removed.
 
 ##### Reporters and TAP output
 
-- The output file of the human reporter always receives the complete
+- The output file of the human-readable reporter always receives the complete
   report; with `--quiet` and `--silent` it was incomplete.
 - With `--quiet`, both reporters display the failed checks, with the
   names of their suite and test cases (the TAP reporter as comments),

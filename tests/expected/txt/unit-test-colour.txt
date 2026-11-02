@@ -1,7 +1,7 @@
 
 Running: unit-test --reporter human --color --verbose one two
 Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
-µTest++ human report
+µTest++ human-readable report
 
 • Top suite
 

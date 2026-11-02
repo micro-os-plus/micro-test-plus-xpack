@@ -1,6 +1,6 @@
 Running: unit-deprecated-test --reporter=human --output-file=unit-deprecated-test.txt one two
 Built with GCC 15.2.1 20251203, with FP, with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
-µTest++ human report
+µTest++ human-readable report
 • Top suite
 ✓ Top suite - passed (0 checks in 0 test cases)
 • Deprecated suite
