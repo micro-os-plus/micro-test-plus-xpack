@@ -1,13 +1,24 @@
 @defgroup micro-os-plus-micro-test-plus-cpp-api C++ API
-@brief Topics related to the µTest++ C++ API.
+@brief How to write the tests.
 
 @details
-The µTest++ framework is built upon modern C++ standards, providing a robust
-and expressive API for defining and managing tests. Its design prioritises
-clarity and maintainability, offering a concise set of core primitives for
-verifying expectations and requirements within test cases.
+All the definitions are in the `micro_os_plus::micro_test_plus`
+namespace, which the examples shorten with an alias:
 
-Unlike many traditional frameworks, µTest++ avoids the use of preprocessor
-macros; all testing primitives are implemented directly in C++. This approach
-ensures type safety, improved readability, and seamless integration with
-contemporary C++ development practices.
+@code{.cpp}
+#include <micro-os-plus/micro-test-plus.h>
+
+namespace mt = micro_os_plus::micro_test_plus;
+@endcode
+
+The topics follow the structure of a test program:
+- the runner, which starts and ends the session;
+- the suites, which group the test cases;
+- the test cases, which hold the checks;
+- the checks: the expectations, which are counted, and the requirements,
+  which also stop the test case when they fail;
+- the conditions of the checks: the function comparators, the logical
+  functions, and the exception checks;
+- the string utilities;
+- the customisation, for the application types and comparators;
+- the deprecated definitions, kept for the existing tests.

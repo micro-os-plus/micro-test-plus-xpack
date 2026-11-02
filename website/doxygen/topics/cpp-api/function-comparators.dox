@@ -2,19 +2,21 @@
 @brief Functions for comparing actual and expected values in tests.
 
 @details
-While any boolean expression can be used in expectations and requirements,
-dedicated comparator functions such as `eq`, `ne`, `lt`, `le`, `gt`, and
-`ge` provide enhanced reporting by explicitly showing the compared values
-when a check fails.
+A check written as a plain boolean, such as `t.expect (x == 42)`, reports
+only its location when it fails. The function comparators compare two
+values and, when the check fails, also report both values:
 
-Using these comparators ensures that failed checks report both actual and
-expected values, making issues easier to diagnose.
+| Comparator              | True when                          |
+| ----------------------- | ---------------------------------- |
+| `mt::eq (a, b)`         | `a == b`                           |
+| `mt::ne (a, b)`         | `a != b`                           |
+| `mt::lt (a, b)`         | `a < b`                            |
+| `mt::le (a, b)`         | `a <= b`                           |
+| `mt::gt (a, b)`         | `a > b`                            |
+| `mt::ge (a, b)`         | `a >= b`                           |
+| `mt::approx (a, b, e)`  | `a` and `b` differ by at most `e`  |
 
-Comparators are available for both fundamental types and standard
-containers. When a container comparison fails, the elements of both
-containers are shown.
-
-@par Examples
+@par Example
 
 @code{.cpp}
 ts.test ("Check various conditions", [] (auto& t) {
@@ -24,14 +26,11 @@ ts.test ("Check various conditions", [] (auto& t) {
   t.expect (mt::le (compute_answer (), 43)) << "answer is <= 43";
   t.expect (mt::gt (compute_answer (), 41)) << "answer is > 41";
   t.expect (mt::ge (compute_answer (), 42)) << "answer is >= 42";
-
-  t.expect (compute_condition ()) << "condition is true";
 });
 @endcode
 
-If a comparator check fails, the output clearly indicates the actual and
-expected values. For example, when `compute_answer()` returns 41, the
-human-readable reporter displays:
+When `compute_answer()` returns 41, the human-readable reporter displays
+the failed checks with the compared values:
 
 @code{.console}
     • Check various conditions
@@ -41,34 +40,35 @@ human-readable reporter displays:
     ✗ Check various conditions - FAILED (3 checks passed, 3 failed)
 @endcode
 
-The C strings (`char` arrays, including the string literals, and `char`
-pointers) are compared by content, also with `std::string` and
-`std::string_view`, so `mt::eq (actual, "abc")` checks the characters,
-not the addresses; a null `char` pointer is equal only to another null
-pointer (or `nullptr`), not to an empty string. The other arrays
-(including `uint8_t` buffers) are compared by content, element by
-element, also with a container; the other pointers are compared by
-address.
+@par How the values are compared
+- The operands must be comparable with the operator of the comparator;
+  for example, `mt::eq (a, b)` does not compile when `a == b` would not.
+- Integers of different signedness are compared by value, as by
+  `std::cmp_equal()`: `mt::eq (-1, static_cast<unsigned> (-1))` fails,
+  although `-1 == static_cast<unsigned> (-1)` is true.
+- C strings (`char` arrays, including the string literals, and `char`
+  pointers) are compared by content, also with `std::string` and
+  `std::string_view`, so `mt::eq (actual, "abc")` checks the characters,
+  not the addresses. A null `char` pointer is equal only to another null
+  pointer (or `nullptr`), not to an empty string.
+- Other arrays (including `uint8_t` buffers) are compared element by
+  element, also with a container.
+- Other pointers are compared by address.
+- Values of the application types are displayed only if the application
+  provides an `operator<<` for them; see
+  @ref micro-os-plus-micro-test-plus-cpp-api-customisation.
 
-The operands must be comparable with the operator of the comparator; for
-example, `mt::eq (a, b)` does not compile when `a == b` would not. For the
-values of the application types to be displayed in the reports, see
-@ref micro-os-plus-micro-test-plus-cpp-api-customisation. The
-comparison of integers of different signedness is made by value, as by
-`std::cmp_equal()`, so that `mt::eq (-1, static_cast<unsigned> (-1))`
-fails, although `-1 == static_cast<unsigned> (-1)` is true.
-
-@par Comparing Approximately
-
+@par Comparing approximately
 The comparison of floating-point values with `eq()` is exact, so
 `mt::eq (0.1 + 0.2, 0.3)` fails. To accept a difference, use
-`mt::approx (lhs, rhs, epsilon)`, which is true when the operands differ
-by at most the explicit tolerance `epsilon`, the limit included. The
-operands and the tolerance are integral or floating-point numbers, of any
-type; the distance of integers is computed exactly, also for operands of
-different signedness. A negative tolerance fails all the comparisons. A
-failed check shows the operands and the tolerance, as in
-`1.0 ~ (1.5 +/- 0.1)`.
+`mt::approx (a, b, epsilon)`, which is true when the operands differ by
+at most `epsilon`, the limit included:
+- the operands and the tolerance are integral or floating-point numbers,
+  of any type; the distance of integers is computed exactly, also for
+  operands of different signedness;
+- a negative tolerance fails all the comparisons;
+- a failed check shows the operands and the tolerance, as in
+  `1.0 ~ (1.5 +/- 0.1)`.
 
 @code{.cpp}
 ts.test ("Check approximate values", [] (auto& t) {
@@ -78,22 +78,14 @@ ts.test ("Check approximate values", [] (auto& t) {
 });
 @endcode
 
-@par Comparing Containers
-
-Containers can be compared for equality or inequality using the same
-comparator functions. The comparison is performed with the `==`
-operator of the containers, so they must be of types that can be
-compared, usually of the same type. The standard `==` and `!=` operators
-return a plain `bool`, so a failed check written with them could not
-show the elements. Only the first 16 elements of a container are shown;
-when two longer containers differ after them, the report adds the index
-of the first difference.
-
-@par Examples
+@par Comparing containers
+Containers are compared with their own operators, so they must be
+comparable, usually by being of the same type. When the check fails, the
+elements of both containers are shown, up to the first 16; when two
+longer containers differ after them, the report adds the index of the
+first difference.
 
 @code{.cpp}
-namespace mt = micro_os_plus::micro_test_plus;
-
 ts.test ("Check containers", [] (auto& t) {
   t.expect (mt::eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
       << "vector{ 1, 2 } eq vector{ 1, 2 }";
@@ -103,4 +95,3 @@ ts.test ("Check containers", [] (auto& t) {
       << "vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }";
 });
 @endcode
-

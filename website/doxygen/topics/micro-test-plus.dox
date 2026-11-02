@@ -1,23 +1,25 @@
 @defgroup micro-os-plus-micro-test-plus µTest++
-@brief Topics related to the µTest++ Testing Framework.
+@brief The µTest++ Testing Framework.
 
 @details
-The @b µTest++ project is a **modern C++** library designed to provide
-a **lightweight and efficient**, **macro free**, **TAP based** testing
-framework, purpose-built for embedded systems development.
+µTest++ is a C++20 testing framework for embedded targets, which also runs
+on the native platforms. The tests are ordinary C++ code, functions and
+lambdas, with no preprocessor macros.
 
-The **C++ API** is the primary interface for writing test suites and
-test cases. It is centred on three classes: the `runner` drives the test
-session, runs the suites, and collects the results; a `suite` groups test
-cases, which it creates with `test()`; and a `test_case` evaluates the
-expectations and the requirements. Function comparators
-and logical functions complement the core API to enable expressive,
-type-safe assertions with no macro dependencies. The API is documented in the
-@ref micro-os-plus-micro-test-plus-cpp-api group.
+A test program uses three classes:
+- the `runner`, which reads the command line, runs the suites, and
+  returns the exit code;
+- the `suite`, a named group of test cases;
+- the `test_case`, a named sequence of checks, made with `expect()` and
+  `require()`.
 
-The **command-line interface (CLI)** allows test executables to be
-configured at run time without recompilation. Arguments are passed to
-`runner::initialise()` and control aspects such as the verbosity level,
-the output reporter format, the colours, an output file, and the
-selection or listing of the test cases. The available options are documented in
-the @ref micro-os-plus-micro-test-plus-cli group.
+The results are written in the TAP format, for the tools that read test
+results, or in a human-readable format.
+
+The topics are grouped in four parts:
+- how to write the tests, in @ref micro-os-plus-micro-test-plus-cpp-api;
+- how to test C code, in @ref micro-os-plus-micro-test-plus-c-api;
+- the macros that enable the framework, in
+  @ref micro-os-plus-micro-test-plus-config;
+- the options of the test programs, in
+  @ref micro-os-plus-micro-test-plus-cli.

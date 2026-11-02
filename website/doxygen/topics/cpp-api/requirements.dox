@@ -2,17 +2,31 @@
 @brief Requirements are checks that stop the test case when they fail.
 
 @details
-When a precondition of the following checks does not hold, the test case
-cannot continue meaningfully. A failed requirement is reported and counted
-like a failed expectation, and then the rest of the test case body is
-skipped; the run continues with the next test case.
+`t.require (condition)` checks a condition as `expect()` does, and also
+stops the test case when it fails. Use it when the rest of the test case
+depends on the condition, for example to check that a pointer is not null
+before using it.
 
-This is the behaviour of the fatal assertions of most C++ test frameworks
-(`ASSERT_*` in GoogleTest, `REQUIRE()` in Catch2 and doctest,
-`BOOST_REQUIRE()` in Boost.Test). The test case is stopped with an
-exception; without exceptions, it cannot be stopped alone, so the
-results of the test case are reported, ending with the failed
-requirement (followed, with the TAP reporter, by a `Bail out!` line),
-and the whole test execution is aborted with `runner::abort()`, as
-Catch2 does; the remaining test cases do not run, and no totals are
-written.
+A failed requirement is reported and counted like a failed expectation.
+What follows depends on the build:
+- with exceptions, the rest of the test case is skipped, and the run
+  continues with the next test case; this is the behaviour of the fatal
+  assertions of most C++ test frameworks (`ASSERT_*` in GoogleTest,
+  `REQUIRE()` in Catch2 and doctest, `BOOST_REQUIRE()` in Boost.Test);
+- without exceptions, a test case cannot be stopped alone, so the whole
+  test run is aborted with `runner::abort()`, as Catch2 does: the results
+  of the test case are written, ending with the failed requirement
+  (followed, with the TAP reporter, by a `Bail out!` line), the remaining
+  test cases do not run, and no totals are written. The process is then
+  terminated with `::abort()`, unless the application set another handler
+  with `runner::set_abort_handler()`.
+
+@par Example
+
+@code{.cpp}
+ts.test ("Check the buffer", [] (auto& t) {
+  const char* buffer = get_buffer ();
+  t.require (mt::ne (buffer, nullptr)) << "buffer allocated";
+  t.expect (mt::eq (buffer[0], 'a'));
+});
+@endcode

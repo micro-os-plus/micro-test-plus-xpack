@@ -3,20 +3,18 @@
 
 @details
 The functions `mt::_and()`, `mt::_or()`, and `mt::_not()` are the v5.0.1
-names of `mt::all_of()`, `mt::any_of()`, and `mt::negate()`. They are
-deprecated since 6.0.0, and are kept for compatibility with the existing
-applications; they behave as the functions that replace them.
-
-The names were changed since a leading underscore is not used by the other
-public names. Unlike the replacements, `mt::_and()` and `mt::_or()` take
-exactly two operands, whereas `mt::all_of()` and `mt::any_of()` take two or
-more.
+names of `mt::all_of()`, `mt::any_of()`, and `mt::negate()`, and behave
+as them. They are deprecated since 6.0.0, because no other public name
+starts with an underscore.
 
 | Deprecated    | Replacement    |
 | ------------- | -------------- |
 | `mt::_and()`  | `mt::all_of()` |
 | `mt::_or()`   | `mt::any_of()` |
 | `mt::_not()`  | `mt::negate()` |
+
+Unlike the replacements, `mt::_and()` and `mt::_or()` take exactly two
+operands, whereas `mt::all_of()` and `mt::any_of()` take two or more.
 
 @par Example
 
@@ -30,6 +28,5 @@ t.expect (mt::all_of (mt::eq (compute_answer (), 42),
                       mt::lt (compute_answer (), 43)));
 @endcode
 
-The overloaded logical operators of the `micro_test_plus::operators`
-namespace are also deprecated since 6.0.0, in favour of the same
-replacement functions.
+The overloaded logical operators of the `mt::operators` namespace are
+also deprecated since 6.0.0, in favour of the same functions.

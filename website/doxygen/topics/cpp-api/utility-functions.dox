@@ -2,9 +2,28 @@
 @brief Utility functions for handling strings in tests.
 
 @details
-The functions of the `utility` namespace help with the strings that the
-tests often check: `utility::is_match()` matches a string against a
-pattern with the `*` and `?` wildcards, `utility::split()` splits a
-string into a vector of the non-empty sub-strings separated by any of the
-delimiter characters, and
-`utility::extract_file_name()` returns the file name part of a path.
+The `utility` namespace has three functions for the strings that the
+tests often check:
+- `utility::is_match (input, pattern)` checks whether a string matches a
+  pattern, in which `*` matches any sequence of characters, including an
+  empty one, and `?` matches any single character;
+- `utility::split (input, delimiters)` splits a string into a vector of
+  the non-empty sub-strings separated by any of the delimiter characters;
+  for a `std::string` it returns `std::string` copies, and for a
+  `std::string_view`, a string literal, or a `const char*` it returns
+  views into the input, which must outlive them;
+- `utility::extract_file_name (path)` returns the file name part of a
+  path, after the last `/` or backslash.
+
+@par Example
+
+@code{.cpp}
+namespace mt = micro_os_plus::micro_test_plus;
+
+ts.test ("Check the strings", [] (auto& t) {
+  t.expect (mt::utility::is_match ("main.cpp", "*.cpp"));
+  t.expect (mt::eq (mt::utility::split ("a, b,,c", ", ").size (), 3u));
+  t.expect (mt::eq (mt::utility::extract_file_name ("src/main.cpp"),
+                    "main.cpp"));
+});
+@endcode

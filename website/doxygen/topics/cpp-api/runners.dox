@@ -2,13 +2,27 @@
 @brief The runner initialises the framework and returns the exit code.
 
 @details
-Proper initialisation ensures that µTest++ is correctly configured
-to manage and execute test cases, whilst the exit code reflects the overall
-test outcome and supports integration with automated build and continuous
-integration systems.
+A test program has one runner, usually a global object, which `main()`
+uses in three steps:
+1. `initialise (argc, argv)` reads the command line options (see
+   @ref micro-os-plus-micro-test-plus-cli); on platforms without a command
+   line, `initialise (runner_options)` sets the options directly. The call
+   is optional; without it, the default options are used;
+2. `add_top_suite()` returns the top suite, on which `main()` creates its
+   own test cases (see @ref micro-os-plus-micro-test-plus-cpp-api-test-suites).
+   The call is optional, for programs whose test cases are all in other
+   suites;
+3. `run_suites()` runs the other suites, writes the totals, and returns
+   the exit code, which `main()` returns to the system.
 
-The simplest test consists of the default test suite and a single test case
-with one expectation; for example:
+The exit code is:
+- 0 when all the checks passed, or when the test cases were only listed;
+- 1 when a check failed, or when the program used the runner wrongly (for
+  example, it added no suite at all);
+- 2 when the command line had an error, or when the filters selected no
+  test case.
+
+@par Example
 
 @code{.cpp}
 #include <micro-os-plus/micro-test-plus.h>
@@ -32,8 +46,8 @@ main (int argc, char* argv[])
 }
 @endcode
 
-When this test is executed, the output is as follows (the passed checks
-are displayed only with the `--verbose` option):
+The program writes (the passed checks are displayed only with the
+`--verbose` option):
 
 @code{.console}
 # Running: minimal
@@ -49,6 +63,6 @@ ok 1 - Minimal # { passed, 1 check in 1 test case, time: 0.039 ms }
 # { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.074 ms }
 @endcode
 
-The name passed to the top suite is optional; if missing, it will attempt to
-extract a name from argv[0], which is commonly the executable name. If that
-fails, a default name is used.
+The name of the top suite is optional. Without it, the suite is named
+after the program, the file name of `argv[0]` without its extension
+(`minimal` above); without `argv[0]`, it is named `default suite`.

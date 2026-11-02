@@ -2,37 +2,25 @@
 @brief Functions for verifying exceptions in test cases.
 
 @details
-Dedicated exception-check utilities verify whether expressions or function
-calls throw. These utilities support robust testing of error handling and
-exceptional conditions in C++ code.
+Three functions check what a callable throws, and are used as the
+conditions of `expect()` or `require()`:
+- `mt::throws (callable)` is true when the callable throws any exception;
+- `mt::throws<E> (callable)` is true when it throws an exception of type
+  `E`, or of a type derived from it;
+- `mt::nothrow (callable)` is true when it throws nothing.
 
-Developers can assert that exceptions are thrown, or not thrown, as
-expected, improving the reliability and safety of software components. The
-framework supports both generic checks and type-specific verification,
-allowing precise and expressive test cases.
-
-These functions are declared only when the compiler defines
-`__cpp_exceptions`. In a build without exceptions (for example with
-`-fno-exceptions`), the code under test cannot throw, the functions do
-not exist, and a test case that calls them does not compile; guard such
-test cases with `#if defined(__cpp_exceptions)`.
-
-When an exception check fails, the report states why: for example
-`throws<std::runtime_error>, but nothing was thrown`,
-`throws<std::runtime_error>, but a std::exception was thrown: "what"`
-(with the text returned by its `what()`), or
-`nothrow, but an exception of unknown type was thrown`.
+The exception is caught by the check, so it does not leave the test case.
+When the check fails, the report states why, for example:
+- `throws<std::runtime_error>, but nothing was thrown`;
+- `throws<std::runtime_error>, but a std::exception was thrown: "what"`,
+  with the text returned by its `what()`;
+- `nothrow, but an exception of unknown type was thrown`.
 
 A failed `require()` inside the callable is not an exception of the
 callable: it stops the test case, as it does elsewhere, and does not
 satisfy `throws()` or fail `nothrow()`.
 
-For advanced scenarios, such as handling multiple expected exception types,
-use explicit `try` blocks with multiple `catch` statements and report
-results with `expect(true)` or `expect(false)`. This approach enables
-comprehensive coverage of exception-handling logic.
-
-@par Examples
+@par Example
 
 @code{.cpp}
 ts.test ("Check if exceptions are thrown", [] (auto& t) {
@@ -47,6 +35,19 @@ ts.test ("Check if exceptions are thrown", [] (auto& t) {
       << "exception not thrown";
 });
 @endcode
+
+@par Availability
+The functions are declared only when the compiler defines
+`__cpp_exceptions`. In a build without exceptions (for example with
+`-fno-exceptions`), the code under test cannot throw, the functions do
+not exist, and a test case that calls them does not compile; guard such
+test cases with `#if defined(__cpp_exceptions)`.
+
+@par Several exception types
+To accept one of several exception types, use a `try` block with a
+`catch` for each type, and report each outcome with `expect (true)` or
+`expect (false)`. Check the normal path too, after the call in the `try`
+block; otherwise a call that throws nothing passes with no check:
 
 @code{.cpp}
 ts.test ("Check exceptions explicitly", [] (auto& t) {

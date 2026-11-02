@@ -2,13 +2,36 @@
 @brief Expectations are checks whose outcomes are counted and reported.
 
 @details
-During test execution, each condition outcome, whether passing or failing,
-is explicitly reported in test results. Unlike requirements, a failed
-expectation does not stop the
-test; execution continues, allowing multiple conditions to be checked within
-a single test case.
+`t.expect (condition)` checks a condition, counts the result, and reports
+it; when the check fails, the test case continues, so that all its checks
+are evaluated and reported in one run.
 
-This approach enables comprehensive validation of code behaviour, because
-all relevant expectations can be evaluated and reported in one run. Using
-expectations provides detailed insight into which aspects of the code meet
-requirements and which do not, supporting thorough and efficient testing.
+The condition is one of:
+- a function comparator, such as `mt::eq (actual, 42)`, or a combination
+  of them, which reports the values of its operands;
+- an exception check, such as `mt::throws (...)`;
+- any value that converts to `bool`, such as `x == 1` or a
+  `std::optional`, which reports only the location of the failed check.
+
+A message can be appended with `<<`, with any values that can be written,
+for example `t.expect (x == 2) << "x is " << x;`. The check is reported at
+the end of the statement, with the message, or, without one, with the
+condition.
+
+@par Example
+
+@code{.cpp}
+ts.test ("Check the values", [] (auto& t) {
+  int x = 1;
+  t.expect (mt::eq (x, 2));
+  t.expect (x == 2) << "x is " << x;
+});
+@endcode
+
+Both checks fail; the human-readable reporter displays:
+
+@code{.console}
+    • Check the values
+        ✗ FAILED (main.cpp:13, 1 == 2)
+        ✗ x is 1 FAILED (main.cpp:14)
+@endcode

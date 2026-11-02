@@ -40,6 +40,7 @@
 @addtogroup micro-os-plus-micro-test-plus-cpp-api
 @{
     @include{doc} topics/cpp-api/runners.dox
+    @include{doc} topics/cpp-api/test-suites.dox
     @include{doc} topics/cpp-api/test-case.dox
     @include{doc} topics/cpp-api/expectations.dox
     @include{doc} topics/cpp-api/requirements.dox
@@ -47,7 +48,6 @@
     @include{doc} topics/cpp-api/logical-functions.dox
     @include{doc} topics/cpp-api/exceptions.dox
     @include{doc} topics/cpp-api/utility-functions.dox
-    @include{doc} topics/cpp-api/test-suites.dox
     @include{doc} topics/cpp-api/customisation.dox
     @include{doc} topics/cpp-api/deprecated.dox
 @}

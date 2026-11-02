@@ -1,20 +1,30 @@
 @defgroup micro-os-plus-micro-test-plus-config Configuration
-@brief Configuration macros.
+@brief The macros that enable and configure the framework.
 
 @details
-The µTest++ Testing Framework library uses several preprocessor macros
-to enable it and to configure various options.
+The framework is configured with preprocessor macros. They have no value;
+only their definition matters:
+- `MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED` is required; without it, the
+  headers declare nothing and the library sources compile to nothing;
+- `MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED` makes the deprecated
+  definitions available;
+- `MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED` and
+  `MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED` enable the
+  trace messages.
 
-These macros must be defined by the application; neither the library nor
-its CMake, meson, and xPack build files define them (the `defaultDefine`
-entries in `xcdl-package.jsonc` are informative only).
+@par Where to define them
+The application defines the macros; neither the library nor its CMake,
+meson, and xPack build files define them (the `defaultDefine` entries in
+`xcdl-package.jsonc` are informative only).
 
-The preferred place is `micro-os-plus/micro-test-plus-defines.h`, or
-`micro-os-plus/project-config.h`, which each µTest++ header includes, if
-present, before its own definitions, so that the application and the
-library sources are compiled with the same configuration. The macros
-have no value, only their definition matters; guard them, so that they
-can also be defined on the compiler command line:
+The application and the library sources must be compiled with the same
+macros, otherwise the link fails. The simplest way is a header named
+`micro-os-plus/micro-test-plus-defines.h` (or
+`micro-os-plus/project-config.h`) in the include path of the build: every
+µTest++ header includes it, if present, before its own definitions.
+
+Guard each definition, so that the macro can also be given on the compiler
+command line:
 
 @code{.cpp}
 #if !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)
@@ -22,6 +32,6 @@ can also be defined on the compiler command line:
 #endif // !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)
 @endcode
 
-A macro defined only on the compiler command line (for example
-`‑DMICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED`) must be defined for the 
-entire build (both the application and the library sources).
+A macro given only on the compiler command line (for example
+`-DMICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED`) must be given for the whole
+build, for both the application and the library sources.

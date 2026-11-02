@@ -2,24 +2,19 @@
 @brief Functions used to compose logical expressions in tests.
 
 @details
-The functions `mt::all_of()`, `mt::any_of()`, and `mt::negate()` combine
-multiple conditions, allowing expressive and concise test logic.
-`mt::all_of()` and `mt::any_of()` take two or more operands, and
-`mt::any_of()` is an inclusive or: it is true also when all the conditions
-are true. A chain of the same operation is reported as a single group,
-for example `(a and b and c)`.
+Three functions combine the conditions of a check, and report the values
+of all their operands when the check fails:
+- `mt::all_of (a, b, ...)` is true when all the conditions are true;
+- `mt::any_of (a, b, ...)` is true when at least one condition is true,
+  including when all are;
+- `mt::negate (a)` is true when the condition is false.
 
-All the operands are evaluated before the check, so, unlike the standard
-algorithms of the same names, the functions do not stop at the first
-operand that decides the result. After a `using namespace std`, an
-unqualified call with three or more operands of the same type selects the
-standard algorithm; call the functions as `mt::all_of()` and
-`mt::any_of()`.
+`all_of()` and `any_of()` take two or more operands; a failed check shows
+them as one group, for example `(1 == 1 and 1 == 1 and 1 == 3)`.
 
-The functions have descriptive names, since `and`, `or`, and `not` are
-alternative tokens and cannot be used as identifiers. Using these logical
-functions allows developers to express compound conditions clearly and
-improve readability.
+The functions have names, rather than the `&&`, `||`, and `!` operators,
+because the built-in operators would return a plain `bool`, which loses
+the values of the operands.
 
 @par Example
 
@@ -31,5 +26,14 @@ ts.test ("Check compound conditions", [] (auto& t) {
 });
 @endcode
 
-The overloaded logical operators of the `micro_test_plus::operators`
-namespace are deprecated since 6.0.0, in favour of these functions.
+@par Differences from the built-in operators
+- All the operands are evaluated before the check; unlike `&&` and `||`,
+  the functions do not stop at the first operand that decides the result,
+  so do not write `mt::all_of (mt::ne (p, nullptr), mt::eq (*p, 1))`.
+- After a `using namespace std`, an unqualified `all_of()` or `any_of()`
+  with three or more operands of the same type selects the standard
+  algorithm, which does not compile; write `mt::all_of()` and
+  `mt::any_of()`.
+
+The overloaded logical operators of the `mt::operators` namespace are
+deprecated since 6.0.0, in favour of these functions.

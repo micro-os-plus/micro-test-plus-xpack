@@ -1,14 +1,21 @@
 @defgroup micro-os-plus-micro-test-plus-c-api C API
-@brief Topics related to the µTest++ C API.
+@brief There is no C API; C code is tested from C++.
 
 @details
-Although µTest++ is highly effective for testing C code, its implementation
-is based on modern C++ features that cannot be replicated in the C language.
-Consequently, µTest++ does not provide a dedicated C API or C equivalents
-for its C++ definitions.
+µTest++ is built on C++20 features, such as templates, concepts, and
+lambdas, which have no equivalent in C, so it has no C API.
 
-Developers can, however, use the µTest++ framework to organise and execute
-tests for C code by writing test cases in C++. This approach enables
-comprehensive testing of C modules while benefiting from the advanced
-capabilities and expressive syntax of the C++ API, supporting professional
-software quality assurance.
+To test C code, write the test cases in C++ and call the C functions from
+them. If the C headers do not declare their functions with `extern "C"`
+themselves, include them in an `extern "C"` block:
+
+@code{.cpp}
+extern "C"
+{
+#include "adder.h"
+}
+
+ts.test ("Check the C adder", [] (auto& t) {
+  t.expect (mt::eq (add (2, 3), 5));
+});
+@endcode

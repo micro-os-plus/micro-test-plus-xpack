@@ -2,32 +2,47 @@
 @brief Definitions kept for compatibility with earlier releases.
 
 @details
-The definitions in this group, and in the groups they refer to, are still
-available, but the compiler reports their use, and they will be removed in
-a future major release. Each one names its replacement in the deprecation
-message, together with the version that deprecated it (most of them since
+The deprecated definitions are kept so that the tests written for the
+earlier releases still compile; they will be removed in a future major
+release. The compiler reports each use, with a message that names the
+replacement and the version that deprecated it (most of them since
 6.0.0).
 
 @par Availability
-The deprecated definitions are compiled only when the application defines
-the macro `MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED`, in
-`micro-os-plus/project-config.h` or in
-`micro-os-plus/micro-test-plus-defines.h`. Without it, the applications
-that still use them fail to compile, which is a way of finding what must
-be migrated.
+The deprecated definitions exist only when the application defines the
+macro `MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED` (see
+@ref micro-os-plus-micro-test-plus-config). Without it, the tests that
+still use them do not compile, which shows what remains to be migrated.
 
-@par Groups
-The deprecated definitions are documented together with the features they
-belong to:
-- the overloaded comparison and logical operators, in
-  @ref micro-os-plus-micro-test-plus-cpp-api-deprecated-operators, replaced by the function
-  comparators and the logical functions;
-- the user-defined literals and the type wrappers, in
-  @ref micro-os-plus-micro-test-plus-cpp-api-deprecated-literals, replaced by the plain values
-  passed to the function comparators;
-- the underscore-prefixed logical functions (`_not()`, `_and()`, and `_or()`), in
-  @ref micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions, replaced by
-  `negate()`, `all_of()`, and `any_of()`.
+@par Migration
+Build once with the macro defined and the deprecation warnings enabled,
+and rewrite each reported use as its message suggests. While migrating,
+the applications that build with `-Werror` can disable the warnings
+temporarily with `-Wno-deprecated-declarations`.
+
+@code{.cpp}
+namespace mt = micro_os_plus::micro_test_plus;
+
+// Deprecated.
+using namespace mt::operators;
+using namespace mt::literals;
+t.expect (compute_answer () == 42_i) << "answer is 42";
+
+// Replacement.
+t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+@endcode
+
+@par Deprecated groups
+Three groups of deprecated definitions have topics of their own:
+- the overloaded comparison and logical operators (see
+  @ref micro-os-plus-micro-test-plus-cpp-api-deprecated-operators),
+  replaced by the function comparators and the logical functions;
+- the user-defined literals and the type wrappers (see
+  @ref micro-os-plus-micro-test-plus-cpp-api-deprecated-literals),
+  replaced by the plain values passed to the function comparators;
+- the logical functions `_and()`, `_or()`, and `_not()` (see
+  @ref micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions),
+  replaced by `all_of()`, `any_of()`, and `negate()`.
 
 @par Other deprecated definitions
 - the v5.0.1 names of the classes: `static_runner` (replaced by `runner`),
@@ -64,21 +79,3 @@ belong to:
 - the traits of the `type_traits` namespace: `function_traits` and
   `list`, which are not replaced, and `identity`, replaced by
   `std::type_identity`.
-
-@par Migration
-Build once with the deprecation warnings enabled, and rewrite each
-reported use as suggested by the message. Temporarily, the warnings can be
-disabled with `-Wno-deprecated-declarations`, for the applications that
-build with `-Werror`.
-
-@code{.cpp}
-namespace mt = micro_os_plus::micro_test_plus;
-
-// Deprecated.
-using namespace mt::operators;
-using namespace mt::literals;
-t.expect (compute_answer () == 42_i) << "answer is 42";
-
-// Replacement.
-t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
-@endcode

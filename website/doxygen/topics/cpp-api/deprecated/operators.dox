@@ -2,27 +2,27 @@
 @brief Deprecated overloaded operators for test comparisons.
 
 @details
-The overloaded operators `==`, `!=`, `<`, `>`, `<=`, `>=`, `and`, `or`, and
-`not` are defined in the dedicated `micro_test_plus::operators` namespace,
-to avoid conflicts with application-defined operators.
+The `mt::operators` namespace defines the comparison operators `==`,
+`!=`, `<`, `>`, `<=`, and `>=`, and the logical operators `and`, `or`, and
+`not`, for the framework types. After `using namespace mt::operators`, a
+check such as `t.expect (mt::to_i{ compute_answer () } == 42_i)` reports
+the values of its operands, as the function comparators do.
 
 @par Deprecated
 The operators are deprecated since 6.0.0, in favour of the function
-comparators `mt::eq()`, `mt::ne()`, `mt::lt()`, `mt::le()`, `mt::gt()`, and
-`mt::ge()`, and of the logical functions `mt::all_of()`, `mt::any_of()`, and
-`mt::negate()`, which check and report the plain values, without literal
-suffixes or casts. The compiler reports the use of the operators.
+comparators `mt::eq()`, `mt::ne()`, `mt::lt()`, `mt::le()`, `mt::gt()`,
+and `mt::ge()`, and of the logical functions `mt::all_of()`,
+`mt::any_of()`, and `mt::negate()`, which check and report the plain
+values, without literal suffixes or wrappers.
 
-The operators are restricted to the framework types (see
-`extension::is_op`). For constant values, this is achieved with the
-(deprecated) literals, for example `1_i`, whilst dynamic values can be
-wrapped with the (deprecated) converters such as `mt::to_i{expression}`.
-When neither operand is of such a type, the standard operators are
-selected; they return a plain `bool`, so a failed check cannot show the
-operands.
-
-@warning The overloaded `and` and `or` operators evaluate both operands
-before the check, so they do not short-circuit like the built-in ones.
+@par Limitations
+- The operators apply only when at least one operand is a framework type
+  (see `extension::is_op`): a deprecated literal, such as `1_i`, or a
+  deprecated wrapper, such as `mt::to_i{ value }`. When neither operand
+  is, the standard operator is selected; it returns a plain `bool`, so a
+  failed check cannot show the operands.
+- The overloaded `and` and `or` operators evaluate both operands before
+  the check, so they do not short-circuit like the built-in ones.
 
 @par Replacement
 
