@@ -71,6 +71,18 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
 
+  /**
+   * @brief Local helpers of the runner.
+   *
+   * @details
+   * The unnamed namespace gives the helpers internal linkage, so that they
+   * are visible only in this translation unit, and cannot conflict with
+   * the names of the application or of the other source files of the
+   * framework. They are not declared in any header.
+   *
+   * It contains `help_options`, the list of the command line options
+   * that `--help` displays after the usage line.
+   */
   namespace
   {
     /**
