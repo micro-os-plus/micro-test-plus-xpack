@@ -104,7 +104,7 @@ By default, when a test is executed, the output conforms to the **TAP14 (Test An
 For the above test, the verbose output would look like:
 
 ```console
-# Running: main --verbose
+# Running: minimal-test --verbose
 # Built with GCC 15.2.1, with exceptions
 TAP version 14
 # Subtest: minimal-test
@@ -234,7 +234,7 @@ main(int argc, char* argv[])
   auto& ts = tr.add_top_suite ("The Answer");
 
   ts.test ("Check answer with comparator", [] (auto& t) {
-    t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+    t.expect (mt::eq (compute_answer (), 42)) << "the answer is 42";
   });
 
   return tr.run_suites ();
@@ -1138,7 +1138,7 @@ The failed check reports both values:
           condition: "{ 1, 2 } == { 1, 3 }"
           at:
             fileName: main.cpp
-            lineNumber: 35
+            lineNumber: 37
           ...
 ```
 
@@ -1258,9 +1258,9 @@ main (int argc, char* argv[])
 The failed checks report the operands, with the symbols of the tags:
 
 ```console
-        ✗ FAILED (main.cpp:58, 5 divides 12)
-        ✗ FAILED (main.cpp:59, even 7)
-        ✗ FAILED (main.cpp:60, (3 divides 12 and even 7))
+        ✗ FAILED (main.cpp:59, 5 divides 12)
+        ✗ FAILED (main.cpp:60, even 7)
+        ✗ FAILED (main.cpp:61, (3 divides 12 and even 7))
 ```
 
 The tag is stateless, so it cannot carry a parameter, such as a
@@ -1667,22 +1667,23 @@ a test that passes there fits in its stack.
 
 ### Timings
 
-On native platforms that support a standard way of accessing the system clock (such as the POSIX `clock_gettime()`), the µTest++ runner measures the time spent in each test suite and reports it in milliseconds alongside the results.
+The µTest++ runner measures the time spent in each test suite and reports it in milliseconds alongside the results. The times are measured with `clock_gettime (CLOCK_MONOTONIC)` on the POSIX platforms, and with `timespec_get ()` on Windows.
 
 For example:
 
 ```
-ok 1 - Minimal # { test suite passed, 1 check in 1 test case, time: 0.007 ms }
+ok 1 - minimal-test # { passed, 1 check in 1 test case, time: 0.009 ms }
+
 1..1
-# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.030 ms }
+# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.044 ms }
 ```
 
-On embedded platforms using Arm semihosting, the clock resolution is in the range of tens of milliseconds — too coarse for meaningful reporting — and timings are therefore omitted from the output.
+On the platforms that provide neither, usually the embedded ones, the times are not measured, and are omitted from the output.
 
 ### Console output
 
 The reporters write all console output through the standard `stdout`
-stream, using `vfprintf()`, `fputs()`, and `fflush()`. Output written
+stream, using `vfprintf()`, `fwrite()`, and `fflush()`. Output written
 by the tests with `printf()` shares the same stream and buffer, so the
 two appear in the expected order.
 
@@ -1857,18 +1858,20 @@ enabled with:
 --reporter=human
 ```
 
-The output is slightly more compact, for example:
+For the minimal test above, the output is:
 
 ```
-µTest++ human report
+Running: minimal-test --reporter=human
+Built with GCC 15.2.1, with exceptions
+µTest++ human-readable report
 
-• Minimal
+• minimal-test
 
-    ✓ Check various conditions - passed (2 checks)
+    ✓ Check truth - passed (1 check)
 
-✓ Minimal - passed (2 checks in 1 test case), time: 0.025 ms
+✓ minimal-test - passed (1 check in 1 test case), time: 0.026 ms
 
-✓ Total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.082 ms
+✓ Total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.108 ms
 ```
 
 The human-readable reporter is intended for reading the console output. For the integration with other tools, use the TAP reporter, whose output file is always complete (see [Output file](#output-file)).

@@ -58,13 +58,13 @@ fails the test case, it does not skip it.
 <summary>How can the test results be written to a file?</summary>
 
 Use the `--output-file` option, either as `--output-file=<path>` or as
-`--output-file=<path>`. The file is intended for the integration with
+`--output-file <path>`. The file is intended for the integration with
 other tools, while the console is intended for the people who watch the
 tests run. With both reporters, the file receives the complete
 results, whatever the console verbosity selected with `--verbose`,
 `--quiet`, or `--silent`. The TAP reporter (the default) writes a valid
 TAP document, so, for integration, use it. If the path is
-missing or the file cannot be opened, the error is reported on
+missing or the file cannot be created, the error is reported on
 `stderr` and on the console, no test is run, and the program returns 2.
 
 On embedded platforms, the file is created with `fopen()`, so the
@@ -137,7 +137,7 @@ library in `-Wl,--whole-archive … -Wl,--no-whole-archive`.
 <details>
 <summary>Why is the test output out of order on my board?</summary>
 
-The reporters write through `stdout` (`vfprintf()`, `fputs()`, and
+The reporters write through `stdout` (`vfprintf()`, `fwrite()`, and
 `fflush()`). If the platform forwards only `printf()` to the host, for
 example with `-Wl,--wrap=printf`, and `stdout` goes elsewhere, the two
 streams are not synchronised. Route `stdout` and all the `printf()`
