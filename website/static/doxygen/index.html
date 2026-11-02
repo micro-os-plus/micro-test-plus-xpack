@@ -114,11 +114,35 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
   <div class="headertitle"><div class="title">micro-test-plus </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The <b>µTest++</b> project is a <b>lightweight</b>, <b>macro-free</b>, <b>modern C++</b> testing framework <b>with TAP output</b>, purpose-built for embedded systems development.</p>
-<p>With its clean and expressive C++ API, µTest++ enables developers to write, organise, and execute unit tests with minimal overhead. The library includes advanced features such as <b>test suites</b>, <b>test cases</b>, and detailed reporting, all tailored to meet the specific needs of embedded environments.</p>
-<p>Test results are reported in the <a href="https://en.wikipedia.org/wiki/Test_Anything_Protocol">TAP</a> (<b>Test Anything Protocol</b>) format by default, ensuring compatibility with a wide range of continuous integration systems and TAP-aware test harnesses. A human-readable reporter is also available for interactive use.</p>
-<p>Output verbosity is fully configurable via command-line options, allowing users to choose between concise summaries and comprehensive diagnostic information to best suit their workflow.</p>
-<p>By adopting µTest++, you can achieve robust and maintainable code through systematic and automated testing, supporting professional software engineering practices across your entire project.  </p>
+<div class="textblock"><p>The <b>µTest++</b> project is a C++20 testing framework for embedded systems, which also runs on the native platforms. The tests are ordinary C++ code, with no preprocessor macros, organised in test suites and test cases.</p>
+<p>The results are written in the <a href="https://en.wikipedia.org/wiki/Test_Anything_Protocol">TAP</a> (Test Anything Protocol) format by default, which the continuous integration systems and the TAP tools read. A human-readable format is also available, for reading the results on the console.</p>
+<p>The command-line options select the format, how much is displayed (from nothing, with only the exit code, to every check), the colours, an output file, and the test cases to run.</p>
+<h1 class="doxsection"><a class="anchor" id="mainpage-start"></a>
+Getting started</h1>
+<p>The applications include a single header, <span class="tt"><a class="el" href="micro-test-plus_8h.html" title="Main C++ header with the declarations for the µTest++ Testing Framework.">micro-os-plus/micro-test-plus.h</a></span>. The header declares nothing unless the macro <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-config.html#ga3dd1e70998580fe7d7f410e5cd83879b" title="Enables the µTest++ Testing Framework.">MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</a></span> is defined, preferably in <span class="tt">micro-os-plus/micro-test-plus-defines.h</span>, for the application and for the library sources (see <a class="el" href="group__micro-os-plus-micro-test-plus-config.html" title="Configuration">Configuration</a>).</p>
+<p>A complete test program has a runner, initialised with the command-line arguments, a top suite created in <span class="tt">main()</span> (optional, since the suites can be added to the runner instead), test cases with checks, and returns the exit code of the session:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="micro-test-plus_8h.html">micro-os-plus/micro-test-plus.h</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>mt = <a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a>;</div>
+<div class="line"> </div>
+<div class="line">mt::runner tr;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span></div>
+<div class="line">main (<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[])</div>
+<div class="line">{</div>
+<div class="line">  tr.initialise (argc, argv);</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">auto</span>&amp; ts = tr.add_top_suite ();</div>
+<div class="line"> </div>
+<div class="line">  ts.test (<span class="stringliteral">&quot;Check truth&quot;</span>, [] (<span class="keyword">auto</span>&amp; t) {</div>
+<div class="line">    t.expect (mt::eq (6 * 7, 42)) &lt;&lt; <span class="stringliteral">&quot;the answer&quot;</span>;</div>
+<div class="line">  });</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">return</span> tr.run_suites ();</div>
+<div class="line">}</div>
+<div class="ttc" id="amicro-test-plus_8h_html"><div class="ttname"><a href="micro-test-plus_8h.html">micro-test-plus.h</a></div><div class="ttdoc">Main C++ header with the declarations for the µTest++ Testing Framework.</div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div><div class="ttdef"><b>Definition</b> <a href="check-result_8h_source.html#l00075">check-result.h:76</a></div></div>
+</div><!-- fragment --><p>The topics of the <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api.html" title="C++ API">C++ API</a> group describe the runner, the suites, the test cases, and the checks, and the <a class="el" href="group__micro-os-plus-micro-test-plus-cli.html" title="Command-Line Options">Command-Line Options</a> group the options of the test programs. The installation, the first project, and the user manual are in the <a href="../getting-started/">Getting Started</a> and <a href="../user/">User's Guide</a> pages of the site.  </p>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->

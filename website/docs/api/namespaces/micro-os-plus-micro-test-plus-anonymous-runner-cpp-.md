@@ -17,7 +17,7 @@ keywords:
 
 # `anonymous{runner.cpp}` Namespace
 
-TODO: add <code>@brief</code> to <code>@namespace micro_os_plus::micro_test_plus::anonymous{runner.cpp}</code>
+<p>Local helpers of the runner. <a href="#details">More...</a></p>
 
 ## Definition
 
@@ -47,9 +47,14 @@ namespace micro_os_plus::micro_test_plus::anonymous{runner.cpp} { ... }
 
 ## Description {#details}
 
-TODO: add <code>@brief</code> to <code>@namespace micro_os_plus::micro_test_plus::anonymous{runner.cpp}</code>
+<p>Local helpers of the runner.</p>
 
-TODO: add <code>@details</code> to <code>@namespace micro_os_plus::micro_test_plus::anonymous{runner.cpp}</code>
+
+<p>The unnamed namespace gives the helpers internal linkage, so that they are visible only in this translation unit, and cannot conflict with the names of the application or of the other source files of the framework. They are not declared in any header.</p>
+
+
+<p>It contains <span class="doxyComputerOutput"><a href="#a93bc763e06193fa6de523088f09a8816">help_options</a></span>, the list of the command line options that <span class="doxyComputerOutput">--help</span> displays after the usage line.</p>
+
 
 <div class="doxySectionDef">
 
@@ -105,12 +110,12 @@ TODO: add <code>@details</code> to <code>@namespace micro_os_plus::micro_test_pl
 <p>Lists the options recognised by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-options">runner_options</a></span>, one per line, with the description of the <span class="doxyComputerOutput">--filter</span> levels.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/runner-cpp/#l00084">84</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/runner-cpp">runner.cpp</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/runner-cpp/#l00095">95</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/runner-cpp">runner.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber">85</span><span class="doxyLineContent"><span class="doxyHighlight">        = </span><span class="doxyHighlightStringLiteral">"Options:\n"</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">96</span><span class="doxyLineContent"><span class="doxyHighlight">        = </span><span class="doxyHighlightStringLiteral">"Options:\n"</span></span></div>
 
 </div>
 
@@ -129,6 +134,6 @@ The documentation for this namespace was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

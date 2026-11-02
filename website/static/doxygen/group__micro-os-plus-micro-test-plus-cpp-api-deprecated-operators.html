@@ -158,10 +158,13 @@ requires extension::any_op&lt;std::remove_cvref_t&lt;Lhs_T&gt;, std::remove_cvre
 <tr class="memdesc:ga9d9f5f30c7d8973ef7ccd6f52f0cbd21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated greater than or equal operator. Matches only if at least one operand is a framework type (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="C++20 concept satisfied when a type is a framework expression type.">extension::is_op</a></span>).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The overloaded operators <span class="tt">==</span>, <span class="tt">!=</span>, <span class="tt">&lt;</span>, <span class="tt">&gt;</span>, <span class="tt">&lt;=</span>, <span class="tt">&gt;=</span>, <span class="tt">and</span>, <span class="tt">or</span>, and <span class="tt">not</span> are defined in the dedicated <span class="tt">micro_test_plus::operators</span> namespace, to avoid conflicts with application-defined operators.</p>
-<dl class="section user"><dt>Deprecated</dt><dd>The operators are deprecated since 6.0.0, in favour of the function comparators <span class="tt">mt::eq()</span>, <span class="tt">mt::ne()</span>, <span class="tt">mt::lt()</span>, <span class="tt">mt::le()</span>, <span class="tt">mt::gt()</span>, and <span class="tt">mt::ge()</span>, and of the logical functions <span class="tt">mt::all_of()</span>, <span class="tt">mt::any_of()</span>, and <span class="tt">mt::negate()</span>, which check and report the plain values, without literal suffixes or casts. The compiler reports the use of the operators.</dd></dl>
-<p>The operators are restricted to the framework types (see <span class="tt">extension::is_op</span>). For constant values, this is achieved with the (deprecated) literals, for example <span class="tt">1_i</span>, whilst dynamic values can be wrapped with the (deprecated) converters such as <span class="tt">mt::to_i{expression}</span>. When neither operand is of such a type, the standard operators are selected; they return a plain <span class="tt">bool</span>, so a failed check cannot show the operands.</p>
-<dl class="section warning"><dt>Warning</dt><dd>The overloaded <span class="tt">and</span> and <span class="tt">or</span> operators evaluate both operands before the check, so they do not short-circuit like the built-in ones.</dd></dl>
+<div class="textblock"><p>The <span class="tt">mt::operators</span> namespace defines the comparison operators <span class="tt">==</span>, <span class="tt">!=</span>, <span class="tt">&lt;</span>, <span class="tt">&gt;</span>, <span class="tt">&lt;=</span>, and <span class="tt">&gt;=</span>, and the logical operators <span class="tt">and</span>, <span class="tt">or</span>, and <span class="tt">not</span>, for the framework types. After <span class="tt">using namespace mt::operators</span>, a check such as <span class="tt">t.expect (mt::to_i{ compute_answer () } == 42_i)</span> reports the values of its operands, as the function comparators do.</p>
+<dl class="section user"><dt>Deprecated</dt><dd>The operators are deprecated since 6.0.0, in favour of the function comparators <span class="tt">mt::eq()</span>, <span class="tt">mt::ne()</span>, <span class="tt">mt::lt()</span>, <span class="tt">mt::le()</span>, <span class="tt">mt::gt()</span>, and <span class="tt">mt::ge()</span>, and of the logical functions <span class="tt">mt::all_of()</span>, <span class="tt">mt::any_of()</span>, and <span class="tt">mt::negate()</span>, which check and report the plain values, without literal suffixes or wrappers.</dd></dl>
+<dl class="section user"><dt>Limitations</dt><dd><ul>
+<li>The operators apply only when at least one operand is a framework type (see <span class="tt">extension::is_op</span>): a deprecated literal, such as <span class="tt">1_i</span>, or a deprecated wrapper, such as <span class="tt">mt::to_i{ value }</span>. When neither operand is, the standard operator is selected; it returns a plain <span class="tt">bool</span>, so a failed check cannot show the operands.</li>
+<li>The overloaded <span class="tt">and</span> and <span class="tt">or</span> operators evaluate both operands before the check, so they do not short-circuit like the built-in ones.</li>
+</ul>
+</dd></dl>
 <dl class="section user"><dt>Replacement</dt><dd></dd></dl>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>mt = <a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a>;</div>
 <div class="line"> </div>
@@ -224,12 +227,12 @@ requires extension::any_op&lt;std::remove_cvref_t&lt;Lhs_T&gt;, std::remove_cvre
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000066">Deprecated</a></b></dt><dd>use <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" title="Generic logical and operation, for two or more operands.">all_of()</a> (since 6.0.0)</dd></dl>
 <p>Constructs an <span class="tt">and_op</span> logical conjunction object from the two operands and returns it. The object evaluates to <span class="tt">true</span> if both operands are true. At least one operand must be a framework type (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="C++20 concept satisfied when a type is a framework expression type.">extension::is_op</a></span>). </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00857">857</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  858</span>    {</div>
-<div class="line"><span class="lineno">  859</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html">detail::and_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</div>
-<div class="line"><span class="lineno">  860</span>                             std::forward&lt;Rhs_T&gt; (rhs) };</div>
-<div class="line"><span class="lineno">  861</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html">micro_os_plus::micro_test_plus::detail::and_op</a></div><div class="ttdoc">Logical AND comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01051">detail.h:1052</a></div></div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00856">856</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  857</span>    {</div>
+<div class="line"><span class="lineno">  858</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html">detail::and_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</div>
+<div class="line"><span class="lineno">  859</span>                             std::forward&lt;Rhs_T&gt; (rhs) };</div>
+<div class="line"><span class="lineno">  860</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html">micro_os_plus::micro_test_plus::detail::and_op</a></div><div class="ttdoc">Logical AND comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01044">detail.h:1045</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -274,14 +277,14 @@ requires extension::is_op&lt;std::remove_cvref_t&lt;T&gt;&gt;</div>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000068">Deprecated</a></b></dt><dd>use <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gae82d39ac86167bb4bfa6624676f3729e" title="Generic logical not operation.">negate()</a> (since 6.0.0)</dd></dl>
 <p>Constructs a <span class="tt">not_op</span> logical negator object from the operand and returns it. The object evaluates to <span class="tt">true</span> if the operand is false. The operand must be a framework type (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="C++20 concept satisfied when a type is a framework expression type.">extension::is_op</a></span>). </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00889">889</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  890</span>    {</div>
-<div class="line"><span class="lineno">  891</span>      <span class="comment">// Not `not_op{ t }`, which would copy an operand that is itself</span></div>
-<div class="line"><span class="lineno">  892</span>      <span class="comment">// a `not_op`, instead of negating it.</span></div>
-<div class="line"><span class="lineno">  893</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__op.html">detail::not_op&lt;detail::stored_operand_t&lt;T&gt;</a>&gt;{ std::forward&lt;T&gt; (</div>
-<div class="line"><span class="lineno">  894</span>          t) };</div>
-<div class="line"><span class="lineno">  895</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__op.html">micro_os_plus::micro_test_plus::detail::not_op</a></div><div class="ttdoc">Logical NOT comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01164">detail.h:1165</a></div></div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00888">888</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  889</span>    {</div>
+<div class="line"><span class="lineno">  890</span>      <span class="comment">// Not `not_op{ t }`, which would copy an operand that is itself</span></div>
+<div class="line"><span class="lineno">  891</span>      <span class="comment">// a `not_op`, instead of negating it.</span></div>
+<div class="line"><span class="lineno">  892</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__op.html">detail::not_op&lt;detail::stored_operand_t&lt;T&gt;</a>&gt;{ std::forward&lt;T&gt; (</div>
+<div class="line"><span class="lineno">  893</span>          t) };</div>
+<div class="line"><span class="lineno">  894</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__op.html">micro_os_plus::micro_test_plus::detail::not_op</a></div><div class="ttdoc">Logical NOT comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01157">detail.h:1158</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -332,12 +335,12 @@ requires extension::any_op&lt;std::remove_cvref_t&lt;Lhs_T&gt;, std::remove_cvre
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000067">Deprecated</a></b></dt><dd>use <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gadc2224d07a9bf118c8772518a7d3c4fd" title="Generic logical (inclusive) or operation, for two or more operands.">any_of()</a> (since 6.0.0)</dd></dl>
 <p>Constructs an <span class="tt">or_op</span> logical disjunction object from the two operands and returns it. The object evaluates to <span class="tt">true</span> if at least one operand is true. At least one operand must be a framework type (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="C++20 concept satisfied when a type is a framework expression type.">extension::is_op</a></span>). </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00874">874</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  875</span>    {</div>
-<div class="line"><span class="lineno">  876</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op.html">detail::or_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</div>
-<div class="line"><span class="lineno">  877</span>                            std::forward&lt;Rhs_T&gt; (rhs) };</div>
-<div class="line"><span class="lineno">  878</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op.html">micro_os_plus::micro_test_plus::detail::or_op</a></div><div class="ttdoc">Logical OR comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01106">detail.h:1107</a></div></div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00873">873</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  874</span>    {</div>
+<div class="line"><span class="lineno">  875</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op.html">detail::or_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</div>
+<div class="line"><span class="lineno">  876</span>                            std::forward&lt;Rhs_T&gt; (rhs) };</div>
+<div class="line"><span class="lineno">  877</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op.html">micro_os_plus::micro_test_plus::detail::or_op</a></div><div class="ttdoc">Logical OR comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01099">detail.h:1100</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -388,14 +391,14 @@ requires extension::any_op&lt;std::remove_cvref_t&lt;Lhs_T&gt;, std::remove_cvre
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000061">Deprecated</a></b></dt><dd>use <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa77076edd474fc10d8c0bd6da623e284" title="Generic non-equality comparator.">ne()</a> (since 6.0.0)</dd></dl>
 <p>Constructs a comparator object, with the <span class="tt">not_equal_to</span> tag, from the two operands and returns it. The comparator evaluates to <span class="tt">true</span> if the operands are not equal. At least one operand must be a framework type (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="C++20 concept satisfied when a type is a framework expression type.">extension::is_op</a></span>). </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00768">768</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  769</span>    {</div>
-<div class="line"><span class="lineno">  770</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</div>
-<div class="line"><span class="lineno">  771</span>                                 std::forward&lt;Rhs_T&gt; (rhs),</div>
-<div class="line"><span class="lineno">  772</span>                                 <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to.html">detail::not_equal_to</a>{} };</div>
-<div class="line"><span class="lineno">  773</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">micro_os_plus::micro_test_plus::detail::compare_op</a></div><div class="ttdoc">Relational comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00877">detail.h:878</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to.html">micro_os_plus::micro_test_plus::detail::not_equal_to</a></div><div class="ttdoc">Non-equality tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00494">detail.h:495</a></div></div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00767">767</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  768</span>    {</div>
+<div class="line"><span class="lineno">  769</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</div>
+<div class="line"><span class="lineno">  770</span>                                 std::forward&lt;Rhs_T&gt; (rhs),</div>
+<div class="line"><span class="lineno">  771</span>                                 <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to.html">detail::not_equal_to</a>{} };</div>
+<div class="line"><span class="lineno">  772</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">micro_os_plus::micro_test_plus::detail::compare_op</a></div><div class="ttdoc">Relational comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00870">detail.h:871</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to.html">micro_os_plus::micro_test_plus::detail::not_equal_to</a></div><div class="ttdoc">Non-equality tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00487">detail.h:488</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -446,12 +449,12 @@ requires extension::any_op&lt;std::remove_cvref_t&lt;Lhs_T&gt;, std::remove_cvre
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000064">Deprecated</a></b></dt><dd>use <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaea39573e23de35872ace5b08d2514327" title="Generic less than comparator.">lt()</a> (since 6.0.0)</dd></dl>
 <p>Constructs a comparator object, with the <span class="tt">less</span> tag, from the two operands and returns it. The comparator evaluates to <span class="tt">true</span> if <span class="tt">lhs</span> is less than <span class="tt">rhs</span>. At least one operand must be a framework type (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="C++20 concept satisfied when a type is a framework expression type.">extension::is_op</a></span>). </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00821">821</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  823</span>    {</div>
-<div class="line"><span class="lineno">  824</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</div>
-<div class="line"><span class="lineno">  825</span>                                 std::forward&lt;Rhs_T&gt; (rhs), <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less.html">detail::less</a>{} };</div>
-<div class="line"><span class="lineno">  826</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less.html">micro_os_plus::micro_test_plus::detail::less</a></div><div class="ttdoc">Less than tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00671">detail.h:672</a></div></div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00820">820</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  822</span>    {</div>
+<div class="line"><span class="lineno">  823</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</div>
+<div class="line"><span class="lineno">  824</span>                                 std::forward&lt;Rhs_T&gt; (rhs), <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less.html">detail::less</a>{} };</div>
+<div class="line"><span class="lineno">  825</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less.html">micro_os_plus::micro_test_plus::detail::less</a></div><div class="ttdoc">Less than tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00664">detail.h:665</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -502,13 +505,13 @@ requires extension::any_op&lt;std::remove_cvref_t&lt;Lhs_T&gt;, std::remove_cvre
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000065">Deprecated</a></b></dt><dd>use <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaf9e47a6e18771f969cdd840ec187734a" title="Generic less than or equal comparator.">le()</a> (since 6.0.0)</dd></dl>
 <p>Constructs a comparator object, with the <span class="tt">less_equal</span> tag, from the two operands and returns it. The comparator evaluates to <span class="tt">true</span> if <span class="tt">lhs</span> is less than or equal to <span class="tt">rhs</span>. At least one operand must be a framework type (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="C++20 concept satisfied when a type is a framework expression type.">extension::is_op</a></span>). </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00838">838</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  840</span>    {</div>
-<div class="line"><span class="lineno">  841</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</div>
-<div class="line"><span class="lineno">  842</span>                                 std::forward&lt;Rhs_T&gt; (rhs),</div>
-<div class="line"><span class="lineno">  843</span>                                 <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal.html">detail::less_equal</a>{} };</div>
-<div class="line"><span class="lineno">  844</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal.html">micro_os_plus::micro_test_plus::detail::less_equal</a></div><div class="ttdoc">Less than or equal tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00730">detail.h:731</a></div></div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00837">837</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  839</span>    {</div>
+<div class="line"><span class="lineno">  840</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</div>
+<div class="line"><span class="lineno">  841</span>                                 std::forward&lt;Rhs_T&gt; (rhs),</div>
+<div class="line"><span class="lineno">  842</span>                                 <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal.html">detail::less_equal</a>{} };</div>
+<div class="line"><span class="lineno">  843</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal.html">micro_os_plus::micro_test_plus::detail::less_equal</a></div><div class="ttdoc">Less than or equal tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00723">detail.h:724</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -559,13 +562,13 @@ requires extension::any_op&lt;std::remove_cvref_t&lt;Lhs_T&gt;, std::remove_cvre
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000060">Deprecated</a></b></dt><dd>use <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gada610d1d5701b79f3df916f6e397ea06" title="Generic equality comparator.">eq()</a> (since 6.0.0)</dd></dl>
 <p>Constructs a comparator object, with the <span class="tt">equal_to</span> tag, from the two operands and returns it. The comparator evaluates to <span class="tt">true</span> if the operands are equal. At least one operand must be a framework type (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="C++20 concept satisfied when a type is a framework expression type.">extension::is_op</a></span>). </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00750">750</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  751</span>    {</div>
-<div class="line"><span class="lineno">  752</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</div>
-<div class="line"><span class="lineno">  753</span>                                 std::forward&lt;Rhs_T&gt; (rhs),</div>
-<div class="line"><span class="lineno">  754</span>                                 <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to.html">detail::equal_to</a>{} };</div>
-<div class="line"><span class="lineno">  755</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to.html">micro_os_plus::micro_test_plus::detail::equal_to</a></div><div class="ttdoc">Equality tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00435">detail.h:436</a></div></div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00749">749</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  750</span>    {</div>
+<div class="line"><span class="lineno">  751</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</div>
+<div class="line"><span class="lineno">  752</span>                                 std::forward&lt;Rhs_T&gt; (rhs),</div>
+<div class="line"><span class="lineno">  753</span>                                 <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to.html">detail::equal_to</a>{} };</div>
+<div class="line"><span class="lineno">  754</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to.html">micro_os_plus::micro_test_plus::detail::equal_to</a></div><div class="ttdoc">Equality tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00428">detail.h:429</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -616,13 +619,13 @@ requires extension::any_op&lt;std::remove_cvref_t&lt;Lhs_T&gt;, std::remove_cvre
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000062">Deprecated</a></b></dt><dd>use <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaf32fd09749f18635233613fa48f91b56" title="Generic greater than comparator.">gt()</a> (since 6.0.0)</dd></dl>
 <p>Constructs a comparator object, with the <span class="tt">greater</span> tag, from the two operands and returns it. The comparator evaluates to <span class="tt">true</span> if <span class="tt">lhs</span> is greater than <span class="tt">rhs</span>. At least one operand must be a framework type (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="C++20 concept satisfied when a type is a framework expression type.">extension::is_op</a></span>). </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00786">786</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  787</span>    {</div>
-<div class="line"><span class="lineno">  788</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</div>
-<div class="line"><span class="lineno">  789</span>                                 std::forward&lt;Rhs_T&gt; (rhs),</div>
-<div class="line"><span class="lineno">  790</span>                                 <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater.html">detail::greater</a>{} };</div>
-<div class="line"><span class="lineno">  791</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater.html">micro_os_plus::micro_test_plus::detail::greater</a></div><div class="ttdoc">Greater than tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00553">detail.h:554</a></div></div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00785">785</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  786</span>    {</div>
+<div class="line"><span class="lineno">  787</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</div>
+<div class="line"><span class="lineno">  788</span>                                 std::forward&lt;Rhs_T&gt; (rhs),</div>
+<div class="line"><span class="lineno">  789</span>                                 <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater.html">detail::greater</a>{} };</div>
+<div class="line"><span class="lineno">  790</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater.html">micro_os_plus::micro_test_plus::detail::greater</a></div><div class="ttdoc">Greater than tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00546">detail.h:547</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -673,13 +676,13 @@ requires extension::any_op&lt;std::remove_cvref_t&lt;Lhs_T&gt;, std::remove_cvre
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000063">Deprecated</a></b></dt><dd>use <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga989e5966794d5c5487477aa782d844b1" title="Generic greater than or equal comparator.">ge()</a> (since 6.0.0)</dd></dl>
 <p>Constructs a comparator object, with the <span class="tt">greater_equal</span> tag, from the two operands and returns it. The comparator evaluates to <span class="tt">true</span> if <span class="tt">lhs</span> is greater than or equal to <span class="tt">rhs</span>. At least one operand must be a framework type (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="C++20 concept satisfied when a type is a framework expression type.">extension::is_op</a></span>). </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00804">804</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  805</span>    {</div>
-<div class="line"><span class="lineno">  806</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</div>
-<div class="line"><span class="lineno">  807</span>                                 std::forward&lt;Rhs_T&gt; (rhs),</div>
-<div class="line"><span class="lineno">  808</span>                                 <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal.html">detail::greater_equal</a>{} };</div>
-<div class="line"><span class="lineno">  809</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal.html">micro_os_plus::micro_test_plus::detail::greater_equal</a></div><div class="ttdoc">Greater than or equal tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00612">detail.h:613</a></div></div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00803">803</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  804</span>    {</div>
+<div class="line"><span class="lineno">  805</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</div>
+<div class="line"><span class="lineno">  806</span>                                 std::forward&lt;Rhs_T&gt; (rhs),</div>
+<div class="line"><span class="lineno">  807</span>                                 <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal.html">detail::greater_equal</a>{} };</div>
+<div class="line"><span class="lineno">  808</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal.html">micro_os_plus::micro_test_plus::detail::greater_equal</a></div><div class="ttdoc">Greater than or equal tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00605">detail.h:606</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

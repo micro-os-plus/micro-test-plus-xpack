@@ -95,17 +95,14 @@ namespace micro_os_plus::micro_test_plus::utility { ... }
 <p>Utility functions for the µTest++ testing framework.</p>
 
 
-<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/utility">micro_os_plus::micro_test_plus::utility</a></span> namespace provides a suite of helper functions designed to support advanced string operations and other common tasks within the µTest++ framework.</p>
+<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/utility">micro_os_plus::micro_test_plus::utility</a></span> namespace provides a suite of helper functions for the strings that the tests often check.</p>
 
 
-<p>These utilities include functions for extracting the file name from a path, for pattern matching (verifying whether a string matches a pattern with <span class="doxyComputerOutput">*</span> and <span class="doxyComputerOutput">?</span> wildcards), and for splitting strings into sub-strings based on delimiters. The implementations are efficient and suitable for both embedded and general C++ projects.</p>
-
-
-<p>By encapsulating these helper functions within a dedicated namespace, the framework maintains clear code organisation and minimises naming conflicts.</p>
+<p>These utilities include functions for extracting the file name from a path, for pattern matching (verifying whether a string matches a pattern with <span class="doxyComputerOutput">*</span> and <span class="doxyComputerOutput">?</span> wildcards), and for splitting strings into sub-strings based on delimiters.</p>
 
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

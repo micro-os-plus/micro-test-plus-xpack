@@ -30,13 +30,10 @@ keywords:
 <p>Although named as a header, this file is not included in the build process; it is intended exclusively as a documentation resource for Doxygen. Due to Doxygen processing requirements, it cannot be provided as a Markdown file or as a <span class="doxyComputerOutput">.doxyfile</span>.</p>
 
 
-<p>It introduces and organises the main documentation groups for the library, covering the C++ API, command-line options, expectations, requirements, function comparators, logical functions, exception checks, utility functions, and test suite management.</p>
+<p>It defines the tree and the order of the documentation topics, which is also the order of the sidebar, by including with <span class="doxyComputerOutput">@include{doc}</span> the hand-written Doxygen sources of the <span class="doxyComputerOutput">website/doxygen</span> folder: the main page (<span class="doxyComputerOutput">pages/</span>), the file and folder pages (<span class="doxyComputerOutput">files/</span> and <span class="doxyComputerOutput">folders/</span>), the topics (<span class="doxyComputerOutput">topics/</span>, with the C++ API topics in <span class="doxyComputerOutput">topics/cpp-api/</span>), and the configuration macros (<span class="doxyComputerOutput">macros/</span>).</p>
 
 
-<p>The documentation is structured to provide a comprehensive overview of the library's features, usage patterns, and configuration options. It includes detailed explanations, usage examples, and descriptions of the available reporters, verbosity modes, and filters, along with representative output for various scenarios.</p>
-
-
-<p>All documentation topics and group definitions are maintained in this file to ensure a consistent and modular structure. The file is located in the <span class="doxyComputerOutput">website/doxygen/files</span> folder to facilitate integration with the Doxygen system.</p>
+<p>The text of the topics is not in this file, but in the included files; this page, for example, is <span class="doxyComputerOutput">files/topics-h.dox</span>, whereas <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/topics-h">topics.h</a></span> is in the <span class="doxyComputerOutput">website/doxygen</span> folder.</p>
 
 
 ## File Listing
@@ -66,6 +63,6 @@ The file content with the documentation metadata removed is:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

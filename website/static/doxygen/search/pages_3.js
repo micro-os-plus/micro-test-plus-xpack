@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['help_0',['Help',['../group__micro-os-plus-micro-test-plus-cli.html#cli-help',1,'']]]
+  ['getting_20started_0',['Getting started',['../index.html#mainpage-start',1,'']]]
 ];

@@ -240,10 +240,7 @@ keywords:
 <p>Folder with C++ header files containing inline µTest++ implementations.</p>
 
 
-<p>This folder gathers the inline implementation headers used by µTest++. These headers define logic for core library components, including the check results, counters, exception checks, the expression formatter, function comparators, mathematical utilities, reflection utilities, test reporters, test runners and their options, the stopwatch, test suites, utility functions, and values.</p>
-
-
-<p>By separating inline implementations from their corresponding declarations, this structure promotes modularity, clarity, and maintainability within the codebase. All inline definitions are designed to be lightweight and efficient, supporting both embedded and general C++ development.</p>
+<p>This folder holds the definitions of the inline functions and of the templates declared in the headers of the parent folder, in files named after them, with the <span class="doxyComputerOutput">-inlines</span> suffix: the check results, counters, deprecated definitions, shared templates, exception checks, expression formatter, function comparators, mathematical helpers, reflection, reporters, runner and its options, stopwatch, test suites and test cases, and string utilities.</p>
 
 
 <p>The contents of this folder are intended solely for internal use within the library and should not be included directly by user code.</p>
@@ -251,6 +248,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

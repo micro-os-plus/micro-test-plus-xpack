@@ -1257,7 +1257,7 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d" kind="enumvalue"><name>quiet</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" kind="enumvalue"><name>normal</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" kind="enumvalue"><name>verbose</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gabecc05360d0941067222d827ff8e3f08" kind="typedef"><name>expression_formatter</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-customisation_1gabecc05360d0941067222d827ff8e3f08" kind="typedef"><name>expression_formatter</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga47d2c99f85fc5597b82da402d4687e75" kind="typedef"><name>static_runner</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga1424c18b26d5fdaed11439c77e6bf561" kind="typedef"><name>subtest</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" kind="function"><name>_and</name></member>
@@ -1578,7 +1578,7 @@
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga63345b69c376caae707262748aa6aea1" kind="function"><name>throws</name></member>
   </compound>
   <compound refid="expression-formatter_8h" kind="file"><name>expression-formatter.h</name>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gabecc05360d0941067222d827ff8e3f08" kind="typedef"><name>expression_formatter</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-customisation_1gabecc05360d0941067222d827ff8e3f08" kind="typedef"><name>expression_formatter</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a48c790000ed3d766b705c6c5223d8767" kind="variable"><name>colours_none</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ad59e204218aa41581652a072be0e8a8a" kind="variable"><name>colours_red_green</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a1fd5e3a96e759c76038572203aa988c8" kind="function"><name>append_control_escape</name></member>
@@ -1839,6 +1839,8 @@
   </compound>
   <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-runners" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-runners</name>
   </compound>
+  <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-test-suites" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-test-suites</name>
+  </compound>
   <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-test-case" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-test-case</name>
   </compound>
   <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-expectations" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-expectations</name>
@@ -1848,7 +1850,6 @@
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-requirements_1gaad1feafeef2f3cea336be3ebe0b27e14" kind="function"><name>require</name></member>
   </compound>
   <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-function-comparators</name>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gabecc05360d0941067222d827ff8e3f08" kind="typedef"><name>expression_formatter</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0d374ffc56933dccd3ffba008ab7eaa5" kind="function"><name>approx</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kind="function"><name>eq</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga989e5966794d5c5487477aa782d844b1" kind="function"><name>ge</name></member>
@@ -1873,7 +1874,8 @@
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gac17bb0b9be9a1ca01854c8bbbabc5def" kind="function"><name>split</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" kind="function"><name>split</name></member>
   </compound>
-  <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-test-suites" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-test-suites</name>
+  <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-customisation" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-customisation</name>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-customisation_1gabecc05360d0941067222d827ff8e3f08" kind="typedef"><name>expression_formatter</name></member>
   </compound>
   <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-deprecated</name>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga67890916b8d3d8cbaab893cc6b599745" kind="typedef"><name>genuine_integral_value</name></member>

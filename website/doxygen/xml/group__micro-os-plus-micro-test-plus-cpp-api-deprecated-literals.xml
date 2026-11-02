@@ -39,7 +39,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1577" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1567" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6ccf42d05ae14c445f602128f8ffd831" prot="public" static="no">
         <type>detail::value&lt; char &gt;</type>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1589" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1579" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae3838e23c60edeadbafdd4a22d1b1516" prot="public" static="no">
         <type>detail::value&lt; signed char &gt;</type>
@@ -79,7 +79,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1601" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1591" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" prot="public" static="no">
         <type>detail::value&lt; short &gt;</type>
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1613" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1603" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf3ee271cefcffa625e40d476305da62f" prot="public" static="no">
         <type>detail::value&lt; int &gt;</type>
@@ -119,7 +119,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1625" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1615" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga09028a1e0e713723257afba48b9ee551" prot="public" static="no">
         <type>detail::value&lt; long &gt;</type>
@@ -139,7 +139,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1637" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1627" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" prot="public" static="no">
         <type>detail::value&lt; long long &gt;</type>
@@ -159,7 +159,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1649" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1639" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" prot="public" static="no">
         <type>detail::value&lt; unsigned &gt;</type>
@@ -179,7 +179,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1661" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1651" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" prot="public" static="no">
         <type>detail::value&lt; unsigned char &gt;</type>
@@ -199,7 +199,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1673" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1663" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" prot="public" static="no">
         <type>detail::value&lt; unsigned short &gt;</type>
@@ -219,7 +219,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1685" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1675" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5d2d6a69c090569866a779672772b48f" prot="public" static="no">
         <type>detail::value&lt; unsigned long &gt;</type>
@@ -239,7 +239,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1697" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1687" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae1438b74ec39a793d5ad516a7c2c7788" prot="public" static="no">
         <type>detail::value&lt; unsigned long long &gt;</type>
@@ -259,7 +259,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1709" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1699" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" prot="public" static="no">
         <type>detail::value&lt; std::int8_t &gt;</type>
@@ -279,7 +279,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1721" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1711" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" prot="public" static="no">
         <type>detail::value&lt; std::int16_t &gt;</type>
@@ -299,7 +299,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1733" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1723" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga201eeff58867ba58d3312ae56113ef06" prot="public" static="no">
         <type>detail::value&lt; std::int32_t &gt;</type>
@@ -319,7 +319,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1745" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1735" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaead55f5e265634a742633261f9f2aa3f" prot="public" static="no">
         <type>detail::value&lt; std::int64_t &gt;</type>
@@ -339,7 +339,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1757" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1747" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" prot="public" static="no">
         <type>detail::value&lt; std::uint8_t &gt;</type>
@@ -359,7 +359,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1769" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1759" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga87bb08ab5e58f481ee911e872108f8e0" prot="public" static="no">
         <type>detail::value&lt; std::uint16_t &gt;</type>
@@ -379,7 +379,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1781" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1771" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" prot="public" static="no">
         <type>detail::value&lt; std::uint32_t &gt;</type>
@@ -399,7 +399,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1793" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1783" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" prot="public" static="no">
         <type>detail::value&lt; std::uint64_t &gt;</type>
@@ -419,7 +419,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1805" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1795" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5368740b47e92605914b6c38ea88aebf" prot="public" static="no">
         <type>detail::value&lt; float &gt;</type>
@@ -439,7 +439,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1817" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1807" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" prot="public" static="no">
         <type>detail::value&lt; double &gt;</type>
@@ -459,7 +459,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1828" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1818" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaeba32254fdd8159523b525745b13bfa9" prot="public" static="no">
         <type>detail::value&lt; long double &gt;</type>
@@ -479,7 +479,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1839" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1829" column="3"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="user-defined">
@@ -506,7 +506,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1980" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1970" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafdd897d040f92df9cd42e551ebc88cd8" prot="public" static="no">
         <type>to_c</type>
@@ -523,7 +523,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1990" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1980" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0cc4baab5f421ac7adee10218d8ee8a2" prot="public" static="no">
         <type>to_sc</type>
@@ -540,7 +540,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2000" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1990" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga461a956b7e308ed6e8c64afa3cf160f2" prot="public" static="no">
         <type>to_s</type>
@@ -557,7 +557,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2010" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2000" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" prot="public" static="no">
         <type>to_i</type>
@@ -574,7 +574,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2020" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2010" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga429a848542fc4ffafd3dd22bc1832654" prot="public" static="no">
         <type>to_l</type>
@@ -591,7 +591,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2030" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2020" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9c597ca04848620b8570c29a4741e77d" prot="public" static="no">
         <type>to_ll</type>
@@ -608,7 +608,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2040" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2030" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaaa486af2418a24076237fbe26940f5ae" prot="public" static="no">
         <type>to_u</type>
@@ -625,7 +625,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2050" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2040" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaa8bb559065ea34a9645fdfd6339b9b7a" prot="public" static="no">
         <type>to_uc</type>
@@ -642,7 +642,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2060" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2050" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga65aea7fc6324806cc029041a1c785611" prot="public" static="no">
         <type>to_us</type>
@@ -659,7 +659,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2070" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2060" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga32c7eef01fcaef2f1a9478427d951f62" prot="public" static="no">
         <type>to_ul</type>
@@ -676,7 +676,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2080" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2070" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gada8a165060d3d3b3ab51272b9da58761" prot="public" static="no">
         <type>to_ull</type>
@@ -693,7 +693,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2090" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2080" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga265f8609ef3d6ead78c7a66825553e24" prot="public" static="no">
         <type>to_i8</type>
@@ -710,7 +710,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2100" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2090" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad2d95793c99112ad2889c6663789d1e3" prot="public" static="no">
         <type>to_i16</type>
@@ -727,7 +727,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2110" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2100" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga917a1759e37cd0d3fe3786da11729a4b" prot="public" static="no">
         <type>to_i32</type>
@@ -744,7 +744,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2120" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2110" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga290a150eae030e183ca2e14e9095c93b" prot="public" static="no">
         <type>to_i64</type>
@@ -761,7 +761,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2130" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2120" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" prot="public" static="no">
         <type>to_u8</type>
@@ -778,7 +778,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2140" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2130" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga97f7bc9a25eb4b7c663bd2388ade01ae" prot="public" static="no">
         <type>to_u16</type>
@@ -795,7 +795,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2150" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2140" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga4afa32150456241245bfc641a6f17bbc" prot="public" static="no">
         <type>to_u32</type>
@@ -812,7 +812,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2160" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2150" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga1241e84fc4457af1b4df5f053eec6aa5" prot="public" static="no">
         <type>to_u64</type>
@@ -829,7 +829,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2170" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2160" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga231cd51e76a2f426703275739d605ad4" prot="public" static="no">
         <type>to_f</type>
@@ -846,7 +846,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2180" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2170" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga7c6c0169d894a7dd589d96df49e8df26" prot="public" static="no">
         <type>to_d</type>
@@ -863,7 +863,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2189" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2179" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gacfe28c6fb7bfb47ca8891cb61e7f58d9" prot="public" static="no">
         <type>to_ld</type>
@@ -880,7 +880,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2198" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2188" column="3"/>
       </memberdef>
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga15147e343475e219c2e46dce07b4127c" prot="public" static="no">
         <templateparamlist>
@@ -912,7 +912,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2213" column="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2203" column="3"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -982,10 +982,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1280" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1280" bodyend="1284" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1934" declcolumn="3"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" compoundref="deprecated-inlines_8h" startline="1280" endline="1284">micro_os_plus::micro_test_plus::approx</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0d374ffc56933dccd3ffba008ab7eaa5" compoundref="function-comparators-inlines_8h" startline="211" endline="216">micro_os_plus::micro_test_plus::approx</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" compoundref="deprecated-inlines_8h" startline="1280" endline="1284">micro_os_plus::micro_test_plus::approx</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1279" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1279" bodyend="1283" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1924" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" compoundref="deprecated-inlines_8h" startline="1279" endline="1283">micro_os_plus::micro_test_plus::approx</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0d374ffc56933dccd3ffba008ab7eaa5" compoundref="function-comparators-inlines_8h" startline="210" endline="215">micro_os_plus::micro_test_plus::approx</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" compoundref="deprecated-inlines_8h" startline="1279" endline="1283">micro_os_plus::micro_test_plus::approx</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaa2bfc74376f8c110053bfa6e06e40772" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>auto</type>
@@ -1031,7 +1031,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1241" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1241" bodyend="1244" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1522" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1240" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1240" bodyend="1243" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1512" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae521cebfd48332f44d01e4f880b4aafa" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1067,8 +1067,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="942" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="942" bodyend="945" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1196" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="584" endline="598">micro_os_plus::micro_test_plus::detail::integral_literal</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="941" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="941" bodyend="944" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1186" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="583" endline="597">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1104,10 +1104,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1199" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1199" bodyend="1205" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1492" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a154910632d01b827ab1b67f309064211" compoundref="deprecated-inlines_8h" startline="182" endline="209">micro_os_plus::micro_test_plus::detail::math::den</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" compoundref="deprecated-inlines_8h" startline="225" endline="230">micro_os_plus::micro_test_plus::detail::math::den_size</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" compoundref="deprecated-inlines_8h" startline="139" endline="164">micro_os_plus::micro_test_plus::detail::math::num</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1198" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1198" bodyend="1204" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1482" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a154910632d01b827ab1b67f309064211" compoundref="deprecated-inlines_8h" startline="181" endline="208">micro_os_plus::micro_test_plus::detail::math::den</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" compoundref="deprecated-inlines_8h" startline="224" endline="229">micro_os_plus::micro_test_plus::detail::math::den_size</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" compoundref="deprecated-inlines_8h" startline="138" endline="163">micro_os_plus::micro_test_plus::detail::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1143,10 +1143,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1181" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1181" bodyend="1187" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1477" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a154910632d01b827ab1b67f309064211" compoundref="deprecated-inlines_8h" startline="182" endline="209">micro_os_plus::micro_test_plus::detail::math::den</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" compoundref="deprecated-inlines_8h" startline="225" endline="230">micro_os_plus::micro_test_plus::detail::math::den_size</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" compoundref="deprecated-inlines_8h" startline="139" endline="164">micro_os_plus::micro_test_plus::detail::math::num</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1180" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1180" bodyend="1186" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1467" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a154910632d01b827ab1b67f309064211" compoundref="deprecated-inlines_8h" startline="181" endline="208">micro_os_plus::micro_test_plus::detail::math::den</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" compoundref="deprecated-inlines_8h" startline="224" endline="229">micro_os_plus::micro_test_plus::detail::math::den_size</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" compoundref="deprecated-inlines_8h" startline="138" endline="163">micro_os_plus::micro_test_plus::detail::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga366a0d47aec3241e659816067c94fcdf" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1182,8 +1182,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="914" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="914" bodyend="917" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1164" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="584" endline="598">micro_os_plus::micro_test_plus::detail::integral_literal</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="913" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="913" bodyend="916" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1154" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="583" endline="597">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gabce6e838737bf25be6e7527f69e75590" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1219,8 +1219,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1082" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1082" bodyend="1085" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1363" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="584" endline="598">micro_os_plus::micro_test_plus::detail::integral_literal</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1081" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1081" bodyend="1084" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1353" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="583" endline="597">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6a192d3dfff5a4a98aa7532d36d1b1bd" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1256,8 +1256,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1096" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1096" bodyend="1099" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1379" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="584" endline="598">micro_os_plus::micro_test_plus::detail::integral_literal</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1095" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1095" bodyend="1098" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1369" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="583" endline="597">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gab0bb5d1e37cbe8de6477c11ecd60956d" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1293,8 +1293,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1110" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1110" bodyend="1113" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1395" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="584" endline="598">micro_os_plus::micro_test_plus::detail::integral_literal</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1109" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1109" bodyend="1112" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1385" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="583" endline="597">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9ca6fecc72b6da90acee52977eb077d7" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1330,8 +1330,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1068" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1068" bodyend="1071" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1347" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="584" endline="598">micro_os_plus::micro_test_plus::detail::integral_literal</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1067" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1067" bodyend="1070" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1337" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="583" endline="597">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga96e891b439024e116cb845bc65bc9c4f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1367,8 +1367,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="970" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="970" bodyend="973" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1229" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="584" endline="598">micro_os_plus::micro_test_plus::detail::integral_literal</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="969" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="969" bodyend="972" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1219" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="583" endline="597">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaecd8c981d99602a0d0a44ebf6d1d4f75" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1404,10 +1404,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1217" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1217" bodyend="1223" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1508" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a154910632d01b827ab1b67f309064211" compoundref="deprecated-inlines_8h" startline="182" endline="209">micro_os_plus::micro_test_plus::detail::math::den</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" compoundref="deprecated-inlines_8h" startline="225" endline="230">micro_os_plus::micro_test_plus::detail::math::den_size</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" compoundref="deprecated-inlines_8h" startline="139" endline="164">micro_os_plus::micro_test_plus::detail::math::num</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1216" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1216" bodyend="1222" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1498" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a154910632d01b827ab1b67f309064211" compoundref="deprecated-inlines_8h" startline="181" endline="208">micro_os_plus::micro_test_plus::detail::math::den</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" compoundref="deprecated-inlines_8h" startline="224" endline="229">micro_os_plus::micro_test_plus::detail::math::den_size</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" compoundref="deprecated-inlines_8h" startline="138" endline="163">micro_os_plus::micro_test_plus::detail::math::num</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf5ab66b00c9486ade5d49f34a83783f5" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1443,8 +1443,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="984" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="984" bodyend="987" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1246" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="584" endline="598">micro_os_plus::micro_test_plus::detail::integral_literal</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="983" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="983" bodyend="986" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1236" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="583" endline="597">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga812816a2e9b23de1f8d8b2d86553d96d" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1480,8 +1480,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="928" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="928" bodyend="931" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1180" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="584" endline="598">micro_os_plus::micro_test_plus::detail::integral_literal</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="927" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="927" bodyend="930" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1170" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="583" endline="597">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga57d27f1a76de2d2b2a067134cbe61457" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1517,8 +1517,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="956" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="956" bodyend="959" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1213" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="584" endline="598">micro_os_plus::micro_test_plus::detail::integral_literal</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="955" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="955" bodyend="958" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1203" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="583" endline="597">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf45bf641153a462a1ba7c12b908e667f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1554,8 +1554,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="998" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="998" bodyend="1001" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1263" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="584" endline="598">micro_os_plus::micro_test_plus::detail::integral_literal</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="997" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="997" bodyend="1000" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1253" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="583" endline="597">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga96d12d563093f297a73a8b984ae7a3a5" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1591,8 +1591,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1138" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1138" bodyend="1141" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1428" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="584" endline="598">micro_os_plus::micro_test_plus::detail::integral_literal</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1137" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1137" bodyend="1140" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1418" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="583" endline="597">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga3171e605b5c2e1d9a0e55ae34e904674" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1628,8 +1628,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1152" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1152" bodyend="1155" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1445" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="584" endline="598">micro_os_plus::micro_test_plus::detail::integral_literal</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1151" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1151" bodyend="1154" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1435" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="583" endline="597">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga622b4808b7ebfc26ddf9db9128533f28" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1665,8 +1665,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1166" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1166" bodyend="1169" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1462" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="584" endline="598">micro_os_plus::micro_test_plus::detail::integral_literal</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1165" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1165" bodyend="1168" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1452" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="583" endline="597">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga80f43260f6a1afd8260355136858df48" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1702,8 +1702,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1124" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1124" bodyend="1127" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1411" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="584" endline="598">micro_os_plus::micro_test_plus::detail::integral_literal</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1123" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1123" bodyend="1126" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1401" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="583" endline="597">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6c1b46d4b967bdbc573e3192c2d9f98a" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1739,8 +1739,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1012" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1012" bodyend="1015" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1280" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="584" endline="598">micro_os_plus::micro_test_plus::detail::integral_literal</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1011" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1011" bodyend="1014" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1270" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="583" endline="597">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaef96b19b140b5007ec33a944c3b72cae" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1776,8 +1776,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1040" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1040" bodyend="1043" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1314" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="584" endline="598">micro_os_plus::micro_test_plus::detail::integral_literal</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1039" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1039" bodyend="1042" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1304" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="583" endline="597">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga01adcd3866da43c393b7fba8a5e72bb2" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1813,8 +1813,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1054" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1054" bodyend="1057" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1331" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="584" endline="598">micro_os_plus::micro_test_plus::detail::integral_literal</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1053" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1053" bodyend="1056" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1321" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="583" endline="597">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1850,30 +1850,38 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1026" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1026" bodyend="1029" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1297" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="584" endline="598">micro_os_plus::micro_test_plus::detail::integral_literal</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1025" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1025" bodyend="1028" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1287" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="583" endline="597">micro_os_plus::micro_test_plus::detail::integral_literal</references>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Deprecated literal operators and wrappers for typed operands. </para>
     </briefdescription>
     <detaileddescription>
-<para>Literals such as <computeroutput>1<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput> and <computeroutput>42<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga231cd51e76a2f426703275739d605ad4" kindref="member">_f</ref></computeroutput> create strongly typed operands, whilst wrappers like <computeroutput>mt::to_i{expression}</computeroutput> convert dynamic values, so that the (deprecated) overloaded operators can compare and report them.</para>
-<para><simplesect kind="par"><title>Deprecated</title><para>The literals of the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1literals" kindref="compound">literals</ref></computeroutput> namespace, the <computeroutput>to_*</computeroutput> type wrappers, <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" kindref="compound">to_t</ref>&lt;T&gt;</computeroutput>, and the two-argument <computeroutput>mt::approx (<ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref>, epsilon)</computeroutput> are deprecated since 6.0.0, in favour of the function comparators <computeroutput>mt::eq()</computeroutput>, <computeroutput>mt::ne()</computeroutput>, <computeroutput>mt::lt()</computeroutput>, <computeroutput>mt::le()</computeroutput>, <computeroutput>mt::gt()</computeroutput>, and <computeroutput>mt::ge()</computeroutput>, which compare and report the plain values, and of the function comparator <computeroutput>mt::approx (lhs, rhs, epsilon)</computeroutput>, which sets the tolerance explicitly. The compiler reports their use.</para>
+<para>The deprecated overloaded operators compare only the framework types. The literals of the <computeroutput>mt::literals</computeroutput> namespace, such as <computeroutput>1<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput> and <computeroutput>42.0_f</computeroutput>, create such operands from constants, and the wrappers, such as <computeroutput>mt::to_i{ <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref> }</computeroutput>, from the values computed at run time.</para>
+<para><simplesect kind="par"><title>Deprecated</title><para>The literals, the <computeroutput>to_*</computeroutput> wrappers, <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1to__t" kindref="compound">to_t</ref>&lt;T&gt;</computeroutput>, and the two-argument <computeroutput>mt::approx (<ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref>, epsilon)</computeroutput> are deprecated since 6.0.0. Use instead:<itemizedlist>
+<listitem><para>the function comparators <computeroutput>mt::eq()</computeroutput>, <computeroutput>mt::ne()</computeroutput>, <computeroutput>mt::lt()</computeroutput>, <computeroutput>mt::le()</computeroutput>, <computeroutput>mt::gt()</computeroutput>, and <computeroutput>mt::ge()</computeroutput>, which compare and report the plain values;</para>
+</listitem><listitem><para>the function comparator <computeroutput>mt::approx (lhs, rhs, epsilon)</computeroutput>, which sets the tolerance explicitly.</para>
+</listitem></itemizedlist>
+</para>
 </simplesect>
-The integer literals follow the C++ syntax: decimal, hexadecimal (<computeroutput>0x10_i</computeroutput>), binary (<computeroutput>0b101_i</computeroutput>), and octal (<computeroutput>010<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>, which is 8), with digit separators (<computeroutput>1&apos;000<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>). A decimal point, an exponent, or a value that does not fit in the type of the literal (e.g. <computeroutput>300<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" kindref="member">_u8</ref></computeroutput>) is a compilation error.</para>
-<para>The floating-point literals are written with decimal digits and a decimal point, optionally with digit separators (<computeroutput>1&apos;000.000&apos;5<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga7c6c0169d894a7dd589d96df49e8df26" kindref="member">_d</ref></computeroutput>), but without an exponent; the digits before the decimal point, and the decimals, are each limited to <computeroutput>std::numeric_limits&lt;T&gt;::digits10</computeroutput> of the type of the literal (for example 6 for <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga231cd51e76a2f426703275739d605ad4" kindref="member">_f</ref></computeroutput> and 15 for <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga7c6c0169d894a7dd589d96df49e8df26" kindref="member">_d</ref></computeroutput>), otherwise the compilation fails.</para>
-<para>The literal <computeroutput>"name"<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kindref="member">_b</ref></computeroutput> creates a named <computeroutput>bool</computeroutput> constant with the value <computeroutput>true</computeroutput>, reported by its name; it is deprecated in favour of a plain <computeroutput>bool</computeroutput> and a check message.</para>
-<para>The floating-point literals (<computeroutput>1.5_d</computeroutput>) and wrappers (<computeroutput>mt::to_d{ 1.5 }</computeroutput>) compare with a tolerance of one unit of the last decimal written (0.1 for <computeroutput>1.5</computeroutput>), so that <computeroutput>1.45 == 1.5_d</computeroutput> is true. All six comparisons apply it consistently: values within the tolerance are equal, and neither less nor greater. Plain floating-point values compare exactly. The tolerance depends on the digits written, and on which operand is wrapped; to set it explicitly, use <computeroutput>mt::approx (lhs, rhs, epsilon)</computeroutput>.</para>
-<para><simplesect kind="par"><title>Replacement</title><para></para>
+<simplesect kind="par"><title>Replacement</title><para></para>
 </simplesect>
 <programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>operands&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::eq<sp/>(answer,<sp/>42));</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::approx<sp/>(measured,<sp/>42.0f,<sp/>0.01f));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::eq<sp/>(compute_answer<sp/>(),<sp/>42));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::approx<sp/>(compute_float<sp/>(),<sp/>42.0,<sp/>0.01));</highlight></codeline>
 <codeline><highlight class="normal">});</highlight></codeline>
-</programlisting>  </para>
+</programlisting></para>
+<para><simplesect kind="par"><title>Integer literals</title><para>They follow the C++ syntax: decimal, hexadecimal (<computeroutput>0x10_i</computeroutput>), binary (<computeroutput>0b101_i</computeroutput>), and octal (<computeroutput>010<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>, which is 8), with digit separators (<computeroutput>1&apos;000<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>). A decimal point, an exponent, or a value that does not fit in the type of the literal (for example <computeroutput>300<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" kindref="member">_u8</ref></computeroutput>) is a compilation error.</para>
+</simplesect>
+<simplesect kind="par"><title>Floating-point literals</title><para>They are written with decimal digits and a decimal point, which is required (<computeroutput>42.0_f</computeroutput>, not <computeroutput>42<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga231cd51e76a2f426703275739d605ad4" kindref="member">_f</ref></computeroutput>), optionally with digit separators (<computeroutput>1&apos;000.000&apos;5<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga7c6c0169d894a7dd589d96df49e8df26" kindref="member">_d</ref></computeroutput>), and without an exponent. The digits before the decimal point, and the decimals, are each limited to <computeroutput>std::numeric_limits&lt;T&gt;::digits10</computeroutput> of the type of the literal (for example 6 for <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga231cd51e76a2f426703275739d605ad4" kindref="member">_f</ref></computeroutput> and 15 for <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga7c6c0169d894a7dd589d96df49e8df26" kindref="member">_d</ref></computeroutput>), otherwise the compilation fails.</para>
+</simplesect>
+The floating-point literals (<computeroutput>1.5_d</computeroutput>) and wrappers (<computeroutput>mt::to_d{ 1.5 }</computeroutput>) compare with a tolerance of one unit of the last decimal written (0.1 for <computeroutput>1.5</computeroutput>), so that <computeroutput>1.45 == 1.5_d</computeroutput> is true. All six comparisons apply it: values within the tolerance are equal, and neither less nor greater. Plain floating-point values compare exactly. Since the tolerance depends on the digits written and on which operand is wrapped, set it explicitly with <computeroutput>mt::approx (lhs, rhs, epsilon)</computeroutput> instead.</para>
+<para><simplesect kind="par"><title>Boolean literals</title><para>The literal <computeroutput>"name"<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kindref="member">_b</ref></computeroutput> creates a constant with the value <computeroutput>true</computeroutput>, whatever the name (<computeroutput>"false"<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kindref="member">_b</ref></computeroutput> is also true), reported by its name. Use a plain <computeroutput>bool</computeroutput> and a check message instead.  </para>
+</simplesect>
+</para>
     </detaileddescription>
   </compounddef>
 </doxygen>

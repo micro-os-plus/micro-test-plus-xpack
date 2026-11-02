@@ -36,6 +36,7 @@ namespace micro_os_plus::micro_test_plus { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
+<p>Local helpers of the runner. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/anonymous-runner-cpp-/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -280,12 +281,12 @@ namespace micro_os_plus::micro_test_plus { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gabecc05360d0941067222d827ff8e3f08">expression_formatter</a> = detail::expression_formatter</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-customisation/#gabecc05360d0941067222d827ff8e3f08">expression_formatter</a> = detail::expression_formatter</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Public name of the formatter used to report operand values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gabecc05360d0941067222d827ff8e3f08">More...</a></p>
+<p>Public name of the formatter used to report operand values. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-customisation/#gabecc05360d0941067222d827ff8e3f08">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -1366,10 +1367,7 @@ namespace micro_os_plus::micro_test_plus { ... }
 <p>The main classes (the runners, and the suites and test cases) are defined directly in this namespace. Several nested namespaces group specific aspects of the framework: <span class="doxyComputerOutput">math</span> (mathematical utilities), <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/extension">extension</a></span> (the concepts for custom comparators, operators, and helpers), <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection">reflection</a></span> (source locations and type names), <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/literals">literals</a></span> (user-defined literals), <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/operators">operators</a></span> (comparison and logical operators), <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/utility">utility</a></span> (utility functions), and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">detail</a></span> (internal implementation details, including the reporters and the value wrappers).</p>
 
 
-<p>By grouping all definitions within this namespace and its sub-namespaces, the framework achieves clear code organisation, minimises naming conflicts, and enhances maintainability.</p>
-
-
-<p>All public API definitions are implemented in the <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus</span> folder, ensuring a clear separation from user code and facilitating straightforward integration with the wider µOS++ ecosystem.</p>
+<p>The declarations are in the headers of the <span class="doxyComputerOutput">include/micro-os-plus/micro-test-plus</span> folder, and the non-inline definitions in the <span class="doxyComputerOutput">src</span> folder.</p>
 
 
 <div class="doxySectionDef">
@@ -1429,7 +1427,7 @@ namespace micro_os_plus::micro_test_plus { ... }
 <p>Selected with the <span class="doxyComputerOutput">--colour</span> command-line option (or its American spelling <span class="doxyComputerOutput">--color</span>, or its alternative <span class="doxyComputerOutput">--use-colour</span>, also spelled <span class="doxyComputerOutput">--use-color</span>), or with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-options/#a48ed4dd71eff02911c2d6943ba616850">runner_options::colour</a></span>; the default is <span class="doxyComputerOutput">automatic</span>. The names follow the values of <span class="doxyComputerOutput">--color</span> in the GNU tools.</p>
 
 
-<p>Only the human reporter uses colours; the TAP reporter never does, since the ANSI escape sequences are not part of the TAP syntax. The output file never receives colours, whatever the mode.</p>
+<p>Only the human-readable reporter uses colours; the TAP reporter never does, since the ANSI escape sequences are not part of the TAP syntax. The output file never receives colours, whatever the mode.</p>
 
 
 <dl class="doxySectionUser">
@@ -1438,16 +1436,16 @@ namespace micro_os_plus::micro_test_plus { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00149">149</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00148">148</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber">150</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8">151</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8">automatic</a>, </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb">154</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb">always</a>, </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a603af2d1c9643caa351305180b2e905bac7561db7a418dd39b2201dfe110ab4a4">158</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a603af2d1c9643caa351305180b2e905bac7561db7a418dd39b2201dfe110ab4a4">never</a> </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">159</span><span class="doxyLineContent"><span class="doxyHighlight">  };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">149</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8">150</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8">automatic</a>, </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb">153</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb">always</a>, </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a603af2d1c9643caa351305180b2e905bac7561db7a418dd39b2201dfe110ab4a4">157</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a603af2d1c9643caa351305180b2e905bac7561db7a418dd39b2201dfe110ab4a4">never</a> </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">158</span><span class="doxyLineContent"><span class="doxyHighlight">  };</span></span></div>
 
 </div>
 
@@ -1508,15 +1506,15 @@ namespace micro_os_plus::micro_test_plus { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00125">125</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00124">124</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber">126</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b">127</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b">tap</a>, </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70">128</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70">human</a> </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">129</span><span class="doxyLineContent"><span class="doxyHighlight">  };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">125</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b">126</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b">tap</a>, </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70">127</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70">human</a> </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">128</span><span class="doxyLineContent"><span class="doxyHighlight">  };</span></span></div>
 
 </div>
 
@@ -1584,17 +1582,17 @@ namespace micro_os_plus::micro_test_plus { ... }
 <p>The <span class="doxyComputerOutput">quiet</span> level displays the failed checks, with the names of the suite and of the test cases that contain them, and the totals; the passed checks and the passed test cases are not displayed. To also see them, use the <span class="doxyComputerOutput">verbose</span> level, or keep <span class="doxyComputerOutput">quiet</span> and use an output file, which receives them.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00100">100</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00099">99</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber">101</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">102</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">silent</a> = 0, </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">103</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">quiet</a> = 1, </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">107</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">normal</a> = 2, </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">110</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbose</a> = 3 </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">112</span><span class="doxyLineContent"><span class="doxyHighlight">  };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">100</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">101</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">silent</a> = 0, </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">102</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">quiet</a> = 1, </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">106</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">normal</a> = 2, </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">109</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbose</a> = 3 </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">111</span><span class="doxyLineContent"><span class="doxyHighlight">  };</span></span></div>
 
 </div>
 
@@ -1613,6 +1611,6 @@ The documentation for this namespace was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

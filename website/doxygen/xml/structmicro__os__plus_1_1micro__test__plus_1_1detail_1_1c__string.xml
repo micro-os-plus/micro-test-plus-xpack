@@ -18,8 +18,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1634" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1634" bodyend="-1"/>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1ae80c2a30d372f12aac55094520d6f68b" compoundref="detail-inlines_8h" startline="1211" endline="1215">view</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1627" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1627" bodyend="-1"/>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1ae80c2a30d372f12aac55094520d6f68b" compoundref="detail-inlines_8h" startline="1210" endline="1214">view</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1aef16a91ae4a348901e0bbc94fb5aa9a6" prot="private" static="no" mutable="no">
         <type>const char *</type>
@@ -35,11 +35,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1626" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1626" bodyend="-1"/>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1a8981cf74f42a9cdbeed10da6b37a8009" compoundref="detail-inlines_8h" startline="1181" endline="1185">c_string</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1ab62fc84779f70b69cf6d61ee4fee5de7" compoundref="detail-inlines_8h" startline="1192" endline="1204">c_string</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1ab3ab63f34f2310d31484a226c92e32aa" compoundref="detail-inlines_8h" startline="1222" endline="1225">is_null</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1ae80c2a30d372f12aac55094520d6f68b" compoundref="detail-inlines_8h" startline="1211" endline="1215">view</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1619" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1619" bodyend="-1"/>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1a8981cf74f42a9cdbeed10da6b37a8009" compoundref="detail-inlines_8h" startline="1180" endline="1184">c_string</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1ab62fc84779f70b69cf6d61ee4fee5de7" compoundref="detail-inlines_8h" startline="1191" endline="1203">c_string</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1ab3ab63f34f2310d31484a226c92e32aa" compoundref="detail-inlines_8h" startline="1221" endline="1224">is_null</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1ae80c2a30d372f12aac55094520d6f68b" compoundref="detail-inlines_8h" startline="1210" endline="1214">view</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -70,8 +70,8 @@ The length is computed with <computeroutput>std::char_traits&lt;char&gt;::length
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1582" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1181" bodyend="1185"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1aef16a91ae4a348901e0bbc94fb5aa9a6" compoundref="detail_8h" startline="1626">str_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1575" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1180" bodyend="1184"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1aef16a91ae4a348901e0bbc94fb5aa9a6" compoundref="detail_8h" startline="1619">str_</references>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1ab62fc84779f70b69cf6d61ee4fee5de7" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -113,8 +113,8 @@ The characters are counted up to the first null character, or up to <computerout
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1595" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1192" bodyend="1204"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1aef16a91ae4a348901e0bbc94fb5aa9a6" compoundref="detail_8h" startline="1626">str_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1588" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1191" bodyend="1203"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1aef16a91ae4a348901e0bbc94fb5aa9a6" compoundref="detail_8h" startline="1619">str_</references>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1ab3ab63f34f2310d31484a226c92e32aa" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>bool</type>
@@ -152,8 +152,8 @@ Returns whether the stored pointer is null. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1617" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1222" bodyend="1225"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1aef16a91ae4a348901e0bbc94fb5aa9a6" compoundref="detail_8h" startline="1626">str_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1610" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1221" bodyend="1224"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1aef16a91ae4a348901e0bbc94fb5aa9a6" compoundref="detail_8h" startline="1619">str_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a984d2b715e58437c9e2bd3455174ae60" compoundref="expression-formatter_8cpp" startline="663" endline="674">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1ae80c2a30d372f12aac55094520d6f68b" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
@@ -177,9 +177,9 @@ Returns an empty view for a null pointer. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1606" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1211" bodyend="1215"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1ac98a2bf493b2ffe5ded3075dce583702" compoundref="detail_8h" startline="1634">size_</references>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1aef16a91ae4a348901e0bbc94fb5aa9a6" compoundref="detail_8h" startline="1626">str_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1599" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1210" bodyend="1214"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1ac98a2bf493b2ffe5ded3075dce583702" compoundref="detail_8h" startline="1627">size_</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1aef16a91ae4a348901e0bbc94fb5aa9a6" compoundref="detail_8h" startline="1619">str_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a984d2b715e58437c9e2bd3455174ae60" compoundref="expression-formatter_8cpp" startline="663" endline="674">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
       </memberdef>
     </sectiondef>
@@ -190,7 +190,7 @@ Returns an empty view for a null pointer. </para>
 <para>The comparators convert the <computeroutput>char</computeroutput> arrays (including the string literals) and the <computeroutput>char</computeroutput> pointers to this type (see <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">as_operand()</ref></computeroutput>), so that they are compared by content, as a reader of a test expects, and not by address. A null pointer is equal only to another null pointer (not to an empty string), and is less than any string.</para>
 <para>The characters are not copied; the operand must outlive the comparison, which is always the case within a check. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1574" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1575" bodyend="1635"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1567" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1568" bodyend="1628"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1a8981cf74f42a9cdbeed10da6b37a8009" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::c_string</scope><name>c_string</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_1ab62fc84779f70b69cf6d61ee4fee5de7" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::c_string</scope><name>c_string</name></member>

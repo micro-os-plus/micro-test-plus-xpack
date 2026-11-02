@@ -135,11 +135,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 <div class="line">          and (not std::is_same_v&lt;Rhs_T, char16_t&gt;)</div>
 <div class="line">          and (not std::is_same_v&lt;Lhs_T, char32_t&gt;)</div>
 <div class="line">          and (not std::is_same_v&lt;Rhs_T, char32_t&gt;)</div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1sign__mixed__integers_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1sign__mixed__integers.html">micro_os_plus::micro_test_plus::detail::sign_mixed_integers</a></div><div class="ttdoc">Concept satisfied by two integer types of different signedness.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00279">detail-inlines.h:280</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1sign__mixed__integers_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1sign__mixed__integers.html">micro_os_plus::micro_test_plus::detail::sign_mixed_integers</a></div><div class="ttdoc">Concept satisfied by two integer types of different signedness.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00278">detail-inlines.h:279</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The built-in comparison of a signed and an unsigned operand converts the signed one to the unsigned type, so <span class="tt">-1 &lt; 1u</span> is false. For these pairs the comparisons use the <span class="tt">std::cmp_*()</span> functions, which compare the mathematical values. <span class="tt">bool</span> and the character types are excluded, since <span class="tt">std::cmp_*()</span> do not accept them and their comparison with integers is not a sign problem. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00279">279</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00278">278</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

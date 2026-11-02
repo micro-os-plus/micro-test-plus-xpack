@@ -44,17 +44,17 @@ keywords:
 <p>Test cases are named sequences of checks.</p>
 
 
-<p>Each test case is defined by calling <span class="doxyComputerOutput">suite::test()</span> with a descriptive name and a callable object (typically a lambda accepting a <span class="doxyComputerOutput">test_case&amp;</span> reference), along with any optional arguments required for the test. The test case runs immediately, within the call. Nested test cases are defined with <span class="doxyComputerOutput">test_case::test()</span>, and a test case for each value of a range or a tuple with <span class="doxyComputerOutput">test_each()</span>.</p>
+<p>A test case is created with <span class="doxyComputerOutput">test()</span>, called on a suite, with a name and a callable, usually a lambda that receives the test case (<span class="doxyComputerOutput">[] (auto&amp; t) { ... }</span>), followed by any arguments for the callable. The test case runs immediately, within the call, and its checks are made on the test case received by the lambda (<span class="doxyComputerOutput">t.expect (...)</span>).</p>
 
 
-<p>Test cases allow related checks to be organised together within the same environment, improving clarity and maintainability. Any number of test cases may be defined, each focusing on a specific aspect of the code under test.</p>
+<p>Write one test case for each behaviour of the code under test; the report shows the result of each test case, so a failure points to the behaviour that broke.</p>
 
 
-<p>By grouping checks in this way, developers can identify which functionality is being verified and interpret results in the context of overall software quality.</p>
+<p>A test case can contain other test cases, created with <span class="doxyComputerOutput">test()</span> on the test case itself (<span class="doxyComputerOutput">t.test (...)</span>); they are reported nested.</p>
 
 
 <dl class="doxySectionUser">
-<dt>Examples</dt>
+<dt>Example</dt>
 <dd></dd>
 </dl>
 
@@ -72,8 +72,47 @@ keywords:
 </div>
 
 
+<dl class="doxySectionUser">
+<dt>Test cases for several values</dt>
+<dd></dd>
+</dl>
+
+
+<p><span class="doxyComputerOutput">test_each()</span>, called on a suite or on a test case, creates and runs a test case for each value of a range (a container, an array, a span, or a view), of a list written in place, or of a tuple, whose values may have different types. The callable receives the test case and the value, and a generic lambda is needed for a tuple. Each test case is named after the common name, followed by the value in parentheses, such as <span class="doxyComputerOutput">Sizes (16)</span>; a value that cannot be written, such as an application type without an <span class="doxyComputerOutput">operator&lt;&lt;</span>, is replaced by its position, starting at 1, such as <span class="doxyComputerOutput">Records (#2)</span>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">ts.test_each (</span><span class="doxyHighlightStringLiteral">"Sizes"</span><span class="doxyHighlight">, std::vector&lt;int&gt;{ 1, 16, 512 },</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">              [] (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp; t, </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> size) { t.expect (mt::gt (size, 0)); });</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">ts.test_each (</span><span class="doxyHighlightStringLiteral">"Limits"</span><span class="doxyHighlight">, { 3, 4 },</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">              [] (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp; t, </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> limit) { t.expect (mt::gt (limit, 2)); });</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">ts.test_each (</span><span class="doxyHighlightStringLiteral">"Types"</span><span class="doxyHighlight">, std::tuple{ 42, 1.5, </span><span class="doxyHighlightStringLiteral">"text"</span><span class="doxyHighlight"> },</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">              [] (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp; t, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp; value) {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">                t.expect (mt::eq (value, value));</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">              });</span></span></div>
+
+</div>
+
+
+<p>With the TAP reporter, the first call is reported as:</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">ok 1 - Sizes (1) # { passed, 1 check }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">ok 2 - Sizes (16) # { passed, 1 check }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">ok 3 - Sizes (512) # { passed, 1 check }</span></span></div>
+
+</div>
+
+
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

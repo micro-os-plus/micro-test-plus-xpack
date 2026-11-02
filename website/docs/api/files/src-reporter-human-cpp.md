@@ -17,7 +17,7 @@ keywords:
 
 # `reporter-human.cpp` File
 
-<p>C++ source file with implementations for the µTest++ human test reporter member functions. <a href="#details">More...</a></p>
+<p>C++ source file with implementations for the µTest++ human-readable reporter member functions. <a href="#details">More...</a></p>
 
 ## Included Headers
 
@@ -77,7 +77,7 @@ keywords:
 
 ## Description {#details}
 
-<p>C++ source file with implementations for the µTest++ human test reporter member functions.</p>
+<p>C++ source file with implementations for the µTest++ human-readable reporter member functions.</p>
 
 
 <p>This source file contains the implementations for <span class="doxyComputerOutput">reporter_human</span>, the concrete implementation of the <span class="doxyComputerOutput">reporter</span> abstract interface that presents test results in a human-readable form on the standard output, accumulating output in an internal string buffer and supporting colour-coded diagnostics and multiple verbosity levels.</p>
@@ -194,7 +194,7 @@ The file content with the documentation metadata removed is:
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00139"></a>139</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00140"></a>140</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a6b48a4007c568c28fffbc2f2fe3f32e7">write_info</a> (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a68a030feff1f481126e9a6d170331420">runner</a>.<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#acea30e98ccf65d97e8c0e0d0ff8edda0">options_</a>.<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-options/#a8782919e89d6ee79cceb06365a779146">arguments</a> ());</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00141"></a>141</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00142"></a>142</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#aa97f2ba65009154090dc68e42c94db71">write_line</a> (to_console, </span><span class="doxyHighlightStringLiteral">"µTest++ human report\n"</span><span class="doxyHighlight">);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00142"></a>142</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#aa97f2ba65009154090dc68e42c94db71">write_line</a> (to_console, </span><span class="doxyHighlightStringLiteral">"µTest++ human-readable report\n"</span><span class="doxyHighlight">);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00143"></a>143</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00144"></a>144</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a804b593aefa158d92a72da43de57d242">flush_streams</a> ();</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00145"></a>145</span></div>
@@ -753,6 +753,6 @@ The file content with the documentation metadata removed is:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

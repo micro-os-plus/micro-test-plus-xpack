@@ -80,21 +80,33 @@ Initialises the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test_
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="1507" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="547" bodyend="561"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1ab81139f2b0c47e93b7d488976fcbbd66" compoundref="check-result-inlines_8h" startline="106" endline="134">micro_os_plus::micro_test_plus::detail::check_result::init</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a82e48e546c5a5034be69412c1641482d" compoundref="test-inlines_8h" startline="481" endline="485">micro_os_plus::micro_test_plus::test_case::is_misdirected</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a9b25dc50ced0df2821d7a984eb142c1a" compoundref="test_8cpp" startline="401" endline="418">micro_os_plus::micro_test_plus::test_case::report_misdirected</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="1504" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="546" bodyend="560"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1ab81139f2b0c47e93b7d488976fcbbd66" compoundref="check-result-inlines_8h" startline="105" endline="133">micro_os_plus::micro_test_plus::detail::check_result::init</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a82e48e546c5a5034be69412c1641482d" compoundref="test-inlines_8h" startline="480" endline="484">micro_os_plus::micro_test_plus::test_case::is_misdirected</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a9b25dc50ced0df2821d7a984eb142c1a" compoundref="test_8cpp" startline="400" endline="417">micro_os_plus::micro_test_plus::test_case::report_misdirected</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a0726a1bc3b6f16245cb8a4b42fe0e70caba12fb48e2d23bb2bd2819f64d02ec7e" compoundref="check-result_8h" startline="110">micro_os_plus::micro_test_plus::detail::requirement</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a7e4a578732a0464480e211f6591fa69f" compoundref="test_8cpp" startline="156" endline="159">micro_os_plus::micro_test_plus::detail::runnable_base::test_reporter</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1adeccc20d1919ae7f8fc697997dc9bb98" compoundref="test-inlines_8h" startline="629" endline="633">micro_os_plus::micro_test_plus::test_case::assume</referencedby>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a7e4a578732a0464480e211f6591fa69f" compoundref="test_8cpp" startline="155" endline="158">micro_os_plus::micro_test_plus::detail::runnable_base::test_reporter</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1adeccc20d1919ae7f8fc697997dc9bb98" compoundref="test-inlines_8h" startline="628" endline="632">micro_os_plus::micro_test_plus::test_case::assume</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Requirements are checks that stop the test case when they fail. </para>
     </briefdescription>
     <detaileddescription>
-<para>When a precondition of the following checks does not hold, the test case cannot continue meaningfully. A failed requirement is reported and counted like a failed expectation, and then the rest of the test case body is skipped; the run continues with the next test case.</para>
-<para>This is the behaviour of the fatal assertions of most C++ test frameworks (<computeroutput>ASSERT_*</computeroutput> in GoogleTest, <computeroutput>REQUIRE()</computeroutput> in Catch2 and doctest, <computeroutput>BOOST_REQUIRE()</computeroutput> in Boost.Test). The test case is stopped with an exception; without exceptions, it cannot be stopped alone, so the results of the test case are reported, ending with the failed requirement (followed, with the TAP reporter, by a <computeroutput>Bail out!</computeroutput> line), and the whole test execution is aborted with <computeroutput>runner::abort()</computeroutput>, as Catch2 does; the remaining test cases do not run, and no totals are written.  </para>
+<para><computeroutput>t.require (condition)</computeroutput> checks a condition as <computeroutput>expect()</computeroutput> does, and also stops the test case when it fails. Use it when the rest of the test case depends on the condition, for example to check that a pointer is not null before using it.</para>
+<para>A failed requirement is reported and counted like a failed expectation. What follows depends on the build:<itemizedlist>
+<listitem><para>with exceptions, the rest of the test case is skipped, and the run continues with the next test case; this is the behaviour of the fatal assertions of most C++ test frameworks (<computeroutput>ASSERT_*</computeroutput> in GoogleTest, <computeroutput>REQUIRE()</computeroutput> in Catch2 and doctest, <computeroutput>BOOST_REQUIRE()</computeroutput> in Boost.Test);</para>
+</listitem><listitem><para>without exceptions, a test case cannot be stopped alone, so the whole test run is aborted with <computeroutput>runner::abort()</computeroutput>, as Catch2 does: the results of the test case are written, ending with the failed requirement (followed, with the TAP reporter, by a <computeroutput>Bail out!</computeroutput> line), the remaining test cases do not run, and no totals are written. The process is then terminated with <computeroutput>::abort()</computeroutput>, unless the application set another handler with <computeroutput>runner::set_abort_handler()</computeroutput>.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Example</title><para></para>
+</simplesect>
+<programlisting filename=".cpp"><codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>the<sp/>buffer&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>buffer<sp/>=<sp/>get_buffer<sp/>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.require<sp/>(mt::ne<sp/>(buffer,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;buffer<sp/>allocated&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::eq<sp/>(buffer[0],<sp/></highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+</programlisting>  </para>
     </detaileddescription>
   </compounddef>
 </doxygen>

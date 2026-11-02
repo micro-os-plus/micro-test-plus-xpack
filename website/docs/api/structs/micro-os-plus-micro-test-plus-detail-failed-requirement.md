@@ -41,11 +41,11 @@ struct micro_os_plus::micro_test_plus::detail::failed_requirement { ... }
 <p>It is deliberately not derived from <span class="doxyComputerOutput">std::exception</span>, so that a <span class="doxyComputerOutput">catch (const std::exception&amp;)</span> in the test case body does not stop it; a <span class="doxyComputerOutput">catch (...)</span> does, and should rethrow it.</p>
 
 
-<p>Definition at line 1271 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+<p>Definition at line 1264 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
 
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

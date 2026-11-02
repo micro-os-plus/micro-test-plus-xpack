@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__micro-o
 </div><!--header-->
 <div class="contents">
 
-<p>Classes for initialising the framework and returning an exit code.  
+<p>The runner initialises the framework and returns the exit code.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -124,8 +124,17 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The test runner for the µTest++ framework.  <a href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html#details">More...</a><br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Proper initialisation ensures that µTest++ is correctly configured to manage and execute test cases, whilst the exit code reflects the overall test outcome and supports integration with automated build and continuous integration systems.</p>
-<p>The simplest test consists of the default test suite and a single test case with one expectation; for example:</p>
+<div class="textblock"><p>A test program has one runner, usually a global object, which <span class="tt">main()</span> uses in three steps:</p><ol type="1">
+<li><span class="tt">initialise (argc, argv)</span> reads the command-line options (see <a class="el" href="group__micro-os-plus-micro-test-plus-cli.html" title="Command-Line Options">Command-Line Options</a>); on platforms without a command line, <span class="tt">initialise (runner_options)</span> sets the options directly. The call is optional; without it, the default options are used;</li>
+<li><span class="tt">add_top_suite()</span> returns the top suite, on which <span class="tt">main()</span> creates its own test cases (see <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-test-suites.html" title="Test Suites">Test Suites</a>). The call is optional, for programs whose test cases are all in other suites;</li>
+<li><span class="tt">run_suites()</span> runs the other suites, writes the totals, and returns the exit code, which <span class="tt">main()</span> returns to the system.</li>
+</ol>
+<p>The exit code is:</p><ul>
+<li>0 when all the checks passed, or when the test cases were only listed;</li>
+<li>1 when a check failed, or when the program used the runner wrongly (for example, it added no suite at all);</li>
+<li>2 when the command line had an error, or when the filters selected no test case.</li>
+</ul>
+<dl class="section user"><dt>Example</dt><dd></dd></dl>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="micro-test-plus_8h.html">micro-os-plus/micro-test-plus.h</a>&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>mt = <a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a>;</div>
@@ -147,18 +156,19 @@ Classes</h2></td></tr>
 <div class="line">}</div>
 <div class="ttc" id="amicro-test-plus_8h_html"><div class="ttname"><a href="micro-test-plus_8h.html">micro-test-plus.h</a></div><div class="ttdoc">Main C++ header with the declarations for the µTest++ Testing Framework.</div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div><div class="ttdef"><b>Definition</b> <a href="check-result_8h_source.html#l00075">check-result.h:76</a></div></div>
-</div><!-- fragment --><p>When this test is executed, the output is as follows:</p>
-<div class="fragment"><div class="line">TAP version 14</div>
+</div><!-- fragment --><p>The program writes (the passed checks are displayed only with the <span class="tt">--verbose</span> option):</p>
+<div class="fragment"><div class="line"># Running: minimal</div>
+<div class="line"># Built with ...</div>
+<div class="line">TAP version 14</div>
 <div class="line"># Subtest: Minimal</div>
-<div class="line">    # Subtest: Check truth</div>
-<div class="line">        ok 1 - true</div>
-<div class="line">        1..1</div>
 <div class="line">    ok 1 - Check truth # { passed, 1 check }</div>
+<div class="line"> </div>
 <div class="line">    1..1</div>
-<div class="line">ok 1 - Minimal # { passed, 1 check in 1 test case, time: 0.065 ms }</div>
+<div class="line">ok 1 - Minimal # { passed, 1 check in 1 test case, time: 0.039 ms }</div>
+<div class="line"> </div>
 <div class="line">1..1</div>
-<div class="line"># { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.136 ms }</div>
-</div><!-- fragment --><p>The name passed to the top suite is optional; if missing, it will attempt to extract a name from argv[0], which is commonly the executable name. If that fails, a default name is used.  </p>
+<div class="line"># { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.074 ms }</div>
+</div><!-- fragment --><p>The name of the top suite is optional. Without it, the suite is named after the program, the file name of <span class="tt">argv[0]</span> without its extension (<span class="tt">minimal</span> above); without <span class="tt">argv[0]</span>, it is named <span class="tt">default suite</span>.  </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

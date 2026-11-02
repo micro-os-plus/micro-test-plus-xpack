@@ -189,10 +189,10 @@ namespace micro_os_plus::micro_test_plus::operators { ... }
 <p>Custom operator overloads for expressive and type-safe test assertions.</p>
 
 
-<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/operators">micro_os_plus::micro_test_plus::operators</a></span> namespace provides a comprehensive set of custom operator overloads designed to enable expressive, concise, and type-safe test assertions within the µTest++ framework.</p>
+<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/operators">micro_os_plus::micro_test_plus::operators</a></span> namespace provides the deprecated overloaded operators of the test checks.</p>
 
 
-<p>This namespace includes equality, inequality, relational, and logical operators tailored for use with the framework’s custom types. These operators facilitate the creation of clear and readable test expressions, supporting both strongly-typed constants (via user-defined literals) and dynamic values (via wrappers).</p>
+<p>This namespace includes the equality, inequality, relational, and logical operators of the framework types, which apply to the strongly-typed constants (the user-defined literals) and to the dynamic values (the wrappers).</p>
 
 
 
@@ -227,6 +227,6 @@ namespace micro_os_plus::micro_test_plus::operators { ... }
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

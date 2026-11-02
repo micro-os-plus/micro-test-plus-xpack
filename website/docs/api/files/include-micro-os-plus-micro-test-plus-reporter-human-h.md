@@ -17,7 +17,7 @@ keywords:
 
 # `reporter-human.h` File
 
-<p>C++ header file with declarations for the µTest++ human test reporter. <a href="#details">More...</a></p>
+<p>C++ header file with declarations for the µTest++ human-readable reporter. <a href="#details">More...</a></p>
 
 ## Included Headers
 
@@ -95,7 +95,7 @@ keywords:
 
 ## Description {#details}
 
-<p>C++ header file with declarations for the µTest++ human test reporter.</p>
+<p>C++ header file with declarations for the µTest++ human-readable reporter.</p>
 
 
 <p>This header provides the declaration for <span class="doxyComputerOutput">reporter_human</span>, a concrete implementation of the <span class="doxyComputerOutput">reporter</span> abstract interface, selected with the <span class="doxyComputerOutput">--reporter=human</span> command-line option, or with <span class="doxyComputerOutput">runner_options::selected_reporter</span> (the default is TAP). It formats and presents test results in a human-readable form on the standard output, accumulating output in an internal string buffer and supporting colour-coded diagnostics and multiple verbosity levels.</p>
@@ -271,6 +271,6 @@ The file content with the documentation metadata removed is:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

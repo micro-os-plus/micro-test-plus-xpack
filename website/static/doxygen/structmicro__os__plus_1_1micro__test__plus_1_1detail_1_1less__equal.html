@@ -136,7 +136,7 @@ Static Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines the operator applied by <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html" title="Relational comparator struct template.">compare_op</a></span>, its symbol in the failure reports, and the result when the operands are within the tolerance of the floating-point wrappers. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00730">730</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00723">723</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="ad24b05cbbdc8672cb13e0f126a9c9802" name="ad24b05cbbdc8672cb13e0f126a9c9802"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad24b05cbbdc8672cb13e0f126a9c9802">&#9670;&#160;</a></span>apply()</h2>
@@ -184,17 +184,17 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The result of <span class="tt">lhs &lt;= rhs</span>, converted to <span class="tt">bool</span>.</dd></dl>
 <p>The using-declaration makes the standard operators visible to unqualified lookup, in addition to those found by argument-dependent lookup, and hides any <span class="tt">operator&lt;=</span> of the enclosing namespaces. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00550">550</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  552</span>    {</div>
-<div class="line"><span class="lineno">  553</span>      <span class="keyword">using </span>std::operator&lt;=;</div>
-<div class="line"><span class="lineno">  554</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (sign_mixed_integers&lt;Lhs_T, Rhs_T&gt;)</div>
-<div class="line"><span class="lineno">  555</span>        {</div>
-<div class="line"><span class="lineno">  556</span>          <span class="keywordflow">return</span> std::cmp_less_equal (lhs, rhs);</div>
-<div class="line"><span class="lineno">  557</span>        }</div>
-<div class="line"><span class="lineno">  558</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  559</span>        {</div>
-<div class="line"><span class="lineno">  560</span>          <span class="keywordflow">return</span> lhs &lt;= rhs;</div>
-<div class="line"><span class="lineno">  561</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00549">549</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  551</span>    {</div>
+<div class="line"><span class="lineno">  552</span>      <span class="keyword">using </span>std::operator&lt;=;</div>
+<div class="line"><span class="lineno">  553</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (sign_mixed_integers&lt;Lhs_T, Rhs_T&gt;)</div>
+<div class="line"><span class="lineno">  554</span>        {</div>
+<div class="line"><span class="lineno">  555</span>          <span class="keywordflow">return</span> std::cmp_less_equal (lhs, rhs);</div>
+<div class="line"><span class="lineno">  556</span>        }</div>
+<div class="line"><span class="lineno">  557</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  558</span>        {</div>
+<div class="line"><span class="lineno">  559</span>          <span class="keywordflow">return</span> lhs &lt;= rhs;</div>
+<div class="line"><span class="lineno">  560</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -220,7 +220,7 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 </div><div class="memdoc">
 <p>Includes the surrounding spaces, so that the formatter appends it with a single call; a C string, not a <span class="tt">std::string_view</span>, which would take two registers at each call site and enlarge the code. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00740">740</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00733">733</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
 </div>
 </div>

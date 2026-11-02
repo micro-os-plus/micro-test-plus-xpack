@@ -128,14 +128,14 @@
         </briefdescription>
         <detaileddescription>
 <para>Selected with the <computeroutput>--colour</computeroutput> command-line option (or its American spelling <computeroutput>--color</computeroutput>, or its alternative <computeroutput>--use-colour</computeroutput>, also spelled <computeroutput>--use-color</computeroutput>), or with <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a48ed4dd71eff02911c2d6943ba616850" kindref="member">runner_options::colour</ref></computeroutput>; the default is <computeroutput>automatic</computeroutput>. The names follow the values of <computeroutput>--color</computeroutput> in the GNU tools.</para>
-<para>Only the human reporter uses colours; the TAP reporter never does, since the ANSI escape sequences are not part of the TAP syntax. The output file never receives colours, whatever the mode.</para>
+<para>Only the human-readable reporter uses colours; the TAP reporter never does, since the ANSI escape sequences are not part of the TAP syntax. The output file never receives colours, whatever the mode.</para>
 <para><simplesect kind="since"><para>6.0.0 </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="149" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="150" bodyend="159"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="148" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="149" bodyend="158"/>
       </memberdef>
       <memberdef kind="enum" id="namespacemicro__os__plus_1_1micro__test__plus_1a913c4161963e9439b20857358486e8b2" prot="public" static="no" strong="yes">
         <type></type>
@@ -168,7 +168,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="125" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="126" bodyend="129"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="124" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="125" bodyend="128"/>
       </memberdef>
       <memberdef kind="enum" id="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" prot="public" static="no" strong="yes">
         <type></type>
@@ -219,11 +219,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="100" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="101" bodyend="112"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="99" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="100" bodyend="111"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="typedef">
-      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gabecc05360d0941067222d827ff8e3f08" kind="typedef"><name>expression_formatter</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-customisation_1gabecc05360d0941067222d827ff8e3f08" kind="typedef"><name>expression_formatter</name></member>
       <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga47d2c99f85fc5597b82da402d4687e75" kind="typedef"><name>static_runner</name></member>
       <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga1424c18b26d5fdaed11439c77e6bf561" kind="typedef"><name>subtest</name></member>
     </sectiondef>
@@ -253,8 +253,7 @@
     <detaileddescription>
 <para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></computeroutput> namespace encapsulates all core components, types, and utilities of the µTest++ testing framework, providing a dedicated scope for its public API.</para>
 <para>The main classes (the runners, and the suites and test cases) are defined directly in this namespace. Several nested namespaces group specific aspects of the framework: <computeroutput>math</computeroutput> (mathematical utilities), <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1extension" kindref="compound">extension</ref></computeroutput> (the concepts for custom comparators, operators, and helpers), <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection" kindref="compound">reflection</ref></computeroutput> (source locations and type names), <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1literals" kindref="compound">literals</ref></computeroutput> (user-defined literals), <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1operators" kindref="compound">operators</ref></computeroutput> (comparison and logical operators), <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1utility" kindref="compound">utility</ref></computeroutput> (utility functions), and <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail" kindref="compound">detail</ref></computeroutput> (internal implementation details, including the reporters and the value wrappers).</para>
-<para>By grouping all definitions within this namespace and its sub-namespaces, the framework achieves clear code organisation, minimises naming conflicts, and enhances maintainability.</para>
-<para>All public API definitions are implemented in the <computeroutput>include/micro-os-plus/micro-test-plus</computeroutput> folder, ensuring a clear separation from user code and facilitating straightforward integration with the wider µOS++ ecosystem. </para>
+<para>The declarations are in the headers of the <computeroutput>include/micro-os-plus/micro-test-plus</computeroutput> folder, and the non-inline definitions in the <computeroutput>src</computeroutput> folder. </para>
     </detaileddescription>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/check-result.h" line="75" column="1"/>
   </compounddef>

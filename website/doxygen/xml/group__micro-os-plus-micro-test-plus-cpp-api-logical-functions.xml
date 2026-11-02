@@ -100,10 +100,10 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-log
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="265" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="265" bodyend="279" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="313" declcolumn="3"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" compoundref="function-comparators-inlines_8h" startline="265" endline="279">micro_os_plus::micro_test_plus::all_of</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" compoundref="deprecated-inlines_8h" startline="701" endline="704">micro_os_plus::micro_test_plus::_and</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" compoundref="function-comparators-inlines_8h" startline="265" endline="279">micro_os_plus::micro_test_plus::all_of</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="264" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="264" bodyend="278" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="312" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" compoundref="function-comparators-inlines_8h" startline="264" endline="278">micro_os_plus::micro_test_plus::all_of</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" compoundref="deprecated-inlines_8h" startline="700" endline="703">micro_os_plus::micro_test_plus::_and</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" compoundref="function-comparators-inlines_8h" startline="264" endline="278">micro_os_plus::micro_test_plus::all_of</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -200,10 +200,10 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-log
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="300" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="300" bodyend="314" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="338" declcolumn="3"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" compoundref="function-comparators-inlines_8h" startline="300" endline="314">micro_os_plus::micro_test_plus::any_of</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" compoundref="deprecated-inlines_8h" startline="714" endline="717">micro_os_plus::micro_test_plus::_or</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" compoundref="function-comparators-inlines_8h" startline="300" endline="314">micro_os_plus::micro_test_plus::any_of</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="299" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="299" bodyend="313" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="337" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" compoundref="function-comparators-inlines_8h" startline="299" endline="313">micro_os_plus::micro_test_plus::any_of</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" compoundref="deprecated-inlines_8h" startline="713" endline="716">micro_os_plus::micro_test_plus::_or</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" compoundref="function-comparators-inlines_8h" startline="299" endline="313">micro_os_plus::micro_test_plus::any_of</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -252,19 +252,24 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-log
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="235" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="235" bodyend="240" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="289" declcolumn="3"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" compoundref="function-comparators-inlines_8h" startline="235" endline="240">micro_os_plus::micro_test_plus::negate</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" compoundref="deprecated-inlines_8h" startline="688" endline="691">micro_os_plus::micro_test_plus::_not</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" compoundref="function-comparators-inlines_8h" startline="235" endline="240">micro_os_plus::micro_test_plus::negate</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="234" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="234" bodyend="239" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="288" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" compoundref="function-comparators-inlines_8h" startline="234" endline="239">micro_os_plus::micro_test_plus::negate</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" compoundref="deprecated-inlines_8h" startline="687" endline="690">micro_os_plus::micro_test_plus::_not</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" compoundref="function-comparators-inlines_8h" startline="234" endline="239">micro_os_plus::micro_test_plus::negate</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Functions used to compose logical expressions in tests. </para>
     </briefdescription>
     <detaileddescription>
-<para>The functions <computeroutput>mt::all_of()</computeroutput>, <computeroutput>mt::any_of()</computeroutput>, and <computeroutput>mt::negate()</computeroutput> combine multiple conditions, allowing expressive and concise test logic. <computeroutput>mt::all_of()</computeroutput> and <computeroutput>mt::any_of()</computeroutput> take two or more operands, and <computeroutput>mt::any_of()</computeroutput> is an inclusive or: it is true also when all the conditions are true. A chain of the same operation is reported as a single group, for example <computeroutput>(a and b and c)</computeroutput>.</para>
-<para>All the operands are evaluated before the check, so, unlike the standard algorithms of the same names, the functions do not stop at the first operand that decides the result. After a <computeroutput>using namespace std</computeroutput>, an unqualified call with three or more operands of the same type selects the standard algorithm; call the functions as <computeroutput>mt::all_of()</computeroutput> and <computeroutput>mt::any_of()</computeroutput>.</para>
-<para>The functions have descriptive names, since <computeroutput>and</computeroutput>, <computeroutput>or</computeroutput>, and <computeroutput>not</computeroutput> are alternative tokens and cannot be used as identifiers. Using these logical functions allows developers to express compound conditions clearly and improve readability.</para>
+<para>Three functions combine the conditions of a check, and report the values of all their operands when the check fails:<itemizedlist>
+<listitem><para><computeroutput>mt::all_of (a, b, ...)</computeroutput> is true when all the conditions are true;</para>
+</listitem><listitem><para><computeroutput>mt::any_of (a, b, ...)</computeroutput> is true when at least one condition is true, including when all are;</para>
+</listitem><listitem><para><computeroutput>mt::negate (a)</computeroutput> is true when the condition is false.</para>
+</listitem></itemizedlist>
+</para>
+<para><computeroutput>all_of()</computeroutput> and <computeroutput>any_of()</computeroutput> take two or more operands; a failed check shows them as one group, for example <computeroutput>(1 == 1 and 1 == 1 and 1 == 3)</computeroutput>.</para>
+<para>The functions have names, rather than the <computeroutput>&amp;&amp;</computeroutput>, <computeroutput>||</computeroutput>, and <computeroutput>!</computeroutput> operators, because the built-in operators would return a plain <computeroutput>bool</computeroutput>, which loses the values of the operands.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
 <programlisting filename=".cpp"><codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>compound<sp/>conditions&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
@@ -273,7 +278,13 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-log
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mt::lt<sp/>(compute_answer<sp/>(),<sp/>43)));</highlight></codeline>
 <codeline><highlight class="normal">});</highlight></codeline>
 </programlisting></para>
-<para>The overloaded logical operators of the <computeroutput>micro_test_plus::operators</computeroutput> namespace are deprecated since 6.0.0, in favour of these functions.  </para>
+<para><simplesect kind="par"><title>Differences from the built-in operators</title><para><itemizedlist>
+<listitem><para>All the operands are evaluated before the check; unlike <computeroutput>&amp;&amp;</computeroutput> and <computeroutput>||</computeroutput>, the functions do not stop at the first operand that decides the result, so do not write <computeroutput>mt::all_of (mt::ne (p, nullptr), mt::eq (*p, 1))</computeroutput>.</para>
+</listitem><listitem><para>After a <computeroutput>using namespace std</computeroutput>, an unqualified <computeroutput>all_of()</computeroutput> or <computeroutput>any_of()</computeroutput> with three or more operands of the same type selects the standard algorithm, which does not compile; write <computeroutput>mt::all_of()</computeroutput> and <computeroutput>mt::any_of()</computeroutput>.</para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+The overloaded logical operators of the <computeroutput>mt::operators</computeroutput> namespace are deprecated since 6.0.0, in favour of these functions.  </para>
     </detaileddescription>
   </compounddef>
 </doxygen>

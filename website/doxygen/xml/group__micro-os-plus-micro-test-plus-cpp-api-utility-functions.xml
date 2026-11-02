@@ -27,9 +27,9 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A pointer to the first character of the file name within <computeroutput>path</computeroutput>, or <computeroutput>path</computeroutput> itself if no path separator (<computeroutput>/</computeroutput> or <computeroutput>\\endiskip</computeroutput>) is found; an empty string if <computeroutput>path</computeroutput> is <computeroutput>nullptr</computeroutput>.</para>
+<simplesect kind="return"><para>A pointer to the first character of the file name within <computeroutput>path</computeroutput>, or <computeroutput>path</computeroutput> itself if no path separator (<computeroutput>/</computeroutput> or the backslash) is found; an empty string if <computeroutput>path</computeroutput> is <computeroutput>nullptr</computeroutput>.</para>
 </simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">extract_file_name</ref></computeroutput> function extracts the file name from a given file path, handling both Unix-style (<computeroutput>/</computeroutput>) and Windows-style (<computeroutput>\\endiskip</computeroutput>) path separators. It returns a pointer to the start of the file name within the input string, or the original string if no separators are found.</para>
+The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" kindref="member">extract_file_name</ref></computeroutput> function extracts the file name from a given file path, handling both Unix-style (<computeroutput>/</computeroutput>) and Windows-style (the backslash) path separators. It returns a pointer to the start of the file name within the input string, or the original string if no separators are found.</para>
 <para>This utility is particularly useful for test reporting, allowing for concise display of file names without full paths.</para>
 <para>A <computeroutput>nullptr</computeroutput> path, which a default-constructed source location may provide, is accepted and yields an empty string, instead of reaching the <computeroutput>std::string_view</computeroutput> constructor, which does not allow it.</para>
 <para><simplesect kind="par"><title>Example</title><para></para>
@@ -41,14 +41,14 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-uti
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" line="93" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" bodystart="93" bodyend="107" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/utility.h" declline="96" declcolumn="5"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" compoundref="utility_8cpp" startline="93" endline="107">micro_os_plus::micro_test_plus::utility::extract_file_name</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1af0682165f5d07b13fd21e3f6f8da546c" compoundref="runner_8cpp" startline="938" endline="974">micro_os_plus::micro_test_plus::runner::abort</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" line="94" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" bodystart="94" bodyend="108" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/utility.h" declline="90" declcolumn="5"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" compoundref="utility_8cpp" startline="94" endline="108">micro_os_plus::micro_test_plus::utility::extract_file_name</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1af0682165f5d07b13fd21e3f6f8da546c" compoundref="runner_8cpp" startline="949" endline="985">micro_os_plus::micro_test_plus::runner::abort</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a66f620b093f92e0def6bf5297fb6d6ee" compoundref="reporter-human_8cpp" startline="739" endline="798">micro_os_plus::micro_test_plus::detail::reporter_human::abort_session</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1aa8802baefcb360f48451418c783ac413" compoundref="reporter-tap_8cpp" startline="1100" endline="1153">micro_os_plus::micro_test_plus::detail::reporter_tap::abort_session</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a7170624ca4a3a92b17ced71472726529" compoundref="runner_8cpp" startline="409" endline="497">micro_os_plus::micro_test_plus::runner::add_top_suite</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" compoundref="utility_8cpp" startline="93" endline="107">micro_os_plus::micro_test_plus::utility::extract_file_name</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ae87c4a8f0e08e069b6d1a393f88e040e" compoundref="runner_8cpp" startline="261" endline="386">micro_os_plus::micro_test_plus::runner::initialise</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a7170624ca4a3a92b17ced71472726529" compoundref="runner_8cpp" startline="420" endline="508">micro_os_plus::micro_test_plus::runner::add_top_suite</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" compoundref="utility_8cpp" startline="94" endline="108">micro_os_plus::micro_test_plus::utility::extract_file_name</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ae87c4a8f0e08e069b6d1a393f88e040e" compoundref="runner_8cpp" startline="272" endline="397">micro_os_plus::micro_test_plus::runner::initialise</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a032be7e38aad40c8bc44b2376ad90e29" compoundref="reporter-human_8cpp" startline="595" endline="626">micro_os_plus::micro_test_plus::detail::reporter_human::output_fail_prefix</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1aaea110287f115fbaf80b0248f724c5b6" compoundref="reporter-tap_8cpp" startline="999" endline="1024">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_suffix</referencedby>
         <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gafc93799846770e521c4721d0de0a81cc" compoundref="deprecated_8cpp" startline="78" endline="81">micro_os_plus::micro_test_plus::reflection::short_name</referencedby>
@@ -104,10 +104,10 @@ This function enables pattern-based string comparison for tests, supporting both
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" line="145" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" bodystart="145" bodyend="190" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/utility.h" declline="109" declcolumn="5"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" compoundref="utility_8cpp" startline="145" endline="190">micro_os_plus::micro_test_plus::utility::is_match</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" compoundref="utility_8cpp" startline="145" endline="190">micro_os_plus::micro_test_plus::utility::is_match</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a2b0adeef059676a455d9506ba8a06d26" compoundref="runner_8cpp" startline="520" endline="541">micro_os_plus::micro_test_plus::runner::is_selected</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" line="146" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" bodystart="146" bodyend="191" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/utility.h" declline="103" declcolumn="5"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" compoundref="utility_8cpp" startline="146" endline="191">micro_os_plus::micro_test_plus::utility::is_match</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gaa2f0f4cff320a783ad2347c9ff3fc731" compoundref="utility_8cpp" startline="146" endline="191">micro_os_plus::micro_test_plus::utility::is_match</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a2b0adeef059676a455d9506ba8a06d26" compoundref="runner_8cpp" startline="531" endline="552">micro_os_plus::micro_test_plus::runner::is_selected</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gac17bb0b9be9a1ca01854c8bbbabc5def" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; std::string_view &gt;</type>
@@ -159,8 +159,8 @@ The function iterates through the input, identifying the positions of any of the
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" line="213" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" bodystart="213" bodyend="231" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/utility.h" declline="157" declcolumn="5"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" compoundref="utility-inlines_8h" startline="96" endline="114">micro_os_plus::micro_test_plus::utility::split</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" line="214" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" bodystart="214" bodyend="232" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/utility.h" declline="151" declcolumn="5"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" compoundref="utility-inlines_8h" startline="95" endline="113">micro_os_plus::micro_test_plus::utility::split</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -189,7 +189,7 @@ The function iterates through the input, identifying the positions of any of the
 <para>Splits a string into a vector of sub-strings. </para>
         </briefdescription>
         <detaileddescription>
-<para>This function template facilitates string handling in tests by splitting a string into a vector of substrings, using the specified delimiter.</para>
+<para>This function template splits a string into a vector of substrings, using the specified delimiter characters.</para>
 <para>The function iterates through the input string, identifying the positions of any of the delimiter characters (via <computeroutput>find_first_of()</computeroutput>) and extracting the substrings between them. Each non-empty substring is added to the output vector; empty substrings, such as those between consecutive delimiters, are omitted. This approach supports flexible parsing of delimited data, which is particularly useful for validating string processing logic in test cases.</para>
 <para><bold>Example</bold></para>
 <para><programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
@@ -239,17 +239,33 @@ The function iterates through the input, identifying the positions of any of the
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/utility-inlines.h" line="96" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/utility-inlines.h" bodystart="96" bodyend="114" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/utility.h" declline="138" declcolumn="5"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" compoundref="utility-inlines_8h" startline="96" endline="114">micro_os_plus::micro_test_plus::utility::split</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gac17bb0b9be9a1ca01854c8bbbabc5def" compoundref="utility_8cpp" startline="213" endline="231">micro_os_plus::micro_test_plus::utility::split</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" compoundref="utility-inlines_8h" startline="96" endline="114">micro_os_plus::micro_test_plus::utility::split</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/utility-inlines.h" line="95" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/utility-inlines.h" bodystart="95" bodyend="113" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/utility.h" declline="132" declcolumn="5"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" compoundref="utility-inlines_8h" startline="95" endline="113">micro_os_plus::micro_test_plus::utility::split</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gac17bb0b9be9a1ca01854c8bbbabc5def" compoundref="utility_8cpp" startline="214" endline="232">micro_os_plus::micro_test_plus::utility::split</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" compoundref="utility-inlines_8h" startline="95" endline="113">micro_os_plus::micro_test_plus::utility::split</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Utility functions for handling strings in tests. </para>
     </briefdescription>
     <detaileddescription>
-<para>The functions of the <computeroutput>utility</computeroutput> namespace help with the strings that the tests often check: <computeroutput>utility::is_match()</computeroutput> matches a string against a pattern with the <computeroutput>*</computeroutput> and <computeroutput>?</computeroutput> wildcards, <computeroutput>utility::split()</computeroutput> splits a string into a vector of the non-empty sub-strings separated by any of the delimiter characters, and <computeroutput>utility::extract_file_name()</computeroutput> returns the file name part of a path.  </para>
+<para>The <computeroutput>utility</computeroutput> namespace has three functions for the strings that the tests often check:<itemizedlist>
+<listitem><para><computeroutput>utility::is_match (input, pattern)</computeroutput> checks whether a string matches a pattern, in which <computeroutput>*</computeroutput> matches any sequence of characters, including an empty one, and <computeroutput>?</computeroutput> matches any single character;</para>
+</listitem><listitem><para><computeroutput>utility::split (input, delimiters)</computeroutput> splits a string into a vector of the non-empty sub-strings separated by any of the delimiter characters; for a <computeroutput>std::string</computeroutput> it returns <computeroutput>std::string</computeroutput> copies, and for a <computeroutput>std::string_view</computeroutput>, a string literal, or a <computeroutput>const char*</computeroutput> it returns views into the input, which must outlive them;</para>
+</listitem><listitem><para><computeroutput>utility::extract_file_name (path)</computeroutput> returns the file name part of a path, after the last <computeroutput>/</computeroutput> or backslash.</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="par"><title>Example</title><para></para>
+</simplesect>
+<programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>the<sp/>strings&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::utility::is_match<sp/>(</highlight><highlight class="stringliteral">&quot;main.cpp&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;*.cpp&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::eq<sp/>(mt::utility::split<sp/>(</highlight><highlight class="stringliteral">&quot;a,<sp/>b,,c&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal">).size<sp/>(),<sp/>3u));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::eq<sp/>(mt::utility::extract_file_name<sp/>(</highlight><highlight class="stringliteral">&quot;src/main.cpp&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;main.cpp&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+</programlisting>  </para>
     </detaileddescription>
   </compounddef>
 </doxygen>

@@ -36,7 +36,7 @@ Topics related to the µOS++ framework
 <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus">µTest++</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Topics related to the µTest++ Testing Framework
+The µTest++ Testing Framework
 </td>
 </tr>
 
@@ -46,7 +46,7 @@ Topics related to the µTest++ Testing Framework
 <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api">C++ API</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Topics related to the µTest++ C++ API
+How to write the tests
 </td>
 </tr>
 
@@ -56,7 +56,17 @@ Topics related to the µTest++ C++ API
 <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-runners">Test Runners</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Classes for initialising the framework and returning an exit code
+The runner initialises the framework and returns the exit code
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 48px; display: inline-block;"></span>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-test-suites">Test Suites</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Test suites are named groups of related test cases
 </td>
 </tr>
 
@@ -133,10 +143,10 @@ Utility functions for handling strings in tests
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-test-suites">Test Suites</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-customisation">Customisation</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Test suites are named groups of related test cases
+Reporting the application types, and writing application comparators
 </td>
 </tr>
 
@@ -186,7 +196,7 @@ Deprecated literal operators and wrappers for typed operands
 <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-c-api">C API</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Topics related to the µTest++ C API
+There is no C API; C code is tested from C++
 </td>
 </tr>
 
@@ -196,14 +206,14 @@ Topics related to the µTest++ C API
 <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-config">Configuration</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Configuration macros
+The macros that enable and configure the framework
 </td>
 </tr>
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cli">Command Line Options</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cli">Command-Line Options</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Options for controlling the test output at run time
@@ -216,19 +226,50 @@ Options for controlling the test output at run time
 
 
 
-<p>The <b>µTest++</b> project is a <b>lightweight</b>, <b>macro-free</b>, <b>modern C++</b> testing framework <b>with TAP output</b>, purpose-built for embedded systems development.</p>
+<p>The <b>µTest++</b> project is a C++20 testing framework for embedded systems, which also runs on the native platforms. The tests are ordinary C++ code, with no preprocessor macros, organised in test suites and test cases.</p>
 
 
-<p>With its clean and expressive C++ API, µTest++ enables developers to write, organise, and execute unit tests with minimal overhead. The library includes advanced features such as <b>test suites</b>, <b>test cases</b>, and detailed reporting, all tailored to meet the specific needs of embedded environments.</p>
+<p>The results are written in the <a href="https://en.wikipedia.org/wiki/Test_Anything_Protocol">TAP</a> (Test Anything Protocol) format by default, which the continuous integration systems and the TAP tools read. A human-readable format is also available, for reading the results on the console.</p>
 
 
-<p>Test results are reported in the <a href="https://en.wikipedia.org/wiki/Test_Anything_Protocol">TAP</a> (<b>Test Anything Protocol</b>) format by default, ensuring compatibility with a wide range of continuous integration systems and TAP-aware test harnesses. A human-readable reporter is also available for interactive use.</p>
+<p>The command-line options select the format, how much is displayed (from nothing, with only the exit code, to every check), the colours, an output file, and the test cases to run.</p>
 
 
-<p>Output verbosity is fully configurable via command-line options, allowing users to choose between concise summaries and comprehensive diagnostic information to best suit their workflow.</p>
+## Getting started {#mainpage-start}
 
 
-<p>By adopting µTest++, you can achieve robust and maintainable code through systematic and automated testing, supporting professional software engineering practices across your entire project.</p>
+<p>The applications include a single header, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a></span>. The header declares nothing unless the macro <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-config/#ga3dd1e70998580fe7d7f410e5cd83879b">MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</a></span> is defined, preferably in <span class="doxyComputerOutput">micro-os-plus/micro-test-plus-defines.h</span>, for the application and for the library sources (see <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-config">Configuration</a>).</p>
+
+
+<p>A complete test program has a runner, initialised with the command-line arguments, a top suite created in <span class="doxyComputerOutput">main()</span> (optional, since the suites can be added to the runner instead), test cases with checks, and returns the exit code of the session:</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">mt::runner tr;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeywordType">int</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">main (</span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> argc, </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* argv[])</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">{</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  tr.initialise (argc, argv);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp; ts = tr.add_top_suite ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  ts.test (</span><span class="doxyHighlightStringLiteral">"Check truth"</span><span class="doxyHighlight">, [] (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp; t) {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    t.expect (mt::eq (6 * 7, 42)) &lt;&lt; </span><span class="doxyHighlightStringLiteral">"the answer"</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  });</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> tr.run_suites ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">}</span></span></div>
+
+</div>
+
+
+<p>The topics of the <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api">C++ API</a> group describe the runner, the suites, the test cases, and the checks, and the <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cli">Command-Line Options</a> group the options of the test programs. The installation, the first project, and the user manual are in the <a href="../getting-started/">Getting Started</a> and <a href="../user/">User's Guide</a> pages of the site.</p>
 
 
 :::note
@@ -237,6 +278,6 @@ For comparison, the original Doxygen html pages continue to be available via the
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

@@ -6,11 +6,34 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para>The <bold>µTest++</bold> project is a <bold>lightweight</bold>, <bold>macro-free</bold>, <bold>modern C++</bold> testing framework <bold>with TAP output</bold>, purpose-built for embedded systems development.</para>
-<para>With its clean and expressive C++ API, µTest++ enables developers to write, organise, and execute unit tests with minimal overhead. The library includes advanced features such as <bold>test suites</bold>, <bold>test cases</bold>, and detailed reporting, all tailored to meet the specific needs of embedded environments.</para>
-<para>Test results are reported in the <ulink url="https://en.wikipedia.org/wiki/Test_Anything_Protocol">TAP</ulink> (<bold>Test Anything Protocol</bold>) format by default, ensuring compatibility with a wide range of continuous integration systems and TAP-aware test harnesses. A human-readable reporter is also available for interactive use.</para>
-<para>Output verbosity is fully configurable via command-line options, allowing users to choose between concise summaries and comprehensive diagnostic information to best suit their workflow.</para>
-<para>By adopting µTest++, you can achieve robust and maintainable code through systematic and automated testing, supporting professional software engineering practices across your entire project.  </para>
+<para>The <bold>µTest++</bold> project is a C++20 testing framework for embedded systems, which also runs on the native platforms. The tests are ordinary C++ code, with no preprocessor macros, organised in test suites and test cases.</para>
+<para>The results are written in the <ulink url="https://en.wikipedia.org/wiki/Test_Anything_Protocol">TAP</ulink> (Test Anything Protocol) format by default, which the continuous integration systems and the TAP tools read. A human-readable format is also available, for reading the results on the console.</para>
+<para>The command-line options select the format, how much is displayed (from nothing, with only the exit code, to every check), the colours, an output file, and the test cases to run.</para>
+<sect1 id="index_1mainpage-start">
+<title>Getting started</title><para>The applications include a single header, <computeroutput><ref refid="micro-test-plus_8h" kindref="compound">micro-os-plus/micro-test-plus.h</ref></computeroutput>. The header declares nothing unless the macro <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-config_1ga3dd1e70998580fe7d7f410e5cd83879b" kindref="member">MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</ref></computeroutput> is defined, preferably in <computeroutput>micro-os-plus/micro-test-plus-defines.h</computeroutput>, for the application and for the library sources (see <ref refid="group__micro-os-plus-micro-test-plus-config" kindref="compound">Configuration</ref>).</para>
+<para>A complete test program has a runner, initialised with the command-line arguments, a top suite created in <computeroutput>main()</computeroutput> (optional, since the suites can be added to the runner instead), test cases with checks, and returns the exit code of the session:</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="preprocessor">#include<sp/>&lt;<ref refid="micro-test-plus_8h" kindref="compound">micro-os-plus/micro-test-plus.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">mt::runner<sp/>tr;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">main<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>argv[])</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>tr.initialise<sp/>(argc,<sp/>argv);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>ts<sp/>=<sp/>tr.add_top_suite<sp/>();</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>truth&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t.expect<sp/>(mt::eq<sp/>(6<sp/>*<sp/>7,<sp/>42))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;the<sp/>answer&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>});</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tr.run_suites<sp/>();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para>The topics of the <ref refid="group__micro-os-plus-micro-test-plus-cpp-api" kindref="compound">C++ API</ref> group describe the runner, the suites, the test cases, and the checks, and the <ref refid="group__micro-os-plus-micro-test-plus-cli" kindref="compound">Command-Line Options</ref> group the options of the test programs. The installation, the first project, and the user manual are in the <ulink url="../getting-started/">Getting Started</ulink> and <ulink url="../user/">User&apos;s Guide</ulink> pages of the site.  </para>
+</sect1>
     </detaileddescription>
     <location file="topics.h"/>
   </compounddef>

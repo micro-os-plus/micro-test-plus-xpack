@@ -146,7 +146,7 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This header provides the <span class="tt">stopwatch</span> class, used to measure the elapsed time of the test suites and of the test session within the µTest++ framework. The stopwatch is started before the measured operation, stopped after it, and then reports the elapsed time as a <span class="tt">std::chrono::microseconds</span> duration.</p>
 <p>Timing support relies on <span class="tt">clock_gettime(CLOCK_MONOTONIC, ...)</span> on POSIX platforms and on <span class="tt">timespec_get(..., TIME_UTC)</span> on Windows. If no clock is available (e.g. on bare-metal targets without an RTC), the readings remain zero, <span class="tt">has_elapsed()</span> returns <span class="tt">false</span>, and no timing information is reported.</p>
-<p>All definitions reside within the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html" title="Internal implementation details for the µTest++ framework.">micro_os_plus::micro_test_plus::detail</a></span> namespace, ensuring clear separation from user code and minimising the risk of naming conflicts.</p>
+<p>All definitions reside within the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html" title="Internal implementation details for the µTest++ framework.">micro_os_plus::micro_test_plus::detail</a></span> namespace.</p>
 <p>This file is intended solely for internal use within the framework and should not be included directly by user code. </p>
 
 <p class="definition">Definition in file <a class="el" href="stopwatch_8h_source.html">stopwatch.h</a>.</p>

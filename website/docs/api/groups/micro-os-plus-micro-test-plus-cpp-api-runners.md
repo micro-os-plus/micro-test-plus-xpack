@@ -17,7 +17,7 @@ keywords:
 
 # Test Runners
 
-<p>Classes for initialising the framework and returning an exit code. <a href="#details">More...</a></p>
+<p>The runner initialises the framework and returns the exit code. <a href="#details">More...</a></p>
 
 ## Classes Index
 
@@ -41,13 +41,31 @@ keywords:
 
 ## Description {#details}
 
-<p>Classes for initialising the framework and returning an exit code.</p>
+<p>The runner initialises the framework and returns the exit code.</p>
 
 
-<p>Proper initialisation ensures that µTest++ is correctly configured to manage and execute test cases, whilst the exit code reflects the overall test outcome and supports integration with automated build and continuous integration systems.</p>
+<p>A test program has one runner, usually a global object, which <span class="doxyComputerOutput">main()</span> uses in three steps:</p>
 
 
-<p>The simplest test consists of the default test suite and a single test case with one expectation; for example:</p>
+<ol class="doxyList" type="1">
+<li><span class="doxyComputerOutput">initialise (argc, argv)</span> reads the command-line options (see <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cli">Command-Line Options</a>); on platforms without a command line, <span class="doxyComputerOutput">initialise (runner_options)</span> sets the options directly. The call is optional; without it, the default options are used;</li>
+<li><span class="doxyComputerOutput">add_top_suite()</span> returns the top suite, on which <span class="doxyComputerOutput">main()</span> creates its own test cases (see <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-test-suites">Test Suites</a>). The call is optional, for programs whose test cases are all in other suites;</li>
+<li><span class="doxyComputerOutput">run_suites()</span> runs the other suites, writes the totals, and returns the exit code, which <span class="doxyComputerOutput">main()</span> returns to the system.</li>
+</ol>
+
+<p>The exit code is:</p>
+
+
+<ul class="doxyList ">
+<li>0 when all the checks passed, or when the test cases were only listed;</li>
+<li>1 when a check failed, or when the program used the runner wrongly (for example, it added no suite at all);</li>
+<li>2 when the command line had an error, or when the filters selected no test case.</li>
+</ul>
+
+<dl class="doxySectionUser">
+<dt>Example</dt>
+<dd></dd>
+</dl>
 
 
 <div class="doxyProgramListing">
@@ -75,30 +93,31 @@ keywords:
 </div>
 
 
-<p>When this test is executed, the output is as follows:</p>
+<p>The program writes (the passed checks are displayed only with the <span class="doxyComputerOutput">--verbose</span> option):</p>
 
 
 <div class="doxyProgramListing">
 
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight"># Running: minimal</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight"># Built with ...</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">TAP version 14</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight"># Subtest: Minimal</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    # Subtest: Check truth</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">        ok 1 - true</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">        1..1</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    ok 1 - Check truth # { passed, 1 check }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    1..1</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">ok 1 - Minimal # { passed, 1 check in 1 test case, time: 0.065 ms }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">ok 1 - Minimal # { passed, 1 check in 1 test case, time: 0.039 ms }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">1..1</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight"># { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.136 ms }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight"># { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.074 ms }</span></span></div>
 
 </div>
 
 
-<p>The name passed to the top suite is optional; if missing, it will attempt to extract a name from argv[0], which is commonly the executable name. If that fails, a default name is used.</p>
+<p>The name of the top suite is optional. Without it, the suite is named after the program, the file name of <span class="doxyComputerOutput">argv[0]</span> without its extension (<span class="doxyComputerOutput">minimal</span> above); without <span class="doxyComputerOutput">argv[0]</span>, it is named <span class="doxyComputerOutput">default suite</span>.</p>
 
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

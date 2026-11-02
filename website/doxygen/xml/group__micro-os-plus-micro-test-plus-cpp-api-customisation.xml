@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="group__micro-os-plus-micro-test-plus-cpp-api-customisation" kind="group">
+    <compoundname>micro-os-plus-micro-test-plus-cpp-api-customisation</compoundname>
+    <title>Customisation</title>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-customisation_1gabecc05360d0941067222d827ff8e3f08" prot="public" static="no">
+        <type>detail::expression_formatter</type>
+        <definition>using micro_os_plus::micro_test_plus::expression_formatter = detail::expression_formatter</definition>
+        <argsstring></argsstring>
+        <name>expression_formatter</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::expression_formatter</qualifiedname>
+        <briefdescription>
+<para>Public name of the formatter used to report operand values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The function comparators and the custom operators report the values of their operands when a check fails. Values of user-defined types can be reported only if the application provides an <computeroutput>operator&lt;&lt;</computeroutput> that writes them to this formatter, declared in the namespace of the type, so that it is found by argument-dependent lookup:</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">app</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">point</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>operator==<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>point&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>point&amp;<sp/>rhs)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lhs.x<sp/>==<sp/>rhs.x<sp/>&amp;&amp;<sp/>lhs.y<sp/>==<sp/>rhs.y;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>mt::expression_formatter&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>operator&lt;&lt;<sp/>(mt::expression_formatter&amp;<sp/>formatter,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>point&amp;<sp/>p)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>formatter<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;{<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>p.x<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>p.y<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>}&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>app</highlight></codeline>
+</programlisting></para>
+<para>Without such an operator, comparators such as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref></computeroutput> do not compile for user-defined types, since the operand values cannot be formatted; only the scoped enumerations are formatted without it, by their underlying value. Plain boolean checks, such as <computeroutput>expect (a == b)</computeroutput>, do not need it, but they report only the source location on failure. The same operator also writes the values appended to the messages of the checks (<computeroutput>expect (a == b) &lt;&lt; "a is " &lt;&lt; a</computeroutput>).</para>
+<para>Applications use the <computeroutput>operator&lt;&lt;</computeroutput> overloads, and <computeroutput>str()</computeroutput> to test their own operators; the functions that manage the buffer are private to the framework. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="1720" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" bodystart="1720" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Reporting the application types, and writing application comparators. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The applications extend the framework in two ways, both with public names only: they teach the formatter to write the values of their own types, and they write their own comparators and predicates, which are reported as the built-in ones.</para>
+<para><simplesect kind="par"><title>Application types</title><para>The function comparators report the values of their operands when a check fails. The scalars, the strings, the containers, and the scoped enumerations are written by the framework. For any other type, the application provides an <computeroutput>operator&lt;&lt;</computeroutput> that writes the value to the <computeroutput>expression_formatter</computeroutput>, declared in the namespace of the type, so that it is found by argument-dependent lookup. Without it, a comparator such as <computeroutput>eq()</computeroutput> does not compile for that type. The same operator writes the values appended to the messages of the checks.</para>
+</simplesect>
+<simplesect kind="par"><title>Application comparators and predicates</title><para>A comparator is an expression template, parametrised by a tag of the application: a type with a <computeroutput>symbol</computeroutput> text, which separates the operands in the report, and a static <computeroutput>apply()</computeroutput> function, which returns the result. <computeroutput>extension::compare_op</computeroutput> takes two operands and a tag, and <computeroutput>extension::predicate_op</computeroutput> takes one operand and a tag. The result is an expression like those returned by <computeroutput>eq()</computeroutput> and <computeroutput>negate()</computeroutput>, so it can be combined with <computeroutput>all_of()</computeroutput>, <computeroutput>any_of()</computeroutput>, and <computeroutput>negate()</computeroutput>, and a failed check displays the operands and the symbol.</para>
+</simplesect>
+The concepts of the <computeroutput>extension</computeroutput> namespace (<computeroutput>is_op</computeroutput>, <computeroutput>any_op</computeroutput>, <computeroutput>checkable</computeroutput>, <computeroutput>printable</computeroutput>, <computeroutput>compare_tag</computeroutput>, and <computeroutput>predicate_tag</computeroutput>) describe the types that these templates and the checks accept.</para>
+<para><simplesect kind="par"><title>Example</title><para></para>
+</simplesect>
+<programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">app</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">point</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>operator==<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>point&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>point&amp;<sp/>rhs)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lhs.x<sp/>==<sp/>rhs.x<sp/>&amp;&amp;<sp/>lhs.y<sp/>==<sp/>rhs.y;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Found<sp/>by<sp/>argument-dependent<sp/>lookup.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>mt::expression_formatter&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>operator&lt;&lt;<sp/>(mt::expression_formatter&amp;<sp/>formatter,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>point&amp;<sp/>p)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>formatter<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;{<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>p.x<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>p.y<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>}&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">divides_tag</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>symbol<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;<sp/>divides<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>apply<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Lhs_T&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Rhs_T&amp;<sp/>rhs)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rhs<sp/>%<sp/>lhs<sp/>==<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>divides<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Lhs_T&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Rhs_T&amp;<sp/>rhs)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mt::extension::compare_op{<sp/>lhs,<sp/>rhs,<sp/>divides_tag{}<sp/>};</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>app</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>points&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::eq<sp/>(app::point{<sp/>1,<sp/>2<sp/>},<sp/>app::point{<sp/>1,<sp/>3<sp/>}))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;differ&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>divisors&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(app::divides<sp/>(5,<sp/>12))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;5<sp/>divides<sp/>12&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+</programlisting></para>
+<para>The failed checks are reported with the values and the symbol:</para>
+<para><programlisting filename=".console"><codeline><highlight class="normal">•<sp/>Check<sp/>points</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>✗<sp/>differ<sp/>FAILED<sp/>(main.cpp:75,<sp/>{<sp/>1,<sp/>2<sp/>}<sp/>==<sp/>{<sp/>1,<sp/>3<sp/>})</highlight></codeline>
+<codeline><highlight class="normal">•<sp/>Check<sp/>divisors</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>✗<sp/>5<sp/>divides<sp/>12<sp/>FAILED<sp/>(main.cpp:80,<sp/>5<sp/>divides<sp/>12)</highlight></codeline>
+</programlisting></para>
+<para>A predicate is written in the same way, with a tag that has a <computeroutput>symbol</computeroutput> and an <computeroutput>apply()</computeroutput> function of one operand, and the template <computeroutput>extension::predicate_op</computeroutput>.  </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

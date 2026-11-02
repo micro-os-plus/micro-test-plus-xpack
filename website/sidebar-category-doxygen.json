@@ -41,6 +41,11 @@
                 },
                 {
                   "type": "doc",
+                  "label": "Test Suites",
+                  "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-test-suites"
+                },
+                {
+                  "type": "doc",
                   "label": "Test Cases",
                   "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-test-case"
                 },
@@ -76,8 +81,8 @@
                 },
                 {
                   "type": "doc",
-                  "label": "Test Suites",
-                  "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-test-suites"
+                  "label": "Customisation",
+                  "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-customisation"
                 },
                 {
                   "type": "category",
@@ -119,7 +124,7 @@
             },
             {
               "type": "doc",
-              "label": "Command Line Options",
+              "label": "Command-Line Options",
               "id": "api/groups/micro-os-plus-micro-test-plus-cli"
             }
           ]

@@ -27,7 +27,7 @@ Used only as the type of <computeroutput><ref refid="structmicro__os__plus_1_1mi
 <para><xrefsect id="deprecated_1_deprecated000099"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Not replaced (since 6.0.0). </para>
 </xrefdescription></xrefsect></para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2596" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="2597" bodyend="2598"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2586" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="2587" bodyend="2588"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

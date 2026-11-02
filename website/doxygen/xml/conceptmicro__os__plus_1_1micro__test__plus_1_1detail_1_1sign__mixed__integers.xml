@@ -27,7 +27,7 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1sig
           and (not std::is_same_v&lt;Lhs_T, char32_t&gt;)
           and (not std::is_same_v&lt;Rhs_T, char32_t&gt;)</initializer>
     <conceptparts>
-      <codepart line="280">    <programlisting>
+      <codepart line="279">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">sign_mixed_integers<sp/>=<sp/>std::is_integral_v&lt;Lhs_T&gt;<sp/>and<sp/>std::is_integral_v&lt;Rhs_T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(std::is_signed_v&lt;Lhs_T&gt;<sp/>!=<sp/>std::is_signed_v&lt;Rhs_T&gt;)</highlight></codeline>
@@ -52,6 +52,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1sig
     <detaileddescription>
 <para>The built-in comparison of a signed and an unsigned operand converts the signed one to the unsigned type, so <computeroutput>-1 &lt; 1u</computeroutput> is false. For these pairs the comparisons use the <computeroutput>std::cmp_*()</computeroutput> functions, which compare the mathematical values. <computeroutput>bool</computeroutput> and the character types are excluded, since <computeroutput>std::cmp_*()</computeroutput> do not accept them and their comparison with integers is not a sign problem. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="279" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="278" column="5"/>
   </compounddef>
 </doxygen>

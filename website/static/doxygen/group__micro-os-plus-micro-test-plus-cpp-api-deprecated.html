@@ -207,12 +207,23 @@ Variables</h2></td></tr>
 <tr class="memdesc:ga8decf36d3e0e7cc8242c6a2170743422"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated result when the operands are within the tolerance.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The definitions in this group, and in the groups they refer to, are still available, but the compiler reports their use, and they will be removed in a future major release. Each one names its replacement in the deprecation message, together with the version that deprecated it (most of them since 6.0.0).</p>
-<dl class="section user"><dt>Availability</dt><dd>The deprecated definitions are compiled only when the application defines the macro <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-config.html#ga67c701de5426ac340584ed038494a873" title="Enables the deprecated definitions of the µTest++ Testing Framework.">MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</a></span>, in <span class="tt">micro-os-plus/project-config.h</span> or in <span class="tt">micro-os-plus/micro-test-plus-defines.h</span>. Without it, the applications that still use them fail to compile, which is a way of finding what must be migrated.</dd></dl>
-<dl class="section user"><dt>Groups</dt><dd>The deprecated definitions are documented together with the features they belong to:<ul>
-<li>the overloaded comparison and logical operators, in <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators.html" title="Operators">Operators</a>, replaced by the function comparators and the logical functions;</li>
-<li>the user-defined literals and the type wrappers, in <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html" title="Literals and Wrappers">Literals and Wrappers</a>, replaced by the plain values passed to the function comparators;</li>
-<li>the underscore-prefixed logical functions (<span class="tt">_not()</span>, <span class="tt">_and()</span>, and <span class="tt">_or()</span>), in <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions.html" title="Logical Functions">Logical Functions</a>, replaced by <span class="tt">negate()</span>, <span class="tt">all_of()</span>, and <span class="tt">any_of()</span>.</li>
+<div class="textblock"><p>The deprecated definitions are kept so that the tests written for the earlier releases still compile; they will be removed in a future major release. The compiler reports each use, with a message that names the replacement and the version that deprecated it (most of them since 6.0.0).</p>
+<dl class="section user"><dt>Availability</dt><dd>The deprecated definitions exist only when the application defines the macro <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-config.html#ga67c701de5426ac340584ed038494a873" title="Enables the deprecated definitions of the µTest++ Testing Framework.">MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</a></span> (see <a class="el" href="group__micro-os-plus-micro-test-plus-config.html" title="Configuration">Configuration</a>). Without it, the tests that still use them do not compile, which shows what remains to be migrated.</dd></dl>
+<dl class="section user"><dt>Migration</dt><dd>Build once with the macro defined and the deprecation warnings enabled, and rewrite each reported use as its message suggests. While migrating, the applications that build with <span class="tt">-Werror</span> can disable the warnings temporarily with <span class="tt">-Wno-deprecated-declarations</span>.</dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">namespace </span>mt = <a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Deprecated.</span></div>
+<div class="line"><span class="keyword">using namespace </span>mt::operators;</div>
+<div class="line"><span class="keyword">using namespace </span>mt::literals;</div>
+<div class="line">t.expect (compute_answer () == 42_i) &lt;&lt; <span class="stringliteral">&quot;answer is 42&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Replacement.</span></div>
+<div class="line">t.expect (mt::eq (compute_answer (), 42)) &lt;&lt; <span class="stringliteral">&quot;answer is 42&quot;</span>;</div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div><div class="ttdef"><b>Definition</b> <a href="check-result_8h_source.html#l00075">check-result.h:76</a></div></div>
+</div><!-- fragment --><dl class="section user"><dt>Deprecated groups</dt><dd>Three groups of deprecated definitions have topics of their own:<ul>
+<li>the overloaded comparison and logical operators (see <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators.html" title="Operators">Operators</a>), replaced by the function comparators and the logical functions;</li>
+<li>the user-defined literals and the type wrappers (see <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html" title="Literals and Wrappers">Literals and Wrappers</a>), replaced by the plain values passed to the function comparators;</li>
+<li>the logical functions <span class="tt">_and()</span>, <span class="tt">_or()</span>, and <span class="tt">_not()</span> (see <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions.html" title="Logical Functions">Logical Functions</a>), replaced by <span class="tt">all_of()</span>, <span class="tt">any_of()</span>, and <span class="tt">negate()</span>.</li>
 </ul>
 </dd></dl>
 <dl class="section user"><dt>Other deprecated definitions</dt><dd><ul>
@@ -229,21 +240,11 @@ Variables</h2></td></tr>
 <li>the overloads of <span class="tt">test_case::expect()</span> and <span class="tt">test_case::require()</span> that accept an argument that is always true (a string literal or a function name), replaced by writing the condition;</li>
 <li>the <span class="tt">static_suite</span> constructor whose callable takes a <span class="tt">static_suite&amp;</span>, replaced by a callable taking a <span class="tt">suite&amp;</span>;</li>
 <li><span class="tt">reflection::short_name()</span>, replaced by <span class="tt">utility::extract_file_name()</span>;</li>
-<li>the <span class="tt">type_traits</span> namespace, with the concepts and the value wrapper templates of v5.0.1, replaced by the <span class="tt">extension</span> namespace.</li>
+<li>the <span class="tt">type_traits</span> namespace, with the concepts and the value wrapper templates of v5.0.1, replaced by the <span class="tt">extension</span> namespace;</li>
+<li>the traits of the <span class="tt">type_traits</span> namespace: <span class="tt">function_traits</span> and <span class="tt">list</span>, which are not replaced, and <span class="tt">identity</span>, replaced by <span class="tt">std::type_identity</span>.  </li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>Migration</dt><dd>Build once with the deprecation warnings enabled, and rewrite each reported use as suggested by the message. Temporarily, the warnings can be disabled with <span class="tt">-Wno-deprecated-declarations</span>, for the applications that build with <span class="tt">-Werror</span>.</dd></dl>
-<div class="fragment"><div class="line"><span class="keyword">namespace </span>mt = <a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Deprecated.</span></div>
-<div class="line"><span class="keyword">using namespace </span>mt::operators;</div>
-<div class="line"><span class="keyword">using namespace </span>mt::literals;</div>
-<div class="line">t.expect (compute_answer () == 42_i) &lt;&lt; <span class="stringliteral">&quot;answer is 42&quot;</span>;</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Replacement.</span></div>
-<div class="line">t.expect (mt::eq (compute_answer (), 42)) &lt;&lt; <span class="stringliteral">&quot;answer is 42&quot;</span>;</div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div><div class="ttdef"><b>Definition</b> <a href="check-result_8h_source.html#l00075">check-result.h:76</a></div></div>
-</div><!-- fragment -->  </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
+</div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
 <a id="ga67890916b8d3d8cbaab893cc6b599745" name="ga67890916b8d3d8cbaab893cc6b599745"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga67890916b8d3d8cbaab893cc6b599745">&#9670;&#160;</a></span>genuine_integral_value</h2>
 
@@ -266,7 +267,7 @@ template&lt;class T&gt; </div>
 <p>In v5.0.1, a separate wrapper with the same members as <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">value</a>&lt;T&gt;</span>, never created by the framework; now <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">value</a>&lt;T&gt;</span>, so the values are compared and reported in the same way.</p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000107">Deprecated</a></b></dt><dd>The value wrappers are internal (since 6.0.0). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l02827">2827</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l02817">2817</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
 
 </div>
 </div>
@@ -352,7 +353,7 @@ template&lt;class T&gt; </div>
 <p>The v5.0.1 name, with a trailing underscore. The stored value is now private, and <span class="tt">get()</span> returns a reference; the value is read with <span class="tt">get()</span> or with the explicit conversion, not through the v5.0.1 public member <span class="tt">value_</span>.</p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000106">Deprecated</a></b></dt><dd>The value wrappers are internal (since 6.0.0). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l02811">2811</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l02801">2801</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
 
 </div>
 </div>
@@ -399,14 +400,14 @@ template&lt;class T&gt; </div>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000007">Deprecated</a></b></dt><dd>use const_cast&lt;T&amp;&gt; (since 6.0.0)</dd></dl>
 <p>Removes the <span class="tt">const</span> qualifier from the reference with <span class="tt">const_cast</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00728">728</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  729</span>  {</div>
-<div class="line"><span class="lineno">  730</span>    <span class="keywordflow">return</span> <span class="keyword">const_cast&lt;</span>T&amp;<span class="keyword">&gt;</span> (t);</div>
-<div class="line"><span class="lineno">  731</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00727">727</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  728</span>  {</div>
+<div class="line"><span class="lineno">  729</span>    <span class="keywordflow">return</span> <span class="keyword">const_cast&lt;</span>T&amp;<span class="keyword">&gt;</span> (t);</div>
+<div class="line"><span class="lineno">  730</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00728">mut()</a>.</p>
+<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00727">mut()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00728">mut()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00727">mut()</a>.</p>
 
 </div>
 </div>
@@ -439,17 +440,17 @@ template&lt;class T&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A pointer to the file name within the input string, after the last <span class="tt">/</span> or <span class="tt">\\endiskip</span> separator, or the string itself if there is no separator. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the file name within the input string, after the last <span class="tt">/</span> or backslash separator, or the string itself if there is no separator. </dd></dl>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000092">Deprecated</a></b></dt><dd>use <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html#ga791f22f0c85b6436c9016821907b0653" title="Extracts the file name component from a full path.">utility::extract_file_name()</a> (since 6.0.0)</dd></dl>
-<p>Delegates to <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html#ga791f22f0c85b6436c9016821907b0653" title="Extracts the file name component from a full path.">utility::extract_file_name()</a></span>, the single implementation used by the framework, so both the <span class="tt">/</span> and the <span class="tt">\\endiskip</span> separators are recognised. If no separator is present, the original input string is returned. </p>
+<p>Delegates to <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html#ga791f22f0c85b6436c9016821907b0653" title="Extracts the file name component from a full path.">utility::extract_file_name()</a></span>, the single implementation used by the framework, so both the <span class="tt">/</span> and the backslash separators are recognised. If no separator is present, the original input string is returned. </p>
 
 <p class="definition">Definition at line <a class="el" href="deprecated_8cpp_source.html#l00078">78</a> of file <a class="el" href="deprecated_8cpp_source.html">deprecated.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   79</span>    {</div>
 <div class="line"><span class="lineno">   80</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html#ga791f22f0c85b6436c9016821907b0653">utility::extract_file_name</a> (name);</div>
 <div class="line"><span class="lineno">   81</span>    }</div>
-<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-cpp-api-utility-functions_html_ga791f22f0c85b6436c9016821907b0653"><div class="ttname"><a href="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html#ga791f22f0c85b6436c9016821907b0653">micro_os_plus::micro_test_plus::utility::extract_file_name</a></div><div class="ttdeci">const char * extract_file_name(const char *path) noexcept</div><div class="ttdoc">Extracts the file name component from a full path.</div><div class="ttdef"><b>Definition</b> <a href="utility_8cpp_source.html#l00093">utility.cpp:93</a></div></div>
+<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-cpp-api-utility-functions_html_ga791f22f0c85b6436c9016821907b0653"><div class="ttname"><a href="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html#ga791f22f0c85b6436c9016821907b0653">micro_os_plus::micro_test_plus::utility::extract_file_name</a></div><div class="ttdeci">const char * extract_file_name(const char *path) noexcept</div><div class="ttdoc">Extracts the file name component from a full path.</div><div class="ttdef"><b>Definition</b> <a href="utility_8cpp_source.html#l00094">utility.cpp:94</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="utility_8cpp_source.html#l00093">micro_os_plus::micro_test_plus::utility::extract_file_name()</a>, and <a class="el" href="deprecated_8cpp_source.html#l00078">short_name()</a>.</p>
+<p class="reference">References <a class="el" href="utility_8cpp_source.html#l00094">micro_os_plus::micro_test_plus::utility::extract_file_name()</a>, and <a class="el" href="deprecated_8cpp_source.html#l00078">short_name()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="deprecated_8cpp_source.html#l00078">short_name()</a>.</p>
 
@@ -510,47 +511,47 @@ requires (extension::has_epsilon&lt;Lhs_T&gt; or extension::has_epsilon&lt;Rhs_T
 </dl>
 <p>The tolerance is the smaller <span class="tt">epsilon</span> of the two operands, if both have one, otherwise the <span class="tt">epsilon</span> of the operand that has one. The operands are equal when the absolute value of their difference is less than the tolerance. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00213">213</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  214</span>    {</div>
-<div class="line"><span class="lineno">  215</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  216</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
-<div class="line"><span class="lineno">  217</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wfloat-equal&quot;</span></div>
-<div class="line"><span class="lineno">  218</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wconversion&quot;</span></div>
-<div class="line"><span class="lineno">  219</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wdouble-promotion&quot;</span></div>
-<div class="line"><span class="lineno">  220</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wsign-compare&quot;</span></div>
-<div class="line"><span class="lineno">  221</span><span class="preprocessor">#if defined(__clang__)</span></div>
-<div class="line"><span class="lineno">  222</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wimplicit-int-float-conversion&quot;</span></div>
-<div class="line"><span class="lineno">  223</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wpedantic&quot;</span></div>
-<div class="line"><span class="lineno">  224</span><span class="preprocessor">#endif </span><span class="comment">// defined(__clang__)</span></div>
-<div class="line"><span class="lineno">  225</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  226</span>      <span class="keyword">const</span> <span class="keyword">auto</span> difference</div>
-<div class="line"><span class="lineno">  227</span>          = <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a515f68bbb31d64d07810f45f3b1118f6">math::abs</a> (<a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a59eb53c96f68d26635c13df53b358ac8">detail::unwrap</a> (lhs) - <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a59eb53c96f68d26635c13df53b358ac8">detail::unwrap</a> (rhs));</div>
-<div class="line"><span class="lineno">  228</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html">extension::has_epsilon&lt;Lhs_T&gt;</a></div>
-<div class="line"><span class="lineno">  229</span>                    and <a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html">extension::has_epsilon&lt;Rhs_T&gt;</a>)</div>
-<div class="line"><span class="lineno">  230</span>        {</div>
-<div class="line"><span class="lineno">  231</span>          <span class="comment">// If both values have precision, use the smallest one.</span></div>
-<div class="line"><span class="lineno">  232</span>          <span class="keywordflow">return</span> difference &lt; <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a67e71e2dce0120ad4839635830e80de8">math::min_value</a> (lhs.epsilon, rhs.epsilon);</div>
-<div class="line"><span class="lineno">  233</span>        }</div>
-<div class="line"><span class="lineno">  234</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html">extension::has_epsilon&lt;Lhs_T&gt;</a>)</div>
-<div class="line"><span class="lineno">  235</span>        {</div>
-<div class="line"><span class="lineno">  236</span>          <span class="keywordflow">return</span> difference &lt; lhs.epsilon;</div>
-<div class="line"><span class="lineno">  237</span>        }</div>
-<div class="line"><span class="lineno">  238</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  239</span>        {</div>
-<div class="line"><span class="lineno">  240</span>          <span class="keywordflow">return</span> difference &lt; rhs.epsilon;</div>
-<div class="line"><span class="lineno">  241</span>        }</div>
-<div class="line"><span class="lineno">  242</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  243</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
-<div class="line"><span class="lineno">  244</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  245</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00212">212</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  213</span>    {</div>
+<div class="line"><span class="lineno">  214</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  215</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
+<div class="line"><span class="lineno">  216</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wfloat-equal&quot;</span></div>
+<div class="line"><span class="lineno">  217</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wconversion&quot;</span></div>
+<div class="line"><span class="lineno">  218</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wdouble-promotion&quot;</span></div>
+<div class="line"><span class="lineno">  219</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wsign-compare&quot;</span></div>
+<div class="line"><span class="lineno">  220</span><span class="preprocessor">#if defined(__clang__)</span></div>
+<div class="line"><span class="lineno">  221</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wimplicit-int-float-conversion&quot;</span></div>
+<div class="line"><span class="lineno">  222</span><span class="preprocessor">#pragma clang diagnostic ignored &quot;-Wpedantic&quot;</span></div>
+<div class="line"><span class="lineno">  223</span><span class="preprocessor">#endif </span><span class="comment">// defined(__clang__)</span></div>
+<div class="line"><span class="lineno">  224</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  225</span>      <span class="keyword">const</span> <span class="keyword">auto</span> difference</div>
+<div class="line"><span class="lineno">  226</span>          = <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a515f68bbb31d64d07810f45f3b1118f6">math::abs</a> (<a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a59eb53c96f68d26635c13df53b358ac8">detail::unwrap</a> (lhs) - <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a59eb53c96f68d26635c13df53b358ac8">detail::unwrap</a> (rhs));</div>
+<div class="line"><span class="lineno">  227</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html">extension::has_epsilon&lt;Lhs_T&gt;</a></div>
+<div class="line"><span class="lineno">  228</span>                    and <a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html">extension::has_epsilon&lt;Rhs_T&gt;</a>)</div>
+<div class="line"><span class="lineno">  229</span>        {</div>
+<div class="line"><span class="lineno">  230</span>          <span class="comment">// If both values have precision, use the smallest one.</span></div>
+<div class="line"><span class="lineno">  231</span>          <span class="keywordflow">return</span> difference &lt; <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a67e71e2dce0120ad4839635830e80de8">math::min_value</a> (lhs.epsilon, rhs.epsilon);</div>
+<div class="line"><span class="lineno">  232</span>        }</div>
+<div class="line"><span class="lineno">  233</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html">extension::has_epsilon&lt;Lhs_T&gt;</a>)</div>
+<div class="line"><span class="lineno">  234</span>        {</div>
+<div class="line"><span class="lineno">  235</span>          <span class="keywordflow">return</span> difference &lt; lhs.epsilon;</div>
+<div class="line"><span class="lineno">  236</span>        }</div>
+<div class="line"><span class="lineno">  237</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  238</span>        {</div>
+<div class="line"><span class="lineno">  239</span>          <span class="keywordflow">return</span> difference &lt; rhs.epsilon;</div>
+<div class="line"><span class="lineno">  240</span>        }</div>
+<div class="line"><span class="lineno">  241</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  242</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
+<div class="line"><span class="lineno">  243</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  244</span>    }</div>
 <div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html">micro_os_plus::micro_test_plus::extension::has_epsilon</a></div><div class="ttdoc">Deprecated C++20 concept satisfied when T is a framework floating-point wrapper with a tolerance.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00227">extension.h:227</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_html_a515f68bbb31d64d07810f45f3b1118f6"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a515f68bbb31d64d07810f45f3b1118f6">micro_os_plus::micro_test_plus::detail::math::abs</a></div><div class="ttdeci">constexpr auto abs(const T t) noexcept -&gt; T</div><div class="ttdoc">Computes the absolute value of a given comparable value.</div><div class="ttdef"><b>Definition</b> <a href="math-inlines_8h_source.html#l00092">math-inlines.h:92</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_html_a67e71e2dce0120ad4839635830e80de8"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a67e71e2dce0120ad4839635830e80de8">micro_os_plus::micro_test_plus::detail::math::min_value</a></div><div class="ttdeci">constexpr auto min_value(const T &amp;lhs, const T &amp;rhs) noexcept -&gt; const T &amp;</div><div class="ttdoc">Computes the minimum of two comparable values.</div><div class="ttdef"><b>Definition</b> <a href="math-inlines_8h_source.html#l00110">math-inlines.h:110</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a59eb53c96f68d26635c13df53b358ac8"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a59eb53c96f68d26635c13df53b358ac8">micro_os_plus::micro_test_plus::detail::unwrap</a></div><div class="ttdeci">decltype(auto) constexpr unwrap(const T &amp;t)</div><div class="ttdoc">Returns the value wrapped by a framework type, or the operand itself.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00099">detail-inlines.h:99</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a59eb53c96f68d26635c13df53b358ac8"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a59eb53c96f68d26635c13df53b358ac8">micro_os_plus::micro_test_plus::detail::unwrap</a></div><div class="ttdeci">decltype(auto) constexpr unwrap(const T &amp;t)</div><div class="ttdoc">Returns the value wrapped by a framework type, or the operand itself.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00098">detail-inlines.h:98</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="math-inlines_8h_source.html#l00092">micro_os_plus::micro_test_plus::detail::math::abs()</a>, <a class="el" href="math-inlines_8h_source.html#l00110">micro_os_plus::micro_test_plus::detail::math::min_value()</a>, <a class="el" href="detail-inlines_8h_source.html#l00099">unwrap()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00213">within_tolerance()</a>.</p>
+<p class="reference">References <a class="el" href="math-inlines_8h_source.html#l00092">micro_os_plus::micro_test_plus::detail::math::abs()</a>, <a class="el" href="math-inlines_8h_source.html#l00110">micro_os_plus::micro_test_plus::detail::math::min_value()</a>, <a class="el" href="detail-inlines_8h_source.html#l00098">unwrap()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00212">within_tolerance()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00590">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00213">within_tolerance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00589">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00212">within_tolerance()</a>.</p>
 
 </div>
 </div>
@@ -578,7 +579,7 @@ requires (extension::has_epsilon&lt;Lhs_T&gt; or extension::has_epsilon&lt;Rhs_T
 <p>Used only by the tolerance of the deprecated floating-point wrappers.</p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000109">Deprecated</a></b></dt><dd>To be removed with the deprecated floating-point wrappers (since 6.0.0). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00462">462</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00455">455</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
 </div>
 </div>
@@ -605,7 +606,7 @@ requires (extension::has_epsilon&lt;Lhs_T&gt; or extension::has_epsilon&lt;Rhs_T
 <p>Used only by the tolerance of the deprecated floating-point wrappers.</p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000111">Deprecated</a></b></dt><dd>To be removed with the deprecated floating-point wrappers (since 6.0.0). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00580">580</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00573">573</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
 </div>
 </div>
@@ -632,7 +633,7 @@ requires (extension::has_epsilon&lt;Lhs_T&gt; or extension::has_epsilon&lt;Rhs_T
 <p>Used only by the tolerance of the deprecated floating-point wrappers.</p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000112">Deprecated</a></b></dt><dd>To be removed with the deprecated floating-point wrappers (since 6.0.0). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00639">639</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00632">632</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
 </div>
 </div>
@@ -659,7 +660,7 @@ requires (extension::has_epsilon&lt;Lhs_T&gt; or extension::has_epsilon&lt;Rhs_T
 <p>Used only by the tolerance of the deprecated floating-point wrappers.</p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000113">Deprecated</a></b></dt><dd>To be removed with the deprecated floating-point wrappers (since 6.0.0). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00698">698</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00691">691</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
 </div>
 </div>
@@ -686,7 +687,7 @@ requires (extension::has_epsilon&lt;Lhs_T&gt; or extension::has_epsilon&lt;Rhs_T
 <p>Used only by the tolerance of the deprecated floating-point wrappers.</p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000114">Deprecated</a></b></dt><dd>To be removed with the deprecated floating-point wrappers (since 6.0.0). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00757">757</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00750">750</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
 </div>
 </div>
@@ -713,7 +714,7 @@ requires (extension::has_epsilon&lt;Lhs_T&gt; or extension::has_epsilon&lt;Rhs_T
 <p>Used only by the tolerance of the deprecated floating-point wrappers.</p>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000110">Deprecated</a></b></dt><dd>To be removed with the deprecated floating-point wrappers (since 6.0.0). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00521">521</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00514">514</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
 </div>
 </div>

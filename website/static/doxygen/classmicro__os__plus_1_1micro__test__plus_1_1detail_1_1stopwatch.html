@@ -189,7 +189,7 @@ Friends</h2></td></tr>
 <p>The class is <span class="tt">final</span>; the non-public members are <span class="tt">private</span>, and only the unit tests, through a friend, set known readings.</p>
 <p>The public members of the v5.0.1 <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga53a6bc7f86b15378c8296b3647e7013f" title="Deprecated name of stopwatch.">detail::timestamps</a></span> class (<span class="tt"><a class="el" href="#a621a32c96a4950306c0a1aef8c577740" title="Deprecated recording of the start time, from the system clock.">timestamp_begin()</a></span>, <span class="tt"><a class="el" href="#a4c1a4d8b22d04205be49f8289ed7abd6" title="Deprecated recording of the stop time, from the system clock.">timestamp_end()</a></span>, <span class="tt"><a class="el" href="#a306d33023758a96948a6b24ea7a5dc06" title="Deprecated check of the start reading.">has_begin()</a></span>, <span class="tt"><a class="el" href="#adbabde73dd4f7588ae46f8d051d120e1" title="Deprecated check of the stop reading.">has_end()</a></span>, <span class="tt"><a class="el" href="#ac698189ef451dfe398d779eb7cccda7f" title="Deprecated name of has_elapsed().">has_timestamps()</a></span>, and <span class="tt"><a class="el" href="#afd1213b3e3ffa9997ab0eba78b944ecf" title="Deprecated split of the elapsed time.">compute_elapsed_time()</a></span>) are kept, deprecated, for the applications that used the deprecated <span class="tt">timings()</span> of the runner and of the suites, which return a reference to this class. </p>
 
-<p class="definition">Definition at line <a class="el" href="stopwatch_8h_source.html#l00139">139</a> of file <a class="el" href="stopwatch_8h_source.html">stopwatch.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stopwatch_8h_source.html#l00137">137</a> of file <a class="el" href="stopwatch_8h_source.html">stopwatch.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5564c4e3d0806e45b40ee16e7ae1b185" name="a5564c4e3d0806e45b40ee16e7ae1b185"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5564c4e3d0806e45b40ee16e7ae1b185">&#9670;&#160;</a></span>stopwatch() <span class="overload">[1/3]</span></h2>
@@ -299,7 +299,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>No resources are owned, so there is nothing to release. </p>
 
-<p class="reference">References <a class="el" href="stopwatch-inlines_8h_source.html#l00125">compute_elapsed_time()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00116">elapsed()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00089">has_begin()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00063">has_elapsed()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00101">has_end()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00112">has_timestamps()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00087">start()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00101">stop()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00139">timestamp_begin()</a>, and <a class="el" href="stopwatch_8cpp_source.html#l00155">timestamp_end()</a>.</p>
+<p class="reference">References <a class="el" href="stopwatch-inlines_8h_source.html#l00123">compute_elapsed_time()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00116">elapsed()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00087">has_begin()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00061">has_elapsed()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00099">has_end()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00110">has_timestamps()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00087">start()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00101">stop()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00139">timestamp_begin()</a>, and <a class="el" href="stopwatch_8cpp_source.html#l00155">timestamp_end()</a>.</p>
 
 </div>
 </div>
@@ -342,12 +342,12 @@ Friends</h2></td></tr>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000132">Deprecated</a></b></dt><dd>use <a class="el" href="#a3719382123c6741054a89e4f76b55d90" title="Gets the time elapsed between start() and stop().">elapsed()</a> (since 6.0.0)</dd></dl>
 <p>Divides the microseconds count returned by <span class="tt"><a class="el" href="#a3719382123c6741054a89e4f76b55d90" title="Gets the time elapsed between start() and stop().">elapsed()</a></span> by 1000; the conversions to <span class="tt">uint32_t</span> truncate the intervals longer than about 49 days, as in v5.0.1. </p>
 
-<p class="definition">Definition at line <a class="el" href="stopwatch-inlines_8h_source.html#l00125">125</a> of file <a class="el" href="stopwatch-inlines_8h_source.html">stopwatch-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  127</span>  {</div>
-<div class="line"><span class="lineno">  128</span>    <span class="keyword">const</span> <span class="keyword">auto</span> count = <a class="code hl_function" href="#a3719382123c6741054a89e4f76b55d90">elapsed</a> ().count ();</div>
-<div class="line"><span class="lineno">  129</span>    milliseconds = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span> (count / 1000);</div>
-<div class="line"><span class="lineno">  130</span>    microseconds = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span> (count % 1000);</div>
-<div class="line"><span class="lineno">  131</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="stopwatch-inlines_8h_source.html#l00123">123</a> of file <a class="el" href="stopwatch-inlines_8h_source.html">stopwatch-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  125</span>  {</div>
+<div class="line"><span class="lineno">  126</span>    <span class="keyword">const</span> <span class="keyword">auto</span> count = <a class="code hl_function" href="#a3719382123c6741054a89e4f76b55d90">elapsed</a> ().count ();</div>
+<div class="line"><span class="lineno">  127</span>    milliseconds = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span> (count / 1000);</div>
+<div class="line"><span class="lineno">  128</span>    microseconds = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span> (count % 1000);</div>
+<div class="line"><span class="lineno">  129</span>  }</div>
 <div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_html_a3719382123c6741054a89e4f76b55d90"><div class="ttname"><a href="#a3719382123c6741054a89e4f76b55d90">micro_os_plus::micro_test_plus::detail::stopwatch::elapsed</a></div><div class="ttdeci">std::chrono::microseconds elapsed(void) const noexcept</div><div class="ttdoc">Gets the time elapsed between start() and stop().</div><div class="ttdef"><b>Definition</b> <a href="stopwatch_8cpp_source.html#l00116">stopwatch.cpp:116</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="stopwatch_8cpp_source.html#l00116">elapsed()</a>.</p>
@@ -396,13 +396,13 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  126</span> </div>
 <div class="line"><span class="lineno">  127</span>    <span class="keywordflow">return</span> std::chrono::duration_cast&lt;std::chrono::microseconds&gt; (delta);</div>
 <div class="line"><span class="lineno">  128</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_html_a3f84d3511f9130c9daefac85e2a772d7"><div class="ttname"><a href="#a3f84d3511f9130c9daefac85e2a772d7">micro_os_plus::micro_test_plus::detail::stopwatch::has_elapsed</a></div><div class="ttdeci">bool has_elapsed(void) const noexcept</div><div class="ttdoc">Checks whether the elapsed time is available.</div><div class="ttdef"><b>Definition</b> <a href="stopwatch-inlines_8h_source.html#l00063">stopwatch-inlines.h:63</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_html_a5f1f1e5b3faeb79b81bb7eb3602aefd1"><div class="ttname"><a href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">micro_os_plus::micro_test_plus::detail::stopwatch::start_time_</a></div><div class="ttdeci">timespec start_time_</div><div class="ttdoc">The clock reading at the start of the measured interval.</div><div class="ttdef"><b>Definition</b> <a href="stopwatch_8h_source.html#l00432">stopwatch.h:432</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_html_afa5a38b18b6f14b904fafac9f0bd74fa"><div class="ttname"><a href="#afa5a38b18b6f14b904fafac9f0bd74fa">micro_os_plus::micro_test_plus::detail::stopwatch::stop_time_</a></div><div class="ttdeci">timespec stop_time_</div><div class="ttdoc">The clock reading at the end of the measured interval.</div><div class="ttdef"><b>Definition</b> <a href="stopwatch_8h_source.html#l00441">stopwatch.h:441</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_html_a3f84d3511f9130c9daefac85e2a772d7"><div class="ttname"><a href="#a3f84d3511f9130c9daefac85e2a772d7">micro_os_plus::micro_test_plus::detail::stopwatch::has_elapsed</a></div><div class="ttdeci">bool has_elapsed(void) const noexcept</div><div class="ttdoc">Checks whether the elapsed time is available.</div><div class="ttdef"><b>Definition</b> <a href="stopwatch-inlines_8h_source.html#l00061">stopwatch-inlines.h:61</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_html_a5f1f1e5b3faeb79b81bb7eb3602aefd1"><div class="ttname"><a href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">micro_os_plus::micro_test_plus::detail::stopwatch::start_time_</a></div><div class="ttdeci">timespec start_time_</div><div class="ttdoc">The clock reading at the start of the measured interval.</div><div class="ttdef"><b>Definition</b> <a href="stopwatch_8h_source.html#l00430">stopwatch.h:430</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_html_afa5a38b18b6f14b904fafac9f0bd74fa"><div class="ttname"><a href="#afa5a38b18b6f14b904fafac9f0bd74fa">micro_os_plus::micro_test_plus::detail::stopwatch::stop_time_</a></div><div class="ttdeci">timespec stop_time_</div><div class="ttdoc">The clock reading at the end of the measured interval.</div><div class="ttdef"><b>Definition</b> <a href="stopwatch_8h_source.html#l00439">stopwatch.h:439</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="stopwatch-inlines_8h_source.html#l00063">has_elapsed()</a>, <a class="el" href="stopwatch_8h_source.html#l00432">start_time_</a>, and <a class="el" href="stopwatch_8h_source.html#l00441">stop_time_</a>.</p>
+<p class="reference">References <a class="el" href="stopwatch-inlines_8h_source.html#l00061">has_elapsed()</a>, <a class="el" href="stopwatch_8h_source.html#l00430">start_time_</a>, and <a class="el" href="stopwatch_8h_source.html#l00439">stop_time_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#addee5d2a57a6465734840797ff23cdc2">~stopwatch()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00125">compute_elapsed_time()</a>, and <a class="el" href="reporter_8cpp_source.html#l00809">micro_os_plus::micro_test_plus::detail::reporter::format_elapsed_time()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#addee5d2a57a6465734840797ff23cdc2">~stopwatch()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00123">compute_elapsed_time()</a>, and <a class="el" href="reporter_8cpp_source.html#l00809">micro_os_plus::micro_test_plus::detail::reporter::format_elapsed_time()</a>.</p>
 
 </div>
 </div>
@@ -440,13 +440,13 @@ Friends</h2></td></tr>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000129">Deprecated</a></b></dt><dd>use <a class="el" href="#a3f84d3511f9130c9daefac85e2a772d7" title="Checks whether the elapsed time is available.">has_elapsed()</a> (since 6.0.0)</dd></dl>
 <p>Returns <span class="tt">true</span> if the start reading was recorded, as determined by <span class="tt"><a class="el" href="#a197be08374692404afd4b07ae8b30e75" title="Checks whether a clock reading was recorded.">is_recorded()</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="stopwatch-inlines_8h_source.html#l00089">89</a> of file <a class="el" href="stopwatch-inlines_8h_source.html">stopwatch-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   90</span>  {</div>
-<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a class="code hl_variable" href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a>);</div>
-<div class="line"><span class="lineno">   92</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_html_a197be08374692404afd4b07ae8b30e75"><div class="ttname"><a href="#a197be08374692404afd4b07ae8b30e75">micro_os_plus::micro_test_plus::detail::stopwatch::is_recorded</a></div><div class="ttdeci">static bool is_recorded(const timespec &amp;ts) noexcept</div><div class="ttdoc">Checks whether a clock reading was recorded.</div><div class="ttdef"><b>Definition</b> <a href="stopwatch-inlines_8h_source.html#l00074">stopwatch-inlines.h:74</a></div></div>
+<p class="definition">Definition at line <a class="el" href="stopwatch-inlines_8h_source.html#l00087">87</a> of file <a class="el" href="stopwatch-inlines_8h_source.html">stopwatch-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>  {</div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a class="code hl_variable" href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a>);</div>
+<div class="line"><span class="lineno">   90</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_html_a197be08374692404afd4b07ae8b30e75"><div class="ttname"><a href="#a197be08374692404afd4b07ae8b30e75">micro_os_plus::micro_test_plus::detail::stopwatch::is_recorded</a></div><div class="ttdeci">static bool is_recorded(const timespec &amp;ts) noexcept</div><div class="ttdoc">Checks whether a clock reading was recorded.</div><div class="ttdef"><b>Definition</b> <a href="stopwatch-inlines_8h_source.html#l00072">stopwatch-inlines.h:72</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="stopwatch-inlines_8h_source.html#l00074">is_recorded()</a>, and <a class="el" href="stopwatch_8h_source.html#l00432">start_time_</a>.</p>
+<p class="reference">References <a class="el" href="stopwatch-inlines_8h_source.html#l00072">is_recorded()</a>, and <a class="el" href="stopwatch_8h_source.html#l00430">start_time_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="#addee5d2a57a6465734840797ff23cdc2">~stopwatch()</a>.</p>
 
@@ -485,14 +485,14 @@ Friends</h2></td></tr>
 </dl>
 <p>Returns <span class="tt">true</span> only when both the start and the stop readings were recorded, as determined by <span class="tt"><a class="el" href="#a197be08374692404afd4b07ae8b30e75" title="Checks whether a clock reading was recorded.">is_recorded()</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="stopwatch-inlines_8h_source.html#l00063">63</a> of file <a class="el" href="stopwatch-inlines_8h_source.html">stopwatch-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   64</span>  {</div>
-<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a class="code hl_variable" href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a>) &amp;&amp; <a class="code hl_function" href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a class="code hl_variable" href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a>);</div>
-<div class="line"><span class="lineno">   66</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="stopwatch-inlines_8h_source.html#l00061">61</a> of file <a class="el" href="stopwatch-inlines_8h_source.html">stopwatch-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>  {</div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a class="code hl_variable" href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a>) &amp;&amp; <a class="code hl_function" href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a class="code hl_variable" href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a>);</div>
+<div class="line"><span class="lineno">   64</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="stopwatch-inlines_8h_source.html#l00074">is_recorded()</a>, <a class="el" href="stopwatch_8h_source.html#l00432">start_time_</a>, and <a class="el" href="stopwatch_8h_source.html#l00441">stop_time_</a>.</p>
+<p class="reference">References <a class="el" href="stopwatch-inlines_8h_source.html#l00072">is_recorded()</a>, <a class="el" href="stopwatch_8h_source.html#l00430">start_time_</a>, and <a class="el" href="stopwatch_8h_source.html#l00439">stop_time_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#addee5d2a57a6465734840797ff23cdc2">~stopwatch()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00116">elapsed()</a>, and <a class="el" href="stopwatch-inlines_8h_source.html#l00112">has_timestamps()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#addee5d2a57a6465734840797ff23cdc2">~stopwatch()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00116">elapsed()</a>, and <a class="el" href="stopwatch-inlines_8h_source.html#l00110">has_timestamps()</a>.</p>
 
 </div>
 </div>
@@ -530,12 +530,12 @@ Friends</h2></td></tr>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000130">Deprecated</a></b></dt><dd>use <a class="el" href="#a3f84d3511f9130c9daefac85e2a772d7" title="Checks whether the elapsed time is available.">has_elapsed()</a> (since 6.0.0)</dd></dl>
 <p>Returns <span class="tt">true</span> if the stop reading was recorded, as determined by <span class="tt"><a class="el" href="#a197be08374692404afd4b07ae8b30e75" title="Checks whether a clock reading was recorded.">is_recorded()</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="stopwatch-inlines_8h_source.html#l00101">101</a> of file <a class="el" href="stopwatch-inlines_8h_source.html">stopwatch-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  102</span>  {</div>
-<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a class="code hl_variable" href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a>);</div>
-<div class="line"><span class="lineno">  104</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="stopwatch-inlines_8h_source.html#l00099">99</a> of file <a class="el" href="stopwatch-inlines_8h_source.html">stopwatch-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>  {</div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a class="code hl_variable" href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a>);</div>
+<div class="line"><span class="lineno">  102</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="stopwatch-inlines_8h_source.html#l00074">is_recorded()</a>, and <a class="el" href="stopwatch_8h_source.html#l00441">stop_time_</a>.</p>
+<p class="reference">References <a class="el" href="stopwatch-inlines_8h_source.html#l00072">is_recorded()</a>, and <a class="el" href="stopwatch_8h_source.html#l00439">stop_time_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="#addee5d2a57a6465734840797ff23cdc2">~stopwatch()</a>.</p>
 
@@ -569,12 +569,12 @@ Friends</h2></td></tr>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000131">Deprecated</a></b></dt><dd>use <a class="el" href="#a3f84d3511f9130c9daefac85e2a772d7" title="Checks whether the elapsed time is available.">has_elapsed()</a> (since 6.0.0)</dd></dl>
 <p>Forwards to <span class="tt"><a class="el" href="#a3f84d3511f9130c9daefac85e2a772d7" title="Checks whether the elapsed time is available.">has_elapsed()</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="stopwatch-inlines_8h_source.html#l00112">112</a> of file <a class="el" href="stopwatch-inlines_8h_source.html">stopwatch-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  113</span>  {</div>
-<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a3f84d3511f9130c9daefac85e2a772d7">has_elapsed</a> ();</div>
-<div class="line"><span class="lineno">  115</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="stopwatch-inlines_8h_source.html#l00110">110</a> of file <a class="el" href="stopwatch-inlines_8h_source.html">stopwatch-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  111</span>  {</div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a3f84d3511f9130c9daefac85e2a772d7">has_elapsed</a> ();</div>
+<div class="line"><span class="lineno">  113</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="stopwatch-inlines_8h_source.html#l00063">has_elapsed()</a>.</p>
+<p class="reference">References <a class="el" href="stopwatch-inlines_8h_source.html#l00061">has_elapsed()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="#addee5d2a57a6465734840797ff23cdc2">~stopwatch()</a>.</p>
 
@@ -618,12 +618,12 @@ Friends</h2></td></tr>
 </dl>
 <p>Returns <span class="tt">true</span> if at least one of the <span class="tt">tv_sec</span> or <span class="tt">tv_nsec</span> members of <code class="param">ts</code> is non-zero, indicating that a clock reading was captured. </p>
 
-<p class="definition">Definition at line <a class="el" href="stopwatch-inlines_8h_source.html#l00074">74</a> of file <a class="el" href="stopwatch-inlines_8h_source.html">stopwatch-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   75</span>  {</div>
-<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">return</span> ts.tv_sec != 0 || ts.tv_nsec != 0;</div>
-<div class="line"><span class="lineno">   77</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="stopwatch-inlines_8h_source.html#l00072">72</a> of file <a class="el" href="stopwatch-inlines_8h_source.html">stopwatch-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>  {</div>
+<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">return</span> ts.tv_sec != 0 || ts.tv_nsec != 0;</div>
+<div class="line"><span class="lineno">   75</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="stopwatch-inlines_8h_source.html#l00089">has_begin()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00063">has_elapsed()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00101">has_end()</a>, <a class="el" href="stopwatch_8h_source.html#l00410">stopwatch_test_access</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00139">timestamp_begin()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00139">timestamp_begin()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00153">timestamp_end()</a>, and <a class="el" href="stopwatch_8cpp_source.html#l00155">timestamp_end()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="stopwatch-inlines_8h_source.html#l00087">has_begin()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00061">has_elapsed()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00099">has_end()</a>, <a class="el" href="stopwatch_8h_source.html#l00408">stopwatch_test_access</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00137">timestamp_begin()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00139">timestamp_begin()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00151">timestamp_end()</a>, and <a class="el" href="stopwatch_8cpp_source.html#l00155">timestamp_end()</a>.</p>
 
 </div>
 </div>
@@ -718,9 +718,9 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">   92</span>  }</div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a60dcef812e43e13d1e30f602a572e27a"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a60dcef812e43e13d1e30f602a572e27a">micro_os_plus::micro_test_plus::detail::read_clock</a></div><div class="ttdeci">void read_clock(timespec &amp;ts) noexcept</div><div class="ttdoc">Reads the system clock.</div><div class="ttdef"><b>Definition</b> <a href="stopwatch_8cpp_source.html#l00066">stopwatch.cpp:66</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="stopwatch_8cpp_source.html#l00066">micro_os_plus::micro_test_plus::detail::read_clock()</a>, <a class="el" href="stopwatch_8h_source.html#l00432">start_time_</a>, and <a class="el" href="stopwatch_8h_source.html#l00441">stop_time_</a>.</p>
+<p class="reference">References <a class="el" href="stopwatch_8cpp_source.html#l00066">micro_os_plus::micro_test_plus::detail::read_clock()</a>, <a class="el" href="stopwatch_8h_source.html#l00430">start_time_</a>, and <a class="el" href="stopwatch_8h_source.html#l00439">stop_time_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#addee5d2a57a6465734840797ff23cdc2">~stopwatch()</a>, <a class="el" href="runner_8cpp_source.html#l00409">micro_os_plus::micro_test_plus::runner::add_top_suite()</a>, <a class="el" href="runner_8cpp_source.html#l00261">micro_os_plus::micro_test_plus::runner::initialise()</a>, and <a class="el" href="test_8cpp_source.html#l00520">micro_os_plus::micro_test_plus::suite::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#addee5d2a57a6465734840797ff23cdc2">~stopwatch()</a>, <a class="el" href="runner_8cpp_source.html#l00420">micro_os_plus::micro_test_plus::runner::add_top_suite()</a>, <a class="el" href="runner_8cpp_source.html#l00272">micro_os_plus::micro_test_plus::runner::initialise()</a>, and <a class="el" href="test_8cpp_source.html#l00519">micro_os_plus::micro_test_plus::suite::run()</a>.</p>
 
 </div>
 </div>
@@ -757,9 +757,9 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  104</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a60dcef812e43e13d1e30f602a572e27a">read_clock</a> (<a class="code hl_variable" href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a>);</div>
 <div class="line"><span class="lineno">  105</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="stopwatch_8cpp_source.html#l00066">micro_os_plus::micro_test_plus::detail::read_clock()</a>, and <a class="el" href="stopwatch_8h_source.html#l00441">stop_time_</a>.</p>
+<p class="reference">References <a class="el" href="stopwatch_8cpp_source.html#l00066">micro_os_plus::micro_test_plus::detail::read_clock()</a>, and <a class="el" href="stopwatch_8h_source.html#l00439">stop_time_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#addee5d2a57a6465734840797ff23cdc2">~stopwatch()</a>, <a class="el" href="test_8cpp_source.html#l00520">micro_os_plus::micro_test_plus::suite::run()</a>, and <a class="el" href="runner_8cpp_source.html#l00760">micro_os_plus::micro_test_plus::runner::run_suites()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#addee5d2a57a6465734840797ff23cdc2">~stopwatch()</a>, <a class="el" href="test_8cpp_source.html#l00519">micro_os_plus::micro_test_plus::suite::run()</a>, and <a class="el" href="runner_8cpp_source.html#l00771">micro_os_plus::micro_test_plus::runner::run_suites()</a>.</p>
 
 </div>
 </div>
@@ -796,15 +796,15 @@ Friends</h2></td></tr>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000134">Deprecated</a></b></dt><dd>use <a class="el" href="#af5ebb1e454867633db12fef45db9788d" title="Records the start time, from the system clock.">start()</a> (since 6.0.0)</dd></dl>
 <p>Stores <code class="param">ts</code> only if <span class="tt"><a class="el" href="#a197be08374692404afd4b07ae8b30e75" title="Checks whether a clock reading was recorded.">is_recorded()</a></span> reports no start reading. </p>
 
-<p class="definition">Definition at line <a class="el" href="stopwatch-inlines_8h_source.html#l00139">139</a> of file <a class="el" href="stopwatch-inlines_8h_source.html">stopwatch-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  140</span>  {</div>
-<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a class="code hl_variable" href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a>))</div>
-<div class="line"><span class="lineno">  142</span>      {</div>
-<div class="line"><span class="lineno">  143</span>        <a class="code hl_variable" href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a> = ts;</div>
-<div class="line"><span class="lineno">  144</span>      }</div>
-<div class="line"><span class="lineno">  145</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="stopwatch-inlines_8h_source.html#l00137">137</a> of file <a class="el" href="stopwatch-inlines_8h_source.html">stopwatch-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  138</span>  {</div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a class="code hl_variable" href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a>))</div>
+<div class="line"><span class="lineno">  140</span>      {</div>
+<div class="line"><span class="lineno">  141</span>        <a class="code hl_variable" href="#a5f1f1e5b3faeb79b81bb7eb3602aefd1">start_time_</a> = ts;</div>
+<div class="line"><span class="lineno">  142</span>      }</div>
+<div class="line"><span class="lineno">  143</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="stopwatch-inlines_8h_source.html#l00074">is_recorded()</a>, and <a class="el" href="stopwatch_8h_source.html#l00432">start_time_</a>.</p>
+<p class="reference">References <a class="el" href="stopwatch-inlines_8h_source.html#l00072">is_recorded()</a>, and <a class="el" href="stopwatch_8h_source.html#l00430">start_time_</a>.</p>
 
 </div>
 </div>
@@ -844,7 +844,7 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  144</span>      }</div>
 <div class="line"><span class="lineno">  145</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="stopwatch-inlines_8h_source.html#l00074">is_recorded()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00066">micro_os_plus::micro_test_plus::detail::read_clock()</a>, and <a class="el" href="stopwatch_8h_source.html#l00432">start_time_</a>.</p>
+<p class="reference">References <a class="el" href="stopwatch-inlines_8h_source.html#l00072">is_recorded()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00066">micro_os_plus::micro_test_plus::detail::read_clock()</a>, and <a class="el" href="stopwatch_8h_source.html#l00430">start_time_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="#addee5d2a57a6465734840797ff23cdc2">~stopwatch()</a>.</p>
 
@@ -883,15 +883,15 @@ Friends</h2></td></tr>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000136">Deprecated</a></b></dt><dd>use <a class="el" href="#a83ab4e25e25a4a81ed1d3277ac09390d" title="Records the stop time, from the system clock.">stop()</a> (since 6.0.0)</dd></dl>
 <p>Stores <code class="param">ts</code> only if <span class="tt"><a class="el" href="#a197be08374692404afd4b07ae8b30e75" title="Checks whether a clock reading was recorded.">is_recorded()</a></span> reports no stop reading. </p>
 
-<p class="definition">Definition at line <a class="el" href="stopwatch-inlines_8h_source.html#l00153">153</a> of file <a class="el" href="stopwatch-inlines_8h_source.html">stopwatch-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  154</span>  {</div>
-<div class="line"><span class="lineno">  155</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a class="code hl_variable" href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a>))</div>
-<div class="line"><span class="lineno">  156</span>      {</div>
-<div class="line"><span class="lineno">  157</span>        <a class="code hl_variable" href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a> = ts;</div>
-<div class="line"><span class="lineno">  158</span>      }</div>
-<div class="line"><span class="lineno">  159</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="stopwatch-inlines_8h_source.html#l00151">151</a> of file <a class="el" href="stopwatch-inlines_8h_source.html">stopwatch-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  152</span>  {</div>
+<div class="line"><span class="lineno">  153</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="#a197be08374692404afd4b07ae8b30e75">is_recorded</a> (<a class="code hl_variable" href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a>))</div>
+<div class="line"><span class="lineno">  154</span>      {</div>
+<div class="line"><span class="lineno">  155</span>        <a class="code hl_variable" href="#afa5a38b18b6f14b904fafac9f0bd74fa">stop_time_</a> = ts;</div>
+<div class="line"><span class="lineno">  156</span>      }</div>
+<div class="line"><span class="lineno">  157</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="stopwatch-inlines_8h_source.html#l00074">is_recorded()</a>, and <a class="el" href="stopwatch_8h_source.html#l00441">stop_time_</a>.</p>
+<p class="reference">References <a class="el" href="stopwatch-inlines_8h_source.html#l00072">is_recorded()</a>, and <a class="el" href="stopwatch_8h_source.html#l00439">stop_time_</a>.</p>
 
 </div>
 </div>
@@ -931,7 +931,7 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  160</span>      }</div>
 <div class="line"><span class="lineno">  161</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="stopwatch-inlines_8h_source.html#l00074">is_recorded()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00066">micro_os_plus::micro_test_plus::detail::read_clock()</a>, and <a class="el" href="stopwatch_8h_source.html#l00441">stop_time_</a>.</p>
+<p class="reference">References <a class="el" href="stopwatch-inlines_8h_source.html#l00072">is_recorded()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00066">micro_os_plus::micro_test_plus::detail::read_clock()</a>, and <a class="el" href="stopwatch_8h_source.html#l00439">stop_time_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="#addee5d2a57a6465734840797ff23cdc2">~stopwatch()</a>.</p>
 
@@ -959,11 +959,11 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>It is declared here, and defined by the unit tests only, so that the tests can inject readings without deriving from the class. </p>
 
-<p class="definition">Definition at line <a class="el" href="stopwatch_8h_source.html#l00410">410</a> of file <a class="el" href="stopwatch_8h_source.html">stopwatch.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stopwatch_8h_source.html#l00408">408</a> of file <a class="el" href="stopwatch_8h_source.html">stopwatch.h</a>.</p>
 
-<p class="reference">References <a class="el" href="stopwatch-inlines_8h_source.html#l00074">is_recorded()</a>, and <a class="el" href="stopwatch_8h_source.html#l00410">stopwatch_test_access</a>.</p>
+<p class="reference">References <a class="el" href="stopwatch-inlines_8h_source.html#l00072">is_recorded()</a>, and <a class="el" href="stopwatch_8h_source.html#l00408">stopwatch_test_access</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="stopwatch_8h_source.html#l00410">stopwatch_test_access</a>.</p>
+<p class="reference">Referenced by <a class="el" href="stopwatch_8h_source.html#l00408">stopwatch_test_access</a>.</p>
 
 </div>
 </div>
@@ -989,9 +989,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Zero until <span class="tt"><a class="el" href="#af5ebb1e454867633db12fef45db9788d" title="Records the start time, from the system clock.">start()</a></span> is called; set again by each <span class="tt"><a class="el" href="#af5ebb1e454867633db12fef45db9788d" title="Records the start time, from the system clock.">start()</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="stopwatch_8h_source.html#l00432">432</a> of file <a class="el" href="stopwatch_8h_source.html">stopwatch.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stopwatch_8h_source.html#l00430">430</a> of file <a class="el" href="stopwatch_8h_source.html">stopwatch.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="stopwatch_8cpp_source.html#l00116">elapsed()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00089">has_begin()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00063">has_elapsed()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00087">start()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00139">timestamp_begin()</a>, and <a class="el" href="stopwatch_8cpp_source.html#l00139">timestamp_begin()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="stopwatch_8cpp_source.html#l00116">elapsed()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00087">has_begin()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00061">has_elapsed()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00087">start()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00137">timestamp_begin()</a>, and <a class="el" href="stopwatch_8cpp_source.html#l00139">timestamp_begin()</a>.</p>
 
 </div>
 </div>
@@ -1016,9 +1016,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Zero until <span class="tt"><a class="el" href="#a83ab4e25e25a4a81ed1d3277ac09390d" title="Records the stop time, from the system clock.">stop()</a></span> is called; set again by each <span class="tt"><a class="el" href="#a83ab4e25e25a4a81ed1d3277ac09390d" title="Records the stop time, from the system clock.">stop()</a></span>, and cleared by <span class="tt"><a class="el" href="#af5ebb1e454867633db12fef45db9788d" title="Records the start time, from the system clock.">start()</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="stopwatch_8h_source.html#l00441">441</a> of file <a class="el" href="stopwatch_8h_source.html">stopwatch.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="stopwatch_8h_source.html#l00439">439</a> of file <a class="el" href="stopwatch_8h_source.html">stopwatch.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="stopwatch_8cpp_source.html#l00116">elapsed()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00063">has_elapsed()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00101">has_end()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00087">start()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00101">stop()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00153">timestamp_end()</a>, and <a class="el" href="stopwatch_8cpp_source.html#l00155">timestamp_end()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="stopwatch_8cpp_source.html#l00116">elapsed()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00061">has_elapsed()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00099">has_end()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00087">start()</a>, <a class="el" href="stopwatch_8cpp_source.html#l00101">stop()</a>, <a class="el" href="stopwatch-inlines_8h_source.html#l00151">timestamp_end()</a>, and <a class="el" href="stopwatch_8cpp_source.html#l00155">timestamp_end()</a>.</p>
 
 </div>
 </div>

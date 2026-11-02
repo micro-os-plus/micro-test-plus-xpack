@@ -210,7 +210,7 @@ Friends</h2></td></tr>
 <p>The tests can read the counters of the runner, of a suite, or of a test case through the <span class="tt">totals()</span> accessor. The functions that update the counters are private, and called only by the framework classes, which are friends.</p>
 <p>The class is a copyable value type, so that a test can take a snapshot of the counters (<span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1counters.html" title="Aggregated check and test case counters for a node in the test tree.">counters</a> before = ts.totals ();</span>) and compare it later with the current values. The copy is independent: it is not updated when the original counters change. The nodes that own the live counters are themselves neither copyable nor movable. The runner, the suites, and the test cases return only a <span class="tt">const</span> reference, so that the counters of the nodes are read only. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters_8h_source.html#l00121">121</a> of file <a class="el" href="counters_8h_source.html">counters.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="counters_8h_source.html#l00120">120</a> of file <a class="el" href="counters_8h_source.html">counters.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a41b64371f0a6066ab9082b9a19a2ff0c" name="a41b64371f0a6066ab9082b9a19a2ff0c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a41b64371f0a6066ab9082b9a19a2ff0c">&#9670;&#160;</a></span>counters() <span class="overload">[1/3]</span></h2>
@@ -236,7 +236,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>All counters start at zero, via their default member initialisers. </p>
 
-<p class="reference">Referenced by <a class="el" href="#afbfc8d79b7a94ed779989108669bd4c3">counters()</a>, <a class="el" href="#a46914cfe88effd6c4e9b798c56435348">counters()</a>, <a class="el" href="counters_8h_source.html#l00401">detail::runnable_base</a>, <a class="el" href="counters_8cpp_source.html#l00071">operator+=()</a>, <a class="el" href="#adc5390a03d6f674bf7b3f6111a6ab356">operator=()</a>, and <a class="el" href="#ac746889e15b5b360a354bdedcae1637e">operator=()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#afbfc8d79b7a94ed779989108669bd4c3">counters()</a>, <a class="el" href="#a46914cfe88effd6c4e9b798c56435348">counters()</a>, <a class="el" href="counters_8h_source.html#l00400">detail::runnable_base</a>, <a class="el" href="counters_8cpp_source.html#l00071">operator+=()</a>, <a class="el" href="#adc5390a03d6f674bf7b3f6111a6ab356">operator=()</a>, and <a class="el" href="#ac746889e15b5b360a354bdedcae1637e">operator=()</a>.</p>
 
 </div>
 </div>
@@ -334,7 +334,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Trivial; the counters own no resources. </p>
 
-<p class="reference">References <a class="el" href="counters-inlines_8h_source.html#l00141">executed_checks()</a>, <a class="el" href="counters-inlines_8h_source.html#l00163">executed_subtests()</a>, <a class="el" href="counters-inlines_8h_source.html#l00151">executed_test_cases()</a>, <a class="el" href="counters-inlines_8h_source.html#l00131">failed_checks()</a>, <a class="el" href="counters-inlines_8h_source.html#l00174">failed_test_cases()</a>, <a class="el" href="counters-inlines_8h_source.html#l00197">passed()</a>, <a class="el" href="counters-inlines_8h_source.html#l00108">passed_checks()</a>, <a class="el" href="counters-inlines_8h_source.html#l00184">skipped_test_cases()</a>, <a class="el" href="counters-inlines_8h_source.html#l00120">successful_checks()</a>, and <a class="el" href="counters-inlines_8h_source.html#l00209">was_successful()</a>.</p>
+<p class="reference">References <a class="el" href="counters-inlines_8h_source.html#l00140">executed_checks()</a>, <a class="el" href="counters-inlines_8h_source.html#l00162">executed_subtests()</a>, <a class="el" href="counters-inlines_8h_source.html#l00150">executed_test_cases()</a>, <a class="el" href="counters-inlines_8h_source.html#l00130">failed_checks()</a>, <a class="el" href="counters-inlines_8h_source.html#l00173">failed_test_cases()</a>, <a class="el" href="counters-inlines_8h_source.html#l00196">passed()</a>, <a class="el" href="counters-inlines_8h_source.html#l00107">passed_checks()</a>, <a class="el" href="counters-inlines_8h_source.html#l00183">skipped_test_cases()</a>, <a class="el" href="counters-inlines_8h_source.html#l00119">successful_checks()</a>, and <a class="el" href="counters-inlines_8h_source.html#l00208">was_successful()</a>.</p>
 
 </div>
 </div>
@@ -365,14 +365,14 @@ Friends</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The sum of passed and failed checks.</dd></dl>
 <p>Returns the sum of <span class="tt"><a class="el" href="#a454de640619adaeeb5cbc2ada7144946" title="Total number of passed checks.">passed_checks_</a></span> and <span class="tt"><a class="el" href="#a903b0e792447e149a032a7e46570bfc1" title="Total number of failed checks.">failed_checks_</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00141">141</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  142</span>  {</div>
-<div class="line"><span class="lineno">  143</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a454de640619adaeeb5cbc2ada7144946">passed_checks_</a> + <a class="code hl_variable" href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a>;</div>
-<div class="line"><span class="lineno">  144</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1counters_html_a454de640619adaeeb5cbc2ada7144946"><div class="ttname"><a href="#a454de640619adaeeb5cbc2ada7144946">micro_os_plus::micro_test_plus::counters::passed_checks_</a></div><div class="ttdeci">size_t passed_checks_</div><div class="ttdoc">Total number of passed checks.</div><div class="ttdef"><b>Definition</b> <a href="counters_8h_source.html#l00476">counters.h:476</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1counters_html_a903b0e792447e149a032a7e46570bfc1"><div class="ttname"><a href="#a903b0e792447e149a032a7e46570bfc1">micro_os_plus::micro_test_plus::counters::failed_checks_</a></div><div class="ttdeci">size_t failed_checks_</div><div class="ttdoc">Total number of failed checks.</div><div class="ttdef"><b>Definition</b> <a href="counters_8h_source.html#l00484">counters.h:484</a></div></div>
+<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00140">140</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  141</span>  {</div>
+<div class="line"><span class="lineno">  142</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a454de640619adaeeb5cbc2ada7144946">passed_checks_</a> + <a class="code hl_variable" href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a>;</div>
+<div class="line"><span class="lineno">  143</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1counters_html_a454de640619adaeeb5cbc2ada7144946"><div class="ttname"><a href="#a454de640619adaeeb5cbc2ada7144946">micro_os_plus::micro_test_plus::counters::passed_checks_</a></div><div class="ttdeci">size_t passed_checks_</div><div class="ttdoc">Total number of passed checks.</div><div class="ttdef"><b>Definition</b> <a href="counters_8h_source.html#l00475">counters.h:475</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1counters_html_a903b0e792447e149a032a7e46570bfc1"><div class="ttname"><a href="#a903b0e792447e149a032a7e46570bfc1">micro_os_plus::micro_test_plus::counters::failed_checks_</a></div><div class="ttdeci">size_t failed_checks_</div><div class="ttdoc">Total number of failed checks.</div><div class="ttdef"><b>Definition</b> <a href="counters_8h_source.html#l00483">counters.h:483</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="counters_8h_source.html#l00484">failed_checks_</a>, and <a class="el" href="counters_8h_source.html#l00476">passed_checks_</a>.</p>
+<p class="reference">References <a class="el" href="counters_8h_source.html#l00483">failed_checks_</a>, and <a class="el" href="counters_8h_source.html#l00475">passed_checks_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="#a7e957314ea5aa3c064741c42336d1ee7">~counters()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00528">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00748">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>.</p>
 
@@ -406,13 +406,13 @@ Friends</h2></td></tr>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated</a></b></dt><dd>use <a class="el" href="#a3d33b96c8d1a299929ead1f830e91853" title="Returns the number of test cases that were executed.">executed_test_cases()</a> (since 6.0.0)</dd></dl>
 <p>Forwards to <span class="tt"><a class="el" href="#a3d33b96c8d1a299929ead1f830e91853" title="Returns the number of test cases that were executed.">executed_test_cases()</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00163">163</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  164</span>  {</div>
-<div class="line"><span class="lineno">  165</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases</a> ();</div>
-<div class="line"><span class="lineno">  166</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1counters_html_a3d33b96c8d1a299929ead1f830e91853"><div class="ttname"><a href="#a3d33b96c8d1a299929ead1f830e91853">micro_os_plus::micro_test_plus::counters::executed_test_cases</a></div><div class="ttdeci">size_t executed_test_cases(void) const noexcept</div><div class="ttdoc">Returns the number of test cases that were executed.</div><div class="ttdef"><b>Definition</b> <a href="counters-inlines_8h_source.html#l00151">counters-inlines.h:151</a></div></div>
+<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00162">162</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  163</span>  {</div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases</a> ();</div>
+<div class="line"><span class="lineno">  165</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1counters_html_a3d33b96c8d1a299929ead1f830e91853"><div class="ttname"><a href="#a3d33b96c8d1a299929ead1f830e91853">micro_os_plus::micro_test_plus::counters::executed_test_cases</a></div><div class="ttdeci">size_t executed_test_cases(void) const noexcept</div><div class="ttdoc">Returns the number of test cases that were executed.</div><div class="ttdef"><b>Definition</b> <a href="counters-inlines_8h_source.html#l00150">counters-inlines.h:150</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="counters-inlines_8h_source.html#l00151">executed_test_cases()</a>.</p>
+<p class="reference">References <a class="el" href="counters-inlines_8h_source.html#l00150">executed_test_cases()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="#a7e957314ea5aa3c064741c42336d1ee7">~counters()</a>.</p>
 
@@ -444,15 +444,15 @@ Friends</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The cumulative count of executed test cases.</dd></dl>
 <p>Returns the value of the <span class="tt"><a class="el" href="#a72fb6b1038be0ac8b09b4da60aa292e8" title="Total number of test cases executed.">executed_test_cases_</a></span> counter. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00151">151</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  152</span>  {</div>
-<div class="line"><span class="lineno">  153</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a72fb6b1038be0ac8b09b4da60aa292e8">executed_test_cases_</a>;</div>
-<div class="line"><span class="lineno">  154</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1counters_html_a72fb6b1038be0ac8b09b4da60aa292e8"><div class="ttname"><a href="#a72fb6b1038be0ac8b09b4da60aa292e8">micro_os_plus::micro_test_plus::counters::executed_test_cases_</a></div><div class="ttdeci">size_t executed_test_cases_</div><div class="ttdoc">Total number of test cases executed.</div><div class="ttdef"><b>Definition</b> <a href="counters_8h_source.html#l00493">counters.h:493</a></div></div>
+<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00150">150</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  151</span>  {</div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a72fb6b1038be0ac8b09b4da60aa292e8">executed_test_cases_</a>;</div>
+<div class="line"><span class="lineno">  153</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1counters_html_a72fb6b1038be0ac8b09b4da60aa292e8"><div class="ttname"><a href="#a72fb6b1038be0ac8b09b4da60aa292e8">micro_os_plus::micro_test_plus::counters::executed_test_cases_</a></div><div class="ttdeci">size_t executed_test_cases_</div><div class="ttdoc">Total number of test cases executed.</div><div class="ttdef"><b>Definition</b> <a href="counters_8h_source.html#l00492">counters.h:492</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="counters_8h_source.html#l00493">executed_test_cases_</a>.</p>
+<p class="reference">References <a class="el" href="counters_8h_source.html#l00492">executed_test_cases_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#a7e957314ea5aa3c064741c42336d1ee7">~counters()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00255">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00528">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00748">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="counters-inlines_8h_source.html#l00163">executed_subtests()</a>, <a class="el" href="reporter_8cpp_source.html#l00895">micro_os_plus::micro_test_plus::detail::reporter::format_session_totals()</a>, <a class="el" href="reporter_8cpp_source.html#l00932">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals()</a>, and <a class="el" href="runner_8cpp_source.html#l00760">micro_os_plus::micro_test_plus::runner::run_suites()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#a7e957314ea5aa3c064741c42336d1ee7">~counters()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00255">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00528">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00748">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="counters-inlines_8h_source.html#l00162">executed_subtests()</a>, <a class="el" href="reporter_8cpp_source.html#l00895">micro_os_plus::micro_test_plus::detail::reporter::format_session_totals()</a>, <a class="el" href="reporter_8cpp_source.html#l00932">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals()</a>, and <a class="el" href="runner_8cpp_source.html#l00771">micro_os_plus::micro_test_plus::runner::run_suites()</a>.</p>
 
 </div>
 </div>
@@ -482,12 +482,12 @@ Friends</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The cumulative count of failed checks.</dd></dl>
 <p>Returns the value of the <span class="tt"><a class="el" href="#a903b0e792447e149a032a7e46570bfc1" title="Total number of failed checks.">failed_checks_</a></span> counter. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00131">131</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  132</span>  {</div>
-<div class="line"><span class="lineno">  133</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a>;</div>
-<div class="line"><span class="lineno">  134</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00130">130</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  131</span>  {</div>
+<div class="line"><span class="lineno">  132</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a>;</div>
+<div class="line"><span class="lineno">  133</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="counters_8h_source.html#l00484">failed_checks_</a>.</p>
+<p class="reference">References <a class="el" href="counters_8h_source.html#l00483">failed_checks_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="#a7e957314ea5aa3c064741c42336d1ee7">~counters()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00528">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00748">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="reporter_8cpp_source.html#l00895">micro_os_plus::micro_test_plus::detail::reporter::format_session_totals()</a>, <a class="el" href="reporter_8cpp_source.html#l00932">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals()</a>, and <a class="el" href="reporter_8cpp_source.html#l00969">micro_os_plus::micro_test_plus::detail::reporter::format_test_case_totals()</a>.</p>
 
@@ -519,13 +519,13 @@ Friends</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The cumulative count of failed test cases.</dd></dl>
 <p>Returns the value of the <span class="tt"><a class="el" href="#a09550bb4fd851f9b704904311bba27b6" title="Total number of executed test cases that failed.">failed_test_cases_</a></span> counter. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00174">174</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  175</span>  {</div>
-<div class="line"><span class="lineno">  176</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a09550bb4fd851f9b704904311bba27b6">failed_test_cases_</a>;</div>
-<div class="line"><span class="lineno">  177</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1counters_html_a09550bb4fd851f9b704904311bba27b6"><div class="ttname"><a href="#a09550bb4fd851f9b704904311bba27b6">micro_os_plus::micro_test_plus::counters::failed_test_cases_</a></div><div class="ttdeci">size_t failed_test_cases_</div><div class="ttdoc">Total number of executed test cases that failed.</div><div class="ttdef"><b>Definition</b> <a href="counters_8h_source.html#l00505">counters.h:505</a></div></div>
+<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00173">173</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  174</span>  {</div>
+<div class="line"><span class="lineno">  175</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a09550bb4fd851f9b704904311bba27b6">failed_test_cases_</a>;</div>
+<div class="line"><span class="lineno">  176</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1counters_html_a09550bb4fd851f9b704904311bba27b6"><div class="ttname"><a href="#a09550bb4fd851f9b704904311bba27b6">micro_os_plus::micro_test_plus::counters::failed_test_cases_</a></div><div class="ttdeci">size_t failed_test_cases_</div><div class="ttdoc">Total number of executed test cases that failed.</div><div class="ttdef"><b>Definition</b> <a href="counters_8h_source.html#l00504">counters.h:504</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="counters_8h_source.html#l00505">failed_test_cases_</a>.</p>
+<p class="reference">References <a class="el" href="counters_8h_source.html#l00504">failed_test_cases_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="#a7e957314ea5aa3c064741c42336d1ee7">~counters()</a>, and <a class="el" href="reporter_8cpp_source.html#l00969">micro_os_plus::micro_test_plus::detail::reporter::format_test_case_totals()</a>.</p>
 
@@ -562,14 +562,14 @@ Friends</h2></td></tr>
 <dl class="section user"><dt>Returns</dt><dd>Nothing.</dd></dl>
 <p>Adds <span class="tt">count</span> to the <span class="tt"><a class="el" href="#a72fb6b1038be0ac8b09b4da60aa292e8" title="Total number of test cases executed.">executed_test_cases_</a></span> counter. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00078">78</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   79</span>  {</div>
-<div class="line"><span class="lineno">   80</span>    <a class="code hl_variable" href="#a72fb6b1038be0ac8b09b4da60aa292e8">executed_test_cases_</a> += count;</div>
-<div class="line"><span class="lineno">   81</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00077">77</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>  {</div>
+<div class="line"><span class="lineno">   79</span>    <a class="code hl_variable" href="#a72fb6b1038be0ac8b09b4da60aa292e8">executed_test_cases_</a> += count;</div>
+<div class="line"><span class="lineno">   80</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="counters_8h_source.html#l00493">executed_test_cases_</a>.</p>
+<p class="reference">References <a class="el" href="counters_8h_source.html#l00492">executed_test_cases_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00307">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create()</a>, and <a class="el" href="counters_8h_source.html#l00401">detail::runnable_base</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00306">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create()</a>, and <a class="el" href="counters_8h_source.html#l00400">detail::runnable_base</a>.</p>
 
 </div>
 </div>
@@ -604,14 +604,14 @@ Friends</h2></td></tr>
 <dl class="section user"><dt>Returns</dt><dd>Nothing.</dd></dl>
 <p>Adds <span class="tt">count</span> to the <span class="tt"><a class="el" href="#a903b0e792447e149a032a7e46570bfc1" title="Total number of failed checks.">failed_checks_</a></span> counter. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00068">68</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   69</span>  {</div>
-<div class="line"><span class="lineno">   70</span>    <a class="code hl_variable" href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a> += count;</div>
-<div class="line"><span class="lineno">   71</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00067">67</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   68</span>  {</div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_variable" href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a> += count;</div>
+<div class="line"><span class="lineno">   70</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="counters_8h_source.html#l00484">failed_checks_</a>.</p>
+<p class="reference">References <a class="el" href="counters_8h_source.html#l00483">failed_checks_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="check-result_8cpp_source.html#l00138">micro_os_plus::micro_test_plus::detail::check_result::~check_result()</a>, <a class="el" href="test_8cpp_source.html#l00222">micro_os_plus::micro_test_plus::detail::runnable_base::accepts_test_case()</a>, <a class="el" href="counters_8h_source.html#l00401">detail::runnable_base</a>, <a class="el" href="test_8cpp_source.html#l00620">micro_os_plus::micro_test_plus::suite::fail_unexpected_exception()</a>, and <a class="el" href="test_8cpp_source.html#l00452">micro_os_plus::micro_test_plus::test_case::fail_unexpected_exception()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="check-result_8cpp_source.html#l00138">micro_os_plus::micro_test_plus::detail::check_result::~check_result()</a>, <a class="el" href="test_8cpp_source.html#l00221">micro_os_plus::micro_test_plus::detail::runnable_base::accepts_test_case()</a>, <a class="el" href="counters_8h_source.html#l00400">detail::runnable_base</a>, <a class="el" href="test_8cpp_source.html#l00619">micro_os_plus::micro_test_plus::suite::fail_unexpected_exception()</a>, and <a class="el" href="test_8cpp_source.html#l00451">micro_os_plus::micro_test_plus::test_case::fail_unexpected_exception()</a>.</p>
 
 </div>
 </div>
@@ -646,14 +646,14 @@ Friends</h2></td></tr>
 <dl class="section user"><dt>Returns</dt><dd>Nothing.</dd></dl>
 <p>Adds <span class="tt">count</span> to the <span class="tt"><a class="el" href="#a09550bb4fd851f9b704904311bba27b6" title="Total number of executed test cases that failed.">failed_test_cases_</a></span> counter. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00088">88</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   89</span>  {</div>
-<div class="line"><span class="lineno">   90</span>    <a class="code hl_variable" href="#a09550bb4fd851f9b704904311bba27b6">failed_test_cases_</a> += count;</div>
-<div class="line"><span class="lineno">   91</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00087">87</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>  {</div>
+<div class="line"><span class="lineno">   89</span>    <a class="code hl_variable" href="#a09550bb4fd851f9b704904311bba27b6">failed_test_cases_</a> += count;</div>
+<div class="line"><span class="lineno">   90</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="counters_8h_source.html#l00505">failed_test_cases_</a>.</p>
+<p class="reference">References <a class="el" href="counters_8h_source.html#l00504">failed_test_cases_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00307">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create()</a>, and <a class="el" href="counters_8h_source.html#l00401">detail::runnable_base</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00306">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create()</a>, and <a class="el" href="counters_8h_source.html#l00400">detail::runnable_base</a>.</p>
 
 </div>
 </div>
@@ -690,14 +690,14 @@ Friends</h2></td></tr>
 <dl class="section since"><dt>Since</dt><dd>6.0.0</dd></dl>
 <p>Adds <span class="tt">count</span> to the <span class="tt"><a class="el" href="#a454de640619adaeeb5cbc2ada7144946" title="Total number of passed checks.">passed_checks_</a></span> counter. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00058">58</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   59</span>  {</div>
-<div class="line"><span class="lineno">   60</span>    <a class="code hl_variable" href="#a454de640619adaeeb5cbc2ada7144946">passed_checks_</a> += count;</div>
-<div class="line"><span class="lineno">   61</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00057">57</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>  {</div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_variable" href="#a454de640619adaeeb5cbc2ada7144946">passed_checks_</a> += count;</div>
+<div class="line"><span class="lineno">   60</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="counters_8h_source.html#l00476">passed_checks_</a>.</p>
+<p class="reference">References <a class="el" href="counters_8h_source.html#l00475">passed_checks_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="check-result_8cpp_source.html#l00138">micro_os_plus::micro_test_plus::detail::check_result::~check_result()</a>, and <a class="el" href="counters_8h_source.html#l00401">detail::runnable_base</a>.</p>
+<p class="reference">Referenced by <a class="el" href="check-result_8cpp_source.html#l00138">micro_os_plus::micro_test_plus::detail::check_result::~check_result()</a>, and <a class="el" href="counters_8h_source.html#l00400">detail::runnable_base</a>.</p>
 
 </div>
 </div>
@@ -733,15 +733,15 @@ Friends</h2></td></tr>
 <dl class="section since"><dt>Since</dt><dd>6.0.0</dd></dl>
 <p>Adds <span class="tt">count</span> to the <span class="tt"><a class="el" href="#a4399ece2b4eb697927d7cf205d5b18d9" title="Total number of test cases skipped by the filter.">skipped_test_cases_</a></span> counter. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00098">98</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   99</span>  {</div>
-<div class="line"><span class="lineno">  100</span>    <a class="code hl_variable" href="#a4399ece2b4eb697927d7cf205d5b18d9">skipped_test_cases_</a> += count;</div>
-<div class="line"><span class="lineno">  101</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1counters_html_a4399ece2b4eb697927d7cf205d5b18d9"><div class="ttname"><a href="#a4399ece2b4eb697927d7cf205d5b18d9">micro_os_plus::micro_test_plus::counters::skipped_test_cases_</a></div><div class="ttdeci">size_t skipped_test_cases_</div><div class="ttdoc">Total number of test cases skipped by the filter.</div><div class="ttdef"><b>Definition</b> <a href="counters_8h_source.html#l00515">counters.h:515</a></div></div>
+<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00097">97</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   98</span>  {</div>
+<div class="line"><span class="lineno">   99</span>    <a class="code hl_variable" href="#a4399ece2b4eb697927d7cf205d5b18d9">skipped_test_cases_</a> += count;</div>
+<div class="line"><span class="lineno">  100</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1counters_html_a4399ece2b4eb697927d7cf205d5b18d9"><div class="ttname"><a href="#a4399ece2b4eb697927d7cf205d5b18d9">micro_os_plus::micro_test_plus::counters::skipped_test_cases_</a></div><div class="ttdeci">size_t skipped_test_cases_</div><div class="ttdoc">Total number of test cases skipped by the filter.</div><div class="ttdef"><b>Definition</b> <a href="counters_8h_source.html#l00514">counters.h:514</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="counters_8h_source.html#l00515">skipped_test_cases_</a>.</p>
+<p class="reference">References <a class="el" href="counters_8h_source.html#l00514">skipped_test_cases_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00307">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create()</a>, and <a class="el" href="counters_8h_source.html#l00401">detail::runnable_base</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test_8cpp_source.html#l00306">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create()</a>, and <a class="el" href="counters_8h_source.html#l00400">detail::runnable_base</a>.</p>
 
 </div>
 </div>
@@ -795,9 +795,9 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">   87</span> </div>
 <div class="line"><span class="lineno">   88</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><span class="lineno">   89</span>  }</div>
-<div class="ttc" id="adetail_8h_html_aaec16ed032c8fc52ba753a273b788381"><div class="ttname"><a href="detail_8h.html#aaec16ed032c8fc52ba753a273b788381">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a></div><div class="ttdeci">#define MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</div><div class="ttdoc">Portable printf() conversion for the size_t values.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00097">detail.h:97</a></div></div>
+<div class="ttc" id="adetail_8h_html_aaec16ed032c8fc52ba753a273b788381"><div class="ttname"><a href="detail_8h.html#aaec16ed032c8fc52ba753a273b788381">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a></div><div class="ttdeci">#define MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</div><div class="ttdoc">Portable printf() conversion for the size_t values.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00096">detail.h:96</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="#a41b64371f0a6066ab9082b9a19a2ff0c">counters()</a>, <a class="el" href="counters_8h_source.html#l00493">executed_test_cases_</a>, <a class="el" href="counters_8h_source.html#l00484">failed_checks_</a>, <a class="el" href="counters_8h_source.html#l00505">failed_test_cases_</a>, <a class="el" href="detail_8h_source.html#l00097">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a>, <a class="el" href="counters_8h_source.html#l00476">passed_checks_</a>, and <a class="el" href="counters_8h_source.html#l00515">skipped_test_cases_</a>.</p>
+<p class="reference">References <a class="el" href="#a41b64371f0a6066ab9082b9a19a2ff0c">counters()</a>, <a class="el" href="counters_8h_source.html#l00492">executed_test_cases_</a>, <a class="el" href="counters_8h_source.html#l00483">failed_checks_</a>, <a class="el" href="counters_8h_source.html#l00504">failed_test_cases_</a>, <a class="el" href="detail_8h_source.html#l00096">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</a>, <a class="el" href="counters_8h_source.html#l00475">passed_checks_</a>, and <a class="el" href="counters_8h_source.html#l00514">skipped_test_cases_</a>.</p>
 
 </div>
 </div>
@@ -905,14 +905,14 @@ Friends</h2></td></tr>
 </dl>
 <p>A node with no checks at all is considered successful, as it did not fail any check. A test case whose own checks all passed is still unsuccessful if one of its nested test cases failed, so that a failure is reported at every level above it, as in node-tap. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00197">197</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  198</span>  {</div>
-<div class="line"><span class="lineno">  199</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a> == 0 &amp;&amp; <a class="code hl_variable" href="#a09550bb4fd851f9b704904311bba27b6">failed_test_cases_</a> == 0;</div>
-<div class="line"><span class="lineno">  200</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00196">196</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  197</span>  {</div>
+<div class="line"><span class="lineno">  198</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a903b0e792447e149a032a7e46570bfc1">failed_checks_</a> == 0 &amp;&amp; <a class="code hl_variable" href="#a09550bb4fd851f9b704904311bba27b6">failed_test_cases_</a> == 0;</div>
+<div class="line"><span class="lineno">  199</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="counters_8h_source.html#l00484">failed_checks_</a>, and <a class="el" href="counters_8h_source.html#l00505">failed_test_cases_</a>.</p>
+<p class="reference">References <a class="el" href="counters_8h_source.html#l00483">failed_checks_</a>, and <a class="el" href="counters_8h_source.html#l00504">failed_test_cases_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#a7e957314ea5aa3c064741c42336d1ee7">~counters()</a>, <a class="el" href="test_8cpp_source.html#l00307">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00161">micro_os_plus::micro_test_plus::detail::reporter_human::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00255">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00528">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00452">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00748">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="reporter_8cpp_source.html#l00932">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals()</a>, <a class="el" href="reporter_8cpp_source.html#l00969">micro_os_plus::micro_test_plus::detail::reporter::format_test_case_totals()</a>, <a class="el" href="runner_8cpp_source.html#l00760">micro_os_plus::micro_test_plus::runner::run_suites()</a>, and <a class="el" href="counters-inlines_8h_source.html#l00209">was_successful()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#a7e957314ea5aa3c064741c42336d1ee7">~counters()</a>, <a class="el" href="test_8cpp_source.html#l00306">micro_os_plus::micro_test_plus::detail::runnable_base::after_test_case_create()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00161">micro_os_plus::micro_test_plus::detail::reporter_human::end_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00255">micro_os_plus::micro_test_plus::detail::reporter_human::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00528">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00452">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00748">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="reporter_8cpp_source.html#l00932">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals()</a>, <a class="el" href="reporter_8cpp_source.html#l00969">micro_os_plus::micro_test_plus::detail::reporter::format_test_case_totals()</a>, <a class="el" href="runner_8cpp_source.html#l00771">micro_os_plus::micro_test_plus::runner::run_suites()</a>, and <a class="el" href="counters-inlines_8h_source.html#l00208">was_successful()</a>.</p>
 
 </div>
 </div>
@@ -944,14 +944,14 @@ Friends</h2></td></tr>
 <dl class="section since"><dt>Since</dt><dd>6.0.0</dd></dl>
 <p>Returns the value of the <span class="tt"><a class="el" href="#a454de640619adaeeb5cbc2ada7144946" title="Total number of passed checks.">passed_checks_</a></span> counter. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00108">108</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  109</span>  {</div>
-<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a454de640619adaeeb5cbc2ada7144946">passed_checks_</a>;</div>
-<div class="line"><span class="lineno">  111</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00107">107</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>  {</div>
+<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a454de640619adaeeb5cbc2ada7144946">passed_checks_</a>;</div>
+<div class="line"><span class="lineno">  110</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="counters_8h_source.html#l00476">passed_checks_</a>.</p>
+<p class="reference">References <a class="el" href="counters_8h_source.html#l00475">passed_checks_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#a7e957314ea5aa3c064741c42336d1ee7">~counters()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00528">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00748">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="reporter_8cpp_source.html#l00895">micro_os_plus::micro_test_plus::detail::reporter::format_session_totals()</a>, <a class="el" href="reporter_8cpp_source.html#l00932">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals()</a>, <a class="el" href="reporter_8cpp_source.html#l00969">micro_os_plus::micro_test_plus::detail::reporter::format_test_case_totals()</a>, and <a class="el" href="counters-inlines_8h_source.html#l00120">successful_checks()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#a7e957314ea5aa3c064741c42336d1ee7">~counters()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00528">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00748">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="reporter_8cpp_source.html#l00895">micro_os_plus::micro_test_plus::detail::reporter::format_session_totals()</a>, <a class="el" href="reporter_8cpp_source.html#l00932">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals()</a>, <a class="el" href="reporter_8cpp_source.html#l00969">micro_os_plus::micro_test_plus::detail::reporter::format_test_case_totals()</a>, and <a class="el" href="counters-inlines_8h_source.html#l00119">successful_checks()</a>.</p>
 
 </div>
 </div>
@@ -983,12 +983,12 @@ Friends</h2></td></tr>
 <dl class="section since"><dt>Since</dt><dd>6.0.0</dd></dl>
 <p>Returns the value of the <span class="tt"><a class="el" href="#a4399ece2b4eb697927d7cf205d5b18d9" title="Total number of test cases skipped by the filter.">skipped_test_cases_</a></span> counter. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00184">184</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  185</span>  {</div>
-<div class="line"><span class="lineno">  186</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a4399ece2b4eb697927d7cf205d5b18d9">skipped_test_cases_</a>;</div>
-<div class="line"><span class="lineno">  187</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00183">183</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  184</span>  {</div>
+<div class="line"><span class="lineno">  185</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a4399ece2b4eb697927d7cf205d5b18d9">skipped_test_cases_</a>;</div>
+<div class="line"><span class="lineno">  186</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="counters_8h_source.html#l00515">skipped_test_cases_</a>.</p>
+<p class="reference">References <a class="el" href="counters_8h_source.html#l00514">skipped_test_cases_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="#a7e957314ea5aa3c064741c42336d1ee7">~counters()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l00748">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case()</a>, <a class="el" href="reporter_8cpp_source.html#l00895">micro_os_plus::micro_test_plus::detail::reporter::format_session_totals()</a>, and <a class="el" href="reporter_8cpp_source.html#l00932">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals()</a>.</p>
 
@@ -1022,13 +1022,13 @@ Friends</h2></td></tr>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated</a></b></dt><dd>use <a class="el" href="#a6d478407d2416d3d19a4041fa1c12c9b" title="Returns the number of checks that passed.">passed_checks()</a> (since 6.0.0)</dd></dl>
 <p>Forwards to <span class="tt"><a class="el" href="#a6d478407d2416d3d19a4041fa1c12c9b" title="Returns the number of checks that passed.">passed_checks()</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00120">120</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  121</span>  {</div>
-<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a6d478407d2416d3d19a4041fa1c12c9b">passed_checks</a> ();</div>
-<div class="line"><span class="lineno">  123</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1counters_html_a6d478407d2416d3d19a4041fa1c12c9b"><div class="ttname"><a href="#a6d478407d2416d3d19a4041fa1c12c9b">micro_os_plus::micro_test_plus::counters::passed_checks</a></div><div class="ttdeci">size_t passed_checks(void) const noexcept</div><div class="ttdoc">Returns the number of checks that passed.</div><div class="ttdef"><b>Definition</b> <a href="counters-inlines_8h_source.html#l00108">counters-inlines.h:108</a></div></div>
+<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00119">119</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  120</span>  {</div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a6d478407d2416d3d19a4041fa1c12c9b">passed_checks</a> ();</div>
+<div class="line"><span class="lineno">  122</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1counters_html_a6d478407d2416d3d19a4041fa1c12c9b"><div class="ttname"><a href="#a6d478407d2416d3d19a4041fa1c12c9b">micro_os_plus::micro_test_plus::counters::passed_checks</a></div><div class="ttdeci">size_t passed_checks(void) const noexcept</div><div class="ttdoc">Returns the number of checks that passed.</div><div class="ttdef"><b>Definition</b> <a href="counters-inlines_8h_source.html#l00107">counters-inlines.h:107</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="counters-inlines_8h_source.html#l00108">passed_checks()</a>.</p>
+<p class="reference">References <a class="el" href="counters-inlines_8h_source.html#l00107">passed_checks()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="#a7e957314ea5aa3c064741c42336d1ee7">~counters()</a>.</p>
 
@@ -1062,13 +1062,13 @@ Friends</h2></td></tr>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated</a></b></dt><dd>use <a class="el" href="#a14690f9880df505f9dd90a9f2c3dfc96" title="Checks whether all executed checks and test cases were successful.">passed()</a> (since 6.0.0)</dd></dl>
 <p>Forwards to <span class="tt"><a class="el" href="#a14690f9880df505f9dd90a9f2c3dfc96" title="Checks whether all executed checks and test cases were successful.">passed()</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00209">209</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  210</span>  {</div>
-<div class="line"><span class="lineno">  211</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a14690f9880df505f9dd90a9f2c3dfc96">passed</a> ();</div>
-<div class="line"><span class="lineno">  212</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1counters_html_a14690f9880df505f9dd90a9f2c3dfc96"><div class="ttname"><a href="#a14690f9880df505f9dd90a9f2c3dfc96">micro_os_plus::micro_test_plus::counters::passed</a></div><div class="ttdeci">bool passed(void) const noexcept</div><div class="ttdoc">Checks whether all executed checks and test cases were successful.</div><div class="ttdef"><b>Definition</b> <a href="counters-inlines_8h_source.html#l00197">counters-inlines.h:197</a></div></div>
+<p class="definition">Definition at line <a class="el" href="counters-inlines_8h_source.html#l00208">208</a> of file <a class="el" href="counters-inlines_8h_source.html">counters-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  209</span>  {</div>
+<div class="line"><span class="lineno">  210</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a14690f9880df505f9dd90a9f2c3dfc96">passed</a> ();</div>
+<div class="line"><span class="lineno">  211</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1counters_html_a14690f9880df505f9dd90a9f2c3dfc96"><div class="ttname"><a href="#a14690f9880df505f9dd90a9f2c3dfc96">micro_os_plus::micro_test_plus::counters::passed</a></div><div class="ttdeci">bool passed(void) const noexcept</div><div class="ttdoc">Checks whether all executed checks and test cases were successful.</div><div class="ttdef"><b>Definition</b> <a href="counters-inlines_8h_source.html#l00196">counters-inlines.h:196</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="counters-inlines_8h_source.html#l00197">passed()</a>.</p>
+<p class="reference">References <a class="el" href="counters-inlines_8h_source.html#l00196">passed()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="#a7e957314ea5aa3c064741c42336d1ee7">~counters()</a>.</p>
 
@@ -1096,7 +1096,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>See the friend declaration of <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html" title="The test runner for the µTest++ framework.">runner</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters_8h_source.html#l00391">391</a> of file <a class="el" href="counters_8h_source.html">counters.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="counters_8h_source.html#l00390">390</a> of file <a class="el" href="counters_8h_source.html">counters.h</a>.</p>
 
 </div>
 </div>
@@ -1121,9 +1121,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>See the friend declaration of <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html" title="The test runner for the µTest++ framework.">runner</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters_8h_source.html#l00401">401</a> of file <a class="el" href="counters_8h_source.html">counters.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="counters_8h_source.html#l00400">400</a> of file <a class="el" href="counters_8h_source.html">counters.h</a>.</p>
 
-<p class="reference">References <a class="el" href="#a41b64371f0a6066ab9082b9a19a2ff0c">counters()</a>, <a class="el" href="counters-inlines_8h_source.html#l00078">increment_executed_test_cases()</a>, <a class="el" href="counters-inlines_8h_source.html#l00068">increment_failed_checks()</a>, <a class="el" href="counters-inlines_8h_source.html#l00088">increment_failed_test_cases()</a>, <a class="el" href="counters-inlines_8h_source.html#l00058">increment_passed_checks()</a>, and <a class="el" href="counters-inlines_8h_source.html#l00098">increment_skipped_test_cases()</a>.</p>
+<p class="reference">References <a class="el" href="#a41b64371f0a6066ab9082b9a19a2ff0c">counters()</a>, <a class="el" href="counters-inlines_8h_source.html#l00077">increment_executed_test_cases()</a>, <a class="el" href="counters-inlines_8h_source.html#l00067">increment_failed_checks()</a>, <a class="el" href="counters-inlines_8h_source.html#l00087">increment_failed_test_cases()</a>, <a class="el" href="counters-inlines_8h_source.html#l00057">increment_passed_checks()</a>, and <a class="el" href="counters-inlines_8h_source.html#l00097">increment_skipped_test_cases()</a>.</p>
 
 </div>
 </div>
@@ -1148,11 +1148,11 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>The nodes of the test tree and the check result update their counters, and the runner accumulates the totals of the suites; the applications only read them. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters_8h_source.html#l00365">365</a> of file <a class="el" href="counters_8h_source.html">counters.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="counters_8h_source.html#l00364">364</a> of file <a class="el" href="counters_8h_source.html">counters.h</a>.</p>
 
-<p class="reference">References <a class="el" href="counters_8h_source.html#l00365">runner</a>.</p>
+<p class="reference">References <a class="el" href="counters_8h_source.html#l00364">runner</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="counters_8h_source.html#l00365">runner</a>.</p>
+<p class="reference">Referenced by <a class="el" href="counters_8h_source.html#l00364">runner</a>.</p>
 
 </div>
 </div>
@@ -1177,11 +1177,11 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>See the friend declaration of <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html" title="The test runner for the µTest++ framework.">runner</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters_8h_source.html#l00374">374</a> of file <a class="el" href="counters_8h_source.html">counters.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="counters_8h_source.html#l00373">373</a> of file <a class="el" href="counters_8h_source.html">counters.h</a>.</p>
 
-<p class="reference">References <a class="el" href="counters_8h_source.html#l00374">suite</a>.</p>
+<p class="reference">References <a class="el" href="counters_8h_source.html#l00373">suite</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="counters_8h_source.html#l00374">suite</a>.</p>
+<p class="reference">Referenced by <a class="el" href="counters_8h_source.html#l00373">suite</a>.</p>
 
 </div>
 </div>
@@ -1206,11 +1206,11 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>See the friend declaration of <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner.html" title="The test runner for the µTest++ framework.">runner</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters_8h_source.html#l00383">383</a> of file <a class="el" href="counters_8h_source.html">counters.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="counters_8h_source.html#l00382">382</a> of file <a class="el" href="counters_8h_source.html">counters.h</a>.</p>
 
-<p class="reference">References <a class="el" href="counters_8h_source.html#l00383">test_case</a>.</p>
+<p class="reference">References <a class="el" href="counters_8h_source.html#l00382">test_case</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="counters_8h_source.html#l00383">test_case</a>.</p>
+<p class="reference">Referenced by <a class="el" href="counters_8h_source.html#l00382">test_case</a>.</p>
 
 </div>
 </div>
@@ -1236,9 +1236,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Incremented by <span class="tt"><a class="el" href="#a21c6250b78a96ae1448a7fa93608d2d3" title="Increments the executed test cases counter.">increment_executed_test_cases()</a></span> and by <span class="tt">operator+=</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters_8h_source.html#l00493">493</a> of file <a class="el" href="counters_8h_source.html">counters.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="counters_8h_source.html#l00492">492</a> of file <a class="el" href="counters_8h_source.html">counters.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="counters-inlines_8h_source.html#l00151">executed_test_cases()</a>, <a class="el" href="counters-inlines_8h_source.html#l00078">increment_executed_test_cases()</a>, and <a class="el" href="counters_8cpp_source.html#l00071">operator+=()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="counters-inlines_8h_source.html#l00150">executed_test_cases()</a>, <a class="el" href="counters-inlines_8h_source.html#l00077">increment_executed_test_cases()</a>, and <a class="el" href="counters_8cpp_source.html#l00071">operator+=()</a>.</p>
 
 </div>
 </div>
@@ -1263,9 +1263,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Incremented by <span class="tt"><a class="el" href="#aceea5d97d4ae5cd25f077d0349465062" title="Increments the failed-checks counter.">increment_failed_checks()</a></span> and by <span class="tt">operator+=</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters_8h_source.html#l00484">484</a> of file <a class="el" href="counters_8h_source.html">counters.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="counters_8h_source.html#l00483">483</a> of file <a class="el" href="counters_8h_source.html">counters.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="counters-inlines_8h_source.html#l00141">executed_checks()</a>, <a class="el" href="counters-inlines_8h_source.html#l00131">failed_checks()</a>, <a class="el" href="counters-inlines_8h_source.html#l00068">increment_failed_checks()</a>, <a class="el" href="counters_8cpp_source.html#l00071">operator+=()</a>, and <a class="el" href="counters-inlines_8h_source.html#l00197">passed()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="counters-inlines_8h_source.html#l00140">executed_checks()</a>, <a class="el" href="counters-inlines_8h_source.html#l00130">failed_checks()</a>, <a class="el" href="counters-inlines_8h_source.html#l00067">increment_failed_checks()</a>, <a class="el" href="counters_8cpp_source.html#l00071">operator+=()</a>, and <a class="el" href="counters-inlines_8h_source.html#l00196">passed()</a>.</p>
 
 </div>
 </div>
@@ -1290,9 +1290,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Incremented by <span class="tt"><a class="el" href="#a80c4365daa5804dc8ea52c7a5531e4cd" title="Increments the failed test cases counter.">increment_failed_test_cases()</a></span>, when a test case ends with a failed check or a failed nested test case, and by <span class="tt">operator+=</span>. A test case fails when any of its nested test cases fails, as in node-tap, although the checks of the nested test cases are not counted in its check counters. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters_8h_source.html#l00505">505</a> of file <a class="el" href="counters_8h_source.html">counters.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="counters_8h_source.html#l00504">504</a> of file <a class="el" href="counters_8h_source.html">counters.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="counters-inlines_8h_source.html#l00174">failed_test_cases()</a>, <a class="el" href="counters-inlines_8h_source.html#l00088">increment_failed_test_cases()</a>, <a class="el" href="counters_8cpp_source.html#l00071">operator+=()</a>, and <a class="el" href="counters-inlines_8h_source.html#l00197">passed()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="counters-inlines_8h_source.html#l00173">failed_test_cases()</a>, <a class="el" href="counters-inlines_8h_source.html#l00087">increment_failed_test_cases()</a>, <a class="el" href="counters_8cpp_source.html#l00071">operator+=()</a>, and <a class="el" href="counters-inlines_8h_source.html#l00196">passed()</a>.</p>
 
 </div>
 </div>
@@ -1317,9 +1317,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Incremented by <span class="tt"><a class="el" href="#a2805c82d9f1e97c61c538eb78381119d" title="Increments the passed-checks counter.">increment_passed_checks()</a></span> and by <span class="tt">operator+=</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters_8h_source.html#l00476">476</a> of file <a class="el" href="counters_8h_source.html">counters.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="counters_8h_source.html#l00475">475</a> of file <a class="el" href="counters_8h_source.html">counters.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="counters-inlines_8h_source.html#l00141">executed_checks()</a>, <a class="el" href="counters-inlines_8h_source.html#l00058">increment_passed_checks()</a>, <a class="el" href="counters_8cpp_source.html#l00071">operator+=()</a>, and <a class="el" href="counters-inlines_8h_source.html#l00108">passed_checks()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="counters-inlines_8h_source.html#l00140">executed_checks()</a>, <a class="el" href="counters-inlines_8h_source.html#l00057">increment_passed_checks()</a>, <a class="el" href="counters_8cpp_source.html#l00071">operator+=()</a>, and <a class="el" href="counters-inlines_8h_source.html#l00107">passed_checks()</a>.</p>
 
 </div>
 </div>
@@ -1344,9 +1344,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Incremented by <span class="tt"><a class="el" href="#a0fdafd0ee8aa838ecc833365d2b0eebb" title="Increments the skipped test cases counter.">increment_skipped_test_cases()</a></span>, when the name of a test case, or of its suite, does not match the filter pattern of its level, and by <span class="tt">operator+=</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="counters_8h_source.html#l00515">515</a> of file <a class="el" href="counters_8h_source.html">counters.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="counters_8h_source.html#l00514">514</a> of file <a class="el" href="counters_8h_source.html">counters.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="counters-inlines_8h_source.html#l00098">increment_skipped_test_cases()</a>, <a class="el" href="counters_8cpp_source.html#l00071">operator+=()</a>, and <a class="el" href="counters-inlines_8h_source.html#l00184">skipped_test_cases()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="counters-inlines_8h_source.html#l00097">increment_skipped_test_cases()</a>, <a class="el" href="counters_8cpp_source.html#l00071">operator+=()</a>, and <a class="el" href="counters-inlines_8h_source.html#l00183">skipped_test_cases()</a>.</p>
 
 </div>
 </div>

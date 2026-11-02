@@ -9,7 +9,7 @@ var searchData=
   ['lhs_6',['lhs',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#a27b015b0e2b40e0f0bbb1b08588e1c20',1,'micro_os_plus::micro_test_plus::detail::binary_op']]],
   ['lhs_5f_7',['lhs_',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#ac21255b7b6b6d4b9c71522cc997a5fc2',1,'micro_os_plus::micro_test_plus::detail::binary_op']]],
   ['line_8',['line',['../classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#aab9d006004611ac0526852a09f675c66',1,'micro_os_plus::micro_test_plus::reflection::source_location']]],
-  ['line_20options_9',['Command Line Options',['../group__micro-os-plus-micro-test-plus-cli.html',1,'']]],
+  ['line_20options_9',['Command-Line Options',['../group__micro-os-plus-micro-test-plus-cli.html',1,'']]],
   ['line_5f_10',['line_',['../classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html#a0e805c2ed2234f2c004fd7196b844fc5',1,'micro_os_plus::micro_test_plus::reflection::source_location']]],
   ['link_11',['link',['../classmicro__os__plus_1_1micro__test__plus_1_1suite.html#a532459c0a6362991282548f4f845cb97',1,'micro_os_plus::micro_test_plus::suite']]],
   ['link_5for_5freject_12',['link_or_reject',['../classmicro__os__plus_1_1micro__test__plus_1_1static__suite.html#a7ac8520c7d0761e54e7482ca5d7e26f2',1,'micro_os_plus::micro_test_plus::static_suite']]],

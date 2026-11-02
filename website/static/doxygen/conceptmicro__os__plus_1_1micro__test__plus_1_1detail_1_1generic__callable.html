@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 <div class="fragment"><div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Callable_T&gt;</div>
 <div class="line">    <span class="keyword">concept </span><a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1generic__callable.html">generic_callable</a> = std::is_class_v&lt;std::decay_t&lt;Callable_T&gt;&gt;</div>
 <div class="line">          &amp;&amp; (!<span class="keyword">requires</span> { &amp;std::decay_t&lt;Callable_T&gt;::operator(); })</div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1generic__callable_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1generic__callable.html">micro_os_plus::micro_test_plus::detail::generic_callable</a></div><div class="ttdoc">Concept satisfied by a callable object whose call operator is not a single non-template member functi...</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01101">test.h:1102</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1generic__callable_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1generic__callable.html">micro_os_plus::micro_test_plus::detail::generic_callable</a></div><div class="ttdoc">Concept satisfied by a callable object whose call operator is not a single non-template member functi...</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01098">test.h:1099</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The generic lambdas (<span class="tt">[] (auto&amp; t) { ... }</span>), the function objects with a template or an overloaded call operator, and the classes without a call operator. To find out whether such an object can be invoked, the compiler must instantiate its body to deduce the return type, and an error in the body becomes an error of the check, with its own long trace; so the bodies of the tests and of the suites that satisfy this concept are not checked for invocability, and an error is reported where the body is invoked.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l01101">1101</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l01098">1098</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

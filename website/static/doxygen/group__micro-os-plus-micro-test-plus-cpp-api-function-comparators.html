@@ -118,11 +118,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__micro-o
 <p>Functions for comparing actual and expected values in tests.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:gabecc05360d0941067222d827ff8e3f08" id="r_gabecc05360d0941067222d827ff8e3f08"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#gabecc05360d0941067222d827ff8e3f08">micro_os_plus::micro_test_plus::expression_formatter</a> = <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter.html">detail::expression_formatter</a></td></tr>
-<tr class="memdesc:gabecc05360d0941067222d827ff8e3f08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public name of the formatter used to report operand values.  <br /></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga0d374ffc56933dccd3ffba008ab7eaa5" id="r_ga0d374ffc56933dccd3ffba008ab7eaa5"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T, class Epsilon_T&gt; <br />
@@ -159,10 +154,26 @@ requires ( extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&g
 <tr class="memdesc:gaa77076edd474fc10d8c0bd6da623e284"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic non-equality comparator.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>While any boolean expression can be used in expectations and requirements, dedicated comparator functions such as <span class="tt">eq</span>, <span class="tt">ne</span>, <span class="tt">lt</span>, <span class="tt">le</span>, <span class="tt">gt</span>, and <span class="tt">ge</span> provide enhanced reporting by explicitly showing the compared values when a check fails.</p>
-<p>Using these comparators ensures that failed checks report both actual and expected values, making issues easier to diagnose.</p>
-<p>Comparators are available for both fundamental types and standard containers. When a container comparison fails, the elements of both containers are shown.</p>
-<dl class="section user"><dt>Examples</dt><dd></dd></dl>
+<div class="textblock"><p>A check written as a plain boolean, such as <span class="tt">t.expect (x == 42)</span>, reports only its location when it fails. The function comparators compare two values and, when the check fails, also report both values:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Comparator  </th><th class="markdownTableHeadNone">True when  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">mt::eq (a, b)</span>  </td><td class="markdownTableBodyNone"><span class="tt">a == b</span>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">mt::ne (a, b)</span>  </td><td class="markdownTableBodyNone"><span class="tt">a != b</span>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">mt::lt (a, b)</span>  </td><td class="markdownTableBodyNone"><span class="tt">a &lt; b</span>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">mt::le (a, b)</span>  </td><td class="markdownTableBodyNone"><span class="tt">a &lt;= b</span>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">mt::gt (a, b)</span>  </td><td class="markdownTableBodyNone"><span class="tt">a &gt; b</span>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">mt::ge (a, b)</span>  </td><td class="markdownTableBodyNone"><span class="tt">a &gt;= b</span>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">mt::approx (a, b, e)</span>  </td><td class="markdownTableBodyNone"><span class="tt">a</span> and <span class="tt">b</span> differ by at most <span class="tt">e</span>  </td></tr>
+</table>
+<dl class="section user"><dt>Example</dt><dd></dd></dl>
 <div class="fragment"><div class="line">ts.test (<span class="stringliteral">&quot;Check various conditions&quot;</span>, [] (<span class="keyword">auto</span>&amp; t) {</div>
 <div class="line">  t.expect (mt::eq (compute_answer (), 42)) &lt;&lt; <span class="stringliteral">&quot;answer is 42&quot;</span>;</div>
 <div class="line">  t.expect (mt::ne (compute_answer (), 43)) &lt;&lt; <span class="stringliteral">&quot;answer is not 43&quot;</span>;</div>
@@ -170,22 +181,35 @@ requires ( extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&g
 <div class="line">  t.expect (mt::le (compute_answer (), 43)) &lt;&lt; <span class="stringliteral">&quot;answer is &lt;= 43&quot;</span>;</div>
 <div class="line">  t.expect (mt::gt (compute_answer (), 41)) &lt;&lt; <span class="stringliteral">&quot;answer is &gt; 41&quot;</span>;</div>
 <div class="line">  t.expect (mt::ge (compute_answer (), 42)) &lt;&lt; <span class="stringliteral">&quot;answer is &gt;= 42&quot;</span>;</div>
-<div class="line"> </div>
-<div class="line">  t.expect (compute_condition ()) &lt;&lt; <span class="stringliteral">&quot;condition is true&quot;</span>;</div>
 <div class="line">});</div>
-</div><!-- fragment --><p>If a comparator check fails, the output clearly indicates the actual and expected values:</p>
-<div class="fragment"><div class="line">Check failed comparisons</div>
-<div class="line">  ✗ actual != 42 FAILED (unit-test.cpp:286, 42 != 42)</div>
-<div class="line">  ✗ FAILED (unit-test.cpp:307, 42 != 42)</div>
-<div class="line">  ✗ (actual == 42) and (actual != 42.0) FAILED (unit-test.cpp:781, (42 == 42 and 42.0 != 42.0))</div>
-</div><!-- fragment --><p>The C strings (<span class="tt">char</span> arrays, including the string literals, and <span class="tt">char</span> pointers) are compared by content, also with <span class="tt">std::string</span> and <span class="tt">std::string_view</span>, so <span class="tt">mt::eq (actual, "abc")</span> checks the characters, not the addresses; a null <span class="tt">char</span> pointer is equal only to another null pointer (or <span class="tt">nullptr</span>), not to an empty string. The other arrays (including <span class="tt">uint8_t</span> buffers) are compared by content, element by element, also with a container; the other pointers are compared by address.</p>
-<p>The operands must be comparable with the operator of the comparator; for example, <span class="tt">mt::eq (a, b)</span> does not compile when <span class="tt">a == b</span> would not. The comparison of integers of different signedness is made by value, as by <span class="tt">std::cmp_equal()</span>, so that <span class="tt">mt::eq (-1, static_cast&lt;unsigned&gt; (-1))</span> fails, although <span class="tt">-1 == static_cast&lt;unsigned&gt; (-1)</span> is true.</p>
-<dl class="section user"><dt>Comparing Containers</dt><dd></dd></dl>
-<p>Containers can be compared for equality or inequality using the same comparator functions. The comparison is performed with the <span class="tt">==</span> operator of the containers, so they must be of types that can be compared, usually of the same type. The standard <span class="tt">==</span> and <span class="tt">!=</span> operators return a plain <span class="tt">bool</span>, so a failed check written with them could not show the elements. Only the first 16 elements of a container are shown; when two longer containers differ after them, the report adds the index of the first difference.</p>
-<dl class="section user"><dt>Examples</dt><dd></dd></dl>
-<div class="fragment"><div class="line"><span class="keyword">namespace </span>mt = <a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a>;</div>
-<div class="line"> </div>
-<div class="line">ts.test (<span class="stringliteral">&quot;Check containers&quot;</span>, [] (<span class="keyword">auto</span>&amp; t) {</div>
+</div><!-- fragment --><p>When <span class="tt">compute_answer()</span> returns 41, the human-readable reporter displays the failed checks with the compared values:</p>
+<div class="fragment"><div class="line">• Check various conditions</div>
+<div class="line">    ✗ answer is 42 FAILED (main.cpp:21, 41 == 42)</div>
+<div class="line">    ✗ answer is &gt; 41 FAILED (main.cpp:25, 41 &gt; 41)</div>
+<div class="line">    ✗ answer is &gt;= 42 FAILED (main.cpp:26, 41 &gt;= 42)</div>
+<div class="line">✗ Check various conditions - FAILED (3 checks passed, 3 failed)</div>
+</div><!-- fragment --><dl class="section user"><dt>How the values are compared</dt><dd><ul>
+<li>The operands must be comparable with the operator of the comparator; for example, <span class="tt">mt::eq (a, b)</span> does not compile when <span class="tt">a == b</span> would not.</li>
+<li>Integers of different signedness are compared by value, as by <span class="tt">std::cmp_equal()</span>: <span class="tt">mt::eq (-1, static_cast&lt;unsigned&gt; (-1))</span> fails, although <span class="tt">-1 == static_cast&lt;unsigned&gt; (-1)</span> is true.</li>
+<li>C strings (<span class="tt">char</span> arrays, including the string literals, and <span class="tt">char</span> pointers) are compared by content, also with <span class="tt">std::string</span> and <span class="tt">std::string_view</span>, so <span class="tt">mt::eq (actual, "abc")</span> checks the characters, not the addresses. A null <span class="tt">char</span> pointer is equal only to another null pointer (or <span class="tt">nullptr</span>), not to an empty string.</li>
+<li>Other arrays (including <span class="tt">uint8_t</span> buffers) are compared element by element, also with a container.</li>
+<li>Other pointers are compared by address.</li>
+<li>Values of the application types are displayed only if the application provides an <span class="tt">operator&lt;&lt;</span> for them; see <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-customisation.html" title="Customisation">Customisation</a>.</li>
+</ul>
+</dd></dl>
+<dl class="section user"><dt>Comparing approximately</dt><dd>The comparison of floating-point values with <span class="tt">eq()</span> is exact, so <span class="tt">mt::eq (0.1 + 0.2, 0.3)</span> fails. To accept a difference, use <span class="tt">mt::approx (a, b, epsilon)</span>, which is true when the operands differ by at most <span class="tt">epsilon</span>, the limit included:<ul>
+<li>the operands and the tolerance are integral or floating-point numbers, of any type; the distance of integers is computed exactly, also for operands of different signedness;</li>
+<li>a negative tolerance fails all the comparisons;</li>
+<li>a failed check shows the operands and the tolerance, as in <span class="tt">1.0 ~ (1.5 +/- 0.1)</span>.</li>
+</ul>
+</dd></dl>
+<div class="fragment"><div class="line">ts.test (<span class="stringliteral">&quot;Check approximate values&quot;</span>, [] (<span class="keyword">auto</span>&amp; t) {</div>
+<div class="line">  t.expect (mt::approx (read_adc (), 512, 3)) &lt;&lt; <span class="stringliteral">&quot;ADC reading&quot;</span>;</div>
+<div class="line">  t.expect (mt::approx (compute_float (), 42.0f, 0.001f))</div>
+<div class="line">      &lt;&lt; <span class="stringliteral">&quot;result is about 42&quot;</span>;</div>
+<div class="line">});</div>
+</div><!-- fragment --><dl class="section user"><dt>Comparing containers</dt><dd>Containers are compared with their own operators, so they must be comparable, usually by being of the same type. When the check fails, the elements of both containers are shown, up to the first 16; when two longer containers differ after them, the report adds the index of the first difference.</dd></dl>
+<div class="fragment"><div class="line">ts.test (<span class="stringliteral">&quot;Check containers&quot;</span>, [] (<span class="keyword">auto</span>&amp; t) {</div>
 <div class="line">  t.expect (mt::eq (std::vector&lt;int&gt;{ 1, 2 }, std::vector&lt;int&gt;{ 1, 2 }))</div>
 <div class="line">      &lt;&lt; <span class="stringliteral">&quot;vector{ 1, 2 } eq vector{ 1, 2 }&quot;</span>;</div>
 <div class="line"> </div>
@@ -193,48 +217,7 @@ requires ( extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&g
 <div class="line">                    std::vector&lt;int&gt;{ 1, 2, 4 }))</div>
 <div class="line">      &lt;&lt; <span class="stringliteral">&quot;vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }&quot;</span>;</div>
 <div class="line">});</div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div><div class="ttdef"><b>Definition</b> <a href="check-result_8h_source.html#l00075">check-result.h:76</a></div></div>
-</div><!-- fragment --></div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
-<a id="gabecc05360d0941067222d827ff8e3f08" name="gabecc05360d0941067222d827ff8e3f08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabecc05360d0941067222d827ff8e3f08">&#9670;&#160;</a></span>expression_formatter</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="#gabecc05360d0941067222d827ff8e3f08">micro_os_plus::micro_test_plus::expression_formatter</a> = <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter.html">detail::expression_formatter</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>The function comparators and the custom operators report the values of their operands when a check fails. Values of user-defined types can be reported only if the application provides an <span class="tt">operator&lt;&lt;</span> that writes them to this formatter, declared in the namespace of the type, so that it is found by argument-dependent lookup:</p>
-<div class="fragment"><div class="line"><span class="keyword">namespace </span>app</div>
-<div class="line">{</div>
-<div class="line">  <span class="keyword">struct </span>point</div>
-<div class="line">  {</div>
-<div class="line">    <span class="keywordtype">int</span> x;</div>
-<div class="line">    <span class="keywordtype">int</span> y;</div>
-<div class="line">  };</div>
-<div class="line"> </div>
-<div class="line">  <span class="keyword">constexpr</span> <span class="keywordtype">bool</span></div>
-<div class="line">  operator== (<span class="keyword">const</span> point&amp; lhs, <span class="keyword">const</span> point&amp; rhs)</div>
-<div class="line">  {</div>
-<div class="line">    <span class="keywordflow">return</span> lhs.x == rhs.x &amp;&amp; lhs.y == rhs.y;</div>
-<div class="line">  }</div>
-<div class="line"> </div>
-<div class="line">  <span class="keyword">inline</span> mt::expression_formatter&amp;</div>
-<div class="line">  operator&lt;&lt; (mt::expression_formatter&amp; formatter, <span class="keyword">const</span> point&amp; p)</div>
-<div class="line">  {</div>
-<div class="line">    <span class="keywordflow">return</span> formatter &lt;&lt; <span class="stringliteral">&quot;{ &quot;</span> &lt;&lt; p.x &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; p.y &lt;&lt; <span class="stringliteral">&quot; }&quot;</span>;</div>
-<div class="line">  }</div>
-<div class="line">} <span class="comment">// namespace app</span></div>
-</div><!-- fragment --><p>Without such an operator, comparators such as <span class="tt"><a class="el" href="#gada610d1d5701b79f3df916f6e397ea06" title="Generic equality comparator.">eq()</a></span> do not compile for user-defined types, since the operand values cannot be formatted; only the scoped enumerations are formatted without it, by their underlying value. Plain boolean checks, such as <span class="tt">expect (a == b)</span>, do not need it, but they report only the source location on failure. The same operator also writes the values appended to the messages of the checks (<span class="tt">expect (a == b) &lt;&lt; "a is " &lt;&lt; a</span>).</p>
-<p>Applications use the <span class="tt">operator&lt;&lt;</span> overloads, and <span class="tt">str()</span> to test their own operators; the functions that manage the buffer are private to the framework. </p>
-
-<p class="definition">Definition at line <a class="el" href="expression-formatter_8h_source.html#l01721">1721</a> of file <a class="el" href="expression-formatter_8h_source.html">expression-formatter.h</a>.</p>
-
-</div>
-</div>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+</div><!-- fragment -->  </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="ga0d374ffc56933dccd3ffba008ab7eaa5" name="ga0d374ffc56933dccd3ffba008ab7eaa5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga0d374ffc56933dccd3ffba008ab7eaa5">&#9670;&#160;</a></span>approx()</h2>
 
@@ -293,15 +276,15 @@ requires (extension::approx_operand&lt;Lhs_T&gt; and extension::approx_operand&l
 <dl class="section since"><dt>Since</dt><dd>6.0.0</dd></dl>
 <p>The <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx</a></span> function template constructs a <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op.html" title="Approximate comparator struct template.">detail::approx_op</a></span> from the forwarded operands and tolerance; the operands are numbers, so <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b" title="Prepares an operand of a comparator.">detail::as_operand()</a></span>, which converts the C strings, is not needed. </p>
 
-<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00211">211</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  212</span>  {</div>
-<div class="line"><span class="lineno">  213</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op.html">detail::approx_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</div>
-<div class="line"><span class="lineno">  214</span>                              std::forward&lt;Rhs_T&gt; (rhs),</div>
-<div class="line"><span class="lineno">  215</span>                              std::forward&lt;Epsilon_T&gt; (epsilon) };</div>
-<div class="line"><span class="lineno">  216</span>  }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op.html">micro_os_plus::micro_test_plus::detail::approx_op</a></div><div class="ttdoc">Approximate comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00971">detail.h:972</a></div></div>
+<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00210">210</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  211</span>  {</div>
+<div class="line"><span class="lineno">  212</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op.html">detail::approx_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</div>
+<div class="line"><span class="lineno">  213</span>                              std::forward&lt;Rhs_T&gt; (rhs),</div>
+<div class="line"><span class="lineno">  214</span>                              std::forward&lt;Epsilon_T&gt; (epsilon) };</div>
+<div class="line"><span class="lineno">  215</span>  }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op.html">micro_os_plus::micro_test_plus::detail::approx_op</a></div><div class="ttdoc">Approximate comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00964">detail.h:965</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l01280">approx()</a>.</p>
+<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l01279">approx()</a>.</p>
 
 </div>
 </div>
@@ -355,19 +338,19 @@ requires (extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&gt
 <p>The <span class="tt"><a class="el" href="#gada610d1d5701b79f3df916f6e397ea06" title="Generic equality comparator.">eq</a></span> function template provides a generic equality comparator for any types. The operands are first passed to <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b" title="Prepares an operand of a comparator.">detail::as_operand()</a></span>, which converts the C strings to <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html" title="A C string operand of a comparator.">detail::c_string</a></span>, and the other arrays to <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand.html" title="An array operand of a comparator, other than a char array.">detail::array_operand</a></span>, so that they are compared by content. It constructs a comparator object, with the <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to.html" title="Equality tag for compare_op.">detail::equal_to</a></span> tag, which evaluates to <span class="tt">true</span> if the two values are equal, and which is reported with both values if not.</p>
 <p>The operands are forwarded, so that the comparator moves the temporaries and refers to the named operands, without copying them. </p>
 
-<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00093">93</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   94</span>  {</div>
-<div class="line"><span class="lineno">   95</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Lhs_T&gt; (lhs)),</div>
-<div class="line"><span class="lineno">   96</span>                               <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Rhs_T&gt; (rhs)),</div>
-<div class="line"><span class="lineno">   97</span>                               <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to.html">detail::equal_to</a>{} };</div>
-<div class="line"><span class="lineno">   98</span>  }</div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a51e86043001b197561806d5c6297041b"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">micro_os_plus::micro_test_plus::detail::as_operand</a></div><div class="ttdeci">constexpr auto as_operand(T &amp;&amp;t) noexcept -&gt; decltype(auto)</div><div class="ttdoc">Prepares an operand of a comparator.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l01378">detail-inlines.h:1378</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">micro_os_plus::micro_test_plus::detail::compare_op</a></div><div class="ttdoc">Relational comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00877">detail.h:878</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to.html">micro_os_plus::micro_test_plus::detail::equal_to</a></div><div class="ttdoc">Equality tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00435">detail.h:436</a></div></div>
+<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00092">92</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>  {</div>
+<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Lhs_T&gt; (lhs)),</div>
+<div class="line"><span class="lineno">   95</span>                               <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Rhs_T&gt; (rhs)),</div>
+<div class="line"><span class="lineno">   96</span>                               <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to.html">detail::equal_to</a>{} };</div>
+<div class="line"><span class="lineno">   97</span>  }</div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a51e86043001b197561806d5c6297041b"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">micro_os_plus::micro_test_plus::detail::as_operand</a></div><div class="ttdeci">constexpr auto as_operand(T &amp;&amp;t) noexcept -&gt; decltype(auto)</div><div class="ttdoc">Prepares an operand of a comparator.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l01377">detail-inlines.h:1377</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">micro_os_plus::micro_test_plus::detail::compare_op</a></div><div class="ttdoc">Relational comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00870">detail.h:871</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to.html">micro_os_plus::micro_test_plus::detail::equal_to</a></div><div class="ttdoc">Equality tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00428">detail.h:429</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l01378">micro_os_plus::micro_test_plus::detail::as_operand()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00093">eq()</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l01377">micro_os_plus::micro_test_plus::detail::as_operand()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00092">eq()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="function-comparators-inlines_8h_source.html#l00093">eq()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="function-comparators-inlines_8h_source.html#l00092">eq()</a>.</p>
 
 </div>
 </div>
@@ -418,17 +401,17 @@ requires (extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&gt
 <dl class="section return"><dt>Returns</dt><dd>A comparator object that evaluates to true if <span class="tt">lhs</span> is greater than or equal to <span class="tt">rhs</span>.</dd></dl>
 <p>The operands are passed to <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b" title="Prepares an operand of a comparator.">detail::as_operand()</a></span>, as for <span class="tt"><a class="el" href="#gada610d1d5701b79f3df916f6e397ea06" title="Generic equality comparator.">eq()</a></span>, so that the C strings and the arrays are compared by content. It constructs a comparator object, with the <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal.html" title="Greater than or equal tag for compare_op.">detail::greater_equal</a></span> tag, which evaluates to <span class="tt">true</span> if <span class="tt">lhs</span> is greater than or equal to <span class="tt">rhs</span>, and which is reported with both values if not. </p>
 
-<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00153">153</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  154</span>  {</div>
-<div class="line"><span class="lineno">  155</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Lhs_T&gt; (lhs)),</div>
-<div class="line"><span class="lineno">  156</span>                               <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Rhs_T&gt; (rhs)),</div>
-<div class="line"><span class="lineno">  157</span>                               <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal.html">detail::greater_equal</a>{} };</div>
-<div class="line"><span class="lineno">  158</span>  }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal.html">micro_os_plus::micro_test_plus::detail::greater_equal</a></div><div class="ttdoc">Greater than or equal tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00612">detail.h:613</a></div></div>
+<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00152">152</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  153</span>  {</div>
+<div class="line"><span class="lineno">  154</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Lhs_T&gt; (lhs)),</div>
+<div class="line"><span class="lineno">  155</span>                               <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Rhs_T&gt; (rhs)),</div>
+<div class="line"><span class="lineno">  156</span>                               <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal.html">detail::greater_equal</a>{} };</div>
+<div class="line"><span class="lineno">  157</span>  }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal.html">micro_os_plus::micro_test_plus::detail::greater_equal</a></div><div class="ttdoc">Greater than or equal tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00605">detail.h:606</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l01378">micro_os_plus::micro_test_plus::detail::as_operand()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00153">ge()</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l01377">micro_os_plus::micro_test_plus::detail::as_operand()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00152">ge()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="function-comparators-inlines_8h_source.html#l00153">ge()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="function-comparators-inlines_8h_source.html#l00152">ge()</a>.</p>
 
 </div>
 </div>
@@ -479,17 +462,17 @@ requires ( extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&g
 <dl class="section return"><dt>Returns</dt><dd>A comparator object that evaluates to true if <span class="tt">lhs</span> is greater than <span class="tt">rhs</span>.</dd></dl>
 <p>The operands are passed to <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b" title="Prepares an operand of a comparator.">detail::as_operand()</a></span>, as for <span class="tt"><a class="el" href="#gada610d1d5701b79f3df916f6e397ea06" title="Generic equality comparator.">eq()</a></span>, so that the C strings and the arrays are compared by content. It constructs a comparator object, with the <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater.html" title="Greater than tag for compare_op.">detail::greater</a></span> tag, which evaluates to <span class="tt">true</span> if <span class="tt">lhs</span> is greater than <span class="tt">rhs</span>, and which is reported with both values if not. </p>
 
-<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00133">133</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  134</span>  {</div>
-<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Lhs_T&gt; (lhs)),</div>
-<div class="line"><span class="lineno">  136</span>                               <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Rhs_T&gt; (rhs)),</div>
-<div class="line"><span class="lineno">  137</span>                               <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater.html">detail::greater</a>{} };</div>
-<div class="line"><span class="lineno">  138</span>  }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater.html">micro_os_plus::micro_test_plus::detail::greater</a></div><div class="ttdoc">Greater than tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00553">detail.h:554</a></div></div>
+<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00132">132</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  133</span>  {</div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Lhs_T&gt; (lhs)),</div>
+<div class="line"><span class="lineno">  135</span>                               <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Rhs_T&gt; (rhs)),</div>
+<div class="line"><span class="lineno">  136</span>                               <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater.html">detail::greater</a>{} };</div>
+<div class="line"><span class="lineno">  137</span>  }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater.html">micro_os_plus::micro_test_plus::detail::greater</a></div><div class="ttdoc">Greater than tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00546">detail.h:547</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l01378">micro_os_plus::micro_test_plus::detail::as_operand()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00133">gt()</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l01377">micro_os_plus::micro_test_plus::detail::as_operand()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00132">gt()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="function-comparators-inlines_8h_source.html#l00133">gt()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="function-comparators-inlines_8h_source.html#l00132">gt()</a>.</p>
 
 </div>
 </div>
@@ -540,17 +523,17 @@ requires ( extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&g
 <dl class="section return"><dt>Returns</dt><dd>A comparator object that evaluates to true if <span class="tt">lhs</span> is less than or equal to <span class="tt">rhs</span>.</dd></dl>
 <p>The operands are passed to <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b" title="Prepares an operand of a comparator.">detail::as_operand()</a></span>, as for <span class="tt"><a class="el" href="#gada610d1d5701b79f3df916f6e397ea06" title="Generic equality comparator.">eq()</a></span>, so that the C strings and the arrays are compared by content. It constructs a comparator object, with the <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal.html" title="Less than or equal tag for compare_op.">detail::less_equal</a></span> tag, which evaluates to <span class="tt">true</span> if <span class="tt">lhs</span> is less than or equal to <span class="tt">rhs</span>, and which is reported with both values if not. </p>
 
-<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00192">192</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  193</span>  {</div>
-<div class="line"><span class="lineno">  194</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Lhs_T&gt; (lhs)),</div>
-<div class="line"><span class="lineno">  195</span>                               <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Rhs_T&gt; (rhs)),</div>
-<div class="line"><span class="lineno">  196</span>                               <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal.html">detail::less_equal</a>{} };</div>
-<div class="line"><span class="lineno">  197</span>  }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal.html">micro_os_plus::micro_test_plus::detail::less_equal</a></div><div class="ttdoc">Less than or equal tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00730">detail.h:731</a></div></div>
+<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00191">191</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  192</span>  {</div>
+<div class="line"><span class="lineno">  193</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Lhs_T&gt; (lhs)),</div>
+<div class="line"><span class="lineno">  194</span>                               <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Rhs_T&gt; (rhs)),</div>
+<div class="line"><span class="lineno">  195</span>                               <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal.html">detail::less_equal</a>{} };</div>
+<div class="line"><span class="lineno">  196</span>  }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal.html">micro_os_plus::micro_test_plus::detail::less_equal</a></div><div class="ttdoc">Less than or equal tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00723">detail.h:724</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l01378">micro_os_plus::micro_test_plus::detail::as_operand()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00192">le()</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l01377">micro_os_plus::micro_test_plus::detail::as_operand()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00191">le()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="function-comparators-inlines_8h_source.html#l00192">le()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="function-comparators-inlines_8h_source.html#l00191">le()</a>.</p>
 
 </div>
 </div>
@@ -600,17 +583,17 @@ requires (extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&gt
 <dl class="section return"><dt>Returns</dt><dd>A comparator object that evaluates to true if <span class="tt">lhs</span> is less than <span class="tt">rhs</span>.</dd></dl>
 <p>The operands are passed to <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b" title="Prepares an operand of a comparator.">detail::as_operand()</a></span>, as for <span class="tt"><a class="el" href="#gada610d1d5701b79f3df916f6e397ea06" title="Generic equality comparator.">eq()</a></span>, so that the C strings and the arrays are compared by content. It constructs a comparator object, with the <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less.html" title="Less than tag for compare_op.">detail::less</a></span> tag, which evaluates to <span class="tt">true</span> if <span class="tt">lhs</span> is less than <span class="tt">rhs</span>, and which is reported with both values if not. </p>
 
-<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00172">172</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  173</span>  {</div>
-<div class="line"><span class="lineno">  174</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Lhs_T&gt; (lhs)),</div>
-<div class="line"><span class="lineno">  175</span>                               <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Rhs_T&gt; (rhs)),</div>
-<div class="line"><span class="lineno">  176</span>                               <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less.html">detail::less</a>{} };</div>
-<div class="line"><span class="lineno">  177</span>  }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less.html">micro_os_plus::micro_test_plus::detail::less</a></div><div class="ttdoc">Less than tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00671">detail.h:672</a></div></div>
+<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00171">171</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  172</span>  {</div>
+<div class="line"><span class="lineno">  173</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Lhs_T&gt; (lhs)),</div>
+<div class="line"><span class="lineno">  174</span>                               <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Rhs_T&gt; (rhs)),</div>
+<div class="line"><span class="lineno">  175</span>                               <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less.html">detail::less</a>{} };</div>
+<div class="line"><span class="lineno">  176</span>  }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less.html">micro_os_plus::micro_test_plus::detail::less</a></div><div class="ttdoc">Less than tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00664">detail.h:665</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l01378">micro_os_plus::micro_test_plus::detail::as_operand()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00172">lt()</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l01377">micro_os_plus::micro_test_plus::detail::as_operand()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00171">lt()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="function-comparators-inlines_8h_source.html#l00172">lt()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="function-comparators-inlines_8h_source.html#l00171">lt()</a>.</p>
 
 </div>
 </div>
@@ -661,17 +644,17 @@ requires ( extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&g
 <dl class="section return"><dt>Returns</dt><dd>A comparator object that evaluates to true if the operands are not equal.</dd></dl>
 <p>The operands are passed to <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b" title="Prepares an operand of a comparator.">detail::as_operand()</a></span>, as for <span class="tt"><a class="el" href="#gada610d1d5701b79f3df916f6e397ea06" title="Generic equality comparator.">eq()</a></span>, so that the C strings and the arrays are compared by content. It constructs a comparator object, with the <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to.html" title="Non-equality tag for compare_op.">detail::not_equal_to</a></span> tag, which evaluates to <span class="tt">true</span> if the two values are not equal, and which is reported with both values if not. </p>
 
-<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00113">113</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  114</span>  {</div>
-<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Lhs_T&gt; (lhs)),</div>
-<div class="line"><span class="lineno">  116</span>                               <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Rhs_T&gt; (rhs)),</div>
-<div class="line"><span class="lineno">  117</span>                               <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to.html">detail::not_equal_to</a>{} };</div>
-<div class="line"><span class="lineno">  118</span>  }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to.html">micro_os_plus::micro_test_plus::detail::not_equal_to</a></div><div class="ttdoc">Non-equality tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00494">detail.h:495</a></div></div>
+<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00112">112</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  113</span>  {</div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">detail::compare_op</a>{ <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Lhs_T&gt; (lhs)),</div>
+<div class="line"><span class="lineno">  115</span>                               <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (std::forward&lt;Rhs_T&gt; (rhs)),</div>
+<div class="line"><span class="lineno">  116</span>                               <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to.html">detail::not_equal_to</a>{} };</div>
+<div class="line"><span class="lineno">  117</span>  }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to.html">micro_os_plus::micro_test_plus::detail::not_equal_to</a></div><div class="ttdoc">Non-equality tag for compare_op.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00487">detail.h:488</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l01378">micro_os_plus::micro_test_plus::detail::as_operand()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00113">ne()</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l01377">micro_os_plus::micro_test_plus::detail::as_operand()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00112">ne()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="function-comparators-inlines_8h_source.html#l00113">ne()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="function-comparators-inlines_8h_source.html#l00112">ne()</a>.</p>
 
 </div>
 </div>

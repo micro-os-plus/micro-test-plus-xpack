@@ -31,13 +31,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/runner.cpp" line="84" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/runner.cpp" bodystart="85" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/runner.cpp" line="95" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/runner.cpp" bodystart="96" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Local helpers of the runner. </para>
     </briefdescription>
     <detaileddescription>
+<para>The unnamed namespace gives the helpers internal linkage, so that they are visible only in this translation unit, and cannot conflict with the names of the application or of the other source files of the framework. They are not declared in any header.</para>
+<para>It contains <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1anonymous__namespace_02runner_8cpp_03_1a93bc763e06193fa6de523088f09a8816" kindref="member">help_options</ref></computeroutput>, the list of the command line options that <computeroutput>--help</computeroutput> displays after the usage line. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/runner.cpp" line="75" column="3"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/runner.cpp" line="86" column="3"/>
   </compounddef>
 </doxygen>

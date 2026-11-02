@@ -17,8 +17,8 @@
 <para>Custom operator overloads for expressive and type-safe test assertions. </para>
     </briefdescription>
     <detaileddescription>
-<para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1operators" kindref="compound">micro_os_plus::micro_test_plus::operators</ref></computeroutput> namespace provides a comprehensive set of custom operator overloads designed to enable expressive, concise, and type-safe test assertions within the µTest++ framework.</para>
-<para>This namespace includes equality, inequality, relational, and logical operators tailored for use with the framework’s custom types. These operators facilitate the creation of clear and readable test expressions, supporting both strongly-typed constants (via user-defined literals) and dynamic values (via wrappers).</para>
+<para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1operators" kindref="compound">micro_os_plus::micro_test_plus::operators</ref></computeroutput> namespace provides the deprecated overloaded operators of the test checks.</para>
+<para>This namespace includes the equality, inequality, relational, and logical operators of the framework types, which apply to the strongly-typed constants (the user-defined literals) and to the dynamic values (the wrappers).</para>
 <para><simplesect kind="warning"><para>Please be aware that these operators may conflict with other operators defined within the application under test.</para>
 </simplesect>
 To minimise conflicts with application-defined operators, these overloads are enabled only when an operand is a framework expression or value wrapper (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op" kindref="compound">extension::is_op</ref></computeroutput>). Constants typically require a literal suffix (e.g., <computeroutput>1<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>), while dynamic values should be wrapped using the provided casting utilities (e.g., <computeroutput>mt::to_i{...}</computeroutput>). When neither operand is of such a type, the standard operators are selected; they return a plain <computeroutput>bool</computeroutput>, so a failed check cannot show the operands.</para>
@@ -31,6 +31,6 @@ To minimise conflicts with application-defined operators, these overloads are en
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="886" column="1"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="885" column="1"/>
   </compounddef>
 </doxygen>

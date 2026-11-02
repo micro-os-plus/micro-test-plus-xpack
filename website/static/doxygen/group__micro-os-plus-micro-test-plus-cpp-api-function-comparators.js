@@ -1,6 +1,5 @@
 var group__micro_os_plus_micro_test_plus_cpp_api_function_comparators =
 [
-    [ "micro_os_plus::micro_test_plus::expression_formatter", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gabecc05360d0941067222d827ff8e3f08", null ],
     [ "micro_os_plus::micro_test_plus::approx", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga0d374ffc56933dccd3ffba008ab7eaa5", null ],
     [ "micro_os_plus::micro_test_plus::eq", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gada610d1d5701b79f3df916f6e397ea06", null ],
     [ "micro_os_plus::micro_test_plus::ge", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga989e5966794d5c5487477aa782d844b1", null ],

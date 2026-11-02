@@ -58,10 +58,16 @@ keywords:
 <p>Test suites are named groups of related test cases.</p>
 
 
-<p>By default, all test cases defined in <span class="doxyComputerOutput">main()</span> are included in the top-level test suite, which is owned by the runner and returned by <span class="doxyComputerOutput">runner::add_top_suite()</span>; its test cases run immediately, until <span class="doxyComputerOutput">runner::run_suites()</span> is called. A test case can be created only on the suite whose body is running (the top suite, from <span class="doxyComputerOutput">main()</span>, or, in the body of another suite, that suite); a call on another suite, for example on the top suite captured from the body of another suite, is reported as a failure, and the test case is not run. For more complex projects, additional test suites can be defined, typically in separate source files.</p>
+<p>A suite has a name and a body, a function that creates its test cases. The suites are either added in <span class="doxyComputerOutput">main()</span> with <span class="doxyComputerOutput">runner::add_suite()</span>, or defined as static suites, and <span class="doxyComputerOutput">runner::run_suites()</span> runs them all, sorted by name.</p>
 
 
-<p>The additional test suites are either added in <span class="doxyComputerOutput">main()</span> with <span class="doxyComputerOutput">runner::add_suite()</span>, or defined as <span class="doxyComputerOutput">mt::static_suite</span> objects, at namespace scope, constructed with a name, a reference to the runner, and a callable (usually a function or a lambda with a <span class="doxyComputerOutput">mt::suite&amp;</span> first parameter, which creates the test cases), along with any optional arguments. The static suites register themselves in their constructors, so they are included in the test run without other calls.</p>
+<p>The top suite is a shortcut: a suite whose body is the code of <span class="doxyComputerOutput">main()</span> itself. <span class="doxyComputerOutput">runner::add_top_suite()</span> adds it and returns it, and the test cases created on it in <span class="doxyComputerOutput">main()</span> run immediately, before <span class="doxyComputerOutput">runner::run_suites()</span> is called. It therefore always runs before all the other suites, whatever their names. It is optional; a program may put all its test cases in the other suites.</p>
+
+
+<p>A test case can be created only on the suite whose body is running: on the top suite from <span class="doxyComputerOutput">main()</span>, or on the suite received by the body of another suite. A call on another suite, for example on the top suite captured in the body of another suite, is reported as a failure, and the test case is not run.</p>
+
+
+<p>The static suites are <span class="doxyComputerOutput">mt::static_suite</span> objects, defined at namespace scope, usually in separate source files, and constructed with a name, a reference to the runner, and a callable (usually a function or a lambda with a <span class="doxyComputerOutput">mt::suite&amp;</span> first parameter, which creates the test cases), along with any optional arguments. They register themselves in their constructors, so they are included in the test run without other calls.</p>
 
 
 
@@ -70,7 +76,25 @@ keywords:
 :::
 
 
-<p>The static suites may be constructed before or after the runner, in any order. <span class="doxyComputerOutput">runner::run_suites()</span> runs all the suites, added or static, after the test cases of the top suite, sorted by name (byte by byte, as by <span class="doxyComputerOutput">std::strcmp()</span>). Suites with the same name run in the order in which they were created, so the static ones, which exist before <span class="doxyComputerOutput">main()</span> starts, run before the added ones; the relative order of static suites defined in different source files is unspecified, so give them distinct names. Zero-padded numeric prefixes (<span class="doxyComputerOutput">"01 - Init"</span>) give an explicit order. Nevertheless, design the test suites to be independent of each other, so that they do not depend on the execution order.</p>
+<p>A static suite does not need the runner to be constructed first; it can be defined in any source file, before or after the runner.</p>
+
+
+<dl class="doxySectionUser">
+<dt>Execution order</dt>
+<dd>
+<p>The top suite runs first, as described above. <span class="doxyComputerOutput">runner::run_suites()</span> then runs all the other suites, the added and the static ones together, sorted by name:</p>
+
+
+<ul class="doxyList ">
+<li>the names are compared byte by byte, as by <span class="doxyComputerOutput">std::strcmp()</span>, so the upper-case letters come before the lower-case ones (<span class="doxyComputerOutput">"Gamma"</span> runs before <span class="doxyComputerOutput">"alpha"</span>);</li>
+<li>suites with the same name run in the order in which they were created; the static suites are created before <span class="doxyComputerOutput">main()</span> starts, so they run before the added suites with the same name;</li>
+<li>the order of static suites with the same name, defined in different source files, is not specified; give them distinct names.</li>
+</ul>
+</dd>
+</dl>
+
+
+<p>To set the order explicitly, start the names with zero-padded numbers (<span class="doxyComputerOutput">"01 - Init"</span>, <span class="doxyComputerOutput">"02 - Run"</span>). Even so, write each suite so that it does not depend on the others having run before it.</p>
 
 
 <dl class="doxySectionUser">
@@ -151,6 +175,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

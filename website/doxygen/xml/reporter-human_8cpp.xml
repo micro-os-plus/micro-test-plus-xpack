@@ -465,7 +465,7 @@
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus">micro_os_plus::micro_test_plus</innernamespace>
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail">micro_os_plus::micro_test_plus::detail</innernamespace>
     <briefdescription>
-<para>C++ source file with implementations for the µTest++ human test reporter member functions. </para>
+<para>C++ source file with implementations for the µTest++ human-readable reporter member functions. </para>
     </briefdescription>
     <detaileddescription>
 <para>This source file contains the implementations for <computeroutput>reporter_human</computeroutput>, the concrete implementation of the <computeroutput>reporter</computeroutput> abstract interface that presents test results in a human-readable form on the standard output, accumulating output in an internal string buffer and supporting colour-coded diagnostics and multiple verbosity levels.</para>
@@ -572,7 +572,7 @@
 <codeline lineno="139"><highlight class="normal"></highlight></codeline>
 <codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a6b48a4007c568c28fffbc2f2fe3f32e7" kindref="member">write_info</ref><sp/>(<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a68a030feff1f481126e9a6d170331420" kindref="member">runner</ref>.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1acea30e98ccf65d97e8c0e0d0ff8edda0" kindref="member">options_</ref>.<ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a8782919e89d6ee79cceb06365a779146" kindref="member">arguments</ref><sp/>());</highlight></codeline>
 <codeline lineno="141"><highlight class="normal"></highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1aa97f2ba65009154090dc68e42c94db71" kindref="member">write_line</ref><sp/>(to_console,<sp/></highlight><highlight class="stringliteral">&quot;µTest++<sp/>human<sp/>report\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1aa97f2ba65009154090dc68e42c94db71" kindref="member">write_line</ref><sp/>(to_console,<sp/></highlight><highlight class="stringliteral">&quot;µTest++<sp/>human-readable<sp/>report\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="143"><highlight class="normal"></highlight></codeline>
 <codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a804b593aefa158d92a72da43de57d242" kindref="member">flush_streams</ref><sp/>();</highlight></codeline>
 <codeline lineno="145"><highlight class="normal"></highlight></codeline>

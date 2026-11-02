@@ -17,7 +17,7 @@ keywords:
 
 # C++ API
 
-<p>Topics related to the µTest++ C++ API. <a href="#details">More...</a></p>
+<p>How to write the tests. <a href="#details">More...</a></p>
 
 ## Topics Index
 
@@ -30,7 +30,21 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Classes for initialising the framework and returning an exit code. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-runners/#details">More...</a></p>
+<p>The runner initialises the framework and returns the exit code. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-runners/#details">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">&nbsp;</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-test-suites">Test Suites</a></td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Test suites are named groups of related test cases. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-test-suites/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -137,12 +151,12 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">&nbsp;</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-test-suites">Test Suites</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-customisation">Customisation</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Test suites are named groups of related test cases. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-test-suites/#details">More...</a></p>
+<p>Reporting the application types, and writing application comparators. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-customisation/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -167,17 +181,37 @@ keywords:
 
 ## Description {#details}
 
-<p>Topics related to the µTest++ C++ API.</p>
+<p>How to write the tests.</p>
 
 
-<p>The µTest++ framework is built upon modern C++ standards, providing a robust and expressive API for defining and managing tests. Its design prioritises clarity and maintainability, offering a concise set of core primitives for verifying expectations and requirements within test cases.</p>
+<p>All the definitions are in the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></span> namespace, which the examples shorten with an alias:</p>
 
 
-<p>Unlike many traditional frameworks, µTest++ avoids the use of preprocessor macros; all testing primitives are implemented directly in C++. This approach ensures type safety, improved readability, and seamless integration with contemporary C++ development practices.</p>
+<div class="doxyProgramListing">
 
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#include &lt;<a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-os-plus/micro-test-plus.h</a>&gt;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight">mt = <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a>;</span></span></div>
+
+</div>
+
+
+<p>The topics follow the structure of a test program:</p>
+
+
+<ul class="doxyList ">
+<li>the runner, which starts and ends the session;</li>
+<li>the suites, which group the test cases;</li>
+<li>the test cases, which hold the checks;</li>
+<li>the checks: the expectations, which are counted, and the requirements, which also stop the test case when they fail;</li>
+<li>the conditions of the checks: the function comparators, the logical functions, and the exception checks;</li>
+<li>the string utilities;</li>
+<li>the customisation, for the application types and comparators;</li>
+<li>the deprecated definitions, kept for the existing tests.</li>
+</ul>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

@@ -115,13 +115,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__micro-o
 </div><!--header-->
 <div class="contents">
 
-<p>Topics related to the µTest++ C++ API.  
+<p>How to write the tests.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-groups" class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
 <tr class="memitem:micro-os-plus-micro-test-plus-cpp-api-runners" id="r_micro-os-plus-micro-test-plus-cpp-api-runners"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-runners.html">Test Runners</a></td></tr>
-<tr class="memdesc:group__micro-os-plus-micro-test-plus-cpp-api-runners"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classes for initialising the framework and returning an exit code. <br /></td></tr>
+<tr class="memdesc:group__micro-os-plus-micro-test-plus-cpp-api-runners"><td class="mdescLeft">&#160;</td><td class="mdescRight">The runner initialises the framework and returns the exit code. <br /></td></tr>
+<tr class="memitem:micro-os-plus-micro-test-plus-cpp-api-test-suites" id="r_micro-os-plus-micro-test-plus-cpp-api-test-suites"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-test-suites.html">Test Suites</a></td></tr>
+<tr class="memdesc:group__micro-os-plus-micro-test-plus-cpp-api-test-suites"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test suites are named groups of related test cases. <br /></td></tr>
 <tr class="memitem:micro-os-plus-micro-test-plus-cpp-api-test-case" id="r_micro-os-plus-micro-test-plus-cpp-api-test-case"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-test-case.html">Test Cases</a></td></tr>
 <tr class="memdesc:group__micro-os-plus-micro-test-plus-cpp-api-test-case"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test cases are named sequences of checks. <br /></td></tr>
 <tr class="memitem:micro-os-plus-micro-test-plus-cpp-api-expectations" id="r_micro-os-plus-micro-test-plus-cpp-api-expectations"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-expectations.html">Expectations</a></td></tr>
@@ -136,14 +138,28 @@ Topics</h2></td></tr>
 <tr class="memdesc:group__micro-os-plus-micro-test-plus-cpp-api-exceptions"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functions for verifying exceptions in test cases. <br /></td></tr>
 <tr class="memitem:micro-os-plus-micro-test-plus-cpp-api-utility-functions" id="r_micro-os-plus-micro-test-plus-cpp-api-utility-functions"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html">Utility Functions</a></td></tr>
 <tr class="memdesc:group__micro-os-plus-micro-test-plus-cpp-api-utility-functions"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility functions for handling strings in tests. <br /></td></tr>
-<tr class="memitem:micro-os-plus-micro-test-plus-cpp-api-test-suites" id="r_micro-os-plus-micro-test-plus-cpp-api-test-suites"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-test-suites.html">Test Suites</a></td></tr>
-<tr class="memdesc:group__micro-os-plus-micro-test-plus-cpp-api-test-suites"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test suites are named groups of related test cases. <br /></td></tr>
+<tr class="memitem:micro-os-plus-micro-test-plus-cpp-api-customisation" id="r_micro-os-plus-micro-test-plus-cpp-api-customisation"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-customisation.html">Customisation</a></td></tr>
+<tr class="memdesc:group__micro-os-plus-micro-test-plus-cpp-api-customisation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reporting the application types, and writing application comparators. <br /></td></tr>
 <tr class="memitem:micro-os-plus-micro-test-plus-cpp-api-deprecated" id="r_micro-os-plus-micro-test-plus-cpp-api-deprecated"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html">Deprecated</a></td></tr>
 <tr class="memdesc:group__micro-os-plus-micro-test-plus-cpp-api-deprecated"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definitions kept for compatibility with earlier releases. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The µTest++ framework is built upon modern C++ standards, providing a robust and expressive API for defining and managing tests. Its design prioritises clarity and maintainability, offering a concise set of core primitives for verifying expectations and requirements within test cases.</p>
-<p>Unlike many traditional frameworks, µTest++ avoids the use of preprocessor macros; all testing primitives are implemented directly in C++. This approach ensures type safety, improved readability, and seamless integration with contemporary C++ development practices.  </p>
+<div class="textblock"><p>All the definitions are in the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus.html" title="Primary namespace for the µTest++ testing framework.">micro_os_plus::micro_test_plus</a></span> namespace, which the examples shorten with an alias:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="micro-test-plus_8h.html">micro-os-plus/micro-test-plus.h</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>mt = <a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a>;</div>
+<div class="ttc" id="amicro-test-plus_8h_html"><div class="ttname"><a href="micro-test-plus_8h.html">micro-test-plus.h</a></div><div class="ttdoc">Main C++ header with the declarations for the µTest++ Testing Framework.</div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div><div class="ttdef"><b>Definition</b> <a href="check-result_8h_source.html#l00075">check-result.h:76</a></div></div>
+</div><!-- fragment --><p>The topics follow the structure of a test program:</p><ul>
+<li>the runner, which starts and ends the session;</li>
+<li>the suites, which group the test cases;</li>
+<li>the test cases, which hold the checks;</li>
+<li>the checks: the expectations, which are counted, and the requirements, which also stop the test case when they fail;</li>
+<li>the conditions of the checks: the function comparators, the logical functions, and the exception checks;</li>
+<li>the string utilities;</li>
+<li>the customisation, for the application types and comparators;</li>
+<li>the deprecated definitions, kept for the existing tests.  </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

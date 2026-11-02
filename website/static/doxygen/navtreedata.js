@@ -26,6 +26,7 @@ var NAVTREE =
 [
   [ "micro-test-plus", "index.html", [
     [ "Documentation", "/micro-test-plus-xpack/", null ],
+    [ "Getting started", "index.html#mainpage-start", null ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Reference", "topics.html", "topics" ],
     [ "Namespaces", "namespaces.html", [
@@ -71,10 +72,10 @@ var NAVTREEINDEX =
 "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap.html#ac928cbe8852ca0c0273482b905c6301b",
 "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#ac29e4b993bb3fe795eb8900231cbf5c4",
 "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#a6df38c720d659b6a53dfd2b65c5d25e4",
-"group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gaceb70f41ddfa8f5805dbe9be2adf2289",
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html#a384b1d115e493d6a554ebda4e3089b19",
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html#ada5dc84fd655a188ac350568572dddb8",
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#aab5138b851247527b8c8abdf28c5e5b1"
+"group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gabc8f58b457f42435bcb51f53e6fe6b78",
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html#a3111bc24739599066db41c6a5023672b",
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html#ac69d71afd275e3374ef0516c8d9a82d6",
+"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#a384b1d115e493d6a554ebda4e3089b19"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

@@ -82,7 +82,7 @@ var namespacemicro__os__plus_1_1micro__test__plus =
     [ "_ul", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga32c7eef01fcaef2f1a9478427d951f62", null ],
     [ "_ull", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gada8a165060d3d3b3ab51272b9da58761", null ],
     [ "_us", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga65aea7fc6324806cc029041a1c785611", null ],
-    [ "expression_formatter", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gabecc05360d0941067222d827ff8e3f08", null ],
+    [ "expression_formatter", "group__micro-os-plus-micro-test-plus-cpp-api-customisation.html#gabecc05360d0941067222d827ff8e3f08", null ],
     [ "static_runner", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga47d2c99f85fc5597b82da402d4687e75", null ],
     [ "subtest", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga1424c18b26d5fdaed11439c77e6bf561", null ],
     [ "to_b", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga5570e36fb3e73be3edf734ac80a23d93", null ],

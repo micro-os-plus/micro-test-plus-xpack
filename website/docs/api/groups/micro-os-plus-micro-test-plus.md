@@ -17,7 +17,7 @@ keywords:
 
 # µTest++
 
-<p>Topics related to the µTest++ Testing Framework. <a href="#details">More...</a></p>
+<p>The µTest++ Testing Framework. <a href="#details">More...</a></p>
 
 ## Topics Index
 
@@ -30,7 +30,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Topics related to the µTest++ C++ API. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api/#details">More...</a></p>
+<p>How to write the tests. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -44,7 +44,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Topics related to the µTest++ C API. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-c-api/#details">More...</a></p>
+<p>There is no C API; C code is tested from C++. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-c-api/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -58,7 +58,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Configuration macros. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-config/#details">More...</a></p>
+<p>The macros that enable and configure the framework. <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-config/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -67,7 +67,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">&nbsp;</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cli">Command Line Options</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cli">Command-Line Options</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -83,20 +83,36 @@ keywords:
 
 ## Description {#details}
 
-<p>Topics related to the µTest++ Testing Framework.</p>
+<p>The µTest++ Testing Framework.</p>
 
 
-<p>The <b>µTest++</b> project is a <b>modern C++</b> library designed to provide a <b>lightweight and efficient</b>, <b>macro free</b>, <b>TAP based</b> testing framework, purpose-built for embedded systems development.</p>
+<p>µTest++ is a C++20 testing framework for embedded targets, which also runs on the native platforms. The tests are ordinary C++ code, functions and lambdas, with no preprocessor macros.</p>
 
 
-<p>The <b>C++ API</b> is the primary interface for writing test suites and test cases. It is centred on the <span class="doxyComputerOutput">runner</span> and <span class="doxyComputerOutput">test_case</span> classes, which provide methods for registering tests, evaluating expectations and requirements, and collecting results. Function comparators and logical functions complement the core API to enable expressive, type-safe assertions with no macro dependencies. The API is documented in the <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api">C++ API</a> group.</p>
+<p>A test program uses three classes:</p>
 
 
-<p>The <b>command-line interface (CLI)</b> allows test executables to be configured at run time without recompilation. Arguments are passed to <span class="doxyComputerOutput">runner::initialise()</span> and control aspects such as the verbosity level, the output reporter format, the colours, an output file, and the selection or listing of the test cases. The available options are documented in the <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cli">Command Line Options</a> group.</p>
+<ul class="doxyList ">
+<li>the <span class="doxyComputerOutput">runner</span>, which reads the command line, runs the suites, and returns the exit code;</li>
+<li>the <span class="doxyComputerOutput">suite</span>, a named group of test cases;</li>
+<li>the <span class="doxyComputerOutput">test_case</span>, a named sequence of checks, made with <span class="doxyComputerOutput">expect()</span> and <span class="doxyComputerOutput">require()</span>.</li>
+</ul>
 
+<p>The results are written in the TAP format, for the tools that read test results, or in a human-readable format.</p>
+
+
+<p>The topics are grouped in four parts:</p>
+
+
+<ul class="doxyList ">
+<li>how to write the tests, in <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api">C++ API</a>;</li>
+<li>how to test C code, in <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-c-api">C API</a>;</li>
+<li>the macros that enable the framework, in <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-config">Configuration</a>;</li>
+<li>the options of the test programs, in <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cli">Command-Line Options</a>.</li>
+</ul>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

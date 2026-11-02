@@ -17,19 +17,33 @@ keywords:
 
 # C API
 
-<p>Topics related to the µTest++ C API.</p>
+<p>There is no C API; C code is tested from C++.</p>
 
 ## Description {#details}
 
 
-<p>Although µTest++ is highly effective for testing C code, its implementation is based on modern C++ features that cannot be replicated in the C language. Consequently, µTest++ does not provide a dedicated C API or C equivalents for its C++ definitions.</p>
+<p>µTest++ is built on C++20 features, such as templates, concepts, and lambdas, which have no equivalent in C, so it has no C API.</p>
 
 
-<p>Developers can, however, use the µTest++ framework to organise and execute tests for C code by writing test cases in C++. This approach enables comprehensive testing of C modules while benefiting from the advanced capabilities and expressive syntax of the C++ API, supporting professional software quality assurance.</p>
+<p>To test C code, write the test cases in C++ and call the C functions from them. If the C headers do not declare their functions with <span class="doxyComputerOutput">extern "C"</span> themselves, include them in an <span class="doxyComputerOutput">extern "C"</span> block:</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">extern</span><span class="doxyHighlight"> </span><span class="doxyHighlightStringLiteral">"C"</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">{</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#include "adder.h"</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">}</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">ts.test (</span><span class="doxyHighlightStringLiteral">"Check the C adder"</span><span class="doxyHighlight">, [] (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp; t) {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  t.expect (mt::eq (add (2, 3), 5));</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">});</span></span></div>
+
+</div>
 
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

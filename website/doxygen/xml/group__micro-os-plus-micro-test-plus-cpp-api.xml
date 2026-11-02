@@ -4,6 +4,7 @@
     <compoundname>micro-os-plus-micro-test-plus-cpp-api</compoundname>
     <title>C++ API</title>
     <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-runners">Test Runners</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-test-suites">Test Suites</innergroup>
     <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-test-case">Test Cases</innergroup>
     <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-expectations">Expectations</innergroup>
     <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-requirements">Requirements</innergroup>
@@ -11,14 +12,28 @@
     <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions">Logical Functions</innergroup>
     <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions">Checking Exceptions</innergroup>
     <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions">Utility Functions</innergroup>
-    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-test-suites">Test Suites</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-customisation">Customisation</innergroup>
     <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated">Deprecated</innergroup>
     <briefdescription>
-<para>Topics related to the µTest++ C++ API. </para>
+<para>How to write the tests. </para>
     </briefdescription>
     <detaileddescription>
-<para>The µTest++ framework is built upon modern C++ standards, providing a robust and expressive API for defining and managing tests. Its design prioritises clarity and maintainability, offering a concise set of core primitives for verifying expectations and requirements within test cases.</para>
-<para>Unlike many traditional frameworks, µTest++ avoids the use of preprocessor macros; all testing primitives are implemented directly in C++. This approach ensures type safety, improved readability, and seamless integration with contemporary C++ development practices.  </para>
+<para>All the definitions are in the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></computeroutput> namespace, which the examples shorten with an alias:</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="preprocessor">#include<sp/>&lt;<ref refid="micro-test-plus_8h" kindref="compound">micro-os-plus/micro-test-plus.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
+</programlisting></para>
+<para>The topics follow the structure of a test program:<itemizedlist>
+<listitem><para>the runner, which starts and ends the session;</para>
+</listitem><listitem><para>the suites, which group the test cases;</para>
+</listitem><listitem><para>the test cases, which hold the checks;</para>
+</listitem><listitem><para>the checks: the expectations, which are counted, and the requirements, which also stop the test case when they fail;</para>
+</listitem><listitem><para>the conditions of the checks: the function comparators, the logical functions, and the exception checks;</para>
+</listitem><listitem><para>the string utilities;</para>
+</listitem><listitem><para>the customisation, for the application types and comparators;</para>
+</listitem><listitem><para>the deprecated definitions, kept for the existing tests.  </para>
+</listitem></itemizedlist>
+</para>
     </detaileddescription>
   </compounddef>
 </doxygen>

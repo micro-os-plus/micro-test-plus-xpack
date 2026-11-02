@@ -6,14 +6,26 @@
     <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api">C++ API</innergroup>
     <innergroup refid="group__micro-os-plus-micro-test-plus-c-api">C API</innergroup>
     <innergroup refid="group__micro-os-plus-micro-test-plus-config">Configuration</innergroup>
-    <innergroup refid="group__micro-os-plus-micro-test-plus-cli">Command Line Options</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cli">Command-Line Options</innergroup>
     <briefdescription>
-<para>Topics related to the µTest++ Testing Framework. </para>
+<para>The µTest++ Testing Framework. </para>
     </briefdescription>
     <detaileddescription>
-<para>The <bold>µTest++</bold> project is a <bold>modern C++</bold> library designed to provide a <bold>lightweight and efficient</bold>, <bold>macro free</bold>, <bold>TAP based</bold> testing framework, purpose-built for embedded systems development.</para>
-<para>The <bold>C++ API</bold> is the primary interface for writing test suites and test cases. It is centred on the <computeroutput>runner</computeroutput> and <computeroutput>test_case</computeroutput> classes, which provide methods for registering tests, evaluating expectations and requirements, and collecting results. Function comparators and logical functions complement the core API to enable expressive, type-safe assertions with no macro dependencies. The API is documented in the <ref refid="group__micro-os-plus-micro-test-plus-cpp-api" kindref="compound">C++ API</ref> group.</para>
-<para>The <bold>command-line interface (CLI)</bold> allows test executables to be configured at run time without recompilation. Arguments are passed to <computeroutput>runner::initialise()</computeroutput> and control aspects such as the verbosity level, the output reporter format, the colours, an output file, and the selection or listing of the test cases. The available options are documented in the <ref refid="group__micro-os-plus-micro-test-plus-cli" kindref="compound">Command Line Options</ref> group.  </para>
+<para>µTest++ is a C++20 testing framework for embedded targets, which also runs on the native platforms. The tests are ordinary C++ code, functions and lambdas, with no preprocessor macros.</para>
+<para>A test program uses three classes:<itemizedlist>
+<listitem><para>the <computeroutput>runner</computeroutput>, which reads the command line, runs the suites, and returns the exit code;</para>
+</listitem><listitem><para>the <computeroutput>suite</computeroutput>, a named group of test cases;</para>
+</listitem><listitem><para>the <computeroutput>test_case</computeroutput>, a named sequence of checks, made with <computeroutput>expect()</computeroutput> and <computeroutput>require()</computeroutput>.</para>
+</listitem></itemizedlist>
+</para>
+<para>The results are written in the TAP format, for the tools that read test results, or in a human-readable format.</para>
+<para>The topics are grouped in four parts:<itemizedlist>
+<listitem><para>how to write the tests, in <ref refid="group__micro-os-plus-micro-test-plus-cpp-api" kindref="compound">C++ API</ref>;</para>
+</listitem><listitem><para>how to test C code, in <ref refid="group__micro-os-plus-micro-test-plus-c-api" kindref="compound">C API</ref>;</para>
+</listitem><listitem><para>the macros that enable the framework, in <ref refid="group__micro-os-plus-micro-test-plus-config" kindref="compound">Configuration</ref>;</para>
+</listitem><listitem><para>the options of the test programs, in <ref refid="group__micro-os-plus-micro-test-plus-cli" kindref="compound">Command-Line Options</ref>.  </para>
+</listitem></itemizedlist>
+</para>
     </detaileddescription>
   </compounddef>
 </doxygen>

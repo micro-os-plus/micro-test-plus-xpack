@@ -3,47 +3,6 @@
   <compounddef id="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators" kind="group">
     <compoundname>micro-os-plus-micro-test-plus-cpp-api-function-comparators</compoundname>
     <title>Function Comparators</title>
-    <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gabecc05360d0941067222d827ff8e3f08" prot="public" static="no">
-        <type>detail::expression_formatter</type>
-        <definition>using micro_os_plus::micro_test_plus::expression_formatter = detail::expression_formatter</definition>
-        <argsstring></argsstring>
-        <name>expression_formatter</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::expression_formatter</qualifiedname>
-        <briefdescription>
-<para>Public name of the formatter used to report operand values. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The function comparators and the custom operators report the values of their operands when a check fails. Values of user-defined types can be reported only if the application provides an <computeroutput>operator&lt;&lt;</computeroutput> that writes them to this formatter, declared in the namespace of the type, so that it is found by argument-dependent lookup:</para>
-<para><programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">app</highlight></codeline>
-<codeline><highlight class="normal">{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">point</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>};</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>operator==<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>point&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>point&amp;<sp/>rhs)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lhs.x<sp/>==<sp/>rhs.x<sp/>&amp;&amp;<sp/>lhs.y<sp/>==<sp/>rhs.y;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>mt::expression_formatter&amp;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>operator&lt;&lt;<sp/>(mt::expression_formatter&amp;<sp/>formatter,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>point&amp;<sp/>p)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>formatter<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;{<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>p.x<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>p.y<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>}&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>app</highlight></codeline>
-</programlisting></para>
-<para>Without such an operator, comparators such as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref></computeroutput> do not compile for user-defined types, since the operand values cannot be formatted; only the scoped enumerations are formatted without it, by their underlying value. Plain boolean checks, such as <computeroutput>expect (a == b)</computeroutput>, do not need it, but they report only the source location on failure. The same operator also writes the values appended to the messages of the checks (<computeroutput>expect (a == b) &lt;&lt; "a is " &lt;&lt; a</computeroutput>).</para>
-<para>Applications use the <computeroutput>operator&lt;&lt;</computeroutput> overloads, and <computeroutput>str()</computeroutput> to test their own operators; the functions that manage the buffer are private to the framework. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="1721" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" bodystart="1721" bodyend="-1"/>
-      </memberdef>
-    </sectiondef>
     <sectiondef kind="func">
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0d374ffc56933dccd3ffba008ab7eaa5" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -142,8 +101,8 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-dep
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="211" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="211" bodyend="216" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="271" declcolumn="3"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" compoundref="deprecated-inlines_8h" startline="1280" endline="1284">micro_os_plus::micro_test_plus::approx</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="210" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="210" bodyend="215" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="270" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" compoundref="deprecated-inlines_8h" startline="1279" endline="1283">micro_os_plus::micro_test_plus::approx</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -216,10 +175,10 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-fun
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="93" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="93" bodyend="98" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="134" declcolumn="3"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1378" endline="1412">micro_os_plus::micro_test_plus::detail::as_operand</references>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" compoundref="function-comparators-inlines_8h" startline="93" endline="98">micro_os_plus::micro_test_plus::eq</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" compoundref="function-comparators-inlines_8h" startline="93" endline="98">micro_os_plus::micro_test_plus::eq</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="92" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="92" bodyend="97" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="133" declcolumn="3"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1377" endline="1411">micro_os_plus::micro_test_plus::detail::as_operand</references>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" compoundref="function-comparators-inlines_8h" startline="92" endline="97">micro_os_plus::micro_test_plus::eq</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" compoundref="function-comparators-inlines_8h" startline="92" endline="97">micro_os_plus::micro_test_plus::eq</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga989e5966794d5c5487477aa782d844b1" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -288,10 +247,10 @@ The operands are passed to <computeroutput><ref refid="namespacemicro__os__plus_
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="153" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="153" bodyend="158" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="189" declcolumn="3"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1378" endline="1412">micro_os_plus::micro_test_plus::detail::as_operand</references>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga989e5966794d5c5487477aa782d844b1" compoundref="function-comparators-inlines_8h" startline="153" endline="158">micro_os_plus::micro_test_plus::ge</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga989e5966794d5c5487477aa782d844b1" compoundref="function-comparators-inlines_8h" startline="153" endline="158">micro_os_plus::micro_test_plus::ge</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="152" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="152" bodyend="157" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="188" declcolumn="3"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1377" endline="1411">micro_os_plus::micro_test_plus::detail::as_operand</references>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga989e5966794d5c5487477aa782d844b1" compoundref="function-comparators-inlines_8h" startline="152" endline="157">micro_os_plus::micro_test_plus::ge</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga989e5966794d5c5487477aa782d844b1" compoundref="function-comparators-inlines_8h" startline="152" endline="157">micro_os_plus::micro_test_plus::ge</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf32fd09749f18635233613fa48f91b56" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -360,10 +319,10 @@ The operands are passed to <computeroutput><ref refid="namespacemicro__os__plus_
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="133" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="133" bodyend="138" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="170" declcolumn="3"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1378" endline="1412">micro_os_plus::micro_test_plus::detail::as_operand</references>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf32fd09749f18635233613fa48f91b56" compoundref="function-comparators-inlines_8h" startline="133" endline="138">micro_os_plus::micro_test_plus::gt</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf32fd09749f18635233613fa48f91b56" compoundref="function-comparators-inlines_8h" startline="133" endline="138">micro_os_plus::micro_test_plus::gt</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="132" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="132" bodyend="137" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="169" declcolumn="3"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1377" endline="1411">micro_os_plus::micro_test_plus::detail::as_operand</references>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf32fd09749f18635233613fa48f91b56" compoundref="function-comparators-inlines_8h" startline="132" endline="137">micro_os_plus::micro_test_plus::gt</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf32fd09749f18635233613fa48f91b56" compoundref="function-comparators-inlines_8h" startline="132" endline="137">micro_os_plus::micro_test_plus::gt</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf9e47a6e18771f969cdd840ec187734a" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -432,10 +391,10 @@ The operands are passed to <computeroutput><ref refid="namespacemicro__os__plus_
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="192" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="192" bodyend="197" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="226" declcolumn="3"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1378" endline="1412">micro_os_plus::micro_test_plus::detail::as_operand</references>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf9e47a6e18771f969cdd840ec187734a" compoundref="function-comparators-inlines_8h" startline="192" endline="197">micro_os_plus::micro_test_plus::le</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf9e47a6e18771f969cdd840ec187734a" compoundref="function-comparators-inlines_8h" startline="192" endline="197">micro_os_plus::micro_test_plus::le</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="191" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="191" bodyend="196" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="225" declcolumn="3"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1377" endline="1411">micro_os_plus::micro_test_plus::detail::as_operand</references>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf9e47a6e18771f969cdd840ec187734a" compoundref="function-comparators-inlines_8h" startline="191" endline="196">micro_os_plus::micro_test_plus::le</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf9e47a6e18771f969cdd840ec187734a" compoundref="function-comparators-inlines_8h" startline="191" endline="196">micro_os_plus::micro_test_plus::le</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaea39573e23de35872ace5b08d2514327" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -504,10 +463,10 @@ The operands are passed to <computeroutput><ref refid="namespacemicro__os__plus_
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="172" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="172" bodyend="177" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="207" declcolumn="3"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1378" endline="1412">micro_os_plus::micro_test_plus::detail::as_operand</references>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaea39573e23de35872ace5b08d2514327" compoundref="function-comparators-inlines_8h" startline="172" endline="177">micro_os_plus::micro_test_plus::lt</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaea39573e23de35872ace5b08d2514327" compoundref="function-comparators-inlines_8h" startline="172" endline="177">micro_os_plus::micro_test_plus::lt</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="171" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="171" bodyend="176" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="206" declcolumn="3"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1377" endline="1411">micro_os_plus::micro_test_plus::detail::as_operand</references>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaea39573e23de35872ace5b08d2514327" compoundref="function-comparators-inlines_8h" startline="171" endline="176">micro_os_plus::micro_test_plus::lt</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaea39573e23de35872ace5b08d2514327" compoundref="function-comparators-inlines_8h" startline="171" endline="176">micro_os_plus::micro_test_plus::lt</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa77076edd474fc10d8c0bd6da623e284" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -576,20 +535,52 @@ The operands are passed to <computeroutput><ref refid="namespacemicro__os__plus_
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="113" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="113" bodyend="118" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="152" declcolumn="3"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1378" endline="1412">micro_os_plus::micro_test_plus::detail::as_operand</references>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa77076edd474fc10d8c0bd6da623e284" compoundref="function-comparators-inlines_8h" startline="113" endline="118">micro_os_plus::micro_test_plus::ne</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa77076edd474fc10d8c0bd6da623e284" compoundref="function-comparators-inlines_8h" startline="113" endline="118">micro_os_plus::micro_test_plus::ne</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="112" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="112" bodyend="117" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="151" declcolumn="3"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1377" endline="1411">micro_os_plus::micro_test_plus::detail::as_operand</references>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa77076edd474fc10d8c0bd6da623e284" compoundref="function-comparators-inlines_8h" startline="112" endline="117">micro_os_plus::micro_test_plus::ne</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa77076edd474fc10d8c0bd6da623e284" compoundref="function-comparators-inlines_8h" startline="112" endline="117">micro_os_plus::micro_test_plus::ne</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Functions for comparing actual and expected values in tests. </para>
     </briefdescription>
     <detaileddescription>
-<para>While any boolean expression can be used in expectations and requirements, dedicated comparator functions such as <computeroutput>eq</computeroutput>, <computeroutput>ne</computeroutput>, <computeroutput>lt</computeroutput>, <computeroutput>le</computeroutput>, <computeroutput>gt</computeroutput>, and <computeroutput>ge</computeroutput> provide enhanced reporting by explicitly showing the compared values when a check fails.</para>
-<para>Using these comparators ensures that failed checks report both actual and expected values, making issues easier to diagnose.</para>
-<para>Comparators are available for both fundamental types and standard containers. When a container comparison fails, the elements of both containers are shown.</para>
-<para><simplesect kind="par"><title>Examples</title><para></para>
+<para>A check written as a plain boolean, such as <computeroutput>t.expect (x == 42)</computeroutput>, reports only its location when it fails. The function comparators compare two values and, when the check fails, also report both values:</para>
+<para><table rows="8" cols="2"><row>
+<entry thead="yes"><para>Comparator  </para>
+</entry><entry thead="yes"><para>True when  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><computeroutput>mt::eq (a, b)</computeroutput>  </para>
+</entry><entry thead="no"><para><computeroutput>a == b</computeroutput>  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><computeroutput>mt::ne (a, b)</computeroutput>  </para>
+</entry><entry thead="no"><para><computeroutput>a != b</computeroutput>  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><computeroutput>mt::lt (a, b)</computeroutput>  </para>
+</entry><entry thead="no"><para><computeroutput>a &lt; b</computeroutput>  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><computeroutput>mt::le (a, b)</computeroutput>  </para>
+</entry><entry thead="no"><para><computeroutput>a &lt;= b</computeroutput>  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><computeroutput>mt::gt (a, b)</computeroutput>  </para>
+</entry><entry thead="no"><para><computeroutput>a &gt; b</computeroutput>  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><computeroutput>mt::ge (a, b)</computeroutput>  </para>
+</entry><entry thead="no"><para><computeroutput>a &gt;= b</computeroutput>  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><computeroutput>mt::approx (a, b, e)</computeroutput>  </para>
+</entry><entry thead="no"><para><computeroutput>a</computeroutput> and <computeroutput>b</computeroutput> differ by at most <computeroutput>e</computeroutput>  </para>
+</entry></row>
+</table>
+</para>
+<para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
 <programlisting filename=".cpp"><codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>various<sp/>conditions&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::eq<sp/>(compute_answer<sp/>(),<sp/>42))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
@@ -598,26 +589,41 @@ The operands are passed to <computeroutput><ref refid="namespacemicro__os__plus_
 <codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::le<sp/>(compute_answer<sp/>(),<sp/>43))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&lt;=<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::gt<sp/>(compute_answer<sp/>(),<sp/>41))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&gt;<sp/>41&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::ge<sp/>(compute_answer<sp/>(),<sp/>42))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>is<sp/>&gt;=<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(compute_condition<sp/>())<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;condition<sp/>is<sp/>true&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal">});</highlight></codeline>
 </programlisting></para>
-<para>If a comparator check fails, the output clearly indicates the actual and expected values:</para>
-<para><programlisting filename=".console"><codeline><highlight class="normal">Check<sp/>failed<sp/>comparisons</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>✗<sp/>actual<sp/>!=<sp/>42<sp/>FAILED<sp/>(unit-test.cpp:286,<sp/>42<sp/>!=<sp/>42)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>✗<sp/>FAILED<sp/>(unit-test.cpp:307,<sp/>42<sp/>!=<sp/>42)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>✗<sp/>(actual<sp/>==<sp/>42)<sp/>and<sp/>(actual<sp/>!=<sp/>42.0)<sp/>FAILED<sp/>(unit-test.cpp:781,<sp/>(42<sp/>==<sp/>42<sp/>and<sp/>42.0<sp/>!=<sp/>42.0))</highlight></codeline>
+<para>When <computeroutput>compute_answer()</computeroutput> returns 41, the human-readable reporter displays the failed checks with the compared values:</para>
+<para><programlisting filename=".console"><codeline><highlight class="normal">•<sp/>Check<sp/>various<sp/>conditions</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>✗<sp/>answer<sp/>is<sp/>42<sp/>FAILED<sp/>(main.cpp:21,<sp/>41<sp/>==<sp/>42)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>✗<sp/>answer<sp/>is<sp/>&gt;<sp/>41<sp/>FAILED<sp/>(main.cpp:25,<sp/>41<sp/>&gt;<sp/>41)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>✗<sp/>answer<sp/>is<sp/>&gt;=<sp/>42<sp/>FAILED<sp/>(main.cpp:26,<sp/>41<sp/>&gt;=<sp/>42)</highlight></codeline>
+<codeline><highlight class="normal">✗<sp/>Check<sp/>various<sp/>conditions<sp/>-<sp/>FAILED<sp/>(3<sp/>checks<sp/>passed,<sp/>3<sp/>failed)</highlight></codeline>
 </programlisting></para>
-<para>The C strings (<computeroutput>char</computeroutput> arrays, including the string literals, and <computeroutput>char</computeroutput> pointers) are compared by content, also with <computeroutput>std::string</computeroutput> and <computeroutput>std::string_view</computeroutput>, so <computeroutput>mt::eq (actual, "abc")</computeroutput> checks the characters, not the addresses; a null <computeroutput>char</computeroutput> pointer is equal only to another null pointer (or <computeroutput>nullptr</computeroutput>), not to an empty string. The other arrays (including <computeroutput>uint8_t</computeroutput> buffers) are compared by content, element by element, also with a container; the other pointers are compared by address.</para>
-<para>The operands must be comparable with the operator of the comparator; for example, <computeroutput>mt::eq (a, b)</computeroutput> does not compile when <computeroutput>a == b</computeroutput> would not. The comparison of integers of different signedness is made by value, as by <computeroutput>std::cmp_equal()</computeroutput>, so that <computeroutput>mt::eq (-1, static_cast&lt;unsigned&gt; (-1))</computeroutput> fails, although <computeroutput>-1 == static_cast&lt;unsigned&gt; (-1)</computeroutput> is true.</para>
-<para><simplesect kind="par"><title>Comparing Containers</title><para></para>
+<para><simplesect kind="par"><title>How the values are compared</title><para><itemizedlist>
+<listitem><para>The operands must be comparable with the operator of the comparator; for example, <computeroutput>mt::eq (a, b)</computeroutput> does not compile when <computeroutput>a == b</computeroutput> would not.</para>
+</listitem><listitem><para>Integers of different signedness are compared by value, as by <computeroutput>std::cmp_equal()</computeroutput>: <computeroutput>mt::eq (-1, static_cast&lt;unsigned&gt; (-1))</computeroutput> fails, although <computeroutput>-1 == static_cast&lt;unsigned&gt; (-1)</computeroutput> is true.</para>
+</listitem><listitem><para>C strings (<computeroutput>char</computeroutput> arrays, including the string literals, and <computeroutput>char</computeroutput> pointers) are compared by content, also with <computeroutput>std::string</computeroutput> and <computeroutput>std::string_view</computeroutput>, so <computeroutput>mt::eq (actual, "abc")</computeroutput> checks the characters, not the addresses. A null <computeroutput>char</computeroutput> pointer is equal only to another null pointer (or <computeroutput>nullptr</computeroutput>), not to an empty string.</para>
+</listitem><listitem><para>Other arrays (including <computeroutput>uint8_t</computeroutput> buffers) are compared element by element, also with a container.</para>
+</listitem><listitem><para>Other pointers are compared by address.</para>
+</listitem><listitem><para>Values of the application types are displayed only if the application provides an <computeroutput>operator&lt;&lt;</computeroutput> for them; see <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-customisation" kindref="compound">Customisation</ref>.</para>
+</listitem></itemizedlist>
+</para>
 </simplesect>
-Containers can be compared for equality or inequality using the same comparator functions. The comparison is performed with the <computeroutput>==</computeroutput> operator of the containers, so they must be of types that can be compared, usually of the same type. The standard <computeroutput>==</computeroutput> and <computeroutput>!=</computeroutput> operators return a plain <computeroutput>bool</computeroutput>, so a failed check written with them could not show the elements. Only the first 16 elements of a container are shown; when two longer containers differ after them, the report adds the index of the first difference.</para>
-<para><simplesect kind="par"><title>Examples</title><para></para>
+<simplesect kind="par"><title>Comparing approximately</title><para>The comparison of floating-point values with <computeroutput>eq()</computeroutput> is exact, so <computeroutput>mt::eq (0.1 + 0.2, 0.3)</computeroutput> fails. To accept a difference, use <computeroutput>mt::approx (a, b, epsilon)</computeroutput>, which is true when the operands differ by at most <computeroutput>epsilon</computeroutput>, the limit included:<itemizedlist>
+<listitem><para>the operands and the tolerance are integral or floating-point numbers, of any type; the distance of integers is computed exactly, also for operands of different signedness;</para>
+</listitem><listitem><para>a negative tolerance fails all the comparisons;</para>
+</listitem><listitem><para>a failed check shows the operands and the tolerance, as in <computeroutput>1.0 ~ (1.5 +/- 0.1)</computeroutput>.</para>
+</listitem></itemizedlist>
+</para>
 </simplesect>
-<programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
-<codeline><highlight class="normal"></highlight></codeline>
-<codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>containers&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
+<programlisting filename=".cpp"><codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>approximate<sp/>values&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::approx<sp/>(read_adc<sp/>(),<sp/>512,<sp/>3))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ADC<sp/>reading&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::approx<sp/>(compute_float<sp/>(),<sp/>42.0f,<sp/>0.001f))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;result<sp/>is<sp/>about<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">});</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="par"><title>Comparing containers</title><para>Containers are compared with their own operators, so they must be comparable, usually by being of the same type. When the check fails, the elements of both containers are shown, up to the first 16; when two longer containers differ after them, the report adds the index of the first difference.</para>
+</simplesect>
+<programlisting filename=".cpp"><codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>containers&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::eq<sp/>(std::vector&lt;int&gt;{<sp/>1,<sp/>2<sp/>},<sp/>std::vector&lt;int&gt;{<sp/>1,<sp/>2<sp/>}))</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;vector{<sp/>1,<sp/>2<sp/>}<sp/>eq<sp/>vector{<sp/>1,<sp/>2<sp/>}&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -625,7 +631,7 @@ Containers can be compared for equality or inequality using the same comparator 
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;{<sp/>1,<sp/>2,<sp/>4<sp/>}))</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;vector{<sp/>1,<sp/>2,<sp/>3<sp/>}<sp/>ne<sp/>vector{<sp/>1,<sp/>2,<sp/>4<sp/>}&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal">});</highlight></codeline>
-</programlisting></para>
+</programlisting>  </para>
     </detaileddescription>
   </compounddef>
 </doxygen>

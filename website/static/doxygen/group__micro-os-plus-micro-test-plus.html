@@ -115,24 +115,34 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__micro-o
 </div><!--header-->
 <div class="contents">
 
-<p>Topics related to the µTest++ Testing Framework.  
+<p>The µTest++ Testing Framework.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-groups" class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
 <tr class="memitem:micro-os-plus-micro-test-plus-cpp-api" id="r_micro-os-plus-micro-test-plus-cpp-api"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api.html">C++ API</a></td></tr>
-<tr class="memdesc:group__micro-os-plus-micro-test-plus-cpp-api"><td class="mdescLeft">&#160;</td><td class="mdescRight">Topics related to the µTest++ C++ API. <br /></td></tr>
+<tr class="memdesc:group__micro-os-plus-micro-test-plus-cpp-api"><td class="mdescLeft">&#160;</td><td class="mdescRight">How to write the tests. <br /></td></tr>
 <tr class="memitem:micro-os-plus-micro-test-plus-c-api" id="r_micro-os-plus-micro-test-plus-c-api"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-c-api.html">C API</a></td></tr>
-<tr class="memdesc:group__micro-os-plus-micro-test-plus-c-api"><td class="mdescLeft">&#160;</td><td class="mdescRight">Topics related to the µTest++ C API. <br /></td></tr>
+<tr class="memdesc:group__micro-os-plus-micro-test-plus-c-api"><td class="mdescLeft">&#160;</td><td class="mdescRight">There is no C API; C code is tested from C++. <br /></td></tr>
 <tr class="memitem:micro-os-plus-micro-test-plus-config" id="r_micro-os-plus-micro-test-plus-config"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-config.html">Configuration</a></td></tr>
-<tr class="memdesc:group__micro-os-plus-micro-test-plus-config"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration macros. <br /></td></tr>
-<tr class="memitem:micro-os-plus-micro-test-plus-cli" id="r_micro-os-plus-micro-test-plus-cli"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cli.html">Command Line Options</a></td></tr>
+<tr class="memdesc:group__micro-os-plus-micro-test-plus-config"><td class="mdescLeft">&#160;</td><td class="mdescRight">The macros that enable and configure the framework. <br /></td></tr>
+<tr class="memitem:micro-os-plus-micro-test-plus-cli" id="r_micro-os-plus-micro-test-plus-cli"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cli.html">Command-Line Options</a></td></tr>
 <tr class="memdesc:group__micro-os-plus-micro-test-plus-cli"><td class="mdescLeft">&#160;</td><td class="mdescRight">Options for controlling the test output at run time. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <b>µTest++</b> project is a <b>modern C++</b> library designed to provide a <b>lightweight and efficient</b>, <b>macro free</b>, <b>TAP based</b> testing framework, purpose-built for embedded systems development.</p>
-<p>The <b>C++ API</b> is the primary interface for writing test suites and test cases. It is centred on the <span class="tt">runner</span> and <span class="tt">test_case</span> classes, which provide methods for registering tests, evaluating expectations and requirements, and collecting results. Function comparators and logical functions complement the core API to enable expressive, type-safe assertions with no macro dependencies. The API is documented in the <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api.html" title="C++ API">C++ API</a> group.</p>
-<p>The <b>command-line interface (CLI)</b> allows test executables to be configured at run time without recompilation. Arguments are passed to <span class="tt">runner::initialise()</span> and control aspects such as the verbosity level, the output reporter format, the colours, an output file, and the selection or listing of the test cases. The available options are documented in the <a class="el" href="group__micro-os-plus-micro-test-plus-cli.html" title="Command Line Options">Command Line Options</a> group.  </p>
+<div class="textblock"><p>µTest++ is a C++20 testing framework for embedded targets, which also runs on the native platforms. The tests are ordinary C++ code, functions and lambdas, with no preprocessor macros.</p>
+<p>A test program uses three classes:</p><ul>
+<li>the <span class="tt">runner</span>, which reads the command line, runs the suites, and returns the exit code;</li>
+<li>the <span class="tt">suite</span>, a named group of test cases;</li>
+<li>the <span class="tt">test_case</span>, a named sequence of checks, made with <span class="tt">expect()</span> and <span class="tt">require()</span>.</li>
+</ul>
+<p>The results are written in the TAP format, for the tools that read test results, or in a human-readable format.</p>
+<p>The topics are grouped in four parts:</p><ul>
+<li>how to write the tests, in <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api.html" title="C++ API">C++ API</a>;</li>
+<li>how to test C code, in <a class="el" href="group__micro-os-plus-micro-test-plus-c-api.html" title="C API">C API</a>;</li>
+<li>the macros that enable the framework, in <a class="el" href="group__micro-os-plus-micro-test-plus-config.html" title="Configuration">Configuration</a>;</li>
+<li>the options of the test programs, in <a class="el" href="group__micro-os-plus-micro-test-plus-cli.html" title="Command-Line Options">Command-Line Options</a>.  </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

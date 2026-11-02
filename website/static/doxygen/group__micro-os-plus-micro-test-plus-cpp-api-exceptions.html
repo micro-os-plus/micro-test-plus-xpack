@@ -131,12 +131,18 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga63345b69c376caae707262748aa6aea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a callable throws a specific exception, for <span class="tt">expect()</span> or <span class="tt">require()</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Dedicated exception-check utilities verify whether expressions or function calls throw. These utilities support robust testing of error handling and exceptional conditions in C++ code.</p>
-<p>Developers can assert that exceptions are thrown, or not thrown, as expected, improving the reliability and safety of software components. The framework supports both generic checks and type-specific verification, allowing precise and expressive test cases.</p>
-<p>When such a check fails, the report states why: for example <span class="tt">throws&lt;std::runtime_error&gt;, but nothing was thrown</span>, <span class="tt">throws&lt;std::runtime_error&gt;, but a std::exception was thrown: "what"</span> (with the text returned by its <span class="tt">what()</span>), or <span class="tt">nothrow, but an exception of unknown type was thrown</span>.</p>
+<div class="textblock"><p>Three functions check what a callable throws, and are used as the conditions of <span class="tt">expect()</span> or <span class="tt">require()</span>:</p><ul>
+<li><span class="tt">mt::throws (callable)</span> is true when the callable throws any exception;</li>
+<li><span class="tt">mt::throws&lt;E&gt; (callable)</span> is true when it throws an exception of type <span class="tt">E</span>, or of a type derived from it;</li>
+<li><span class="tt">mt::nothrow (callable)</span> is true when it throws nothing.</li>
+</ul>
+<p>The exception is caught by the check, so it does not leave the test case. When the check fails, the report states why, for example:</p><ul>
+<li><span class="tt">throws&lt;std::runtime_error&gt;, but nothing was thrown</span>;</li>
+<li><span class="tt">throws&lt;std::runtime_error&gt;, but a std::exception was thrown: "what"</span>, with the text returned by its <span class="tt">what()</span>;</li>
+<li><span class="tt">nothrow, but an exception of unknown type was thrown</span>.</li>
+</ul>
 <p>A failed <span class="tt">require()</span> inside the callable is not an exception of the callable: it stops the test case, as it does elsewhere, and does not satisfy <span class="tt">throws()</span> or fail <span class="tt">nothrow()</span>.</p>
-<p>For advanced scenarios, such as handling multiple expected exception types, use explicit <span class="tt">try</span> blocks with multiple <span class="tt">catch</span> statements and report results with <span class="tt">expect(true)</span> or <span class="tt">expect(false)</span>. This approach enables comprehensive coverage of exception-handling logic.</p>
-<dl class="section user"><dt>Examples</dt><dd></dd></dl>
+<dl class="section user"><dt>Example</dt><dd></dd></dl>
 <div class="fragment"><div class="line">ts.test (<span class="stringliteral">&quot;Check if exceptions are thrown&quot;</span>, [] (<span class="keyword">auto</span>&amp; t) {</div>
 <div class="line">  t.expect (mt::throws ([] { exercise_throw (<span class="keyword">true</span>); }))</div>
 <div class="line">      &lt;&lt; <span class="stringliteral">&quot;exception thrown&quot;</span>;</div>
@@ -148,10 +154,13 @@ Functions</h2></td></tr>
 <div class="line">  t.expect (mt::nothrow ([] { exercise_throw (<span class="keyword">false</span>); }))</div>
 <div class="line">      &lt;&lt; <span class="stringliteral">&quot;exception not thrown&quot;</span>;</div>
 <div class="line">});</div>
-</div><!-- fragment --><div class="fragment"><div class="line">ts.test (<span class="stringliteral">&quot;Check exceptions explicitly&quot;</span>, [] (<span class="keyword">auto</span>&amp; t) {</div>
+</div><!-- fragment --><dl class="section user"><dt>Availability</dt><dd>The functions are declared only when the compiler defines <span class="tt">__cpp_exceptions</span>. In a build without exceptions (for example with <span class="tt">-fno-exceptions</span>), the code under test cannot throw, the functions do not exist, and a test case that calls them does not compile; guard such test cases with <span class="tt">#if defined(__cpp_exceptions)</span>.</dd></dl>
+<dl class="section user"><dt>Several exception types</dt><dd>To accept one of several exception types, use a <span class="tt">try</span> block with a <span class="tt">catch</span> for each type, and report each outcome with <span class="tt">expect (true)</span> or <span class="tt">expect (false)</span>. Check the normal path too, after the call in the <span class="tt">try</span> block; otherwise a call that throws nothing passes with no check:</dd></dl>
+<div class="fragment"><div class="line">ts.test (<span class="stringliteral">&quot;Check exceptions explicitly&quot;</span>, [] (<span class="keyword">auto</span>&amp; t) {</div>
 <div class="line">  <span class="keywordflow">try</span></div>
 <div class="line">    {</div>
 <div class="line">      compute_answer ();</div>
+<div class="line">      t.expect (<span class="keyword">false</span>) &lt;&lt; <span class="stringliteral">&quot;no exception thrown&quot;</span>;</div>
 <div class="line">    }</div>
 <div class="line">  <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::overflow_error&amp; e)</div>
 <div class="line">    {</div>
@@ -207,15 +216,15 @@ template&lt;class Callable_T&gt; </div>
 <p>The <span class="tt"><a class="el" href="#gacbf45f8ba39c0653bbf1035c70dd9529" title="Checks whether a callable does not throw any exception, for expect() or require().">nothrow</a></span> function template verifies whether invoking the provided callable object does not result in the throwing of any exception within the µTest++ framework. This is useful for ensuring that code under test does not unexpectedly signal error conditions.</p>
 <p>The callable is invoked immediately, when the comparator is constructed; the result is reported when the comparator is passed to <span class="tt">expect()</span> or <span class="tt">require()</span>, which also accept optional messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="exceptions-inlines_8h_source.html#l00118">118</a> of file <a class="el" href="exceptions-inlines_8h_source.html">exceptions-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  119</span>  {</div>
-<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op.html">detail::nothrow_op</a>{ func };</div>
-<div class="line"><span class="lineno">  121</span>  }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op.html">micro_os_plus::micro_test_plus::detail::nothrow_op</a></div><div class="ttdoc">Operator struct to check if an expression does not throw any exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01506">detail.h:1507</a></div></div>
+<p class="definition">Definition at line <a class="el" href="exceptions-inlines_8h_source.html#l00117">117</a> of file <a class="el" href="exceptions-inlines_8h_source.html">exceptions-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  118</span>  {</div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op.html">detail::nothrow_op</a>{ func };</div>
+<div class="line"><span class="lineno">  120</span>  }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op.html">micro_os_plus::micro_test_plus::detail::nothrow_op</a></div><div class="ttdoc">Operator struct to check if an expression does not throw any exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01499">detail.h:1500</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="exceptions-inlines_8h_source.html#l00118">nothrow()</a>.</p>
+<p class="reference">References <a class="el" href="exceptions-inlines_8h_source.html#l00117">nothrow()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="exceptions-inlines_8h_source.html#l00118">nothrow()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="exceptions-inlines_8h_source.html#l00117">nothrow()</a>.</p>
 
 </div>
 </div>
@@ -260,11 +269,11 @@ template&lt;class Callable_T&gt; </div>
 <p>The <span class="tt"><a class="el" href="#ga63345b69c376caae707262748aa6aea1" title="Checks whether a callable throws a specific exception, for expect() or require().">throws</a></span> function template verifies whether invoking the provided callable object results in the throwing of any exception within the µTest++ framework. This is useful for ensuring that code under test properly signals error conditions.</p>
 <p>The callable is invoked immediately, when the comparator is constructed; the result is reported when the comparator is passed to <span class="tt">expect()</span> or <span class="tt">require()</span>, which also accept optional messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="exceptions-inlines_8h_source.html#l00100">100</a> of file <a class="el" href="exceptions-inlines_8h_source.html">exceptions-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  101</span>  {</div>
-<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">detail::throws_op&lt;&gt;</a>{ func };</div>
-<div class="line"><span class="lineno">  103</span>  }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">micro_os_plus::micro_test_plus::detail::throws_op</a></div><div class="ttdoc">Operator struct template to check if an expression throws a specific exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01447">detail.h:1448</a></div></div>
+<p class="definition">Definition at line <a class="el" href="exceptions-inlines_8h_source.html#l00099">99</a> of file <a class="el" href="exceptions-inlines_8h_source.html">exceptions-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>  {</div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">detail::throws_op&lt;&gt;</a>{ func };</div>
+<div class="line"><span class="lineno">  102</span>  }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">micro_os_plus::micro_test_plus::detail::throws_op</a></div><div class="ttdoc">Operator struct template to check if an expression throws a specific exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01440">detail.h:1441</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -310,10 +319,10 @@ template&lt;class Exception_T, class Callable_T&gt; </div>
 <p>The <span class="tt"><a class="el" href="#ga63345b69c376caae707262748aa6aea1" title="Checks whether a callable throws a specific exception, for expect() or require().">throws</a></span> function template verifies whether invoking the provided callable object results in the throwing of a specific exception type within the µTest++ framework. This is useful for testing error handling in code under test. Exceptions of other types are reported as failures.</p>
 <p>The callable is invoked immediately, when the comparator is constructed; the result is reported when the comparator is passed to <span class="tt">expect()</span> or <span class="tt">require()</span>, which also accept optional messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="exceptions-inlines_8h_source.html#l00082">82</a> of file <a class="el" href="exceptions-inlines_8h_source.html">exceptions-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   83</span>  {</div>
-<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">detail::throws_op&lt;Exception_T&gt;</a>{ func };</div>
-<div class="line"><span class="lineno">   85</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="exceptions-inlines_8h_source.html#l00081">81</a> of file <a class="el" href="exceptions-inlines_8h_source.html">exceptions-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>  {</div>
+<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">detail::throws_op&lt;Exception_T&gt;</a>{ func };</div>
+<div class="line"><span class="lineno">   84</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -8,10 +8,10 @@
 <para>Test cases are named sequences of checks. </para>
     </briefdescription>
     <detaileddescription>
-<para>Each test case is defined by calling <computeroutput>suite::test()</computeroutput> with a descriptive name and a callable object (typically a lambda accepting a <computeroutput>test_case&amp;</computeroutput> reference), along with any optional arguments required for the test. The test case runs immediately, within the call. Nested test cases are defined with <computeroutput>test_case::test()</computeroutput>, and a test case for each value of a range or a tuple with <computeroutput>test_each()</computeroutput>.</para>
-<para>Test cases allow related checks to be organised together within the same environment, improving clarity and maintainability. Any number of test cases may be defined, each focusing on a specific aspect of the code under test.</para>
-<para>By grouping checks in this way, developers can identify which functionality is being verified and interpret results in the context of overall software quality.</para>
-<para><simplesect kind="par"><title>Examples</title><para></para>
+<para>A test case is created with <computeroutput>test()</computeroutput>, called on a suite, with a name and a callable, usually a lambda that receives the test case (<computeroutput>[] (auto&amp; t) { ... }</computeroutput>), followed by any arguments for the callable. The test case runs immediately, within the call, and its checks are made on the test case received by the lambda (<computeroutput>t.expect (...)</computeroutput>).</para>
+<para>Write one test case for each behaviour of the code under test; the report shows the result of each test case, so a failure points to the behaviour that broke.</para>
+<para>A test case can contain other test cases, created with <computeroutput>test()</computeroutput> on the test case itself (<computeroutput>t.test (...)</computeroutput>); they are reported nested.</para>
+<para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
 <programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
@@ -20,6 +20,27 @@
 <codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::eq<sp/>(compute_answer<sp/>(),<sp/>42))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>eq<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::ne<sp/>(compute_answer<sp/>(),<sp/>43))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;answer<sp/>ne<sp/>43&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal">});</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="par"><title>Test cases for several values</title><para></para>
+</simplesect>
+<computeroutput>test_each()</computeroutput>, called on a suite or on a test case, creates and runs a test case for each value of a range (a container, an array, a span, or a view), of a list written in place, or of a tuple, whose values may have different types. The callable receives the test case and the value, and a generic lambda is needed for a tuple. Each test case is named after the common name, followed by the value in parentheses, such as <computeroutput>Sizes (16)</computeroutput>; a value that cannot be written, such as an application type without an <computeroutput>operator&lt;&lt;</computeroutput>, is replaced by its position, starting at 1, such as <computeroutput>Records (#2)</computeroutput>.</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">ts.test_each<sp/>(</highlight><highlight class="stringliteral">&quot;Sizes&quot;</highlight><highlight class="normal">,<sp/>std::vector&lt;int&gt;{<sp/>1,<sp/>16,<sp/>512<sp/>},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size)<sp/>{<sp/>t.expect<sp/>(mt::gt<sp/>(size,<sp/>0));<sp/>});</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">ts.test_each<sp/>(</highlight><highlight class="stringliteral">&quot;Limits&quot;</highlight><highlight class="normal">,<sp/>{<sp/>3,<sp/>4<sp/>},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>limit)<sp/>{<sp/>t.expect<sp/>(mt::gt<sp/>(limit,<sp/>2));<sp/>});</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">ts.test_each<sp/>(</highlight><highlight class="stringliteral">&quot;Types&quot;</highlight><highlight class="normal">,<sp/>std::tuple{<sp/>42,<sp/>1.5,<sp/></highlight><highlight class="stringliteral">&quot;text&quot;</highlight><highlight class="normal"><sp/>},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>value)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t.expect<sp/>(mt::eq<sp/>(value,<sp/>value));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+</programlisting></para>
+<para>With the TAP reporter, the first call is reported as:</para>
+<para><programlisting filename=".console"><codeline><highlight class="normal">ok<sp/>1<sp/>-<sp/>Sizes<sp/>(1)<sp/>#<sp/>{<sp/>passed,<sp/>1<sp/>check<sp/>}</highlight></codeline>
+<codeline><highlight class="normal">ok<sp/>2<sp/>-<sp/>Sizes<sp/>(16)<sp/>#<sp/>{<sp/>passed,<sp/>1<sp/>check<sp/>}</highlight></codeline>
+<codeline><highlight class="normal">ok<sp/>3<sp/>-<sp/>Sizes<sp/>(512)<sp/>#<sp/>{<sp/>passed,<sp/>1<sp/>check<sp/>}</highlight></codeline>
 </programlisting>  </para>
     </detaileddescription>
   </compounddef>

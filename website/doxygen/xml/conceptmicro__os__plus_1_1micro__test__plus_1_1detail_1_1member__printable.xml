@@ -13,9 +13,9 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1mem
             formatter.operator&lt;&lt; (<ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" kindref="compound">value</ref>);
           }</initializer>
     <conceptparts>
-      <codepart line="1665">    <programlisting>
+      <codepart line="1664">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">member_printable<sp/>=<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gabecc05360d0941067222d827ff8e3f08" kindref="member">expression_formatter</ref>&amp;<sp/>formatter,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>value)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">member_printable<sp/>=<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-customisation_1gabecc05360d0941067222d827ff8e3f08" kindref="member">expression_formatter</ref>&amp;<sp/>formatter,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>value)<sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>formatter.operator&lt;&lt;<sp/>(value);</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
     </programlisting>
@@ -37,6 +37,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1mem
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="1664" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="1663" column="5"/>
   </compounddef>
 </doxygen>

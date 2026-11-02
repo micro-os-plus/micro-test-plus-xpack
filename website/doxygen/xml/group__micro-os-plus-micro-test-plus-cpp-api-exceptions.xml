@@ -48,9 +48,9 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exc
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="118" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="118" bodyend="121" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="132" declcolumn="3"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gacbf45f8ba39c0653bbf1035c70dd9529" compoundref="exceptions-inlines_8h" startline="118" endline="121">micro_os_plus::micro_test_plus::nothrow</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gacbf45f8ba39c0653bbf1035c70dd9529" compoundref="exceptions-inlines_8h" startline="118" endline="121">micro_os_plus::micro_test_plus::nothrow</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="117" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="117" bodyend="120" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="131" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gacbf45f8ba39c0653bbf1035c70dd9529" compoundref="exceptions-inlines_8h" startline="117" endline="120">micro_os_plus::micro_test_plus::nothrow</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gacbf45f8ba39c0653bbf1035c70dd9529" compoundref="exceptions-inlines_8h" startline="117" endline="120">micro_os_plus::micro_test_plus::nothrow</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gadf818920a5a7ba9905466c521deb342e" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -97,7 +97,7 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exc
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="100" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="100" bodyend="103" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="118" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="99" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="99" bodyend="102" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="117" declcolumn="3"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga63345b69c376caae707262748aa6aea1" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -155,19 +155,27 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exc
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="82" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="82" bodyend="85" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="99" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="81" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="81" bodyend="84" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="98" declcolumn="3"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Functions for verifying exceptions in test cases. </para>
     </briefdescription>
     <detaileddescription>
-<para>Dedicated exception-check utilities verify whether expressions or function calls throw. These utilities support robust testing of error handling and exceptional conditions in C++ code.</para>
-<para>Developers can assert that exceptions are thrown, or not thrown, as expected, improving the reliability and safety of software components. The framework supports both generic checks and type-specific verification, allowing precise and expressive test cases.</para>
-<para>When such a check fails, the report states why: for example <computeroutput>throws&lt;std::runtime_error&gt;, but nothing was thrown</computeroutput>, <computeroutput>throws&lt;std::runtime_error&gt;, but a std::exception was thrown: "what"</computeroutput> (with the text returned by its <computeroutput>what()</computeroutput>), or <computeroutput>nothrow, but an exception of unknown type was thrown</computeroutput>.</para>
+<para>Three functions check what a callable throws, and are used as the conditions of <computeroutput>expect()</computeroutput> or <computeroutput>require()</computeroutput>:<itemizedlist>
+<listitem><para><computeroutput>mt::throws (callable)</computeroutput> is true when the callable throws any exception;</para>
+</listitem><listitem><para><computeroutput>mt::throws&lt;E&gt; (callable)</computeroutput> is true when it throws an exception of type <computeroutput>E</computeroutput>, or of a type derived from it;</para>
+</listitem><listitem><para><computeroutput>mt::nothrow (callable)</computeroutput> is true when it throws nothing.</para>
+</listitem></itemizedlist>
+</para>
+<para>The exception is caught by the check, so it does not leave the test case. When the check fails, the report states why, for example:<itemizedlist>
+<listitem><para><computeroutput>throws&lt;std::runtime_error&gt;, but nothing was thrown</computeroutput>;</para>
+</listitem><listitem><para><computeroutput>throws&lt;std::runtime_error&gt;, but a std::exception was thrown: "what"</computeroutput>, with the text returned by its <computeroutput>what()</computeroutput>;</para>
+</listitem><listitem><para><computeroutput>nothrow, but an exception of unknown type was thrown</computeroutput>.</para>
+</listitem></itemizedlist>
+</para>
 <para>A failed <computeroutput>require()</computeroutput> inside the callable is not an exception of the callable: it stops the test case, as it does elsewhere, and does not satisfy <computeroutput>throws()</computeroutput> or fail <computeroutput>nothrow()</computeroutput>.</para>
-<para>For advanced scenarios, such as handling multiple expected exception types, use explicit <computeroutput>try</computeroutput> blocks with multiple <computeroutput>catch</computeroutput> statements and report results with <computeroutput>expect(true)</computeroutput> or <computeroutput>expect(false)</computeroutput>. This approach enables comprehensive coverage of exception-handling logic.</para>
-<para><simplesect kind="par"><title>Examples</title><para></para>
+<para><simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
 <programlisting filename=".cpp"><codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>if<sp/>exceptions<sp/>are<sp/>thrown&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>t.expect<sp/>(mt::throws<sp/>([]<sp/>{<sp/>exercise_throw<sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);<sp/>}))</highlight></codeline>
@@ -181,10 +189,15 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exc
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;exception<sp/>not<sp/>thrown&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal">});</highlight></codeline>
 </programlisting></para>
-<para><programlisting filename=".cpp"><codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>exceptions<sp/>explicitly&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
+<para><simplesect kind="par"><title>Availability</title><para>The functions are declared only when the compiler defines <computeroutput>__cpp_exceptions</computeroutput>. In a build without exceptions (for example with <computeroutput>-fno-exceptions</computeroutput>), the code under test cannot throw, the functions do not exist, and a test case that calls them does not compile; guard such test cases with <computeroutput>#if defined(__cpp_exceptions)</computeroutput>.</para>
+</simplesect>
+<simplesect kind="par"><title>Several exception types</title><para>To accept one of several exception types, use a <computeroutput>try</computeroutput> block with a <computeroutput>catch</computeroutput> for each type, and report each outcome with <computeroutput>expect (true)</computeroutput> or <computeroutput>expect (false)</computeroutput>. Check the normal path too, after the call in the <computeroutput>try</computeroutput> block; otherwise a call that throws nothing passes with no check:</para>
+</simplesect>
+<programlisting filename=".cpp"><codeline><highlight class="normal">ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>exceptions<sp/>explicitly&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>compute_answer<sp/>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>t.expect<sp/>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;no<sp/>exception<sp/>thrown&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::overflow_error&amp;<sp/>e)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>

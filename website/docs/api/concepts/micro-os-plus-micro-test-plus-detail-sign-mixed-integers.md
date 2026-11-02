@@ -47,7 +47,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>The built-in comparison of a signed and an unsigned operand converts the signed one to the unsigned type, so <span class="doxyComputerOutput">-1 &lt; 1u</span> is false. For these pairs the comparisons use the <span class="doxyComputerOutput">std::cmp_*()</span> functions, which compare the mathematical values. <span class="doxyComputerOutput">bool</span> and the character types are excluded, since <span class="doxyComputerOutput">std::cmp_*()</span> do not accept them and their comparison with integers is not a sign problem.</p>
 
 
-<p>Definition at line 279 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">detail-inlines.h</a>.</p>
+<p>Definition at line 278 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">detail-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -73,6 +73,6 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.5 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

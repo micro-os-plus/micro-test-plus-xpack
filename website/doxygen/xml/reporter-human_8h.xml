@@ -342,7 +342,7 @@
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus">micro_os_plus::micro_test_plus</innernamespace>
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail">micro_os_plus::micro_test_plus::detail</innernamespace>
     <briefdescription>
-<para>C++ header file with declarations for the µTest++ human test reporter. </para>
+<para>C++ header file with declarations for the µTest++ human-readable reporter. </para>
     </briefdescription>
     <detaileddescription>
 <para>This header provides the declaration for <computeroutput>reporter_human</computeroutput>, a concrete implementation of the <computeroutput>reporter</computeroutput> abstract interface, selected with the <computeroutput>--reporter=human</computeroutput> command-line option, or with <computeroutput>runner_options::selected_reporter</computeroutput> (the default is TAP). It formats and presents test results in a human-readable form on the standard output, accumulating output in an internal string buffer and supporting colour-coded diagnostics and multiple verbosity levels.</para>

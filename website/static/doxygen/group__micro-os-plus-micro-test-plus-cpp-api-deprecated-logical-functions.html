@@ -131,8 +131,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga1c7ddbf53764ab67240f1cf0e0fb4b8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated generic logical (inclusive) <b>or</b> operation, the v5.0.1 name of <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gadc2224d07a9bf118c8772518a7d3c4fd" title="Generic logical (inclusive) or operation, for two or more operands.">any_of()</a></span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The functions <span class="tt">mt::_and()</span>, <span class="tt">mt::_or()</span>, and <span class="tt">mt::_not()</span> are the v5.0.1 names of <span class="tt">mt::all_of()</span>, <span class="tt">mt::any_of()</span>, and <span class="tt">mt::negate()</span>. They are deprecated since 6.0.0, and are kept for compatibility with the existing applications; they behave as the functions that replace them.</p>
-<p>The names were changed since a leading underscore is not used by the other public names. Unlike the replacements, <span class="tt">mt::_and()</span> and <span class="tt">mt::_or()</span> take exactly two operands, whereas <span class="tt">mt::all_of()</span> and <span class="tt">mt::any_of()</span> take two or more.</p>
+<div class="textblock"><p>The functions <span class="tt">mt::_and()</span>, <span class="tt">mt::_or()</span>, and <span class="tt">mt::_not()</span> are the v5.0.1 names of <span class="tt">mt::all_of()</span>, <span class="tt">mt::any_of()</span>, and <span class="tt">mt::negate()</span>, and behave as them. They are deprecated since 6.0.0, because no other public name starts with an underscore.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Deprecated  </th><th class="markdownTableHeadNone">Replacement  </th></tr>
@@ -143,6 +142,7 @@ Functions</h2></td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">mt::_not()</span>  </td><td class="markdownTableBodyNone"><span class="tt">mt::negate()</span>  </td></tr>
 </table>
+<p>Unlike the replacements, <span class="tt">mt::_and()</span> and <span class="tt">mt::_or()</span> take exactly two operands, whereas <span class="tt">mt::all_of()</span> and <span class="tt">mt::any_of()</span> take two or more.</p>
 <dl class="section user"><dt>Example</dt><dd></dd></dl>
 <div class="fragment"><div class="line"><span class="comment">// Deprecated.</span></div>
 <div class="line">t.expect (mt::_and (mt::eq (compute_answer (), 42),</div>
@@ -151,7 +151,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="comment">// Replacement.</span></div>
 <div class="line">t.expect (mt::all_of (mt::eq (compute_answer (), 42),</div>
 <div class="line">                      mt::lt (compute_answer (), 43)));</div>
-</div><!-- fragment --><p>The overloaded logical operators of the <span class="tt">micro_test_plus::operators</span> namespace are also deprecated since 6.0.0, in favour of the same replacement functions.  </p>
+</div><!-- fragment --><p>The overloaded logical operators of the <span class="tt">mt::operators</span> namespace are also deprecated since 6.0.0, in favour of the same functions.  </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="ga9998cd63972fac8b24a2f0138322e7c1" name="ga9998cd63972fac8b24a2f0138322e7c1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga9998cd63972fac8b24a2f0138322e7c1">&#9670;&#160;</a></span>_and()</h2>
@@ -200,15 +200,15 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000005">Deprecated</a></b></dt><dd>use <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" title="Generic logical and operation, for two or more operands.">all_of()</a> (since 6.0.0)</dd></dl>
 <p>Forwards to <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" title="Generic logical and operation, for two or more operands.">all_of()</a></span>, so the returned expression is the same, and is reported in the same way. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00701">701</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  702</span>  {</div>
-<div class="line"><span class="lineno">  703</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#ga0a385c59a2f7d3c4cfef77d2d3b4f3d6">all_of</a> (std::forward&lt;Lhs_T&gt; (lhs), std::forward&lt;Rhs_T&gt; (rhs));</div>
-<div class="line"><span class="lineno">  704</span>  }</div>
-<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-cpp-api-logical-functions_html_ga0a385c59a2f7d3c4cfef77d2d3b4f3d6"><div class="ttname"><a href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#ga0a385c59a2f7d3c4cfef77d2d3b4f3d6">micro_os_plus::micro_test_plus::all_of</a></div><div class="ttdeci">constexpr auto all_of(First_T &amp;&amp;first, Second_T &amp;&amp;second, Rest_T &amp;&amp;... rest)</div><div class="ttdoc">Generic logical and operation, for two or more operands.</div><div class="ttdef"><b>Definition</b> <a href="function-comparators-inlines_8h_source.html#l00265">function-comparators-inlines.h:265</a></div></div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00700">700</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  701</span>  {</div>
+<div class="line"><span class="lineno">  702</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#ga0a385c59a2f7d3c4cfef77d2d3b4f3d6">all_of</a> (std::forward&lt;Lhs_T&gt; (lhs), std::forward&lt;Rhs_T&gt; (rhs));</div>
+<div class="line"><span class="lineno">  703</span>  }</div>
+<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-cpp-api-logical-functions_html_ga0a385c59a2f7d3c4cfef77d2d3b4f3d6"><div class="ttname"><a href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#ga0a385c59a2f7d3c4cfef77d2d3b4f3d6">micro_os_plus::micro_test_plus::all_of</a></div><div class="ttdeci">constexpr auto all_of(First_T &amp;&amp;first, Second_T &amp;&amp;second, Rest_T &amp;&amp;... rest)</div><div class="ttdoc">Generic logical and operation, for two or more operands.</div><div class="ttdef"><b>Definition</b> <a href="function-comparators-inlines_8h_source.html#l00264">function-comparators-inlines.h:264</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00701">_and()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00265">all_of()</a>.</p>
+<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00700">_and()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00264">all_of()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00701">_and()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00700">_and()</a>.</p>
 
 </div>
 </div>
@@ -253,15 +253,15 @@ template&lt;class Expr_T&gt; </div>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated</a></b></dt><dd>use <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gae82d39ac86167bb4bfa6624676f3729e" title="Generic logical not operation.">negate()</a> (since 6.0.0)</dd></dl>
 <p>Forwards to <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gae82d39ac86167bb4bfa6624676f3729e" title="Generic logical not operation.">negate()</a></span>, so the returned expression is the same, and is reported in the same way. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00688">688</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  689</span>  {</div>
-<div class="line"><span class="lineno">  690</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gae82d39ac86167bb4bfa6624676f3729e">negate</a> (std::forward&lt;Expr_T&gt; (expr));</div>
-<div class="line"><span class="lineno">  691</span>  }</div>
-<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-cpp-api-logical-functions_html_gae82d39ac86167bb4bfa6624676f3729e"><div class="ttname"><a href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gae82d39ac86167bb4bfa6624676f3729e">micro_os_plus::micro_test_plus::negate</a></div><div class="ttdeci">constexpr auto negate(Expr_T &amp;&amp;expr)</div><div class="ttdoc">Generic logical not operation.</div><div class="ttdef"><b>Definition</b> <a href="function-comparators-inlines_8h_source.html#l00235">function-comparators-inlines.h:235</a></div></div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00687">687</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  688</span>  {</div>
+<div class="line"><span class="lineno">  689</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gae82d39ac86167bb4bfa6624676f3729e">negate</a> (std::forward&lt;Expr_T&gt; (expr));</div>
+<div class="line"><span class="lineno">  690</span>  }</div>
+<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-cpp-api-logical-functions_html_gae82d39ac86167bb4bfa6624676f3729e"><div class="ttname"><a href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gae82d39ac86167bb4bfa6624676f3729e">micro_os_plus::micro_test_plus::negate</a></div><div class="ttdeci">constexpr auto negate(Expr_T &amp;&amp;expr)</div><div class="ttdoc">Generic logical not operation.</div><div class="ttdef"><b>Definition</b> <a href="function-comparators-inlines_8h_source.html#l00234">function-comparators-inlines.h:234</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00688">_not()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00235">negate()</a>.</p>
+<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00687">_not()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00234">negate()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00688">_not()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00687">_not()</a>.</p>
 
 </div>
 </div>
@@ -312,15 +312,15 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000006">Deprecated</a></b></dt><dd>use <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gadc2224d07a9bf118c8772518a7d3c4fd" title="Generic logical (inclusive) or operation, for two or more operands.">any_of()</a> (since 6.0.0)</dd></dl>
 <p>Forwards to <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gadc2224d07a9bf118c8772518a7d3c4fd" title="Generic logical (inclusive) or operation, for two or more operands.">any_of()</a></span>, so the returned expression is the same, and is reported in the same way. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00714">714</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  715</span>  {</div>
-<div class="line"><span class="lineno">  716</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gadc2224d07a9bf118c8772518a7d3c4fd">any_of</a> (std::forward&lt;Lhs_T&gt; (lhs), std::forward&lt;Rhs_T&gt; (rhs));</div>
-<div class="line"><span class="lineno">  717</span>  }</div>
-<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-cpp-api-logical-functions_html_gadc2224d07a9bf118c8772518a7d3c4fd"><div class="ttname"><a href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gadc2224d07a9bf118c8772518a7d3c4fd">micro_os_plus::micro_test_plus::any_of</a></div><div class="ttdeci">constexpr auto any_of(First_T &amp;&amp;first, Second_T &amp;&amp;second, Rest_T &amp;&amp;... rest)</div><div class="ttdoc">Generic logical (inclusive) or operation, for two or more operands.</div><div class="ttdef"><b>Definition</b> <a href="function-comparators-inlines_8h_source.html#l00300">function-comparators-inlines.h:300</a></div></div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00713">713</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  714</span>  {</div>
+<div class="line"><span class="lineno">  715</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gadc2224d07a9bf118c8772518a7d3c4fd">any_of</a> (std::forward&lt;Lhs_T&gt; (lhs), std::forward&lt;Rhs_T&gt; (rhs));</div>
+<div class="line"><span class="lineno">  716</span>  }</div>
+<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-cpp-api-logical-functions_html_gadc2224d07a9bf118c8772518a7d3c4fd"><div class="ttname"><a href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gadc2224d07a9bf118c8772518a7d3c4fd">micro_os_plus::micro_test_plus::any_of</a></div><div class="ttdeci">constexpr auto any_of(First_T &amp;&amp;first, Second_T &amp;&amp;second, Rest_T &amp;&amp;... rest)</div><div class="ttdoc">Generic logical (inclusive) or operation, for two or more operands.</div><div class="ttdef"><b>Definition</b> <a href="function-comparators-inlines_8h_source.html#l00299">function-comparators-inlines.h:299</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00714">_or()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00300">any_of()</a>.</p>
+<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00713">_or()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00299">any_of()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00714">_or()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00713">_or()</a>.</p>
 
 </div>
 </div>

@@ -9,6 +9,6 @@
     <detaileddescription>
 <para>The using-declarations make the standard operators visible to unqualified lookup, in addition to those found by argument-dependent lookup, as in the bodies of the <computeroutput>apply()</computeroutput> functions; the concept checks that the comparison is well-formed, without instantiating the bodies. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="363" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="362" column="5"/>
   </compounddef>
 </doxygen>

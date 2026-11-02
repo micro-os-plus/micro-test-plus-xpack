@@ -49,7 +49,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="365" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="365" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="364" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="364" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1abb9873b49614cc55fae3f6dda7b08b48" prot="public" static="no">
         <type>T</type>
@@ -65,7 +65,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="373" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="373" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="372" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="372" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-attrib">
@@ -84,10 +84,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="413" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="413" bodyend="413"/>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad2d04a9ef0d53c48107b13005ec0877d" compoundref="deprecated-inlines_8h" startline="487" endline="489">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::value_base</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a9199f28db3a365b60ca6ef17053cec2a" compoundref="deprecated-inlines_8h" startline="509" endline="512">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::get</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad81a4f621493097416d74f16aa458c6f" compoundref="deprecated-inlines_8h" startline="497" endline="500">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::operator T</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="412" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="412" bodyend="412"/>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad2d04a9ef0d53c48107b13005ec0877d" compoundref="deprecated-inlines_8h" startline="486" endline="488">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::value_base</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a9199f28db3a365b60ca6ef17053cec2a" compoundref="deprecated-inlines_8h" startline="508" endline="511">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::get</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad81a4f621493097416d74f16aa458c6f" compoundref="deprecated-inlines_8h" startline="496" endline="499">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::operator T</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -118,10 +118,10 @@ Stores the supplied value in the <computeroutput><ref refid="structmicro__os__pl
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="380" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="487" bodyend="489"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a5a34518dbc973dee068c7e4ae03cd217" compoundref="deprecated_8h" startline="413" endline="413">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::value_</references>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1a56168e5434409f1021bb86160e2352e4" compoundref="deprecated_8h" startline="697" endline="700">micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::value</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad81a4f621493097416d74f16aa458c6f" compoundref="deprecated-inlines_8h" startline="497" endline="500">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::operator T</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="379" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="486" bodyend="488"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a5a34518dbc973dee068c7e4ae03cd217" compoundref="deprecated_8h" startline="412" endline="412">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::value_</references>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1a56168e5434409f1021bb86160e2352e4" compoundref="deprecated_8h" startline="696" endline="699">micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::value</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad81a4f621493097416d74f16aa458c6f" compoundref="deprecated-inlines_8h" startline="496" endline="499">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::operator T</referencedby>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a9199f28db3a365b60ca6ef17053cec2a" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>const T &amp;</type>
@@ -145,8 +145,8 @@ Returns a <computeroutput>const</computeroutput> reference to the stored value, 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="403" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="509" bodyend="512"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a5a34518dbc973dee068c7e4ae03cd217" compoundref="deprecated_8h" startline="413" endline="413">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::value_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="402" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="508" bodyend="511"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a5a34518dbc973dee068c7e4ae03cd217" compoundref="deprecated_8h" startline="412" endline="412">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::value_</references>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad81a4f621493097416d74f16aa458c6f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="yes" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -164,9 +164,9 @@ Allows explicit conversion to the encapsulated value. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="388" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="497" bodyend="500"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad2d04a9ef0d53c48107b13005ec0877d" compoundref="deprecated-inlines_8h" startline="487" endline="489">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::value_base</references>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a5a34518dbc973dee068c7e4ae03cd217" compoundref="deprecated_8h" startline="413" endline="413">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::value_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="387" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="496" bodyend="499"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1ad2d04a9ef0d53c48107b13005ec0877d" compoundref="deprecated-inlines_8h" startline="486" endline="488">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::value_base</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a5a34518dbc973dee068c7e4ae03cd217" compoundref="deprecated_8h" startline="412" endline="412">micro_os_plus::micro_test_plus::detail::value_base&lt; T &gt;::value_</references>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -346,7 +346,7 @@ The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1de
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="356" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="357" bodyend="414"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="355" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="356" bodyend="413"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a9199f28db3a365b60ca6ef17053cec2a" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value_base</scope><name>get</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a4d0554be18a449d7b9176e868e631846" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value_base</scope><name>op_type</name></member>
