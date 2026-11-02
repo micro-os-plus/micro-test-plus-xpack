@@ -1,605 +1,84 @@
 {/* ------------------------------------------------------------------------ */}
 
-### Test Details
+### Test details
 
-The tests are built and run for each platform and toolchain; the excerpts
-below are from the native run, with the system compiler:
+The tests are built and run for each platform and toolchain. To build and run
+the native tests with the system compiler, use:
 
-```console
-> xpm run test --config synthetic-posix-cmake-sys-debug
-> ctest -V --test-dir build/synthetic-posix-cmake-sys-debug
-Internal ctest changing into directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
-UpdateCTestConfiguration  from :/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/DartConfiguration.tcl
-UpdateCTestConfiguration  from :/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/DartConfiguration.tcl
-Test project /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
-Constructing a list of tests
-Done constructing a list of tests
-Updating test list for fixtures
-Added 0 tests to meet fixture requirements
-Checking test dependency graph...
-Checking test dependency graph end
-...
+```sh
+xpm run test -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 ```
 
-#### minimal-test
+The test programs are in the [`tests/sources`](https://github.com/micro-os-plus/micro-test-plus-xpack/tree/xpack-development/tests/sources) folder, one
+folder for each program, with the sources in `src/`. The executables are
+named `<name>-test`, and the same sources are built on all platforms.
 
-The [minimal/src/main.cpp](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/tests/sources/minimal/src/main.cpp)
-file is a concise application that illustrates
-how to construct the simplest possible test for verifying a condition.
+Each program is run several times, with different options: the TAP reporter
+with the default verbosity, `--verbose`, `--quiet`, and `--silent`, and the
+human-readable reporter (`--reporter=human`) with the same four verbosity
+levels. For each run, the tests:
 
-```console
-test 21
-        Start  21: minimal-test-verbose
+- run the program;
+- compare the output file with a reference file in
+  [`tests/expected/tap`](https://github.com/micro-os-plus/micro-test-plus-xpack/tree/xpack-development/tests/expected/tap) or
+  [`tests/expected/txt`](https://github.com/micro-os-plus/micro-test-plus-xpack/tree/xpack-development/tests/expected/txt), ignoring the program line, the
+  compiler line, the timings, the addresses, and the line numbers
+  (`tests/scripts/compare-files.sh`);
+- parse each TAP output file with the node-tap parser, in strict mode, to
+  validate it (`tests/scripts/validate-tap.mjs`).
 
-21: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test "one" "two" "--output-file" "minimal-test-verbose.tap" "--verbose"
-21: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
-21: Test timeout computed to be: 10000000
-21: micro_os_plus::trace::initialise()
-21: 
-21: # Running: minimal-test --output-file=minimal-test-verbose.tap --verbose one two
-21: # Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
-21: TAP version 14
-21: # Subtest: minimal-test
-21: void micro_os_plus::micro_test_plus::suite::test(const test_case_name &, Callable_T &&, Args_T &&...) [Callable_T = (lambda at /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/sources/minimal/src/main.cpp:64:40), Args_T = <>] 'Check various conditions'
-21: micro_os_plus::micro_test_plus::test_case::test_case(const test_case_name &, runner &, suite &, size_t, size_t, detail::callable_ref<test_case>) 'Check various conditions' 1 1
-21: 
-21:     # Subtest: Check various conditions
-21: micro_os_plus::micro_test_plus::detail::check_result::check_result(const Expr_T &, check_kind, const reflection::source_location &, test_case &, expression_formatter &, bool) [Expr_T = micro_os_plus::micro_test_plus::detail::compare_op<int, int, micro_os_plus::micro_test_plus::detail::equal_to>]
-21: micro_os_plus::micro_test_plus::detail::check_result::check_result(const Expr_T &, check_kind, const reflection::source_location &, test_case &, expression_formatter &, bool) [Expr_T = bool]
-21:         ok 1 - answer is 42
-21:         ok 2 - condition is true
-21:         1..2
-21:     ok 1 - Check various conditions # { passed, 2 checks }
-21: 
-21:     1..1
-21: ok 1 - minimal-test # { passed, 2 checks in 1 test case, time: 0.145 ms }
-21: 
-21: 1..1
-21: # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.316 ms }
-21: # Test output written to 'minimal-test-verbose.tap'.
- 21/110 Test  #21: minimal-test-verbose ..............................   Passed    0.06 sec
-test 22
-        Start  22: minimal-test-verbose-compare
+The reference files whose names end in `-noexcept` are for the builds
+without exceptions.
 
-22: Test command: /bin/bash "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/scripts/compare-files.sh" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test-verbose.tap" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/expected/tap/minimal-test.tap"
-22: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
-22: Test timeout computed to be: 10000000
-22: minimal-test-verbose.tap ok
- 22/110 Test  #22: minimal-test-verbose-compare ......................   Passed    0.02 sec
-test 23
-        Start  23: minimal-test-verbose-validate
+Some checks of the unit tests are intended to fail, to validate the
+failure-reporting paths. Their failures are part of the reference outputs,
+so the test passes when the output is identical to the reference file, not
+when all the checks pass; the totals of the `unit` programs therefore show
+failed checks.
 
-23: Test command: /Users/ilg/.nvm/versions/node/v20.20.0/bin/node "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/scripts/validate-tap.mjs" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test-verbose.tap"
-23: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
-23: Test timeout computed to be: 10000000
-23: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test-verbose.tap: valid TAP
- 23/110 Test  #23: minimal-test-verbose-validate .....................   Passed    0.10 sec
-test 24
-        Start  24: minimal-test
+#### The test programs
 
-24: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test "one" "two" "--output-file" "minimal-test.tap"
-24: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
-24: Test timeout computed to be: 10000000
-24: micro_os_plus::trace::initialise()
-24: 
-24: # Running: minimal-test --output-file=minimal-test.tap one two
-24: # Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
-24: TAP version 14
-24: # Subtest: minimal-test
-24: void micro_os_plus::micro_test_plus::suite::test(const test_case_name &, Callable_T &&, Args_T &&...) [Callable_T = (lambda at /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/sources/minimal/src/main.cpp:64:40), Args_T = <>] 'Check various conditions'
-24: micro_os_plus::micro_test_plus::test_case::test_case(const test_case_name &, runner &, suite &, size_t, size_t, detail::callable_ref<test_case>) 'Check various conditions' 1 1
-24: 
-24:     # Subtest: Check various conditions
-24: micro_os_plus::micro_test_plus::detail::check_result::check_result(const Expr_T &, check_kind, const reflection::source_location &, test_case &, expression_formatter &, bool) [Expr_T = micro_os_plus::micro_test_plus::detail::compare_op<int, int, micro_os_plus::micro_test_plus::detail::equal_to>]
-24: micro_os_plus::micro_test_plus::detail::check_result::check_result(const Expr_T &, check_kind, const reflection::source_location &, test_case &, expression_formatter &, bool) [Expr_T = bool]
-24:         1..0
-24:     ok 1 - Check various conditions # { passed, 2 checks }
-24: 
-24:     1..1
-24: ok 1 - minimal-test # { passed, 2 checks in 1 test case, time: 0.137 ms }
-24: 
-24: 1..1
-24: # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.313 ms }
-24: # Test output written to 'minimal-test.tap'.
- 24/110 Test  #24: minimal-test ......................................   Passed    0.05 sec
-test 25
-        Start  25: minimal-test-compare
+| Program | What it tests | Reference outputs |
+| --- | --- | --- |
+| [`empty`](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack-development/tests/sources/empty/src/main.cpp) | runners and suites with no checks, or with only empty test cases; it uses plain assertions instead of the framework primitives | `empty-test` |
+| [`minimal`](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack-development/tests/sources/minimal/src/main.cpp) | the smallest possible test, a single test case with two checks, intended for first experiments | `minimal-test` |
+| [`sample`](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack-development/tests/sources/sample/src/main.cpp) | the main primitives of the framework in a practical test, including strings, arguments passed to suites, explicit namespaces, and, if exceptions are enabled, the checks of exceptions | `sample-test` |
+| [`suite`](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack-development/tests/sources/suite/src/main.cpp) | the test hierarchy: local runners, a static runner, and suites, including a static suite defined in a separate file, and the deeply nested test cases used to measure the stack | `suite-test` |
+| [`unit`](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack-development/tests/sources/unit/src/main.cpp) | all the unit tests in one program, built from the bodies of the four programs below | `unit-test` |
+| [`unit-checks`](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack-development/tests/sources/unit-checks/src/main.cpp) | the expectations and requirements, the comparators, and the operands | `unit-checks-test` |
+| [`unit-combinations`](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack-development/tests/sources/unit-combinations/src/main.cpp) | the combinations of operand types | `unit-combinations-test` |
+| [`unit-exceptions`](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack-development/tests/sources/unit-exceptions/src/main.cpp) | the exceptions, including those that escape test cases and suites, and the stopped test cases | `unit-exceptions-test` |
+| [`unit-miscellaneous`](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack-development/tests/sources/unit-miscellaneous/src/main.cpp) | the test hierarchy, the formatters, the reporters, and the custom types | `unit-miscellaneous-test` |
+| [`unit-deprecated`](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack-development/tests/sources/unit-deprecated/src/main.cpp) | the deprecated operators, literals, and wrappers, built with `MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED` | `unit-deprecated-test` |
+| [`unit-static-asserts`](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack-development/tests/sources/unit-static-asserts/src/main.cpp) | mostly compile-time checks, with `static_assert()`; the program must compile, and is also run | none |
 
-25: Test command: /bin/bash "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/scripts/compare-files.sh" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test.tap" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/expected/tap/minimal-test.tap"
-25: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
-25: Test timeout computed to be: 10000000
-25: minimal-test.tap ok
- 25/110 Test  #25: minimal-test-compare ..............................   Passed    0.02 sec
-test 26
-        Start  26: minimal-test-validate
+The `unit-checks`, `unit-combinations`, `unit-exceptions`, and
+`unit-miscellaneous` bodies are also built as separate programs; their
+shared header is in `unit-common`. The `unit` and `unit-checks` programs have,
+besides the files for the TAP reporter, others for the console output of the
+human-readable reporter (`-console` and `-console-quiet`) and for the output
+with colours (`-colour`).
 
-26: Test command: /Users/ilg/.nvm/versions/node/v20.20.0/bin/node "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/scripts/validate-tap.mjs" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test.tap"
-26: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
-26: Test timeout computed to be: 10000000
-26: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test.tap: valid TAP
- 26/110 Test  #26: minimal-test-validate .............................   Passed    0.11 sec
-test 27
-        Start  27: minimal-test-quiet
+<details>
+<summary>Example: the reference output of the minimal test</summary>
 
-27: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test "one" "two" "--output-file" "minimal-test-quiet.tap" "--quiet"
-27: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
-27: Test timeout computed to be: 10000000
-27: micro_os_plus::trace::initialise()
-27: 
-27: TAP version 14
-27: void micro_os_plus::micro_test_plus::suite::test(const test_case_name &, Callable_T &&, Args_T &&...) [Callable_T = (lambda at /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/sources/minimal/src/main.cpp:64:40), Args_T = <>] 'Check various conditions'
-27: micro_os_plus::micro_test_plus::test_case::test_case(const test_case_name &, runner &, suite &, size_t, size_t, detail::callable_ref<test_case>) 'Check various conditions' 1 1
-27: micro_os_plus::micro_test_plus::detail::check_result::check_result(const Expr_T &, check_kind, const reflection::source_location &, test_case &, expression_formatter &, bool) [Expr_T = micro_os_plus::micro_test_plus::detail::compare_op<int, int, micro_os_plus::micro_test_plus::detail::equal_to>]
-27: micro_os_plus::micro_test_plus::detail::check_result::check_result(const Expr_T &, check_kind, const reflection::source_location &, test_case &, expression_formatter &, bool) [Expr_T = bool]
-27: ok 1 - minimal-test # { passed, 2 checks in 1 test case, time: 0.135 ms }
-27: 1..1
-27: # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.318 ms }
-27: # Test output written to 'minimal-test-quiet.tap'.
- 27/110 Test  #27: minimal-test-quiet ................................   Passed    0.05 sec
-test 28
-        Start  28: minimal-test-quiet-compare
-
-28: Test command: /bin/bash "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/scripts/compare-files.sh" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test-quiet.tap" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/expected/tap/minimal-test.tap"
-28: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
-28: Test timeout computed to be: 10000000
-28: minimal-test-quiet.tap ok
- 28/110 Test  #28: minimal-test-quiet-compare ........................   Passed    0.02 sec
-test 29
-        Start  29: minimal-test-quiet-validate
-
-29: Test command: /Users/ilg/.nvm/versions/node/v20.20.0/bin/node "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/scripts/validate-tap.mjs" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test-quiet.tap"
-29: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
-29: Test timeout computed to be: 10000000
-29: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test-quiet.tap: valid TAP
- 29/110 Test  #29: minimal-test-quiet-validate .......................   Passed    0.10 sec
-test 30
-        Start  30: minimal-test-silent
-
-30: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/minimal-test "one" "two" "--output-file" "minimal-test-silent.tap" "--silent"
-30: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
-30: Test timeout computed to be: 10000000
-30: micro_os_plus::trace::initialise()
-30: void micro_os_plus::micro_test_plus::suite::test(const test_case_name &, Callable_T &&, Args_T &&...) [Callable_T = (lambda at /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/sources/minimal/src/main.cpp:64:40), Args_T = <>] 'Check various conditions'
-30: micro_os_plus::micro_test_plus::test_case::test_case(const test_case_name &, runner &, suite &, size_t, size_t, detail::callable_ref<test_case>) 'Check various conditions' 1 1
-30: micro_os_plus::micro_test_plus::detail::check_result::check_result(const Expr_T &, check_kind, const reflection::source_location &, test_case &, expression_formatter &, bool) [Expr_T = micro_os_plus::micro_test_plus::detail::compare_op<int, int, micro_os_plus::micro_test_plus::detail::equal_to>]
-30: micro_os_plus::micro_test_plus::detail::check_result::check_result(const Expr_T &, check_kind, const reflection::source_location &, test_case &, expression_formatter &, bool) [Expr_T = bool]
- 30/110 Test  #30: minimal-test-silent ...............................   Passed    0.05 sec
-```
-
-All verbosity modes are exercised: default, `--verbose`, `--quiet`, and `--silent`.
-
-#### sample-test
-
-The [sample/src/main.cpp](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/tests/sources/sample/src/main.cpp)
-file is a representative application that demonstrates how to use the principal
-primitives provided by the library to construct a practical test.
-
-A typical execution produces the following output:
+The reference file `tests/expected/tap/minimal-test.tap` is the output of the
+`minimal` program, run with `--verbose`:
 
 ```console
-test 61
-        Start  61: sample-test-verbose
-
-61: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/sample-test "one" "two" "--output-file" "sample-test-verbose.tap" "--verbose"
-61: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
-61: Test timeout computed to be: 10000000
-61: micro_os_plus::trace::initialise()
-61: 
-61: # Running: sample-test --output-file=sample-test-verbose.tap --verbose one two
-61: # Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
-61: TAP version 14
-61: # Subtest: Sample
-61: 
-61:     # Subtest: Check various conditions
-61:         ok 1 - answer eq 42
-61:         ok 2 - answer ne 43
-61:         ok 3 - answer lt 43
-61:         ok 4 - answer le 42
-61:         ok 5 - answer gt 43
-61:         ok 6 - answer ge 42
-61:         ok 7 - condition is true
-61:         1..7
-61:     ok 1 - Check various conditions # { passed, 7 checks }
-61: 
-61:     # Subtest: Check strings
-61:         ok 1 - ultimate answer is 'fortytwo'
-61:         1..1
-61:     ok 2 - Check strings # { passed, 1 check }
-61: 
-61:     # Subtest: Check compound conditions
-61:         ok 1 - logical 'and' expression
-61:         1..1
-61:     ok 3 - Check compound conditions # { passed, 1 check }
-61: 
-61:     # Subtest: Check multiple function invocations
-61:         ok 1 - lambda returns 42
-61:         ok 2 - lambda returns 43
-61:         1..2
-61:     ok 4 - Check multiple function invocations # { passed, 2 checks }
-61: 
-61:     # Subtest: Check args
-61:         ok 1 - argc >= 2
-61:         ok 2 - the next to last argument is 'one'
-61:         ok 3 - the last argument is 'two'
-61:         1..3
-61:     ok 5 - Check args # { passed, 3 checks }
-61: 
-61:     # Subtest: Check complex logic
-61:         ok 1 - xyz passed
-61:         1..1
-61:     ok 6 - Check complex logic # { passed, 1 check }
-61: 
-61:     # Subtest: Check if exceptions are thrown
-61:         ok 1 - exception thrown
-61:         ok 2 - std::runtime_error thrown
-61:         1..2
-61:     ok 7 - Check if exceptions are thrown # { passed, 2 checks }
-61: 
-61:     # Subtest: Check if exceptions are not thrown
-61:         ok 1 - exception not thrown
-61:         1..1
-61:     ok 8 - Check if exceptions are not thrown # { passed, 1 check }
-61: 
-61:     # Subtest: Check containers
-61:         ok 1 - vector{ 1, 2 } eq vector{ 1, 2 }
-61:         ok 2 - vector{ 1, 2, 3 } ne vector{ 1, 2, 4 }
-61:         1..2
-61:     ok 9 - Check containers # { passed, 2 checks }
-61: 
-61:     1..9
-61: ok 1 - Sample # { passed, 20 checks in 9 test cases, time: 1.111 ms }
-61: 
-61: # Subtest: Args suite
-61: 
-61:     # Subtest: args
-61:         ok 1 - ic is 42
-61:         ok 2 - iv is 43
-61:         ok 3 - ir is 44
-61:         ok 4 - *ip1 is 45
-61:         ok 5 - *ip2 is 46
-61:         1..5
-61:     ok 1 - args # { passed, 5 checks }
-61: 
-61:     1..1
-61: ok 2 - Args suite # { passed, 5 checks in 1 test case, time: 0.065 ms }
-61: 
-61: # Subtest: Explicit namespace suite
-61: 
-61:     # Subtest: Check one
-61:         ok 1 - Passed
-61:         1..1
-61:     ok 1 - Check one # { passed, 1 check }
-61: 
-61:     # Subtest: Check two
-61:         ok 1 - Passed
-61:         1..1
-61:     ok 2 - Check two # { passed, 1 check }
-61: 
-61:     1..2
-61: ok 3 - Explicit namespace suite # { passed, 2 checks in 2 test cases, time: 0.079 ms }
-61: 
-61: # Subtest: Implicit namespace suite
-61: 
-61:     # Subtest: Check one
-61:         ok 1 - Passed
-61:         1..1
-61:     ok 1 - Check one # { passed, 1 check }
-61: 
-61:     # Subtest: Check two
-61:         ok 1 - Passed
-61:         1..1
-61:     ok 2 - Check two # { passed, 1 check }
-61: 
-61:     1..2
-61: ok 4 - Implicit namespace suite # { passed, 2 checks in 2 test cases, time: 0.078 ms }
-61: 
-61: 1..4
-61: # { total: 29 checks passed, 0 failed, in 14 test cases, 4 test suites, time: 1.587 ms }
-61: # Test output written to 'sample-test-verbose.tap'.
- 61/110 Test  #61: sample-test-verbose ...............................   Passed    0.06 sec
+# Running: minimal-test --reporter=tap --output-file=minimal-test.tap one two
+# Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+TAP version 14
+# Subtest: minimal-test
+    # Subtest: Check various conditions
+        ok 1 - answer is 42
+        ok 2 - condition is true
+        1..2
+    ok 1 - Check various conditions # { passed, 2 checks }
+    1..1
+ok 1 - minimal-test # { passed, 2 checks in 1 test case, time: 0.069 ms }
+1..1
+# { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.147 ms }
 ```
 
-All possible verbosity modes are exercised: default, `--verbose`, `--quiet`, and `--silent`.
-
-#### unit-checks-test
-
-The [unit-checks/src/main.cpp](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack/tests/sources/unit-checks/src/main.cpp)
-file, with the other files of the same folder, constitutes the comprehensive
-test suite of the checks, designed to verify that the library functions
-behave as intended. Some checks are deliberately expected
-to fail, in order to validate the failure-reporting paths.
-
-The other unit tests exercise the exceptions (`unit-exceptions`), the
-combinations of operand types (`unit-combinations`), the test hierarchy,
-the formatters, and the reporters (`unit-miscellaneous`), and the
-deprecated features (`unit-deprecated`).
-
-A typical execution produces the following output:
-
-```console
-test 97
-        Start  97: unit-checks-test-reporter-human
-
-97: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/unit-checks-test "one" "two" "--reporter=human" "--output-file=unit-checks-test.txt"
-97: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
-97: Test timeout computed to be: 10000000
-97: micro_os_plus::trace::initialise()
-97: 
-97: Running: unit-checks-test --reporter=human --output-file=unit-checks-test.txt one two
-97: Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
-97: µTest++ human report
-97: 
-97: • Top suite
-97: 
-97: µTest++ unit tests; some checks are expected to fail.
-97: 
-97:     ✓ require - passed (1 check)
-97:     ✓ Initial counters - passed (0 checks)
-97:     ✓ expect(true) - passed (5 checks)
-97: 
-97:     • expect(false)
-97:         ✗ FAILED (main.cpp:216)
-97:         ✗ false FAILED (main.cpp:219)
-97:     ✗ expect(false) - FAILED (0 checks passed, 2 failed)
-97: 
-97:     ✓ reflection::type_name() - passed (4 checks)
-97:     ✓ Splits - passed (8 checks)
-97:         ✓ inner subtest - passed (1 check)
-97:     ✓ Nested subtests - passed (0 checks)
-97:         ✓ inner subtest after a check - passed (1 check)
-97:     ✓ Nested subtest after a check - passed (1 check)
-97: 
-97:     • Failed nested subtest
-97:         • middle subtest
-97:             • inner subtest
-97:                 ✗ inner check fails FAILED (main.cpp:381, 1 == 2)
-97:             ✗ inner subtest - FAILED (0 checks passed, 1 failed)
-97: 
-97:         ✗ middle subtest - FAILED (0 checks passed, 0 failed, 1 test case failed)
-97: 
-97:     ✗ Failed nested subtest - FAILED (1 check passed, 0 failed, 1 test case failed)
-97: 
-97:     • Stored check result
-97:         ✓ later check passes
-97:         ✗ stored check fails FAILED (main.cpp:409, 1 == 2)
-97:     ✗ Stored check result - FAILED (1 check passed, 1 failed)
-97: 
-97:     ✓ Application types with get() - passed (3 checks)
-97:     ✓ Application types with value and epsilon - passed (4 checks)
-97:     ✓ Message values - passed (3 checks)
-97: 
-97:     • Character operands
-97:         ✗ FAILED (main.cpp:527, '\0' == 'a')
-97:         ✗ space is tab FAILED (main.cpp:530, ' ' == '\t')
-97:         ✓ 'x' == 'x'
-97:     ✗ Character operands - FAILED (1 check passed, 2 failed)
-97: 
-97: ✗ Top suite - FAILED (34 checks passed, 6 failed, in 18 test cases), time: 0.890 ms
-97: 
-97: • Comparisons suite
-97: 
-97:     ✓ Integer comparisons - passed (6 checks)
-97: 
-97:     • Failed integer comparisons
-97:         ✗ actual != 42 FAILED (comparisons.cpp:111, 42 != 42)
-97:         ✗ actual+1 == 42 FAILED (comparisons.cpp:114, 43 == 42)
-97:         ✗ actual-1 >= 42 FAILED (comparisons.cpp:118, 41 >= 42)
-97:         ✗ actual > 42 FAILED (comparisons.cpp:122, 42 > 42)
-97:         ✗ actual+1 <= 42 FAILED (comparisons.cpp:125, 43 <= 42)
-97:         ✗ actual < 42 FAILED (comparisons.cpp:129, 42 < 42)
-97:     ✗ Failed integer comparisons - FAILED (0 checks passed, 6 failed)
-97: 
-97:     ✓ Float comparisons - passed (10 checks)
-97: 
-97:     • Failed float comparisons
-97:         ✗ actual != 42.0 FAILED (comparisons.cpp:188, 42.0f != 42.0f)
-97:         ✗ actual == 43.0 FAILED (comparisons.cpp:191, 42.0f == 43.0f)
-97:         ✗ actual != 42 FAILED (comparisons.cpp:194, 42.0f != 42)
-97:         ✗ actual == 43 FAILED (comparisons.cpp:197, 42.0f == 43)
-97:     ✗ Failed float comparisons - FAILED (0 checks passed, 4 failed)
-97: 
-97:     ✓ Approximate comparisons - passed (8 checks)
-97: 
-97:     • Failed approximate comparisons
-97:         ✗ actual ~ 45 +/- 2 FAILED (comparisons.cpp:258, 42 ~ (45 +/- 2))
-97:         ✗ 10 ~ 13 +/- 2 FAILED (comparisons.cpp:263, 10 ~ (13 +/- 2))
-97:         ✗ 3u ~ 5u +/- 1u FAILED (comparisons.cpp:267, 3u ~ (5u +/- 1u))
-97:         ✗ 1 ~ 1 +/- -1 FAILED (comparisons.cpp:271, 1 ~ (1 +/- -1))
-97:         ✗ actual ~ 42.1f +/- 0.01f FAILED (comparisons.cpp:274, 42.0f ~ (42.1f +/- 0.01f))
-97:         ✗ FAILED (comparisons.cpp:278, 1.0 ~ (1.2 +/- 0.1))
-97:     ✗ Failed approximate comparisons - FAILED (0 checks passed, 6 failed)
-97: 
-97:     ✓ String comparisons - passed (6 checks)
-97: 
-97:     • Failed string comparisons
-97:         ✗ actual_sv != abc_sv FAILED (comparisons.cpp:335, abc != abc)
-97:         ✗ actual_sv == abx_sv FAILED (comparisons.cpp:339, abc == abx)
-97:         ✗ actual_sv >= abd_sv FAILED (comparisons.cpp:343, abc >= abd)
-97:         ✗ actual_sv > abc_sv FAILED (comparisons.cpp:347, abc > abc)
-97:         ✗ actual_sv <= abb_sv FAILED (comparisons.cpp:351, abc <= abb)
-97:         ✗ actual_sv < abc_sv FAILED (comparisons.cpp:355, abc < abc)
-97:     ✗ Failed string comparisons - FAILED (0 checks passed, 6 failed)
-97: 
-97:     ✓ C string comparisons - passed (14 checks)
-97: 
-97:     • Failed C string comparisons
-97:         ✗ actual == "abx" FAILED (comparisons.cpp:420, abc == abx)
-97:         ✗ null_string == "abc" FAILED (comparisons.cpp:423, nullptr == abc)
-97:     ✗ Failed C string comparisons - FAILED (0 checks passed, 2 failed)
-97: 
-97:     ✓ Pointer comparisons - passed (9 checks)
-97: 
-97:     • Failed pointer comparisons
-97:         ✗ ptr1 != &one FAILED (comparisons.cpp:504, 0x7ff7b12841c0 != 0x7ff7b12841c0)
-97:         ✗ ptr1 != ptr2 FAILED (comparisons.cpp:507, 0x7ff7b12841c0 != 0x7ff7b12841c0)
-97:         ✗ ptr1 > ptr2 FAILED (comparisons.cpp:510, 0x7ff7b12841c0 > 0x7ff7b12841c0)
-97:         ✗ ptr1 < ptr2 FAILED (comparisons.cpp:513, 0x7ff7b12841c0 < 0x7ff7b12841c0)
-97:         ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:516, 0x7ff7b12841c0 == 0x7ff7b1284210)
-97:         ✗ pfunc != afunc FAILED (comparisons.cpp:519, 0x10ed2f7b8 != 0x10ed2f7b8)
-97:         ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:522, 0x10ed2f7b8 == 0x7ff7b1284210)
-97:         ✗ pone >= ptwo FAILED (comparisons.cpp:534, 0x7ff7b1284840 >= 0x7ff7b1284844)
-97:         ✗ ptwo <= pone FAILED (comparisons.cpp:537, 0x7ff7b1284844 <= 0x7ff7b1284840)
-97:     ✗ Failed pointer comparisons - FAILED (0 checks passed, 9 failed)
-97: 
-97:     ✓ Null pointer comparisons - passed (3 checks)
-97: 
-97:     • Failed null pointer comparisons
-97:         ✗ a_nullptr != nullptr FAILED (comparisons.cpp:585, 0x0 != nullptr)
-97:         ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:588, 0x7ff7b1284800 == nullptr)
-97:         ✗ pfunc != nullptr FAILED (comparisons.cpp:591, 0x0 != nullptr)
-97:     ✗ Failed null pointer comparisons - FAILED (0 checks passed, 3 failed)
-97: 
-97:     • Logical operations
-97:         ✓ not (actual != 42)
-97:         ✗ not (actual == 42) FAILED (comparisons.cpp:612, not 42 == 42)
-97:         ✓ (actual == 42) and (actual == 42.0)
-97:         ✗ (actual == 42) and (actual != 42.0) FAILED (comparisons.cpp:621, (42 == 42 and 42.0f != 42.0))
-97:         ✗ (actual != 42) and (actual == 42.0) FAILED (comparisons.cpp:626, (42 != 42 and 42.0f == 42.0))
-97:         ✗ (actual != 42) and (actual != 42.0) FAILED (comparisons.cpp:631, (42 != 42 and 42.0f != 42.0))
-97:         ✓ (42 == 42 and 42.0f == 42.0)
-97:         ✗ FAILED (comparisons.cpp:640, (42 == 42 and 42.0f != 42.0))
-97:         ✓ (actual == 42) or (actual == 42.0)
-97:         ✓ (actual == 42) or (actual != 42.0)
-97:         ✓ (actual != 42) or (actual == 42.0)
-97:         ✗ (actual != 42) or (actual != 42.0) FAILED (comparisons.cpp:659, (42 != 42 or 42.0f != 42.0))
-97:     ✗ Logical operations - FAILED (6 checks passed, 6 failed)
-97: 
-97:     • Logical operations with more operands
-97:         ✓ all_of three true
-97:         ✓ all_of five true
-97:         ✓ any_of three, the last true
-97:         ✓ any_of three, the first true
-97:         ✓ all_of with a nested all_of
-97:         ✓ not all_of
-97:         ✗ all_of three, the second false FAILED (comparisons.cpp:709, (42 == 42 and 42 < 41 and 42 > 41))
-97:         ✗ all_of four, the last false FAILED (comparisons.cpp:713, (42 == 42 and 42 == 42 and 42 == 42 and 42 == 0))
-97:         ✗ any_of three false FAILED (comparisons.cpp:718, (42 == 0 or 42 == 1 or 42 == 2))
-97:         ✗ any_of of two all_of FAILED (comparisons.cpp:722, ((42 == 0 and 42 == 42) or (42 == 1 and 42 == 42 and 42 == 2)))
-97:         ✗ all_of with a nested any_of FAILED (comparisons.cpp:728, (42 == 42 and (42 == 0 or 42 == 1)))
-97:     ✗ Logical operations with more operands - FAILED (6 checks passed, 5 failed)
-97: 
-97: ✗ Comparisons suite - FAILED (68 checks passed, 47 failed, in 16 test cases), time: 1.201 ms
-97: 
-97: • Dynamic suite
-97: 
-97:     ✓ check in dynamic suite - passed (1 check)
-97: 
-97: ✓ Dynamic suite - passed (1 check in 1 test case), time: 0.052 ms
-97: 
-97: • Dynamic suite with a temporary name
-97: 
-97:     ✓ check in dynamic suite with a temporary name - passed (1 check)
-97: 
-97: ✓ Dynamic suite with a temporary name - passed (1 check in 1 test case), time: 0.050 ms
-97: 
-97: • Operands suite
-97: 
-97:     ✓ Arrays - passed (4 checks)
-97: 
-97:     • Arrays bad
-97:         ✗ array{ 42 } ne array{ 42 } FAILED (operands.cpp:223, {42} != {42})
-97:         ✗ array{ 42 } eq array{ 43 } FAILED (operands.cpp:227, {42} == {43})
-97:         ✗ array{ 1, 2 } ne array{ 1, 2 } FAILED (operands.cpp:231, {1, 2} != {1, 2})
-97:         ✗ array{ 1, 2, 3 } eq array{ 1, 2, 4 } FAILED (operands.cpp:235, {1, 2, 3} == {1, 2, 4})
-97:     ✗ Arrays bad - FAILED (0 checks passed, 4 failed)
-97: 
-97:     ✓ Vectors - passed (6 checks)
-97: 
-97:     • Vectors bad
-97:         ✗ vector{ } != vector{ } FAILED (operands.cpp:287, {} != {})
-97:         ✗ FAILED (operands.cpp:291, {} != {})
-97:         ✗ vector{ 42 } != vector{ 42 } FAILED (operands.cpp:294, {42} != {42})
-97:         ✗ vector{ 42 } == vector{ 43 } FAILED (operands.cpp:298, {42} == {43})
-97:         ✗ vector{ 1, 2 } != vector{ 1, 2 } FAILED (operands.cpp:302, {1, 2} != {1, 2})
-97:         ✗ vector{ 1, 2, 3 } == vector{ 1, 2, 4 } FAILED (operands.cpp:306, {1, 2, 3} == {1, 2, 4})
-97:     ✗ Vectors bad - FAILED (0 checks passed, 6 failed)
-97: 
-97:     ✓ Custom types - passed (2 checks)
-97: 
-97:     • Custom types bad
-97:         ✗ point{ 1, 2 } == point{ 1, 3 } FAILED (operands.cpp:343, { 1, 2 } == { 1, 3 })
-97:         ✗ FAILED (operands.cpp:348, { 1, 2 } == { 1, 3 })
-97:         ✗ point{ 1, 2 } != point{ 1, 2 } FAILED (operands.cpp:351, { 1, 2 } != { 1, 2 })
-97:     ✗ Custom types bad - FAILED (0 checks passed, 3 failed)
-97: 
-97:     ✓ Custom comparators - passed (3 checks)
-97: 
-97:     • Custom comparators bad
-97:         ✗ 5 divides 12 FAILED (operands.cpp:389, 5 divides 12)
-97:         ✗ FAILED (operands.cpp:392, 5 divides 12)
-97:         ✗ FAILED (operands.cpp:395, even 7)
-97:         ✗ FAILED (operands.cpp:398, (3 divides 12 and even 7))
-97:     ✗ Custom comparators bad - FAILED (0 checks passed, 4 failed)
-97: 
-97:     ✓ Standard types - passed (10 checks)
-97: 
-97:     • Standard types bad
-97:         ✗ colour::red == colour::green FAILED (operands.cpp:464, 0 == 1)
-97:         ✗ std::byte{ 1 } == std::byte{ 2 } FAILED (operands.cpp:468, 1uc == 2uc)
-97:         ✗ pairs1 == pairs2 FAILED (operands.cpp:474, {(1, 2)} == {(1, 3)})
-97:         ✗ optional == nullopt FAILED (operands.cpp:477, 42 == nullopt)
-97:     ✗ Standard types bad - FAILED (0 checks passed, 4 failed)
-97: 
-97:     ✓ Explicit conversions to bool - passed (5 checks)
-97: 
-97:     • Explicit conversions to bool bad
-97:         ✗ empty optional FAILED (operands.cpp:527)
-97:         ✗ null unique_ptr FAILED (operands.cpp:530)
-97:         ✗ empty function FAILED (operands.cpp:533)
-97:         ✗ FAILED (operands.cpp:536)
-97:     ✗ Explicit conversions to bool bad - FAILED (0 checks passed, 4 failed)
-97: 
-97:     ✓ Pointers to const - passed (2 checks)
-97:     ✓ Operand copies - passed (6 checks)
-97: 
-97: ✗ Operands suite - FAILED (38 checks passed, 25 failed, in 14 test cases), time: 0.999 ms
-97: 
-97: ✗ Total: 142 checks passed, 78 failed, in 50 test cases, 5 test suites, time: 3.484 ms
-97: error: test runner already initialised
-97: Overall, the µTest++ unit tests were successful!
-97: 
-97: Test output written to 'unit-checks-test.txt'.
- 97/110 Test  #97: unit-checks-test-reporter-human ...................   Passed    0.07 sec
-test 98
-        Start  98: unit-checks-test-reporter-human-compare
-
-98: Test command: /bin/bash "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/scripts/compare-files.sh" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/unit-checks-test.txt" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/expected/txt/unit-checks-test.txt"
-98: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
-98: Test timeout computed to be: 10000000
-98: unit-checks-test.txt ok
- 98/110 Test  #98: unit-checks-test-reporter-human-compare ...........   Passed    0.02 sec
-test 99
-        Start  99: unit-checks-test-reporter-human-quiet
-
-99: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/unit-checks-test "one" "two" "--reporter" "human" "--output-file" "unit-checks-test-quiet.txt" "--quiet"
-99: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
-99: Test timeout computed to be: 10000000
-99: micro_os_plus::trace::initialise()
-99: 
-99: µTest++ human report
-99: 
-99: ✗ Total: 142 checks passed, 78 failed, in 50 test cases, 5 test suites, time: 2.232 ms
-99: error: test runner already initialised
-99: Test output written to 'unit-checks-test-quiet.txt'.
- 99/110 Test  #99: unit-checks-test-reporter-human-quiet .............   Passed    0.06 sec
-test 100
-        Start 100: unit-checks-test-reporter-human-quiet-compare
-
-100: Test command: /bin/bash "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/scripts/compare-files.sh" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/unit-checks-test-quiet.txt" "/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/expected/txt/unit-checks-test-quiet.txt"
-100: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
-100: Test timeout computed to be: 10000000
-100: unit-checks-test-quiet.txt ok
-100/110 Test #100: unit-checks-test-reporter-human-quiet-compare .....   Passed    0.02 sec
-test 101
-        Start 101: unit-checks-test-reporter-human-silent
-
-101: Test command: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug/unit-checks-test "one" "two" "--reporter" "human" "--output-file" "unit-checks-test-silent.txt" "--silent"
-101: Working Directory: /Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/tests/build/synthetic-posix-cmake-sys-debug
-101: Test timeout computed to be: 10000000
-101: micro_os_plus::trace::initialise()
-101: error: test runner already initialised
-101/110 Test #101: unit-checks-test-reporter-human-silent ............   Passed    0.07 sec
-```
-
-All verbosity modes are evaluated: default, verbose, quiet, and silent
-(for conciseness, the complete verbose output is not presented here).
+</details>

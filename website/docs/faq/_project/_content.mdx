@@ -154,7 +154,7 @@ By retargeting the C library; µTest++ has no output hook of its own.
 The reporters write through `stdout`, the errors through `stderr`, and
 the output file through `fopen()`, so whatever the C library does with
 them applies to the test output as well. On the µOS++ platforms, all of
-them are forwarded to the host through Arm semihosting, which requires
+them are forwarded to the host through semihosting, which requires
 a debugger or QEMU. In other environments, implement the C library
 back end (for example `_write()` with newlib) for the desired channel.
 See the [Console output](/docs/user/#console-output) section of the

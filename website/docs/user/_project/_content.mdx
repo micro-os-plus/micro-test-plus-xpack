@@ -1393,7 +1393,7 @@ main(int argc, char* argv[])
 
 The order of the calls to `add_suite()` is **ignored**. The added suites
 run when `run_suites()` is called, together with the static suites, sorted
-**alphabetically by name** (see above). Only for equal names, they run
+**by name, byte by byte** (see above). Only for equal names, they run
 after the static suites constructed before `main()`, in the order of the
 calls.
 
@@ -1697,7 +1697,7 @@ reporter output out of order.
 µTest++ has no output hook of its own: the output is redirected by the
 C library, not by the framework. On the µOS++ platforms, which provide
 the C library back end, `stdout`, `stderr`, and the file operations
-(`fopen()`) are forwarded to the host through Arm semihosting, so the
+(`fopen()`) are forwarded to the host through semihosting, so the
 console output, the error messages, and the
 [output file](#output-file) all reach the host without any further
 configuration. In other environments, to send the output to a serial

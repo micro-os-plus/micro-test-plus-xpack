@@ -22,7 +22,7 @@ import ProjectTestDetails from '../_project/_test-details.mdx';
 The project is written in modern C++ and, for reproducibility reasons,
 utilises the xPack Framework tools during development.
 
-<CommonPrerequisites nodeVersion="18.0.0" nodeVersionMajor="18"/>
+<CommonPrerequisites nodeVersion="20.0" nodeVersionMajor="20"/>
 
 <CommonGetProjectSources />
 
@@ -33,7 +33,7 @@ utilises the xPack Framework tools during development.
 Navigate to the project folder:
 
 ```sh
-cd ~/Work/xpack/micro-os-plus/micro-test-plus-xpack.git
+cd ~/Work/micro-os-plus/micro-test-plus-xpack.git
 ```
 
 and execute the following commands:
@@ -43,6 +43,12 @@ npm install
 npm --prefix tests install
 xpm install -C tests
 ```
+
+The last command installs the dependencies of the tests project, such as the
+build tools. The toolchains required by each build configuration are
+installed later, by the `install` actions, as described in
+[Manual tests](#manual-tests); those actions also run `xpm install`, so
+repeating it is harmless.
 
 ## Language standard compliance
 
@@ -66,35 +72,49 @@ tests, a C++ development environment is required
 (on Ubuntu install `build-essential`)
 - macOS (>= **11.0**);
 as C++ development environment utilise **Command Line Tools**
-- Windows 7 with the Universal C Runtime (UCRT), Windows 8, Windows 10,
-Windows 11
+- Windows 10, Windows 11
 
 ### Target Platforms
 
-The supported target test platforms are:
+The supported target test platforms are in the `tests/platforms` folder;
+the list is taken from `tests/config/tests-templates.json`.
 
-- `platforms/native` - execute the test applications as **native processes**
-  on the development machine
-- `platforms/qemu-cortex-m0` - execute the tests as fully semihosted
-  **Cortex-M0** applications on a QEMU **mps2-an385** emulated board
-  (an Arm Cortex-M3 development board)
-- `platforms/qemu-cortex-m3` - execute the tests as fully semihosted
-  **Cortex-M3** applications on a QEMU **mps2-an385** emulated board
-  (an Arm Cortex-M3 development board)
-- `platforms/qemu-cortex-m4f` - execute the tests as fully semihosted
-  **Cortex-M4** applications on a QEMU **mps2-an386** emulated board
-  (an Arm Cortex-M4 development board)
-- `platforms/qemu-cortex-m7f` - execute the tests as fully semihosted
-  **Cortex-M7** applications on a QEMU **mps2-an500** emulated board
-  (an Arm Cortex-M7 development board)
-- `platforms/qemu-aarch32-a15` - execute the tests as fully semihosted
-  **Cortex-A15** applications on a QEMU **virt** emulated board
-- `platforms/qemu-aarch64-a72` - execute the tests as fully semihosted
-  **Cortex-A72** (64-bit) applications on a QEMU **virt** emulated board
-- `platforms/qemu-riscv-rv32imac` - execute the tests as fully semihosted
-  **RISC-V RV32IMAC** applications on a QEMU **virt** emulated board
-- `platforms/qemu-riscv-rv64imafdc` - execute the tests as fully semihosted
-  **RISC-V RV64IMAFDC** applications on a QEMU **virt** emulated board
+The test applications are executed as **native processes** on the
+development machine with:
+
+- `platforms/synthetic-posix`
+
+The tests are executed as fully semihosted applications on **QEMU** emulated
+boards, which can be run without any hardware, with:
+
+- `platforms/qemu-cortex-m0`
+- `platforms/qemu-cortex-m3`
+- `platforms/qemu-cortex-m4f`
+- `platforms/qemu-cortex-m7f`
+- `platforms/qemu-cortex-m33`
+- `platforms/qemu-aarch32-a15`
+- `platforms/qemu-aarch64-a72`
+- `platforms/qemu-riscv-rv32imac`
+- `platforms/qemu-riscv-rv64imafdc`
+
+The tests are built for **physical boards**, with the following platforms;
+to run them, the board must be connected and powered up:
+
+- `platforms/nucleo-f411re`
+- `platforms/nucleo-f411re-cubemx`
+- `platforms/nucleo-f411re-cubemx-startup`
+- `platforms/nucleo-f767zi`
+- `platforms/nucleo-f767zi-cubemx`
+- `platforms/nucleo-h533re`
+- `platforms/nucleo-h533re-cubemx`
+- `platforms/raspberry-pi-pico`
+- `platforms/raspberry-pi-pico-sdk`
+- `platforms/raspberry-pi-pico-2-arm`
+- `platforms/raspberry-pi-pico-2-arm-sdk`
+- `platforms/raspberry-pi-pico-2-riscv`
+- `platforms/raspberry-pi-pico-2-riscv-sdk`
+- `platforms/raspberry-pi-zero-2-w-aarch32`
+- `platforms/raspberry-pi-zero-2-w-aarch64`
 
 The build configurations utilise exactly the same source files on all platforms,
 without changes.
@@ -103,7 +123,8 @@ without changes.
 
 On embedded platforms, the applications interact with the
 host via the
-[Arm semihosting mechanism](https://github.com/ARM-software/abi-aa/blob/main/semihosting/semihosting.rst).
+[semihosting mechanism](https://github.com/ARM-software/abi-aa/blob/main/semihosting/semihosting.rst),
+defined by Arm and used with the same protocol on RISC-V.
 
 ### Toolchains
 
@@ -116,7 +137,7 @@ The following toolchains are utilised:
 - clang (native)
 - arm-none-eabi-gcc (Cortex-M, AArch32)
 - aarch64-none-elf-gcc (AArch64)
-- risc-none-elf-gcc (RISC-V 32/64)
+- riscv-none-elf-gcc (RISC-V 32/64)
 
 <ProjectTestDetails />
 

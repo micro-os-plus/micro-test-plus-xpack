@@ -18,10 +18,8 @@ to an application with:
 
 ```meson
 exe = executable(
-  your-target,
-  link_with: [
-    # Nothing, not static.
-  ],
+  'your-target',
+  sources: ['main.cpp'],
   dependencies: [
     micro_os_plus_micro_test_plus_dependency,
   ]
