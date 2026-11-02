@@ -294,8 +294,9 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
   add_compare_files_test (
     NAME "unit-checks-test-reporter-human-compare"
     DEPENDS "unit-checks-test-reporter-human"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-noexcept.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-checks-test-noexcept.txt"
+    FILES
+      "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-noexcept.txt"
+      "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-checks-test-noexcept.txt"
   )
 
   message (VERBOSE "") # Separator for readability

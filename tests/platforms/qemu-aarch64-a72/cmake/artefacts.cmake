@@ -159,8 +159,9 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
   add_compare_files_test (
     NAME "unit-checks-test-compare"
     DEPENDS "unit-checks-test"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-noexcept.tap"
-          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-checks-test-noexcept.tap"
+    FILES
+      "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-noexcept.tap"
+      "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-checks-test-noexcept.tap"
   )
 
   add_qemu_test (
@@ -171,8 +172,9 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
   add_compare_files_test (
     NAME "unit-checks-test-reporter-human-compare"
     DEPENDS "unit-checks-test-reporter-human"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-noexcept.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-checks-test-noexcept.txt"
+    FILES
+      "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-noexcept.txt"
+      "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-checks-test-noexcept.txt"
   )
 
   message (VERBOSE "") # Separator for readability
