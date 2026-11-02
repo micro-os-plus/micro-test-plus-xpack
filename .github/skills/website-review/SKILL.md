@@ -1,7 +1,7 @@
 ---
 name: website-review
 description: 'Review the content of the µTest++ Testing Framework website (the Docusaurus site in website/), excluding the API reference pages under docs/api/: readability, ease of understanding, structure, consistency, language, and technical accuracy against the code. Report the problems found, each with a permanent number, and suggest improvements in the source files, naming the template to fix when a file is generated. Use when the user asks to "review the website", "check the web pages", "analyse the documentation site", or to find stale, wrong, or placeholder content on the site.'
-argument-hint: 'Optional: page or folder to review (e.g. docs/user, blog); defaults to the whole site except docs/api'
+argument-hint: 'Optional: URL, page, or folder to review (e.g. docs/user, blog); defaults to the whole webpreview site except docs/api'
 ---
 
 # Website Review — µTest++ Testing Framework
@@ -31,6 +31,10 @@ every page under `/docs/`, the blog (`/blog/`), the navigation bar, the
 sidebars, and the footer. The list of the published pages is in the
 site's
 [`sitemap.xml`](https://micro-os-plus.github.io/micro-test-plus-xpack-webpreview/sitemap.xml).
+The sitemap omits the pages with `unlisted: true` in their front
+matter, which are still published; find them with `grep` over the
+front matter of `website/docs/` and `website/blog/`, and add them to
+the scope.
 
 The review reads the published text, but reports every finding against
 the source file in `website/` that produces it, since that is where
@@ -44,9 +48,17 @@ lag behind the branch being worked on. Before starting:
 1. Run `git fetch origin webpreview` and compare
    `git rev-parse --short origin/webpreview` with
    `git rev-parse --short HEAD`.
-2. List the differences in the sources of the pages in scope:
-   `git diff --stat origin/webpreview HEAD -- website
-   ':!website/docs/api'` and `git status --short website`.
+2. List the differences in the sources of the pages in scope, leaving
+   out the API reference pages, their sidebar, and the Doxygen files
+   from which they are generated:
+
+   ```sh
+   x=(':!website/docs/api' ':!website/doxygen' ':!website/static/doxygen'
+     ':!website/sidebar-category-doxygen.json')
+   git diff --stat origin/webpreview HEAD -- website "${x[@]}"
+   git status --short -- website "${x[@]}"
+   ```
+
 3. If there are differences, tell the user (naming the files) and ask
    whether to wait until the webpreview site is updated or to proceed.
    When proceeding, review the pages built from the changed files from
@@ -60,9 +72,12 @@ a page that does not yet show a pushed change is not a finding.
 
 Download each page with `curl` and read the text of its `<article>`
 element (the navigation bar, the sidebar, and the footer are the same
-on every page; read them once). Do not use `WebFetch`: it returns a
-summary made by a model, not the full text, and the review must read
-every sentence.
+on every page; read them once). The home page has no `<article>`;
+read its `<main>` element. The blog index and the blog archive, tag,
+and author pages show one `<article>` excerpt per post; read each post
+on its own page, and check the index pages only for their order and
+titles. Do not use `WebFetch`: it returns a summary made by a model,
+not the full text, and the review must read every sentence.
 
 The site is a static build, so `curl` returns the rendered text. This
 does not hold for the Docusaurus development server (`npm run start`
@@ -95,7 +110,8 @@ Read them as follows:
    actually uses them.
 3. Pages present in the sitemap but absent from the sidebar and the
    navigation bar are suspect. Front matter `unlisted: true` hides a
-   page from the sitemap; `draft: true` excludes it from production.
+   page from the sitemap but still publishes it (see "Scope");
+   `draft: true` excludes it from production (e.g. `docs/test/`).
 4. Partials that no page imports are dead; find them with `grep` over
    the `import` lines.
 5. The build fails on broken internal links and anchors
@@ -105,10 +121,15 @@ Read them as follows:
 
 ## Generated Files
 
-Most website files carry a header "DO NOT EDIT! Automatically
-generated from docusaurus-template-liquid/…", naming their template.
-They are regenerated with `npm run generate-website-commons` in
-`website/`, so changes made in place are lost. The templates are in
+Most website files carry a header that starts with "DO NOT EDIT!"
+and names their template: in the `.mdx` files, a
+`{/* DO NOT EDIT! Automatically generated from template file: */}`
+comment, followed by a comment with the template path
+(`docusaurus-template-liquid/templates/…`); in the other files, the
+same text in the comment syntax of the file. Search for `DO NOT EDIT!`
+only, since the rest of the text varies. They are regenerated with
+`npm run generate-website-commons` in `website/`, so changes made in
+place are lost. The templates are in
 the `@xpack/docusaurus-template-liquid` package
 (`website/node_modules/@xpack/docusaurus-template-liquid/`, usually a
 link to a writable checkout); for every problem in a generated file,
