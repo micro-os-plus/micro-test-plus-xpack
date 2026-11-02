@@ -22,8 +22,7 @@
  * `main()` arguments, and the recording of the errors it finds.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
- * namespace, ensuring clear separation from user code and minimising the risk
- * of naming conflicts.
+ * namespace.
  *
  * This file must be included when building the µTest++ library.
  */

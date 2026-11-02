@@ -27,9 +27,8 @@
  * arguments, and determining the overall test result via an exit code. It
  * also provides a mechanism for aborting test execution.
  *
- * All definitions reside within the
- * `micro_os_plus::micro_test_plus` namespace, ensuring clear
- * separation from user code and minimising the risk of naming conflicts.
+ * All definitions reside within the `micro_os_plus::micro_test_plus`
+ * namespace.
  *
  * The header files are organised within the
  * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
@@ -105,14 +104,9 @@
  * (utility functions), and `detail` (internal implementation details,
  * including the reporters and the value wrappers).
  *
- * By grouping all definitions within this namespace and its sub-namespaces,
- * the framework achieves clear code organisation, minimises naming conflicts,
- * and enhances maintainability.
- *
- * All public API definitions are implemented in the
- * `include/micro-os-plus/micro-test-plus` folder, ensuring a clear
- * separation from user code and facilitating straightforward integration
- * with the wider µOS++ ecosystem.
+ * The declarations are in the headers of the
+ * `include/micro-os-plus/micro-test-plus` folder, and the non-inline
+ * definitions in the `src` folder.
  */
 namespace micro_os_plus::micro_test_plus
 {
@@ -186,9 +180,8 @@ namespace micro_os_plus::micro_test_plus
    * (the names shown in the reports belong to the suites), and it owns
    * the session totals, which accumulate the totals of all the suites.
    *
-   * All members are defined within the
-   * `micro_os_plus::micro_test_plus` namespace, ensuring clear separation from
-   * user code and minimising the risk of naming conflicts.
+   * All members are defined within the `micro_os_plus::micro_test_plus`
+   * namespace.
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */

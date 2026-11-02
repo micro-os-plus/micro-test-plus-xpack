@@ -23,8 +23,7 @@
  * and implementations reside in inline files.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
- * namespace, ensuring clear separation from user code and minimising
- * the risk of naming conflicts.
+ * namespace.
  */
 
 #ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_COUNTERS_INLINES_H_

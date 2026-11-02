@@ -23,8 +23,8 @@
  * @details
  * This header provides the declarations for the reflection utilities used
  * within the µTest++ framework. It defines interfaces for obtaining source
- * location information and extracting type names at compile time, supporting
- * advanced diagnostics and reporting capabilities.
+ * location information and extracting type names at compile time, for the
+ * reports of the checks.
  *
  * The reflection utilities include a local implementation of `source_location`
  * for standard libraries that do not yet provide `std::source_location`, a
@@ -34,8 +34,7 @@
  * and types in test reports.
  *
  * All definitions reside within the
- * `micro_os_plus::micro_test_plus::reflection` namespace, ensuring clear
- * separation from user code and minimising the risk of naming conflicts.
+ * `micro_os_plus::micro_test_plus::reflection` namespace.
  *
  * The header files are organised within the
  * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
@@ -96,8 +95,8 @@ namespace micro_os_plus::micro_test_plus
    *
    * @details
    * The `reflection` namespace provides facilities for obtaining source
-   * location information and type names at compile time, thereby supporting
-   * advanced reporting and diagnostics within the µTest++ framework.
+   * location information and type names at compile time, for the reports of
+   * the checks.
    *
    * It includes a local implementation of `source_location` for standard
    * libraries that do not yet provide `std::source_location`, as well as
@@ -115,8 +114,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The `source_location` type provides access to source code location
-     * details, such as file name and line number, for enhanced diagnostics and
-     * reporting within the µTest++ framework. When the standard library
+     * details, such as file name and line number, for the reports of the
+     * checks. When the standard library
      * provides it (`__cpp_lib_source_location` is defined), this alias refers
      * to `std::source_location`; otherwise, a local implementation with the
      * same interface subset is used.
@@ -135,8 +134,7 @@ namespace micro_os_plus::micro_test_plus
      * provide it (`__cpp_lib_source_location` is not defined).
      *
      * It enables retrieval of the file name and line number at the point of
-     * invocation, supporting enhanced diagnostics and reporting within the
-     * µTest++ framework.
+     * invocation, for the reports of the checks.
      *
      * The static member function `current()` captures the current source
      * location, using compiler built-ins where available, or defaulting to

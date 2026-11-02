@@ -31,8 +31,7 @@
  * `runner::initialise (options)`.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
- * namespace, ensuring clear separation from user code and minimising the
- * risk of naming conflicts.
+ * namespace.
  *
  * The header is included through `micro-test-plus.h` and should not be
  * included directly by user code.

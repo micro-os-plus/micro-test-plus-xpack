@@ -28,8 +28,7 @@
  * exception, or throws no exception, respectively.
  *
  * All declarations are conditionally compiled under `__cpp_exceptions` and
- * reside within the `micro_os_plus::micro_test_plus` namespace, ensuring
- * clear separation from user code and minimising the risk of naming conflicts.
+ * reside within the `micro_os_plus::micro_test_plus` namespace.
  *
  * This header is located in the `include/micro-os-plus/micro-test-plus`
  * folder.

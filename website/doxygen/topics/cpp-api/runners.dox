@@ -4,7 +4,7 @@
 @details
 A test program has one runner, usually a global object, which `main()`
 uses in three steps:
-1. `initialise (argc, argv)` reads the command line options (see
+1. `initialise (argc, argv)` reads the command-line options (see
    @ref micro-os-plus-micro-test-plus-cli); on platforms without a command
    line, `initialise (runner_options)` sets the options directly. The call
    is optional; without it, the default options are used;

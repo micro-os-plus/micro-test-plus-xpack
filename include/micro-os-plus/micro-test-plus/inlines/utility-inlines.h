@@ -26,9 +26,8 @@
  * splitting strings into substrings using a specified delimiter, enabling
  * convenient and type-safe string parsing in test expressions.
  *
- * All definitions reside within the
- * `micro_os_plus::micro_test_plus::utility` namespace, ensuring clear
- * separation from user code and minimising the risk of naming conflicts.
+ * All definitions reside within the `micro_os_plus::micro_test_plus::utility`
+ * namespace.
  *
  * The header files are organised within the
  * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
@@ -65,8 +64,8 @@ namespace micro_os_plus::micro_test_plus
   {
     /**
      * @details
-     * This function template facilitates string handling in tests by splitting
-     * a string into a vector of substrings, using the specified delimiter.
+     * This function template splits a string into a vector of substrings,
+     * using the specified delimiter characters.
      *
      * The function iterates through the input string, identifying the
      * positions of any of the delimiter characters (via `find_first_of()`)

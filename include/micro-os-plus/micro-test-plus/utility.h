@@ -68,18 +68,12 @@ namespace micro_os_plus::micro_test_plus
    *
    * @details
    * The `micro_os_plus::micro_test_plus::utility` namespace provides a suite
-   * of helper functions designed to support advanced string operations and
-   * other common tasks within the µTest++ framework.
+   * of helper functions for the strings that the tests often check.
    *
    * These utilities include functions for extracting the file name from a
    * path, for pattern matching (verifying whether a string matches a
    * pattern with `*` and `?` wildcards), and for splitting strings into
-   * sub-strings based on delimiters. The implementations are efficient and
-   * suitable for both embedded and general C++ projects.
-   *
-   * By encapsulating these helper functions within a dedicated namespace, the
-   * framework maintains clear code organisation and minimises naming
-   * conflicts.
+   * sub-strings based on delimiters.
    */
   namespace utility
   {

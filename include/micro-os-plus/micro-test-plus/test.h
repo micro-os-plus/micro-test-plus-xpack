@@ -26,15 +26,12 @@
  * offer mechanisms for running test cases, managing the counters of the
  * passed and failed checks, and registering test suites with the runner.
  *
- * The design ensures that test suites are non-copyable and non-movable,
- * maintaining unique ownership and consistent state. Flexible support for
- * callable objects enables a wide range of test suite definitions,
- * facilitating expressive and maintainable test organisation across embedded
- * and general C++ projects.
+ * The test suites are non-copyable and non-movable, so that each one has a
+ * single owner. Their bodies are any callable objects, such as functions
+ * and lambdas, with optional arguments.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
- * namespace, ensuring clear separation from user code and minimising the risk
- * of naming conflicts.
+ * namespace.
  *
  * The header files are organised within the
  * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and

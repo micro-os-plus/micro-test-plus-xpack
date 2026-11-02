@@ -51,8 +51,7 @@
  * identify and, in a future major release, to remove.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
- * namespace, ensuring clear separation from user code and minimising the
- * risk of naming conflicts.
+ * namespace.
  *
  * The header files are organised within the
  * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
@@ -888,16 +887,13 @@ namespace micro_os_plus::micro_test_plus
    * assertions.
    *
    * @details
-   * The `micro_os_plus::micro_test_plus::operators` namespace provides a
-   * comprehensive set of custom operator overloads designed to enable
-   * expressive, concise, and type-safe test assertions within the µTest++
-   * framework.
+   * The `micro_os_plus::micro_test_plus::operators` namespace provides the
+   * deprecated overloaded operators of the test checks.
    *
-   * This namespace includes equality, inequality, relational, and logical
-   * operators tailored for use with the framework’s custom types. These
-   * operators facilitate the creation of clear and readable test
-   * expressions, supporting both strongly-typed constants (via user-defined
-   * literals) and dynamic values (via wrappers).
+   * This namespace includes the equality, inequality, relational, and
+   * logical operators of the framework types, which apply to the
+   * strongly-typed constants (the user-defined literals) and to the
+   * dynamic values (the wrappers).
    *
    * @warning Please be aware that these operators
    * may conflict with other operators defined within the application under
@@ -1118,23 +1114,17 @@ namespace micro_os_plus::micro_test_plus
    * @brief User-defined literals for the µTest++ testing framework.
    *
    * @details
-   * The `literals` namespace provides an extensive collection of user-defined
-   * literal operators, enabling explicit specification of operand types for
-   * use with the µTest++ comparators and operators.
+   * The `literals` namespace provides the deprecated user-defined literal
+   * operators, which set the type of the operands of the µTest++
+   * comparators and operators.
    *
    * These operators allow constants to be suffixed (for example, `1_i`,
-   * `2_u16`) to produce strongly-typed values, thereby enhancing type safety
-   * and ensuring that comparator functions and operators can display actual
-   * values in test reports.
+   * `2_u16`) to produce strongly-typed values, which the comparator
+   * functions and the operators display in the test reports.
    *
    * The complementary wrappers for converting dynamic values and
    * expressions to recognised types (such as `to_i`, `to_u8`) are defined
    * in the parent `micro_os_plus::micro_test_plus` namespace.
-   *
-   * All definitions within this namespace are intended to facilitate clear and
-   * type-safe test expressions, and are implemented in the
-   * `include/micro-os-plus/micro-test-plus` folder to maintain a structured
-   * and modular codebase.
    *
    * @par Deprecated
    * Pass the plain values to the function comparators `eq()`, `ne()`,

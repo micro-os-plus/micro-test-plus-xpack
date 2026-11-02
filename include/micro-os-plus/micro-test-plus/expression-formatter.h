@@ -39,8 +39,7 @@
  * empty strings unless the reporter enables colours.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
- * namespace, ensuring clear separation from user code and minimising the
- * risk of naming conflicts.
+ * namespace.
  *
  * This file is intended solely for internal use within the framework and
  * should not be included directly by user code.

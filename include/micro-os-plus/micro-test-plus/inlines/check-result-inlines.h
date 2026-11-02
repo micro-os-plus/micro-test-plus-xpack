@@ -24,8 +24,7 @@
  * and the destructor are defined in `src/check-result.cpp`.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus::detail`
- * namespace, ensuring clear separation from user code and minimising the risk
- * of naming conflicts.
+ * namespace.
  *
  * The header files are organised within the
  * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and

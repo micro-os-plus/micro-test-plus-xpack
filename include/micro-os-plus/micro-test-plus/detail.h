@@ -28,8 +28,7 @@
  * exception checking facilities.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus::detail`
- * namespace, ensuring clear separation from user code and minimising the risk
- * of naming conflicts.
+ * namespace.
  *
  * The header files are organised within the
  * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
@@ -130,14 +129,8 @@ namespace micro_os_plus::micro_test_plus
    * logical and relational operations, mechanisms for exception checking,
    * the reporters, the check result, and the expression formatter.
    *
-   * All definitions within `detail` are intended exclusively for internal use,
-   * ensuring a clear distinction between user-facing and internal components.
-   * This approach enhances maintainability, mitigates the risk of naming
-   * conflicts, and keeps the public API succinct.
-   *
-   * The relevant header files are organised within the
-   * `include/micro-os-plus/micro-test-plus` folder to maintain a structured
-   * and modular codebase.
+   * All definitions within `detail` are intended exclusively for internal use;
+   * the applications do not need to name them.
    */
   namespace detail
   {
@@ -321,9 +314,9 @@ namespace micro_os_plus::micro_test_plus
      * with the pre-computed boolean result of a binary comparison. Derived
      * structs such as `compare_op`, `and_op`, and `or_op` inherit from this
      * to provide relational and logical operations. The comparison result is
-     * computed at construction time and cached, enabling efficient
-     * reporting and composition of complex assertions without repeated
-     * computation.
+     * computed at construction time and stored, so that the reporters and
+     * the logical operations read it without evaluating the operands
+     * again.
      *
      * @tparam Lhs_T The type of the stored left-hand operand, either the
      * operand type, or a `const` reference to it (see `stored_operand_t`).

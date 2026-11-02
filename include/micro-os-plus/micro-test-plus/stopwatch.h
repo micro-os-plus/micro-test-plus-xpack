@@ -29,10 +29,8 @@
  * remain zero, `has_elapsed()` returns `false`, and no timing information
  * is reported.
  *
- * All definitions reside within the
- * `micro_os_plus::micro_test_plus::detail` namespace, ensuring clear
- * separation from user code and minimising the
- * risk of naming conflicts.
+ * All definitions reside within the `micro_os_plus::micro_test_plus::detail`
+ * namespace.
  *
  * This file is intended solely for internal use within the framework and
  * should not be included directly by user code.

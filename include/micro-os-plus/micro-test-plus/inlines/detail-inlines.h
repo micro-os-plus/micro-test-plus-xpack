@@ -35,9 +35,8 @@
  * concise and focused on the interface, whilst grouping the complex
  * lambda-based constructor bodies here for maintainability.
  *
- * All definitions reside within the
- * `micro_os_plus::micro_test_plus::detail` namespace, ensuring clear
- * separation from user code and minimising the risk of naming conflicts.
+ * All definitions reside within the `micro_os_plus::micro_test_plus::detail`
+ * namespace.
  *
  * This file is intended solely for internal use within the framework and
  * should not be included directly by user code.

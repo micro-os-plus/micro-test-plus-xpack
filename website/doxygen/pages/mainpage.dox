@@ -1,28 +1,17 @@
 @mainpage
-The @b µTest++ project is a **lightweight**, **macro-free**, **modern C++**
-testing framework **with TAP output**, purpose-built for embedded systems
-development.
+The @b µTest++ project is a C++20 testing framework for embedded systems,
+which also runs on the native platforms. The tests are ordinary C++ code,
+with no preprocessor macros, organised in test suites and test cases.
 
-With its clean and expressive C++ API, µTest++ enables developers to write,
-organise, and execute unit tests with minimal overhead. The library
-includes advanced features such as **test suites**, **test cases**, and
-detailed reporting, all tailored to meet the specific needs of embedded
-environments.
-
-Test results are reported in the
+The results are written in the
 [TAP](https://en.wikipedia.org/wiki/Test_Anything_Protocol)
-(**Test Anything Protocol**)
-format by default, ensuring compatibility with a wide range of
-continuous integration systems and TAP-aware test harnesses. A
-human-readable reporter is also available for interactive use.
+(Test Anything Protocol) format by default, which the continuous
+integration systems and the TAP tools read. A human-readable format is
+also available, for reading the results on the console.
 
-Output verbosity is fully configurable via command-line options, allowing
-users to choose between concise summaries and comprehensive diagnostic
-information to best suit their workflow.
-
-By adopting µTest++, you can achieve robust and maintainable code through
-systematic and automated testing, supporting professional software
-engineering practices across your entire project.
+The command-line options select the format, how much is displayed (from
+nothing, with only the exit code, to every check), the colours, an output
+file, and the test cases to run.
 
 @section mainpage-start Getting started
 
@@ -32,7 +21,7 @@ The header declares nothing unless the macro
 `micro-os-plus/micro-test-plus-defines.h`, for the application and for
 the library sources (see @ref micro-os-plus-micro-test-plus-config).
 
-A complete test program has a runner, initialised with the command line
+A complete test program has a runner, initialised with the command-line
 arguments, a top suite created in `main()` (optional, since the suites can
 be added to the runner instead), test cases with checks, and returns the
 exit code of the session:
