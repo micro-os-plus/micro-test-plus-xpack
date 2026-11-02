@@ -26,6 +26,8 @@
         "src/utility.cpp"
       ],
       "dependencies": [
+      ],
+      "optionalDependencies": [
         "micro-os-plus.diag.trace"
       ],
       "generatedFile": {

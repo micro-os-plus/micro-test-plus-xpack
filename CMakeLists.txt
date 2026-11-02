@@ -89,10 +89,6 @@ target_sources (
             "src/utility.cpp"
 )
 
-target_link_libraries (
-  micro-os-plus-micro-test-plus-interface INTERFACE "micro-os-plus::diag-trace"
-)
-
 if (COMMAND xpack_display_target_lists)
   xpack_display_target_lists (micro-os-plus-micro-test-plus-interface)
 endif ()
@@ -107,14 +103,6 @@ add_library (
 message (
   VERBOSE
   "> micro-os-plus::micro-test-plus -> micro-os-plus-micro-test-plus-interface"
-)
-
-# -----------------------------------------------------------------------------
-
-get_property (
-  micro-os-plus-diag-trace-includes
-  TARGET micro-os-plus::diag-trace
-  PROPERTY INTERFACE_INCLUDE_DIRECTORIES
 )
 
 # -----------------------------------------------------------------------------
@@ -166,23 +154,6 @@ target_sources (
 target_sources (
   micro-os-plus-micro-test-plus-objects-library
   INTERFACE "$<TARGET_OBJECTS:micro-os-plus-micro-test-plus-objects-library>"
-)
-
-# Add the dependency include paths without linking the code; linking it would
-# add dependency sources as INTERFACE_SOURCES and compile them into the OBJECT
-# library, causing duplicate symbols at link time.
-target_include_directories (
-  micro-os-plus-micro-test-plus-objects-library
-  PRIVATE ${micro-os-plus-diag-trace-includes}
-)
-
-# Use INTERFACE (not PUBLIC) to propagate the dependency to consumers without
-# pulling its INTERFACE_SOURCES into the OBJECT library compilation; the include
-# paths above already provide the headers needed to compile this library's own
-# sources.
-target_link_libraries (
-  micro-os-plus-micro-test-plus-objects-library
-  INTERFACE "micro-os-plus::diag-trace"
 )
 
 if (COMMAND xpack_display_target_lists)
@@ -245,23 +216,6 @@ target_sources (
           "src/stopwatch.cpp"
           "src/deprecated.cpp"
           "src/utility.cpp"
-)
-
-# Add the dependency include paths without linking the dependency target:
-# linking it would add dependency sources as INTERFACE_SOURCES and compile them
-# into the STATIC library, causing duplicate symbols at link time.
-target_include_directories (
-  micro-os-plus-micro-test-plus-static-library
-  PRIVATE ${micro-os-plus-diag-trace-includes}
-)
-
-# Use INTERFACE (not PUBLIC) to propagate the dependency to consumers without
-# pulling its INTERFACE_SOURCES into the STATIC library compilation; the include
-# paths above already provide the headers needed to compile this library's own
-# sources.
-target_link_libraries (
-  micro-os-plus-micro-test-plus-static-library
-  INTERFACE "micro-os-plus::diag-trace"
 )
 
 if (COMMAND xpack_display_target_lists)
