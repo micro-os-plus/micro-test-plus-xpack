@@ -86,7 +86,7 @@ struct micro_os_plus::micro_test_plus::detail::callable_result { ... }
 <p>Returned by the lambda that the constructors of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-op">throws_op</a></span> and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/nothrow-op">nothrow_op</a></span> pass to <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op">callable_op</a></span>.</p>
 
 
-<p>Definition at line 1304 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+<p>Definition at line 1305 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -117,12 +117,12 @@ struct micro_os_plus::micro_test_plus::detail::callable_result { ... }
 <p><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a879f218299b32f5eb9fe68e15dfe0edfa334c4a4c42fdb79d7ebc3e73b517e6f8">throw_outcome::none</a></span> when the check passed, or when nothing was thrown but an exception was expected.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01322">1322</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01323">1323</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#abd77c787fde5f5d9b90a883849d9a76b">1322</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a879f218299b32f5eb9fe68e15dfe0edf">throw_outcome</a> <a href="#abd77c787fde5f5d9b90a883849d9a76b">outcome</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#abd77c787fde5f5d9b90a883849d9a76b">1323</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a879f218299b32f5eb9fe68e15dfe0edf">throw_outcome</a> <a href="#abd77c787fde5f5d9b90a883849d9a76b">outcome</a>;</span></span></div>
 
 </div>
 
@@ -153,12 +153,12 @@ struct micro_os_plus::micro_test_plus::detail::callable_result { ... }
 <p>True if the expected exception was thrown (<span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/throws-op">throws_op</a></span>), or if nothing was thrown (<span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/nothrow-op">nothrow_op</a></span>).</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01313">1313</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01314">1314</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#af4bafb957cc53a478f741f3e0048b293">1313</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#af4bafb957cc53a478f741f3e0048b293">value</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#af4bafb957cc53a478f741f3e0048b293">1314</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#af4bafb957cc53a478f741f3e0048b293">value</a>;</span></span></div>
 
 </div>
 
@@ -189,12 +189,12 @@ struct micro_os_plus::micro_test_plus::detail::callable_result { ... }
 <p>Empty unless <span class="doxyComputerOutput"><a href="#abd77c787fde5f5d9b90a883849d9a76b">outcome</a></span> is <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a879f218299b32f5eb9fe68e15dfe0edfa1702c8950d15f035273a3f192a9da2dc">throw_outcome::std_exception</a></span>.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01330">1330</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h/#l01331">1331</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">detail.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a5118df01280af3f6094bb718716b422c">1330</a></span><span class="doxyLineContent"><span class="doxyHighlight">      std::string <a href="#a5118df01280af3f6094bb718716b422c">what</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a5118df01280af3f6094bb718716b422c">1331</a></span><span class="doxyLineContent"><span class="doxyHighlight">      std::string <a href="#a5118df01280af3f6094bb718716b422c">what</a>;</span></span></div>
 
 </div>
 

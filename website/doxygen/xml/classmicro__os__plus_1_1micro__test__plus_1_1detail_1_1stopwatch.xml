@@ -493,7 +493,7 @@ Converts the differences of the seconds and of the nanoseconds members to a sing
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afa5a38b18b6f14b904fafac9f0bd74fa" compoundref="stopwatch_8h" startline="439" endline="439">stop_time_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2">~stopwatch</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afd1213b3e3ffa9997ab0eba78b944ecf" compoundref="stopwatch-inlines_8h" startline="123" endline="129">compute_elapsed_time</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1ac6dca3d3fa34870f3960fe5e226e45d8" compoundref="reporter_8cpp" startline="809" endline="824">micro_os_plus::micro_test_plus::detail::reporter::format_elapsed_time</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1ac6dca3d3fa34870f3960fe5e226e45d8" compoundref="reporter_8cpp" startline="810" endline="825">micro_os_plus::micro_test_plus::detail::reporter::format_elapsed_time</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>bool</type>

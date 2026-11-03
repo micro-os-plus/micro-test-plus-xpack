@@ -462,7 +462,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 </dl>
 
 
-<p>Definition at line 212 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
+<p>Definition at line 213 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -516,7 +516,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00275">275</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00276">276</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
 
 
 <p>Reference <a href="#a1cd0deb2811e578a7e767414b1092eec">runner_options</a>.</p>
@@ -604,7 +604,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 <p>A missing option argument, an unknown reporter name, an unknown colour mode, a colour mode given separately after <span class="doxyComputerOutput">--<a href="#a48ed4dd71eff02911c2d6943ba616850">colour</a></span> or <span class="doxyComputerOutput">--color</span>, or an unknown option (any other argument that starts with a dash, including a single one), is recorded by <span class="doxyComputerOutput"><a href="#abe865fdd65296f743fd11bdf5ef79a14">add_error()</a></span>, and the option is ignored; the parsing continues with the next argument, to record all the errors. Nothing is written by the constructor; the runner then writes the errors and refuses to run the tests.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00261">261</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/runner-options-cpp/#l00119">119</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/runner-options-cpp">runner-options.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00262">262</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/runner-options-cpp/#l00119">119</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/runner-options-cpp">runner-options.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -910,7 +910,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00288">288</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00289">289</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
 
 
 <p>Reference <a href="#a1cd0deb2811e578a7e767414b1092eec">runner_options</a>.</p>
@@ -947,7 +947,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 <p>The TAP reporter, the <span class="doxyComputerOutput">normal</span> verbosity, no output file, automatic colours, no filter, and no command line; the test cases are run, not listed.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00223">223</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00224">224</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
 
 
 <p>Referenced by <a href="#a01ea0d0319a60701968fbfea120ce767">runner_options</a>, <a href="#a16a3fae931e45f0803e9d28b174ab615">runner_options</a>, <a href="#a7df40b87a2471732f9a411bdb1e5db52">operator=</a> and <a href="#aa8399af15f4ab63f8208f9a4775cd650">operator=</a>.</p>
@@ -990,7 +990,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 <p>Releases the owned strings.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00331">331</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00332">332</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
 
 </div>
 </div>
@@ -1060,7 +1060,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 <p>Copies <span class="doxyComputerOutput">other</span> with the copy constructor, and moves the copy into this instance; self-assignment is safe.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00308">308</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h/#l00059">59</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h">runner-options-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00309">309</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h/#l00059">59</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h">runner-options-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1133,7 +1133,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00322">322</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00323">323</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
 
 
 <p>Reference <a href="#a1cd0deb2811e578a7e767414b1092eec">runner_options</a>.</p>
@@ -1199,7 +1199,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 <p>Returns the part of <span class="doxyComputerOutput"><a href="#af6b062e15df8f4a1903c2346afa08b08">arguments_</a></span> that starts at <span class="doxyComputerOutput"><a href="#a0c0fd379f4e9fe53937856c8b79ce76f">application_begin_</a></span>, or an empty span if there are none, including when the options were not parsed from a command line.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00559">559</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h/#l00114">114</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h">runner-options-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00560">560</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h/#l00114">114</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h">runner-options-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1278,7 +1278,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 <p>Returns the member <span class="doxyComputerOutput"><a href="#af6b062e15df8f4a1903c2346afa08b08">arguments_</a></span>, which is filled only by the parsing constructor.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00537">537</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h/#l00102">102</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h">runner-options-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00538">538</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h/#l00102">102</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h">runner-options-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1351,7 +1351,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 <p>Returns the <span class="doxyComputerOutput"><a href="#a444295471a1fcc38cca319f4c6c731d5">errors_</a></span> member.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00511">511</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h/#l00091">91</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h">runner-options-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00512">512</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h/#l00091">91</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h">runner-options-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1418,7 +1418,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 <p>Returns whether the <span class="doxyComputerOutput"><a href="#a444295471a1fcc38cca319f4c6c731d5">errors_</a></span> member is not empty.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00478">478</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h/#l00071">71</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h">runner-options-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00479">479</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h/#l00071">71</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h">runner-options-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1485,7 +1485,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 <p>Returns the <span class="doxyComputerOutput"><a href="#a767f197820d565e99ab249c26554b7a2">unknown_option_</a></span> member.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00493">493</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h/#l00081">81</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h">runner-options-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00494">494</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h/#l00081">81</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/runner-options-inlines-h">runner-options-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1565,7 +1565,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 <p>The message is only kept in <span class="doxyComputerOutput"><a href="#a444295471a1fcc38cca319f4c6c731d5">errors_</a></span>, so that the constructor has no output; the runner writes it on <span class="doxyComputerOutput">stderr</span> and on the console, since the reporter does not exist yet.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00577">577</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/runner-options-cpp/#l00376">376</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/runner-options-cpp">runner-options.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00578">578</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/runner-options-cpp/#l00376">376</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/runner-options-cpp">runner-options.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1627,12 +1627,12 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00384">384</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00385">385</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a48ed4dd71eff02911c2d6943ba616850">384</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a603af2d1c9643caa351305180b2e905b">colour_mode</a> <a href="#a48ed4dd71eff02911c2d6943ba616850">colour</a>{ <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8">colour_mode::automatic</a> };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a48ed4dd71eff02911c2d6943ba616850">385</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a603af2d1c9643caa351305180b2e905b">colour_mode</a> <a href="#a48ed4dd71eff02911c2d6943ba616850">colour</a>{ <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8">colour_mode::automatic</a> };</span></span></div>
 
 </div>
 
@@ -1681,12 +1681,12 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00413">413</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00414">414</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a62b0a05ad2be4f3a5131aaf8bb523910">413</a></span><span class="doxyLineContent"><span class="doxyHighlight">    std::vector&lt;std::string&gt; <a href="#a62b0a05ad2be4f3a5131aaf8bb523910">filter_patterns</a>{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a62b0a05ad2be4f3a5131aaf8bb523910">414</a></span><span class="doxyLineContent"><span class="doxyHighlight">    std::vector&lt;std::string&gt; <a href="#a62b0a05ad2be4f3a5131aaf8bb523910">filter_patterns</a>{};</span></span></div>
 
 </div>
 
@@ -1726,12 +1726,12 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00462">462</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00463">463</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a36b690e87d69f1124c8fff4d4a59f90c">462</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#a36b690e87d69f1124c8fff4d4a59f90c">help</a>{ </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight"> };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a36b690e87d69f1124c8fff4d4a59f90c">463</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#a36b690e87d69f1124c8fff4d4a59f90c">help</a>{ </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight"> };</span></span></div>
 
 </div>
 
@@ -1787,12 +1787,12 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00446">446</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00447">447</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ac4f95336439b329d0f3731a5dcafb6f9">446</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#ac4f95336439b329d0f3731a5dcafb6f9">list_tests</a>{ </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight"> };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ac4f95336439b329d0f3731a5dcafb6f9">447</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#ac4f95336439b329d0f3731a5dcafb6f9">list_tests</a>{ </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight"> };</span></span></div>
 
 </div>
 
@@ -1826,12 +1826,12 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 <p>Set by <span class="doxyComputerOutput">--output-file=&lt;path&gt;</span> or <span class="doxyComputerOutput">--output-file &lt;path&gt;</span>. When it is empty (the default), no file is written. The reporter opens the file when it is created by <span class="doxyComputerOutput">initialise()</span>; if the file cannot be opened, the error is reported on <span class="doxyComputerOutput">stderr</span> and on the console, no test is run, and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a700e3ef1f955492cd84235bd388dcdf2">runner::run_suites()</a></span> returns 2.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00363">363</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00364">364</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a86bc6ef13bb488a933f6001c98aa2c6e">363</a></span><span class="doxyLineContent"><span class="doxyHighlight">    std::string <a href="#a86bc6ef13bb488a933f6001c98aa2c6e">output_file_path</a>{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a86bc6ef13bb488a933f6001c98aa2c6e">364</a></span><span class="doxyLineContent"><span class="doxyHighlight">    std::string <a href="#a86bc6ef13bb488a933f6001c98aa2c6e">output_file_path</a>{};</span></span></div>
 
 </div>
 
@@ -1865,12 +1865,12 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 <p>Set by <span class="doxyComputerOutput">--reporter=&lt;name&gt;</span> or <span class="doxyComputerOutput">--reporter &lt;name&gt;</span>, where the name is <span class="doxyComputerOutput">tap</span> or <span class="doxyComputerOutput">human</span>.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00340">340</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00341">341</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ad22d04df014c5b0658b6e7bd239f15b0">340</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a913c4161963e9439b20857358486e8b2">reporter_kind</a> <a href="#ad22d04df014c5b0658b6e7bd239f15b0">selected_reporter</a>{ <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b">reporter_kind::tap</a> };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ad22d04df014c5b0658b6e7bd239f15b0">341</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a913c4161963e9439b20857358486e8b2">reporter_kind</a> <a href="#ad22d04df014c5b0658b6e7bd239f15b0">selected_reporter</a>{ <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b">reporter_kind::tap</a> };</span></span></div>
 
 </div>
 
@@ -1914,14 +1914,14 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 <p>Set by <span class="doxyComputerOutput">--silent</span>, <span class="doxyComputerOutput">--quiet</span>, or <span class="doxyComputerOutput">--verbose</span>; when several are given, the last one takes effect.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00349">349</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00350">350</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aff30f0303a958a549a2f4b6e67db00d5">349</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914b">micro_test_plus::verbosity</a> <a href="#aff30f0303a958a549a2f4b6e67db00d5">verbosity_level</a>{</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">350</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">micro_test_plus::verbosity::normal</a></span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">351</span><span class="doxyLineContent"><span class="doxyHighlight">    };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aff30f0303a958a549a2f4b6e67db00d5">350</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914b">micro_test_plus::verbosity</a> <a href="#aff30f0303a958a549a2f4b6e67db00d5">verbosity_level</a>{</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">351</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">micro_test_plus::verbosity::normal</a></span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">352</span><span class="doxyLineContent"><span class="doxyHighlight">    };</span></span></div>
 
 </div>
 
@@ -1961,12 +1961,12 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 <p>Set by the parsing constructor, where the parsing of the µTest++ options ends; used by <span class="doxyComputerOutput"><a href="#ab94dfa73cbbf89b5408036c06718f0d7">application_arguments()</a></span>.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00616">616</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00617">617</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a0c0fd379f4e9fe53937856c8b79ce76f">616</a></span><span class="doxyLineContent"><span class="doxyHighlight">    std::size_t <a href="#a0c0fd379f4e9fe53937856c8b79ce76f">application_begin_</a>{ 0 };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a0c0fd379f4e9fe53937856c8b79ce76f">617</a></span><span class="doxyLineContent"><span class="doxyHighlight">    std::size_t <a href="#a0c0fd379f4e9fe53937856c8b79ce76f">application_begin_</a>{ 0 };</span></span></div>
 
 </div>
 
@@ -2000,12 +2000,12 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 <p>Filled by the parsing constructor with a copy of the <span class="doxyComputerOutput">argv[]</span> strings; returned by <span class="doxyComputerOutput"><a href="#a8782919e89d6ee79cceb06365a779146">arguments()</a></span>, and used by <span class="doxyComputerOutput"><a href="#ab94dfa73cbbf89b5408036c06718f0d7">application_arguments()</a></span>.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00606">606</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00607">607</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#af6b062e15df8f4a1903c2346afa08b08">606</a></span><span class="doxyLineContent"><span class="doxyHighlight">    std::vector&lt;std::string&gt; <a href="#af6b062e15df8f4a1903c2346afa08b08">arguments_</a>{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#af6b062e15df8f4a1903c2346afa08b08">607</a></span><span class="doxyLineContent"><span class="doxyHighlight">    std::vector&lt;std::string&gt; <a href="#af6b062e15df8f4a1903c2346afa08b08">arguments_</a>{};</span></span></div>
 
 </div>
 
@@ -2039,12 +2039,12 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 <p>Appended by <span class="doxyComputerOutput"><a href="#abe865fdd65296f743fd11bdf5ef79a14">add_error()</a></span>; returned by <span class="doxyComputerOutput"><a href="#a4bea6b19bad696b128758d8a19a71f6c">errors()</a></span>, and tested by <span class="doxyComputerOutput"><a href="#a4ed347422b26dded0244c3926ef384a8">has_errors()</a></span>.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00587">587</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00588">588</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a444295471a1fcc38cca319f4c6c731d5">587</a></span><span class="doxyLineContent"><span class="doxyHighlight">    std::vector&lt;std::string&gt; <a href="#a444295471a1fcc38cca319f4c6c731d5">errors_</a>{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a444295471a1fcc38cca319f4c6c731d5">588</a></span><span class="doxyLineContent"><span class="doxyHighlight">    std::vector&lt;std::string&gt; <a href="#a444295471a1fcc38cca319f4c6c731d5">errors_</a>{};</span></span></div>
 
 </div>
 
@@ -2078,12 +2078,12 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 <p>Set by the parsing constructor, with the error; tested by <span class="doxyComputerOutput"><a href="#a117509554a3549c7a7c836506050b8ef">has_unknown_option()</a></span>.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00596">596</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00597">597</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a767f197820d565e99ab249c26554b7a2">596</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#a767f197820d565e99ab249c26554b7a2">unknown_option_</a>{ </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight"> };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a767f197820d565e99ab249c26554b7a2">597</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#a767f197820d565e99ab249c26554b7a2">unknown_option_</a>{ </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight"> };</span></span></div>
 
 </div>
 

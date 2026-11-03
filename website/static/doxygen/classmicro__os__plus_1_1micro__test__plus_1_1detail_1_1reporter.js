@@ -44,6 +44,7 @@ var classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter =
     [ "output_pass_prefix", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#aede54e424adbe77bdb6b87d40f2d3517", null ],
     [ "output_pass_suffix", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a82f4940bc3915b3fdcb58823f9bdb535", null ],
     [ "pass", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#ad9e6ccebc1904f723409ddb0caaddb3e", null ],
+    [ "pass_without_text", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a62da9e7c1a7884c7f2cdec496650a5c4", null ],
     [ "route", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#af33f2f6498a97383cdb75020e32ccf23", null ],
     [ "skip_suite", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a01df0bb54bda2662826e84e685374ce0", null ],
     [ "skip_test_case", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a1986653001ad23e18de13822bbcd022f", null ],

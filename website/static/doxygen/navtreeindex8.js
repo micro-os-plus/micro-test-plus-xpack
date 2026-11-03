@@ -1,5 +1,11 @@
 var NAVTREEINDEX8 =
 {
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html#a2069fa6eef31eeb9cd9ce2ec3214c6e2":[6,0,0,0,0,26,5],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html#a384b1d115e493d6a554ebda4e3089b19":[4,0,0,0,1,29,0],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html#a384b1d115e493d6a554ebda4e3089b19":[6,0,0,0,0,26,0],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html#a43f20a87067408065e48d3bcd950db79":[4,0,0,0,1,29,1],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html#a43f20a87067408065e48d3bcd950db79":[6,0,0,0,0,26,1],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html#ac69d71afd275e3374ef0516c8d9a82d6":[4,0,0,0,1,29,4],
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html#ac69d71afd275e3374ef0516c8d9a82d6":[6,0,0,0,0,26,4],
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html#ada5dc84fd655a188ac350568572dddb8":[4,0,0,0,1,29,2],
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html#ada5dc84fd655a188ac350568572dddb8":[6,0,0,0,0,26,2],
@@ -243,11 +249,5 @@ var NAVTREEINDEX8 =
 "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#a9199f28db3a365b60ca6ef17053cec2a":[3,0,0,0,10,2,0,3],
 "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#aad9720f2d1e443d77cdfd1eb1151e924":[3,0,0,0,10,2,0,2],
 "structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#abb9873b49614cc55fae3f6dda7b08b48":[3,0,0,0,10,2,0,1],
-"structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#ad81a4f621493097416d74f16aa458c6f":[3,0,0,0,10,2,0,4],
-"structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#adbc4320a0bdfc8bcc0cdf255639af0f2":[3,0,0,0,10,2,0,5],
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html":[4,0,0,0,6,0],
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html":[6,0,0,0,3,0],
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#a0169d044ee9d39e5d1b63c0a1fc4ce95":[4,0,0,0,6,0,2],
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#a0169d044ee9d39e5d1b63c0a1fc4ce95":[6,0,0,0,3,0,2],
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#a384b1d115e493d6a554ebda4e3089b19":[4,0,0,0,6,0,0]
+"structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#ad81a4f621493097416d74f16aa458c6f":[3,0,0,0,10,2,0,4]
 };

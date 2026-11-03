@@ -142,7 +142,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><p>The comparators convert the <span class="tt">char</span> arrays (including the string literals) and the <span class="tt">char</span> pointers to this type (see <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b" title="Prepares an operand of a comparator.">as_operand()</a></span>), so that they are compared by content, as a reader of a test expects, and not by address. A null pointer is equal only to another null pointer (not to an empty string), and is less than any string.</p>
 <p>The characters are not copied; the operand must outlive the comparison, which is always the case within a check. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01567">1567</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01568">1568</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8981cf74f42a9cdbeed10da6b37a8009" name="a8981cf74f42a9cdbeed10da6b37a8009"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8981cf74f42a9cdbeed10da6b37a8009">&#9670;&#160;</a></span>c_string() <span class="overload">[1/2]</span></h2>
@@ -178,10 +178,10 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno"> 1182</span>        : <a class="code hl_variable" href="#aef16a91ae4a348901e0bbc94fb5aa9a6">str_</a>{ str },</div>
 <div class="line"><span class="lineno"> 1183</span>          <a class="code hl_variable" href="#ac98a2bf493b2ffe5ded3075dce583702">size_</a>{ str == <span class="keyword">nullptr</span> ? 0 : std::char_traits&lt;char&gt;::length (str) }</div>
 <div class="line"><span class="lineno"> 1184</span>    {</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_html_ac98a2bf493b2ffe5ded3075dce583702"><div class="ttname"><a href="#ac98a2bf493b2ffe5ded3075dce583702">micro_os_plus::micro_test_plus::detail::c_string::size_</a></div><div class="ttdeci">std::size_t size_</div><div class="ttdoc">The number of characters, without the terminator.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01627">detail.h:1627</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_html_aef16a91ae4a348901e0bbc94fb5aa9a6"><div class="ttname"><a href="#aef16a91ae4a348901e0bbc94fb5aa9a6">micro_os_plus::micro_test_plus::detail::c_string::str_</a></div><div class="ttdeci">const char * str_</div><div class="ttdoc">The first character, or nullptr.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01619">detail.h:1619</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_html_ac98a2bf493b2ffe5ded3075dce583702"><div class="ttname"><a href="#ac98a2bf493b2ffe5ded3075dce583702">micro_os_plus::micro_test_plus::detail::c_string::size_</a></div><div class="ttdeci">std::size_t size_</div><div class="ttdoc">The number of characters, without the terminator.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01628">detail.h:1628</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string_html_aef16a91ae4a348901e0bbc94fb5aa9a6"><div class="ttname"><a href="#aef16a91ae4a348901e0bbc94fb5aa9a6">micro_os_plus::micro_test_plus::detail::c_string::str_</a></div><div class="ttdeci">const char * str_</div><div class="ttdoc">The first character, or nullptr.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01620">detail.h:1620</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l01619">str_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l01620">str_</a>.</p>
 
 </div>
 </div>
@@ -233,7 +233,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno"> 1202</span>          <a class="code hl_variable" href="#ac98a2bf493b2ffe5ded3075dce583702">size_</a> = terminator;</div>
 <div class="line"><span class="lineno"> 1203</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l01619">str_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l01620">str_</a>.</p>
 
 </div>
 </div>
@@ -274,7 +274,7 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno"> 1223</span>    {</div>
 <div class="line"><span class="lineno"> 1224</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#aef16a91ae4a348901e0bbc94fb5aa9a6">str_</a> == <span class="keyword">nullptr</span>;</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l01619">str_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l01620">str_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="expression-formatter_8cpp_source.html#l00663">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>.</p>
 
@@ -311,7 +311,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno"> 1213</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#aef16a91ae4a348901e0bbc94fb5aa9a6">str_</a> == <span class="keyword">nullptr</span> ? std::string_view{}</div>
 <div class="line"><span class="lineno"> 1214</span>                             : std::string_view{ <a class="code hl_variable" href="#aef16a91ae4a348901e0bbc94fb5aa9a6">str_</a>, <a class="code hl_variable" href="#ac98a2bf493b2ffe5ded3075dce583702">size_</a> };</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l01627">size_</a>, and <a class="el" href="detail_8h_source.html#l01619">str_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l01628">size_</a>, and <a class="el" href="detail_8h_source.html#l01620">str_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="expression-formatter_8cpp_source.html#l00663">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>.</p>
 
@@ -339,7 +339,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Computed by the constructors; zero for a null pointer. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01627">1627</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01628">1628</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01210">view()</a>.</p>
 
@@ -366,7 +366,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Not owned; points into the operand passed to the comparator. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01619">1619</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01620">1620</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01180">c_string()</a>, <a class="el" href="detail-inlines_8h_source.html#l01191">c_string()</a>, <a class="el" href="detail-inlines_8h_source.html#l01221">is_null()</a>, and <a class="el" href="detail-inlines_8h_source.html#l01210">view()</a>.</p>
 

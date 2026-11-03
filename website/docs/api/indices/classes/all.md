@@ -575,6 +575,9 @@ keywords:
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case/#a3f1717ee8c04af1181f6dff2966b3d34"><b>parent_suite_</b></a>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">micro_os_plus::micro_test_plus::test_case</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/colours/#ac3953ba58fbf322bd310c857844d17fe"><b>pass</b></a>: as variable in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/colours">micro_os_plus::micro_test_plus::detail::colours</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-human/#affeaf431bef88a17bb79e00e355ad031"><b>pass_without_text()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-human">micro_os_plus::micro_test_plus::detail::reporter_human</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-tap/#a4ccc6d5273d6668fc3e91cc790328c5f"><b>pass_without_text()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-tap">micro_os_plus::micro_test_plus::detail::reporter_tap</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a62da9e7c1a7884c7f2cdec496650a5c4"><b>pass_without_text()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter">micro_os_plus::micro_test_plus::detail::reporter</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#ad9e6ccebc1904f723409ddb0caaddb3e"><b>pass()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-tap">micro_os_plus::micro_test_plus::detail::reporter_tap</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#a454de640619adaeeb5cbc2ada7144946"><b>passed_checks_</b></a>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters">micro_os_plus::micro_test_plus::counters</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#a6d478407d2416d3d19a4041fa1c12c9b"><b>passed_checks()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters">micro_os_plus::micro_test_plus::counters</a></li>
@@ -590,7 +593,7 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/anonymous-reporter-tap-cpp-/tap-name/#a7c9c0f8a9f13ff4c258c1d9a55bed42c"><b>prepared_</b></a>: as variable in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/anonymous-reporter-tap-cpp-/tap-name">micro_os_plus::micro_test_plus::detail::anonymous{reporter-tap.cpp}::tap_name</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter/#a3a9dbf882eb4e65385eef75726500477"><b>prepend_cast()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter">micro_os_plus::micro_test_plus::detail::expression_formatter</a></li>
 </ul>
-<p>16 entries</p>
+<p>19 entries</p>
 
 ## - R -
 
@@ -857,7 +860,7 @@ keywords:
 </ul>
 <p>12 entries</p>
 <br/>
-<p>Total: 715 entries.</p>
+<p>Total: 718 entries.</p>
 
 <hr/>
 

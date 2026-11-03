@@ -1,5 +1,11 @@
 var NAVTREEINDEX6 =
 {
+"group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5":[3,0,0,0,10,2,39],
+"group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gaa2bfc74376f8c110053bfa6e06e40772":[3,0,0,0,10,2,49],
+"group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gaa8bb559065ea34a9645fdfd6339b9b7a":[3,0,0,0,10,2,21],
+"group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gaaa486af2418a24076237fbe26940f5ae":[3,0,0,0,10,2,16],
+"group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gab0bb5d1e37cbe8de6477c11ecd60956d":[3,0,0,0,10,2,56],
+"group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef":[3,0,0,0,10,2,52],
 "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gabc8f58b457f42435bcb51f53e6fe6b78":[3,0,0,0,10,2,37],
 "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gabce6e838737bf25be6e7527f69e75590":[3,0,0,0,10,2,54],
 "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gaceb70f41ddfa8f5805dbe9be2adf2289":[3,0,0,0,10,2,43],
@@ -243,11 +249,5 @@ var NAVTREEINDEX6 =
 "stopwatch-inlines_8h_source.html":[7,0,0,0,0,0,12],
 "stopwatch_8cpp.html":[7,0,1,9],
 "stopwatch_8cpp_source.html":[7,0,1,9],
-"stopwatch_8h.html":[7,0,0,0,0,16],
-"stopwatch_8h_source.html":[7,0,0,0,0,16],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html":[4,0,0,0,1,5],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html":[6,0,0,0,0,2],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html#a27b015b0e2b40e0f0bbb1b08588e1c20":[4,0,0,0,1,5,2],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html#a27b015b0e2b40e0f0bbb1b08588e1c20":[6,0,0,0,0,2,2],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html#a3111bc24739599066db41c6a5023672b":[4,0,0,0,1,5,6]
+"stopwatch_8h.html":[7,0,0,0,0,16]
 };

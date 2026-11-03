@@ -1,5 +1,11 @@
 var NAVTREEINDEX5 =
 {
+"classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#a6c652cd5dc8194269c1cc5f0dc1945e0":[4,0,0,0,16,15],
+"classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#a6c652cd5dc8194269c1cc5f0dc1945e0":[6,0,0,0,12,15],
+"classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#a6d375bb7425b231aa3605642289d2f44":[4,0,0,0,16,8],
+"classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#a6d375bb7425b231aa3605642289d2f44":[6,0,0,0,12,8],
+"classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#a6ddd1c0721a1f0ce3c9e92870ef358ff":[4,0,0,0,16,35],
+"classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#a6ddd1c0721a1f0ce3c9e92870ef358ff":[6,0,0,0,12,35],
 "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#a6df38c720d659b6a53dfd2b65c5d25e4":[4,0,0,0,16,10],
 "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#a6df38c720d659b6a53dfd2b65c5d25e4":[6,0,0,0,12,10],
 "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#a7601ca8102a7b4b3d7e7f8b33a0728a3":[4,0,0,0,16,17],
@@ -243,11 +249,5 @@ var NAVTREEINDEX5 =
 "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga97f7bc9a25eb4b7c663bd2388ade01ae":[3,0,0,0,10,2,17],
 "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga9c597ca04848620b8570c29a4741e77d":[3,0,0,0,10,2,12],
 "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga9ca6fecc72b6da90acee52977eb077d7":[3,0,0,0,10,2,57],
-"group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga9d9b0d77e96cc46e7c9fabbb6cf671da":[3,0,0,0,10,2,51],
-"group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga9e7a52d8850ef68e6e0f6f9ca64a4ce5":[3,0,0,0,10,2,39],
-"group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gaa2bfc74376f8c110053bfa6e06e40772":[3,0,0,0,10,2,49],
-"group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gaa8bb559065ea34a9645fdfd6339b9b7a":[3,0,0,0,10,2,21],
-"group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gaaa486af2418a24076237fbe26940f5ae":[3,0,0,0,10,2,16],
-"group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gab0bb5d1e37cbe8de6477c11ecd60956d":[3,0,0,0,10,2,56],
-"group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef":[3,0,0,0,10,2,52]
+"group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga9d9b0d77e96cc46e7c9fabbb6cf671da":[3,0,0,0,10,2,51]
 };

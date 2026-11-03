@@ -410,6 +410,9 @@ keywords:
 ## - P -
 
 <ul>
+<li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-human/#affeaf431bef88a17bb79e00e355ad031"><b>pass_without_text()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-human">micro_os_plus::micro_test_plus::detail::reporter_human</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-tap/#a4ccc6d5273d6668fc3e91cc790328c5f"><b>pass_without_text()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-tap">micro_os_plus::micro_test_plus::detail::reporter_tap</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a62da9e7c1a7884c7f2cdec496650a5c4"><b>pass_without_text()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter">micro_os_plus::micro_test_plus::detail::reporter</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#ad9e6ccebc1904f723409ddb0caaddb3e"><b>pass()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-tap">micro_os_plus::micro_test_plus::detail::reporter_tap</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#a6d478407d2416d3d19a4041fa1c12c9b"><b>passed_checks()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters">micro_os_plus::micro_test_plus::counters</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#a14690f9880df505f9dd90a9f2c3dfc96"><b>passed()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters">micro_os_plus::micro_test_plus::counters</a></li>
@@ -417,7 +420,7 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/extension/predicate-op/#ab1d700c6cde6b75a6d96e113b00824cb"><b>predicate_op()</b></a>: as function in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/extension/predicate-op">micro_os_plus::micro_test_plus::extension::predicate_op&lt;T, Predicate_T&gt;</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter/#a3a9dbf882eb4e65385eef75726500477"><b>prepend_cast()</b></a>: as function in class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter">micro_os_plus::micro_test_plus::detail::expression_formatter</a></li>
 </ul>
-<p>6 entries</p>
+<p>9 entries</p>
 
 ## - R -
 
@@ -586,7 +589,7 @@ keywords:
 </ul>
 <p>10 entries</p>
 <br/>
-<p>Total: 449 entries.</p>
+<p>Total: 452 entries.</p>
 
 <hr/>
 

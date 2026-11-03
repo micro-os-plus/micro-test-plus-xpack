@@ -486,6 +486,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a3ff526c7ae5db0669d7db2adebf7cb2d" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a0cdaf2313f78a256b80f7bb7b279e2e6" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1ad9e6ccebc1904f723409ddb0caaddb3e" kind="function"><name>pass</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a62da9e7c1a7884c7f2cdec496650a5c4" kind="function"><name>pass_without_text</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a01df0bb54bda2662826e84e685374ce0" kind="function"><name>skip_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a1986653001ad23e18de13822bbcd022f" kind="function"><name>skip_test_case</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a0e6f0a129d495a7e9d57ef71412cd88f" kind="function"><name>writes_passed_checks</name></member>
@@ -546,6 +547,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1aff9992a52d166dafec931c8c9d430356" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a23a8c557b9a14e415b3092fb766d4fad" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1ad9e6ccebc1904f723409ddb0caaddb3e" kind="function"><name>pass</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1affeaf431bef88a17bb79e00e355ad031" kind="function"><name>pass_without_text</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1aca37d52611ed87d102dce89c3c6cc99d" kind="function"><name>skip_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1af28ab5a9448645fb8976c0b139bf302b" kind="function"><name>skip_test_case</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a0e6f0a129d495a7e9d57ef71412cd88f" kind="function"><name>writes_passed_checks</name></member>
@@ -625,6 +627,7 @@
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1afe3745c4194923880428e105848f6a13" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a9da35382cc3f903728f5f1bed2c4a745" kind="function"><name>operator=</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1ad9e6ccebc1904f723409ddb0caaddb3e" kind="function"><name>pass</name></member>
+    <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a4ccc6d5273d6668fc3e91cc790328c5f" kind="function"><name>pass_without_text</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a319f35d4af8c72af8b14a89b421c1c74" kind="function"><name>skip_suite</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a31ccd7af941d06241ce16df9274abc38" kind="function"><name>skip_test_case</name></member>
     <member refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a0e6f0a129d495a7e9d57ef71412cd88f" kind="function"><name>writes_passed_checks</name></member>

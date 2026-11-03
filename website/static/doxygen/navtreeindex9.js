@@ -1,5 +1,11 @@
 var NAVTREEINDEX9 =
 {
+"structmicro__os__plus_1_1micro__test__plus_1_1to__t.html#adbc4320a0bdfc8bcc0cdf255639af0f2":[3,0,0,0,10,2,0,5],
+"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html":[4,0,0,0,6,0],
+"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html":[6,0,0,0,3,0],
+"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#a0169d044ee9d39e5d1b63c0a1fc4ce95":[4,0,0,0,6,0,2],
+"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#a0169d044ee9d39e5d1b63c0a1fc4ce95":[6,0,0,0,3,0,2],
+"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#a384b1d115e493d6a554ebda4e3089b19":[4,0,0,0,6,0,0],
 "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#a384b1d115e493d6a554ebda4e3089b19":[6,0,0,0,3,0,0],
 "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#aab5138b851247527b8c8abdf28c5e5b1":[4,0,0,0,6,0,6],
 "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html#aab5138b851247527b8c8abdf28c5e5b1":[6,0,0,0,3,0,6],

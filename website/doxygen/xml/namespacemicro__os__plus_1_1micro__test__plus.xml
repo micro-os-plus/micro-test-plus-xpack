@@ -135,7 +135,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="148" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="149" bodyend="158"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="149" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="150" bodyend="159"/>
       </memberdef>
       <memberdef kind="enum" id="namespacemicro__os__plus_1_1micro__test__plus_1a913c4161963e9439b20857358486e8b2" prot="public" static="no" strong="yes">
         <type></type>
@@ -168,7 +168,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="124" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="125" bodyend="128"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="125" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="126" bodyend="129"/>
       </memberdef>
       <memberdef kind="enum" id="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" prot="public" static="no" strong="yes">
         <type></type>
@@ -198,7 +198,7 @@
           <briefdescription>
           </briefdescription>
           <detaileddescription>
-<para>Displays test suite and test case results; the individual checks are shown only for failures, the passed checks being only counted. </para>
+<para>Displays test suite and test case results; the individual checks are shown only for failures, the passed checks being counted, and, in the TAP blocks, numbered by bare <computeroutput>ok</computeroutput> lines. </para>
           </detaileddescription>
         </enumvalue>
         <enumvalue id="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" prot="public">
@@ -219,7 +219,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="99" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="100" bodyend="111"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="99" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="100" bodyend="112"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="typedef">

@@ -172,7 +172,7 @@ The v5.0.1 name, with a trailing underscore. The stored value is now private, an
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="455" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="455" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="456" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="456" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga3770982b9b7025e79d30c44f8b6de981" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>bool</type>
@@ -192,7 +192,7 @@ The v5.0.1 name, with a trailing underscore. The stored value is now private, an
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="573" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="573" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="574" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="574" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga1e6e1923184c1e15b8dfe69053010c83" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>bool</type>
@@ -212,7 +212,7 @@ The v5.0.1 name, with a trailing underscore. The stored value is now private, an
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="632" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="632" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="633" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="633" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gaf95d91c9cae67c4ce138146b2cdab25e" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>bool</type>
@@ -232,7 +232,7 @@ The v5.0.1 name, with a trailing underscore. The stored value is now private, an
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="691" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="691" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="692" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="692" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gadcaedd85e07d96bd7230d06c5c258df7" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>bool</type>
@@ -252,7 +252,7 @@ The v5.0.1 name, with a trailing underscore. The stored value is now private, an
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="750" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="750" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="751" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="751" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga8decf36d3e0e7cc8242c6a2170743422" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>bool</type>
@@ -272,7 +272,7 @@ The v5.0.1 name, with a trailing underscore. The stored value is now private, an
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="514" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="514" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="515" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="515" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">

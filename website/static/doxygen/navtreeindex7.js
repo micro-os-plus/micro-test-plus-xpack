@@ -1,5 +1,11 @@
 var NAVTREEINDEX7 =
 {
+"stopwatch_8h_source.html":[7,0,0,0,0,16],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html":[4,0,0,0,1,5],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html":[6,0,0,0,0,2],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html#a27b015b0e2b40e0f0bbb1b08588e1c20":[4,0,0,0,1,5,2],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html#a27b015b0e2b40e0f0bbb1b08588e1c20":[6,0,0,0,0,2,2],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html#a3111bc24739599066db41c6a5023672b":[4,0,0,0,1,5,6],
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html#a3111bc24739599066db41c6a5023672b":[6,0,0,0,0,2,6],
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html#a384b1d115e493d6a554ebda4e3089b19":[4,0,0,0,1,5,0],
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html#a384b1d115e493d6a554ebda4e3089b19":[6,0,0,0,0,2,0],
@@ -243,11 +249,5 @@ var NAVTREEINDEX7 =
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html":[6,0,0,0,0,26],
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html#a00b50cd87531243cd42964982fc11bdd":[4,0,0,0,1,29,3],
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html#a00b50cd87531243cd42964982fc11bdd":[6,0,0,0,0,26,3],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html#a2069fa6eef31eeb9cd9ce2ec3214c6e2":[4,0,0,0,1,29,5],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html#a2069fa6eef31eeb9cd9ce2ec3214c6e2":[6,0,0,0,0,26,5],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html#a384b1d115e493d6a554ebda4e3089b19":[4,0,0,0,1,29,0],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html#a384b1d115e493d6a554ebda4e3089b19":[6,0,0,0,0,26,0],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html#a43f20a87067408065e48d3bcd950db79":[4,0,0,0,1,29,1],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html#a43f20a87067408065e48d3bcd950db79":[6,0,0,0,0,26,1],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html#ac69d71afd275e3374ef0516c8d9a82d6":[4,0,0,0,1,29,4]
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html#a2069fa6eef31eeb9cd9ce2ec3214c6e2":[4,0,0,0,1,29,5]
 };

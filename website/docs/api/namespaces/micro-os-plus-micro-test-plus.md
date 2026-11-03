@@ -1436,16 +1436,16 @@ namespace micro_os_plus::micro_test_plus { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00148">148</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00149">149</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber">149</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8">150</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8">automatic</a>, </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb">153</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb">always</a>, </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a603af2d1c9643caa351305180b2e905bac7561db7a418dd39b2201dfe110ab4a4">157</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a603af2d1c9643caa351305180b2e905bac7561db7a418dd39b2201dfe110ab4a4">never</a> </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">158</span><span class="doxyLineContent"><span class="doxyHighlight">  };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">150</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8">151</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8">automatic</a>, </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb">154</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb">always</a>, </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a603af2d1c9643caa351305180b2e905bac7561db7a418dd39b2201dfe110ab4a4">158</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a603af2d1c9643caa351305180b2e905bac7561db7a418dd39b2201dfe110ab4a4">never</a> </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">159</span><span class="doxyLineContent"><span class="doxyHighlight">  };</span></span></div>
 
 </div>
 
@@ -1506,15 +1506,15 @@ namespace micro_os_plus::micro_test_plus { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00124">124</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h/#l00125">125</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">runner-options.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber">125</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b">126</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b">tap</a>, </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70">127</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70">human</a> </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">128</span><span class="doxyLineContent"><span class="doxyHighlight">  };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">126</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b">127</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b">tap</a>, </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70">128</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70">human</a> </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">129</span><span class="doxyLineContent"><span class="doxyHighlight">  };</span></span></div>
 
 </div>
 
@@ -1591,8 +1591,8 @@ namespace micro_os_plus::micro_test_plus { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">101</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">silent</a> = 0, </span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">102</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">quiet</a> = 1, </span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">106</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">normal</a> = 2, </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">109</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbose</a> = 3 </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">111</span><span class="doxyLineContent"><span class="doxyHighlight">  };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">110</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbose</a> = 3 </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">112</span><span class="doxyLineContent"><span class="doxyHighlight">  };</span></span></div>
 
 </div>
 
