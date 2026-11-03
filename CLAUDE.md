@@ -179,12 +179,16 @@ downstream projects via one of:
 - **CMake** (`CMakeLists.txt`): defines `micro-os-plus::micro-test-plus`
   (INTERFACE), `micro-os-plus::micro-test-plus-objects-library` (OBJECT),
   and a STATIC library variant, all built from the same `src/*.cpp` list
-  and depending on `micro-os-plus::diag-trace`. When adding a new `.cpp`
-  file, add it to **all** of these `target_sources()` lists.
+  and depending on `micro-os-plus::diag-trace`.
 - **meson** (`meson.build`): declares an equivalent
   `micro_os_plus_micro_test_plus_dependency`.
 - **xPack/xCDL** (`xcdl-package.jsonc`): package metadata for the xpm
-  package manager.
+  package manager, and the source of the top-level `CMakeLists.txt` and
+  `meson.build`, which are generated (they start with "DO NOT EDIT!") by
+  `xpm run xcdl-export`. When adding, removing, or renaming a `.cpp`
+  file, an include folder, or a dependency, change `xcdl-package.jsonc`
+  and run the action again; do not edit the generated files (see the xcdl
+  skill).
 
 ## Testing
 
