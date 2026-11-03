@@ -41,7 +41,7 @@ main (int argc, char* argv[])
   auto& ts = tr.add_top_suite ();
 
   ts.test ("Check truth", [] (auto& t) {
-    t.expect (mt::eq (6 * 7, 42)) << "the answer";
+    t.expect (mt::eq (6 * 7, 42)) << "the answer is 42";
   });
 
   return tr.run_suites ();

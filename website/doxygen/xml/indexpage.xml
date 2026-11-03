@@ -26,7 +26,7 @@
 <codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>ts<sp/>=<sp/>tr.add_top_suite<sp/>();</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>truth&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t.expect<sp/>(mt::eq<sp/>(6<sp/>*<sp/>7,<sp/>42))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;the<sp/>answer&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t.expect<sp/>(mt::eq<sp/>(6<sp/>*<sp/>7,<sp/>42))<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;the<sp/>answer<sp/>is<sp/>42&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>});</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tr.run_suites<sp/>();</highlight></codeline>
