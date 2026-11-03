@@ -874,6 +874,30 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
+   * The line is appended only with the normal verbosity, the only level at
+   * which a test case may be displayed as a block while its passed checks
+   * are not formatted: with the verbose verbosity, or with an output file,
+   * the passed checks are written in full, by `pass()`, and with the quiet
+   * and silent verbosity levels, only the failed checks are displayed. The
+   * line, indented one level deeper than the test case, carries the test
+   * point number of the check; the buffer is displayed only when the test
+   * case is displayed as a block, and discarded when it is a single test
+   * point.
+   */
+  void
+  reporter_tap::pass_without_text (const test_case& test_case)
+  {
+    if (verbosity_ != verbosity::normal)
+      {
+        return;
+      }
+
+    *this << indent (test_case.nesting_depth () + 1) << "ok "
+          << test_case.test_point_number_ << endl;
+  }
+
+  /**
+   * @details
    * This member function outputs the prefix for a passing check result, as a
    * TAP `"ok <n> - "` line, where `<n>` is the test point number of the
    * check, which counts the checks and the nested test cases of the test

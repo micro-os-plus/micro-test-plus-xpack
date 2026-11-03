@@ -285,6 +285,11 @@ namespace
     }
 
     void
+    pass_without_text (const mt::test_case&) override
+    {
+    }
+
+    void
     abort_session (const mt::reflection::source_location&, bool) override
     {
     }

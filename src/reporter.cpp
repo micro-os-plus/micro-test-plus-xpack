@@ -313,7 +313,8 @@ namespace micro_os_plus::micro_test_plus::detail
    * whatever the verbosity; to the console only with the verbose
    * verbosity level. With the normal verbosity, only the failed checks
    * (with the names of the open test cases) are displayed, so the passed
-   * checks are only counted, without formatting them.
+   * checks are counted, without formatting them; the TAP reporter records
+   * their test points (see `pass_without_text()`).
    */
   bool
   reporter::writes_passed_checks (void) const noexcept

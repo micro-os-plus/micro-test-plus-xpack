@@ -47,19 +47,26 @@ endif ()
 find_program (NODE_EXECUTABLE NAMES node REQUIRED)
 
 # add_validate_tap_test(NAME <validate-name> DEPENDS <depends-name> FILE
-# <tap-file>)
+# <tap-file> [LENIENT])
 #
 # Registers a test named <validate-name>, which runs validate-tap.mjs to check
 # that <tap-file> is well-formed TAP 14. The test depends on <depends-name>.
+# With LENIENT, used for the console captures, the lines printed by the test
+# program are accepted (see validate-tap.mjs).
 
 function (add_validate_tap_test)
 
-  cmake_parse_arguments (PARSE_ARGV 0 arg "" "NAME;DEPENDS;FILE" "")
+  cmake_parse_arguments (PARSE_ARGV 0 arg "LENIENT" "NAME;DEPENDS;FILE" "")
+
+  set (options)
+  if (arg_LENIENT)
+    list (APPEND options "--lenient")
+  endif ()
 
   add_test (
     NAME "${arg_NAME}"
     COMMAND "${NODE_EXECUTABLE}" "${CMAKE_SOURCE_DIR}/scripts/validate-tap.mjs"
-            "${arg_FILE}"
+            ${options} "${arg_FILE}"
   )
 
   set_tests_properties ("${arg_NAME}" PROPERTIES DEPENDS "${arg_DEPENDS}")
@@ -1198,6 +1205,17 @@ if (XPACK_ENABLE_UNIT_TEST)
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-console.tap"
           "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-test-console.tap"
   )
+  # The plans of the blocks must match their test points, also when the passed
+  # checks are not displayed.
+  add_validate_tap_test (
+    NAME
+    "unit-test-console-validate"
+    DEPENDS
+    "unit-test-console"
+    FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/unit-test-console.tap"
+    LENIENT
+  )
 
   # --quiet The TAP console output has the suites as single test points, and the
   # failed checks as comments.
@@ -1214,6 +1232,15 @@ if (XPACK_ENABLE_UNIT_TEST)
     DEPENDS "unit-test-console-quiet"
     FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-console-quiet.tap"
           "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-test-console-quiet.tap"
+  )
+  add_validate_tap_test (
+    NAME
+    "unit-test-console-quiet-validate"
+    DEPENDS
+    "unit-test-console-quiet"
+    FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/unit-test-console-quiet.tap"
+    LENIENT
   )
 
   # default

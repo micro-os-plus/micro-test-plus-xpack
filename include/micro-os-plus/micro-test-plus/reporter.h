@@ -516,6 +516,26 @@ namespace micro_os_plus::micro_test_plus
             const test_case& test_case);
 
       /**
+       * @brief Reports a passed condition whose text is not written.
+       *
+       * @details
+       * Called by the destructor of `check_result` instead of `pass()`,
+       * for a passed check that was neither formatted nor described,
+       * since `writes_passed_checks()` returned `false`; the check has
+       * already been numbered and is counted by the caller. The TAP
+       * reporter records the test point, so that the plan of a test case
+       * displayed as a block matches its test points; the human-readable
+       * reporter does nothing.
+       *
+       * @param test_case The test case that owns this check.
+       * @par Returns
+       *   Nothing.
+       */
+      virtual void
+      pass_without_text (const test_case& test_case)
+          = 0;
+
+      /**
        * @brief Reports a failed condition.
        *
        * @param failure The failure details: the kind of the check, the

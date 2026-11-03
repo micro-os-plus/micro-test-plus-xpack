@@ -111,8 +111,9 @@ namespace micro_os_plus::micro_test_plus
      * in its arguments.
      *
      * If the evaluated expression is true, the reporter records a
-     * successful outcome along with any accumulated message, unless it
-     * does not write the passed checks, and the passed checks counter of
+     * successful outcome along with any accumulated message, or, if it
+     * does not write the passed checks, only the test point, with
+     * `reporter::pass_without_text()`, and the passed checks counter of
      * the test case is incremented. If the expression is false, the
      * reporter records a failure, with the failure details (the kind of
      * the check, the message, and the source location) and the
@@ -163,6 +164,10 @@ namespace micro_os_plus::micro_test_plus
             {
               test_case_->test_reporter ().pass (info_.message, expression_str,
                                                  *test_case_);
+            }
+          else
+            {
+              test_case_->test_reporter ().pass_without_text (*test_case_);
             }
           test_case_->totals_.increment_passed_checks ();
         }

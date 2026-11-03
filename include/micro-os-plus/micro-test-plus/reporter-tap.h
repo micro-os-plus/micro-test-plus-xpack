@@ -256,6 +256,22 @@ namespace micro_os_plus::micro_test_plus::detail
     skip_test_case (const test_case& test_case) override;
 
     /**
+     * @brief Records a passed check whose text is not written.
+     *
+     * @details
+     * With the normal verbosity, appends a bare `ok <n>` line, without a
+     * description, to the buffered results of the test case, so that,
+     * when the test case is displayed as a block, the plan matches the
+     * test points.
+     *
+     * @param test_case The test case that owns this check.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    pass_without_text (const test_case& test_case) override;
+
+    /**
      * @brief Reports the abort of the test execution.
      *
      * @details

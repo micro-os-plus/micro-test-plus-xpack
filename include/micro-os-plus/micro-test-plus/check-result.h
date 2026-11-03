@@ -183,7 +183,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * A passed check whose line the reporter never writes (see
      * `reporter::writes_passed_checks()`) formats neither its expression
-     * nor its messages, and is only counted.
+     * nor its messages; it is counted, and passed to
+     * `reporter::pass_without_text()`, which records only its test point.
      *
      * Only the template function `init()` depends on the type of the
      * expression; it delegates to a private non-template function, and the

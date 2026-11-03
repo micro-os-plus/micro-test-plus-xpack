@@ -268,6 +268,21 @@ namespace micro_os_plus::micro_test_plus::detail
     skip_test_case (const test_case& test_case) override;
 
     /**
+     * @brief Ignores a passed check whose text is not written.
+     *
+     * @details
+     * The human-readable report has no plan, and displays the passed
+     * checks only when they are written in full, so a check without text
+     * leaves no trace in it.
+     *
+     * @param test_case The test case that owns this check.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    pass_without_text (const test_case& test_case) override;
+
+    /**
      * @brief Reports the abort of the test execution.
      *
      * @details

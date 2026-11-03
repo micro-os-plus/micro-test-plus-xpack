@@ -710,6 +710,18 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
+   * Does nothing; the passed checks are displayed only with the verbose
+   * verbosity, or written to the output file, and in both cases they are
+   * written in full, by `pass()`.
+   */
+  void
+  reporter_human::pass_without_text (
+      [[maybe_unused]] const test_case& test_case)
+  {
+  }
+
+  /**
+   * @details
    * Since `end_test_case()` is not called for the running test cases, this
    * member function writes the buffered results in its place; after a failed
    * requirement, they end with it. As in `end_test_case()`, they are always

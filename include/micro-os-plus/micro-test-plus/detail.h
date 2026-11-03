@@ -289,8 +289,9 @@ namespace micro_os_plus::micro_test_plus
        * @brief Stores the operand.
        *
        * @details
-       * Either a value, moved from a temporary, or a `const` reference to
-       * a named operand (see `stored_operand_t`). It is not `const`, so
+       * A value, moved from a temporary or copied from a named operand,
+       * or, for a named operand that cannot be copied, a `const`
+       * reference to it (see `stored_operand_t`). It is not `const`, so
        * that a temporary expression can be moved into an enclosing one.
        */
       T t_;
@@ -389,10 +390,10 @@ namespace micro_os_plus::micro_test_plus
        * @brief Stores the left-hand operand.
        *
        * @details
-       * Either a value, moved from a temporary, or a `const` reference to
-       * a named operand (see `stored_operand_t`), so that a named
-       * container is not copied. It is not `const`, so that a temporary
-       * expression can be moved into an enclosing one.
+       * A value, moved from a temporary or copied from a named operand,
+       * or, for a named operand that cannot be copied, a `const`
+       * reference to it (see `stored_operand_t`). It is not `const`, so
+       * that a temporary expression can be moved into an enclosing one.
        */
       Lhs_T lhs_;
 
