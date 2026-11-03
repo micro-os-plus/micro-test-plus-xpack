@@ -1,7 +1,7 @@
 ---
 title: µTest++ Testing Framework v3.0.0 released
 seo_title: Version 3.0.0 released
-description: Version 3.0.0 is a new release
+description: Version 3.0.0 is a new release; a significant revision, with comparators, exception handling, and templates for test cases and suites
 keywords:
   - micro-os-plus
   - xpack
@@ -51,7 +51,12 @@ package into a project is to add it as a dependency via **xpm**.
 `xpm install @micro-os-plus/micro-test-plus@${frontMatter.version} --verbose
 `} </CodeBlock>
 
-Comprehensive instructions can be found in the [Install Guide](/docs/install/).
+However, like any source code library, this project can also be
+integrated into another project in the traditional manner, either
+by copying the relevant files into the target project or by
+linking the entire project as a Git submodule.
+
+Detailed instructions can be found in the [Integration Guide](/docs/install/).
 
 ## Source code
 

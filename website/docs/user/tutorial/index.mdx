@@ -1,0 +1,310 @@
+---
+title: "Tutorial: writing the first tests"
+description: "A step-by-step tutorial that builds a first test with µTest++, from a minimal program to checks with comparators, each with its code and its output."
+keywords:
+  - micro-os-plus
+  - xpack
+  - micro-test-plus
+  - user
+  - guide
+  - tutorial
+
+date: 2026-11-03 10:00:00 +0200
+---
+
+{/* ------------------------------------------------------------------------ */}
+
+# Tutorial: writing the first tests
+
+This tutorial builds the first tests step by step, from a minimal program to
+checks with comparators, each with its code and the output that it produces.
+The pages that follow describe each feature in detail.
+
+## Minimal test
+
+The most basic test comprises a single test case with a single expectation; for
+example:
+
+```cpp showLineNumbers
+#include "micro-os-plus/micro-test-plus.h"
+
+// For convenience, alias the fully qualified namespace to a shorter name.
+namespace mt = micro_os_plus::micro_test_plus;
+
+// Create a runner instance.
+mt::runner tr;
+
+int
+main(int argc, char* argv[])
+{
+  // Initialise the runner with the command-line options.
+  tr.initialise (argc, argv);
+
+  // Add the top suite and get a reference to it.
+  auto& ts = tr.add_top_suite ();
+
+  // Perform a simple test, with a single expectation.
+  ts.test ("Check truth", [] (auto& t) {
+    t.expect (true);
+  });
+
+  return tr.run_suites ();
+}
+```
+
+:::info C++ Lambdas
+The second argument passed to the `test()` function is a **C++ lambda**, which
+is an unnamed inline function.
+
+µTest++ recommends using lambdas whenever possible, but also supports passing
+any C++ callable object, such as pointers to functions, functors,
+`std::function`, etc.
+:::
+
+The program must be built with the sources of the library and with
+`MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED` defined; without that macro the
+umbrella header is empty, and the first error is
+`use of undeclared identifier 'micro_os_plus'`. The sources are listed in the
+[Integration](/docs/install/#integration) section of the Integration Guide, and the
+other macros in the [Configuration](/docs/install/#configuration) section.
+
+## TAP output
+
+By default, when a test is executed, the output conforms to the **TAP 14 (Test
+Anything Protocol version 14)**
+[specification](https://testanything.org/tap-version-14-specification.html), a
+well-established protocol for communication between tested logic and test
+harnesses.
+
+For the above test, the output looks like this:
+
+```console
+# Running: minimal-test
+# Built with GCC 15.2.1, with exceptions
+TAP version 14
+# Subtest: minimal-test
+    ok 1 - Check truth # { passed, 1 check }
+
+    1..1
+ok 1 - minimal-test # { passed, 1 check in 1 test case, time: 0.04 ms }
+
+1..1
+# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.04 ms }
+```
+
+The first two lines show the command line and the compiler. A passed test case
+is displayed as a single `ok` line. With the `--verbose` option (see
+[Verbosity](/docs/user/running-tests/#verbosity)), the heading of every test
+case and each passed check are also displayed:
+
+```console
+# Running: minimal-test --verbose
+# Built with GCC 15.2.1, with exceptions
+TAP version 14
+# Subtest: minimal-test
+
+    # Subtest: Check truth
+        ok 1 - true
+        1..1
+    ok 1 - Check truth # { passed, 1 check }
+
+    1..1
+ok 1 - minimal-test # { passed, 1 check in 1 test case, time: 0.04 ms }
+
+1..1
+# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.04 ms }
+```
+
+In the `ok`/`not ok` lines, the names of the suites and test cases, the
+messages, and the expressions are escaped as the specification recommends: each
+`#` is written as `\#`, and each `\` as `\\`, so that a `#` in a name (for
+example `parser # TODO rework`) is not read as a `TODO` or `SKIP` directive,
+which would hide a failure; the TAP consumers remove the escapes. The line
+breaks are replaced by spaces, so that a name or a message always fits on its
+line. The `# Subtest:` lines, which are comments, show the names as they are,
+with only the line breaks replaced.
+
+## Testing a computed value
+
+A slightly more practical example would verify the result of a computed value;
+for instance:
+
+```cpp showLineNumbers
+#include "micro-os-plus/micro-test-plus.h"
+
+namespace mt = micro_os_plus::micro_test_plus;
+
+static int
+compute_answer()
+{
+  return 42;
+}
+
+mt::runner tr;
+
+int
+main(int argc, char* argv[])
+{
+  tr.initialise (argc, argv);
+
+  auto& ts = tr.add_top_suite ("The Answer");
+
+  ts.test ("Check answer", [] (auto& t) {
+    t.expect (compute_answer() == 42) << "the answer is 42";
+  });
+
+  return tr.run_suites ();
+}
+```
+
+```console
+# Running: main --verbose
+# Built with GCC 15.2.1, with exceptions
+TAP version 14
+# Subtest: The Answer
+
+    # Subtest: Check answer
+        ok 1 - the answer is 42
+        1..1
+    ok 1 - Check answer # { passed, 1 check }
+
+    1..1
+ok 1 - The Answer # { passed, 1 check in 1 test case, time: 0.04 ms }
+
+1..1
+# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.04 ms }
+```
+
+If the function returns an incorrect value, the test will fail; for example:
+
+```cpp
+static int
+compute_answer()
+{
+  return 42 + 1;
+}
+```
+
+In this case, the test output will be as follows:
+
+```console
+# Running: main --verbose
+# Built with GCC 15.2.1, with exceptions
+TAP version 14
+# Subtest: The Answer
+
+    # Subtest: Check answer
+        not ok 1 - the answer is 42
+          ---
+          at:
+            fileName: main.cpp
+            lineNumber: 21
+          ...
+        1..1
+    not ok 1 - Check answer # { FAILED, 0 checks passed, 1 failed }
+
+    1..1
+not ok 1 - The Answer # { FAILED, 0 checks passed, 1 failed, in 1 test case, time: 0.04 ms }
+
+1..1
+# { total: 0 checks passed, 1 failed, in 1 test case, 1 test suite, time: 0.04 ms }
+```
+
+The output identifies the failed test at line 21, but does not provide further
+details, such as the actual incorrect value.
+
+## More advanced comparators
+
+To obtain a more informative report, such as the actual incorrect value, the
+test should be slightly more detailed and employ a function comparator; for
+example:
+
+```cpp showLineNumbers
+#include "micro-os-plus/micro-test-plus.h"
+
+namespace mt = micro_os_plus::micro_test_plus;
+
+static int
+compute_answer()
+{
+  return 42+1;
+}
+
+mt::runner tr;
+
+int
+main(int argc, char* argv[])
+{
+  tr.initialise (argc, argv);
+  auto& ts = tr.add_top_suite ("The Answer");
+
+  ts.test ("Check answer with comparator", [] (auto& t) {
+    t.expect (mt::eq (compute_answer (), 42)) << "the answer is 42";
+  });
+
+  return tr.run_suites ();
+}
+```
+
+The output would be:
+
+```console
+# Running: main --verbose
+# Built with GCC 15.2.1, with exceptions
+TAP version 14
+# Subtest: The Answer
+
+    # Subtest: Check answer with comparator
+        not ok 1 - the answer is 42
+          ---
+          condition: "43 == 42"
+          at:
+            fileName: main.cpp
+            lineNumber: 20
+          ...
+        1..1
+    not ok 1 - Check answer with comparator # { FAILED, 0 checks passed, 1 failed }
+
+    1..1
+not ok 1 - The Answer # { FAILED, 0 checks passed, 1 failed, in 1 test case, time: 0.04 ms }
+
+1..1
+# { total: 0 checks passed, 1 failed, in 1 test case, 1 test suite, time: 0.04 ms }
+```
+
+Here, `eq()` is a **function comparator**, a function not only capable of
+comparing almost any type but also of recording the values of its operands.
+Similar functions exist for all types of comparisons (`ne()`, `lt()`, `le()`,
+`gt()`, `ge()`, and `approx()`).
+
+The earlier releases also offered overloaded operators, literals (such as
+`42_i`), and type wrappers (such as `mt::to_i`); they are deprecated, in favour
+of the function comparators (see [Deprecated operators, literals, and
+wrappers](/docs/user/migrating/#deprecated-operators-literals-and-wrappers)).
+
+## More complex tests
+
+For simple scenarios, invoking multiple test cases in `main()` may suffice.
+
+For more complex applications, test cases can be grouped into test suites and
+invoked, potentially multiple times with different arguments (see
+[Test suites](/docs/user/organising-tests/#test-suites)). For example, the
+same suite function can be added twice, with different values for its parameter:
+
+```cpp
+static void
+check_buffer (mt::suite& ts, int size)
+{
+  ts.test ("Size is positive", [size] (auto& t) {
+    t.expect (mt::gt (size, 0)) << "size is positive";
+  });
+}
+
+// In main(), before run_suites().
+tr.add_suite ("Small buffer", check_buffer, 16);
+tr.add_suite ("Large buffer", check_buffer, 4096);
+```
+
+The suites run sorted by name, so `Large buffer` runs before `Small buffer`. A
+`static_suite` takes the arguments in the same way, after the runner and the
+suite function.

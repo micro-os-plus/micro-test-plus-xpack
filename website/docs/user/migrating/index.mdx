@@ -1,0 +1,69 @@
+---
+title: Migrating from earlier versions
+description: "How to migrate the tests written with the deprecated operators, literals, and wrappers to the function comparators."
+keywords:
+  - micro-os-plus
+  - xpack
+  - micro-test-plus
+  - user
+  - guide
+  - migration
+  - deprecated
+  - operators
+  - literals
+
+date: 2026-11-03 10:00:00 +0200
+---
+
+{/* ------------------------------------------------------------------------ */}
+
+# Migrating from earlier versions
+
+Version 6.0.0 deprecated the overloaded operators, the literals, and the type
+wrappers, in favour of the function comparators. This page describes how to
+migrate the existing tests; the other changes that may break existing code are
+listed in the
+[compatibility notices](/docs/getting-started/compatibility-notices/).
+
+## Deprecated operators, literals, and wrappers
+
+The overloaded operators of the `operators` namespace, the literals of the
+`literals` namespace, the `to_*` type wrappers, `to_t<T>`, and the
+`approx (value, epsilon)` wrapper are deprecated since 6.0.0, and will be
+removed in a future release. They are still available, but the compiler
+reports their use.
+
+The function comparators provide the same checks and the same reports, with
+plain values, so that the constants do not need a literal suffix and the
+expressions do not need to be cast:
+
+| Deprecated | Use |
+| --- | --- |
+| `x == 42_i`, `mt::to_i{ x } == 42` | `mt::eq (x, 42)` |
+| `x != 42_i` | `mt::ne (x, 42)` |
+| `x < 42_i`, `x <= 42_i` | `mt::lt (x, 42)`, `mt::le (x, 42)` |
+| `x > 42_i`, `x >= 42_i` | `mt::gt (x, 42)`, `mt::ge (x, 42)` |
+| `x == 1.5_d`, `mt::to_d{ 1.5 } == x` | `mt::approx (x, 1.5, 0.1)`, or `mt::eq (x, 1.5)` for an exact comparison |
+| `mt::eq (x, mt::approx (1.5, 0.01))` | `mt::approx (x, 1.5, 0.01)` |
+| `a and b`, `a or b`, `not a` | `mt::all_of (a, b)`, `mt::any_of (a, b)`, `mt::negate (a)` |
+| `"flag"_b == flag` | `t.expect (flag) << "flag"` |
+| `mt::to_t<app_type>{ x } == y` | `mt::eq (x, y)`, with an `operator<<` for the type |
+
+:::warning
+The overloaded `and` and `or` operators evaluate both operands before the
+check, so they do not short-circuit like the built-in ones;
+`p != nullptr and p->x == 1_i` dereferences a null pointer.
+:::
+
+The floating-point literals and wrappers compare with a tolerance of one
+unit of the last decimal written (0.1 for `1.5_d`), derived from the digits
+of the value. This is not always what the digits suggest: the tolerance of a
+whole value is 0.1, and the comparison depends on which operand is wrapped.
+With `mt::approx (lhs, rhs, epsilon)` the tolerance is explicit, and the
+same for both operands.
+
+Refer to the
+[Operators](/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-operators/)
+and [Literals and
+Wrappers](/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/)
+reference pages.

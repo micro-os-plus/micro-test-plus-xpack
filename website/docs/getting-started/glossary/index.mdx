@@ -15,19 +15,56 @@ date: 2024-11-24 18:58:00 +0300
 ## ISTQB Glossary
 
 The **International Software Testing Qualifications Board (ISTQB)**
-provides the following definitions relevant to testing frameworks:
+provides the following definitions relevant to testing frameworks, with their
+implementation in µTest++:
 
 - **test condition**: a testable aspect of a component or system identified
-  as a basis for testing (in µTest++ this corresponds to calls to the
-  `t.expect()` or `t.require()` member functions);
+  as a basis for testing (in µTest++ this corresponds to a _check_, made with
+  the `t.expect()` or `t.require()` member functions):
+  - an _expectation_ is a check made with `expect()`; a failure is reported and
+    counted, and the test case continues;
+  - a _requirement_ is a check made with `require()`; a failure is reported and
+    counted, and the rest of the test case is skipped;
 - **test case**: a set of preconditions, inputs, actions (where applicable),
   expected results, and postconditions, developed based on test conditions
   (in µTest++ this corresponds to instances of the `test_case` class, created
-  by calls to the `ts.test()` member function);
+  by calls to the `test()` member function of a suite or of another test case,
+  in which case it is nested; its body runs immediately);
 - **test suite**: a collection of test scripts or test procedures to be
   executed within a specific test run (in µTest++ this corresponds to
-  instances of the `suite` class).
+  instances of the `suite` class, which are run by the runner, sorted by name):
+  - the _top suite_ is the optional suite whose test cases are written
+    directly in `main()`, added with `add_top_suite()`; it is always the first
+    suite in the report;
+  - a suite added to the runner with `add_suite()`;
+  - a _static suite_ is a suite defined as a `static_suite` object, usually in
+    its own source file, which registers itself with a runner when it is
+    constructed, before `main()` is called.
 
-## Further information
+For additional details, refer to the
+[ISTQB Glossary](https://glossary.istqb.org/en_US/search?term=test_case&exact_matches_first=true).
 
-For additional details, refer to the [ISTQB Glossary](https://glossary.istqb.org/en_US/search?term=test_case&exact_matches_first=true).
+## Other µTest++ terms
+
+- **runner**: the object (`mt::runner`) that drives a test session: it is
+  initialised with the options, holds the suites, runs them with
+  `run_suites()`, reports the results through the selected reporter, and
+  returns the result as the exit code;
+- **comparator**: a function such as `eq()`, `lt()`, or `approx()` that compares
+  its operands and records them, so that a failed check reports their values;
+- **reporter**: the component that formats the results; the TAP reporter is the
+  default, and the human-readable reporter is selected with
+  `--reporter=human`.
+
+## Protocols and tools
+
+- **TAP** (Test Anything Protocol): a simple text-based protocol between test
+  programs and the tools that collect their results; µTest++ writes TAP
+  version 14 by default;
+- **node-tap**: the JavaScript testing framework that inspired the model of
+  µTest++, and whose TAP parser is used to validate its output;
+- **xpm**: the xPack project manager, a command line tool that installs source
+  and binary packages into a project, in the `xpacks` folder;
+- **xpm package** (xPack): a package that uses the npm package format, with
+  additional metadata for C/C++ projects, installed with xpm; µTest++ is
+  distributed as an xpm package.

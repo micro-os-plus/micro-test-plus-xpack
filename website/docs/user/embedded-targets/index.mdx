@@ -1,0 +1,232 @@
+---
+title: Embedded targets
+description: "The aspects of µTest++ that matter on embedded targets: memory footprint, stack usage, timings, console output, and builds without exceptions."
+keywords:
+  - micro-os-plus
+  - xpack
+  - micro-test-plus
+  - user
+  - guide
+  - embedded
+  - memory
+  - stack
+  - timings
+
+date: 2026-11-03 10:00:00 +0200
+---
+
+{/* ------------------------------------------------------------------------ */}
+
+# Embedded targets
+
+This page covers the aspects that matter on embedded targets: the memory
+footprint, the stack usage, the timings, the console output, and the builds
+without exceptions.
+
+## Memory footprint
+
+The memory footprint of unit tests based on µTest++ is generally smaller than
+that of traditional C++ testing frameworks, primarily because the `iostream`
+library is not used.
+
+As an example, for Cortex-M7F, consider a minimal test that checks a single
+condition:
+
+```cpp
+mt::runner tr;
+
+int
+main (int argc, char* argv[])
+{
+  tr.initialise (argc, argv);
+  auto& ts = tr.add_top_suite ();
+
+  ts.test ("Check truth", [] (auto& t)
+    {
+      t.expect (true);
+    });
+
+  return tr.run_suites ();
+}
+```
+
+Built with µTest++ 6.0.0 and the xPack GNU Arm Embedded GCC 15.2.1, as a
+`release` build with `-Os`, the binary requires about 130 KB:
+
+```text
+   text    data     bss     dec     hex filename
+ 121188    2504    9728  133420   2092c minimal-test.elf
+```
+
+<details>
+<summary>A similar test using Boost UT produced a binary over 415 KB in size.</summary>
+
+The equivalent minimal test, with [Boost UT](https://boost-ext.github.io/ut/)
+2.3.1 and the same toolchain and options, was:
+
+```cpp
+#include <boost/ut.hpp>
+
+int
+main(int argc, char* argv[])
+{
+  using namespace boost::ut;
+
+  "Check truth"_test = [] {
+    expect(true);
+  };
+
+  return 0;
+}
+```
+
+```text
+   text    data     bss     dec     hex filename
+ 410200    4452   10556  425208   67cf8 ut-minimal-test.elf
+```
+
+</details>
+
+However, the use of templates for implementing comparators
+should be used with care on platforms with severely limited memory
+resources, as each unique pair of operand types contributes to the overall
+program size.
+
+If necessary, µTest++ can be used without custom comparators,
+relying solely on standard boolean expressions, while still providing the
+essential functionality for testing conditions. In this configuration, the
+actual values compared are not displayed on failure.
+
+:::info
+The memory footprint in `debug` builds (compiled with `-O0`) is significantly
+larger than in `release` builds. If required, the optimisation level for the
+`debug` build may be increased to `-Og` to conserve memory.
+:::
+
+### Stack usage
+
+The test cases run on the stack of the caller: each call to `test()`
+creates the test case as a local object, and runs its body immediately,
+before returning. A nested test case therefore adds its call chain to the
+stack of the outer one, and the stack needed by a test grows with its
+nesting depth.
+
+The stack needed is approximately the sum of:
+
+- a fixed part, for the runner, the suite, and the start of the first
+  test case;
+- a part for each nesting level, which includes the frame of the test
+  case body;
+- the temporary space used by the reporter at the innermost level, to
+  write the results, plus that of the C library formatting functions.
+
+For example, with GCC 15.2, the values measured with the deeply nested
+test of the `suite` sample were:
+
+| | Cortex-M33 `debug` (`-O0`) | Cortex-M33 `release` (`-Os`) | AArch64 `debug` (`-O0`) | AArch64 `release` (`-Os`) |
+| --- | --- | --- | --- | --- |
+| Fixed part | about 1.1 KB | about 0.7 KB | about 1.3 KB | about 1.3 KB |
+| Each nesting level | 392 bytes | 200 bytes | 512 bytes | 400 bytes |
+
+On Cortex-M33, the reporter uses about 0.5 KB more at the innermost
+level, in both builds, plus the space used by `vsnprintf()`, which
+depends on the C library.
+
+Of each nesting level, 88 bytes (`debug`) and 64 bytes (`release`), on
+Cortex-M33, are the frame of the test case body, which depends on the
+application code: its local variables, and the calls it makes, add to
+these values. The arguments passed to `test()` after the body are copied
+into the frame of the test case.
+
+The values depend on the architecture, the compiler, and the optimisation
+level, so they are only an indication.
+
+On platforms with small stacks, such as the 8 KB of the Cortex-M test
+platforms, deep nesting must be planned: the deeply nested test of the
+`suite` sample, with eleven levels of test cases, uses about 5 KB of the
+stack in a Cortex-M33 `debug` build, before the reporter writes the
+results of the innermost level. If the stack is not large enough,
+increase it, reduce the nesting depth, or build the tests with `-Og`,
+which, on Cortex-M33, needs about 280 bytes for each nesting level.
+
+:::caution
+Most Cortex-M cores do not detect a stack overflow: the stack grows
+silently into the memory below it, usually the heap, and the test fails
+later, in an unrelated place, or not at all. The ARMv8-M Mainline cores
+(for example Cortex-M33) can check the stack limit, and stop with a fault
+when the startup code sets the limit, as on the Cortex-M33 test platform;
+a test that passes there fits in its stack.
+:::
+
+## Timings
+
+The µTest++ runner measures the time spent in each test suite and reports it in
+milliseconds alongside the results. The times are measured with
+`clock_gettime (CLOCK_MONOTONIC)` on the POSIX platforms, and with
+`timespec_get ()` on Windows.
+
+For example:
+
+```
+ok 1 - minimal-test # { passed, 1 check in 1 test case, time: 0.009 ms }
+
+1..1
+# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.044 ms }
+```
+
+On the platforms that provide neither, usually the embedded ones, the times are
+not measured, and are omitted from the output.
+
+## Console output
+
+The reporters write all console output through the standard `stdout`
+stream, using `vfprintf()`, `fwrite()`, and `fflush()`. Output written
+by the tests with `printf()` shares the same stream and buffer, so the
+two appear in the expected order.
+
+On embedded platforms, where the output is usually forwarded to the host
+via semihosting, a serial port, or a debug channel, the platform must
+route `stdout` and `printf()`/`puts()`/`putchar()` to the same
+destination. Platforms that redirect only `printf()` (for example via
+`-Wl,--wrap=printf`) to a separate channel may interleave the test and
+reporter output out of order.
+
+µTest++ has no output hook of its own: the output is redirected by the C
+library, not by the framework. On the µOS++ platforms, which provide the C
+library back end, `stdout`, `stderr`, and the file operations (`fopen()`) are
+forwarded to the host through semihosting, so the console output, the error
+messages, and the [output file](/docs/user/running-tests/#output-file) all reach
+the host without any further configuration. In other environments, to send the
+output to a serial port, RTT, or another debug channel, retarget the C library
+(for example, with newlib, implement `_write()`); `stdout` and `stderr` are then
+forwarded together with the `printf()` family.
+
+The configuration errors (a missing option argument, an unknown
+reporter, an output file that cannot be opened, a suite added too
+late) are written to `stderr`, so the platform should forward `stderr`
+as well. The errors of the command line options are also written
+through the reporter, to the console and to the output file, which is
+truncated, so that it never keeps the report of an earlier run; the
+other errors are not written to the output file.
+
+Semihosting requires a debugger or an emulator (such as QEMU) connected
+to the target; without one, the first semihosting call faults, and the
+program stops before reporting anything. Tests that run on a board
+without a debugger must therefore retarget the C library to another
+channel.
+
+## Builds without exceptions
+
+Embedded projects often build with `-fno-exceptions`, in which case
+`__cpp_exceptions` is not defined, and the framework adapts:
+
+- `throws()` and `nothrow()` are not available, so the checks that use them
+  must be guarded (see
+  [Checking exceptions](/docs/user/checks/#checking-exceptions));
+- a failed `require()` cannot stop only its test case, so it aborts the whole
+  test execution (see [Requirements](/docs/user/checks/#requirements) and
+  [Aborting the test
+  execution](/docs/user/organising-tests/#aborting-the-test-execution));
+- the results of the aborted test case are displayed also with `--quiet`, since
+  the totals are never reached (see
+  [Verbosity](/docs/user/running-tests/#verbosity)).

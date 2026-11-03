@@ -365,7 +365,7 @@ const config: Config = {
             },
             {
               label: 'Discord',
-              href: 'https://discord.com/invite/Xu82xjZZ',
+              href: 'https://discord.gg/RhF3b5hes',
             },
             {
               label: 'X/Twitter',

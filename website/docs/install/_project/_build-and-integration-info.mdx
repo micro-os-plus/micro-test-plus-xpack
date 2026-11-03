@@ -3,7 +3,7 @@ import CommonMesonIntegration from "../_common/_meson-integration.mdx";
 
 {/* ------------------------------------------------------------------------ */}
 
-## Build & Integration Information
+## Integration
 
 This project is implemented in C++. Tests are also expected to be written in
 C++, although the code under test may be written in standard C.
@@ -21,7 +21,7 @@ Pre-configured **CMake** and **Meson** build files are provided to simplify
 integration into user projects, as described below. For alternative build
 systems, refer to the sections that follow.
 
-### Include Folders
+### Include folders
 
 The following folder should be passed to the compiler during the
 build process:
@@ -38,7 +38,7 @@ The primary header file to include in user projects is:
 No other header file should be included explicitly by the application.
 :::
 
-### Source Files
+### Source files
 
 All source files in the `src` folder should be incorporated into user
 projects. The files are:
@@ -61,77 +61,7 @@ application: the layout of the object returned by `expect()` and
 `require()` depends on whether exceptions are enabled, so the
 translation units compiled with and without exceptions cannot be mixed.
 
-### Preprocessor Definitions
-
-The build can be configured using the following preprocessor definitions:
-
-- `MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED` - to include and enable the µTest++ library in the build; it is required, and must be defined for both the library sources and the application: without it, the headers and the sources compile to nothing, and the application fails to compile, since none of the µTest++ definitions are declared
-- `MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED` - to enable tracing messages specific to the µTest++ library
-- `MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED` – to enable tracing messages for object constructors and destructors
-- `MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED` - to enable the deprecated definitions, which are otherwise not available; define it for the library sources too
-
-The recommended way to define the `micro-test-plus` specific macros is to use a 
-separate header file,`micro-os-plus/micro-test-plus-defines.h`, and define the 
-macros there (uncomment the desired lines).
-
-```c title="micro-os-plus/micro-test-plus-defines.h"
-// ----------------------------------------------------------------------------
-
-#ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_DEFINES_H_
-#define MICRO_OS_PLUS_MICRO_TEST_PLUS_DEFINES_H_
-
-// ----------------------------------------------------------------------------
-
-// µTest++, a lightweight testing framework for embedded platforms.
-#if !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)
-#define MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED
-#endif // !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)
-
-// Display trace messages in the µTest++ Testing Framework when TRACE is
-// enabled.
-#if !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-// #define MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
-#endif // !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
-
-// Display trace messages in constructors and destructors in the µTest++
-// testing framework when TRACE is enabled.
-#if !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-// #define MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
-#endif // !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)
-
-// Enable the deprecated definitions of the µTest++ Testing Framework, which
-// are otherwise not available; the compiler reports their use.
-#if !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
-// #define MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED
-#endif // !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
-
-// ----------------------------------------------------------------------------
-
-#endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_DEFINES_H_
-
-// ----------------------------------------------------------------------------
-```
-
-Once the xCDL tool is available, for xCDL enabled projects this file will be generated automatically.
-
-The `cdlSettings` to enable them are:
-
-```jsonc title="xcdl-project.jsonc"
-    "cdlConfigurations": {
-      //
-      "<name>": {
-        ...
-        "cdlSettings": {
-          ...
-          "micro-os-plus.micro-test-plus.trace": true,
-          "micro-os-plus.micro-test-plus.trace-constructors": true
-        }
-      },
-      ...
-    }
-```
-
-### Compiler Options
+### Compiler options
 
 The following options **must** be supplied to the compiler:
 
@@ -146,7 +76,7 @@ is optional, and is used only to output trace messages in Debug mode. The
 library includes `micro-os-plus/diag/trace.h` only if it is available, so to
 enable the trace messages, install the `@micro-os-plus/diag-trace` package, add
 it to the build of the application, and define the trace macros
-(see [Preprocessor Definitions](#preprocessor-definitions)). The CMake and
+(see [Configuration](#configuration)). The CMake and
 meson files of this library do not link it.
 
 <CommonCmakeIntegration />

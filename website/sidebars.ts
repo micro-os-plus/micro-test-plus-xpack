@@ -3,6 +3,7 @@
 
 import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 import {customDocsGettingStartedSidebarCategory} from "./sidebar-docs-getting-started-custom";
+import {customDocsUserSidebarCategory} from "./sidebar-docs-user-custom";
 import doxygenSidebarItems from './sidebar-category-doxygen.json';
 
 /**
@@ -24,11 +25,7 @@ const sidebars: SidebarsConfig = {
       id: 'install/index',
       label: 'Integration Guide'
     },
-    {
-      type: 'doc',
-      id: 'user/index',
-      label: 'User\'s Guide'
-    },
+    customDocsUserSidebarCategory,
     {
       type: 'doc',
       id: 'developer/index',
@@ -75,7 +72,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'link',
-          label: 'License',
+          label: 'Licence',
           href: 'https://opensource.org/license/mit',
         },
       ]

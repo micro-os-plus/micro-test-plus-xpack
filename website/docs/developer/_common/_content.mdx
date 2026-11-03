@@ -20,7 +20,7 @@ import ProjectTestDetails from '../_project/_test-details.mdx';
 {/* ------------------------------------------------------------------------ */}
 
 The project is written in modern C++ and, for reproducibility reasons,
-utilises the xPack Framework tools during development.
+uses the xPack Framework tools during development.
 
 <CommonPrerequisites nodeVersion="20.0" nodeVersionMajor="20"/>
 
@@ -62,7 +62,7 @@ The µOS++ testing strategy involves compiling the sources with
 as many toolchains as possible and executing them on a wide
 range of platforms.
 
-### Host Platforms
+### Host platforms
 
 The tests may be executed on any of the supported host
 platforms:
@@ -71,10 +71,10 @@ platforms:
 tests, a C++ development environment is required
 (on Ubuntu install `build-essential`)
 - macOS (>= **11.0**);
-as C++ development environment utilise **Command Line Tools**
+as C++ development environment use **Command Line Tools**
 - Windows 10, Windows 11
 
-### Target Platforms
+### Target platforms
 
 The supported target test platforms are in the `tests/platforms` folder;
 the list is taken from `tests/config/tests-templates.json`.
@@ -116,7 +116,7 @@ to run them, the board must be connected and powered up:
 - `platforms/raspberry-pi-zero-2-w-aarch32`
 - `platforms/raspberry-pi-zero-2-w-aarch64`
 
-The build configurations utilise exactly the same source files on all platforms,
+The build configurations use exactly the same source files on all platforms,
 without changes.
 
 ### Semihosting
@@ -129,9 +129,9 @@ defined by Arm and used with the same protocol on RISC-V.
 ### Toolchains
 
 To enhance source code portability, the builds are repeatedly conducted
-utilising various toolchains, including multiple versions of the same toolchain.
+using various toolchains, including multiple versions of the same toolchain.
 
-The following toolchains are utilised:
+The following toolchains are used:
 
 - gcc (native)
 - clang (native)
@@ -143,7 +143,7 @@ The following toolchains are utilised:
 
 <CommonManualTests />
 
-### Continuous Integration (CI)
+### Continuous integration (CI)
 
 <CommonContinuousIntegration />
 

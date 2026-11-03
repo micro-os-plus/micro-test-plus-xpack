@@ -1,23 +1,28 @@
 {/* ------------------------------------------------------------------------ */}
 
-## Features & Benefits
+## Features and benefits
 
-The main attributes of the µTest++ Testing Framework, largely
-derived from [Boost UT](https://boost-ext.github.io/ut/), are as follows:
+The main attributes of the µTest++ Testing Framework are as follows. Its model,
+with test suites, test cases, and results reported in
+**[TAP](https://testanything.org) (Test Anything Protocol)** format, follows
+[node-tap](https://node-tap.org); the function comparators were inspired by
+[Boost UT](https://boost-ext.github.io/ut/).
 
-- Designed to facilitate testing of **both C and C++** projects.
-- Written in modern **C++20**, improving code readability and maintainability
-  (which consequently raised the minimum C++20 requirement across the entire µOS++ project).
-- **Macro-free** implementation, whilst retaining the ability to report the
-  file name and line number for failed tests.
+- Results reported in **TAP** format, enabling straightforward integration
+  with standard TAP-aware tooling, with a human-readable reporter available on
+  request.
+- Test **suites** and **test cases**, which may be nested, created with a
+  `t.test()` and `t.expect()` mechanism modelled on node-tap.
 - Support for **expectations**, **requirements**, and **exceptions**.
-- Provision of **test cases** and **test suites**.
 - **Automatic registration** of test suites: each test suite can be defined as a
   static global object in its own source file, and registration with the test
   runner is performed automatically via the C++ static constructors mechanism,
   eliminating the need for any explicit registration calls.
-- Results reported in **TAP (Test Anything Protocol)** format, enabling
-  straightforward integration with standard TAP-aware tooling.
+- **Macro-free** implementation, whilst retaining the ability to report the
+  file name and line number for failed tests.
+- Written in modern **C++20**, improving code readability and maintainability.
+- Designed to facilitate testing of **both C and C++** projects (the tests
+  themselves are written in C++20).
 
 Key distinctions from Boost UT include:
 

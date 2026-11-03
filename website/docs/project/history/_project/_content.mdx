@@ -1,24 +1,87 @@
 {/* ------------------------------------------------------------------------ */}
 
-### February 2021
+## February 2021 (v1.1)
 
-In February 2021, the initial experimental version was developed, drawing inspiration from [Node TAP](https://node-tap.org) and prioritising maximum simplicity.
+In February 2021, the initial experimental version was developed, drawing inspiration from [node-tap](https://node-tap.org) and prioritising maximum simplicity.
 
-### March 2021
+## March 2021 (v2.0)
 
 During March 2021, as part of a broader project restructuring, the C++ namespace was renamed to `micro_os_plus`.
 
-### April 2022
+## April 2022 (v3.0)
 
-At the beginning of 2022, a significant reworking of the library commenced, with the objective of enhancing flexibility and supporting multiple test suites. The principal source of inspiration for this revision was [Boost UT](https://boost-ext.github.io/ut/). The v3.x release was subsequently published in April 2022.
+At the beginning of 2022, a significant reworking of the library commenced, with the objective of enhancing flexibility and supporting multiple test suites. The principal source of inspiration for this revision was [Boost UT](https://boost-ext.github.io/ut/). The revision required C++20, which consequently raised the minimum C++ standard of the entire µOS++ project. The v3.x release was subsequently published in April 2022.
 
-### April 2026
+## March 2026 (v3.3)
 
-In March 2026, following extensive experience with [Node TAP](https://node-tap.org),
-a major rework was undertaken to better align µTest++ with the Node TAP model.
-Two principal enhancements were introduced: the internal static objects were
-replaced by a hierarchy of explicit objects that pass references down the call
-chain from the runner to the individual checks; and a dedicated TAP reporter
-was added, producing output compliant with the
-[TAP14 specification](https://testanything.org/tap-version-14-specification.html).
-The v4.x release was subsequently published in April 2026.
+In March 2026, a dedicated TAP reporter was added, producing output compliant with the
+[TAP 14 specification](https://testanything.org/tap-version-14-specification.html).
+
+## April 2026 (v4.0)
+
+In March 2026, following extensive experience with [node-tap](https://node-tap.org),
+a major rework was undertaken to better align µTest++ with the node-tap model.
+The internal static objects were replaced by a hierarchy of explicit objects
+that pass references down the call chain from the runner to the individual
+checks, and the TAP reporter became the default. The v4.0 release was
+published in April 2026.
+
+## May 2026 (v4.1)
+
+The name of the top suite, previously passed to the runner constructor, became
+optional, and defaults to the name of the program. The definitions were split
+from the declarations, and the internal classes were moved to the `detail`
+namespace.
+
+## July 2026 (v5.0)
+
+The v5.0 release changed the configuration and the build integration, but not
+the C++ API. The CMake and meson files are now generated from a single
+description of the package, `xcdl-package.jsonc`, in preparation for the xCDL
+configuration tool, which will generate the configuration from the same
+description. For this, the configuration macros had to follow a single naming
+scheme, with the `_ENABLED` suffix, and the configuration had to be in a header
+file included automatically, `micro-os-plus/micro-test-plus-defines.h`.
+
+## October 2026 (v6.0)
+
+After v5.0.1, the C++ API and the implementation were reviewed systematically,
+in seven successive reviews, between 12 October and 1 November 2026. Each review
+read the code without its comments, and confirmed the suspected defects with
+small test programs. The reviews found defects that made tests behave
+wrongly, for example a nested test case that aborted the program, an exception
+that escaped a test case and ended the run, integers of different signedness
+compared by conversion, and TAP output that was not valid TAP. They also found
+design weaknesses: classes whose internal state was public, two places that parsed
+the command line with different policies, a library that terminated the process
+in many places, and names that were inconsistent. The findings were registered
+as 223 [GitHub issues](https://github.com/micro-os-plus/micro-test-plus-xpack/milestone/5),
+assigned to the 6.0.0 milestone.
+
+The result is the most extensive rework of the library since v4.0, which also simplified the API, by hiding the internals of the library classes and removing the redundant ways of writing the same check:
+
+- the runner is configured with a `runner_options` object, which owns its
+  strings and parses the command line, and the top suite is added explicitly,
+  with `add_top_suite()`, so that a test program can run without a command line
+  and without a top suite;
+- the test hierarchy is protected: the constructors and the internal state of
+  the suites and of the test cases are no longer public, an exception that
+  escapes a test case or a suite is reported as a failed check, and a failed
+  `require()` stops only its test case;
+- the checks report their operands in a uniform way, with function comparators
+  that replace the overloaded operators, the literals, and the type wrappers,
+  which are now deprecated, and with an `extension` namespace, through which the
+  applications write comparators that report their operands as the built-in ones;
+- the reports follow the TAP 14 specification, with escaped names, valid
+  plans, and diagnostics fields as in node-tap, and the human-readable report
+  file is always complete;
+- new features were added, such as `test_each()`, the `--filter`, `--colour`,
+  `--list-tests`, and `--help` options, and `all_of()`, `any_of()`, `negate()`,
+  and `approx()`.
+
+The deprecated definitions remain available when
+`MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED` is defined, so that existing
+applications can be migrated step by step. The changes that cannot be hidden
+behind deprecated aliases are described in the
+[compatibility notices](/docs/getting-started/compatibility-notices/) and, in
+detail, in the release post.

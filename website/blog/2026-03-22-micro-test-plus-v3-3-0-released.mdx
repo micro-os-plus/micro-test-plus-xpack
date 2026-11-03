@@ -51,7 +51,12 @@ package into a project is to declare it as a dependency using **xpm**.
 `xpm install @micro-os-plus/micro-test-plus@${frontMatter.version} --verbose
 `} </CodeBlock>
 
-Comprehensive instructions are available in the [Install Guide](/docs/install/).
+However, like any source code library, this project can also be
+integrated into another project in the traditional manner, either
+by copying the relevant files into the target project or by
+linking the entire project as a Git submodule.
+
+Detailed instructions are available in the [Integration Guide](/docs/install/).
 
 ## Source code
 
@@ -91,7 +96,7 @@ ok 1 - Minimal # { test suite passed, 1 check in 1 test case, time: 0.007 ms }
 
 - None.
 
-## Continuous Integration tests
+## Continuous integration tests
 
 Prior to publication, a suite of tests was executed.
 The results can be reviewed at:

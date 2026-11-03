@@ -52,7 +52,8 @@ export default function HomepageExample(): JSX.Element {
       <Heading as="h2" className="text--center">A first test</Heading>
       <p className="text--center">
         The outputs below were produced by running the program
-        with <code>--verbose</code>.
+        with <code>--verbose</code>; the header lines, the timings, and the
+        totals were omitted.
       </p>
       <div className="row">
         <div className="col col--6">

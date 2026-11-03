@@ -1,7 +1,7 @@
 ---
 title: µTest++ Testing Framework v3.2.2 released
 seo_title: Version 3.2.2 released
-description: Version 3.2.2 is a maintenance release
+description: Version 3.2.2 is a maintenance release; it silences some warnings and updates RPATH processing
 keywords:
   - micro-os-plus
   - xpack
@@ -35,6 +35,8 @@ Version **3.2.2** is a maintenance release; it silences some warnings and update
 
 <!-- truncate -->
 
+Version 3.2.1, published shortly before, contains the same fixes and has no separate release post.
+
 <PageMetadata title={frontMatter.seo_title} />
 
 The [µTest++ Testing Framework](https://micro-os-plus.github.io/micro-test-plus-xpack/)
@@ -51,7 +53,12 @@ package into a project is to add it as a dependency via **xpm**.
 `xpm install @micro-os-plus/micro-test-plus@${frontMatter.version} --verbose
 `} </CodeBlock>
 
-Comprehensive instructions can be found in the [Install Guide](/docs/install/).
+However, like any source code library, this project can also be
+integrated into another project in the traditional manner, either
+by copying the relevant files into the target project or by
+linking the entire project as a Git submodule.
+
+Detailed instructions can be found in the [Integration Guide](/docs/install/).
 
 ## Source code
 

@@ -1,7 +1,7 @@
 ---
 title: µTest++ Testing Framework v4.1.1 released
 seo_title: Version 4.1.1 released
-description: Version 4.1.1 is a new minor release
+description: Version 4.1.1 is a new minor release; it introduces a cleaner initialisation and several internal improvements
 keywords:
   - micro-os-plus
   - xpack
@@ -35,6 +35,8 @@ Version **4.1.1** is a new minor release, introducing a cleaner initialisation a
 
 <!-- truncate -->
 
+Version 4.1.0, published a few hours earlier, introduced these changes and has no separate release post; version 4.1.1 contains the same functionality.
+
 <PageMetadata title={frontMatter.seo_title} />
 
 The [µTest++ Testing Framework](https://micro-os-plus.github.io/micro-test-plus-xpack/)
@@ -51,7 +53,12 @@ package into a project is to declare it as a dependency using **xpm**.
 `xpm install @micro-os-plus/micro-test-plus@${frontMatter.version} --verbose
 `} </CodeBlock>
 
-Comprehensive instructions are available in the [Install Guide](/docs/install/).
+However, like any source code library, this project can also be
+integrated into another project in the traditional manner, either
+by copying the relevant files into the target project or by
+linking the entire project as a Git submodule.
+
+Detailed instructions are available in the [Integration Guide](/docs/install/).
 
 ## Source code
 
@@ -85,7 +92,7 @@ Comprehensive instructions are available in the [Install Guide](/docs/install/).
 
 - None.
 
-## Continuous Integration tests
+## Continuous integration tests
 
 Prior to publication, a suite of tests was executed.
 The results can be reviewed at:

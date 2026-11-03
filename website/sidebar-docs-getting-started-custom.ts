@@ -21,6 +21,11 @@ export const customDocsGettingStartedSidebarCategory =
   items: [
     {
       type: 'doc',
+      id: 'getting-started/compatibility-notices/index',
+      label: 'Compatibility notices'
+    },
+    {
+      type: 'doc',
       id: 'getting-started/glossary/index',
       label: 'Glossary'
     },

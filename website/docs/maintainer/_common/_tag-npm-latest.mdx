@@ -27,7 +27,15 @@ Check the result:
 `npm dist-tag ls @micro-os-plus/micro-test-plus
 `} </CodeBlock>
 
-Should the release prove problematic and require unpublishing:
+Should the release prove problematic, deprecate it, so that the users get a
+warning when they install it; the version remains available:
+
+<CodeBlock language="sh"> {
+`npm deprecate @micro-os-plus/micro-test-plus@6.0.0 "<reason>"
+`} </CodeBlock>
+
+npm allows unpublishing a version only within 72 hours of its publication, so
+this should be used only for a release published by mistake:
 
 <CodeBlock language="sh"> {
 `npm unpublish @micro-os-plus/micro-test-plus@6.0.0

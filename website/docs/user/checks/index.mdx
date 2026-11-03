@@ -1,0 +1,464 @@
+---
+title: Writing checks
+description: "How to write expectations and requirements with the function comparators, for numbers, strings, containers, exceptions, and other standard types."
+keywords:
+  - micro-os-plus
+  - xpack
+  - micro-test-plus
+  - user
+  - guide
+  - checks
+  - expectations
+  - requirements
+  - comparators
+
+date: 2026-11-03 10:00:00 +0200
+---
+
+{/* ------------------------------------------------------------------------ */}
+
+# Writing checks
+
+A check is an expectation or a requirement, written as an expression with
+the function comparators, which report their operands when the check fails.
+This page describes how to write the checks for the common types of values;
+the checks for the types of the application are described in
+[Extending the framework](/docs/user/extending/).
+
+## Namespaces
+
+The definitions are organised within several namespaces under `micro_os_plus`:
+
+- `micro_os_plus::micro_test_plus` (commonly aliased as `mt`)
+- `micro_os_plus::micro_test_plus::utility`
+- `micro_os_plus::micro_test_plus::extension` (see [Custom
+  Comparators](/docs/user/extending/#custom-comparators))
+- `micro_os_plus::micro_test_plus::reflection` (the `source_location` of the
+  signatures, rarely named by the applications)
+
+`micro_os_plus` is the primary µOS++ namespace, and `micro_test_plus` is the
+namespace for µTest++. The deprecated operators and literals are in two other
+namespaces, described in [Deprecated operators, literals, and
+wrappers](/docs/user/migrating/#deprecated-operators-literals-and-wrappers).
+
+In complex projects, the definitions within the `micro_test_plus` namespace may
+conflict with those of the application, so refer to the
+function comparators with explicit namespaces, and not with a
+`using namespace` directive. For brevity, declare a short alias for the
+namespace, at the appropriate scope, and prefix all the references with it:
+
+```cpp
+namespace mt = micro_os_plus::micro_test_plus;
+
+ts.test ("Check answer", [] (auto& t) {
+  t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+});
+```
+
+
+## Expectations and requirements
+
+Expectations and requirements are checks that evaluate expressions
+yielding boolean values; they differ in what happens after a failure.
+
+Both are created with member functions of the test case objects, and return an
+object to which a message can be appended with `<<`; the check is
+reported at the end of the statement, so the returned object cannot be
+kept in a variable. The declarations below show the parameters that an
+application passes; the return type is internal:
+
+```cpp
+template <class Expr_T>
+  requires extension::checkable<Expr_T>
+auto expect (const Expr_T& expr,
+             const reflection::source_location& sl
+             = reflection::source_location::current ());
+
+template <class Expr_T>
+  requires extension::checkable<Expr_T>
+auto require (const Expr_T& expr,
+              const reflection::source_location& sl
+              = reflection::source_location::current ());
+```
+
+The source location defaults to that of the call, so a check helper
+that takes a `const mt::reflection::source_location&` parameter, with
+the same default, and passes it on, makes the failures report the line
+of the caller of the helper.
+
+The expression is either a framework expression (a comparator, an
+operator, or a logical function), whose operands are reported on
+failure, or any value that the condition of an `if` statement accepts,
+including the types with an `explicit operator bool`, such as
+`std::optional`, `std::unique_ptr`, and `std::function`:
+
+```cpp
+auto buffer = std::make_unique<std::byte[]> (size);
+t.require (buffer) << "buffer allocated";
+```
+
+The arguments that are always true are rejected, since they make the
+check pass silently: the arrays, including the string literals, the
+functions, the pointers to functions and to members, and the pointers to
+the character types. They usually come from writing the description
+instead of the condition, or a function name without the call; write
+the condition, with `mt::ne (p, nullptr)` for a character pointer. The
+pointers to other objects are accepted, so `t.expect (ptr)` checks for
+non-null:
+
+```cpp
+t.expect ("answer () == 42");        // Rejected, was always true.
+t.expect (answer);                   // Rejected, a function name.
+t.expect (mt::eq (answer (), 42));   // Correct.
+```
+
+A failed **expectation** is reported and counted, and the test case
+continues, so that all its checks are evaluated and reported in one run.
+
+The result of `t.expect (...)` and `t.require (...)` lives until the end of
+the statement, where the check is reported, so that the checks are
+reported in the order of the statements. It cannot be kept in a variable:
+`auto r = t.expect (...)` does not compile, and a result bound to a
+reference (`auto&& r = t.expect (...)`) cannot be used, since the message
+operator and `value()` can be called only on the temporary.
+
+The message accepts the same values as the operands of the [function
+comparators](#function-comparators), including the [custom
+types](/docs/user/extending/#custom-types) with an `operator<<` for the
+formatter, and any number of them can be appended. They are written as in the
+reports of the comparators, except that the numbers have no type suffixes and
+the `char` values are not quoted, since the message is text; the wide characters
+(`u'x'`, `U'x'`, `L'x'`) are written as in the reports, since they cannot be
+appended to the text unchanged:
+
+```cpp
+t.expect (mt::eq (parse (input), expected))
+    << "input " << input << ", " << input.size () << " bytes";
+```
+
+A part of the message that is valid only after a failure can be given
+as a callable object, such as a lambda, that returns a value accepted
+by the message; it is called only if the check fails, and its result is
+appended, while after a success it appends nothing:
+
+```cpp
+std::expected<config, std::string> result = parse ("config.json");
+t.require (result.has_value ())
+    << "parse failed: " << [&result] { return result.error (); };
+```
+
+The function pointers are not called; they are written as addresses.
+
+### Requirements
+
+A failed **requirement** is reported and counted as a failed
+expectation, and then the rest of the test case is skipped, since the
+following checks would be meaningless; the run continues with the next
+test case:
+
+```cpp
+ts.test ("Parse configuration", [] (auto& t)
+  {
+    auto config = parse ("config.json");
+    t.require (config.has_value ()) << "configuration parsed";
+
+    // Not reached if the configuration could not be parsed.
+    t.expect (config->version == 2) << "version 2";
+  });
+```
+
+A failed requirement in a nested test case stops only the nested test
+case; the outer test case continues, and fails because of it.
+
+The test case is stopped by throwing an exception, at the end of the
+statement, after the message was appended. It is not derived from
+`std::exception`, so a `catch (const std::exception&)` in the test case
+body does not intercept it; a `catch (...)` does, and must rethrow it
+with `throw;`. The test case body must not be `noexcept`, since the
+exception would call `std::terminate()`.
+
+The human-readable reporter marks the failed requirement with
+`- test case stopped`, after the location; the TAP reporter reports it
+like any other failed check, as node-tap does, and the stop is shown by
+the plan of the test case, which follows it:
+
+```
+    • Parse configuration
+        ✗ configuration parsed FAILED (main.cpp:4) - test case stopped
+```
+
+Without exceptions (for example with `-fno-exceptions`, common on embedded
+targets), the test case cannot be stopped, and a failed requirement aborts the
+whole test execution, as described in [Aborting the test
+execution](/docs/user/organising-tests/#aborting-the-test-execution): the
+results of the test case are displayed, ending with the failed requirement, but
+the remaining test cases do not run and no totals are written.
+
+### Comparison with other frameworks
+
+The plain `assert()` macro, mentioned in the [Rationale](/docs/user/#rationale),
+terminates the whole program at the first failure. Test frameworks
+distinguish the non-fatal checks, which only report the failure, from
+the fatal ones, which also stop the test; most of them stop only the
+current test case, which is also the behaviour of `require()`:
+
+| Framework | Non-fatal | Fatal | After a fatal failure |
+| --- | --- | --- | --- |
+| µTest++ | `expect()` | `require()` | the test case is stopped |
+| GoogleTest | `EXPECT_*()` | `ASSERT_*()` | the current function returns |
+| Catch2 | `CHECK()` | `REQUIRE()` | the test case is stopped |
+| doctest | `CHECK()` | `REQUIRE()` | the test case is stopped |
+| Boost.Test | `BOOST_CHECK()` | `BOOST_REQUIRE()` | the test case is stopped |
+| Boost UT | `expect()` | `expect (...) << fatal` | the program exits |
+| Unity (C) | — | `TEST_ASSERT_*()` | the test is stopped |
+| JUnit | — | `assert*()` | the test is stopped |
+| C library | — | `assert()` | the program is aborted |
+
+Some differences are worth noting:
+
+- in GoogleTest, `ASSERT_*()` returns only from the function in which
+  it is used; if this is a helper function, the test continues after
+  the call;
+- Catch2, doctest, and Boost.Test also stop the test case with an
+  exception; without exceptions, Catch2 calls `std::terminate()`,
+  and doctest either removes `REQUIRE()`, or makes it behave as
+  `CHECK()`;
+- Boost UT reports the fatal failure and calls `std::exit()`, so the
+  remaining tests do not run, as with the previous versions of
+  `assume()`;
+- Unity, a C framework, stops the test with `longjmp()`, which does not
+  run the destructors of the C++ objects;
+- in JUnit, an unmet `assume*()` aborts the test, which is reported as
+  skipped, not as failed.
+
+Refer to the
+[Expectations](/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-expectations/)
+and
+[Requirements](/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-requirements/)
+reference pages.
+
+
+## Function comparators
+
+To facilitate clear reporting of differences between expected and
+actual values in failed conditions, several **generic comparator functions**
+are provided.
+
+```cpp
+template <class Lhs_T, class Rhs_T>
+auto eq(Lhs_T&& lhs, Rhs_T&& rhs);
+
+template <class Lhs_T, class Rhs_T>
+auto ne(Lhs_T&& lhs, Rhs_T&& rhs);
+
+template <class Lhs_T, class Rhs_T>
+auto lt(Lhs_T&& lhs, Rhs_T&& rhs);
+
+template <class Lhs_T, class Rhs_T>
+auto le(Lhs_T&& lhs, Rhs_T&& rhs);
+
+template <class Lhs_T, class Rhs_T>
+auto gt(Lhs_T&& lhs, Rhs_T&& rhs);
+
+template <class Lhs_T, class Rhs_T>
+auto ge(Lhs_T&& lhs, Rhs_T&& rhs);
+
+template <class Lhs_T, class Rhs_T, class Epsilon_T>
+auto approx(Lhs_T&& lhs, Rhs_T&& rhs, Epsilon_T&& epsilon);
+```
+
+The C strings (`char` arrays, including the string literals, and `char`
+pointers) are compared by content, also with `std::string` and
+`std::string_view`, so `mt::eq (actual, "abc")` checks the characters,
+not the addresses; a null `char` pointer is equal only to another null
+pointer (or `nullptr`), not to an empty string. The other arrays
+(including `uint8_t` buffers) are compared element by element, also with
+a container such as a `std::vector`, and are written as ranges on
+failure; arrays of different sizes are never equal. The other pointers
+are compared by address.
+
+Two integers of different signedness are compared by value, not by
+converting the signed operand to the unsigned type, so
+`mt::lt (-1, 1u)` succeeds and `mt::eq (-1, UINT_MAX)` fails. This does
+not apply to `bool` and to the character types, which are compared as
+the language does.
+
+The pointers and arrays of `char8_t`, `char16_t`, `char32_t`, and
+`wchar_t` are not treated as strings: the arrays are compared element
+by element, including the terminating null character, and the pointers
+are compared by address. Convert them to `std::u8string_view`,
+`std::u16string_view`, `std::u32string_view`, or `std::wstring_view`
+to compare their content; these views and the corresponding strings are
+reported as text, converted to UTF-8, quoted as the `std::string` values
+are. The messages write the text of the pointers and arrays of these
+types, converted to UTF-8 in the same way.
+
+The `approx()` comparator succeeds if its first two operands differ by
+at most the third one, the tolerance, so a tolerance of zero requires
+equal operands and a negative one always fails. The operands are numbers,
+integral or floating-point, possibly of different types. For
+the integers, the distance is computed exactly, also for operands of
+different signedness, without wrap-around; for the other types, in
+their common floating-point type. A failure is reported as
+`lhs ~ (rhs +/- epsilon)`:
+
+```cpp
+t.expect (mt::approx (read_adc (), 512, 3)) << "ADC reading";
+// When it fails: 508 ~ (512 +/- 3)
+```
+
+Refer to the [Function
+Comparators](/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/)
+reference page.
+
+## Logical functions
+
+Complex expressions may be evaluated in a single statement using the logical
+functions `all_of()`, `any_of()`, and `negate()`, the function forms of the
+`&&`, `||`, and `!` operators; `any_of()` is an inclusive or, true also
+when all the operands are true.
+
+```cpp
+template <class First_T, class Second_T, class... Rest_T>
+auto all_of (First_T&& first, Second_T&& second, Rest_T&&... rest);
+
+template <class First_T, class Second_T, class... Rest_T>
+auto any_of (First_T&& first, Second_T&& second, Rest_T&&... rest);
+
+template <class Expr_T>
+auto negate (Expr_T&& expr);
+```
+
+The operands must be accepted by `expect()`: the values that are always
+true, such as string literals, C strings, arrays, and pointers to functions,
+are rejected at compile time, also when wrapped in one of these functions.
+
+`all_of()` and `any_of()` take two or more operands. A chain of the same
+operation is reported as a single group, for example
+`(1 == 1 and abc == abd and 3 < 2)`.
+
+All the operands are evaluated before the check, so, unlike the standard
+algorithms of the same names, the functions do not stop at the first operand
+that decides the result. After a `using namespace std`, an unqualified call
+with three or more operands of the same type selects `std::all_of()` or
+`std::any_of()`; call them as `mt::all_of()` and `mt::any_of()`.
+
+Refer to the [Logical
+Functions](/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/)
+reference page.
+
+## Checking exceptions
+
+It is also possible to check various **exception-related conditions**.
+
+```cpp
+// Check for any exception.
+template <class Callable_T>
+auto throws (const Callable_T& expr);
+
+// Check for a specific exception.
+template <class Exception_T, class Callable_T>
+auto throws (const Callable_T& expr);
+
+// Check for no exception at all.
+template <class Callable_T>
+auto nothrow (const Callable_T& expr);
+```
+
+The first form passes if the callable throws an exception of any type, the
+second if it throws an exception of the given type or of a type derived from it
+(so `throws<std::exception>` passes for any standard exception), and `nothrow()`
+if it throws no exception:
+
+```cpp
+t.expect (mt::throws<std::runtime_error> ([] { parse (""); }))
+    << "an empty input is rejected";
+t.expect (mt::nothrow ([] { parse ("config.json"); })) << "a valid input is accepted";
+```
+
+These functions are available only when exceptions are enabled, that is, when
+`__cpp_exceptions` is defined. A program that is also built with
+`-fno-exceptions` must guard them:
+
+```cpp
+#if defined(__cpp_exceptions)
+t.expect (mt::throws ([] { parse (""); })) << "an empty input is rejected";
+#endif // defined(__cpp_exceptions)
+```
+
+Refer to the [Checking
+Exceptions](/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-exceptions/)
+reference page.
+
+## Strings
+
+Strings are compared with `eq()` and `ne()`, which compare them by
+content, and show them when the check fails (the standard `==` and `!=`
+operators return a plain `bool`, so a failed check could not show the
+strings):
+
+```cpp
+t.expect (mt::eq (actual, "fortytwo"))
+    << "actual eq 'fortytwo'";
+```
+
+## Containers
+
+Containers are compared with `eq()` and `ne()`, which use the standard
+operators, and show their elements when the check fails. The containers
+must be comparable with the standard operators, which for the standard
+containers means the same type; a C array is also accepted against a
+container:
+
+```cpp
+t.expect (mt::eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
+    << "vector{ 1, 2 } eq vector{ 1, 2 }";
+```
+
+The elements are shown as `{1, 2}`, for any type that a range-based `for`
+statement can iterate, with `begin()` and `end()` members, like the standard
+containers, the spans, and the views, or functions, found by argument-dependent
+lookup. The arrays passed to the comparators are shown the same way. The
+exceptions are the strings, which are shown as text, and the types whose
+elements are of their own type, like `std::filesystem::path`, which cannot be
+shown element by element, and are rejected by the comparators; compare
+`p.string ()` instead, or, for an application type, define an `operator<<` for
+it, as for the [custom types](/docs/user/extending/#custom-types). The elements
+must themselves be printable.
+
+## Other standard types
+
+The function comparators also accept the scoped enumerations
+(including `std::byte`), and the `std::pair`, `std::tuple`, and
+`std::optional` objects, so also the maps, whose elements are pairs.
+These are accepted only if their elements are printable (and a duration only
+if its count is a number), so a pair with a member that has no `operator<<`
+is rejected like that member.
+When a check fails, they are shown as follows:
+
+- a scoped enumeration by its underlying value, written as that type
+  is, for example `1` for `int` and `(unsigned char)1` for `std::byte`,
+  whose underlying type is `unsigned char`; to show the names of the
+  enumerators instead, define an `operator<<` for the enumeration, as
+  for the [custom types](/docs/user/extending/#custom-types);
+- a pair or a tuple as `(a, b)`, and a map as `{(1, 2), (3, 4)}`;
+- an optional by its value, or as `nullopt` when it has no value;
+- a `std::chrono` duration as the count followed by the unit, for example
+  `5ms`, `250us`, `2s`, `3min`, or `1h`, and, for the other periods, by the
+  ratio, as `3[1/30]s`.
+
+```cpp
+enum class colour { red, green };
+
+t.expect (mt::eq (paint (), colour::red)) << "colour is red";
+t.expect (mt::ne (find (42), std::nullopt)) << "42 is found";
+t.expect (mt::lt (elapsed (), 5ms)) << "completed within 5ms";
+```
+
+The strings are shown quoted, whether they are `std::string` or
+`std::string_view` values, or `const char*` elements of a container, pair,
+tuple, or optional (a null pointer is shown as `nullptr`), so that an
+empty string or a trailing space is visible. The values that the
+`operator<<` of an application type writes are shown as that function
+writes them; to quote a `const char*` member there, write
+`formatter << std::string_view{ s }`.

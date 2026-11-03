@@ -37,8 +37,10 @@ optional; the default is the program name, derived from `argv[0]`.
 
 Major rework introducing explicit objects for test suites and test cases
 (subtests), using a `ts.test()` and `t.expect()` mechanism inspired by
-[node-tap](https://node-tap.org). Internal static objects are no longer used.
-The TAP reporter is now the default.
+[node-tap](https://node-tap.org). The static objects of the framework itself
+(the runner and the reporter) are no longer used; the applications create the
+runner, and the static suites remain objects of the application, which register
+themselves with a runner. The TAP reporter is now the default.
 
 ### v3.3 (2026-03-22)
 
@@ -47,7 +49,7 @@ reporter.
 
 ### v3.0 (2022-04-03)
 
-Significant revision introducing a comprehensive set of comparators, exception
+Significant revision introducing a set of comparators, exception
 handling, function templates for test cases, and class templates for test
 suites. Heavily influenced by [Boost UT](https://boost-ext.github.io/ut/).
 

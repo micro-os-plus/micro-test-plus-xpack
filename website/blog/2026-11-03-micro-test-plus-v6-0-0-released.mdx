@@ -2,7 +2,7 @@
 
 title: µTest++ Testing Framework v6.0.0 released
 seo_title: Version 6.0.0 released
-description: Version 6.0.0 is a new release
+description: Version 6.0.0 is a new major release; it adds parametrised tests and new comparators, deprecates the operators and literals, and reworks the API
 keywords:
   - micro-os-plus
   - xpack
@@ -39,7 +39,7 @@ Version **6.0.0** is a new major release. It adds parametrised tests
 the applications, and the `--filter`, `--colour`, and `--list-tests` options.
 It deprecates the overloaded operators, the literals, and the type wrappers,
 and it contains changes that break the compilation or change the behaviour of
-existing code (see [Detailed changes](#details)).
+existing code (see [Detailed changes](/blog/2026/11/03/micro-test-plus-v6-0-0-released/#details)).
 
 <!-- truncate -->
 
@@ -59,7 +59,12 @@ package into a project is to declare it as a dependency using **xpm**.
 `xpm install @micro-os-plus/micro-test-plus@${frontMatter.version} --verbose
 `} </CodeBlock>
 
-Comprehensive instructions are available in the [Install Guide](/docs/install/).
+However, like any source code library, this project can also be
+integrated into another project in the traditional manner, either
+by copying the relevant files into the target project or by
+linking the entire project as a Git submodule.
+
+Detailed instructions are available in the [Integration Guide](/docs/install/).
 
 ## Source code
 
@@ -301,7 +306,7 @@ Comprehensive instructions are available in the [Install Guide](/docs/install/).
 
 - None.
 
-## Continuous Integration tests
+## Continuous integration tests
 
 Prior to publication, a suite of tests was executed.
 The results can be reviewed at:
@@ -597,7 +602,7 @@ function of the reporters was removed.
   execution, and so does `runner::abort()`, but the report is now
   complete: it includes the results of the aborted test case, also in the
   output file, and ends with `✗ Test execution aborted at <file>:<line>`
-  (human) or `Bail out! Requirement failed at <file>:<line>` (TAP) in
+  (human-readable reporter) or `Bail out! Requirement failed at <file>:<line>` (TAP reporter) in
   place of the totals; for `runner::abort()`, the TAP text is
   `Bail out! Test execution aborted at <file>:<line>`. The error is no
   longer written to `stderr`, except for an abort before `initialise()`

@@ -1,0 +1,290 @@
+---
+title: Running tests
+description: "The command line options of the test programs: verbosity, filtering, listing test cases, the output file, the reporters, and the colours."
+keywords:
+  - micro-os-plus
+  - xpack
+  - micro-test-plus
+  - user
+  - guide
+  - command line
+  - options
+  - reporter
+
+date: 2026-11-03 10:00:00 +0200
+---
+
+{/* ------------------------------------------------------------------------ */}
+
+# Running tests
+
+This page describes the command line options of the test programs: how to
+select the verbosity, the test cases, the reporter, the output file, and the
+colours.
+
+# Command line options
+
+The µTest++ options come first, before the arguments of the application: the
+parsing of the options ends at the first argument that does not start with a
+dash, or at the first `--` alone, and that argument, and all the following ones,
+are left to the application, uninterpreted, so they may be options of the
+application. The first `--` alone, when it ends the options, is not passed on.
+An option argument given separately (`--reporter human`) belongs to its option
+and does not end the parsing; an unknown option before that point (an argument
+that starts with a dash, such as `-x` or `-verbose`) is an error.
+
+```sh
+sample-test --verbose --output-file=out.tap one --app-option
+sample-test --quiet -- --app-option
+sample-test --quiet one -- two
+```
+
+In the first command, `one` and `--app-option` are left to the application, and
+the parsing stops at `one`, so `--app-option` is not examined. In the second
+command, `--app-option` is left to the application; the `--` is needed because
+an argument that starts with a dash would otherwise be taken for a µTest++
+option, and rejected as an unknown one. In the third command, the parsing
+already stopped at `one`, so the `--` is not a terminator but one of the
+arguments of the application, which are `one`, `--`, and `two`; the same applies
+to a second `--` after the first one.
+
+A µTest++ option written after an application argument
+(`sample-test one --verbose`) is not an option, but one of the arguments of the
+application. An argument that starts with a single dash (`-v`) before that point
+is taken for a µTest++ option, and rejected as an unknown one, so an application
+that receives such arguments first needs the `--` (`sample-test -- -v`).
+
+The application obtains its arguments from the runner, without `argv[0]` and
+without the µTest++ options:
+
+```cpp
+tr.initialise (argc, argv);
+
+for (const std::string& argument : tr.application_arguments ())
+  {
+    // ...
+  }
+```
+
+## Verbosity
+
+By default, µTest++ displays a **summary line for each test case**, and, for the
+failed ones, the **failed checks**; the passed checks are only counted.
+
+To adjust the verbosity, one of the following command-line options may be
+specified:
+
+- `--verbose` – display **all checks**, irrespective of their outcome, and the
+  heading of every test case
+- `--quiet` – display only the **failed checks**, with the names of the suite
+  and of the test cases that contain them, and the **runner totals**; the TAP
+  reporter also displays one `ok`/`not ok` line per test suite, with the plan
+  counting them, so that the output remains a valid TAP document, which node-tap
+  and the other TAP consumers read as failed when a suite failed
+- `--silent` – suppress all output and return **solely the exit code**
+
+The verbosity selects only the console output; the output file always receives
+the complete report (see [Output file](#output-file)). The table summarises what
+each level displays on the console:
+
+| Level | Option | Console |
+| --- | --- | --- |
+| verbose | `‑‑verbose` | everything displayed by the normal level, plus the heading of every test case and each passed check |
+| normal | (none) | the informational lines, the result of each suite and of each test case, passed or failed, with the counts of checks, and the failed checks, under the headings of the test cases that contain them; the passed checks are only counted |
+| quiet | `‑‑quiet` | the failed checks, with the names of the suite and of the test cases that contain them, and the totals; with TAP, also one `ok`/`not ok` line per test suite, and the failed checks as comments |
+| silent | `‑‑silent` | nothing; only the exit code |
+
+In short, the levels differ as follows:
+
+- **quiet** shows only what failed, without the results of the passed or failed
+  test cases, and the totals;
+- **normal** adds the result line of every test case, so a passed test case is
+  visible as such, and the header and informational lines;
+- **verbose** adds the headings of all the test cases and the line of each
+  passed check, which is the only console level that shows them.
+
+The passed checks are not formatted at the quiet and normal levels, unless an
+output file is used, so they cost only a counter increment.
+
+With the TAP reporter and the normal verbosity, the passed test cases are
+displayed as single `ok` lines, and the failed ones as complete `# Subtest:`
+blocks; the nested passed test cases appear inside the block of their outer test
+case. With the human-readable reporter, the line of a passed nested test case is
+preceded by the name of its outer test case.
+
+When the test execution is aborted, the totals are replaced by a line with the
+location of the abort, also with `--quiet`, and there is no exit code, since
+`run_suites()` does not return; see [Aborting the test
+execution](/docs/user/organising-tests/#aborting-the-test-execution).
+
+With `--quiet`, the failed checks are the only details displayed, so it is the
+level to use for a long run, in which only the failures matter. To also keep the
+details of the passed checks, add an output file, which receives every check,
+whatever the verbosity:
+
+```sh
+sample-test --quiet --output-file=sample-test.tap
+```
+
+When exceptions are not enabled and a failed requirement aborts the test
+execution, the results of the aborted test case are displayed also with
+`--quiet`, since the totals are never reached; see [Aborting the test
+execution](/docs/user/organising-tests/#aborting-the-test-execution).
+
+Refer to the [Command Line
+Options](/docs/api/groups/micro-os-plus-micro-test-plus-cli/) reference page.
+
+## Filter
+
+To run only some of the test suites and test cases, select them by name with the
+`--filter` option, as with `--grep` in node-tap. The option may be repeated, one
+pattern per nesting level: the first pattern applies to the suite names, the
+second to the test case names, and each further one to the nested test cases.
+
+```sh
+sample-test --filter='Args*|*namespace*'
+sample-test --filter='*' --filter='Check one'
+```
+
+In a pattern, `*` matches any sequence of characters, `?` matches any single
+character, and `|` separates alternatives; the match is case-sensitive, and the
+pattern must cover the whole name. The suites and test cases that do not match
+are not run, and are reported as skipped (`ok 2 - Args suite # SKIP filtered` in
+TAP); the totals lines show how many were skipped.
+
+The top suite is never skipped as a whole, since its body is `main()`, but its
+test cases are filtered like those of any other suite.
+
+## List test cases
+
+To list the test cases without running them, use the `--list-tests` option, or
+its short form `--list`, as in Catch2 and Boost UT. The test cases are listed
+under the names of their suites, followed by their number:
+
+```console
+$ sample-test --list-tests
+All available test cases:
+  Sample
+    Check various conditions
+    Check strings
+  Explicit namespace suite
+    Check one
+    Check two
+4 test cases in 2 test suites
+```
+
+The list is made of plain lines, the same with both reporters and with all the
+verbosity levels; it is not a TAP report, so it is not formatted as one, even
+when the TAP reporter is selected.
+
+With `--filter`, the header is `Matching test cases:`, and only the selected
+test cases are listed; the suites without selected test cases are not listed, so
+the two options together show what a run with the same filter would run.
+
+The suite bodies run, as usual, since they create the test cases, but the bodies
+of the test cases do not run, so no check is evaluated; for the same reason, the
+nested test cases, created by the bodies of their parents, are not listed. No
+report is written: the list is written to the console and to the output file, if
+any, and the exit code is 0; it is 2 after an option error, and when `--filter`
+selects no test case, as for a run, in which case the list is followed by the
+error `the filters selected no test case`.
+
+The code of `main()` and of the suite bodies also runs while listing, so the
+parts that depend on the results of the test cases (their totals, or the exit
+code of `run_suites()`), and the messages of the test program, which would be
+mixed with the list, should be skipped when `tr.is_listing ()` is true:
+
+```cpp
+if (!tr.is_listing ())
+  {
+    printf ("Starting the tests...\n");
+  }
+```
+
+## Output file
+
+To also write the report to a file, use the `--output-file` option, either as
+`--output-file=<path>` or as `--output-file <path>`.
+
+The two outputs have different purposes: the console is intended for the people
+who watch the tests run, and its content is selected with the verbosity options,
+while the output file is intended for the integration with other tools (for
+example a CI pipeline, or a TAP consumer such as node-tap).
+
+The output file always receives the **complete report**, whatever the console
+verbosity, with both reporters; the verbosity selects only what is displayed on
+the console. The TAP reporter is the one to use for integration, since its file
+is a valid TAP document, which the TAP consumers read. The file of the
+human-readable reporter is intended for people, to keep the details of a run
+whose console output is short (see [Verbosity](#verbosity)).
+
+## The human-readable reporter
+
+Starting with v4.x, the default reporter is **TAP**. For compatibility with
+previous versions, the original **human-readable** reporter was preserved and
+can be enabled with:
+
+```
+--reporter=human
+```
+
+For the [minimal test](/docs/user/tutorial/#minimal-test) of the tutorial, the
+output is:
+
+```
+Running: minimal-test --reporter=human
+Built with GCC 15.2.1, with exceptions
+µTest++ human-readable report
+
+• minimal-test
+
+    ✓ Check truth - passed (1 check)
+
+✓ minimal-test - passed (1 check in 1 test case), time: 0.026 ms
+
+✓ Total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.108 ms
+```
+
+The human-readable reporter is intended for reading the console output. For the
+integration with other tools, use the TAP reporter, whose output file is always
+complete (see [Output file](#output-file)).
+
+## Colours
+
+The human-readable reporter highlights the results in colour (green for the
+passed checks and red for the failed ones). By default, the colours are used
+only when the standard output is a terminal, which can be detected only on POSIX
+platforms (Linux, macOS); when the output is redirected to a file or a pipe, and
+on the other platforms, such as the embedded ones, the output is plain.
+
+To select the colours explicitly, use the `--colour` option, modelled on the
+`--color` option of the GNU tools (`ls`, `grep`, `diff`); the American spelling
+`--color` is accepted too, and has the same effect:
+
+- `--colour=auto` – use colours only when the output is a terminal (the default)
+- `--colour=always`, or `--colour` alone – always use colours, for example in a
+  CI system that renders the ANSI escape sequences but does not provide a
+  terminal, or on an embedded target whose output is displayed by a terminal
+- `--colour=never` – never use colours
+
+```sh
+sample-test --reporter=human --colour
+```
+
+As in the GNU tools, the value must be attached with `=`; the argument that
+follows `--colour` is never taken as its value. If it is one of the modes, as in
+`--colour never`, it was probably meant as the value, so it is reported as an
+option error (the program returns 2), instead of being passed to the
+application; an application argument of that kind can follow `--`. The GNU
+synonyms are also accepted: `yes` and `force` for `always`, `no` and `none` for
+`never`, and `tty` and `if-tty` for `auto`.
+
+For compatibility with Catch2 and Boost UT, the alternative `--use-colour`
+option, also spelled `--use-color`, is accepted too, either as
+`--use-colour=<mode>` or as `--use-colour <mode>`, with the modes `yes`, `no`,
+and `auto` (and the other values of `--colour`). When both options are given,
+the last one takes effect.
+
+The TAP reporter never uses colours, since the escape sequences are not part of
+the TAP syntax, and the output file never receives them, whatever the mode. An
+unknown mode is an option error: no test is run and the program returns 2.

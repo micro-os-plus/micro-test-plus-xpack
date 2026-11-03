@@ -31,7 +31,7 @@ stopped**: the rest of its body is skipped, and the run continues with
 the next test case. This is how the fatal assertions of most other
 frameworks behave (`ASSERT_*` in GoogleTest, `REQUIRE()` in Catch2 and
 doctest, `BOOST_REQUIRE()` in Boost.Test); see the comparison in the
-[User's Guide](/docs/user/#comparison-with-other-frameworks).
+[User's Guide](/docs/user/checks/#comparison-with-other-frameworks).
 
 Without exceptions, the test case cannot be stopped alone, so the
 **whole test execution is aborted**. The results of the test case,
@@ -45,7 +45,7 @@ with the human-readable reporter, `Bail out! Requirement failed at
 handler set with `runner::set_abort_handler()`, if any, and then
 `abort()`. The remaining test cases and suites do not run, and no final
 totals are written; see
-[Aborting the test execution](/docs/user/#aborting-the-test-execution).
+[Aborting the test execution](/docs/user/organising-tests/#aborting-the-test-execution).
 
 Use `require()` only for conditions without which the following checks
 are meaningless, and `expect()` for everything else. `assume()` is a
@@ -88,7 +88,7 @@ receives every check, whatever the verbosity:
 sample-test --quiet --output-file=sample-test.tap
 ```
 
-See [Verbosity](/docs/user/#verbosity).
+See [Verbosity](/docs/user/running-tests/#verbosity).
 
 </details>
 
@@ -105,16 +105,14 @@ rejected with `error: unknown reporter '<name>'`, and no test is run.
 <summary>Why is the human-readable output not coloured in CI?</summary>
 
 By default, the human-readable reporter uses colours only when `stdout` is a
-terminal, which is not the case in most CI systems, or when the output
-is piped. To force them, for example when the CI log renders the ANSI
-escape sequences, use `--colour` (or `--colour=always`); to disable
-them, use `--colour=never` (the value must be attached with `=`; a
-separate `--colour never` is reported as an error). The American spelling `--color`, and the
-Catch2 and Boost UT form,
-`--use-colour=yes` or `--use-colour=no` (also spelled `--use-color`), is
-also accepted. The output
-file never receives colours. See
-[Colours](/docs/user/#colours).
+terminal, which is not the case in most CI systems, or when the output is piped.
+To force them, for example when the CI log renders the ANSI escape sequences,
+use `--colour` (or `--colour=always`); to disable them, use `--colour=never`
+(the value must be attached with `=`; a separate `--colour never` is reported as
+an error). The American spelling `--color`, and the Catch2 and Boost UT form,
+`--use-colour=yes` or `--use-colour=no` (also spelled `--use-color`), is also
+accepted. The output file never receives colours. See
+[Colours](/docs/user/running-tests/#colours).
 
 </details>
 
@@ -137,12 +135,12 @@ library in `-Wl,--whole-archive … -Wl,--no-whole-archive`.
 <details>
 <summary>Why is the test output out of order on my board?</summary>
 
-The reporters write through `stdout` (`vfprintf()`, `fwrite()`, and
-`fflush()`). If the platform forwards only `printf()` to the host, for
-example with `-Wl,--wrap=printf`, and `stdout` goes elsewhere, the two
-streams are not synchronised. Route `stdout` and all the `printf()`
-family to the same destination. See the
-[Console output](/docs/user/#console-output) section of the User's
+The reporters write through `stdout` (`vfprintf()`, `fwrite()`, and `fflush()`).
+If the platform forwards only `printf()` to the host, for example with
+`-Wl,--wrap=printf`, and `stdout` goes elsewhere, the two streams are not
+synchronised. Route `stdout` and all the `printf()` family to the same
+destination. See the [Console
+output](/docs/user/embedded-targets/#console-output) section of the User's
 Guide.
 
 </details>
@@ -150,15 +148,15 @@ Guide.
 <details>
 <summary>How can the output be sent to a serial port or RTT?</summary>
 
-By retargeting the C library; µTest++ has no output hook of its own.
-The reporters write through `stdout`, the errors through `stderr`, and
-the output file through `fopen()`, so whatever the C library does with
-them applies to the test output as well. On the µOS++ platforms, all of
-them are forwarded to the host through semihosting, which requires
-a debugger or QEMU. In other environments, implement the C library
-back end (for example `_write()` with newlib) for the desired channel.
-See the [Console output](/docs/user/#console-output) section of the
-User's Guide.
+By retargeting the C library; µTest++ has no output hook of its own. The
+reporters write through `stdout`, the errors through `stderr`, and the output
+file through `fopen()`, so whatever the C library does with them applies to the
+test output as well. On the µOS++ platforms, all of them are forwarded to the
+host through semihosting, which requires a debugger or QEMU. In other
+environments, implement the C library back end (for example `_write()` with
+newlib) for the desired channel. See the [Console
+output](/docs/user/embedded-targets/#console-output) section of the User's
+Guide.
 
 </details>
 

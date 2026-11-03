@@ -2,7 +2,7 @@
 
 title: µTest++ Testing Framework v5.0.0 released
 seo_title: Version 5.0.0 released
-description: Version 5.0.0 is a new release
+description: Version 5.0.0 is a new major release; the configuration and the build integration changed, and the C++ API is unchanged
 keywords:
   - micro-os-plus
   - xpack
@@ -33,7 +33,9 @@ import Link from '@docusaurus/Link';
 import CommonPrerequisites from './_common/_prerequisites.mdx';
 import CommonDownloadAnalytics from './_common/_download-analytics.mdx';
 
-Version **5.0.0** is a new release, updated for xcdl configuration and using the new `micro-test-plus-defines.h` file.
+Version **5.0.0** is a new major release; the C++ API is unchanged, but the
+configuration and the build integration changed, in preparation for the xCDL
+configuration (see [Detailed changes](/blog/2026/07/14/micro-test-plus-v5-0-0-released/#details)).
 
 <!-- truncate -->
 
@@ -53,7 +55,12 @@ package into a project is to declare it as a dependency using **xpm**.
 `xpm install @micro-os-plus/micro-test-plus@${frontMatter.version} --verbose
 `} </CodeBlock>
 
-Comprehensive instructions are available in the [Install Guide](/docs/install/).
+However, like any source code library, this project can also be
+integrated into another project in the traditional manner, either
+by copying the relevant files into the target project or by
+linking the entire project as a Git submodule.
+
+Detailed instructions are available in the [Integration Guide](/docs/install/).
 
 ## Source code
 
@@ -61,7 +68,15 @@ Comprehensive instructions are available in the [Install Guide](/docs/install/).
 
 ## Major changes
 
-- None.
+- `MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED` must now be defined; without it the
+  headers and the sources compile to nothing.
+- The configuration headers `micro-os-plus/project-config.h` and
+  `micro-os-plus/micro-test-plus-defines.h` are now included automatically,
+  and the `MICRO_OS_PLUS_INCLUDE_CONFIG_H` mechanism was removed.
+- The configuration macros were renamed with the `_ENABLED` suffix; the old
+  names are silently ignored.
+- The CMake OBJECT library was renamed to
+  `micro-os-plus::micro-test-plus-objects-library`.
 
 ## Bug fixes
 
@@ -69,16 +84,16 @@ Comprehensive instructions are available in the [Install Guide](/docs/install/).
 
 ## Enhancements
 
-- the configuration file is now `<micro-os-plus/micro-test-plus-defines.h>`
-- to enable tracing, the new preprocessor macros are 
-`MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED` and 
-`MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED`
+- A new CMake STATIC library, `micro-os-plus::micro-test-plus-static-library`.
+- The include guards of the headers were renamed.
+- A compilation with a standard older than C++20 is now reported with an
+  explicit error.
 
 ## Known issues
 
 - None.
 
-## Continuous Integration tests
+## Continuous integration tests
 
 Prior to publication, a suite of tests was executed.
 The results can be reviewed at:
