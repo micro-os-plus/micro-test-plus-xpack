@@ -18,9 +18,9 @@ date: 2026-11-03 10:00:00 +0200
 
 # Organising tests
 
-This page describes how the tests are organised and executed: the runner, the
-top suite, the test cases (which may be nested or repeated for several values),
-and the test suites.
+This page describes how the tests are organised and executed: the **runner**, the
+**top suite**, the **test cases** (which may be nested or repeated for several values),
+and the **test suites**.
 
 ## Test runner
 
@@ -49,7 +49,7 @@ from the main arguments:
 tr.initialise (argc, argv);
 ```
 
-The initialisation is optional; without it, the runner uses the default options
+The initialisation is optional; without it, the runner uses the **default options**
 (the TAP reporter, the `normal` verbosity, no output file, and no filter). If
 used, `initialise()` must precede `add_top_suite()` and `run_suites()`, which
 otherwise initialise the runner with the default options; a later call is
@@ -83,14 +83,14 @@ options.selected_reporter = mt::reporter_kind::human;
 tr.initialise (options);
 ```
 
-The options own their strings (the command line, the output file path, and the
+The **options own their strings** (the command line, the output file path, and the
 filter patterns), and the runner keeps its own copy for the whole session, so
 the options and the strings they were built from need not outlive the call.
 
 ### Top suite
 
 The test cases written directly in `main()` belong to the top suite, which the
-application adds explicitly, giving it a name:
+application adds explicitly; the name is optional:
 
 ```cpp
 auto& ts = tr.add_top_suite ("Main");
@@ -100,10 +100,11 @@ ts.test ("Check something", [] (auto& t) {
 });
 ```
 
-The test cases of the top suite run immediately, when `test()` is called; the
-top suite is always the first suite in the report. If no name is given, the top
-suite is named after the program (the file name of `argv[0]`, without the
-extension), or `default suite` when there is no command line.
+The test cases of the top suite **run immediately**, when `test()` is called; **the
+top suite is always the first suite** in the report. With `tr.add_top_suite ()`,
+without a name, the top suite is named after the program (the file name of
+`argv[0]`, without the extension), or `default suite` when there is no command
+line.
 
 The top suite is optional; without `add_top_suite()`, there is no top suite, and
 `run_suites()` runs only the suites added with `add_suite()` and the static
@@ -111,10 +112,6 @@ suites (see [Test suites](#test-suites)). It can be added only once, and before
 `run_suites()`; a second call returns the same suite, and a call once
 `run_suites()` has started is reported on `stderr` and rejected, so that the
 result is not 0. The same applies to a second call of `initialise()`.
-
-Before 6.0.0, `initialise (argc, argv, name)` also created and returned the top
-suite; it is deprecated, and is equivalent to `initialise (argc, argv)` followed
-by `add_top_suite (name)`.
 
 ### Test result
 
@@ -126,7 +123,7 @@ session runs only once, and later calls return the same result:
 return tr.run_suites ();
 ```
 
-The result is 0 if all checks passed, and 1 otherwise, including when a suite
+The result is **0 if all checks passed**, and 1 otherwise, including when a suite
 was added too late (see [Non-static test suites](#non-static-test-suites)), when
 `initialise()` or `add_top_suite()` was called twice, and when there is no suite
 at all (no top suite, no suite added with `add_suite()`, and no static suite),
@@ -285,7 +282,7 @@ reference page.
 
 ## Test cases
 
-Test cases are collections of checks to be executed within the same environment.
+Test cases are **collections of checks** to be executed within the same environment.
 
 Test case objects can be created using the `test()` member function provided by
 the test suite object:
@@ -370,8 +367,8 @@ reference page.
 
 ## Nested test cases
 
-Test cases can be defined in a nested manner, i.e., a test case can include not
-only checks, but also other test cases, at any nesting level.
+Test cases can be defined in a nested manner, i.e., **a test case can include not
+only checks, but also other test cases**, at any nesting level.
 
 A nested test case is created by calling `test()` on the outer test
 case, and runs immediately; a failed nested test case also fails the
@@ -412,7 +409,7 @@ Each nesting level adds to the stack used by the test; see
 
 ## Test cases for each value
 
-The same test can be run for several values with `test_each()`, which
+**The same test can be run for several values** with `test_each()`, which
 adds and runs a test case for each value, on the suite or, nested, on
 a test case; the callable receives the test case and the value:
 
@@ -445,15 +442,17 @@ as the arguments of `test()`.
 
 ## Test suites
 
-Test suites are named sequences of test cases.
+Test suites are **named sequences of test cases**.
 
 ### Static test suites
 
 In the common use case, test suites are static instances of the `static_suite`
-class, which refer to a `runner` and are run by it. Each static suite inserts
-itself into a list of suites when it is constructed, before `main()`; the
-list does not depend on the runner object, so the suites may be constructed
-before the runner, in any order, and in any source file.
+class, constructed with a reference to a `runner`, which runs them. **Each
+static suite inserts itself into a global list of suites, sorted by name,**
+when it is constructed, before `main()`. The list does not depend on the runner
+object, so the suites may be constructed before the runner, in any order, and in
+any source file; each runner runs only its own suites, in the order of the
+list.
 
 The main program looks like this:
 
@@ -500,9 +499,9 @@ suite_function (mt::suite& ts)
 static mt::static_suite static_suite_1 = { "Static suite", tr, suite_function };
 ```
 
-The implementation uses the C++ static constructors that are performed before
+The implementation uses the **C++ static constructors** that are performed before
 the `main()` function is called. The order of registration is not defined; to
-provide a certain degree of predictability, the framework runs all suites when
+provide a certain degree of **predictability**, the framework runs all suites when
 the `run_suites()` member function is called, after **ordering them by name**.
 
 The source files that define static suites must be linked into the program as
@@ -559,7 +558,7 @@ main(int argc, char* argv[])
 }
 ```
 
-:::warning Suites run by name, not in the order of the calls
+:::warning Suites run by name, not in the order of the registration calls
 
 The order of the calls to `add_suite()` is **ignored**. The added suites
 run when `run_suites()` is called, together with the static suites, sorted

@@ -210,13 +210,13 @@ not ok 1 - The Answer # { FAILED, 0 checks passed, 1 failed, in 1 test case, tim
 # { total: 0 checks passed, 1 failed, in 1 test case, 1 test suite, time: 0.04 ms }
 ```
 
-The output identifies the failed test at line 21, but does not provide further
-details, such as the actual incorrect value.
+The output identifies the failed test at line 21, but **does not provide further
+details**, such as the actual incorrect value.
 
 ## More advanced comparators
 
 To obtain a more informative report, such as the actual incorrect value, the
-test should be slightly more detailed and employ a function comparator; for
+test should be slightly more detailed and **employ a function comparator**; for
 example:
 
 ```cpp showLineNumbers
@@ -273,14 +273,9 @@ not ok 1 - The Answer # { FAILED, 0 checks passed, 1 failed, in 1 test case, tim
 ```
 
 Here, `eq()` is a **function comparator**, a function not only capable of
-comparing almost any type but also of recording the values of its operands.
+**comparing almost any type** but also of **recording the values of its operands**.
 Similar functions exist for all types of comparisons (`ne()`, `lt()`, `le()`,
 `gt()`, `ge()`, and `approx()`).
-
-The earlier releases also offered overloaded operators, literals (such as
-`42_i`), and type wrappers (such as `mt::to_i`); they are deprecated, in favour
-of the function comparators (see [Deprecated operators, literals, and
-wrappers](/docs/user/migrating/#deprecated-operators-literals-and-wrappers)).
 
 ## More complex tests
 

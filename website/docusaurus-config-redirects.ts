@@ -27,7 +27,6 @@ export const redirects = {
     //   },
   ],
   createRedirects(existingPath) {
-    console.log(existingPath);
     //   if (existingPath.includes('/evenimente')) {
     //     // console.log(`to ${existingPath} from ${existingPath.replace('/evenimente', '/events')}`);
     //     // Redirect from /events/X to /evenimente/X

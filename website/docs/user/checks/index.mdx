@@ -37,9 +37,7 @@ The definitions are organised within several namespaces under `micro_os_plus`:
   signatures, rarely named by the applications)
 
 `micro_os_plus` is the primary µOS++ namespace, and `micro_test_plus` is the
-namespace for µTest++. The deprecated operators and literals are in two other
-namespaces, described in [Deprecated operators, literals, and
-wrappers](/docs/user/migrating/#deprecated-operators-literals-and-wrappers).
+namespace for µTest++.
 
 In complex projects, the definitions within the `micro_test_plus` namespace may
 conflict with those of the application, so refer to the
@@ -267,25 +265,25 @@ template <class Lhs_T, class Rhs_T, class Epsilon_T>
 auto approx(Lhs_T&& lhs, Rhs_T&& rhs, Epsilon_T&& epsilon);
 ```
 
-The C strings (`char` arrays, including the string literals, and `char`
-pointers) are compared by content, also with `std::string` and
+The **C strings** (`char` arrays, including the string literals, and `char`
+pointers) **are compared by content**, also with `std::string` and
 `std::string_view`, so `mt::eq (actual, "abc")` checks the characters,
 not the addresses; a null `char` pointer is equal only to another null
-pointer (or `nullptr`), not to an empty string. The other arrays
-(including `uint8_t` buffers) are compared element by element, also with
+pointer (or `nullptr`), not to an empty string. The **other arrays**
+(including `uint8_t` buffers) **are compared element by element**, also with
 a container such as a `std::vector`, and are written as ranges on
 failure; arrays of different sizes are never equal. The other pointers
 are compared by address.
 
-Two integers of different signedness are compared by value, not by
+Two **integers of different signedness are compared by value**, not by
 converting the signed operand to the unsigned type, so
 `mt::lt (-1, 1u)` succeeds and `mt::eq (-1, UINT_MAX)` fails. This does
 not apply to `bool` and to the character types, which are compared as
 the language does.
 
 The pointers and arrays of `char8_t`, `char16_t`, `char32_t`, and
-`wchar_t` are not treated as strings: the arrays are compared element
-by element, including the terminating null character, and the pointers
+`wchar_t` are not treated as strings: **the arrays are compared element
+by element**, including the terminating null character, and the pointers
 are compared by address. Convert them to `std::u8string_view`,
 `std::u16string_view`, `std::u32string_view`, or `std::wstring_view`
 to compare their content; these views and the corresponding strings are
@@ -293,8 +291,8 @@ reported as text, converted to UTF-8, quoted as the `std::string` values
 are. The messages write the text of the pointers and arrays of these
 types, converted to UTF-8 in the same way.
 
-The `approx()` comparator succeeds if its first two operands differ by
-at most the third one, the tolerance, so a tolerance of zero requires
+The `approx()` comparator **succeeds if its first two operands differ by
+at most the third one**, the tolerance, so a tolerance of zero requires
 equal operands and a negative one always fails. The operands are numbers,
 integral or floating-point, possibly of different types. For
 the integers, the distance is computed exactly, also for operands of
@@ -333,11 +331,11 @@ The operands must be accepted by `expect()`: the values that are always
 true, such as string literals, C strings, arrays, and pointers to functions,
 are rejected at compile time, also when wrapped in one of these functions.
 
-`all_of()` and `any_of()` take two or more operands. A chain of the same
+`all_of()` and `any_of()` **take two or more operands**. A chain of the same
 operation is reported as a single group, for example
 `(1 == 1 and abc == abd and 3 < 2)`.
 
-All the operands are evaluated before the check, so, unlike the standard
+**All the operands are evaluated before the check**, so, unlike the standard
 algorithms of the same names, the functions do not stop at the first operand
 that decides the result. After a `using namespace std`, an unqualified call
 with three or more operands of the same type selects `std::all_of()` or
@@ -392,8 +390,8 @@ reference page.
 
 ## Strings
 
-Strings are compared with `eq()` and `ne()`, which compare them by
-content, and show them when the check fails (the standard `==` and `!=`
+**Strings are compared** with `eq()` and `ne()`, which compare them **by
+content**, and show them when the check fails (the standard `==` and `!=`
 operators return a plain `bool`, so a failed check could not show the
 strings):
 
@@ -428,9 +426,9 @@ must themselves be printable.
 
 ## Other standard types
 
-The function comparators also accept the scoped enumerations
+The function comparators also accept the **scoped enumerations**
 (including `std::byte`), and the `std::pair`, `std::tuple`, and
-`std::optional` objects, so also the maps, whose elements are pairs.
+`std::optional` objects, so also the **maps**, whose elements are pairs.
 These are accepted only if their elements are printable (and a duration only
 if its count is a number), so a pair with a member that has no `operator<<`
 is rejected like that member.
@@ -455,7 +453,7 @@ t.expect (mt::ne (find (42), std::nullopt)) << "42 is found";
 t.expect (mt::lt (elapsed (), 5ms)) << "completed within 5ms";
 ```
 
-The strings are shown quoted, whether they are `std::string` or
+The **strings are shown quoted**, whether they are `std::string` or
 `std::string_view` values, or `const char*` elements of a container, pair,
 tuple, or optional (a null pointer is shown as `nullptr`), so that an
 empty string or a trailing space is visible. The values that the

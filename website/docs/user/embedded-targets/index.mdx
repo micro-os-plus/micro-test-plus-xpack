@@ -184,22 +184,21 @@ stream, using `vfprintf()`, `fwrite()`, and `fflush()`. Output written
 by the tests with `printf()` shares the same stream and buffer, so the
 two appear in the expected order.
 
-On embedded platforms, where the output is usually forwarded to the host
-via semihosting, a serial port, or a debug channel, the platform must
-route `stdout` and `printf()`/`puts()`/`putchar()` to the same
-destination. Platforms that redirect only `printf()` (for example via
-`-Wl,--wrap=printf`) to a separate channel may interleave the test and
-reporter output out of order.
-
 µTest++ has no output hook of its own: the output is redirected by the C
 library, not by the framework. On the µOS++ platforms, which provide the C
-library back end, `stdout`, `stderr`, and the file operations (`fopen()`) are
-forwarded to the host through semihosting, so the console output, the error
-messages, and the [output file](/docs/user/running-tests/#output-file) all reach
-the host without any further configuration. In other environments, to send the
-output to a serial port, RTT, or another debug channel, retarget the C library
-(for example, with newlib, implement `_write()`); `stdout` and `stderr` are then
-forwarded together with the `printf()` family.
+library back end, the output is forwarded to the host through semihosting
+(see [Semihosting](#semihosting)), and nothing needs to be configured.
+
+In other environments, to send the output to a serial port, RTT, or another
+debug channel, retarget the C library (for example, with newlib, implement
+`_write()`); `stdout` and `stderr` are then forwarded together, with the
+reporters and the whole `printf()` family.
+
+Redirect `stdout`, not only `printf()`. Redirecting only `printf()`
+(for example with `-Wl,--wrap=printf`) is not sufficient, because the reporters
+write with `vfprintf()` and `fwrite()`, so the output of the tests and the
+output of the reporters would follow different paths and may appear out of
+order.
 
 The configuration errors (a missing option argument, an unknown
 reporter, an output file that cannot be opened, a suite added too
@@ -209,11 +208,23 @@ through the reporter, to the console and to the output file, which is
 truncated, so that it never keeps the report of an earlier run; the
 other errors are not written to the output file.
 
-Semihosting requires a debugger or an emulator (such as QEMU) connected
+## Semihosting
+
+On the µOS++ platforms, which provide the C library back end, `stdout`,
+`stderr`, and the file operations (`fopen()`) are forwarded to the host through
+semihosting, so the console output, the error messages, and the
+[output file](/docs/user/running-tests/#output-file) all reach the host without
+any further configuration. 
+
+The recommended semihosting implementation is the µOS++
+[semihosting](https://github.com/micro-os-plus/semihosting-xpack/) xpm package, which
+the projects that need it add as a dependency.
+
+Semihosting requires a debugger (such as **OpenOCD**) or an emulator (such as **QEMU**) connected
 to the target; without one, the first semihosting call faults, and the
 program stops before reporting anything. Tests that run on a board
 without a debugger must therefore retarget the C library to another
-channel.
+channel, as described in [Console output](#console-output).
 
 ## Builds without exceptions
 
