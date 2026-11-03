@@ -788,7 +788,9 @@ namespace micro_os_plus::micro_test_plus
        *   None.
        * @retval true The lines of the passed checks reach the console or
        * the output file, at least in some cases.
-       * @retval false The lines of the passed checks are never written.
+       * @retval false The descriptions and the expressions of the passed
+       * checks are never written; the TAP reporter writes only their test
+       * points (see `pass_without_text()`).
        */
       [[nodiscard]] bool
       writes_passed_checks (void) const noexcept;
@@ -832,9 +834,11 @@ namespace micro_os_plus::micro_test_plus
        *
        * The headings of the test cases that contain a failure are also
        * displayed with the normal verbosity (see `console_lines()`), but
-       * the passed checks are not; they are only counted, without being
-       * formatted (see `writes_passed_checks()`). The concrete reporters
-       * adapt the quiet and normal levels to their format.
+       * the passed checks are not; they are counted, without being
+       * formatted (see `writes_passed_checks()`), and the TAP reporter
+       * records their test points (see `pass_without_text()`). The
+       * concrete reporters adapt the quiet and normal levels to their
+       * format.
        *
        * @param kind The kind of record.
        * @return The destinations of the record.

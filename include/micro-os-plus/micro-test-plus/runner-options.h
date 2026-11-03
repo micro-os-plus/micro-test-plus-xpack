@@ -105,7 +105,8 @@ namespace micro_os_plus::micro_test_plus
                   checks as comments. */
     normal = 2, /**< Displays test suite and test case results; the
                    individual checks are shown only for failures, the
-                   passed checks being only counted. */
+                   passed checks being counted, and, in the TAP blocks,
+                   numbered by bare `ok` lines. */
     verbose = 3 /**< Displays all results, including passed checks, for maximum
                    detail. */
   };
