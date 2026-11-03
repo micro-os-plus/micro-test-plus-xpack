@@ -8,6 +8,7 @@
   "hasCustomHomepageFeatures": true,
   "hasCustomUser": true,
   "hasCustomUserSidebar": true,
+  "hasCustomDeveloperSidebar": true,
   "hasDoxygenDocusaurusApi": true,
   "hasDoxygenReference": true,
   "hasHomepageExample": true,

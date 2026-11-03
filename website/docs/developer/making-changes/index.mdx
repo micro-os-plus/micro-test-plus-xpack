@@ -1,0 +1,182 @@
+---
+title: Making changes
+description: "Where new code goes, the constraints every change must respect, and how a change is documented and tested."
+keywords:
+  - micro-os-plus
+  - xpack
+  - micro-test-plus
+  - developer
+  - internals
+  - contributing
+
+date: 2026-11-03 10:00:00 +0200
+---
+
+{/* ------------------------------------------------------------------------ */}
+
+# Making changes
+
+This page collects the rules that apply to every change of the framework:
+where the code goes, the constraints that follow from the embedded targets,
+the documentation, and the tests. The commands that build and test the
+project, and the formatting tools, are described on the
+[first page](/docs/developer/) of the Contributor's Guide.
+
+## Where the code goes
+
+Each part of the framework is split across three files with the same name:
+
+| File | Contents |
+| --- | --- |
+| `include/micro-os-plus/micro-test-plus/<name>.h` | the declarations, with their Doxygen comments |
+| `include/micro-os-plus/micro-test-plus/inlines/<name>-inlines.h` | the definitions of the templates, of the inline functions, and of the `constexpr` functions |
+| `src/<name>.cpp` | the non-inline definitions |
+
+A new member of an existing class follows the same split. A new header is
+included by `micro-test-plus.h`, in the order of the dependencies (see
+[The files](/docs/developer/architecture/#the-files)); the applications never
+include it directly.
+
+The top-level `CMakeLists.txt` and `meson.build` are generated, and must not
+be edited by hand. A new source file, a new include folder, or a new
+dependency is added to `xcdl-package.jsonc`, and the build files are
+regenerated with:
+
+```sh
+xpm run xcdl-export
+```
+
+Only the `publicIncludeFolders`, `sourceFiles`, `publicDefines`,
+`compilerOptions`, and `dependencies` properties affect the generated files;
+the other properties of `xcdl-package.jsonc` are informative.
+
+## Keep the templates small
+
+The templates are instantiated for each type of operand, in every
+translation unit of the tests; their code is multiplied accordingly. A
+template should do only the work that depends on the type, and delegate the
+rest to a non-template function, compiled once, in `src/`. The check result
+is the model (see [Initialisation](/docs/developer/checks/#initialisation)):
+`init()` evaluates and formats the expression, and passes a `bool` and the
+location to `start()`, while the destructor, which does the reporting, is not
+a template at all.
+
+## The constraints of the embedded targets
+
+Every change must build and run on the bare-metal targets, under QEMU and on
+the boards. In practice:
+
+- **No streams**: do not include `<iostream>`, `<ostream>`, or `<sstream>`;
+  write text through the formatter or the reporter, which use the C standard
+  I/O functions.
+- **No allocations on the paths that run often**: a check, a test case, and
+  its body should not allocate; reuse the existing buffers. The current
+  exception is the name of a test case longer than the small-string capacity,
+  which `located_name` copies into a `std::string`, freed when `test()`
+  returns, so that the heap does not grow; a change that adds an allocation
+  should keep this property. The objects created once per session may
+  allocate.
+- **Builds without exceptions**: guard the code that throws or catches with
+  `#if defined(__cpp_exceptions)`, and provide the behaviour without them;
+  the reference outputs have `-noexcept` variants for these builds.
+- **Small stacks**: the nested test cases run at the deepest point of the
+  stack, and the embedded targets have small stacks. Avoid large local
+  arrays (`reporter::write_line()` formats into a local array of 128 bytes),
+  avoid recursion where an iteration will do (as in `utility::is_match()`),
+  and call the callables directly, rather than through `std::invoke()`, which
+  adds frames without optimisations. For the same reason, keep the test cases
+  of the `unit-miscellaneous` program small.
+- **Warnings**: the tests are built with many warnings enabled, with several
+  compilers. When a warning must be silenced, do it locally, with a separate
+  group of pragmas for each compiler, guarded by `__GNUC__` and, if needed,
+  `__clang__`, as in the existing sources. The Cortex-M GCC release builds
+  treat `-Wsuggest-final-types` and `-Wsuggest-final-methods` as errors, so a
+  new virtual function of `detail::reporter` is pure virtual, with an override
+  in both reporters and in the `buffer_reporter` of `unit-miscellaneous`; the
+  native builds do not show these errors, so run `test-selected` after such a
+  change.
+- **Portability of the standard library**: some features are missing or
+  incomplete on the embedded toolchains (for example `std::to_chars()` for
+  `long double`); check the existing code for the workarounds before using a
+  new standard facility.
+
+## Style
+
+- The C++ names are in snake_case; the descriptive template parameters end
+  in `_T` (`Expr_T`, `Callable_T`); the private data members of the classes
+  end in `_`.
+- The nested namespaces are written on one line
+  (`namespace micro_os_plus::micro_test_plus::detail`).
+- The includes are grouped (project, µOS++, third-party, standard library),
+  in alphabetical order within each group, separated by blank lines.
+- The code is formatted with `clang-format`, using the configuration in
+  `maintenance/config/`; the formatting is applied with
+  `xpm run clang-format`, from the top folder of the project.
+- The comments and the documentation use British English.
+
+## Documentation
+
+- **Doxygen comments**: every entity (class, member, function, parameter,
+  return value), and every file, including those in `inlines/` and `src/`,
+  has a Doxygen comment, with a `@brief` and, where useful, a `@details`.
+  The comments are updated in the same change as the code, so that they
+  always describe what the code does. The rules are in
+  `.github/skills/doxygen-review/SKILL.md`.
+- **The User's Guide**: a change visible to the applications (a new
+  function, a new option, a different report) is described in the relevant
+  page of the [User's Guide](/docs/user/), and, if it breaks existing code, in
+  the [compatibility notices](/docs/getting-started/compatibility-notices/).
+- **The API reference**: the pages under `/docs/api/` are generated from the
+  Doxygen comments, and are regenerated separately; they are not edited by
+  hand.
+- **These pages**: a change to a mechanism described in the Contributor's
+  Guide is reflected in the page that describes it, including the code
+  excerpts.
+
+## Tests
+
+The tests are separate programs, in `tests/sources/`, built and run for each
+platform and toolchain:
+
+- `unit` links the bodies of the `unit-checks`, `unit-combinations`,
+  `unit-exceptions`, and `unit-miscellaneous` folders, which share the
+  header in `unit-common`; `unit-deprecated` and `unit-static-asserts` are
+  separate programs;
+- `empty`, `minimal`, `sample`, and `suite` exercise the main uses of the
+  framework, as an application would.
+
+The output of each program is compared with the reference files in
+`tests/expected/tap` and `tests/expected/txt`: the `-noexcept` variants are
+for the builds without exceptions, and the `-console`, `-console-quiet`, and
+`-colour` variants hold the console outputs of the `unit` programs. A change
+that alters a report, or adds or removes a check, must update these files in
+the same commit.
+
+The TAP outputs are also checked with `tests/scripts/validate-tap.mjs`, which
+parses them with the node-tap parser and rejects the plans that do not match
+their test points, among other errors. The console captures are checked with
+its `--lenient` option, which accepts the lines printed by the test programs,
+but not the malformed TAP lines.
+
+Run the tests with the system compiler after a minor change:
+
+```sh
+xpm run test -C tests
+```
+
+and a minimal selection of platforms and toolchains after a major one:
+
+```sh
+xpm run test-selected -C tests
+```
+
+The other actions, for each platform and toolchain, are described in the
+[Tests](/docs/developer/#tests) section of the first page of this guide.
+
+## Reviews
+
+The project has agent skills, in `.github/skills/`, which describe the
+checks of the reviews: `api-review` and `code-review` for the code,
+`doxygen-review` for the comments, `website-review` and `website-api-review`
+for the website, and `consistency-check` for the names and the
+configurations. They are useful checklists also for a review done by hand.

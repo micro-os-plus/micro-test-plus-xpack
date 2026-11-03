@@ -1,0 +1,547 @@
+---
+title: Checks and the check result
+description: "How expect() and require() create a temporary check result, how the result collects the messages, and how its destructor reports the check and stops the test case."
+keywords:
+  - micro-os-plus
+  - xpack
+  - micro-test-plus
+  - developer
+  - internals
+  - checks
+  - expect
+  - require
+
+date: 2026-11-03 10:00:00 +0200
+---
+
+{/* ------------------------------------------------------------------------ */}
+
+# Checks and the check result
+
+A check is a single statement, such as:
+
+```cpp
+t.expect (mt::eq (a, 2)) << "the value is " << a;
+```
+
+It looks like a function call followed by a stream insertion, but the report
+is written only at the end of the statement, after all the messages were
+appended. This page describes how this works: the `check_result` object
+created for each check, its initialisation by `expect()` and `require()`, the
+messages, the reporting in its destructor, and what a failed `require()`
+does.
+
+The check functions are members of `test_case`, declared in `test.h` and
+defined in `inlines/test-inlines.h`; the check result is declared in
+`check-result.h`, with its templates in `inlines/check-result-inlines.h` and
+the rest in `src/check-result.cpp`.
+
+## The overloads of `expect()`
+
+`expect()` has two overloads, selected by the type of the condition:
+
+```cpp title="test.h (simplified)"
+template <class Expr_T>
+  requires extension::checkable<Expr_T>
+detail::check_result&&
+expect (const Expr_T& expr,
+        const reflection::source_location& sl
+        = reflection::source_location::current (),
+        detail::check_result&& result = detail::check_result{});
+
+template <class Expr_T>
+  requires detail::unsupported_condition<Expr_T>
+detail::check_result&&
+expect (const Expr_T& expr,
+        const reflection::source_location& sl
+        = reflection::source_location::current (),
+        detail::check_result&& result = detail::check_result{});
+```
+
+The first one accepts the framework expressions and the values that can be
+used as a condition (see
+[The marker and the concepts](/docs/developer/comparators/#the-marker-and-the-concepts)).
+The second one accepts everything else, only to stop the compilation with a
+clear message:
+
+```cpp title="inlines/test-inlines.h"
+template <class Expr_T>
+  requires detail::unsupported_condition<Expr_T>
+detail::check_result&&
+test_case::expect ([[maybe_unused]] const Expr_T& expr,
+                   [[maybe_unused]] const reflection::source_location& sl,
+                   detail::check_result&& result)
+{
+  static_assert (extension::checkable<Expr_T>,
+                 "expect() takes a Boolean condition or a comparison, "
+                 "such as eq (); a value of this type is neither");
+  return std::move (result);
+}
+```
+
+Without it, a call such as `t.expect ("abc")` would fail with a list of
+unsatisfied constraints; with it, the compiler writes:
+
+```text
+error: static assertion failed: expect() takes a Boolean condition or a
+comparison, such as eq (); a value of this type is neither
+```
+
+The condition of the `static_assert` depends on the template parameter, so it
+is evaluated only when this overload is selected. `require()` has the same
+two overloads.
+
+## The two defaulted parameters
+
+The last two parameters are never passed by the applications; their default
+arguments are evaluated at the call site:
+
+- `reflection::source_location::current ()` captures the file and the line of
+  the call, not of the declaration, since a default argument is evaluated
+  where the function is called. This is how the framework reports the
+  location of a failed check without a macro.
+- `detail::check_result{}` creates a temporary in the full expression of the
+  caller. A temporary lives until the end of that full expression, which is
+  the end of the statement, so it outlives the call of `expect()`, and all the
+  `<<` that follow.
+
+`expect()` initialises the temporary, and returns an rvalue reference to it:
+
+```cpp title="inlines/test-inlines.h (simplified)"
+template <class Expr_T>
+  requires extension::checkable<Expr_T>
+detail::check_result&&
+test_case::expect (const Expr_T& expr, const reflection::source_location& sl,
+                   detail::check_result&& result)
+{
+  if (is_misdirected ()) [[unlikely]]
+    {
+      return report_misdirected (detail::check_kind::expectation, sl,
+                                 std::move (result));
+    }
+
+  result.init (expr, detail::check_kind::expectation, sl, *this,
+               test_reporter ().expression_,
+               test_reporter ().writes_passed_checks ());
+  return std::move (result);
+}
+```
+
+`require()` is the same, with `detail::check_kind::requirement`.
+
+The check result cannot be copied or moved; all four copy and move operations
+are deleted. So `auto r = t.expect (true);` does not compile ("call to
+deleted constructor of `detail::check_result`"), and the result cannot outlive
+its statement. This is intentional: a result kept in a variable would be
+reported only when the variable is destroyed, out of order with the other
+checks.
+
+## The check result
+
+The object holds everything needed to report the check:
+
+```cpp title="check-result.h (simplified)"
+class check_result
+{
+public:
+  check_result (void);
+
+  template <class Expr_T>
+  void
+  init (const Expr_T& expr, check_kind kind,
+        const reflection::source_location& location, test_case& test_case,
+        expression_formatter& expression, bool writes_passed);
+
+  check_result (const check_result&) = delete;
+  check_result (check_result&&) = delete;
+  check_result& operator= (const check_result&) = delete;
+  check_result& operator= (check_result&&) = delete;
+
+  ~check_result () noexcept (false);
+
+  template <class T>
+    requires (extension::printable<T> or detail::lazy_message<T>)
+  check_result&&
+  operator<< (const T& msg) &&;
+
+private:
+  void
+  start (bool value, check_kind kind, bool has_expression,
+         const reflection::source_location& location, test_case& test_case,
+         bool writes_passed);
+
+  bool value_ = false;
+  bool is_written_ = false;
+  failure_info info_;
+#if defined(__cpp_exceptions)
+  int uncaught_exceptions_ = 0;
+#endif
+  test_case* test_case_ = nullptr;
+};
+```
+
+`failure_info` groups the kind of the check (`check_kind::expectation` or
+`check_kind::requirement`), the message, whether there is an expression to
+display, and the source location; it is passed as one object to
+`reporter::fail()`.
+
+A result constructed by the default constructor has no test case, and its
+destructor reports nothing; only `init()` makes it a check.
+
+### Initialisation
+
+`init()` is the only member that depends on the type of the expression. It
+converts the expression to `bool`, passes the result to the non-template
+`start()`, and formats the expression, if needed:
+
+```cpp title="inlines/check-result-inlines.h (simplified)"
+template <class Expr_T>
+void
+check_result::init (const Expr_T& expr, check_kind kind,
+                    const reflection::source_location& location,
+                    test_case& test_case, expression_formatter& expression,
+                    bool writes_passed)
+{
+  start (static_cast<bool> (expr), kind, extension::is_op<Expr_T>,
+         location, test_case, writes_passed);
+
+  expression.begin_check (this);
+  if (is_written_)
+    {
+      if constexpr (extension::is_op<Expr_T>
+                    or std::convertible_to<Expr_T, bool>)
+        {
+          expression << expr;
+        }
+      else
+        {
+          expression << static_cast<bool> (expr);
+        }
+    }
+}
+```
+
+```cpp title="src/check-result.cpp (simplified)"
+void
+check_result::start (bool value, check_kind kind, bool has_expression,
+                     const reflection::source_location& location,
+                     test_case& test_case, bool writes_passed)
+{
+  value_ = value;
+  is_written_ = !value || writes_passed;
+  info_ = failure_info{ kind, {}, has_expression, location };
+  test_case_ = &test_case;
+#if defined(__cpp_exceptions)
+  uncaught_exceptions_ = std::uncaught_exceptions ();
+#endif
+}
+```
+
+Some details:
+
+- **The expression is formatted only when it will be written**: always for a
+  failed check, and for a passed one only if the reporter writes the passed
+  checks, which `reporter::writes_passed_checks()` decides (with the verbose
+  verbosity, or when an output file is open). Otherwise the operands, which
+  may be application types with an expensive `operator<<`, are not formatted,
+  and a passed check costs only the comparison, a counter, and, with the TAP
+  reporter, its test point (see `reporter::pass_without_text()`).
+- **The formatting is done here**, not in the destructor, because the check
+  result is not a template, and keeps no reference to the expression; the
+  type of the expression, needed to select the formatter overloads, is known
+  only in `init()`.
+- **A type that is only explicitly convertible to `bool`**, such as a
+  `std::optional`, is written as `true` or `false`, the result of the
+  conversion, since that is what the check tested.
+- **The template part is small**: everything else, including the destructor,
+  is compiled once, in `src/check-result.cpp`, not for each type of
+  expression.
+
+### Messages
+
+The `operator<<` of the check result appends a value to the message. It is
+qualified with `&&`, so it applies only to the reference returned by
+`expect()`, and returns the same reference, so that the calls can be chained:
+
+```cpp title="inlines/check-result-inlines.h (simplified)"
+template <class T>
+  requires (extension::printable<T> or detail::lazy_message<T>)
+check_result&&
+check_result::operator<< (const T& msg) &&
+{
+  if constexpr (detail::lazy_message<T>)
+    {
+      if (value_)
+        {
+          return std::move (*this);
+        }
+    }
+  else
+    {
+      if (!is_written_)
+        {
+          return std::move (*this);
+        }
+    }
+
+  expression_formatter formatter{ std::move (info_.message) };
+  if constexpr (detail::lazy_message<T>)
+    {
+      formatter << std::invoke (msg);
+    }
+  else
+    {
+      formatter << msg;
+    }
+  info_.message = std::move (formatter.buffer_);
+  return std::move (*this);
+}
+```
+
+- The message values are written with the same `operator<<` overloads as the
+  operands, through a local formatter in the _plain_ mode, which writes the
+  numbers without type suffixes, and the strings without quotes. The message
+  string is moved into the local formatter, and moved back, so no other buffer
+  is allocated. The formatter of the reporter is not used, since it holds the
+  text of the expression.
+- When the check will not be written, the value is not formatted at all.
+- A **lazy message** is a callable object (see `detail::lazy_message`) whose
+  result is printable. It is called only if the check failed, so it can
+  describe a failure with values that are not valid otherwise, such as the
+  error of a `std::expected` that holds a value. A lazy message attached to a
+  passed check is never called, even when the passed checks are written.
+
+The values of the messages are evaluated by the caller in any case: in
+`t.expect (c) << f ()`, `f()` is called even if the check passes. Only a lazy
+message defers the work.
+
+## Reporting, in the destructor
+
+At the end of the statement, the temporary is destroyed:
+
+```cpp title="src/check-result.cpp (simplified)"
+check_result::~check_result () noexcept (false)
+{
+  if (test_case_ == nullptr) [[unlikely]]
+    {
+      return;
+    }
+
+  test_case_->next_test_point_number ();
+
+  auto& expression = test_case_->test_reporter ().expression_;
+  const std::string& expression_str = expression.check_text (this);
+
+  if (value_) [[likely]]
+    {
+      if (is_written_)
+        {
+          test_case_->test_reporter ().pass (info_.message, expression_str,
+                                             *test_case_);
+        }
+      else
+        {
+          test_case_->test_reporter ().pass_without_text (*test_case_);
+        }
+      test_case_->totals_.increment_passed_checks ();
+    }
+  else
+    {
+      test_case_->test_reporter ().fail (info_, expression_str, *test_case_);
+      test_case_->totals_.increment_failed_checks ();
+    }
+  expression.end_check (this);
+
+  if (info_.kind == check_kind::requirement && !value_) [[unlikely]]
+    {
+#if defined(__cpp_exceptions)
+      if (std::uncaught_exceptions () <= uncaught_exceptions_)
+        {
+          throw failed_requirement{};
+        }
+#else
+      test_case_->abort (info_.location);
+#endif
+    }
+}
+```
+
+The destructor:
+
+1. assigns the number of the check, by advancing the test point number of the
+   test case; the numbers follow the order in which the checks are reported;
+2. retrieves the text of the expression from the formatter;
+3. calls `reporter::pass()` or `reporter::fail()`, or, for a passed check
+   that is not written, `reporter::pass_without_text()`, which records only
+   its test point; and increments the counter of the test case;
+4. releases the text;
+5. after a failed `require()`, stops the test case.
+
+The destructor is declared `noexcept (false)`, since destructors are
+implicitly `noexcept`, and a `noexcept` destructor that throws calls
+`std::terminate()`.
+
+## A check within another check
+
+The formatter of the reporter is shared by all the checks; normally a check
+formats its expression into the buffer of the formatter, and its destructor
+reads it before the next check begins. A check can, however, begin while
+another one is pending, when a function called in a message makes a check:
+
+```cpp
+template <class T>
+int
+helper (T& t)
+{
+  t.expect (mt::eq (3, 4)) << "inner";
+  return 7;
+}
+
+t.expect (mt::eq (a, 2)) << "outer " << helper (t);
+```
+
+The outer check is initialised first, then `helper()` runs, and its check is
+initialised, reported, and destroyed, before the outer one is destroyed.
+`begin_check()` handles this by moving the text of the pending check aside,
+keyed by the address of its check result:
+
+```cpp title="src/expression-formatter.cpp (simplified)"
+void
+expression_formatter::begin_check (const void* owner)
+{
+  if (owner_ != nullptr)
+    {
+      pending_.emplace_back (owner_, std::move (buffer_));
+    }
+  buffer_.clear ();
+  owner_ = owner;
+}
+```
+
+`check_text (owner)` returns the buffer if it belongs to the check, and
+otherwise searches `pending_`; `end_check (owner)` releases the buffer, or
+removes the entry from `pending_`. In the usual case, `pending_` stays empty,
+and the buffer is reused without allocating.
+
+The report shows the inner check first, as check 1, and the outer one as
+check 2, each with its own text:
+
+```text
+    # Subtest: pending
+        not ok 1 - inner
+          ---
+          condition: "3 == 4"
+          ...
+        not ok 2 - outer 7
+          ---
+          condition: "1 == 2"
+          ...
+```
+
+## A failed requirement
+
+### With exceptions
+
+The destructor throws `detail::failed_requirement`, an empty struct, not
+derived from `std::exception`. It propagates out of the body of the test case,
+and `test_case::run()` catches it (see
+[Running a test case](/docs/developer/test-cases-and-suites/#running-a-test-case));
+the failure was already reported and counted, so nothing else is done, and the
+run continues with the next test case. The rest of the body is skipped:
+
+```cpp
+t.require (mt::eq (1, 2)) << "stops";
+printf ("not reached\n");
+```
+
+Two cases need care:
+
+- **Stack unwinding.** If an exception is thrown while the rest of the
+  statement is evaluated, for example by a message argument, the destructor
+  runs during the unwinding; throwing then would call `std::terminate()`.
+  `start()` stores `std::uncaught_exceptions()`, and the destructor throws only
+  if the number has not grown.
+- **The comparators of exceptions** rethrow `failed_requirement`, so that a
+  failed `require()` inside a callable passed to `throws()` or `nothrow()`
+  still stops the test case (see
+  [Exceptions](/docs/developer/comparators/#exceptions)). A `catch (...)` in
+  the body of a test case, however, also catches `failed_requirement`, and the
+  rest of the body then runs.
+
+### Without exceptions
+
+The destructor calls `test_case::abort()`, which calls `runner::abort()`:
+
+```cpp title="src/runner.cpp (simplified)"
+void
+runner::abort (const reflection::source_location& sl, bool is_requirement)
+{
+  if (!aborted_)
+    {
+      aborted_ = true;
+      if (session_state_ == session_state::initialised
+          || session_state_ == session_state::running)
+        {
+          reporter_->abort_session (sl, is_requirement);
+        }
+      else
+        {
+          const unsigned long line = sl.line ();
+          fprintf (stderr, "error: test execution aborted at %s:%lu\n",
+                   utility::extract_file_name (sl.file_name ()), line);
+        }
+    }
+  fflush (stdout);
+  fflush (stderr);
+
+  if (abort_handler_ != nullptr)
+    {
+      abort_handler_ (sl);
+    }
+  ::abort ();
+}
+```
+
+The reporter writes the results buffered so far and the location of the
+abort, since the totals will never be written; then the handler set with
+`runner::set_abort_handler()`, if any, is called, and, if it returns, the
+process is terminated. The `aborted_` flag is never cleared, so a runner that
+was aborted refuses to run again.
+
+## Misdirected checks
+
+A check is _misdirected_ when it is made on a test case that is not the one
+running, usually because a nested body captured the outer test case and
+used it instead of its own parameter:
+
+```cpp
+t.test ("inner", [&t] (auto&) { t.expect (true) << "misdirected"; });
+```
+
+`is_misdirected()` compares the test case with the innermost running test
+case of the runner. A misdirected check is attributed to the running test
+case, as a failure whose message names both, so that the numbers of the checks
+of the running test case stay consecutive, and its TAP plan stays valid:
+
+```text
+            not ok 1 - [check on test case 'outer' while 'inner' runs] misdirected
+```
+
+The condition is replaced by a constant `false`, so the check fails even if
+the condition held.
+
+## Summary of the order of events
+
+For `t.expect (mt::eq (a, 2)) << "the value is " << a;`:
+
+1. The arguments of `expect()` are evaluated, in an order that the language
+   does not specify: `mt::eq (a, 2)` constructs the expression, which computes
+   the result, and the default arguments create the source location and the
+   temporary `check_result`.
+2. `expect()` checks that the test case is the running one, and calls
+   `init()`, which stores the result, and formats the expression if the check
+   will be written.
+3. Each `<<` appends its value to the message, if the check will be written.
+4. At the `;`, the temporaries are destroyed, in the reverse order of their
+   construction; the destructor of the check result reports the check, and,
+   after a failed `require()`, stops the test case.

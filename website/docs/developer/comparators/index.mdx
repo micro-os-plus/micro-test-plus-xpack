@@ -1,0 +1,530 @@
+---
+title: Expression templates and comparators
+description: "How the function comparators build the expression objects, how the operands are stored, copied, or moved, and how the result is computed."
+keywords:
+  - micro-os-plus
+  - xpack
+  - micro-test-plus
+  - developer
+  - internals
+  - comparators
+  - expression templates
+
+date: 2026-11-03 10:00:00 +0200
+---
+
+{/* ------------------------------------------------------------------------ */}
+
+# Expression templates and comparators
+
+A check such as `t.expect (mt::eq (a, 2))` does not pass a `bool` to
+`expect()`. The function comparator `eq()` returns an _expression object_,
+which holds the two operands and the result of the comparison, so that a
+failed check can report `1 == 2`, and not only that it failed. This page
+describes these objects: their types, how they are built, how they store
+their operands, and how the logical functions combine them.
+
+The expression templates are declared in `detail.h`, with their definitions in
+`inlines/detail-inlines.h`; the function comparators are declared in
+`function-comparators.h` and `exceptions.h`, and defined in their inlines;
+the concepts that constrain them are in `extension.h`.
+
+## The expression types
+
+All the expression types are in the `detail` namespace; most are templates:
+
+| Template | Created by | Result | Reported as |
+| --- | --- | --- | --- |
+| `compare_op<Lhs_T, Rhs_T, Compare_T>` | `eq()`, `ne()`, `gt()`, `ge()`, `lt()`, `le()` | `Compare_T::apply (lhs, rhs)` | `1 == 2` |
+| `approx_op<Lhs_T, Rhs_T, Epsilon_T>` | `approx()` | the distance is at most the tolerance | `1.0 ~ (1.2 +/- 0.1)` |
+| `and_op<Lhs_T, Rhs_T>` | `all_of()` | both operands are true | `(1 == 1 and 1 < 0)` |
+| `or_op<Lhs_T, Rhs_T>` | `any_of()` | at least one operand is true | `(1 == 2 or 1 < 0)` |
+| `not_op<T>` | `negate()` | the operand is false | `not (1 == 1)` |
+| `predicate_op<T, Predicate_T>` | the applications, through `extension` | `Predicate_T::apply (operand)` | `even 7` |
+| `throws_op<Exception_T>`, `nothrow_op` | `throws()`, `nothrow()` | the callable threw, or did not | `throws, but nothing was thrown` |
+
+The reports in the last column are those of the failed checks, as written by
+the TAP reporter in the `condition:` line.
+
+Every expression type:
+
+- derives from the empty struct `detail::op`, which marks it as a framework
+  type;
+- computes its result once, in its constructor, and stores it as a `bool`;
+- converts to `bool` through a `constexpr` conversion operator, which returns
+  the stored result;
+- gives access to its operands, so that the formatter can write them.
+
+## The marker and the concepts
+
+The base struct only defines a type alias, which the concepts test:
+
+```cpp title="extension.h (simplified)"
+namespace detail
+{
+  struct op
+  {
+    using op_type = op;
+  };
+}
+
+namespace extension
+{
+  template <class T>
+  concept is_op
+      = requires { requires std::same_as<typename T::op_type, detail::op>; };
+}
+```
+
+Since the concept tests the alias, not the base class, a type can also declare
+the alias directly, without deriving from `op`.
+
+The checks accept an expression type, or any value that can be used as a
+condition, except the types that are likely mistakes, such as arrays, function
+pointers, and `char` pointers, which would test an address:
+
+```cpp title="extension.h (simplified)"
+template <class T>
+concept checkable
+    = is_op<T> or (not suspicious_condition<T> and requires (const T& t) {
+        t ? true : false;
+      });
+```
+
+The condition of the conditional operator, which cannot be overloaded, tests
+the contextual conversion to `bool`, as the condition of an `if` statement
+does; it accepts the types with an `explicit operator bool`, such as
+`std::optional` and `std::unique_ptr`, but not the scoped enumerations.
+
+## The base templates
+
+The binary expressions derive from `binary_op`, and the unary ones from
+`unary_op`. The base stores the operands and the result:
+
+```cpp title="detail.h (simplified)"
+template <class Lhs_T, class Rhs_T>
+struct binary_op : op
+{
+  template <class L, class R>
+  constexpr binary_op (L&& lhs, R&& rhs, bool value)
+      : lhs_{ std::forward<L> (lhs) }, rhs_{ std::forward<R> (rhs) },
+        value_{ value }
+  {
+  }
+
+  [[nodiscard]] constexpr operator bool () const { return value_; }
+
+  [[nodiscard]] constexpr decltype (auto) lhs (void) const;
+  [[nodiscard]] constexpr decltype (auto) rhs (void) const;
+
+private:
+  Lhs_T lhs_;
+  Rhs_T rhs_;
+  const bool value_{};
+};
+```
+
+The result is passed to the base constructor already computed; each derived
+template computes it from the constructor arguments. The members that hold
+the operands are not `const`, so that an expression can be moved into an
+enclosing one (see [The logical functions](#the-logical-functions)).
+
+For `eq (a, b)` with two `int` operands, the object holds two `int` and a
+`bool`; on a 64-bit host it occupies 12 bytes.
+
+## Comparisons and tags
+
+`compare_op` implements the six comparisons; the comparison itself is defined
+by a _tag_, an empty struct with a static `symbol`, written in the report
+between the operands, and a static `apply()`, which compares them:
+
+```cpp title="detail.h and inlines/detail-inlines.h (simplified)"
+struct equal_to
+{
+  static constexpr const char* symbol = " == ";
+
+  template <class Lhs_T, class Rhs_T>
+  [[nodiscard, gnu::always_inline]] static constexpr bool
+  apply (const Lhs_T& lhs, const Rhs_T& rhs)
+  {
+    using std::operator==;
+    if constexpr (sign_mixed_integers<Lhs_T, Rhs_T>)
+      {
+        return std::cmp_equal (lhs, rhs);
+      }
+    else
+      {
+        return lhs == rhs;
+      }
+  }
+};
+```
+
+Two details of `apply()` matter:
+
+- **Integers of different signedness** are compared by value, with
+  `std::cmp_equal()` (and `std::cmp_less()` and the others in the other tags),
+  so `eq (-1, 1u)` is false; the operator of the language would convert `-1`
+  to a large unsigned value. The `bool` and character types are excluded from
+  this rule.
+- **The using-declaration** makes the operators of the standard library
+  visible to unqualified lookup, together with those found by
+  argument-dependent lookup, and hides any `operator==` of the enclosing
+  namespaces of the framework.
+
+The other tags are `not_equal_to`, `greater`, `greater_equal`, `less`, and
+`less_equal`, with the same structure.
+
+The constructor of `compare_op` computes the result before it forwards the
+operands to the base, since the operands may be moved there:
+
+```cpp title="inlines/detail-inlines.h (simplified)"
+template <class Lhs_T, class Rhs_T, class Compare_T>
+template <class L, class R>
+  requires extension::compare_tag<Compare_T, unwrapped_t<L>, unwrapped_t<R>>
+constexpr compare_op<Lhs_T, Rhs_T, Compare_T>::compare_op (L&& lhs, R&& rhs,
+                                                           Compare_T)
+    : binary_op<Lhs_T, Rhs_T>{
+        detail::as_operand (std::forward<L> (lhs)),
+        detail::as_operand (std::forward<R> (rhs)),
+        Compare_T::apply (detail::unwrap (lhs), detail::unwrap (rhs)) }
+{
+}
+```
+
+The arguments of the base constructor are all evaluated before the base is
+entered, so `apply()` sees the operands before any of them is moved from. The
+tag argument is used only to deduce `Compare_T`; the tag stores nothing, so a
+parameter of the comparison, such as a tolerance, must be an operand.
+
+## From `eq()` to `compare_op`
+
+`eq()` forwards its operands to the constructor, with the tag:
+
+```cpp title="function-comparators.h and its inlines (simplified)"
+template <class Lhs_T, class Rhs_T>
+  requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>
+            and detail::comparable<detail::comparison::equal, Lhs_T, Rhs_T>)
+[[nodiscard]] constexpr auto
+eq (Lhs_T&& lhs, Rhs_T&& rhs)
+{
+  return detail::compare_op{ detail::as_operand (std::forward<Lhs_T> (lhs)),
+                             detail::as_operand (std::forward<Rhs_T> (rhs)),
+                             detail::equal_to{} };
+}
+```
+
+The template arguments of `compare_op` are not written; they are deduced from
+the constructor arguments by a deduction guide, which selects how each operand
+is stored (see [How the operands are stored](#how-the-operands-are-stored)):
+
+```cpp title="detail.h"
+template <class Lhs_T, class Rhs_T, class Compare_T>
+compare_op (Lhs_T&&, Rhs_T&&, Compare_T)
+    -> compare_op<stored_operand_t<decltype (detail::as_operand (
+                      std::declval<Lhs_T> ()))>,
+                  stored_operand_t<decltype (detail::as_operand (
+                      std::declval<Rhs_T> ()))>,
+                  Compare_T>;
+```
+
+### The operands that change type
+
+`as_operand()` converts the operands that the operators of the language would
+compare by address:
+
+- a `char` array, including a string literal, becomes a `c_string` bounded by
+  the size of the array;
+- a `char` pointer becomes a `c_string` bounded by the null terminator; a null
+  pointer is equal only to another null pointer, and is less than any string;
+- any other array becomes an `array_operand`, compared element by element;
+- every other operand is forwarded unchanged.
+
+A `c_string` refers to the characters, and does not copy them; a
+`std::string` operand, in contrast, is an ordinary operand, and is copied or
+moved like any other.
+
+The types deduced for some common calls are:
+
+| Call | Type |
+| --- | --- |
+| `eq (a, b)`, with `int a, b` | `compare_op<int, int, equal_to>` |
+| `eq (a, 2)` | `compare_op<int, int, equal_to>` |
+| `eq (s, "abc")`, with `std::string s` | `compare_op<std::string, c_string, equal_to>` |
+| `negate (e)`, with `e` the first expression | `not_op<compare_op<int, int, equal_to>>` |
+
+### The constraints at the call site
+
+The `requires` clause of `eq()` rejects the invalid calls at the call site,
+with a short diagnostic, instead of an error deep inside `apply()`:
+
+- `printable` requires that each operand can be written by the expression
+  formatter, since a failed check writes it;
+- `comparable` requires that the operands can be compared by the selected
+  operator, after `as_operand()`, or that they are integers of different
+  signedness.
+
+`comparable` is a single concept, parametrised by the `comparison`
+enumeration, so that the six comparators share it. Its check of the operator
+is made in a namespace with the same using-declarations as `apply()`, so that
+it accepts exactly what `apply()` compiles:
+
+```cpp title="inlines/detail-inlines.h (simplified)"
+namespace comparison_lookup
+{
+  using std::operator==;
+  // ... and the other five operators
+
+  template <comparison Op, class Lhs_T, class Rhs_T>
+  concept can_compare
+      = (Op == comparison::equal
+         and requires (const Lhs_T& lhs, const Rhs_T& rhs) { lhs == rhs; })
+        or (Op == comparison::not_equal
+            and requires (const Lhs_T& lhs, const Rhs_T& rhs) { lhs != rhs; })
+        // ... and the other four
+        ;
+}
+```
+
+## How the operands are stored
+
+The type with which an expression stores an operand is chosen by
+`stored_operand_t`, applied to the type deduced for a forwarding reference:
+
+```cpp title="detail.h"
+template <class T>
+using stored_operand_t = std::conditional_t<
+    std::is_lvalue_reference_v<T>
+        and not std::is_copy_constructible_v<std::remove_cvref_t<T>>,
+    const std::remove_reference_t<T>&, std::remove_cvref_t<T>>;
+```
+
+The rules, and their effect, measured with a type that counts its copies and
+moves, are:
+
+| Operand | Stored as | `eq (x, y)` with two such operands |
+| --- | --- | --- |
+| an lvalue (a named object) of a copyable type | a copy | 2 copies |
+| an rvalue (a temporary) | the value, moved | 2 moves |
+| an lvalue of a type that cannot be copied | a `const` reference | no copy, no move |
+
+The reasons are:
+
+- **Copying the named operands** keeps an expression valid after the objects
+  it was built from are gone. An expression built in a function from its local
+  variables, and returned, does not refer to the destroyed locals:
+
+  ```cpp
+  auto make_check (int x)
+  {
+    int local = x;
+    return mt::eq (local, 42); // stores a copy of local
+  }
+
+  t.expect (make_check (42));
+  ```
+
+  The C strings and the other arrays are an exception: they are stored as a
+  `c_string` or an `array_operand`, which refer to the original characters or
+  elements (see [The operands that change type](#the-operands-that-change-type)),
+  so an expression built from a local array must not outlive the array.
+
+- **Moving the temporaries** keeps an expression valid after the end of the
+  statement, as in `auto op = eq (f (), 1);`, and avoids the cost of a copy.
+- **Referring to the objects that cannot be copied** is the only option for
+  them; the reference remains valid while the named object exists, which is
+  always the case within the statement that checks the expression.
+
+The cost of the copies is paid in every check, passed or failed, and is
+significant for large objects, such as a long `std::vector`.
+
+The operand is evaluated once, when the argument of the comparator is
+evaluated; `eq (f (), 42)` calls `f()` once, and the stored value is used both
+for the result and for the report.
+
+## Approximate comparisons
+
+`approx (lhs, rhs, epsilon)` creates an `approx_op`, which stores the three
+values and the result; the operands are not passed through `as_operand()`,
+since only arithmetic types are accepted (the concept `approx_operand`
+excludes `bool` and the character types):
+
+```cpp title="inlines/detail-inlines.h (simplified)"
+template <class Lhs_T, class Rhs_T, class Epsilon_T>
+template <class L, class R, class E>
+constexpr approx_op<Lhs_T, Rhs_T, Epsilon_T>::approx_op (L&& lhs, R&& rhs,
+                                                         E&& epsilon)
+    : binary_op<Lhs_T, Rhs_T>{ std::forward<L> (lhs), std::forward<R> (rhs),
+                               detail::differ_by_at_most (
+                                   detail::unwrap (lhs), detail::unwrap (rhs),
+                                   detail::unwrap (epsilon)) },
+      epsilon_{ std::forward<E> (epsilon) }
+{
+}
+```
+
+`differ_by_at_most()` computes the distance exactly when all three values are
+integers, as an unsigned value, so that it neither overflows nor wraps around;
+otherwise it converts the values to their common floating-point type. A
+negative tolerance, or a NaN, makes the result false. The tolerance is
+reported with the operands, as `1.0 ~ (1.2 +/- 0.1)`.
+
+## The logical functions
+
+`all_of()` and `any_of()` take two or more expressions, or conditions, and
+nest them, two at a time, into `and_op` or `or_op` objects:
+
+```cpp title="inlines/function-comparators-inlines.h (simplified)"
+template <class First_T, class Second_T, class... Rest_T>
+constexpr auto
+all_of (First_T&& first, Second_T&& second, Rest_T&&... rest)
+{
+  if constexpr (sizeof...(Rest_T) == 0)
+    {
+      return detail::and_op{ std::forward<First_T> (first),
+                             std::forward<Second_T> (second) };
+    }
+  else
+    {
+      return micro_test_plus::all_of (
+          detail::and_op{ std::forward<First_T> (first),
+                          std::forward<Second_T> (second) },
+          std::forward<Rest_T> (rest)...);
+    }
+}
+```
+
+So `all_of (eq (a, b), lt (a, 2), gt (b, 0))` has the type:
+
+```cpp
+and_op<and_op<compare_op<int, int, equal_to>,
+              compare_op<int, int, less>>,
+       compare_op<int, int, greater>>
+```
+
+The formatter writes the nested operands of the same kind without the inner
+parentheses, so the expression is reported as `(1 == 1 and 1 < 2 and 1 > 0)`.
+
+The `and_op` constructor computes its result from the results of its
+operands, which are already computed:
+
+```cpp title="inlines/detail-inlines.h (simplified)"
+template <class Lhs_T, class Rhs_T>
+template <class L, class R>
+constexpr and_op<Lhs_T, Rhs_T>::and_op (L&& lhs, R&& rhs)
+    : binary_op<Lhs_T, Rhs_T>{ std::forward<L> (lhs), std::forward<R> (rhs),
+                               static_cast<bool> (lhs)
+                                   and static_cast<bool> (rhs) }
+{
+}
+```
+
+Two consequences follow:
+
+- **There is no short-circuit evaluation.** All the arguments of `all_of()`
+  are evaluated before it is called, so in
+  `all_of (ne (p, nullptr), eq (*p, 1))` the pointer is dereferenced even when
+  it is null. A check that depends on an earlier one must be a separate
+  statement, usually a `require()` followed by an `expect()`.
+- **The sub-expressions are moved** into the enclosing ones, since they are
+  temporaries; at each level of nesting, the operands are moved again. With
+  three comparisons of two named objects, a type that counts its copies and
+  moves shows 6 copies (2 for each comparison) and 10 moves (4 at the first
+  level of nesting, 6 at the second).
+
+`negate()` creates a `not_op`, which stores its operand as
+`stored_operand_t` selects, and whose result is the negation of the result of
+its operand.
+
+## Predicates
+
+`predicate_op` is the unary counterpart of `compare_op`: a tag with a
+`symbol`, written before the operand, and an `apply()` that takes one operand.
+The framework defines no predicate of its own; the template exists for the
+applications, which use it through the `extension` namespace.
+
+## Exceptions
+
+When exceptions are enabled, `throws<E> (f)`, `throws (f)`, and `nothrow (f)`
+create objects derived from `callable_op`. These do not store the callable:
+their constructors call it, immediately, from a lambda that catches what it
+throws, and store only the outcome:
+
+```cpp title="inlines/detail-inlines.h (simplified)"
+template <class Exception_T>
+template <class Callable_T>
+throws_op<Exception_T>::throws_op (const Callable_T& func)
+    : callable_op{ [&func] () -> callable_result
+  {
+    try
+      {
+        func ();
+      }
+    catch (const failed_requirement&)
+      {
+        throw;
+      }
+    catch (const Exception_T&)
+      {
+        return { true, throw_outcome::none, {} };
+      }
+    catch (const std::exception& e)
+      {
+        return { false, throw_outcome::std_exception,
+                 e.what () != nullptr ? e.what () : "" };
+      }
+    catch (...)
+      {
+        return { false, throw_outcome::unknown_exception, {} };
+      }
+    return { false, throw_outcome::none, {} };
+  }() }
+{
+}
+```
+
+- `callable_result` holds the result, the kind of exception thrown
+  (`throw_outcome`), and the text of `what()`, so that the report can say what
+  was thrown instead.
+- `failed_requirement` is rethrown, so that a failed `require()` within the
+  callable still stops the test case, instead of counting as an exception
+  thrown by the callable.
+
+Without exceptions, these functions are not defined.
+
+## The `extension` namespace
+
+The applications create their own comparators with the same templates,
+through two using-declarations at the end of `detail.h`:
+
+```cpp title="detail.h"
+namespace extension
+{
+  using detail::compare_op;
+  using detail::predicate_op;
+}
+```
+
+An application tag is accepted if it satisfies `extension::compare_tag` (or
+`extension::predicate_tag`): a printable `symbol`, and an `apply()` whose
+result converts to `bool`. The expressions so created are ordinary framework
+expressions: they can be combined with `all_of()` and `negate()`, and are
+reported by the same formatter. The User's Guide shows an example, in
+[Custom comparators](/docs/user/extending/#custom-comparators).
+
+## Adding a comparator
+
+A new built-in comparator usually needs:
+
+1. a tag, in `detail.h`, with its `symbol` and the declaration of `apply()`,
+   and the definition of `apply()` in `inlines/detail-inlines.h`;
+2. if it is a new comparison operator, a value in the `comparison`
+   enumeration, and the corresponding alternative in `can_compare`;
+3. the function, declared in `function-comparators.h`, with its Doxygen
+   comment and its constraints, and defined in its inlines, following `eq()`;
+4. checks in the `unit` test program, for the passed and the failed cases,
+   and the updated reference outputs in `tests/expected`.
+
+A comparator built on `compare_op` needs no change in the formatter, which
+already writes any `compare_op`, with the symbol of its tag (see
+[The expression formatter](/docs/developer/formatter/)).

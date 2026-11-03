@@ -1,0 +1,352 @@
+---
+title: The reporters
+description: "How the reporters receive the events of the session, buffer the results of the test cases, decide where each record is written, and format the TAP and the human-readable reports."
+keywords:
+  - micro-os-plus
+  - xpack
+  - micro-test-plus
+  - developer
+  - internals
+  - reporters
+  - TAP
+
+date: 2026-11-03 10:00:00 +0200
+---
+
+{/* ------------------------------------------------------------------------ */}
+
+# The reporters
+
+The reporters turn the events of a session, such as the beginning of a test
+case or a failed check, into text, written to the console and to the optional
+output file. There are two of them: the TAP reporter, the default, and the
+human-readable reporter. This page describes their common base class, the
+protocol through which the rest of the framework calls them, the policy that
+decides where each record is written, the buffering of the results, and the
+specifics of each reporter.
+
+The base class is `detail::reporter`, in `reporter.h` and `src/reporter.cpp`;
+the concrete reporters are `detail::reporter_tap` (`reporter-tap.h`,
+`src/reporter-tap.cpp`) and `detail::reporter_human` (`reporter-human.h`,
+`src/reporter-human.cpp`).
+
+The reporters are internal: the applications select one with `--reporter`, or
+with `runner_options::selected_reporter`, but cannot provide their own. Their
+public members are the protocol between the parts of the framework, not an
+API for the applications.
+
+## The protocol
+
+The runner, the suites, the test cases, and the check results call the
+reporter as the session progresses:
+
+| Called by | Function | When |
+| --- | --- | --- |
+| `runner::initialise()` | `begin_session()` | the report begins |
+| `runner::add_top_suite()`, `suite::run()` | `begin_suite()` | a suite begins |
+| `runner::run_child_suites()` | `skip_suite()` | the filter does not select a suite |
+| `test_case::run()` | `begin_test_case()` | a test case begins |
+| `~check_result()` | `pass()`, `fail()` | a check is reported |
+| `~check_result()` | `pass_without_text()` | a passed check is not written |
+| `test_case::fail_unexpected_exception()` | `fail()` | an exception escapes the body of a test case |
+| `runnable_base::after_test_case_create()` | `skip_test_case()` | the filter does not select a test case |
+| `test_case::run()` | `end_test_case()` | a test case ends |
+| `suite::run()`, `accepts_test_case()` | `fail_suite()` | a suite fails outside its test cases |
+| `runner::run_suites()`, `suite::run()` | `end_suite()` | a suite ends |
+| `runner::run_suites()` | `end_session()` | the totals are written |
+| `runner::abort()` | `abort_session()` | the test execution is aborted |
+
+All of them are pure virtual functions of the base class, implemented by each
+reporter (the human-readable reporter implements `pass_without_text()` as an
+empty function), except `pass()` and `fail()`, which are non-virtual functions
+of the base class, built on virtual _prefix_ and _suffix_ functions:
+
+```cpp title="src/reporter.cpp (simplified)"
+void
+reporter::pass (const std::string& message, const std::string& expression,
+                const test_case& test_case)
+{
+  output_pass_prefix (message, test_case);
+  if (message.empty ())
+    {
+      *this << expression;
+    }
+  output_pass_suffix (test_case);
+}
+
+void
+reporter::fail (const failure_info& failure, const std::string& expression,
+                const test_case& test_case)
+{
+  const size_t begin = buffer_.size ();
+  output_fail_prefix (failure.message, failure.has_expression,
+                      failure.location, test_case);
+  if (failure.has_expression)
+    {
+      *this << expression;
+    }
+  output_fail_suffix (failure.location, failure.kind, test_case);
+  mark_failure (begin);
+}
+```
+
+A passed check is described by its message, or, without one, by the text of
+its expression; a failed check shows both.
+
+## Writing the text
+
+The reporter does not use the C++ streams. It has three ways to produce text:
+
+- `operator<<` overloads, for strings, characters, numbers, and pointers,
+  which append to `buffer_`, the buffer of the current test case;
+- `printf`-style functions: `write_console()` and `write_file()` pass the
+  format to `vfprintf()`, on `stdout` or on the output file; `write_line()`,
+  which writes a line to both, formats it once with `vsnprintf()` into a local
+  array of 128 bytes (or, for a longer line, into a string of the exact size),
+  and writes it with `fwrite()`, without the colours for the file;
+- the expression formatter, `expression_`, a member of the reporter, which
+  the check results use for the text of the expressions (see
+  [The expression formatter](/docs/developer/formatter/)).
+
+The local array of `write_line()` is small because the lines that end the
+nested test cases are written at the deepest point of the stack. The text is
+written with its length, not as a C string, so a zero character in a message
+does not end the output. `flush_streams()` flushes both outputs at the end of
+each test case, so the output of the tests written with `printf()` appears in
+the expected order.
+
+## Where each record goes
+
+Every piece of output is a record of a kind (`record_kind`); `route()`
+decides, from the kind and the verbosity, whether the record is written to
+the console, and whether to the output file:
+
+```cpp title="src/reporter.cpp (simplified)"
+output_route
+reporter::route (record_kind kind) const noexcept
+{
+  bool console;
+  if (kind == record_kind::failed_check || kind == record_kind::total
+      || kind == record_kind::abort)
+    {
+      console = (verbosity_ != verbosity::silent);
+    }
+  else if (kind == record_kind::test_case_heading
+           || kind == record_kind::passed_check)
+    {
+      console = (verbosity_ == verbosity::verbose);
+    }
+  else
+    {
+      console = (verbosity_ == verbosity::normal
+                 || verbosity_ == verbosity::verbose);
+    }
+  return { console, output_file_ != nullptr };
+}
+```
+
+| Record | `silent` | `quiet` | `normal` | `verbose` | Output file |
+| --- | --- | --- | --- | --- | --- |
+| failed checks, totals, abort | no | yes | yes | yes | yes |
+| test case headings, passed checks | no | no | no | yes | yes |
+| everything else (information, suite headings and results, test case results, skipped) | no | no | yes | yes | yes |
+
+The policy is in this single function; the concrete reporters only format the
+records and ask where they go. The output file receives every record,
+whatever the verbosity, so a file written by a `silent` run is as complete as
+that of a `verbose` one. On the µOS++ platforms, when the startup code already
+displays the information lines, they are not repeated on the console.
+
+`writes_passed_checks()` tells the check results whether a passed check will
+be written anywhere: only with the verbose verbosity, or when an output file
+is open. Otherwise, the passed checks are counted, and, with the TAP reporter,
+recorded as bare `ok <n>` lines, but their expressions and messages are not
+formatted (see
+[Initialisation](/docs/developer/checks/#initialisation)).
+
+## The output file
+
+The constructor of the base class opens the file named by `--output-file`,
+with `fopen (path, "w")`, so an existing file is truncated, and never keeps
+the results of an earlier run. If the file cannot be opened, the error is
+written to `stderr`, `has_output_file_error()` returns `true`, and the runner
+declines the session. At the end of the session, the reporter writes a line
+naming the file, on the console.
+
+The text written to the file has no colour sequences, even when the console
+has them.
+
+## Buffering the results of the test cases
+
+The results of a test case are not written as they happen. They are appended
+to `buffer_`, and written when the test case ends, or when a nested test case
+begins. The buffering lets the reporter decide, at the end, how much to show:
+
+- With the **normal** verbosity, a passed test case with nothing to show
+  under it is written as a single line, without its heading and its checks; a
+  failed one, or one with nested test cases, is written as a block, with the
+  headings of the outer test cases, if they are not written yet. The passed
+  checks are not formatted at this level; the TAP reporter records each of
+  them, with `pass_without_text()`, as a bare `ok <n>` line, so that the plan
+  of a block matches its test points.
+- With the **quiet** verbosity, only the failed checks are shown; since the
+  buffer may also hold the passed checks, for the output file, the lines of the
+  failed checks are copied into `failures_` by `mark_failure()`.
+- With the **verbose** verbosity, everything is shown, in order.
+
+The open test cases, from the outermost one, are kept in
+`open_test_cases_`, each with a flag that tells whether its heading was
+already written:
+
+```cpp title="reporter.h (simplified)"
+struct open_test_case
+{
+  const test_case* test;
+  bool name_displayed;
+};
+
+std::vector<open_test_case> open_test_cases_{};
+```
+
+`begin_test_case()` adds an entry, and `end_test_case()` removes it. When a
+nested test case begins, the results of the outer one so far are written
+first, by `commit_outer_results()`, so that the output follows the order of
+execution. When something must be shown under a test case whose heading was
+not written yet, `display_open_test_cases()` writes the missing headings of
+the outer test cases, from the outermost one, and marks them as written.
+
+## The TAP reporter
+
+The TAP reporter writes TAP version 14. Each suite and each test case is a
+_subtest_: a `# Subtest:` comment, the indented test points of its checks and
+nested test cases, a plan (`1..n`), and a result line. A failed check has a
+YAML diagnostics block, with the expression as the `condition:` field and the
+location as the `at:` fields:
+
+```text
+TAP version 14
+# Subtest: main
+    ok 1 - good # { passed, 1 check }
+
+    # Subtest: outer
+        ok 1
+        # Subtest: inner
+            not ok 1 - two is three
+              ---
+              condition: "2 == 3"
+              at:
+                fileName: rep.cpp
+                lineNumber: 11
+              ...
+            1..1
+        not ok 2 - inner # { FAILED, 0 checks passed, 1 failed }
+
+        1..2
+    not ok 2 - outer # { FAILED, 1 check passed, 0 failed, 1 test case failed }
+
+    1..2
+not ok 1 - main # { FAILED, 2 checks passed, 1 failed, in 3 test cases, time: 0.060 ms }
+
+1..1
+# { total: 2 checks passed, 1 failed, in 3 test cases, 1 test suite, time: 0.112 ms }
+```
+
+The details that keep the output valid for the TAP consumers are:
+
+- **Escaping**: the descriptions, the reasons, and the comments are escaped by
+  `tap_text()`, so that a `#` in a name does not start a directive and a line
+  break does not end a line; the condition is written in the YAML
+  double-quoted form by `yaml_double_quoted()`, so that operands such as
+  `{1, 2}` or `'a'`, which would start a YAML collection or a quoted scalar,
+  do not make the block invalid.
+- **Field names**: the location fields are `fileName:` and `lineNumber:`, as
+  written by node-tap, whose reporters (for example the JUnit one, used by
+  the CI systems) read the file name only from these names.
+- **Numbers**: the test points keep their numbers, also when the filter skips
+  some of them, and each passed check of a block is a test point, also when
+  it is not formatted (`ok 1` above), so that the plan stays complete.
+- **Prefixes**: the comments start with `# `, and the errors of the options
+  and the abort are written as `Bail out!` lines (`comment_prefix()` and
+  `error_prefix()`), which the TAP consumers treat as a failure of the whole
+  run.
+- **Quiet output**: with the quiet verbosity, the failed checks are written as
+  comments, preceded by the path of their test case, and only the result lines
+  of the suites are test points, so that the console output is a complete TAP
+  document, with one test point per suite:
+
+  ```text
+  TAP version 14
+  # main > outer > inner
+  #             not ok 1 - two is three
+  #               ---
+  #               condition: "2 == 3"
+  #               at:
+  #                 fileName: rep.cpp
+  #                 lineNumber: 11
+  #               ...
+  not ok 1 - main # { FAILED, 2 checks passed, 1 failed, in 3 test cases, time: 0.034 ms }
+  1..1
+  ```
+
+No colours are used in the TAP output.
+
+## The human-readable reporter
+
+The human-readable reporter writes the same events with symbols: `•` for the
+beginning of a suite or a test case, `✓` for a pass, and `✗` for a failure,
+with the location and the expression of the failed checks in parentheses:
+
+```text
+µTest++ human-readable report
+
+• main
+
+    ✓ good - passed (1 check)
+
+    • outer
+        • inner
+            ✗ two is three FAILED (rep.cpp:11, 2 == 3)
+        ✗ inner - FAILED (0 checks passed, 1 failed)
+
+    ✗ outer - FAILED (1 check passed, 0 failed, 1 test case failed)
+
+✗ main - FAILED (2 checks passed, 1 failed, in 3 test cases), time: 0.056 ms
+
+✗ Total: 2 checks passed, 1 failed, in 3 test cases, 1 test suite, time: 0.104 ms
+```
+
+It is the only reporter that uses colours. Its constructor selects the
+red and green colour set with `--colour=always`, or with the default
+`--colour=auto` when `stdout` is a terminal (tested with `isatty()`, on the
+POSIX platforms only; on the other platforms, including Windows and the
+embedded ones, `auto` means no colours):
+
+```cpp title="src/reporter-human.cpp (simplified)"
+reporter_human::reporter_human (const runner_options& opts)
+    : reporter{ opts }
+{
+  bool use_colours = (opts.colour == colour_mode::always);
+#if defined(__APPLE__) || defined(__linux__) || defined(__unix__)
+  if (opts.colour == colour_mode::automatic && isatty (fileno (stdout)))
+    {
+      use_colours = true;
+    }
+#endif
+  if (use_colours)
+    {
+      colours_ = colours_red_green;
+    }
+}
+```
+
+The expression formatter of the base class was constructed with a reference
+to `colours_`, so the assignment in the derived constructor also changes the
+colours of the expressions.
+
+## Changing a report
+
+Any change to the text of the reports changes the output of the test
+programs, which is compared with the reference files in `tests/expected`
+(the TAP and the text outputs, the `-noexcept` variants, and the console
+captures of the `unit` program). They must be updated in the same commit as
+the change.

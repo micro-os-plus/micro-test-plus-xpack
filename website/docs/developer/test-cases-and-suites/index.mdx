@@ -1,0 +1,605 @@
+---
+title: Test cases and suites
+description: "How the test cases are created on the stack and run immediately, how their bodies are referenced without allocation, and how the suites are stored, registered, and run."
+keywords:
+  - micro-os-plus
+  - xpack
+  - micro-test-plus
+  - developer
+  - internals
+  - test cases
+  - suites
+
+date: 2026-11-03 10:00:00 +0200
+---
+
+{/* ------------------------------------------------------------------------ */}
+
+# Test cases and suites
+
+The tests are organised in suites, which contain test cases, which may
+contain nested test cases. The two kinds of objects have very different
+lifetimes: a suite exists for the whole session, and runs when the runner
+runs it, while a test case exists only while its body runs. This page
+describes both, the class that they share, and how the counters of the
+results are propagated.
+
+The classes are declared in `test.h`, with their templates in
+`inlines/test-inlines.h`, and the rest in `src/test.cpp`; the counters are in
+`counters.h`.
+
+## The class hierarchy
+
+```text
+detail::runnable_base      name, counters, runner, test point numbers
+  ├── test_case            parent suite, nesting depth, body reference
+  └── suite                stored body, located name, stopwatch, list link
+        ├── top_suite      owned by the runner, its body is main()
+        └── static_suite   a static object of the application
+```
+
+`runnable_base` is abstract, with the private pure virtual function `run()`,
+and cannot be copied or moved; its main members are:
+
+```cpp title="test.h (simplified)"
+class runnable_base
+{
+public:
+  [[nodiscard]] const char* name (void) const noexcept;
+  [[nodiscard]] const counters& totals (void) const noexcept;
+
+private:
+  virtual void run (void) = 0;
+
+protected:
+  size_t next_test_point_number (void) noexcept;
+  void after_test_case_create (class test_case& test_case, suite& suite);
+
+  template <typename Callable_T, typename... Args_T>
+  [[gnu::always_inline]] void
+  create_test_case (const located_name& name, suite& parent_suite,
+                    size_t nesting_depth, Callable_T&& callable,
+                    Args_T&&... arguments);
+
+  const char* name_;
+  counters totals_;
+  runner& runner_;
+  size_t own_index_;
+  size_t test_point_number_ = 0;
+  size_t child_test_cases_count_ = 0;
+};
+```
+
+- The **test point number** counts the checks and the nested test cases of a
+  node, in the order in which they are reported; it is the number of each
+  `ok` and `not ok` line of the TAP report, and its final value is the plan.
+- The **own index** is the number of the node within its parent.
+- The **counters** (`counters`) hold the numbers of passed and failed checks,
+  and of executed, failed, and skipped test cases; a node passed if it has no
+  failed check and no failed test case.
+
+## Test cases
+
+### Creation and lifetime
+
+`suite::test()` and `test_case::test()` both call `create_test_case()`, which
+constructs the test case as a local object, and runs it:
+
+```cpp title="inlines/test-inlines.h (simplified)"
+template <typename Callable_T, typename... Args_T>
+inline void
+runnable_base::create_test_case (const located_name& name,
+                                 suite& parent_suite, size_t nesting_depth,
+                                 Callable_T&& callable,
+                                 Args_T&&... arguments)
+{
+  size_t own_index = next_test_point_number ();
+  auto body = bind_callable<class test_case> (
+      std::forward<Callable_T> (callable),
+      std::forward<Args_T> (arguments)...);
+  class test_case child_test_case{
+    name,      runner_,       parent_suite,
+    own_index, nesting_depth, callable_ref<class test_case>{ body }
+  };
+
+  after_test_case_create (child_test_case, parent_suite);
+}
+```
+
+When the function returns, the test case and its body are destroyed. The
+memory used by a session therefore does not grow with the number of test
+cases: the stack holds one test case and one body for each level of nesting
+being run. Nothing is allocated for them, except for the name: the
+`located_name` argument of `test()` holds a `std::string` copy of it, which
+allocates when the name is longer than the small-string capacity (15
+characters with libstdc++, 22 with libc++).
+
+That copy is a temporary of the statement that calls `test()`, so it is freed
+when `test()` returns, after the test case has run, and the allocations do not
+accumulate: the heap holds at most one name for each level of nesting being
+run. Measured with a counting `operator new`, 1000 test cases with names of 40
+characters made 1000 allocations, but never held more than one name (48 bytes
+with the macOS allocator), and nothing remained after them; three nested test
+cases held three names at the deepest point. The remaining cost is a
+`malloc()` and a `free()` for each such test case, and the need for a heap.
+
+### The body: `bind_callable()` and `callable_ref`
+
+The body of a test case is a callable, usually a generic lambda, possibly
+with arguments passed to `test()` after it. `bind_callable()` turns it into an
+object callable with the test case alone:
+
+- without arguments, it returns the callable itself, moved or copied;
+- with arguments, it returns a `bound_callable`, which stores the callable
+  and decayed copies of the arguments, in a `std::tuple`, and passes them to
+  the callable as lvalues.
+
+The arguments are copies, so a reference parameter refers to the copy, not to
+the object of the caller. For example, a counter passed to a body that takes
+`int&` and increments it is still `0` after the test case:
+
+```cpp
+int counter = 0;
+ts.test ("args", [] (auto& t, int& c) { ++c; t.expect (mt::eq (c, 1)); },
+         counter);
+// counter is still 0 here
+```
+
+To refer to the object of the caller, the application passes a pointer, or
+`std::ref (counter)`.
+
+The test case refers to the bound body through a `callable_ref`, a
+non-owning, type-erased reference: two pointers, one to the callable, and one
+to a function, instantiated for its type, that calls it:
+
+```cpp title="test.h and inlines/test-inlines.h (simplified)"
+template <typename Self_T>
+class callable_ref
+{
+public:
+  template <typename Callable_T>
+  explicit callable_ref (Callable_T& callable) noexcept
+      : callable_{ std::addressof (callable) },
+        invoke_{ &invoke_callable<Callable_T> }
+  {
+  }
+
+  void operator() (Self_T& self) const { invoke_ (callable_, self); }
+
+private:
+  template <typename Callable_T>
+  static void
+  invoke_callable (void* callable, Self_T& self)
+  {
+    (*static_cast<Callable_T*> (callable)) (self);
+  }
+
+  void* callable_;
+  void (*invoke_) (void*, Self_T&);
+};
+```
+
+Unlike a `std::function`, it never copies the callable and never allocates;
+this is safe because the body, a local of `create_test_case()`, outlives the
+test case. The callables are called directly, not through `std::invoke()`,
+which, without optimisations, adds several frames to the stack; only a pointer
+to a member function, which only `std::invoke()` can call, goes through it.
+
+### Running a test case
+
+`after_test_case_create()` decides whether the test case runs, and collects
+its results:
+
+1. If the session was declined or aborted, it does nothing.
+2. While the test cases are listed (`--list-tests`), it lists the test case if
+   the filter selects it, and does not run it.
+3. If the filter does not select it, it reports it as skipped, and counts it.
+4. Otherwise, it makes it the _running test case_ of the runner, restoring
+   the previous one with a guard object, also when an exception leaves, and
+   calls `test_case::run()`.
+5. After the run, it counts one more executed test case in the parent, and,
+   if the child failed, one more failed test case; and it adds the counters
+   of the child to those of the suite.
+
+The check counters of a child are added to the suite, not to the parent test
+case: each test case reports only its own checks, and a failed child fails
+its parents through the failed test case counter, as in node-tap. A parent
+with no failed check of its own is reported as:
+
+```text
+not ok 4 - outer # { FAILED, 0 checks passed, 0 failed, 1 test case failed }
+```
+
+`test_case::run()` tells the reporter that the test case begins, calls the
+body, and tells the reporter that it ends. With exceptions, it catches what
+escapes the body:
+
+```cpp title="inlines/test-inlines.h (simplified)"
+inline void
+test_case::run (void)
+{
+  detail::reporter& reporter = this->test_reporter ();
+  reporter.begin_test_case (*this);
+
+#if defined(__cpp_exceptions)
+  try
+    {
+      callable_ (*this);
+    }
+  catch (const detail::failed_requirement&)
+    {
+      // A failed require() stopped the test case; already reported.
+    }
+  catch (const std::exception& e)
+    {
+      if (is_aborted ())
+        {
+          throw;
+        }
+      fail_unexpected_exception (e.what ());
+    }
+  catch (...)
+    {
+      if (is_aborted ())
+        {
+          throw;
+        }
+      fail_unexpected_exception (nullptr);
+    }
+#else
+  callable_ (*this);
+#endif
+
+  reporter.end_test_case (*this);
+}
+```
+
+- A failed `require()` throws `failed_requirement` (see
+  [A failed requirement](/docs/developer/checks/#a-failed-requirement)),
+  which only stops the body.
+- Any other exception is reported as a failed check of the test case, with the
+  text of `what()` when it is a `std::exception`.
+- An exception thrown by the abort handler, after the abort was reported, is
+  passed on, so that it reaches the application that set the handler.
+
+Since the nested test cases catch their own exceptions, an exception is
+reported by the innermost test case whose body it escapes.
+
+### Nesting
+
+`test_case::test()` creates a child with the nesting depth of the parent plus
+one, and the parent's suite as its suite. The nesting depth selects the level
+of the `--filter` patterns that applies to the test case, and the indentation
+of the reports.
+
+`suite::test()` may also be called while a test case runs, for example through
+a reference to the suite captured by a lambda. The new test case cannot be
+reported as a sibling of the running one, which has not ended, so
+`suite::test()` forwards the call to the running test case, and the new test
+case runs nested in it:
+
+```cpp title="inlines/test-inlines.h (simplified)"
+template <typename Callable_T, typename... Args_T>
+void
+suite::test (const located_name& name, Callable_T&& callable,
+             Args_T&&... arguments)
+{
+  if (class test_case* running = running_test_case (); running != nullptr)
+    {
+      running->test (name, std::forward<Callable_T> (callable),
+                     std::forward<Args_T> (arguments)...);
+      return;
+    }
+
+  if (!accepts_test_case (*this, name.name ()))
+    {
+      return;
+    }
+
+  create_test_case (name, *this, 1, std::forward<Callable_T> (callable),
+                    std::forward<Args_T> (arguments)...);
+}
+```
+
+### The running suite
+
+A test case can be created only on the suite whose body is running, which the
+runner tracks in `running_suite_`. `accepts_test_case()` rejects the other
+calls, for example a test case created on the top suite from the body of
+another suite:
+
+- if a suite is running, the rejection is reported as a failed check of that
+  suite, so the session fails:
+
+  ```text
+      ✗ test case 'misplaced' started on suite 'suites', which is not running FAILED
+  ```
+
+- otherwise, for example after `run_suites()` returned, the message is written
+  to `stderr`, and the call is counted as rejected, so that the exit code is
+  not `0`.
+
+### Parametrised test cases
+
+`test_each()` creates one test case for each value of a range, an
+initialiser list, or a tuple. The common implementation builds the name of
+each test case from the name and the value, and calls `test()`:
+
+```cpp title="inlines/test-inlines.h (simplified)"
+template <class Self_T, class Values_T, class Callable_T>
+void
+test_each_value (Self_T& self, const located_name& name, Values_T&& values,
+                 Callable_T& callable)
+{
+  std::size_t position = 0;
+  const auto run_one = [&self, &name, &callable, &position] (const auto& value)
+  {
+    ++position;
+    std::string text{ name.name () };
+    text += " (";
+    if constexpr (extension::printable<std::remove_cvref_t<decltype (value)>>)
+      {
+        plain_text::append (text, value);
+      }
+    else
+      {
+        text += '#';
+        plain_text::append (text, position);
+      }
+    text += ')';
+    self.test (located_name{ std::move (text), name.location () },
+               [&callable, &value] (auto& test_self)
+      { callable (test_self, value); });
+  };
+
+  if constexpr (test_values_range<Values_T>)
+    {
+      for (const auto& value : values)
+        {
+          run_one (value);
+        }
+    }
+  else
+    {
+      std::apply ([&run_one] (const auto&... elements)
+        { (run_one (elements), ...); }, values);
+    }
+}
+```
+
+A printable value is written in the name, in the plain mode of the formatter;
+a value that is not printable is replaced by its position, so
+`test_each ("tuple", std::tuple{ 1, thing{ 2 } }, ...)` creates the test cases
+`tuple (1)` and `tuple (#2)`. The value is passed to the body as a `const`
+reference to the element, without an intermediate copy, since the test case
+runs within the loop.
+
+## Suites
+
+### The stored body
+
+A suite runs after it is created, so it must own its body. It stores it in a
+`std::function<void (suite&)>`, built by `bind_callable()` as for the test
+cases:
+
+```cpp title="inlines/test-inlines.h (simplified)"
+template <typename Callable_T, typename... Args_T>
+suite::suite (located_name&& name, runner& test_runner,
+              Callable_T&& callable, Args_T&&... arguments)
+    : runnable_base{ "", test_runner, 0 },
+      callable_{ detail::bind_callable<suite> (
+          std::forward<Callable_T> (callable),
+          std::forward<Args_T> (arguments)...) },
+      located_name_{ std::move (name) }
+{
+  name_ = located_name_.name ();
+}
+```
+
+The `std::function` may allocate, if the callable and the bound arguments do
+not fit in its internal buffer; a suite is created once per session, so this
+is not on a path that runs often.
+
+The name is a `located_name`, which holds a `std::string` copy of the name and
+the source location of the call that created the suite; the copy is needed
+because the suite may run after the string of the caller is gone. The node
+name, `name_`, points into it.
+
+### Running a suite
+
+`suite::run()` makes the suite the running suite of the runner, restoring the
+previous one with a guard, starts its stopwatch, tells the reporter that it
+begins, calls the body, and tells the reporter that it ends. With exceptions,
+an exception that escapes the body, outside any test case, is reported as a
+failed check of the suite, and the run continues with the next suite; the
+test cases already run remain reported, and the following ones are not run.
+
+While the test cases are listed, the body runs only to create the test cases,
+which are listed; the suite is neither reported nor timed.
+
+### The list of suites
+
+The suites to run, both those added with `add_suite()` and the static ones,
+are kept in a single intrusive list, sorted by name. The head of the list is
+a static member of `suite`, constant-initialised, so it is valid before any
+constructor runs:
+
+```cpp title="src/test.cpp"
+constinit suite* suite::first_ = nullptr;
+```
+
+Each suite has a `next_` pointer, and inserts itself with `link()`:
+
+```cpp title="src/test.cpp (simplified)"
+void
+suite::link (void) noexcept
+{
+  suite** slot = &first_;
+  while (*slot != nullptr && std::strcmp ((*slot)->name_, name_) <= 0)
+    {
+      slot = &(*slot)->next_;
+    }
+  next_ = *slot;
+  *slot = this;
+}
+```
+
+The insertion is placed after the suites with names less than or equal to its
+own, so the list stays sorted, and the suites with the same name keep the
+order of their insertion. This is the only place where the names of the
+suites are compared. No memory is allocated, and the order of the static
+constructors, which the language does not define across translation units,
+does not matter.
+
+The destructor of `suite` calls `unlink()`, which removes the suite from the
+list, so a suite destroyed before the end of the program, such as one created
+by a local runner, does not leave a dangling pointer.
+
+The list holds the suites of all the runners; each runner runs only its own
+(see [Running the suites](/docs/developer/runner/#running-the-suites)). For
+example, the static suites `zeta` and `alpha`, defined in this order, and the
+suite `beta`, added with `add_suite()`, run in the order `alpha`, `beta`,
+`zeta`.
+
+### Suites added with `add_suite()`
+
+`runner::add_suite()` allocates the suite, and passes its ownership to
+`register_suite()`:
+
+```cpp title="inlines/runner-inlines.h and src/runner.cpp (simplified)"
+template <typename Callable_T, typename... Args_T>
+  requires detail::suite_body<Callable_T, Args_T...>
+void
+runner::add_suite (located_name name, Callable_T&& callable,
+                   Args_T&&... arguments)
+{
+  std::unique_ptr<class suite> child_suite{ new class suite (
+      std::move (name), *this, std::forward<Callable_T> (callable),
+      std::forward<Args_T> (arguments)...) };
+  register_suite (std::move (child_suite));
+}
+
+void
+runner::register_suite (std::unique_ptr<micro_test_plus::suite> suite)
+{
+  if (session_state_ == session_state::declined)
+    {
+      return;
+    }
+  if (session_state_ == session_state::running
+      || session_state_ == session_state::finished)
+    {
+      reject_suite (suite->name ());
+      return;
+    }
+  children_suites_.push_back (std::move (suite));
+  children_suites_.back ()->link ();
+}
+```
+
+The runner owns these suites, in a `std::vector<std::unique_ptr<suite>>`,
+and destroys them with itself; the list only refers to them. A suite added
+after `run_suites()` started is rejected, and destroyed when the function
+returns; a suite added to a declined session is discarded silently.
+
+### Static suites
+
+A `static_suite` is a suite defined as a static object of the application,
+usually in its own source file. Its constructor inserts it into the list,
+unless its runner already started:
+
+```cpp title="inlines/test-inlines.h and src/runner.cpp (simplified)"
+template <typename Callable_T, typename... Args_T>
+static_suite::static_suite (located_name name, runner& test_runner,
+                            Callable_T&& callable, Args_T&&... arguments)
+    : suite{ std::move (name), test_runner,
+             std::forward<Callable_T> (callable),
+             std::forward<Args_T> (arguments)... }
+{
+  link_or_reject ();
+}
+
+void
+runner::link_static_suite (runner& test_runner,
+                           micro_test_plus::suite& suite) noexcept
+{
+  for (const runner* started = started_first_; started != nullptr;
+       started = started->started_next_)
+    {
+      if (started == &test_runner)
+        {
+          test_runner.reject_suite (suite.name ());
+          return;
+        }
+    }
+  suite.link ();
+}
+```
+
+The constructor receives a reference to a runner that may not be constructed
+yet, since the static objects of different source files are constructed in
+an unspecified order. It therefore does not read the runner; it only stores
+the reference. To find whether the runner already started, it walks
+`runner::started_first_`, another `constinit` list, of the runners whose
+`run_suites()` has started; this list is valid even before any runner is
+constructed. A static suite constructed late, such as a function-local static
+constructed while its runner runs, is thus rejected.
+
+The application owns the static suites; the runner never destroys them.
+
+### The top suite
+
+`top_suite` is a member of the runner, constructed with an empty body:
+
+```cpp title="src/test.cpp"
+top_suite::top_suite (const char* name, runner& test_runner)
+    : suite{ located_name{ name }, test_runner, [] (suite&) noexcept {} }
+{
+  own_index_ = 1;
+}
+```
+
+It is not in the list of suites. Its "body" is the code of `main()` between
+`add_top_suite()` and `run_suites()`: `add_top_suite()` makes it the running
+suite, and starts it, and `run_suites()` ends it, before it runs the other
+suites. Its index is always 1, since it is always the first suite of the
+report.
+
+## The counters
+
+`counters` holds five numbers, with public getters and private incrementers,
+which only the friends (the runner, the suites, the test cases, and the check
+result) call:
+
+```cpp title="counters.h (simplified)"
+class counters
+{
+public:
+  [[nodiscard]] size_t passed_checks (void) const noexcept;
+  [[nodiscard]] size_t failed_checks (void) const noexcept;
+  [[nodiscard]] size_t executed_test_cases (void) const noexcept;
+  [[nodiscard]] size_t failed_test_cases (void) const noexcept;
+  [[nodiscard]] size_t skipped_test_cases (void) const noexcept;
+  [[nodiscard]] bool passed (void) const noexcept;
+
+private:
+  counters& operator+= (const counters& other) noexcept;
+  void increment_passed_checks (size_t count = 1) noexcept;
+  // ... and the other incrementers
+
+  size_t passed_checks_ = 0;
+  size_t failed_checks_ = 0;
+  size_t executed_test_cases_ = 0;
+  size_t failed_test_cases_ = 0;
+  size_t skipped_test_cases_ = 0;
+};
+```
+
+They are updated as follows:
+
+| Event | Updated |
+| --- | --- |
+| a check is reported | the passed or failed checks of its test case |
+| a test case ends | the executed, and possibly the failed, test cases of its parent; all its counters are added to its suite |
+| a test case is skipped by the filter | the skipped test cases of its parent |
+| a suite ends | all its counters are added to the totals of the runner |

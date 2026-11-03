@@ -4,6 +4,7 @@
 import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 import {customDocsGettingStartedSidebarCategory} from "./sidebar-docs-getting-started-custom";
 import {customDocsUserSidebarCategory} from "./sidebar-docs-user-custom";
+import {customDocsDeveloperSidebarCategory} from "./sidebar-docs-developer-custom";
 import doxygenSidebarItems from './sidebar-category-doxygen.json';
 
 /**
@@ -26,11 +27,7 @@ const sidebars: SidebarsConfig = {
       label: 'Integration Guide'
     },
     customDocsUserSidebarCategory,
-    {
-      type: 'doc',
-      id: 'developer/index',
-      label: 'Contributor\'s Guide'
-    },
+    customDocsDeveloperSidebarCategory,
     {
       type: 'doc',
       id: 'maintainer/index',

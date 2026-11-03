@@ -1,0 +1,308 @@
+---
+title: Architecture overview
+description: "The structure of the µTest++ implementation, its design constraints, and the path of a test program from the runner to the exit code."
+keywords:
+  - micro-os-plus
+  - xpack
+  - micro-test-plus
+  - developer
+  - internals
+  - architecture
+
+date: 2026-11-03 10:00:00 +0200
+---
+
+{/* ------------------------------------------------------------------------ */}
+
+# Architecture overview
+
+This page and the following ones describe how µTest++ works internally. They
+are written for the contributors who change the framework, and for anyone who
+wants to understand what happens behind `expect (eq (a, b))`. They assume a
+working knowledge of C++20, in particular of concepts, forwarding references,
+and class template argument deduction, and of the public API, described in the
+[User's Guide](/docs/user/).
+
+This page gives the overall structure and follows a minimal test program from
+the beginning to the end; the next pages describe each part in detail:
+
+- [Expression templates and comparators](/docs/developer/comparators/)
+- [Checks and the check result](/docs/developer/checks/)
+- [The expression formatter](/docs/developer/formatter/)
+- [Test cases and suites](/docs/developer/test-cases-and-suites/)
+- [The runner](/docs/developer/runner/)
+- [The reporters](/docs/developer/reporters/)
+- [Making changes](/docs/developer/making-changes/)
+
+The code excerpts are taken from the sources, without the Doxygen comments and
+the tracing code. Those marked _simplified_ also omit some overloads,
+constraints, or attributes; the full definitions are in the files named before
+each excerpt.
+
+## Design constraints
+
+The structure of the code follows from a few requirements, which also apply
+to every change:
+
+- **Small embedded targets**: the framework runs on Cortex-M devices with tens
+  of kilobytes of RAM. It does not use the C++ streams; the reporters write
+  through the C standard I/O functions (`vfprintf()`, `fwrite()`, and
+  `fflush()`), which the embedded C libraries already provide.
+- **Builds without exceptions**: every feature, except the comparators of
+  exceptions (`throws()` and `nothrow()`), works with `-fno-exceptions`. The
+  code tests `__cpp_exceptions` where the behaviour differs; the main
+  difference is that a failed `require()` aborts the test execution, instead of
+  stopping only its test case.
+- **No macros**: the checks are member functions, and the source location of
+  each check is captured by a defaulted `std::source_location` argument, not by
+  a macro such as `__LINE__`.
+- **Template code that stays small**: the templates, instantiated for each
+  type of operand or of callable, do only the work that depends on the types;
+  the counting, the reporting, and the control of the test cases are
+  non-template code, compiled once, in `src/`.
+- **Few allocations on the paths that run often**: a test case and its body
+  live on the stack, and are never allocated. The heap is used for the objects
+  created once per session (the options, the reporter, and the suites added
+  with `add_suite()`, with their bodies), and for the text buffers of the
+  reports, which are reused; the only allocation per test case is the copy of
+  a name longer than the small-string capacity of `std::string`, freed when
+  the test case ends, so the heap does not grow with the number of test cases
+  (see [Creation and lifetime](/docs/developer/test-cases-and-suites/#creation-and-lifetime)).
+
+## The files
+
+The library is a header and a set of source files:
+
+- `include/micro-os-plus/micro-test-plus.h` is the only header the
+  applications include. It reads the optional configuration headers
+  (`micro-os-plus/project-config.h` and
+  `micro-os-plus/micro-test-plus-defines.h`), and, if
+  `MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED` is defined, includes the other
+  headers, in the order of their dependencies.
+- `include/micro-os-plus/micro-test-plus/<name>.h` holds the declarations of
+  one part of the framework, with their Doxygen comments.
+- `include/micro-os-plus/micro-test-plus/inlines/<name>-inlines.h` holds the
+  definitions of the templates and of the inline functions declared in
+  `<name>.h`; it is included at the end of that header.
+- `src/<name>.cpp` holds the non-inline definitions of `<name>.h`. CMake and
+  meson compile all of them into the library; their top files are generated
+  from `xcdl-package.jsonc`.
+
+The headers, in the order in which `micro-test-plus.h` includes them, and the
+parts they define, are:
+
+| Header | Contents | Described in |
+| --- | --- | --- |
+| `math.h` | `abs()` and `min_value()`, for the approximate comparisons | [Expression templates and comparators](/docs/developer/comparators/) |
+| `extension.h` | `op`, and the concepts that constrain the operands | [Expression templates and comparators](/docs/developer/comparators/) |
+| `reflection.h` | `source_location` | [Checks and the check result](/docs/developer/checks/#the-two-defaulted-parameters) |
+| `detail.h` | the expression templates (`compare_op`, `and_op`, and the others) | [Expression templates and comparators](/docs/developer/comparators/) |
+| `function-comparators.h` | `eq()`, `lt()`, `approx()`, `all_of()`, and the others | [Expression templates and comparators](/docs/developer/comparators/) |
+| `exceptions.h` | `throws()` and `nothrow()` | [Expression templates and comparators](/docs/developer/comparators/) |
+| `expression-formatter.h` | the conversion of the operands into text | [The expression formatter](/docs/developer/formatter/) |
+| `runner-options.h` | `runner_options`, and the parsing of the command line | [The runner](/docs/developer/runner/) |
+| `reporter.h` | the reporter base class | [The reporters](/docs/developer/reporters/) |
+| `check-result.h` | `check_result`, the object behind each check | [Checks and the check result](/docs/developer/checks/) |
+| `counters.h` | the counters of the checks and of the test cases | [Test cases and suites](/docs/developer/test-cases-and-suites/) |
+| `reporter-human.h`, `reporter-tap.h` | the two concrete reporters | [The reporters](/docs/developer/reporters/) |
+| `utility.h` | `is_match()`, `split()`, and `extract_file_name()` | [The runner](/docs/developer/runner/) |
+| `test.h` | `test_case`, `suite`, `top_suite`, and `static_suite` | [Test cases and suites](/docs/developer/test-cases-and-suites/) |
+| `runner.h` | `runner` | [The runner](/docs/developer/runner/) |
+
+`stopwatch.h`, which measures the durations, is included by the headers that
+use it (`reporter.h`, `test.h`, and `runner.h`).
+
+## The namespaces
+
+Everything is defined in `micro_os_plus::micro_test_plus`, which the
+applications usually alias as `mt`. Within it:
+
+- the top namespace holds the public API: the runner, the test hierarchy, the
+  function comparators, and the options;
+- `detail` holds the implementation, which the applications never name: the
+  expression templates, the check result, the formatter, and the reporters;
+- `extension` makes a few `detail` templates and concepts public, so that the
+  applications can write their own comparators (see
+  [Extending the framework](/docs/user/extending/)); it is a separate
+  namespace so that `using namespace mt` does not bring its generic names
+  into the application code;
+- `utility` holds a few string functions, also used by the applications.
+
+A class that needs the private members of another is declared as its friend,
+rather than making those members public; for example, the runner, the
+reporters, and the check result are friends of `runnable_base`, the base class
+of the suites and of the test cases. The friend declarations are the protocol
+between the parts, and are documented as such in the headers.
+
+## The main objects
+
+A test session involves the following objects:
+
+```text
+runner ───owns──► reporter (reporter_human or reporter_tap)
+  │                  └─owns─► expression_formatter
+  ├──owns──► top_suite ──runs──► test_case ──runs──► nested test_case
+  ├──owns──► suites added with add_suite()
+  └──runs──► static_suite objects (owned by the application)
+
+test_case ──creates──► check_result (one per expect() or require())
+```
+
+- The **runner** (`runner`) drives the session: it is initialised with the
+  options, creates the reporter, holds the suites, runs them, and computes the
+  exit code.
+- The **reporter** formats the results and writes them to the console and to
+  the output file. Its **expression formatter** turns the operands of a check
+  into text, such as `42 == 42`.
+- The **suites** (`suite`, and its derived classes `top_suite` and
+  `static_suite`) are named groups of test cases.
+- The **test cases** (`test_case`) run their bodies, which make the checks.
+  A test case exists only while its body runs.
+- A **check result** (`detail::check_result`) is the temporary object created
+  by each `expect()` and `require()`; it reports the check when it is
+  destroyed, at the end of the statement (see
+  [Checks](/docs/developer/checks/)).
+- An **expression** is the object returned by a function comparator, such as
+  `eq()`; it holds the operands and the result of the comparison (see
+  [Expression templates and comparators](/docs/developer/comparators/)).
+
+## A test session, step by step
+
+The following program, the same as on the home page, has one test case with one
+check:
+
+```cpp title="minimal-test.cpp"
+#include <micro-os-plus/micro-test-plus.h>
+
+namespace mt = micro_os_plus::micro_test_plus;
+
+mt::runner tr;
+
+int
+main (int argc, char* argv[])
+{
+  tr.initialise (argc, argv);
+
+  auto& ts = tr.add_top_suite ();
+
+  ts.test ("Check truth", [] (auto& t)
+    {
+      t.expect (mt::eq (6 * 7, 42)) << "the answer is 42";
+    });
+
+  return tr.run_suites ();
+}
+```
+
+The calls, in the order in which they run, are:
+
+```text
+static initialisation
+  runner::runner()                    constructs the top_suite member, not yet added
+  static_suite constructors, if any   insert themselves in the list of suites
+
+main()
+  runner::initialise (argc, argv)     parses the options, creates the reporter,
+                                      reporter::begin_session()
+  runner::add_top_suite ()            names the top suite, makes it the running suite,
+                                      reporter::begin_suite()
+  suite::test ("Check truth", body)
+    runnable_base::create_test_case() constructs a test_case on the stack
+      after_test_case_create()        applies the filter, counts the test case
+        test_case::run()              reporter::begin_test_case()
+          body (t)
+            mt::eq (6 * 7, 42)        constructs a compare_op; computes 42 == 42
+            t.expect (op)             initialises the check_result temporary
+            << "the answer is 42"     appends the message
+          ;                           ~check_result(): reporter::pass_without_text()
+                                      (the check is not written), counts
+                                      reporter::end_test_case()
+    the test_case is destroyed
+  runner::run_suites ()               reporter::end_suite() for the top suite,
+                                      runs the other suites, sorted by name,
+                                      reporter::end_session(), returns 0 or 1
+```
+
+The steps are described below, with a pointer to the page that explains each
+one in detail.
+
+### Construction
+
+`mt::runner tr;` is a static object. Its constructor only constructs its
+`top_suite_` member; nothing is reported, and the top suite is not part of the
+session until `add_top_suite()` is called. The static suites of the application,
+if any, are constructed in the same phase, in an order that the language does
+not define; each one inserts itself, sorted by name, into a list that does not
+depend on the runner, so the order does not matter.
+
+### Initialisation
+
+`initialise()` parses the command line into a `runner_options` object, moves it
+into the runner, and creates the reporter selected by `--reporter`, with
+`std::make_unique`. Then the reporter writes the beginning of the session (with
+the TAP reporter, the `# Running:` and `# Built with` lines, and the
+`TAP version 14` line). If the options have errors, or request `--help`, the
+reporter writes the errors or the usage, and the session is _declined_: nothing
+else runs, and `run_suites()` returns the code computed here.
+
+The call is optional; `add_top_suite()` and `run_suites()` initialise the
+runner with the default options if it was not initialised.
+
+### The top suite
+
+`add_top_suite()` names the top suite (after the program, when no name is
+given), marks it as part of the session, and makes it the _running suite_ of
+the runner, which is the only suite on which test cases can be created. The
+reporter writes its heading.
+
+### A test case
+
+`ts.test (name, body)` does not store the test case: it constructs a
+`test_case` object on the stack, with a non-owning reference to the body, and
+runs it before returning. `after_test_case_create()` applies the `--filter`
+patterns, increments the counters, and calls `test_case::run()`, which tells
+the reporter that the test case begins, calls the body, catches the exceptions
+that escape it, and tells the reporter that the test case ends. When `test()`
+returns, the test case no longer exists; only its counters, added to those of
+the suite, remain.
+
+### A check
+
+Within the body, `mt::eq (6 * 7, 42)` constructs an expression object, a
+`compare_op` with the tag `equal_to`, which stores the two operands and the
+result of the comparison, computed in its constructor.
+
+`t.expect (op)` has a third parameter, a `check_result&&` with a default
+argument, so the caller creates a temporary `check_result` for each check.
+`expect()` initialises it: it records the result, and, if the outcome will be
+written, formats the expression into text. Then it returns a reference to the
+temporary, to which `<< "the answer is 42"` appends the message.
+
+At the end of the statement, the temporary is destroyed, and its destructor
+reports the check: it calls `reporter::pass()` or `reporter::fail()`, or, for
+a passed check that is not written, as here with the default verbosity,
+`reporter::pass_without_text()`, and increments the counters of the test case.
+After a failed `require()`, the destructor also stops the test case: with
+exceptions, by throwing an exception that `test_case::run()` catches; without
+them, by aborting the test execution.
+
+### The end of the session
+
+`run_suites()` ends the top suite, then runs the other suites, both the suites
+added with `add_suite()` and the static suites, in the order of their names.
+Each suite runs its body, which creates and runs its test cases, as above.
+Finally, the reporter writes the totals, and `run_suites()` returns the exit
+code, `0` when all the checks passed (see
+[The exit code](/docs/developer/runner/#the-exit-code) for the other values).
+
+## Where to change what
+
+| To change | Look in |
+| --- | --- |
+| a comparator, or add a new one | `detail.h`, `function-comparators.h`, and their inlines |
+| how a type is displayed in the reports | `expression-formatter.h`, its inlines, and `src/expression-formatter.cpp` |
+| what happens when a check passes or fails | `check-result.h` and `src/check-result.cpp` |
+| how test cases and suites are created and run | `test.h`, `inlines/test-inlines.h`, and `src/test.cpp` |
+| a command line option | `runner-options.h` and `src/runner-options.cpp` |
+| the order of the session, the exit code | `runner.h` and `src/runner.cpp` |
+| the layout of the reports | `reporter.h`, `reporter-human.h`, `reporter-tap.h`, and their `src/` files |

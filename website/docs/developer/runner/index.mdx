@@ -1,0 +1,356 @@
+---
+title: The runner
+description: "How the runner parses the options, creates the reporter, tracks the state of the session, selects and runs the suites, and computes the exit code."
+keywords:
+  - micro-os-plus
+  - xpack
+  - micro-test-plus
+  - developer
+  - internals
+  - runner
+  - options
+
+date: 2026-11-03 10:00:00 +0200
+---
+
+{/* ------------------------------------------------------------------------ */}
+
+# The runner
+
+The runner drives a test session: it is initialised with the options, owns the
+reporter and the top suite, accepts the suites, runs them, and returns the
+exit code. This page describes its state, the parsing of the options, the
+selection and the order of the suites, the exit codes, and the less common
+cases: listing the test cases, local runners, and the abort of the test
+execution.
+
+The class is declared in `runner.h`, with its templates in
+`inlines/runner-inlines.h` and the rest in `src/runner.cpp`; the options are
+in `runner-options.h` and `src/runner-options.cpp`, and the pattern matching
+in `utility.h` and `src/utility.cpp`.
+
+## The members
+
+```cpp title="runner.h (simplified)"
+class runner
+{
+  // ...
+private:
+  class top_suite top_suite_;
+  bool has_top_suite_ = false;
+  std::vector<std::unique_ptr<class suite>> children_suites_;
+  std::unique_ptr<detail::reporter> reporter_;
+  detail::stopwatch stopwatch_;
+  counters totals_;
+  runner_options options_{};
+  size_t skipped_suites_count_ = 0;
+
+  session_state session_state_ = session_state::created;
+  int exit_code_ = 1;
+  bool has_rejected_calls_ = false;
+  abort_handler_t abort_handler_ = nullptr;
+  bool aborted_ = false;
+
+  test_case* running_test_case_ = nullptr;
+  class suite* running_suite_ = nullptr;
+
+  static runner* started_first_;
+  runner* started_next_ = nullptr;
+  // ... and the counters of the listed test cases
+};
+```
+
+- `top_suite_` is constructed with the runner, but is part of the session
+  only after `add_top_suite()` sets `has_top_suite_`.
+- `children_suites_` owns the suites added with `add_suite()`; the static
+  suites are owned by the application.
+- `reporter_` is created by `initialise()`, of the type selected by the
+  options.
+- `running_test_case_` and `running_suite_` are the innermost running test
+  case and the suite whose body is running; they are maintained by the test
+  cases and the suites (see
+  [Test cases and suites](/docs/developer/test-cases-and-suites/)), and read
+  to accept or reject the checks and the new test cases.
+
+The runner is usually a static object, but it may be any object that outlives
+the suites and the test cases referring to it.
+
+## The state of the session
+
+The session moves only forwards, through the states of `session_state`:
+
+```text
+created ──initialise()──► initialised ──run_suites()──► running ──► finished
+                │
+                └── --help, option errors, output file error ──► declined
+```
+
+| State | Meaning | What the calls do |
+| --- | --- | --- |
+| `created` | constructed | `add_top_suite()` and `run_suites()` initialise the runner with the default options first |
+| `initialised` | the reporter exists, the report began | test cases and suites are accepted |
+| `declined` | nothing will run | the suites are discarded silently; `run_suites()` returns the stored code |
+| `running` | `run_suites()` runs the suites | new suites are rejected |
+| `finished` | the session ended | `run_suites()` returns the stored code |
+
+A call made in the wrong state is either ignored, or rejected: a second
+`initialise()` or `add_top_suite()`, and a suite added after `run_suites()`
+started, write an error on `stderr` and set `has_rejected_calls_`, so that the
+exit code is not `0`.
+
+## The options
+
+### Parsing
+
+`initialise (argc, argv)` constructs a `runner_options` from the command
+line, and passes it to `initialise (runner_options)`. The constructor of
+`runner_options`:
+
+- copies all the arguments into `arguments_`, so that the options own their
+  strings, and the reporter can list the command line;
+- reads the arguments from the second one, up to the first argument that
+  does not start with a dash, or up to a `--` alone; the arguments from there
+  on are the application arguments, returned by `application_arguments()`;
+- accepts `--verbose`, `--quiet`, `--silent`, `--reporter`, `--output-file`,
+  `--colour` (and its variants), `--filter`, `--list-tests`, and `--help`,
+  with the values either after `=` or, for most of them, as the next argument;
+- records each error (an unknown option, a missing or invalid value) with
+  `add_error()`, ignores the option, and continues, so that all the errors are
+  collected; nothing is written by the constructor.
+
+The options with a value are described by a table, so that the forms with `=`
+and with a separate value are handled once:
+
+```cpp title="src/runner-options.cpp (simplified)"
+struct value_option
+{
+  std::string_view name;
+  setting what;
+  bool value_may_follow;
+};
+
+static constexpr value_option value_options[]
+    = { { "--reporter", setting::set_reporter, true },
+        { "--output-file", setting::set_output_file, true },
+        { "--use-colour", setting::set_colour, true },
+        { "--use-color", setting::set_colour, true },
+        { "--colour", setting::set_colour, false },
+        { "--color", setting::set_colour, false },
+        { "--filter", setting::add_filter, true } };
+```
+
+When an option is repeated, the last one takes effect, except `--filter`,
+whose patterns are all kept, in order.
+
+### Initialisation
+
+`initialise (runner_options)` moves the options into the runner, and then:
+
+1. if the options have errors, or request `--help`, it creates a reporter
+   anyway, since the suites and the test cases refer to it, writes the errors
+   (on `stderr`, on the console, and in the output file) or the usage (only on
+   the console), declines the session, and stores the exit code, `2` after
+   errors and `0` after `--help`;
+2. otherwise, it creates the reporter selected by the options, with
+   `std::make_unique<detail::reporter_human>` or
+   `std::make_unique<detail::reporter_tap>`;
+3. if the output file cannot be opened, it declines the session, with the
+   exit code `2`;
+4. with `--list-tests`, it writes the header of the list;
+5. otherwise, it starts the stopwatch of the session, and calls
+   `reporter::begin_session()`.
+
+With the TAP reporter, an option error is written as a `Bail out!` line, which
+the TAP consumers treat as a failure of the whole run:
+
+```text
+error: unknown option '--bogus'
+Bail out! unknown option '--bogus'
+# Use --help to list the options.
+```
+
+## Running the suites
+
+`run_suites()` returns at once if the session has finished or was declined,
+returning the stored code, and refuses a recursive call from a suite or a
+test case. Otherwise, it marks the session as running, adds the runner to the
+list of the started runners, and:
+
+1. ends the top suite, if it was added, with `reporter::end_suite()`, and
+   adds its counters to the totals;
+2. runs the other suites, with `run_child_suites()`;
+3. writes an error if there were no suites, or if the filters selected no
+   test case;
+4. stops the stopwatch, and calls `reporter::end_session()`, which writes the
+   totals;
+5. computes and stores the exit code, and marks the session as finished.
+
+`run_child_suites()` walks the list of all the suites, sorted by name (see
+[The list of suites](/docs/developer/test-cases-and-suites/#the-list-of-suites)),
+and runs those of this runner:
+
+```cpp title="src/runner.cpp (simplified)"
+void
+runner::run_child_suites (void)
+{
+  // The top suite, if added, has index 1.
+  size_t own_index = has_top_suite_ ? 1 : 0;
+  for (micro_test_plus::suite* suite_ptr = suite::first_;
+       suite_ptr != nullptr; suite_ptr = suite_ptr->next_)
+    {
+      // Skip the suites run by other runners.
+      if (&suite_ptr->test_runner () != this)
+        {
+          continue;
+        }
+
+      suite_ptr->own_index_ = ++own_index;
+
+      if (!is_selected (suite_ptr->name (), 0))
+        {
+          ++skipped_suites_count_;
+          if (!options_.list_tests)
+            {
+              reporter_->skip_suite (*suite_ptr);
+            }
+          continue;
+        }
+
+      suite_ptr->run ();
+      totals_ += suite_ptr->totals ();
+    }
+}
+```
+
+The next suite is read after the current one has run, since a suite may
+create a local runner, whose suites are inserted into the list, and removed
+again, while it runs (see [Local runners](#local-runners)). The names are
+compared in byte order, so `Suite10` comes before `Suite2`.
+
+### The filter
+
+`is_selected (name, level)` tests a name against the pattern of its nesting
+level: the first `--filter` applies to the suites, the second to the test
+cases, and each further one to the nested test cases; a level without a
+pattern selects everything:
+
+```cpp title="src/runner.cpp"
+bool
+runner::is_selected (const char* name, size_t level) const
+{
+  if (level >= options_.filter_patterns.size ())
+    {
+      return true;
+    }
+  std::string_view alternatives{ options_.filter_patterns[level] };
+  while (true)
+    {
+      const size_t separator = alternatives.find ('|');
+      if (utility::is_match (name, alternatives.substr (0, separator)))
+        {
+          return true;
+        }
+      if (separator == std::string_view::npos)
+        {
+          return false;
+        }
+      alternatives.remove_prefix (separator + 1);
+    }
+}
+```
+
+`utility::is_match()` matches the whole name, with `*` and `?` as wildcards. It
+is iterative, without recursion, so its stack usage is constant, which matters
+on the embedded targets. The first pattern also applies to the top suite. A
+suite or a test case that is not selected is reported as skipped, and keeps its
+number, so that the TAP plan remains complete:
+
+```text
+• suites
+    ✓ each (1) - passed (1 check)
+    ✓ each (2) - passed (1 check)
+    ✓ each (3) - passed (1 check)
+    • tuple (1) - skipped (filtered)
+    • tuple (#2) - skipped (filtered)
+    • args - skipped (filtered)
+✓ suites - passed (3 checks in 3 test cases, 3 skipped), time: 0.034 ms
+• alpha - skipped (filtered)
+```
+
+A test case that is not selected is not run, so its nested test cases are not
+created; the filter of a nested level applies only within the selected outer
+test cases.
+
+### Listing the test cases
+
+With `--list-tests`, the session is not reported. The top suite and the
+other suites still run their bodies, which create the test cases, but
+`after_test_case_create()` passes each selected test case to
+`runner::list_test_case()`, which writes its name, preceded by the name of its
+suite when that changes, instead of running it. Since the test cases are not
+run, the nested test cases are not listed. The list ends with the numbers of
+test cases and suites:
+
+```text
+Matching test cases:
+  alpha
+    a1
+  zeta
+    z1
+2 test cases in 2 test suites
+```
+
+## The exit code
+
+`run_suites()` returns:
+
+| Code | When |
+| --- | --- |
+| `0` | all the checks passed, and no call was rejected; also after `--help`, and after a listing without errors |
+| `1` | a check failed, a test case or a suite failed, a call was rejected, or there were no suites |
+| `2` | the options had errors, the output file could not be opened, or the filters selected no test case |
+
+The code is stored, and the later calls of `run_suites()` return it without
+running anything; a call rejected after the session finished changes a stored
+`0` into `1`.
+
+## Local runners
+
+A runner can be created as a local object, for example in a test case that
+tests the framework itself, or in an application that runs several sessions.
+Its suites are added to the same list of suites, which is why
+`run_child_suites()` skips the suites of other runners, and why the destructor
+of a suite removes it from the list.
+
+The runners whose `run_suites()` has started are kept in a second intrusive
+list, `started_first_`, which is also `constinit`:
+
+```cpp title="src/runner.cpp"
+constinit runner* runner::started_first_ = nullptr;
+```
+
+A static suite consults it when it is constructed, to reject itself if its
+runner has already started (see
+[Static suites](/docs/developer/test-cases-and-suites/#static-suites)); the
+destructor of the runner removes the runner from it.
+
+## The abort of the test execution
+
+Without exceptions, a failed `require()` cannot stop only its test case, so
+it aborts the test execution with `runner::abort()` (see
+[Without exceptions](/docs/developer/checks/#without-exceptions)); the public
+`runner::abort (sl)`, which an application may call, makes an explicit abort
+through the same function, which:
+
+1. sets `aborted_`, which is never cleared;
+2. if the report is open, calls `reporter::abort_session()`, which writes the
+   buffered results and the location of the abort, since the totals will never
+   be written; otherwise, writes the location on `stderr`;
+3. flushes `stdout` and `stderr`;
+4. calls the handler set with `set_abort_handler()`, if any;
+5. if there is no handler, or if it returns, calls `::abort()`.
+
+A handler may also throw an exception, when the application wants to regain
+control, for example to run another session. Since `aborted_` is set, the test
+cases and the suites pass that exception on without reporting it, and the
+runner refuses to run again.

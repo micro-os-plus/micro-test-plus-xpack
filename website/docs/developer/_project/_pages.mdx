@@ -1,0 +1,26 @@
+{/* ------------------------------------------------------------------------ */}
+
+## How the framework works
+
+Besides the build and the tests, described below, this guide explains how
+µTest++ works internally, with excerpts of the code, for the contributors who
+change the framework:
+
+- [Architecture overview](/docs/developer/architecture/): the design
+  constraints, the files, the namespaces, and the path of a test program from
+  the runner to the exit code;
+- [Expression templates and comparators](/docs/developer/comparators/): the
+  objects returned by `eq()` and the other comparators, and how they store
+  their operands;
+- [Checks and the check result](/docs/developer/checks/): how `expect()` and
+  `require()` collect the messages and report the checks;
+- [The expression formatter](/docs/developer/formatter/): how the operands and
+  the expressions become the text of the reports;
+- [Test cases and suites](/docs/developer/test-cases-and-suites/): how the test
+  cases run on the stack, and how the suites are stored and run;
+- [The runner](/docs/developer/runner/): the options, the state of the
+  session, the order of the suites, and the exit code;
+- [The reporters](/docs/developer/reporters/): where each record is written,
+  and how the TAP and the human-readable reports are formatted;
+- [Making changes](/docs/developer/making-changes/): where new code goes, the
+  rules every change respects, and how it is documented and tested.

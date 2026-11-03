@@ -1,0 +1,320 @@
+---
+title: The expression formatter
+description: "How the expression formatter converts the operands and the expressions into the text of the reports, including the application types, and how it is shared by the checks."
+keywords:
+  - micro-os-plus
+  - xpack
+  - micro-test-plus
+  - developer
+  - internals
+  - formatter
+
+date: 2026-11-03 10:00:00 +0200
+---
+
+{/* ------------------------------------------------------------------------ */}
+
+# The expression formatter
+
+When a check fails, the report shows the operands, as in `1u == 2u` or
+`{1, 2, 3} == {1, 2, 4}`. This text is produced by the _expression
+formatter_, a small replacement for an output stream, which appends text to a
+`std::string`. This page describes how it writes each kind of value, how the
+application types are written, and how the formatter is used by the checks
+and by the messages.
+
+The class is `detail::expression_formatter`, declared in
+`expression-formatter.h`, with its templates in
+`inlines/expression-formatter-inlines.h` and the rest in
+`src/expression-formatter.cpp`. It is also available as
+`mt::expression_formatter`, the name the applications use in their
+`operator<<`.
+
+## Why not a stream
+
+The C++ streams are not used by the framework (see
+[Design constraints](/docs/developer/architecture/#design-constraints)): they
+add a large amount of code and static data to an embedded program, and their
+formatting depends on the state of the stream. The formatter has the same
+shape as a stream, a set of `operator<<` overloads that return the formatter,
+so that the application code reads the same, but:
+
+- it only appends to a `std::string`, its `buffer_`, which is reused from one
+  check to the next, keeping its capacity;
+- the numbers are converted with `std::to_chars()`, which is independent of
+  the locale, except `long double`, for which `std::to_chars()` is not always
+  available, and which is converted with `snprintf()`;
+- the format of each type is fixed, and chosen so that the text reads like a
+  C++ value of that type.
+
+## The members
+
+```cpp title="expression-formatter.h (simplified)"
+class expression_formatter
+{
+public:
+  expression_formatter (void) noexcept;
+  expression_formatter (const colours& colours) noexcept;
+
+  // The copy and move operations are deleted.
+
+  expression_formatter& operator<< (std::string_view sv);
+  expression_formatter& operator<< (char c);
+  expression_formatter& operator<< (bool v);
+  expression_formatter& operator<< (signed int v);
+  expression_formatter& operator<< (unsigned int v);
+  expression_formatter& operator<< (double v);
+  // ... and the other character, string, and arithmetic types
+
+  template <typename T>
+    requires (not std::is_same_v<T, char>)
+  expression_formatter& operator<< (T* v);
+
+  template <class T>
+    requires detail::formattable_range<T>
+  expression_formatter& operator<< (const T& t);
+
+  // ... std::pair, std::tuple, std::optional, std::chrono::duration,
+  // the scoped enumerations, and one overload for each expression type
+
+  [[nodiscard]] const std::string& str (void) const noexcept;
+
+private:
+  explicit expression_formatter (std::string&& buffer) noexcept;
+
+  void begin_check (const void* owner);
+  const std::string& check_text (const void* owner) const noexcept;
+  void end_check (const void* owner) noexcept;
+
+  const colours& colours_;
+  std::string buffer_{};
+  const void* owner_{ nullptr };
+  std::vector<std::pair<const void*, std::string>> pending_{};
+  const bool plain_{ false };
+};
+```
+
+There are two kinds of formatters:
+
+- the formatter of the reporter, constructed with the colours of the session,
+  writes the expressions of the checks; it is the only one that uses
+  `begin_check()`, `check_text()`, and `end_check()` (see
+  [A check within another check](/docs/developer/checks/#a-check-within-another-check));
+- the _plain_ formatters, constructed by the private constructor that takes
+  a string, are temporary objects that append to an existing string; they are
+  used for the messages, and for the application types.
+
+## How each type is written
+
+The text written for the failed comparison of two values of each type, as
+reported by the human-readable reporter, is:
+
+| Operands | Text |
+| --- | --- |
+| `int` | `1 == 2` |
+| `unsigned int` | `1u == 2u` |
+| `long` | `1l == 2l` |
+| `std::int8_t` | `(signed char)1 == (signed char)2` |
+| `float` | `1.0f == 2.5f` |
+| `double` | `1.0 == 0.1` |
+| `char` | `'a' == 'b'` |
+| `std::string` and a string literal | `"a\"b\n" == "x"` |
+| `std::vector<int>` | `{1, 2, 3} == {1, 2, 4}` |
+| `std::vector<std::uint8_t>` | `{1, 2} == {1, 3}` |
+| `std::pair<int, char>` | `(1, 'x') == (2, 'x')` |
+| `std::tuple<int, double>` | `(1, 2.0) == (1, 3.0)` |
+| `std::optional<int>` | `1 == nullopt` |
+| `std::chrono::milliseconds` | `10ms == 20ms` |
+| a scoped enumeration | `0 == 1` |
+| a pointer and `nullptr` | `0x7ff7ba03c994 == nullptr` |
+| an application type | `(1, 2) == (1, 3)` |
+
+The rules are:
+
+- **Integers** are written with the suffix of their type (`u`, `l`, `ul`,
+  `ll`, `ull`), so that the type of each operand is visible, as in
+  `-1 == 4294967295u`. The types that have no suffix (`signed char`,
+  `unsigned char`, `short`, and `unsigned short`) are written with a cast.
+- **Floating-point values** are written in their shortest exact form, always
+  with a decimal point, so that `1.0` is not taken for an integer, and with
+  the suffix `f` for `float` and `L` for `long double`; the infinities and the
+  NaNs have no suffix.
+- **Characters and strings** are quoted, and the characters that are not
+  printable, and the quotes, are escaped, so that a difference in white space
+  or in control characters is visible.
+- **Ranges** (any type with `begin()` and `end()`, except the strings) are
+  written as `{a, b, c}`; the elements of type `signed char` and
+  `unsigned char`, such as `std::uint8_t`, are bytes, and are written as plain
+  numbers. Only the first 16 elements are written, followed by the number of
+  elements; when the operands of an equality are truncated, the index of the
+  first difference is appended, if it is not visible:
+
+  ```text
+  {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ... (20 elements)} == {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ... (20 elements)} (first difference at index 18)
+  ```
+
+- **Pairs and tuples** are written in parentheses; an empty `std::optional`
+  as `nullopt`, a non-empty one as its value; a duration with the suffix of
+  its period.
+- **Scoped enumerations**, which have no names at run time, are written as
+  the value of their underlying type.
+- **Pointers** are written in hexadecimal, by the same function as in the
+  messages; the null pointer as `nullptr`.
+
+## The expressions
+
+Each expression type has its own overload, which writes the operands with the
+symbol, in the colour of the result. For `compare_op`:
+
+```cpp title="inlines/expression-formatter-inlines.h (simplified)"
+template <class Lhs_T, class Rhs_T, class Compare_T>
+expression_formatter&
+expression_formatter::operator<< (
+    const detail::compare_op<Lhs_T, Rhs_T, Compare_T>& op)
+{
+  *this << colour (op);
+  append_operand (op.lhs ());
+  *this << Compare_T::symbol;
+  append_operand (op.rhs ());
+  // For an equality of two ranges, possibly the first difference.
+  return (*this << colour_none ());
+}
+```
+
+`colour (op)` converts the expression to `bool`, and writes the escape
+sequence of the pass or fail colour, if the colours are enabled; otherwise it
+writes nothing. Since the symbol is taken from the tag, this single overload
+writes every comparison, including those of the applications.
+
+The logical expressions write their operands recursively. A chain of the same
+operator is written with a single pair of parentheses: the overload of
+`and_op` writes `(`, then calls `append_and_operand()`, which recurses into an
+`and_op` operand without adding parentheses, and writes any other operand
+through the usual overloads:
+
+```cpp title="inlines/expression-formatter-inlines.h (simplified)"
+template <class Lhs_T, class Rhs_T>
+expression_formatter&
+expression_formatter::operator<< (const detail::and_op<Lhs_T, Rhs_T>& op)
+{
+  *this << "(";
+  append_and_operand (op);
+  return (*this << ")");
+}
+```
+
+So `all_of (eq (a, b), lt (a, 2), gt (b, 3))` is written as
+`(1 == 1 and 1 < 2 and 1 > 3)`, while an `any_of()` nested in an `all_of()`
+keeps its own parentheses.
+
+## The application types
+
+An application makes its type printable by defining an `operator<<` for the
+formatter, in the namespace of the type, where argument-dependent lookup finds
+it:
+
+```cpp
+namespace app
+{
+  struct point
+  {
+    int x, y;
+    bool operator== (const point&) const = default;
+  };
+
+  mt::expression_formatter&
+  operator<< (mt::expression_formatter& f, const point& p)
+  {
+    return f << "(" << p.x << ", " << p.y << ")";
+  }
+}
+```
+
+The formatter must distinguish the types it writes itself from the application
+types, which it writes through their `operator<<`:
+
+```cpp title="inlines/expression-formatter-inlines.h (simplified)"
+template <class T>
+void
+expression_formatter::append_operand (const T& value)
+{
+  if constexpr (detail::member_printable<T>)
+    {
+      *this << value;
+    }
+  else
+    {
+      plain_text::append (buffer_, value);
+    }
+}
+```
+
+`member_printable` is satisfied when a _member_ `operator<<` accepts the value,
+so it tells the built-in types apart:
+
+```cpp title="expression-formatter.h"
+template <class T>
+concept member_printable
+    = requires (expression_formatter& formatter, const T& value) {
+        formatter.operator<< (value);
+      };
+```
+
+An application type is written by `plain_text::append()`, which moves the
+buffer into a plain formatter, calls the application `operator<<` on it, and
+moves the buffer back:
+
+```cpp title="inlines/expression-formatter-inlines.h"
+template <class T>
+  requires extension::printable<T>
+void
+plain_text::append (std::string& text, const T& value)
+{
+  expression_formatter formatter{ std::move (text) };
+  formatter << value;
+  text = std::move (formatter.buffer_);
+}
+```
+
+The values that the application `operator<<` writes are therefore written as
+in the messages: the numbers without suffixes, and the strings without quotes,
+so that the application controls the whole text of its type. The moves keep
+the single buffer, so no allocation is made.
+
+The concept `extension::printable`, which constrains the comparators,
+accepts the types for which either a member or a free `operator<<` exists:
+
+```cpp title="extension.h"
+template <class T>
+concept printable = requires (detail::expression_formatter& formatter,
+                              const T& value) { formatter << value; };
+```
+
+## The messages
+
+The messages appended with `<<` to a check are written by a plain formatter
+too (see [Messages](/docs/developer/checks/#messages)), so the same types are
+accepted in the messages and in the expressions, but written without
+decoration:
+
+```cpp
+t.expect (false) << "message: " << 1u << " " << 2.5f << " " << 'c' << " "
+                 << std::string{ "s" };
+```
+
+is reported as `message: 1 2.5 c s`. In the plain mode, only the control
+characters that can change the state of a terminal are escaped.
+
+## Adding a type
+
+To support a new standard type:
+
+1. declare a member `operator<<` in `expression-formatter.h`, constrained if
+   it is a template, so that `member_printable` and `printable` accept the
+   type;
+2. define it in `inlines/expression-formatter-inlines.h` (for a template) or
+   in `src/expression-formatter.cpp`, writing the text with the existing
+   overloads, so that the nested values are formatted consistently;
+3. check that the plain mode, used for the messages, gives a sensible text;
+4. add checks to the `unit` test program, with the passed and the failed
+   cases, and update the reference outputs in `tests/expected`.
