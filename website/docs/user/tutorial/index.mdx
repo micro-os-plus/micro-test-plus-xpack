@@ -61,12 +61,12 @@ any C++ callable object, such as pointers to functions, functors,
 `std::function`, etc.
 :::
 
-The program must be built with the sources of the library and with
-`MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED` defined; without that macro the
+The program must be built with the sources of the library and **with
+`MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED` defined**; without that macro the
 umbrella header is empty, and the first error is
 `use of undeclared identifier 'micro_os_plus'`. The sources are listed in the
-[Integration](/docs/install/#integration) section of the Integration Guide, and the
-other macros in the [Configuration](/docs/install/#configuration) section.
+[Integration](/docs/install/#integration) section of the Integration Guide, and
+the other macros in the [Configuration](/docs/install/#configuration) section.
 
 ## TAP output
 
@@ -93,7 +93,7 @@ ok 1 - minimal-test # { passed, 1 check in 1 test case, time: 0.04 ms }
 ```
 
 The first two lines show the command line and the compiler. A passed test case
-is displayed as a single `ok` line. With the `--verbose` option (see
+is displayed as a **single `ok` line**. With the `--verbose` option (see
 [Verbosity](/docs/user/running-tests/#verbosity)), the heading of every test
 case and each passed check are also displayed:
 
@@ -273,18 +273,18 @@ not ok 1 - The Answer # { FAILED, 0 checks passed, 1 failed, in 1 test case, tim
 ```
 
 Here, `eq()` is a **function comparator**, a function not only capable of
-**comparing almost any type** but also of **recording the values of its operands**.
-Similar functions exist for all types of comparisons (`ne()`, `lt()`, `le()`,
-`gt()`, `ge()`, and `approx()`).
+**comparing almost any type** but also of **recording the values of its
+operands**. Similar functions exist for all types of comparisons (`ne()`,
+`lt()`, `le()`, `gt()`, `ge()`, and `approx()`).
 
 ## More complex tests
 
 For simple scenarios, invoking multiple test cases in `main()` may suffice.
 
-For more complex applications, test cases can be grouped into test suites and
-invoked, potentially multiple times with different arguments (see
-[Test suites](/docs/user/organising-tests/#test-suites)). For example, the
-same suite function can be added twice, with different values for its parameter:
+For more complex applications, test cases can be grouped into **test suites**
+and invoked, potentially multiple times with different arguments (see [Test
+suites](/docs/user/organising-tests/#test-suites)). For example, the same suite
+function can be added twice, with different values for its parameter:
 
 ```cpp
 static void
@@ -300,6 +300,6 @@ tr.add_suite ("Small buffer", check_buffer, 16);
 tr.add_suite ("Large buffer", check_buffer, 4096);
 ```
 
-The suites run sorted by name, so `Large buffer` runs before `Small buffer`. A
-`static_suite` takes the arguments in the same way, after the runner and the
-suite function.
+The suites **run sorted by name**, so `Large buffer` runs before
+`Small buffer`. A `static_suite` takes the arguments in the same way, after the
+runner and the suite function.

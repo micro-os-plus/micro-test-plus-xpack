@@ -24,12 +24,11 @@ A check is a single statement, such as:
 t.expect (mt::eq (a, 2)) << "the value is " << a;
 ```
 
-It looks like a function call followed by a stream insertion, but the report
-is written only at the end of the statement, after all the messages were
-appended. This page describes how this works: the `check_result` object
-created for each check, its initialisation by `expect()` and `require()`, the
-messages, the reporting in its destructor, and what a failed `require()`
-does.
+It looks like a function call followed by a stream insertion, but the report is
+written **only at the end of the statement**, after all the messages were
+appended. This page describes how this works: the `check_result` object created
+for each check, its initialisation by `expect()` and `require()`, the messages,
+the reporting in its destructor, and what a failed `require()` does.
 
 The check functions are members of `test_case`, declared in `test.h` and
 defined in `inlines/test-inlines.h`; the check result is declared in
@@ -58,11 +57,11 @@ expect (const Expr_T& expr,
         detail::check_result&& result = detail::check_result{});
 ```
 
-The first one accepts the framework expressions and the values that can be
-used as a condition (see
-[The marker and the concepts](/docs/developer/comparators/#the-marker-and-the-concepts)).
-The second one accepts everything else, only to stop the compilation with a
-clear message:
+The first one accepts the framework expressions and the values that can be used
+as a condition (see [The marker and the
+concepts](/docs/developer/comparators/#the-marker-and-the-concepts)). The
+second one accepts everything else, only to stop the compilation with a clear
+message:
 
 ```cpp title="inlines/test-inlines.h"
 template <class Expr_T>
@@ -129,11 +128,11 @@ test_case::expect (const Expr_T& expr, const reflection::source_location& sl,
 
 `require()` is the same, with `detail::check_kind::requirement`.
 
-The check result cannot be copied or moved; all four copy and move operations
-are deleted. So `auto r = t.expect (true);` does not compile ("call to
-deleted constructor of `detail::check_result`"), and the result cannot outlive
-its statement. This is intentional: a result kept in a variable would be
-reported only when the variable is destroyed, out of order with the other
+The check result **cannot be copied or moved**; all four copy and move
+operations are deleted. So `auto r = t.expect (true);` does not compile ("call
+to deleted constructor of `detail::check_result`"), and the result cannot
+outlive its statement. This is intentional: a result kept in a variable would
+be reported only when the variable is destroyed, out of order with the other
 checks.
 
 ## The check result
@@ -444,10 +443,10 @@ check 2, each with its own text:
 
 The destructor throws `detail::failed_requirement`, an empty struct, not
 derived from `std::exception`. It propagates out of the body of the test case,
-and `test_case::run()` catches it (see
-[Running a test case](/docs/developer/test-cases-and-suites/#running-a-test-case));
-the failure was already reported and counted, so nothing else is done, and the
-run continues with the next test case. The rest of the body is skipped:
+and `test_case::run()` catches it (see [Running a test
+case](/docs/developer/test-cases-and-suites/#running-a-test-case)); the failure
+was already reported and counted, so nothing else is done, and the run
+continues with the next test case. The rest of the body is skipped:
 
 ```cpp
 t.require (mt::eq (1, 2)) << "stops";

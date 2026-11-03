@@ -64,10 +64,11 @@ to every change:
   live on the stack, and are never allocated. The heap is used for the objects
   created once per session (the options, the reporter, and the suites added
   with `add_suite()`, with their bodies), and for the text buffers of the
-  reports, which are reused; the only allocation per test case is the copy of
-  a name longer than the small-string capacity of `std::string`, freed when
-  the test case ends, so the heap does not grow with the number of test cases
-  (see [Creation and lifetime](/docs/developer/test-cases-and-suites/#creation-and-lifetime)).
+  reports, which are reused; the only allocation per test case is the copy of a
+  name longer than the small-string capacity of `std::string`, freed when the
+  test case ends, so the heap does not grow with the number of test cases (see
+  [Creation and
+  lifetime](/docs/developer/test-cases-and-suites/#creation-and-lifetime)).
 
 ## The files
 
@@ -258,13 +259,13 @@ reporter writes its heading.
 ### A test case
 
 `ts.test (name, body)` does not store the test case: it constructs a
-`test_case` object on the stack, with a non-owning reference to the body, and
-runs it before returning. `after_test_case_create()` applies the `--filter`
+`test_case` object **on the stack**, with a non-owning reference to the body,
+and runs it before returning. `after_test_case_create()` applies the `--filter`
 patterns, increments the counters, and calls `test_case::run()`, which tells
 the reporter that the test case begins, calls the body, catches the exceptions
 that escape it, and tells the reporter that the test case ends. When `test()`
-returns, the test case no longer exists; only its counters, added to those of
-the suite, remain.
+returns, the test case **no longer exists**; only its counters, added to those
+of the suite, remain.
 
 ### A check
 
@@ -273,14 +274,14 @@ Within the body, `mt::eq (6 * 7, 42)` constructs an expression object, a
 result of the comparison, computed in its constructor.
 
 `t.expect (op)` has a third parameter, a `check_result&&` with a default
-argument, so the caller creates a temporary `check_result` for each check.
+argument, so the caller creates a **temporary `check_result`** for each check.
 `expect()` initialises it: it records the result, and, if the outcome will be
 written, formats the expression into text. Then it returns a reference to the
 temporary, to which `<< "the answer is 42"` appends the message.
 
 At the end of the statement, the temporary is destroyed, and its destructor
-reports the check: it calls `reporter::pass()` or `reporter::fail()`, or, for
-a passed check that is not written, as here with the default verbosity,
+**reports the check**: it calls `reporter::pass()` or `reporter::fail()`, or,
+for a passed check that is not written, as here with the default verbosity,
 `reporter::pass_without_text()`, and increments the counters of the test case.
 After a failed `require()`, the destructor also stops the test case: with
 exceptions, by throwing an exception that `test_case::run()` catches; without

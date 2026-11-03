@@ -98,8 +98,8 @@ There are two kinds of formatters:
 
 - the formatter of the reporter, constructed with the colours of the session,
   writes the expressions of the checks; it is the only one that uses
-  `begin_check()`, `check_text()`, and `end_check()` (see
-  [A check within another check](/docs/developer/checks/#a-check-within-another-check));
+  `begin_check()`, `check_text()`, and `end_check()` (see [A check within
+  another check](/docs/developer/checks/#a-check-within-another-check));
 - the _plain_ formatters, constructed by the private constructor that takes
   a string, are temporary objects that append to an existing string; they are
   used for the messages, and for the application types.

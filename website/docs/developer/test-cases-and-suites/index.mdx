@@ -17,11 +17,11 @@ date: 2026-11-03 10:00:00 +0200
 
 # Test cases and suites
 
-The tests are organised in suites, which contain test cases, which may
-contain nested test cases. The two kinds of objects have very different
-lifetimes: a suite exists for the whole session, and runs when the runner
-runs it, while a test case exists only while its body runs. This page
-describes both, the class that they share, and how the counters of the
+The tests are organised in test suites, or simply _suites_, which contain test
+cases; a test case may contain nested test cases. The two kinds of objects have
+very different lifetimes: a suite exists for the whole session, and runs when
+the runner runs it, while a test case exists **only while its body runs**. This
+page describes both, the class that they share, and how the counters of the
 results are propagated.
 
 The classes are declared in `test.h`, with their templates in
@@ -83,7 +83,7 @@ protected:
 ### Creation and lifetime
 
 `suite::test()` and `test_case::test()` both call `create_test_case()`, which
-constructs the test case as a local object, and runs it:
+constructs the test case as a **local object**, and runs it:
 
 ```cpp title="inlines/test-inlines.h (simplified)"
 template <typename Callable_T, typename... Args_T>
@@ -134,8 +134,8 @@ object callable with the test case alone:
   and decayed copies of the arguments, in a `std::tuple`, and passes them to
   the callable as lvalues.
 
-The arguments are copies, so a reference parameter refers to the copy, not to
-the object of the caller. For example, a counter passed to a body that takes
+The arguments are **copies**, so a reference parameter refers to the copy, not
+to the object of the caller. For example, a counter passed to a body that takes
 `int&` and increments it is still `0` after the test case:
 
 ```cpp
@@ -179,7 +179,7 @@ private:
 };
 ```
 
-Unlike a `std::function`, it never copies the callable and never allocates;
+Unlike a `std::function`, it **never copies the callable and never allocates**;
 this is safe because the body, a local of `create_test_case()`, outlives the
 test case. The callables are called directly, not through `std::invoke()`,
 which, without optimisations, adds several frames to the stack; only a pointer
@@ -303,8 +303,8 @@ suite::test (const located_name& name, Callable_T&& callable,
 
 ### The running suite
 
-A test case can be created only on the suite whose body is running, which the
-runner tracks in `running_suite_`. `accepts_test_case()` rejects the other
+A test case can be created **only on the suite whose body is running**, which
+the runner tracks in `running_suite_`. `accepts_test_case()` rejects the other
 calls, for example a test case created on the top suite from the body of
 another suite:
 
@@ -419,9 +419,9 @@ which are listed; the suite is neither reported nor timed.
 
 ### The list of suites
 
-The suites to run, both those added with `add_suite()` and the static ones,
-are kept in a single intrusive list, sorted by name. The head of the list is
-a static member of `suite`, constant-initialised, so it is valid before any
+The suites to run, both those added with `add_suite()` and the static ones, are
+kept in a **single intrusive list, sorted by name**. The head of the list is a
+static member of `suite`, constant-initialised, so it is valid before any
 constructor runs:
 
 ```cpp title="src/test.cpp"
@@ -537,8 +537,8 @@ runner::link_static_suite (runner& test_runner,
 ```
 
 The constructor receives a reference to a runner that may not be constructed
-yet, since the static objects of different source files are constructed in
-an unspecified order. It therefore does not read the runner; it only stores
+yet, since the static objects of different source files are constructed in an
+unspecified order. It therefore **does not read the runner**; it only stores
 the reference. To find whether the runner already started, it walks
 `runner::started_first_`, another `constinit` list, of the runners whose
 `run_suites()` has started; this list is valid even before any runner is

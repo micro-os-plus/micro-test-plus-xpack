@@ -50,7 +50,7 @@ Every expression type:
 
 - derives from the empty struct `detail::op`, which marks it as a framework
   type;
-- computes its result once, in its constructor, and stores it as a `bool`;
+- computes its result **once, in its constructor**, and stores it as a `bool`;
 - converts to `bool` through a `constexpr` conversion operator, which returns
   the stored result;
 - gives access to its operands, so that the formatter can write them.
@@ -326,8 +326,9 @@ The reasons are:
 
   The C strings and the other arrays are an exception: they are stored as a
   `c_string` or an `array_operand`, which refer to the original characters or
-  elements (see [The operands that change type](#the-operands-that-change-type)),
-  so an expression built from a local array must not outlive the array.
+  elements (see [The operands that change
+  type](#the-operands-that-change-type)), so an expression built from a local
+  array must not outlive the array.
 
 - **Moving the temporaries** keeps an expression valid after the end of the
   statement, as in `auto op = eq (f (), 1);`, and avoids the cost of a copy.
@@ -335,7 +336,7 @@ The reasons are:
   them; the reference remains valid while the named object exists, which is
   always the case within the statement that checks the expression.
 
-The cost of the copies is paid in every check, passed or failed, and is
+The cost of the copies is paid **in every check**, passed or failed, and is
 significant for large objects, such as a long `std::vector`.
 
 The operand is evaluated once, when the argument of the comparator is

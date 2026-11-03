@@ -31,9 +31,9 @@ the concrete reporters are `detail::reporter_tap` (`reporter-tap.h`,
 `src/reporter-human.cpp`).
 
 The reporters are internal: the applications select one with `--reporter`, or
-with `runner_options::selected_reporter`, but cannot provide their own. Their
-public members are the protocol between the parts of the framework, not an
-API for the applications.
+with `runner_options::selected_reporter`, but **cannot provide their own**.
+Their public members are the protocol between the parts of the framework, not
+an API for the applications.
 
 ## The protocol
 
@@ -151,8 +151,8 @@ reporter::route (record_kind kind) const noexcept
 | test case headings, passed checks | no | no | no | yes | yes |
 | everything else (information, suite headings and results, test case results, skipped) | no | no | yes | yes | yes |
 
-The policy is in this single function; the concrete reporters only format the
-records and ask where they go. The output file receives every record,
+The policy is **in this single function**; the concrete reporters only format
+the records and ask where they go. The output file **receives every record**,
 whatever the verbosity, so a file written by a `silent` run is as complete as
 that of a `verbose` one. On the µOS++ platforms, when the startup code already
 displays the information lines, they are not repeated on the console.
@@ -178,9 +178,10 @@ has them.
 
 ## Buffering the results of the test cases
 
-The results of a test case are not written as they happen. They are appended
-to `buffer_`, and written when the test case ends, or when a nested test case
-begins. The buffering lets the reporter decide, at the end, how much to show:
+The results of a test case are **not written as they happen**. They are
+appended to `buffer_`, and written when the test case ends, or when a nested
+test case begins. The buffering lets the reporter decide, at the end, how much
+to show:
 
 - With the **normal** verbosity, a passed test case with nothing to show
   under it is written as a single line, without its heading and its checks; a

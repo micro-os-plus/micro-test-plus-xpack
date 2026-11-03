@@ -18,9 +18,9 @@ date: 2026-11-03 10:00:00 +0200
 
 # Organising tests
 
-This page describes how the tests are organised and executed: the **runner**, the
-**top suite**, the **test cases** (which may be nested or repeated for several values),
-and the **test suites**.
+This page describes how the tests are organised and executed: the **runner**,
+the **top suite**, the **test cases** (which may be nested or repeated for
+several values), and the **test suites**.
 
 ## Test runner
 
@@ -35,10 +35,10 @@ The runner object must be instantiated by the application:
 mt::runner tr;
 ```
 
-For simple tests, the runner can be a local object in `main()`. When suites
-are added from other files, with `add_suite()`, the runner is usually a global
-object, so that those files can refer to it. The runner should outlive the
-static suites that refer to it.
+For simple tests, the runner can be a local object in `main()`. When suites are
+added from other files, with `add_suite()`, the runner is usually a global
+object, so that those files can refer to it. The runner **should outlive the
+static suites** that refer to it.
 
 ### Initialisation
 
@@ -49,11 +49,11 @@ from the main arguments:
 tr.initialise (argc, argv);
 ```
 
-The initialisation is optional; without it, the runner uses the **default options**
-(the TAP reporter, the `normal` verbosity, no output file, and no filter). If
-used, `initialise()` must precede `add_top_suite()` and `run_suites()`, which
-otherwise initialise the runner with the default options; a later call is
-reported as an error.
+The initialisation is optional; without it, the runner uses the **default
+options** (the TAP reporter, the `normal` verbosity, no output file, and no
+filter). If used, `initialise()` **must precede** `add_top_suite()` and
+`run_suites()`, which otherwise initialise the runner with the default options;
+a later call is reported as an error.
 
 On platforms without a command line, such as embedded applications without
 semihosting arguments, the runner can be initialised with the options set
@@ -83,9 +83,9 @@ options.selected_reporter = mt::reporter_kind::human;
 tr.initialise (options);
 ```
 
-The **options own their strings** (the command line, the output file path, and the
-filter patterns), and the runner keeps its own copy for the whole session, so
-the options and the strings they were built from need not outlive the call.
+The **options own their strings** (the command line, the output file path, and
+the filter patterns), and the runner keeps its own copy for the whole session,
+so the options and the strings they were built from need not outlive the call.
 
 ### Top suite
 
@@ -100,16 +100,16 @@ ts.test ("Check something", [] (auto& t) {
 });
 ```
 
-The test cases of the top suite **run immediately**, when `test()` is called; **the
-top suite is always the first suite** in the report. With `tr.add_top_suite ()`,
-without a name, the top suite is named after the program (the file name of
-`argv[0]`, without the extension), or `default suite` when there is no command
-line.
+The test cases of the top suite **run immediately**, when `test()` is called;
+**the top suite is always the first suite** in the report. With
+`tr.add_top_suite ()`, without a name, the top suite is named after the program
+(the file name of `argv[0]`, without the extension), or `default suite` when
+there is no command line.
 
-The top suite is optional; without `add_top_suite()`, there is no top suite, and
-`run_suites()` runs only the suites added with `add_suite()` and the static
-suites (see [Test suites](#test-suites)). It can be added only once, and before
-`run_suites()`; a second call returns the same suite, and a call once
+The top suite is optional; without `add_top_suite()`, there is no top suite,
+and `run_suites()` runs only the suites added with `add_suite()` and the static
+suites (see [Test suites](#test-suites)). It can be added **only once**, and
+before `run_suites()`; a second call returns the same suite, and a call once
 `run_suites()` has started is reported on `stderr` and rejected, so that the
 result is not 0. The same applies to a second call of `initialise()`.
 
@@ -123,26 +123,26 @@ session runs only once, and later calls return the same result:
 return tr.run_suites ();
 ```
 
-The result is **0 if all checks passed**, and 1 otherwise, including when a suite
-was added too late (see [Non-static test suites](#non-static-test-suites)), when
-`initialise()` or `add_top_suite()` was called twice, and when there is no suite
-at all (no top suite, no suite added with `add_suite()`, and no static suite),
-since a test program that runs nothing must not pass unnoticed. If the
-command-line options were not valid (an unknown option, an unknown reporter
-name, an unknown colour mode, or a missing option argument), the errors are
-reported on `stderr` when the options are parsed and written on the console by
-the reporter (for TAP, as `Bail out!` lines, followed, for an unknown option, by
-a comment line suggesting `--help`), no output file is created, no test is run,
-and the result is 2. If the output file cannot be opened, the error is reported
-in the same way, no test is run, and the result is 2. With the `--help` option
-(or `-h`), the usage and the list of the options are written on the console, no
-test is run, and the result is 0.
+The result is **0 if all checks passed**, and 1 otherwise, including when a
+suite was added too late (see [Non-static test
+suites](#non-static-test-suites)), when `initialise()` or `add_top_suite()` was
+called twice, and when there is no suite at all (no top suite, no suite added
+with `add_suite()`, and no static suite), since a test program that runs
+nothing must not pass unnoticed. If the command-line options were not valid (an
+unknown option, an unknown reporter name, an unknown colour mode, or a missing
+option argument), the errors are reported on `stderr` when the options are
+parsed and written on the console by the reporter (for TAP, as `Bail out!`
+lines, followed, for an unknown option, by a comment line suggesting `--help`),
+no output file is created, no test is run, and the result is 2. If the output
+file cannot be opened, the error is reported in the same way, no test is run,
+and the result is 2. With the `--help` option (or `-h`), the usage and the list
+of the options are written on the console, no test is run, and the result is 0.
 
 ### Aborting the test execution
 
 When exceptions are not enabled, a failed requirement cannot stop only its test
-case (see [Requirements](/docs/user/checks/#requirements)), so it aborts the
-whole test execution: the remaining test cases and suites do not run,
+case (see [Requirements](/docs/user/checks/#requirements)), so it **aborts the
+whole test execution**: the remaining test cases and suites do not run,
 `run_suites()` does not return, and no totals are written. The test execution
 can also be aborted explicitly, from a test case, from a suite, or from the
 application, by calling `tr.abort ()`. Before the process is terminated, the
@@ -203,8 +203,8 @@ An explicit abort is intended for the failures after which running the other
 tests is pointless, or even harmful, whether exceptions are enabled or not: for
 example, when the device or the environment that all the tests use cannot be
 initialised. Unlike a failed `require()` with exceptions, which stops only its
-test case, `tr.abort ()` always stops the whole test execution. The runner must
-be reachable from the test case, for example captured by reference:
+test case, `tr.abort ()` **always stops the whole test execution**. The runner
+must be reachable from the test case, for example captured by reference:
 
 ```cpp
 ts.test ("Open the device", [&tr] (auto& t)
@@ -231,8 +231,8 @@ With the TAP reporter, the end of the output is then:
 Bail out! Test execution aborted at main.cpp:61
 ```
 
-Unless the abort handler ends the program otherwise, the process ends with
-`SIGABRT`, so a test harness sees a terminated process, not an exit code
+Unless the abort handler ends the program otherwise, the process **ends with
+`SIGABRT`**, so a test harness sees a terminated process, not an exit code
 returned by `run_suites()`.
 
 On embedded targets, where terminating the process is not meaningful, the
@@ -246,7 +246,7 @@ tr.set_abort_handler ([] (const mt::reflection::source_location& sl)
   });
 ```
 
-If the handler returns, `::abort()` is still called.
+If the handler returns, `::abort()` is **still called**.
 
 When exceptions are enabled, the handler may also throw an exception, to return
 control to the application without terminating the process, for example when the
@@ -272,9 +272,10 @@ catch (const test_aborted&)
   }
 ```
 
-The abort is final: the report is complete, no test case runs afterwards, and
-`initialise()` and `run_suites()` report an error on `stderr` (`run_suites()`
-returns 1). Without exceptions, the handler must not return.
+**The abort is final**: the report is complete, no test case runs afterwards,
+and `initialise()` and `run_suites()` report an error on `stderr`
+(`run_suites()` returns 1). Without exceptions, the handler **must not
+return**.
 
 Refer to the [Test
 Runners](/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-runners/)
@@ -282,7 +283,8 @@ reference page.
 
 ## Test cases
 
-Test cases are **collections of checks** to be executed within the same environment.
+Test cases are **collections of checks** to be executed within the same
+environment.
 
 Test case objects can be created using the `test()` member function provided by
 the test suite object:
@@ -292,10 +294,10 @@ template <typename Callable_T, typename... Args_T>
 void test (const located_name& name, Callable_T&& func, Args_T&&... arguments);
 ```
 
-The body is called with a reference to the test case. It is usually
-written with `auto&`, as in the examples; the parameter may be declared
-as `mt::test_case&` instead, which gives much shorter compiler
-diagnostics when the body has a mistake.
+The body is called with a reference to the test case. It is usually written
+with `auto&`, as in the examples; the parameter may be declared as
+`mt::test_case&` instead, which gives **much shorter compiler diagnostics**
+when the body has a mistake.
 
 The name is a string literal, a `const char*`, a `std::string`, or a
 `std::string_view`, converted implicitly to `located_name`, which copies
@@ -319,19 +321,17 @@ check_answer (mt::suite& ts, const mt::located_name& name, int value)
 }
 ```
 
-The additional arguments, if any, are passed to the callable after the
-test case reference. They are copied when `test()` is called, as they
-are by `runner::add_suite()` and by the `static_suite` constructor, whose
-suites run later, so a reference parameter refers to the copy. To
-refer to the caller's object, pass a pointer, or `std::ref (object)`
-for a parameter of type `T&`. A lambda can also capture the values
-instead.
+The additional arguments, if any, are passed to the callable after the test
+case reference. They are copied when `test()` is called, as they are by
+`runner::add_suite()` and by the `static_suite` constructor, whose suites run
+later, so a reference parameter **refers to the copy**. To refer to the
+caller's object, pass a pointer, or `std::ref (object)` for a parameter of type
+`T&`. A lambda can also capture the values instead.
 
-When exceptions are enabled, an exception that escapes the body of a
-test case is reported as a failed check of that test case, at the
-location of the `test()` call, and the run continues with the next test
-case; the message includes the result of `what()` for a
-`std::exception`:
+When exceptions are enabled, an exception that escapes the body of a test case
+is **reported as a failed check** of that test case, at the location of the
+`test()` call, and the run continues with the next test case; the message
+includes the result of `what()` for a `std::exception`:
 
 ```console
     • Parse configuration
@@ -356,9 +356,9 @@ shown:
 ✗ Configuration suite - FAILED (1 check passed, 1 failed, in 1 test case)
 ```
 
-For the exception to reach the framework, the body, of a test case or
-of a test suite, must not be declared `noexcept`; otherwise the
-exception calls `std::terminate()`, and ends the program.
+For the exception to reach the framework, the body, of a test case or of a test
+suite, **must not be declared `noexcept`**; otherwise the exception calls
+`std::terminate()`, and ends the program.
 
 Refer to the [Test
 Cases](/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-test-case/)
@@ -367,12 +367,11 @@ reference page.
 
 ## Nested test cases
 
-Test cases can be defined in a nested manner, i.e., **a test case can include not
-only checks, but also other test cases**, at any nesting level.
+Test cases can be defined in a nested manner, i.e., **a test case can include
+not only checks, but also other test cases**, at any nesting level.
 
-A nested test case is created by calling `test()` on the outer test
-case, and runs immediately; a failed nested test case also fails the
-outer one:
+A nested test case is created by calling `test()` on the outer test case, and
+runs immediately; a failed nested test case **also fails the outer one**:
 
 ```cpp
 ts.test ("Parse configuration", [] (auto& t)
@@ -392,17 +391,17 @@ follow it in the report, since the running test case has not ended; it
 runs nested in the innermost running test case, as if `t.test()` had
 been called.
 
-The counts of the outer test case do not include the checks of its
-nested test cases, which are reported on their own lines, while the
-counts of the suite and of the totals include them; an outer test case
-with no checks of its own and a failed nested one is therefore reported
-as `FAILED (0 checks passed, 0 failed, 1 test case failed)`.
+The counts of the outer test case **do not include the checks of its nested
+test cases**, which are reported on their own lines, while the counts of the
+suite and of the totals include them; an outer test case with no checks of its
+own and a failed nested one is therefore reported as
+`FAILED (0 checks passed, 0 failed, 1 test case failed)`.
 
-The checks of a nested test case are made on its own parameter (`nt` in
-the example). A check made on the outer test case (`t`, captured by
-reference) while the nested one runs would be written inside the report
-of the nested test case; it is reported instead as a failure of the
-running test case, with a message that names the two test cases.
+The checks of a nested test case are made on its own parameter (`nt` in the
+example). A check made on the outer test case (`t`, captured by reference)
+while the nested one runs would be written inside the report of the nested test
+case; it is reported instead as a **failure of the running test case**, with a
+message that names the two test cases.
 
 Each nesting level adds to the stack used by the test; see
 [Stack usage](/docs/user/embedded-targets/#stack-usage).
@@ -432,12 +431,13 @@ ts.test_each ("Serialise", std::tuple{ 42, 1.5, "text" },
   });
 ```
 
-Each test case is named after the common name, followed by the value
-in parentheses, written as in the messages (`Buffer sizes (16)`,
-`Serialise (text)`); a value that cannot be written, an application
-type without an `operator<<`, is replaced by its position, starting at
-1 (`Records (#2)`). The values are passed to the callable as copies,
-as the arguments of `test()`.
+Each test case is named after the common name, followed by the value in
+parentheses, written as in the messages (`Buffer sizes (16)`,
+`Serialise (text)`); a value that cannot be written, an application type
+without an `operator<<`, is replaced by its position, starting at 1
+(`Records (#2)`). The values are passed to the callable **by reference**, not
+copied in advance as the arguments of `test()` are, since each test case runs
+within the iteration; a parameter declared by value receives its own copy.
 
 
 ## Test suites
@@ -499,23 +499,24 @@ suite_function (mt::suite& ts)
 static mt::static_suite static_suite_1 = { "Static suite", tr, suite_function };
 ```
 
-The implementation uses the **C++ static constructors** that are performed before
-the `main()` function is called. The order of registration is not defined; to
-provide a certain degree of **predictability**, the framework runs all suites when
-the `run_suites()` member function is called, after **ordering them by name**.
+The implementation uses the **C++ static constructors** that are performed
+before the `main()` function is called. The order of registration is not
+defined; to provide a certain degree of **predictability**, the framework runs
+all suites when the `run_suites()` member function is called, after **ordering
+them by name**.
 
-The source files that define static suites must be linked into the program as
-object files. If they are packed in a static library, the linker drops the
+The source files that define static suites **must be linked into the program as
+object files**. If they are packed in a static library, the linker drops the
 object files that no symbol refers to, and since nothing refers to a static
-suite, the suite silently does not run. Add the files directly to the
+suite, the suite **silently does not run**. Add the files directly to the
 executable, or use a CMake `OBJECT` library; the [FAQ](/docs/faq/) explains the
 problem in more detail.
 
 The names are compared byte by byte, as with `strcmp()`: the comparison is
-case-sensitive (`"Zeta"` runs before `"alpha"`), and numbers are not compared by
-value (`"Suite 10"` runs before `"Suite 2"`). To run the suites in a given
-order, start their names with zero-padded numbers (`"01 - Init"`, `"02 - Run"`),
-and use the same case.
+**case-sensitive** (`"Zeta"` runs before `"alpha"`), and numbers are **not
+compared by value** (`"Suite 10"` runs before `"Suite 2"`). To run the suites
+in a given order, start their names with zero-padded numbers (`"01 - Init"`,
+`"02 - Run"`), and use the same case.
 
 A `static_suite` may also be a local object, constructed in a function, but only
 before the `run_suites()` of its runner has started; one constructed later would
@@ -573,9 +574,9 @@ for example with a numeric prefix, such as `"01 Setup"` and
 
 :::
 
-The suites must be added before `run_suites()` is called. A suite added while
-`run_suites()` runs, for example from the body of another suite, or after it
-returned, would never run; it is rejected, the error is reported on
+The suites **must be added before `run_suites()`** is called. A suite added
+while `run_suites()` runs, for example from the body of another suite, or after
+it returned, would never run; it is rejected, the error is reported on
 `stderr`, and the result is not 0.
 
 The suite name can be a string literal, a `const char*`, a
@@ -584,10 +585,10 @@ need not outlive the call to `add_suite()`.
 
 ### Several runners
 
-A program may have several runners, each with its own static suites and
-suites added with `add_suite()`. All the suites are kept in a single list,
-shared by the runners, but each suite refers to its runner, and `run_suites()`
-runs only the suites that refer to it; the suites of the other runners are
+A program may have several runners, each with its own static suites and suites
+added with `add_suite()`. All the suites are kept in a single list, shared by
+the runners, but each suite refers to its runner, and `run_suites()` runs
+**only the suites that refer to it**; the suites of the other runners are
 skipped, so the runners do not interfere:
 
 ```cpp
@@ -612,13 +613,13 @@ main (int argc, char* argv[])
 }
 ```
 
-Each runner has its own session, with its own options, report, totals,
-and result. If the runners write to an output file, give each one a
-different file, since each session overwrites it.
+Each runner has its own session, with its own options, report, totals, and
+result. If the runners write to an output file, **give each one a different
+file**, since each session overwrites it.
 
-The list of suites is not protected by a lock; the runners must not run,
-and the suites must not be created or destroyed, concurrently from
-different threads.
+The list of suites is **not protected by a lock**; the runners must not run,
+and the suites must not be created or destroyed, concurrently from different
+threads.
 
 ### Example
 

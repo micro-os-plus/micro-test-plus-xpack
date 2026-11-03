@@ -19,8 +19,8 @@ date: 2026-11-03 10:00:00 +0200
 # Extending the framework
 
 The applications can make their own types readable in the reports, and can
-write their own comparators. These are advanced features, which are not needed
-for the usual checks described in [Writing checks](/docs/user/checks/).
+write their own comparators. These are **advanced features**, which are not
+needed for the usual checks described in [Writing checks](/docs/user/checks/).
 
 ## Utility functions
 
@@ -46,9 +46,10 @@ it, for each of the alternatives that it separates with `|`.
 
 `split()` splits a string at any of the delimiter characters, and returns the
 sub-strings in a `std::vector`, omitting the empty ones. For a
-`std::string_view`, a string literal, or a `const char*`, the elements are views
-into the input, which must outlive them; for a `std::string` they are copies.
-The vector allocates memory from the heap, which may matter on embedded targets.
+`std::string_view`, a string literal, or a `const char*`, the elements are
+views into the input, **which must outlive them**; for a `std::string` they are
+copies. The vector **allocates memory from the heap**, which may matter on
+embedded targets.
 
 Refer to the [Utility
 Functions](/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-utility-functions/)
@@ -62,14 +63,14 @@ that the type has the operator used by the comparator: `operator==` for
 `operator<=>` (or the individual relational operators) for `lt()`,
 `le()`, `gt()`, and `ge()`.
 
-Since the comparators **report the values** of their operands when a
-check fails, they also need to know how to print the type. For this, the
-application must define an `operator<<` that writes the value to an
-`mt::expression_formatter`, in the namespace of the type, so that it is
-found by argument-dependent lookup. Without it, the comparators do not
-compile for that type: the call is rejected, and the diagnostic names
-the type that does not satisfy `extension::printable`; only the scoped
-enumerations are shown without it, by their underlying value.
+Since the comparators **report the values** of their operands when a check
+fails, they also need to know how to print the type. For this, the application
+must define an `operator<<` that writes the value to an
+`mt::expression_formatter`, in the namespace of the type, so that it is found
+by argument-dependent lookup. Without it, the comparators **do not compile**
+for that type: the call is rejected, and the diagnostic names the type that
+does not satisfy `extension::printable`; only the scoped enumerations are shown
+without it, by their underlying value.
 
 ```cpp showLineNumbers
 #include "micro-os-plus/micro-test-plus.h"
@@ -127,16 +128,15 @@ The failed check reports both values:
           ...
 ```
 
-The formatter accepts the standard arithmetic types, characters,
-strings, pointers, containers, scoped enumerations, pairs, tuples, and
-optionals, so the members can usually be written
-directly, as above. The `char` pointers and arrays, also when not
-`const`, are written as strings (a null pointer as `nullptr`); the other
-pointers, including the `signed char` and `unsigned char` (`uint8_t`)
-pointers, are written as addresses. A plain boolean check, such as
-`t.expect (p == q)`, needs no formatter, but on failure it reports only
-the source location. The same `operator<<` also writes the values
-appended to the messages (`t.expect (p == q) << "p is " << p`).
+The formatter accepts the standard arithmetic types, characters, strings,
+pointers, containers, scoped enumerations, pairs, tuples, and optionals, so the
+members can usually be written directly, as above. The `char` pointers and
+arrays, also when not `const`, are written as strings (a null pointer as
+`nullptr`); the other pointers, including the `signed char` and `unsigned char`
+(`uint8_t`) pointers, are written as addresses. A plain boolean check, such as
+`t.expect (p == q)`, needs no formatter, but on failure it **reports only the
+source location**. The same `operator<<` also writes the values appended to the
+messages (`t.expect (p == q) << "p is " << p`).
 
 To test such an `operator<<` on its own, construct a formatter, write
 the value, and compare `str()` with the expected text:
@@ -156,11 +156,11 @@ suffixes and the quotes, as in the messages.
 
 ## Custom comparators
 
-When the relation to check is not one of the built-in comparisons, a
-function that returns `bool` can be used, but on failure it reports only
-the source location. To report the operands, as the built-in comparators
-do, the function must return a framework expression, built with the
-public templates of the `mt::extension` namespace:
+When the relation to check is not one of the built-in comparisons, a function
+that returns `bool` can be used, but on failure it reports only the source
+location. To report the operands, as the built-in comparators do, the function
+must return a **framework expression**, built with the public templates of the
+`mt::extension` namespace:
 
 - `extension::compare_op{ lhs, rhs, tag }`, for a comparison of two
   operands;
@@ -248,10 +248,10 @@ The failed checks report the operands, with the symbols of the tags:
         ✗ FAILED (main.cpp:61, (3 divides 12 and even 7))
 ```
 
-The tag is stateless, so it cannot carry a parameter, such as a
-tolerance, to be reported with the operands. A parameter is passed as an
-operand, usually the right one, as the divisor of `divides` above, and
-is then written in the report like any other operand.
+The tag is **stateless**, so it cannot carry a parameter, such as a tolerance,
+to be reported with the operands. A parameter is passed as an operand, usually
+the right one, as the divisor of `divides` above, and is then written in the
+report like any other operand.
 
 The expressions can be combined with the logical functions, and,
 being `constexpr`, also checked at compile time
@@ -264,14 +264,15 @@ the operands as they were passed.
 
 For brevity, the example above takes its operands as `const&`.
 
-A temporary operand is moved into the expression, and a named operand
-is copied, so an expression can be returned from the function that
-builds it, or kept in a variable, after the operands are destroyed. An
-operand whose class cannot be copied (for example a
-`std::unique_ptr`) is referred to instead, and must outlive the
-check. To move the temporaries, and not copy them, take the operands as
-forwarding references (`Lhs_T&& lhs`) and pass them on with
-`std::forward<Lhs_T> (lhs)`, as `eq()` does.
+A temporary operand is **moved** into the expression, and a named operand is
+**copied**, so an expression can be returned from the function that builds it,
+or kept in a variable, after the operands are destroyed; the C strings and the
+other arrays are the exception, since the expression refers to their characters
+or elements. An operand whose class cannot be copied (for example a
+`std::unique_ptr`) is referred to instead, and **must outlive the check**. To
+move the temporaries, and not copy them, take the operands as forwarding
+references (`Lhs_T&& lhs`) and pass them on with `std::forward<Lhs_T> (lhs)`,
+as `eq()` does.
 
 A helper that passes its argument on to `expect()` or `require()` can be
 constrained with `extension::checkable`, as these functions are, and one

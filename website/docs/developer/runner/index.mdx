@@ -17,12 +17,12 @@ date: 2026-11-03 10:00:00 +0200
 
 # The runner
 
-The runner drives a test session: it is initialised with the options, owns the
-reporter and the top suite, accepts the suites, runs them, and returns the
-exit code. This page describes its state, the parsing of the options, the
-selection and the order of the suites, the exit codes, and the less common
-cases: listing the test cases, local runners, and the abort of the test
-execution.
+The test runner, or simply _the runner_, drives a test session: it is
+initialised with the options, owns the reporter and the top suite, accepts the
+suites, runs them, and returns the exit code. This page describes its state,
+the parsing of the options, the selection and the order of the suites, the exit
+codes, and the less common cases: listing the test cases, local runners, and
+the abort of the test execution.
 
 The class is declared in `runner.h`, with its templates in
 `inlines/runner-inlines.h` and the rest in `src/runner.cpp`; the options are
@@ -77,7 +77,7 @@ the suites and the test cases referring to it.
 
 ## The state of the session
 
-The session moves only forwards, through the states of `session_state`:
+The session **moves only forwards**, through the states of `session_state`:
 
 ```text
 created ──initialise()──► initialised ──run_suites()──► running ──► finished
@@ -115,8 +115,8 @@ line, and passes it to `initialise (runner_options)`. The constructor of
   `--colour` (and its variants), `--filter`, `--list-tests`, and `--help`,
   with the values either after `=` or, for most of them, as the next argument;
 - records each error (an unknown option, a missing or invalid value) with
-  `add_error()`, ignores the option, and continues, so that all the errors are
-  collected; nothing is written by the constructor.
+  `add_error()`, ignores the option, and continues, so that **all the errors
+  are collected**; nothing is written by the constructor.
 
 The options with a value are described by a table, so that the forms with `=`
 and with a separate value are handled once:
@@ -185,8 +185,8 @@ list of the started runners, and:
    totals;
 5. computes and stores the exit code, and marks the session as finished.
 
-`run_child_suites()` walks the list of all the suites, sorted by name (see
-[The list of suites](/docs/developer/test-cases-and-suites/#the-list-of-suites)),
+`run_child_suites()` walks the list of all the suites, sorted by name (see [The
+list of suites](/docs/developer/test-cases-and-suites/#the-list-of-suites)),
 and runs those of this runner:
 
 ```cpp title="src/runner.cpp (simplified)"
@@ -222,7 +222,7 @@ runner::run_child_suites (void)
 }
 ```
 
-The next suite is read after the current one has run, since a suite may
+The next suite is read **after the current one has run**, since a suite may
 create a local runner, whose suites are inserted into the list, and removed
 again, while it runs (see [Local runners](#local-runners)). The names are
 compared in byte order, so `Suite10` comes before `Suite2`.
@@ -261,7 +261,7 @@ runner::is_selected (const char* name, size_t level) const
 
 `utility::is_match()` matches the whole name, with `*` and `?` as wildcards. It
 is iterative, without recursion, so its stack usage is constant, which matters
-on the embedded targets. The first pattern also applies to the top suite. A
+on the embedded targets. The first pattern **also applies to the top suite**. A
 suite or a test case that is not selected is reported as skipped, and keeps its
 number, so that the TAP plan remains complete:
 
@@ -342,7 +342,7 @@ it aborts the test execution with `runner::abort()` (see
 `runner::abort (sl)`, which an application may call, makes an explicit abort
 through the same function, which:
 
-1. sets `aborted_`, which is never cleared;
+1. sets `aborted_`, which is **never cleared**;
 2. if the report is open, calls `reporter::abort_session()`, which writes the
    buffered results and the location of the abort, since the totals will never
    be written; otherwise, writes the location on `stderr`;

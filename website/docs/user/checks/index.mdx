@@ -40,10 +40,10 @@ The definitions are organised within several namespaces under `micro_os_plus`:
 namespace for µTest++.
 
 In complex projects, the definitions within the `micro_test_plus` namespace may
-conflict with those of the application, so refer to the
-function comparators with explicit namespaces, and not with a
-`using namespace` directive. For brevity, declare a short alias for the
-namespace, at the appropriate scope, and prefix all the references with it:
+conflict with those of the application, so refer to the function comparators
+**with explicit namespaces**, and not with a `using namespace` directive. For
+brevity, declare a short alias for the namespace, at the appropriate scope, and
+prefix all the references with it:
 
 ```cpp
 namespace mt = micro_os_plus::micro_test_plus;
@@ -56,14 +56,14 @@ ts.test ("Check answer", [] (auto& t) {
 
 ## Expectations and requirements
 
-Expectations and requirements are checks that evaluate expressions
-yielding boolean values; they differ in what happens after a failure.
+Expectations and requirements are checks that evaluate expressions yielding
+boolean values; they differ in **what happens after a failure**.
 
 Both are created with member functions of the test case objects, and return an
-object to which a message can be appended with `<<`; the check is
-reported at the end of the statement, so the returned object cannot be
-kept in a variable. The declarations below show the parameters that an
-application passes; the return type is internal:
+object to which a message can be appended with `<<`; the check is **reported at
+the end of the statement**, so the returned object cannot be kept in a
+variable. The declarations below show the parameters that an application
+passes; the return type is internal:
 
 ```cpp
 template <class Expr_T>
@@ -95,14 +95,13 @@ auto buffer = std::make_unique<std::byte[]> (size);
 t.require (buffer) << "buffer allocated";
 ```
 
-The arguments that are always true are rejected, since they make the
-check pass silently: the arrays, including the string literals, the
-functions, the pointers to functions and to members, and the pointers to
-the character types. They usually come from writing the description
-instead of the condition, or a function name without the call; write
-the condition, with `mt::ne (p, nullptr)` for a character pointer. The
-pointers to other objects are accepted, so `t.expect (ptr)` checks for
-non-null:
+The arguments that are **always true are rejected**, since they make the check
+pass silently: the arrays, including the string literals, the functions, the
+pointers to functions and to members, and the pointers to the character types.
+They usually come from writing the description instead of the condition, or a
+function name without the call; write the condition, with `mt::ne (p, nullptr)`
+for a character pointer. The pointers to other objects are accepted, so
+`t.expect (ptr)` checks for non-null:
 
 ```cpp
 t.expect ("answer () == 42");        // Rejected, was always true.
@@ -134,10 +133,10 @@ t.expect (mt::eq (parse (input), expected))
     << "input " << input << ", " << input.size () << " bytes";
 ```
 
-A part of the message that is valid only after a failure can be given
-as a callable object, such as a lambda, that returns a value accepted
-by the message; it is called only if the check fails, and its result is
-appended, while after a success it appends nothing:
+A part of the message that is valid only after a failure can be given as a
+callable object, such as a lambda, that returns a value accepted by the
+message; it is **called only if the check fails**, and its result is appended,
+while after a success it appends nothing:
 
 ```cpp
 std::expected<config, std::string> result = parse ("config.json");
@@ -149,10 +148,9 @@ The function pointers are not called; they are written as addresses.
 
 ### Requirements
 
-A failed **requirement** is reported and counted as a failed
-expectation, and then the rest of the test case is skipped, since the
-following checks would be meaningless; the run continues with the next
-test case:
+A failed **requirement** is reported and counted as a failed expectation, and
+then **the rest of the test case is skipped**, since the following checks would
+be meaningless; the run continues with the next test case:
 
 ```cpp
 ts.test ("Parse configuration", [] (auto& t)
@@ -165,15 +163,14 @@ ts.test ("Parse configuration", [] (auto& t)
   });
 ```
 
-A failed requirement in a nested test case stops only the nested test
-case; the outer test case continues, and fails because of it.
+A failed requirement in a nested test case **stops only the nested test case**;
+the outer test case continues, and fails because of it.
 
-The test case is stopped by throwing an exception, at the end of the
-statement, after the message was appended. It is not derived from
-`std::exception`, so a `catch (const std::exception&)` in the test case
-body does not intercept it; a `catch (...)` does, and must rethrow it
-with `throw;`. The test case body must not be `noexcept`, since the
-exception would call `std::terminate()`.
+The test case is stopped by throwing an exception, at the end of the statement,
+after the message was appended. It is not derived from `std::exception`, so a
+`catch (const std::exception&)` in the test case body does not intercept it; a
+`catch (...)` does, and **must rethrow it** with `throw;`. The test case body
+**must not be `noexcept`**, since the exception would call `std::terminate()`.
 
 The human-readable reporter marks the failed requirement with
 `- test case stopped`, after the location; the TAP reporter reports it
@@ -186,8 +183,8 @@ the plan of the test case, which follows it:
 ```
 
 Without exceptions (for example with `-fno-exceptions`, common on embedded
-targets), the test case cannot be stopped, and a failed requirement aborts the
-whole test execution, as described in [Aborting the test
+targets), the test case cannot be stopped, and a failed requirement **aborts
+the whole test execution**, as described in [Aborting the test
 execution](/docs/user/organising-tests/#aborting-the-test-execution): the
 results of the test case are displayed, ending with the failed requirement, but
 the remaining test cases do not run and no totals are written.
@@ -313,7 +310,7 @@ reference page.
 
 Complex expressions may be evaluated in a single statement using the logical
 functions `all_of()`, `any_of()`, and `negate()`, the function forms of the
-`&&`, `||`, and `!` operators; `any_of()` is an inclusive or, true also
+`&&`, `||`, and `!` operators; `any_of()` is an **inclusive or**, true also
 when all the operands are true.
 
 ```cpp
@@ -327,9 +324,9 @@ template <class Expr_T>
 auto negate (Expr_T&& expr);
 ```
 
-The operands must be accepted by `expect()`: the values that are always
-true, such as string literals, C strings, arrays, and pointers to functions,
-are rejected at compile time, also when wrapped in one of these functions.
+The operands must be accepted by `expect()`: the values that are always true,
+such as string literals, C strings, arrays, and pointers to functions, are
+**rejected at compile time**, also when wrapped in one of these functions.
 
 `all_of()` and `any_of()` **take two or more operands**. A chain of the same
 operation is reported as a single group, for example
@@ -339,7 +336,7 @@ operation is reported as a single group, for example
 algorithms of the same names, the functions do not stop at the first operand
 that decides the result. After a `using namespace std`, an unqualified call
 with three or more operands of the same type selects `std::all_of()` or
-`std::any_of()`; call them as `mt::all_of()` and `mt::any_of()`.
+`std::any_of()`; **call them as `mt::all_of()` and `mt::any_of()`**.
 
 Refer to the [Logical
 Functions](/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/)
@@ -374,8 +371,8 @@ t.expect (mt::throws<std::runtime_error> ([] { parse (""); }))
 t.expect (mt::nothrow ([] { parse ("config.json"); })) << "a valid input is accepted";
 ```
 
-These functions are available only when exceptions are enabled, that is, when
-`__cpp_exceptions` is defined. A program that is also built with
+These functions are **available only when exceptions are enabled**, that is,
+when `__cpp_exceptions` is defined. A program that is also built with
 `-fno-exceptions` must guard them:
 
 ```cpp
@@ -403,10 +400,9 @@ t.expect (mt::eq (actual, "fortytwo"))
 ## Containers
 
 Containers are compared with `eq()` and `ne()`, which use the standard
-operators, and show their elements when the check fails. The containers
-must be comparable with the standard operators, which for the standard
-containers means the same type; a C array is also accepted against a
-container:
+operators, and show their elements when the check fails. The containers must be
+comparable with the standard operators, which for the standard containers means
+**the same type**; a C array is also accepted against a container:
 
 ```cpp
 t.expect (mt::eq (std::vector<int>{ 1, 2 }, std::vector<int>{ 1, 2 }))
@@ -426,12 +422,11 @@ must themselves be printable.
 
 ## Other standard types
 
-The function comparators also accept the **scoped enumerations**
-(including `std::byte`), and the `std::pair`, `std::tuple`, and
-`std::optional` objects, so also the **maps**, whose elements are pairs.
-These are accepted only if their elements are printable (and a duration only
-if its count is a number), so a pair with a member that has no `operator<<`
-is rejected like that member.
+The function comparators also accept the **scoped enumerations** (including
+`std::byte`), and the `std::pair`, `std::tuple`, and `std::optional` objects,
+so also the **maps**, whose elements are pairs. These are accepted **only if
+their elements are printable** (and a duration only if its count is a number),
+so a pair with a member that has no `operator<<` is rejected like that member.
 When a check fails, they are shown as follows:
 
 - a scoped enumeration by its underlying value, written as that type
