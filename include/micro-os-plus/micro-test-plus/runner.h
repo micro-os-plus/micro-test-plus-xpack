@@ -1114,7 +1114,8 @@ namespace micro_os_plus::micro_test_plus
      * and the output file that cannot be opened. The filters that select
      * no test case are checked by `run_suites()` itself.
      *
-     * Valid only after `initialise()` created the reporter.
+     * Before `initialise()` created the reporter, there is no output
+     * file, and the result is `false`.
      *
      * @return `true` if an option error was found.
      */

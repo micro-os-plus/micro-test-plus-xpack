@@ -92,12 +92,15 @@ namespace micro_os_plus::micro_test_plus
   /**
    * @details
    * Combines the results kept by the options and by the reporter, so
-   * that the runner needs no flag of its own.
+   * that the runner needs no flag of its own. The reporter is created by
+   * `initialise()`; until then there is no output file, hence no error
+   * of it.
    */
   inline bool
   runner::has_option_errors (void) const noexcept
   {
-    return options_.has_errors () || reporter_->has_output_file_error ();
+    return options_.has_errors ()
+           || (reporter_ != nullptr && reporter_->has_output_file_error ());
   }
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)

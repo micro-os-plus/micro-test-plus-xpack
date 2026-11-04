@@ -652,7 +652,8 @@ namespace micro_os_plus::micro_test_plus
        * suite, between `runner::add_top_suite()` and
        * `runner::run_suites()`, or the suite being run). A call on any
        * other suite, for example on the top suite from the body of
-       * another suite, or after `runner::run_suites()` returned, would
+       * another suite, on a static suite before the runner was
+       * initialised, or after `runner::run_suites()` returned, would
        * run the test case where its results cannot be reported
        * correctly. Such a call is rejected: the failure is reported in
        * the running suite, or, when no suite runs, on `stderr`, and the

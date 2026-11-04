@@ -1087,6 +1087,10 @@ TAP version 14
         [32m✓[0m a test case started after run_suites() is not run
     [32m✓[0m Misplaced test cases - passed (2 checks)
 
+    • Early test cases
+        [32m✓[0m a test case started before initialise() is rejected
+    [32m✓[0m Early test cases - passed (1 check)
+
     • Runner option errors
         [32m✓[0m valid options still applied
         [32m✓[0m unknown reporter
@@ -1329,7 +1333,7 @@ Matching test cases:
         [32m✓[0m string view suite name copied
     [32m✓[0m Test case and suite names - passed (9 checks)
 
-[31m✗[0m Miscellaneous suite - [31mFAILED[0m (210 checks passed, 8 failed, in 53 test cases), time: 10.807 ms
+[31m✗[0m Miscellaneous suite - [31mFAILED[0m (211 checks passed, 8 failed, in 54 test cases), time: 10.082 ms
 
 • Operands suite
 
@@ -1670,6 +1674,6 @@ Matching test cases:
 
 [31m✗[0m Utility suite - [31mFAILED[0m (21 checks passed, 5 failed, in 3 test cases), time: 0.161 ms
 
-[31m✗[0m Total: 697 checks passed, 373 failed, in 171 test cases, 15 test suites, time: 18.605 ms
+[31m✗[0m Total: 698 checks passed, 373 failed, in 172 test cases, 15 test suites, time: 26.987 ms
 Overall, the µTest++ unit tests were successful!
 

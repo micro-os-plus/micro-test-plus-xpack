@@ -1158,6 +1158,30 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
         local_counts.executed_test_cases++;
       });
 
+    // A test case started on a static suite before the runner is
+    // initialised is rejected, with no reporter to use; the session then
+    // fails.
+    ts.test ("Early test cases", [] (auto& t)
+      {
+        mt::runner early_runner;
+        mt::static_suite early_suite{ "Early", early_runner,
+                                      [] (mt::suite&) noexcept {} };
+
+        early_suite.test ("Early test", [] (auto& lt) { lt.expect (true); });
+
+        mt::runner_options options{};
+        options.verbosity_level = mt::verbosity::silent;
+        early_runner.initialise (options);
+
+        t.expect (mt::eq (early_runner.run_suites (), 1)
+                  and mt::eq (early_runner.totals ().executed_test_cases (),
+                              0u))
+            << "a test case started before initialise() is rejected";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
     // An option error does not terminate the process; it is reported on
     // stderr (the messages are expected in the test output), no test is
     // run, and `run_suites()` returns 2.

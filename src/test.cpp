@@ -213,7 +213,8 @@ namespace micro_os_plus::micro_test_plus
      * cases are not only listed), the failure is reported as a check of
      * that suite, with the same numbering and counting as the
      * unexpected exceptions of the suite body. Otherwise (the runner
-     * has not started the suites, or has finished them) the message is
+     * was not initialised, has not started the suites, or has finished
+     * them) the message is
      * written to `stderr`, and `runner::mark_rejected()` makes the exit
      * code non-zero, as for the suites added too late.
      */

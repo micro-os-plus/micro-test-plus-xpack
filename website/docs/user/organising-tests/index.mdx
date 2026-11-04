@@ -391,6 +391,12 @@ follow it in the report, since the running test case has not ended; it
 runs nested in the innermost running test case, as if `t.test()` had
 been called.
 
+A test case can be started only on a suite whose body is running. A call on
+any other suite, for example on a static suite from `main()`, before the runner
+was initialised, or after `run_suites()` returned, is rejected: the failure is
+reported in the running suite, or on `stderr` when no suite runs, and
+`run_suites()` returns 1.
+
 The counts of the outer test case **do not include the checks of its nested
 test cases**, which are reported on their own lines, while the counts of the
 suite and of the totals include them; an outer test case with no checks of its

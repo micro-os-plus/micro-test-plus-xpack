@@ -589,6 +589,7 @@ TAP version 14
 # Subtest: default suite
     ✓ Optional top suite - passed (7 checks)
     ✓ Misplaced test cases - passed (2 checks)
+    ✓ Early test cases - passed (1 check)
     ✓ Runner option errors - passed (10 checks)
     ✓ Runner application arguments - passed (3 checks)
     ✓ Runner colour options - passed (3 checks)
@@ -653,7 +654,7 @@ Matching test cases:
     ✓ Abort during the session - passed (6 checks)
     ✓ Test case and suite names - passed (9 checks)
 
-✗ Miscellaneous suite - FAILED (210 checks passed, 8 failed, in 53 test cases), time: 8.670 ms
+✗ Miscellaneous suite - FAILED (211 checks passed, 8 failed, in 54 test cases), time: 9.465 ms
 
 • Operands suite
 
@@ -789,6 +790,6 @@ Matching test cases:
 
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.102 ms
 
-✗ Total: 697 checks passed, 373 failed, in 171 test cases, 15 test suites, time: 13.987 ms
+✗ Total: 698 checks passed, 373 failed, in 172 test cases, 15 test suites, time: 24.432 ms
 Overall, the µTest++ unit tests were successful!
 
