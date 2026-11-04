@@ -310,6 +310,16 @@ pointers and arrays of these types in the same way. A C string of one
 character type is not comparable with a string of another type, for example
 `L"abc"` with a `std::string`; the comparison is rejected at compile time.
 
+The comparators **copy the named operands** and move the temporaries into the
+expression, so that an expression built in a helper function from its
+parameters and returned, or kept in a variable, stays valid after the operands
+are destroyed. The copy is made for every check, passing or failing, so a
+large container or string costs a copy and an allocation, which matters on a
+small target. When the cost matters, compare a view, which copies only a
+pointer and a size: `mt::eq (std::string_view{ text }, "abc")` makes no
+allocation. The operands that cannot be copied, such as a `std::unique_ptr`,
+are referred to, not copied.
+
 The `approx()` comparator **succeeds if its first two operands differ by
 at most the third one**, the tolerance, so a tolerance of zero requires
 equal operands and a negative one always fails. The operands are numbers,

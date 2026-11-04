@@ -39,7 +39,10 @@
  * pointers are compared by address.
  * The temporaries are moved into the returned expressions, and the named
  * operands are copied, so an expression can be returned from the function
- * that builds it, and kept after the operands are destroyed.
+ * that builds it, and kept after the operands are destroyed. The copy is
+ * made for every check, passing or failing, so a large container or string
+ * costs an allocation; compare a `std::string_view` of a string instead,
+ * when the cost matters.
  * The logical combinators have descriptive names, since `and`, `or`, and
  * `not` are alternative tokens and cannot be used as identifiers.
  *

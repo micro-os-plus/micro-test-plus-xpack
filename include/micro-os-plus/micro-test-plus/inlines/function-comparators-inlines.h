@@ -83,7 +83,8 @@ namespace micro_os_plus::micro_test_plus
    * with both values if not.
    *
    * The operands are forwarded, so that the comparator moves the
-   * temporaries and refers to the named operands, without copying them.
+   * temporaries, and copies the named operands (see `stored_operand_t`),
+   * so that the expression stays valid after the operands are destroyed.
    */
   template <class Lhs_T, class Rhs_T>
     requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>

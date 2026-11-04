@@ -292,6 +292,19 @@ numeric name prefixes. This is a deliberate design decision, not a defect:
 do not report it, and do not propose the registration order for the added
 suites.
 
+### Operands of the comparators
+
+The comparators (`eq()`, `ne()`, `gt()`, `ge()`, `lt()`, `le()`, `approx()`,
+and the logical combinators) copy their named operands into the expression,
+and move the temporaries. This is a deliberate trade-off, not a defect: an
+expression built in a helper function from its parameters, and returned, or
+kept in a variable, must stay valid after the operands are destroyed, and a
+reference would dangle without any diagnostic. The cost of the copies is
+documented in the user manual, with the remedy of comparing a view
+(`std::string_view`). Do not report the copies, and do not propose to store
+references; an opt-out for the large operands, as a new feature, may be
+suggested.
+
 ### Utilities
 
 The `utilities` namespace is intended for helper functions and types that
