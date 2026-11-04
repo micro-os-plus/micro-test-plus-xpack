@@ -305,6 +305,27 @@ documented in the user manual, with the remedy of comparing a view
 references; an opt-out for the large operands, as a new feature, may be
 suggested.
 
+### Containers of different types
+
+The comparators compare containers with the operators of the standard library,
+so two containers are comparable only if the standard library defines the
+operator for them, which for the standard containers means the same type.
+The arrays are the exception, since they have no usable operator: they are
+compared element by element, and a C array can be compared with a container.
+This is documented in the user manual, and the comparison of operands that the
+operators do not support is rejected on purpose, with a message. Do not report
+it as a defect; a comparison of different containers, element by element,
+would be a new feature, to be suggested as an enhancement.
+
+### Lazy messages
+
+A message that is a callable object (a lazy message) is called only if the
+check fails, and never for a passed check, even when the passed checks are
+written. It exists for the text that is valid only after a failure, such as
+the error of a `std::expected` that holds a value, which is undefined
+behaviour to evaluate after a success. This is documented in the user
+manual. Do not report that a lazy message is not shown for a passed check.
+
 ### Utilities
 
 The `utilities` namespace is intended for helper functions and types that
