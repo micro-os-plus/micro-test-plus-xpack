@@ -171,6 +171,14 @@ t.require (result.has_value ())
 
 The function pointers are not called; they are written as addresses.
 
+An argument that is neither of these is **rejected with a message** that states
+what a message argument is, not with the trace of the overload resolution: a
+type without an `operator<<` for the formatter (define one in the namespace of
+the type, as for the comparators), or a callable object that takes arguments,
+returns `void`, or returns a value that cannot be written. The last case would
+otherwise convert a lambda without captures to a function pointer and then to
+`bool`, and write `true`.
+
 ### Requirements
 
 A failed **requirement** is reported and counted as a failed expectation, and

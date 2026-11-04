@@ -1221,6 +1221,21 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     // The function pointers are printed, not called.
     static_assert (not mt::detail::lazy_message<int (*) (void)>);
     static_assert (mt::extension::printable<int (*) (void)>);
+
+    // The message arguments are the printable values, and the callable
+    // objects that return one; the other callable objects, which would be
+    // written as `true`, after the conversion to a function pointer, and
+    // the values that cannot be written, are rejected.
+    static_assert (mt::detail::message_argument<int>);
+    static_assert (mt::detail::message_argument<const char*>);
+    static_assert (mt::detail::message_argument<std::string>);
+    static_assert (mt::detail::message_argument<int (*) (void)>);
+    static_assert (mt::detail::message_argument<decltype (captureless)>);
+    static_assert (mt::detail::message_argument<decltype (capturing)>);
+    static_assert (not mt::detail::message_argument<decltype (no_result)>);
+    static_assert (
+        not mt::detail::message_argument<decltype (unformatted_result)>);
+    static_assert (not mt::detail::message_argument<unformatted>);
   }
 
   {

@@ -305,7 +305,9 @@ namespace micro_os_plus::micro_test_plus
        * statement.
        *
        * @tparam T The type of the message to append: a value that the
-       * formatter can write, or a callable object that returns one.
+       * formatter can write, or a callable object that returns one (see
+       * `detail::message_argument`); any other argument is rejected at
+       * compile time, with a message that states what is accepted.
        *
        * @param msg The message to append, or the callable object that
        * returns it, called only if the check fails.
@@ -313,7 +315,26 @@ namespace micro_os_plus::micro_test_plus
        * further messages can be appended in the same expression.
        */
       template <class T>
-        requires (extension::printable<T> or detail::lazy_message<T>)
+        requires detail::message_argument<T>
+      check_result&&
+      operator<< (const T& msg) &&;
+
+      /**
+       * @brief Rejects a message argument that cannot be written.
+       *
+       * @details
+       * Selected for the arguments that the message operator does not
+       * accept (see `detail::message_argument`); it stops the compilation
+       * with a message that states what a message argument is, instead of
+       * the trace of the overload resolution. Never called.
+       *
+       * @tparam T The type of the argument.
+       *
+       * @param msg The argument.
+       * @return The current check result.
+       */
+      template <class T>
+        requires (not detail::message_argument<T>)
       check_result&&
       operator<< (const T& msg) &&;
 

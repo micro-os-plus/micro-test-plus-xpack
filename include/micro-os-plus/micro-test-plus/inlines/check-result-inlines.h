@@ -176,7 +176,7 @@ namespace micro_os_plus::micro_test_plus
      * too, although it is also printable, as a `bool`.
      */
     template <class T>
-      requires (extension::printable<T> or detail::lazy_message<T>)
+      requires detail::message_argument<T>
     check_result&&
     check_result::operator<< (const T& msg) &&
     {
@@ -205,6 +205,36 @@ namespace micro_os_plus::micro_test_plus
           formatter << msg;
         }
       info_.message = std::move (formatter.buffer_);
+      return std::move (*this);
+    }
+
+    /**
+     * @details
+     * Never called; the compilation stops here, with a message that
+     * states what a message argument is.
+     */
+    template <class T>
+      requires (not detail::message_argument<T>)
+    check_result&&
+    check_result::operator<< ([[maybe_unused]] const T& msg) &&
+    {
+      if constexpr (std::is_class_v<T> and std::invocable<const T&>)
+        {
+          static_assert (
+              not std::is_same_v<T, T>,
+              "a message that is a callable object must be callable "
+              "without arguments and return a value that can be "
+              "written, not void");
+        }
+      else
+        {
+          static_assert (not std::is_same_v<T, T>,
+                         "a message argument must be a value that can be "
+                         "written: define an operator<< (mt::"
+                         "expression_formatter&, const T&) in the namespace "
+                         "of the type, or pass a callable object that returns "
+                         "such a value");
+        }
       return std::move (*this);
     }
 

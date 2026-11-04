@@ -674,6 +674,27 @@ namespace micro_os_plus::micro_test_plus
           and (not std::is_void_v<std::invoke_result_t<const T&>>)
           and extension::printable<std::invoke_result_t<const T&>>;
 
+    /**
+     * @brief C++20 concept satisfied when `T` can be appended to the
+     * message of a check.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * The `message_argument` concept is satisfied by a `lazy_message`, or
+     * by a value that satisfies `extension::printable`, except a class
+     * type callable without arguments that is not a `lazy_message`. A
+     * lambda without captures, which returns `void` or a value that
+     * cannot be written, converts to a function pointer and then to
+     * `bool`, so it would be written as `true` instead of being rejected;
+     * the message must be a value, or a callable object that returns one.
+     */
+    template <class T>
+    concept message_argument
+        = lazy_message<T>
+          or (extension::printable<T>
+              and not(std::is_class_v<T> and std::invocable<const T&>));
+
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
      * @brief C++20 concept satisfied when `T` is a framework compile-time
