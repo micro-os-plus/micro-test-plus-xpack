@@ -3217,6 +3217,18 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         ok 1 - callable not copied
         1..1
     ok 42 - Each uncopied callable (3) # { passed, 1 check }
+    # Subtest: Uncopyable body
+        ok 1 - uncopyable body called
+        1..1
+    ok 43 - Uncopyable body # { passed, 1 check }
+    # Subtest: Uncopyable body again
+        ok 1 - uncopyable body called
+        1..1
+    ok 44 - Uncopyable body again # { passed, 1 check }
+    # Subtest: Uncopyable body calls
+        ok 1 - the lvalue body was called
+        1..1
+    ok 45 - Uncopyable body calls # { passed, 1 check }
     # Subtest: Nested test_each
         # Subtest: Each nested value (10)
             ok 1 - multiple of 10
@@ -3227,11 +3239,11 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
             1..1
         ok 2 - Each nested value (20) # { passed, 1 check }
         1..2
-    ok 43 - Nested test_each # { passed, 0 checks }
+    ok 46 - Nested test_each # { passed, 0 checks }
     # Subtest: Failed each value (1)
         ok 1 - value 1 == 1
         1..1
-    ok 44 - Failed each value (1) # { passed, 1 check }
+    ok 47 - Failed each value (1) # { passed, 1 check }
     # Subtest: Failed each value (2)
         not ok 1 - value 2 == 1
           ---
@@ -3241,7 +3253,7 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
             lineNumber: 1929
           ...
         1..1
-    not ok 45 - Failed each value (2) # { FAILED, 0 checks passed, 1 failed }
+    not ok 48 - Failed each value (2) # { FAILED, 0 checks passed, 1 failed }
     # Subtest: Callable arguments
         ok 1 - reference parameter refers to a copy
         ok 2 - std::ref() refers to the object
@@ -3249,19 +3261,19 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         ok 4 - local session passed
         ok 5 - deferred suite received the copy
         1..5
-    ok 46 - Callable arguments # { passed, 5 checks }
+    ok 49 - Callable arguments # { passed, 5 checks }
     # Subtest: Test case lifetime
         ok 1 - test cases destroyed
         ok 2 - test cases counted
         ok 3 - local session passed
         1..3
-    ok 47 - Test case lifetime # { passed, 3 checks }
+    ok 50 - Test case lifetime # { passed, 3 checks }
     # Subtest: Test case bodies
         ok 1 - large body invoked
         ok 2 - large body not allocated
         ok 3 - local session passed
         1..3
-    ok 48 - Test case bodies # { passed, 3 checks }
+    ok 51 - Test case bodies # { passed, 3 checks }
     # Subtest: Formatting of passed checks
         ok 1 - passed check not formatted (human)
         ok 2 - failed check formatted (human)
@@ -3270,13 +3282,13 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         ok 5 - failed check formatted (tap)
         ok 6 - both checks counted (tap)
         1..6
-    ok 49 - Formatting of passed checks # { passed, 6 checks }
+    ok 52 - Formatting of passed checks # { passed, 6 checks }
     # Subtest: Abort handler
         ok 1 - no initial handler
         ok 2 - handler called
         ok 3 - previous handler returned
         1..3
-    ok 50 - Abort handler # { passed, 3 checks }
+    ok 53 - Abort handler # { passed, 3 checks }
     # Subtest: Abort during the session
         ok 1 - human handler exception passed on
         ok 2 - human no test case after the abort
@@ -3285,7 +3297,7 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         ok 5 - tap no test case after the abort
         ok 6 - tap run_suites() refused after the abort
         1..6
-    ok 51 - Abort during the session # { passed, 6 checks }
+    ok 54 - Abort during the session # { passed, 6 checks }
     # Subtest: Test case and suite names
         ok 1 - temporary string name
         ok 2 - string name
@@ -3297,9 +3309,9 @@ not ok 10 - Failed combinatorial integrals suite # { FAILED, 0 checks passed, 20
         ok 8 - C string suite name copied
         ok 9 - string view suite name copied
         1..9
-    ok 52 - Test case and suite names # { passed, 9 checks }
-    1..52
-not ok 11 - Miscellaneous suite # { FAILED, 212 checks passed, 8 failed, in 55 test cases, time: 7.479 ms }
+    ok 55 - Test case and suite names # { passed, 9 checks }
+    1..55
+not ok 11 - Miscellaneous suite # { FAILED, 215 checks passed, 8 failed, in 58 test cases, time: 8.235 ms }
 # Subtest: Operands suite
     # Subtest: Arrays
         ok 1 - array{ 42 } == array{ 42 }
@@ -3884,4 +3896,4 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.379 ms }
     1..3
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.246 ms }
 1..15
-# { total: 719 checks passed, 375 failed, in 176 test cases, 15 test suites, time: 34.975 ms }
+# { total: 722 checks passed, 375 failed, in 179 test cases, 15 test suites, time: 26.376 ms }

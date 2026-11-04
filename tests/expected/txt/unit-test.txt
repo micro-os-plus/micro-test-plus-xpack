@@ -1125,6 +1125,15 @@ next line FAILED (miscellaneous.cpp:939)
     • Each uncopied callable (3)
         ✓ callable not copied
     ✓ Each uncopied callable (3) - passed (1 check)
+    • Uncopyable body
+        ✓ uncopyable body called
+    ✓ Uncopyable body - passed (1 check)
+    • Uncopyable body again
+        ✓ uncopyable body called
+    ✓ Uncopyable body again - passed (1 check)
+    • Uncopyable body calls
+        ✓ the lvalue body was called
+    ✓ Uncopyable body calls - passed (1 check)
     • Nested test_each
         • Each nested value (10)
             ✓ multiple of 10
@@ -1188,7 +1197,7 @@ next line FAILED (miscellaneous.cpp:939)
         ✓ C string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (9 checks)
-✗ Miscellaneous suite - FAILED (212 checks passed, 8 failed, in 55 test cases), time: 9.027 ms
+✗ Miscellaneous suite - FAILED (215 checks passed, 8 failed, in 58 test cases), time: 7.197 ms
 • Operands suite
     • Arrays
         ✓ array{ 42 } == array{ 42 }
@@ -1480,4 +1489,4 @@ next line FAILED (miscellaneous.cpp:939)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.235 ms
-✗ Total: 719 checks passed, 375 failed, in 176 test cases, 15 test suites, time: 35.656 ms
+✗ Total: 722 checks passed, 375 failed, in 179 test cases, 15 test suites, time: 20.725 ms

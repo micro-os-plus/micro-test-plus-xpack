@@ -103,6 +103,22 @@ namespace
     static inline int total_copies = 0;
   };
 
+  // A test case body that cannot be copied, and counts its calls.
+  struct uncopyable_body
+  {
+    uncopyable_body () = default;
+    uncopyable_body (const uncopyable_body&) = delete;
+
+    void
+    operator() (mt::test_case& t)
+    {
+      ++calls;
+      t.expect (true) << "uncopyable body called";
+    }
+
+    int calls = 0;
+  };
+
   // A range with begin() and end() functions, not members, found by
   // argument-dependent lookup, as by a range-based for statement.
   struct number_pair
@@ -2025,6 +2041,21 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
                   copy_counting_callable);
     local_counts.passed_checks += 3;
     local_counts.executed_test_cases += 3;
+
+    // A test case refers to its body, which is called in place: a body
+    // that cannot be copied is accepted, and an lvalue keeps its state.
+    uncopyable_body body;
+    ts.test ("Uncopyable body", body);
+    ts.test ("Uncopyable body again", body);
+    local_counts.passed_checks += 2;
+    local_counts.executed_test_cases += 2;
+
+    ts.test ("Uncopyable body calls", [&body] (auto& t)
+      {
+        t.expect (mt::eq (body.calls, 2)) << "the lvalue body was called";
+        local_counts.passed_checks++;
+        local_counts.executed_test_cases++;
+      });
 
     ts.test ("Nested test_each", [] (auto& t)
       {

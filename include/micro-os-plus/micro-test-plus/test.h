@@ -735,6 +735,14 @@ namespace micro_os_plus::micro_test_plus
        * nested test case adds one call chain to the stack, and a separate
        * frame for this function would make it longer.
        *
+       * The test case runs and ends within the call, so, without
+       * additional arguments, it refers to the callable of the caller,
+       * which is neither copied nor moved, and is called in place, so a
+       * callable that cannot be copied is accepted, and an lvalue callable
+       * keeps the changes of its state. With additional arguments, the
+       * callable and the arguments are bound into a body of copies, by
+       * `bind_callable()`.
+       *
        * @tparam Callable_T The type of a callable object.
        * @tparam Args_T The types of the callable arguments.
        *
@@ -1004,7 +1012,8 @@ namespace micro_os_plus::micro_test_plus
        *   `Callable_T` is not a `callable_ref`, so that the copy
        *   constructor is used for copies.
        *
-       * @param callable The callable object; a non-`const` lvalue.
+       * @param callable The callable object; an lvalue, possibly
+       * `const`, in which case it must be callable as `const`.
        */
       template <typename Callable_T>
         requires (!std::is_same_v<std::remove_cv_t<Callable_T>,

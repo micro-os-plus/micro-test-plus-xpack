@@ -2372,7 +2372,7 @@ Matching test cases:
 #             fileName: miscellaneous.cpp
 #             lineNumber: 1929
 #           ...
-not ok 11 - Miscellaneous suite # { FAILED, 212 checks passed, 8 failed, in 55 test cases, time: 8.167 ms }
+not ok 11 - Miscellaneous suite # { FAILED, 215 checks passed, 8 failed, in 58 test cases, time: 5.438 ms }
 # Operands suite > Arrays bad
 #         not ok 1 - array{ 42 } ne array{ 42 }
 #           ---
@@ -2681,4 +2681,4 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.102 ms }
 #           ...
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.126 ms }
 1..15
-# { total: 719 checks passed, 375 failed, in 176 test cases, 15 test suites, time: 19.299 ms }
+# { total: 722 checks passed, 375 failed, in 179 test cases, 15 test suites, time: 17.289 ms }

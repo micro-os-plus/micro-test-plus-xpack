@@ -2679,14 +2679,17 @@ Matching test cases:
     ok 40 - Each uncopied callable (1) # { passed, 1 check }
     ok 41 - Each uncopied callable (2) # { passed, 1 check }
     ok 42 - Each uncopied callable (3) # { passed, 1 check }
+    ok 43 - Uncopyable body # { passed, 1 check }
+    ok 44 - Uncopyable body again # { passed, 1 check }
+    ok 45 - Uncopyable body calls # { passed, 1 check }
 
     # Subtest: Nested test_each
         ok 1 - Each nested value (10) # { passed, 1 check }
         ok 2 - Each nested value (20) # { passed, 1 check }
 
         1..2
-    ok 43 - Nested test_each # { passed, 0 checks }
-    ok 44 - Failed each value (1) # { passed, 1 check }
+    ok 46 - Nested test_each # { passed, 0 checks }
+    ok 47 - Failed each value (1) # { passed, 1 check }
 
     # Subtest: Failed each value (2)
         not ok 1 - value 2 == 1
@@ -2697,17 +2700,17 @@ Matching test cases:
             lineNumber: 1967
           ...
         1..1
-    not ok 45 - Failed each value (2) # { FAILED, 0 checks passed, 1 failed }
-    ok 46 - Callable arguments # { passed, 5 checks }
-    ok 47 - Test case lifetime # { passed, 3 checks }
-    ok 48 - Test case bodies # { passed, 3 checks }
-    ok 49 - Formatting of passed checks # { passed, 6 checks }
-    ok 50 - Abort handler # { passed, 3 checks }
-    ok 51 - Abort during the session # { passed, 6 checks }
-    ok 52 - Test case and suite names # { passed, 9 checks }
+    not ok 48 - Failed each value (2) # { FAILED, 0 checks passed, 1 failed }
+    ok 49 - Callable arguments # { passed, 5 checks }
+    ok 50 - Test case lifetime # { passed, 3 checks }
+    ok 51 - Test case bodies # { passed, 3 checks }
+    ok 52 - Formatting of passed checks # { passed, 6 checks }
+    ok 53 - Abort handler # { passed, 3 checks }
+    ok 54 - Abort during the session # { passed, 6 checks }
+    ok 55 - Test case and suite names # { passed, 9 checks }
 
-    1..52
-not ok 11 - Miscellaneous suite # { FAILED, 212 checks passed, 8 failed, in 55 test cases, time: 6.695 ms }
+    1..55
+not ok 11 - Miscellaneous suite # { FAILED, 215 checks passed, 8 failed, in 58 test cases, time: 6.526 ms }
 
 # Subtest: Operands suite
     ok 1 - Arrays # { passed, 4 checks }
@@ -3097,6 +3100,6 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.133 ms }
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.134 ms }
 
 1..15
-# { total: 719 checks passed, 375 failed, in 176 test cases, 15 test suites, time: 18.911 ms }
+# { total: 722 checks passed, 375 failed, in 179 test cases, 15 test suites, time: 18.654 ms }
 Overall, the µTest++ unit tests were successful!
 

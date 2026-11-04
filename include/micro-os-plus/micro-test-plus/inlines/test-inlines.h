@@ -252,10 +252,15 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Binds the callable and its arguments into a local body, constructs
-     * the child `test_case` as a local object that refers to the body,
-     * with the next test point number of this node as its index, then
-     * passes it to `after_test_case_create()`, which counts and runs it.
+     * Without additional arguments, the child `test_case` is a local
+     * object that refers to the callable of the caller, which is neither
+     * copied nor moved, and is called in place (an lvalue callable keeps
+     * the changes of its state). A function is referred to through its
+     * pointer, and the callable and the additional arguments are bound
+     * into a local body, as copies, when there are arguments. The child
+     * is constructed with the next test point number of this node as its
+     * index, then passed to `after_test_case_create()`, which counts and
+     * runs it.
      *
      * The child test case and its body, with the copies of the
      * arguments, are destroyed when this function returns, so the memory
@@ -273,15 +278,33 @@ namespace micro_os_plus::micro_test_plus
                                      Args_T&&... arguments)
     {
       size_t own_index = next_test_point_number ();
-      auto body = bind_callable<class test_case> (
-          std::forward<Callable_T> (callable),
-          std::forward<Args_T> (arguments)...);
-      class test_case child_test_case{
-        name,      runner_,       parent_suite,
-        own_index, nesting_depth, callable_ref<class test_case>{ body }
-      };
 
-      after_test_case_create (child_test_case, parent_suite);
+      if constexpr (sizeof...(arguments) == 0
+                    && !std::is_function_v<
+                        std::remove_reference_t<Callable_T>>)
+        {
+          // The test case runs and ends within this call, so it refers
+          // to the callable of the caller, which is not copied, and is
+          // called in place.
+          class test_case child_test_case{
+            name,      runner_,       parent_suite,
+            own_index, nesting_depth, callable_ref<class test_case>{ callable }
+          };
+
+          after_test_case_create (child_test_case, parent_suite);
+        }
+      else
+        {
+          auto body = bind_callable<class test_case> (
+              std::forward<Callable_T> (callable),
+              std::forward<Args_T> (arguments)...);
+          class test_case child_test_case{
+            name,      runner_,       parent_suite,
+            own_index, nesting_depth, callable_ref<class test_case>{ body }
+          };
+
+          after_test_case_create (child_test_case, parent_suite);
+        }
     }
 
     // ========================================================================
@@ -381,7 +404,8 @@ namespace micro_os_plus::micro_test_plus
       requires (!std::is_same_v<std::remove_cv_t<Callable_T>,
                                 callable_ref<Self_T>>)
     callable_ref<Self_T>::callable_ref (Callable_T& callable) noexcept
-        : callable_{ std::addressof (callable) },
+        : callable_{ const_cast<void*> (
+              static_cast<const volatile void*> (std::addressof (callable))) },
           invoke_{ &invoke_callable<Callable_T> }
     {
     }
