@@ -570,6 +570,30 @@ namespace micro_os_plus::micro_test_plus
     add_suite (located_name name, Callable_T&& callable,
                Args_T&&... arguments);
 
+    /**
+     * @brief Rejects a callable that is not a valid suite body.
+     *
+     * @details
+     * Selected for the callables that `add_suite()` does not accept (see
+     * `detail::suite_body`); it stops the compilation with a message that
+     * states what the body takes, instead of the trace of the concepts.
+     * Never called.
+     *
+     * @tparam Callable_T The type of the callable.
+     * @tparam Args_T The types of the additional arguments.
+     *
+     * @param name The name of the suite.
+     * @param callable The callable.
+     * @param arguments The additional arguments.
+     * @par Returns
+     *   Nothing.
+     */
+    template <typename Callable_T, typename... Args_T>
+      requires (!detail::suite_body<Callable_T, Args_T...>)
+    void
+    add_suite (located_name name, Callable_T&& callable,
+               Args_T&&... arguments);
+
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
      * @name Deprecated Functions

@@ -1197,6 +1197,63 @@ namespace micro_os_plus::micro_test_plus
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
     /**
+     * @brief A value that is always `false`, but depends on the template
+     * arguments.
+     *
+     * @details
+     * Used as the condition of the `static_assert` of the functions that
+     * reject an argument, so that they fail only when instantiated, and
+     * their diagnostic has the message, not the concepts that were not
+     * satisfied.
+     *
+     * @tparam Ts The template arguments to depend on.
+     */
+    template <typename... Ts>
+    inline constexpr bool dependent_false_v = false;
+
+    /**
+     * @brief Stops the compilation with a message that tells what the
+     * body of a test case takes.
+     *
+     * @details
+     * Called by the overloads of `test_case::test()` and `suite::test()`
+     * that are selected when the callable is not a valid body, so that the
+     * diagnostic names the mistake in the terms of the application, instead
+     * of the concepts and the instantiation stack. Never called at run
+     * time.
+     *
+     * @tparam Callable_T The type of the callable.
+     * @tparam Args_T The types of the additional arguments.
+     * @par Parameters
+     *   None.
+     * @par Returns
+     *   Nothing.
+     */
+    template <typename Callable_T, typename... Args_T>
+    constexpr void
+    reject_test_body (void) noexcept;
+
+    /**
+     * @brief Stops the compilation with a message that tells what the
+     * body of a suite takes.
+     *
+     * @details
+     * Called by the overloads of `runner::add_suite()` and of the
+     * `static_suite` constructor that are selected when the callable is
+     * not a valid body, as `reject_test_body()` is for the test cases.
+     *
+     * @tparam Callable_T The type of the callable.
+     * @tparam Args_T The types of the additional arguments.
+     * @par Parameters
+     *   None.
+     * @par Returns
+     *   Nothing.
+     */
+    template <typename Callable_T, typename... Args_T>
+    constexpr void
+    reject_suite_body (void) noexcept;
+
+    /**
      * @brief Adds and runs a test case for each value.
      *
      * @details
@@ -1370,6 +1427,30 @@ namespace micro_os_plus::micro_test_plus
      */
     template <typename Callable_T, typename... Args_T>
       requires detail::test_body<Callable_T, Args_T...>
+    void
+    test (const located_name& name, Callable_T&& callable,
+          Args_T&&... arguments);
+
+    /**
+     * @brief Rejects a callable that is not a valid test case body.
+     *
+     * @details
+     * Selected for the callables that `test()` does not accept (see
+     * `detail::test_body`); it stops the compilation with a message that
+     * states what the body takes, instead of the trace of the concepts.
+     * Never called.
+     *
+     * @tparam Callable_T The type of the callable.
+     * @tparam Args_T The types of the additional arguments.
+     *
+     * @param name The name of the test case.
+     * @param callable The callable.
+     * @param arguments The additional arguments.
+     * @par Returns
+     *   Nothing.
+     */
+    template <typename Callable_T, typename... Args_T>
+      requires (!detail::test_body<Callable_T, Args_T...>)
     void
     test (const located_name& name, Callable_T&& callable,
           Args_T&&... arguments);
@@ -2042,6 +2123,30 @@ namespace micro_os_plus::micro_test_plus
           Args_T&&... arguments);
 
     /**
+     * @brief Rejects a callable that is not a valid test case body.
+     *
+     * @details
+     * Selected for the callables that `test()` does not accept (see
+     * `detail::test_body`); it stops the compilation with a message that
+     * states what the body takes, instead of the trace of the concepts.
+     * Never called.
+     *
+     * @tparam Callable_T The type of the callable.
+     * @tparam Args_T The types of the additional arguments.
+     *
+     * @param name The name of the test case.
+     * @param callable The callable.
+     * @param arguments The additional arguments.
+     * @par Returns
+     *   Nothing.
+     */
+    template <typename Callable_T, typename... Args_T>
+      requires (!detail::test_body<Callable_T, Args_T...>)
+    void
+    test (const located_name& name, Callable_T&& callable,
+          Args_T&&... arguments);
+
+    /**
      * @brief Adds a test case to the suite for each value of a range or
      * a tuple, and runs them.
      *
@@ -2489,6 +2594,28 @@ namespace micro_os_plus::micro_test_plus
     template <typename Callable_T, typename... Args_T>
       requires (!detail::static_suite_body<Callable_T, Args_T...>
                 && detail::suite_body<Callable_T, Args_T...>)
+    static_suite (located_name name, runner& test_runner,
+                  Callable_T&& callable, Args_T&&... arguments);
+
+    /**
+     * @brief Rejects a callable that is not a valid suite body.
+     *
+     * @details
+     * Selected for the callables that the constructors do not accept; it
+     * stops the compilation with a message that states what the body
+     * takes, instead of the trace of the concepts. Never called.
+     *
+     * @tparam Callable_T The type of the callable.
+     * @tparam Args_T The types of the additional arguments.
+     *
+     * @param name The name of the suite.
+     * @param test_runner The test runner.
+     * @param callable The callable.
+     * @param arguments The additional arguments.
+     */
+    template <typename Callable_T, typename... Args_T>
+      requires (!detail::static_suite_body<Callable_T, Args_T...>
+                && !detail::suite_body<Callable_T, Args_T...>)
     static_suite (located_name name, runner& test_runner,
                   Callable_T&& callable, Args_T&&... arguments);
 

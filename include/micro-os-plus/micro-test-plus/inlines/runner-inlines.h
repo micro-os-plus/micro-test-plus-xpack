@@ -203,6 +203,21 @@ namespace micro_os_plus::micro_test_plus
     register_suite (std::move (child_suite));
   }
 
+  /**
+   * @details
+   * Never called; the compilation stops in `detail::reject_suite_body()`,
+   * with a message that names the mistake.
+   */
+  template <typename Callable_T, typename... Args_T>
+    requires (!detail::suite_body<Callable_T, Args_T...>)
+  void
+  runner::add_suite ([[maybe_unused]] located_name name,
+                     [[maybe_unused]] Callable_T&& callable,
+                     [[maybe_unused]] Args_T&&... arguments)
+  {
+    detail::reject_suite_body<Callable_T, Args_T...> ();
+  }
+
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**
    * @details

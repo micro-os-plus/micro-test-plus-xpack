@@ -299,6 +299,16 @@ with `auto&`, as in the examples; the parameter may be declared as
 `mt::test_case&` instead, which gives **much shorter compiler diagnostics**
 when the body has a mistake.
 
+A body that cannot be called with a `test_case&` and the additional arguments,
+such as one that takes no parameter, an `int`, or a `mt::suite&`, is **rejected
+with a message** that states what the body of a test case takes, not with the
+trace of the concepts. The bodies of the suites, passed to `add_suite()` or to
+the `static_suite` constructor, are checked in the same way: they take a
+`mt::suite&` first, and they and their additional arguments must be copyable,
+since the suite runs later. A generic body (with an `auto&` parameter) is not
+checked, since checking it would instantiate its code; a mistake inside it is
+reported by the compiler at its place.
+
 The name is a string literal, a `const char*`, a `std::string`, or a
 `std::string_view`, converted implicitly to `located_name`, which copies
 it and also records the location of the `test()` call. A temporary

@@ -412,27 +412,18 @@ namespace
   };
 
   // Whether the bodies of the given types, with the given arguments, are
-  // accepted by the test cases and the suites (#239).
+  // accepted by the test cases and the suites (#239). The functions that
+  // take the bodies have also overloads for the other callables, which stop
+  // the compilation with a message, so the call itself cannot be tested;
+  // the concepts that select them are.
   template <class Body_T, class... Args_T>
-  concept can_test_in_test_case
-      = requires (mt::test_case& t, Body_T&& body, Args_T&&... arguments) {
-          t.test ("t", std::forward<Body_T> (body),
-                  std::forward<Args_T> (arguments)...);
-        };
+  concept can_test_in_test_case = mt::detail::test_body<Body_T, Args_T...>;
 
   template <class Body_T, class... Args_T>
-  concept can_test_in_suite
-      = requires (mt::suite& s, Body_T&& body, Args_T&&... arguments) {
-          s.test ("t", std::forward<Body_T> (body),
-                  std::forward<Args_T> (arguments)...);
-        };
+  concept can_test_in_suite = mt::detail::test_body<Body_T, Args_T...>;
 
   template <class Body_T, class... Args_T>
-  concept can_add_suite_body
-      = requires (mt::runner& r, Body_T&& body, Args_T&&... arguments) {
-          r.add_suite ("s", std::forward<Body_T> (body),
-                       std::forward<Args_T> (arguments)...);
-        };
+  concept can_add_suite_body = mt::detail::suite_body<Body_T, Args_T...>;
 
   // Whether the logical combinators accept operands of the given types.
   template <class... Ts>

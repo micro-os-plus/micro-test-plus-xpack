@@ -396,6 +396,66 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
+     * Always fails the static assertion that applies, since it is called
+     * only when `test_body` is not satisfied. A body written for a suite
+     * is recognised, to say so.
+     */
+    template <typename Callable_T, typename... Args_T>
+    constexpr void
+    reject_test_body (void) noexcept
+    {
+      if constexpr (std::is_invocable_v<std::decay_t<Callable_T>&, suite&,
+                                        std::decay_t<Args_T>&...>)
+        {
+          static_assert (dependent_false_v<Callable_T, Args_T...>,
+                         "the body of a test case takes a test_case& as its "
+                         "first parameter, not a suite&");
+        }
+      else
+        {
+          static_assert (dependent_false_v<Callable_T, Args_T...>,
+                         "the body of a test case takes a test_case& as its "
+                         "first parameter, followed by the additional "
+                         "arguments passed to test ()");
+        }
+    }
+
+    /**
+     * @details
+     * Always fails the static assertion that applies, since it is called
+     * only when `suite_body` is not satisfied. A body that cannot be
+     * copied, or a body written for a test case, is recognised, to say so.
+     */
+    template <typename Callable_T, typename... Args_T>
+    constexpr void
+    reject_suite_body (void) noexcept
+    {
+      if constexpr (not std::is_copy_constructible_v<std::decay_t<Callable_T>>
+                    or not(std::is_copy_constructible_v<std::decay_t<Args_T>>
+                           and ...))
+        {
+          static_assert (dependent_false_v<Callable_T, Args_T...>,
+                         "the body of a suite and its additional arguments "
+                         "must be copyable, since the suite runs later");
+        }
+      else if constexpr (std::is_invocable_v<std::decay_t<Callable_T>&,
+                                             test_case&,
+                                             std::decay_t<Args_T>&...>)
+        {
+          static_assert (dependent_false_v<Callable_T, Args_T...>,
+                         "the body of a suite takes a suite& as its first "
+                         "parameter, not a test_case&");
+        }
+      else
+        {
+          static_assert (dependent_false_v<Callable_T, Args_T...>,
+                         "the body of a suite takes a suite& as its first "
+                         "parameter, followed by the additional arguments");
+        }
+    }
+
+    /**
+     * @details
      * Stores the address of the callable, and the address of the
      * `invoke_callable()` instantiation for its type.
      */
@@ -500,6 +560,21 @@ namespace micro_os_plus::micro_test_plus
     create_test_case (name, parent_suite_, nesting_depth_ + 1,
                       std::forward<Callable_T> (callable),
                       std::forward<Args_T> (arguments)...);
+  }
+
+  /**
+   * @details
+   * Never called; the compilation stops in `detail::reject_test_body()`,
+   * with a message that names the mistake.
+   */
+  template <typename Callable_T, typename... Args_T>
+    requires (!detail::test_body<Callable_T, Args_T...>)
+  void
+  test_case::test ([[maybe_unused]] const located_name& name,
+                   [[maybe_unused]] Callable_T&& callable,
+                   [[maybe_unused]] Args_T&&... arguments)
+  {
+    detail::reject_test_body<Callable_T, Args_T...> ();
   }
 
   /**
@@ -888,6 +963,21 @@ namespace micro_os_plus::micro_test_plus
                       std::forward<Args_T> (arguments)...);
   }
 
+  /**
+   * @details
+   * Never called; the compilation stops in `detail::reject_test_body()`,
+   * with a message that names the mistake.
+   */
+  template <typename Callable_T, typename... Args_T>
+    requires (!detail::test_body<Callable_T, Args_T...>)
+  void
+  suite::test ([[maybe_unused]] const located_name& name,
+               [[maybe_unused]] Callable_T&& callable,
+               [[maybe_unused]] Args_T&&... arguments)
+  {
+    detail::reject_test_body<Callable_T, Args_T...> ();
+  }
+
   // --------------------------------------------------------------------------
 
   namespace detail
@@ -1068,6 +1158,24 @@ namespace micro_os_plus::micro_test_plus
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED
 
     link_or_reject ();
+  }
+
+  /**
+   * @details
+   * Never called; the compilation stops in `detail::reject_suite_body()`,
+   * with a message that names the mistake. The base suite is built with a
+   * valid empty body, so that the error is the only one, and the suite is
+   * not linked.
+   */
+  template <typename Callable_T, typename... Args_T>
+    requires (!detail::static_suite_body<Callable_T, Args_T...>
+              && !detail::suite_body<Callable_T, Args_T...>)
+  static_suite::static_suite (located_name name, runner& test_runner,
+                              [[maybe_unused]] Callable_T&& callable,
+                              [[maybe_unused]] Args_T&&... arguments)
+      : suite{ std::move (name), test_runner, [] (suite&) noexcept {} }
+  {
+    detail::reject_suite_body<Callable_T, Args_T...> ();
   }
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
