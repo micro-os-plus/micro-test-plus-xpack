@@ -526,6 +526,13 @@ feed FAILED (checks.cpp:390)
     • Not thrown exceptions
         ✓ exception not thrown
     ✓ Not thrown exceptions - passed (1 check)
+    • Mutable callables
+        ✓ mutable lambda thrown
+        ✓ mutable lambda, std::runtime_error thrown
+        ✓ mutable lambda not thrown
+        ✓ mutable lambda lvalue
+        ✓ the lvalue is called, not copied
+    ✓ Mutable callables - passed (5 checks)
     • Failed not thrown exceptions
         ✗ exception not thrown FAILED (exceptions.cpp:182, nothrow, but an exception of unknown type was thrown)
         ✗ std::exception not thrown FAILED (exceptions.cpp:186, nothrow, but a std::exception was thrown: "boom")
@@ -571,7 +578,7 @@ feed FAILED (checks.cpp:390)
         ✓ later suite run
         ✓ exception counted as a failed check
     ✓ Exception in a suite body - passed (3 checks)
-✗ Exceptions suite - FAILED (11 checks passed, 16 failed, in 16 test cases), time: 1.414 ms
+✗ Exceptions suite - FAILED (16 checks passed, 16 failed, in 17 test cases), time: 3.262 ms
 • Exceptions suite body
     • Test case before the exception
         ✓ check before the exception
@@ -1473,4 +1480,4 @@ next line FAILED (miscellaneous.cpp:939)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.235 ms
-✗ Total: 714 checks passed, 375 failed, in 175 test cases, 15 test suites, time: 24.981 ms
+✗ Total: 719 checks passed, 375 failed, in 176 test cases, 15 test suites, time: 35.656 ms

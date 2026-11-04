@@ -69,6 +69,24 @@ template <class Counters_T>
 concept increments_executed
     = requires (Counters_T& c) { c.increment_executed_test_cases (); };
 
+#if defined(__cpp_exceptions)
+// Satisfied when the exception checks accept the value as the callable;
+// the template makes the constraint part of the substitution.
+template <class Callable_T>
+concept accepted_by_throws
+    = requires (Callable_T&& f) { mt::throws (std::forward<Callable_T> (f)); };
+
+template <class Callable_T>
+concept accepted_by_throws_int = requires (Callable_T&& f) {
+  mt::throws<int> (std::forward<Callable_T> (f));
+};
+
+template <class Callable_T>
+concept accepted_by_nothrow = requires (Callable_T&& f) {
+  mt::nothrow (std::forward<Callable_T> (f));
+};
+#endif // defined(__cpp_exceptions)
+
 template <class Counters_T>
 concept adds_counters
     = requires (Counters_T& c, const Counters_T& o) { c += o; };
@@ -1380,6 +1398,20 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (
         mt::extension::printable<decltype (mt::throws<int> (returns))>);
     static_assert (mt::extension::printable<decltype (mt::nothrow (returns))>);
+
+    // Anything that is invocable without arguments, as an lvalue, is
+    // accepted, including a `mutable` lambda; the other values are
+    // rejected by the constraint of the functions.
+    [[maybe_unused]] auto changes = [n = 0] () mutable { return ++n; };
+    static_assert (accepted_by_throws<decltype (changes)&>);
+    static_assert (accepted_by_throws_int<decltype (changes)&>);
+    static_assert (accepted_by_nothrow<decltype (changes)&>);
+    static_assert (accepted_by_nothrow<decltype (changes)>);
+    static_assert (accepted_by_throws<decltype (returns)>);
+    static_assert (not accepted_by_throws<int>);
+    static_assert (not accepted_by_throws_int<int>);
+    static_assert (not accepted_by_nothrow<int>);
+    static_assert (not accepted_by_throws<void (*) (int)>);
   }
 #endif // defined(__cpp_exceptions)
 

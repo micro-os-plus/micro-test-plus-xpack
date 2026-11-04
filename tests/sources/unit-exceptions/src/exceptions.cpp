@@ -184,6 +184,48 @@ static mt::static_suite ts_exceptions{ "Exceptions suite", tr,
 
     // ------------------------------------------------------------------------
 
+    // The callables may change their state, such as the `mutable` lambdas
+    // and the functors with a non-const call operator, which are called as
+    // lvalues.
+    ts.test ("Mutable callables", [] (auto& t)
+      {
+        int calls = 0;
+
+        t.expect (mt::throws (
+            [calls] () mutable
+          {
+            ++calls;
+            throw 1;
+          }))
+            << "mutable lambda thrown";
+        t.expect (mt::throws<std::runtime_error> (
+            [calls] () mutable
+          {
+            ++calls;
+            throw std::runtime_error{ "" };
+          }))
+            << "mutable lambda, std::runtime_error thrown";
+        t.expect (mt::nothrow ([calls] () mutable { ++calls; }))
+            << "mutable lambda not thrown";
+        local_counts.passed_checks += 3;
+
+        auto counter = [&calls] () mutable { ++calls; };
+        t.expect (mt::nothrow (counter)) << "mutable lambda lvalue";
+        t.expect (mt::eq (calls, 1)) << "the lvalue is called, not copied";
+        local_counts.passed_checks += 2;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    // ------------------------------------------------------------------------
+
     ts.test ("Failed not thrown exceptions", [] (auto& t)
       {
         t.expect (mt::nothrow ([] { exercise_throw (true); }))

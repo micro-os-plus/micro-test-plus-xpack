@@ -881,7 +881,8 @@ namespace micro_os_plus::micro_test_plus
 
     template <class Exception_T>
     template <class Callable_T>
-    throws_op<Exception_T>::throws_op (const Callable_T& func)
+      requires std::invocable<Callable_T&>
+    throws_op<Exception_T>::throws_op (Callable_T&& func)
         : callable_op{ [&func] () -> callable_result
       {
         try
@@ -928,7 +929,8 @@ namespace micro_os_plus::micro_test_plus
      * rethrown.
      */
     template <class Callable_T>
-    throws_op<void>::throws_op (const Callable_T& func)
+      requires std::invocable<Callable_T&>
+    throws_op<void>::throws_op (Callable_T&& func)
         : callable_op{ [&func] () -> callable_result
       {
         try
@@ -964,7 +966,8 @@ namespace micro_os_plus::micro_test_plus
      * rethrown.
      */
     template <class Callable_T>
-    nothrow_op::nothrow_op (const Callable_T& func)
+      requires std::invocable<Callable_T&>
+    nothrow_op::nothrow_op (Callable_T&& func)
         : callable_op{ [&func] () -> callable_result
       {
         try

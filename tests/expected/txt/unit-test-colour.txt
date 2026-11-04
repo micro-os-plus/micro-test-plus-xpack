@@ -597,6 +597,14 @@ feed [31mFAILED[0m (checks.cpp:390)
         [32m✓[0m exception not thrown
     [32m✓[0m Not thrown exceptions - passed (1 check)
 
+    • Mutable callables
+        [32m✓[0m mutable lambda thrown
+        [32m✓[0m mutable lambda, std::runtime_error thrown
+        [32m✓[0m mutable lambda not thrown
+        [32m✓[0m mutable lambda lvalue
+        [32m✓[0m the lvalue is called, not copied
+    [32m✓[0m Mutable callables - passed (5 checks)
+
     • Failed not thrown exceptions
         [31m✗[0m exception not thrown [31mFAILED[0m (exceptions.cpp:189, [31mnothrow, but an exception of unknown type was thrown[0m)
         [31m✗[0m std::exception not thrown [31mFAILED[0m (exceptions.cpp:193, [31mnothrow, but a std::exception was thrown: "boom"[0m)
@@ -655,7 +663,7 @@ feed [31mFAILED[0m (checks.cpp:390)
         [32m✓[0m exception counted as a failed check
     [32m✓[0m Exception in a suite body - passed (3 checks)
 
-[31m✗[0m Exceptions suite - [31mFAILED[0m (11 checks passed, 16 failed, in 16 test cases), time: 1.283 ms
+[31m✗[0m Exceptions suite - [31mFAILED[0m (16 checks passed, 16 failed, in 17 test cases), time: 2.100 ms
 
 • Exceptions suite body
 
@@ -1701,6 +1709,6 @@ Matching test cases:
 
 [31m✗[0m Utility suite - [31mFAILED[0m (21 checks passed, 5 failed, in 3 test cases), time: 0.161 ms
 
-[31m✗[0m Total: 714 checks passed, 375 failed, in 175 test cases, 15 test suites, time: 17.472 ms
+[31m✗[0m Total: 719 checks passed, 375 failed, in 176 test cases, 15 test suites, time: 26.547 ms
 Overall, the µTest++ unit tests were successful!
 

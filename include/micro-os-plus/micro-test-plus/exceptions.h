@@ -87,15 +87,18 @@ namespace micro_os_plus::micro_test_plus
    * the report states what was thrown.
    *
    * @tparam Exception_T The type of the exception expected to be thrown.
-   * @tparam Callable_T The type of the callable object to be invoked.
+   * @tparam Callable_T The type of the callable object to be invoked; it
+   * must be invocable without arguments, as an lvalue, so a `mutable`
+   * lambda is accepted.
    * @param func The callable object to check for exception throwing
    * behaviour.
    * @return An object of an unspecified type, holding the result, to be
    * passed to `expect()` or `require()`.
    */
   template <class Exception_T, class Callable_T>
+    requires std::invocable<Callable_T&>
   [[nodiscard]] auto
-  throws (const Callable_T& func);
+  throws (Callable_T&& func);
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-cpp-api-exceptions
@@ -106,29 +109,35 @@ namespace micro_os_plus::micro_test_plus
    * The callable is invoked once, immediately. The check passes if it
    * throws an exception of any type.
    *
-   * @tparam Callable_T The type of the callable object to be invoked.
+   * @tparam Callable_T The type of the callable object to be invoked; it
+   * must be invocable without arguments, as an lvalue, so a `mutable`
+   * lambda is accepted.
    * @param func The callable object to check for exception throwing
    * behaviour.
    * @return An object of an unspecified type, holding the result, to be
    * passed to `expect()` or `require()`.
    */
   template <class Callable_T>
+    requires std::invocable<Callable_T&>
   [[nodiscard]] auto
-  throws (const Callable_T& func);
+  throws (Callable_T&& func);
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-cpp-api-exceptions
    * @brief Checks whether a callable does not throw any exception, for
    * `expect()` or `require()`.
    *
-   * @tparam Callable_T The type of the callable object to be invoked.
+   * @tparam Callable_T The type of the callable object to be invoked; it
+   * must be invocable without arguments, as an lvalue, so a `mutable`
+   * lambda is accepted.
    * @param func The callable object to check.
    * @return An object of an unspecified type, holding the result, to be
    * passed to `expect()` or `require()`.
    */
   template <class Callable_T>
+    requires std::invocable<Callable_T&>
   [[nodiscard]] auto
-  nothrow (const Callable_T& func);
+  nothrow (Callable_T&& func);
 
 #endif // defined(__cpp_exceptions)
 

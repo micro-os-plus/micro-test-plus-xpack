@@ -213,6 +213,7 @@ feed FAILED (checks.cpp:390)
     ✗ Failed thrown exceptions - FAILED (0 checks passed, 4 failed)
 
     ✓ Not thrown exceptions - passed (1 check)
+    ✓ Mutable callables - passed (5 checks)
 
     • Failed not thrown exceptions
         ✗ exception not thrown FAILED (exceptions.cpp:182, nothrow, but an exception of unknown type was thrown)
@@ -264,7 +265,7 @@ feed FAILED (checks.cpp:390)
 
     ✓ Exception in a suite body - passed (3 checks)
 
-✗ Exceptions suite - FAILED (11 checks passed, 16 failed, in 16 test cases), time: 1.106 ms
+✗ Exceptions suite - FAILED (16 checks passed, 16 failed, in 17 test cases), time: 2.214 ms
 
 • Exceptions suite body
 
@@ -797,6 +798,6 @@ Matching test cases:
 
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.102 ms
 
-✗ Total: 714 checks passed, 375 failed, in 175 test cases, 15 test suites, time: 24.477 ms
+✗ Total: 719 checks passed, 375 failed, in 176 test cases, 15 test suites, time: 24.678 ms
 Overall, the µTest++ unit tests were successful!
 

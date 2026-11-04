@@ -60,6 +60,7 @@
 
 #include <algorithm>
 #include <compare>
+#include <concepts>
 #include <cstddef>
 #include <cstdio>
 #include <string>
@@ -1445,11 +1446,14 @@ namespace micro_os_plus::micro_test_plus
        * @brief Constructs an exception checking operator for the given
        * callable.
        *
-       * @tparam Callable_T The type of the callable object to be invoked.
+       * @tparam Callable_T The type of the callable object to be invoked;
+       * it must be invocable without arguments, as an lvalue, so a
+       * `mutable` lambda is accepted.
        * @param func The callable object to be invoked.
        */
       template <class Callable_T>
-      explicit throws_op (const Callable_T& func);
+        requires std::invocable<Callable_T&>
+      explicit throws_op (Callable_T&& func);
     };
 
     // ========================================================================
@@ -1474,11 +1478,14 @@ namespace micro_os_plus::micro_test_plus
        * @brief Constructs an exception checking operator for the given
        * callable.
        *
-       * @tparam Callable_T The type of the callable object to be invoked.
+       * @tparam Callable_T The type of the callable object to be invoked;
+       * it must be invocable without arguments, as an lvalue, so a
+       * `mutable` lambda is accepted.
        * @param func The callable object to be invoked.
        */
       template <class Callable_T>
-      explicit throws_op (const Callable_T& func);
+        requires std::invocable<Callable_T&>
+      explicit throws_op (Callable_T&& func);
     };
 
     // ========================================================================
@@ -1504,11 +1511,14 @@ namespace micro_os_plus::micro_test_plus
        * @brief Constructs a nothrow checking operator for the given
        * callable.
        *
-       * @tparam Callable_T The type of the callable object to be invoked.
+       * @tparam Callable_T The type of the callable object to be invoked;
+       * it must be invocable without arguments, as an lvalue, so a
+       * `mutable` lambda is accepted.
        * @param func The callable object to be invoked.
        */
       template <class Callable_T>
-      explicit nothrow_op (const Callable_T& func);
+        requires std::invocable<Callable_T&>
+      explicit nothrow_op (Callable_T&& func);
     };
 
 #endif // defined(__cpp_exceptions)

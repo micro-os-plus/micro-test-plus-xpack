@@ -349,16 +349,23 @@ It is also possible to check various **exception-related conditions**.
 ```cpp
 // Check for any exception.
 template <class Callable_T>
-auto throws (const Callable_T& expr);
+  requires std::invocable<Callable_T&>
+auto throws (Callable_T&& func);
 
 // Check for a specific exception.
 template <class Exception_T, class Callable_T>
-auto throws (const Callable_T& expr);
+  requires std::invocable<Callable_T&>
+auto throws (Callable_T&& func);
 
 // Check for no exception at all.
 template <class Callable_T>
-auto nothrow (const Callable_T& expr);
+  requires std::invocable<Callable_T&>
+auto nothrow (Callable_T&& func);
 ```
+
+The callable is invoked once, immediately, with no arguments, as an lvalue, so
+it can be a lambda (including a `mutable` one), a functor, or a function; a
+value that cannot be called without arguments is rejected by the constraint.
 
 The first form passes if the callable throws an exception of any type, the
 second if it throws an exception of the given type or of a type derived from it

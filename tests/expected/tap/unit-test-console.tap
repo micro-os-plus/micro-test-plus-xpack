@@ -650,6 +650,7 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
         1..4
     not ok 2 - Failed thrown exceptions # { FAILED, 0 checks passed, 4 failed }
     ok 3 - Not thrown exceptions # { passed, 1 check }
+    ok 4 - Mutable callables # { passed, 5 checks }
 
     # Subtest: Failed not thrown exceptions
         not ok 1 - exception not thrown
@@ -667,7 +668,7 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
             lineNumber: 193
           ...
         1..2
-    not ok 4 - Failed not thrown exceptions # { FAILED, 0 checks passed, 2 failed }
+    not ok 5 - Failed not thrown exceptions # { FAILED, 0 checks passed, 2 failed }
 
     # Subtest: Unexpected std::exception
         ok 1
@@ -678,7 +679,7 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
             lineNumber: 216
           ...
         1..2
-    not ok 5 - Unexpected std::exception # { FAILED, 1 check passed, 1 failed }
+    not ok 6 - Unexpected std::exception # { FAILED, 1 check passed, 1 failed }
 
     # Subtest: Unexpected exception of unknown type
         not ok 1 - unexpected exception of unknown type
@@ -688,7 +689,7 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
             lineNumber: 230
           ...
         1..1
-    not ok 6 - Unexpected exception of unknown type # { FAILED, 0 checks passed, 1 failed }
+    not ok 7 - Unexpected exception of unknown type # { FAILED, 0 checks passed, 1 failed }
 
     # Subtest: Unexpected exception in nested test case
         # Subtest: nested test case
@@ -703,7 +704,7 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
 
         ok 2
         1..2
-    not ok 7 - Unexpected exception in nested test case # { FAILED, 1 check passed, 0 failed, 1 test case failed }
+    not ok 8 - Unexpected exception in nested test case # { FAILED, 1 check passed, 0 failed, 1 test case failed }
 
     # Subtest: Failed require
         ok 1
@@ -714,7 +715,7 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
             lineNumber: 283
           ...
         1..2
-    not ok 8 - Failed require # { FAILED, 1 check passed, 1 failed }
+    not ok 9 - Failed require # { FAILED, 1 check passed, 1 failed }
 
     # Subtest: Failed require in nested test case
         # Subtest: nested test case
@@ -729,7 +730,7 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
 
         ok 2
         1..2
-    not ok 9 - Failed require in nested test case # { FAILED, 1 check passed, 0 failed, 1 test case failed }
+    not ok 10 - Failed require in nested test case # { FAILED, 1 check passed, 0 failed, 1 test case failed }
 
     # Subtest: Failed require in throws
         not ok 1 - in throws
@@ -739,7 +740,7 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
             lineNumber: 319
           ...
         1..1
-    not ok 10 - Failed require in throws # { FAILED, 0 checks passed, 1 failed }
+    not ok 11 - Failed require in throws # { FAILED, 0 checks passed, 1 failed }
 
     # Subtest: Failed require in throws with a type
         not ok 1 - in typed throws
@@ -749,7 +750,7 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
             lineNumber: 330
           ...
         1..1
-    not ok 11 - Failed require in throws with a type # { FAILED, 0 checks passed, 1 failed }
+    not ok 12 - Failed require in throws with a type # { FAILED, 0 checks passed, 1 failed }
 
     # Subtest: Failed require in nothrow
         not ok 1 - in nothrow
@@ -759,7 +760,7 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
             lineNumber: 340
           ...
         1..1
-    not ok 12 - Failed require in nothrow # { FAILED, 0 checks passed, 1 failed }
+    not ok 13 - Failed require in nothrow # { FAILED, 0 checks passed, 1 failed }
 
     # Subtest: Failed require during unwinding
         not ok 1
@@ -775,11 +776,11 @@ ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, t
             lineNumber: 350
           ...
         1..2
-    not ok 13 - Failed require during unwinding # { FAILED, 0 checks passed, 2 failed }
-    ok 14 - Exception in a suite body # { passed, 3 checks }
+    not ok 14 - Failed require during unwinding # { FAILED, 0 checks passed, 2 failed }
+    ok 15 - Exception in a suite body # { passed, 3 checks }
 
-    1..14
-not ok 7 - Exceptions suite # { FAILED, 11 checks passed, 16 failed, in 16 test cases, time: 1.347 ms }
+    1..15
+not ok 7 - Exceptions suite # { FAILED, 16 checks passed, 16 failed, in 17 test cases, time: 1.435 ms }
 
 # Subtest: Exceptions suite body
     ok 1 - Test case before the exception # { passed, 1 check }
@@ -3096,6 +3097,6 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.133 ms }
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.134 ms }
 
 1..15
-# { total: 714 checks passed, 375 failed, in 175 test cases, 15 test suites, time: 19.969 ms }
+# { total: 719 checks passed, 375 failed, in 176 test cases, 15 test suites, time: 18.911 ms }
 Overall, the µTest++ unit tests were successful!
 
