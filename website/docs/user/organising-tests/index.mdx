@@ -386,15 +386,19 @@ ts.test ("Parse configuration", [] (auto& t)
 ```
 
 A test case started on the suite, with `ts.test()`, from the body of a
-running test case (for example via a captured suite reference), cannot
-follow it in the report, since the running test case has not ended; it
+running test case of that suite (for example via a captured suite reference),
+cannot follow it in the report, since the running test case has not ended; it
 runs nested in the innermost running test case, as if `t.test()` had
 been called.
 
-A test case can be started only on a suite whose body is running. A call on
-any other suite, for example on a static suite from `main()`, before the runner
-was initialised, or after `run_suites()` returned, is rejected: the failure is
-reported in the running suite, or on `stderr` when no suite runs, and
+A test case can be started only on a suite whose body is running, and nested
+only on the test case that runs. A call on any other suite, for example on a
+static suite from `main()`, before the runner was initialised, or after
+`run_suites()` returned, or on a suite other than the running one, from the
+body of a test case, is rejected. The same happens to `t.test()` called on an
+outer test case while a nested one runs. The rejected test case is not run;
+the failure is reported as a failed check of the running test case, or, when
+none runs, in the running suite, or on `stderr` when no suite runs, and
 `run_suites()` returns 1.
 
 The counts of the outer test case **do not include the checks of its nested

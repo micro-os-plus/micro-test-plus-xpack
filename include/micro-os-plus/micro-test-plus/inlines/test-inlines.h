@@ -454,7 +454,8 @@ namespace micro_os_plus::micro_test_plus
    * @details
    * Creates and runs the child test case with `create_test_case()`, in
    * the parent suite of this test case, one level of nesting deeper than
-   * this test case.
+   * this test case. When another test case is running, the call is
+   * rejected with `report_misdirected_test()`, and the child is not run.
    */
   template <typename Callable_T, typename... Args_T>
     requires detail::test_body<Callable_T, Args_T...>
@@ -465,6 +466,12 @@ namespace micro_os_plus::micro_test_plus
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED)
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
+
+    if (is_misdirected ()) [[unlikely]]
+      {
+        report_misdirected_test (name);
+        return;
+      }
 
     create_test_case (name, parent_suite_, nesting_depth_ + 1,
                       std::forward<Callable_T> (callable),
@@ -780,9 +787,9 @@ namespace micro_os_plus::micro_test_plus
    * checks.
    *
    * It is typically invoked within the body of a suite. When invoked
-   * from the body of a running test case (for example via a captured
-   * suite reference), the new test case could not be reported as a
-   * sibling of the running one, which has not ended; it is therefore
+   * from the body of a running test case of this suite (for example via
+   * a captured suite reference), the new test case could not be reported
+   * as a sibling of the running one, which has not ended; it is therefore
    * created by the innermost running test case, with `test_case::test()`,
    * and runs nested in it, as if `test()` had been called on that test
    * case.
@@ -817,15 +824,18 @@ namespace micro_os_plus::micro_test_plus
     trace::printf ("%s '%s'\n", __PRETTY_FUNCTION__, name.name ());
 #endif // MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED
 
-    // Called from inside a running test case; run nested in it.
-    if (class test_case* running = running_test_case (); running != nullptr)
+    // Called from inside a running test case of this suite; run nested in
+    // it. A running test case of another suite does not qualify; the call
+    // is then rejected below, as for any suite that is not running.
+    if (class test_case* running = running_test_case ();
+        running != nullptr && has_running_test_case_of (*this))
       {
         running->test (name, std::forward<Callable_T> (callable),
                        std::forward<Args_T> (arguments)...);
         return;
       }
 
-    if (!accepts_test_case (*this, name.name ()))
+    if (!accepts_test_case (*this, name))
       {
         return;
       }

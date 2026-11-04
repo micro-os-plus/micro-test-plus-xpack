@@ -988,6 +988,9 @@ next line FAILED (miscellaneous.cpp:939)
         ✓ a test case started on a suite that is not running fails
         ✓ a test case started after run_suites() is not run
     ✓ Misplaced test cases - passed (2 checks)
+    • Misdirected test cases
+        ✓ the misdirected test cases are not run, and fail the running test case
+    ✓ Misdirected test cases - passed (1 check)
     • Early test cases
         ✓ a test case started before initialise() is rejected
     ✓ Early test cases - passed (1 check)
@@ -1178,7 +1181,7 @@ next line FAILED (miscellaneous.cpp:939)
         ✓ C string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (9 checks)
-✗ Miscellaneous suite - FAILED (211 checks passed, 8 failed, in 54 test cases), time: 10.708 ms
+✗ Miscellaneous suite - FAILED (212 checks passed, 8 failed, in 55 test cases), time: 9.027 ms
 • Operands suite
     • Arrays
         ✓ array{ 42 } == array{ 42 }
@@ -1470,4 +1473,4 @@ next line FAILED (miscellaneous.cpp:939)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.235 ms
-✗ Total: 713 checks passed, 375 failed, in 174 test cases, 15 test suites, time: 22.726 ms
+✗ Total: 714 checks passed, 375 failed, in 175 test cases, 15 test suites, time: 24.981 ms

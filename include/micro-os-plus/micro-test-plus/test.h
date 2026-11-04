@@ -595,6 +595,25 @@ namespace micro_os_plus::micro_test_plus
       running_test_case (void) const noexcept;
 
       /**
+       * @brief Checks whether the innermost running test case belongs to
+       * a suite.
+       *
+       * @details
+       * Protected, since it is used only by `suite::test()`, to forward
+       * a test case started on the suite to the running test case only
+       * when that is a test case of the same suite; the test cases
+       * started on another suite are rejected.
+       *
+       * @param target The suite to check.
+       * @retval true A test case is running, and its parent suite is
+       * @p target.
+       * @retval false No test case is running, or it belongs to another
+       * suite.
+       */
+      [[nodiscard]] bool
+      has_running_test_case_of (const suite& target) const noexcept;
+
+      /**
        * @brief Checks whether the test execution was aborted by the
        * owning runner.
        *
@@ -655,7 +674,8 @@ namespace micro_os_plus::micro_test_plus
        * another suite, on a static suite before the runner was
        * initialised, or after `runner::run_suites()` returned, would
        * run the test case where its results cannot be reported
-       * correctly. Such a call is rejected: the failure is reported in
+       * correctly. Such a call is rejected: the failure is reported as a
+       * failed check of the running test case, if one runs, otherwise in
        * the running suite, or, when no suite runs, on `stderr`, and the
        * rejection is remembered by the runner, which makes the exit code
        * non-zero. When the session was declined (option errors, or
@@ -663,12 +683,13 @@ namespace micro_os_plus::micro_test_plus
        * `after_test_case_create()` ignores them.
        *
        * @param target The suite on which the test case is created.
-       * @param name The name of the test case, for the message.
+       * @param name The name and the location of the test case, for the
+       * message.
        * @retval true The test case can be created.
        * @retval false The test case must not be created.
        */
       [[nodiscard]] bool
-      accepts_test_case (const suite& target, const char* name);
+      accepts_test_case (const suite& target, const located_name& name);
 
       /**
        * @brief Advances to the next child test point, and returns its
@@ -1314,6 +1335,16 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Adds a nested test case to this test case, and runs it.
      *
+     * @details
+     * Valid only while this test case is the innermost running one,
+     * for example from its body, or from the body of a nested test
+     * case that does not use the parameter of the outer one. When called
+     * on this test case while another one runs (an outer test case
+     * captured by a nested body), the nested test case would be
+     * reported inside the other one, with the numbering of this one;
+     * it is therefore not run, and a failed check is reported in the
+     * running test case.
+     *
      * @tparam Callable_T The type of a callable object.
      * @tparam Args_T The types of the callable arguments.
      *
@@ -1671,6 +1702,44 @@ namespace micro_os_plus::micro_test_plus
     report_misdirected (detail::check_kind kind,
                         const reflection::source_location& sl,
                         detail::check_result&& result);
+
+    /**
+     * @brief Reports a nested test case started on this test case as a
+     * failure of the running one.
+     *
+     * @details
+     * Called by `test()` when another test case is running. The nested
+     * test case is not run; a failed check, with a message that names
+     * the three test cases, is reported in the running test case, with
+     * the numbering and the counting of the other checks, by
+     * `report_rejected_test()`. Non-template, defined in `src/test.cpp`.
+     *
+     * @param name The name and the location of the rejected test case.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    report_misdirected_test (const located_name& name);
+
+    /**
+     * @brief Reports a rejected test case as a failed check of this test
+     * case.
+     *
+     * @details
+     * Called on the running test case, by `report_misdirected_test()` and
+     * by `runnable_base::accepts_test_case()`, when a test case is
+     * started where it cannot be reported. The failed check is counted
+     * and numbered as any other check of this test case, so that its
+     * plan stays valid. Non-template, defined in `src/test.cpp`.
+     *
+     * @param message The message of the failure.
+     * @param location The location of the rejected `test()` call.
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    report_rejected_test (const std::string& message,
+                          const reflection::source_location& location);
 
     /**
      * @brief Executes the test case body by invoking the referred

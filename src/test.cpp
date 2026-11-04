@@ -192,6 +192,19 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
+     * Reads the pointer of the runner, a friend, and the parent suite
+     * of the test case, which `runnable_base` may access.
+     */
+    bool
+    runnable_base::has_running_test_case_of (
+        const suite& target) const noexcept
+    {
+      const test_case* running = runner_.running_test_case_;
+      return running != nullptr && &running->parent_suite_ == &target;
+    }
+
+    /**
+     * @details
      * Sets the pointer of the runner, a friend, and returns the previous
      * value, so that the caller can restore it when the body returns.
      */
@@ -209,17 +222,20 @@ namespace micro_os_plus::micro_test_plus
      * was declined, or aborted, the test case is ignored, as
      * `after_test_case_create()` ignores it.
      *
-     * Otherwise the call is rejected. If a suite runs (and the test
+     * Otherwise the call is rejected. If a test case runs (and the test
      * cases are not only listed), the failure is reported as a check of
-     * that suite, with the same numbering and counting as the
-     * unexpected exceptions of the suite body. Otherwise (the runner
+     * that test case, so that it stays in its report. Otherwise, if a
+     * suite runs, the failure is reported as a check of that suite, with
+     * the same numbering and counting as the unexpected exceptions of the
+     * suite body. Otherwise (the runner
      * was not initialised, has not started the suites, or has finished
      * them) the message is
      * written to `stderr`, and `runner::mark_rejected()` makes the exit
      * code non-zero, as for the suites added too late.
      */
     bool
-    runnable_base::accepts_test_case (const suite& target, const char* name)
+    runnable_base::accepts_test_case (const suite& target,
+                                      const located_name& name)
     {
       if (runner_.running_suite_ == &target)
         {
@@ -233,10 +249,18 @@ namespace micro_os_plus::micro_test_plus
         }
 
       std::string message{ "test case '" };
-      message.append (name);
+      message.append (name.name ());
       message.append ("' started on suite '");
       message.append (target.name ());
       message.append ("', which is not running");
+
+      if (runner_.running_test_case_ != nullptr
+          && !runner_.options_.list_tests)
+        {
+          runner_.running_test_case_->report_rejected_test (message,
+                                                            name.location ());
+          return false;
+        }
 
       suite* running = runner_.running_suite_;
       if (running != nullptr && !runner_.options_.list_tests)
@@ -415,6 +439,46 @@ namespace micro_os_plus::micro_test_plus
                  running.test_reporter ().writes_passed_checks ());
 
     return std::move (std::move (result) << message);
+  }
+
+  /**
+   * @details
+   * Reports a failed check in the running test case, with a message that
+   * names the rejected test case, this one, and the running one, so that
+   * the numbering of the test points, the counting, and the plan of the
+   * running test case stay valid, at the location of the rejected
+   * `test()` call.
+   */
+  void
+  test_case::report_misdirected_test (const located_name& name)
+  {
+    test_case& running = *running_test_case ();
+
+    std::string message{ "[test case '" };
+    message.append (name.name ());
+    message.append ("' started on test case '");
+    message.append (this->name ());
+    message.append ("' while '");
+    message.append (running.name ());
+    message.append ("' runs]");
+
+    running.report_rejected_test (message, name.location ());
+  }
+
+  /**
+   * @details
+   * The check is built as the ones of `report_misdirected()`, always
+   * failed, and is reported when it goes out of scope.
+   */
+  void
+  test_case::report_rejected_test (const std::string& message,
+                                   const reflection::source_location& location)
+  {
+    detail::check_result result;
+    result.init (false, detail::check_kind::expectation, location, *this,
+                 test_reporter ().expression_,
+                 test_reporter ().writes_passed_checks ());
+    std::move (result) << message;
   }
 
   // ==========================================================================

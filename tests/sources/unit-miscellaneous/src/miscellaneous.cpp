@@ -1137,22 +1137,69 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
         wrong_runner.add_suite ("Child", [&wrong_top] (mt::suite& s)
           {
             s.test ("Added test", [] (auto& lt) { lt.expect (true); });
-            wrong_top.test ("Wrong test", [] (auto& lt) { lt.expect (false); });
+            wrong_top.test ("Wrong test",
+                            [] (auto& lt) { lt.expect (false); });
           });
 
-        t.expect (mt::eq (wrong_runner.run_suites (), 1)
-                  and mt::eq (wrong_runner.totals ().failed_checks (), 1u)
-                  and mt::eq (wrong_runner.totals ().executed_test_cases (),
-                              1u))
+        t.expect (
+            mt::eq (wrong_runner.run_suites (), 1)
+            and mt::eq (wrong_runner.totals ().failed_checks (), 1u)
+            and mt::eq (wrong_runner.totals ().executed_test_cases (), 1u))
             << "a test case started on a suite that is not running fails";
         local_counts.passed_checks++;
 
         wrong_top.test ("Too late", [] (auto& lt) { lt.expect (false); });
 
-        t.expect (mt::eq (wrong_runner.run_suites (), 1)
-                  and mt::eq (wrong_runner.totals ().executed_test_cases (),
-                              1u))
+        t.expect (
+            mt::eq (wrong_runner.run_suites (), 1)
+            and mt::eq (wrong_runner.totals ().executed_test_cases (), 1u))
             << "a test case started after run_suites() is not run";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    // A test case started while another test case runs, on an outer test
+    // case or on a suite that is not running, is not run; the failure is
+    // reported as a check of the running test case, so that its report
+    // stays valid.
+    ts.test ("Misdirected test cases", [] (auto& t)
+      {
+        mt::runner_options options{};
+        options.verbosity_level = mt::verbosity::silent;
+
+        mt::runner misdirected_runner;
+        misdirected_runner.initialise (options);
+
+        mt::suite* other_suite = nullptr;
+        misdirected_runner.add_suite ("Other", [&other_suite] (mt::suite& s)
+          {
+            other_suite = &s;
+            s.test ("Other test", [] (auto& lt) { lt.expect (true); });
+          });
+        misdirected_runner.add_suite ("Running", [&other_suite] (mt::suite& s)
+          {
+            s.test ("Outer", [&other_suite] (auto& outer)
+              {
+                outer.test ("Inner", [&outer, &other_suite] (auto& inner)
+                  {
+                    inner.expect (true);
+                    outer.test ("Sibling",
+                                [] (auto& lt) { lt.expect (false); });
+                    other_suite->test ("Wrong",
+                                       [] (auto& lt) { lt.expect (false); });
+                  });
+              });
+          });
+
+        t.expect (
+            mt::eq (misdirected_runner.run_suites (), 1)
+            and mt::eq (misdirected_runner.totals ().passed_checks (), 2u)
+            and mt::eq (misdirected_runner.totals ().failed_checks (), 2u)
+            and mt::eq (misdirected_runner.totals ().executed_test_cases (),
+                        3u))
+            << "the misdirected test cases are not run, and fail the "
+               "running test case";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
@@ -1173,9 +1220,9 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
         options.verbosity_level = mt::verbosity::silent;
         early_runner.initialise (options);
 
-        t.expect (mt::eq (early_runner.run_suites (), 1)
-                  and mt::eq (early_runner.totals ().executed_test_cases (),
-                              0u))
+        t.expect (
+            mt::eq (early_runner.run_suites (), 1)
+            and mt::eq (early_runner.totals ().executed_test_cases (), 0u))
             << "a test case started before initialise() is rejected";
         local_counts.passed_checks++;
 
