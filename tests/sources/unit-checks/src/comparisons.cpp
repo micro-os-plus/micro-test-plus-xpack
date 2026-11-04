@@ -449,6 +449,53 @@ static mt::static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
 
     // -------------------------------------------------------------------------
 
+    // The wide and Unicode C strings (arrays, string literals, and
+    // pointers of `wchar_t`, `char8_t`, `char16_t`, and `char32_t`) are
+    // compared by content, like the `char` ones.
+    ts.test ("Wide C string comparisons", [] (auto& t)
+      {
+        const wchar_t* wide = L"abc";
+        const char16_t* utf16 = u"abc";
+        const char32_t* utf32 = U"abc";
+        const wchar_t* null_wide = nullptr;
+        wchar_t unterminated[3] = { L'a', L'b', L'c' };
+
+        t.expect (mt::eq (L"abc", std::wstring{ L"abc" })) << "wide literal";
+        t.expect (mt::eq (std::wstring{ L"abc" }, wide)) << "wstring == wide";
+        t.expect (mt::eq (wide, L"abc")) << "wide == wide literal";
+        t.expect (mt::eq (u8"abc", std::u8string{ u8"abc" })) << "u8 literal";
+        t.expect (mt::eq (u"abc", std::u16string{ u"abc" })) << "u16 literal";
+        t.expect (mt::eq (utf16, u"abc")) << "utf16 == u16 literal";
+        t.expect (mt::eq (U"abc", std::u32string{ U"abc" })) << "u32 literal";
+        t.expect (mt::eq (utf32, U"abc")) << "utf32 == u32 literal";
+        t.expect (mt::ne (wide, L"abx")) << "wide != \"abx\"";
+        t.expect (mt::lt (wide, L"abd")) << "wide < \"abd\"";
+        t.expect (mt::ge (wide, L"abc")) << "wide >= \"abc\"";
+        local_counts.passed_checks += 11;
+
+        t.expect (mt::eq (null_wide, nullptr)) << "null_wide == nullptr";
+        t.expect (mt::ne (null_wide, L"")) << "null_wide != \"\"";
+        local_counts.passed_checks += 2;
+
+        // An array without a terminator is not read beyond its end, and
+        // the terminator is not part of the string.
+        t.expect (mt::eq (unterminated, L"abc")) << "unterminated == \"abc\"";
+        t.expect (mt::eq (L"abc", std::wstring_view{ L"abc" }))
+            << "terminator not compared";
+        local_counts.passed_checks += 2;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    // -------------------------------------------------------------------------
+
     // The failed C string comparisons display the strings.
     ts.test ("Failed C string comparisons", [] (auto& t)
       {
@@ -459,6 +506,30 @@ static mt::static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         local_counts.failed_checks++;
 
         t.expect (mt::eq (null_string, "abc")) << "null_string == \"abc\"";
+        local_counts.failed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    // -------------------------------------------------------------------------
+
+    // The failed wide C string comparisons display the strings.
+    ts.test ("Failed wide C string comparisons", [] (auto& t)
+      {
+        const wchar_t* wide = L"abc";
+        const wchar_t* null_wide = nullptr;
+
+        t.expect (mt::eq (wide, L"abx")) << "wide == \"abx\"";
+        local_counts.failed_checks++;
+
+        t.expect (mt::eq (null_wide, L"abc")) << "null_wide == \"abc\"";
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;

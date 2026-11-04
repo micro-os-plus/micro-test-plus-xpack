@@ -391,9 +391,35 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * The `char` pointers are written as C strings, quoted and escaped as
-   * the `std::string` values are, with a null pointer written as
-   * `nullptr`; all the other values are written by `append_operand()`.
+   * Appends the characters of the string, quoted and escaped as the
+   * overload for the string view of the character type does (without
+   * quotes in the plain mode, with only the control characters escaped),
+   * or `"nullptr"` for a null pointer, as the other operator overloads
+   * do for these values.
+   */
+  template <character Char_T>
+  expression_formatter&
+  expression_formatter::operator<< (const basic_c_string<Char_T>& s)
+  {
+    if (s.is_null ())
+      {
+        buffer_.append ("nullptr");
+      }
+    else
+      {
+        *this << s.view ();
+      }
+    return *this;
+  }
+
+  // --------------------------------------------------------------------------
+
+  /**
+   * @details
+   * The pointers to the character types are written as C strings, quoted
+   * and escaped as the `std::string` values are, with a null pointer
+   * written as `nullptr`; all the other values are written by
+   * `append_operand()`.
    * In the plain mode, used for the messages, the strings are not quoted.
    */
   template <class T>
@@ -401,9 +427,9 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::append_value (const T& value)
   {
     using pointee_type = std::remove_cv_t<std::remove_pointer_t<T>>;
-    if constexpr (std::is_pointer_v<T> and std::is_same_v<pointee_type, char>)
+    if constexpr (std::is_pointer_v<T> and detail::character<pointee_type>)
       {
-        *this << detail::c_string{ value };
+        *this << detail::basic_c_string<pointee_type>{ value };
       }
     else
       {

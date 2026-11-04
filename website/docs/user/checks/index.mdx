@@ -262,10 +262,11 @@ template <class Lhs_T, class Rhs_T, class Epsilon_T>
 auto approx(Lhs_T&& lhs, Rhs_T&& rhs, Epsilon_T&& epsilon);
 ```
 
-The **C strings** (`char` arrays, including the string literals, and `char`
-pointers) **are compared by content**, also with `std::string` and
-`std::string_view`, so `mt::eq (actual, "abc")` checks the characters,
-not the addresses; a null `char` pointer is equal only to another null
+The **C strings** (the arrays, including the string literals, and the
+pointers of `char`, `wchar_t`, `char8_t`, `char16_t`, and `char32_t`)
+**are compared by content**, also with the standard strings and string views
+of the same character type, so `mt::eq (actual, "abc")` checks the characters,
+not the addresses; a null pointer is equal only to another null
 pointer (or `nullptr`), not to an empty string. The **other arrays**
 (including `uint8_t` buffers) **are compared element by element**, also with
 a container such as a `std::vector`, and are written as ranges on
@@ -278,15 +279,11 @@ converting the signed operand to the unsigned type, so
 not apply to `bool` and to the character types, which are compared as
 the language does.
 
-The pointers and arrays of `char8_t`, `char16_t`, `char32_t`, and
-`wchar_t` are not treated as strings: **the arrays are compared element
-by element**, including the terminating null character, and the pointers
-are compared by address. Convert them to `std::u8string_view`,
-`std::u16string_view`, `std::u32string_view`, or `std::wstring_view`
-to compare their content; these views and the corresponding strings are
-reported as text, converted to UTF-8, quoted as the `std::string` values
-are. The messages write the text of the pointers and arrays of these
-types, converted to UTF-8 in the same way.
+The wide and Unicode strings are reported as text, converted to UTF-8 and
+quoted as the `std::string` values are; the messages write the text of the
+pointers and arrays of these types in the same way. A C string of one
+character type is not comparable with a string of another type, for example
+`L"abc"` with a `std::string`; the comparison is rejected at compile time.
 
 The `approx()` comparator **succeeds if its first two operands differ by
 at most the third one**, the tolerance, so a tolerance of zero requires

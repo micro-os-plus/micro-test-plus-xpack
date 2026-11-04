@@ -131,11 +131,17 @@ feed FAILED (checks.cpp:390)
     ✗ Failed string comparisons - FAILED (0 checks passed, 6 failed)
 
     ✓ C string comparisons - passed (14 checks)
+    ✓ Wide C string comparisons - passed (15 checks)
 
     • Failed C string comparisons
         ✗ actual == "abx" FAILED (comparisons.cpp:458, "abc" == "abx")
         ✗ null_string == "abc" FAILED (comparisons.cpp:461, nullptr == "abc")
     ✗ Failed C string comparisons - FAILED (0 checks passed, 2 failed)
+
+    • Failed wide C string comparisons
+        ✗ wide == "abx" FAILED (comparisons.cpp:529, "abc" == "abx")
+        ✗ null_wide == "abc" FAILED (comparisons.cpp:532, nullptr == "abc")
+    ✗ Failed wide C string comparisons - FAILED (0 checks passed, 2 failed)
 
     ✓ Pointer comparisons - passed (9 checks)
 
@@ -181,7 +187,7 @@ feed FAILED (checks.cpp:390)
         ✗ all_of with a nested any_of FAILED (comparisons.cpp:797, (42 == 42 and (42 == 0 or 42 == 1)))
     ✗ Logical operations with more operands - FAILED (6 checks passed, 5 failed)
 
-✗ Comparisons suite - FAILED (71 checks passed, 56 failed, in 16 test cases), time: 0.947 ms
+✗ Comparisons suite - FAILED (86 checks passed, 58 failed, in 18 test cases), time: 1.251 ms
 
 • Dynamic suite
 
@@ -790,6 +796,6 @@ Matching test cases:
 
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.102 ms
 
-✗ Total: 698 checks passed, 373 failed, in 172 test cases, 15 test suites, time: 24.432 ms
+✗ Total: 713 checks passed, 375 failed, in 174 test cases, 15 test suites, time: 15.526 ms
 Overall, the µTest++ unit tests were successful!
 

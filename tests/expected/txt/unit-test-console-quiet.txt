@@ -64,6 +64,10 @@ feed FAILED (checks.cpp:390)
         ✗ actual == "abx" FAILED (comparisons.cpp:458, "abc" == "abx")
         ✗ null_string == "abc" FAILED (comparisons.cpp:461, nullptr == "abc")
 
+    • Failed wide C string comparisons
+        ✗ wide == "abx" FAILED (comparisons.cpp:529, "abc" == "abx")
+        ✗ null_wide == "abc" FAILED (comparisons.cpp:532, nullptr == "abc")
+
     • Failed pointer comparisons
         ✗ ptr1 != &one FAILED (comparisons.cpp:542, 0x7ff7b8dca6c0 != 0x7ff7b8dca6c0)
         ✗ ptr1 != ptr2 FAILED (comparisons.cpp:545, 0x7ff7b8dca6c0 != 0x7ff7b8dca6c0)
@@ -527,4 +531,4 @@ Matching test cases:
         ✗ abc matches *C FAILED (utility.cpp:191)
         ✗ ab matches ??? FAILED (utility.cpp:195)
 
-✗ Total: 698 checks passed, 373 failed, in 172 test cases, 15 test suites, time: 19.221 ms
+✗ Total: 713 checks passed, 375 failed, in 174 test cases, 15 test suites, time: 14.554 ms

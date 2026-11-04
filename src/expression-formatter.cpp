@@ -23,8 +23,8 @@
  * @details
  * This source file contains the non-template `operator<<` overloads of
  * `expression_formatter` for all standard arithmetic, character, string,
- * boolean, and null-pointer types, `std::nullopt`, and the `c_string` and
- * `named_bool` operands. Each overload appends the formatted value —
+ * boolean, and null-pointer types, `std::nullopt`, and the `named_bool`
+ * operand. Each overload appends the formatted value —
  * together with an appropriate type suffix where applicable — to the
  * internal string buffer. It also contains the private helpers that
  * write the decimal point, the suffixes, and the characters, and the
@@ -548,7 +548,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * Appends the null-terminated C string @p s to the internal buffer
    * as `append_plain()` does, with the control characters other than
    * the tab and the line feed, and DEL, escaped, or `"nullptr"` for a
-   * null pointer, as the `c_string` overload does; the `char*` values
+   * null pointer, as the `basic_c_string` overload does; the `char*` values
    * also reach this overload, so the null pointer must be checked
    * before the text is read.
    */
@@ -649,28 +649,6 @@ namespace micro_os_plus::micro_test_plus::detail
         return *this;
       }
     return *this << std::u32string_view{ s };
-  }
-
-  /**
-   * @details
-   * Appends the characters of the string, quoted and escaped as the
-   * `std::string_view` overload does (without quotes in the plain mode,
-   * with only the control characters escaped), or
-   * `"nullptr"` for a null pointer, as the other operator overloads do
-   * for these values.
-   */
-  expression_formatter&
-  expression_formatter::operator<< (const c_string& s)
-  {
-    if (s.is_null ())
-      {
-        buffer_.append ("nullptr");
-      }
-    else
-      {
-        *this << s.view ();
-      }
-    return *this;
   }
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)

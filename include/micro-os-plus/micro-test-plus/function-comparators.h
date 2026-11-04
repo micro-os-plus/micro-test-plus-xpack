@@ -32,8 +32,9 @@
  * `deprecated.h`.
  *
  * These comparators and logical operators enable expressive and type-safe test
- * expectations and assertions. The C strings (`char` arrays, including the
- * string literals, and `char` pointers) are compared by content, and so are
+ * expectations and assertions. The C strings (the arrays, including the
+ * string literals, and the pointers of the character types) are compared
+ * by content, and so are
  * the other arrays (e.g. byte buffers), element by element; the other
  * pointers are compared by address.
  * The temporaries are moved into the returned expressions, and the named
@@ -97,15 +98,13 @@ namespace micro_os_plus::micro_test_plus
    * @brief Generic equality comparator.
    *
    * @details
-   * The C strings (`char` arrays, including the string literals, and
-   * `char` pointers) are compared by content, also with `std::string` and
-   * `std::string_view`; a null `char` pointer is equal only to another
-   * null pointer. The other arrays (e.g. byte buffers) are compared
-   * element by element, also with a container, and written as ranges; the
-   * other pointers are compared by address. The pointers and arrays of
-   * `char8_t`, `char16_t`, `char32_t`, and `wchar_t` are not treated as
-   * strings: the arrays are compared element by element, including the
-   * terminating null character, and the pointers by address. The
+   * The C strings (the arrays, including the string literals, and the
+   * pointers of `char`, `wchar_t`, `char8_t`, `char16_t`, and `char32_t`)
+   * are compared by content, also with the standard strings and string
+   * views of the same character type; a null pointer is equal only to
+   * another null pointer. The other arrays (e.g. byte buffers) are
+   * compared element by element, also with a container, and written as
+   * ranges; the other pointers are compared by address. The
    * integers of different signedness are compared by value, as by
    * `std::cmp_equal()`, not after the usual arithmetic conversions, so
    * `eq (-1, static_cast<unsigned> (-1))` fails.

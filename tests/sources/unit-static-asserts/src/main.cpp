@@ -1304,6 +1304,20 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
                    decltype (mt::eq ("abc", str)),
                    mt::detail::compare_op<mt::detail::c_string, std::string,
                                           mt::detail::equal_to>>);
+    // The arrays and the pointers of the other character types are
+    // converted to strings too.
+    static_assert (
+        std::is_same_v<
+            decltype (mt::eq (L"abc", std::wstring{ L"abc" })),
+            mt::detail::compare_op<mt::detail::basic_c_string<wchar_t>,
+                                   std::wstring, mt::detail::equal_to>>);
+    static_assert (std::is_same_v<
+                   decltype (mt::eq (u"abc", u"abd")),
+                   mt::detail::compare_op<mt::detail::basic_c_string<char16_t>,
+                                          mt::detail::basic_c_string<char16_t>,
+                                          mt::detail::equal_to>>);
+    static_assert (mt::detail::character<const char32_t>);
+    static_assert (not mt::detail::character<unsigned char>);
     static_assert (
         std::is_same_v<
             decltype (wrapped == 1),

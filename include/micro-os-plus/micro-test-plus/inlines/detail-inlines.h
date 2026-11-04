@@ -28,8 +28,8 @@
  * constructors, the predicate constructor, the tolerance helpers
  * (`within_tolerance()`, `differ_by_at_most()`), the callable operator
  * types (`throws_op`, `nothrow_op`), the `append_number()` and
- * `append_pointer()` formatting helpers, the `c_string` operand and its
- * operators, and `as_operand()`.
+ * `append_pointer()` formatting helpers, the `basic_c_string` operand and
+ * its operators, and `as_operand()`.
  *
  * Separating the implementations from the declarations keeps `detail.h`
  * concise and focused on the interface, whilst grouping the complex
@@ -296,8 +296,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The type of the operand after `as_operand()` and `unwrap()`, without
-     * references and qualifiers; for example `detail::c_string` for a
-     * string literal.
+     * references and qualifiers; for example `detail::basic_c_string<char>` for
+     * a string literal.
      *
      * @tparam T The type deduced for the operand, possibly a reference.
      */
@@ -1175,12 +1175,14 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * The length is computed with `std::char_traits<char>::length()`,
+     * The length is computed with `std::char_traits<Char_T>::length()`,
      * which, unlike `strlen()`, can be evaluated at compile time.
      */
-    constexpr c_string::c_string (const char* str) noexcept
+    template <character Char_T>
+    constexpr basic_c_string<Char_T>::basic_c_string (
+        const Char_T* str) noexcept
         : str_{ str },
-          size_{ str == nullptr ? 0 : std::char_traits<char>::length (str) }
+          size_{ str == nullptr ? 0 : std::char_traits<Char_T>::length (str) }
     {
     }
 
@@ -1189,15 +1191,16 @@ namespace micro_os_plus::micro_test_plus
      * The characters are counted up to the first null character, or up to
      * `capacity`.
      */
-    constexpr c_string::c_string (const char* str,
-                                  std::size_t capacity) noexcept
+    template <character Char_T>
+    constexpr basic_c_string<Char_T>::basic_c_string (
+        const Char_T* str, std::size_t capacity) noexcept
         : str_{ str }, size_{ capacity }
     {
       // Search within the array only; the view avoids indexing the raw
       // pointer.
       const std::size_t terminator
-          = std::string_view{ str, capacity }.find ('\0');
-      if (terminator != std::string_view::npos)
+          = std::basic_string_view<Char_T>{ str, capacity }.find (Char_T{});
+      if (terminator != std::basic_string_view<Char_T>::npos)
         {
           size_ = terminator;
         }
@@ -1207,19 +1210,21 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Returns an empty view for a null pointer.
      */
-    constexpr std::string_view
-    c_string::view (void) const noexcept
+    template <character Char_T>
+    constexpr std::basic_string_view<Char_T>
+    basic_c_string<Char_T>::view (void) const noexcept
     {
-      return str_ == nullptr ? std::string_view{}
-                             : std::string_view{ str_, size_ };
+      return str_ == nullptr ? std::basic_string_view<Char_T>{}
+                             : std::basic_string_view<Char_T>{ str_, size_ };
     }
 
     /**
      * @details
      * Returns whether the stored pointer is null.
      */
+    template <character Char_T>
     constexpr bool
-    c_string::is_null (void) const noexcept
+    basic_c_string<Char_T>::is_null (void) const noexcept
     {
       return str_ == nullptr;
     }
@@ -1229,8 +1234,10 @@ namespace micro_os_plus::micro_test_plus
      * Two null pointers are equal; a null pointer is not equal to any
      * string, not even an empty one.
      */
+    template <character Char_T>
     constexpr bool
-    operator== (const c_string& lhs, const c_string& rhs) noexcept
+    operator== (const basic_c_string<Char_T>& lhs,
+                const basic_c_string<Char_T>& rhs) noexcept
     {
       if (lhs.is_null () || rhs.is_null ())
         {
@@ -1243,8 +1250,11 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * A null pointer is not equal to any string.
      */
+    template <character Char_T>
     constexpr bool
-    operator== (const c_string& lhs, std::string_view rhs) noexcept
+    operator== (
+        const basic_c_string<Char_T>& lhs,
+        std::type_identity_t<std::basic_string_view<Char_T>> rhs) noexcept
     {
       return !lhs.is_null () && lhs.view () == rhs;
     }
@@ -1253,8 +1263,9 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Returns whether the operand is a null pointer.
      */
+    template <character Char_T>
     constexpr bool
-    operator== (const c_string& lhs, std::nullptr_t) noexcept
+    operator== (const basic_c_string<Char_T>& lhs, std::nullptr_t) noexcept
     {
       return lhs.is_null ();
     }
@@ -1263,8 +1274,10 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * A null pointer orders before any string.
      */
+    template <character Char_T>
     constexpr std::strong_ordering
-    operator<=> (const c_string& lhs, const c_string& rhs) noexcept
+    operator<=> (const basic_c_string<Char_T>& lhs,
+                 const basic_c_string<Char_T>& rhs) noexcept
     {
       if (lhs.is_null () || rhs.is_null ())
         {
@@ -1277,8 +1290,11 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * A null pointer orders before any string.
      */
+    template <character Char_T>
     constexpr std::strong_ordering
-    operator<=> (const c_string& lhs, std::string_view rhs) noexcept
+    operator<=> (
+        const basic_c_string<Char_T>& lhs,
+        std::type_identity_t<std::basic_string_view<Char_T>> rhs) noexcept
     {
       if (lhs.is_null ())
         {
@@ -1367,9 +1383,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
-     * Arrays of `char` are converted using their size as a bound, pointers
-     * to `char` using the null terminator; the cv-qualifiers of the
-     * characters are ignored. The other arrays are converted to
+     * Arrays of the character types are converted using their size as a
+     * bound, pointers to them using the null terminator; the
+     * cv-qualifiers of the characters are ignored. The other arrays are
+     * converted to
      * `array_operand`. Every other operand is forwarded, unchanged, as an
      * lvalue or an rvalue reference.
      */
@@ -1380,17 +1397,18 @@ namespace micro_os_plus::micro_test_plus
       using type = std::remove_cvref_t<T>;
 
       if constexpr (std::is_array_v<type>
-                    && std::is_same_v<
-                        std::remove_cv_t<std::remove_extent_t<type>>, char>)
+                    && character<std::remove_extent_t<type>>)
         {
-          return c_string{ t, std::extent_v<type> };
+          return basic_c_string<std::remove_cv_t<std::remove_extent_t<type>>>{
+            t, std::extent_v<type>
+          };
         }
       else if constexpr (std::is_pointer_v<type>
-                         && std::is_same_v<
-                             std::remove_cv_t<std::remove_pointer_t<type>>,
-                             char>)
+                         && character<std::remove_pointer_t<type>>)
         {
-          return c_string{ t };
+          return basic_c_string<std::remove_cv_t<std::remove_pointer_t<type>>>{
+            t
+          };
         }
       else if constexpr (std::is_array_v<type>)
         {

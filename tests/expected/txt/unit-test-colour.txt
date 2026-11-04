@@ -461,10 +461,33 @@ feed [31mFAILED[0m (checks.cpp:390)
         [32m✓[0m unterminated == "abc"
     [32m✓[0m C string comparisons - passed (14 checks)
 
+    • Wide C string comparisons
+        [32m✓[0m wide literal
+        [32m✓[0m wstring == wide
+        [32m✓[0m wide == wide literal
+        [32m✓[0m u8 literal
+        [32m✓[0m u16 literal
+        [32m✓[0m utf16 == u16 literal
+        [32m✓[0m u32 literal
+        [32m✓[0m utf32 == u32 literal
+        [32m✓[0m wide != "abx"
+        [32m✓[0m wide < "abd"
+        [32m✓[0m wide >= "abc"
+        [32m✓[0m null_wide == nullptr
+        [32m✓[0m null_wide != ""
+        [32m✓[0m unterminated == "abc"
+        [32m✓[0m terminator not compared
+    [32m✓[0m Wide C string comparisons - passed (15 checks)
+
     • Failed C string comparisons
         [31m✗[0m actual == "abx" [31mFAILED[0m (comparisons.cpp:458, [31m"abc" == "abx"[0m)
         [31m✗[0m null_string == "abc" [31mFAILED[0m (comparisons.cpp:461, [31mnullptr == "abc"[0m)
     [31m✗[0m Failed C string comparisons - [31mFAILED[0m (0 checks passed, 2 failed)
+
+    • Failed wide C string comparisons
+        [31m✗[0m wide == "abx" [31mFAILED[0m (comparisons.cpp:529, [31m"abc" == "abx"[0m)
+        [31m✗[0m null_wide == "abc" [31mFAILED[0m (comparisons.cpp:532, [31mnullptr == "abc"[0m)
+    [31m✗[0m Failed wide C string comparisons - [31mFAILED[0m (0 checks passed, 2 failed)
 
     • Pointer comparisons
         [32m✓[0m ptr1 == &one
@@ -537,7 +560,7 @@ feed [31mFAILED[0m (checks.cpp:390)
         [31m✗[0m all_of with a nested any_of [31mFAILED[0m (comparisons.cpp:797, ([32m42 == 42[0m[31m and [0m([31m42 == 0[0m[31m or [0m[31m42 == 1[0m)))
     [31m✗[0m Logical operations with more operands - [31mFAILED[0m (6 checks passed, 5 failed)
 
-[31m✗[0m Comparisons suite - [31mFAILED[0m (71 checks passed, 56 failed, in 16 test cases), time: 1.364 ms
+[31m✗[0m Comparisons suite - [31mFAILED[0m (86 checks passed, 58 failed, in 18 test cases), time: 2.017 ms
 
 • Dynamic suite
 
@@ -1674,6 +1697,6 @@ Matching test cases:
 
 [31m✗[0m Utility suite - [31mFAILED[0m (21 checks passed, 5 failed, in 3 test cases), time: 0.161 ms
 
-[31m✗[0m Total: 698 checks passed, 373 failed, in 172 test cases, 15 test suites, time: 26.987 ms
+[31m✗[0m Total: 713 checks passed, 375 failed, in 174 test cases, 15 test suites, time: 23.448 ms
 Overall, the µTest++ unit tests were successful!
 

@@ -254,6 +254,21 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
 #             fileName: comparisons.cpp
 #             lineNumber: 461
 #           ...
+# Comparisons suite > Failed wide C string comparisons
+#         not ok 1 - wide == "abx"
+#           ---
+#           condition: "\"abc\" == \"abx\""
+#           at:
+#             fileName: comparisons.cpp
+#             lineNumber: 529
+#           ...
+#         not ok 2 - null_wide == "abc"
+#           ---
+#           condition: "nullptr == \"abc\""
+#           at:
+#             fileName: comparisons.cpp
+#             lineNumber: 532
+#           ...
 # Comparisons suite > Failed pointer comparisons
 #         not ok 1 - ptr1 != &one
 #           ---
@@ -454,7 +469,7 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
 #             fileName: comparisons.cpp
 #             lineNumber: 797
 #           ...
-not ok 4 - Comparisons suite # { FAILED, 71 checks passed, 56 failed, in 16 test cases, time: 1.474 ms }
+not ok 4 - Comparisons suite # { FAILED, 86 checks passed, 58 failed, in 18 test cases, time: 1.765 ms }
 ok 5 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.027 ms }
 ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, time: 0.028 ms }
 # Exceptions suite > Failed thrown exceptions
@@ -2666,4 +2681,4 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.102 ms }
 #           ...
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.126 ms }
 1..15
-# { total: 698 checks passed, 373 failed, in 172 test cases, 15 test suites, time: 27.220 ms }
+# { total: 713 checks passed, 375 failed, in 174 test cases, 15 test suites, time: 17.489 ms }

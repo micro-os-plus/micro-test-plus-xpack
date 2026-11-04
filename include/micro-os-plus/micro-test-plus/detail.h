@@ -776,9 +776,10 @@ namespace micro_os_plus::micro_test_plus
      * @brief Prepares an operand of a comparator.
      *
      * @details
-     * The `char` arrays and the `char` pointers (not those of `signed
+     * The arrays and the pointers of the character types (`char`,
+     * `wchar_t`, `char8_t`, `char16_t`, and `char32_t`, but not `signed
      * char` or `unsigned char`, which are byte buffers) are converted to
-     * `c_string`, so that they are compared by content; the other arrays
+     * `basic_c_string`, so that they are compared by content; the other arrays
      * are converted to `array_operand`, so that they are compared by
      * content, the functions to function pointers, and all other operands
      * are returned unchanged, so the other pointers and the functions are
@@ -790,7 +791,7 @@ namespace micro_os_plus::micro_test_plus
      * @tparam T The type deduced for the forwarding reference.
      *
      * @param t The operand.
-     * @return A `c_string` for the C strings, an `array_operand` for the
+     * @return A `basic_c_string` for the C strings, an `array_operand` for the
      * other arrays, otherwise `t`, forwarded.
      */
     template <class T>
@@ -1551,21 +1552,44 @@ namespace micro_os_plus::micro_test_plus
     // ========================================================================
 
     /**
+     * @brief C++20 concept satisfied by the character types.
+     *
+     * @details
+     * The `character` concept is satisfied when the type, ignoring the
+     * cv-qualifiers, is one of `char`, `wchar_t`, `char8_t`, `char16_t`,
+     * or `char32_t`. The comparators compare the arrays and the pointers
+     * of these types as strings (see `basic_c_string`); `signed char` and
+     * `unsigned char` are not characters, but bytes.
+     *
+     * @tparam T The type to check.
+     */
+    template <class T>
+    concept character = std::is_same_v<std::remove_cv_t<T>, char>
+                        or std::is_same_v<std::remove_cv_t<T>, wchar_t>
+                        or std::is_same_v<std::remove_cv_t<T>, char8_t>
+                        or std::is_same_v<std::remove_cv_t<T>, char16_t>
+                        or std::is_same_v<std::remove_cv_t<T>, char32_t>;
+
+    /**
      * @brief A C string operand of a comparator.
      *
      * @details
-     * The comparators convert the `char` arrays (including the string
-     * literals) and the `char` pointers to this type (see `as_operand()`),
-     * so that they are compared by content, as a reader of a test expects,
-     * and not by address. A null pointer is equal only to another null
-     * pointer (not to an empty string), and is less than any string.
+     * The comparators convert the arrays (including the string literals)
+     * and the pointers of the character types to this type (see
+     * `as_operand()`), so that they are compared by content, as a reader
+     * of a test expects, and not by address. A null pointer is equal
+     * only to another null pointer (not to an empty string), and is less
+     * than any string.
      *
      * The characters are not copied; the operand must outlive the
      * comparison, which is always the case within a check.
      *
+     * @tparam Char_T The character type; it satisfies `character`.
+     *
      * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
      */
-    struct c_string
+    template <character Char_T>
+    struct basic_c_string
     {
       /**
        * @brief Constructs the operand from a pointer to a null-terminated
@@ -1573,10 +1597,10 @@ namespace micro_os_plus::micro_test_plus
        *
        * @param str The string, or `nullptr`.
        */
-      constexpr explicit c_string (const char* str) noexcept;
+      constexpr explicit basic_c_string (const Char_T* str) noexcept;
 
       /**
-       * @brief Constructs the operand from a `char` array.
+       * @brief Constructs the operand from an array of characters.
        *
        * @details
        * The string ends at the first null character, or at the end of the
@@ -1586,7 +1610,8 @@ namespace micro_os_plus::micro_test_plus
        * @param str The first character of the array.
        * @param capacity The number of elements of the array.
        */
-      constexpr c_string (const char* str, std::size_t capacity) noexcept;
+      constexpr basic_c_string (const Char_T* str,
+                                std::size_t capacity) noexcept;
 
       /**
        * @brief Returns the characters, as a string view.
@@ -1596,7 +1621,7 @@ namespace micro_os_plus::micro_test_plus
        * @return The characters, without the terminator; empty for a null
        * pointer.
        */
-      [[nodiscard]] constexpr std::string_view
+      [[nodiscard]] constexpr std::basic_string_view<Char_T>
       view (void) const noexcept;
 
       /**
@@ -1617,7 +1642,7 @@ namespace micro_os_plus::micro_test_plus
        * @details
        * Not owned; points into the operand passed to the comparator.
        */
-      const char* str_;
+      const Char_T* str_;
 
       /**
        * @brief The number of characters, without the terminator.
@@ -1629,72 +1654,93 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
+     * @brief The C string operand of `char` strings.
+     */
+    using c_string = basic_c_string<char>;
+
+    /**
      * @brief Compares two C string operands for equality.
      *
+     * @tparam Char_T The character type.
      * @param lhs The left operand.
      * @param rhs The right operand.
      * @retval true Both are null, or both are strings with the same
      * characters.
      * @retval false Otherwise.
      */
+    template <character Char_T>
     [[nodiscard]] constexpr bool
-    operator== (const c_string& lhs, const c_string& rhs) noexcept;
+    operator== (const basic_c_string<Char_T>& lhs,
+                const basic_c_string<Char_T>& rhs) noexcept;
 
     /**
      * @brief Compares a C string operand with a string.
      *
      * @details
-     * Also used for `std::string` operands, which convert to
-     * `std::string_view`, and, as a rewritten candidate, with the operands
-     * in the reverse order.
+     * Also used for the standard strings of the same character type,
+     * which convert to the string view, and, as a rewritten candidate,
+     * with the operands in the reverse order.
      *
+     * @tparam Char_T The character type.
      * @param lhs The C string operand.
      * @param rhs The string.
      * @retval true The operand is not null and has the same characters.
      * @retval false Otherwise.
      */
+    template <character Char_T>
     [[nodiscard]] constexpr bool
-    operator== (const c_string& lhs, std::string_view rhs) noexcept;
+    operator== (
+        const basic_c_string<Char_T>& lhs,
+        std::type_identity_t<std::basic_string_view<Char_T>> rhs) noexcept;
 
     /**
      * @brief Checks whether a C string operand is a null pointer.
      *
+     * @tparam Char_T The character type.
      * @param lhs The C string operand.
      * @retval true The operand is a null pointer.
      * @retval false Otherwise.
      */
+    template <character Char_T>
     [[nodiscard]] constexpr bool
-    operator== (const c_string& lhs, std::nullptr_t) noexcept;
+    operator== (const basic_c_string<Char_T>& lhs, std::nullptr_t) noexcept;
 
     /**
      * @brief Orders two C string operands.
      *
+     * @tparam Char_T The character type.
      * @param lhs The left operand.
      * @param rhs The right operand.
      * @return The lexicographic order of the characters; a null pointer is
      * equal to another null pointer and less than any string.
      */
+    template <character Char_T>
     [[nodiscard]] constexpr std::strong_ordering
-    operator<=> (const c_string& lhs, const c_string& rhs) noexcept;
+    operator<=> (const basic_c_string<Char_T>& lhs,
+                 const basic_c_string<Char_T>& rhs) noexcept;
 
     /**
      * @brief Orders a C string operand and a string.
      *
+     * @tparam Char_T The character type.
      * @param lhs The C string operand.
      * @param rhs The string.
      * @return The lexicographic order of the characters; a null pointer is
      * less than any string.
      */
+    template <character Char_T>
     [[nodiscard]] constexpr std::strong_ordering
-    operator<=> (const c_string& lhs, std::string_view rhs) noexcept;
+    operator<=> (
+        const basic_c_string<Char_T>& lhs,
+        std::type_identity_t<std::basic_string_view<Char_T>> rhs) noexcept;
 
     /**
-     * @brief An array operand of a comparator, other than a `char` array.
+     * @brief An array operand of a comparator, other than a character array.
      *
      * @details
-     * The comparators convert the arrays of any element type except `char`
-     * (the byte buffers, the arrays of numbers, and the arrays of the
-     * wide character types) to this type (see `as_operand()`), so that
+     * The comparators convert the arrays of any element type except the
+     * character types (the byte buffers and the arrays of numbers) to
+     * this type (see `as_operand()`), so that
      * they are compared element by element, and written as ranges,
      * instead of being compared and written as the addresses they decay
      * to. Two arrays of different sizes are never equal.

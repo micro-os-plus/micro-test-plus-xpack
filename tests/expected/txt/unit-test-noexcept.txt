@@ -410,10 +410,31 @@ feed FAILED (checks.cpp:390)
         ✓ null_string < ""
         ✓ unterminated == "abc"
     ✓ C string comparisons - passed (14 checks)
+    • Wide C string comparisons
+        ✓ wide literal
+        ✓ wstring == wide
+        ✓ wide == wide literal
+        ✓ u8 literal
+        ✓ u16 literal
+        ✓ utf16 == u16 literal
+        ✓ u32 literal
+        ✓ utf32 == u32 literal
+        ✓ wide != "abx"
+        ✓ wide < "abd"
+        ✓ wide >= "abc"
+        ✓ null_wide == nullptr
+        ✓ null_wide != ""
+        ✓ unterminated == "abc"
+        ✓ terminator not compared
+    ✓ Wide C string comparisons - passed (15 checks)
     • Failed C string comparisons
         ✗ actual == "abx" FAILED (comparisons.cpp:458, "abc" == "abx")
         ✗ null_string == "abc" FAILED (comparisons.cpp:461, nullptr == "abc")
     ✗ Failed C string comparisons - FAILED (0 checks passed, 2 failed)
+    • Failed wide C string comparisons
+        ✗ wide == "abx" FAILED (comparisons.cpp:529, "abc" == "abx")
+        ✗ null_wide == "abc" FAILED (comparisons.cpp:532, nullptr == "abc")
+    ✗ Failed wide C string comparisons - FAILED (0 checks passed, 2 failed)
     • Pointer comparisons
         ✓ ptr1 == &one
         ✓ ptr1 == ptr2
@@ -479,7 +500,7 @@ feed FAILED (checks.cpp:390)
         ✗ any_of of two all_of FAILED (comparisons.cpp:790, ((42 == 0 and 42 == 42) or (42 == 1 and 42 == 42 and 42 == 2)))
         ✗ all_of with a nested any_of FAILED (comparisons.cpp:797, (42 == 42 and (42 == 0 or 42 == 1)))
     ✗ Logical operations with more operands - FAILED (6 checks passed, 5 failed)
-✗ Comparisons suite - FAILED (71 checks passed, 56 failed, in 16 test cases)
+✗ Comparisons suite - FAILED (86 checks passed, 58 failed, in 18 test cases)
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
@@ -1376,4 +1397,4 @@ next line FAILED (miscellaneous.cpp:939)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 680 checks passed, 356 failed, in 155 test cases, 13 test suites
+✗ Total: 695 checks passed, 358 failed, in 157 test cases, 13 test suites

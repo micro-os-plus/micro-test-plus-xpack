@@ -511,7 +511,7 @@ namespace micro_os_plus::micro_test_plus
        * that are values to be reported, such as the operands of the
        * comparators and the elements of the ranges, pairs, tuples, and
        * optionals, are written quoted, like the `std::string` values, by
-       * the overload for `c_string`; an application writes a quoted value
+       * the overload for `basic_c_string`; an application writes a quoted value
        * with a `std::string_view`.
        *
        * @param s The C string to append, or a null pointer.
@@ -585,14 +585,17 @@ namespace micro_os_plus::micro_test_plus
        * @brief Appends a C string operand of a comparator.
        *
        * @details
-       * Quoted and escaped as a string view; a null pointer is written
-       * as `nullptr`.
+       * Quoted and escaped as a string view of the character type (with
+       * the prefix of the wide and Unicode strings); a null pointer is
+       * written as `nullptr`.
        *
+       * @tparam Char_T The character type of the operand.
        * @param s The operand.
        * @return Reference to this instance.
        */
+      template <character Char_T>
       expression_formatter&
-      operator<< (const c_string& s);
+      operator<< (const basic_c_string<Char_T>& s);
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
       /**
