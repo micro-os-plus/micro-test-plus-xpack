@@ -225,6 +225,14 @@ file is a valid TAP document, which the TAP consumers read. The file of the
 human-readable reporter is intended for people, to keep the details of a run
 whose console output is short (see [Verbosity](#verbosity)).
 
+A failed check is written by the TAP reporter with a YAML block, which gives the
+`condition:`, as a double-quoted string, so that operands such as `{ 1, 2 }`
+do not make the block invalid, and the location, under `at:`, as `fileName:` and
+`lineNumber:`, the names that node-tap writes and that the CI reporters read.
+The file name is written as it is, and double-quoted only when it contains a
+character that a YAML parser would not accept, such as a space followed by `#`
+or a colon followed by a space.
+
 ## The human-readable reporter
 
 Starting with v4.x, the default reporter is **TAP**. For compatibility with

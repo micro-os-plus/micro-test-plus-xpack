@@ -356,6 +356,37 @@ namespace micro_os_plus::micro_test_plus::detail
 
       return result;
     }
+
+    /**
+     * @brief Formats a text as a YAML scalar, double-quoted only when
+     * needed.
+     *
+     * @details
+     * A text made only of letters, digits, and the characters `_`, `.`,
+     * `+`, `/`, and `-`, and not starting with `-`, is a valid plain
+     * scalar, whatever its meaning, and is returned unchanged, so that the
+     * usual values are written as before. Any other text, for example a
+     * file name with a space, a `#`, or a `:`, which a YAML parser would
+     * truncate, split, or reject as a plain scalar, is returned
+     * double-quoted, as `yaml_double_quoted()` does.
+     *
+     * @param text The text to format.
+     * @return The scalar.
+     */
+    std::string
+    yaml_scalar (std::string_view text)
+    {
+      bool is_plain = !text.empty () && text.front () != '-';
+      for (const char c : text)
+        {
+          const bool is_safe = (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
+                               || (c >= '0' && c <= '9') || c == '_'
+                               || c == '.' || c == '+' || c == '/' || c == '-';
+          is_plain = is_plain && is_safe;
+        }
+
+      return is_plain ? std::string{ text } : yaml_double_quoted (text);
+    }
   } // namespace
 
   // --------------------------------------------------------------------------
@@ -1003,7 +1034,10 @@ namespace micro_os_plus::micro_test_plus::detail
    * by the CI systems to annotate the failures) read the file name only
    * from `fileName:` or `file:`, not from `filename:`. There is no
    * `columnNumber:`, since `reflection::source_location` does not
-   * provide a column.
+   * provide a column. The file name is written as a plain scalar, as
+   * node-tap does, unless it contains a character that a YAML parser
+   * would not accept in a plain scalar, when it is double-quoted (see
+   * `yaml_scalar()`).
    *
    * The expression, which follows `condition_begin_` in the buffer, is
    * first replaced by its YAML double-quoted form (see
@@ -1040,7 +1074,8 @@ namespace micro_os_plus::micro_test_plus::detail
 
     *this << indent (level + 1) << "  at:" << endl;
     *this << indent (level + 1) << "    fileName: "
-          << utility::extract_file_name (location.file_name ()) << endl;
+          << yaml_scalar (utility::extract_file_name (location.file_name ()))
+          << endl;
     *this << indent (level + 1) << "    lineNumber: " << location.line ()
           << endl;
 

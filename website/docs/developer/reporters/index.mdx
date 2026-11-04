@@ -263,6 +263,11 @@ The details that keep the output valid for the TAP consumers are:
 - **Field names**: the location fields are `fileName:` and `lineNumber:`, as
   written by node-tap, whose reporters (for example the JUnit one, used by
   the CI systems) read the file name only from these names.
+- **The file name**: it is written as a plain YAML scalar, as node-tap does, so
+  that the usual output is the same as before. A name that is not made only of
+  letters, digits, and `_ . + / -`, or that starts with `-`, such as `a #b.cpp`
+  (which a YAML parser reads as `a`) or `x: y.cpp` (a YAML error), is written in
+  the double-quoted form, by `yaml_scalar()`.
 - **Numbers**: the test points keep their numbers, also when the filter skips
   some of them, and each passed check of a block is a test point, also when
   it is not formatted (`ok 1` above), so that the plan stays complete.
