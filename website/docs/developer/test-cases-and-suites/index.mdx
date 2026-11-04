@@ -94,17 +94,41 @@ runnable_base::create_test_case (const located_name& name,
                                  Args_T&&... arguments)
 {
   size_t own_index = next_test_point_number ();
-  auto body = bind_callable<class test_case> (
-      std::forward<Callable_T> (callable),
-      std::forward<Args_T> (arguments)...);
-  class test_case child_test_case{
-    name,      runner_,       parent_suite,
-    own_index, nesting_depth, callable_ref<class test_case>{ body }
-  };
 
-  after_test_case_create (child_test_case, parent_suite);
+  if constexpr (sizeof...(arguments) == 0
+                && !std::is_function_v<std::remove_reference_t<Callable_T>>)
+    {
+      // The test case refers to the callable of the caller.
+      class test_case child_test_case{
+        name,      runner_,       parent_suite,
+        own_index, nesting_depth, callable_ref<class test_case>{ callable }
+      };
+
+      after_test_case_create (child_test_case, parent_suite);
+    }
+  else
+    {
+      auto body = bind_callable<class test_case> (
+          std::forward<Callable_T> (callable),
+          std::forward<Args_T> (arguments)...);
+      class test_case child_test_case{
+        name,      runner_,       parent_suite,
+        own_index, nesting_depth, callable_ref<class test_case>{ body }
+      };
+
+      after_test_case_create (child_test_case, parent_suite);
+    }
 }
 ```
+
+The test case runs and ends within this call, so, **without additional
+arguments**, it refers to the callable of the caller, an lvalue or a
+temporary that lives until `test()` returns. The callable is **neither copied
+nor moved**, and is called in place: a body that cannot be copied, such as a
+lambda that captures a `std::unique_ptr`, is accepted, and a callable object
+passed as an lvalue keeps the changes of its state. A function is the
+exception, since its address cannot be stored as a `void*`: it takes the other
+branch, which decays it to a pointer.
 
 When the function returns, the test case and its body are destroyed. The
 memory used by a session therefore does not grow with the number of test
@@ -129,7 +153,9 @@ The body of a test case is a callable, usually a generic lambda, possibly
 with arguments passed to `test()` after it. `bind_callable()` turns it into an
 object callable with the test case alone:
 
-- without arguments, it returns the callable itself, moved or copied;
+- without arguments, it returns the callable itself, moved or copied; the
+  test cases do not use this branch for the callables that are not
+  functions (see above), but the suites do, since their body runs later;
 - with arguments, it returns a `bound_callable`, which stores the callable
   and decayed copies of the arguments, in a `std::tuple`, and passes them to
   the callable as lvalues.
@@ -159,7 +185,8 @@ class callable_ref
 public:
   template <typename Callable_T>
   explicit callable_ref (Callable_T& callable) noexcept
-      : callable_{ std::addressof (callable) },
+      : callable_{ const_cast<void*> (
+            static_cast<const volatile void*> (std::addressof (callable))) },
         invoke_{ &invoke_callable<Callable_T> }
   {
   }
@@ -272,11 +299,14 @@ one, and the parent's suite as its suite. The nesting depth selects the level
 of the `--filter` patterns that applies to the test case, and the indentation
 of the reports.
 
-`suite::test()` may also be called while a test case runs, for example through
-a reference to the suite captured by a lambda. The new test case cannot be
-reported as a sibling of the running one, which has not ended, so
-`suite::test()` forwards the call to the running test case, and the new test
-case runs nested in it:
+`suite::test()` may also be called while a test case of **the same suite**
+runs, for example through a reference to the suite captured by a lambda. The
+new test case cannot be reported as a sibling of the running one, which has
+not ended, so `suite::test()` forwards the call to the running test case, and
+the new test case runs nested in it. A running test case of another suite does
+not qualify (`has_running_test_case_of()` compares its parent suite with the
+suite of the call); the call then goes to `accepts_test_case()`, which rejects
+it (see below):
 
 ```cpp title="inlines/test-inlines.h (simplified)"
 template <typename Callable_T, typename... Args_T>
@@ -284,14 +314,15 @@ void
 suite::test (const located_name& name, Callable_T&& callable,
              Args_T&&... arguments)
 {
-  if (class test_case* running = running_test_case (); running != nullptr)
+  if (class test_case* running = running_test_case ();
+      running != nullptr && has_running_test_case_of (*this))
     {
       running->test (name, std::forward<Callable_T> (callable),
                      std::forward<Args_T> (arguments)...);
       return;
     }
 
-  if (!accepts_test_case (*this, name.name ()))
+  if (!accepts_test_case (*this, name))
     {
       return;
     }
@@ -301,6 +332,19 @@ suite::test (const located_name& name, Callable_T&& callable,
 }
 ```
 
+`test_case::test()` has the same restriction: it is valid only on the test case
+that runs. Called on an **outer** test case, captured by a nested body, while a
+nested one runs, it would create the child inside the report of the nested
+test case, with the numbering of the outer one, which breaks the TAP plan. The
+call is therefore rejected by `report_misdirected_test()`: the new test case is
+not run, and a failed check, with a message that names the three test cases, is
+reported in the running test case, as for a [misdirected
+check](/docs/developer/checks/#misdirected-checks):
+
+```text
+            ✗ [test case 'sibling' started on test case 'outer' while 'inner' runs] FAILED
+```
+
 ### The running suite
 
 A test case can be created **only on the suite whose body is running**, which
@@ -308,16 +352,56 @@ the runner tracks in `running_suite_`. `accepts_test_case()` rejects the other
 calls, for example a test case created on the top suite from the body of
 another suite:
 
-- if a suite is running, the rejection is reported as a failed check of that
-  suite, so the session fails:
+- if a test case is running, for example a call on another suite made from its
+  body, the rejection is reported as a failed check of that test case, so that
+  it stays in its report (`report_rejected_test()`);
+- otherwise, if a suite is running, the rejection is reported as a failed check
+  of that suite, so the session fails:
 
   ```text
       ✗ test case 'misplaced' started on suite 'suites', which is not running FAILED
   ```
 
-- otherwise, for example after `run_suites()` returned, the message is written
-  to `stderr`, and the call is counted as rejected, so that the exit code is
-  not `0`.
+- otherwise, for example before `initialise()`, or after `run_suites()`
+  returned, the message is written to `stderr`, and the call is counted as
+  rejected, so that the exit code is not `0`. Before `initialise()` the runner
+  has no reporter yet, so `has_option_errors()` treats the missing reporter as
+  no error, and the call, for example on a static suite from `main()`, is
+  rejected like the others.
+
+### The bodies that are not valid
+
+`test()` and `add_suite()` are constrained by the concepts `test_body` and
+`suite_body`. For the callables that do not satisfy them, each function has a
+second overload, selected by the negated constraint, as `expect()` has one for
+the values that are not conditions. It never runs: it only stops the
+compilation, with a message that states what the body takes, instead of the
+notes of the concepts:
+
+```cpp title="inlines/test-inlines.h (simplified)"
+template <typename Callable_T, typename... Args_T>
+  requires (!detail::test_body<Callable_T, Args_T...>)
+void
+suite::test (const located_name&, Callable_T&&, Args_T&&...)
+{
+  detail::reject_test_body<Callable_T, Args_T...> ();
+}
+```
+
+`reject_test_body()` and `reject_suite_body()` choose the message: a body
+written for the other kind (a `suite&` for a test case, or the reverse) is
+recognised, and so is a suite body, or an argument, that cannot be copied,
+since the suite runs later. Their `static_assert` depends on the template
+arguments with a constant `false` (`dependent_false_v`), not on the concept,
+so that the diagnostic shows the message and not the notes about the concept.
+The `static_suite` constructor has the same fallback. A generic body (with an
+`auto&` parameter) satisfies `test_body` without being checked, since the check
+would instantiate its code; a mistake inside it is reported by the compiler at
+its place.
+
+Since the call of these functions is well formed for any callable, a program
+cannot test whether a body is accepted by trying to call `test()`; it tests the
+concepts `detail::test_body` and `detail::suite_body` instead.
 
 ### Parametrised test cases
 

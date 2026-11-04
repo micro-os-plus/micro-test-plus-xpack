@@ -71,12 +71,32 @@ test_case::expect ([[maybe_unused]] const Expr_T& expr,
                    [[maybe_unused]] const reflection::source_location& sl,
                    detail::check_result&& result)
 {
-  static_assert (extension::checkable<Expr_T>,
-                 "expect() takes a Boolean condition or a comparison, "
-                 "such as eq (); a value of this type is neither");
+  if constexpr (detail::ambiguous_condition<Expr_T>)
+    {
+      static_assert (not detail::ambiguous_condition<Expr_T>,
+                     "expect() does not take a wrapper of a bool, whose "
+                     "condition tests the wrapper, not the value; write "
+                     "has_value () or != nullptr, or use eq ()");
+    }
+  else
+    {
+      static_assert (extension::checkable<Expr_T>,
+                     "expect() takes a Boolean condition or a comparison, "
+                     "such as eq (); a value of this type is neither");
+    }
   return std::move (result);
 }
 ```
+
+The wrappers of a `bool` (`std::optional<bool>`, `std::unique_ptr<bool>`, and
+`std::shared_ptr<bool>`) are not `checkable`, and have their own message. Their
+condition tests the wrapper (a value is present, or the pointer is not null),
+not the `bool` that it holds, so a check of `std::optional<bool>{ false }` would
+pass, and be reported as `true`, for another reason than the one the author had
+in mind; as for the arguments that are always true, a check that passes
+silently by mistake is worse than one that does not compile. The same concept,
+`detail::ambiguous_condition`, excludes them from the operands of `all_of()`,
+`any_of()`, and `negate()`.
 
 Without it, a call such as `t.expect ("abc")` would fail with a list of
 unsatisfied constraints; with it, the compiler writes:
@@ -134,6 +154,14 @@ to deleted constructor of `detail::check_result`"), and the result cannot
 outlive its statement. This is intentional: a result kept in a variable would
 be reported only when the variable is destroyed, out of order with the other
 checks.
+
+A reference, `auto&& r = t.expect (true);`, does compile, but dangles after
+the statement, since the temporary it refers to is destroyed there. The
+members of the check result that an application uses, the message operator and
+`value()`, are qualified for rvalues, so the named result cannot be used,
+except by forcing it with `std::move()`, which is undefined. This is a
+documented restriction of the API: the result must never be named, and the
+message is appended in the same statement.
 
 ## The check result
 
@@ -264,7 +292,7 @@ qualified with `&&`, so it applies only to the reference returned by
 
 ```cpp title="inlines/check-result-inlines.h (simplified)"
 template <class T>
-  requires (extension::printable<T> or detail::lazy_message<T>)
+  requires detail::message_argument<T>
 check_result&&
 check_result::operator<< (const T& msg) &&
 {
@@ -303,6 +331,13 @@ check_result::operator<< (const T& msg) &&
   string is moved into the local formatter, and moved back, so no other buffer
   is allocated. The formatter of the reporter is not used, since it holds the
   text of the expression.
+- `detail::message_argument` accepts a printable value, or a lazy message, but
+  not a callable object that is not a lazy message: a lambda without captures
+  that returns `void`, or a value that cannot be written, converts to a function
+  pointer and then to `bool`, so it would be written as `true`. For the
+  arguments that are not accepted, a second overload of the operator stops
+  the compilation with a message that states what a message argument is,
+  instead of the trace of the overload resolution.
 - When the check will not be written, the value is not formatted at all.
 - A **lazy message** is a callable object (see `detail::lazy_message`) whose
   result is printable. It is called only if the check failed, so it can
@@ -528,6 +563,9 @@ of the running test case stay consecutive, and its TAP plan stays valid:
 
 The condition is replaced by a constant `false`, so the check fails even if
 the condition held.
+
+The same applies to a nested test case started on a test case that is not the
+running one; see [Nesting](/docs/developer/test-cases-and-suites/#nesting).
 
 ## Summary of the order of events
 

@@ -81,14 +81,16 @@ the alias directly, without deriving from `op`.
 
 The checks accept an expression type, or any value that can be used as a
 condition, except the types that are likely mistakes, such as arrays, function
-pointers, and `char` pointers, which would test an address:
+pointers, and `char` pointers, which would test an address, and the wrappers of
+a `bool` (`std::optional<bool>` and the smart pointers to `bool`), whose
+condition tests the wrapper, not the value that a reader assumes:
 
 ```cpp title="extension.h (simplified)"
 template <class T>
 concept checkable
-    = is_op<T> or (not suspicious_condition<T> and requires (const T& t) {
-        t ? true : false;
-      });
+    = is_op<T>
+      or (not suspicious_condition<T> and not detail::ambiguous_condition<T>
+          and requires (const T& t) { t ? true : false; });
 ```
 
 The condition of the conditional operator, which cannot be overloaded, tests
@@ -233,14 +235,21 @@ compare_op (Lhs_T&&, Rhs_T&&, Compare_T)
 `as_operand()` converts the operands that the operators of the language would
 compare by address:
 
-- a `char` array, including a string literal, becomes a `c_string` bounded by
-  the size of the array;
-- a `char` pointer becomes a `c_string` bounded by the null terminator; a null
-  pointer is equal only to another null pointer, and is less than any string;
+- an array of a character type (`char`, `wchar_t`, `char8_t`, `char16_t`, or
+  `char32_t`), including a string literal, becomes a `basic_c_string` of that
+  type, bounded by the size of the array; `c_string` is the alias for `char`;
+- a pointer to a character type becomes a `basic_c_string` bounded by the null
+  terminator; a null pointer is equal only to another null pointer, and is less
+  than any string;
 - any other array becomes an `array_operand`, compared element by element;
 - every other operand is forwarded unchanged.
 
-A `c_string` refers to the characters, and does not copy them; a
+The concept `character` selects the five types (`signed char` and `unsigned
+char` are bytes, and their arrays are `array_operand`s). A `basic_c_string` is
+compared with the strings and string views of the **same** character type, as
+`std::basic_string_view` is, so `L"abc"` is comparable with a `std::wstring`
+but not with a `std::string`. A `basic_c_string` refers to the characters, and
+does not copy them; a
 `std::string` operand, in contrast, is an ordinary operand, and is copied or
 moved like any other.
 
@@ -251,6 +260,7 @@ The types deduced for some common calls are:
 | `eq (a, b)`, with `int a, b` | `compare_op<int, int, equal_to>` |
 | `eq (a, 2)` | `compare_op<int, int, equal_to>` |
 | `eq (s, "abc")`, with `std::string s` | `compare_op<std::string, c_string, equal_to>` |
+| `eq (L"abc", ws)`, with `std::wstring ws` | `compare_op<basic_c_string<wchar_t>, std::wstring, equal_to>` |
 | `negate (e)`, with `e` the first expression | `not_op<compare_op<int, int, equal_to>>` |
 
 ### The constraints at the call site
@@ -325,7 +335,7 @@ The reasons are:
   ```
 
   The C strings and the other arrays are an exception: they are stored as a
-  `c_string` or an `array_operand`, which refer to the original characters or
+  `basic_c_string` or an `array_operand`, which refer to the original characters or
   elements (see [The operands that change
   type](#the-operands-that-change-type)), so an expression built from a local
   array must not outlive the array.
@@ -337,7 +347,12 @@ The reasons are:
   always the case within the statement that checks the expression.
 
 The cost of the copies is paid **in every check**, passed or failed, and is
-significant for large objects, such as a long `std::vector`.
+significant for large objects, such as a long `std::vector`. It is a deliberate
+trade-off, made for the safety of the returned expressions: an expression that
+referred to the named operands would dangle, without a diagnostic, when it is
+returned from the function that builds it. A view copies only a pointer and a
+size, so comparing a `std::string_view` of a string makes no allocation, where
+comparing the strings makes two.
 
 The operand is evaluated once, when the argument of the comparator is
 evaluated; `eq (f (), 42)` calls `f()` once, and the stored value is used both
@@ -454,7 +469,8 @@ throws, and store only the outcome:
 ```cpp title="inlines/detail-inlines.h (simplified)"
 template <class Exception_T>
 template <class Callable_T>
-throws_op<Exception_T>::throws_op (const Callable_T& func)
+  requires std::invocable<Callable_T&>
+throws_op<Exception_T>::throws_op (Callable_T&& func)
     : callable_op{ [&func] () -> callable_result
   {
     try
@@ -484,6 +500,13 @@ throws_op<Exception_T>::throws_op (const Callable_T& func)
 }
 ```
 
+- The callable is taken by forwarding reference and called as an **lvalue**,
+  so a `mutable` lambda or a functor with a non-const call operator is
+  accepted. The functions `throws()` and `nothrow()` and these constructors
+  are constrained by `std::invocable<Callable_T&>`, so that a value that
+  cannot be called without arguments is rejected at the call, with a
+  diagnostic that names the function and the constraint, not deep inside the
+  constructor.
 - `callable_result` holds the result, the kind of exception thrown
   (`throw_outcome`), and the text of `what()`, so that the report can say what
   was thrown instead.
