@@ -726,8 +726,8 @@ static mt::static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
         t.expect (engaged) << "optional with a value";
         local_counts.passed_checks++;
 
-        // Written as `true`, not as the contained `false`.
-        t.expect (std::optional<bool>{ false });
+        // Written as `true`, not as the contained `0`.
+        t.expect (std::optional<int>{ 0 });
         local_counts.passed_checks++;
 
         auto owner = std::make_unique<int> (42);

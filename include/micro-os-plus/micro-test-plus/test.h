@@ -1494,7 +1494,10 @@ namespace micro_os_plus::micro_test_plus
      * Selected for the values that `expect()` does not accept (see
      * `detail::unsupported_condition`); it stops the compilation with a
      * message that states what the function takes, instead of the trace
-     * of the concepts. Never called.
+     * of the concepts, or, for the wrappers of a `bool` (see
+     * `detail::ambiguous_condition`), why they are rejected: their
+     * condition tests the wrapper, not the `bool` that it holds, so the
+     * check would pass for a `false` inside. Never called.
      *
      * @tparam Expr_T The type of the value.
      *
@@ -1568,7 +1571,10 @@ namespace micro_os_plus::micro_test_plus
      * Selected for the values that `require()` does not accept (see
      * `detail::unsupported_condition`); it stops the compilation with a
      * message that states what the function takes, instead of the trace
-     * of the concepts. Never called.
+     * of the concepts, or, for the wrappers of a `bool` (see
+     * `detail::ambiguous_condition`), why they are rejected: their
+     * condition tests the wrapper, not the `bool` that it holds, so the
+     * check would pass for a `false` inside. Never called.
      *
      * @tparam Expr_T The type of the value.
      *

@@ -992,6 +992,18 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (mt::extension::checkable<explicit_bool>);
     static_assert (mt::extension::checkable<std::optional<int>>);
     static_assert (mt::extension::checkable<std::unique_ptr<int>>);
+
+    // The wrappers of a `bool` are ambiguous: their condition tests the
+    // wrapper, not the `bool` that they hold.
+    static_assert (not mt::extension::checkable<std::optional<bool>>);
+    static_assert (not mt::extension::checkable<const std::optional<bool>>);
+    static_assert (not mt::extension::checkable<std::unique_ptr<bool>>);
+    static_assert (not mt::extension::checkable<std::shared_ptr<bool>>);
+    static_assert (not mt::extension::checkable<std::shared_ptr<const bool>>);
+    static_assert (mt::detail::ambiguous_condition<std::optional<bool>>);
+    static_assert (not mt::detail::ambiguous_condition<std::optional<int>>);
+    static_assert (not mt::detail::ambiguous_condition<bool*>);
+    static_assert (mt::extension::checkable<bool*>);
     static_assert (mt::extension::checkable<std::shared_ptr<int>>);
     static_assert (mt::extension::checkable<std::function<void (void)>>);
     // The argument is `const`, so a non-`const` conversion is not usable.

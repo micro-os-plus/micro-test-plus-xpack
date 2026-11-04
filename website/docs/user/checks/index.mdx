@@ -88,7 +88,8 @@ The expression is either a framework expression (a comparator, an
 operator, or a logical function), whose operands are reported on
 failure, or any value that the condition of an `if` statement accepts,
 including the types with an `explicit operator bool`, such as
-`std::optional`, `std::unique_ptr`, and `std::function`:
+`std::optional`, `std::unique_ptr`, and `std::function` (except the wrappers
+of a `bool`, which are rejected, see below):
 
 ```cpp
 auto buffer = std::make_unique<std::byte[]> (size);
@@ -107,6 +108,27 @@ for a character pointer. The pointers to other objects are accepted, so
 t.expect ("answer () == 42");        // Rejected, was always true.
 t.expect (answer);                   // Rejected, a function name.
 t.expect (mt::eq (answer (), 42));   // Correct.
+```
+
+The **wrappers of a `bool` are rejected** too: `std::optional<bool>`, and the
+smart pointers `std::unique_ptr<bool>` and `std::shared_ptr<bool>`. The reason
+is that the condition of such a wrapper does not test the `bool` that it holds,
+but the wrapper itself (a value is present, or the pointer is not null), while
+a reader of `t.expect (flag)` assumes that the check tests the flag. For
+`std::optional<bool>{ false }`, the check would **pass**, and it would be
+reported as `true`, like the arguments that are always true, which are rejected
+for the same reason: a check that passes silently, for another reason than the
+one the author had in mind, is worse than one that does not compile. Write
+`flag.has_value ()` or `ptr != nullptr` to test the wrapper, or compare the
+value, `mt::eq (*flag, true)`. The wrappers of the other types are accepted,
+so `t.expect (value)` with a `std::optional<int>` checks that a value is
+present, as there is no other meaning for it:
+
+```cpp
+std::optional<bool> enabled = read_flag ();
+t.expect (enabled);                  // Rejected, passes also for false.
+t.expect (enabled.has_value ());     // Correct, a value is present.
+t.expect (mt::eq (*enabled, true));  // Correct, the value is true.
 ```
 
 A failed **expectation** is reported and counted, and the test case

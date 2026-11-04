@@ -72,6 +72,8 @@
 
 #include <concepts>
 #include <iterator>
+#include <memory>
+#include <optional>
 #include <string_view>
 #include <type_traits>
 #include <utility>
@@ -130,6 +132,81 @@ namespace micro_os_plus::micro_test_plus
        */
       using op_type = op;
     };
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * @brief Trait marking the wrappers of a `bool`, whose condition is
+     * ambiguous.
+     *
+     * @details
+     * The primary template is `false`; it is `true` for `std::optional`,
+     * `std::unique_ptr`, and `std::shared_ptr` of `bool` (ignoring the
+     * cv-qualifiers of the wrapper and of the element).
+     *
+     * @tparam T The type to check.
+     */
+    template <class T>
+    struct is_bool_wrapper : std::false_type
+    {
+    };
+
+    /**
+     * @brief The specialisation for `std::optional<bool>`.
+     *
+     * @tparam T The element type.
+     */
+    template <class T>
+      requires std::is_same_v<std::remove_cv_t<T>, bool>
+    struct is_bool_wrapper<std::optional<T>> : std::true_type
+    {
+    };
+
+    /**
+     * @brief The specialisation for `std::unique_ptr` of `bool`.
+     *
+     * @tparam T The element type.
+     * @tparam Deleter_T The type of the deleter.
+     */
+    template <class T, class Deleter_T>
+      requires std::is_same_v<std::remove_cv_t<T>, bool>
+    struct is_bool_wrapper<std::unique_ptr<T, Deleter_T>> : std::true_type
+    {
+    };
+
+    /**
+     * @brief The specialisation for `std::shared_ptr` of `bool`.
+     *
+     * @tparam T The element type.
+     */
+    template <class T>
+      requires std::is_same_v<std::remove_cv_t<T>, bool>
+    struct is_bool_wrapper<std::shared_ptr<T>> : std::true_type
+    {
+    };
+
+    /**
+     * @brief C++20 concept satisfied by the wrappers of a `bool`, whose
+     * condition is ambiguous.
+     *
+     * @details
+     * The condition of a `std::optional<bool>`, or of a smart pointer to
+     * a `bool`, tests the wrapper (a value is present, or the pointer is
+     * not null), not the `bool` that it holds, which is what a reader
+     * of `t.expect (flag)` assumes; a check with `false` inside would
+     * pass, and be reported as `true`, for another reason than the one
+     * the author had in mind, as the checks of the arguments that are
+     * always true (see `suspicious_condition`). A check that passes
+     * silently by mistake is worse than one that does not compile, so
+     * `extension::checkable` rejects these types, and the application
+     * writes `has_value ()`, `!= nullptr`, or compares the value with
+     * `eq ()`. The wrappers of the other types are accepted, since the
+     * presence of a value is then the only meaning of the condition.
+     *
+     * @tparam T The type to check.
+     */
+    template <class T>
+    concept ambiguous_condition = is_bool_wrapper<std::remove_cv_t<T>>::value;
 
     // ------------------------------------------------------------------------
   } // namespace detail
@@ -296,7 +373,10 @@ namespace micro_os_plus::micro_test_plus
      * `std::function`, but not the scoped enumerations, which only a
      * cast converts, nor the types satisfying `suspicious_condition`
      * (the arrays, the functions, the pointers to functions, to members,
-     * and to characters), which would make the check pass by mistake.
+     * and to characters), which would make the check pass by mistake,
+     * nor the wrappers of a `bool` (`std::optional<bool>`, and the smart
+     * pointers to `bool`), whose condition tests the wrapper, not the
+     * `bool` that it holds.
      * It is used to constrain the `expect()` and
      * `require()` function templates, and the operands of `all_of()`,
      * `any_of()`, and `negate()`, ensuring that only sensible
@@ -309,10 +389,10 @@ namespace micro_os_plus::micro_test_plus
      * a `const` value, as `expect()` and `require()` receive it.
      */
     template <class T>
-    concept checkable
-        = is_op<T> or (not suspicious_condition<T> and requires (const T& t) {
-            t ? true : false;
-          });
+    concept checkable = is_op<T>
+                        or (not suspicious_condition<T>
+                            and not detail::ambiguous_condition<T>
+                            and requires (const T& t) { t ? true : false; });
 
     /**
      * @brief C++20 concept satisfied when a type was accepted by

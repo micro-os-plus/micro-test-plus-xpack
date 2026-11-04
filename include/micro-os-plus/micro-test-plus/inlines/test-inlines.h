@@ -554,9 +554,19 @@ namespace micro_os_plus::micro_test_plus
                      [[maybe_unused]] const reflection::source_location& sl,
                      detail::check_result&& result)
   {
-    static_assert (extension::checkable<Expr_T>,
-                   "expect() takes a Boolean condition or a comparison, "
-                   "such as eq (); a value of this type is neither");
+    if constexpr (detail::ambiguous_condition<Expr_T>)
+      {
+        static_assert (not detail::ambiguous_condition<Expr_T>,
+                       "expect() does not take a wrapper of a bool, whose "
+                       "condition tests the wrapper, not the value; write "
+                       "has_value () or != nullptr, or use eq ()");
+      }
+    else
+      {
+        static_assert (extension::checkable<Expr_T>,
+                       "expect() takes a Boolean condition or a comparison, "
+                       "such as eq (); a value of this type is neither");
+      }
     return std::move (result);
   }
 
@@ -604,9 +614,19 @@ namespace micro_os_plus::micro_test_plus
                       [[maybe_unused]] const reflection::source_location& sl,
                       detail::check_result&& result)
   {
-    static_assert (extension::checkable<Expr_T>,
-                   "require() takes a Boolean condition or a comparison, "
-                   "such as eq (); a value of this type is neither");
+    if constexpr (detail::ambiguous_condition<Expr_T>)
+      {
+        static_assert (not detail::ambiguous_condition<Expr_T>,
+                       "require() does not take a wrapper of a bool, whose "
+                       "condition tests the wrapper, not the value; write "
+                       "has_value () or != nullptr, or use eq ()");
+      }
+    else
+      {
+        static_assert (extension::checkable<Expr_T>,
+                       "require() takes a Boolean condition or a comparison, "
+                       "such as eq (); a value of this type is neither");
+      }
     return std::move (result);
   }
 
