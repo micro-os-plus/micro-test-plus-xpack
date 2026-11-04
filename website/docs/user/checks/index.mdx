@@ -61,8 +61,8 @@ boolean values; they differ in **what happens after a failure**.
 
 Both are created with member functions of the test case objects, and return an
 object to which a message can be appended with `<<`; the check is **reported at
-the end of the statement**, so the returned object cannot be kept in a
-variable. The declarations below show the parameters that an application
+the end of the statement**, so the returned object **must not be named or
+stored**, not even in a reference. The declarations below show the parameters that an application
 passes; the return type is internal:
 
 ```cpp
@@ -114,10 +114,13 @@ continues, so that all its checks are evaluated and reported in one run.
 
 The result of `t.expect (...)` and `t.require (...)` lives until the end of
 the statement, where the check is reported, so that the checks are
-reported in the order of the statements. It cannot be kept in a variable:
-`auto r = t.expect (...)` does not compile, and a result bound to a
-reference (`auto&& r = t.expect (...)`) cannot be used, since the message
-operator and `value()` can be called only on the temporary.
+reported in the order of the statements. It must never be named. A variable
+of its type, `auto r = t.expect (...)`, does not compile; a reference,
+`auto&& r = t.expect (...)`, compiles, but **dangles after the statement**,
+since the temporary is destroyed there, and the check is reported there, not
+later. The message operator and `value()` can be called only on the temporary,
+so the named result cannot be used, and forcing it with `std::move()` is
+undefined. Append the message in the same statement, with `<<`.
 
 The message accepts the same values as the operands of the [function
 comparators](#function-comparators), including the [custom

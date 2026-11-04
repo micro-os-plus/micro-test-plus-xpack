@@ -170,8 +170,19 @@ namespace micro_os_plus::micro_test_plus
      * the defaulted last argument of these functions, it lives until the
      * end of the expression statement, and the functions return a
      * reference to it, so that a result cannot be kept in a variable
-     * (`auto r = t.expect (...)` does not compile). A result in the
-     * initial state, not yet initialised, reports nothing.
+     * (`auto r = t.expect (...)` does not compile). The check is
+     * reported when the result is destroyed, at the end of the
+     * statement, in the order of the statements, and not later.
+     *
+     * @warning The result must never be named: a reference bound to it
+     * (`auto&& r = t.expect (...)`) compiles, but dangles after the
+     * statement. The message operator and `value()` can be called only
+     * on a temporary, so the named result cannot be used, and forcing
+     * it with `std::move()` is undefined. The messages are appended in
+     * the same statement.
+     *
+     * A result in the initial state, not yet initialised, reports
+     * nothing.
      *
      * Its template function `init()` evaluates the
      * expression and formats it, with the actual operand values, into the

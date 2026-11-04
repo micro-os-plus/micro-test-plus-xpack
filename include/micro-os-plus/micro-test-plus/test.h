@@ -1460,8 +1460,15 @@ namespace micro_os_plus::micro_test_plus
      * destroyed at the end of the statement.
      * @return A reference to the check result, to which optional messages
      * can be appended with `operator<<`; the check is reported when it is
-     * destroyed, at the end of the statement, so the result cannot be kept
-     * in a variable.
+     * destroyed, at the end of the statement.
+     *
+     * @warning The result must not be named, stored, or kept in any
+     * variable. A reference such as `auto&& r = t.expect (...)` compiles,
+     * but dangles after the statement; the message operator and `value()`
+     * can be called only on a temporary, so the named result cannot be
+     * used, and forcing it with `std::move()` is undefined. The check
+     * must be reported at the end of the statement, and not later. Write
+     * the message in the same statement, with `operator<<`.
      */
     template <class Expr_T>
       requires extension::checkable<Expr_T>
@@ -1527,8 +1534,15 @@ namespace micro_os_plus::micro_test_plus
      * destroyed at the end of the statement.
      * @return A reference to the check result, to which optional messages
      * can be appended with `operator<<`; the check is reported when it is
-     * destroyed, at the end of the statement, so the result cannot be kept
-     * in a variable.
+     * destroyed, at the end of the statement.
+     *
+     * @warning The result must not be named, stored, or kept in any
+     * variable. A reference such as `auto&& r = t.expect (...)` compiles,
+     * but dangles after the statement; the message operator and `value()`
+     * can be called only on a temporary, so the named result cannot be
+     * used, and forcing it with `std::move()` is undefined. The check
+     * must be reported at the end of the statement, and not later. Write
+     * the message in the same statement, with `operator<<`.
      */
     template <class Expr_T>
       requires extension::checkable<Expr_T>
@@ -1636,8 +1650,15 @@ namespace micro_os_plus::micro_test_plus
      * destroyed at the end of the statement.
      * @return A reference to the check result, to which optional messages
      * can be appended with `operator<<`; the check is reported when it is
-     * destroyed, at the end of the statement, so the result cannot be kept
-     * in a variable.
+     * destroyed, at the end of the statement.
+     *
+     * @warning The result must not be named, stored, or kept in any
+     * variable. A reference such as `auto&& r = t.expect (...)` compiles,
+     * but dangles after the statement; the message operator and `value()`
+     * can be called only on a temporary, so the named result cannot be
+     * used, and forcing it with `std::move()` is undefined. The check
+     * must be reported at the end of the statement, and not later. Write
+     * the message in the same statement, with `operator<<`.
      */
     template <class Expr_T>
       requires extension::checkable<Expr_T>

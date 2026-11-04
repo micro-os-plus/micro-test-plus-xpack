@@ -268,11 +268,17 @@ c++ -std=c++20 $W -DMICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED -Iinclude \
 
 ### Immediate reporting
 
-The result of each test must be reported right when the test is executed, 
-not deferred until later.  This also means that `expect()` and `require()` 
-cannot be stored
-in a variable, since it would delay the reporting until the variable goes
-out of scope.
+The result of each test must be reported right when the test is executed,
+not deferred until later. This also means that the result of `expect()` and
+`require()` must never be named, stored, or kept in any variable, not even in
+a reference (`auto&& r = t.expect (...)` compiles, but dangles after the
+statement): a named result would delay the reporting until the variable goes
+out of scope. The message operator and `value()` are rvalue-qualified, so a
+named result cannot be used, and forcing it with `std::move()` is undefined.
+This is a documented restriction of the API, not a defect: do not report the
+possibility of a dangling reference (a probe must not force it with
+`std::move()`), and do not propose changes to the return type of `expect()`
+and `require()` that would allow the result to be kept.
 
 ### Utilities
 
