@@ -269,7 +269,8 @@ c++ -std=c++20 $W -DMICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED -Iinclude \
 ### Immediate reporting
 
 The result of each test must be reported right when the test is executed, 
-not deferred until later. This also means that the result cannot be stored
+not deferred until later.  This also means that `expect()` and `require()` 
+cannot be stored
 in a variable, since it would delay the reporting until the variable goes
 out of scope.
 
