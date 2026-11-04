@@ -712,7 +712,7 @@ namespace micro_os_plus::micro_test_plus
    * arguments that are always true.
    */
   template <class Expr_T>
-    requires extension::legacy_checkable<Expr_T>
+    requires detail::legacy_checkable<Expr_T>
   detail::check_result&&
   test_case::expect (const Expr_T& expr, const reflection::source_location& sl,
                      detail::check_result&& result)
@@ -729,7 +729,7 @@ namespace micro_os_plus::micro_test_plus
    * arguments that are always true.
    */
   template <class Expr_T>
-    requires extension::legacy_checkable<Expr_T>
+    requires detail::legacy_checkable<Expr_T>
   detail::check_result&&
   test_case::require (const Expr_T& expr,
                       const reflection::source_location& sl,

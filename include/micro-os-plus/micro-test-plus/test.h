@@ -1190,8 +1190,7 @@ namespace micro_os_plus::micro_test_plus
     template <class T>
     concept unsupported_condition
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
-        = (not extension::checkable<T>)
-          and (not extension::legacy_checkable<T>);
+        = (not extension::checkable<T>) and (not detail::legacy_checkable<T>);
 #else
         = not extension::checkable<T>;
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
@@ -1697,7 +1696,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A reference to the check result.
      */
     template <class Expr_T>
-      requires extension::legacy_checkable<Expr_T>
+      requires detail::legacy_checkable<Expr_T>
     [[deprecated ("the argument is always true; write the condition "
                   "(since 6.0.0)")]] detail::check_result&&
     expect (const Expr_T& expr,
@@ -1721,7 +1720,7 @@ namespace micro_os_plus::micro_test_plus
      * @return A reference to the check result.
      */
     template <class Expr_T>
-      requires extension::legacy_checkable<Expr_T>
+      requires detail::legacy_checkable<Expr_T>
     [[deprecated ("the argument is always true; write the condition "
                   "(since 6.0.0)")]] detail::check_result&&
     require (const Expr_T& expr,

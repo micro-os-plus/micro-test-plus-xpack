@@ -209,6 +209,42 @@ namespace micro_os_plus::micro_test_plus
     concept ambiguous_condition = is_bool_wrapper<std::remove_cv_t<T>>::value;
 
     // ------------------------------------------------------------------------
+
+    /**
+     * @brief C++20 concept satisfied when a type is contextually
+     * convertible to `bool`, but is most likely not a condition.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * The `suspicious_condition` concept is satisfied by the arrays
+     * (including the string literals), the functions, the pointers to
+     * functions and to members, and the pointers to the character types.
+     * All of them are contextually convertible to `bool`, so, when
+     * passed to `expect()` or `require()`, the check silently passes,
+     * usually because the description was written instead of the
+     * condition, or because a function name was written without the
+     * call. The pointers to other object types are not included, since
+     * checking a pointer for null is a legitimate use.
+     */
+    template <class T>
+    concept suspicious_condition
+        = std::is_array_v<T> or std::is_function_v<T>
+          or std::is_member_pointer_v<T>
+          or (std::is_pointer_v<T>
+              and (std::is_function_v<std::remove_pointer_t<T>>
+                   or std::is_same_v<
+                       std::remove_cv_t<std::remove_pointer_t<T>>, char>
+                   or std::is_same_v<
+                       std::remove_cv_t<std::remove_pointer_t<T>>, wchar_t>
+                   or std::is_same_v<
+                       std::remove_cv_t<std::remove_pointer_t<T>>, char8_t>
+                   or std::is_same_v<
+                       std::remove_cv_t<std::remove_pointer_t<T>>, char16_t>
+                   or std::is_same_v<
+                       std::remove_cv_t<std::remove_pointer_t<T>>, char32_t>));
+
+    // ------------------------------------------------------------------------
   } // namespace detail
 
   // --------------------------------------------------------------------------
@@ -325,40 +361,6 @@ namespace micro_os_plus::micro_test_plus
     concept any_op = is_op<Lhs_T> or is_op<Rhs_T>;
 
     /**
-     * @brief C++20 concept satisfied when a type is contextually
-     * convertible to `bool`, but is most likely not a condition.
-     *
-     * @tparam T The type to be checked.
-     *
-     * @details
-     * The `suspicious_condition` concept is satisfied by the arrays
-     * (including the string literals), the functions, the pointers to
-     * functions and to members, and the pointers to the character types.
-     * All of them are contextually convertible to `bool`, so, when
-     * passed to `expect()` or `require()`, the check silently passes,
-     * usually because the description was written instead of the
-     * condition, or because a function name was written without the
-     * call. The pointers to other object types are not included, since
-     * checking a pointer for null is a legitimate use.
-     */
-    template <class T>
-    concept suspicious_condition
-        = std::is_array_v<T> or std::is_function_v<T>
-          or std::is_member_pointer_v<T>
-          or (std::is_pointer_v<T>
-              and (std::is_function_v<std::remove_pointer_t<T>>
-                   or std::is_same_v<
-                       std::remove_cv_t<std::remove_pointer_t<T>>, char>
-                   or std::is_same_v<
-                       std::remove_cv_t<std::remove_pointer_t<T>>, wchar_t>
-                   or std::is_same_v<
-                       std::remove_cv_t<std::remove_pointer_t<T>>, char8_t>
-                   or std::is_same_v<
-                       std::remove_cv_t<std::remove_pointer_t<T>>, char16_t>
-                   or std::is_same_v<
-                       std::remove_cv_t<std::remove_pointer_t<T>>, char32_t>));
-
-    /**
      * @brief C++20 concept satisfied when a type can be used as a test
      * expression in `expect()` or `require()`.
      *
@@ -390,26 +392,9 @@ namespace micro_os_plus::micro_test_plus
      */
     template <class T>
     concept checkable = is_op<T>
-                        or (not suspicious_condition<T>
+                        or (not detail::suspicious_condition<T>
                             and not detail::ambiguous_condition<T>
                             and requires (const T& t) { t ? true : false; });
-
-    /**
-     * @brief C++20 concept satisfied when a type was accepted by
-     * `expect()` and `require()` before the exclusion of the suspicious
-     * conditions.
-     *
-     * @tparam T The type to be checked.
-     *
-     * @details
-     * Satisfied by the types that are contextually convertible to `bool`
-     * but are not `checkable`, i.e. the `suspicious_condition` types. It
-     * constrains the deprecated overloads of `expect()` and `require()`,
-     * which keep such code compiling for one release, with a warning.
-     */
-    template <class T>
-    concept legacy_checkable = (not checkable<T>) and suspicious_condition<T>
-                               and requires (const T& t) { t ? true : false; };
 
     /**
      * @brief C++20 concept satisfied when a type can be appended to the
@@ -489,6 +474,27 @@ namespace micro_os_plus::micro_test_plus
 
   namespace detail
   {
+
+#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
+    /**
+     * @brief C++20 concept satisfied when a type was accepted by
+     * `expect()` and `require()` before the exclusion of the suspicious
+     * conditions.
+     *
+     * @tparam T The type to be checked.
+     *
+     * @details
+     * Satisfied by the types that are contextually convertible to `bool`
+     * but are not `checkable`, i.e. the `suspicious_condition` types. It
+     * constrains the deprecated overloads of `expect()` and `require()`,
+     * which keep such code compiling for one release, with a warning.
+     */
+    template <class T>
+    concept legacy_checkable
+        = (not extension::checkable<T>) and suspicious_condition<T>
+          and requires (const T& t) { t ? true : false; };
+#endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
+
     // ------------------------------------------------------------------------
     // Concepts used only by the implementation.
 

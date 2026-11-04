@@ -89,7 +89,8 @@ condition tests the wrapper, not the value that a reader assumes:
 template <class T>
 concept checkable
     = is_op<T>
-      or (not suspicious_condition<T> and not detail::ambiguous_condition<T>
+      or (not detail::suspicious_condition<T>
+          and not detail::ambiguous_condition<T>
           and requires (const T& t) { t ? true : false; });
 ```
 
@@ -97,6 +98,13 @@ The condition of the conditional operator, which cannot be overloaded, tests
 the contextual conversion to `bool`, as the condition of an `if` statement
 does; it accepts the types with an `explicit operator bool`, such as
 `std::optional` and `std::unique_ptr`, but not the scoped enumerations.
+
+The two concepts that exclude the types, `suspicious_condition` and
+`ambiguous_condition`, are in the `detail` namespace, not in `extension`,
+since an application that writes an extension needs only `checkable`. So is
+`legacy_checkable`, which selects the deprecated overloads of `expect()` and
+`require()` for the types that `suspicious_condition` excluded, and which is
+defined only when the deprecated functionality is enabled.
 
 ## The base templates
 

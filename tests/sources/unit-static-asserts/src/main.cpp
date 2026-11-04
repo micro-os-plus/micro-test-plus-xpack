@@ -1070,11 +1070,11 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (not mt::extension::checkable<const char*>);
     static_assert (not mt::extension::checkable<wchar_t*>);
     static_assert (not mt::extension::checkable<const char8_t*>);
-    static_assert (mt::extension::legacy_checkable<char[4]>);
-    static_assert (mt::extension::legacy_checkable<void (void)>);
-    static_assert (mt::extension::legacy_checkable<const char*>);
-    static_assert (not mt::extension::legacy_checkable<bool>);
-    static_assert (not mt::extension::legacy_checkable<no_conversion>);
+    static_assert (mt::detail::legacy_checkable<char[4]>);
+    static_assert (mt::detail::legacy_checkable<void (void)>);
+    static_assert (mt::detail::legacy_checkable<const char*>);
+    static_assert (not mt::detail::legacy_checkable<bool>);
+    static_assert (not mt::detail::legacy_checkable<no_conversion>);
 
     // The logical combinators apply the same guard to their operands, so
     // that wrapping an always true value does not bypass it.
