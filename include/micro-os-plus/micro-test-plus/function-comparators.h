@@ -147,12 +147,13 @@ namespace micro_os_plus::micro_test_plus
    * @tparam Rhs_T Type of the right hand side operand.
    * @param lhs Left hand side operand.
    * @param rhs Right hand side operand.
-   * @return `false`, to avoid further errors in the check.
+   * @return `false`, to avoid further errors in the check; the type is not
+   * deduced, so that the call can be used in an unevaluated operand.
    */
   template <class Lhs_T, class Rhs_T>
     requires (not detail::comparable_operands<detail::comparison::equal, Lhs_T,
                                               Rhs_T>)
-  [[nodiscard]] constexpr auto
+  [[nodiscard]] constexpr bool
   eq (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**
@@ -185,12 +186,13 @@ namespace micro_os_plus::micro_test_plus
    * @tparam Rhs_T Type of the right hand side operand.
    * @param lhs Left hand side operand.
    * @param rhs Right hand side operand.
-   * @return `false`, to avoid further errors in the check.
+   * @return `false`, to avoid further errors in the check; the type is not
+   * deduced, so that the call can be used in an unevaluated operand.
    */
   template <class Lhs_T, class Rhs_T>
     requires (not detail::comparable_operands<detail::comparison::not_equal,
                                               Lhs_T, Rhs_T>)
-  [[nodiscard]] constexpr auto
+  [[nodiscard]] constexpr bool
   ne (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**
@@ -223,12 +225,13 @@ namespace micro_os_plus::micro_test_plus
    * @tparam Rhs_T Type of the right hand side operand.
    * @param lhs Left hand side operand.
    * @param rhs Right hand side operand.
-   * @return `false`, to avoid further errors in the check.
+   * @return `false`, to avoid further errors in the check; the type is not
+   * deduced, so that the call can be used in an unevaluated operand.
    */
   template <class Lhs_T, class Rhs_T>
     requires (not detail::comparable_operands<detail::comparison::greater,
                                               Lhs_T, Rhs_T>)
-  [[nodiscard]] constexpr auto
+  [[nodiscard]] constexpr bool
   gt (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**
@@ -262,12 +265,13 @@ namespace micro_os_plus::micro_test_plus
    * @tparam Rhs_T Type of the right hand side operand.
    * @param lhs Left hand side operand.
    * @param rhs Right hand side operand.
-   * @return `false`, to avoid further errors in the check.
+   * @return `false`, to avoid further errors in the check; the type is not
+   * deduced, so that the call can be used in an unevaluated operand.
    */
   template <class Lhs_T, class Rhs_T>
     requires (not detail::comparable_operands<
               detail::comparison::greater_equal, Lhs_T, Rhs_T>)
-  [[nodiscard]] constexpr auto
+  [[nodiscard]] constexpr bool
   ge (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**
@@ -301,12 +305,13 @@ namespace micro_os_plus::micro_test_plus
    * @tparam Rhs_T Type of the right hand side operand.
    * @param lhs Left hand side operand.
    * @param rhs Right hand side operand.
-   * @return `false`, to avoid further errors in the check.
+   * @return `false`, to avoid further errors in the check; the type is not
+   * deduced, so that the call can be used in an unevaluated operand.
    */
   template <class Lhs_T, class Rhs_T>
     requires (not detail::comparable_operands<detail::comparison::less, Lhs_T,
                                               Rhs_T>)
-  [[nodiscard]] constexpr auto
+  [[nodiscard]] constexpr bool
   lt (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**
@@ -340,12 +345,13 @@ namespace micro_os_plus::micro_test_plus
    * @tparam Rhs_T Type of the right hand side operand.
    * @param lhs Left hand side operand.
    * @param rhs Right hand side operand.
-   * @return `false`, to avoid further errors in the check.
+   * @return `false`, to avoid further errors in the check; the type is not
+   * deduced, so that the call can be used in an unevaluated operand.
    */
   template <class Lhs_T, class Rhs_T>
     requires (not detail::comparable_operands<detail::comparison::less_equal,
                                               Lhs_T, Rhs_T>)
-  [[nodiscard]] constexpr auto
+  [[nodiscard]] constexpr bool
   le (Lhs_T&& lhs, Rhs_T&& rhs);
 
   /**

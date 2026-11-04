@@ -105,7 +105,7 @@ namespace micro_os_plus::micro_test_plus
   template <class Lhs_T, class Rhs_T>
     requires (not detail::comparable_operands<detail::comparison::equal, Lhs_T,
                                               Rhs_T>)
-  constexpr auto
+  constexpr bool
   eq ([[maybe_unused]] Lhs_T&& lhs, [[maybe_unused]] Rhs_T&& rhs)
   {
     detail::reject_comparison<detail::comparison::equal, Lhs_T, Rhs_T> ();
@@ -139,7 +139,7 @@ namespace micro_os_plus::micro_test_plus
   template <class Lhs_T, class Rhs_T>
     requires (not detail::comparable_operands<detail::comparison::not_equal,
                                               Lhs_T, Rhs_T>)
-  constexpr auto
+  constexpr bool
   ne ([[maybe_unused]] Lhs_T&& lhs, [[maybe_unused]] Rhs_T&& rhs)
   {
     detail::reject_comparison<detail::comparison::not_equal, Lhs_T, Rhs_T> ();
@@ -173,7 +173,7 @@ namespace micro_os_plus::micro_test_plus
   template <class Lhs_T, class Rhs_T>
     requires (not detail::comparable_operands<detail::comparison::greater,
                                               Lhs_T, Rhs_T>)
-  constexpr auto
+  constexpr bool
   gt ([[maybe_unused]] Lhs_T&& lhs, [[maybe_unused]] Rhs_T&& rhs)
   {
     detail::reject_comparison<detail::comparison::greater, Lhs_T, Rhs_T> ();
@@ -207,7 +207,7 @@ namespace micro_os_plus::micro_test_plus
   template <class Lhs_T, class Rhs_T>
     requires (not detail::comparable_operands<
               detail::comparison::greater_equal, Lhs_T, Rhs_T>)
-  constexpr auto
+  constexpr bool
   ge ([[maybe_unused]] Lhs_T&& lhs, [[maybe_unused]] Rhs_T&& rhs)
   {
     detail::reject_comparison<detail::comparison::greater_equal, Lhs_T,
@@ -242,7 +242,7 @@ namespace micro_os_plus::micro_test_plus
   template <class Lhs_T, class Rhs_T>
     requires (not detail::comparable_operands<detail::comparison::less, Lhs_T,
                                               Rhs_T>)
-  constexpr auto
+  constexpr bool
   lt ([[maybe_unused]] Lhs_T&& lhs, [[maybe_unused]] Rhs_T&& rhs)
   {
     detail::reject_comparison<detail::comparison::less, Lhs_T, Rhs_T> ();
@@ -276,7 +276,7 @@ namespace micro_os_plus::micro_test_plus
   template <class Lhs_T, class Rhs_T>
     requires (not detail::comparable_operands<detail::comparison::less_equal,
                                               Lhs_T, Rhs_T>)
-  constexpr auto
+  constexpr bool
   le ([[maybe_unused]] Lhs_T&& lhs, [[maybe_unused]] Rhs_T&& rhs)
   {
     detail::reject_comparison<detail::comparison::less_equal, Lhs_T, Rhs_T> ();

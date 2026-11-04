@@ -334,6 +334,58 @@ namespace
       = mt::detail::comparable_operands<mt::detail::comparison::less_equal, L,
                                         R>;
 
+  // Whether the calls that take the bodies, the operands, the messages, and
+  // the tags are well formed. They are for the arguments that are not valid
+  // too, since the functions have overloads for them, which stop the
+  // compilation with a message when they are instantiated, but not when
+  // they are only named in an unevaluated operand. A call that is well
+  // formed for an argument that does not satisfy the concept of the valid
+  // ones shows that the overload exists.
+  template <class Body_T>
+  concept calls_test = requires (mt::suite& s, Body_T&& body) {
+    s.test ("t", std::forward<Body_T> (body));
+  };
+
+  template <class Body_T>
+  concept calls_test_nested = requires (mt::test_case& t, Body_T&& body) {
+    t.test ("t", std::forward<Body_T> (body));
+  };
+
+  template <class Body_T>
+  concept calls_add_suite = requires (mt::runner& r, Body_T&& body) {
+    r.add_suite ("s", std::forward<Body_T> (body));
+  };
+
+  template <class Body_T>
+  concept builds_static_suite = requires (mt::runner& r, Body_T&& body) {
+    mt::static_suite{ "s", r, std::forward<Body_T> (body) };
+  };
+
+  template <class L, class R>
+  concept calls_comparators = requires (L&& l, R&& r) {
+    mt::eq (std::forward<L> (l), std::forward<R> (r));
+    mt::ne (std::forward<L> (l), std::forward<R> (r));
+    mt::gt (std::forward<L> (l), std::forward<R> (r));
+    mt::ge (std::forward<L> (l), std::forward<R> (r));
+    mt::lt (std::forward<L> (l), std::forward<R> (r));
+    mt::le (std::forward<L> (l), std::forward<R> (r));
+  };
+
+  template <class T>
+  concept appends_message
+      = requires (mt::detail::check_result&& result, const T& message) {
+          std::move (result) << message;
+        };
+
+  template <class Tag_T>
+  concept builds_compare_op = requires (int a, int b) {
+    mt::extension::compare_op{ a, b, Tag_T{} };
+  };
+
+  template <class Tag_T>
+  concept builds_predicate_op
+      = requires (int a) { mt::extension::predicate_op{ a, Tag_T{} }; };
+
   // The tags of the custom comparators and predicates, with and without
   // the members that the framework requires (#240).
   struct tag_compare
@@ -1058,6 +1110,12 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (can_ge<double, float>);
 
     static_assert (not can_eq<int, const char (&)[4]>);
+
+    // The comparators have overloads for the operands that cannot be
+    // compared or written, which state why; the calls are well formed.
+    static_assert (calls_comparators<int, int>);
+    static_assert (calls_comparators<int, const char (&)[4]>);
+    static_assert (calls_comparators<std::string, int>);
     static_assert (not can_eq<std::string, int>);
     static_assert (not can_eq<std::vector<int>, std::array<int, 2>>);
     static_assert (not can_ne<std::string, int>);
@@ -1118,6 +1176,16 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (not mt::extension::predicate_tag<tag_without_symbol, int>);
     static_assert (not mt::extension::predicate_tag<tag_without_apply, int>);
     static_assert (not mt::extension::predicate_tag<tag_compare, int>);
+
+    // The expressions with a tag that is not valid have a constructor that
+    // states what the tag needs; it exists only for those tags.
+    static_assert (builds_compare_op<tag_compare>);
+    static_assert (builds_compare_op<tag_without_symbol>);
+    static_assert (builds_compare_op<tag_without_apply>);
+    static_assert (builds_compare_op<tag_unprintable_symbol>);
+    static_assert (builds_predicate_op<tag_predicate>);
+    static_assert (builds_predicate_op<tag_without_symbol>);
+    static_assert (builds_predicate_op<tag_without_apply>);
   }
 
   {
@@ -1170,6 +1238,19 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (not can_add_suite_body<decltype (no_parameter)>);
     static_assert (not can_add_suite_body<decltype (typed_suite)>);
     static_assert (not can_add_suite_body<decltype (move_only)>);
+
+    // The functions have overloads for the bodies that are not valid, which
+    // state what a body takes; the calls are well formed.
+    static_assert (calls_test<decltype (generic_test)>);
+    static_assert (calls_test<decltype (no_parameter)>);
+    static_assert (calls_test<decltype (integer_parameter)>);
+    static_assert (calls_test<decltype (suite_parameter)>);
+    static_assert (calls_test_nested<decltype (no_parameter)>);
+    static_assert (calls_add_suite<decltype (typed_suite)>);
+    static_assert (calls_add_suite<decltype (typed_test)>);
+    static_assert (calls_add_suite<decltype (move_only)>);
+    static_assert (builds_static_suite<decltype (no_parameter)>);
+    static_assert (builds_static_suite<decltype (typed_test)>);
   }
 
   {
@@ -1231,6 +1312,13 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     // written as `true`, after the conversion to a function pointer, and
     // the values that cannot be written, are rejected.
     static_assert (mt::detail::message_argument<int>);
+
+    // The message operator has an overload for the arguments that are not
+    // valid, which states what a message argument is; the call is well
+    // formed.
+    static_assert (appends_message<int>);
+    static_assert (appends_message<decltype (no_result)>);
+    static_assert (appends_message<unformatted>);
     static_assert (mt::detail::message_argument<const char*>);
     static_assert (mt::detail::message_argument<std::string>);
     static_assert (mt::detail::message_argument<int (*) (void)>);

@@ -170,7 +170,10 @@ must return a **framework expression**, built with the public templates of the
 The **tag** is an empty structure that defines the operation, with a
 static `apply()` member function template, which receives the operands
 and returns the result, and a static `symbol`, written in the failure
-reports between the two operands, or before the single one:
+reports between the two operands, or before the single one. A tag that has no
+`symbol` that can be written, or no `apply()` that can be called with the
+operands and returns a value convertible to `bool`, is **rejected with a
+message** that states what the tag needs, not with the trace of the concepts:
 
 ```cpp showLineNumbers
 #include "micro-os-plus/micro-test-plus.h"

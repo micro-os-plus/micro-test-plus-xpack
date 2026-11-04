@@ -632,6 +632,72 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
+     * Satisfied when the tag has a static member `symbol` that the
+     * formatter can write.
+     */
+    template <class Tag_T>
+    concept tag_has_symbol = requires {
+      requires extension::printable<
+          std::remove_cvref_t<decltype (Tag_T::symbol)>>;
+    };
+
+    /**
+     * @details
+     * Always fails the static assertion that applies, since it is called
+     * only when `extension::compare_tag` is not satisfied: the missing or
+     * unprintable `symbol` is reported first, then the `apply()` that
+     * cannot be called with the operands, or whose result is not
+     * convertible to `bool`.
+     */
+    template <class Tag_T>
+    constexpr void
+    reject_compare_tag (void) noexcept
+    {
+      if constexpr (not tag_has_symbol<Tag_T>)
+        {
+          static_assert (not std::is_same_v<Tag_T, Tag_T>,
+                         "the tag of a comparator needs a static member "
+                         "symbol that can be written, such as a const "
+                         "char*");
+        }
+      else
+        {
+          static_assert (not std::is_same_v<Tag_T, Tag_T>,
+                         "the tag of a comparator needs a static member "
+                         "function apply (lhs, rhs) that can be called with "
+                         "the operands and returns a value convertible to "
+                         "bool");
+        }
+    }
+
+    /**
+     * @details
+     * As `reject_compare_tag()`, for the tag of a predicate, whose
+     * `apply()` takes one operand.
+     */
+    template <class Tag_T>
+    constexpr void
+    reject_predicate_tag (void) noexcept
+    {
+      if constexpr (not tag_has_symbol<Tag_T>)
+        {
+          static_assert (not std::is_same_v<Tag_T, Tag_T>,
+                         "the tag of a predicate needs a static member "
+                         "symbol that can be written, such as a const "
+                         "char*");
+        }
+      else
+        {
+          static_assert (not std::is_same_v<Tag_T, Tag_T>,
+                         "the tag of a predicate needs a static member "
+                         "function apply (operand) that can be called with "
+                         "the operand and returns a value convertible to "
+                         "bool");
+        }
+    }
+
+    /**
+     * @details
      * Evaluates the comparison inside an immediately invoked lambda, which
      * converts the result of `Compare_T::apply()` to `bool`, and passes it
      * to the `binary_op` base class constructor:
@@ -689,6 +755,26 @@ namespace micro_os_plus::micro_test_plus
           }
       }() }
     {
+    }
+
+    /**
+     * @details
+     * Never called; the compilation stops in `reject_compare_tag()`, with a
+     * message that states what the tag needs. The base is built with the
+     * operands and a `false` result, so that the error is the only one.
+     */
+    template <class Lhs_T, class Rhs_T, class Compare_T>
+    template <class L, class R>
+      requires (not extension::compare_tag<Compare_T, unwrapped_t<L>,
+                                           unwrapped_t<R>>)
+    constexpr compare_op<Lhs_T, Rhs_T, Compare_T>::compare_op (L&& lhs,
+                                                               R&& rhs,
+                                                               Compare_T)
+        : binary_op<Lhs_T, Rhs_T>{ detail::as_operand (std::forward<L> (lhs)),
+                                   detail::as_operand (std::forward<R> (rhs)),
+                                   false }
+    {
+      detail::reject_compare_tag<Compare_T> ();
     }
 
     // ------------------------------------------------------------------------
@@ -872,6 +958,20 @@ namespace micro_os_plus::micro_test_plus
                        static_cast<bool> (
                            Predicate_T::apply (detail::unwrap (t))) }
     {
+    }
+
+    /**
+     * @details
+     * Never called; the compilation stops in `reject_predicate_tag()`, with
+     * a message that states what the tag needs.
+     */
+    template <class T, class Predicate_T>
+    template <class U>
+      requires (not extension::predicate_tag<Predicate_T, unwrapped_t<U>>)
+    constexpr predicate_op<T, Predicate_T>::predicate_op (U&& t, Predicate_T)
+        : unary_op<T>{ detail::as_operand (std::forward<U> (t)), false }
+    {
+      detail::reject_predicate_tag<Predicate_T> ();
     }
 
     // ------------------------------------------------------------------------

@@ -480,7 +480,12 @@ namespace micro_os_plus::micro_test_plus::detail
   {
     *this << colour (op);
     append_operand (op.lhs ());
-    *this << Compare_T::symbol;
+    // A tag without a symbol is rejected when the expression is built, and
+    // must not give a second error here.
+    if constexpr (detail::tag_has_symbol<Compare_T>)
+      {
+        *this << Compare_T::symbol;
+      }
     append_operand (op.rhs ());
     using lhs_type = std::remove_cvref_t<decltype (op.lhs ())>;
     using rhs_type = std::remove_cvref_t<decltype (op.rhs ())>;
@@ -702,7 +707,11 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::operator<< (
       const detail::predicate_op<T, Predicate_T>& op)
   {
-    *this << colour (op) << Predicate_T::symbol;
+    *this << colour (op);
+    if constexpr (detail::tag_has_symbol<Predicate_T>)
+      {
+        *this << Predicate_T::symbol;
+      }
     append_operand (op.operand ());
     return (*this << colour_none ());
   }

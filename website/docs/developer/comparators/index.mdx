@@ -544,7 +544,14 @@ namespace extension
 
 An application tag is accepted if it satisfies `extension::compare_tag` (or
 `extension::predicate_tag`): a printable `symbol`, and an `apply()` whose
-result converts to `bool`. The expressions so created are ordinary framework
+result converts to `bool`. The constructors of `compare_op` and `predicate_op`
+require the concept; for a tag that does not satisfy it, a second constructor,
+selected by the negated concept, only stops the compilation, with a
+`static_assert` in `reject_compare_tag()` or `reject_predicate_tag()` that
+says what the tag needs (the `symbol` first, then the `apply()`), and builds
+the base with a `false` result, so that the error is the only one. The
+formatter writes the `symbol` of a tag only when it has one
+(`tag_has_symbol`), for the same reason. The expressions so created are ordinary framework
 expressions: they can be combined with `all_of()` and `negate()`, and are
 reported by the same formatter. The User's Guide shows an example, in
 [Custom comparators](/docs/user/extending/#custom-comparators).

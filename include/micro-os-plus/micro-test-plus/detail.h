@@ -890,6 +890,26 @@ namespace micro_os_plus::micro_test_plus
         requires extension::compare_tag<Compare_T, unwrapped_t<L>,
                                         unwrapped_t<R>>
       constexpr compare_op (L&& lhs, R&& rhs, Compare_T);
+
+      /**
+       * @brief Rejects a tag that does not satisfy `extension::compare_tag`.
+       *
+       * @details
+       * Selected when the tag has no printable static `symbol`, or no
+       * static `apply()` that can be called with the operands; it stops the
+       * compilation with a message that states what the tag needs, instead
+       * of the notes of the concept. Never called.
+       *
+       * @tparam L The type of the left-hand operand argument.
+       * @tparam R The type of the right-hand operand argument.
+       *
+       * @param lhs The left-hand operand.
+       * @param rhs The right-hand operand.
+       */
+      template <class L, class R>
+        requires (not extension::compare_tag<Compare_T, unwrapped_t<L>,
+                                             unwrapped_t<R>>)
+      constexpr compare_op (L&& lhs, R&& rhs, Compare_T);
     };
 
     /**
@@ -1231,6 +1251,24 @@ namespace micro_os_plus::micro_test_plus
        */
       template <class U>
         requires extension::predicate_tag<Predicate_T, unwrapped_t<U>>
+      constexpr predicate_op (U&& t, Predicate_T);
+
+      /**
+       * @brief Rejects a tag that does not satisfy
+       * `extension::predicate_tag`.
+       *
+       * @details
+       * Selected when the tag has no printable static `symbol`, or no
+       * static `apply()` that can be called with the operand; it stops the
+       * compilation with a message that states what the tag needs, instead
+       * of the notes of the concept. Never called.
+       *
+       * @tparam U The type of the operand argument.
+       *
+       * @param t The operand.
+       */
+      template <class U>
+        requires (not extension::predicate_tag<Predicate_T, unwrapped_t<U>>)
       constexpr predicate_op (U&& t, Predicate_T);
     };
 
