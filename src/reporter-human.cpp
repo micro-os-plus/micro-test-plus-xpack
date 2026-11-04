@@ -531,8 +531,8 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Returns an empty string. The human-readable reporter does not prefix comment
-   * lines; the `write_info()` output appears as plain text.
+   * Returns an empty string. The human-readable reporter does not prefix
+   * comment lines; the `write_info()` output appears as plain text.
    */
   const char*
   reporter_human::comment_prefix (void) const noexcept
