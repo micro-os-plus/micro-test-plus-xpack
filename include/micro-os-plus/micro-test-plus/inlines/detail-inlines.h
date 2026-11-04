@@ -434,6 +434,70 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
+     * The operands of the comparators must be written in the report of a
+     * failed check, and compared with the operator. A single concept for
+     * both conditions selects the comparator, and its negation selects the
+     * overload that explains why a call is rejected.
+     */
+    template <comparison Op, class Lhs_T, class Rhs_T>
+    concept comparable_operands
+        = extension::printable<Lhs_T> and extension::printable<Rhs_T>
+          and comparable<Op, Lhs_T, Rhs_T>;
+
+    /**
+     * @details
+     * Always fails the static assertion that applies, since it is called
+     * only when `comparable_operands` is not satisfied: an operand that
+     * cannot be written is reported first, then the operator that the
+     * operands do not support.
+     */
+    template <comparison Op, class Lhs_T, class Rhs_T>
+    constexpr void
+    reject_comparison (void) noexcept
+    {
+      if constexpr (not extension::printable<Lhs_T>
+                    or not extension::printable<Rhs_T>)
+        {
+          static_assert (not std::is_same_v<Lhs_T, Lhs_T>,
+                         "an operand of the comparator cannot be written in "
+                         "the report; define an operator<< (mt::"
+                         "expression_formatter&, const T&) in the namespace "
+                         "of its type");
+        }
+      else if constexpr (Op == comparison::equal)
+        {
+          static_assert (not std::is_same_v<Lhs_T, Lhs_T>,
+                         "the operands of eq () cannot be compared with ==");
+        }
+      else if constexpr (Op == comparison::not_equal)
+        {
+          static_assert (not std::is_same_v<Lhs_T, Lhs_T>,
+                         "the operands of ne () cannot be compared with !=");
+        }
+      else if constexpr (Op == comparison::greater)
+        {
+          static_assert (not std::is_same_v<Lhs_T, Lhs_T>,
+                         "the operands of gt () cannot be compared with >");
+        }
+      else if constexpr (Op == comparison::greater_equal)
+        {
+          static_assert (not std::is_same_v<Lhs_T, Lhs_T>,
+                         "the operands of ge () cannot be compared with >=");
+        }
+      else if constexpr (Op == comparison::less)
+        {
+          static_assert (not std::is_same_v<Lhs_T, Lhs_T>,
+                         "the operands of lt () cannot be compared with <");
+        }
+      else
+        {
+          static_assert (not std::is_same_v<Lhs_T, Lhs_T>,
+                         "the operands of le () cannot be compared with <=");
+        }
+    }
+
+    /**
+     * @details
      * The using-declaration makes the standard operators visible to
      * unqualified lookup, in addition to those found by argument-dependent
      * lookup, and hides any `operator==` of the enclosing namespaces.

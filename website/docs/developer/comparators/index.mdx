@@ -274,6 +274,19 @@ with a short diagnostic, instead of an error deep inside `apply()`:
   operator, after `as_operand()`, or that they are integers of different
   signedness.
 
+The two conditions are joined in the concept `comparable_operands`, which
+selects `eq()`. For the operands that do not satisfy it, `eq()` has a second
+overload, selected by the negated concept, as `expect()` has for the values
+that are not conditions. It never runs: it calls `reject_comparison()`, whose
+`static_assert` states why the call is rejected (an operand that cannot be
+written first, then the operator that the operands do not support), and
+returns `false`, so that the check that contains the call gives no further
+errors. The same holds for the other five comparators.
+
+Since the call of the comparators is well formed for any operands, a program
+cannot test whether two types are comparable by trying to call them; it tests
+`detail::comparable_operands` instead.
+
 `comparable` is a single concept, parametrised by the `comparison`
 enumeration, so that the six comparators share it. Its check of the operator
 is made in a namespace with the same using-declarations as `apply()`, so that

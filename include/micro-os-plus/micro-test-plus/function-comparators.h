@@ -129,8 +129,29 @@ namespace micro_os_plus::micro_test_plus
    * equal.
    */
   template <class Lhs_T, class Rhs_T>
-    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>
-              and detail::comparable<detail::comparison::equal, Lhs_T, Rhs_T>)
+    requires detail::comparable_operands<detail::comparison::equal, Lhs_T,
+                                         Rhs_T>
+  [[nodiscard]] constexpr auto
+  eq (Lhs_T&& lhs, Rhs_T&& rhs);
+
+  /**
+   * @brief Rejects operands that cannot be compared with `==` or written.
+   *
+   * @details
+   * Selected for the operands that `eq()` does not accept (see
+   * `detail::comparable_operands`); it stops the compilation with a message
+   * that states what is wrong, instead of the notes of the concepts. Never
+   * called.
+   *
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   * @param lhs Left hand side operand.
+   * @param rhs Right hand side operand.
+   * @return `false`, to avoid further errors in the check.
+   */
+  template <class Lhs_T, class Rhs_T>
+    requires (not detail::comparable_operands<detail::comparison::equal, Lhs_T,
+                                              Rhs_T>)
   [[nodiscard]] constexpr auto
   eq (Lhs_T&& lhs, Rhs_T&& rhs);
 
@@ -146,9 +167,29 @@ namespace micro_os_plus::micro_test_plus
    * equal.
    */
   template <class Lhs_T, class Rhs_T>
-    requires (
-        extension::printable<Lhs_T> and extension::printable<Rhs_T>
-        and detail::comparable<detail::comparison::not_equal, Lhs_T, Rhs_T>)
+    requires detail::comparable_operands<detail::comparison::not_equal, Lhs_T,
+                                         Rhs_T>
+  [[nodiscard]] constexpr auto
+  ne (Lhs_T&& lhs, Rhs_T&& rhs);
+
+  /**
+   * @brief Rejects operands that cannot be compared with `!=` or written.
+   *
+   * @details
+   * Selected for the operands that `ne()` does not accept (see
+   * `detail::comparable_operands`); it stops the compilation with a message
+   * that states what is wrong, instead of the notes of the concepts. Never
+   * called.
+   *
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   * @param lhs Left hand side operand.
+   * @param rhs Right hand side operand.
+   * @return `false`, to avoid further errors in the check.
+   */
+  template <class Lhs_T, class Rhs_T>
+    requires (not detail::comparable_operands<detail::comparison::not_equal,
+                                              Lhs_T, Rhs_T>)
   [[nodiscard]] constexpr auto
   ne (Lhs_T&& lhs, Rhs_T&& rhs);
 
@@ -164,9 +205,29 @@ namespace micro_os_plus::micro_test_plus
    * than `rhs`.
    */
   template <class Lhs_T, class Rhs_T>
-    requires (
-        extension::printable<Lhs_T> and extension::printable<Rhs_T>
-        and detail::comparable<detail::comparison::greater, Lhs_T, Rhs_T>)
+    requires detail::comparable_operands<detail::comparison::greater, Lhs_T,
+                                         Rhs_T>
+  [[nodiscard]] constexpr auto
+  gt (Lhs_T&& lhs, Rhs_T&& rhs);
+
+  /**
+   * @brief Rejects operands that cannot be compared with `>` or written.
+   *
+   * @details
+   * Selected for the operands that `gt()` does not accept (see
+   * `detail::comparable_operands`); it stops the compilation with a message
+   * that states what is wrong, instead of the notes of the concepts. Never
+   * called.
+   *
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   * @param lhs Left hand side operand.
+   * @param rhs Right hand side operand.
+   * @return `false`, to avoid further errors in the check.
+   */
+  template <class Lhs_T, class Rhs_T>
+    requires (not detail::comparable_operands<detail::comparison::greater,
+                                              Lhs_T, Rhs_T>)
   [[nodiscard]] constexpr auto
   gt (Lhs_T&& lhs, Rhs_T&& rhs);
 
@@ -183,9 +244,29 @@ namespace micro_os_plus::micro_test_plus
    * than or equal to `rhs`.
    */
   template <class Lhs_T, class Rhs_T>
-    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>
-              and detail::comparable<detail::comparison::greater_equal, Lhs_T,
-                                     Rhs_T>)
+    requires detail::comparable_operands<detail::comparison::greater_equal,
+                                         Lhs_T, Rhs_T>
+  [[nodiscard]] constexpr auto
+  ge (Lhs_T&& lhs, Rhs_T&& rhs);
+
+  /**
+   * @brief Rejects operands that cannot be compared with `>=` or written.
+   *
+   * @details
+   * Selected for the operands that `ge()` does not accept (see
+   * `detail::comparable_operands`); it stops the compilation with a message
+   * that states what is wrong, instead of the notes of the concepts. Never
+   * called.
+   *
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   * @param lhs Left hand side operand.
+   * @param rhs Right hand side operand.
+   * @return `false`, to avoid further errors in the check.
+   */
+  template <class Lhs_T, class Rhs_T>
+    requires (not detail::comparable_operands<
+              detail::comparison::greater_equal, Lhs_T, Rhs_T>)
   [[nodiscard]] constexpr auto
   ge (Lhs_T&& lhs, Rhs_T&& rhs);
 
@@ -202,8 +283,29 @@ namespace micro_os_plus::micro_test_plus
    * `rhs`.
    */
   template <class Lhs_T, class Rhs_T>
-    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>
-              and detail::comparable<detail::comparison::less, Lhs_T, Rhs_T>)
+    requires detail::comparable_operands<detail::comparison::less, Lhs_T,
+                                         Rhs_T>
+  [[nodiscard]] constexpr auto
+  lt (Lhs_T&& lhs, Rhs_T&& rhs);
+
+  /**
+   * @brief Rejects operands that cannot be compared with `<` or written.
+   *
+   * @details
+   * Selected for the operands that `lt()` does not accept (see
+   * `detail::comparable_operands`); it stops the compilation with a message
+   * that states what is wrong, instead of the notes of the concepts. Never
+   * called.
+   *
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   * @param lhs Left hand side operand.
+   * @param rhs Right hand side operand.
+   * @return `false`, to avoid further errors in the check.
+   */
+  template <class Lhs_T, class Rhs_T>
+    requires (not detail::comparable_operands<detail::comparison::less, Lhs_T,
+                                              Rhs_T>)
   [[nodiscard]] constexpr auto
   lt (Lhs_T&& lhs, Rhs_T&& rhs);
 
@@ -220,9 +322,29 @@ namespace micro_os_plus::micro_test_plus
    * or equal to `rhs`.
    */
   template <class Lhs_T, class Rhs_T>
-    requires (
-        extension::printable<Lhs_T> and extension::printable<Rhs_T>
-        and detail::comparable<detail::comparison::less_equal, Lhs_T, Rhs_T>)
+    requires detail::comparable_operands<detail::comparison::less_equal, Lhs_T,
+                                         Rhs_T>
+  [[nodiscard]] constexpr auto
+  le (Lhs_T&& lhs, Rhs_T&& rhs);
+
+  /**
+   * @brief Rejects operands that cannot be compared with `<=` or written.
+   *
+   * @details
+   * Selected for the operands that `le()` does not accept (see
+   * `detail::comparable_operands`); it stops the compilation with a message
+   * that states what is wrong, instead of the notes of the concepts. Never
+   * called.
+   *
+   * @tparam Lhs_T Type of the left hand side operand.
+   * @tparam Rhs_T Type of the right hand side operand.
+   * @param lhs Left hand side operand.
+   * @param rhs Right hand side operand.
+   * @return `false`, to avoid further errors in the check.
+   */
+  template <class Lhs_T, class Rhs_T>
+    requires (not detail::comparable_operands<detail::comparison::less_equal,
+                                              Lhs_T, Rhs_T>)
   [[nodiscard]] constexpr auto
   le (Lhs_T&& lhs, Rhs_T&& rhs);
 

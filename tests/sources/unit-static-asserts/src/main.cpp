@@ -221,14 +221,18 @@ namespace with_comparators
   // Satisfied when at least one function comparator accepts the operands.
   template <class Lhs_T, class Rhs_T>
   concept any_accepts
-      = requires (const Lhs_T& lhs, const Rhs_T& rhs) { mt::eq (lhs, rhs); }
-        or requires (const Lhs_T& lhs, const Rhs_T& rhs) { mt::ne (lhs, rhs); }
-        or requires (const Lhs_T& lhs, const Rhs_T& rhs) { mt::gt (lhs, rhs); }
-        or requires (const Lhs_T& lhs, const Rhs_T& rhs) { mt::ge (lhs, rhs); }
-        or requires (const Lhs_T& lhs, const Rhs_T& rhs) { mt::lt (lhs, rhs); }
-        or requires (const Lhs_T& lhs, const Rhs_T& rhs) {
-             mt::le (lhs, rhs);
-           };
+      = mt::detail::comparable_operands<mt::detail::comparison::equal, Lhs_T,
+                                        Rhs_T>
+        or mt::detail::comparable_operands<mt::detail::comparison::not_equal,
+                                           Lhs_T, Rhs_T>
+        or mt::detail::comparable_operands<mt::detail::comparison::greater,
+                                           Lhs_T, Rhs_T>
+        or mt::detail::comparable_operands<
+            mt::detail::comparison::greater_equal, Lhs_T, Rhs_T>
+        or mt::detail::comparable_operands<mt::detail::comparison::less, Lhs_T,
+                                           Rhs_T>
+        or mt::detail::comparable_operands<mt::detail::comparison::less_equal,
+                                           Lhs_T, Rhs_T>;
 } // namespace with_comparators
 
 // ----------------------------------------------------------------------------
@@ -299,36 +303,36 @@ namespace
   concept can_add_top_suite
       = requires (mt::runner& r, Name_T name) { r.add_top_suite (name); };
 
-  // Whether the comparators accept operands of the given types (#238).
+  // Whether the comparators accept operands of the given types (#238). The
+  // functions have also overloads for the other operands, which stop the
+  // compilation with a message, so the call itself cannot be tested; the
+  // concept that selects them is.
   template <class L, class R>
-  concept can_eq = requires (L&& l, R&& r) {
-    mt::eq (std::forward<L> (l), std::forward<R> (r));
-  };
+  concept can_eq
+      = mt::detail::comparable_operands<mt::detail::comparison::equal, L, R>;
 
   template <class L, class R>
-  concept can_ne = requires (L&& l, R&& r) {
-    mt::ne (std::forward<L> (l), std::forward<R> (r));
-  };
+  concept can_ne
+      = mt::detail::comparable_operands<mt::detail::comparison::not_equal, L,
+                                        R>;
 
   template <class L, class R>
-  concept can_gt = requires (L&& l, R&& r) {
-    mt::gt (std::forward<L> (l), std::forward<R> (r));
-  };
+  concept can_gt
+      = mt::detail::comparable_operands<mt::detail::comparison::greater, L, R>;
 
   template <class L, class R>
-  concept can_ge = requires (L&& l, R&& r) {
-    mt::ge (std::forward<L> (l), std::forward<R> (r));
-  };
+  concept can_ge
+      = mt::detail::comparable_operands<mt::detail::comparison::greater_equal,
+                                        L, R>;
 
   template <class L, class R>
-  concept can_lt = requires (L&& l, R&& r) {
-    mt::lt (std::forward<L> (l), std::forward<R> (r));
-  };
+  concept can_lt
+      = mt::detail::comparable_operands<mt::detail::comparison::less, L, R>;
 
   template <class L, class R>
-  concept can_le = requires (L&& l, R&& r) {
-    mt::le (std::forward<L> (l), std::forward<R> (r));
-  };
+  concept can_le
+      = mt::detail::comparable_operands<mt::detail::comparison::less_equal, L,
+                                        R>;
 
   // The tags of the custom comparators and predicates, with and without
   // the members that the framework requires (#240).

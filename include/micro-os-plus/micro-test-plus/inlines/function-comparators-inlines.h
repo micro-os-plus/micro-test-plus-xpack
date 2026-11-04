@@ -87,14 +87,29 @@ namespace micro_os_plus::micro_test_plus
    * so that the expression stays valid after the operands are destroyed.
    */
   template <class Lhs_T, class Rhs_T>
-    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>
-              and detail::comparable<detail::comparison::equal, Lhs_T, Rhs_T>)
+    requires detail::comparable_operands<detail::comparison::equal, Lhs_T,
+                                         Rhs_T>
   constexpr auto
   eq (Lhs_T&& lhs, Rhs_T&& rhs)
   {
     return detail::compare_op{ detail::as_operand (std::forward<Lhs_T> (lhs)),
                                detail::as_operand (std::forward<Rhs_T> (rhs)),
                                detail::equal_to{} };
+  }
+
+  /**
+   * @details
+   * Never called; the compilation stops in `detail::reject_comparison()`,
+   * with a message that names the mistake.
+   */
+  template <class Lhs_T, class Rhs_T>
+    requires (not detail::comparable_operands<detail::comparison::equal, Lhs_T,
+                                              Rhs_T>)
+  constexpr auto
+  eq ([[maybe_unused]] Lhs_T&& lhs, [[maybe_unused]] Rhs_T&& rhs)
+  {
+    detail::reject_comparison<detail::comparison::equal, Lhs_T, Rhs_T> ();
+    return false;
   }
 
   /**
@@ -106,15 +121,29 @@ namespace micro_os_plus::micro_test_plus
    * values if not.
    */
   template <class Lhs_T, class Rhs_T>
-    requires (
-        extension::printable<Lhs_T> and extension::printable<Rhs_T>
-        and detail::comparable<detail::comparison::not_equal, Lhs_T, Rhs_T>)
+    requires detail::comparable_operands<detail::comparison::not_equal, Lhs_T,
+                                         Rhs_T>
   constexpr auto
   ne (Lhs_T&& lhs, Rhs_T&& rhs)
   {
     return detail::compare_op{ detail::as_operand (std::forward<Lhs_T> (lhs)),
                                detail::as_operand (std::forward<Rhs_T> (rhs)),
                                detail::not_equal_to{} };
+  }
+
+  /**
+   * @details
+   * Never called; the compilation stops in `detail::reject_comparison()`,
+   * with a message that names the mistake.
+   */
+  template <class Lhs_T, class Rhs_T>
+    requires (not detail::comparable_operands<detail::comparison::not_equal,
+                                              Lhs_T, Rhs_T>)
+  constexpr auto
+  ne ([[maybe_unused]] Lhs_T&& lhs, [[maybe_unused]] Rhs_T&& rhs)
+  {
+    detail::reject_comparison<detail::comparison::not_equal, Lhs_T, Rhs_T> ();
+    return false;
   }
 
   /**
@@ -126,15 +155,29 @@ namespace micro_os_plus::micro_test_plus
    * values if not.
    */
   template <class Lhs_T, class Rhs_T>
-    requires (
-        extension::printable<Lhs_T> and extension::printable<Rhs_T>
-        and detail::comparable<detail::comparison::greater, Lhs_T, Rhs_T>)
+    requires detail::comparable_operands<detail::comparison::greater, Lhs_T,
+                                         Rhs_T>
   constexpr auto
   gt (Lhs_T&& lhs, Rhs_T&& rhs)
   {
     return detail::compare_op{ detail::as_operand (std::forward<Lhs_T> (lhs)),
                                detail::as_operand (std::forward<Rhs_T> (rhs)),
                                detail::greater{} };
+  }
+
+  /**
+   * @details
+   * Never called; the compilation stops in `detail::reject_comparison()`,
+   * with a message that names the mistake.
+   */
+  template <class Lhs_T, class Rhs_T>
+    requires (not detail::comparable_operands<detail::comparison::greater,
+                                              Lhs_T, Rhs_T>)
+  constexpr auto
+  gt ([[maybe_unused]] Lhs_T&& lhs, [[maybe_unused]] Rhs_T&& rhs)
+  {
+    detail::reject_comparison<detail::comparison::greater, Lhs_T, Rhs_T> ();
+    return false;
   }
 
   /**
@@ -146,15 +189,30 @@ namespace micro_os_plus::micro_test_plus
    * reported with both values if not.
    */
   template <class Lhs_T, class Rhs_T>
-    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>
-              and detail::comparable<detail::comparison::greater_equal, Lhs_T,
-                                     Rhs_T>)
+    requires detail::comparable_operands<detail::comparison::greater_equal,
+                                         Lhs_T, Rhs_T>
   constexpr auto
   ge (Lhs_T&& lhs, Rhs_T&& rhs)
   {
     return detail::compare_op{ detail::as_operand (std::forward<Lhs_T> (lhs)),
                                detail::as_operand (std::forward<Rhs_T> (rhs)),
                                detail::greater_equal{} };
+  }
+
+  /**
+   * @details
+   * Never called; the compilation stops in `detail::reject_comparison()`,
+   * with a message that names the mistake.
+   */
+  template <class Lhs_T, class Rhs_T>
+    requires (not detail::comparable_operands<
+              detail::comparison::greater_equal, Lhs_T, Rhs_T>)
+  constexpr auto
+  ge ([[maybe_unused]] Lhs_T&& lhs, [[maybe_unused]] Rhs_T&& rhs)
+  {
+    detail::reject_comparison<detail::comparison::greater_equal, Lhs_T,
+                              Rhs_T> ();
+    return false;
   }
 
   /**
@@ -166,14 +224,29 @@ namespace micro_os_plus::micro_test_plus
    * not.
    */
   template <class Lhs_T, class Rhs_T>
-    requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>
-              and detail::comparable<detail::comparison::less, Lhs_T, Rhs_T>)
+    requires detail::comparable_operands<detail::comparison::less, Lhs_T,
+                                         Rhs_T>
   constexpr auto
   lt (Lhs_T&& lhs, Rhs_T&& rhs)
   {
     return detail::compare_op{ detail::as_operand (std::forward<Lhs_T> (lhs)),
                                detail::as_operand (std::forward<Rhs_T> (rhs)),
                                detail::less{} };
+  }
+
+  /**
+   * @details
+   * Never called; the compilation stops in `detail::reject_comparison()`,
+   * with a message that names the mistake.
+   */
+  template <class Lhs_T, class Rhs_T>
+    requires (not detail::comparable_operands<detail::comparison::less, Lhs_T,
+                                              Rhs_T>)
+  constexpr auto
+  lt ([[maybe_unused]] Lhs_T&& lhs, [[maybe_unused]] Rhs_T&& rhs)
+  {
+    detail::reject_comparison<detail::comparison::less, Lhs_T, Rhs_T> ();
+    return false;
   }
 
   /**
@@ -185,15 +258,29 @@ namespace micro_os_plus::micro_test_plus
    * both values if not.
    */
   template <class Lhs_T, class Rhs_T>
-    requires (
-        extension::printable<Lhs_T> and extension::printable<Rhs_T>
-        and detail::comparable<detail::comparison::less_equal, Lhs_T, Rhs_T>)
+    requires detail::comparable_operands<detail::comparison::less_equal, Lhs_T,
+                                         Rhs_T>
   constexpr auto
   le (Lhs_T&& lhs, Rhs_T&& rhs)
   {
     return detail::compare_op{ detail::as_operand (std::forward<Lhs_T> (lhs)),
                                detail::as_operand (std::forward<Rhs_T> (rhs)),
                                detail::less_equal{} };
+  }
+
+  /**
+   * @details
+   * Never called; the compilation stops in `detail::reject_comparison()`,
+   * with a message that names the mistake.
+   */
+  template <class Lhs_T, class Rhs_T>
+    requires (not detail::comparable_operands<detail::comparison::less_equal,
+                                              Lhs_T, Rhs_T>)
+  constexpr auto
+  le ([[maybe_unused]] Lhs_T&& lhs, [[maybe_unused]] Rhs_T&& rhs)
+  {
+    detail::reject_comparison<detail::comparison::less_equal, Lhs_T, Rhs_T> ();
+    return false;
   }
 
   /**

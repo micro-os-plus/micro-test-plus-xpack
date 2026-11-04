@@ -318,6 +318,12 @@ pointers and arrays of these types in the same way. A C string of one
 character type is not comparable with a string of another type, for example
 `L"abc"` with a `std::string`; the comparison is rejected at compile time.
 
+Operands that cannot be compared with the operator of the comparator, such as
+a structure and an integer, or that cannot be written in the report, such as an
+application type without an `operator<<` for the formatter, are **rejected with
+a message** that names the comparator and the operator, or says that the
+operand cannot be written, not with the trace of the concepts.
+
 The comparators **copy the named operands** and move the temporaries into the
 expression, so that an expression built in a helper function from its
 parameters and returned, or kept in a variable, stays valid after the operands
