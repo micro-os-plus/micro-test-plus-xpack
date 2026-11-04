@@ -326,6 +326,31 @@ the error of a `std::expected` that holds a value, which is undefined
 behaviour to evaluate after a success. This is documented in the user
 manual. Do not report that a lazy message is not shown for a passed check.
 
+### Hand-written special members
+
+The copy assignment of `runner_options` is written by hand on purpose: it
+copies the object with the copy constructor, and moves the copy into the
+instance, because the defaulted copy assignment of the vectors of strings
+uses `std::copy`, which triggers `-Waggregate-return` in the standard library
+headers of GCC on some targets, and the project is built with that warning.
+Do not report it as a special member that could be defaulted. In general, a
+special member written by hand where `= default` would do is likely to avoid a
+warning of a compiler; read the comment before reporting it, even if the review
+otherwise ignores the comments, and confirm by compiling with the strict
+warnings of the tests.
+
+### Characters and strings of the wide types
+
+The characters of the types `wchar_t`, `char8_t`, `char16_t`, and `char32_t` are
+written with their prefix and quotes (`L'x'`, `u8'x'`, `u'x'`, `U'x'`), in the
+reports and in the messages, since they have no plain form in the narrow text,
+and without the prefix they would be mistaken for numbers; the `char` is
+written as itself in a message, which is text. The strings of these types are
+converted to UTF-8 and written as text, quoted in the operands and plain in the
+messages, without a prefix, so that a `std::wstring` and a `std::string` with
+the same text are reported alike. This is deliberate and documented in the user
+manual. Do not report it as an inconsistency.
+
 ### Utilities
 
 The `utilities` namespace is intended for helper functions and types that
