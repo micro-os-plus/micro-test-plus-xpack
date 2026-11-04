@@ -280,6 +280,18 @@ possibility of a dangling reference (a probe must not force it with
 `std::move()`), and do not propose changes to the return type of `expect()`
 and `require()` that would allow the result to be kept.
 
+### Suite order
+
+All the suites, those added with `runner::add_suite()` and the static suites,
+run in a single order, sorted by name, byte by byte, and not in the order of
+the registration calls. The construction order of the static suites of
+different translation units is not defined, so they must be sorted to be
+deterministic, and one rule for all the suites is simpler than two. The
+order is documented in the user manual, with a warning and the idiom of the
+numeric name prefixes. This is a deliberate design decision, not a defect:
+do not report it, and do not propose the registration order for the added
+suites.
+
 ### Utilities
 
 The `utilities` namespace is intended for helper functions and types that
