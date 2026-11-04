@@ -40,8 +40,8 @@
  * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
  * modular codebase.
  *
- * This file is intended solely for internal use within the framework and
- * should not be included directly by user code.
+ * This file is included by `micro-os-plus/micro-test-plus.h`, which is the
+ * header that the applications include.
  */
 
 #ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_REFLECTION_H_

@@ -87,6 +87,17 @@ The **options own their strings** (the command line, the output file path, and
 the filter patterns), and the runner keeps its own copy for the whole session,
 so the options and the strings they were built from need not outlive the call.
 
+The options are taken by value, so the calls above copy them. When the options
+are not used after the call, they can be **moved** instead, which avoids the
+copy:
+
+```cpp
+mt::runner_options options{ argc, argv };
+options.selected_reporter = mt::reporter_kind::human;
+
+tr.initialise (std::move (options));
+```
+
 ### Top suite
 
 The test cases written directly in `main()` belong to the top suite, which the

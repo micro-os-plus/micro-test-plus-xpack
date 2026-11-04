@@ -25,9 +25,8 @@
  * extend the framework with their own comparators, operators, and helpers
  * (the expressions they return, `extension::compare_op` and
  * `extension::predicate_op`, are declared in `detail.h`):
- * the concepts that detect the framework expressions and value wrappers,
- * their floating-point tolerance, and the types accepted by `expect()`,
- * `require()`, and the message operator.
+ * the concepts that detect the framework expressions, and the types
+ * accepted by `expect()`, `require()`, and the message operator.
  *
  * The public concepts reside within the
  * `micro_os_plus::micro_test_plus::extension` namespace, separate from the
@@ -294,8 +293,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The `is_op` concept is satisfied when `T` has the `op_type` member
      * type alias of `detail::op`, either inherited from the `detail::op`
-     * base struct, or declared directly, like in `detail::value_base`,
-     * which avoids the empty base. It is used throughout the framework,
+     * base struct, or declared directly, which avoids the empty base. It is
+     * used throughout the framework,
      * both as a constraint and as a boolean expression in `if constexpr`
      * contexts.
      *
@@ -349,13 +348,11 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The `any_op` concept is satisfied when `Lhs_T` or `Rhs_T` (or both)
-     * are framework expression types (see `is_op`). It is used to
-     * constrain binary operator overloads in the `operators` namespace so
-     * that they are enabled only when at least one operand is a framework
-     * type, avoiding unintended conflicts with user-defined operators.
-     *
-     * A custom operator uses it in the same way, so that it does not
-     * compete with the operators of the application types.
+     * are framework expression types (see `is_op`). A custom operator
+     * constrains its overload with it, so that the overload is enabled only
+     * when at least one operand is a framework expression, and does not
+     * compete with the operators of the application types. The framework
+     * itself uses it only for the deprecated operators.
      */
     template <class Lhs_T, class Rhs_T>
     concept any_op = is_op<Lhs_T> or is_op<Rhs_T>;

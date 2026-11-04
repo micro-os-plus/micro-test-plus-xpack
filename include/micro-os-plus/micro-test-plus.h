@@ -22,8 +22,8 @@
  *
  * It provides all essential declarations required to write and manage tests,
  * including test runner and reporter objects, test suite and test case
- * management, expectations, assumptions, comparators, logical operators,
- * exception verification, and utility functions.
+ * management, expectations and requirements, function comparators, logical
+ * functions, exception verification, and utility functions.
  *
  * The header also includes all the other headers of the framework.
  *

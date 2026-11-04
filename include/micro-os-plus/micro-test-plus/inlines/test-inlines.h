@@ -41,8 +41,8 @@
  * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
  * modular codebase.
  *
- * This file is intended solely for internal use within the framework and
- * should not be included directly by user code.
+ * This file is included by `test.h`; the applications include
+ * `micro-os-plus/micro-test-plus.h`, not this file.
  */
 
 #ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_TEST_INLINES_H_

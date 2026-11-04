@@ -34,8 +34,8 @@
  * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
  * modular codebase.
  *
- * This file is intended solely for internal use within the framework and
- * should not be included directly by user code.
+ * This file is included by `micro-os-plus/micro-test-plus.h`, which is the
+ * header that the applications include.
  */
 
 #ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_RUNNER_H_
@@ -380,7 +380,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @code{.cpp}
      * mt::runner_options options{ argc, argv };
-     * options.selected_reporter = mt::reporter_kind::tap;
+     * options.selected_reporter = mt::reporter_kind::human;
      * tr.initialise (std::move (options));
      * @endcode
      *

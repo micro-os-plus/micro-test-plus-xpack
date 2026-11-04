@@ -30,8 +30,8 @@
  * Both live in the `detail` namespace and are not part of the
  * public API.
  *
- * This file is intended solely for internal use within the framework and
- * should not be included directly by user code.
+ * This file is included by `micro-os-plus/micro-test-plus.h`, which is the
+ * header that the applications include.
  */
 
 #ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_CHECK_RESULT_H_

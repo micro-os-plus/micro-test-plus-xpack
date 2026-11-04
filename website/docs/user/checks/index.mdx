@@ -62,8 +62,8 @@ boolean values; they differ in **what happens after a failure**.
 Both are created with member functions of the test case objects, and return an
 object to which a message can be appended with `<<`; the check is **reported at
 the end of the statement**, so the returned object **must not be named or
-stored**, not even in a reference. The declarations below show the parameters that an application
-passes; the return type is internal:
+stored**, not even in a reference. The declarations below show the parameters
+that an application passes; the return type is internal:
 
 ```cpp
 template <class Expr_T>
@@ -337,7 +337,8 @@ are referred to, not copied.
 The `approx()` comparator **succeeds if its first two operands differ by
 at most the third one**, the tolerance, so a tolerance of zero requires
 equal operands and a negative one always fails. The operands are numbers,
-integral or floating-point, possibly of different types. For
+integral or floating-point, possibly of different types, but not `bool` or the
+character types, which are rejected. For
 the integers, the distance is computed exactly, also for operands of
 different signedness, without wrap-around; for the other types, in
 their common floating-point type. A failure is reported as
