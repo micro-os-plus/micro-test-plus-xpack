@@ -506,5 +506,7 @@ The **strings are shown quoted**, whether they are `std::string` or
 tuple, or optional (a null pointer is shown as `nullptr`), so that an
 empty string or a trailing space is visible. The values that the
 `operator<<` of an application type writes are shown as that function
-writes them; to quote a `const char*` member there, write
-`formatter << std::string_view{ s }`.
+writes them, as in the messages, without quotes or type suffixes: its
+`std::string`, `std::string_view`, and `const char*` members are **not** quoted
+by the report, so write the quotes in the operator if an empty string or a
+trailing space must be visible.
