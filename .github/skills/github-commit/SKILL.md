@@ -13,8 +13,9 @@ argument-hint: 'Optional: the GitHub issue number (#N), and whether the commit c
   changes.
 
 This skill is the reference for the commit messages and the issue
-updates; `.github/copilot-instructions.md` ("Commits") only points to
-it and requires the user approval before each commit.
+updates; `.github/copilot-instructions.md` ("Git Commits" and "Issue
+Updates") points to it, and requires the user approval before each
+commit.
 
 ## Procedure
 
@@ -27,9 +28,12 @@ it and requires the user approval before each commit.
    user did not give the number and it cannot be determined with
    certainty from the conversation, ask for it; do not guess. If no
    issue exists, offer to create one with the `create-github-issue`
-   skill. Ask whether this commit completes the issue (and gets
-   `Fixes #N`), or is one of several commits for it, unless that is
-   already clear.
+   skill. If the user prefers a commit without an issue, see "Commits
+   without an issue". Ask whether this commit completes the issue (and
+   gets `Fixes #N`), or is one of several commits for it, unless that
+   is already clear. A commit may fix several issues; it then has one
+   `Fixes #N` line for each, and the subject has the number of the
+   main one.
 3. **Check that the tests were run** as required by the "Testing"
    section of `.github/copilot-instructions.md` (`test-selected` after
    major changes, `test` after minor ones, and the platform-specific
@@ -57,11 +61,13 @@ it and requires the user approval before each commit.
    Do not amend, rebase, or skip the hooks (`--no-verify`) unless the
    user asks. If a hook fails, fix the cause and create the commit
    again. Do not push unless the user asks.
-8. **Report** the commit hash and subject (`git log -1 --oneline`).
+8. **Report** the commit hash and subject, with
+   `git log -1 --format='%h %s'`. The short hash is the one printed by
+   `%h`, 8 characters in this repository; use it everywhere.
 9. **Update the issue**, if the commit has `Fixes #N` (see "Issue
-   Comment").
-10. **Update the review documents** that list the issue or the finding
-    it came from (see "Review Documents").
+   Comment"); the comment is posted after the commit is pushed.
+10. **Ask whether to update the review documents** that list the issue
+    or the finding it came from (see "Review Documents").
 
 Do not start the next fix while this one is uncommitted; commit first.
 
@@ -122,7 +128,10 @@ After the body, separated by a blank line:
 - `Fixes #N` — only on the commit that completes the issue; omit it
   from the intermediate commits of an issue fixed in several commits.
 - The attribution trailer required by the agent's environment, if any
-  (for example `Co-Authored-By: ...`), as the last line.
+  (for example `Co-Authored-By: ...`), copied exactly as given there,
+  as the last line. The example below omits it, because it depends on
+  the environment; it is not optional when the environment requires
+  it.
 
 ### Example
 
@@ -144,9 +153,24 @@ compatibility notices, and the User's Guide.
 Fixes #155
 ```
 
+## Commits without an Issue
+
+When the user decides that a change needs no issue (for example a
+documentation update or a website change):
+
+- The subject has no `#N: ` prefix; the other subject rules apply (the
+  imperative mood, a capital letter, at most 50 characters, no period).
+- The message has no `Fixes` trailer, and there is no issue comment.
+- Ask whether a review document lists the change (see "Review
+  Documents"); it is then recorded with the commit hash only.
+
 ## Issue Comment
 
-After a commit with `Fixes #N`, add a comment to the issue:
+After a commit with `Fixes #N`, add a comment to the issue. GitHub can
+link a commit hash only after the commit is pushed, and an amend or a
+rebase changes it; therefore post the comment after the push, with the
+final hash. If the user wants the comment before the push, say that
+the hash is provisional, and correct the comment after any amend:
 
 ```sh
 gh issue comment <N> --body-file <scratchpad>/issue-comment.md
@@ -158,7 +182,8 @@ gh issue comment <N> --body-file <scratchpad>/issue-comment.md
   verified (measurements, compared outputs).
 - Write the commit hashes bare, without backticks (`Fixed in 123f0c76`),
   so that GitHub links them to the commits; in backticks they are not
-  linked.
+  linked. (The review documents are read as files in the repository, so
+  they write the hashes in backticks; do not make the two consistent.)
 - If the proposal of the issue was not followed, or the finding was
   withdrawn, say so and explain why.
 - Write the paragraphs unwrapped (one line each), in Markdown, with
@@ -178,15 +203,20 @@ The findings that lead to issues are often recorded in review, change,
 or comparison documents, mainly in `maintenance/docs/` (for example
 `API-REVIEW-<n>.md`, `API-COMPATIBILITY.md`, `BOOST-UT-CHANGES.md`), and
 in other files named `*-review*`, `*-changes*`, `*-compatibility*`, or
-similar. After the commit, search them for the issue and the finding:
+similar. After the commit, search them for the issue and the finding.
+When the finding came from a known document (for example, the issue was
+created from `API-REVIEW-8.md`), search that document first, by the
+words of the issue title and by the item number; otherwise search all
+the documents:
 
 ```sh
-grep -n -E '\(#N\)|#N[^0-9]|<words from the issue title>' \
+grep -n -i -E '<words from the issue title>|\(#<N>\)|issue #<N>' \
   maintenance/docs/*.md
 ```
 
-In some documents, a `#K` at the start of an item is the number of the
-finding within the document, not a GitHub issue number; match the
+Replace `<N>` with the number of the issue. In some documents, a `#K`
+at the start of an item is the number of the finding within the
+document, not a GitHub issue number; match the
 GitHub number where it is used as such (in parentheses, or after
 "issue" or "fixed in"), and confirm the item by its content.
 
