@@ -168,7 +168,9 @@ The rules are:
   as `nullopt`, a non-empty one as its value; a duration with the suffix of
   its period.
 - **Scoped enumerations**, which have no names at run time, are written as
-  the value of their underlying type.
+  the value of their underlying type, unless the application defines an
+  `operator<<` for the enumeration (see [The application
+  types](#the-application-types)).
 - **Pointers** are written in hexadecimal, by the same function as in the
   messages; the null pointer as `nullptr`.
 
@@ -276,7 +278,8 @@ template <class T>
 void
 expression_formatter::append_operand (const T& value)
 {
-  if constexpr (detail::member_printable<T>)
+  if constexpr (detail::member_printable<T>
+                and not detail::free_printable<T>)
     {
       *this << value;
     }
@@ -297,6 +300,27 @@ concept member_printable
         formatter.operator<< (value);
       };
 ```
+
+The members include templates, constrained for the scoped enumerations and for
+the types with `begin()` and `end()`, so `member_printable` is satisfied by an
+application enumeration or range too. If the application also defines an
+`operator<<` for it, the call `*this << value` selects that function, not the
+template, since a function that is not a template is a better match, and the
+function would write on the formatter of the report, with the quotes and the
+suffixes. The concept `free_printable` detects such a function, which
+`append_operand()` tests first; the framework defines no free `operator<<` for
+the formatter, so the ones found are those of the application:
+
+```cpp title="expression-formatter.h"
+template <class T>
+concept free_printable
+    = requires (expression_formatter& formatter, const T& value) {
+        operator<< (formatter, value);
+      };
+```
+
+The call has the form of a function call, which looks only for free functions,
+by argument-dependent lookup, and does not see the members of the formatter.
 
 An application type is written by `plain_text::append()`, which moves the
 buffer into a plain formatter, calls the application `operator<<` on it, and

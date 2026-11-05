@@ -1382,11 +1382,14 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * An operand that the formatter has a member `operator<<` for is
-       * written by it. An operand of an application type, found by
+       * written by it, unless the application defines a free `operator<<`
+       * for the type. An operand of an application type, found by
        * argument-dependent lookup, is written in the plain mode, as the
        * messages are, so that the values that its `operator<<` writes
        * are shown as it writes them, without the type suffixes and the
-       * quotes.
+       * quotes; this includes the scoped enumerations and the types with
+       * `begin()` and `end()` for which the application defines an
+       * `operator<<`.
        *
        * @tparam T The type of the operand.
        *
@@ -1682,7 +1685,10 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * The types that satisfy `extension::printable` but not this concept
      * are the application types, written by a free `operator<<` found by
-     * argument-dependent lookup.
+     * argument-dependent lookup. A type may satisfy both, if it is
+     * accepted by a template of the formatter (a scoped enumeration, or
+     * a type with `begin()` and `end()`) and the application also defines
+     * an `operator<<` for it; see `free_printable`.
      *
      * @tparam T The type to check.
      */
@@ -1690,6 +1696,30 @@ namespace micro_os_plus::micro_test_plus
     concept member_printable
         = requires (expression_formatter& formatter, const T& value) {
             formatter.operator<< (value);
+          };
+
+    /**
+     * @brief Concept satisfied by the types that have a free `operator<<`
+     * for the formatter.
+     *
+     * @details
+     * Satisfied when the call `operator<< (formatter, value)` is valid,
+     * which looks for free functions only, by argument-dependent lookup,
+     * so it does not see the member functions of the formatter. The
+     * framework defines no free `operator<<` for the formatter; the
+     * ones found are those of the application. They take precedence
+     * over the templates of the formatter for the scoped enumerations
+     * and for the types with `begin()` and `end()`, which would be
+     * written by the formatter if the application did not define its
+     * own function, so that the application controls the text of its
+     * type.
+     *
+     * @tparam T The type to check.
+     */
+    template <class T>
+    concept free_printable
+        = requires (expression_formatter& formatter, const T& value) {
+            operator<< (formatter, value);
           };
 
     // ------------------------------------------------------------------------

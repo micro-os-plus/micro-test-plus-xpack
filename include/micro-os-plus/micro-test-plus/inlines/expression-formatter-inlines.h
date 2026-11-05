@@ -471,13 +471,19 @@ namespace micro_os_plus::micro_test_plus::detail
    * The operands of the types that the formatter writes itself are
    * passed to its `operator<<`; the other ones, the application types,
    * are written by `plain_text::append()`, which hands to their
-   * `operator<<` a formatter in the plain mode.
+   * `operator<<` a formatter in the plain mode. A type with a free
+   * `operator<<` is an application type, even if a template of the
+   * formatter accepts it too (a scoped enumeration, or a type with
+   * `begin()` and `end()`), since a call on this formatter would select
+   * the function of the application, which would write on the formatter
+   * of the report with its decorations.
    */
   template <class T>
   void
   expression_formatter::append_operand (const T& value)
   {
-    if constexpr (detail::member_printable<T>)
+    if constexpr (detail::member_printable<T>
+                  and not detail::free_printable<T>)
       {
         *this << value;
       }

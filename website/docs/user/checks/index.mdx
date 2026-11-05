@@ -492,7 +492,9 @@ When a check fails, they are shown as follows:
   is, for example `1` for `int` and `(unsigned char)1` for `std::byte`,
   whose underlying type is `unsigned char`; to show the names of the
   enumerators instead, define an `operator<<` for the enumeration, as
-  for the [custom types](/docs/user/extending/#custom-types);
+  for the [custom types](/docs/user/extending/#custom-types); the report
+  then shows the text that the function writes, as for any other type of
+  the application, also for the elements of the containers;
 - a pair or a tuple as `(a, b)`, and a map as `{(1, 2), (3, 4)}`;
 - an optional by its value, or as `nullopt` when it has no value;
 - a `std::chrono` duration as the count followed by the unit, for example

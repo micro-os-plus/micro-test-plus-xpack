@@ -86,6 +86,49 @@ namespace
                      << m.currency;
   }
 
+  // A scoped enumeration, and a type with `begin()` and `end()`, which the
+  // formatter has templates for, with an `operator<<` of the application,
+  // which must write them, in the plain mode.
+  enum class lamp
+  {
+    stop,
+    go
+  };
+
+  mt::expression_formatter&
+  operator<< (mt::expression_formatter& formatter, const lamp& s)
+  {
+    return formatter << (s == lamp::stop ? "stop" : "go") << '/'
+                     << static_cast<unsigned> (s);
+  }
+
+  struct basket
+  {
+    std::vector<int> items;
+
+    [[nodiscard]] auto
+    begin () const noexcept
+    {
+      return items.begin ();
+    }
+
+    [[nodiscard]] auto
+    end () const noexcept
+    {
+      return items.end ();
+    }
+
+    bool
+    operator== (const basket&) const
+        = default;
+  };
+
+  mt::expression_formatter&
+  operator<< (mt::expression_formatter& formatter, const basket& b)
+  {
+    return formatter << "basket of " << b.items.size ();
+  }
+
   // A comparator, a predicate, and an operator of the application, built
   // only with public names, and reported as the built-in ones (#149).
   struct divides_tag
@@ -533,6 +576,31 @@ static mt::static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
 
         t.expect (mt::eq (std::pair{ 1, money{ 10, "RON" } },
                           std::pair{ 1, money{ 20, "RON" } }));
+        local_counts.failed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    // The application `operator<<` takes precedence over the templates of
+    // the formatter, and writes in the plain mode, in the operands and in
+    // the elements of the standard types.
+    ts.test ("Custom enumerations and ranges bad", [] (auto& t)
+      {
+        t.expect (mt::eq (lamp::stop, lamp::go));
+        local_counts.failed_checks++;
+
+        t.expect (mt::eq (basket{ { 1 } }, basket{ { 2 } }));
+        local_counts.failed_checks++;
+
+        t.expect (mt::eq (std::vector<lamp>{ lamp::stop },
+                          std::vector<lamp>{ lamp::go }));
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;
