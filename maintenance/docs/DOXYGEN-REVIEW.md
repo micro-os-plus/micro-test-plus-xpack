@@ -332,3 +332,100 @@ projects, so the text must stay generic.
   Doxygen XML has exactly one Deprecated section, with the version, for
   each of the 71 deprecated entities. Keep the attribute messages short
   enough to stay single literals.
+
+## Review after #271 to #278
+
+A second review, on 2026-11-05, of the comments of the code changed
+since `f6714bc5` (the fixes of #271 to #278), and of the other comments
+that describe the same behaviours. The rest of the code was not read
+again line by line. All the fixes are in `ba2ba243`.
+
+| Check                                            | Before | After |
+| ------------------------------------------------ | ------ | ----- |
+| Doxygen warnings (strict settings)               | 0      | 0     |
+| Merged completeness (`check-doxygen-merged.mjs`) | 14     | 0     |
+| Style (`check-doxygen-style.mjs`)                | 11     | 3     |
+
+The 3 remaining style problems are the `@ingroup` lines of
+`deprecated.h` (lines 799, 817, and 838), whose group name alone is
+80 characters long. The edited sources are unchanged by `clang-format`.
+The tests pass: `xpm run test` (118 of 118),
+`test-synthetic-posix-cmake-clang` (118 of 118, with `-Wdocumentation`),
+and `test-qemu-cortex-m33-cmake-gcc` (14 of 14).
+
+### Stale descriptions
+
+- #77 Fixed: `reporter.h`, `fail_suite()`: "called by `suite::run()`";
+  since #274 it is also called by `runner::reject_call()` and by
+  `runnable_base::accepts_test_case()`, for the calls rejected while the
+  suite body runs.
+- #78 Fixed: `test.h`, `report_rejected_test()`: the callers did not
+  include `runner::reject_call()`, and the location was said to be that
+  of a `test()` call.
+- #79 Fixed: `runner.h` and `runner.cpp`, `initialise()`,
+  `add_top_suite()`, `add_suite()`, and `register_suite()`: the rejected
+  calls were said to be reported on `stderr`; since #274 they are also
+  reported in the report.
+- #80 Fixed: `runner.h`, `runner.cpp` (`run_suites()`),
+  `runner-options.h` (`list_tests`), and `cli.dox`: the exit code of the
+  listing was "0, or 2 after an option error"; since #277 it is 1 after
+  a rejected call or an exception of a suite body, and 2 also when the
+  filters select no test case. The return value of `run_suites()` now
+  also names the test cases started on a suite that is not running.
+- #81 Fixed: `test.cpp`, `suite::run()`: an exception of the suite body
+  while listing was said to be written only to `stderr`; since #277 it
+  is also written in the listing, and the exit code is not 0.
+- #82 Fixed: `test.cpp`, `accepts_test_case()`: the case of the listing
+  was not described; the message is then written only to `stderr` (see
+  #92).
+- #83 Fixed: `expression-formatter.h`, the `operator<<` for the
+  character pointers: the brief said "or the address of the pointer";
+  since #278 the text is always written.
+- #84 Fixed: `extension.h`, `formattable_range`: "the arrays are
+  compared by address, and are written as addresses"; the comparators
+  convert them to `basic_c_string` or `array_operand`, and only the
+  arrays of the other types given to the formatter directly are written
+  as addresses (confirmed by a probe).
+- #85 Fixed: `detail-inlines.h`, `as_operand()`: "the cv-qualifiers of
+  the characters are ignored"; the `volatile` characters do not compile
+  (see #91). The functions, converted to pointers, were not mentioned.
+  `detail.h`, `as_operand()`: the other arrays are compared element by
+  element, not "by content".
+- #86 Fixed: `detail.h` (`stored_operand_t`) and
+  `function-comparators-inlines.h` (`eq()`): the named operands were
+  said to be always copied; the arrays and the characters of the C
+  strings are referred to (`308bd4ac`). `function-comparators.h`, file
+  details: the C strings were missing from the exception.
+- #87 Fixed: `function-comparators.dox`: the C strings were only those
+  of `char`; it now covers the wide strings (#260), the characters
+  compared by value (#272), the arrays bounded by their size (#271),
+  and the elements of the arrays compared as the single values (#276).
+  `function-comparators.h`, `eq()`, now states the last three.
+
+### Completeness and style after #278
+
+- #88 Fixed: Added the missing brief, details, or template parameters:
+  `comparison_integer`, its specialisation, their `type` members,
+  `comparison_integer_t`, `as_comparison_integer()`,
+  `sign_mixed_integers`, `reject_comparison()`, `reject_compare_tag()`,
+  `reject_predicate_tag()`, the three `is_bool_wrapper`
+  specialisations, `c_string`, `bounded_view()`, and the `runner` friend
+  of `test_case`.
+- #89 Fixed: The four `@copydoc` blocks of the wide `append_c_string()`
+  overloads were replaced by their own text, and the `capacity`
+  parameter now mentions `std::string_view::npos`.
+- #90 Fixed: Reflowed 6 comment lines over 79 characters, and wrote 5
+  function references without the space before the parentheses
+  (`eq()`, not `eq ()`), as the other 1019 references are.
+
+### Code defects noticed after #278, not fixed
+
+- #91 `detail-inlines.h`, `as_operand()`: a `volatile char*` operand of
+  `eq()` fails with "no matching constructor for initialization of
+  `basic_c_string<char>`", followed by the rejection of the comparison,
+  instead of a single message that names the cause.
+- #92 `test.cpp`, `runnable_base::accepts_test_case()`: it does not use
+  `runner::reject_call()`, so a test case started on a suite that is not
+  running, while listing or after `run_suites()` returned, is written
+  only to `stderr`, while the other rejected calls are also written in
+  the listing or in the report.
