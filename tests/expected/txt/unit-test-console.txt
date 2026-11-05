@@ -623,6 +623,13 @@ Matching test cases:
 Matching test cases:
 0 test cases in 0 test suites
     ✓ List test cases - passed (9 checks)
+All available test cases:
+  Outer
+    Listed
+  Throwing
+    Before
+2 test cases in 2 test suites
+    ✓ List test cases with errors - passed (3 checks)
     ✓ Late suites - passed (9 checks)
 
     • Test case started on the suite
@@ -668,7 +675,7 @@ Matching test cases:
     ✓ Abort during the session - passed (6 checks)
     ✓ Test case and suite names - passed (10 checks)
 
-✗ Miscellaneous suite - FAILED (221 checks passed, 8 failed, in 58 test cases), time: 6.344 ms
+✗ Miscellaneous suite - FAILED (224 checks passed, 8 failed, in 59 test cases), time: 6.350 ms
 
 • Operands suite
 
@@ -810,7 +817,7 @@ Matching test cases:
 
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.113 ms
 
-✗ Total: 739 checks passed, 378 failed, in 182 test cases, 15 test suites, time: 15.685 ms
+✗ Total: 742 checks passed, 378 failed, in 183 test cases, 15 test suites, time: 16.574 ms
 error: test runner already initialised
 error: top suite already added
 Overall, the µTest++ unit tests were successful!

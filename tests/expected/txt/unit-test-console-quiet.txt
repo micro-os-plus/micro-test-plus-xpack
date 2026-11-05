@@ -456,6 +456,12 @@ Matching test cases:
 2 test cases in 1 test suite
 Matching test cases:
 0 test cases in 0 test suites
+All available test cases:
+  Outer
+    Listed
+  Throwing
+    Before
+2 test cases in 2 test suites
 
     • Failed each value (2)
         ✗ value 2 == 1 FAILED (miscellaneous.cpp:2110, 2 == 1)
@@ -536,6 +542,6 @@ Matching test cases:
         ✗ abc matches *C FAILED (utility.cpp:191)
         ✗ ab matches ??? FAILED (utility.cpp:195)
 
-✗ Total: 739 checks passed, 378 failed, in 182 test cases, 15 test suites, time: 15.776 ms
+✗ Total: 742 checks passed, 378 failed, in 183 test cases, 15 test suites, time: 15.857 ms
 error: test runner already initialised
 error: top suite already added

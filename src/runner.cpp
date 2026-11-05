@@ -646,13 +646,13 @@ namespace micro_os_plus::micro_test_plus
    *   @p location, or at the location of the test case;
    * - in a running suite, including the top suite, as a failed test
    *   point of that suite;
-   * - otherwise, for example after `run_suites()` returned, as a comment
-   *   line, since the report is complete and the test points cannot be
-   *   changed.
+   * - otherwise, for example after `run_suites()` returned, or while the
+   *   test cases are listed, as a comment line, since the report is
+   *   complete, or there are no test points.
    *
    * Nothing is given to the reporter if there is none yet, after the
-   * session was declined because of the options, after the execution was
-   * aborted, and while the test cases are listed.
+   * session was declined because of the options, and after the execution
+   * was aborted.
    */
   void
   runner::reject_call (const std::string& message,
@@ -662,8 +662,17 @@ namespace micro_os_plus::micro_test_plus
     mark_rejected ();
 
     if (reporter_ == nullptr || session_state_ == session_state::declined
-        || aborted_ || options_.list_tests)
+        || aborted_)
       {
+        return;
+      }
+
+    if (options_.list_tests)
+      {
+        reporter_->write_line (options_.verbosity_level != verbosity::silent,
+                               "%serror: %s\n", reporter_->comment_prefix (),
+                               message.c_str ());
+        reporter_->flush_streams ();
         return;
       }
 
@@ -887,7 +896,14 @@ namespace micro_os_plus::micro_test_plus
           }
         reporter_->flush_streams ();
 
-        exit_code_ = (listed_nothing || has_option_errors ()) ? 2 : 0;
+        if (listed_nothing || has_option_errors ())
+          {
+            exit_code_ = 2;
+          }
+        else
+          {
+            exit_code_ = has_rejected_calls_ ? 1 : 0;
+          }
         session_state_ = session_state::finished;
         return exit_code_;
       }

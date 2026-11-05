@@ -724,6 +724,24 @@ namespace micro_os_plus::micro_test_plus
       accepts_test_case (const suite& target, const located_name& name);
 
       /**
+       * @brief Reports the exception that escaped the body of a suite
+       * while the test cases are listed, and records it.
+       *
+       * @details
+       * Protected, since it is used only by `suite::run()`, when there is
+       * no test point to fail. It gives the message, which names the
+       * suite, to `runner::reject_call()`, which writes it on `stderr`
+       * and in the listing, and makes the exit code non-zero.
+       *
+       * @par Parameters
+       *   None.
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      reject_body_exception (void);
+
+      /**
        * @brief Advances to the next child test point, and returns its
        * number.
        *

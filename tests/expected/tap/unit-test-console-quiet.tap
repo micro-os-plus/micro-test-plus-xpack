@@ -2364,6 +2364,12 @@ Matching test cases:
 2 test cases in 1 test suite
 Matching test cases:
 0 test cases in 0 test suites
+All available test cases:
+  Outer
+    Listed
+  Throwing
+    Before
+2 test cases in 2 test suites
 # Miscellaneous suite > Failed each value (2)
 #         not ok 1 - value 2 == 1
 #           ---
@@ -2372,7 +2378,7 @@ Matching test cases:
 #             fileName: miscellaneous.cpp
 #             lineNumber: 2110
 #           ...
-not ok 11 - Miscellaneous suite # { FAILED, 221 checks passed, 8 failed, in 58 test cases, time: 7.068 ms }
+not ok 11 - Miscellaneous suite # { FAILED, 224 checks passed, 8 failed, in 59 test cases, time: 7.121 ms }
 # Operands suite > Arrays bad
 #         not ok 1 - array{ 42 } ne array{ 42 }
 #           ---
@@ -2703,6 +2709,6 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.112 ms }
 #           ...
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.152 ms }
 1..15
-# { total: 739 checks passed, 378 failed, in 182 test cases, 15 test suites, time: 18.347 ms }
+# { total: 742 checks passed, 378 failed, in 183 test cases, 15 test suites, time: 22.169 ms }
 # error: test runner already initialised
 # error: top suite already added

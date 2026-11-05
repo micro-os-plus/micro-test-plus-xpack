@@ -1873,6 +1873,70 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
         local_counts.executed_test_cases++;
       });
 
+    // The errors that make the list incomplete, a suite added from a suite
+    // body and an exception that escapes a suite body, are written in the
+    // list and in the output file, and the exit code is not 0, as for a run.
+    ts.test ("List test cases with errors", [] (auto& t)
+      {
+        static constexpr const char* list_path = "listed-errors.txt";
+
+        mt::runner_options options{};
+        options.verbosity_level = mt::verbosity::silent;
+        options.output_file_path = list_path;
+        options.list_tests = true;
+
+        int exit_code = 0;
+        {
+          mt::runner list_runner;
+          list_runner.initialise (options);
+          list_runner.add_suite ("Outer", [&list_runner] (mt::suite& s)
+            {
+              s.test ("Listed", [] (mt::test_case&) noexcept {});
+              list_runner.add_suite ("Late", [] (mt::suite&) noexcept {});
+            });
+#if defined(__cpp_exceptions)
+          list_runner.add_suite ("Throwing", [] (mt::suite& s)
+            {
+              s.test ("Before", [] (mt::test_case&) noexcept {});
+              throw 1;
+            });
+#endif
+          exit_code = list_runner.run_suites ();
+        }
+
+        t.expect (mt::eq (exit_code, 1)) << "errors while listing, exit code 1";
+        local_counts.passed_checks++;
+
+        std::string list;
+        if (std::FILE* file = std::fopen (list_path, "r"); file != nullptr)
+          {
+            char buffer[128];
+            std::size_t count;
+            while ((count = std::fread (buffer, 1, sizeof (buffer), file)) > 0)
+              {
+                list.append (buffer, count);
+              }
+            std::fclose (file);
+          }
+        std::remove (list_path);
+
+        t.expect (list.find ("# error: suite 'Late' added after run_suites() "
+                             "started, rejected\n")
+                  != std::string::npos)
+            << "rejected suite listed as an error";
+        local_counts.passed_checks++;
+
+#if defined(__cpp_exceptions)
+        t.expect (list.find ("# error: unexpected exception in the body of "
+                             "suite 'Throwing'\n")
+                  != std::string::npos)
+            << "exception of a suite body listed as an error";
+        local_counts.passed_checks++;
+#endif
+
+        local_counts.executed_test_cases++;
+      });
+
     // The suites added once run_suites() has started would never run; they are
     // rejected, the exit code is not 0, and, in a running suite, the rejection
     // is reported as a failed check of that suite, so that the report tells

@@ -278,6 +278,24 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @details
+     * Builds the message here, and not in `suite::run()`, to keep the
+     * frame of that function, which is on the stack of every session,
+     * unchanged. Delegates to the private `runner::reject_call()`, which
+     * writes the message on `stderr` and in the listing, and marks the
+     * runner, so that the exit code of `runner::run_suites()` is not 0.
+     */
+    void
+    runnable_base::reject_body_exception (void)
+    {
+      std::string message{ "unexpected exception in the body of suite '" };
+      message.append (name_);
+      message.append ("'");
+
+      runner_.reject_call (message);
+    }
+
+    /**
+     * @details
      * Delegates to the private `runner::abort()`, as caused by a failed
      * requirement, passing the supplied source location, so that the
      * report identifies it. The runner then calls the abort handler, if
@@ -617,10 +635,7 @@ namespace micro_os_plus::micro_test_plus
               {
                 throw;
               }
-            fprintf (stderr,
-                     "error: unexpected exception in the body of suite "
-                     "'%s'\n",
-                     name_);
+            reject_body_exception ();
           }
 #else
         callable_ (*this);

@@ -478,7 +478,10 @@ namespace micro_os_plus::micro_test_plus
      * While the test cases are listed (see `is_listing()`), the suites
      * run only to create their test cases, which are listed, and the
      * number of listed test cases is written; the result of the checks
-     * does not affect the exit code, since no check is evaluated.
+     * does not affect the exit code, since no check is evaluated; a
+     * rejected call or an exception that escapes a suite body, which
+     * make the list incomplete, are written in the list, on `stderr`
+     * and in the output file, and make the exit code 1.
      *
      * A session without any suite (no top suite, no suite added with
      * `add_suite()`, and no static suite) is reported as an error, since
@@ -492,7 +495,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @par Parameters
      *   None.
-     * @return 0 if all checks passed, or if the test cases were listed;
+     * @return 0 if all checks passed, or if the test cases were listed
+     * without errors;
      * 1 if a check failed, if a suite was rejected by `add_suite()` or
      * `add_top_suite()`, if `initialise()` or `add_top_suite()` was called
      * twice, if there was no suite, if the runner is running, or if the
