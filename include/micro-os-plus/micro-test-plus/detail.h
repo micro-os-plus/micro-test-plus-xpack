@@ -787,10 +787,12 @@ namespace micro_os_plus::micro_test_plus
      * `wchar_t`, `char8_t`, `char16_t`, and `char32_t`, but not `signed
      * char` or `unsigned char`, which are byte buffers) are converted to
      * `basic_c_string`, so that they are compared by content; the other
-     * arrays are converted to `array_operand`, so that they are compared
-     * element by element, the functions to function pointers, and all
-     * other operands are returned unchanged, so the other pointers and
-     * the functions are compared by address.
+     * arrays, including those of `volatile` characters, are converted to
+     * `array_operand`, so that they are compared element by element, the
+     * functions to function pointers, and all other operands are
+     * returned unchanged, so the other pointers, including the pointers
+     * to `volatile` characters, and the functions are compared by
+     * address.
      *
      * The other operands are forwarded, so that the comparator moves a
      * temporary, and refers to a named operand.

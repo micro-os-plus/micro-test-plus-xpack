@@ -15,6 +15,7 @@
 
 #include <array>
 #include <chrono>
+#include <climits>
 #include <cstddef>
 #include <cstdint>
 #include <functional>
@@ -948,6 +949,49 @@ static mt::static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
         const std::uint8_t other[]{ 1, 2, 4 };
 
         t.expect (mt::eq (first, other)) << "bytes eq";
+        local_counts.failed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    // The volatile arrays, such as the buffers filled by a DMA controller,
+    // are compared element by element, also the ones of characters; the
+    // volatile pointers are compared by address (#279).
+    ts.test ("Volatile operands", [] (auto& t)
+      {
+        static volatile std::uint8_t buffer[]{ 1, 2, 3 };
+        static volatile int numbers[]{ -1, 2 };
+        static volatile char text[]{ 'a', 'b', 0 };
+        volatile char* const pointer = text;
+
+        t.expect (mt::eq (buffer, std::array<std::uint8_t, 3>{ 1, 2, 3 }))
+            << "volatile bytes";
+        local_counts.passed_checks++;
+
+        t.expect (mt::eq (numbers, std::vector<int>{ -1, 2 }))
+            << "volatile integers";
+        local_counts.passed_checks++;
+
+        t.expect (mt::ne (numbers, std::vector<unsigned>{ UINT_MAX, 2u }))
+            << "volatile integers by value";
+        local_counts.passed_checks++;
+
+        t.expect (mt::eq (text, std::array<char, 3>{ 'a', 'b', 0 }))
+            << "volatile characters";
+        local_counts.passed_checks++;
+
+        t.expect (mt::eq (pointer, pointer)) << "volatile pointer";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    ts.test ("Volatile operands bad", [] (auto& t)
+      {
+        static volatile std::uint8_t buffer[]{ 1, 2, 3 };
+
+        t.expect (mt::eq (buffer, std::array<std::uint8_t, 3>{ 1, 2, 4 }))
+            << "volatile bytes eq";
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;

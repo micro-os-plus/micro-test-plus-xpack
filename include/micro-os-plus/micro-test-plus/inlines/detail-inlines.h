@@ -1679,27 +1679,38 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Arrays of the character types are converted using their size as a
      * bound, pointers to them using the null terminator; the `const`
-     * qualifier of the characters is ignored, but the `volatile`
-     * characters are not accepted, since `basic_c_string` cannot refer
-     * to them. The other arrays are converted to `array_operand`, and
-     * the functions to function pointers. Every other operand is
-     * forwarded, unchanged, as an lvalue or an rvalue reference.
+     * qualifier of the characters is ignored. The `volatile` characters
+     * are not strings, since `basic_c_string` cannot refer to them: an
+     * array of them is converted to `array_operand`, like the other
+     * arrays, and compared element by element, and a pointer to them is
+     * forwarded, and compared by address, like the other pointers. The
+     * functions are converted to function pointers. Every other operand
+     * is forwarded, unchanged, as an lvalue or an rvalue reference.
+     *
+     * The qualifiers of an array are those of its elements, so the
+     * element type is taken from the type of the argument, not from the
+     * type without qualifiers, which would lose the `volatile` of the
+     * elements, and the conversion to the pointer to `const` elements
+     * would not compile.
      */
     template <class T>
     constexpr auto
     as_operand (T&& t) noexcept -> decltype (auto)
     {
       using type = std::remove_cvref_t<T>;
+      // The cv-qualifiers of an array are those of its elements, which
+      // std::remove_cvref_t removes; keep volatile for the element type.
+      using element_type = std::remove_const_t<
+          std::remove_extent_t<std::remove_reference_t<T>>>;
 
-      if constexpr (std::is_array_v<type>
-                    && character<std::remove_extent_t<type>>)
+      if constexpr (std::is_array_v<type> && character<element_type>
+                    && not std::is_volatile_v<element_type>)
         {
           return basic_c_string<std::remove_cv_t<std::remove_extent_t<type>>>{
             t, std::extent_v<type>
           };
         }
-      else if constexpr (std::is_pointer_v<type>
-                         && character<std::remove_pointer_t<type>>)
+      else if constexpr (character_pointer<type>)
         {
           return basic_c_string<std::remove_cv_t<std::remove_pointer_t<type>>>{
             t
@@ -1708,9 +1719,8 @@ namespace micro_os_plus::micro_test_plus
       else if constexpr (std::is_array_v<type>)
         {
           // Other arrays (e.g. byte buffers) are compared by content.
-          return array_operand<std::remove_extent_t<type>>{
-            static_cast<const std::remove_extent_t<type>*> (t),
-            std::extent_v<type>
+          return array_operand<element_type>{
+            static_cast<const element_type*> (t), std::extent_v<type>
           };
         }
       else if constexpr (std::is_function_v<type>)

@@ -15,6 +15,7 @@
 #include "micro-os-plus/micro-test-plus.h"
 
 #include <array>
+#include <cstdint>
 #include <memory>
 #include <optional>
 #include <string>
@@ -1110,6 +1111,17 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
     static_assert (can_ge<double, float>);
 
     static_assert (not can_eq<int, const char (&)[4]>);
+
+    // The volatile arrays are compared element by element, also the
+    // character ones, which are not strings; the volatile character
+    // pointers are compared by address (#279).
+    static_assert (can_eq<volatile int (&)[3], std::array<int, 3>>);
+    static_assert (
+        can_eq<volatile std::uint8_t (&)[4], volatile std::uint8_t (&)[4]>);
+    static_assert (can_eq<volatile char (&)[4], std::array<char, 4>>);
+    static_assert (not can_eq<volatile char (&)[4], const char (&)[4]>);
+    static_assert (can_eq<volatile char*&, volatile char*&>);
+    static_assert (can_eq<const volatile char*&, const volatile char*&>);
 
     // The comparators have overloads for the operands that cannot be
     // compared or written, which state why; the calls are well formed.

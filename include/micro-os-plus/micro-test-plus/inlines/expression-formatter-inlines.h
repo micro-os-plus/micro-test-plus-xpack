@@ -198,7 +198,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * that is full, without a terminator, is not read beyond its end.
    */
   template <typename Char_T, std::size_t N>
-    requires detail::character<Char_T>
+    requires (detail::character<Char_T> and not std::is_volatile_v<Char_T>)
   expression_formatter&
   expression_formatter::operator<< (const Char_T (&s)[N])
   {

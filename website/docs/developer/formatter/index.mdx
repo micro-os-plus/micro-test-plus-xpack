@@ -71,9 +71,10 @@ public:
     requires detail::character_pointer<Pointer_T>
   expression_formatter& operator<< (Pointer_T s);
 
-  // The arrays of the character types, bounded by their size.
+  // The arrays of the character types, bounded by their size; not the
+  // volatile ones, which are written as the pointers they decay to.
   template <typename Char_T, std::size_t N>
-    requires detail::character<Char_T>
+    requires (detail::character<Char_T> and not std::is_volatile_v<Char_T>)
   expression_formatter& operator<< (const Char_T (&s)[N]);
 
   // The other pointers are written as addresses.
@@ -229,7 +230,10 @@ terminator, so they are written by the template constrained with
 types are written by a more specialised template, which passes their size as
 the capacity, so that the text ends at the first null character or at the end
 of the array, and an array that is full, without a terminator (a fixed-size
-name field), is not read beyond its end.
+name field), is not read beyond its end. The arrays of `volatile` characters
+are excluded: the function that reads the text cannot take a pointer to
+`volatile` characters, and without the exclusion the array overload is
+ambiguous with the one for the pointers (#279).
 
 These are templates on purpose. A non-template `operator<< (const char*)`
 would tie with a template for the arrays, since the array-to-pointer

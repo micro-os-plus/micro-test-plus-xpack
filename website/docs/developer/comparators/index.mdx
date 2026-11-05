@@ -252,13 +252,23 @@ compare by address:
   `char32_t`), including a string literal, becomes a `basic_c_string` of that
   type, bounded by the size of the array; `c_string` is the alias for `char`;
 - a pointer to a character type becomes a `basic_c_string` bounded by the null
-  terminator; a null pointer is equal only to another null pointer, and is less
-  than any string;
+  terminator (the concept `character_pointer`); a null pointer is equal only
+  to another null pointer, and is less than any string;
 - any other array becomes an `array_operand`, compared element by element
   with `equal_to::apply()`, so the elements follow the same rules as the
   single operands, including the comparison of integers of different
   signedness by value;
 - every other operand is forwarded unchanged.
+
+The `volatile` characters are not strings, since a `basic_c_string` cannot
+refer to them: an array of them becomes an `array_operand`, like the other
+arrays, and a pointer to them is forwarded, and compared by address, like the
+other pointers. The qualifiers of an array are those of its elements, so
+`as_operand()` takes the element type from the type of the argument, keeping
+`volatile`; the type without qualifiers, `std::remove_cvref_t`, would turn a
+`volatile int[3]` into an `int[3]`, and the conversion to a pointer to
+`const int` would not compile. The tests are in `operands.cpp` and in the
+static assertions.
 
 The concept `character` selects the five types (`signed char` and `unsigned
 char` are bytes, and their arrays are `array_operand`s). A `basic_c_string` is

@@ -541,19 +541,22 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * Selected for the arrays of the character types, including the
-       * string literals. The text ends at the first null character or at
+       * string literals, but not for the `volatile` characters, whose
+       * arrays are written as the pointers they decay to are. The text
+       * ends at the first null character or at
        * the end of the array, whichever comes first, so that an array
        * that is full, without a terminator, such as a fixed-size name
        * field, is not read beyond its end. Otherwise it is written as the
        * overload for the character pointers writes the text of a pointer.
        *
-       * @tparam Char_T The character type; it satisfies `detail::character`.
+       * @tparam Char_T The character type; it satisfies
+       * `detail::character`, and is not `volatile`.
        * @tparam N The number of elements of the array.
        * @param s The array.
        * @return Reference to this instance.
        */
       template <typename Char_T, std::size_t N>
-        requires detail::character<Char_T>
+        requires (detail::character<Char_T> and not std::is_volatile_v<Char_T>)
       expression_formatter&
       operator<< (const Char_T (&s)[N]);
 

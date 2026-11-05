@@ -308,6 +308,13 @@ are compared as single values are (see below), so an `int` array holding `-1`
 is not equal to an `unsigned` array holding `UINT_MAX`. The other pointers
 are compared by address.
 
+The `volatile` operands, such as a buffer filled by a DMA controller, are
+accepted: an array of `volatile` elements is compared element by element, and
+written as a range, like the other arrays; this includes a `volatile char`
+array, which is a buffer of characters, not a string, so it is not compared
+with a string literal (compare it with a `std::array<char, N>`). A pointer to
+`volatile` characters is compared by address, like the other pointers.
+
 Two **integers of different signedness are compared by value**, not by
 converting the signed operand to the unsigned type, so
 `mt::lt (-1, 1u)` succeeds and `mt::eq (-1, UINT_MAX)` fails. The character
