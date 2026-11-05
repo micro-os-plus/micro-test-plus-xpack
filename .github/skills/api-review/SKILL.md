@@ -351,6 +351,98 @@ messages, without a prefix, so that a `std::wstring` and a `std::string` with
 the same text are reported alike. This is deliberate and documented in the user
 manual. Do not report it as an inconsistency.
 
+### Scoped enumerations
+
+A scoped enumeration, including `std::byte`, is written by its underlying
+value, as that type is written, for example `1` for an `int`, and
+`(unsigned char)1` for a `std::byte`; the framework cannot know the names of
+the enumerators. An application that wants the names defines an `operator<<`
+for the enumeration. This is documented in the user manual. Do not report
+that the enumerations are written as numbers, or that the text does not show
+the type of the enumeration.
+
+### The operator for the formatter of the applications
+
+The application writes the values of its types with an `operator<<` whose first
+parameter is an `mt::expression_formatter&`, as the user manual prescribes. An
+operator with a generic first parameter (`template <class F> F& operator<< (F&,
+const T&)`) is outside this contract: it is ambiguous with the member
+templates of the formatter, for example for the types with `begin()` and
+`end()`. A framework fix would be circular, since `extension::printable` is
+defined by the same expression. Do not report it.
+
+### Values of the application types in the reports
+
+The values that the `operator<<` of an application type writes are shown in the
+reports as that function writes them, in the plain mode, as in the messages,
+without quotes or type suffixes, so that the members are not decorated by the
+reports. A formatter constructed by the application, and written to directly,
+keeps the decorations of the reports of the built-in types, so its `str()` can
+differ from the reports. This is deliberate, and documented in the user manual.
+Do not report the difference.
+
+### The type of an exception in the reports
+
+The reports of the exceptions (`throws<E>` and `nothrow` that fail, and the
+exception that escapes a test case) show what was thrown as nothing, a
+`std::exception` with its `what()`, or an exception of an unknown type, and not
+the type of the exception: its name is available only with RTTI, in an
+implementation-defined (usually mangled) form, and the library must build with
+`-fno-rtti` and give the same reports in every build. Do not report that the
+type is not named.
+
+### The report of long ranges and strings
+
+A range is written with at most 16 elements, followed by the number of
+elements, and, for an equality whose first difference is beyond the elements
+written, the index of the difference; the values at that index are not written,
+by design, to keep the report short, and the user finds them with the index. A
+string is written in full, quoted, so that an empty string, a trailing space,
+and a difference in the white space are visible. Do not report that the
+differing values, a position, or a window are not written.
+
+### The command-line errors
+
+An error in the command-line options is written twice: on `stderr`, when the
+options are parsed, for a shell or a script that discards the standard output,
+and on the console by the reporter (for TAP, as a `Bail out!` line), which
+also writes it in the output file. On a terminal, where both streams are
+shown, the error therefore appears twice. This is deliberate and documented in
+the user manual. Do not report the duplicate.
+
+### The runner object of the application
+
+The runner is an object that the application instantiates, and the static suites
+refer to it by a reference (`extern mt::runner tr;`). There is no default or
+global runner of the framework: the application owns the object, can have
+several runners, each with its own options, report, and totals, and the
+construction and the destruction order are the application's. The boilerplate of
+`main()` and the `extern` declaration are the price. This is documented in the
+user manual. Do not report it; a default runner would be a new feature, to be
+suggested as an enhancement.
+
+### The `detail` types in the public signatures
+
+The types of the `detail` namespace appear in some public signatures and
+classes: the base class `runnable_base` of the test cases and the suites, the
+`check_result` returned by `expect()` and `require()`, the alias
+`expression_formatter`, and the concepts that constrain the functions. This is
+accepted, as long as an application never has to write their names: what it
+needs is documented in the user manual (the `operator<<` for the formatter, the
+parameters of the bodies), and the diagnostics state what is accepted, without
+naming the concepts. Report a `detail` type only if an application must name it
+to write its code.
+
+### The body of a suite
+
+The suites run later, so each suite stores its body, with the copies of its
+additional arguments, in a `std::function`; the body and the arguments must
+therefore be copyable, and the compiler says so. This is deliberate and
+documented in the user manual; the test cases, which run immediately, refer to
+their body and do not copy it. Do not report that a move-only body is rejected,
+and do not claim a saving of program size from replacing the `std::function`
+without the measurement described in `maintenance/docs/SIZE-COMPARISON.md`.
+
 ### Utilities
 
 The `utilities` namespace is intended for helper functions and types that
