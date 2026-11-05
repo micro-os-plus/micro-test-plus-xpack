@@ -487,7 +487,10 @@ is not on a path that runs often.
 The name is a `located_name`, which holds a `std::string` copy of the name and
 the source location of the call that created the suite; the copy is needed
 because the suite may run after the string of the caller is gone. The node
-name, `name_`, points into it.
+name, `name_`, points into it. A `char` array is copied up to its first null
+character, or up to its end, by a constructor template that is more
+specialised than the one for the `char` pointers, which reads up to the
+terminator (see [The C strings and the arrays](/docs/developer/formatter/#the-c-strings-and-the-arrays)).
 
 ### Running a suite
 

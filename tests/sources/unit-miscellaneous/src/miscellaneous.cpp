@@ -538,6 +538,24 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
           << static_cast<const char*> (nullptr);
         check ("nullptr nullptr", "null char pointers");
 
+        // The text of an array ends at its first null character, or at its
+        // end, so that an array that is full, without a terminator, is not
+        // read beyond it.
+        const char full_text[4] = { 'a', 'b', 'c', 'd' };
+        f << full_text;
+        check ("abcd", "unterminated const char array");
+
+        char early_end[6] = { 'a', 'b', '\0', 'c', 'd', '\0' };
+        f << early_end;
+        check ("ab", "char array with an early terminator");
+
+        const wchar_t full_wide_text[2] = { L'x', L'y' };
+        std::string plain_text;
+        mt::detail::plain_text::append (plain_text, full_wide_text);
+        t.expect (mt::eq (plain_text, std::string{ "xy" }))
+            << "unterminated wide array";
+        local_counts.passed_checks++;
+
         // The `signed char` and `unsigned char` pointers, usually byte
         // buffers, are displayed as addresses, whose format depends on the
         // platform.
@@ -2432,6 +2450,19 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
 
         t.expect (mt::eq (reported, std::string{ "Name from view" }))
             << "string view name";
+        local_counts.passed_checks++;
+
+        // An array that is full, without a terminator, is not read beyond
+        // its end.
+        const char full_name[4] = { 'a', 'b', 'c', 'd' };
+        local_ts.test (full_name, [&reported] (auto& lt)
+          {
+            reported = lt.name ();
+            lt.expect (true);
+          });
+
+        t.expect (mt::eq (reported, std::string{ "abcd" }))
+            << "unterminated array name";
         local_counts.passed_checks++;
 
         int runs = 0;

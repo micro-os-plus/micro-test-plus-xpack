@@ -66,8 +66,19 @@ public:
   expression_formatter& operator<< (double v);
   // ... and the other character, string, and arithmetic types
 
+  // The null-terminated C strings (the pointers to the character types).
+  template <typename Pointer_T>
+    requires detail::character_pointer<Pointer_T>
+  expression_formatter& operator<< (Pointer_T s);
+
+  // The arrays of the character types, bounded by their size.
+  template <typename Char_T, std::size_t N>
+    requires detail::character<Char_T>
+  expression_formatter& operator<< (const Char_T (&s)[N]);
+
+  // The other pointers are written as addresses.
   template <typename T>
-    requires (not std::is_same_v<T, char>)
+    requires (not detail::character_pointer<T*>)
   expression_formatter& operator<< (T* v);
 
   template <class T>
@@ -206,6 +217,33 @@ expression_formatter::operator<< (const detail::and_op<Lhs_T, Rhs_T>& op)
 So `all_of (eq (a, b), lt (a, 2), gt (b, 3))` is written as
 `(1 == 1 and 1 < 2 and 1 > 3)`, while an `any_of()` nested in an `all_of()`
 keeps its own parentheses.
+
+## The C strings and the arrays
+
+The pointers to the character types are C strings, read up to their
+terminator, so they are written by the template constrained with
+`detail::character_pointer`, which passes the text to the private
+`append_c_string()` with an unbounded capacity. The arrays of the character
+types are written by a more specialised template, which passes their size as
+the capacity, so that the text ends at the first null character or at the end
+of the array, and an array that is full, without a terminator (a fixed-size
+name field), is not read beyond its end.
+
+These are templates on purpose. A non-template `operator<< (const char*)`
+would tie with a template for the arrays, since the array-to-pointer
+conversion does not count in the ranking of the conversions, and the
+non-template wins a tie; the array would then decay to a pointer, and its size
+would be lost. As templates, the overload for the arrays is the more
+specialised, and is selected for the arrays and the string literals; the
+pointers to `volatile` characters, and the other pointers, are written as
+addresses by the `T*` template, which `detail::character_pointer` excludes
+from the C strings. `located_name` follows the same scheme for the names of
+the suites and of the test cases: a template constructor for the `char`
+pointers, and one for the `char` arrays.
+
+The same applies to a new overload for a type with a pointer and an array
+form: write the pointer and the array as constrained templates, and test with
+a full array, without a terminator, under AddressSanitizer.
 
 ## The application types
 

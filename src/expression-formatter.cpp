@@ -333,6 +333,30 @@ namespace micro_os_plus::micro_test_plus::detail
             }
         }
     }
+
+    /**
+     * @brief Gets the text of a C string held in a buffer of a known
+     * capacity.
+     *
+     * @tparam Char_T The character type.
+     * @param s The text; it must not be null.
+     * @param capacity The number of characters that may be read, or
+     * `npos` if the text is null-terminated.
+     * @return A view of the characters before the first null character,
+     * or of the @p capacity characters if there is none.
+     */
+    template <class Char_T>
+    std::basic_string_view<Char_T>
+    bounded_view (const Char_T* s, std::size_t capacity) noexcept
+    {
+      if (capacity == std::basic_string_view<Char_T>::npos)
+        {
+          return std::basic_string_view<Char_T>{ s };
+        }
+
+      const std::basic_string_view<Char_T> buffer{ s, capacity };
+      return buffer.substr (0, buffer.find (Char_T{}));
+    }
   } // namespace
 
   // --------------------------------------------------------------------------
@@ -545,110 +569,113 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * Appends the null-terminated C string @p s to the internal buffer
-   * as `append_plain()` does, with the control characters other than
-   * the tab and the line feed, and DEL, escaped, or `"nullptr"` for a
-   * null pointer, as the `basic_c_string` overload does; the `char*` values
-   * also reach this overload, so the null pointer must be checked
-   * before the text is read.
+   * The text ends at the first null character or after @p capacity
+   * characters. It is appended as `append_plain()` does, with the control
+   * characters other than the tab and the line feed, and DEL, escaped, or
+   * as `"nullptr"` for a null pointer, as the `basic_c_string` overload
+   * does; the null pointer must therefore be checked before the text is
+   * read, and no more than @p capacity characters are read, so that an
+   * array that is full, without a terminator, is not overread.
    */
-  expression_formatter&
-  expression_formatter::operator<< (const char* s)
+  void
+  expression_formatter::append_c_string (const char* s, std::size_t capacity)
   {
     if (s == nullptr)
       {
         buffer_.append ("nullptr");
+        return;
       }
-    else
-      {
-        append_plain (buffer_, s);
-      }
-    return *this;
+
+    append_plain (buffer_, bounded_view (s, capacity));
   }
 
   /**
    * @details
-   * In the plain mode, the text, converted to UTF-8 and written as a
-   * `std::wstring_view` is, with a null pointer written as `nullptr`;
-   * otherwise the address, since the pointers of the wide character
-   * types are compared by address.
+   * In the plain mode the text, bounded by @p capacity as for the `char`
+   * text, is converted to UTF-8 and written as a `std::wstring_view` is;
+   * otherwise the address of the pointer is written, since the wide
+   * strings are not strings for the comparators.
    */
-  expression_formatter&
-  expression_formatter::operator<< (const wchar_t* s)
+  void
+  expression_formatter::append_c_string (const wchar_t* s,
+                                         std::size_t capacity)
   {
     if (!plain_)
       {
         detail::append_pointer (buffer_, s);
-        return *this;
+        return;
       }
     if (s == nullptr)
       {
         buffer_.append ("nullptr");
-        return *this;
+        return;
       }
-    return *this << std::wstring_view{ s };
+    *this << bounded_view (s, capacity);
   }
 
 #if defined(__cpp_lib_char8_t)
   /**
    * @details
-   * Written as the overload for `const wchar_t*` is.
+   * Written as the overload for `const wchar_t*` writes the text.
    */
-  expression_formatter&
-  expression_formatter::operator<< (const char8_t* s)
+  void
+  expression_formatter::append_c_string (const char8_t* s,
+                                         std::size_t capacity)
   {
     if (!plain_)
       {
         detail::append_pointer (buffer_, s);
-        return *this;
+        return;
       }
     if (s == nullptr)
       {
         buffer_.append ("nullptr");
-        return *this;
+        return;
       }
-    return *this << std::u8string_view{ s };
+    *this << bounded_view (s, capacity);
   }
 #endif // defined(__cpp_lib_char8_t)
 
   /**
    * @details
-   * Written as the overload for `const wchar_t*` is.
+   * Written as the overload for `const wchar_t*` writes the text.
    */
-  expression_formatter&
-  expression_formatter::operator<< (const char16_t* s)
+  void
+  expression_formatter::append_c_string (const char16_t* s,
+                                         std::size_t capacity)
   {
     if (!plain_)
       {
         detail::append_pointer (buffer_, s);
-        return *this;
+        return;
       }
     if (s == nullptr)
       {
         buffer_.append ("nullptr");
-        return *this;
+        return;
       }
-    return *this << std::u16string_view{ s };
+    *this << bounded_view (s, capacity);
   }
 
   /**
    * @details
-   * Written as the overload for `const wchar_t*` is.
+   * Written as the overload for `const wchar_t*` writes the text.
    */
-  expression_formatter&
-  expression_formatter::operator<< (const char32_t* s)
+  void
+  expression_formatter::append_c_string (const char32_t* s,
+                                         std::size_t capacity)
   {
     if (!plain_)
       {
         detail::append_pointer (buffer_, s);
-        return *this;
+        return;
       }
     if (s == nullptr)
       {
         buffer_.append ("nullptr");
-        return *this;
+        return;
       }
-    return *this << std::u32string_view{ s };
+    *this << bounded_view (s, capacity);
   }
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)

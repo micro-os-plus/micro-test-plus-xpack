@@ -496,90 +496,66 @@ namespace micro_os_plus::micro_test_plus
       operator<< (wchar_t c);
 
       /**
-       * @brief Appends a null-terminated C string to the buffer.
+       * @brief Appends a null-terminated C string, or the address of the
+       * pointer.
        *
        * @details
-       * Also selected for the non-const `char` pointers and arrays, which
-       * the pointer template does not accept. A null pointer is rendered
-       * as `"nullptr"`.
+       * Selected for the pointers to the character types (`char`,
+       * `wchar_t`, `char8_t`, `char16_t`, and `char32_t`, possibly
+       * `const`), including the string literals when they are passed
+       * through a pointer; the arrays are written by the overload for
+       * arrays, which does not read beyond the array. A null pointer is
+       * rendered as `"nullptr"`. The text must be null-terminated.
        *
-       * The text is appended without quotes, with only the control
+       * The `char` text is appended without quotes, with only the control
        * characters other than the tab and the line feed, and DEL,
-       * escaped, in both modes, since this is how
-       * the string literals are written by the `operator<<` functions of
-       * the applications, for example for separators. The `char` pointers
-       * that are values to be reported, such as the operands of the
-       * comparators and the elements of the ranges, pairs, tuples, and
-       * optionals, are written quoted, like the `std::string` values, by
-       * the overload for `basic_c_string`; an application writes a quoted value
-       * with a `std::string_view`.
+       * escaped, in both modes, since this is how the string literals are
+       * written by the `operator<<` functions of the applications, for
+       * example for separators. The `char` pointers that are values to be
+       * reported, such as the operands of the comparators and the elements
+       * of the ranges, pairs, tuples, and optionals, are written quoted,
+       * like the `std::string` values, by the overload for
+       * `basic_c_string`; an application writes a quoted value with a
+       * `std::string_view`.
        *
-       * @param s The C string to append, or a null pointer.
-       * @return Reference to this instance.
-       */
-      expression_formatter&
-      operator<< (const char* s);
-
-      /**
-       * @brief Appends a null-terminated wide C string in the plain mode,
-       * or the address of the pointer otherwise.
-       *
-       * @details
-       * The pointers and arrays of the wide character types are not
+       * The pointers and the arrays of the wide character types are not
        * strings for the comparators, which compare the addresses, so, as
        * operands, they are reported as addresses. In the plain mode, used
        * for the messages and for the values written by the applications,
-       * the text is converted to UTF-8 and written as a
-       * `std::wstring_view` is, and a null pointer as
-       * `"nullptr"`. Also selected for the string literals, which decay
-       * to a pointer.
+       * their text is converted to UTF-8 and written as a
+       * `std::wstring_view` is; otherwise the address of the pointer is
+       * written.
        *
-       * @param s The wide C string, or a null pointer.
+       * @tparam Pointer_T The pointer type; it satisfies
+       * `detail::character_pointer`.
+       * @param s The C string, or a null pointer.
        * @return Reference to this instance.
        */
+      template <typename Pointer_T>
+        requires detail::character_pointer<Pointer_T>
       expression_formatter&
-      operator<< (const wchar_t* s);
-
-#if defined(__cpp_lib_char8_t)
-      /**
-       * @brief Appends a null-terminated UTF-8 C string in the plain mode,
-       * or the address of the pointer otherwise.
-       *
-       * @details
-       * Written as the overload for `const wchar_t*` writes the text.
-       *
-       * @param s The UTF-8 C string, or a null pointer.
-       * @return Reference to this instance.
-       */
-      expression_formatter&
-      operator<< (const char8_t* s);
-#endif // defined(__cpp_lib_char8_t)
+      operator<< (Pointer_T s);
 
       /**
-       * @brief Appends a null-terminated UTF-16 C string in the plain mode,
-       * or the address of the pointer otherwise.
+       * @brief Appends the text held by an array of characters.
        *
        * @details
-       * Written as the overload for `const wchar_t*` writes the text.
+       * Selected for the arrays of the character types, including the
+       * string literals. The text ends at the first null character or at
+       * the end of the array, whichever comes first, so that an array
+       * that is full, without a terminator, such as a fixed-size name
+       * field, is not read beyond its end. Otherwise it is written as the
+       * overload for the character pointers writes the text of a pointer.
        *
-       * @param s The UTF-16 C string, or a null pointer.
+       * @tparam Char_T The character type; it satisfies `detail::character`.
+       * @tparam N The number of elements of the array.
+       * @param s The array.
        * @return Reference to this instance.
        */
+      template <typename Char_T, std::size_t N>
+        requires detail::character<Char_T>
       expression_formatter&
-      operator<< (const char16_t* s);
-
-      /**
-       * @brief Appends a null-terminated UTF-32 C string in the plain mode,
-       * or the address of the pointer otherwise.
-       *
-       * @details
-       * Written as the overload for `const wchar_t*` writes the text.
-       *
-       * @param s The UTF-32 C string, or a null pointer.
-       * @return Reference to this instance.
-       */
-      expression_formatter&
-      operator<< (const char32_t* s);
+      operator<< (const Char_T (&s)[N]);
 
       /**
        * @brief Appends a C string operand of a comparator.
@@ -778,17 +754,17 @@ namespace micro_os_plus::micro_test_plus
        * Null pointers are rendered as `"0x0"`. Non-null pointers are
        * formatted with `snprintf` using the `%p` specifier.
        *
-       * The `char` pointers are excluded, so that they are written as
-       * strings by the `const char*` overload, as the `const char`
-       * pointers are; the `signed char` and `unsigned char` pointers,
-       * usually byte buffers, are written as addresses.
+       * The pointers to the character types are excluded, so that they
+       * are written as strings by the overload for the character
+       * pointers; the `signed char` and `unsigned char` pointers, usually
+       * byte buffers, are written as addresses.
        *
-       * @tparam T The type pointed to, other than `char`.
+       * @tparam T The type pointed to, other than a character type.
        * @param v The pointer value.
        * @return Reference to this instance.
        */
       template <typename T>
-        requires (not std::is_same_v<T, char>)
+        requires (not detail::character_pointer<T*>)
       expression_formatter&
       operator<< (T* v);
 
@@ -1165,6 +1141,54 @@ namespace micro_os_plus::micro_test_plus
        * which is held in memory (and, in TAP, copied) until reported.
        */
       static constexpr size_t max_range_elements_ = 16;
+
+      /**
+       * @brief Appends the text of a C string held in a buffer of a known
+       * capacity.
+       *
+       * @details
+       * The text ends at the first null character or after @p capacity
+       * characters, whichever comes first. A null pointer is written as
+       * `"nullptr"`. In the plain mode the text is written as the
+       * overloads for the string views write it (the `char` text without
+       * quotes); out of it, the `char` text is written in the same way
+       * and the text of the other character types is replaced by the
+       * address of the pointer. Shared by the overloads for the
+       * character pointers (unbounded capacity) and for the arrays.
+       *
+       * @param s The text, or a null pointer.
+       * @param capacity The number of characters that may be read.
+       * @par Returns
+       *   Nothing.
+       */
+      void
+      append_c_string (const char* s, std::size_t capacity);
+
+      /**
+       * @copydoc append_c_string(const char*, std::size_t)
+       */
+      void
+      append_c_string (const wchar_t* s, std::size_t capacity);
+
+#if defined(__cpp_lib_char8_t)
+      /**
+       * @copydoc append_c_string(const char*, std::size_t)
+       */
+      void
+      append_c_string (const char8_t* s, std::size_t capacity);
+#endif // defined(__cpp_lib_char8_t)
+
+      /**
+       * @copydoc append_c_string(const char*, std::size_t)
+       */
+      void
+      append_c_string (const char16_t* s, std::size_t capacity);
+
+      /**
+       * @copydoc append_c_string(const char*, std::size_t)
+       */
+      void
+      append_c_string (const char32_t* s, std::size_t capacity);
 
       /**
        * @brief Constructs a formatter in the plain mode, for a message.

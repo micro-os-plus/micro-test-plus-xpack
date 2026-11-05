@@ -511,3 +511,10 @@ writes them, as in the messages, without quotes or type suffixes: its
 `std::string`, `std::string_view`, and `const char*` members are **not** quoted
 by the report, so write the quotes in the operator if an empty string or a
 trailing space must be visible.
+
+A `char` array that the `operator<<` of an application type, or a message,
+writes (for example a fixed-size name field of a structure) is written up to
+its first null character, or up to its end if it has none, so an array that is
+full, without a terminator, is read only within its bounds. A `char` pointer
+is a null-terminated string, read up to its terminator; when only the array is
+available, write the array itself, not a pointer to its first element.

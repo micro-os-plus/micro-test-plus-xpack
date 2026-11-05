@@ -98,9 +98,30 @@ namespace micro_os_plus::micro_test_plus
    * called implicitly, the location is the place of the conversion, in
    * the user code.
    */
-  inline located_name::located_name (
-      const char* name, const reflection::source_location& location)
+  template <typename Pointer_T>
+    requires (std::is_same_v<Pointer_T, const char*>
+              or std::is_same_v<Pointer_T, char*>
+              or std::is_null_pointer_v<Pointer_T>)
+  located_name::located_name (Pointer_T name,
+                              const reflection::source_location& location)
       : name_{ name != nullptr ? name : "" }, location_{ location }
+  {
+    detail::escape_control_characters (name_);
+  }
+
+  /**
+   * @details
+   * Copies the characters up to the first null character, or all the
+   * elements of the array if there is none, and stores the location;
+   * when called implicitly, the location is the place of the conversion,
+   * in the user code.
+   */
+  template <std::size_t N>
+  located_name::located_name (const char (&name)[N],
+                              const reflection::source_location& location)
+      : name_{ std::string_view{ name, N }.substr (
+            0, std::string_view{ name, N }.find ('\0')) },
+        location_{ location }
   {
     detail::escape_control_characters (name_);
   }

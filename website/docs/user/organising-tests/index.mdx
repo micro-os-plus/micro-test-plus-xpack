@@ -324,8 +324,11 @@ The name is a string literal, a `const char*`, a `std::string`, or a
 `std::string_view`, converted implicitly to `located_name`, which copies
 it and also records the location of the `test()` call. A temporary
 string, such as `prefix + " overflow"`, is moved instead of copied, and
-a view need not be null-terminated. The copy is freed when the test case
-ends. The names of the suites, given to `add_suite()`,
+a view need not be null-terminated. A `char` array is copied up to its
+first null character, or up to its end if it has none, so that a
+fixed-size name field that is full, without a terminator, is read only
+within the array; a `char` pointer must point to a null-terminated
+string. The copy is freed when the test case ends. The names of the suites, given to `add_suite()`,
 `add_top_suite()`, and the `static_suite` constructor, are
 `located_name` objects too, and are kept by the suites.
 
@@ -616,9 +619,10 @@ while `run_suites()` runs, for example from the body of another suite, or after
 it returned, would never run; it is rejected, the error is reported on
 `stderr`, and the result is not 0.
 
-The suite name can be a string literal, a `const char*`, a
-`std::string`, or a `std::string_view`; it is copied, so the string
-need not outlive the call to `add_suite()`.
+The suite name can be a string literal, a `char` array, a `const char*`,
+a `std::string`, or a `std::string_view`, with the same rules as the name of
+a test case; it is copied, so the string need not outlive the call to
+`add_suite()`.
 
 ### Several runners
 

@@ -179,11 +179,40 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
+   * The text is not bounded, so it must be null-terminated; the
+   * overload for the arrays is more specialised, so it is selected for
+   * the arrays, which cannot be read beyond their end.
+   */
+  template <typename Pointer_T>
+    requires detail::character_pointer<Pointer_T>
+  expression_formatter&
+  expression_formatter::operator<< (Pointer_T s)
+  {
+    append_c_string (s, std::string_view::npos);
+    return *this;
+  }
+
+  /**
+   * @details
+   * The size of the array limits the characters read, so that an array
+   * that is full, without a terminator, is not read beyond its end.
+   */
+  template <typename Char_T, std::size_t N>
+    requires detail::character<Char_T>
+  expression_formatter&
+  expression_formatter::operator<< (const Char_T (&s)[N])
+  {
+    append_c_string (static_cast<const Char_T*> (s), N);
+    return *this;
+  }
+
+  /**
+   * @details
    * The address is formatted by the `detail::append_pointer()` helper,
    * shared with the `detail::reporter`.
    */
   template <typename T>
-    requires (not std::is_same_v<T, char>)
+    requires (not detail::character_pointer<T*>)
   expression_formatter&
   expression_formatter::operator<< (T* v)
   {

@@ -1619,6 +1619,23 @@ namespace micro_os_plus::micro_test_plus
                         or std::is_same_v<std::remove_cv_t<T>, char32_t>;
 
     /**
+     * @brief C++20 concept satisfied by the pointers to the character
+     * types.
+     *
+     * @details
+     * The `character_pointer` concept is satisfied when the type is a
+     * pointer to a `character`, possibly `const`, but not `volatile`.
+     * The formatter writes these pointers as C strings, and
+     * `located_name` takes them as names.
+     *
+     * @tparam T The type to check.
+     */
+    template <class T>
+    concept character_pointer
+        = std::is_pointer_v<T> and character<std::remove_pointer_t<T>>
+          and not std::is_volatile_v<std::remove_pointer_t<T>>;
+
+    /**
      * @brief A C string operand of a comparator.
      *
      * @details

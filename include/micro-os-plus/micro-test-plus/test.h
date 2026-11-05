@@ -183,13 +183,45 @@ namespace micro_os_plus::micro_test_plus
      * @brief Constructs the name from a C string, capturing the location
      * of the caller.
      *
+     * @details
+     * Selected for the `char` pointers; the text must be null-terminated.
+     * The arrays, including the string literals, are taken by the
+     * constructor for arrays, which does not read beyond the array.
+     *
+     * @tparam Pointer_T The pointer type: a pointer to `char`, possibly
+     * `const`, or `std::nullptr_t`.
      * @param name The name or description, used in reports; copied. A
      * null pointer is an empty name.
      * @param location The location of the conversion, defaulting to the
      * call in the user code.
      */
-    located_name (const char* name, const reflection::source_location& location
-                                    = reflection::source_location::current ());
+    template <typename Pointer_T>
+      requires (std::is_same_v<Pointer_T, const char*>
+                or std::is_same_v<Pointer_T, char*>
+                or std::is_null_pointer_v<Pointer_T>)
+    located_name (Pointer_T name, const reflection::source_location& location
+                                  = reflection::source_location::current ());
+
+    /**
+     * @brief Constructs the name from an array of characters, capturing
+     * the location of the caller.
+     *
+     * @details
+     * Selected for the arrays, including the string literals. The name
+     * ends at the first null character or at the end of the array,
+     * whichever comes first, so that an array that is full, without a
+     * terminator, such as a fixed-size name field, is not read beyond its
+     * end.
+     *
+     * @tparam N The number of elements of the array.
+     * @param name The name or description, used in reports; copied.
+     * @param location The location of the conversion, defaulting to the
+     * call in the user code.
+     */
+    template <std::size_t N>
+    located_name (const char (&name)[N],
+                  const reflection::source_location& location
+                  = reflection::source_location::current ());
 
     /**
      * @brief Constructs the name from a standard string, capturing the

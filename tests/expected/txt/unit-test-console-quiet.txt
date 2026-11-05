@@ -61,90 +61,90 @@ feed FAILED (checks.cpp:390)
         ✗ actual_sv < abc_sv FAILED (comparisons.cpp:393, "abc" < "abc")
 
     • Failed C string comparisons
-        ✗ actual == "abx" FAILED (comparisons.cpp:458, "abc" == "abx")
-        ✗ null_string == "abc" FAILED (comparisons.cpp:461, nullptr == "abc")
+        ✗ actual == "abx" FAILED (comparisons.cpp:505, "abc" == "abx")
+        ✗ null_string == "abc" FAILED (comparisons.cpp:508, nullptr == "abc")
 
     • Failed wide C string comparisons
         ✗ wide == "abx" FAILED (comparisons.cpp:529, "abc" == "abx")
         ✗ null_wide == "abc" FAILED (comparisons.cpp:532, nullptr == "abc")
 
     • Failed pointer comparisons
-        ✗ ptr1 != &one FAILED (comparisons.cpp:542, 0x7ff7b8dca6c0 != 0x7ff7b8dca6c0)
-        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:545, 0x7ff7b8dca6c0 != 0x7ff7b8dca6c0)
-        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:548, 0x7ff7b8dca6c0 > 0x7ff7b8dca6c0)
-        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:551, 0x7ff7b8dca6c0 < 0x7ff7b8dca6c0)
-        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:554, 0x7ff7b8dca6c0 == 0x7ff7b8dca710)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:557, 0x10719fac8 != 0x10719fac8)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:560, 0x10719fac8 == 0x7ff7b8dca710)
-        ✗ pone >= ptwo FAILED (comparisons.cpp:572, 0x7ff7b8dcad40 >= 0x7ff7b8dcad44)
-        ✗ ptwo <= pone FAILED (comparisons.cpp:575, 0x7ff7b8dcad44 <= 0x7ff7b8dcad40)
+        ✗ ptr1 != &one FAILED (comparisons.cpp:613, 0x7ff7b015f420 != 0x7ff7b015f420)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:616, 0x7ff7b015f420 != 0x7ff7b015f420)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:619, 0x7ff7b015f420 > 0x7ff7b015f420)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:622, 0x7ff7b015f420 < 0x7ff7b015f420)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:625, 0x7ff7b015f420 == 0x7ff7b015f470)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:628, 0x10fe3a178 != 0x10fe3a178)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:631, 0x10fe3a178 == 0x7ff7b015f470)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:643, 0x7ff7b015faa0 >= 0x7ff7b015faa4)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:646, 0x7ff7b015faa4 <= 0x7ff7b015faa0)
 
     • Failed null pointer comparisons
-        ✗ a_nullptr != nullptr FAILED (comparisons.cpp:624, 0x0 != nullptr)
-        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:627, 0x7ff7b8dcad60 == nullptr)
-        ✗ pfunc != nullptr FAILED (comparisons.cpp:631, 0x0 != nullptr)
+        ✗ a_nullptr != nullptr FAILED (comparisons.cpp:695, 0x0 != nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:698, 0x7ff7b015fac0 == nullptr)
+        ✗ pfunc != nullptr FAILED (comparisons.cpp:702, 0x0 != nullptr)
 
     • Logical operations
-        ✗ not (actual == 42) FAILED (comparisons.cpp:652, not (42 == 42))
-        ✗ FAILED (comparisons.cpp:659, not (42 ~ (42 +/- 1)))
-        ✗ FAILED (comparisons.cpp:662, not ("abc" == "abc"))
-        ✗ FAILED (comparisons.cpp:668, not not (42 != 42))
-        ✗ FAILED (comparisons.cpp:671, not (42 == 42 or 1 != 1))
-        ✗ FAILED (comparisons.cpp:674, not true)
-        ✗ (actual == 42) and (actual != 42.0) FAILED (comparisons.cpp:682, (42 == 42 and 42.0f != 42.0))
-        ✗ (actual != 42) and (actual == 42.0) FAILED (comparisons.cpp:687, (42 != 42 and 42.0f == 42.0))
-        ✗ (actual != 42) and (actual != 42.0) FAILED (comparisons.cpp:692, (42 != 42 and 42.0f != 42.0))
-        ✗ FAILED (comparisons.cpp:701, (42 == 42 and 42.0f != 42.0))
-        ✗ (actual != 42) or (actual != 42.0) FAILED (comparisons.cpp:720, (42 != 42 or 42.0f != 42.0))
+        ✗ not (actual == 42) FAILED (comparisons.cpp:723, not (42 == 42))
+        ✗ FAILED (comparisons.cpp:730, not (42 ~ (42 +/- 1)))
+        ✗ FAILED (comparisons.cpp:733, not ("abc" == "abc"))
+        ✗ FAILED (comparisons.cpp:739, not not (42 != 42))
+        ✗ FAILED (comparisons.cpp:742, not (42 == 42 or 1 != 1))
+        ✗ FAILED (comparisons.cpp:745, not true)
+        ✗ (actual == 42) and (actual != 42.0) FAILED (comparisons.cpp:753, (42 == 42 and 42.0f != 42.0))
+        ✗ (actual != 42) and (actual == 42.0) FAILED (comparisons.cpp:758, (42 != 42 and 42.0f == 42.0))
+        ✗ (actual != 42) and (actual != 42.0) FAILED (comparisons.cpp:763, (42 != 42 and 42.0f != 42.0))
+        ✗ FAILED (comparisons.cpp:772, (42 == 42 and 42.0f != 42.0))
+        ✗ (actual != 42) or (actual != 42.0) FAILED (comparisons.cpp:791, (42 != 42 or 42.0f != 42.0))
 
     • Logical operations with more operands
-        ✗ all_of three, the second false FAILED (comparisons.cpp:775, (42 == 42 and 42 < 41 and 42 > 41))
-        ✗ all_of four, the last false FAILED (comparisons.cpp:780, (42 == 42 and 42 == 42 and 42 == 42 and 42 == 0))
-        ✗ any_of three false FAILED (comparisons.cpp:785, (42 == 0 or 42 == 1 or 42 == 2))
-        ✗ any_of of two all_of FAILED (comparisons.cpp:790, ((42 == 0 and 42 == 42) or (42 == 1 and 42 == 42 and 42 == 2)))
-        ✗ all_of with a nested any_of FAILED (comparisons.cpp:797, (42 == 42 and (42 == 0 or 42 == 1)))
+        ✗ all_of three, the second false FAILED (comparisons.cpp:846, (42 == 42 and 42 < 41 and 42 > 41))
+        ✗ all_of four, the last false FAILED (comparisons.cpp:851, (42 == 42 and 42 == 42 and 42 == 42 and 42 == 0))
+        ✗ any_of three false FAILED (comparisons.cpp:856, (42 == 0 or 42 == 1 or 42 == 2))
+        ✗ any_of of two all_of FAILED (comparisons.cpp:861, ((42 == 0 and 42 == 42) or (42 == 1 and 42 == 42 and 42 == 2)))
+        ✗ all_of with a nested any_of FAILED (comparisons.cpp:868, (42 == 42 and (42 == 0 or 42 == 1)))
 
 • Exceptions suite
 
     • Failed thrown exceptions
-        ✗ exception thrown FAILED (exceptions.cpp:103, throws, but nothing was thrown)
-        ✗ std::runtime_error thrown FAILED (exceptions.cpp:115, throws<std::runtime_error>, but a std::exception was thrown: "")
-        ✗ int thrown FAILED (exceptions.cpp:129, throws<std::runtime_error>, but an exception of unknown type was thrown)
-        ✗ FAILED (exceptions.cpp:142, throws<std::runtime_error>, but a std::exception was thrown: "bad \"value\"\n")
+        ✗ exception thrown FAILED (exceptions.cpp:110, throws, but nothing was thrown)
+        ✗ std::runtime_error thrown FAILED (exceptions.cpp:122, throws<std::runtime_error>, but a std::exception was thrown: "")
+        ✗ int thrown FAILED (exceptions.cpp:136, throws<std::runtime_error>, but an exception of unknown type was thrown)
+        ✗ FAILED (exceptions.cpp:149, throws<std::runtime_error>, but a std::exception was thrown: "bad \"value\"\n")
 
     • Failed not thrown exceptions
-        ✗ exception not thrown FAILED (exceptions.cpp:182, nothrow, but an exception of unknown type was thrown)
-        ✗ std::exception not thrown FAILED (exceptions.cpp:186, nothrow, but a std::exception was thrown: "boom")
+        ✗ exception not thrown FAILED (exceptions.cpp:231, nothrow, but an exception of unknown type was thrown)
+        ✗ std::exception not thrown FAILED (exceptions.cpp:235, nothrow, but a std::exception was thrown: "boom")
 
     • Unexpected std::exception
-        ✗ unexpected exception: boom FAILED (exceptions.cpp:209)
+        ✗ unexpected exception: boom FAILED (exceptions.cpp:258)
 
     • Unexpected exception of unknown type
-        ✗ unexpected exception of unknown type FAILED (exceptions.cpp:223)
+        ✗ unexpected exception of unknown type FAILED (exceptions.cpp:272)
 
     • Unexpected exception in nested test case
         • nested test case
-            ✗ unexpected exception: boom FAILED (exceptions.cpp:237)
+            ✗ unexpected exception: boom FAILED (exceptions.cpp:286)
 
     • Failed require
-        ✗ failed requirement FAILED (exceptions.cpp:276) - test case stopped
+        ✗ failed requirement FAILED (exceptions.cpp:325) - test case stopped
 
     • Failed require in nested test case
         • nested test case
-            ✗ failed nested requirement FAILED (exceptions.cpp:295) - test case stopped
+            ✗ failed nested requirement FAILED (exceptions.cpp:344) - test case stopped
 
     • Failed require in throws
-        ✗ in throws FAILED (exceptions.cpp:312) - test case stopped
+        ✗ in throws FAILED (exceptions.cpp:361) - test case stopped
 
     • Failed require in throws with a type
-        ✗ in typed throws FAILED (exceptions.cpp:323) - test case stopped
+        ✗ in typed throws FAILED (exceptions.cpp:372) - test case stopped
 
     • Failed require in nothrow
-        ✗ in nothrow FAILED (exceptions.cpp:333) - test case stopped
+        ✗ in nothrow FAILED (exceptions.cpp:382) - test case stopped
 
     • Failed require during unwinding
-        ✗ FAILED (exceptions.cpp:348) - test case stopped
-        ✗ unexpected exception: boom FAILED (exceptions.cpp:343)
+        ✗ FAILED (exceptions.cpp:397) - test case stopped
+        ✗ unexpected exception: boom FAILED (exceptions.cpp:392)
 
 • Exceptions suite body
 
@@ -423,20 +423,20 @@ feed FAILED (checks.cpp:390)
 • Miscellaneous suite
 
     • Message types
-        ✗ failed {3} FAILED (miscellaneous.cpp:873)
+        ✗ failed {3} FAILED (miscellaneous.cpp:912)
 
     • Lazy messages
-        ✗ failed and appended FAILED (miscellaneous.cpp:901)
-        ✗ 42 FAILED (miscellaneous.cpp:912)
-        ✗ from a function FAILED (miscellaneous.cpp:917)
+        ✗ failed and appended FAILED (miscellaneous.cpp:940)
+        ✗ 42 FAILED (miscellaneous.cpp:951)
+        ✗ from a function FAILED (miscellaneous.cpp:956)
 
     • TAP escapes # TODO in names \ messages
         ✗ failed # TODO not a directive
-next line FAILED (miscellaneous.cpp:939)
+next line FAILED (miscellaneous.cpp:978)
 
     • TAP condition values are quoted
-        ✗ FAILED (miscellaneous.cpp:950, "key: \"value\" # not a comment" == "a\\b")
-        ✗ FAILED (miscellaneous.cpp:954, "line\nbreak\ttab" == "x")
+        ✗ FAILED (miscellaneous.cpp:989, "key: \"value\" # not a comment" == "a\\b")
+        ✗ FAILED (miscellaneous.cpp:993, "line\nbreak\ttab" == "x")
 
 # Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
 TAP version 14
@@ -458,7 +458,7 @@ Matching test cases:
 0 test cases in 0 test suites
 
     • Failed each value (2)
-        ✗ value 2 == 1 FAILED (miscellaneous.cpp:1929, 2 == 1)
+        ✗ value 2 == 1 FAILED (miscellaneous.cpp:2092, 2 == 1)
 
 • Operands suite
 
@@ -531,4 +531,4 @@ Matching test cases:
         ✗ abc matches *C FAILED (utility.cpp:191)
         ✗ ab matches ??? FAILED (utility.cpp:195)
 
-✗ Total: 722 checks passed, 375 failed, in 179 test cases, 15 test suites, time: 14.581 ms
+✗ Total: 726 checks passed, 375 failed, in 179 test cases, 15 test suites, time: 17.798 ms
