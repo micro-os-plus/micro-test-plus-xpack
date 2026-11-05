@@ -482,10 +482,8 @@ namespace micro_os_plus::micro_test_plus
      * number of listed test cases is written; the result of the checks
      * does not affect the exit code, since no check is evaluated; a
      * rejected call or an exception that escapes a suite body, which
-     * make the list incomplete, are written on `stderr`, and make the
-     * exit code 1; except for a test case started on a suite that is not
-     * running, they are also written in the list, on the console and in
-     * the output file.
+     * make the list incomplete, are written on `stderr`, and in the list,
+     * on the console and in the output file, and make the exit code 1.
      *
      * A session without any suite (no top suite, no suite added with
      * `add_suite()`, and no static suite) is reported as an error, since
@@ -1072,8 +1070,12 @@ namespace micro_os_plus::micro_test_plus
      * the message to the reporter, as a failed check of the running test
      * case, as a failed test point of the running suite, or as a comment
      * line, so that the report and the output file tell why the session
-     * failed. Used by `reject_suite()`, and by `initialise()` and
-     * `add_top_suite()` for the calls made twice.
+     * failed. Used by `reject_suite()`, by `initialise()` and
+     * `add_top_suite()` for the calls made twice, and by
+     * `detail::runnable_base`, for a test case started on a suite that is
+     * not running, where no running test case or suite can report it, and
+     * for an exception that escapes a suite body while the test cases are
+     * listed.
      *
      * @param [in] message The message, without the prefix.
      * @param [in] location The location of the call, or a null pointer

@@ -100,9 +100,10 @@ started, are passed to `reject_call()`, which writes the error on `stderr`, sets
 to the reporter: as a failed check of the running test case, as a failed test
 point of the running suite (the top suite included), or, when none is running,
 for example after `run_suites()` returned, as a comment line after the summary,
-since the report is complete. The reporter is not used if there is none yet,
-after the options declined the session, after an abort, and while the test
-cases are listed.
+since the report is complete, or while the test cases are listed, as a comment
+line in the list, which also reaches the output file. The reporter is not used
+if there is none yet, after the options declined the session, and after an
+abort.
 
 ## The options
 

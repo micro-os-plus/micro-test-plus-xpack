@@ -1874,8 +1874,9 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
       });
 
     // The errors that make the list incomplete, a suite added from a suite
-    // body and an exception that escapes a suite body, are written in the
-    // list and in the output file, and the exit code is not 0, as for a run.
+    // body, a test case started on a suite that is not running, and an
+    // exception that escapes a suite body, are written in the list and in the
+    // output file, and the exit code is not 0, as for a run (#280).
     ts.test ("List test cases with errors", [] (auto& t)
       {
         static constexpr const char* list_path = "listed-errors.txt";
@@ -1889,10 +1890,14 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
         {
           mt::runner list_runner;
           list_runner.initialise (options);
-          list_runner.add_suite ("Outer", [&list_runner] (mt::suite& s)
+          mt::suite* first = nullptr;
+          list_runner.add_suite ("First", [&first] (mt::suite& s) noexcept
+            { first = &s; });
+          list_runner.add_suite ("Outer", [&list_runner, &first] (mt::suite& s)
             {
               s.test ("Listed", [] (mt::test_case&) noexcept {});
               list_runner.add_suite ("Late", [] (mt::suite&) noexcept {});
+              first->test ("Misplaced", [] (mt::test_case&) noexcept {});
             });
 #if defined(__cpp_exceptions)
           list_runner.add_suite ("Throwing", [] (mt::suite& s)
@@ -1904,7 +1909,8 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
           exit_code = list_runner.run_suites ();
         }
 
-        t.expect (mt::eq (exit_code, 1)) << "errors while listing, exit code 1";
+        t.expect (mt::eq (exit_code, 1))
+            << "errors while listing, exit code 1";
         local_counts.passed_checks++;
 
         std::string list;
@@ -1924,6 +1930,12 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
                              "started, rejected\n")
                   != std::string::npos)
             << "rejected suite listed as an error";
+        local_counts.passed_checks++;
+
+        t.expect (list.find ("# error: test case 'Misplaced' started on suite "
+                             "'First', which is not running\n")
+                  != std::string::npos)
+            << "misplaced test case listed as an error";
         local_counts.passed_checks++;
 
 #if defined(__cpp_exceptions)

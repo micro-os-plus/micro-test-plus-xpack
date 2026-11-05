@@ -1002,7 +1002,8 @@ next line FAILED (miscellaneous.cpp:978)
     • List test cases with errors
         ✓ errors while listing, exit code 1
         ✓ rejected suite listed as an error
-    ✓ List test cases with errors - passed (2 checks)
+        ✓ misplaced test case listed as an error
+    ✓ List test cases with errors - passed (3 checks)
     • Late suites
         ✓ suite added during run_suites() rejected
         ✓ rejected suite not run, and reported as a failed check
@@ -1142,7 +1143,7 @@ next line FAILED (miscellaneous.cpp:978)
         ✓ C string suite name copied
         ✓ string view suite name copied
     ✓ Test case and suite names - passed (10 checks)
-✗ Miscellaneous suite - FAILED (217 checks passed, 8 failed, in 59 test cases)
+✗ Miscellaneous suite - FAILED (218 checks passed, 8 failed, in 59 test cases)
 • Operands suite
     • Arrays
         ✓ array{ 42 } == array{ 42 }
@@ -1449,6 +1450,6 @@ next line FAILED (miscellaneous.cpp:978)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 723 checks passed, 362 failed, in 167 test cases, 13 test suites
+✗ Total: 724 checks passed, 362 failed, in 167 test cases, 13 test suites
 error: test runner already initialised
 error: top suite already added

@@ -69,19 +69,19 @@ feed FAILED (checks.cpp:390)
         ✗ null_wide == "abc" FAILED (comparisons.cpp:580, nullptr == "abc")
 
     • Failed pointer comparisons
-        ✗ ptr1 != &one FAILED (comparisons.cpp:661, 0x7ff7b1818260 != 0x7ff7b1818260)
-        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:664, 0x7ff7b1818260 != 0x7ff7b1818260)
-        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:667, 0x7ff7b1818260 > 0x7ff7b1818260)
-        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:670, 0x7ff7b1818260 < 0x7ff7b1818260)
-        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:673, 0x7ff7b1818260 == 0x7ff7b18182b0)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:676, 0x10e790f18 != 0x10e790f18)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:679, 0x10e790f18 == 0x7ff7b18182b0)
-        ✗ pone >= ptwo FAILED (comparisons.cpp:691, 0x7ff7b18188e0 >= 0x7ff7b18188e4)
-        ✗ ptwo <= pone FAILED (comparisons.cpp:694, 0x7ff7b18188e4 <= 0x7ff7b18188e0)
+        ✗ ptr1 != &one FAILED (comparisons.cpp:661, 0x7ff7baa93260 != 0x7ff7baa93260)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:664, 0x7ff7baa93260 != 0x7ff7baa93260)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:667, 0x7ff7baa93260 > 0x7ff7baa93260)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:670, 0x7ff7baa93260 < 0x7ff7baa93260)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:673, 0x7ff7baa93260 == 0x7ff7baa932b0)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:676, 0x105515f18 != 0x105515f18)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:679, 0x105515f18 == 0x7ff7baa932b0)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:691, 0x7ff7baa938e0 >= 0x7ff7baa938e4)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:694, 0x7ff7baa938e4 <= 0x7ff7baa938e0)
 
     • Failed null pointer comparisons
         ✗ a_nullptr != nullptr FAILED (comparisons.cpp:743, 0x0 != nullptr)
-        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:746, 0x7ff7b1818900 == nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:746, 0x7ff7baa93900 == nullptr)
         ✗ pfunc != nullptr FAILED (comparisons.cpp:750, 0x0 != nullptr)
 
     • Logical operations
@@ -464,7 +464,7 @@ All available test cases:
 2 test cases in 2 test suites
 
     • Failed each value (2)
-        ✗ value 2 == 1 FAILED (miscellaneous.cpp:2174, 2 == 1)
+        ✗ value 2 == 1 FAILED (miscellaneous.cpp:2186, 2 == 1)
 
 • Operands suite
 
@@ -545,6 +545,6 @@ All available test cases:
         ✗ abc matches *C FAILED (utility.cpp:191)
         ✗ ab matches ??? FAILED (utility.cpp:195)
 
-✗ Total: 747 checks passed, 379 failed, in 185 test cases, 15 test suites, time: 15.330 ms
+✗ Total: 748 checks passed, 379 failed, in 185 test cases, 15 test suites, time: 16.260 ms
 error: test runner already initialised
 error: top suite already added

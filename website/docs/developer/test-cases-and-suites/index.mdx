@@ -362,9 +362,12 @@ another suite:
       ✗ test case 'misplaced' started on suite 'suites', which is not running FAILED
   ```
 
-- otherwise, for example before `initialise()`, or after `run_suites()`
-  returned, the message is written to `stderr`, and the call is counted as
-  rejected, so that the exit code is not `0`. Before `initialise()` the runner
+- otherwise, for example before `initialise()`, after `run_suites()`
+  returned, or while the test cases are listed, the failure is passed to
+  `runner::reject_call()`, which writes the message on `stderr`, counts the
+  call as rejected, so that the exit code is not `0`, and, where the reporter
+  can still write it, adds it as a comment line, which in a listing is part of
+  the list and of the output file (#280). Before `initialise()` the runner
   has no reporter yet, so `has_option_errors()` treats the missing reporter as
   no error, and the call, for example on a static suite from `main()`, is
   rejected like the others.

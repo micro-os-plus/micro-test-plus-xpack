@@ -229,9 +229,11 @@ namespace micro_os_plus::micro_test_plus
      * the same numbering and counting as the unexpected exceptions of the
      * suite body. Otherwise (the runner was not initialised, has not
      * started the suites, or has finished them, or the test cases are
-     * listed) the message is written only to `stderr`, not by the
-     * reporter, and `runner::mark_rejected()` makes the exit code
-     * non-zero.
+     * listed) the failure is given to `runner::reject_call()`, which
+     * writes the message on `stderr` and, where the reporter can still
+     * write it, as a comment line, for example in the list, and
+     * `runner::mark_rejected()` makes the exit code non-zero, as for the
+     * suites added too late.
      */
     bool
     runnable_base::accepts_test_case (const suite& target,
@@ -271,8 +273,7 @@ namespace micro_os_plus::micro_test_plus
           return false;
         }
 
-      fprintf (stderr, "error: %s\n", message.c_str ());
-      runner_.mark_rejected ();
+      runner_.reject_call (message, &name.location ());
       return false;
     }
 

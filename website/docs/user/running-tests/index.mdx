@@ -195,10 +195,10 @@ listed. No report is written: the list is written to the console and to the
 output file, if any, and the exit code is 0; it is 2 after an option error, and
 when `--filter` selects no test case, as for a run, in which case the list is
 followed by the error `the filters selected no test case`. A call rejected
-while listing, such as a suite added from a suite body, and an exception that
-escapes the body of a suite, which makes the list incomplete, are written in the
-list, as an `error:` line, and on `stderr`, and the exit code is 1, as for a
-run.
+while listing, such as a suite added from a suite body, or a test case started
+on a suite that is not running, and an exception that escapes the body of a
+suite, which makes the list incomplete, are written in the list, as an `error:`
+line, and on `stderr`, and the exit code is 1, as for a run.
 
 The code of `main()` and of the suite bodies also runs while listing, so the
 parts that depend on the results of the test cases (their totals, or the exit
