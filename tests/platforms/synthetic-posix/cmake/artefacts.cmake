@@ -1125,8 +1125,8 @@ if (XPACK_ENABLE_UNIT_TEST)
   # tests link the static library, compiled with exceptions, so the sources of
   # the framework are also compiled in this executable, through the interface
   # library, with `-fno-exceptions`; the linker takes the definitions from the
-  # objects of the executable, and does not use the members of the archive.
-  # It also checks that the framework builds without warnings, with the strict
+  # objects of the executable, and does not use the members of the archive. It
+  # also checks that the framework builds without warnings, with the strict
   # options of the tests.
 
   add_native_test_executable (unit-test-noexcept)
