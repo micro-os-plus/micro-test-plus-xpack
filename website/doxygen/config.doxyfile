@@ -22,3 +22,13 @@ MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED \
 MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED \
 
 #---------------------------------------------------------------------------
+# Configuration options related to the input files
+#---------------------------------------------------------------------------
+
+# The structures derived from std::false_type and std::true_type (for example
+# extension::is_bool_wrapper) make Doxygen create an empty std namespace,
+# which has no documentation and is not part of the project; exclude it.
+
+EXCLUDE_SYMBOLS += std
+
+#---------------------------------------------------------------------------

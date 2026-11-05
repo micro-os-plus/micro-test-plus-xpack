@@ -514,11 +514,18 @@ namespace micro_os_plus::micro_test_plus
                                    comparison_operand_t<Rhs_T>>;
 
     /**
+     * @brief Concept satisfied when the operands of a comparator can be
+     * written and compared.
+     *
      * @details
      * The operands of the comparators must be written in the report of a
      * failed check, and compared with the operator. A single concept for
      * both conditions selects the comparator, and its negation selects the
      * overload that explains why a call is rejected.
+     *
+     * @tparam Op The comparison.
+     * @tparam Lhs_T The type deduced for the left hand side operand.
+     * @tparam Rhs_T The type deduced for the right hand side operand.
      */
     template <comparison Op, class Lhs_T, class Rhs_T>
     concept comparable_operands
@@ -732,9 +739,16 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
     /**
+     * @brief Concept satisfied when the tag of a comparator or of a
+     * predicate has a symbol that can be written.
+     *
      * @details
      * Satisfied when the tag has a static member `symbol` that the
-     * formatter can write.
+     * formatter can write. Used by `reject_compare_tag()` and by
+     * `reject_predicate_tag()`, to tell a missing or unprintable symbol
+     * from a wrong `apply()`.
+     *
+     * @tparam Tag_T The tag of the comparator or of the predicate.
      */
     template <class Tag_T>
     concept tag_has_symbol = requires {
