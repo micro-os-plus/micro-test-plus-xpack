@@ -175,8 +175,13 @@ Two details of `apply()` matter:
 - **Integers of different signedness** are compared by value, with
   `std::cmp_equal()` (and `std::cmp_less()` and the others in the other tags),
   so `eq (-1, 1u)` is false; the operator of the language would convert `-1`
-  to a large unsigned value. The `bool` and character types are excluded from
-  this rule.
+  to a large unsigned value. The character types take part as the integers of
+  the same size and signedness, which `comparison_integer_t` selects (the
+  signedness of `char` and `wchar_t` is that of the platform), and
+  `as_comparison_integer()` converts to; without this, the built-in comparison
+  of a signed `char` with an `unsigned`, or of a `char32_t` with an `int`,
+  would convert the signed operand to the unsigned type, as for the integers.
+  Only `bool` is excluded from this rule.
 - **The using-declaration** makes the operators of the standard library
   visible to unqualified lookup, together with those found by
   argument-dependent lookup, and hides any `operator==` of the enclosing

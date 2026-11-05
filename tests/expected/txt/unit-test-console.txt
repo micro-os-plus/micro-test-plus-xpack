@@ -60,14 +60,14 @@ feed FAILED (checks.cpp:390)
         ✗ space is tab FAILED (checks.cpp:588, ' ' == '\t')
     ✗ Character operands - FAILED (1 check passed, 2 failed)
 
-✗ Top suite - FAILED (40 checks passed, 7 failed, in 21 test cases), time: 0.969 ms
+✗ Top suite - FAILED (40 checks passed, 7 failed, in 21 test cases), time: 1.505 ms
 
 • Combinatorial floats suite
 
     ✓ Combinatorial floats - passed (21 checks)
     ✓ Combinatorial doubles - passed (21 checks)
 
-✓ Combinatorial floats suite - passed (42 checks in 2 test cases), time: 0.332 ms
+✓ Combinatorial floats suite - passed (42 checks in 2 test cases), time: 0.337 ms
 
 • Combinatorial integrals suite
 
@@ -80,7 +80,7 @@ feed FAILED (checks.cpp:390)
     ✓ Combinatorial integrals with signed char - passed (20 checks)
     ✓ Combinatorial integrals with unsigned char - passed (20 checks)
 
-✓ Combinatorial integrals suite - passed (160 checks in 8 test cases), time: 0.798 ms
+✓ Combinatorial integrals suite - passed (160 checks in 8 test cases), time: 1.297 ms
 
 • Comparisons suite
 
@@ -95,111 +95,112 @@ feed FAILED (checks.cpp:390)
         ✗ actual < 42 FAILED (comparisons.cpp:131, 42 < 42)
     ✗ Failed integer comparisons - FAILED (0 checks passed, 6 failed)
 
+    ✓ Character and integer comparisons - passed (8 checks)
     ✓ Float comparisons - passed (10 checks)
 
     • Failed float comparisons
-        ✗ actual != 42.0 FAILED (comparisons.cpp:198, 42.0f != 42.0f)
-        ✗ actual == 43.0 FAILED (comparisons.cpp:202, 42.0f == 43.0f)
-        ✗ actual != 42 FAILED (comparisons.cpp:206, 42.0f != 42)
-        ✗ actual == 43 FAILED (comparisons.cpp:209, 42.0f == 43)
+        ✗ actual != 42.0 FAILED (comparisons.cpp:246, 42.0f != 42.0f)
+        ✗ actual == 43.0 FAILED (comparisons.cpp:250, 42.0f == 43.0f)
+        ✗ actual != 42 FAILED (comparisons.cpp:254, 42.0f != 42)
+        ✗ actual == 43 FAILED (comparisons.cpp:257, 42.0f == 43)
     ✗ Failed float comparisons - FAILED (0 checks passed, 4 failed)
 
     ✓ Approximate comparisons - passed (10 checks)
 
     • Failed approximate comparisons
-        ✗ actual ~ 45 +/- 2 FAILED (comparisons.cpp:279, 42 ~ (45 +/- 2))
-        ✗ 10 ~ 13 +/- 2 FAILED (comparisons.cpp:284, 10 ~ (13 +/- 2))
-        ✗ 3u ~ 5u +/- 1u FAILED (comparisons.cpp:288, 3u ~ (5u +/- 1u))
-        ✗ 1 ~ 1 +/- -1 FAILED (comparisons.cpp:292, 1 ~ (1 +/- -1))
-        ✗ actual ~ 42.1f +/- 0.01f FAILED (comparisons.cpp:295, 42.0f ~ (42.1f +/- 0.01f))
-        ✗ FAILED (comparisons.cpp:299, 1.0 ~ (1.2 +/- 0.1))
-        ✗ inf ~ -inf FAILED (comparisons.cpp:305, inf ~ (-inf +/- 0.1))
-        ✗ inf ~ 1.0 FAILED (comparisons.cpp:308, inf ~ (1.0 +/- 0.1))
-        ✗ NaN ~ NaN FAILED (comparisons.cpp:311, nan ~ (nan +/- 0.1))
-        ✗ 1.0 ~ 1.0 +/- -0.1 FAILED (comparisons.cpp:316, 1.0 ~ (1.0 +/- -0.1))
+        ✗ actual ~ 45 +/- 2 FAILED (comparisons.cpp:327, 42 ~ (45 +/- 2))
+        ✗ 10 ~ 13 +/- 2 FAILED (comparisons.cpp:332, 10 ~ (13 +/- 2))
+        ✗ 3u ~ 5u +/- 1u FAILED (comparisons.cpp:336, 3u ~ (5u +/- 1u))
+        ✗ 1 ~ 1 +/- -1 FAILED (comparisons.cpp:340, 1 ~ (1 +/- -1))
+        ✗ actual ~ 42.1f +/- 0.01f FAILED (comparisons.cpp:343, 42.0f ~ (42.1f +/- 0.01f))
+        ✗ FAILED (comparisons.cpp:347, 1.0 ~ (1.2 +/- 0.1))
+        ✗ inf ~ -inf FAILED (comparisons.cpp:353, inf ~ (-inf +/- 0.1))
+        ✗ inf ~ 1.0 FAILED (comparisons.cpp:356, inf ~ (1.0 +/- 0.1))
+        ✗ NaN ~ NaN FAILED (comparisons.cpp:359, nan ~ (nan +/- 0.1))
+        ✗ 1.0 ~ 1.0 +/- -0.1 FAILED (comparisons.cpp:364, 1.0 ~ (1.0 +/- -0.1))
     ✗ Failed approximate comparisons - FAILED (0 checks passed, 10 failed)
 
     ✓ String comparisons - passed (6 checks)
 
     • Failed string comparisons
-        ✗ actual_sv != abc_sv FAILED (comparisons.cpp:373, "abc" != "abc")
-        ✗ actual_sv == abx_sv FAILED (comparisons.cpp:377, "abc" == "abx")
-        ✗ actual_sv >= abd_sv FAILED (comparisons.cpp:381, "abc" >= "abd")
-        ✗ actual_sv > abc_sv FAILED (comparisons.cpp:385, "abc" > "abc")
-        ✗ actual_sv <= abb_sv FAILED (comparisons.cpp:389, "abc" <= "abb")
-        ✗ actual_sv < abc_sv FAILED (comparisons.cpp:393, "abc" < "abc")
+        ✗ actual_sv != abc_sv FAILED (comparisons.cpp:421, "abc" != "abc")
+        ✗ actual_sv == abx_sv FAILED (comparisons.cpp:425, "abc" == "abx")
+        ✗ actual_sv >= abd_sv FAILED (comparisons.cpp:429, "abc" >= "abd")
+        ✗ actual_sv > abc_sv FAILED (comparisons.cpp:433, "abc" > "abc")
+        ✗ actual_sv <= abb_sv FAILED (comparisons.cpp:437, "abc" <= "abb")
+        ✗ actual_sv < abc_sv FAILED (comparisons.cpp:441, "abc" < "abc")
     ✗ Failed string comparisons - FAILED (0 checks passed, 6 failed)
 
     ✓ C string comparisons - passed (14 checks)
     ✓ Wide C string comparisons - passed (15 checks)
 
     • Failed C string comparisons
-        ✗ actual == "abx" FAILED (comparisons.cpp:505, "abc" == "abx")
-        ✗ null_string == "abc" FAILED (comparisons.cpp:508, nullptr == "abc")
+        ✗ actual == "abx" FAILED (comparisons.cpp:553, "abc" == "abx")
+        ✗ null_string == "abc" FAILED (comparisons.cpp:556, nullptr == "abc")
     ✗ Failed C string comparisons - FAILED (0 checks passed, 2 failed)
 
     • Failed wide C string comparisons
-        ✗ wide == "abx" FAILED (comparisons.cpp:529, "abc" == "abx")
-        ✗ null_wide == "abc" FAILED (comparisons.cpp:532, nullptr == "abc")
+        ✗ wide == "abx" FAILED (comparisons.cpp:577, "abc" == "abx")
+        ✗ null_wide == "abc" FAILED (comparisons.cpp:580, nullptr == "abc")
     ✗ Failed wide C string comparisons - FAILED (0 checks passed, 2 failed)
 
     ✓ Pointer comparisons - passed (9 checks)
 
     • Failed pointer comparisons
-        ✗ ptr1 != &one FAILED (comparisons.cpp:613, 0x7ff7b6270440 != 0x7ff7b6270440)
-        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:616, 0x7ff7b6270440 != 0x7ff7b6270440)
-        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:619, 0x7ff7b6270440 > 0x7ff7b6270440)
-        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:622, 0x7ff7b6270440 < 0x7ff7b6270440)
-        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:625, 0x7ff7b6270440 == 0x7ff7b6270490)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:628, 0x109d29178 != 0x109d29178)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:631, 0x109d29178 == 0x7ff7b6270490)
-        ✗ pone >= ptwo FAILED (comparisons.cpp:643, 0x7ff7b6270ac0 >= 0x7ff7b6270ac4)
-        ✗ ptwo <= pone FAILED (comparisons.cpp:646, 0x7ff7b6270ac4 <= 0x7ff7b6270ac0)
+        ✗ ptr1 != &one FAILED (comparisons.cpp:661, 0x7ff7b3163360 != 0x7ff7b3163360)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:664, 0x7ff7b3163360 != 0x7ff7b3163360)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:667, 0x7ff7b3163360 > 0x7ff7b3163360)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:670, 0x7ff7b3163360 < 0x7ff7b3163360)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:673, 0x7ff7b3163360 == 0x7ff7b31633b0)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:676, 0x10ce44e58 != 0x10ce44e58)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:679, 0x10ce44e58 == 0x7ff7b31633b0)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:691, 0x7ff7b31639e0 >= 0x7ff7b31639e4)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:694, 0x7ff7b31639e4 <= 0x7ff7b31639e0)
     ✗ Failed pointer comparisons - FAILED (0 checks passed, 9 failed)
 
     ✓ Null pointer comparisons - passed (3 checks)
 
     • Failed null pointer comparisons
-        ✗ a_nullptr != nullptr FAILED (comparisons.cpp:695, 0x0 != nullptr)
-        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:698, 0x7ff7b6270ae0 == nullptr)
-        ✗ pfunc != nullptr FAILED (comparisons.cpp:702, 0x0 != nullptr)
+        ✗ a_nullptr != nullptr FAILED (comparisons.cpp:743, 0x0 != nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:746, 0x7ff7b3163a00 == nullptr)
+        ✗ pfunc != nullptr FAILED (comparisons.cpp:750, 0x0 != nullptr)
     ✗ Failed null pointer comparisons - FAILED (0 checks passed, 3 failed)
 
     • Logical operations
-        ✗ not (actual == 42) FAILED (comparisons.cpp:723, not (42 == 42))
-        ✗ FAILED (comparisons.cpp:730, not (42 ~ (42 +/- 1)))
-        ✗ FAILED (comparisons.cpp:733, not ("abc" == "abc"))
-        ✗ FAILED (comparisons.cpp:739, not not (42 != 42))
-        ✗ FAILED (comparisons.cpp:742, not (42 == 42 or 1 != 1))
-        ✗ FAILED (comparisons.cpp:745, not true)
-        ✗ (actual == 42) and (actual != 42.0) FAILED (comparisons.cpp:753, (42 == 42 and 42.0f != 42.0))
-        ✗ (actual != 42) and (actual == 42.0) FAILED (comparisons.cpp:758, (42 != 42 and 42.0f == 42.0))
-        ✗ (actual != 42) and (actual != 42.0) FAILED (comparisons.cpp:763, (42 != 42 and 42.0f != 42.0))
-        ✗ FAILED (comparisons.cpp:772, (42 == 42 and 42.0f != 42.0))
-        ✗ (actual != 42) or (actual != 42.0) FAILED (comparisons.cpp:791, (42 != 42 or 42.0f != 42.0))
+        ✗ not (actual == 42) FAILED (comparisons.cpp:771, not (42 == 42))
+        ✗ FAILED (comparisons.cpp:778, not (42 ~ (42 +/- 1)))
+        ✗ FAILED (comparisons.cpp:781, not ("abc" == "abc"))
+        ✗ FAILED (comparisons.cpp:787, not not (42 != 42))
+        ✗ FAILED (comparisons.cpp:790, not (42 == 42 or 1 != 1))
+        ✗ FAILED (comparisons.cpp:793, not true)
+        ✗ (actual == 42) and (actual != 42.0) FAILED (comparisons.cpp:801, (42 == 42 and 42.0f != 42.0))
+        ✗ (actual != 42) and (actual == 42.0) FAILED (comparisons.cpp:806, (42 != 42 and 42.0f == 42.0))
+        ✗ (actual != 42) and (actual != 42.0) FAILED (comparisons.cpp:811, (42 != 42 and 42.0f != 42.0))
+        ✗ FAILED (comparisons.cpp:820, (42 == 42 and 42.0f != 42.0))
+        ✗ (actual != 42) or (actual != 42.0) FAILED (comparisons.cpp:839, (42 != 42 or 42.0f != 42.0))
     ✗ Logical operations - FAILED (7 checks passed, 11 failed)
 
     • Logical operations with more operands
-        ✗ all_of three, the second false FAILED (comparisons.cpp:846, (42 == 42 and 42 < 41 and 42 > 41))
-        ✗ all_of four, the last false FAILED (comparisons.cpp:851, (42 == 42 and 42 == 42 and 42 == 42 and 42 == 0))
-        ✗ any_of three false FAILED (comparisons.cpp:856, (42 == 0 or 42 == 1 or 42 == 2))
-        ✗ any_of of two all_of FAILED (comparisons.cpp:861, ((42 == 0 and 42 == 42) or (42 == 1 and 42 == 42 and 42 == 2)))
-        ✗ all_of with a nested any_of FAILED (comparisons.cpp:868, (42 == 42 and (42 == 0 or 42 == 1)))
+        ✗ all_of three, the second false FAILED (comparisons.cpp:894, (42 == 42 and 42 < 41 and 42 > 41))
+        ✗ all_of four, the last false FAILED (comparisons.cpp:899, (42 == 42 and 42 == 42 and 42 == 42 and 42 == 0))
+        ✗ any_of three false FAILED (comparisons.cpp:904, (42 == 0 or 42 == 1 or 42 == 2))
+        ✗ any_of of two all_of FAILED (comparisons.cpp:909, ((42 == 0 and 42 == 42) or (42 == 1 and 42 == 42 and 42 == 2)))
+        ✗ all_of with a nested any_of FAILED (comparisons.cpp:916, (42 == 42 and (42 == 0 or 42 == 1)))
     ✗ Logical operations with more operands - FAILED (6 checks passed, 5 failed)
 
-✗ Comparisons suite - FAILED (86 checks passed, 58 failed, in 18 test cases), time: 1.202 ms
+✗ Comparisons suite - FAILED (94 checks passed, 58 failed, in 19 test cases), time: 2.111 ms
 
 • Dynamic suite
 
     ✓ check in dynamic suite - passed (1 check)
 
-✓ Dynamic suite - passed (1 check in 1 test case), time: 0.037 ms
+✓ Dynamic suite - passed (1 check in 1 test case), time: 0.059 ms
 
 • Dynamic suite with a temporary name
 
     ✓ check in dynamic suite with a temporary name - passed (1 check)
 
-✓ Dynamic suite with a temporary name - passed (1 check in 1 test case), time: 0.032 ms
+✓ Dynamic suite with a temporary name - passed (1 check in 1 test case), time: 0.055 ms
 
 • Exceptions suite
 
@@ -265,14 +266,14 @@ feed FAILED (checks.cpp:390)
 
     ✓ Exception in a suite body - passed (3 checks)
 
-✗ Exceptions suite - FAILED (16 checks passed, 16 failed, in 17 test cases), time: 1.300 ms
+✗ Exceptions suite - FAILED (16 checks passed, 16 failed, in 17 test cases), time: 2.106 ms
 
 • Exceptions suite body
 
     ✓ Test case before the exception - passed (1 check)
 
     ✗ unexpected exception in the suite body: boom FAILED
-✗ Exceptions suite body - FAILED (1 check passed, 1 failed, in 1 test case), time: 0.066 ms
+✗ Exceptions suite body - FAILED (1 check passed, 1 failed, in 1 test case), time: 0.089 ms
 
 • Failed combinatorial floats suite
 
@@ -324,7 +325,7 @@ feed FAILED (checks.cpp:390)
         ✗ 42 == 42.0 FAILED (float-failed-combinations.cpp:141, 42 != 42.0)
     ✗ Combinatorial doubles - FAILED (0 checks passed, 21 failed)
 
-✗ Failed combinatorial floats suite - FAILED (0 checks passed, 42 failed, in 2 test cases), time: 0.486 ms
+✗ Failed combinatorial floats suite - FAILED (0 checks passed, 42 failed, in 2 test cases), time: 0.651 ms
 
 • Failed combinatorial integrals suite
 
@@ -558,7 +559,7 @@ feed FAILED (checks.cpp:390)
         ✗ le matches unsigned int FAILED (integral-failed-combinations.cpp:132, (unsigned char)43 <= 42u)
     ✗ Combinatorial integrals with unsigned char - FAILED (0 checks passed, 20 failed)
 
-✗ Failed combinatorial integrals suite - FAILED (0 checks passed, 200 failed, in 10 test cases), time: 2.281 ms
+✗ Failed combinatorial integrals suite - FAILED (0 checks passed, 200 failed, in 10 test cases), time: 3.371 ms
 
 • Miscellaneous suite
 
@@ -665,7 +666,7 @@ Matching test cases:
     ✓ Abort during the session - passed (6 checks)
     ✓ Test case and suite names - passed (10 checks)
 
-✗ Miscellaneous suite - FAILED (219 checks passed, 8 failed, in 58 test cases), time: 9.984 ms
+✗ Miscellaneous suite - FAILED (219 checks passed, 8 failed, in 58 test cases), time: 8.503 ms
 
 • Operands suite
 
@@ -760,7 +761,7 @@ Matching test cases:
         ✗ 16 bytes eq FAILED (operands.cpp:902, {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8})
     ✗ Long ranges bad - FAILED (0 checks passed, 2 failed)
 
-✗ Operands suite - FAILED (55 checks passed, 38 failed, in 23 test cases), time: 1.160 ms
+✗ Operands suite - FAILED (55 checks passed, 38 failed, in 23 test cases), time: 1.127 ms
 
 • Runner options suite
 
@@ -774,7 +775,7 @@ Matching test cases:
     ✓ Owned strings - passed (3 checks)
     ✓ Copies and moves - passed (5 checks)
 
-✓ Runner options suite - passed (64 checks in 9 test cases), time: 1.193 ms
+✓ Runner options suite - passed (64 checks in 9 test cases), time: 1.534 ms
 
 • Stopwatch suite
 
@@ -784,7 +785,7 @@ Matching test cases:
     ✓ stopwatch::stop() replacement - passed (2 checks)
     ✓ stopwatch::elapsed() - passed (7 checks)
 
-✓ Stopwatch suite - passed (20 checks in 5 test cases), time: 0.109 ms
+✓ Stopwatch suite - passed (20 checks in 5 test cases), time: 0.157 ms
 
 • Utility suite
 
@@ -799,8 +800,8 @@ Matching test cases:
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 
-✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.108 ms
+✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.189 ms
 
-✗ Total: 726 checks passed, 375 failed, in 179 test cases, 15 test suites, time: 20.308 ms
+✗ Total: 734 checks passed, 375 failed, in 180 test cases, 15 test suites, time: 23.503 ms
 Overall, the µTest++ unit tests were successful!
 

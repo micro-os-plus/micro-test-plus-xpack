@@ -336,6 +336,16 @@ feed FAILED (checks.cpp:390)
         ✗ actual+1 <= 42 FAILED (comparisons.cpp:127, 43 <= 42)
         ✗ actual < 42 FAILED (comparisons.cpp:131, 42 < 42)
     ✗ Failed integer comparisons - FAILED (0 checks passed, 6 failed)
+    • Character and integer comparisons
+        ✓ U'a' > -1
+        ✓ -1 < U'a'
+        ✓ U'\xFFFFFFFF' != -1
+        ✓ U'a' == 97
+        ✓ 'a' == 97u
+        ✓ 'a' < U'b'
+        ✓ char lt unsigned
+        ✓ char gt unsigned
+    ✓ Character and integer comparisons - passed (8 checks)
     • Float comparisons
         ✓ actual == 42.0f
         ✓ actual != 43.0f
@@ -349,10 +359,10 @@ feed FAILED (checks.cpp:390)
         ✓ actual != 43
     ✓ Float comparisons - passed (10 checks)
     • Failed float comparisons
-        ✗ actual != 42.0 FAILED (comparisons.cpp:198, 42.0f != 42.0f)
-        ✗ actual == 43.0 FAILED (comparisons.cpp:202, 42.0f == 43.0f)
-        ✗ actual != 42 FAILED (comparisons.cpp:206, 42.0f != 42)
-        ✗ actual == 43 FAILED (comparisons.cpp:209, 42.0f == 43)
+        ✗ actual != 42.0 FAILED (comparisons.cpp:246, 42.0f != 42.0f)
+        ✗ actual == 43.0 FAILED (comparisons.cpp:250, 42.0f == 43.0f)
+        ✗ actual != 42 FAILED (comparisons.cpp:254, 42.0f != 42)
+        ✗ actual == 43 FAILED (comparisons.cpp:257, 42.0f == 43)
     ✗ Failed float comparisons - FAILED (0 checks passed, 4 failed)
     • Approximate comparisons
         ✓ actual ~ 43 +/- 2
@@ -367,16 +377,16 @@ feed FAILED (checks.cpp:390)
         ✓ not 10 ~ 20 +/- 5
     ✓ Approximate comparisons - passed (10 checks)
     • Failed approximate comparisons
-        ✗ actual ~ 45 +/- 2 FAILED (comparisons.cpp:279, 42 ~ (45 +/- 2))
-        ✗ 10 ~ 13 +/- 2 FAILED (comparisons.cpp:284, 10 ~ (13 +/- 2))
-        ✗ 3u ~ 5u +/- 1u FAILED (comparisons.cpp:288, 3u ~ (5u +/- 1u))
-        ✗ 1 ~ 1 +/- -1 FAILED (comparisons.cpp:292, 1 ~ (1 +/- -1))
-        ✗ actual ~ 42.1f +/- 0.01f FAILED (comparisons.cpp:295, 42.0f ~ (42.1f +/- 0.01f))
-        ✗ FAILED (comparisons.cpp:299, 1.0 ~ (1.2 +/- 0.1))
-        ✗ inf ~ -inf FAILED (comparisons.cpp:305, inf ~ (-inf +/- 0.1))
-        ✗ inf ~ 1.0 FAILED (comparisons.cpp:308, inf ~ (1.0 +/- 0.1))
-        ✗ NaN ~ NaN FAILED (comparisons.cpp:311, nan ~ (nan +/- 0.1))
-        ✗ 1.0 ~ 1.0 +/- -0.1 FAILED (comparisons.cpp:316, 1.0 ~ (1.0 +/- -0.1))
+        ✗ actual ~ 45 +/- 2 FAILED (comparisons.cpp:327, 42 ~ (45 +/- 2))
+        ✗ 10 ~ 13 +/- 2 FAILED (comparisons.cpp:332, 10 ~ (13 +/- 2))
+        ✗ 3u ~ 5u +/- 1u FAILED (comparisons.cpp:336, 3u ~ (5u +/- 1u))
+        ✗ 1 ~ 1 +/- -1 FAILED (comparisons.cpp:340, 1 ~ (1 +/- -1))
+        ✗ actual ~ 42.1f +/- 0.01f FAILED (comparisons.cpp:343, 42.0f ~ (42.1f +/- 0.01f))
+        ✗ FAILED (comparisons.cpp:347, 1.0 ~ (1.2 +/- 0.1))
+        ✗ inf ~ -inf FAILED (comparisons.cpp:353, inf ~ (-inf +/- 0.1))
+        ✗ inf ~ 1.0 FAILED (comparisons.cpp:356, inf ~ (1.0 +/- 0.1))
+        ✗ NaN ~ NaN FAILED (comparisons.cpp:359, nan ~ (nan +/- 0.1))
+        ✗ 1.0 ~ 1.0 +/- -0.1 FAILED (comparisons.cpp:364, 1.0 ~ (1.0 +/- -0.1))
     ✗ Failed approximate comparisons - FAILED (0 checks passed, 10 failed)
     • String comparisons
         ✓ actual_sv == abc_sv
@@ -387,12 +397,12 @@ feed FAILED (checks.cpp:390)
         ✓ actual_sv >= abc_sv
     ✓ String comparisons - passed (6 checks)
     • Failed string comparisons
-        ✗ actual_sv != abc_sv FAILED (comparisons.cpp:373, "abc" != "abc")
-        ✗ actual_sv == abx_sv FAILED (comparisons.cpp:377, "abc" == "abx")
-        ✗ actual_sv >= abd_sv FAILED (comparisons.cpp:381, "abc" >= "abd")
-        ✗ actual_sv > abc_sv FAILED (comparisons.cpp:385, "abc" > "abc")
-        ✗ actual_sv <= abb_sv FAILED (comparisons.cpp:389, "abc" <= "abb")
-        ✗ actual_sv < abc_sv FAILED (comparisons.cpp:393, "abc" < "abc")
+        ✗ actual_sv != abc_sv FAILED (comparisons.cpp:421, "abc" != "abc")
+        ✗ actual_sv == abx_sv FAILED (comparisons.cpp:425, "abc" == "abx")
+        ✗ actual_sv >= abd_sv FAILED (comparisons.cpp:429, "abc" >= "abd")
+        ✗ actual_sv > abc_sv FAILED (comparisons.cpp:433, "abc" > "abc")
+        ✗ actual_sv <= abb_sv FAILED (comparisons.cpp:437, "abc" <= "abb")
+        ✗ actual_sv < abc_sv FAILED (comparisons.cpp:441, "abc" < "abc")
     ✗ Failed string comparisons - FAILED (0 checks passed, 6 failed)
     • C string comparisons
         ✓ actual == "abc"
@@ -428,12 +438,12 @@ feed FAILED (checks.cpp:390)
         ✓ terminator not compared
     ✓ Wide C string comparisons - passed (15 checks)
     • Failed C string comparisons
-        ✗ actual == "abx" FAILED (comparisons.cpp:505, "abc" == "abx")
-        ✗ null_string == "abc" FAILED (comparisons.cpp:508, nullptr == "abc")
+        ✗ actual == "abx" FAILED (comparisons.cpp:553, "abc" == "abx")
+        ✗ null_string == "abc" FAILED (comparisons.cpp:556, nullptr == "abc")
     ✗ Failed C string comparisons - FAILED (0 checks passed, 2 failed)
     • Failed wide C string comparisons
-        ✗ wide == "abx" FAILED (comparisons.cpp:529, "abc" == "abx")
-        ✗ null_wide == "abc" FAILED (comparisons.cpp:532, nullptr == "abc")
+        ✗ wide == "abx" FAILED (comparisons.cpp:577, "abc" == "abx")
+        ✗ null_wide == "abc" FAILED (comparisons.cpp:580, nullptr == "abc")
     ✗ Failed wide C string comparisons - FAILED (0 checks passed, 2 failed)
     • Pointer comparisons
         ✓ ptr1 == &one
@@ -447,15 +457,15 @@ feed FAILED (checks.cpp:390)
         ✓ ptwo > pone
     ✓ Pointer comparisons - passed (9 checks)
     • Failed pointer comparisons
-        ✗ ptr1 != &one FAILED (comparisons.cpp:613, 0x43fff34c != 0x43fff34c)
-        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:616, 0x43fff34c != 0x43fff34c)
-        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:619, 0x43fff34c > 0x43fff34c)
-        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:622, 0x43fff34c < 0x43fff34c)
-        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:625, 0x43fff34c == 0x43fff330)
-        ✗ pfunc != afunc FAILED (comparisons.cpp:628, 0x40003ddc != 0x40003ddc)
-        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:631, 0x40003ddc == 0x43fff330)
-        ✗ pone >= ptwo FAILED (comparisons.cpp:643, 0x43fff318 >= 0x43fff31c)
-        ✗ ptwo <= pone FAILED (comparisons.cpp:646, 0x43fff31c <= 0x43fff318)
+        ✗ ptr1 != &one FAILED (comparisons.cpp:661, 0x43fff31c != 0x43fff31c)
+        ✗ ptr1 != ptr2 FAILED (comparisons.cpp:664, 0x43fff31c != 0x43fff31c)
+        ✗ ptr1 > ptr2 FAILED (comparisons.cpp:667, 0x43fff31c > 0x43fff31c)
+        ✗ ptr1 < ptr2 FAILED (comparisons.cpp:670, 0x43fff31c < 0x43fff31c)
+        ✗ ptr1 == a_non_nullptr FAILED (comparisons.cpp:673, 0x43fff31c == 0x43fff300)
+        ✗ pfunc != afunc FAILED (comparisons.cpp:676, 0x40003ddc != 0x40003ddc)
+        ✗ pfunc == a_non_nullptr FAILED (comparisons.cpp:679, 0x40003ddc == 0x43fff300)
+        ✗ pone >= ptwo FAILED (comparisons.cpp:691, 0x43fff2e8 >= 0x43fff2ec)
+        ✗ ptwo <= pone FAILED (comparisons.cpp:694, 0x43fff2ec <= 0x43fff2e8)
     ✗ Failed pointer comparisons - FAILED (0 checks passed, 9 failed)
     • Null pointer comparisons
         ✓ a_nullptr == nullptr
@@ -463,29 +473,29 @@ feed FAILED (checks.cpp:390)
         ✓ pfunc == nullptr
     ✓ Null pointer comparisons - passed (3 checks)
     • Failed null pointer comparisons
-        ✗ a_nullptr != nullptr FAILED (comparisons.cpp:695, 0x0 != nullptr)
-        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:698, 0x43fff5a8 == nullptr)
-        ✗ pfunc != nullptr FAILED (comparisons.cpp:702, 0x0 != nullptr)
+        ✗ a_nullptr != nullptr FAILED (comparisons.cpp:743, 0x0 != nullptr)
+        ✗ a_non_nullptr == nullptr FAILED (comparisons.cpp:746, 0x43fff578 == nullptr)
+        ✗ pfunc != nullptr FAILED (comparisons.cpp:750, 0x0 != nullptr)
     ✗ Failed null pointer comparisons - FAILED (0 checks passed, 3 failed)
     • Logical operations
         ✓ not (actual != 42)
-        ✗ not (actual == 42) FAILED (comparisons.cpp:723, not (42 == 42))
-        ✗ FAILED (comparisons.cpp:730, not (42 ~ (42 +/- 1)))
-        ✗ FAILED (comparisons.cpp:733, not ("abc" == "abc"))
+        ✗ not (actual == 42) FAILED (comparisons.cpp:771, not (42 == 42))
+        ✗ FAILED (comparisons.cpp:778, not (42 ~ (42 +/- 1)))
+        ✗ FAILED (comparisons.cpp:781, not ("abc" == "abc"))
         ✓ not not (42 == 42)
-        ✗ FAILED (comparisons.cpp:739, not not (42 != 42))
-        ✗ FAILED (comparisons.cpp:742, not (42 == 42 or 1 != 1))
-        ✗ FAILED (comparisons.cpp:745, not true)
+        ✗ FAILED (comparisons.cpp:787, not not (42 != 42))
+        ✗ FAILED (comparisons.cpp:790, not (42 == 42 or 1 != 1))
+        ✗ FAILED (comparisons.cpp:793, not true)
         ✓ (actual == 42) and (actual == 42.0)
-        ✗ (actual == 42) and (actual != 42.0) FAILED (comparisons.cpp:753, (42 == 42 and 42.0f != 42.0))
-        ✗ (actual != 42) and (actual == 42.0) FAILED (comparisons.cpp:758, (42 != 42 and 42.0f == 42.0))
-        ✗ (actual != 42) and (actual != 42.0) FAILED (comparisons.cpp:763, (42 != 42 and 42.0f != 42.0))
+        ✗ (actual == 42) and (actual != 42.0) FAILED (comparisons.cpp:801, (42 == 42 and 42.0f != 42.0))
+        ✗ (actual != 42) and (actual == 42.0) FAILED (comparisons.cpp:806, (42 != 42 and 42.0f == 42.0))
+        ✗ (actual != 42) and (actual != 42.0) FAILED (comparisons.cpp:811, (42 != 42 and 42.0f != 42.0))
         ✓ (42 == 42 and 42.0f == 42.0)
-        ✗ FAILED (comparisons.cpp:772, (42 == 42 and 42.0f != 42.0))
+        ✗ FAILED (comparisons.cpp:820, (42 == 42 and 42.0f != 42.0))
         ✓ (actual == 42) or (actual == 42.0)
         ✓ (actual == 42) or (actual != 42.0)
         ✓ (actual != 42) or (actual == 42.0)
-        ✗ (actual != 42) or (actual != 42.0) FAILED (comparisons.cpp:791, (42 != 42 or 42.0f != 42.0))
+        ✗ (actual != 42) or (actual != 42.0) FAILED (comparisons.cpp:839, (42 != 42 or 42.0f != 42.0))
     ✗ Logical operations - FAILED (7 checks passed, 11 failed)
     • Logical operations with more operands
         ✓ all_of three true
@@ -494,13 +504,13 @@ feed FAILED (checks.cpp:390)
         ✓ any_of three, the first true
         ✓ all_of with a nested all_of
         ✓ not all_of
-        ✗ all_of three, the second false FAILED (comparisons.cpp:846, (42 == 42 and 42 < 41 and 42 > 41))
-        ✗ all_of four, the last false FAILED (comparisons.cpp:851, (42 == 42 and 42 == 42 and 42 == 42 and 42 == 0))
-        ✗ any_of three false FAILED (comparisons.cpp:856, (42 == 0 or 42 == 1 or 42 == 2))
-        ✗ any_of of two all_of FAILED (comparisons.cpp:861, ((42 == 0 and 42 == 42) or (42 == 1 and 42 == 42 and 42 == 2)))
-        ✗ all_of with a nested any_of FAILED (comparisons.cpp:868, (42 == 42 and (42 == 0 or 42 == 1)))
+        ✗ all_of three, the second false FAILED (comparisons.cpp:894, (42 == 42 and 42 < 41 and 42 > 41))
+        ✗ all_of four, the last false FAILED (comparisons.cpp:899, (42 == 42 and 42 == 42 and 42 == 42 and 42 == 0))
+        ✗ any_of three false FAILED (comparisons.cpp:904, (42 == 0 or 42 == 1 or 42 == 2))
+        ✗ any_of of two all_of FAILED (comparisons.cpp:909, ((42 == 0 and 42 == 42) or (42 == 1 and 42 == 42 and 42 == 2)))
+        ✗ all_of with a nested any_of FAILED (comparisons.cpp:916, (42 == 42 and (42 == 0 or 42 == 1)))
     ✗ Logical operations with more operands - FAILED (6 checks passed, 5 failed)
-✗ Comparisons suite - FAILED (86 checks passed, 58 failed, in 18 test cases)
+✗ Comparisons suite - FAILED (94 checks passed, 58 failed, in 19 test cases)
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
@@ -874,7 +884,7 @@ feed FAILED (checks.cpp:390)
     ✓ Formatter standard types - passed (16 checks)
     • Message types
         ✓ numbers 1 2 3 1.5 2 true
-        ✓ pointer 0x4014c490
+        ✓ pointer 0x4014f2c0
         ✓ container {1, 2}
         ✓ standard types (1, a) nullopt 1
         ✓ custom type { 1, 2 } on
@@ -1413,4 +1423,4 @@ next line FAILED (miscellaneous.cpp:978)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 703 checks passed, 358 failed, in 161 test cases, 13 test suites
+✗ Total: 711 checks passed, 358 failed, in 162 test cases, 13 test suites

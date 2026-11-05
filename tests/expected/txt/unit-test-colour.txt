@@ -118,7 +118,7 @@ feed [31mFAILED[0m (checks.cpp:390)
         [32m✓[0m [32m'x' == 'x'[0m
     [31m✗[0m Character operands - [31mFAILED[0m (1 check passed, 2 failed)
 
-[31m✗[0m Top suite - [31mFAILED[0m (40 checks passed, 7 failed, in 21 test cases), time: 1.536 ms
+[31m✗[0m Top suite - [31mFAILED[0m (40 checks passed, 7 failed, in 21 test cases), time: 1.231 ms
 
 • Combinatorial floats suite
 
@@ -170,7 +170,7 @@ feed [31mFAILED[0m (checks.cpp:390)
         [32m✓[0m 42 == 42.0
     [32m✓[0m Combinatorial doubles - passed (21 checks)
 
-[32m✓[0m Combinatorial floats suite - passed (42 checks in 2 test cases), time: 0.733 ms
+[32m✓[0m Combinatorial floats suite - passed (42 checks in 2 test cases), time: 0.466 ms
 
 • Combinatorial integrals suite
 
@@ -358,7 +358,7 @@ feed [31mFAILED[0m (checks.cpp:390)
         [32m✓[0m gt matches unsigned int
     [32m✓[0m Combinatorial integrals with unsigned char - passed (20 checks)
 
-[32m✓[0m Combinatorial integrals suite - passed (160 checks in 8 test cases), time: 2.597 ms
+[32m✓[0m Combinatorial integrals suite - passed (160 checks in 8 test cases), time: 1.717 ms
 
 • Comparisons suite
 
@@ -380,6 +380,17 @@ feed [31mFAILED[0m (checks.cpp:390)
         [31m✗[0m actual < 42 [31mFAILED[0m (comparisons.cpp:131, [31m42 < 42[0m)
     [31m✗[0m Failed integer comparisons - [31mFAILED[0m (0 checks passed, 6 failed)
 
+    • Character and integer comparisons
+        [32m✓[0m U'a' > -1
+        [32m✓[0m -1 < U'a'
+        [32m✓[0m U'\xFFFFFFFF' != -1
+        [32m✓[0m U'a' == 97
+        [32m✓[0m 'a' == 97u
+        [32m✓[0m 'a' < U'b'
+        [32m✓[0m char lt unsigned
+        [32m✓[0m char gt unsigned
+    [32m✓[0m Character and integer comparisons - passed (8 checks)
+
     • Float comparisons
         [32m✓[0m actual == 42.0f
         [32m✓[0m actual != 43.0f
@@ -394,10 +405,10 @@ feed [31mFAILED[0m (checks.cpp:390)
     [32m✓[0m Float comparisons - passed (10 checks)
 
     • Failed float comparisons
-        [31m✗[0m actual != 42.0 [31mFAILED[0m (comparisons.cpp:198, [31m42.0f != 42.0f[0m)
-        [31m✗[0m actual == 43.0 [31mFAILED[0m (comparisons.cpp:202, [31m42.0f == 43.0f[0m)
-        [31m✗[0m actual != 42 [31mFAILED[0m (comparisons.cpp:206, [31m42.0f != 42[0m)
-        [31m✗[0m actual == 43 [31mFAILED[0m (comparisons.cpp:209, [31m42.0f == 43[0m)
+        [31m✗[0m actual != 42.0 [31mFAILED[0m (comparisons.cpp:246, [31m42.0f != 42.0f[0m)
+        [31m✗[0m actual == 43.0 [31mFAILED[0m (comparisons.cpp:250, [31m42.0f == 43.0f[0m)
+        [31m✗[0m actual != 42 [31mFAILED[0m (comparisons.cpp:254, [31m42.0f != 42[0m)
+        [31m✗[0m actual == 43 [31mFAILED[0m (comparisons.cpp:257, [31m42.0f == 43[0m)
     [31m✗[0m Failed float comparisons - [31mFAILED[0m (0 checks passed, 4 failed)
 
     • Approximate comparisons
@@ -414,16 +425,16 @@ feed [31mFAILED[0m (checks.cpp:390)
     [32m✓[0m Approximate comparisons - passed (10 checks)
 
     • Failed approximate comparisons
-        [31m✗[0m actual ~ 45 +/- 2 [31mFAILED[0m (comparisons.cpp:279, [31m42 ~ (45 +/- 2)[0m)
-        [31m✗[0m 10 ~ 13 +/- 2 [31mFAILED[0m (comparisons.cpp:284, [31m10 ~ (13 +/- 2)[0m)
-        [31m✗[0m 3u ~ 5u +/- 1u [31mFAILED[0m (comparisons.cpp:288, [31m3u ~ (5u +/- 1u)[0m)
-        [31m✗[0m 1 ~ 1 +/- -1 [31mFAILED[0m (comparisons.cpp:292, [31m1 ~ (1 +/- -1)[0m)
-        [31m✗[0m actual ~ 42.1f +/- 0.01f [31mFAILED[0m (comparisons.cpp:295, [31m42.0f ~ (42.1f +/- 0.01f)[0m)
-        [31m✗[0m [31mFAILED[0m (comparisons.cpp:299, [31m1.0 ~ (1.2 +/- 0.1)[0m)
-        [31m✗[0m inf ~ -inf [31mFAILED[0m (comparisons.cpp:305, [31minf ~ (-inf +/- 0.1)[0m)
-        [31m✗[0m inf ~ 1.0 [31mFAILED[0m (comparisons.cpp:308, [31minf ~ (1.0 +/- 0.1)[0m)
-        [31m✗[0m NaN ~ NaN [31mFAILED[0m (comparisons.cpp:311, [31mnan ~ (nan +/- 0.1)[0m)
-        [31m✗[0m 1.0 ~ 1.0 +/- -0.1 [31mFAILED[0m (comparisons.cpp:316, [31m1.0 ~ (1.0 +/- -0.1)[0m)
+        [31m✗[0m actual ~ 45 +/- 2 [31mFAILED[0m (comparisons.cpp:327, [31m42 ~ (45 +/- 2)[0m)
+        [31m✗[0m 10 ~ 13 +/- 2 [31mFAILED[0m (comparisons.cpp:332, [31m10 ~ (13 +/- 2)[0m)
+        [31m✗[0m 3u ~ 5u +/- 1u [31mFAILED[0m (comparisons.cpp:336, [31m3u ~ (5u +/- 1u)[0m)
+        [31m✗[0m 1 ~ 1 +/- -1 [31mFAILED[0m (comparisons.cpp:340, [31m1 ~ (1 +/- -1)[0m)
+        [31m✗[0m actual ~ 42.1f +/- 0.01f [31mFAILED[0m (comparisons.cpp:343, [31m42.0f ~ (42.1f +/- 0.01f)[0m)
+        [31m✗[0m [31mFAILED[0m (comparisons.cpp:347, [31m1.0 ~ (1.2 +/- 0.1)[0m)
+        [31m✗[0m inf ~ -inf [31mFAILED[0m (comparisons.cpp:353, [31minf ~ (-inf +/- 0.1)[0m)
+        [31m✗[0m inf ~ 1.0 [31mFAILED[0m (comparisons.cpp:356, [31minf ~ (1.0 +/- 0.1)[0m)
+        [31m✗[0m NaN ~ NaN [31mFAILED[0m (comparisons.cpp:359, [31mnan ~ (nan +/- 0.1)[0m)
+        [31m✗[0m 1.0 ~ 1.0 +/- -0.1 [31mFAILED[0m (comparisons.cpp:364, [31m1.0 ~ (1.0 +/- -0.1)[0m)
     [31m✗[0m Failed approximate comparisons - [31mFAILED[0m (0 checks passed, 10 failed)
 
     • String comparisons
@@ -436,12 +447,12 @@ feed [31mFAILED[0m (checks.cpp:390)
     [32m✓[0m String comparisons - passed (6 checks)
 
     • Failed string comparisons
-        [31m✗[0m actual_sv != abc_sv [31mFAILED[0m (comparisons.cpp:373, [31m"abc" != "abc"[0m)
-        [31m✗[0m actual_sv == abx_sv [31mFAILED[0m (comparisons.cpp:377, [31m"abc" == "abx"[0m)
-        [31m✗[0m actual_sv >= abd_sv [31mFAILED[0m (comparisons.cpp:381, [31m"abc" >= "abd"[0m)
-        [31m✗[0m actual_sv > abc_sv [31mFAILED[0m (comparisons.cpp:385, [31m"abc" > "abc"[0m)
-        [31m✗[0m actual_sv <= abb_sv [31mFAILED[0m (comparisons.cpp:389, [31m"abc" <= "abb"[0m)
-        [31m✗[0m actual_sv < abc_sv [31mFAILED[0m (comparisons.cpp:393, [31m"abc" < "abc"[0m)
+        [31m✗[0m actual_sv != abc_sv [31mFAILED[0m (comparisons.cpp:421, [31m"abc" != "abc"[0m)
+        [31m✗[0m actual_sv == abx_sv [31mFAILED[0m (comparisons.cpp:425, [31m"abc" == "abx"[0m)
+        [31m✗[0m actual_sv >= abd_sv [31mFAILED[0m (comparisons.cpp:429, [31m"abc" >= "abd"[0m)
+        [31m✗[0m actual_sv > abc_sv [31mFAILED[0m (comparisons.cpp:433, [31m"abc" > "abc"[0m)
+        [31m✗[0m actual_sv <= abb_sv [31mFAILED[0m (comparisons.cpp:437, [31m"abc" <= "abb"[0m)
+        [31m✗[0m actual_sv < abc_sv [31mFAILED[0m (comparisons.cpp:441, [31m"abc" < "abc"[0m)
     [31m✗[0m Failed string comparisons - [31mFAILED[0m (0 checks passed, 6 failed)
 
     • C string comparisons
@@ -480,13 +491,13 @@ feed [31mFAILED[0m (checks.cpp:390)
     [32m✓[0m Wide C string comparisons - passed (15 checks)
 
     • Failed C string comparisons
-        [31m✗[0m actual == "abx" [31mFAILED[0m (comparisons.cpp:505, [31m"abc" == "abx"[0m)
-        [31m✗[0m null_string == "abc" [31mFAILED[0m (comparisons.cpp:508, [31mnullptr == "abc"[0m)
+        [31m✗[0m actual == "abx" [31mFAILED[0m (comparisons.cpp:553, [31m"abc" == "abx"[0m)
+        [31m✗[0m null_string == "abc" [31mFAILED[0m (comparisons.cpp:556, [31mnullptr == "abc"[0m)
     [31m✗[0m Failed C string comparisons - [31mFAILED[0m (0 checks passed, 2 failed)
 
     • Failed wide C string comparisons
-        [31m✗[0m wide == "abx" [31mFAILED[0m (comparisons.cpp:529, [31m"abc" == "abx"[0m)
-        [31m✗[0m null_wide == "abc" [31mFAILED[0m (comparisons.cpp:532, [31mnullptr == "abc"[0m)
+        [31m✗[0m wide == "abx" [31mFAILED[0m (comparisons.cpp:577, [31m"abc" == "abx"[0m)
+        [31m✗[0m null_wide == "abc" [31mFAILED[0m (comparisons.cpp:580, [31mnullptr == "abc"[0m)
     [31m✗[0m Failed wide C string comparisons - [31mFAILED[0m (0 checks passed, 2 failed)
 
     • Pointer comparisons
@@ -502,15 +513,15 @@ feed [31mFAILED[0m (checks.cpp:390)
     [32m✓[0m Pointer comparisons - passed (9 checks)
 
     • Failed pointer comparisons
-        [31m✗[0m ptr1 != &one [31mFAILED[0m (comparisons.cpp:613, [31m0x7ff7b5363420 != 0x7ff7b5363420[0m)
-        [31m✗[0m ptr1 != ptr2 [31mFAILED[0m (comparisons.cpp:616, [31m0x7ff7b5363420 != 0x7ff7b5363420[0m)
-        [31m✗[0m ptr1 > ptr2 [31mFAILED[0m (comparisons.cpp:619, [31m0x7ff7b5363420 > 0x7ff7b5363420[0m)
-        [31m✗[0m ptr1 < ptr2 [31mFAILED[0m (comparisons.cpp:622, [31m0x7ff7b5363420 < 0x7ff7b5363420[0m)
-        [31m✗[0m ptr1 == a_non_nullptr [31mFAILED[0m (comparisons.cpp:625, [31m0x7ff7b5363420 == 0x7ff7b5363470[0m)
-        [31m✗[0m pfunc != afunc [31mFAILED[0m (comparisons.cpp:628, [31m0x10ac36178 != 0x10ac36178[0m)
-        [31m✗[0m pfunc == a_non_nullptr [31mFAILED[0m (comparisons.cpp:631, [31m0x10ac36178 == 0x7ff7b5363470[0m)
-        [31m✗[0m pone >= ptwo [31mFAILED[0m (comparisons.cpp:643, [31m0x7ff7b5363aa0 >= 0x7ff7b5363aa4[0m)
-        [31m✗[0m ptwo <= pone [31mFAILED[0m (comparisons.cpp:646, [31m0x7ff7b5363aa4 <= 0x7ff7b5363aa0[0m)
+        [31m✗[0m ptr1 != &one [31mFAILED[0m (comparisons.cpp:661, [31m0x7ff7b4f9b340 != 0x7ff7b4f9b340[0m)
+        [31m✗[0m ptr1 != ptr2 [31mFAILED[0m (comparisons.cpp:664, [31m0x7ff7b4f9b340 != 0x7ff7b4f9b340[0m)
+        [31m✗[0m ptr1 > ptr2 [31mFAILED[0m (comparisons.cpp:667, [31m0x7ff7b4f9b340 > 0x7ff7b4f9b340[0m)
+        [31m✗[0m ptr1 < ptr2 [31mFAILED[0m (comparisons.cpp:670, [31m0x7ff7b4f9b340 < 0x7ff7b4f9b340[0m)
+        [31m✗[0m ptr1 == a_non_nullptr [31mFAILED[0m (comparisons.cpp:673, [31m0x7ff7b4f9b340 == 0x7ff7b4f9b390[0m)
+        [31m✗[0m pfunc != afunc [31mFAILED[0m (comparisons.cpp:676, [31m0x10b00ce58 != 0x10b00ce58[0m)
+        [31m✗[0m pfunc == a_non_nullptr [31mFAILED[0m (comparisons.cpp:679, [31m0x10b00ce58 == 0x7ff7b4f9b390[0m)
+        [31m✗[0m pone >= ptwo [31mFAILED[0m (comparisons.cpp:691, [31m0x7ff7b4f9b9c0 >= 0x7ff7b4f9b9c4[0m)
+        [31m✗[0m ptwo <= pone [31mFAILED[0m (comparisons.cpp:694, [31m0x7ff7b4f9b9c4 <= 0x7ff7b4f9b9c0[0m)
     [31m✗[0m Failed pointer comparisons - [31mFAILED[0m (0 checks passed, 9 failed)
 
     • Null pointer comparisons
@@ -520,30 +531,30 @@ feed [31mFAILED[0m (checks.cpp:390)
     [32m✓[0m Null pointer comparisons - passed (3 checks)
 
     • Failed null pointer comparisons
-        [31m✗[0m a_nullptr != nullptr [31mFAILED[0m (comparisons.cpp:695, [31m0x0 != nullptr[0m)
-        [31m✗[0m a_non_nullptr == nullptr [31mFAILED[0m (comparisons.cpp:698, [31m0x7ff7b5363ac0 == nullptr[0m)
-        [31m✗[0m pfunc != nullptr [31mFAILED[0m (comparisons.cpp:702, [31m0x0 != nullptr[0m)
+        [31m✗[0m a_nullptr != nullptr [31mFAILED[0m (comparisons.cpp:743, [31m0x0 != nullptr[0m)
+        [31m✗[0m a_non_nullptr == nullptr [31mFAILED[0m (comparisons.cpp:746, [31m0x7ff7b4f9b9e0 == nullptr[0m)
+        [31m✗[0m pfunc != nullptr [31mFAILED[0m (comparisons.cpp:750, [31m0x0 != nullptr[0m)
     [31m✗[0m Failed null pointer comparisons - [31mFAILED[0m (0 checks passed, 3 failed)
 
     • Logical operations
         [32m✓[0m not (actual != 42)
-        [31m✗[0m not (actual == 42) [31mFAILED[0m (comparisons.cpp:723, [31mnot ([32m42 == 42[0m[31m)[0m)
-        [31m✗[0m [31mFAILED[0m (comparisons.cpp:730, [31mnot ([32m42 ~ (42 +/- 1)[0m[31m)[0m)
-        [31m✗[0m [31mFAILED[0m (comparisons.cpp:733, [31mnot ([32m"abc" == "abc"[0m[31m)[0m)
+        [31m✗[0m not (actual == 42) [31mFAILED[0m (comparisons.cpp:771, [31mnot ([32m42 == 42[0m[31m)[0m)
+        [31m✗[0m [31mFAILED[0m (comparisons.cpp:778, [31mnot ([32m42 ~ (42 +/- 1)[0m[31m)[0m)
+        [31m✗[0m [31mFAILED[0m (comparisons.cpp:781, [31mnot ([32m"abc" == "abc"[0m[31m)[0m)
         [32m✓[0m [32mnot [31mnot ([32m42 == 42[0m[31m)[0m[0m
-        [31m✗[0m [31mFAILED[0m (comparisons.cpp:739, [31mnot [32mnot ([31m42 != 42[0m[32m)[0m[0m)
-        [31m✗[0m [31mFAILED[0m (comparisons.cpp:742, [31mnot ([32m42 == 42[0m[32m or [0m[31m1 != 1[0m)[0m)
-        [31m✗[0m [31mFAILED[0m (comparisons.cpp:745, [31mnot true[0m)
+        [31m✗[0m [31mFAILED[0m (comparisons.cpp:787, [31mnot [32mnot ([31m42 != 42[0m[32m)[0m[0m)
+        [31m✗[0m [31mFAILED[0m (comparisons.cpp:790, [31mnot ([32m42 == 42[0m[32m or [0m[31m1 != 1[0m)[0m)
+        [31m✗[0m [31mFAILED[0m (comparisons.cpp:793, [31mnot true[0m)
         [32m✓[0m (actual == 42) and (actual == 42.0)
-        [31m✗[0m (actual == 42) and (actual != 42.0) [31mFAILED[0m (comparisons.cpp:753, ([32m42 == 42[0m[31m and [0m[31m42.0f != 42.0[0m))
-        [31m✗[0m (actual != 42) and (actual == 42.0) [31mFAILED[0m (comparisons.cpp:758, ([31m42 != 42[0m[31m and [0m[32m42.0f == 42.0[0m))
-        [31m✗[0m (actual != 42) and (actual != 42.0) [31mFAILED[0m (comparisons.cpp:763, ([31m42 != 42[0m[31m and [0m[31m42.0f != 42.0[0m))
+        [31m✗[0m (actual == 42) and (actual != 42.0) [31mFAILED[0m (comparisons.cpp:801, ([32m42 == 42[0m[31m and [0m[31m42.0f != 42.0[0m))
+        [31m✗[0m (actual != 42) and (actual == 42.0) [31mFAILED[0m (comparisons.cpp:806, ([31m42 != 42[0m[31m and [0m[32m42.0f == 42.0[0m))
+        [31m✗[0m (actual != 42) and (actual != 42.0) [31mFAILED[0m (comparisons.cpp:811, ([31m42 != 42[0m[31m and [0m[31m42.0f != 42.0[0m))
         [32m✓[0m ([32m42 == 42[0m[32m and [0m[32m42.0f == 42.0[0m)
-        [31m✗[0m [31mFAILED[0m (comparisons.cpp:772, ([32m42 == 42[0m[31m and [0m[31m42.0f != 42.0[0m))
+        [31m✗[0m [31mFAILED[0m (comparisons.cpp:820, ([32m42 == 42[0m[31m and [0m[31m42.0f != 42.0[0m))
         [32m✓[0m (actual == 42) or (actual == 42.0)
         [32m✓[0m (actual == 42) or (actual != 42.0)
         [32m✓[0m (actual != 42) or (actual == 42.0)
-        [31m✗[0m (actual != 42) or (actual != 42.0) [31mFAILED[0m (comparisons.cpp:791, ([31m42 != 42[0m[31m or [0m[31m42.0f != 42.0[0m))
+        [31m✗[0m (actual != 42) or (actual != 42.0) [31mFAILED[0m (comparisons.cpp:839, ([31m42 != 42[0m[31m or [0m[31m42.0f != 42.0[0m))
     [31m✗[0m Logical operations - [31mFAILED[0m (7 checks passed, 11 failed)
 
     • Logical operations with more operands
@@ -553,14 +564,14 @@ feed [31mFAILED[0m (checks.cpp:390)
         [32m✓[0m any_of three, the first true
         [32m✓[0m all_of with a nested all_of
         [32m✓[0m not all_of
-        [31m✗[0m all_of three, the second false [31mFAILED[0m (comparisons.cpp:846, ([32m42 == 42[0m[31m and [0m[31m42 < 41[0m[31m and [0m[32m42 > 41[0m))
-        [31m✗[0m all_of four, the last false [31mFAILED[0m (comparisons.cpp:851, ([32m42 == 42[0m[32m and [0m[32m42 == 42[0m[32m and [0m[32m42 == 42[0m[31m and [0m[31m42 == 0[0m))
-        [31m✗[0m any_of three false [31mFAILED[0m (comparisons.cpp:856, ([31m42 == 0[0m[31m or [0m[31m42 == 1[0m[31m or [0m[31m42 == 2[0m))
-        [31m✗[0m any_of of two all_of [31mFAILED[0m (comparisons.cpp:861, (([31m42 == 0[0m[31m and [0m[32m42 == 42[0m)[31m or [0m([31m42 == 1[0m[31m and [0m[32m42 == 42[0m[31m and [0m[31m42 == 2[0m)))
-        [31m✗[0m all_of with a nested any_of [31mFAILED[0m (comparisons.cpp:868, ([32m42 == 42[0m[31m and [0m([31m42 == 0[0m[31m or [0m[31m42 == 1[0m)))
+        [31m✗[0m all_of three, the second false [31mFAILED[0m (comparisons.cpp:894, ([32m42 == 42[0m[31m and [0m[31m42 < 41[0m[31m and [0m[32m42 > 41[0m))
+        [31m✗[0m all_of four, the last false [31mFAILED[0m (comparisons.cpp:899, ([32m42 == 42[0m[32m and [0m[32m42 == 42[0m[32m and [0m[32m42 == 42[0m[31m and [0m[31m42 == 0[0m))
+        [31m✗[0m any_of three false [31mFAILED[0m (comparisons.cpp:904, ([31m42 == 0[0m[31m or [0m[31m42 == 1[0m[31m or [0m[31m42 == 2[0m))
+        [31m✗[0m any_of of two all_of [31mFAILED[0m (comparisons.cpp:909, (([31m42 == 0[0m[31m and [0m[32m42 == 42[0m)[31m or [0m([31m42 == 1[0m[31m and [0m[32m42 == 42[0m[31m and [0m[31m42 == 2[0m)))
+        [31m✗[0m all_of with a nested any_of [31mFAILED[0m (comparisons.cpp:916, ([32m42 == 42[0m[31m and [0m([31m42 == 0[0m[31m or [0m[31m42 == 1[0m)))
     [31m✗[0m Logical operations with more operands - [31mFAILED[0m (6 checks passed, 5 failed)
 
-[31m✗[0m Comparisons suite - [31mFAILED[0m (86 checks passed, 58 failed, in 18 test cases), time: 2.576 ms
+[31m✗[0m Comparisons suite - [31mFAILED[0m (94 checks passed, 58 failed, in 19 test cases), time: 1.525 ms
 
 • Dynamic suite
 
@@ -568,7 +579,7 @@ feed [31mFAILED[0m (checks.cpp:390)
         [32m✓[0m 1 == 1 in dynamic suite
     [32m✓[0m check in dynamic suite - passed (1 check)
 
-[32m✓[0m Dynamic suite - passed (1 check in 1 test case), time: 0.077 ms
+[32m✓[0m Dynamic suite - passed (1 check in 1 test case), time: 0.049 ms
 
 • Dynamic suite with a temporary name
 
@@ -576,7 +587,7 @@ feed [31mFAILED[0m (checks.cpp:390)
         [32m✓[0m 2 == 2 in the suite with a temporary name
     [32m✓[0m check in dynamic suite with a temporary name - passed (1 check)
 
-[32m✓[0m Dynamic suite with a temporary name - passed (1 check in 1 test case), time: 0.072 ms
+[32m✓[0m Dynamic suite with a temporary name - passed (1 check in 1 test case), time: 0.045 ms
 
 • Exceptions suite
 
@@ -663,7 +674,7 @@ feed [31mFAILED[0m (checks.cpp:390)
         [32m✓[0m exception counted as a failed check
     [32m✓[0m Exception in a suite body - passed (3 checks)
 
-[31m✗[0m Exceptions suite - [31mFAILED[0m (16 checks passed, 16 failed, in 17 test cases), time: 2.410 ms
+[31m✗[0m Exceptions suite - [31mFAILED[0m (16 checks passed, 16 failed, in 17 test cases), time: 1.323 ms
 
 • Exceptions suite body
 
@@ -672,7 +683,7 @@ feed [31mFAILED[0m (checks.cpp:390)
     [32m✓[0m Test case before the exception - passed (1 check)
 
     [31m✗[0m unexpected exception in the suite body: boom [31mFAILED[0m
-[31m✗[0m Exceptions suite body - [31mFAILED[0m (1 check passed, 1 failed, in 1 test case), time: 0.140 ms
+[31m✗[0m Exceptions suite body - [31mFAILED[0m (1 check passed, 1 failed, in 1 test case), time: 0.075 ms
 
 • Failed combinatorial floats suite
 
@@ -724,7 +735,7 @@ feed [31mFAILED[0m (checks.cpp:390)
         [31m✗[0m 42 == 42.0 [31mFAILED[0m (float-failed-combinations.cpp:141, [31m42 != 42.0[0m)
     [31m✗[0m Combinatorial doubles - [31mFAILED[0m (0 checks passed, 21 failed)
 
-[31m✗[0m Failed combinatorial floats suite - [31mFAILED[0m (0 checks passed, 42 failed, in 2 test cases), time: 0.865 ms
+[31m✗[0m Failed combinatorial floats suite - [31mFAILED[0m (0 checks passed, 42 failed, in 2 test cases), time: 0.450 ms
 
 • Failed combinatorial integrals suite
 
@@ -958,7 +969,7 @@ feed [31mFAILED[0m (checks.cpp:390)
         [31m✗[0m le matches unsigned int [31mFAILED[0m (integral-failed-combinations.cpp:132, [31m(unsigned char)43 <= 42u[0m)
     [31m✗[0m Combinatorial integrals with unsigned char - [31mFAILED[0m (0 checks passed, 20 failed)
 
-[31m✗[0m Failed combinatorial integrals suite - [31mFAILED[0m (0 checks passed, 200 failed, in 10 test cases), time: 2.951 ms
+[31m✗[0m Failed combinatorial integrals suite - [31mFAILED[0m (0 checks passed, 200 failed, in 10 test cases), time: 1.826 ms
 
 • Miscellaneous suite
 
@@ -1060,7 +1071,7 @@ feed [31mFAILED[0m (checks.cpp:390)
 
     • Message types
         [32m✓[0m numbers 1 2 3 1.5 2 true
-        [32m✓[0m pointer 0x10b35b480
+        [32m✓[0m pointer 0x10b734900
         [32m✓[0m container {1, 2}
         [32m✓[0m standard types (1, a) nullopt 1
         [32m✓[0m custom type { 1, 2 } on
@@ -1384,7 +1395,7 @@ Matching test cases:
         [32m✓[0m string view suite name copied
     [32m✓[0m Test case and suite names - passed (10 checks)
 
-[31m✗[0m Miscellaneous suite - [31mFAILED[0m (219 checks passed, 8 failed, in 58 test cases), time: 8.520 ms
+[31m✗[0m Miscellaneous suite - [31mFAILED[0m (219 checks passed, 8 failed, in 58 test cases), time: 6.506 ms
 
 • Operands suite
 
@@ -1550,7 +1561,7 @@ Matching test cases:
         [31m✗[0m 16 bytes eq [31mFAILED[0m (operands.cpp:902, [31m{7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8}[0m)
     [31m✗[0m Long ranges bad - [31mFAILED[0m (0 checks passed, 2 failed)
 
-[31m✗[0m Operands suite - [31mFAILED[0m (55 checks passed, 38 failed, in 23 test cases), time: 1.407 ms
+[31m✗[0m Operands suite - [31mFAILED[0m (55 checks passed, 38 failed, in 23 test cases), time: 1.295 ms
 
 • Runner options suite
 
@@ -1645,7 +1656,7 @@ Matching test cases:
         [32m✓[0m the move assignment moves all the members
     [32m✓[0m Copies and moves - passed (5 checks)
 
-[32m✓[0m Runner options suite - passed (64 checks in 9 test cases), time: 1.731 ms
+[32m✓[0m Runner options suite - passed (64 checks in 9 test cases), time: 1.371 ms
 
 • Stopwatch suite
 
@@ -1684,7 +1695,7 @@ Matching test cases:
         [32m✓[0m no stop -> 0 µs
     [32m✓[0m stopwatch::elapsed() - passed (7 checks)
 
-[32m✓[0m Stopwatch suite - passed (20 checks in 5 test cases), time: 0.239 ms
+[32m✓[0m Stopwatch suite - passed (20 checks in 5 test cases), time: 0.194 ms
 
 • Utility suite
 
@@ -1723,8 +1734,8 @@ Matching test cases:
         [31m✗[0m ab matches ??? [31mFAILED[0m (utility.cpp:195)
     [31m✗[0m utility::is_match() — failing - [31mFAILED[0m (0 checks passed, 5 failed)
 
-[31m✗[0m Utility suite - [31mFAILED[0m (21 checks passed, 5 failed, in 3 test cases), time: 0.168 ms
+[31m✗[0m Utility suite - [31mFAILED[0m (21 checks passed, 5 failed, in 3 test cases), time: 0.155 ms
 
-[31m✗[0m Total: 726 checks passed, 375 failed, in 179 test cases, 15 test suites, time: 26.379 ms
+[31m✗[0m Total: 734 checks passed, 375 failed, in 180 test cases, 15 test suites, time: 18.479 ms
 Overall, the µTest++ unit tests were successful!
 

@@ -308,9 +308,14 @@ are compared by address.
 
 Two **integers of different signedness are compared by value**, not by
 converting the signed operand to the unsigned type, so
-`mt::lt (-1, 1u)` succeeds and `mt::eq (-1, UINT_MAX)` fails. This does
-not apply to `bool` and to the character types, which are compared as
-the language does.
+`mt::lt (-1, 1u)` succeeds and `mt::eq (-1, UINT_MAX)` fails. The character
+types are compared as the numbers that they hold, with the same rule, as the
+integers of the same size and signedness (the signedness of `char` and
+`wchar_t` is that of the platform), so `mt::gt (U'a', -1)` succeeds, and a
+`char` with the value `-1` is less than `1u` where `char` is signed. Two
+characters of different types are compared in the same way, so `mt::eq ('a',
+U'a')` succeeds. This does not apply to `bool`, which is compared as the
+language does.
 
 The wide and Unicode strings are reported as text, converted to UTF-8 and
 quoted as the `std::string` values are; the messages write the text of the

@@ -263,6 +263,68 @@ namespace micro_os_plus::micro_test_plus
 #endif // defined(__GNUC__)
 
     /**
+     * @brief The integer type used to compare a value of type @p T.
+     *
+     * @details
+     * The primary template is the type itself. The character types
+     * (`char`, `wchar_t`, `char8_t`, `char16_t`, and `char32_t`) are
+     * compared as the numbers that they hold, so they are replaced by
+     * the integer type of the same size and signedness, which
+     * `std::cmp_*()` accepts; the signedness of `char` and `wchar_t`
+     * depends on the platform, and is kept.
+     *
+     * @tparam T The type of the operand.
+     */
+    template <class T>
+    struct comparison_integer
+    {
+      /**
+       * @brief The type used for the comparison.
+       */
+      using type = T;
+    };
+
+    /**
+     * @brief The integer type used to compare a character type.
+     *
+     * @tparam T The character type.
+     */
+    template <class T>
+      requires character<T>
+    struct comparison_integer<T>
+    {
+      /**
+       * @brief The integer type of the same size and signedness.
+       */
+      using type
+          = std::conditional_t<std::is_signed_v<T>, std::make_signed_t<T>,
+                               std::make_unsigned_t<T>>;
+    };
+
+    /**
+     * @brief Alias of the integer type used to compare the type @p T.
+     *
+     * @tparam T The type of the operand.
+     */
+    template <class T>
+    using comparison_integer_t = typename comparison_integer<T>::type;
+
+    /**
+     * @brief Converts an integer or a character to the type used to
+     * compare it.
+     *
+     * @tparam T The type of the operand.
+     * @param value The operand.
+     * @return The value, as `comparison_integer_t<T>`.
+     */
+    template <class T>
+    [[nodiscard]] constexpr comparison_integer_t<T>
+    as_comparison_integer (const T value) noexcept
+    {
+      return static_cast<comparison_integer_t<T>> (value);
+    }
+
+    /**
      * @brief Concept satisfied by two integer types of different
      * signedness.
      *
@@ -270,26 +332,21 @@ namespace micro_os_plus::micro_test_plus
      * The built-in comparison of a signed and an unsigned operand
      * converts the signed one to the unsigned type, so `-1 < 1u` is
      * false. For these pairs the comparisons use the `std::cmp_*()`
-     * functions, which compare the mathematical values. `bool` and the
-     * character types are excluded, since `std::cmp_*()` do not accept
-     * them and their comparison with integers is not a sign problem.
+     * functions, which compare the mathematical values. The character
+     * types take part as the integers of the same size and signedness
+     * (see `comparison_integer`), since the built-in comparison of a
+     * signed `char` with an `unsigned`, or of a `char32_t` with an
+     * `int`, has the same problem. `bool` is excluded, since
+     * `std::cmp_*()` do not accept it and its comparison with integers
+     * is not a sign problem.
      */
     template <class Lhs_T, class Rhs_T>
     concept sign_mixed_integers
         = std::is_integral_v<Lhs_T> and std::is_integral_v<Rhs_T>
-          and (std::is_signed_v<Lhs_T> != std::is_signed_v<Rhs_T>)
           and (not std::is_same_v<Lhs_T, bool>)
           and (not std::is_same_v<Rhs_T, bool>)
-          and (not std::is_same_v<Lhs_T, char>)
-          and (not std::is_same_v<Rhs_T, char>)
-          and (not std::is_same_v<Lhs_T, wchar_t>)
-          and (not std::is_same_v<Rhs_T, wchar_t>)
-          and (not std::is_same_v<Lhs_T, char8_t>)
-          and (not std::is_same_v<Rhs_T, char8_t>)
-          and (not std::is_same_v<Lhs_T, char16_t>)
-          and (not std::is_same_v<Rhs_T, char16_t>)
-          and (not std::is_same_v<Lhs_T, char32_t>)
-          and (not std::is_same_v<Rhs_T, char32_t>);
+          and (std::is_signed_v<comparison_integer_t<Lhs_T>>
+               != std::is_signed_v<comparison_integer_t<Rhs_T>>);
 
     /**
      * @brief The type with which an operand of a comparator is compared.
@@ -509,7 +566,8 @@ namespace micro_os_plus::micro_test_plus
       using std::operator==;
       if constexpr (sign_mixed_integers<Lhs_T, Rhs_T>)
         {
-          return std::cmp_equal (lhs, rhs);
+          return std::cmp_equal (as_comparison_integer (lhs),
+                                 as_comparison_integer (rhs));
         }
       else
         {
@@ -532,7 +590,8 @@ namespace micro_os_plus::micro_test_plus
       using std::operator!=;
       if constexpr (sign_mixed_integers<Lhs_T, Rhs_T>)
         {
-          return std::cmp_not_equal (lhs, rhs);
+          return std::cmp_not_equal (as_comparison_integer (lhs),
+                                     as_comparison_integer (rhs));
         }
       else
         {
@@ -553,7 +612,8 @@ namespace micro_os_plus::micro_test_plus
       using std::operator>;
       if constexpr (sign_mixed_integers<Lhs_T, Rhs_T>)
         {
-          return std::cmp_greater (lhs, rhs);
+          return std::cmp_greater (as_comparison_integer (lhs),
+                                   as_comparison_integer (rhs));
         }
       else
         {
@@ -574,7 +634,8 @@ namespace micro_os_plus::micro_test_plus
       using std::operator>=;
       if constexpr (sign_mixed_integers<Lhs_T, Rhs_T>)
         {
-          return std::cmp_greater_equal (lhs, rhs);
+          return std::cmp_greater_equal (as_comparison_integer (lhs),
+                                         as_comparison_integer (rhs));
         }
       else
         {
@@ -595,7 +656,8 @@ namespace micro_os_plus::micro_test_plus
       using std::operator<;
       if constexpr (sign_mixed_integers<Lhs_T, Rhs_T>)
         {
-          return std::cmp_less (lhs, rhs);
+          return std::cmp_less (as_comparison_integer (lhs),
+                                as_comparison_integer (rhs));
         }
       else
         {
@@ -616,7 +678,8 @@ namespace micro_os_plus::micro_test_plus
       using std::operator<=;
       if constexpr (sign_mixed_integers<Lhs_T, Rhs_T>)
         {
-          return std::cmp_less_equal (lhs, rhs);
+          return std::cmp_less_equal (as_comparison_integer (lhs),
+                                      as_comparison_integer (rhs));
         }
       else
         {

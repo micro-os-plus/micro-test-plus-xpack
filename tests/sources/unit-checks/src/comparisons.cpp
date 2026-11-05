@@ -141,6 +141,54 @@ static mt::static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
 
     // -------------------------------------------------------------------------
 
+    // The character types are compared as the numbers that they hold, so
+    // the comparison with an integer of the other signedness does not
+    // convert the signed operand to the unsigned type.
+    ts.test ("Character and integer comparisons", [] (auto& t)
+      {
+        t.expect (mt::gt (U'a', -1)) << "U'a' > -1";
+        local_counts.passed_checks++;
+
+        t.expect (mt::lt (-1, U'a')) << "-1 < U'a'";
+        local_counts.passed_checks++;
+
+        t.expect (mt::ne (U'\xFFFFFFFF', -1)) << "U'\\xFFFFFFFF' != -1";
+        local_counts.passed_checks++;
+
+        t.expect (mt::eq (U'a', 97)) << "U'a' == 97";
+        local_counts.passed_checks++;
+
+        t.expect (mt::eq ('a', 97u)) << "'a' == 97u";
+        local_counts.passed_checks++;
+
+        t.expect (mt::lt ('a', U'b')) << "'a' < U'b'";
+        local_counts.passed_checks++;
+
+        // The signedness of `char` depends on the platform; the result must
+        // be that of the numbers, whichever it is.
+        const char negative = static_cast<char> (-1);
+        t.expect (mt::eq (static_cast<bool> (mt::lt (negative, 1u)),
+                          static_cast<int> (negative) < 1))
+            << "char lt unsigned";
+        local_counts.passed_checks++;
+
+        t.expect (mt::eq (static_cast<bool> (mt::gt (negative, 0u)),
+                          static_cast<int> (negative) > 0))
+            << "char gt unsigned";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
+
+    // -------------------------------------------------------------------------
+
     ts.test ("Float comparisons", [] (auto& t)
       {
         t.expect (mt::eq (my_actual_float<float> (), 42.0f))
