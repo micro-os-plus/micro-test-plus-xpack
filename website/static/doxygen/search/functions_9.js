@@ -18,7 +18,7 @@ var searchData=
   ['is_5flisting_15',['is_listing',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#ae5df469f7aaccc8e24bfadff4c209688',1,'micro_os_plus::micro_test_plus::runner::is_listing()'],['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a58c3051635ce2389a8afc2222cd6b30d',1,'micro_os_plus::micro_test_plus::detail::runnable_base::is_listing()']]],
   ['is_5fmatch_16',['is_match',['../group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html#gaa2f0f4cff320a783ad2347c9ff3fc731',1,'micro_os_plus::micro_test_plus::utility']]],
   ['is_5fmisdirected_17',['is_misdirected',['../classmicro__os__plus_1_1micro__test__plus_1_1test__case.html#a82e48e546c5a5034be69412c1641482d',1,'micro_os_plus::micro_test_plus::test_case']]],
-  ['is_5fnull_18',['is_null',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ab3ab63f34f2310d31484a226c92e32aa',1,'micro_os_plus::micro_test_plus::detail::c_string']]],
+  ['is_5fnull_18',['is_null',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html#a02a4a3d852b5606cbac121e9bab8d69d',1,'micro_os_plus::micro_test_plus::detail::basic_c_string']]],
   ['is_5frecorded_19',['is_recorded',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html#a197be08374692404afd4b07ae8b30e75',1,'micro_os_plus::micro_test_plus::detail::stopwatch']]],
   ['is_5fselected_20',['is_selected',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a2b0adeef059676a455d9506ba8a06d26',1,'micro_os_plus::micro_test_plus::runner']]]
 ];

@@ -53,7 +53,7 @@
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a515f68bbb31d64d07810f45f3b1118f6" compoundref="math-inlines_8h" startline="92" endline="95">abs</references>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a515f68bbb31d64d07810f45f3b1118f6" compoundref="math-inlines_8h" startline="92" endline="95">abs</referencedby>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1accba38bf51d261f330b594ca121e6f75" compoundref="deprecated-inlines_8h" startline="262" endline="313">count_decimals</referencedby>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ad3e5817bc88a8b60b769b39a5fefee94" compoundref="detail-inlines_8h" startline="652" endline="708">micro_os_plus::micro_test_plus::detail::differ_by_at_most</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ad3e5817bc88a8b60b769b39a5fefee94" compoundref="detail-inlines_8h" startline="938" endline="994">micro_os_plus::micro_test_plus::detail::differ_by_at_most</referencedby>
         <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga6c5237ff6944278e8c5e3294cf99a3b9" compoundref="detail-inlines_8h" startline="212" endline="244">micro_os_plus::micro_test_plus::detail::within_tolerance</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1accba38bf51d261f330b594ca121e6f75" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -384,7 +384,7 @@ This function template determines, at compile time, the number of decimal (fract
 </parameterlist>
 <simplesect kind="par"><title>Parameters</title><para>None. </para>
 </simplesect>
-<simplesect kind="return"><para>The value of the literal, up to <computeroutput>max ()</computeroutput> of <computeroutput>T</computeroutput>, or, for the signed types, up to <computeroutput>max () + 1</computeroutput>, the absolute value of the minimum.</para>
+<simplesect kind="return"><para>The value of the literal, up to <computeroutput>max()</computeroutput> of <computeroutput>T</computeroutput>, or, for the signed types, up to <computeroutput>max () + 1</computeroutput>, the absolute value of the minimum.</para>
 </simplesect>
 The literal must be an integer literal, in any of the C++ forms (decimal, hexadecimal, binary, or octal, with digit separators), and its value must fit in <computeroutput>T</computeroutput>; otherwise the compilation fails with an explicit message.</para>
 <para>Negative values are obtained with the unary minus, so the literal itself is never negative. For the signed types, the limit is the absolute value of the minimum, <computeroutput>max () + 1</computeroutput>, so that the minimum can be written (e.g. <computeroutput>-128<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga265f8609ef3d6ead78c7a66825553e24" kindref="member">_i8</ref></computeroutput>); the caller allows this magnitude only when it is negated.</para>

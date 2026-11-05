@@ -2708,7 +2708,7 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>The value of the literal, up to <span class="doxyComputerOutput">max ()</span> of <span class="doxyComputerOutput">T</span>, or, for the signed types, up to <span class="doxyComputerOutput">max () + 1</span>, the absolute value of the minimum.</p></dd>
+<dd><p>The value of the literal, up to <span class="doxyComputerOutput">max()</span> of <span class="doxyComputerOutput">T</span>, or, for the signed types, up to <span class="doxyComputerOutput">max () + 1</span>, the absolute value of the minimum.</p></dd>
 </dl>
 
 

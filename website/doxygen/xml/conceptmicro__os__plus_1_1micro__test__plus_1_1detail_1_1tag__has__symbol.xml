@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1tag__has__symbol" kind="concept">
+    <compoundname>micro_os_plus::micro_test_plus::detail::tag_has_symbol</compoundname>
+    <includes refid="detail-inlines_8h" local="no">detail-inlines.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class Tag_T</type>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;class Tag_T&gt;
+concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1tag__has__symbol" kindref="compound">micro_os_plus::micro_test_plus::detail::tag_has_symbol</ref> =  requires {
+      requires extension::printable&lt;
+          std::remove_cvref_t&lt;decltype (Tag_T::symbol)&gt;&gt;;
+    }</initializer>
+    <conceptparts>
+      <codepart line="753">    <programlisting>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Tag_T&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">tag_has_symbol<sp/>=<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>extension::printable&lt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::remove_cvref_t&lt;</highlight><highlight class="keyword">decltype</highlight><highlight class="normal"><sp/>(Tag_T::symbol)&gt;&gt;;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+    </programlisting>
+</codepart>
+    </conceptparts>
+    <briefdescription>
+<para>Concept satisfied when the tag of a comparator or of a predicate has a symbol that can be written. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Satisfied when the tag has a static member <computeroutput>symbol</computeroutput> that the formatter can write. Used by <computeroutput>reject_compare_tag()</computeroutput> and by <computeroutput>reject_predicate_tag()</computeroutput>, to tell a missing or unprintable symbol from a wrong <computeroutput>apply()</computeroutput>.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Tag_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tag of the comparator or of the predicate. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="753" column="5"/>
+  </compounddef>
+</doxygen>

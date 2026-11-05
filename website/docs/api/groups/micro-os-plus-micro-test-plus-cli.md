@@ -348,7 +348,7 @@ keywords:
 <p>The bodies of the suites run, to create their test cases, but the bodies of the test cases do not, so no check is evaluated. The selected test cases are listed under the names of their suites, followed by their count; the nested test cases are not listed, since only the bodies of their parents create them.</p>
 
 
-<p>The list is made of plain lines, the same with both reporters and with all the verbosity levels, and is written to the console and to the output file, if any. The exit code is 0, or 2 after an option error.</p>
+<p>The list is made of plain lines, the same with both reporters and with all the verbosity levels, and is written to the console and to the output file, if any. The exit code is 0, 1 if a call was rejected or an exception escaped the body of a suite, which makes the list incomplete (the error is written in the list, as an <span class="doxyComputerOutput">error:</span> line, and on <span class="doxyComputerOutput">stderr</span>), or 2 after an option error, or if the filters selected no test case.</p>
 
 
 <div class="doxyProgramListing">

@@ -12,7 +12,7 @@
 concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1generic__callable" kindref="compound">micro_os_plus::micro_test_plus::detail::generic_callable</ref> =  std::is_class_v&lt;std::decay_t&lt;Callable_T&gt;&gt;
           &amp;&amp; (!requires { &amp;std::decay_t&lt;Callable_T&gt;::operator(); })</initializer>
     <conceptparts>
-      <codepart line="1099">    <programlisting>
+      <codepart line="1180">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Callable_T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">generic_callable<sp/>=<sp/>std::is_class_v&lt;std::decay_t&lt;Callable_T&gt;&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/>(!</highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>{<sp/>&amp;std::decay_t&lt;Callable_T&gt;::operator();<sp/>})</highlight></codeline>
@@ -35,6 +35,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1gen
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="1098" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="1179" column="5"/>
   </compounddef>
 </doxygen>

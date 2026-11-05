@@ -2,6 +2,7 @@ var structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__op =
 [
     [ "op_type", "structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__op.html#a384b1d115e493d6a554ebda4e3089b19", null ],
     [ "predicate_op", "structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__op.html#ab1d700c6cde6b75a6d96e113b00824cb", null ],
+    [ "predicate_op", "structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__op.html#a7fcd9f2ecf3c2f790a62f4dbfa71851f", null ],
     [ "operand", "structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__op.html#a1c076678ac794ab6216dd967496dd904", null ],
     [ "operator bool", "structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__op.html#aa3c42cbce24fe0857a8b20aa88611569", null ],
     [ "t_", "structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__op.html#a910628335fd0ff17244787a515b8ad2f", null ],

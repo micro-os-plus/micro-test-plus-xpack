@@ -29,15 +29,15 @@ keywords:
 ## - B -
 
 <ul>
+<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/basic-c-string"><b>basic_c_string&lt;Char_T&gt;</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op"><b>binary_op&lt;Lhs_T, Rhs_T&gt;</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/bound-callable"><b>bound_callable&lt;...&gt;</b></a>: as class in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">include/micro-os-plus/micro-test-plus/test.h</a></li>
 </ul>
-<p>2 entries</p>
+<p>3 entries</p>
 
 ## - C -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/c-string"><b>c_string</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op"><b>callable_op</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/callable-ref"><b>callable_ref&lt;Self_T&gt;</b></a>: as class in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">include/micro-os-plus/micro-test-plus/test.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-result"><b>callable_result</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
@@ -46,9 +46,11 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/colours"><b>colours</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h">include/micro-os-plus/micro-test-plus/expression-formatter.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/compare-op"><b>compare_op&lt;Lhs_T, Rhs_T, Compare_T&gt;</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/extension/compare-op"><b>compare_op&lt;Lhs_T, Rhs_T, Compare_T&gt;</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/comparison-integer"><b>comparison_integer&lt;T&gt;</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/comparison-integer-f7399366cd6336ecbea702c3289d9432"><b>comparison_integer&lt;T&gt;</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters"><b>counters</b></a>: as class in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/counters-h">include/micro-os-plus/micro-test-plus/counters.h</a></li>
 </ul>
-<p>10 entries</p>
+<p>11 entries</p>
 
 ## - E -
 
@@ -90,8 +92,9 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant"><b>integral_constant&lt;N&gt;</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">include/micro-os-plus/micro-test-plus/deprecated.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant"><b>integral_constant&lt;N&gt;</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">include/micro-os-plus/micro-test-plus/deprecated.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-min-magnitude"><b>integral_min_magnitude&lt;T&gt;</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">include/micro-os-plus/micro-test-plus/deprecated.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/is-bool-wrapper"><b>is_bool_wrapper&lt;T&gt;</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">include/micro-os-plus/micro-test-plus/extension.h</a></li>
 </ul>
-<p>6 entries</p>
+<p>7 entries</p>
 
 ## - L -
 
@@ -185,7 +188,7 @@ keywords:
 </ul>
 <p>4 entries</p>
 <br/>
-<p>Total: 73 entries.</p>
+<p>Total: 76 entries.</p>
 
 <hr/>
 

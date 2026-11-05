@@ -136,7 +136,7 @@ Static Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines the operator applied by <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html" title="Relational comparator struct template.">compare_op</a></span>, its symbol in the failure reports, and the result when the operands are within the tolerance of the floating-point wrappers. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00665">665</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00672">672</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a81b6505b5400ccbe838e50d06bee8af2" name="a81b6505b5400ccbe838e50d06bee8af2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a81b6505b5400ccbe838e50d06bee8af2">&#9670;&#160;</a></span>apply()</h2>
@@ -184,18 +184,22 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The result of <span class="tt">lhs &lt; rhs</span>, converted to <span class="tt">bool</span>.</dd></dl>
 <p>The using-declaration makes the standard operators visible to unqualified lookup, in addition to those found by argument-dependent lookup, and hides any <span class="tt">operator&lt;</span> of the enclosing namespaces. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00528">528</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  530</span>    {</div>
-<div class="line"><span class="lineno">  531</span>      <span class="keyword">using </span>std::operator&lt;;</div>
-<div class="line"><span class="lineno">  532</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (sign_mixed_integers&lt;Lhs_T, Rhs_T&gt;)</div>
-<div class="line"><span class="lineno">  533</span>        {</div>
-<div class="line"><span class="lineno">  534</span>          <span class="keywordflow">return</span> std::cmp_less (lhs, rhs);</div>
-<div class="line"><span class="lineno">  535</span>        }</div>
-<div class="line"><span class="lineno">  536</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  537</span>        {</div>
-<div class="line"><span class="lineno">  538</span>          <span class="keywordflow">return</span> lhs &lt; rhs;</div>
-<div class="line"><span class="lineno">  539</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00698">698</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  700</span>    {</div>
+<div class="line"><span class="lineno">  701</span>      <span class="keyword">using </span>std::operator&lt;;</div>
+<div class="line"><span class="lineno">  702</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (sign_mixed_integers&lt;Lhs_T, Rhs_T&gt;)</div>
+<div class="line"><span class="lineno">  703</span>        {</div>
+<div class="line"><span class="lineno">  704</span>          <span class="keywordflow">return</span> std::cmp_less (<a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#aadebcd6c243d90bd0bdb4acc807ce1e1">as_comparison_integer</a> (lhs),</div>
+<div class="line"><span class="lineno">  705</span>                                <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#aadebcd6c243d90bd0bdb4acc807ce1e1">as_comparison_integer</a> (rhs));</div>
+<div class="line"><span class="lineno">  706</span>        }</div>
+<div class="line"><span class="lineno">  707</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  708</span>        {</div>
+<div class="line"><span class="lineno">  709</span>          <span class="keywordflow">return</span> lhs &lt; rhs;</div>
+<div class="line"><span class="lineno">  710</span>        }</div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_aadebcd6c243d90bd0bdb4acc807ce1e1"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#aadebcd6c243d90bd0bdb4acc807ce1e1">micro_os_plus::micro_test_plus::detail::as_comparison_integer</a></div><div class="ttdeci">constexpr comparison_integer_t&lt; T &gt; as_comparison_integer(const T value) noexcept</div><div class="ttdoc">Converts an integer or a character to the type used to compare it.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00343">detail-inlines.h:343</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00343">micro_os_plus::micro_test_plus::detail::as_comparison_integer()</a>.</p>
+
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
@@ -220,7 +224,7 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 </div><div class="memdoc">
 <p>Includes the surrounding spaces, so that the formatter appends it with a single call; a C string, not a <span class="tt">std::string_view</span>, which would take two registers at each call site and enlarge the code. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00675">675</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00682">682</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
 </div>
 </div>

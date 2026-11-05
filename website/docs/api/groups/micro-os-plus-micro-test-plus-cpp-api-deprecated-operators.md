@@ -577,7 +577,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000061>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gaa77076edd474fc10d8c0bd6da623e284">ne()</a> (since 6.0.0)</p>
+<p>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga92cdc2dde6af040f2f5f5df677df0985">ne()</a> (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -672,7 +672,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000064>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gaea39573e23de35872ace5b08d2514327">lt()</a> (since 6.0.0)</p>
+<p>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga493a42c738ef38b45a28b06a2155aa00">lt()</a> (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -766,7 +766,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000065>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gaf9e47a6e18771f969cdd840ec187734a">le()</a> (since 6.0.0)</p>
+<p>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga9125d2dd997269eecc0d8239d5df67e5">le()</a> (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -861,7 +861,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000060>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> (since 6.0.0)</p>
+<p>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -956,7 +956,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000062>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gaf32fd09749f18635233613fa48f91b56">gt()</a> (since 6.0.0)</p>
+<p>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga90da2cbc14b4562332a205d5b232356f">gt()</a> (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -1051,7 +1051,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000063>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga989e5966794d5c5487477aa782d844b1">ge()</a> (since 6.0.0)</p>
+<p>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga58c7dacabca3fe1b0dc025a0e0f30e9e">ge()</a> (since 6.0.0)</p>
 </dd>
 </dl>
 </div>

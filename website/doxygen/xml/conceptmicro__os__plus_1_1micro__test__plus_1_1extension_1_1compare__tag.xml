@@ -20,7 +20,7 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1
       { Tag_T::apply (lhs, rhs) } -&gt; std::convertible_to&lt;bool&gt;;
     }</initializer>
     <conceptparts>
-      <codepart line="380">    <programlisting>
+      <codepart line="454">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Tag_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">compare_tag<sp/>=<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Lhs_T&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Rhs_T&amp;<sp/>rhs)<sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>printable&lt;std::remove_cvref_t&lt;</highlight><highlight class="keyword">decltype</highlight><highlight class="normal"><sp/>(Tag_T::symbol)&gt;&gt;;</highlight></codeline>
@@ -61,6 +61,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="380" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="454" column="5"/>
   </compounddef>
 </doxygen>

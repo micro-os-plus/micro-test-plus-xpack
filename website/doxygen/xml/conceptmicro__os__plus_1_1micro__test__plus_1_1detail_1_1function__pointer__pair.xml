@@ -16,7 +16,7 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1fun
           and (std::is_function_v&lt;std::remove_pointer_t&lt;Lhs_T&gt;&gt;
                or std::is_function_v&lt;std::remove_pointer_t&lt;Rhs_T&gt;&gt;)</initializer>
     <conceptparts>
-      <codepart line="322">    <programlisting>
+      <codepart line="403">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">function_pointer_pair<sp/>=<sp/>std::is_pointer_v&lt;Lhs_T&gt;<sp/>and<sp/>std::is_pointer_v&lt;Rhs_T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(std::is_function_v&lt;std::remove_pointer_t&lt;Lhs_T&gt;&gt;</highlight></codeline>
@@ -48,6 +48,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1fun
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="321" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="402" column="5"/>
   </compounddef>
 </doxygen>

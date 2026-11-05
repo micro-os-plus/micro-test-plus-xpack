@@ -77,6 +77,20 @@ namespace micro_os_plus::micro_test_plus::detail::anonymous{reporter-tap.cpp} { 
 <td class="doxyMemberIndexSeparator" colspan="2"></td>
 </tr>
 
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemType" align="left" valign="top">std::string</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a27ca54c91d04ccb21bebc0f54b0c735b">yaml_scalar</a> (std::string_view text)</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Formats a text as a YAML scalar, double-quoted only when needed. <a href="#a27ca54c91d04ccb21bebc0f54b0c735b">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
 </table>
 
 ## Description {#details}
@@ -306,7 +320,79 @@ namespace micro_os_plus::micro_test_plus::detail::anonymous{reporter-tap.cpp} { 
 <p>Reference <a href="#ae344ed13847263c08e39a3e9266c0109">yaml_double_quoted</a>.</p>
 
 
-<p>Referenced by <a href="#ae344ed13847263c08e39a3e9266c0109">yaml_double_quoted</a>.</p>
+<p>Referenced by <a href="#ae344ed13847263c08e39a3e9266c0109">yaml_double_quoted</a> and <a href="#a27ca54c91d04ccb21bebc0f54b0c735b">yaml_scalar</a>.</p>
+
+</div>
+</div>
+
+### yaml\_scalar() {#a27ca54c91d04ccb21bebc0f54b0c735b}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">std::string micro_os_plus::micro_test_plus::detail::anonymous{reporter-tap.cpp}::yaml_scalar (std::string_view text)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Formats a text as a YAML scalar, double-quoted only when needed.</p>
+
+
+<p>A text made only of letters, digits, and the characters <span class="doxyComputerOutput">_</span>, <span class="doxyComputerOutput">.</span>, <span class="doxyComputerOutput">+</span>, <span class="doxyComputerOutput">/</span>, and <span class="doxyComputerOutput">-</span>, and not starting with <span class="doxyComputerOutput">-</span>, is a valid plain scalar, whatever its meaning, and is returned unchanged, so that the usual values are written as before. Any other text, for example a file name with a space, a <span class="doxyComputerOutput">#</span>, or a <span class="doxyComputerOutput">:</span>, which a YAML parser would truncate, split, or reject as a plain scalar, is returned double-quoted, as <span class="doxyComputerOutput"><a href="#ae344ed13847263c08e39a3e9266c0109">yaml_double_quoted()</a></span> does.</p>
+
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">text</td>
+<td class="doxyParamItemDescription"><p>The text to format.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="doxySectionUser">
+<dt>Returns</dt>
+<dd><p>The scalar.</p></dd>
+</dl>
+
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-tap-cpp/#l00377">377</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-tap-cpp">reporter-tap.cpp</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a27ca54c91d04ccb21bebc0f54b0c735b">377</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a27ca54c91d04ccb21bebc0f54b0c735b">yaml_scalar</a> (std::string_view text)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">378</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">379</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> is_plain = !text.empty () &amp;&amp; text.front () != </span><span class="doxyHighlightCharLiteral">'-'</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">380</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> c : text)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">381</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">382</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> is_safe = (c &gt;= </span><span class="doxyHighlightCharLiteral">'a'</span><span class="doxyHighlight"> &amp;&amp; c &lt;= </span><span class="doxyHighlightCharLiteral">'z'</span><span class="doxyHighlight">) || (c &gt;= </span><span class="doxyHighlightCharLiteral">'A'</span><span class="doxyHighlight"> &amp;&amp; c &lt;= </span><span class="doxyHighlightCharLiteral">'Z'</span><span class="doxyHighlight">)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">383</span><span class="doxyLineContent"><span class="doxyHighlight">                               || (c &gt;= </span><span class="doxyHighlightCharLiteral">'0'</span><span class="doxyHighlight"> &amp;&amp; c &lt;= </span><span class="doxyHighlightCharLiteral">'9'</span><span class="doxyHighlight">) || c == </span><span class="doxyHighlightCharLiteral">'_'</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">384</span><span class="doxyLineContent"><span class="doxyHighlight">                               || c == </span><span class="doxyHighlightCharLiteral">'.'</span><span class="doxyHighlight"> || c == </span><span class="doxyHighlightCharLiteral">'+'</span><span class="doxyHighlight"> || c == </span><span class="doxyHighlightCharLiteral">'/'</span><span class="doxyHighlight"> || c == </span><span class="doxyHighlightCharLiteral">'-'</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">385</span><span class="doxyLineContent"><span class="doxyHighlight">          is_plain = is_plain &amp;&amp; is_safe;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">386</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">387</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">388</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> is_plain ? std::string{ text } : <a href="#ae344ed13847263c08e39a3e9266c0109">yaml_double_quoted</a> (text);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">389</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+
+</div>
+
+
+<p>References <a href="#ae344ed13847263c08e39a3e9266c0109">yaml_double_quoted</a> and <a href="#a27ca54c91d04ccb21bebc0f54b0c735b">yaml_scalar</a>.</p>
+
+
+<p>Referenced by <a href="#a27ca54c91d04ccb21bebc0f54b0c735b">yaml_scalar</a>.</p>
 
 </div>
 </div>

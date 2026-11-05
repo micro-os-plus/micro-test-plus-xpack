@@ -14,7 +14,7 @@
     <initializer>template&lt;class Lhs_T, class Rhs_T&gt;
 concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1any__op" kindref="compound">micro_os_plus::micro_test_plus::extension::any_op</ref> =  is_op&lt;Lhs_T&gt; or is_op&lt;Rhs_T&gt;</initializer>
     <conceptparts>
-      <codepart line="248">    <programlisting>
+      <codepart line="370">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">any_op<sp/>=<sp/>is_op&lt;Lhs_T&gt;<sp/>or<sp/>is_op&lt;Rhs_T&gt;</highlight></codeline>
     </programlisting>
@@ -41,9 +41,8 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-The <computeroutput>any_op</computeroutput> concept is satisfied when <computeroutput>Lhs_T</computeroutput> or <computeroutput>Rhs_T</computeroutput> (or both) are framework expression types (see <computeroutput>is_op</computeroutput>). It is used to constrain binary operator overloads in the <computeroutput>operators</computeroutput> namespace so that they are enabled only when at least one operand is a framework type, avoiding unintended conflicts with user-defined operators.</para>
-<para>A custom operator uses it in the same way, so that it does not compete with the operators of the application types. </para>
+The <computeroutput>any_op</computeroutput> concept is satisfied when <computeroutput>Lhs_T</computeroutput> or <computeroutput>Rhs_T</computeroutput> (or both) are framework expression types (see <computeroutput>is_op</computeroutput>). A custom operator constrains its overload with it, so that the overload is enabled only when at least one operand is a framework expression, and does not compete with the operators of the application types. The framework itself uses it only for the deprecated operators. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="248" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="370" column="5"/>
   </compounddef>
 </doxygen>

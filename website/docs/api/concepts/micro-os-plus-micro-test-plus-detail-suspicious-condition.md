@@ -3,7 +3,7 @@
 # DO NOT EDIT!
 # Automatically generated via doxygen2docusaurus by Doxygen.
 
-slug: /api/concepts/micro-os-plus/micro-test-plus/extension/suspicious-condition
+slug: /api/concepts/micro-os-plus/micro-test-plus/detail/suspicious-condition
 custom_edit_url: null
 toc_max_heading_level: 4
 keywords:
@@ -23,7 +23,7 @@ keywords:
 
 <div class="doxyDefinition">
 template &lt;class T&gt;<br/>
-concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/suspicious-condition">micro_os_plus::micro_test_plus::extension::suspicious_condition</a> =  std::is_array_v&lt;T&gt; or std::is_function_v&lt;T&gt;<br/>
+concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/suspicious-condition">micro_os_plus::micro_test_plus::detail::suspicious_condition</a> =  std::is_array_v&lt;T&gt; or std::is_function_v&lt;T&gt;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or std::is_member_pointer_v&lt;T&gt;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or (std::is_pointer_v&lt;T&gt;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and (std::is_function_v&lt;std::remove_pointer_t&lt;T&gt;&gt;<br/>
@@ -59,7 +59,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>The <span class="doxyComputerOutput">suspicious_condition</span> concept is satisfied by the arrays (including the string literals), the functions, the pointers to functions and to members, and the pointers to the character types. All of them are contextually convertible to <span class="doxyComputerOutput">bool</span>, so, when passed to <span class="doxyComputerOutput">expect()</span> or <span class="doxyComputerOutput">require()</span>, the check silently passes, usually because the description was written instead of the condition, or because a function name was written without the call. The pointers to other object types are not included, since checking a pointer for null is a legitimate use.</p>
 
 
-<p>Definition at line 268 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 242 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>micro-test-plus: micro_os_plus::micro_test_plus::extension::legacy_checkable Concept Reference</title>
+<title>micro-test-plus: micro_os_plus::micro_test_plus::detail::message_argument Concept Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   </div>
 </div>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1legacy__checkable.html','',''); });
+document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1message__argument.html','',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -111,21 +111,22 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">micro_os_plus::micro_test_plus::extension::legacy_checkable Concept Reference</div></div>
+  <div class="headertitle"><div class="title">micro_os_plus::micro_test_plus::detail::message_argument Concept Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>C++20 concept satisfied when a type was accepted by <span class="tt">expect()</span> and <span class="tt">require()</span> before the exclusion of the suspicious conditions.  
+<p>C++20 concept satisfied when <span class="tt">T</span> can be appended to the message of a check.  
 <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="extension_8h_source.html">extension.h</a>&gt;</code></p>
 <h2 id="header-conceptdef" class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line">    <span class="keyword">concept </span><a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1legacy__checkable.html">legacy_checkable</a> = (not <a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable.html">checkable&lt;T&gt;</a>) and <a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1suspicious__condition.html">suspicious_condition&lt;T&gt;</a></div>
-<div class="line">                               and <span class="keyword">requires</span> (<span class="keyword">const</span> T&amp; t) { t ? true : <span class="keyword">false</span>; }</div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable.html">micro_os_plus::micro_test_plus::extension::checkable</a></div><div class="ttdoc">C++20 concept satisfied when a type can be used as a test expression in expect() or require().</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00312">extension.h:313</a></div></div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1legacy__checkable_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1legacy__checkable.html">micro_os_plus::micro_test_plus::extension::legacy_checkable</a></div><div class="ttdoc">C++20 concept satisfied when a type was accepted by expect() and require() before the exclusion of th...</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00331">extension.h:331</a></div></div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1suspicious__condition_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1suspicious__condition.html">micro_os_plus::micro_test_plus::extension::suspicious_condition</a></div><div class="ttdoc">C++20 concept satisfied when a type is contextually convertible to bool, but is most likely not a con...</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00268">extension.h:269</a></div></div>
+<div class="line">    <span class="keyword">concept </span><a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1message__argument.html">message_argument</a> = <a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lazy__message.html">lazy_message&lt;T&gt;</a></div>
+<div class="line">          or (<a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable.html">extension::printable&lt;T&gt;</a></div>
+<div class="line">              and not(std::is_class_v&lt;T&gt; and std::invocable&lt;const T&amp;&gt;))</div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lazy__message_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lazy__message.html">micro_os_plus::micro_test_plus::detail::lazy_message</a></div><div class="ttdoc">C++20 concept satisfied when T is a callable object that returns a printable message.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00690">extension.h:691</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1message__argument_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1message__argument.html">micro_os_plus::micro_test_plus::detail::message_argument</a></div><div class="ttdoc">C++20 concept satisfied when T can be appended to the message of a check.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00711">extension.h:712</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable.html">micro_os_plus::micro_test_plus::extension::printable</a></div><div class="ttdoc">C++20 concept satisfied when a type can be appended to the message of a check result via operator&lt;&lt;.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00432">extension.h:432</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -133,16 +134,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
   </table>
   </dd>
 </dl>
-<p>Satisfied by the types that are contextually convertible to <span class="tt">bool</span> but are not <span class="tt">checkable</span>, i.e. the <span class="tt">suspicious_condition</span> types. It constrains the deprecated overloads of <span class="tt">expect()</span> and <span class="tt">require()</span>, which keep such code compiling for one release, with a warning. </p>
+<p>The <span class="tt">message_argument</span> concept is satisfied by a <span class="tt">lazy_message</span>, or by a value that satisfies <span class="tt">extension::printable</span>, except a class type callable without arguments that is not a <span class="tt">lazy_message</span>. A lambda without captures, which returns <span class="tt">void</span> or a value that cannot be written, converts to a function pointer and then to <span class="tt">bool</span>, so it would be written as <span class="tt">true</span> instead of being rejected; the message must be a value, or a callable object that returns one. </p>
 
-<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00331">331</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00711">711</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="namespacemicro__os__plus.html">micro_os_plus</a></li><li class="navelem"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_test_plus</a></li><li class="navelem"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1extension.html">extension</a></li><li class="navelem"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1legacy__checkable.html">legacy_checkable</a></li>
+    <li class="navelem"><a href="namespacemicro__os__plus.html">micro_os_plus</a></li><li class="navelem"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_test_plus</a></li><li class="navelem"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html">detail</a></li><li class="navelem"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1message__argument.html">message_argument</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

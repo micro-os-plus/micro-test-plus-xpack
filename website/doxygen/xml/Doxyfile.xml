@@ -199,7 +199,8 @@
   <option  id='EXCLUDE_PATTERNS' default='no' type='stringlist'>
     <value><![CDATA[*/README*]]></value>
   </option>
-  <option  id='EXCLUDE_SYMBOLS' default='yes' type='stringlist'>
+  <option  id='EXCLUDE_SYMBOLS' default='no' type='stringlist'>
+    <value><![CDATA[std]]></value>
   </option>
   <option  id='EXAMPLE_PATH' default='yes' type='stringlist'>
   </option>

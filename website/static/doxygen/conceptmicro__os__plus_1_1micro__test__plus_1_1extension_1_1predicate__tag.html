@@ -125,8 +125,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 <div class="line">      <span class="keyword">requires</span> <a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable.html">printable</a>&lt;std::remove_cvref_t&lt;<span class="keyword">decltype</span> (Tag_T::symbol)&gt;&gt;;</div>
 <div class="line">      { Tag_T::apply (operand) } -&gt; std::convertible_to&lt;bool&gt;;</div>
 <div class="line">    }</div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__tag_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__tag.html">micro_os_plus::micro_test_plus::extension::predicate_tag</a></div><div class="ttdoc">Concept satisfied by a tag that defines a custom predicate.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00400">extension.h:400</a></div></div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable.html">micro_os_plus::micro_test_plus::extension::printable</a></div><div class="ttdoc">C++20 concept satisfied when a type can be appended to the message of a check result via operator&lt;&lt;.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00358">extension.h:358</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__tag_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__tag.html">micro_os_plus::micro_test_plus::extension::predicate_tag</a></div><div class="ttdoc">Concept satisfied by a tag that defines a custom predicate.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00474">extension.h:474</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable.html">micro_os_plus::micro_test_plus::extension::printable</a></div><div class="ttdoc">C++20 concept satisfied when a type can be appended to the message of a check result via operator&lt;&lt;.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00432">extension.h:432</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The tag of <span class="tt">extension::predicate_op</span> is a structure with a static <span class="tt">symbol</span>, which the failure reports write before the operand, and a static <span class="tt">apply()</span> member function template, which receives the operand, unwrapped, and returns the result of the predicate. The <span class="tt">symbol</span> must be printable; the result of <span class="tt">apply()</span> must be convertible to <span class="tt">bool</span>.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00400">400</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00474">474</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

@@ -34,14 +34,16 @@ class micro_os_plus::micro_test_plus::located_name { ... }
 
 <table class="doxyMembersIndex">
 
+<tr class="doxyMemberIndexTemplate">
+<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;std::size_t N&gt;</div></td>
+</tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemType" align="left" valign="top"></td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a872675dbace4d708aa65e8443c3733c0">located_name</a> (const char *name, const reflection::source_location &amp;location=reflection::source_location::current())</td>
+<td class="doxyMemberIndexItemNoTypeNameTemplate" colspan="2" align="left" valign="top"><a href="#a6559d4b0648a5552702a2f5d40ba4db4">located_name</a> (const char(&amp;name)[N], const reflection::source_location &amp;location=reflection::source_location::current())</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Constructs the name from a C string, capturing the location of the caller. <a href="#a872675dbace4d708aa65e8443c3733c0">More...</a></p>
+<p>Constructs the name from an array of characters, capturing the location of the caller. <a href="#a6559d4b0648a5552702a2f5d40ba4db4">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -56,6 +58,22 @@ class micro_os_plus::micro_test_plus::located_name { ... }
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
 <p>Constructs the name from a standard string, capturing the location of the caller. <a href="#a49ca2791ea42fc17bd4f9de133c8adbb">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexTemplate">
+<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;typename Pointer_T&gt;</div></td>
+</tr>
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemNoTypeNameTemplate" colspan="2" align="left" valign="top"><a href="#ab66a15ccc3f4b66fb2f8f897b2cb91ec">located_name</a> (Pointer_T name, const reflection::source_location &amp;location=reflection::source_location::current())</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Constructs the name from a C string, capturing the location of the caller. <a href="#ab66a15ccc3f4b66fb2f8f897b2cb91ec">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -212,31 +230,42 @@ class micro_os_plus::micro_test_plus::located_name { ... }
 
 ## Public Constructors
 
-### located\_name() {#a872675dbace4d708aa65e8443c3733c0}
+### located\_name() {#a6559d4b0648a5552702a2f5d40ba4db4}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
+<div class="doxyMemberTemplate">template &lt;std::size_t N&gt;</div>
 <table class="doxyMemberLabels">
 <tr class="doxyMemberLabels">
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::located_name::located_name (const char * name, const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a> &amp; location=<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current</a>())</td>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::located_name::located_name (const char(&amp;) name=[N], const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a> &amp; location=<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current</a>())</td>
 </tr>
 </table>
-</td>
-<td class="doxyMemberLabelsRight">
-<span class="doxyMemberLabels">
-<span class="doxyMemberLabel inline">inline</span>
-</span>
 </td>
 </tr>
 </table>
 </div>
 <div class="doxyMemberDoc">
 
-<p>Constructs the name from a C string, capturing the location of the caller.</p>
+<p>Constructs the name from an array of characters, capturing the location of the caller.</p>
 
+
+<p>Selected for the arrays, including the string literals. The name ends at the first null character or at the end of the array, whichever comes first, so that an array that is full, without a terminator, such as a fixed-size name field, is not read beyond its end.</p>
+
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Template Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">N</td>
+<td class="doxyParamItemDescription"><p>The number of elements of the array.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
 
 <dl class="doxyParamsList">
 <dt class="doxyParamsTableTitle">Parameters</dt>
@@ -244,7 +273,7 @@ class micro_os_plus::micro_test_plus::located_name { ... }
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
 <td class="doxyParamItemName">name</td>
-<td class="doxyParamItemDescription"><p>The name or description, used in reports; copied. A null pointer is an empty name.</p></td>
+<td class="doxyParamItemDescription"><p>The name or description, used in reports; copied.</p></td>
 </tr>
 <tr class="doxyParamItem">
 <td class="doxyParamItemName">location</td>
@@ -254,20 +283,22 @@ class micro_os_plus::micro_test_plus::located_name { ... }
 </dd>
 </dl>
 
-<p>Copies the name, or stores an empty name if the pointer is null, and the location; the control characters of the name are escaped. When called implicitly, the location is the place of the conversion, in the user code.</p>
+<p>Copies the characters up to the first null character, or all the elements of the array if there is none, and stores the location; when called implicitly, the location is the place of the conversion, in the user code.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00191">191</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00101">101</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00222">222</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00120">120</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a872675dbace4d708aa65e8443c3733c0">101</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> <a href="#a872675dbace4d708aa65e8443c3733c0">located_name::located_name</a> (</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">102</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* <a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a>, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a>&amp; <a href="#ade35aacdde746abad6be66a9fcab251b">location</a>)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">103</span><span class="doxyLineContent"><span class="doxyHighlight">      : <a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>{ <a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a> != nullptr ? <a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a> : </span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"> }, <a href="#a199094a3c03b40d8621279a30a152784">location_</a>{ <a href="#ade35aacdde746abad6be66a9fcab251b">location</a> }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">104</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">105</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#afe0adb93e576b2c11ba933ec65245d91">detail::escape_control_characters</a> (<a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">106</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6559d4b0648a5552702a2f5d40ba4db4">120</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ab66a15ccc3f4b66fb2f8f897b2cb91ec">located_name::located_name</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> (&amp;<a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a>)[N],</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">121</span><span class="doxyLineContent"><span class="doxyHighlight">                              </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a>&amp; <a href="#ade35aacdde746abad6be66a9fcab251b">location</a>)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">122</span><span class="doxyLineContent"><span class="doxyHighlight">      : <a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>{ std::string_view{ <a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a>, N }.substr (</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">123</span><span class="doxyLineContent"><span class="doxyHighlight">            0, std::string_view{ <a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a>, N }.find (</span><span class="doxyHighlightStringLiteral">'\0'</span><span class="doxyHighlight">)) },</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">124</span><span class="doxyLineContent"><span class="doxyHighlight">        <a href="#a199094a3c03b40d8621279a30a152784">location_</a>{ <a href="#ade35aacdde746abad6be66a9fcab251b">location</a> }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">125</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">126</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#afe0adb93e576b2c11ba933ec65245d91">detail::escape_control_characters</a> (<a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">127</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -322,22 +353,101 @@ class micro_os_plus::micro_test_plus::located_name { ... }
 <p>Copies the content of the string, and stores the location; when called implicitly, the location is the place of the conversion, in the user code.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00202">202</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00114">114</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00234">234</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00135">135</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a49ca2791ea42fc17bd4f9de133c8adbb">114</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> <a href="#a872675dbace4d708aa65e8443c3733c0">located_name::located_name</a> (</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">115</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> std::string&amp; <a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a>, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a>&amp; <a href="#ade35aacdde746abad6be66a9fcab251b">location</a>)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">116</span><span class="doxyLineContent"><span class="doxyHighlight">      : <a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>{ <a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a> }, <a href="#a199094a3c03b40d8621279a30a152784">location_</a>{ <a href="#ade35aacdde746abad6be66a9fcab251b">location</a> }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">117</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">118</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#afe0adb93e576b2c11ba933ec65245d91">detail::escape_control_characters</a> (<a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">119</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a49ca2791ea42fc17bd4f9de133c8adbb">135</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> <a href="#ab66a15ccc3f4b66fb2f8f897b2cb91ec">located_name::located_name</a> (</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">136</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> std::string&amp; <a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a>, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a>&amp; <a href="#ade35aacdde746abad6be66a9fcab251b">location</a>)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">137</span><span class="doxyLineContent"><span class="doxyHighlight">      : <a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>{ <a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a> }, <a href="#a199094a3c03b40d8621279a30a152784">location_</a>{ <a href="#ade35aacdde746abad6be66a9fcab251b">location</a> }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">138</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">139</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#afe0adb93e576b2c11ba933ec65245d91">detail::escape_control_characters</a> (<a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">140</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
 <p>References <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#afe0adb93e576b2c11ba933ec65245d91">micro_os_plus::micro_test_plus::detail::escape_control_characters</a>, <a href="#ade35aacdde746abad6be66a9fcab251b">location</a>, <a href="#a199094a3c03b40d8621279a30a152784">location_</a>, <a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a> and <a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>.</p>
+
+</div>
+</div>
+
+### located\_name() {#ab66a15ccc3f4b66fb2f8f897b2cb91ec}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<div class="doxyMemberTemplate">template &lt;typename Pointer_T&gt;</div>
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::located_name::located_name (Pointer_T name, const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a> &amp; location=<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current</a>())</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Constructs the name from a C string, capturing the location of the caller.</p>
+
+
+<p>Selected for the <span class="doxyComputerOutput">char</span> pointers; the text must be null-terminated. The arrays, including the string literals, are taken by the constructor for arrays, which does not read beyond the array.</p>
+
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Template Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">Pointer_T</td>
+<td class="doxyParamItemDescription"><p>The pointer type: a pointer to <span class="doxyComputerOutput">char</span>, possibly <span class="doxyComputerOutput">const</span>, or <span class="doxyComputerOutput">std::nullptr_t</span>.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">name</td>
+<td class="doxyParamItemDescription"><p>The name or description, used in reports; copied. A null pointer is an empty name.</p></td>
+</tr>
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">location</td>
+<td class="doxyParamItemDescription"><p>The location of the conversion, defaulting to the call in the user code.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<p>Copies the name, or stores an empty name if the pointer is null, and the location; the control characters of the name are escaped. When called implicitly, the location is the place of the conversion, in the user code.</p>
+
+
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00202">202</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00105">105</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab66a15ccc3f4b66fb2f8f897b2cb91ec">105</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ab66a15ccc3f4b66fb2f8f897b2cb91ec">located_name::located_name</a> (Pointer_T <a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a>,</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">106</span><span class="doxyLineContent"><span class="doxyHighlight">                              </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a>&amp; <a href="#ade35aacdde746abad6be66a9fcab251b">location</a>)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">107</span><span class="doxyLineContent"><span class="doxyHighlight">      : <a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>{ <a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a> != </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight"> ? <a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a> : </span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"> }, location_{ location }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">108</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">109</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#afe0adb93e576b2c11ba933ec65245d91">detail::escape_control_characters</a> (name_);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">110</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+
+</div>
+
+
+<p>References <a href="#ab66a15ccc3f4b66fb2f8f897b2cb91ec">located_name</a>, <a href="#ade35aacdde746abad6be66a9fcab251b">location</a>, <a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a> and <a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>.</p>
+
+
+<p>Referenced by <a href="#ab66a15ccc3f4b66fb2f8f897b2cb91ec">located_name</a>.</p>
 
 </div>
 </div>
@@ -387,17 +497,17 @@ class micro_os_plus::micro_test_plus::located_name { ... }
 <p>Takes over the content of the string, without copying it, and stores the location; when called implicitly, the location is the place of the conversion, in the user code.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00214">214</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00127">127</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00246">246</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00148">148</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a2be70223f532513d9f1ce311b436b72f">127</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> <a href="#a872675dbace4d708aa65e8443c3733c0">located_name::located_name</a> (</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">128</span><span class="doxyLineContent"><span class="doxyHighlight">      std::string&amp;&amp; <a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a>, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a>&amp; <a href="#ade35aacdde746abad6be66a9fcab251b">location</a>)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">129</span><span class="doxyLineContent"><span class="doxyHighlight">      : <a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>{ std::move (<a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a>) }, <a href="#a199094a3c03b40d8621279a30a152784">location_</a>{ <a href="#ade35aacdde746abad6be66a9fcab251b">location</a> }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">130</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">131</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#afe0adb93e576b2c11ba933ec65245d91">detail::escape_control_characters</a> (<a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">132</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a2be70223f532513d9f1ce311b436b72f">148</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> <a href="#ab66a15ccc3f4b66fb2f8f897b2cb91ec">located_name::located_name</a> (</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">149</span><span class="doxyLineContent"><span class="doxyHighlight">      std::string&amp;&amp; <a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a>, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a>&amp; <a href="#ade35aacdde746abad6be66a9fcab251b">location</a>)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">150</span><span class="doxyLineContent"><span class="doxyHighlight">      : <a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>{ std::move (<a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a>) }, <a href="#a199094a3c03b40d8621279a30a152784">location_</a>{ <a href="#ade35aacdde746abad6be66a9fcab251b">location</a> }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">151</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">152</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#afe0adb93e576b2c11ba933ec65245d91">detail::escape_control_characters</a> (<a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">153</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -452,17 +562,17 @@ class micro_os_plus::micro_test_plus::located_name { ... }
 <p>Copies the characters of the view, which need not be null-terminated, and stores the location; when called implicitly, the location is the place of the conversion, in the user code.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00227">227</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00140">140</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00259">259</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00161">161</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a030144fd43957ba5e2c9a660d2dd33be">140</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> <a href="#a872675dbace4d708aa65e8443c3733c0">located_name::located_name</a> (</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">141</span><span class="doxyLineContent"><span class="doxyHighlight">      std::string_view <a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a>, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a>&amp; <a href="#ade35aacdde746abad6be66a9fcab251b">location</a>)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">142</span><span class="doxyLineContent"><span class="doxyHighlight">      : <a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>{ <a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a> }, <a href="#a199094a3c03b40d8621279a30a152784">location_</a>{ <a href="#ade35aacdde746abad6be66a9fcab251b">location</a> }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">143</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">144</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#afe0adb93e576b2c11ba933ec65245d91">detail::escape_control_characters</a> (<a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">145</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a030144fd43957ba5e2c9a660d2dd33be">161</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">inline</span><span class="doxyHighlight"> <a href="#ab66a15ccc3f4b66fb2f8f897b2cb91ec">located_name::located_name</a> (</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">162</span><span class="doxyLineContent"><span class="doxyHighlight">      std::string_view <a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a>, </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a>&amp; <a href="#ade35aacdde746abad6be66a9fcab251b">location</a>)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">163</span><span class="doxyLineContent"><span class="doxyHighlight">      : <a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>{ <a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a> }, <a href="#a199094a3c03b40d8621279a30a152784">location_</a>{ <a href="#ade35aacdde746abad6be66a9fcab251b">location</a> }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">164</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">165</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#afe0adb93e576b2c11ba933ec65245d91">detail::escape_control_characters</a> (<a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">166</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -521,15 +631,15 @@ class micro_os_plus::micro_test_plus::located_name { ... }
 <p>Returns a reference to the location stored in <span class="doxyComputerOutput"><a href="#a199094a3c03b40d8621279a30a152784">location_</a></span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00250">250</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00162">162</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00282">282</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00183">183</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ade35aacdde746abad6be66a9fcab251b">162</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ade35aacdde746abad6be66a9fcab251b">located_name::location</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">163</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">164</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a199094a3c03b40d8621279a30a152784">location_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">165</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ade35aacdde746abad6be66a9fcab251b">183</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ade35aacdde746abad6be66a9fcab251b">located_name::location</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">184</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">185</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a199094a3c03b40d8621279a30a152784">location_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">186</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -537,7 +647,7 @@ class micro_os_plus::micro_test_plus::located_name { ... }
 <p>Reference <a href="#a199094a3c03b40d8621279a30a152784">location_</a>.</p>
 
 
-<p>Referenced by <a href="#a872675dbace4d708aa65e8443c3733c0">located_name</a>, <a href="#a49ca2791ea42fc17bd4f9de133c8adbb">located_name</a>, <a href="#a2be70223f532513d9f1ce311b436b72f">located_name</a>, <a href="#a030144fd43957ba5e2c9a660d2dd33be">located_name</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a7170624ca4a3a92b17ced71472726529">micro_os_plus::micro_test_plus::runner::add_top_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case/#a1980019eed5ac5b1eef65302eb9cc9cd">micro_os_plus::micro_test_plus::test_case::fail_unexpected_exception</a> and <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a3178150c77ae33d100e18e157436b04b">micro_os_plus::micro_test_plus::detail::test_each_value</a>.</p>
+<p>Referenced by <a href="#a6559d4b0648a5552702a2f5d40ba4db4">located_name</a>, <a href="#a49ca2791ea42fc17bd4f9de133c8adbb">located_name</a>, <a href="#ab66a15ccc3f4b66fb2f8f897b2cb91ec">located_name</a>, <a href="#a2be70223f532513d9f1ce311b436b72f">located_name</a>, <a href="#a030144fd43957ba5e2c9a660d2dd33be">located_name</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runnable-base/#a5e5df8d6e176fd4aa0ba8ed2d5104780">micro_os_plus::micro_test_plus::detail::runnable_base::accepts_test_case</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a7170624ca4a3a92b17ced71472726529">micro_os_plus::micro_test_plus::runner::add_top_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case/#a1980019eed5ac5b1eef65302eb9cc9cd">micro_os_plus::micro_test_plus::test_case::fail_unexpected_exception</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a6a5ba9415486617bc64b8d764fef6ba6">micro_os_plus::micro_test_plus::runner::reject_call</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case/#ac40bf24e28cce401256d3e90f0c9e8cd">micro_os_plus::micro_test_plus::test_case::report_misdirected_test</a> and <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a3178150c77ae33d100e18e157436b04b">micro_os_plus::micro_test_plus::detail::test_each_value</a>.</p>
 
 </div>
 </div>
@@ -585,15 +695,15 @@ class micro_os_plus::micro_test_plus::located_name { ... }
 <p>Returns <span class="doxyComputerOutput">name_.c_str()</span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00240">240</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00152">152</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00272">272</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00173">173</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aa2ec3a20974c59b2f5a64a50b41db444">152</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#aa2ec3a20974c59b2f5a64a50b41db444">located_name::name</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">153</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">154</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>.c_str ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">155</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aa2ec3a20974c59b2f5a64a50b41db444">173</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#aa2ec3a20974c59b2f5a64a50b41db444">located_name::name</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">174</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">175</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>.c_str ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">176</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -601,7 +711,7 @@ class micro_os_plus::micro_test_plus::located_name { ... }
 <p>Reference <a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>.</p>
 
 
-<p>Referenced by <a href="#a872675dbace4d708aa65e8443c3733c0">located_name</a>, <a href="#a49ca2791ea42fc17bd4f9de133c8adbb">located_name</a>, <a href="#a2be70223f532513d9f1ce311b436b72f">located_name</a>, <a href="#a030144fd43957ba5e2c9a660d2dd33be">located_name</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite/#ad7c1d86bb59a42c67848ec6d9482c42b">micro_os_plus::micro_test_plus::suite::suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#abdb31c03509a40a041b8f0ea8e12ebd1">micro_os_plus::micro_test_plus::runner::add_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a7170624ca4a3a92b17ced71472726529">micro_os_plus::micro_test_plus::runner::add_top_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite/#a0cfa76ba0ba0c308d246b2b5d506ab19">micro_os_plus::micro_test_plus::suite::test</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case/#a9b497f0911a0abe12a341a560ba79e1d">micro_os_plus::micro_test_plus::test_case::test</a> and <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a3178150c77ae33d100e18e157436b04b">micro_os_plus::micro_test_plus::detail::test_each_value</a>.</p>
+<p>Referenced by <a href="#a6559d4b0648a5552702a2f5d40ba4db4">located_name</a>, <a href="#a49ca2791ea42fc17bd4f9de133c8adbb">located_name</a>, <a href="#ab66a15ccc3f4b66fb2f8f897b2cb91ec">located_name</a>, <a href="#a2be70223f532513d9f1ce311b436b72f">located_name</a>, <a href="#a030144fd43957ba5e2c9a660d2dd33be">located_name</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite/#ad7c1d86bb59a42c67848ec6d9482c42b">micro_os_plus::micro_test_plus::suite::suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runnable-base/#a5e5df8d6e176fd4aa0ba8ed2d5104780">micro_os_plus::micro_test_plus::detail::runnable_base::accepts_test_case</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#abdb31c03509a40a041b8f0ea8e12ebd1">micro_os_plus::micro_test_plus::runner::add_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a7170624ca4a3a92b17ced71472726529">micro_os_plus::micro_test_plus::runner::add_top_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case/#ac40bf24e28cce401256d3e90f0c9e8cd">micro_os_plus::micro_test_plus::test_case::report_misdirected_test</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite/#a0cfa76ba0ba0c308d246b2b5d506ab19">micro_os_plus::micro_test_plus::suite::test</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case/#a9b497f0911a0abe12a341a560ba79e1d">micro_os_plus::micro_test_plus::test_case::test</a> and <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a3178150c77ae33d100e18e157436b04b">micro_os_plus::micro_test_plus::detail::test_each_value</a>.</p>
 
 </div>
 </div>
@@ -636,17 +746,17 @@ class micro_os_plus::micro_test_plus::located_name { ... }
 <p>Captured by the default argument of the constructor, at the place of the conversion to <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/located-name">located_name</a></span>.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00269">269</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00301">301</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a199094a3c03b40d8621279a30a152784">269</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a> <a href="#a199094a3c03b40d8621279a30a152784">location_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a199094a3c03b40d8621279a30a152784">301</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a> <a href="#a199094a3c03b40d8621279a30a152784">location_</a>;</span></span></div>
 
 </div>
 
 
-<p>Referenced by <a href="#a872675dbace4d708aa65e8443c3733c0">located_name</a>, <a href="#a49ca2791ea42fc17bd4f9de133c8adbb">located_name</a>, <a href="#a2be70223f532513d9f1ce311b436b72f">located_name</a>, <a href="#a030144fd43957ba5e2c9a660d2dd33be">located_name</a> and <a href="#ade35aacdde746abad6be66a9fcab251b">location</a>.</p>
+<p>Referenced by <a href="#a6559d4b0648a5552702a2f5d40ba4db4">located_name</a>, <a href="#a49ca2791ea42fc17bd4f9de133c8adbb">located_name</a>, <a href="#a2be70223f532513d9f1ce311b436b72f">located_name</a>, <a href="#a030144fd43957ba5e2c9a660d2dd33be">located_name</a> and <a href="#ade35aacdde746abad6be66a9fcab251b">location</a>.</p>
 
 </div>
 </div>
@@ -675,17 +785,17 @@ class micro_os_plus::micro_test_plus::located_name { ... }
 <p>Owned, so that the name does not depend on the lifetime of the argument; the name of the node points into it.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00260">260</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l00292">292</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a73d82df6b0bafcf4dfef0f15433185ca">260</a></span><span class="doxyLineContent"><span class="doxyHighlight">    std::string <a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a73d82df6b0bafcf4dfef0f15433185ca">292</a></span><span class="doxyLineContent"><span class="doxyHighlight">    std::string <a href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>;</span></span></div>
 
 </div>
 
 
-<p>Referenced by <a href="#a872675dbace4d708aa65e8443c3733c0">located_name</a>, <a href="#a49ca2791ea42fc17bd4f9de133c8adbb">located_name</a>, <a href="#a2be70223f532513d9f1ce311b436b72f">located_name</a>, <a href="#a030144fd43957ba5e2c9a660d2dd33be">located_name</a> and <a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a>.</p>
+<p>Referenced by <a href="#a6559d4b0648a5552702a2f5d40ba4db4">located_name</a>, <a href="#a49ca2791ea42fc17bd4f9de133c8adbb">located_name</a>, <a href="#ab66a15ccc3f4b66fb2f8f897b2cb91ec">located_name</a>, <a href="#a2be70223f532513d9f1ce311b436b72f">located_name</a>, <a href="#a030144fd43957ba5e2c9a660d2dd33be">located_name</a> and <a href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a>.</p>
 
 </div>
 </div>

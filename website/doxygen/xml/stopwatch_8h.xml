@@ -197,7 +197,7 @@ On Windows, the current time is captured via <computeroutput>timespec_get()</com
 <para>This header provides the <computeroutput>stopwatch</computeroutput> class, used to measure the elapsed time of the test suites and of the test session within the µTest++ framework. The stopwatch is started before the measured operation, stopped after it, and then reports the elapsed time as a <computeroutput>std::chrono::microseconds</computeroutput> duration.</para>
 <para>Timing support relies on <computeroutput>clock_gettime(CLOCK_MONOTONIC, ...)</computeroutput> on POSIX platforms and on <computeroutput>timespec_get(..., TIME_UTC)</computeroutput> on Windows. If no clock is available (e.g. on bare-metal targets without an RTC), the readings remain zero, <computeroutput>has_elapsed()</computeroutput> returns <computeroutput>false</computeroutput>, and no timing information is reported.</para>
 <para>All definitions reside within the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail" kindref="compound">micro_os_plus::micro_test_plus::detail</ref></computeroutput> namespace.</para>
-<para>This file is intended solely for internal use within the framework and should not be included directly by user code. </para>
+<para>This file is included by <computeroutput><ref refid="micro-test-plus_8h" kindref="compound">micro-os-plus/micro-test-plus.h</ref></computeroutput>, which is the header that the applications include. </para>
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>

@@ -70,7 +70,7 @@
 <para>This header provides the inline implementations for the utility function templates used within the µTest++ framework. It defines the logic for splitting strings into substrings using a specified delimiter, enabling convenient and type-safe string parsing in test expressions.</para>
 <para>All definitions reside within the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1utility" kindref="compound">micro_os_plus::micro_test_plus::utility</ref></computeroutput> namespace.</para>
 <para>The header files are organised within the <computeroutput>include/micro-os-plus/micro-test-plus</computeroutput> folder to maintain a structured and modular codebase.</para>
-<para>This file is intended solely for internal use within the framework and should not be included directly by user code. </para>
+<para>This file is included by <computeroutput><ref refid="utility_8h" kindref="compound">utility.h</ref></computeroutput>; the applications include <computeroutput><ref refid="micro-test-plus_8h" kindref="compound">micro-os-plus/micro-test-plus.h</ref></computeroutput>, not this file. </para>
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="comment">/*</highlight></codeline>

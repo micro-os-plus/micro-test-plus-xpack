@@ -9,7 +9,7 @@
       <description><para>Strongly-typed wrappers for converting dynamic values and expressions to specific types recognised by µTest++ comparators.</para>
 <para>These type aliases provide a type-safe mechanism for explicitly converting values to the required types for µTest++ test expressions and comparators. Each alias is a wrapper around <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" kindref="compound">detail::value</ref>&lt;T&gt;</computeroutput>, ensuring that the value is treated as the specified type within the framework.</para>
 <para>The <computeroutput>to_*</computeroutput> forms replaced the older <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" kindref="member">_u8</ref></computeroutput>, etc. aliases, which were deprecated in version 3.2.0.</para>
-<para><simplesect kind="par"><title>Deprecated</title><para>Pass the plain values to the function comparators <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa77076edd474fc10d8c0bd6da623e284" kindref="member">ne()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf32fd09749f18635233613fa48f91b56" kindref="member">gt()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga989e5966794d5c5487477aa782d844b1" kindref="member">ge()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaea39573e23de35872ace5b08d2514327" kindref="member">lt()</ref></computeroutput>, and <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf9e47a6e18771f969cdd840ec187734a" kindref="member">le()</ref></computeroutput> instead; they report the operands in the same way. For the floating-point values compared with a tolerance, use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref></computeroutput> (since 6.0.0).</para>
+<para><simplesect kind="par"><title>Deprecated</title><para>Pass the plain values to the function comparators <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga92cdc2dde6af040f2f5f5df677df0985" kindref="member">ne()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga90da2cbc14b4562332a205d5b232356f" kindref="member">gt()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga58c7dacabca3fe1b0dc025a0e0f30e9e" kindref="member">ge()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga493a42c738ef38b45a28b06a2155aa00" kindref="member">lt()</ref></computeroutput>, and <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9125d2dd997269eecc0d8239d5df67e5" kindref="member">le()</ref></computeroutput> instead; they report the operands in the same way. For the floating-point values compared with a tolerance, use <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref></computeroutput> (since 6.0.0).</para>
 </simplesect>
 <simplesect kind="par"><title>Example</title><para></para>
 </simplesect>
@@ -34,7 +34,7 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>bool</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000008"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000008"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -54,7 +54,7 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>char</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000009"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000009"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -74,7 +74,7 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>signed char</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000010"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000010"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -94,7 +94,7 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>short</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000011"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000011"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -114,7 +114,7 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>int</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000012"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000012"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -134,7 +134,7 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>long</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000013"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000013"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -154,7 +154,7 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>long long</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000014"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000014"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -174,7 +174,7 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>unsigned</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000015"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000015"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -194,7 +194,7 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>unsigned char</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000016"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000016"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -214,7 +214,7 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>unsigned short</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000017"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000017"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -234,7 +234,7 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>unsigned long</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000018"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000018"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -254,7 +254,7 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>unsigned long long</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000019"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000019"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -274,7 +274,7 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>std::int8_t</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000020"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000020"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -294,7 +294,7 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>std::int16_t</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000021"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000021"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -314,7 +314,7 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>std::int32_t</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000022"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000022"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -334,7 +334,7 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>std::int64_t</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000023"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000023"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -354,7 +354,7 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>std::uint8_t</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000024"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000024"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -374,7 +374,7 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>std::uint16_t</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000025"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000025"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -394,7 +394,7 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>std::uint32_t</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000026"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000026"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -414,7 +414,7 @@
 <para>Wraps a run-time value, so that the comparators and the reporter treat it as <computeroutput>std::uint64_t</computeroutput>.</para>
 <para><simplesect kind="since"><para>3.2.0 </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000027"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000027"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -487,7 +487,7 @@
       <description><para>The v5.0.1 names of the <computeroutput>to_*</computeroutput> type wrappers.</para>
 <para>The Boost UT style names, with a leading underscore, kept for compatibility with the existing applications. Each one is an alias of the corresponding <computeroutput>to_*</computeroutput> wrapper, so the wrapped values are compared and reported in the same way. They do not conflict with the literal operators with the same suffixes (<computeroutput>42<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>), which are in the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1literals" kindref="compound">literals</ref></computeroutput> namespace.</para>
 <para>GCC reports the deprecation only when the alias names the type of a declaration, not when it is used in an expression, as in <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref> (expr)</computeroutput>; Clang reports it in both cases.</para>
-<para><simplesect kind="par"><title>Deprecated</title><para>Pass the plain values to the function comparators <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa77076edd474fc10d8c0bd6da623e284" kindref="member">ne()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf32fd09749f18635233613fa48f91b56" kindref="member">gt()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga989e5966794d5c5487477aa782d844b1" kindref="member">ge()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaea39573e23de35872ace5b08d2514327" kindref="member">lt()</ref></computeroutput>, and <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf9e47a6e18771f969cdd840ec187734a" kindref="member">le()</ref></computeroutput> instead; the <computeroutput>to_*</computeroutput> type wrappers that replaced these aliases (since 3.2.0) are deprecated too (since 6.0.0). </para>
+<para><simplesect kind="par"><title>Deprecated</title><para>Pass the plain values to the function comparators <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga92cdc2dde6af040f2f5f5df677df0985" kindref="member">ne()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga90da2cbc14b4562332a205d5b232356f" kindref="member">gt()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga58c7dacabca3fe1b0dc025a0e0f30e9e" kindref="member">ge()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga493a42c738ef38b45a28b06a2155aa00" kindref="member">lt()</ref></computeroutput>, and <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9125d2dd997269eecc0d8239d5df67e5" kindref="member">le()</ref></computeroutput> instead; the <computeroutput>to_*</computeroutput> type wrappers that replaced these aliases (since 3.2.0) are deprecated too (since 6.0.0). </para>
 </simplesect>
 </para>
 </description>
@@ -501,7 +501,7 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>bool</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kindref="member">to_b</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kindref="member">to_b</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000033"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kindref="member">to_b</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000033"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -518,7 +518,7 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>char</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kindref="member">to_c</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kindref="member">to_c</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000034"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga6ccf42d05ae14c445f602128f8ffd831" kindref="member">to_c</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000034"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -535,7 +535,7 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>signed char</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kindref="member">to_sc</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kindref="member">to_sc</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000035"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae3838e23c60edeadbafdd4a22d1b1516" kindref="member">to_sc</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000035"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -552,7 +552,7 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>short</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kindref="member">to_s</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kindref="member">to_s</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000036"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gabc8f58b457f42435bcb51f53e6fe6b78" kindref="member">to_s</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000036"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -569,7 +569,7 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>int</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf3ee271cefcffa625e40d476305da62f" kindref="member">to_i</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf3ee271cefcffa625e40d476305da62f" kindref="member">to_i</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000037"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf3ee271cefcffa625e40d476305da62f" kindref="member">to_i</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000037"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -586,7 +586,7 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>long</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga09028a1e0e713723257afba48b9ee551" kindref="member">to_l</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga09028a1e0e713723257afba48b9ee551" kindref="member">to_l</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000038"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga09028a1e0e713723257afba48b9ee551" kindref="member">to_l</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000038"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -603,7 +603,7 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>long long</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kindref="member">to_ll</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kindref="member">to_ll</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000039"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0d0ae1e784a8a4da6630ab06addcad34" kindref="member">to_ll</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000039"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -620,7 +620,7 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>unsigned</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kindref="member">to_u</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kindref="member">to_u</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000040"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9e7a52d8850ef68e6e0f6f9ca64a4ce5" kindref="member">to_u</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000040"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -637,7 +637,7 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>unsigned char</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kindref="member">to_uc</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kindref="member">to_uc</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000041"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae0c0ed1401416ce6ee417ec86d8d2a89" kindref="member">to_uc</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000041"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -654,7 +654,7 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>unsigned short</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kindref="member">to_us</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kindref="member">to_us</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000042"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8c22086f0e7e89d753cf7846ef7229d4" kindref="member">to_us</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000042"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -671,7 +671,7 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>unsigned long</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5d2d6a69c090569866a779672772b48f" kindref="member">to_ul</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5d2d6a69c090569866a779672772b48f" kindref="member">to_ul</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000043"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5d2d6a69c090569866a779672772b48f" kindref="member">to_ul</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000043"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -688,7 +688,7 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>unsigned long long</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kindref="member">to_ull</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kindref="member">to_ull</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000044"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae1438b74ec39a793d5ad516a7c2c7788" kindref="member">to_ull</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000044"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -705,7 +705,7 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>std::int8_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kindref="member">to_i8</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kindref="member">to_i8</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000045"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga52ad3a0a454c230f9fcfb01e5d73e6db" kindref="member">to_i8</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000045"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -722,7 +722,7 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>std::int16_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kindref="member">to_i16</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kindref="member">to_i16</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000046"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5cc1961eb074bb0740d8a593c411e0f9" kindref="member">to_i16</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000046"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -739,7 +739,7 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>std::int32_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga201eeff58867ba58d3312ae56113ef06" kindref="member">to_i32</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga201eeff58867ba58d3312ae56113ef06" kindref="member">to_i32</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000047"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga201eeff58867ba58d3312ae56113ef06" kindref="member">to_i32</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000047"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -756,7 +756,7 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>std::int64_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaead55f5e265634a742633261f9f2aa3f" kindref="member">to_i64</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaead55f5e265634a742633261f9f2aa3f" kindref="member">to_i64</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000048"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaead55f5e265634a742633261f9f2aa3f" kindref="member">to_i64</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000048"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -773,7 +773,7 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>std::uint8_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kindref="member">to_u8</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kindref="member">to_u8</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000049"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaceb70f41ddfa8f5805dbe9be2adf2289" kindref="member">to_u8</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000049"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -790,7 +790,7 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>std::uint16_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kindref="member">to_u16</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kindref="member">to_u16</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000050"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga87bb08ab5e58f481ee911e872108f8e0" kindref="member">to_u16</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000050"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -807,7 +807,7 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>std::uint32_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kindref="member">to_u32</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kindref="member">to_u32</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000051"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe7f9ec77325e0ae6111967bf8c5f29a" kindref="member">to_u32</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000051"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -824,7 +824,7 @@
 <para>Deprecated strongly-typed wrapper for <computeroutput>std::uint64_t</computeroutput> values, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kindref="member">to_u64</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kindref="member">to_u64</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000052"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<para>The same type as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf7cbf6fdcdeae86203faebdf9df7a201" kindref="member">to_u64</ref></computeroutput>; kept for backwards compatibility. <xrefsect id="deprecated_1_deprecated000052"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -907,7 +907,7 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<xrefsect id="deprecated_1_deprecated000056"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000056"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
         </detaileddescription>
         <inbodydescription>
@@ -984,7 +984,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1279" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1279" bodyend="1283" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1924" declcolumn="3"/>
         <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" compoundref="deprecated-inlines_8h" startline="1279" endline="1283">micro_os_plus::micro_test_plus::approx</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0d374ffc56933dccd3ffba008ab7eaa5" compoundref="function-comparators-inlines_8h" startline="210" endline="215">micro_os_plus::micro_test_plus::approx</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0d374ffc56933dccd3ffba008ab7eaa5" compoundref="function-comparators-inlines_8h" startline="300" endline="305">micro_os_plus::micro_test_plus::approx</referencedby>
         <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" compoundref="deprecated-inlines_8h" startline="1279" endline="1283">micro_os_plus::micro_test_plus::approx</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaa2bfc74376f8c110053bfa6e06e40772" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -1027,7 +1027,7 @@
 <xrefsect id="deprecated_1_deprecated000091"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use a plain bool and a check message (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>This user-defined literal operator creates a named boolean constant, with the value <computeroutput>true</computeroutput>, from a string literal (for example, <computeroutput>"feature_enabled"<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kindref="member">_b</ref></computeroutput>).</para>
-<para>The returned <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool" kindref="compound">detail::named_bool</ref></computeroutput> converts implicitly to <computeroutput>bool</computeroutput>, and the expression formatter prints its name instead of its value. With the operators in the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1operators" kindref="compound">operators</ref></computeroutput> namespace, a comparison like <computeroutput>"feature_enabled"<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kindref="member">_b</ref> == flag</computeroutput> is true when <computeroutput>flag</computeroutput> is true, and, when it fails, it is reported as <computeroutput>feature_enabled == false</computeroutput>; the same applies to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq</ref> ("feature_enabled"<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kindref="member">_b</ref>, flag)</computeroutput>. Without these operators, the comparison is a plain <computeroutput>bool</computeroutput> expression, and its operands are not reported. </para>
+<para>The returned <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool" kindref="compound">detail::named_bool</ref></computeroutput> converts implicitly to <computeroutput>bool</computeroutput>, and the expression formatter prints its name instead of its value. With the operators in the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1operators" kindref="compound">operators</ref></computeroutput> namespace, a comparison like <computeroutput>"feature_enabled"<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kindref="member">_b</ref> == flag</computeroutput> is true when <computeroutput>flag</computeroutput> is true, and, when it fails, it is reported as <computeroutput>feature_enabled == false</computeroutput>; the same applies to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq</ref> ("feature_enabled"<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad4203783cfbe141f41ee8515f7b2ea94" kindref="member">_b</ref>, flag)</computeroutput>. Without these operators, the comparison is a plain <computeroutput>bool</computeroutput> expression, and its operands are not reported. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -1061,7 +1061,7 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>char</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000071"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000071"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>char</computeroutput> constant, for example <computeroutput>65<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafdd897d040f92df9cd42e551ebc88cd8" kindref="member">_c</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
@@ -1176,7 +1176,7 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>int</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000069"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000069"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>int</computeroutput> constant, for example <computeroutput>42<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga8468610e763177a8f569f7d618851288" kindref="member">_i</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
@@ -1213,7 +1213,7 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>int16_t</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000081"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000081"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>int16_t</computeroutput> constant, for example <computeroutput>32767<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gad2d95793c99112ad2889c6663789d1e3" kindref="member">_i16</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
@@ -1250,7 +1250,7 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>int32_t</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000082"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000082"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>int32_t</computeroutput> constant, for example <computeroutput>2147483647<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga917a1759e37cd0d3fe3786da11729a4b" kindref="member">_i32</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
@@ -1287,7 +1287,7 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>int64_t</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000083"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000083"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>int64_t</computeroutput> constant, for example <computeroutput>9223372036854775807<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga290a150eae030e183ca2e14e9095c93b" kindref="member">_i64</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
@@ -1324,7 +1324,7 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>int8_t</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000080"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000080"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>int8_t</computeroutput> constant, for example <computeroutput>127<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga265f8609ef3d6ead78c7a66825553e24" kindref="member">_i8</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
@@ -1361,7 +1361,7 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>long</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000073"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000073"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>long</computeroutput> constant, for example <computeroutput>123<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga429a848542fc4ffafd3dd22bc1832654" kindref="member">_l</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
@@ -1437,7 +1437,7 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>long long</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000074"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000074"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>long long</computeroutput> constant, for example <computeroutput>123<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9c597ca04848620b8570c29a4741e77d" kindref="member">_ll</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
@@ -1474,7 +1474,7 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>short</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000070"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000070"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>short</computeroutput> constant, for example <computeroutput>123<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga461a956b7e308ed6e8c64afa3cf160f2" kindref="member">_s</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
@@ -1511,7 +1511,7 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>signed char</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000072"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000072"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>signed char</computeroutput> constant, for example <computeroutput>65<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga0cc4baab5f421ac7adee10218d8ee8a2" kindref="member">_sc</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
@@ -1548,7 +1548,7 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>unsigned</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000075"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000075"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>unsigned</computeroutput> constant, for example <computeroutput>123<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaaa486af2418a24076237fbe26940f5ae" kindref="member">_u</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
@@ -1585,7 +1585,7 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>uint16_t</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000085"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000085"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>uint16_t</computeroutput> constant, for example <computeroutput>65535<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga97f7bc9a25eb4b7c663bd2388ade01ae" kindref="member">_u16</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
@@ -1622,7 +1622,7 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>uint32_t</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000086"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000086"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>uint32_t</computeroutput> constant, for example <computeroutput>4294967295<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga4afa32150456241245bfc641a6f17bbc" kindref="member">_u32</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
@@ -1659,7 +1659,7 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>uint64_t</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000087"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000087"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>uint64_t</computeroutput> constant, for example <computeroutput>18446744073709551615<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga1241e84fc4457af1b4df5f053eec6aa5" kindref="member">_u64</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
@@ -1696,7 +1696,7 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>uint8_t</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000084"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000084"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>uint8_t</computeroutput> constant, for example <computeroutput>255<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaf27e37e2e29af1a3ffd5c4fb07e77ff9" kindref="member">_u8</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
@@ -1733,7 +1733,7 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>unsigned char</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000076"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000076"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>unsigned char</computeroutput> constant, for example <computeroutput>65<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaa8bb559065ea34a9645fdfd6339b9b7a" kindref="member">_uc</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
@@ -1770,7 +1770,7 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>unsigned long</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000078"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000078"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>unsigned long</computeroutput> constant, for example <computeroutput>123<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga32c7eef01fcaef2f1a9478427d951f62" kindref="member">_ul</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
@@ -1807,7 +1807,7 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>unsigned long long</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000079"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000079"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>unsigned long long</computeroutput> constant, for example <computeroutput>123<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gada8a165060d3d3b3ab51272b9da58761" kindref="member">_ull</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>
@@ -1844,7 +1844,7 @@
 </parameterlist>
 <simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" kindref="compound">detail::integral_constant</ref></computeroutput> instance holding the parsed <computeroutput>unsigned short</computeroutput> value. </para>
 </simplesect>
-<xrefsect id="deprecated_1_deprecated000077"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
+<xrefsect id="deprecated_1_deprecated000077"><xreftitle>Deprecated</xreftitle><xrefdescription><para>pass plain values to <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref> and the other comparators (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para>Creates a compile-time <computeroutput>unsigned short</computeroutput> constant, for example <computeroutput>123<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga65aea7fc6324806cc029041a1c785611" kindref="member">_us</ref></computeroutput>, with <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kindref="member">detail::integral_literal()</ref></computeroutput>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus. </para>
         </detaileddescription>

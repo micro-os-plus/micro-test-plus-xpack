@@ -20,8 +20,11 @@ keywords:
 ## - C -
 
 <ul>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ab21dca8f57bf59dbf7ffdd97742f9e28"><b>c_string</b></a>: as typedef in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51cdb19f7f3312bb3946451261c83ece"><b>comparison_integer_t</b></a>: as typedef in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a6bdf1e117e085a41c16e2dae63e72e52"><b>comparison_operand_t</b></a>: as typedef in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></li>
 </ul>
+<p>3 entries</p>
 
 ## - S -
 
@@ -35,7 +38,7 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a2c197674df5b07499a4ea40d124f1082"><b>unwrapped_t</b></a>: as typedef in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></li>
 </ul>
 <br/>
-<p>Total: 3 entries.</p>
+<p>Total: 5 entries.</p>
 
 <hr/>
 

@@ -1,7 +1,7 @@
 var structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_3_01void_01_4 =
 [
     [ "op_type", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op.html#a384b1d115e493d6a554ebda4e3089b19", null ],
-    [ "throws_op", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_3_01void_01_4.html#ad6ee51ce2ea730d1cd0d791b1ca97992", null ],
+    [ "throws_op", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_3_01void_01_4.html#a61cea8af45f1d872ceaf08e93d7ca2d4", null ],
     [ "operator bool", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a086d26c7329afc11e6a8b2664d753494", null ],
     [ "outcome", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a69618b39f260cbd032e271881430e45c", null ],
     [ "what", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a996c2d87a98606a33f4e80ae62337bcb", null ],

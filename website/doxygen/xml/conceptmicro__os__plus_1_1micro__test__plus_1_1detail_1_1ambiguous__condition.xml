@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ambiguous__condition" kind="concept">
+    <compoundname>micro_os_plus::micro_test_plus::detail::ambiguous_condition</compoundname>
+    <includes refid="extension_8h" local="no">extension.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;class T&gt;
+concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ambiguous__condition" kindref="compound">micro_os_plus::micro_test_plus::detail::ambiguous_condition</ref> =  <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1is__bool__wrapper" kindref="compound">is_bool_wrapper</ref>&lt;std::remove_cv_t&lt;T&gt;&gt;<ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" kindref="compound">::value</ref></initializer>
+    <conceptparts>
+      <codepart line="220">    <programlisting>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">ambiguous_condition<sp/>=<sp/>is_bool_wrapper&lt;std::remove_cv_t&lt;T&gt;&gt;::value</highlight></codeline>
+    </programlisting>
+</codepart>
+    </conceptparts>
+    <briefdescription>
+<para>C++20 concept satisfied by the wrappers of a <computeroutput>bool</computeroutput>, whose condition is ambiguous. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The condition of a <computeroutput>std::optional&lt;bool&gt;</computeroutput>, or of a smart pointer to a <computeroutput>bool</computeroutput>, tests the wrapper (a value is present, or the pointer is not null), not the <computeroutput>bool</computeroutput> that it holds, which is what a reader of <computeroutput>t.expect (flag)</computeroutput> assumes; a check with <computeroutput>false</computeroutput> inside would pass, and be reported as <computeroutput>true</computeroutput>, for another reason than the one the author had in mind, as the checks of the arguments that are always true (see <computeroutput>suspicious_condition</computeroutput>). A check that passes silently by mistake is worse than one that does not compile, so <computeroutput>extension::checkable</computeroutput> rejects these types, and the application writes <computeroutput>has_value()</computeroutput>, <computeroutput>!= nullptr</computeroutput>, or compares the value with <computeroutput>eq()</computeroutput>. The wrappers of the other types are accepted, since the presence of a value is then the only meaning of the condition.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type to check. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="220" column="5"/>
+  </compounddef>
+</doxygen>

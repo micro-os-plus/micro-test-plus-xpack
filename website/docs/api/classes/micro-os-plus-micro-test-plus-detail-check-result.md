@@ -107,12 +107,29 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a7f59d6943d0ad491a270cd6edea64c46">check_result</a> &amp;&amp;</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a39f8e849a894792a4fd57c87504f9c5d">operator&lt;&lt;</a> (const T &amp;msg) &amp;&amp;</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a5d811794dd00a694c7053e46f6db1cb5">operator&lt;&lt;</a> (const T &amp;msg) &amp;&amp;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Appends a message to the check. <a href="#a39f8e849a894792a4fd57c87504f9c5d">More...</a></p>
+<p>Rejects a message argument that cannot be written. <a href="#a5d811794dd00a694c7053e46f6db1cb5">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexTemplate">
+<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T&gt;</div></td>
+</tr>
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a7f59d6943d0ad491a270cd6edea64c46">check_result</a> &amp;&amp;</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#aa3998c8c01e118bb1767652d8f334306">operator&lt;&lt;</a> (const T &amp;msg) &amp;&amp;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Appends a message to the check. <a href="#aa3998c8c01e118bb1767652d8f334306">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -287,7 +304,16 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>The result of one check, reported when destroyed.</p>
 
 
-<p>Created by the caller of <span class="doxyComputerOutput">expect()</span> and <span class="doxyComputerOutput">require()</span> as a temporary, the defaulted last argument of these functions, it lives until the end of the expression statement, and the functions return a reference to it, so that a result cannot be kept in a variable (<span class="doxyComputerOutput">auto r = t.expect (...)</span> does not compile). A result in the initial state, not yet initialised, reports nothing.</p>
+<p>Created by the caller of <span class="doxyComputerOutput">expect()</span> and <span class="doxyComputerOutput">require()</span> as a temporary, the defaulted last argument of these functions, it lives until the end of the expression statement, and the functions return a reference to it, so that a result cannot be kept in a variable (<span class="doxyComputerOutput">auto r = t.expect (...)</span> does not compile). The check is reported when the result is destroyed, at the end of the statement, in the order of the statements, and not later.</p>
+
+
+
+:::warning
+<p>The result must never be named: a reference bound to it (<span class="doxyComputerOutput">auto&amp;&amp; r = t.expect (...)</span>) compiles, but dangles after the statement. The message operator and <span class="doxyComputerOutput"><a href="#a08d2a668e966f9914c1953658b4491b3">value()</a></span> can be called only on a temporary, so the named result cannot be used, and forcing it with <span class="doxyComputerOutput">std::move()</span> is undefined. The messages are appended in the same statement.</p>
+:::
+
+
+<p>A result in the initial state, not yet initialised, reports nothing.</p>
 
 
 <p>Its template function <span class="doxyComputerOutput"><a href="#ab81139f2b0c47e93b7d488976fcbbd66">init()</a></span> evaluates the expression and formats it, with the actual operand values, into the expression formatter of the reporter, which keeps the text for this check until it is reported, so that it can be displayed on failure. The messages passed via <span class="doxyComputerOutput">operator&lt;&lt;()</span> are collected into a string. The destructor reports the outcome, updates the counters of the test case, and, after a failed <span class="doxyComputerOutput">require()</span>, stops the test case.</p>
@@ -299,7 +325,7 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>Only the template function <span class="doxyComputerOutput"><a href="#ab81139f2b0c47e93b7d488976fcbbd66">init()</a></span> depends on the type of the expression; it delegates to a private non-template function, and the destructor, which does the reporting, is not a template either, so this code is compiled once, in <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/check-result-cpp">src/check-result.cpp</a></span>, not for each type of expression.</p>
 
 
-<p>Definition at line 197 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
+<p>Definition at line 208 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -335,7 +361,7 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>The instance is a temporary that lives only until the end of the expression statement; the functions that fill it return a reference to it, so that a result cannot be kept in a variable.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00255">255</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00266">266</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
 
 
 <p>Reference <a href="#a7f59d6943d0ad491a270cd6edea64c46">check_result</a>.</p>
@@ -372,7 +398,7 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>Each instance reports exactly one check, from its destructor; a copy would report it twice.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00245">245</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00256">256</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
 
 
 <p>Reference <a href="#a7f59d6943d0ad491a270cd6edea64c46">check_result</a>.</p>
@@ -407,13 +433,13 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>The members have their initial values: the result is not initialised, has no test case, and its destructor reports nothing.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00209">209</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00220">220</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
 
 
 <p>Reference <a href="#ab81139f2b0c47e93b7d488976fcbbd66">init</a>.</p>
 
 
-<p>Referenced by <a href="#ac5423d6f891819a4bf2f0bb0d4df8996">check_result</a>, <a href="#adc3eb4dbb45d2dfa7b88aac996247f10">check_result</a>, <a href="#a39f8e849a894792a4fd57c87504f9c5d">operator&lt;&lt;</a>, <a href="#a26da353e3ea2577e00106c8f1f7b316b">operator=</a> and <a href="#a231681600fe29544efcdba22c56d5740">operator=</a>.</p>
+<p>Referenced by <a href="#ac5423d6f891819a4bf2f0bb0d4df8996">check_result</a>, <a href="#adc3eb4dbb45d2dfa7b88aac996247f10">check_result</a>, <a href="#a5d811794dd00a694c7053e46f6db1cb5">operator&lt;&lt;</a>, <a href="#a26da353e3ea2577e00106c8f1f7b316b">operator=</a> and <a href="#a231681600fe29544efcdba22c56d5740">operator=</a>.</p>
 
 </div>
 </div>
@@ -471,7 +497,7 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>Without exceptions, the test execution is aborted via the runner, whose reporter writes the buffered test output, in place of the <span class="doxyComputerOutput">end_test_case()</span> that is never reached (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a7bc806540e65c21095ef1ea1ef970db2">runner::abort()</a></span>).</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00284">284</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/check-result-cpp/#l00139">139</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/check-result-cpp">check-result.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00295">295</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/check-result-cpp/#l00139">139</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/check-result-cpp">check-result.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -547,7 +573,70 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 
 ## Public Operators
 
-### operator&lt;&lt;() {#a39f8e849a894792a4fd57c87504f9c5d}
+### operator&lt;&lt;() {#a5d811794dd00a694c7053e46f6db1cb5}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<div class="doxyMemberTemplate">template &lt;class T&gt;</div>
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">check_result &amp;&amp; micro_os_plus::micro_test_plus::detail::check_result::operator&lt;&lt; (const T &amp; msg)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Rejects a message argument that cannot be written.</p>
+
+
+<p>Selected for the arguments that the message operator does not accept (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/message-argument">detail::message_argument</a></span>); it stops the compilation with a message that states what a message argument is, instead of the trace of the overload resolution. Never called.</p>
+
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Template Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">T</td>
+<td class="doxyParamItemDescription"><p>The type of the argument.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">msg</td>
+<td class="doxyParamItemDescription"><p>The argument.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="doxySectionUser">
+<dt>Returns</dt>
+<dd><p>The current check result.</p></dd>
+</dl>
+
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00338">338</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
+
+
+<p>References <a href="#a7f59d6943d0ad491a270cd6edea64c46">check_result</a>, <a href="#a5fcb3f51a91f775a688a4e1fce55486a">start</a> and <a href="#a08d2a668e966f9914c1953658b4491b3">value</a>.</p>
+
+</div>
+</div>
+
+### operator&lt;&lt;() {#aa3998c8c01e118bb1767652d8f334306}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -578,7 +667,7 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
 <td class="doxyParamItemName">T</td>
-<td class="doxyParamItemDescription"><p>The type of the message to append: a value that the formatter can write, or a callable object that returns one.</p></td>
+<td class="doxyParamItemDescription"><p>The type of the message to append: a value that the formatter can write, or a callable object that returns one (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/message-argument">detail::message_argument</a></span>); any other argument is rejected at compile time, with a message that states what is accepted.</p></td>
 </tr>
 </table>
 </dd>
@@ -614,12 +703,15 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>A callable object (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/lazy-message">detail::lazy_message</a></span>) is called only if the check failed, and its result is appended as a value; after a success, even if the outcome is written, it appends nothing, since its purpose is to describe a failure with values that may not be valid otherwise, like the error of a <span class="doxyComputerOutput">std::expected</span> that holds a value. Being a class type, a lambda without captures is called too, although it is also printable, as a <span class="doxyComputerOutput">bool</span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00306">306</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h/#l00181">181</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h">check-result-inlines.h</a>.</p>
+<p>Never called; the compilation stops here, with a message that states what a message argument is.</p>
+
+
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00319">319</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h/#l00181">181</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h">check-result-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber">181</span><span class="doxyLineContent"><span class="doxyHighlight">    check_result::operator&lt;&lt; (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; msg) &amp;&amp;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">181</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#aa3998c8c01e118bb1767652d8f334306">check_result::operator&lt;&lt;</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; msg) &amp;&amp;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">182</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">183</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> (<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/lazy-message">detail::lazy_message&lt;T&gt;</a>)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">184</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
@@ -686,10 +778,10 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>Each instance reports exactly one check, from its destructor.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00274">274</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00285">285</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
 
 
-<p>References <a href="#a7f59d6943d0ad491a270cd6edea64c46">check_result</a>, <a href="#a5fcb3f51a91f775a688a4e1fce55486a">start</a> and <a href="#a08d2a668e966f9914c1953658b4491b3">value</a>.</p>
+<p>Reference <a href="#a7f59d6943d0ad491a270cd6edea64c46">check_result</a>.</p>
 
 </div>
 </div>
@@ -723,7 +815,7 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>Each instance reports exactly one check, from its destructor.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00264">264</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00275">275</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
 
 
 <p>Reference <a href="#a7f59d6943d0ad491a270cd6edea64c46">check_result</a>.</p>
@@ -824,7 +916,7 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>The decision is taken here, while the operands are alive.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00234">234</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h/#l00105">105</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h">check-result-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00245">245</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h/#l00105">105</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h">check-result-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -865,7 +957,7 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>References <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter/#a433e0e309292ccc3e42a35076e32d6c3">micro_os_plus::micro_test_plus::detail::expression_formatter::begin_check</a>, <a href="#a9afc896b5f793149c125544eebbae21d">is_written_</a> and <a href="#a5fcb3f51a91f775a688a4e1fce55486a">start</a>.</p>
 
 
-<p>Referenced by <a href="#a7f59d6943d0ad491a270cd6edea64c46">check_result</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-expectations/#ga6db7427ada09e476aec67306ca5c0b74">micro_os_plus::micro_test_plus::test_case::expect</a> and <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-requirements/#gaad1feafeef2f3cea336be3ebe0b27e14">micro_os_plus::micro_test_plus::test_case::require</a>.</p>
+<p>Referenced by <a href="#a7f59d6943d0ad491a270cd6edea64c46">check_result</a>, <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-expectations/#ga6db7427ada09e476aec67306ca5c0b74">micro_os_plus::micro_test_plus::test_case::expect</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case/#a17e2b5c497cbbec3ad8e15b561d6b599">micro_os_plus::micro_test_plus::test_case::report_rejected_test</a> and <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-requirements/#gaad1feafeef2f3cea336be3ebe0b27e14">micro_os_plus::micro_test_plus::test_case::require</a>.</p>
 
 </div>
 </div>
@@ -926,7 +1018,7 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>Returns the result value stored in <span class="doxyComputerOutput"><a href="#af07b63cd05745cf1c4ce1b2e26ea7f45">value_</a></span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00322">322</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h/#l00142">142</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h">check-result-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00354">354</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h/#l00142">142</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h">check-result-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -942,7 +1034,7 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>Reference <a href="#af07b63cd05745cf1c4ce1b2e26ea7f45">value_</a>.</p>
 
 
-<p>Referenced by <a href="#a26da353e3ea2577e00106c8f1f7b316b">operator=</a> and <a href="#a5fcb3f51a91f775a688a4e1fce55486a">start</a>.</p>
+<p>Referenced by <a href="#a5d811794dd00a694c7053e46f6db1cb5">operator&lt;&lt;</a> and <a href="#a5fcb3f51a91f775a688a4e1fce55486a">start</a>.</p>
 
 </div>
 </div>
@@ -1021,7 +1113,7 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>When exceptions are enabled, the number of uncaught exceptions is also stored, so that the destructor can tell whether it runs during stack unwinding.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00345">345</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/check-result-cpp/#l00089">89</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/check-result-cpp">check-result.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00377">377</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/check-result-cpp/#l00089">89</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/check-result-cpp">check-result.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1045,7 +1137,7 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>References <a href="#af96f9a6d186ff05253e33d088cab8106">info_</a>, <a href="#a9afc896b5f793149c125544eebbae21d">is_written_</a>, <a href="#a577a4b3a4a8ed4c1fd86c288636646a8">test_case_</a>, <a href="#a4a9f64710ef24d140b065ae5666badeb">uncaught_exceptions_</a>, <a href="#a08d2a668e966f9914c1953658b4491b3">value</a> and <a href="#af07b63cd05745cf1c4ce1b2e26ea7f45">value_</a>.</p>
 
 
-<p>Referenced by <a href="#ab81139f2b0c47e93b7d488976fcbbd66">init</a> and <a href="#a26da353e3ea2577e00106c8f1f7b316b">operator=</a>.</p>
+<p>Referenced by <a href="#ab81139f2b0c47e93b7d488976fcbbd66">init</a> and <a href="#a5d811794dd00a694c7053e46f6db1cb5">operator&lt;&lt;</a>.</p>
 
 </div>
 </div>
@@ -1080,17 +1172,17 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>The kind, the expression flag, and the location are set by <span class="doxyComputerOutput"><a href="#a5fcb3f51a91f775a688a4e1fce55486a">start()</a></span>; the message is collected via <span class="doxyComputerOutput">operator&lt;&lt;()</span>. Passed to the reporter by the destructor; the message is also displayed when the check passes.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00378">378</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00410">410</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#af96f9a6d186ff05253e33d088cab8106">378</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/failure-info">failure_info</a> <a href="#af96f9a6d186ff05253e33d088cab8106">info_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#af96f9a6d186ff05253e33d088cab8106">410</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/failure-info">failure_info</a> <a href="#af96f9a6d186ff05253e33d088cab8106">info_</a>;</span></span></div>
 
 </div>
 
 
-<p>Referenced by <a href="#ae3b88e57597f9fcd04536b894bebef5e">~check_result</a>, <a href="#a39f8e849a894792a4fd57c87504f9c5d">operator&lt;&lt;</a> and <a href="#a5fcb3f51a91f775a688a4e1fce55486a">start</a>.</p>
+<p>Referenced by <a href="#ae3b88e57597f9fcd04536b894bebef5e">~check_result</a>, <a href="#aa3998c8c01e118bb1767652d8f334306">operator&lt;&lt;</a> and <a href="#a5fcb3f51a91f775a688a4e1fce55486a">start</a>.</p>
 
 </div>
 </div>
@@ -1119,17 +1211,17 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>Set by <span class="doxyComputerOutput"><a href="#a5fcb3f51a91f775a688a4e1fce55486a">start()</a></span> for a failed check, and for a passed one when the reporter writes the passed checks. When not set, the expression and the messages are not formatted, and the destructor only updates the counters.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00367">367</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00399">399</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a9afc896b5f793149c125544eebbae21d">367</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#a9afc896b5f793149c125544eebbae21d">is_written_</a> = false;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a9afc896b5f793149c125544eebbae21d">399</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#a9afc896b5f793149c125544eebbae21d">is_written_</a> = false;</span></span></div>
 
 </div>
 
 
-<p>Referenced by <a href="#ae3b88e57597f9fcd04536b894bebef5e">~check_result</a>, <a href="#ab81139f2b0c47e93b7d488976fcbbd66">init</a>, <a href="#a39f8e849a894792a4fd57c87504f9c5d">operator&lt;&lt;</a> and <a href="#a5fcb3f51a91f775a688a4e1fce55486a">start</a>.</p>
+<p>Referenced by <a href="#ae3b88e57597f9fcd04536b894bebef5e">~check_result</a>, <a href="#ab81139f2b0c47e93b7d488976fcbbd66">init</a>, <a href="#aa3998c8c01e118bb1767652d8f334306">operator&lt;&lt;</a> and <a href="#a5fcb3f51a91f775a688a4e1fce55486a">start</a>.</p>
 
 </div>
 </div>
@@ -1158,12 +1250,12 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>Provides access to the reporter and to the totals to be updated. Null in the initial state, which marks a result that was not initialised and reports nothing.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00402">402</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00434">434</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a577a4b3a4a8ed4c1fd86c288636646a8">402</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a>* <a href="#a577a4b3a4a8ed4c1fd86c288636646a8">test_case_</a> = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a577a4b3a4a8ed4c1fd86c288636646a8">434</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a>* <a href="#a577a4b3a4a8ed4c1fd86c288636646a8">test_case_</a> = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">;</span></span></div>
 
 </div>
 
@@ -1197,12 +1289,12 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>If the destructor finds more, it runs during stack unwinding (an exception was thrown while the rest of the statement was evaluated, for example by the argument of a message), and must not throw. Present only when exceptions are enabled.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00391">391</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00423">423</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4a9f64710ef24d140b065ae5666badeb">391</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="#a4a9f64710ef24d140b065ae5666badeb">uncaught_exceptions_</a> = 0;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4a9f64710ef24d140b065ae5666badeb">423</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="#a4a9f64710ef24d140b065ae5666badeb">uncaught_exceptions_</a> = 0;</span></span></div>
 
 </div>
 
@@ -1236,17 +1328,17 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>The boolean value of the checked expression, computed by the template function <span class="doxyComputerOutput"><a href="#ab81139f2b0c47e93b7d488976fcbbd66">init()</a></span>.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00356">356</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00388">388</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#af07b63cd05745cf1c4ce1b2e26ea7f45">356</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#af07b63cd05745cf1c4ce1b2e26ea7f45">value_</a> = false;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#af07b63cd05745cf1c4ce1b2e26ea7f45">388</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#af07b63cd05745cf1c4ce1b2e26ea7f45">value_</a> = false;</span></span></div>
 
 </div>
 
 
-<p>Referenced by <a href="#ae3b88e57597f9fcd04536b894bebef5e">~check_result</a>, <a href="#a39f8e849a894792a4fd57c87504f9c5d">operator&lt;&lt;</a>, <a href="#a5fcb3f51a91f775a688a4e1fce55486a">start</a> and <a href="#a08d2a668e966f9914c1953658b4491b3">value</a>.</p>
+<p>Referenced by <a href="#ae3b88e57597f9fcd04536b894bebef5e">~check_result</a>, <a href="#aa3998c8c01e118bb1767652d8f334306">operator&lt;&lt;</a>, <a href="#a5fcb3f51a91f775a688a4e1fce55486a">start</a> and <a href="#a08d2a668e966f9914c1953658b4491b3">value</a>.</p>
 
 </div>
 </div>

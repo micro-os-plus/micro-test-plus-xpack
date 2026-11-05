@@ -219,10 +219,10 @@ Typedefs</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> formatter &lt;&lt; <span class="stringliteral">&quot;{ &quot;</span> &lt;&lt; p.x &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; p.y &lt;&lt; <span class="stringliteral">&quot; }&quot;</span>;</div>
 <div class="line">  }</div>
 <div class="line">} <span class="comment">// namespace app</span></div>
-</div><!-- fragment --><p>Without such an operator, comparators such as <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gada610d1d5701b79f3df916f6e397ea06" title="Generic equality comparator.">eq()</a></span> do not compile for user-defined types, since the operand values cannot be formatted; only the scoped enumerations are formatted without it, by their underlying value. Plain boolean checks, such as <span class="tt">expect (a == b)</span>, do not need it, but they report only the source location on failure. The same operator also writes the values appended to the messages of the checks (<span class="tt">expect (a == b) &lt;&lt; "a is " &lt;&lt; a</span>).</p>
+</div><!-- fragment --><p>Without such an operator, comparators such as <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga0fbc0f7ddf0107c1e5265bb79287487d" title="Generic equality comparator.">eq()</a></span> do not compile for user-defined types, since the operand values cannot be formatted; only the scoped enumerations are formatted without it, by their underlying value. Plain boolean checks, such as <span class="tt">expect (a == b)</span>, do not need it, but they report only the source location on failure. The same operator also writes the values appended to the messages of the checks (<span class="tt">expect (a == b) &lt;&lt; "a is " &lt;&lt; a</span>).</p>
 <p>Applications use the <span class="tt">operator&lt;&lt;</span> overloads, and <span class="tt">str()</span> to test their own operators; the functions that manage the buffer are private to the framework. </p>
 
-<p class="definition">Definition at line <a class="el" href="expression-formatter_8h_source.html#l01720">1720</a> of file <a class="el" href="expression-formatter_8h_source.html">expression-formatter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="expression-formatter_8h_source.html#l01824">1824</a> of file <a class="el" href="expression-formatter_8h_source.html">expression-formatter.h</a>.</p>
 
 </div>
 </div>

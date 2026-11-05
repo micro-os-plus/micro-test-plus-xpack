@@ -4,5 +4,5 @@ var searchData=
   ['value_5fbase_1',['value_base',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html#ad2d04a9ef0d53c48107b13005ec0877d',1,'micro_os_plus::micro_test_plus::detail::value_base']]],
   ['verbosity_2',['verbosity',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a467d1332df523b9acaa3ff82b0ebb714',1,'micro_os_plus::micro_test_plus::detail::reporter::verbosity()'],['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a94a9df0418776ebce476cd9a2e4f591f',1,'micro_os_plus::micro_test_plus::runner::verbosity(void) const noexcept -&gt; micro_test_plus::verbosity']]],
   ['verbosity_5flevel_3',['verbosity_level',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a1dd0221dca8e7382f0b625ff6316ed92',1,'micro_os_plus::micro_test_plus::runner']]],
-  ['view_4',['view',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string.html#ae80c2a30d372f12aac55094520d6f68b',1,'micro_os_plus::micro_test_plus::detail::c_string']]]
+  ['view_4',['view',['../structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html#a0851477f1a58ad82284847d1ebaf5201',1,'micro_os_plus::micro_test_plus::detail::basic_c_string']]]
 ];

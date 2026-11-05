@@ -361,10 +361,50 @@
                         },
                         {
                           "type": "category",
+                          "label": "ambiguous_condition",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/concepts/micro-os-plus-micro-test-plus-detail-ambiguous-condition"
+                          },
+                          "collapsed": true,
+                          "items": []
+                        },
+                        {
+                          "type": "category",
+                          "label": "character",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/concepts/micro-os-plus-micro-test-plus-detail-character"
+                          },
+                          "collapsed": true,
+                          "items": []
+                        },
+                        {
+                          "type": "category",
+                          "label": "character_pointer",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/concepts/micro-os-plus-micro-test-plus-detail-character-pointer"
+                          },
+                          "collapsed": true,
+                          "items": []
+                        },
+                        {
+                          "type": "category",
                           "label": "comparable",
                           "link": {
                             "type": "doc",
                             "id": "api/concepts/micro-os-plus-micro-test-plus-detail-comparable"
+                          },
+                          "collapsed": true,
+                          "items": []
+                        },
+                        {
+                          "type": "category",
+                          "label": "comparable_operands",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/concepts/micro-os-plus-micro-test-plus-detail-comparable-operands"
                           },
                           "collapsed": true,
                           "items": []
@@ -385,6 +425,16 @@
                           "link": {
                             "type": "doc",
                             "id": "api/concepts/micro-os-plus-micro-test-plus-detail-formattable-range"
+                          },
+                          "collapsed": true,
+                          "items": []
+                        },
+                        {
+                          "type": "category",
+                          "label": "free_printable",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/concepts/micro-os-plus-micro-test-plus-detail-free-printable"
                           },
                           "collapsed": true,
                           "items": []
@@ -441,10 +491,30 @@
                         },
                         {
                           "type": "category",
+                          "label": "legacy_checkable",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/concepts/micro-os-plus-micro-test-plus-detail-legacy-checkable"
+                          },
+                          "collapsed": true,
+                          "items": []
+                        },
+                        {
+                          "type": "category",
                           "label": "member_printable",
                           "link": {
                             "type": "doc",
                             "id": "api/concepts/micro-os-plus-micro-test-plus-detail-member-printable"
+                          },
+                          "collapsed": true,
+                          "items": []
+                        },
+                        {
+                          "type": "category",
+                          "label": "message_argument",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/concepts/micro-os-plus-micro-test-plus-detail-message-argument"
                           },
                           "collapsed": true,
                           "items": []
@@ -485,6 +555,26 @@
                           "link": {
                             "type": "doc",
                             "id": "api/concepts/micro-os-plus-micro-test-plus-detail-suite-body"
+                          },
+                          "collapsed": true,
+                          "items": []
+                        },
+                        {
+                          "type": "category",
+                          "label": "suspicious_condition",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/concepts/micro-os-plus-micro-test-plus-detail-suspicious-condition"
+                          },
+                          "collapsed": true,
+                          "items": []
+                        },
+                        {
+                          "type": "category",
+                          "label": "tag_has_symbol",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/concepts/micro-os-plus-micro-test-plus-detail-tag-has-symbol"
                           },
                           "collapsed": true,
                           "items": []
@@ -603,16 +693,6 @@
                         },
                         {
                           "type": "category",
-                          "label": "legacy_checkable",
-                          "link": {
-                            "type": "doc",
-                            "id": "api/concepts/micro-os-plus-micro-test-plus-extension-legacy-checkable"
-                          },
-                          "collapsed": true,
-                          "items": []
-                        },
-                        {
-                          "type": "category",
                           "label": "predicate_tag",
                           "link": {
                             "type": "doc",
@@ -627,16 +707,6 @@
                           "link": {
                             "type": "doc",
                             "id": "api/concepts/micro-os-plus-micro-test-plus-extension-printable"
-                          },
-                          "collapsed": true,
-                          "items": []
-                        },
-                        {
-                          "type": "category",
-                          "label": "suspicious_condition",
-                          "link": {
-                            "type": "doc",
-                            "id": "api/concepts/micro-os-plus-micro-test-plus-extension-suspicious-condition"
                           },
                           "collapsed": true,
                           "items": []
@@ -724,15 +794,15 @@
             },
             {
               "type": "doc",
-              "label": "bound_callable<Self_T, Callable_T, Args_T>",
+              "label": "basic_c_string<Char_T>",
               "className": "doxyEllipsis",
-              "id": "api/classes/micro-os-plus-micro-test-plus-detail-bound-callable"
+              "id": "api/structs/micro-os-plus-micro-test-plus-detail-basic-c-string"
             },
             {
               "type": "doc",
-              "label": "c_string",
+              "label": "bound_callable<Self_T, Callable_T, Args_T>",
               "className": "doxyEllipsis",
-              "id": "api/structs/micro-os-plus-micro-test-plus-detail-c-string"
+              "id": "api/classes/micro-os-plus-micro-test-plus-detail-bound-callable"
             },
             {
               "type": "doc",
@@ -763,6 +833,18 @@
               "label": "colours",
               "className": "doxyEllipsis",
               "id": "api/structs/micro-os-plus-micro-test-plus-detail-colours"
+            },
+            {
+              "type": "doc",
+              "label": "comparison_integer<T>",
+              "className": "doxyEllipsis",
+              "id": "api/structs/micro-os-plus-micro-test-plus-detail-comparison-integer"
+            },
+            {
+              "type": "doc",
+              "label": "comparison_integer<T>",
+              "className": "doxyEllipsis",
+              "id": "api/structs/micro-os-plus-micro-test-plus-detail-comparison-integer-f7399366cd6336ecbea702c3289d9432"
             },
             {
               "type": "doc",
@@ -859,6 +941,12 @@
               "label": "integral_min_magnitude<T>",
               "className": "doxyEllipsis",
               "id": "api/structs/micro-os-plus-micro-test-plus-detail-integral-min-magnitude"
+            },
+            {
+              "type": "doc",
+              "label": "is_bool_wrapper<T>",
+              "className": "doxyEllipsis",
+              "id": "api/structs/micro-os-plus-micro-test-plus-detail-is-bool-wrapper"
             },
             {
               "type": "doc",

@@ -122,24 +122,23 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 <h2 id="header-conceptdef" class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Lhs_T, <span class="keyword">class</span> Rhs_T&gt;</div>
 <div class="line">    <span class="keyword">concept </span><a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1sign__mixed__integers.html">sign_mixed_integers</a> = std::is_integral_v&lt;Lhs_T&gt; and std::is_integral_v&lt;Rhs_T&gt;</div>
-<div class="line">          and (std::is_signed_v&lt;Lhs_T&gt; != std::is_signed_v&lt;Rhs_T&gt;)</div>
 <div class="line">          and (not std::is_same_v&lt;Lhs_T, bool&gt;)</div>
 <div class="line">          and (not std::is_same_v&lt;Rhs_T, bool&gt;)</div>
-<div class="line">          and (not std::is_same_v&lt;Lhs_T, char&gt;)</div>
-<div class="line">          and (not std::is_same_v&lt;Rhs_T, char&gt;)</div>
-<div class="line">          and (not std::is_same_v&lt;Lhs_T, wchar_t&gt;)</div>
-<div class="line">          and (not std::is_same_v&lt;Rhs_T, wchar_t&gt;)</div>
-<div class="line">          and (not std::is_same_v&lt;Lhs_T, char8_t&gt;)</div>
-<div class="line">          and (not std::is_same_v&lt;Rhs_T, char8_t&gt;)</div>
-<div class="line">          and (not std::is_same_v&lt;Lhs_T, char16_t&gt;)</div>
-<div class="line">          and (not std::is_same_v&lt;Rhs_T, char16_t&gt;)</div>
-<div class="line">          and (not std::is_same_v&lt;Lhs_T, char32_t&gt;)</div>
-<div class="line">          and (not std::is_same_v&lt;Rhs_T, char32_t&gt;)</div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1sign__mixed__integers_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1sign__mixed__integers.html">micro_os_plus::micro_test_plus::detail::sign_mixed_integers</a></div><div class="ttdoc">Concept satisfied by two integer types of different signedness.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00278">detail-inlines.h:279</a></div></div>
+<div class="line">          and (std::is_signed_v&lt;<a class="code hl_typedef" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51cdb19f7f3312bb3946451261c83ece">comparison_integer_t&lt;Lhs_T&gt;</a>&gt;</div>
+<div class="line">               != std::is_signed_v&lt;<a class="code hl_typedef" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51cdb19f7f3312bb3946451261c83ece">comparison_integer_t&lt;Rhs_T&gt;</a>&gt;)</div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1sign__mixed__integers_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1sign__mixed__integers.html">micro_os_plus::micro_test_plus::detail::sign_mixed_integers</a></div><div class="ttdoc">Concept satisfied by two integer types of different signedness.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00368">detail-inlines.h:369</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a51cdb19f7f3312bb3946451261c83ece"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51cdb19f7f3312bb3946451261c83ece">micro_os_plus::micro_test_plus::detail::comparison_integer_t</a></div><div class="ttdeci">typename comparison_integer&lt; T &gt;::type comparison_integer_t</div><div class="ttdoc">Alias of the integer type used to compare the type T.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00326">detail-inlines.h:326</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The built-in comparison of a signed and an unsigned operand converts the signed one to the unsigned type, so <span class="tt">-1 &lt; 1u</span> is false. For these pairs the comparisons use the <span class="tt">std::cmp_*()</span> functions, which compare the mathematical values. <span class="tt">bool</span> and the character types are excluded, since <span class="tt">std::cmp_*()</span> do not accept them and their comparison with integers is not a sign problem. </p>
+<div class="textblock"><p>The built-in comparison of a signed and an unsigned operand converts the signed one to the unsigned type, so <span class="tt">-1 &lt; 1u</span> is false. For these pairs the comparisons use the <span class="tt">std::cmp_*()</span> functions, which compare the mathematical values. The character types take part as the integers of the same size and signedness (see <span class="tt">comparison_integer</span>), since the built-in comparison of a signed <span class="tt">char</span> with an <span class="tt">unsigned</span>, or of a <span class="tt">char32_t</span> with an <span class="tt">int</span>, has the same problem. <span class="tt">bool</span> is excluded, since <span class="tt">std::cmp_*()</span> do not accept it and its comparison with integers is not a sign problem.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Lhs_T</td><td>The type of the left operand. </td></tr>
+    <tr><td class="paramname">Rhs_T</td><td>The type of the right operand. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00278">278</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00368">368</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

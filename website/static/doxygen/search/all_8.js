@@ -12,12 +12,13 @@ var searchData=
   ['has_5foutput_5ffile_5ferror_9',['has_output_file_error',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a083ecdfa952d7f8c372a61fbea309357',1,'micro_os_plus::micro_test_plus::detail::reporter']]],
   ['has_5foutput_5ffile_5ferror_5f_10',['has_output_file_error_',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a0d73674812cca717a754137b4b26ed89',1,'micro_os_plus::micro_test_plus::detail::reporter']]],
   ['has_5frejected_5fcalls_5f_11',['has_rejected_calls_',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a97e4cdd2eb8a2bf9a3714b29825683eb',1,'micro_os_plus::micro_test_plus::runner']]],
-  ['has_5ftimestamps_12',['has_timestamps',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html#ac698189ef451dfe398d779eb7cccda7f',1,'micro_os_plus::micro_test_plus::detail::stopwatch']]],
-  ['has_5ftop_5fsuite_5f_13',['has_top_suite_',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a4a43729c815ce9b3e3f15a650f011f66',1,'micro_os_plus::micro_test_plus::runner']]],
-  ['has_5funknown_5foption_14',['has_unknown_option',['../classmicro__os__plus_1_1micro__test__plus_1_1runner__options.html#a117509554a3549c7a7c836506050b8ef',1,'micro_os_plus::micro_test_plus::runner_options']]],
-  ['has_5fvalue_15',['has_value',['../conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1has__value.html',1,'micro_os_plus::micro_test_plus::detail'],['../conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__value.html',1,'micro_os_plus::micro_test_plus::type_traits']]],
-  ['help_16',['Help',['../group__micro-os-plus-micro-test-plus-cli.html#cli-help',1,'']]],
-  ['help_17',['help',['../classmicro__os__plus_1_1micro__test__plus_1_1runner__options.html#a36b690e87d69f1124c8fff4d4a59f90c',1,'micro_os_plus::micro_test_plus::runner_options']]],
-  ['help_5foptions_18',['help_options',['../namespacemicro__os__plus_1_1micro__test__plus_1_1anonymous__namespace_02runner_8cpp_03.html#a93bc763e06193fa6de523088f09a8816',1,'micro_os_plus::micro_test_plus::anonymous_namespace{runner.cpp}']]],
-  ['human_19',['human',['../namespacemicro__os__plus_1_1micro__test__plus.html#a913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70',1,'micro_os_plus::micro_test_plus']]]
+  ['has_5frunning_5ftest_5fcase_5fof_12',['has_running_test_case_of',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#abd436b75b0dce84f8d4108e97f37a82e',1,'micro_os_plus::micro_test_plus::detail::runnable_base']]],
+  ['has_5ftimestamps_13',['has_timestamps',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch.html#ac698189ef451dfe398d779eb7cccda7f',1,'micro_os_plus::micro_test_plus::detail::stopwatch']]],
+  ['has_5ftop_5fsuite_5f_14',['has_top_suite_',['../classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a4a43729c815ce9b3e3f15a650f011f66',1,'micro_os_plus::micro_test_plus::runner']]],
+  ['has_5funknown_5foption_15',['has_unknown_option',['../classmicro__os__plus_1_1micro__test__plus_1_1runner__options.html#a117509554a3549c7a7c836506050b8ef',1,'micro_os_plus::micro_test_plus::runner_options']]],
+  ['has_5fvalue_16',['has_value',['../conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1has__value.html',1,'micro_os_plus::micro_test_plus::detail'],['../conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__value.html',1,'micro_os_plus::micro_test_plus::type_traits']]],
+  ['help_17',['Help',['../group__micro-os-plus-micro-test-plus-cli.html#cli-help',1,'']]],
+  ['help_18',['help',['../classmicro__os__plus_1_1micro__test__plus_1_1runner__options.html#a36b690e87d69f1124c8fff4d4a59f90c',1,'micro_os_plus::micro_test_plus::runner_options']]],
+  ['help_5foptions_19',['help_options',['../namespacemicro__os__plus_1_1micro__test__plus_1_1anonymous__namespace_02runner_8cpp_03.html#a93bc763e06193fa6de523088f09a8816',1,'micro_os_plus::micro_test_plus::anonymous_namespace{runner.cpp}']]],
+  ['human_20',['human',['../namespacemicro__os__plus_1_1micro__test__plus.html#a913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70',1,'micro_os_plus::micro_test_plus']]]
 ];

@@ -32,7 +32,7 @@
 </para>
 <para>If the marker is not found, or the compiler is not supported (e.g. MSVC, which uses <computeroutput>__FUNCSIG__</computeroutput> instead of <computeroutput>__PRETTY_FUNCTION__</computeroutput>), the function returns <computeroutput>"unknown"</computeroutput> rather than failing to compile, since the name is used only to improve the test output.</para>
 <para>The expected layouts are verified at compile time by the <computeroutput>static_assert</computeroutput> checks that follow the definition.</para>
-<para>The name is spelled as the compiler prints it, and is used to identify the expected exception type in the <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga63345b69c376caae707262748aa6aea1" kindref="member">throws</ref>&lt;E&gt;</computeroutput> failure messages. Only clang and GCC are supported; with other compilers the function returns <computeroutput>"unknown"</computeroutput>.</para>
+<para>The name is spelled as the compiler prints it, and is used to identify the expected exception type in the <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga6a0ca4f8b757ea511c494189212812b3" kindref="member">throws</ref>&lt;E&gt;</computeroutput> failure messages. Only clang and GCC are supported; with other compilers the function returns <computeroutput>"unknown"</computeroutput>.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>T</parametername>
@@ -52,7 +52,7 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" line="153" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" bodystart="153" bodyend="184" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="225" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" compoundref="reflection-inlines_8h" startline="153" endline="184">type_name</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6734ab254c188ce23514b5e84dd1232f" compoundref="expression-formatter-inlines_8h" startline="693" endline="708">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6734ab254c188ce23514b5e84dd1232f" compoundref="expression-formatter-inlines_8h" startline="765" endline="780">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" compoundref="reflection-inlines_8h" startline="153" endline="184">type_name</referencedby>
       </memberdef>
     </sectiondef>

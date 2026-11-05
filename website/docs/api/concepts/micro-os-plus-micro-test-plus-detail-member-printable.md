@@ -33,7 +33,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>Concept satisfied by the types that the formatter writes with one of its own member functions <span class="doxyComputerOutput">operator&lt;&lt;</span>.</p>
 
 
-<p>The types that satisfy <span class="doxyComputerOutput">extension::printable</span> but not this concept are the application types, written by a free <span class="doxyComputerOutput">operator&lt;&lt;</span> found by argument-dependent lookup.</p>
+<p>The types that satisfy <span class="doxyComputerOutput">extension::printable</span> but not this concept are the application types, written by a free <span class="doxyComputerOutput">operator&lt;&lt;</span> found by argument-dependent lookup. A type may satisfy both, if it is accepted by a template of the formatter (a scoped enumeration, or a type with <span class="doxyComputerOutput">begin()</span> and <span class="doxyComputerOutput">end()</span>) and the application also defines an <span class="doxyComputerOutput">operator&lt;&lt;</span> for it; see <span class="doxyComputerOutput">free_printable</span>.</p>
 
 
 <dl class="doxyParamsList">
@@ -48,7 +48,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 </dd>
 </dl>
 
-<p>Definition at line 1663 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h">expression-formatter.h</a>.</p>
+<p>Definition at line 1743 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h">expression-formatter.h</a>.</p>
 
 
 <div class="doxyProgramListing">

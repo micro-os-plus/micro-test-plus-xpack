@@ -13,7 +13,7 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1mem
             formatter.operator&lt;&lt; (<ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" kindref="compound">value</ref>);
           }</initializer>
     <conceptparts>
-      <codepart line="1664">    <programlisting>
+      <codepart line="1744">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">member_printable<sp/>=<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-customisation_1gabecc05360d0941067222d827ff8e3f08" kindref="member">expression_formatter</ref>&amp;<sp/>formatter,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>value)<sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>formatter.operator&lt;&lt;<sp/>(value);</highlight></codeline>
@@ -25,7 +25,7 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1mem
 <para>Concept satisfied by the types that the formatter writes with one of its own member functions <computeroutput>operator&lt;&lt;</computeroutput>. </para>
     </briefdescription>
     <detaileddescription>
-<para>The types that satisfy <computeroutput>extension::printable</computeroutput> but not this concept are the application types, written by a free <computeroutput>operator&lt;&lt;</computeroutput> found by argument-dependent lookup.</para>
+<para>The types that satisfy <computeroutput>extension::printable</computeroutput> but not this concept are the application types, written by a free <computeroutput>operator&lt;&lt;</computeroutput> found by argument-dependent lookup. A type may satisfy both, if it is accepted by a template of the formatter (a scoped enumeration, or a type with <computeroutput>begin()</computeroutput> and <computeroutput>end()</computeroutput>) and the application also defines an <computeroutput>operator&lt;&lt;</computeroutput> for it; see <computeroutput>free_printable</computeroutput>.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>T</parametername>
@@ -37,6 +37,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1mem
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="1663" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="1743" column="5"/>
   </compounddef>
 </doxygen>

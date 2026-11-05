@@ -50,7 +50,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 
 <ul class="doxyList ">
-<li>is not an array, since the arrays are compared by address, and are written as addresses, as the pointers they decay to;</li>
+<li>is not an array, since the comparators convert the arrays to <span class="doxyComputerOutput">basic_c_string</span>, written as text, or to <span class="doxyComputerOutput">array_operand</span>, a range (see <span class="doxyComputerOutput">as_operand()</span>), and an array given to the formatter directly is written as text, if it holds characters, or otherwise as the address it decays to;</li>
 <li>is not a string (see <span class="doxyComputerOutput">string_like</span>), which is written as text;</li>
 <li>does not have elements of its own type, like <span class="doxyComputerOutput">std::filesystem::path</span>, whose elements are paths, so that formatting it would recurse without end;</li>
 <li>has elements that satisfy <span class="doxyComputerOutput">extension::printable</span>, so that a range of elements that cannot be reported is rejected where it is compared, not where its elements are formatted.</li>
@@ -59,7 +59,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>The conditions are tested in this order, so the elements of a recursive range are not tested.</p>
 
 
-<p>Definition at line 564 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 662 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">

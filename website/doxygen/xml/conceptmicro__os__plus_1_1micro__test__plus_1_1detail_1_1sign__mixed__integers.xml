@@ -13,36 +13,18 @@
     </templateparamlist>
     <initializer>template&lt;class Lhs_T, class Rhs_T&gt;
 concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1sign__mixed__integers" kindref="compound">micro_os_plus::micro_test_plus::detail::sign_mixed_integers</ref> =  std::is_integral_v&lt;Lhs_T&gt; and std::is_integral_v&lt;Rhs_T&gt;
-          and (std::is_signed_v&lt;Lhs_T&gt; != std::is_signed_v&lt;Rhs_T&gt;)
           and (not std::is_same_v&lt;Lhs_T, bool&gt;)
           and (not std::is_same_v&lt;Rhs_T, bool&gt;)
-          and (not std::is_same_v&lt;Lhs_T, char&gt;)
-          and (not std::is_same_v&lt;Rhs_T, char&gt;)
-          and (not std::is_same_v&lt;Lhs_T, wchar_t&gt;)
-          and (not std::is_same_v&lt;Rhs_T, wchar_t&gt;)
-          and (not std::is_same_v&lt;Lhs_T, char8_t&gt;)
-          and (not std::is_same_v&lt;Rhs_T, char8_t&gt;)
-          and (not std::is_same_v&lt;Lhs_T, char16_t&gt;)
-          and (not std::is_same_v&lt;Rhs_T, char16_t&gt;)
-          and (not std::is_same_v&lt;Lhs_T, char32_t&gt;)
-          and (not std::is_same_v&lt;Rhs_T, char32_t&gt;)</initializer>
+          and (std::is_signed_v&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51cdb19f7f3312bb3946451261c83ece" kindref="member">comparison_integer_t</ref>&lt;Lhs_T&gt;&gt;
+               != std::is_signed_v&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51cdb19f7f3312bb3946451261c83ece" kindref="member">comparison_integer_t</ref>&lt;Rhs_T&gt;&gt;)</initializer>
     <conceptparts>
-      <codepart line="279">    <programlisting>
+      <codepart line="369">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">sign_mixed_integers<sp/>=<sp/>std::is_integral_v&lt;Lhs_T&gt;<sp/>and<sp/>std::is_integral_v&lt;Rhs_T&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(std::is_signed_v&lt;Lhs_T&gt;<sp/>!=<sp/>std::is_signed_v&lt;Rhs_T&gt;)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(not<sp/>std::is_same_v&lt;Lhs_T,<sp/>bool&gt;)</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(not<sp/>std::is_same_v&lt;Rhs_T,<sp/>bool&gt;)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(not<sp/>std::is_same_v&lt;Lhs_T,<sp/>char&gt;)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(not<sp/>std::is_same_v&lt;Rhs_T,<sp/>char&gt;)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(not<sp/>std::is_same_v&lt;Lhs_T,<sp/>wchar_t&gt;)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(not<sp/>std::is_same_v&lt;Rhs_T,<sp/>wchar_t&gt;)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(not<sp/>std::is_same_v&lt;Lhs_T,<sp/>char8_t&gt;)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(not<sp/>std::is_same_v&lt;Rhs_T,<sp/>char8_t&gt;)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(not<sp/>std::is_same_v&lt;Lhs_T,<sp/>char16_t&gt;)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(not<sp/>std::is_same_v&lt;Rhs_T,<sp/>char16_t&gt;)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(not<sp/>std::is_same_v&lt;Lhs_T,<sp/>char32_t&gt;)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(not<sp/>std::is_same_v&lt;Rhs_T,<sp/>char32_t&gt;)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(std::is_signed_v&lt;comparison_integer_t&lt;Lhs_T&gt;&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!=<sp/>std::is_signed_v&lt;comparison_integer_t&lt;Rhs_T&gt;&gt;)</highlight></codeline>
     </programlisting>
 </codepart>
     </conceptparts>
@@ -50,8 +32,26 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1sig
 <para>Concept satisfied by two integer types of different signedness. </para>
     </briefdescription>
     <detaileddescription>
-<para>The built-in comparison of a signed and an unsigned operand converts the signed one to the unsigned type, so <computeroutput>-1 &lt; 1u</computeroutput> is false. For these pairs the comparisons use the <computeroutput>std::cmp_*()</computeroutput> functions, which compare the mathematical values. <computeroutput>bool</computeroutput> and the character types are excluded, since <computeroutput>std::cmp_*()</computeroutput> do not accept them and their comparison with integers is not a sign problem. </para>
+<para>The built-in comparison of a signed and an unsigned operand converts the signed one to the unsigned type, so <computeroutput>-1 &lt; 1u</computeroutput> is false. For these pairs the comparisons use the <computeroutput>std::cmp_*()</computeroutput> functions, which compare the mathematical values. The character types take part as the integers of the same size and signedness (see <computeroutput>comparison_integer</computeroutput>), since the built-in comparison of a signed <computeroutput>char</computeroutput> with an <computeroutput>unsigned</computeroutput>, or of a <computeroutput>char32_t</computeroutput> with an <computeroutput>int</computeroutput>, has the same problem. <computeroutput>bool</computeroutput> is excluded, since <computeroutput>std::cmp_*()</computeroutput> do not accept it and its comparison with integers is not a sign problem.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the left operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the right operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="278" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="368" column="5"/>
   </compounddef>
 </doxygen>

@@ -17,7 +17,7 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1
       { Tag_T::apply (operand) } -&gt; std::convertible_to&lt;bool&gt;;
     }</initializer>
     <conceptparts>
-      <codepart line="400">    <programlisting>
+      <codepart line="474">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Tag_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">predicate_tag<sp/>=<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>operand)<sp/>{</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>printable&lt;std::remove_cvref_t&lt;</highlight><highlight class="keyword">decltype</highlight><highlight class="normal"><sp/>(Tag_T::symbol)&gt;&gt;;</highlight></codeline>
@@ -50,6 +50,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="400" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="474" column="5"/>
   </compounddef>
 </doxygen>

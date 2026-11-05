@@ -23,8 +23,7 @@ keywords:
 
 <div class="doxyDefinition">
 template &lt;class T&gt;<br/>
-concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/unsupported-condition">micro_os_plus::micro_test_plus::detail::unsupported_condition</a> =  (not extension::checkable&lt;T&gt;)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and (not extension::legacy_checkable&lt;T&gt;)
+concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/unsupported-condition">micro_os_plus::micro_test_plus::detail::unsupported_condition</a> =  (not extension::checkable&lt;T&gt;) and (not detail::legacy_checkable&lt;T&gt;)
 </div>
 
 ## Description {#details}
@@ -47,14 +46,13 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 </dd>
 </dl>
 
-<p>Definition at line 1160 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>.</p>
+<p>Definition at line 1241 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight">&lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> T&gt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">concept </span><span class="doxyHighlight">unsupported_condition = (not extension::checkable&lt;T&gt;)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">          and (not extension::legacy_checkable&lt;T&gt;)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">concept </span><span class="doxyHighlight">unsupported_condition = (not extension::checkable&lt;T&gt;) and (not detail::legacy_checkable&lt;T&gt;)</span></span></div>
 
 </div>
 

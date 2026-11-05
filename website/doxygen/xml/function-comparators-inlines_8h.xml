@@ -47,12 +47,445 @@
       <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" kind="function"><name>all_of</name></member>
       <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" kind="function"><name>any_of</name></member>
       <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0d374ffc56933dccd3ffba008ab7eaa5" kind="function"><name>approx</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kind="function"><name>eq</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga989e5966794d5c5487477aa782d844b1" kind="function"><name>ge</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf32fd09749f18635233613fa48f91b56" kind="function"><name>gt</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf9e47a6e18771f969cdd840ec187734a" kind="function"><name>le</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaea39573e23de35872ace5b08d2514327" kind="function"><name>lt</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa77076edd474fc10d8c0bd6da623e284" kind="function"><name>ne</name></member>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1ab88360ce7994d5e5ac71deff0450a638" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::eq</definition>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
+        <name>eq</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::eq</qualifiedname>
+        <param>
+          <type>Lhs_T &amp;&amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>Rhs_T &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+    <requiresclause>(not detail::comparable_operands&lt;detail::comparison::equal, Lhs_T, Rhs_T&gt;)    </requiresclause>
+        <briefdescription>
+<para>Rejects operands that cannot be compared with <computeroutput>==</computeroutput> or written. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Selected for the operands that <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref></computeroutput> does not accept (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands" kindref="compound">detail::comparable_operands</ref></computeroutput>); it stops the compilation with a message that states what is wrong, instead of the notes of the concepts. Never called.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>false</computeroutput>, to avoid further errors in the check; the type is not deduced, so that the call can be used in an unevaluated operand.</para>
+</simplesect>
+Never called; the compilation stops in <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a767a45bfc1b9f58e87b03e2e7698ffc5" kindref="member">detail::reject_comparison()</ref></computeroutput>, with a message that names the mistake. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="111" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="111" bodyend="115" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="162" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" compoundref="function-comparators-inlines_8h" startline="95" endline="100">micro_os_plus::micro_test_plus::eq</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a767a45bfc1b9f58e87b03e2e7698ffc5" compoundref="detail-inlines_8h" startline="557" endline="598">micro_os_plus::micro_test_plus::detail::reject_comparison</references>
+      </memberdef>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kind="function"><name>eq</name></member>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1a7a3c75c65882a8e5a274500789cf3c94" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::ge</definition>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
+        <name>ge</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::ge</qualifiedname>
+        <param>
+          <type>Lhs_T &amp;&amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>Rhs_T &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+    <requiresclause>(not detail::comparable_operands&lt; detail::comparison::greater_equal, Lhs_T, Rhs_T&gt;)    </requiresclause>
+        <briefdescription>
+<para>Rejects operands that cannot be compared with <computeroutput>&gt;=</computeroutput> or written. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Selected for the operands that <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga58c7dacabca3fe1b0dc025a0e0f30e9e" kindref="member">ge()</ref></computeroutput> does not accept (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands" kindref="compound">detail::comparable_operands</ref></computeroutput>); it stops the compilation with a message that states what is wrong, instead of the notes of the concepts. Never called.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>false</computeroutput>, to avoid further errors in the check; the type is not deduced, so that the call can be used in an unevaluated operand.</para>
+</simplesect>
+Never called; the compilation stops in <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a767a45bfc1b9f58e87b03e2e7698ffc5" kindref="member">detail::reject_comparison()</ref></computeroutput>, with a message that names the mistake. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="213" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="213" bodyend="218" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="280" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga58c7dacabca3fe1b0dc025a0e0f30e9e" compoundref="function-comparators-inlines_8h" startline="197" endline="202">micro_os_plus::micro_test_plus::ge</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2" compoundref="detail-inlines_8h" startline="425">micro_os_plus::micro_test_plus::detail::greater_equal</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a767a45bfc1b9f58e87b03e2e7698ffc5" compoundref="detail-inlines_8h" startline="557" endline="598">micro_os_plus::micro_test_plus::detail::reject_comparison</references>
+      </memberdef>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga58c7dacabca3fe1b0dc025a0e0f30e9e" kind="function"><name>ge</name></member>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1a2dd96a2ee35e669ddab6d883caeb3df2" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::gt</definition>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
+        <name>gt</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::gt</qualifiedname>
+        <param>
+          <type>Lhs_T &amp;&amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>Rhs_T &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+    <requiresclause>(not detail::comparable_operands&lt;detail::comparison::greater, Lhs_T, Rhs_T&gt;)    </requiresclause>
+        <briefdescription>
+<para>Rejects operands that cannot be compared with <computeroutput>&gt;</computeroutput> or written. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Selected for the operands that <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga90da2cbc14b4562332a205d5b232356f" kindref="member">gt()</ref></computeroutput> does not accept (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands" kindref="compound">detail::comparable_operands</ref></computeroutput>); it stops the compilation with a message that states what is wrong, instead of the notes of the concepts. Never called.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>false</computeroutput>, to avoid further errors in the check; the type is not deduced, so that the call can be used in an unevaluated operand.</para>
+</simplesect>
+Never called; the compilation stops in <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a767a45bfc1b9f58e87b03e2e7698ffc5" kindref="member">detail::reject_comparison()</ref></computeroutput>, with a message that names the mistake. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="179" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="179" bodyend="183" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="240" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga90da2cbc14b4562332a205d5b232356f" compoundref="function-comparators-inlines_8h" startline="163" endline="168">micro_os_plus::micro_test_plus::gt</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a767a45bfc1b9f58e87b03e2e7698ffc5" compoundref="detail-inlines_8h" startline="557" endline="598">micro_os_plus::micro_test_plus::detail::reject_comparison</references>
+      </memberdef>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga90da2cbc14b4562332a205d5b232356f" kind="function"><name>gt</name></member>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1a434995a43c1ab9d2b75f1ee5e535c48b" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::le</definition>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
+        <name>le</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::le</qualifiedname>
+        <param>
+          <type>Lhs_T &amp;&amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>Rhs_T &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+    <requiresclause>(not detail::comparable_operands&lt;detail::comparison::less_equal, Lhs_T, Rhs_T&gt;)    </requiresclause>
+        <briefdescription>
+<para>Rejects operands that cannot be compared with <computeroutput>&lt;=</computeroutput> or written. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Selected for the operands that <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9125d2dd997269eecc0d8239d5df67e5" kindref="member">le()</ref></computeroutput> does not accept (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands" kindref="compound">detail::comparable_operands</ref></computeroutput>); it stops the compilation with a message that states what is wrong, instead of the notes of the concepts. Never called.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>false</computeroutput>, to avoid further errors in the check; the type is not deduced, so that the call can be used in an unevaluated operand.</para>
+</simplesect>
+Never called; the compilation stops in <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a767a45bfc1b9f58e87b03e2e7698ffc5" kindref="member">detail::reject_comparison()</ref></computeroutput>, with a message that names the mistake. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="282" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="282" bodyend="286" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="360" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9125d2dd997269eecc0d8239d5df67e5" compoundref="function-comparators-inlines_8h" startline="266" endline="271">micro_os_plus::micro_test_plus::le</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a767a45bfc1b9f58e87b03e2e7698ffc5" compoundref="detail-inlines_8h" startline="557" endline="598">micro_os_plus::micro_test_plus::detail::reject_comparison</references>
+      </memberdef>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9125d2dd997269eecc0d8239d5df67e5" kind="function"><name>le</name></member>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1a1584ff2a522d8d452b9b1b8b12ce0bb4" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::lt</definition>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
+        <name>lt</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::lt</qualifiedname>
+        <param>
+          <type>Lhs_T &amp;&amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>Rhs_T &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+    <requiresclause>(not detail::comparable_operands&lt;detail::comparison::less, Lhs_T, Rhs_T&gt;)    </requiresclause>
+        <briefdescription>
+<para>Rejects operands that cannot be compared with <computeroutput>&lt;</computeroutput> or written. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Selected for the operands that <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga493a42c738ef38b45a28b06a2155aa00" kindref="member">lt()</ref></computeroutput> does not accept (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands" kindref="compound">detail::comparable_operands</ref></computeroutput>); it stops the compilation with a message that states what is wrong, instead of the notes of the concepts. Never called.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>false</computeroutput>, to avoid further errors in the check; the type is not deduced, so that the call can be used in an unevaluated operand.</para>
+</simplesect>
+Never called; the compilation stops in <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a767a45bfc1b9f58e87b03e2e7698ffc5" kindref="member">detail::reject_comparison()</ref></computeroutput>, with a message that names the mistake. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="248" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="248" bodyend="252" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="320" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga493a42c738ef38b45a28b06a2155aa00" compoundref="function-comparators-inlines_8h" startline="232" endline="237">micro_os_plus::micro_test_plus::lt</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a767a45bfc1b9f58e87b03e2e7698ffc5" compoundref="detail-inlines_8h" startline="557" endline="598">micro_os_plus::micro_test_plus::detail::reject_comparison</references>
+      </memberdef>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga493a42c738ef38b45a28b06a2155aa00" kind="function"><name>lt</name></member>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1aa9d632f3209a350a25b6b57eebfacb6b" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::ne</definition>
+        <argsstring>(Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</argsstring>
+        <name>ne</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::ne</qualifiedname>
+        <param>
+          <type>Lhs_T &amp;&amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>Rhs_T &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+    <requiresclause>(not detail::comparable_operands&lt;detail::comparison::not_equal, Lhs_T, Rhs_T&gt;)    </requiresclause>
+        <briefdescription>
+<para>Rejects operands that cannot be compared with <computeroutput>!=</computeroutput> or written. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Selected for the operands that <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga92cdc2dde6af040f2f5f5df677df0985" kindref="member">ne()</ref></computeroutput> does not accept (see <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands" kindref="compound">detail::comparable_operands</ref></computeroutput>); it stops the compilation with a message that states what is wrong, instead of the notes of the concepts. Never called.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>false</computeroutput>, to avoid further errors in the check; the type is not deduced, so that the call can be used in an unevaluated operand.</para>
+</simplesect>
+Never called; the compilation stops in <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a767a45bfc1b9f58e87b03e2e7698ffc5" kindref="member">detail::reject_comparison()</ref></computeroutput>, with a message that names the mistake. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="145" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="145" bodyend="149" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="201" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga92cdc2dde6af040f2f5f5df677df0985" compoundref="function-comparators-inlines_8h" startline="129" endline="134">micro_os_plus::micro_test_plus::ne</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a767a45bfc1b9f58e87b03e2e7698ffc5" compoundref="detail-inlines_8h" startline="557" endline="598">micro_os_plus::micro_test_plus::detail::reject_comparison</references>
+      </memberdef>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga92cdc2dde6af040f2f5f5df677df0985" kind="function"><name>ne</name></member>
       <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" kind="function"><name>negate</name></member>
     </sectiondef>
     <briefdescription>
@@ -63,7 +496,7 @@
 <para>These comparators and logical operators enable expressive and type-safe test expectations and assertions; the C strings are compared by content, the other pointers by address. The logical combinators have descriptive names, since <computeroutput>and</computeroutput>, <computeroutput>or</computeroutput>, and <computeroutput>not</computeroutput> are alternative tokens and cannot be used as identifiers.</para>
 <para>All definitions reside within the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></computeroutput> namespace.</para>
 <para>The header files are organised within the <computeroutput>include/micro-os-plus/micro-test-plus</computeroutput> folder to maintain a structured and modular codebase.</para>
-<para>This file is intended solely for internal use within the framework and should not be included directly by user code. </para>
+<para>This file is included by <computeroutput><ref refid="function-comparators_8h" kindref="compound">function-comparators.h</ref></computeroutput>; the applications include <computeroutput><ref refid="micro-test-plus_8h" kindref="compound">micro-os-plus/micro-test-plus.h</ref></computeroutput>, not this file. </para>
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
@@ -109,159 +542,216 @@
 <codeline lineno="72"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="74"><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(<ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable" kindref="compound">extension::printable&lt;Lhs_T&gt;</ref><sp/>and<sp/><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable" kindref="compound">extension::printable&lt;Rhs_T&gt;</ref></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable" kindref="compound">detail::comparable&lt;detail::comparison::equal, Lhs_T, Rhs_T&gt;</ref>)</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="92" refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq</ref><sp/>(Lhs_T&amp;&amp;<sp/>lhs,<sp/>Rhs_T&amp;&amp;<sp/>rhs)</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" kindref="compound">detail::compare_op</ref>{<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Lhs_T&gt;<sp/>(lhs)),</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Rhs_T&gt;<sp/>(rhs)),</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to" kindref="compound">detail::equal_to</ref>{}<sp/>};</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands" kindref="compound">detail::comparable_operands</ref>&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba465289687a70db7aa7217cc240c29f0f" kindref="member">detail::comparison::equal</ref>,<sp/>Lhs_T,</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Rhs_T&gt;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq</ref><sp/>(Lhs_T&amp;&amp;<sp/>lhs,<sp/>Rhs_T&amp;&amp;<sp/>rhs)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" kindref="compound">detail::compare_op</ref>{<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Lhs_T&gt;<sp/>(lhs)),</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Rhs_T&gt;<sp/>(rhs)),</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to" kindref="compound">detail::equal_to</ref>{}<sp/>};</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
 <codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>extension::printable&lt;Lhs_T&gt;<sp/>and<sp/>extension::printable&lt;Rhs_T&gt;</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>detail::comparable&lt;detail::comparison::not_equal,<sp/>Lhs_T,<sp/>Rhs_T&gt;)</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="112" refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa77076edd474fc10d8c0bd6da623e284" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa77076edd474fc10d8c0bd6da623e284" kindref="member">ne</ref><sp/>(Lhs_T&amp;&amp;<sp/>lhs,<sp/>Rhs_T&amp;&amp;<sp/>rhs)</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" kindref="compound">detail::compare_op</ref>{<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Lhs_T&gt;<sp/>(lhs)),</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Rhs_T&gt;<sp/>(rhs)),</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to" kindref="compound">detail::not_equal_to</ref>{}<sp/>};</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"></highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>extension::printable&lt;Lhs_T&gt;<sp/>and<sp/>extension::printable&lt;Rhs_T&gt;</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>detail::comparable&lt;detail::comparison::greater,<sp/>Lhs_T,<sp/>Rhs_T&gt;)</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="132" refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf32fd09749f18635233613fa48f91b56" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf32fd09749f18635233613fa48f91b56" kindref="member">gt</ref><sp/>(Lhs_T&amp;&amp;<sp/>lhs,<sp/>Rhs_T&amp;&amp;<sp/>rhs)</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" kindref="compound">detail::compare_op</ref>{<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Lhs_T&gt;<sp/>(lhs)),</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Rhs_T&gt;<sp/>(rhs)),</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater" kindref="compound">detail::greater</ref>{}<sp/>};</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"></highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(extension::printable&lt;Lhs_T&gt;<sp/>and<sp/>extension::printable&lt;Rhs_T&gt;</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>detail::comparable&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2" kindref="member">detail::comparison::greater_equal</ref>,<sp/>Lhs_T,</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Rhs_T&gt;)</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="152" refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga989e5966794d5c5487477aa782d844b1" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga989e5966794d5c5487477aa782d844b1" kindref="member">ge</ref><sp/>(Lhs_T&amp;&amp;<sp/>lhs,<sp/>Rhs_T&amp;&amp;<sp/>rhs)</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" kindref="compound">detail::compare_op</ref>{<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Lhs_T&gt;<sp/>(lhs)),</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Rhs_T&gt;<sp/>(rhs)),</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal" kindref="compound">detail::greater_equal</ref>{}<sp/>};</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="158"><highlight class="normal"></highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
-<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(extension::printable&lt;Lhs_T&gt;<sp/>and<sp/>extension::printable&lt;Rhs_T&gt;</highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>detail::comparable&lt;detail::comparison::less,<sp/>Lhs_T,<sp/>Rhs_T&gt;)</highlight></codeline>
-<codeline lineno="170"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="171" refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaea39573e23de35872ace5b08d2514327" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaea39573e23de35872ace5b08d2514327" kindref="member">lt</ref><sp/>(Lhs_T&amp;&amp;<sp/>lhs,<sp/>Rhs_T&amp;&amp;<sp/>rhs)</highlight></codeline>
-<codeline lineno="172"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" kindref="compound">detail::compare_op</ref>{<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Lhs_T&gt;<sp/>(lhs)),</highlight></codeline>
-<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Rhs_T&gt;<sp/>(rhs)),</highlight></codeline>
-<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less" kindref="compound">detail::less</ref>{}<sp/>};</highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="177"><highlight class="normal"></highlight></codeline>
-<codeline lineno="186"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(</highlight></codeline>
-<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>extension::printable&lt;Lhs_T&gt;<sp/>and<sp/>extension::printable&lt;Rhs_T&gt;</highlight></codeline>
-<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>detail::comparable&lt;detail::comparison::less_equal,<sp/>Lhs_T,<sp/>Rhs_T&gt;)</highlight></codeline>
-<codeline lineno="190"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="191" refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf9e47a6e18771f969cdd840ec187734a" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf9e47a6e18771f969cdd840ec187734a" kindref="member">le</ref><sp/>(Lhs_T&amp;&amp;<sp/>lhs,<sp/>Rhs_T&amp;&amp;<sp/>rhs)</highlight></codeline>
-<codeline lineno="192"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" kindref="compound">detail::compare_op</ref>{<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Lhs_T&gt;<sp/>(lhs)),</highlight></codeline>
-<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Rhs_T&gt;<sp/>(rhs)),</highlight></codeline>
-<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal" kindref="compound">detail::less_equal</ref>{}<sp/>};</highlight></codeline>
-<codeline lineno="196"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="197"><highlight class="normal"></highlight></codeline>
-<codeline lineno="205"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Epsilon_T&gt;</highlight></codeline>
-<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(extension::approx_operand&lt;Lhs_T&gt;</highlight></codeline>
-<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>extension::approx_operand&lt;Rhs_T&gt;</highlight></codeline>
-<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>extension::approx_operand&lt;Epsilon_T&gt;)</highlight></codeline>
-<codeline lineno="209"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="210" refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0d374ffc56933dccd3ffba008ab7eaa5" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx</ref><sp/>(Lhs_T&amp;&amp;<sp/>lhs,<sp/>Rhs_T&amp;&amp;<sp/>rhs,<sp/>Epsilon_T&amp;&amp;<sp/>epsilon)</highlight></codeline>
-<codeline lineno="211"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op" kindref="compound">detail::approx_op</ref>{<sp/>std::forward&lt;Lhs_T&gt;<sp/>(lhs),</highlight></codeline>
-<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;Rhs_T&gt;<sp/>(rhs),</highlight></codeline>
-<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;Epsilon_T&gt;<sp/>(epsilon)<sp/>};</highlight></codeline>
-<codeline lineno="215"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="216"><highlight class="normal"></highlight></codeline>
-<codeline lineno="217"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="218"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Logical<sp/>operators.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(not<sp/>detail::comparable_operands&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba465289687a70db7aa7217cc240c29f0f" kindref="member">detail::comparison::equal</ref>,<sp/>Lhs_T,</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Rhs_T&gt;)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="namespacemicro__os__plus_1_1micro__test__plus_1ab88360ce7994d5e5ac71deff0450a638" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq</ref><sp/>([[maybe_unused]]<sp/>Lhs_T&amp;&amp;<sp/>lhs,<sp/>[[maybe_unused]]<sp/>Rhs_T&amp;&amp;<sp/>rhs)</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a767a45bfc1b9f58e87b03e2e7698ffc5" kindref="member">detail::reject_comparison&lt;detail::comparison::equal, Lhs_T, Rhs_T&gt;</ref><sp/>();</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>detail::comparable_operands&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba96ee5c0e2a7149613e7fd0b83316486e" kindref="member">detail::comparison::not_equal</ref>,<sp/>Lhs_T,</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Rhs_T&gt;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga92cdc2dde6af040f2f5f5df677df0985" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga92cdc2dde6af040f2f5f5df677df0985" kindref="member">ne</ref><sp/>(Lhs_T&amp;&amp;<sp/>lhs,<sp/>Rhs_T&amp;&amp;<sp/>rhs)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" kindref="compound">detail::compare_op</ref>{<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Lhs_T&gt;<sp/>(lhs)),</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Rhs_T&gt;<sp/>(rhs)),</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to" kindref="compound">detail::not_equal_to</ref>{}<sp/>};</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(not<sp/>detail::comparable_operands&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba96ee5c0e2a7149613e7fd0b83316486e" kindref="member">detail::comparison::not_equal</ref>,</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Lhs_T,<sp/>Rhs_T&gt;)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="namespacemicro__os__plus_1_1micro__test__plus_1aa9d632f3209a350a25b6b57eebfacb6b" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga92cdc2dde6af040f2f5f5df677df0985" kindref="member">ne</ref><sp/>([[maybe_unused]]<sp/>Lhs_T&amp;&amp;<sp/>lhs,<sp/>[[maybe_unused]]<sp/>Rhs_T&amp;&amp;<sp/>rhs)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a767a45bfc1b9f58e87b03e2e7698ffc5" kindref="member">detail::reject_comparison&lt;detail::comparison::not_equal, Lhs_T, Rhs_T&gt;</ref><sp/>();</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>detail::comparable_operands&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba7b8dc4fb0fb55fc8eb69ff080c45ed7e" kindref="member">detail::comparison::greater</ref>,<sp/>Lhs_T,</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Rhs_T&gt;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163" refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga90da2cbc14b4562332a205d5b232356f" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga90da2cbc14b4562332a205d5b232356f" kindref="member">gt</ref><sp/>(Lhs_T&amp;&amp;<sp/>lhs,<sp/>Rhs_T&amp;&amp;<sp/>rhs)</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" kindref="compound">detail::compare_op</ref>{<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Lhs_T&gt;<sp/>(lhs)),</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Rhs_T&gt;<sp/>(rhs)),</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater" kindref="compound">detail::greater</ref>{}<sp/>};</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(not<sp/>detail::comparable_operands&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba7b8dc4fb0fb55fc8eb69ff080c45ed7e" kindref="member">detail::comparison::greater</ref>,</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Lhs_T,<sp/>Rhs_T&gt;)</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179" refid="namespacemicro__os__plus_1_1micro__test__plus_1a2dd96a2ee35e669ddab6d883caeb3df2" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga90da2cbc14b4562332a205d5b232356f" kindref="member">gt</ref><sp/>([[maybe_unused]]<sp/>Lhs_T&amp;&amp;<sp/>lhs,<sp/>[[maybe_unused]]<sp/>Rhs_T&amp;&amp;<sp/>rhs)</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a767a45bfc1b9f58e87b03e2e7698ffc5" kindref="member">detail::reject_comparison&lt;detail::comparison::greater, Lhs_T, Rhs_T&gt;</ref><sp/>();</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>detail::comparable_operands&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2" kindref="member">detail::comparison::greater_equal</ref>,</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Lhs_T,<sp/>Rhs_T&gt;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197" refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga58c7dacabca3fe1b0dc025a0e0f30e9e" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga58c7dacabca3fe1b0dc025a0e0f30e9e" kindref="member">ge</ref><sp/>(Lhs_T&amp;&amp;<sp/>lhs,<sp/>Rhs_T&amp;&amp;<sp/>rhs)</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" kindref="compound">detail::compare_op</ref>{<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Lhs_T&gt;<sp/>(lhs)),</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Rhs_T&gt;<sp/>(rhs)),</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal" kindref="compound">detail::greater_equal</ref>{}<sp/>};</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(not<sp/>detail::comparable_operands&lt;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2" kindref="member">detail::comparison::greater_equal</ref>,<sp/>Lhs_T,<sp/>Rhs_T&gt;)</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213" refid="namespacemicro__os__plus_1_1micro__test__plus_1a7a3c75c65882a8e5a274500789cf3c94" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga58c7dacabca3fe1b0dc025a0e0f30e9e" kindref="member">ge</ref><sp/>([[maybe_unused]]<sp/>Lhs_T&amp;&amp;<sp/>lhs,<sp/>[[maybe_unused]]<sp/>Rhs_T&amp;&amp;<sp/>rhs)</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a767a45bfc1b9f58e87b03e2e7698ffc5" kindref="member">detail::reject_comparison</ref>&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2" kindref="member">detail::comparison::greater_equal</ref>,<sp/>Lhs_T,</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Rhs_T&gt;<sp/>();</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="219"><highlight class="normal"></highlight></codeline>
-<codeline lineno="231"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Expr_T&gt;</highlight></codeline>
-<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>extension::checkable&lt;std::remove_cvref_t&lt;Expr_T&gt;&gt;</highlight></codeline>
-<codeline lineno="233"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="234" refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" kindref="member">negate</ref><sp/>(Expr_T&amp;&amp;<sp/>expr)</highlight></codeline>
-<codeline lineno="235"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__op" kindref="compound">detail::not_op&lt;detail::stored_operand_t&lt;Expr_T&gt;</ref>&gt;{</highlight></codeline>
-<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;Expr_T&gt;<sp/>(expr)</highlight></codeline>
-<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="239"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="240"><highlight class="normal"></highlight></codeline>
-<codeline lineno="259"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">First_T,<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Second_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">...<sp/>Rest_T&gt;</highlight></codeline>
-<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(extension::checkable&lt;std::remove_cvref_t&lt;First_T&gt;&gt;</highlight></codeline>
-<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>extension::checkable&lt;std::remove_cvref_t&lt;Second_T&gt;&gt;</highlight></codeline>
-<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(extension::checkable&lt;std::remove_cvref_t&lt;Rest_T&gt;&gt;<sp/>and<sp/>...))</highlight></codeline>
-<codeline lineno="263"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="264" refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" kindref="member">all_of</ref><sp/>(First_T&amp;&amp;<sp/>first,<sp/>Second_T&amp;&amp;<sp/>second,<sp/>Rest_T&amp;&amp;...<sp/>rest)</highlight></codeline>
-<codeline lineno="265"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">...(Rest_T)<sp/>==<sp/>0)</highlight></codeline>
-<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op" kindref="compound">detail::and_op</ref>{<sp/>std::forward&lt;First_T&gt;<sp/>(first),</highlight></codeline>
-<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;Second_T&gt;<sp/>(second)<sp/>};</highlight></codeline>
-<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" kindref="member">micro_test_plus::all_of</ref><sp/>(</highlight></codeline>
-<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op" kindref="compound">detail::and_op</ref>{<sp/>std::forward&lt;First_T&gt;<sp/>(first),</highlight></codeline>
-<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;Second_T&gt;<sp/>(second)<sp/>},</highlight></codeline>
-<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;Rest_T&gt;<sp/>(rest)...);</highlight></codeline>
-<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="278"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="279"><highlight class="normal"></highlight></codeline>
-<codeline lineno="294"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">First_T,<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Second_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">...<sp/>Rest_T&gt;</highlight></codeline>
-<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(extension::checkable&lt;std::remove_cvref_t&lt;First_T&gt;&gt;</highlight></codeline>
-<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>extension::checkable&lt;std::remove_cvref_t&lt;Second_T&gt;&gt;</highlight></codeline>
-<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(extension::checkable&lt;std::remove_cvref_t&lt;Rest_T&gt;&gt;<sp/>and<sp/>...))</highlight></codeline>
-<codeline lineno="298"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="299" refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" kindref="member">any_of</ref><sp/>(First_T&amp;&amp;<sp/>first,<sp/>Second_T&amp;&amp;<sp/>second,<sp/>Rest_T&amp;&amp;...<sp/>rest)</highlight></codeline>
-<codeline lineno="300"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">...(Rest_T)<sp/>==<sp/>0)</highlight></codeline>
-<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op" kindref="compound">detail::or_op</ref>{<sp/>std::forward&lt;First_T&gt;<sp/>(first),</highlight></codeline>
-<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;Second_T&gt;<sp/>(second)<sp/>};</highlight></codeline>
-<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" kindref="member">micro_test_plus::any_of</ref><sp/>(</highlight></codeline>
-<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op" kindref="compound">detail::or_op</ref>{<sp/>std::forward&lt;First_T&gt;<sp/>(first),</highlight></codeline>
-<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;Second_T&gt;<sp/>(second)<sp/>},</highlight></codeline>
-<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;Rest_T&gt;<sp/>(rest)...);</highlight></codeline>
-<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="313"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="314"><highlight class="normal"></highlight></codeline>
-<codeline lineno="315"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="316"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>micro_os_plus::micro_test_plus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="317"><highlight class="normal"></highlight></codeline>
-<codeline lineno="318"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="319"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>pop</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="320"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="321"><highlight class="normal"></highlight></codeline>
-<codeline lineno="322"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="323"><highlight class="normal"></highlight></codeline>
-<codeline lineno="324"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="325"><highlight class="normal"></highlight></codeline>
-<codeline lineno="326"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="327"><highlight class="normal"></highlight></codeline>
-<codeline lineno="328"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_FUNCTION_COMPARATORS_INLINES_H_</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="329"><highlight class="normal"></highlight></codeline>
-<codeline lineno="330"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>detail::comparable_operands&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0bae37e8d912e8f7b8f9b5ef9452ba47ff1" kindref="member">detail::comparison::less</ref>,<sp/>Lhs_T,</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Rhs_T&gt;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232" refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga493a42c738ef38b45a28b06a2155aa00" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga493a42c738ef38b45a28b06a2155aa00" kindref="member">lt</ref><sp/>(Lhs_T&amp;&amp;<sp/>lhs,<sp/>Rhs_T&amp;&amp;<sp/>rhs)</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" kindref="compound">detail::compare_op</ref>{<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Lhs_T&gt;<sp/>(lhs)),</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Rhs_T&gt;<sp/>(rhs)),</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less" kindref="compound">detail::less</ref>{}<sp/>};</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(not<sp/>detail::comparable_operands&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0bae37e8d912e8f7b8f9b5ef9452ba47ff1" kindref="member">detail::comparison::less</ref>,<sp/>Lhs_T,</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Rhs_T&gt;)</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248" refid="namespacemicro__os__plus_1_1micro__test__plus_1a1584ff2a522d8d452b9b1b8b12ce0bb4" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga493a42c738ef38b45a28b06a2155aa00" kindref="member">lt</ref><sp/>([[maybe_unused]]<sp/>Lhs_T&amp;&amp;<sp/>lhs,<sp/>[[maybe_unused]]<sp/>Rhs_T&amp;&amp;<sp/>rhs)</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a767a45bfc1b9f58e87b03e2e7698ffc5" kindref="member">detail::reject_comparison&lt;detail::comparison::less, Lhs_T, Rhs_T&gt;</ref><sp/>();</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>detail::comparable_operands&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba77932225fb35fc4b74dc8fabf0992dac" kindref="member">detail::comparison::less_equal</ref>,<sp/>Lhs_T,</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Rhs_T&gt;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266" refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9125d2dd997269eecc0d8239d5df67e5" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9125d2dd997269eecc0d8239d5df67e5" kindref="member">le</ref><sp/>(Lhs_T&amp;&amp;<sp/>lhs,<sp/>Rhs_T&amp;&amp;<sp/>rhs)</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" kindref="compound">detail::compare_op</ref>{<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Lhs_T&gt;<sp/>(lhs)),</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">detail::as_operand</ref><sp/>(std::forward&lt;Rhs_T&gt;<sp/>(rhs)),</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal" kindref="compound">detail::less_equal</ref>{}<sp/>};</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(not<sp/>detail::comparable_operands&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba77932225fb35fc4b74dc8fabf0992dac" kindref="member">detail::comparison::less_equal</ref>,</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Lhs_T,<sp/>Rhs_T&gt;)</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282" refid="namespacemicro__os__plus_1_1micro__test__plus_1a434995a43c1ab9d2b75f1ee5e535c48b" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9125d2dd997269eecc0d8239d5df67e5" kindref="member">le</ref><sp/>([[maybe_unused]]<sp/>Lhs_T&amp;&amp;<sp/>lhs,<sp/>[[maybe_unused]]<sp/>Rhs_T&amp;&amp;<sp/>rhs)</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a767a45bfc1b9f58e87b03e2e7698ffc5" kindref="member">detail::reject_comparison&lt;detail::comparison::less_equal, Lhs_T, Rhs_T&gt;</ref><sp/>();</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Epsilon_T&gt;</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(extension::approx_operand&lt;Lhs_T&gt;</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>extension::approx_operand&lt;Rhs_T&gt;</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>extension::approx_operand&lt;Epsilon_T&gt;)</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="300" refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0d374ffc56933dccd3ffba008ab7eaa5" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx</ref><sp/>(Lhs_T&amp;&amp;<sp/>lhs,<sp/>Rhs_T&amp;&amp;<sp/>rhs,<sp/>Epsilon_T&amp;&amp;<sp/>epsilon)</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op" kindref="compound">detail::approx_op</ref>{<sp/>std::forward&lt;Lhs_T&gt;<sp/>(lhs),</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;Rhs_T&gt;<sp/>(rhs),</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;Epsilon_T&gt;<sp/>(epsilon)<sp/>};</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Logical<sp/>operators.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Expr_T&gt;</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>extension::checkable&lt;std::remove_cvref_t&lt;Expr_T&gt;&gt;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="324" refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" kindref="member">negate</ref><sp/>(Expr_T&amp;&amp;<sp/>expr)</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__op" kindref="compound">detail::not_op&lt;detail::stored_operand_t&lt;Expr_T&gt;</ref>&gt;{</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;Expr_T&gt;<sp/>(expr)</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">First_T,<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Second_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">...<sp/>Rest_T&gt;</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(extension::checkable&lt;std::remove_cvref_t&lt;First_T&gt;&gt;</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>extension::checkable&lt;std::remove_cvref_t&lt;Second_T&gt;&gt;</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(extension::checkable&lt;std::remove_cvref_t&lt;Rest_T&gt;&gt;<sp/>and<sp/>...))</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="354" refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" kindref="member">all_of</ref><sp/>(First_T&amp;&amp;<sp/>first,<sp/>Second_T&amp;&amp;<sp/>second,<sp/>Rest_T&amp;&amp;...<sp/>rest)</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">...(Rest_T)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op" kindref="compound">detail::and_op</ref>{<sp/>std::forward&lt;First_T&gt;<sp/>(first),</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;Second_T&gt;<sp/>(second)<sp/>};</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" kindref="member">micro_test_plus::all_of</ref><sp/>(</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op" kindref="compound">detail::and_op</ref>{<sp/>std::forward&lt;First_T&gt;<sp/>(first),</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;Second_T&gt;<sp/>(second)<sp/>},</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;Rest_T&gt;<sp/>(rest)...);</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">First_T,<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Second_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal">...<sp/>Rest_T&gt;</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(extension::checkable&lt;std::remove_cvref_t&lt;First_T&gt;&gt;</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>extension::checkable&lt;std::remove_cvref_t&lt;Second_T&gt;&gt;</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>(extension::checkable&lt;std::remove_cvref_t&lt;Rest_T&gt;&gt;<sp/>and<sp/>...))</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="389" refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" kindref="member">any_of</ref><sp/>(First_T&amp;&amp;<sp/>first,<sp/>Second_T&amp;&amp;<sp/>second,<sp/>Rest_T&amp;&amp;...<sp/>rest)</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">...(Rest_T)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op" kindref="compound">detail::or_op</ref>{<sp/>std::forward&lt;First_T&gt;<sp/>(first),</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;Second_T&gt;<sp/>(second)<sp/>};</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" kindref="member">micro_test_plus::any_of</ref><sp/>(</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op" kindref="compound">detail::or_op</ref>{<sp/>std::forward&lt;First_T&gt;<sp/>(first),</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;Second_T&gt;<sp/>(second)<sp/>},</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::forward&lt;Rest_T&gt;<sp/>(rest)...);</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"></highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="406"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>micro_os_plus::micro_test_plus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="407"><highlight class="normal"></highlight></codeline>
+<codeline lineno="408"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="409"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>pop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="410"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="411"><highlight class="normal"></highlight></codeline>
+<codeline lineno="412"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="413"><highlight class="normal"></highlight></codeline>
+<codeline lineno="414"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="415"><highlight class="normal"></highlight></codeline>
+<codeline lineno="416"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="417"><highlight class="normal"></highlight></codeline>
+<codeline lineno="418"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_FUNCTION_COMPARATORS_INLINES_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="419"><highlight class="normal"></highlight></codeline>
+<codeline lineno="420"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h"/>
   </compounddef>

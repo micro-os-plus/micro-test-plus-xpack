@@ -25,6 +25,12 @@ keywords:
 </ul>
 <p>2 entries</p>
 
+## - D -
+
+<ul>
+<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a360bed7e2af05a26d92e5ca4c414c06e"><b>dependent_false_v</b></a>: as variable in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">include/micro-os-plus/micro-test-plus/test.h</a></li>
+</ul>
+
 ## - F -
 
 <ul>
@@ -37,7 +43,7 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/anonymous-runner-cpp-/#a93bc763e06193fa6de523088f09a8816"><b>help_options</b></a>: as variable in file <a href="/micro-test-plus-xpack/docs/api/files/src/runner-cpp">src/runner.cpp</a></li>
 </ul>
 <br/>
-<p>Total: 4 entries.</p>
+<p>Total: 5 entries.</p>
 
 <hr/>
 

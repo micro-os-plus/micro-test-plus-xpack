@@ -170,7 +170,7 @@ Typedefs</h2></td></tr>
 <tr><td colspan="2" class="ititle"><div class="groupText"><p>Strongly-typed wrappers for converting dynamic values and expressions to specific types recognised by µTest++ comparators.</p>
 <p>These type aliases provide a type-safe mechanism for explicitly converting values to the required types for µTest++ test expressions and comparators. Each alias is a wrapper around <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">detail::value</a>&lt;T&gt;</span>, ensuring that the value is treated as the specified type within the framework.</p>
 <p>The <span class="tt">to_*</span> forms replaced the older <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga8468610e763177a8f569f7d618851288" title="Deprecated strongly-typed wrapper for int values, the v5.0.1 name of to_i.">_i</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gaf27e37e2e29af1a3ffd5c4fb07e77ff9" title="Deprecated strongly-typed wrapper for std::uint8_t values, the v5.0.1 name of to_u8.">_u8</a></span>, etc. aliases, which were deprecated in version 3.2.0.</p>
-<dl class="section user"><dt>Deprecated</dt><dd>Pass the plain values to the function comparators <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gada610d1d5701b79f3df916f6e397ea06" title="Generic equality comparator.">eq()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa77076edd474fc10d8c0bd6da623e284" title="Generic non-equality comparator.">ne()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaf32fd09749f18635233613fa48f91b56" title="Generic greater than comparator.">gt()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga989e5966794d5c5487477aa782d844b1" title="Generic greater than or equal comparator.">ge()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaea39573e23de35872ace5b08d2514327" title="Generic less than comparator.">lt()</a></span>, and <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaf9e47a6e18771f969cdd840ec187734a" title="Generic less than or equal comparator.">le()</a></span> instead; they report the operands in the same way. For the floating-point values compared with a tolerance, use <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a></span> (since 6.0.0).</dd></dl>
+<dl class="section user"><dt>Deprecated</dt><dd>Pass the plain values to the function comparators <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga0fbc0f7ddf0107c1e5265bb79287487d" title="Generic equality comparator.">eq()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga92cdc2dde6af040f2f5f5df677df0985" title="Generic non-equality comparator.">ne()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga90da2cbc14b4562332a205d5b232356f" title="Generic greater than comparator.">gt()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga58c7dacabca3fe1b0dc025a0e0f30e9e" title="Generic greater than or equal comparator.">ge()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga493a42c738ef38b45a28b06a2155aa00" title="Generic less than comparator.">lt()</a></span>, and <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga9125d2dd997269eecc0d8239d5df67e5" title="Generic less than or equal comparator.">le()</a></span> instead; they report the operands in the same way. For the floating-point values compared with a tolerance, use <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a></span> (since 6.0.0).</dd></dl>
 <dl class="section user"><dt>Example</dt><dd></dd></dl>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> x = 42;</div>
 <div class="line"><span class="comment">// Explicitly treat x as an int for test comparison.</span></div>
@@ -228,7 +228,7 @@ Typedefs</h2></td></tr>
 <tr><td colspan="2" class="ititle"><div class="groupText"><p>The v5.0.1 names of the <span class="tt">to_*</span> type wrappers.</p>
 <p>The Boost UT style names, with a leading underscore, kept for compatibility with the existing applications. Each one is an alias of the corresponding <span class="tt">to_*</span> wrapper, so the wrapped values are compared and reported in the same way. They do not conflict with the literal operators with the same suffixes (<span class="tt">42<a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga8468610e763177a8f569f7d618851288" title="Deprecated strongly-typed wrapper for int values, the v5.0.1 name of to_i.">_i</a></span>), which are in the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1literals.html" title="User-defined literals for the µTest++ testing framework.">literals</a></span> namespace.</p>
 <p>GCC reports the deprecation only when the alias names the type of a declaration, not when it is used in an expression, as in <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga8468610e763177a8f569f7d618851288" title="Deprecated strongly-typed wrapper for int values, the v5.0.1 name of to_i.">_i</a> (expr)</span>; Clang reports it in both cases.</p>
-<dl class="section user"><dt>Deprecated</dt><dd>Pass the plain values to the function comparators <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gada610d1d5701b79f3df916f6e397ea06" title="Generic equality comparator.">eq()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa77076edd474fc10d8c0bd6da623e284" title="Generic non-equality comparator.">ne()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaf32fd09749f18635233613fa48f91b56" title="Generic greater than comparator.">gt()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga989e5966794d5c5487477aa782d844b1" title="Generic greater than or equal comparator.">ge()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaea39573e23de35872ace5b08d2514327" title="Generic less than comparator.">lt()</a></span>, and <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaf9e47a6e18771f969cdd840ec187734a" title="Generic less than or equal comparator.">le()</a></span> instead; the <span class="tt">to_*</span> type wrappers that replaced these aliases (since 3.2.0) are deprecated too (since 6.0.0). </dd></dl>
+<dl class="section user"><dt>Deprecated</dt><dd>Pass the plain values to the function comparators <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga0fbc0f7ddf0107c1e5265bb79287487d" title="Generic equality comparator.">eq()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga92cdc2dde6af040f2f5f5df677df0985" title="Generic non-equality comparator.">ne()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga90da2cbc14b4562332a205d5b232356f" title="Generic greater than comparator.">gt()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga58c7dacabca3fe1b0dc025a0e0f30e9e" title="Generic greater than or equal comparator.">ge()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga493a42c738ef38b45a28b06a2155aa00" title="Generic less than comparator.">lt()</a></span>, and <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga9125d2dd997269eecc0d8239d5df67e5" title="Generic less than or equal comparator.">le()</a></span> instead; the <span class="tt">to_*</span> type wrappers that replaced these aliases (since 3.2.0) are deprecated too (since 6.0.0). </dd></dl>
 </div></td></tr>
 <tr class="memitem:gad4203783cfbe141f41ee8515f7b2ea94" id="r_gad4203783cfbe141f41ee8515f7b2ea94"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gad4203783cfbe141f41ee8515f7b2ea94">_b</a> = <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga5570e36fb3e73be3edf734ac80a23d93">to_b</a></td></tr>
 <tr class="memdesc:gad4203783cfbe141f41ee8515f7b2ea94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated strongly-typed wrapper for <span class="tt">bool</span> values, the v5.0.1 name of <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga5570e36fb3e73be3edf734ac80a23d93" title="Deprecated strongly-typed wrapper for bool values.">to_b</a></span>.  <br /></td></tr>
@@ -339,50 +339,73 @@ requires (extension::approx_operand&lt;Lhs_T&gt; and extension::approx_operand&l
 requires std::is_floating_point_v&lt;T&gt;</td></tr>
 <tr class="memitem:gafe47800a219b00fcccf0a1dc596dbe20 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gafe47800a219b00fcccf0a1dc596dbe20">approx</a> (T value, std::type_identity_t&lt; T &gt; epsilon) noexcept -&gt; <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">detail::value</a>&lt; T &gt;</td></tr>
 <tr class="memdesc:gafe47800a219b00fcccf0a1dc596dbe20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated wrapping of a floating-point value with an explicit comparison tolerance.  <br /></td></tr>
-<tr class="memitem:gada610d1d5701b79f3df916f6e397ea06" id="r_gada610d1d5701b79f3df916f6e397ea06"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
-requires (extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&gt; and detail::comparable&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba465289687a70db7aa7217cc240c29f0f">detail::comparison::equal</a>, Lhs_T, Rhs_T&gt;)</td></tr>
-<tr class="memitem:gada610d1d5701b79f3df916f6e397ea06 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gada610d1d5701b79f3df916f6e397ea06">eq</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
-<tr class="memdesc:gada610d1d5701b79f3df916f6e397ea06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic equality comparator.  <br /></td></tr>
-<tr class="memitem:ga989e5966794d5c5487477aa782d844b1" id="r_ga989e5966794d5c5487477aa782d844b1"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
-requires (extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&gt; and detail::comparable&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2">detail::comparison::greater_equal</a>,<br class="typebreak" />
- Lhs_T, Rhs_T&gt;)</td></tr>
-<tr class="memitem:ga989e5966794d5c5487477aa782d844b1 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga989e5966794d5c5487477aa782d844b1">ge</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
-<tr class="memdesc:ga989e5966794d5c5487477aa782d844b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic greater than or equal comparator.  <br /></td></tr>
-<tr class="memitem:gaf32fd09749f18635233613fa48f91b56" id="r_gaf32fd09749f18635233613fa48f91b56"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
-requires ( extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&gt; and detail::comparable&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba7b8dc4fb0fb55fc8eb69ff080c45ed7e">detail::comparison::greater</a>, Lhs_T,<br class="typebreak" />
- Rhs_T&gt;)</td></tr>
-<tr class="memitem:gaf32fd09749f18635233613fa48f91b56 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaf32fd09749f18635233613fa48f91b56">gt</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
-<tr class="memdesc:gaf32fd09749f18635233613fa48f91b56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic greater than comparator.  <br /></td></tr>
-<tr class="memitem:gaf9e47a6e18771f969cdd840ec187734a" id="r_gaf9e47a6e18771f969cdd840ec187734a"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
-requires ( extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&gt; and detail::comparable&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba77932225fb35fc4b74dc8fabf0992dac">detail::comparison::less_equal</a>,<br class="typebreak" />
- Lhs_T, Rhs_T&gt;)</td></tr>
-<tr class="memitem:gaf9e47a6e18771f969cdd840ec187734a template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaf9e47a6e18771f969cdd840ec187734a">le</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
-<tr class="memdesc:gaf9e47a6e18771f969cdd840ec187734a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic less than or equal comparator.  <br /></td></tr>
-<tr class="memitem:gaea39573e23de35872ace5b08d2514327" id="r_gaea39573e23de35872ace5b08d2514327"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
-requires (extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&gt; and detail::comparable&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0bae37e8d912e8f7b8f9b5ef9452ba47ff1">detail::comparison::less</a>, Lhs_T, Rhs_T&gt;)</td></tr>
-<tr class="memitem:gaea39573e23de35872ace5b08d2514327 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaea39573e23de35872ace5b08d2514327">lt</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
-<tr class="memdesc:gaea39573e23de35872ace5b08d2514327"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic less than comparator.  <br /></td></tr>
+<tr class="memitem:ab88360ce7994d5e5ac71deff0450a638" id="r_ab88360ce7994d5e5ac71deff0450a638"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
+requires (not detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba465289687a70db7aa7217cc240c29f0f">detail::comparison::equal</a>, Lhs_T, Rhs_T&gt;)</td></tr>
+<tr class="memitem:ab88360ce7994d5e5ac71deff0450a638 template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#ab88360ce7994d5e5ac71deff0450a638">eq</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
+<tr class="memdesc:ab88360ce7994d5e5ac71deff0450a638"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rejects operands that cannot be compared with <span class="tt">==</span> or written.  <br /></td></tr>
+<tr class="memitem:ga0fbc0f7ddf0107c1e5265bb79287487d" id="r_ga0fbc0f7ddf0107c1e5265bb79287487d"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
+requires detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba465289687a70db7aa7217cc240c29f0f">detail::comparison::equal</a>, Lhs_T, Rhs_T&gt;</td></tr>
+<tr class="memitem:ga0fbc0f7ddf0107c1e5265bb79287487d template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga0fbc0f7ddf0107c1e5265bb79287487d">eq</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
+<tr class="memdesc:ga0fbc0f7ddf0107c1e5265bb79287487d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic equality comparator.  <br /></td></tr>
+<tr class="memitem:a7a3c75c65882a8e5a274500789cf3c94" id="r_a7a3c75c65882a8e5a274500789cf3c94"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
+requires (not detail::comparable_operands&lt; <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2">detail::comparison::greater_equal</a>, Lhs_T, Rhs_T&gt;)</td></tr>
+<tr class="memitem:a7a3c75c65882a8e5a274500789cf3c94 template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#a7a3c75c65882a8e5a274500789cf3c94">ge</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
+<tr class="memdesc:a7a3c75c65882a8e5a274500789cf3c94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rejects operands that cannot be compared with <span class="tt">&gt;=</span> or written.  <br /></td></tr>
+<tr class="memitem:ga58c7dacabca3fe1b0dc025a0e0f30e9e" id="r_ga58c7dacabca3fe1b0dc025a0e0f30e9e"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
+requires detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2">detail::comparison::greater_equal</a>, Lhs_T, Rhs_T&gt;</td></tr>
+<tr class="memitem:ga58c7dacabca3fe1b0dc025a0e0f30e9e template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga58c7dacabca3fe1b0dc025a0e0f30e9e">ge</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
+<tr class="memdesc:ga58c7dacabca3fe1b0dc025a0e0f30e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic greater than or equal comparator.  <br /></td></tr>
+<tr class="memitem:a2dd96a2ee35e669ddab6d883caeb3df2" id="r_a2dd96a2ee35e669ddab6d883caeb3df2"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
+requires (not detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba7b8dc4fb0fb55fc8eb69ff080c45ed7e">detail::comparison::greater</a>, Lhs_T, Rhs_T&gt;)</td></tr>
+<tr class="memitem:a2dd96a2ee35e669ddab6d883caeb3df2 template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#a2dd96a2ee35e669ddab6d883caeb3df2">gt</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
+<tr class="memdesc:a2dd96a2ee35e669ddab6d883caeb3df2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rejects operands that cannot be compared with <span class="tt">&gt;</span> or written.  <br /></td></tr>
+<tr class="memitem:ga90da2cbc14b4562332a205d5b232356f" id="r_ga90da2cbc14b4562332a205d5b232356f"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
+requires detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba7b8dc4fb0fb55fc8eb69ff080c45ed7e">detail::comparison::greater</a>, Lhs_T, Rhs_T&gt;</td></tr>
+<tr class="memitem:ga90da2cbc14b4562332a205d5b232356f template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga90da2cbc14b4562332a205d5b232356f">gt</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
+<tr class="memdesc:ga90da2cbc14b4562332a205d5b232356f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic greater than comparator.  <br /></td></tr>
+<tr class="memitem:a434995a43c1ab9d2b75f1ee5e535c48b" id="r_a434995a43c1ab9d2b75f1ee5e535c48b"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
+requires (not detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba77932225fb35fc4b74dc8fabf0992dac">detail::comparison::less_equal</a>, Lhs_T, Rhs_T&gt;)</td></tr>
+<tr class="memitem:a434995a43c1ab9d2b75f1ee5e535c48b template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#a434995a43c1ab9d2b75f1ee5e535c48b">le</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
+<tr class="memdesc:a434995a43c1ab9d2b75f1ee5e535c48b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rejects operands that cannot be compared with <span class="tt">&lt;=</span> or written.  <br /></td></tr>
+<tr class="memitem:ga9125d2dd997269eecc0d8239d5df67e5" id="r_ga9125d2dd997269eecc0d8239d5df67e5"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
+requires detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba77932225fb35fc4b74dc8fabf0992dac">detail::comparison::less_equal</a>, Lhs_T, Rhs_T&gt;</td></tr>
+<tr class="memitem:ga9125d2dd997269eecc0d8239d5df67e5 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga9125d2dd997269eecc0d8239d5df67e5">le</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
+<tr class="memdesc:ga9125d2dd997269eecc0d8239d5df67e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic less than or equal comparator.  <br /></td></tr>
+<tr class="memitem:a1584ff2a522d8d452b9b1b8b12ce0bb4" id="r_a1584ff2a522d8d452b9b1b8b12ce0bb4"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
+requires (not detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0bae37e8d912e8f7b8f9b5ef9452ba47ff1">detail::comparison::less</a>, Lhs_T, Rhs_T&gt;)</td></tr>
+<tr class="memitem:a1584ff2a522d8d452b9b1b8b12ce0bb4 template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#a1584ff2a522d8d452b9b1b8b12ce0bb4">lt</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
+<tr class="memdesc:a1584ff2a522d8d452b9b1b8b12ce0bb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rejects operands that cannot be compared with <span class="tt">&lt;</span> or written.  <br /></td></tr>
+<tr class="memitem:ga493a42c738ef38b45a28b06a2155aa00" id="r_ga493a42c738ef38b45a28b06a2155aa00"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
+requires detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0bae37e8d912e8f7b8f9b5ef9452ba47ff1">detail::comparison::less</a>, Lhs_T, Rhs_T&gt;</td></tr>
+<tr class="memitem:ga493a42c738ef38b45a28b06a2155aa00 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga493a42c738ef38b45a28b06a2155aa00">lt</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
+<tr class="memdesc:ga493a42c738ef38b45a28b06a2155aa00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic less than comparator.  <br /></td></tr>
 <tr class="memitem:ga00ea8f3dfb7cb0ef39919065321cf62f" id="r_ga00ea8f3dfb7cb0ef39919065321cf62f"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:ga00ea8f3dfb7cb0ef39919065321cf62f template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga00ea8f3dfb7cb0ef39919065321cf62f">mut</a> (const T &amp;t) noexcept -&gt; T &amp;</td></tr>
 <tr class="memdesc:ga00ea8f3dfb7cb0ef39919065321cf62f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated generic mutator to remove const qualification from a reference.  <br /></td></tr>
-<tr class="memitem:gaa77076edd474fc10d8c0bd6da623e284" id="r_gaa77076edd474fc10d8c0bd6da623e284"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
-requires ( extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&gt; and detail::comparable&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba96ee5c0e2a7149613e7fd0b83316486e">detail::comparison::not_equal</a>,<br class="typebreak" />
- Lhs_T, Rhs_T&gt;)</td></tr>
-<tr class="memitem:gaa77076edd474fc10d8c0bd6da623e284 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#gaa77076edd474fc10d8c0bd6da623e284">ne</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
-<tr class="memdesc:gaa77076edd474fc10d8c0bd6da623e284"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic non-equality comparator.  <br /></td></tr>
+<tr class="memitem:aa9d632f3209a350a25b6b57eebfacb6b" id="r_aa9d632f3209a350a25b6b57eebfacb6b"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
+requires (not detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba96ee5c0e2a7149613e7fd0b83316486e">detail::comparison::not_equal</a>, Lhs_T, Rhs_T&gt;)</td></tr>
+<tr class="memitem:aa9d632f3209a350a25b6b57eebfacb6b template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#aa9d632f3209a350a25b6b57eebfacb6b">ne</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
+<tr class="memdesc:aa9d632f3209a350a25b6b57eebfacb6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rejects operands that cannot be compared with <span class="tt">!=</span> or written.  <br /></td></tr>
+<tr class="memitem:ga92cdc2dde6af040f2f5f5df677df0985" id="r_ga92cdc2dde6af040f2f5f5df677df0985"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
+requires detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba96ee5c0e2a7149613e7fd0b83316486e">detail::comparison::not_equal</a>, Lhs_T, Rhs_T&gt;</td></tr>
+<tr class="memitem:ga92cdc2dde6af040f2f5f5df677df0985 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga92cdc2dde6af040f2f5f5df677df0985">ne</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
+<tr class="memdesc:ga92cdc2dde6af040f2f5f5df677df0985"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic non-equality comparator.  <br /></td></tr>
 <tr class="memitem:gae82d39ac86167bb4bfa6624676f3729e" id="r_gae82d39ac86167bb4bfa6624676f3729e"><td class="memTemplParams" colspan="2">template&lt;class Expr_T&gt; <br />
 requires extension::checkable&lt;std::remove_cvref_t&lt;Expr_T&gt;&gt;</td></tr>
 <tr class="memitem:gae82d39ac86167bb4bfa6624676f3729e template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gae82d39ac86167bb4bfa6624676f3729e">negate</a> (Expr_T &amp;&amp;expr)</td></tr>
 <tr class="memdesc:gae82d39ac86167bb4bfa6624676f3729e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic logical <b>not</b> operation.  <br /></td></tr>
-<tr class="memitem:gacbf45f8ba39c0653bbf1035c70dd9529" id="r_gacbf45f8ba39c0653bbf1035c70dd9529"><td class="memTemplParams" colspan="2">template&lt;class Callable_T&gt; </td></tr>
-<tr class="memitem:gacbf45f8ba39c0653bbf1035c70dd9529 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#gacbf45f8ba39c0653bbf1035c70dd9529">nothrow</a> (const Callable_T &amp;func)</td></tr>
-<tr class="memdesc:gacbf45f8ba39c0653bbf1035c70dd9529"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a callable does not throw any exception, for <span class="tt">expect()</span> or <span class="tt">require()</span>.  <br /></td></tr>
-<tr class="memitem:gadf818920a5a7ba9905466c521deb342e" id="r_gadf818920a5a7ba9905466c521deb342e"><td class="memTemplParams" colspan="2">template&lt;class Callable_T&gt; </td></tr>
-<tr class="memitem:gadf818920a5a7ba9905466c521deb342e template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#gadf818920a5a7ba9905466c521deb342e">throws</a> (const Callable_T &amp;func)</td></tr>
-<tr class="memdesc:gadf818920a5a7ba9905466c521deb342e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a callable throws any exception, for <span class="tt">expect()</span> or <span class="tt">require()</span>.  <br /></td></tr>
-<tr class="memitem:ga63345b69c376caae707262748aa6aea1" id="r_ga63345b69c376caae707262748aa6aea1"><td class="memTemplParams" colspan="2">template&lt;class Exception_T, class Callable_T&gt; </td></tr>
-<tr class="memitem:ga63345b69c376caae707262748aa6aea1 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#ga63345b69c376caae707262748aa6aea1">throws</a> (const Callable_T &amp;func)</td></tr>
-<tr class="memdesc:ga63345b69c376caae707262748aa6aea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a callable throws a specific exception, for <span class="tt">expect()</span> or <span class="tt">require()</span>.  <br /></td></tr>
+<tr class="memitem:ga2989618cf5adca7a767c966895ab37a0" id="r_ga2989618cf5adca7a767c966895ab37a0"><td class="memTemplParams" colspan="2">template&lt;class Callable_T&gt; <br />
+requires std::invocable&lt;Callable_T&amp;&gt;</td></tr>
+<tr class="memitem:ga2989618cf5adca7a767c966895ab37a0 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#ga2989618cf5adca7a767c966895ab37a0">nothrow</a> (Callable_T &amp;&amp;func)</td></tr>
+<tr class="memdesc:ga2989618cf5adca7a767c966895ab37a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a callable does not throw any exception, for <span class="tt">expect()</span> or <span class="tt">require()</span>.  <br /></td></tr>
+<tr class="memitem:ga8fdcab2fe2567f6d6a735e89b936298d" id="r_ga8fdcab2fe2567f6d6a735e89b936298d"><td class="memTemplParams" colspan="2">template&lt;class Callable_T&gt; <br />
+requires std::invocable&lt;Callable_T&amp;&gt;</td></tr>
+<tr class="memitem:ga8fdcab2fe2567f6d6a735e89b936298d template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#ga8fdcab2fe2567f6d6a735e89b936298d">throws</a> (Callable_T &amp;&amp;func)</td></tr>
+<tr class="memdesc:ga8fdcab2fe2567f6d6a735e89b936298d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a callable throws any exception, for <span class="tt">expect()</span> or <span class="tt">require()</span>.  <br /></td></tr>
+<tr class="memitem:ga6a0ca4f8b757ea511c494189212812b3" id="r_ga6a0ca4f8b757ea511c494189212812b3"><td class="memTemplParams" colspan="2">template&lt;class Exception_T, class Callable_T&gt; <br />
+requires std::invocable&lt;Callable_T&amp;&gt;</td></tr>
+<tr class="memitem:ga6a0ca4f8b757ea511c494189212812b3 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#ga6a0ca4f8b757ea511c494189212812b3">throws</a> (Callable_T &amp;&amp;func)</td></tr>
+<tr class="memdesc:ga6a0ca4f8b757ea511c494189212812b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a callable throws a specific exception, for <span class="tt">expect()</span> or <span class="tt">require()</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus.html" title="Primary namespace for the µTest++ testing framework.">micro_os_plus::micro_test_plus</a></span> namespace encapsulates all core components, types, and utilities of the µTest++ testing framework, providing a dedicated scope for its public API.</p>
@@ -514,6 +537,352 @@ requires extension::checkable&lt;std::remove_cvref_t&lt;Expr_T&gt;&gt;</td></tr>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15"><div class="ttname"><a href="#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">micro_os_plus::micro_test_plus::verbosity::silent</a></div><div class="ttdeci">@ silent</div><div class="ttdef"><b>Definition</b> <a href="runner-options_8h_source.html#l00101">runner-options.h:101</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555"><div class="ttname"><a href="#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">micro_os_plus::micro_test_plus::verbosity::normal</a></div><div class="ttdeci">@ normal</div><div class="ttdef"><b>Definition</b> <a href="runner-options_8h_source.html#l00106">runner-options.h:106</a></div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="ab88360ce7994d5e5ac71deff0450a638" name="ab88360ce7994d5e5ac71deff0450a638"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab88360ce7994d5e5ac71deff0450a638">&#9670;&#160;</a></span>eq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Lhs_T, class Rhs_T&gt; <br />
+requires (not detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba465289687a70db7aa7217cc240c29f0f">detail::comparison::equal</a>, Lhs_T, Rhs_T&gt;)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool micro_os_plus::micro_test_plus::eq </td>
+          <td>(</td>
+          <td class="paramtype">Lhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Rhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Selected for the operands that <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga0fbc0f7ddf0107c1e5265bb79287487d" title="Generic equality comparator.">eq()</a></span> does not accept (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands.html" title="Concept satisfied when the operands of a comparator can be written and compared.">detail::comparable_operands</a></span>); it stops the compilation with a message that states what is wrong, instead of the notes of the concepts. Never called.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Lhs_T</td><td>Type of the left hand side operand. </td></tr>
+    <tr><td class="paramname">Rhs_T</td><td>Type of the right hand side operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>Left hand side operand. </td></tr>
+    <tr><td class="paramname">rhs</td><td>Right hand side operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">false</span>, to avoid further errors in the check; the type is not deduced, so that the call can be used in an unevaluated operand.</dd></dl>
+<p>Never called; the compilation stops in <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5" title="Stops the compilation of a comparator whose operands are rejected, with a message that tells why.">detail::reject_comparison()</a></span>, with a message that names the mistake. </p>
+
+<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00111">111</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  112</span>  {</div>
+<div class="line"><span class="lineno">  113</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5">detail::reject_comparison&lt;detail::comparison::equal, Lhs_T, Rhs_T&gt;</a> ();</div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  115</span>  }</div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a767a45bfc1b9f58e87b03e2e7698ffc5"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5">micro_os_plus::micro_test_plus::detail::reject_comparison</a></div><div class="ttdeci">constexpr void reject_comparison(void) noexcept</div><div class="ttdoc">Stops the compilation of a comparator whose operands are rejected, with a message that tells why.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00557">detail-inlines.h:557</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="function-comparators-inlines_8h_source.html#l00095">eq()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00557">micro_os_plus::micro_test_plus::detail::reject_comparison()</a>.</p>
+
+</div>
+</div>
+<a id="a7a3c75c65882a8e5a274500789cf3c94" name="a7a3c75c65882a8e5a274500789cf3c94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a3c75c65882a8e5a274500789cf3c94">&#9670;&#160;</a></span>ge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Lhs_T, class Rhs_T&gt; <br />
+requires (not detail::comparable_operands&lt; <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2">detail::comparison::greater_equal</a>, Lhs_T, Rhs_T&gt;)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool micro_os_plus::micro_test_plus::ge </td>
+          <td>(</td>
+          <td class="paramtype">Lhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Rhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Selected for the operands that <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga58c7dacabca3fe1b0dc025a0e0f30e9e" title="Generic greater than or equal comparator.">ge()</a></span> does not accept (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands.html" title="Concept satisfied when the operands of a comparator can be written and compared.">detail::comparable_operands</a></span>); it stops the compilation with a message that states what is wrong, instead of the notes of the concepts. Never called.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Lhs_T</td><td>Type of the left hand side operand. </td></tr>
+    <tr><td class="paramname">Rhs_T</td><td>Type of the right hand side operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>Left hand side operand. </td></tr>
+    <tr><td class="paramname">rhs</td><td>Right hand side operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">false</span>, to avoid further errors in the check; the type is not deduced, so that the call can be used in an unevaluated operand.</dd></dl>
+<p>Never called; the compilation stops in <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5" title="Stops the compilation of a comparator whose operands are rejected, with a message that tells why.">detail::reject_comparison()</a></span>, with a message that names the mistake. </p>
+
+<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00213">213</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  214</span>  {</div>
+<div class="line"><span class="lineno">  215</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5">detail::reject_comparison</a>&lt;<a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2">detail::comparison::greater_equal</a>, Lhs_T,</div>
+<div class="line"><span class="lineno">  216</span>                              Rhs_T&gt; ();</div>
+<div class="line"><span class="lineno">  217</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  218</span>  }</div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2">micro_os_plus::micro_test_plus::detail::comparison::greater_equal</a></div><div class="ttdeci">@ greater_equal</div><div class="ttdoc">The &gt;= operator, checked by ge().</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00425">detail-inlines.h:425</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="function-comparators-inlines_8h_source.html#l00197">ge()</a>, <a class="el" href="detail-inlines_8h_source.html#l00425">micro_os_plus::micro_test_plus::detail::greater_equal</a>, and <a class="el" href="detail-inlines_8h_source.html#l00557">micro_os_plus::micro_test_plus::detail::reject_comparison()</a>.</p>
+
+</div>
+</div>
+<a id="a2dd96a2ee35e669ddab6d883caeb3df2" name="a2dd96a2ee35e669ddab6d883caeb3df2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dd96a2ee35e669ddab6d883caeb3df2">&#9670;&#160;</a></span>gt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Lhs_T, class Rhs_T&gt; <br />
+requires (not detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba7b8dc4fb0fb55fc8eb69ff080c45ed7e">detail::comparison::greater</a>, Lhs_T, Rhs_T&gt;)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool micro_os_plus::micro_test_plus::gt </td>
+          <td>(</td>
+          <td class="paramtype">Lhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Rhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Selected for the operands that <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga90da2cbc14b4562332a205d5b232356f" title="Generic greater than comparator.">gt()</a></span> does not accept (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands.html" title="Concept satisfied when the operands of a comparator can be written and compared.">detail::comparable_operands</a></span>); it stops the compilation with a message that states what is wrong, instead of the notes of the concepts. Never called.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Lhs_T</td><td>Type of the left hand side operand. </td></tr>
+    <tr><td class="paramname">Rhs_T</td><td>Type of the right hand side operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>Left hand side operand. </td></tr>
+    <tr><td class="paramname">rhs</td><td>Right hand side operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">false</span>, to avoid further errors in the check; the type is not deduced, so that the call can be used in an unevaluated operand.</dd></dl>
+<p>Never called; the compilation stops in <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5" title="Stops the compilation of a comparator whose operands are rejected, with a message that tells why.">detail::reject_comparison()</a></span>, with a message that names the mistake. </p>
+
+<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00179">179</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  180</span>  {</div>
+<div class="line"><span class="lineno">  181</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5">detail::reject_comparison&lt;detail::comparison::greater, Lhs_T, Rhs_T&gt;</a> ();</div>
+<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  183</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="function-comparators-inlines_8h_source.html#l00163">gt()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00557">micro_os_plus::micro_test_plus::detail::reject_comparison()</a>.</p>
+
+</div>
+</div>
+<a id="a434995a43c1ab9d2b75f1ee5e535c48b" name="a434995a43c1ab9d2b75f1ee5e535c48b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a434995a43c1ab9d2b75f1ee5e535c48b">&#9670;&#160;</a></span>le()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Lhs_T, class Rhs_T&gt; <br />
+requires (not detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba77932225fb35fc4b74dc8fabf0992dac">detail::comparison::less_equal</a>, Lhs_T, Rhs_T&gt;)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool micro_os_plus::micro_test_plus::le </td>
+          <td>(</td>
+          <td class="paramtype">Lhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Rhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Selected for the operands that <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga9125d2dd997269eecc0d8239d5df67e5" title="Generic less than or equal comparator.">le()</a></span> does not accept (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands.html" title="Concept satisfied when the operands of a comparator can be written and compared.">detail::comparable_operands</a></span>); it stops the compilation with a message that states what is wrong, instead of the notes of the concepts. Never called.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Lhs_T</td><td>Type of the left hand side operand. </td></tr>
+    <tr><td class="paramname">Rhs_T</td><td>Type of the right hand side operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>Left hand side operand. </td></tr>
+    <tr><td class="paramname">rhs</td><td>Right hand side operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">false</span>, to avoid further errors in the check; the type is not deduced, so that the call can be used in an unevaluated operand.</dd></dl>
+<p>Never called; the compilation stops in <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5" title="Stops the compilation of a comparator whose operands are rejected, with a message that tells why.">detail::reject_comparison()</a></span>, with a message that names the mistake. </p>
+
+<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00282">282</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  283</span>  {</div>
+<div class="line"><span class="lineno">  284</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5">detail::reject_comparison&lt;detail::comparison::less_equal, Lhs_T, Rhs_T&gt;</a> ();</div>
+<div class="line"><span class="lineno">  285</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  286</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="function-comparators-inlines_8h_source.html#l00266">le()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00557">micro_os_plus::micro_test_plus::detail::reject_comparison()</a>.</p>
+
+</div>
+</div>
+<a id="a1584ff2a522d8d452b9b1b8b12ce0bb4" name="a1584ff2a522d8d452b9b1b8b12ce0bb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1584ff2a522d8d452b9b1b8b12ce0bb4">&#9670;&#160;</a></span>lt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Lhs_T, class Rhs_T&gt; <br />
+requires (not detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0bae37e8d912e8f7b8f9b5ef9452ba47ff1">detail::comparison::less</a>, Lhs_T, Rhs_T&gt;)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool micro_os_plus::micro_test_plus::lt </td>
+          <td>(</td>
+          <td class="paramtype">Lhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Rhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Selected for the operands that <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga493a42c738ef38b45a28b06a2155aa00" title="Generic less than comparator.">lt()</a></span> does not accept (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands.html" title="Concept satisfied when the operands of a comparator can be written and compared.">detail::comparable_operands</a></span>); it stops the compilation with a message that states what is wrong, instead of the notes of the concepts. Never called.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Lhs_T</td><td>Type of the left hand side operand. </td></tr>
+    <tr><td class="paramname">Rhs_T</td><td>Type of the right hand side operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>Left hand side operand. </td></tr>
+    <tr><td class="paramname">rhs</td><td>Right hand side operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">false</span>, to avoid further errors in the check; the type is not deduced, so that the call can be used in an unevaluated operand.</dd></dl>
+<p>Never called; the compilation stops in <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5" title="Stops the compilation of a comparator whose operands are rejected, with a message that tells why.">detail::reject_comparison()</a></span>, with a message that names the mistake. </p>
+
+<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00248">248</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  249</span>  {</div>
+<div class="line"><span class="lineno">  250</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5">detail::reject_comparison&lt;detail::comparison::less, Lhs_T, Rhs_T&gt;</a> ();</div>
+<div class="line"><span class="lineno">  251</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  252</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="function-comparators-inlines_8h_source.html#l00232">lt()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00557">micro_os_plus::micro_test_plus::detail::reject_comparison()</a>.</p>
+
+</div>
+</div>
+<a id="aa9d632f3209a350a25b6b57eebfacb6b" name="aa9d632f3209a350a25b6b57eebfacb6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9d632f3209a350a25b6b57eebfacb6b">&#9670;&#160;</a></span>ne()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Lhs_T, class Rhs_T&gt; <br />
+requires (not detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba96ee5c0e2a7149613e7fd0b83316486e">detail::comparison::not_equal</a>, Lhs_T, Rhs_T&gt;)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool micro_os_plus::micro_test_plus::ne </td>
+          <td>(</td>
+          <td class="paramtype">Lhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Rhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Selected for the operands that <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga92cdc2dde6af040f2f5f5df677df0985" title="Generic non-equality comparator.">ne()</a></span> does not accept (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands.html" title="Concept satisfied when the operands of a comparator can be written and compared.">detail::comparable_operands</a></span>); it stops the compilation with a message that states what is wrong, instead of the notes of the concepts. Never called.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Lhs_T</td><td>Type of the left hand side operand. </td></tr>
+    <tr><td class="paramname">Rhs_T</td><td>Type of the right hand side operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>Left hand side operand. </td></tr>
+    <tr><td class="paramname">rhs</td><td>Right hand side operand. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">false</span>, to avoid further errors in the check; the type is not deduced, so that the call can be used in an unevaluated operand.</dd></dl>
+<p>Never called; the compilation stops in <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5" title="Stops the compilation of a comparator whose operands are rejected, with a message that tells why.">detail::reject_comparison()</a></span>, with a message that names the mistake. </p>
+
+<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00145">145</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  146</span>  {</div>
+<div class="line"><span class="lineno">  147</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5">detail::reject_comparison&lt;detail::comparison::not_equal, Lhs_T, Rhs_T&gt;</a> ();</div>
+<div class="line"><span class="lineno">  148</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  149</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="function-comparators-inlines_8h_source.html#l00129">ne()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00557">micro_os_plus::micro_test_plus::detail::reject_comparison()</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->

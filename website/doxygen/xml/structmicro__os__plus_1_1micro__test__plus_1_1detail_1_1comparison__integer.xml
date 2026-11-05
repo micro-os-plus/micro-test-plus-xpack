@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparison__integer" kind="struct" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::detail::comparison_integer</compoundname>
+    <includes refid="detail-inlines_8h" local="no">detail-inlines.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparison__integer_1aa758853c28ab3fc87d36ea582fd81b9e" prot="public" static="no">
+        <type>T</type>
+        <definition>using micro_os_plus::micro_test_plus::detail::comparison_integer&lt; T &gt;::type = T</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::comparison_integer::type</qualifiedname>
+        <briefdescription>
+<para>The type used for the comparison. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The type itself, for all the types other than the characters. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="287" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="287" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The integer type used to compare a value of type <computeroutput>T</computeroutput>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The primary template is the type itself. The character types (<computeroutput>char</computeroutput>, <computeroutput>wchar_t</computeroutput>, <computeroutput>char8_t</computeroutput>, <computeroutput>char16_t</computeroutput>, and <computeroutput>char32_t</computeroutput>) are compared as the numbers that they hold, so they are replaced by the integer type of the same size and signedness, which <computeroutput>std::cmp_*()</computeroutput> accepts; the signedness of <computeroutput>char</computeroutput> and <computeroutput>wchar_t</computeroutput> depends on the platform, and is kept.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="279" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="280" bodyend="288"/>
+    <listofallmembers>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparison__integer_1aa758853c28ab3fc87d36ea582fd81b9e" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::comparison_integer</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

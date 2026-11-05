@@ -8,8 +8,6 @@ var namespacemicro__os__plus_1_1micro__test__plus_1_1extension =
     [ "compare_tag", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1compare__tag.html", null ],
     [ "has_epsilon", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html", null ],
     [ "is_op", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html", null ],
-    [ "legacy_checkable", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1legacy__checkable.html", null ],
     [ "predicate_tag", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__tag.html", null ],
-    [ "printable", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable.html", null ],
-    [ "suspicious_condition", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1suspicious__condition.html", null ]
+    [ "printable", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable.html", null ]
 ];

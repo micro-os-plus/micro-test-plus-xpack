@@ -129,6 +129,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:aec79a35b7936b91bee63d9baf4f8c861"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepares a text for a single TAP line.  <br /></td></tr>
 <tr class="memitem:ae344ed13847263c08e39a3e9266c0109" id="r_ae344ed13847263c08e39a3e9266c0109"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#ae344ed13847263c08e39a3e9266c0109">yaml_double_quoted</a> (std::string_view text)</td></tr>
 <tr class="memdesc:ae344ed13847263c08e39a3e9266c0109"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formats a text as a YAML double-quoted scalar.  <br /></td></tr>
+<tr class="memitem:a27ca54c91d04ccb21bebc0f54b0c735b" id="r_a27ca54c91d04ccb21bebc0f54b0c735b"><td class="memItemLeft">std::string&#160;</td><td class="memItemRight"><a class="el" href="#a27ca54c91d04ccb21bebc0f54b0c735b">yaml_scalar</a> (std::string_view text)</td></tr>
+<tr class="memdesc:a27ca54c91d04ccb21bebc0f54b0c735b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formats a text as a YAML scalar, double-quoted only when needed.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The unnamed namespace gives the helpers internal linkage, so that they are visible only in this translation unit, and cannot conflict with the names of the application or of the other source files of the framework. They are not declared in any header.</p>
@@ -290,7 +292,51 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="reporter-tap_8cpp_source.html#l00294">yaml_double_quoted()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="reporter-tap_8cpp_source.html#l00294">yaml_double_quoted()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="reporter-tap_8cpp_source.html#l00294">yaml_double_quoted()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00377">yaml_scalar()</a>.</p>
+
+</div>
+</div>
+<a id="a27ca54c91d04ccb21bebc0f54b0c735b" name="a27ca54c91d04ccb21bebc0f54b0c735b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27ca54c91d04ccb21bebc0f54b0c735b">&#9670;&#160;</a></span>yaml_scalar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string micro_os_plus::micro_test_plus::detail::anonymous_namespace{<a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html">reporter</a>-tap.cpp}::yaml_scalar </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A text made only of letters, digits, and the characters <span class="tt">_</span>, <span class="tt">.</span>, <span class="tt">+</span>, <span class="tt">/</span>, and <span class="tt">-</span>, and not starting with <span class="tt">-</span>, is a valid plain scalar, whatever its meaning, and is returned unchanged, so that the usual values are written as before. Any other text, for example a file name with a space, a <span class="tt">#</span>, or a <span class="tt">:</span>, which a YAML parser would truncate, split, or reject as a plain scalar, is returned double-quoted, as <span class="tt"><a class="el" href="#ae344ed13847263c08e39a3e9266c0109" title="Formats a text as a YAML double-quoted scalar.">yaml_double_quoted()</a></span> does.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>The text to format. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The scalar. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="reporter-tap_8cpp_source.html#l00377">377</a> of file <a class="el" href="reporter-tap_8cpp_source.html">reporter-tap.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  378</span>    {</div>
+<div class="line"><span class="lineno">  379</span>      <span class="keywordtype">bool</span> is_plain = !text.empty () &amp;&amp; text.front () != <span class="charliteral">&#39;-&#39;</span>;</div>
+<div class="line"><span class="lineno">  380</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">char</span> c : text)</div>
+<div class="line"><span class="lineno">  381</span>        {</div>
+<div class="line"><span class="lineno">  382</span>          <span class="keyword">const</span> <span class="keywordtype">bool</span> is_safe = (c &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;z&#39;</span>) || (c &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;Z&#39;</span>)</div>
+<div class="line"><span class="lineno">  383</span>                               || (c &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;9&#39;</span>) || c == <span class="charliteral">&#39;_&#39;</span></div>
+<div class="line"><span class="lineno">  384</span>                               || c == <span class="charliteral">&#39;.&#39;</span> || c == <span class="charliteral">&#39;+&#39;</span> || c == <span class="charliteral">&#39;/&#39;</span> || c == <span class="charliteral">&#39;-&#39;</span>;</div>
+<div class="line"><span class="lineno">  385</span>          is_plain = is_plain &amp;&amp; is_safe;</div>
+<div class="line"><span class="lineno">  386</span>        }</div>
+<div class="line"><span class="lineno">  387</span> </div>
+<div class="line"><span class="lineno">  388</span>      <span class="keywordflow">return</span> is_plain ? std::string{ text } : <a class="code hl_function" href="#ae344ed13847263c08e39a3e9266c0109">yaml_double_quoted</a> (text);</div>
+<div class="line"><span class="lineno">  389</span>    }</div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_html_ae344ed13847263c08e39a3e9266c0109"><div class="ttname"><a href="#ae344ed13847263c08e39a3e9266c0109">micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::yaml_double_quoted</a></div><div class="ttdeci">std::string yaml_double_quoted(std::string_view text)</div><div class="ttdoc">Formats a text as a YAML double-quoted scalar.</div><div class="ttdef"><b>Definition</b> <a href="reporter-tap_8cpp_source.html#l00294">reporter-tap.cpp:294</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="reporter-tap_8cpp_source.html#l00294">yaml_double_quoted()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l00377">yaml_scalar()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="reporter-tap_8cpp_source.html#l00377">yaml_scalar()</a>.</p>
 
 </div>
 </div>

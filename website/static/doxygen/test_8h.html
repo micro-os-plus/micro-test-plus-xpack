@@ -187,16 +187,28 @@ Functions</h2></td></tr>
 <tr class="memdesc:a6abb44ef8226b1f80aad8010b5ef1a5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the function object that holds the body of a test case or suite.  <br /></td></tr>
 <tr class="memitem:afe0adb93e576b2c11ba933ec65245d91" id="r_afe0adb93e576b2c11ba933ec65245d91"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#afe0adb93e576b2c11ba933ec65245d91">micro_os_plus::micro_test_plus::detail::escape_control_characters</a> (std::string &amp;name)</td></tr>
 <tr class="memdesc:afe0adb93e576b2c11ba933ec65245d91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escapes the control characters of a name.  <br /></td></tr>
+<tr class="memitem:abf92eca75cdfb0993bb529fdbb592be1" id="r_abf92eca75cdfb0993bb529fdbb592be1"><td class="memTemplParams" colspan="2">template&lt;typename Callable_T, typename... Args_T&gt; </td></tr>
+<tr class="memitem:abf92eca75cdfb0993bb529fdbb592be1 template"><td class="memItemLeft">constexpr void&#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#abf92eca75cdfb0993bb529fdbb592be1">micro_os_plus::micro_test_plus::detail::reject_suite_body</a> (void) noexcept</td></tr>
+<tr class="memdesc:abf92eca75cdfb0993bb529fdbb592be1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the compilation with a message that tells what the body of a suite takes.  <br /></td></tr>
+<tr class="memitem:ab1f64ac2ae5a8acc8b198e7f44cf0747" id="r_ab1f64ac2ae5a8acc8b198e7f44cf0747"><td class="memTemplParams" colspan="2">template&lt;typename Callable_T, typename... Args_T&gt; </td></tr>
+<tr class="memitem:ab1f64ac2ae5a8acc8b198e7f44cf0747 template"><td class="memItemLeft">constexpr void&#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ab1f64ac2ae5a8acc8b198e7f44cf0747">micro_os_plus::micro_test_plus::detail::reject_test_body</a> (void) noexcept</td></tr>
+<tr class="memdesc:ab1f64ac2ae5a8acc8b198e7f44cf0747"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the compilation with a message that tells what the body of a test case takes.  <br /></td></tr>
 <tr class="memitem:a3178150c77ae33d100e18e157436b04b" id="r_a3178150c77ae33d100e18e157436b04b"><td class="memTemplParams" colspan="2">template&lt;class Self_T, class Values_T, class Callable_T&gt; </td></tr>
 <tr class="memitem:a3178150c77ae33d100e18e157436b04b template"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a3178150c77ae33d100e18e157436b04b">micro_os_plus::micro_test_plus::detail::test_each_value</a> (Self_T &amp;self, const <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1located__name.html">located_name</a> &amp;name, Values_T &amp;&amp;values, Callable_T &amp;callable)</td></tr>
 <tr class="memdesc:a3178150c77ae33d100e18e157436b04b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds and runs a test case for each value.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a360bed7e2af05a26d92e5ca4c414c06e" id="r_a360bed7e2af05a26d92e5ca4c414c06e"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
+<tr class="memitem:a360bed7e2af05a26d92e5ca4c414c06e template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a360bed7e2af05a26d92e5ca4c414c06e">micro_os_plus::micro_test_plus::detail::dependent_false_v</a> = false</td></tr>
+<tr class="memdesc:a360bed7e2af05a26d92e5ca4c414c06e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A value that is always <span class="tt">false</span>, but depends on the template arguments.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This header provides the declarations for the test hierarchy used within the µTest++ framework: the internal <span class="tt">detail::runnable_base</span> base class, and the <span class="tt">test_case</span>, <span class="tt">suite</span>, <span class="tt">top_suite</span>, and <span class="tt">static_suite</span> classes. They offer mechanisms for running test cases, managing the counters of the passed and failed checks, and registering test suites with the runner.</p>
 <p>The test suites are non-copyable and non-movable, so that each one has a single owner. Their bodies are any callable objects, such as functions and lambdas, with optional arguments.</p>
 <p>All definitions reside within the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus.html" title="Primary namespace for the µTest++ testing framework.">micro_os_plus::micro_test_plus</a></span> namespace.</p>
 <p>The header files are organised within the <span class="tt">include/micro-os-plus/micro-test-plus</span> folder to maintain a structured and modular codebase.</p>
-<p>This file is intended solely for internal use within the framework and should not be included directly by user code. </p>
+<p>This file is included by <span class="tt"><a class="el" href="micro-test-plus_8h.html" title="Main C++ header with the declarations for the µTest++ Testing Framework.">micro-os-plus/micro-test-plus.h</a></span>, which is the header that the applications include. </p>
 
 <p class="definition">Definition in file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 </div></div><!-- contents -->

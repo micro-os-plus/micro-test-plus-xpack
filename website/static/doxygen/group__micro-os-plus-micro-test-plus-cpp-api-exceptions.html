@@ -120,15 +120,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__micro-o
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gacbf45f8ba39c0653bbf1035c70dd9529" id="r_gacbf45f8ba39c0653bbf1035c70dd9529"><td class="memTemplParams" colspan="2">template&lt;class Callable_T&gt; </td></tr>
-<tr class="memitem:gacbf45f8ba39c0653bbf1035c70dd9529 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#gacbf45f8ba39c0653bbf1035c70dd9529">micro_os_plus::micro_test_plus::nothrow</a> (const Callable_T &amp;func)</td></tr>
-<tr class="memdesc:gacbf45f8ba39c0653bbf1035c70dd9529"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a callable does not throw any exception, for <span class="tt">expect()</span> or <span class="tt">require()</span>.  <br /></td></tr>
-<tr class="memitem:gadf818920a5a7ba9905466c521deb342e" id="r_gadf818920a5a7ba9905466c521deb342e"><td class="memTemplParams" colspan="2">template&lt;class Callable_T&gt; </td></tr>
-<tr class="memitem:gadf818920a5a7ba9905466c521deb342e template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#gadf818920a5a7ba9905466c521deb342e">micro_os_plus::micro_test_plus::throws</a> (const Callable_T &amp;func)</td></tr>
-<tr class="memdesc:gadf818920a5a7ba9905466c521deb342e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a callable throws any exception, for <span class="tt">expect()</span> or <span class="tt">require()</span>.  <br /></td></tr>
-<tr class="memitem:ga63345b69c376caae707262748aa6aea1" id="r_ga63345b69c376caae707262748aa6aea1"><td class="memTemplParams" colspan="2">template&lt;class Exception_T, class Callable_T&gt; </td></tr>
-<tr class="memitem:ga63345b69c376caae707262748aa6aea1 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ga63345b69c376caae707262748aa6aea1">micro_os_plus::micro_test_plus::throws</a> (const Callable_T &amp;func)</td></tr>
-<tr class="memdesc:ga63345b69c376caae707262748aa6aea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a callable throws a specific exception, for <span class="tt">expect()</span> or <span class="tt">require()</span>.  <br /></td></tr>
+<tr class="memitem:ga2989618cf5adca7a767c966895ab37a0" id="r_ga2989618cf5adca7a767c966895ab37a0"><td class="memTemplParams" colspan="2">template&lt;class Callable_T&gt; <br />
+requires std::invocable&lt;Callable_T&amp;&gt;</td></tr>
+<tr class="memitem:ga2989618cf5adca7a767c966895ab37a0 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ga2989618cf5adca7a767c966895ab37a0">micro_os_plus::micro_test_plus::nothrow</a> (Callable_T &amp;&amp;func)</td></tr>
+<tr class="memdesc:ga2989618cf5adca7a767c966895ab37a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a callable does not throw any exception, for <span class="tt">expect()</span> or <span class="tt">require()</span>.  <br /></td></tr>
+<tr class="memitem:ga8fdcab2fe2567f6d6a735e89b936298d" id="r_ga8fdcab2fe2567f6d6a735e89b936298d"><td class="memTemplParams" colspan="2">template&lt;class Callable_T&gt; <br />
+requires std::invocable&lt;Callable_T&amp;&gt;</td></tr>
+<tr class="memitem:ga8fdcab2fe2567f6d6a735e89b936298d template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ga8fdcab2fe2567f6d6a735e89b936298d">micro_os_plus::micro_test_plus::throws</a> (Callable_T &amp;&amp;func)</td></tr>
+<tr class="memdesc:ga8fdcab2fe2567f6d6a735e89b936298d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a callable throws any exception, for <span class="tt">expect()</span> or <span class="tt">require()</span>.  <br /></td></tr>
+<tr class="memitem:ga6a0ca4f8b757ea511c494189212812b3" id="r_ga6a0ca4f8b757ea511c494189212812b3"><td class="memTemplParams" colspan="2">template&lt;class Exception_T, class Callable_T&gt; <br />
+requires std::invocable&lt;Callable_T&amp;&gt;</td></tr>
+<tr class="memitem:ga6a0ca4f8b757ea511c494189212812b3 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ga6a0ca4f8b757ea511c494189212812b3">micro_os_plus::micro_test_plus::throws</a> (Callable_T &amp;&amp;func)</td></tr>
+<tr class="memdesc:ga6a0ca4f8b757ea511c494189212812b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a callable throws a specific exception, for <span class="tt">expect()</span> or <span class="tt">require()</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Three functions check what a callable throws, and are used as the conditions of <span class="tt">expect()</span> or <span class="tt">require()</span>:</p><ul>
@@ -176,13 +179,14 @@ Functions</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">});</div>
 </div><!-- fragment -->  </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="gacbf45f8ba39c0653bbf1035c70dd9529" name="gacbf45f8ba39c0653bbf1035c70dd9529"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacbf45f8ba39c0653bbf1035c70dd9529">&#9670;&#160;</a></span>nothrow()</h2>
+<a id="ga2989618cf5adca7a767c966895ab37a0" name="ga2989618cf5adca7a767c966895ab37a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2989618cf5adca7a767c966895ab37a0">&#9670;&#160;</a></span>nothrow()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Callable_T&gt; </div>
+template&lt;class Callable_T&gt; <br />
+requires std::invocable&lt;Callable_T&amp;&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -190,7 +194,7 @@ template&lt;class Callable_T&gt; </div>
         <tr>
           <td class="memname">auto micro_os_plus::micro_test_plus::nothrow </td>
           <td>(</td>
-          <td class="paramtype">const Callable_T &amp;</td>          <td class="paramname"><span class="paramname"><em>func</em></span></td><td>)</td>
+          <td class="paramtype">Callable_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>func</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -202,7 +206,7 @@ template&lt;class Callable_T&gt; </div>
 </div><div class="memdoc">
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Callable_T</td><td>The type of the callable object to be invoked. </td></tr>
+    <tr><td class="paramname">Callable_T</td><td>The type of the callable object to be invoked; it must be invocable without arguments, as an lvalue, so a <span class="tt">mutable</span> lambda is accepted. </td></tr>
   </table>
   </dd>
 </dl>
@@ -213,28 +217,29 @@ template&lt;class Callable_T&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An object of an unspecified type, holding the result, to be passed to <span class="tt">expect()</span> or <span class="tt">require()</span>.</dd></dl>
-<p>The <span class="tt"><a class="el" href="#gacbf45f8ba39c0653bbf1035c70dd9529" title="Checks whether a callable does not throw any exception, for expect() or require().">nothrow</a></span> function template verifies whether invoking the provided callable object does not result in the throwing of any exception within the µTest++ framework. This is useful for ensuring that code under test does not unexpectedly signal error conditions.</p>
+<p>The <span class="tt"><a class="el" href="#ga2989618cf5adca7a767c966895ab37a0" title="Checks whether a callable does not throw any exception, for expect() or require().">nothrow</a></span> function template verifies whether invoking the provided callable object does not result in the throwing of any exception within the µTest++ framework. This is useful for ensuring that code under test does not unexpectedly signal error conditions.</p>
 <p>The callable is invoked immediately, when the comparator is constructed; the result is reported when the comparator is passed to <span class="tt">expect()</span> or <span class="tt">require()</span>, which also accept optional messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="exceptions-inlines_8h_source.html#l00117">117</a> of file <a class="el" href="exceptions-inlines_8h_source.html">exceptions-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  118</span>  {</div>
-<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op.html">detail::nothrow_op</a>{ func };</div>
-<div class="line"><span class="lineno">  120</span>  }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op.html">micro_os_plus::micro_test_plus::detail::nothrow_op</a></div><div class="ttdoc">Operator struct to check if an expression does not throw any exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01500">detail.h:1501</a></div></div>
+<p class="definition">Definition at line <a class="el" href="exceptions-inlines_8h_source.html#l00120">120</a> of file <a class="el" href="exceptions-inlines_8h_source.html">exceptions-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  121</span>  {</div>
+<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op.html">detail::nothrow_op</a>{ func };</div>
+<div class="line"><span class="lineno">  123</span>  }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op.html">micro_os_plus::micro_test_plus::detail::nothrow_op</a></div><div class="ttdoc">Operator struct to check if an expression does not throw any exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01554">detail.h:1555</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="exceptions-inlines_8h_source.html#l00117">nothrow()</a>.</p>
+<p class="reference">References <a class="el" href="exceptions-inlines_8h_source.html#l00120">nothrow()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="exceptions-inlines_8h_source.html#l00117">nothrow()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="exceptions-inlines_8h_source.html#l00120">nothrow()</a>.</p>
 
 </div>
 </div>
-<a id="gadf818920a5a7ba9905466c521deb342e" name="gadf818920a5a7ba9905466c521deb342e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadf818920a5a7ba9905466c521deb342e">&#9670;&#160;</a></span>throws() <span class="overload">[1/2]</span></h2>
+<a id="ga8fdcab2fe2567f6d6a735e89b936298d" name="ga8fdcab2fe2567f6d6a735e89b936298d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8fdcab2fe2567f6d6a735e89b936298d">&#9670;&#160;</a></span>throws() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Callable_T&gt; </div>
+template&lt;class Callable_T&gt; <br />
+requires std::invocable&lt;Callable_T&amp;&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -242,7 +247,7 @@ template&lt;class Callable_T&gt; </div>
         <tr>
           <td class="memname">auto micro_os_plus::micro_test_plus::throws </td>
           <td>(</td>
-          <td class="paramtype">const Callable_T &amp;</td>          <td class="paramname"><span class="paramname"><em>func</em></span></td><td>)</td>
+          <td class="paramtype">Callable_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>func</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -255,7 +260,7 @@ template&lt;class Callable_T&gt; </div>
 <p>The callable is invoked once, immediately. The check passes if it throws an exception of any type.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Callable_T</td><td>The type of the callable object to be invoked. </td></tr>
+    <tr><td class="paramname">Callable_T</td><td>The type of the callable object to be invoked; it must be invocable without arguments, as an lvalue, so a <span class="tt">mutable</span> lambda is accepted. </td></tr>
   </table>
   </dd>
 </dl>
@@ -266,24 +271,25 @@ template&lt;class Callable_T&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An object of an unspecified type, holding the result, to be passed to <span class="tt">expect()</span> or <span class="tt">require()</span>.</dd></dl>
-<p>The <span class="tt"><a class="el" href="#ga63345b69c376caae707262748aa6aea1" title="Checks whether a callable throws a specific exception, for expect() or require().">throws</a></span> function template verifies whether invoking the provided callable object results in the throwing of any exception within the µTest++ framework. This is useful for ensuring that code under test properly signals error conditions.</p>
+<p>The <span class="tt"><a class="el" href="#ga6a0ca4f8b757ea511c494189212812b3" title="Checks whether a callable throws a specific exception, for expect() or require().">throws</a></span> function template verifies whether invoking the provided callable object results in the throwing of any exception within the µTest++ framework. This is useful for ensuring that code under test properly signals error conditions.</p>
 <p>The callable is invoked immediately, when the comparator is constructed; the result is reported when the comparator is passed to <span class="tt">expect()</span> or <span class="tt">require()</span>, which also accept optional messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="exceptions-inlines_8h_source.html#l00099">99</a> of file <a class="el" href="exceptions-inlines_8h_source.html">exceptions-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  100</span>  {</div>
-<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">detail::throws_op&lt;&gt;</a>{ func };</div>
-<div class="line"><span class="lineno">  102</span>  }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">micro_os_plus::micro_test_plus::detail::throws_op</a></div><div class="ttdoc">Operator struct template to check if an expression throws a specific exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01441">detail.h:1442</a></div></div>
+<p class="definition">Definition at line <a class="el" href="exceptions-inlines_8h_source.html#l00101">101</a> of file <a class="el" href="exceptions-inlines_8h_source.html">exceptions-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  102</span>  {</div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">detail::throws_op&lt;&gt;</a>{ func };</div>
+<div class="line"><span class="lineno">  104</span>  }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">micro_os_plus::micro_test_plus::detail::throws_op</a></div><div class="ttdoc">Operator struct template to check if an expression throws a specific exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01489">detail.h:1490</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ga63345b69c376caae707262748aa6aea1" name="ga63345b69c376caae707262748aa6aea1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga63345b69c376caae707262748aa6aea1">&#9670;&#160;</a></span>throws() <span class="overload">[2/2]</span></h2>
+<a id="ga6a0ca4f8b757ea511c494189212812b3" name="ga6a0ca4f8b757ea511c494189212812b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6a0ca4f8b757ea511c494189212812b3">&#9670;&#160;</a></span>throws() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Exception_T, class Callable_T&gt; </div>
+template&lt;class Exception_T, class Callable_T&gt; <br />
+requires std::invocable&lt;Callable_T&amp;&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -291,7 +297,7 @@ template&lt;class Exception_T, class Callable_T&gt; </div>
         <tr>
           <td class="memname">auto micro_os_plus::micro_test_plus::throws </td>
           <td>(</td>
-          <td class="paramtype">const Callable_T &amp;</td>          <td class="paramname"><span class="paramname"><em>func</em></span></td><td>)</td>
+          <td class="paramtype">Callable_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>func</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -301,11 +307,11 @@ template&lt;class Exception_T, class Callable_T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The callable is invoked once, immediately. The check passes if it throws an exception of type <span class="tt">Exception_T</span> or of a type derived from it, so <span class="tt"><a class="el" href="#ga63345b69c376caae707262748aa6aea1" title="Checks whether a callable throws a specific exception, for expect() or require().">throws</a>&lt;std::exception&gt;()</span> passes for any standard exception. An exception of another type, or no exception, fails the check, and the report states what was thrown.</p>
+<p>The callable is invoked once, immediately. The check passes if it throws an exception of type <span class="tt">Exception_T</span> or of a type derived from it, so <span class="tt"><a class="el" href="#ga6a0ca4f8b757ea511c494189212812b3" title="Checks whether a callable throws a specific exception, for expect() or require().">throws</a>&lt;std::exception&gt;()</span> passes for any standard exception. An exception of another type, or no exception, fails the check, and the report states what was thrown.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Exception_T</td><td>The type of the exception expected to be thrown. </td></tr>
-    <tr><td class="paramname">Callable_T</td><td>The type of the callable object to be invoked. </td></tr>
+    <tr><td class="paramname">Callable_T</td><td>The type of the callable object to be invoked; it must be invocable without arguments, as an lvalue, so a <span class="tt">mutable</span> lambda is accepted. </td></tr>
   </table>
   </dd>
 </dl>
@@ -316,13 +322,13 @@ template&lt;class Exception_T, class Callable_T&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An object of an unspecified type, holding the result, to be passed to <span class="tt">expect()</span> or <span class="tt">require()</span>.</dd></dl>
-<p>The <span class="tt"><a class="el" href="#ga63345b69c376caae707262748aa6aea1" title="Checks whether a callable throws a specific exception, for expect() or require().">throws</a></span> function template verifies whether invoking the provided callable object results in the throwing of a specific exception type within the µTest++ framework. This is useful for testing error handling in code under test. Exceptions of other types are reported as failures.</p>
+<p>The <span class="tt"><a class="el" href="#ga6a0ca4f8b757ea511c494189212812b3" title="Checks whether a callable throws a specific exception, for expect() or require().">throws</a></span> function template verifies whether invoking the provided callable object results in the throwing of a specific exception type within the µTest++ framework. This is useful for testing error handling in code under test. Exceptions of other types are reported as failures.</p>
 <p>The callable is invoked immediately, when the comparator is constructed; the result is reported when the comparator is passed to <span class="tt">expect()</span> or <span class="tt">require()</span>, which also accept optional messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="exceptions-inlines_8h_source.html#l00081">81</a> of file <a class="el" href="exceptions-inlines_8h_source.html">exceptions-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   82</span>  {</div>
-<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">detail::throws_op&lt;Exception_T&gt;</a>{ func };</div>
-<div class="line"><span class="lineno">   84</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="exceptions-inlines_8h_source.html#l00082">82</a> of file <a class="el" href="exceptions-inlines_8h_source.html">exceptions-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>  {</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">detail::throws_op&lt;Exception_T&gt;</a>{ func };</div>
+<div class="line"><span class="lineno">   85</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>

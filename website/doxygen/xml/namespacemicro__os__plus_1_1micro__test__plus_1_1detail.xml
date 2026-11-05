@@ -5,15 +5,17 @@
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op" prot="public">micro_os_plus::micro_test_plus::detail::and_op</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op" prot="public">micro_os_plus::micro_test_plus::detail::approx_op</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand" prot="public">micro_os_plus::micro_test_plus::detail::array_operand</innerclass>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string" prot="public">micro_os_plus::micro_test_plus::detail::basic_c_string</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op" prot="public">micro_os_plus::micro_test_plus::detail::binary_op</innerclass>
     <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable" prot="public">micro_os_plus::micro_test_plus::detail::bound_callable</innerclass>
-    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string" prot="public">micro_os_plus::micro_test_plus::detail::c_string</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op" prot="public">micro_os_plus::micro_test_plus::detail::callable_op</innerclass>
     <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref" prot="public">micro_os_plus::micro_test_plus::detail::callable_ref</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result" prot="public">micro_os_plus::micro_test_plus::detail::callable_result</innerclass>
     <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result" prot="public">micro_os_plus::micro_test_plus::detail::check_result</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1colours" prot="public">micro_os_plus::micro_test_plus::detail::colours</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" prot="public">micro_os_plus::micro_test_plus::detail::compare_op</innerclass>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparison__integer" prot="public">micro_os_plus::micro_test_plus::detail::comparison_integer</innerclass>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparison__integer_3_01_t_01_4" prot="public">micro_os_plus::micro_test_plus::detail::comparison_integer&lt; T &gt;</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to" prot="public">micro_os_plus::micro_test_plus::detail::equal_to</innerclass>
     <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter" prot="public">micro_os_plus::micro_test_plus::detail::expression_formatter</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1failed__requirement" prot="public">micro_os_plus::micro_test_plus::detail::failed_requirement</innerclass>
@@ -24,6 +26,7 @@
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1indentation" prot="public">micro_os_plus::micro_test_plus::detail::indentation</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant" prot="public">micro_os_plus::micro_test_plus::detail::integral_constant</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__min__magnitude" prot="public">micro_os_plus::micro_test_plus::detail::integral_min_magnitude</innerclass>
+    <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1is__bool__wrapper" prot="public">micro_os_plus::micro_test_plus::detail::is_bool_wrapper</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less" prot="public">micro_os_plus::micro_test_plus::detail::less</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal" prot="public">micro_os_plus::micro_test_plus::detail::less_equal</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool" prot="public">micro_os_plus::micro_test_plus::detail::named_bool</innerclass>
@@ -49,19 +52,28 @@
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" prot="public">micro_os_plus::micro_test_plus::detail::value</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4" prot="public">micro_os_plus::micro_test_plus::detail::value&lt; T &gt;</innerclass>
     <innerclass refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base" prot="public">micro_os_plus::micro_test_plus::detail::value_base</innerclass>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ambiguous__condition">micro_os_plus::micro_test_plus::detail::ambiguous_condition</innerconcept>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1character">micro_os_plus::micro_test_plus::detail::character</innerconcept>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1character__pointer">micro_os_plus::micro_test_plus::detail::character_pointer</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable">micro_os_plus::micro_test_plus::detail::comparable</innerconcept>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands">micro_os_plus::micro_test_plus::detail::comparable_operands</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1container__like">micro_os_plus::micro_test_plus::detail::container_like</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1formattable__range">micro_os_plus::micro_test_plus::detail::formattable_range</innerconcept>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1free__printable">micro_os_plus::micro_test_plus::detail::free_printable</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1free__range">micro_os_plus::micro_test_plus::detail::free_range</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1function__pointer__pair">micro_os_plus::micro_test_plus::detail::function_pointer_pair</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1generic__callable">micro_os_plus::micro_test_plus::detail::generic_callable</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1has__value">micro_os_plus::micro_test_plus::detail::has_value</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1lazy__message">micro_os_plus::micro_test_plus::detail::lazy_message</innerconcept>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1legacy__checkable">micro_os_plus::micro_test_plus::detail::legacy_checkable</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1member__printable">micro_os_plus::micro_test_plus::detail::member_printable</innerconcept>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1message__argument">micro_os_plus::micro_test_plus::detail::message_argument</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1sign__mixed__integers">micro_os_plus::micro_test_plus::detail::sign_mixed_integers</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1static__suite__body">micro_os_plus::micro_test_plus::detail::static_suite_body</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1string__like">micro_os_plus::micro_test_plus::detail::string_like</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1suite__body">micro_os_plus::micro_test_plus::detail::suite_body</innerconcept>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1suspicious__condition">micro_os_plus::micro_test_plus::detail::suspicious_condition</innerconcept>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1tag__has__symbol">micro_os_plus::micro_test_plus::detail::tag_has_symbol</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__body">micro_os_plus::micro_test_plus::detail::test_body</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__range">micro_os_plus::micro_test_plus::detail::test_values_range</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__tuple">micro_os_plus::micro_test_plus::detail::test_values_tuple</innerconcept>
@@ -111,7 +123,7 @@
         <enumvalue id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba465289687a70db7aa7217cc240c29f0f" prot="public">
           <name>equal</name>
           <briefdescription>
-<para>The <computeroutput>==</computeroutput> operator, checked by <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref></computeroutput>. </para>
+<para>The <computeroutput>==</computeroutput> operator, checked by <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref></computeroutput>. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -119,7 +131,7 @@
         <enumvalue id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba96ee5c0e2a7149613e7fd0b83316486e" prot="public">
           <name>not_equal</name>
           <briefdescription>
-<para>The <computeroutput>!=</computeroutput> operator, checked by <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa77076edd474fc10d8c0bd6da623e284" kindref="member">ne()</ref></computeroutput>. </para>
+<para>The <computeroutput>!=</computeroutput> operator, checked by <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga92cdc2dde6af040f2f5f5df677df0985" kindref="member">ne()</ref></computeroutput>. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -127,7 +139,7 @@
         <enumvalue id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba7b8dc4fb0fb55fc8eb69ff080c45ed7e" prot="public">
           <name>greater</name>
           <briefdescription>
-<para>The <computeroutput>&gt;</computeroutput> operator, checked by <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf32fd09749f18635233613fa48f91b56" kindref="member">gt()</ref></computeroutput>. </para>
+<para>The <computeroutput>&gt;</computeroutput> operator, checked by <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga90da2cbc14b4562332a205d5b232356f" kindref="member">gt()</ref></computeroutput>. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -135,7 +147,7 @@
         <enumvalue id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2" prot="public">
           <name>greater_equal</name>
           <briefdescription>
-<para>The <computeroutput>&gt;=</computeroutput> operator, checked by <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga989e5966794d5c5487477aa782d844b1" kindref="member">ge()</ref></computeroutput>. </para>
+<para>The <computeroutput>&gt;=</computeroutput> operator, checked by <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga58c7dacabca3fe1b0dc025a0e0f30e9e" kindref="member">ge()</ref></computeroutput>. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -143,7 +155,7 @@
         <enumvalue id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0bae37e8d912e8f7b8f9b5ef9452ba47ff1" prot="public">
           <name>less</name>
           <briefdescription>
-<para>The <computeroutput>&lt;</computeroutput> operator, checked by <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaea39573e23de35872ace5b08d2514327" kindref="member">lt()</ref></computeroutput>. </para>
+<para>The <computeroutput>&lt;</computeroutput> operator, checked by <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga493a42c738ef38b45a28b06a2155aa00" kindref="member">lt()</ref></computeroutput>. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -151,7 +163,7 @@
         <enumvalue id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba77932225fb35fc4b74dc8fabf0992dac" prot="public">
           <name>less_equal</name>
           <briefdescription>
-<para>The <computeroutput>&lt;=</computeroutput> operator, checked by <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf9e47a6e18771f969cdd840ec187734a" kindref="member">le()</ref></computeroutput>. </para>
+<para>The <computeroutput>&lt;=</computeroutput> operator, checked by <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9125d2dd997269eecc0d8239d5df67e5" kindref="member">le()</ref></computeroutput>. </para>
           </briefdescription>
           <detaileddescription>
           </detaileddescription>
@@ -160,11 +172,11 @@
 <para>The comparison operators, as the template argument of the <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable" kindref="compound">comparable</ref></computeroutput> concept. </para>
         </briefdescription>
         <detaileddescription>
-<para>A single concept, parametrised by the operator, checks the operands of all the comparators (<computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa77076edd474fc10d8c0bd6da623e284" kindref="member">ne()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf32fd09749f18635233613fa48f91b56" kindref="member">gt()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga989e5966794d5c5487477aa782d844b1" kindref="member">ge()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaea39573e23de35872ace5b08d2514327" kindref="member">lt()</ref></computeroutput>, and <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf9e47a6e18771f969cdd840ec187734a" kindref="member">le()</ref></computeroutput>). </para>
+<para>A single concept, parametrised by the operator, checks the operands of all the comparators (<computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga92cdc2dde6af040f2f5f5df677df0985" kindref="member">ne()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga90da2cbc14b4562332a205d5b232356f" kindref="member">gt()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga58c7dacabca3fe1b0dc025a0e0f30e9e" kindref="member">ge()</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga493a42c738ef38b45a28b06a2155aa00" kindref="member">lt()</ref></computeroutput>, and <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9125d2dd997269eecc0d8239d5df67e5" kindref="member">le()</ref></computeroutput>). </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="335" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="336" bodyend="349"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="416" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="417" bodyend="430"/>
       </memberdef>
       <memberdef kind="enum" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1af25a23e4451135649a8207c3a0ea30b5" prot="public" static="no" strong="yes">
         <type>uint8_t</type>
@@ -296,10 +308,57 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1279" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1280" bodyend="1296"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1327" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1328" bodyend="1344"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ab21dca8f57bf59dbf7ffdd97742f9e28" prot="public" static="no">
+        <type><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string" kindref="compound">basic_c_string</ref>&lt; char &gt;</type>
+        <definition>using micro_os_plus::micro_test_plus::detail::c_string = basic_c_string&lt;char&gt;</definition>
+        <argsstring></argsstring>
+        <name>c_string</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::c_string</qualifiedname>
+        <briefdescription>
+<para>The C string operand of <computeroutput>char</computeroutput> strings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The type to which <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">as_operand()</ref></computeroutput> converts the <computeroutput>char</computeroutput> arrays, including the string literals, and the <computeroutput>char</computeroutput> pointers; the framework itself names <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string" kindref="compound">basic_c_string</ref></computeroutput>, and the alias is kept for the tests that name the type of a comparator. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1738" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1738" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51cdb19f7f3312bb3946451261c83ece" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>typename <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparison__integer" kindref="compound">comparison_integer</ref>&lt; T &gt;::type</type>
+        <definition>using micro_os_plus::micro_test_plus::detail::comparison_integer_t = typename comparison_integer&lt;T&gt;::type</definition>
+        <argsstring></argsstring>
+        <name>comparison_integer_t</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::comparison_integer_t</qualifiedname>
+        <briefdescription>
+<para>Alias of the integer type used to compare the type <computeroutput>T</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used by <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1sign__mixed__integers" kindref="compound">sign_mixed_integers</ref></computeroutput>, to tell the signedness, and by <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1aadebcd6c243d90bd0bdb4acc807ce1e1" kindref="member">as_comparison_integer()</ref></computeroutput>, to convert the operands.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="326" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="326" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="typedef" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6bdf1e117e085a41c16e2dae63e72e52" prot="public" static="no">
         <templateparamlist>
           <param>
@@ -315,7 +374,7 @@
 <para>The type with which an operand of a comparator is compared. </para>
         </briefdescription>
         <detaileddescription>
-<para>The type of the operand after <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">as_operand()</ref></computeroutput> and <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a59eb53c96f68d26635c13df53b358ac8" kindref="member">unwrap()</ref></computeroutput>, without references and qualifiers; for example <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string" kindref="compound">detail::c_string</ref></computeroutput> for a string literal.</para>
+<para>The type of the operand after <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">as_operand()</ref></computeroutput> and <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a59eb53c96f68d26635c13df53b358ac8" kindref="member">unwrap()</ref></computeroutput>, without references and qualifiers; for example <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string" kindref="compound">detail::basic_c_string</ref>&lt;char&gt;</computeroutput> for a string literal.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>T</parametername>
@@ -329,7 +388,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="305" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="305" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="386" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="386" bodyend="-1"/>
       </memberdef>
       <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gaf123417aafc76c826760101bcc517dfa" kind="typedef"><name>runner_totals</name></member>
       <memberdef kind="typedef" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ae9fe49cb0d38724533e9a27a2232bf09" prot="public" static="no">
@@ -351,7 +410,8 @@
         </briefdescription>
         <detaileddescription>
 <para>Applied by the deduction guides and the factory functions to the type deduced for a forwarding reference: <computeroutput>X&amp;</computeroutput> (or <computeroutput>const X&amp;</computeroutput>) for an lvalue, <computeroutput>X</computeroutput> for an rvalue.</para>
-<para>An lvalue is copied into the expression, so that an expression built in a function from its parameters, and returned, does not refer to the destroyed locals of that function. An rvalue is moved into the expression, so that an expression that outlives the statement, like <computeroutput>auto <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op" kindref="compound">op</ref> = <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq</ref> (f (), 1);</computeroutput>, does not refer to a destroyed temporary.</para>
+<para>An lvalue is copied into the expression, so that an expression built in a function from its parameters, and returned, does not refer to the destroyed locals of that function. An rvalue is moved into the expression, so that an expression that outlives the statement, like <computeroutput>auto <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op" kindref="compound">op</ref> = <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq</ref> (f (), 1);</computeroutput>, does not refer to a destroyed temporary.</para>
+<para>The arrays and the character pointers are first converted by <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">as_operand()</ref></computeroutput> to <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string" kindref="compound">basic_c_string</ref></computeroutput> or <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand" kindref="compound">array_operand</ref></computeroutput>, which are stored, but which refer to the characters or to the elements of the operand, without copying them; such an expression is valid only as long as the operand.</para>
 <para>Only an lvalue of a class type that cannot be copied (for example a <computeroutput>std::unique_ptr</computeroutput>) is stored as a <computeroutput>const</computeroutput> reference; such a reference remains valid only as long as the named operand, which is always the case within the statement that checks the expression.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
@@ -366,7 +426,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="222" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="222" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="229" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="229" bodyend="-1"/>
       </memberdef>
       <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga53a6bc7f86b15378c8296b3647e7013f" kind="typedef"><name>timestamps</name></member>
       <memberdef kind="typedef" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a2c197674df5b07499a4ea40d124f1082" prot="public" static="no">
@@ -398,7 +458,7 @@ Without references and qualifiers; for example <computeroutput>int</computeroutp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="813" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="813" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="823" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="823" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="var">
@@ -443,6 +503,42 @@ Without references and qualifiers; for example <computeroutput>int</computeroutp
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="171" column="30" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" bodystart="171" bodyend="175"/>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a82221fa355584dbaa75c7e66fbefa6b8" compoundref="reporter-human_8cpp" startline="80" endline="100">micro_os_plus::micro_test_plus::detail::reporter_human::reporter_human</referencedby>
       </memberdef>
+      <memberdef kind="variable" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a360bed7e2af05a26d92e5ca4c414c06e" prot="public" static="no" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::dependent_false_v</definition>
+        <argsstring></argsstring>
+        <name>dependent_false_v</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::dependent_false_v</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>A value that is always <computeroutput>false</computeroutput>, but depends on the template arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used as the condition of the <computeroutput>static_assert</computeroutput> of the functions that reject an argument, so that they fail only when instantiated, and their diagnostic has the message, not the concepts that were not satisfied.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Ts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The template arguments to depend on. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="1261" column="27" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" bodystart="1261" bodyend="-1"/>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1abf92eca75cdfb0993bb529fdbb592be1" compoundref="test-inlines_8h" startline="452" endline="476">reject_suite_body</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ab1f64ac2ae5a8acc8b198e7f44cf0747" compoundref="test-inlines_8h" startline="426" endline="442">reject_test_body</referencedby>
+      </memberdef>
     </sectiondef>
     <sectiondef kind="func">
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1abaf649db5561610c2f8bea816f2683d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -473,7 +569,7 @@ Without references and qualifiers; for example <computeroutput>int</computeroutp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1074" column="5" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1074" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1104" column="5" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1104" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a1fd5e3a96e759c76038572203aa988c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -515,12 +611,12 @@ The usual escapes for the characters that have one; the other ones, including DE
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" line="346" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="346" bodyend="378" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" declline="124" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a1fd5e3a96e759c76038572203aa988c8" compoundref="expression-formatter_8cpp" startline="346" endline="378">append_control_escape</references>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a1fd5e3a96e759c76038572203aa988c8" compoundref="expression-formatter_8cpp" startline="346" endline="378">append_control_escape</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" line="401" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="401" bodyend="433" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" declline="124" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a1fd5e3a96e759c76038572203aa988c8" compoundref="expression-formatter_8cpp" startline="401" endline="433">append_control_escape</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a1fd5e3a96e759c76038572203aa988c8" compoundref="expression-formatter_8cpp" startline="401" endline="433">append_control_escape</referencedby>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1aa9d532379d86e8eee8a5227fe929abc8" compoundref="expression-formatter_8cpp" startline="322" endline="335">micro_os_plus::micro_test_plus::detail::anonymous_namespace{expression-formatter.cpp}::append_plain</referencedby>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1afe0adb93e576b2c11ba933ec65245d91" compoundref="test_8cpp" startline="80" endline="112">escape_control_characters</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6df410b7ec951a5563b1fae75ed31350" compoundref="expression-formatter_8cpp" startline="474" endline="491">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6df410b7ec951a5563b1fae75ed31350" compoundref="expression-formatter_8cpp" startline="529" endline="546">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -584,24 +680,24 @@ The value is formatted into a local buffer, which is then appended to <computero
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="1041" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1041" bodyend="1112" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1530" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" compoundref="detail-inlines_8h" startline="1041" endline="1112">append_number</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a5568c08ff7a8d29614a288da787d81c2" compoundref="expression-formatter-inlines_8h" startline="482" endline="506">micro_os_plus::micro_test_plus::detail::expression_formatter::append_first_difference</referencedby>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" compoundref="detail-inlines_8h" startline="1041" endline="1112">append_number</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2164ee9d09127bf1b2f7f43cd1d120ea" compoundref="expression-formatter-inlines_8h" startline="340" endline="374">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae35ae1fef3c1b19f78d9d01c46e389e5" compoundref="expression-formatter_8cpp" startline="892" endline="898">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a28f6feb880950d846e9d527254e019cd" compoundref="expression-formatter_8cpp" startline="873" endline="883">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1addfdc62bee977a9bec102e7babec03e1" compoundref="expression-formatter_8cpp" startline="911" endline="921">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a50d03426268411a1481d778952bdb8f4" compoundref="expression-formatter_8cpp" startline="733" endline="739">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2852a7fdaabf1036ddbeb50b2e0a23bd" compoundref="expression-formatter_8cpp" startline="794" endline="798">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a93e6a5524f5cd912acd200cf7842ddf4" compoundref="expression-formatter_8cpp" startline="845" endline="850">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1adec3880ea2146b10b4b6ff188ad0a57c" compoundref="expression-formatter_8cpp" startline="819" endline="824">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a51879a69ec3bbd2d36614f05b7991748" compoundref="expression-formatter_8cpp" startline="764" endline="770">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a41d15d145121a646d3ec8e2a53626658" compoundref="expression-formatter_8cpp" startline="748" endline="754">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a9943e733445290a4296bd236ba5b1294" compoundref="expression-formatter_8cpp" startline="806" endline="811">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2f40f5b293810e4c9c55340dd7074936" compoundref="expression-formatter_8cpp" startline="858" endline="863">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ac2b6dfdd70318f5005035667d19814b2" compoundref="expression-formatter_8cpp" startline="832" endline="837">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a60165c67928c5bab83c4dac211b50ec4" compoundref="expression-formatter_8cpp" startline="780" endline="786">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="1344" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1344" bodyend="1415" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1587" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" compoundref="detail-inlines_8h" startline="1344" endline="1415">append_number</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a5568c08ff7a8d29614a288da787d81c2" compoundref="expression-formatter-inlines_8h" startline="550" endline="574">micro_os_plus::micro_test_plus::detail::expression_formatter::append_first_difference</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3abe0c9c597c7fe04a5f101022ecea5d" compoundref="detail-inlines_8h" startline="1344" endline="1415">append_number</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2164ee9d09127bf1b2f7f43cd1d120ea" compoundref="expression-formatter-inlines_8h" startline="369" endline="403">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ae35ae1fef3c1b19f78d9d01c46e389e5" compoundref="expression-formatter_8cpp" startline="907" endline="913">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a28f6feb880950d846e9d527254e019cd" compoundref="expression-formatter_8cpp" startline="888" endline="898">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1addfdc62bee977a9bec102e7babec03e1" compoundref="expression-formatter_8cpp" startline="926" endline="936">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a50d03426268411a1481d778952bdb8f4" compoundref="expression-formatter_8cpp" startline="748" endline="754">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2852a7fdaabf1036ddbeb50b2e0a23bd" compoundref="expression-formatter_8cpp" startline="809" endline="813">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a93e6a5524f5cd912acd200cf7842ddf4" compoundref="expression-formatter_8cpp" startline="860" endline="865">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1adec3880ea2146b10b4b6ff188ad0a57c" compoundref="expression-formatter_8cpp" startline="834" endline="839">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a51879a69ec3bbd2d36614f05b7991748" compoundref="expression-formatter_8cpp" startline="779" endline="785">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a41d15d145121a646d3ec8e2a53626658" compoundref="expression-formatter_8cpp" startline="763" endline="769">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a9943e733445290a4296bd236ba5b1294" compoundref="expression-formatter_8cpp" startline="821" endline="826">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2f40f5b293810e4c9c55340dd7074936" compoundref="expression-formatter_8cpp" startline="873" endline="878">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1ac2b6dfdd70318f5005035667d19814b2" compoundref="expression-formatter_8cpp" startline="847" endline="852">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a60165c67928c5bab83c4dac211b50ec4" compoundref="expression-formatter_8cpp" startline="795" endline="801">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a0cdaf2313f78a256b80f7bb7b279e2e6" compoundref="reporter-inlines_8h" startline="101" endline="105">micro_os_plus::micro_test_plus::detail::reporter::operator&lt;&lt;</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a622a2bb23e2c98ecfa3a2ccb53e19910" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -661,13 +757,10 @@ Null pointers are rendered as <computeroutput>"0x0"</computeroutput>, regardless
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="1137" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1137" bodyend="1171" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1549" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a622a2bb23e2c98ecfa3a2ccb53e19910" compoundref="detail-inlines_8h" startline="1137" endline="1171">append_pointer</references>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a622a2bb23e2c98ecfa3a2ccb53e19910" compoundref="detail-inlines_8h" startline="1137" endline="1171">append_pointer</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a8e8bda279988a58e7812e881f9f2cf84" compoundref="expression-formatter_8cpp" startline="619" endline="632">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a74a2fb2ea8cebdd9e5618d9a68e0e940" compoundref="expression-formatter_8cpp" startline="639" endline="652">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1acfc1bb36c5b0b84d653431eb7f360555" compoundref="expression-formatter_8cpp" startline="577" endline="590">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a965d6164f8c6d50cfb29545e794e9615" compoundref="expression-formatter-inlines_8h" startline="188" endline="192">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="1440" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1440" bodyend="1474" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1606" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a622a2bb23e2c98ecfa3a2ccb53e19910" compoundref="detail-inlines_8h" startline="1440" endline="1474">append_pointer</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a622a2bb23e2c98ecfa3a2ccb53e19910" compoundref="detail-inlines_8h" startline="1440" endline="1474">append_pointer</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a2171b8ffdba71b7a108c87fa0b708f92" compoundref="expression-formatter-inlines_8h" startline="217" endline="221">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a3ff526c7ae5db0669d7db2adebf7cb2d" compoundref="reporter-inlines_8h" startline="84" endline="88">micro_os_plus::micro_test_plus::detail::reporter::operator&lt;&lt;</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a933e64cbdd20aa8b1f0968965cf260a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -704,7 +797,61 @@ Null pointers are rendered as <computeroutput>"0x0"</computeroutput>, regardless
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1018" column="5" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1018" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1048" column="5" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1048" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1aadebcd6c243d90bd0bdb4acc807ce1e1" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51cdb19f7f3312bb3946451261c83ece" kindref="member">comparison_integer_t</ref>&lt; T &gt;</type>
+        <definition>comparison_integer_t&lt; T &gt; micro_os_plus::micro_test_plus::detail::as_comparison_integer</definition>
+        <argsstring>(const T value) noexcept</argsstring>
+        <name>as_comparison_integer</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::as_comparison_integer</qualifiedname>
+        <param>
+          <type>const T</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Converts an integer or a character to the type used to compare it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The conversion keeps the value, since the type has the same size and signedness. Applied to both operands of the <computeroutput>std::cmp_*()</computeroutput> functions, which do not accept the character types.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The value, as <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51cdb19f7f3312bb3946451261c83ece" kindref="member">comparison_integer_t</ref>&lt;T&gt;</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="343" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="343" bodyend="346"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1aadebcd6c243d90bd0bdb4acc807ce1e1" compoundref="detail-inlines_8h" startline="343" endline="346">as_comparison_integer</references>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to_1a3e079e0cfd481086f5e722d8619963af" compoundref="detail-inlines_8h" startline="608" endline="620">micro_os_plus::micro_test_plus::detail::equal_to::apply</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater_1a160a3a53085ef4de1cbe0d391df9c20a" compoundref="detail-inlines_8h" startline="654" endline="666">micro_os_plus::micro_test_plus::detail::greater::apply</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal_1a51ffacf87f7c030f4b289f9f53ddeccd" compoundref="detail-inlines_8h" startline="676" endline="688">micro_os_plus::micro_test_plus::detail::greater_equal::apply</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less_1a81b6505b5400ccbe838e50d06bee8af2" compoundref="detail-inlines_8h" startline="698" endline="710">micro_os_plus::micro_test_plus::detail::less::apply</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal_1ad24b05cbbdc8672cb13e0f126a9c9802" compoundref="detail-inlines_8h" startline="720" endline="732">micro_os_plus::micro_test_plus::detail::less_equal::apply</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to_1a6911d4baf097b704280eebbead545ba1" compoundref="detail-inlines_8h" startline="631" endline="644">micro_os_plus::micro_test_plus::detail::not_equal_to::apply</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1aadebcd6c243d90bd0bdb4acc807ce1e1" compoundref="detail-inlines_8h" startline="343" endline="346">as_comparison_integer</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -725,7 +872,7 @@ Null pointers are rendered as <computeroutput>"0x0"</computeroutput>, regardless
 <para>Prepares an operand of a comparator. </para>
         </briefdescription>
         <detaileddescription>
-<para>The <computeroutput>char</computeroutput> arrays and the <computeroutput>char</computeroutput> pointers (not those of <computeroutput>signed char</computeroutput> or <computeroutput>unsigned char</computeroutput>, which are byte buffers) are converted to <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string" kindref="compound">c_string</ref></computeroutput>, so that they are compared by content; the other arrays are converted to <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand" kindref="compound">array_operand</ref></computeroutput>, so that they are compared by content, the functions to function pointers, and all other operands are returned unchanged, so the other pointers and the functions are compared by address.</para>
+<para>The arrays and the pointers of the character types (<computeroutput>char</computeroutput>, <computeroutput>wchar_t</computeroutput>, <computeroutput>char8_t</computeroutput>, <computeroutput>char16_t</computeroutput>, and <computeroutput>char32_t</computeroutput>, but not <computeroutput>signed char</computeroutput> or <computeroutput>unsigned char</computeroutput>, which are byte buffers) are converted to <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string" kindref="compound">basic_c_string</ref></computeroutput>, so that they are compared by content; the other arrays, including those of <computeroutput>volatile</computeroutput> characters, are converted to <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand" kindref="compound">array_operand</ref></computeroutput>, so that they are compared element by element, the functions to function pointers, and all other operands are returned unchanged, so the other pointers, including the pointers to <computeroutput>volatile</computeroutput> characters, and the functions are compared by address.</para>
 <para>The other operands are forwarded, so that the comparator moves a temporary, and refers to a named operand.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
@@ -745,24 +892,25 @@ Null pointers are rendered as <computeroutput>"0x0"</computeroutput>, regardless
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string" kindref="compound">c_string</ref></computeroutput> for the C strings, an <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand" kindref="compound">array_operand</ref></computeroutput> for the other arrays, otherwise <computeroutput>t</computeroutput>, forwarded.</para>
+<simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string" kindref="compound">basic_c_string</ref></computeroutput> for the C strings, an <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand" kindref="compound">array_operand</ref></computeroutput> for the other arrays, otherwise <computeroutput>t</computeroutput>, forwarded.</para>
 </simplesect>
-Arrays of <computeroutput>char</computeroutput> are converted using their size as a bound, pointers to <computeroutput>char</computeroutput> using the null terminator; the cv-qualifiers of the characters are ignored. The other arrays are converted to <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand" kindref="compound">array_operand</ref></computeroutput>. Every other operand is forwarded, unchanged, as an lvalue or an rvalue reference. </para>
+Arrays of the character types are converted using their size as a bound, pointers to them using the null terminator; the <computeroutput>const</computeroutput> qualifier of the characters is ignored. The <computeroutput>volatile</computeroutput> characters are not strings, since <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string" kindref="compound">basic_c_string</ref></computeroutput> cannot refer to them: an array of them is converted to <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand" kindref="compound">array_operand</ref></computeroutput>, like the other arrays, and compared element by element, and a pointer to them is forwarded, and compared by address, like the other pointers. The functions are converted to function pointers. Every other operand is forwarded, unchanged, as an lvalue or an rvalue reference.</para>
+<para>The qualifiers of an array are those of its elements, so the element type is taken from the type of the argument, not from the type without qualifiers, which would lose the <computeroutput>volatile</computeroutput> of the elements, and the conversion to the pointer to <computeroutput>const</computeroutput> elements would not compile. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="1377" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1377" bodyend="1411" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="798" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1377" endline="1411">as_operand</references>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op_1a7e864eeb2250a0e6b7f4b11c2eeae663" compoundref="detail-inlines_8h" startline="589" endline="627">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1predicate__op_1ab1d700c6cde6b75a6d96e113b00824cb" compoundref="detail-inlines_8h" startline="805" endline="810">micro_os_plus::micro_test_plus::detail::predicate_op&lt; T, Predicate_T &gt;::predicate_op</referencedby>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1377" endline="1411">as_operand</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="1711" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1711" bodyend="1748" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="808" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1711" endline="1748">as_operand</references>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op_1a7e864eeb2250a0e6b7f4b11c2eeae663" compoundref="detail-inlines_8h" startline="855" endline="893">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1predicate__op_1ab1d700c6cde6b75a6d96e113b00824cb" compoundref="detail-inlines_8h" startline="1091" endline="1096">micro_os_plus::micro_test_plus::detail::predicate_op&lt; T, Predicate_T &gt;::predicate_op</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1711" endline="1748">as_operand</referencedby>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a5d35f4ca3b52088e8a64b9afd88a0ce0">compare_op</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" compoundref="function-comparators-inlines_8h" startline="92" endline="97">micro_os_plus::micro_test_plus::eq</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga989e5966794d5c5487477aa782d844b1" compoundref="function-comparators-inlines_8h" startline="152" endline="157">micro_os_plus::micro_test_plus::ge</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf32fd09749f18635233613fa48f91b56" compoundref="function-comparators-inlines_8h" startline="132" endline="137">micro_os_plus::micro_test_plus::gt</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaf9e47a6e18771f969cdd840ec187734a" compoundref="function-comparators-inlines_8h" startline="191" endline="196">micro_os_plus::micro_test_plus::le</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaea39573e23de35872ace5b08d2514327" compoundref="function-comparators-inlines_8h" startline="171" endline="176">micro_os_plus::micro_test_plus::lt</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gaa77076edd474fc10d8c0bd6da623e284" compoundref="function-comparators-inlines_8h" startline="112" endline="117">micro_os_plus::micro_test_plus::ne</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" compoundref="function-comparators-inlines_8h" startline="95" endline="100">micro_os_plus::micro_test_plus::eq</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga58c7dacabca3fe1b0dc025a0e0f30e9e" compoundref="function-comparators-inlines_8h" startline="197" endline="202">micro_os_plus::micro_test_plus::ge</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga90da2cbc14b4562332a205d5b232356f" compoundref="function-comparators-inlines_8h" startline="163" endline="168">micro_os_plus::micro_test_plus::gt</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9125d2dd997269eecc0d8239d5df67e5" compoundref="function-comparators-inlines_8h" startline="266" endline="271">micro_os_plus::micro_test_plus::le</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga493a42c738ef38b45a28b06a2155aa00" compoundref="function-comparators-inlines_8h" startline="232" endline="237">micro_os_plus::micro_test_plus::lt</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga92cdc2dde6af040f2f5f5df677df0985" compoundref="function-comparators-inlines_8h" startline="129" endline="134">micro_os_plus::micro_test_plus::ne</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6abb44ef8226b1f80aad8010b5ef1a5c" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -847,10 +995,10 @@ Arrays of <computeroutput>char</computeroutput> are converted using their size a
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" line="304" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="304" bodyend="318" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" declline="839" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6abb44ef8226b1f80aad8010b5ef1a5c" compoundref="test-inlines_8h" startline="304" endline="318">bind_callable</references>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6abb44ef8226b1f80aad8010b5ef1a5c" compoundref="test-inlines_8h" startline="304" endline="318">bind_callable</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a6d375bb7425b231aa3605642289d2f44" compoundref="test-inlines_8h" startline="270" endline="285">micro_os_plus::micro_test_plus::detail::runnable_base::create_test_case</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" line="348" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="348" bodyend="362" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" declline="919" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6abb44ef8226b1f80aad8010b5ef1a5c" compoundref="test-inlines_8h" startline="348" endline="362">bind_callable</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6abb44ef8226b1f80aad8010b5ef1a5c" compoundref="test-inlines_8h" startline="348" endline="362">bind_callable</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1a6d375bb7425b231aa3605642289d2f44" compoundref="test-inlines_8h" startline="296" endline="329">micro_os_plus::micro_test_plus::detail::runnable_base::create_test_case</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a5d35f4ca3b52088e8a64b9afd88a0ce0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -886,9 +1034,9 @@ Arrays of <computeroutput>char</computeroutput> are converted using their size a
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="904" column="5" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="904" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1377" endline="1411">as_operand</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ad3e5817bc88a8b60b769b39a5fefee94" compoundref="detail-inlines_8h" startline="652" endline="708">differ_by_at_most</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="934" column="5" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="934" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1711" endline="1748">as_operand</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ad3e5817bc88a8b60b769b39a5fefee94" compoundref="detail-inlines_8h" startline="938" endline="994">differ_by_at_most</references>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ad3e5817bc88a8b60b769b39a5fefee94" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -996,12 +1144,12 @@ For the integers, the larger value is selected with <computeroutput>std::cmp_les
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="652" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="652" bodyend="708" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="938" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="938" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="938" bodyend="994" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="968" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a515f68bbb31d64d07810f45f3b1118f6" compoundref="math-inlines_8h" startline="92" endline="95">micro_os_plus::micro_test_plus::detail::math::abs</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ad3e5817bc88a8b60b769b39a5fefee94" compoundref="detail-inlines_8h" startline="652" endline="708">differ_by_at_most</references>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op_1a5b53c23cc06ec1d830f7a99ddcb26259" compoundref="detail-inlines_8h" startline="720" endline="730">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op</referencedby>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ad3e5817bc88a8b60b769b39a5fefee94" compoundref="detail-inlines_8h" startline="938" endline="994">differ_by_at_most</references>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op_1a5b53c23cc06ec1d830f7a99ddcb26259" compoundref="detail-inlines_8h" startline="1006" endline="1016">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op</referencedby>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a5d35f4ca3b52088e8a64b9afd88a0ce0">compare_op</referencedby>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ad3e5817bc88a8b60b769b39a5fefee94" compoundref="detail-inlines_8h" startline="652" endline="708">differ_by_at_most</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ad3e5817bc88a8b60b769b39a5fefee94" compoundref="detail-inlines_8h" startline="938" endline="994">differ_by_at_most</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a18e81b3839468cd82ad9c394d88a0e02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter" kindref="compound">reporter</ref> &amp;</type>
@@ -1038,13 +1186,13 @@ The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a18e81b3839468cd82ad9c394d88a0e02" compoundref="reporter_8cpp" startline="218" endline="222">endl</references>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a18e81b3839468cd82ad9c394d88a0e02" compoundref="reporter_8cpp" startline="218" endline="222">endl</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1afd98d9a322823d67448d4ba301846392" compoundref="reporter-human_8cpp" startline="366" endline="380">micro_os_plus::micro_test_plus::detail::reporter_human::fail_suite</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a314df80e98fe6fa5de008d6708a14925" compoundref="reporter-tap_8cpp" startline="660" endline="672">micro_os_plus::micro_test_plus::detail::reporter_tap::fail_suite</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a3bd1c7d455abc782062d0e23a3ef1015" compoundref="reporter-tap_8cpp" startline="967" endline="991">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_prefix</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a314df80e98fe6fa5de008d6708a14925" compoundref="reporter-tap_8cpp" startline="691" endline="703">micro_os_plus::micro_test_plus::detail::reporter_tap::fail_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a3bd1c7d455abc782062d0e23a3ef1015" compoundref="reporter-tap_8cpp" startline="998" endline="1022">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_prefix</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1ab9fdb57e1a5497af22de7cf4a252ce4b" compoundref="reporter-human_8cpp" startline="646" endline="660">micro_os_plus::micro_test_plus::detail::reporter_human::output_fail_suffix</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1aaea110287f115fbaf80b0248f724c5b6" compoundref="reporter-tap_8cpp" startline="1023" endline="1048">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_suffix</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1aaea110287f115fbaf80b0248f724c5b6" compoundref="reporter-tap_8cpp" startline="1057" endline="1083">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_suffix</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1aeb5fb6ae953d2250360968c5582f73ab" compoundref="reporter-human_8cpp" startline="578" endline="582">micro_os_plus::micro_test_plus::detail::reporter_human::output_pass_suffix</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a37c4235afdd9b704fd65d25d130bee86" compoundref="reporter-tap_8cpp" startline="943" endline="951">micro_os_plus::micro_test_plus::detail::reporter_tap::output_pass_suffix</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a4ccc6d5273d6668fc3e91cc790328c5f" compoundref="reporter-tap_8cpp" startline="888" endline="897">micro_os_plus::micro_test_plus::detail::reporter_tap::pass_without_text</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a37c4235afdd9b704fd65d25d130bee86" compoundref="reporter-tap_8cpp" startline="974" endline="982">micro_os_plus::micro_test_plus::detail::reporter_tap::output_pass_suffix</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a4ccc6d5273d6668fc3e91cc790328c5f" compoundref="reporter-tap_8cpp" startline="919" endline="928">micro_os_plus::micro_test_plus::detail::reporter_tap::pass_without_text</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1afe0adb93e576b2c11ba933ec65245d91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1075,12 +1223,12 @@ The text is scanned first, so that a name without control characters is not touc
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/test.cpp" line="80" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/test.cpp" bodystart="80" bodyend="112" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" declline="119" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a1fd5e3a96e759c76038572203aa988c8" compoundref="expression-formatter_8cpp" startline="346" endline="378">append_control_escape</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a1fd5e3a96e759c76038572203aa988c8" compoundref="expression-formatter_8cpp" startline="401" endline="433">append_control_escape</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1afe0adb93e576b2c11ba933ec65245d91" compoundref="test_8cpp" startline="80" endline="112">escape_control_characters</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1located__name_1a872675dbace4d708aa65e8443c3733c0" compoundref="test-inlines_8h" startline="101" endline="106">micro_os_plus::micro_test_plus::located_name::located_name</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1located__name_1a49ca2791ea42fc17bd4f9de133c8adbb" compoundref="test-inlines_8h" startline="114" endline="119">micro_os_plus::micro_test_plus::located_name::located_name</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1located__name_1a2be70223f532513d9f1ce311b436b72f" compoundref="test-inlines_8h" startline="127" endline="132">micro_os_plus::micro_test_plus::located_name::located_name</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1located__name_1a030144fd43957ba5e2c9a660d2dd33be" compoundref="test-inlines_8h" startline="140" endline="145">micro_os_plus::micro_test_plus::located_name::located_name</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1located__name_1a6559d4b0648a5552702a2f5d40ba4db4" compoundref="test-inlines_8h" startline="120" endline="127">micro_os_plus::micro_test_plus::located_name::located_name</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1located__name_1a49ca2791ea42fc17bd4f9de133c8adbb" compoundref="test-inlines_8h" startline="135" endline="140">micro_os_plus::micro_test_plus::located_name::located_name</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1located__name_1a2be70223f532513d9f1ce311b436b72f" compoundref="test-inlines_8h" startline="148" endline="153">micro_os_plus::micro_test_plus::located_name::located_name</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1located__name_1a030144fd43957ba5e2c9a660d2dd33be" compoundref="test-inlines_8h" startline="161" endline="166">micro_os_plus::micro_test_plus::located_name::located_name</referencedby>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1afe0adb93e576b2c11ba933ec65245d91" compoundref="test_8cpp" startline="80" endline="112">escape_control_characters</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac6a624fe83a51361f31de016875fdb27" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
@@ -1117,23 +1265,23 @@ The text is scanned first, so that a name without control characters is not touc
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reporter-inlines.h" line="68" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reporter-inlines.h" bodystart="68" bodyend="71" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" declline="152" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac6a624fe83a51361f31de016875fdb27" compoundref="reporter-inlines_8h" startline="68" endline="71">indent</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a04cef97a62731931038355a1b5f23556" compoundref="reporter-human_8cpp" startline="398" endline="425">micro_os_plus::micro_test_plus::detail::reporter_human::begin_test_case</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a0302f9f5b977b05139d73df3bbc18d69" compoundref="reporter-tap_8cpp" startline="691" endline="721">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_test_case</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a0302f9f5b977b05139d73df3bbc18d69" compoundref="reporter-tap_8cpp" startline="722" endline="752">micro_os_plus::micro_test_plus::detail::reporter_tap::begin_test_case</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a5c1cab1018f0e1f5b070ee327faef4ca" compoundref="reporter-human_8cpp" startline="901" endline="911">micro_os_plus::micro_test_plus::detail::reporter_human::display_open_heading</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a4930462ea6e25d0adeedd50a405c25ab" compoundref="reporter-tap_8cpp" startline="1227" endline="1239">micro_os_plus::micro_test_plus::detail::reporter_tap::display_open_heading</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a2d5ddae3195ab52a957927a1b455f7b8" compoundref="reporter-tap_8cpp" startline="528" endline="608">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a4930462ea6e25d0adeedd50a405c25ab" compoundref="reporter-tap_8cpp" startline="1262" endline="1274">micro_os_plus::micro_test_plus::detail::reporter_tap::display_open_heading</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a2d5ddae3195ab52a957927a1b455f7b8" compoundref="reporter-tap_8cpp" startline="559" endline="639">micro_os_plus::micro_test_plus::detail::reporter_tap::end_suite</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a7987c7a524058211a73d048d28943fb9" compoundref="reporter-human_8cpp" startline="452" endline="528">micro_os_plus::micro_test_plus::detail::reporter_human::end_test_case</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1ad15f7dbbf6a683441df40c502125adc3" compoundref="reporter-tap_8cpp" startline="748" endline="848">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1ad15f7dbbf6a683441df40c502125adc3" compoundref="reporter-tap_8cpp" startline="779" endline="879">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1afd98d9a322823d67448d4ba301846392" compoundref="reporter-human_8cpp" startline="366" endline="380">micro_os_plus::micro_test_plus::detail::reporter_human::fail_suite</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a314df80e98fe6fa5de008d6708a14925" compoundref="reporter-tap_8cpp" startline="660" endline="672">micro_os_plus::micro_test_plus::detail::reporter_tap::fail_suite</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a314df80e98fe6fa5de008d6708a14925" compoundref="reporter-tap_8cpp" startline="691" endline="703">micro_os_plus::micro_test_plus::detail::reporter_tap::fail_suite</referencedby>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ac6a624fe83a51361f31de016875fdb27" compoundref="reporter-inlines_8h" startline="68" endline="71">indent</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a032be7e38aad40c8bc44b2376ad90e29" compoundref="reporter-human_8cpp" startline="595" endline="626">micro_os_plus::micro_test_plus::detail::reporter_human::output_fail_prefix</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a3bd1c7d455abc782062d0e23a3ef1015" compoundref="reporter-tap_8cpp" startline="967" endline="991">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_prefix</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1aaea110287f115fbaf80b0248f724c5b6" compoundref="reporter-tap_8cpp" startline="1023" endline="1048">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_suffix</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a3bd1c7d455abc782062d0e23a3ef1015" compoundref="reporter-tap_8cpp" startline="998" endline="1022">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_prefix</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1aaea110287f115fbaf80b0248f724c5b6" compoundref="reporter-tap_8cpp" startline="1057" endline="1083">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_suffix</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a043919044274838f8030d53630e3b1f5" compoundref="reporter-human_8cpp" startline="554" endline="565">micro_os_plus::micro_test_plus::detail::reporter_human::output_pass_prefix</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1ac6c05f92e47ad71f72b44f9beb0b98f1" compoundref="reporter-tap_8cpp" startline="915" endline="926">micro_os_plus::micro_test_plus::detail::reporter_tap::output_pass_prefix</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a4ccc6d5273d6668fc3e91cc790328c5f" compoundref="reporter-tap_8cpp" startline="888" endline="897">micro_os_plus::micro_test_plus::detail::reporter_tap::pass_without_text</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1ac6c05f92e47ad71f72b44f9beb0b98f1" compoundref="reporter-tap_8cpp" startline="946" endline="957">micro_os_plus::micro_test_plus::detail::reporter_tap::output_pass_prefix</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a4ccc6d5273d6668fc3e91cc790328c5f" compoundref="reporter-tap_8cpp" startline="919" endline="928">micro_os_plus::micro_test_plus::detail::reporter_tap::pass_without_text</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1af28ab5a9448645fb8976c0b139bf302b" compoundref="reporter-human_8cpp" startline="677" endline="709">micro_os_plus::micro_test_plus::detail::reporter_human::skip_test_case</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a31ccd7af941d06241ce16df9274abc38" compoundref="reporter-tap_8cpp" startline="1065" endline="1097">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_test_case</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1a31ccd7af941d06241ce16df9274abc38" compoundref="reporter-tap_8cpp" startline="1100" endline="1132">micro_os_plus::micro_test_plus::detail::reporter_tap::skip_test_case</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1276,30 +1424,46 @@ A range that is a prefix of the other is the lesser one. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="1358" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1359" bodyend="1363" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1791" declcolumn="16"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1a8f44a4be9bb4c412b551818b378395c4" compoundref="detail-inlines_8h" startline="1306" endline="1309">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::begin</references>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1afe9138ceb8877c6f13281c240008a762" compoundref="detail-inlines_8h" startline="1325" endline="1328">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::end</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1afa8a96f9fca4c7dceae1ee9e02a9861c" compoundref="detail-inlines_8h" startline="1266" endline="1273">operator&lt;=&gt;</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="1682" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1683" bodyend="1687" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1918" declcolumn="16"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1a8f44a4be9bb4c412b551818b378395c4" compoundref="detail-inlines_8h" startline="1625" endline="1628">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::begin</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1afe9138ceb8877c6f13281c240008a762" compoundref="detail-inlines_8h" startline="1644" endline="1647">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::end</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ae4068cfe50c838dec87a004d3c233691" compoundref="detail-inlines_8h" startline="1581" endline="1589">operator&lt;=&gt;</references>
       </memberdef>
-      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1afa8a96f9fca4c7dceae1ee9e02a9861c" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ae4068cfe50c838dec87a004d3c233691" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>character</type>
+            <declname>Char_T</declname>
+            <defname>Char_T</defname>
+          </param>
+        </templateparamlist>
         <type>std::strong_ordering</type>
         <definition>std::strong_ordering micro_os_plus::micro_test_plus::detail::operator&lt;=&gt;</definition>
-        <argsstring>(const c_string &amp;lhs, const c_string &amp;rhs) noexcept</argsstring>
+        <argsstring>(const basic_c_string&lt; Char_T &gt; &amp;lhs, const basic_c_string&lt; Char_T &gt; &amp;rhs) noexcept</argsstring>
         <name>operator&lt;=&gt;</name>
         <qualifiedname>micro_os_plus::micro_test_plus::detail::operator&lt;=&gt;</qualifiedname>
         <param>
-          <type>const <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string" kindref="compound">c_string</ref> &amp;</type>
+          <type>const <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string" kindref="compound">basic_c_string</ref>&lt; Char_T &gt; &amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type>const <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string" kindref="compound">c_string</ref> &amp;</type>
+          <type>const <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string" kindref="compound">basic_c_string</ref>&lt; Char_T &gt; &amp;</type>
           <declname>rhs</declname>
         </param>
         <briefdescription>
 <para>Orders two C string operands. </para>
         </briefdescription>
         <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Char_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>lhs</parametername>
 </parameternamelist>
@@ -1322,28 +1486,44 @@ A null pointer orders before any string. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="1265" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1266" bodyend="1273" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1677" declcolumn="16"/>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ade4fe4b187a8ded1bb42910536d86235" compoundref="detail-inlines_8h" startline="1359" endline="1363">operator&lt;=&gt;</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="1580" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1581" bodyend="1589" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1797" declcolumn="16"/>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ade4fe4b187a8ded1bb42910536d86235" compoundref="detail-inlines_8h" startline="1683" endline="1687">operator&lt;=&gt;</referencedby>
       </memberdef>
-      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3a06e7992caa3dfc9355a34369486c86" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ad9ef8b6b904608a738c08089606ea7af" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>character</type>
+            <declname>Char_T</declname>
+            <defname>Char_T</defname>
+          </param>
+        </templateparamlist>
         <type>std::strong_ordering</type>
         <definition>std::strong_ordering micro_os_plus::micro_test_plus::detail::operator&lt;=&gt;</definition>
-        <argsstring>(const c_string &amp;lhs, std::string_view rhs) noexcept</argsstring>
+        <argsstring>(const basic_c_string&lt; Char_T &gt; &amp;lhs, std::type_identity_t&lt; std::basic_string_view&lt; Char_T &gt; &gt; rhs) noexcept</argsstring>
         <name>operator&lt;=&gt;</name>
         <qualifiedname>micro_os_plus::micro_test_plus::detail::operator&lt;=&gt;</qualifiedname>
         <param>
-          <type>const <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string" kindref="compound">c_string</ref> &amp;</type>
+          <type>const <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string" kindref="compound">basic_c_string</ref>&lt; Char_T &gt; &amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type>std::string_view</type>
+          <type>std::type_identity_t&lt; std::basic_string_view&lt; Char_T &gt; &gt;</type>
           <declname>rhs</declname>
         </param>
         <briefdescription>
 <para>Orders a C string operand and a string. </para>
         </briefdescription>
         <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Char_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>lhs</parametername>
 </parameternamelist>
@@ -1366,7 +1546,7 @@ A null pointer orders before any string. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="1279" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1280" bodyend="1287" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1688" declcolumn="16"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="1596" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1597" bodyend="1606" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1811" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ad7b514fb92021548630dbeb2cd8189bc" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1446,33 +1626,49 @@ A null pointer orders before any string. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-Ranges of different sizes are not equal, without comparing any element. </para>
+Ranges of different sizes are not equal, without comparing any element. The elements are compared as the scalar operands of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref></computeroutput> are, with <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to_1a3e079e0cfd481086f5e722d8619963af" kindref="member">equal_to::apply()</ref></computeroutput>, so that integers of different signedness are compared by value, not by converting the signed one to the unsigned type. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="1345" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1345" bodyend="1348" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1775" declcolumn="5"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1a8f44a4be9bb4c412b551818b378395c4" compoundref="detail-inlines_8h" startline="1306" endline="1309">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::begin</references>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1afe9138ceb8877c6f13281c240008a762" compoundref="detail-inlines_8h" startline="1325" endline="1328">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::end</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="1667" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1667" bodyend="1672" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1902" declcolumn="5"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1a8f44a4be9bb4c412b551818b378395c4" compoundref="detail-inlines_8h" startline="1625" endline="1628">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::begin</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1afe9138ceb8877c6f13281c240008a762" compoundref="detail-inlines_8h" startline="1644" endline="1647">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::end</references>
       </memberdef>
-      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3461b586a0b0e6146681ccda9dbb49b4" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a485c4e8be14a4df5272714d021a0aedb" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>character</type>
+            <declname>Char_T</declname>
+            <defname>Char_T</defname>
+          </param>
+        </templateparamlist>
         <type>bool</type>
         <definition>bool micro_os_plus::micro_test_plus::detail::operator==</definition>
-        <argsstring>(const c_string &amp;lhs, const c_string &amp;rhs) noexcept</argsstring>
+        <argsstring>(const basic_c_string&lt; Char_T &gt; &amp;lhs, const basic_c_string&lt; Char_T &gt; &amp;rhs) noexcept</argsstring>
         <name>operator==</name>
         <qualifiedname>micro_os_plus::micro_test_plus::detail::operator==</qualifiedname>
         <param>
-          <type>const <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string" kindref="compound">c_string</ref> &amp;</type>
+          <type>const <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string" kindref="compound">basic_c_string</ref>&lt; Char_T &gt; &amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type>const <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string" kindref="compound">c_string</ref> &amp;</type>
+          <type>const <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string" kindref="compound">basic_c_string</ref>&lt; Char_T &gt; &amp;</type>
           <declname>rhs</declname>
         </param>
         <briefdescription>
 <para>Compares two C string operands for equality. </para>
         </briefdescription>
         <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Char_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>lhs</parametername>
 </parameternamelist>
@@ -1510,16 +1706,23 @@ Two null pointers are equal; a null pointer is not equal to any string, not even
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="1232" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1232" bodyend="1239" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1641" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="1541" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1541" bodyend="1549" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1752" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a81530e9e1a17d43a930a16a504af9912" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a264085f73c1641ab523f9a0684f0edc6" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>character</type>
+            <declname>Char_T</declname>
+            <defname>Char_T</defname>
+          </param>
+        </templateparamlist>
         <type>bool</type>
         <definition>bool micro_os_plus::micro_test_plus::detail::operator==</definition>
-        <argsstring>(const c_string &amp;lhs, std::nullptr_t) noexcept</argsstring>
+        <argsstring>(const basic_c_string&lt; Char_T &gt; &amp;lhs, std::nullptr_t) noexcept</argsstring>
         <name>operator==</name>
         <qualifiedname>micro_os_plus::micro_test_plus::detail::operator==</qualifiedname>
         <param>
-          <type>const <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string" kindref="compound">c_string</ref> &amp;</type>
+          <type>const <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string" kindref="compound">basic_c_string</ref>&lt; Char_T &gt; &amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
@@ -1529,7 +1732,16 @@ Two null pointers are equal; a null pointer is not equal to any string, not even
 <para>Checks whether a C string operand is a null pointer. </para>
         </briefdescription>
         <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Char_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>lhs</parametername>
 </parameternamelist>
@@ -1559,28 +1771,44 @@ Returns whether the operand is a null pointer. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="1256" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1256" bodyend="1259" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1667" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="1570" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1570" bodyend="1573" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1785" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a28646b3e1ddd2792546f303b6b65ad92" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a7bbea972bf7d904edc52784ab22830da" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>character</type>
+            <declname>Char_T</declname>
+            <defname>Char_T</defname>
+          </param>
+        </templateparamlist>
         <type>bool</type>
         <definition>bool micro_os_plus::micro_test_plus::detail::operator==</definition>
-        <argsstring>(const c_string &amp;lhs, std::string_view rhs) noexcept</argsstring>
+        <argsstring>(const basic_c_string&lt; Char_T &gt; &amp;lhs, std::type_identity_t&lt; std::basic_string_view&lt; Char_T &gt; &gt; rhs) noexcept</argsstring>
         <name>operator==</name>
         <qualifiedname>micro_os_plus::micro_test_plus::detail::operator==</qualifiedname>
         <param>
-          <type>const <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1c__string" kindref="compound">c_string</ref> &amp;</type>
+          <type>const <ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string" kindref="compound">basic_c_string</ref>&lt; Char_T &gt; &amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type>std::string_view</type>
+          <type>std::type_identity_t&lt; std::basic_string_view&lt; Char_T &gt; &gt;</type>
           <declname>rhs</declname>
         </param>
         <briefdescription>
 <para>Compares a C string operand with a string. </para>
         </briefdescription>
         <detaileddescription>
-<para>Also used for <computeroutput>std::string</computeroutput> operands, which convert to <computeroutput>std::string_view</computeroutput>, and, as a rewritten candidate, with the operands in the reverse order.</para>
-<para><parameterlist kind="param"><parameteritem>
+<para>Also used for the standard strings of the same character type, which convert to the string view, and, as a rewritten candidate, with the operands in the reverse order.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Char_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>lhs</parametername>
 </parameternamelist>
@@ -1618,7 +1846,7 @@ A null pointer is not equal to any string. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="1246" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1246" bodyend="1249" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1657" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="1557" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1557" bodyend="1562" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1771" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a92a38209445666c9fdab2d9fb189cff0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1648,7 +1876,7 @@ A null pointer is not equal to any string. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1129" column="5" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1129" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1159" column="5" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1159" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a659c9f826bd40c03800576825e5ff709" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1678,7 +1906,7 @@ A null pointer is not equal to any string. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1245" column="5" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1245" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1293" column="5" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="1293" declcolumn="5"/>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a60dcef812e43e13d1e30f602a572e27a" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -1718,6 +1946,272 @@ On Windows, the current time is captured via <computeroutput>timespec_get()</com
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" compoundref="stopwatch_8cpp" startline="101" endline="105">micro_os_plus::micro_test_plus::detail::stopwatch::stop</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a621a32c96a4950306c0a1aef8c577740" compoundref="stopwatch_8cpp" startline="139" endline="145">micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_begin</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a4c1a4d8b22d04205be49f8289ed7abd6" compoundref="stopwatch_8cpp" startline="155" endline="161">micro_os_plus::micro_test_plus::detail::stopwatch::timestamp_end</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8f37cb82707a1ddb497f445f761d2b51" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Tag_T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::detail::reject_compare_tag</definition>
+        <argsstring>(void) noexcept</argsstring>
+        <name>reject_compare_tag</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::reject_compare_tag</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Stops the compilation of a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" kindref="compound">compare_op</ref></computeroutput> whose tag is rejected, with a message that tells why. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Always fails the static assertion that applies, since it is called only when <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1compare__tag" kindref="compound">extension::compare_tag</ref></computeroutput> is not satisfied: the missing or unprintable <computeroutput>symbol</computeroutput> is reported first, then the <computeroutput>apply()</computeroutput> that cannot be called with the operands, or whose result is not convertible to <computeroutput>bool</computeroutput>.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Tag_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tag of the comparator.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="par"><title>Returns</title><para>Nothing. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="778" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="778" bodyend="795"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8f37cb82707a1ddb497f445f761d2b51" compoundref="detail-inlines_8h" startline="778" endline="795">reject_compare_tag</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8f37cb82707a1ddb497f445f761d2b51" compoundref="detail-inlines_8h" startline="778" endline="795">reject_compare_tag</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a767a45bfc1b9f58e87b03e2e7698ffc5" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>comparison</type>
+            <declname>Op</declname>
+            <defname>Op</defname>
+          </param>
+          <param>
+            <type>class Lhs_T</type>
+          </param>
+          <param>
+            <type>class Rhs_T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::detail::reject_comparison</definition>
+        <argsstring>(void) noexcept</argsstring>
+        <name>reject_comparison</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::reject_comparison</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Stops the compilation of a comparator whose operands are rejected, with a message that tells why. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Always fails the static assertion that applies, since it is called only when <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands" kindref="compound">comparable_operands</ref></computeroutput> is not satisfied: an operand that cannot be written is reported first, then the operator that the operands do not support. Called by the overloads of the comparators that accept the rejected operands, so that the compiler shows this message instead of a list of the unsatisfied constraints.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Op</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The comparison of the comparator. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the left operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the right operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="par"><title>Returns</title><para>Nothing. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="557" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="557" bodyend="598"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba465289687a70db7aa7217cc240c29f0f" compoundref="detail-inlines_8h" startline="419">equal</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba7b8dc4fb0fb55fc8eb69ff080c45ed7e" compoundref="detail-inlines_8h" startline="423">greater</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2" compoundref="detail-inlines_8h" startline="425">greater_equal</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0bae37e8d912e8f7b8f9b5ef9452ba47ff1" compoundref="detail-inlines_8h" startline="427">less</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0ba96ee5c0e2a7149613e7fd0b83316486e" compoundref="detail-inlines_8h" startline="421">not_equal</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a767a45bfc1b9f58e87b03e2e7698ffc5" compoundref="detail-inlines_8h" startline="557" endline="598">reject_comparison</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1ab88360ce7994d5e5ac71deff0450a638" compoundref="function-comparators-inlines_8h" startline="111" endline="115">micro_os_plus::micro_test_plus::eq</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1a7a3c75c65882a8e5a274500789cf3c94" compoundref="function-comparators-inlines_8h" startline="213" endline="218">micro_os_plus::micro_test_plus::ge</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1a2dd96a2ee35e669ddab6d883caeb3df2" compoundref="function-comparators-inlines_8h" startline="179" endline="183">micro_os_plus::micro_test_plus::gt</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1a434995a43c1ab9d2b75f1ee5e535c48b" compoundref="function-comparators-inlines_8h" startline="282" endline="286">micro_os_plus::micro_test_plus::le</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1a1584ff2a522d8d452b9b1b8b12ce0bb4" compoundref="function-comparators-inlines_8h" startline="248" endline="252">micro_os_plus::micro_test_plus::lt</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1aa9d632f3209a350a25b6b57eebfacb6b" compoundref="function-comparators-inlines_8h" startline="145" endline="149">micro_os_plus::micro_test_plus::ne</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a767a45bfc1b9f58e87b03e2e7698ffc5" compoundref="detail-inlines_8h" startline="557" endline="598">reject_comparison</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1abf1e7d4a0c75ed9351e9f06cd733b1cd" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Tag_T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::detail::reject_predicate_tag</definition>
+        <argsstring>(void) noexcept</argsstring>
+        <name>reject_predicate_tag</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::reject_predicate_tag</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Stops the compilation of a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1predicate__op" kindref="compound">predicate_op</ref></computeroutput> whose tag is rejected, with a message that tells why. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>As <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8f37cb82707a1ddb497f445f761d2b51" kindref="member">reject_compare_tag()</ref></computeroutput>, for the tag of a predicate, whose <computeroutput>apply()</computeroutput> takes one operand; called only when <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__tag" kindref="compound">extension::predicate_tag</ref></computeroutput> is not satisfied.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Tag_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tag of the predicate.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="par"><title>Returns</title><para>Nothing. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="815" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="815" bodyend="832"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1abf1e7d4a0c75ed9351e9f06cd733b1cd" compoundref="detail-inlines_8h" startline="815" endline="832">reject_predicate_tag</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1abf1e7d4a0c75ed9351e9f06cd733b1cd" compoundref="detail-inlines_8h" startline="815" endline="832">reject_predicate_tag</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1abf92eca75cdfb0993bb529fdbb592be1" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Callable_T</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args_T</declname>
+            <defname>Args_T</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::detail::reject_suite_body</definition>
+        <argsstring>(void) noexcept</argsstring>
+        <name>reject_suite_body</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::reject_suite_body</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Stops the compilation with a message that tells what the body of a suite takes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Always fails the static assertion that applies, since it is called only when <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1suite__body" kindref="compound">suite_body</ref></computeroutput> is not satisfied. A body that cannot be copied, or a body written for a test case, is recognised, to say so.</para>
+<para>Called by the overloads of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1abdb31c03509a40a041b8f0ea8e12ebd1" kindref="member">runner::add_suite()</ref></computeroutput> and of the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref></computeroutput> constructor that are selected when the callable is not a valid body, as <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ab1f64ac2ae5a8acc8b198e7f44cf0747" kindref="member">reject_test_body()</ref></computeroutput> is for the test cases.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Callable_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the callable. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Args_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The types of the additional arguments. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="par"><title>Returns</title><para>Nothing. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" line="452" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="452" bodyend="476" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" declline="1303" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a360bed7e2af05a26d92e5ca4c414c06e" compoundref="test_8h" startline="1261">dependent_false_v</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1abf92eca75cdfb0993bb529fdbb592be1" compoundref="test-inlines_8h" startline="452" endline="476">reject_suite_body</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1abdb31c03509a40a041b8f0ea8e12ebd1" compoundref="runner-inlines_8h" startline="191" endline="204">micro_os_plus::micro_test_plus::runner::add_suite</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1abf92eca75cdfb0993bb529fdbb592be1" compoundref="test-inlines_8h" startline="452" endline="476">reject_suite_body</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ab1f64ac2ae5a8acc8b198e7f44cf0747" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Callable_T</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args_T</declname>
+            <defname>Args_T</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void micro_os_plus::micro_test_plus::detail::reject_test_body</definition>
+        <argsstring>(void) noexcept</argsstring>
+        <name>reject_test_body</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::reject_test_body</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Stops the compilation with a message that tells what the body of a test case takes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Always fails the static assertion that applies, since it is called only when <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__body" kindref="compound">test_body</ref></computeroutput> is not satisfied. A body written for a suite is recognised, to say so.</para>
+<para>Called by the overloads of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a9b497f0911a0abe12a341a560ba79e1d" kindref="member">test_case::test()</ref></computeroutput> and <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a0cfa76ba0ba0c308d246b2b5d506ab19" kindref="member">suite::test()</ref></computeroutput> that are selected when the callable is not a valid body, so that the diagnostic names the mistake in the terms of the application, instead of the concepts and the instantiation stack. Never called at run time.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Callable_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the callable. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Args_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The types of the additional arguments. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="par"><title>Returns</title><para>Nothing. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" line="426" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="426" bodyend="442" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" declline="1283" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a360bed7e2af05a26d92e5ca4c414c06e" compoundref="test_8h" startline="1261">dependent_false_v</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ab1f64ac2ae5a8acc8b198e7f44cf0747" compoundref="test-inlines_8h" startline="426" endline="442">reject_test_body</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ab1f64ac2ae5a8acc8b198e7f44cf0747" compoundref="test-inlines_8h" startline="426" endline="442">reject_test_body</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3178150c77ae33d100e18e157436b04b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1822,16 +2316,16 @@ On Windows, the current time is captured via <computeroutput>timespec_get()</com
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" line="854" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="854" bodyend="907" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" declline="1190" declcolumn="5"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text_1a63b3cc3a8e725c2921787180f1244824" compoundref="expression-formatter-inlines_8h" startline="767" endline="772">micro_os_plus::micro_test_plus::detail::plain_text::append</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1located__name_1ade35aacdde746abad6be66a9fcab251b" compoundref="test-inlines_8h" startline="162" endline="165">micro_os_plus::micro_test_plus::located_name::location</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1located__name_1aa2ec3a20974c59b2f5a64a50b41db444" compoundref="test-inlines_8h" startline="152" endline="155">micro_os_plus::micro_test_plus::located_name::name</references>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3178150c77ae33d100e18e157436b04b" compoundref="test-inlines_8h" startline="854" endline="907">test_each_value</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1adc0f91f958d943f505dac6f73c2c240d" compoundref="test-inlines_8h" startline="960" endline="964">micro_os_plus::micro_test_plus::suite::test_each</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a61a886b526fef82564a3e4ec1ea0dee4" compoundref="test-inlines_8h" startline="947" endline="952">micro_os_plus::micro_test_plus::suite::test_each</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a5fdc1f162d725c6e01b0858c5efecfa7" compoundref="test-inlines_8h" startline="932" endline="936">micro_os_plus::micro_test_plus::test_case::test_each</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a419000e72526d0d251d7e28f48d656d2" compoundref="test-inlines_8h" startline="919" endline="924">micro_os_plus::micro_test_plus::test_case::test_each</referencedby>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3178150c77ae33d100e18e157436b04b" compoundref="test-inlines_8h" startline="854" endline="907">test_each_value</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" line="1019" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="1019" bodyend="1072" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" declline="1327" declcolumn="5"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text_1a63b3cc3a8e725c2921787180f1244824" compoundref="expression-formatter-inlines_8h" startline="839" endline="844">micro_os_plus::micro_test_plus::detail::plain_text::append</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1located__name_1ade35aacdde746abad6be66a9fcab251b" compoundref="test-inlines_8h" startline="183" endline="186">micro_os_plus::micro_test_plus::located_name::location</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1located__name_1aa2ec3a20974c59b2f5a64a50b41db444" compoundref="test-inlines_8h" startline="173" endline="176">micro_os_plus::micro_test_plus::located_name::name</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3178150c77ae33d100e18e157436b04b" compoundref="test-inlines_8h" startline="1019" endline="1072">test_each_value</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1adc0f91f958d943f505dac6f73c2c240d" compoundref="test-inlines_8h" startline="1125" endline="1129">micro_os_plus::micro_test_plus::suite::test_each</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a61a886b526fef82564a3e4ec1ea0dee4" compoundref="test-inlines_8h" startline="1112" endline="1117">micro_os_plus::micro_test_plus::suite::test_each</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a5fdc1f162d725c6e01b0858c5efecfa7" compoundref="test-inlines_8h" startline="1097" endline="1101">micro_os_plus::micro_test_plus::test_case::test_each</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a419000e72526d0d251d7e28f48d656d2" compoundref="test-inlines_8h" startline="1084" endline="1089">micro_os_plus::micro_test_plus::test_case::test_each</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a3178150c77ae33d100e18e157436b04b" compoundref="test-inlines_8h" startline="1019" endline="1072">test_each_value</referencedby>
       </memberdef>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a59eb53c96f68d26635c13df53b358ac8" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1878,15 +2372,15 @@ If the type <computeroutput>T</computeroutput> is a framework type (see <compute
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="161" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="98" bodyend="106" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="161" declcolumn="26"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="162" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="98" bodyend="106" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="162" declcolumn="26"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a59eb53c96f68d26635c13df53b358ac8" compoundref="detail-inlines_8h" startline="98" endline="106">unwrap</references>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op_1a5b53c23cc06ec1d830f7a99ddcb26259" compoundref="detail-inlines_8h" startline="720" endline="730">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op_1a7e864eeb2250a0e6b7f4b11c2eeae663" compoundref="detail-inlines_8h" startline="589" endline="627">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1predicate__op_1ab1d700c6cde6b75a6d96e113b00824cb" compoundref="detail-inlines_8h" startline="805" endline="810">micro_os_plus::micro_test_plus::detail::predicate_op&lt; T, Predicate_T &gt;::predicate_op</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op_1ab1df01803852dcf0c603fda20a7e4f14" compoundref="detail-inlines_8h" startline="738" endline="741">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::epsilon</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op_1a5b53c23cc06ec1d830f7a99ddcb26259" compoundref="detail-inlines_8h" startline="1006" endline="1016">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op_1a7e864eeb2250a0e6b7f4b11c2eeae663" compoundref="detail-inlines_8h" startline="855" endline="893">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1predicate__op_1ab1d700c6cde6b75a6d96e113b00824cb" compoundref="detail-inlines_8h" startline="1091" endline="1096">micro_os_plus::micro_test_plus::detail::predicate_op&lt; T, Predicate_T &gt;::predicate_op</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op_1ab1df01803852dcf0c603fda20a7e4f14" compoundref="detail-inlines_8h" startline="1024" endline="1027">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::epsilon</referencedby>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1a27b015b0e2b40e0f0bbb1b08588e1c20" compoundref="detail-inlines_8h" startline="181" endline="184">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::lhs</referencedby>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op_1a1c076678ac794ab6216dd967496dd904" compoundref="detail-inlines_8h" startline="141" endline="144">micro_os_plus::micro_test_plus::detail::unary_op&lt; T &gt;::operand</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a667715506ffe8f42c3243b7e290a9768" compoundref="expression-formatter-inlines_8h" startline="206" endline="210">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a667715506ffe8f42c3243b7e290a9768" compoundref="expression-formatter-inlines_8h" startline="235" endline="239">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1ae1436f1b38c1062f7c733d3e8cb39b87" compoundref="detail-inlines_8h" startline="194" endline="197">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::rhs</referencedby>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a59eb53c96f68d26635c13df53b358ac8" compoundref="detail-inlines_8h" startline="98" endline="106">unwrap</referencedby>
         <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga6c5237ff6944278e8c5e3294cf99a3b9" compoundref="detail-inlines_8h" startline="212" endline="244">within_tolerance</referencedby>
@@ -1939,13 +2433,13 @@ If the type <computeroutput>T</computeroutput> is a framework type (see <compute
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="98" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="98" bodyend="106"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a59eb53c96f68d26635c13df53b358ac8" compoundref="detail-inlines_8h" startline="98" endline="106">unwrap</references>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op_1a5b53c23cc06ec1d830f7a99ddcb26259" compoundref="detail-inlines_8h" startline="720" endline="730">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op_1a7e864eeb2250a0e6b7f4b11c2eeae663" compoundref="detail-inlines_8h" startline="589" endline="627">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1predicate__op_1ab1d700c6cde6b75a6d96e113b00824cb" compoundref="detail-inlines_8h" startline="805" endline="810">micro_os_plus::micro_test_plus::detail::predicate_op&lt; T, Predicate_T &gt;::predicate_op</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op_1ab1df01803852dcf0c603fda20a7e4f14" compoundref="detail-inlines_8h" startline="738" endline="741">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::epsilon</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op_1a5b53c23cc06ec1d830f7a99ddcb26259" compoundref="detail-inlines_8h" startline="1006" endline="1016">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op_1a7e864eeb2250a0e6b7f4b11c2eeae663" compoundref="detail-inlines_8h" startline="855" endline="893">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1predicate__op_1ab1d700c6cde6b75a6d96e113b00824cb" compoundref="detail-inlines_8h" startline="1091" endline="1096">micro_os_plus::micro_test_plus::detail::predicate_op&lt; T, Predicate_T &gt;::predicate_op</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op_1ab1df01803852dcf0c603fda20a7e4f14" compoundref="detail-inlines_8h" startline="1024" endline="1027">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::epsilon</referencedby>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1a27b015b0e2b40e0f0bbb1b08588e1c20" compoundref="detail-inlines_8h" startline="181" endline="184">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::lhs</referencedby>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op_1a1c076678ac794ab6216dd967496dd904" compoundref="detail-inlines_8h" startline="141" endline="144">micro_os_plus::micro_test_plus::detail::unary_op&lt; T &gt;::operand</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a667715506ffe8f42c3243b7e290a9768" compoundref="expression-formatter-inlines_8h" startline="206" endline="210">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a667715506ffe8f42c3243b7e290a9768" compoundref="expression-formatter-inlines_8h" startline="235" endline="239">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1ae1436f1b38c1062f7c733d3e8cb39b87" compoundref="detail-inlines_8h" startline="194" endline="197">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::rhs</referencedby>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a59eb53c96f68d26635c13df53b358ac8" compoundref="detail-inlines_8h" startline="98" endline="106">unwrap</referencedby>
         <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga6c5237ff6944278e8c5e3294cf99a3b9" compoundref="detail-inlines_8h" startline="212" endline="244">within_tolerance</referencedby>

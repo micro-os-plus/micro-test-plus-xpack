@@ -259,49 +259,41 @@ The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1de
       </node>
       <node id="15">
         <label>micro_os_plus::micro_test_plus::detail::value&lt; std::int16_t &gt;</label>
-        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="16">
         <label>micro_os_plus::micro_test_plus::detail::value&lt; std::int32_t &gt;</label>
-        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="17">
         <label>micro_os_plus::micro_test_plus::detail::value&lt; std::int64_t &gt;</label>
-        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="14">
         <label>micro_os_plus::micro_test_plus::detail::value&lt; std::int8_t &gt;</label>
-        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="19">
         <label>micro_os_plus::micro_test_plus::detail::value&lt; std::uint16_t &gt;</label>
-        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="20">
         <label>micro_os_plus::micro_test_plus::detail::value&lt; std::uint32_t &gt;</label>
-        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="21">
         <label>micro_os_plus::micro_test_plus::detail::value&lt; std::uint64_t &gt;</label>
-        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="18">
         <label>micro_os_plus::micro_test_plus::detail::value&lt; std::uint8_t &gt;</label>
-        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>

@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands" kind="concept">
+    <compoundname>micro_os_plus::micro_test_plus::detail::comparable_operands</compoundname>
+    <includes refid="detail-inlines_8h" local="no">detail-inlines.h</includes>
+    <templateparamlist>
+      <param>
+        <type><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0b" kindref="member">comparison</ref></type>
+        <declname>Op</declname>
+        <defname>Op</defname>
+      </param>
+      <param>
+        <type>class Lhs_T</type>
+      </param>
+      <param>
+        <type>class Rhs_T</type>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ada744f2df815ad518c8b897608907c0b" kindref="member">comparison</ref> Op, class Lhs_T, class Rhs_T&gt;
+concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands" kindref="compound">micro_os_plus::micro_test_plus::detail::comparable_operands</ref> =  extension::printable&lt;Lhs_T&gt; and extension::printable&lt;Rhs_T&gt;
+          and comparable&lt;Op, Lhs_T, Rhs_T&gt;</initializer>
+    <conceptparts>
+      <codepart line="531">    <programlisting>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;comparison<sp/>Op,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">comparable_operands<sp/>=<sp/>extension::printable&lt;Lhs_T&gt;<sp/>and<sp/>extension::printable&lt;Rhs_T&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>comparable&lt;Op,<sp/>Lhs_T,<sp/>Rhs_T&gt;</highlight></codeline>
+    </programlisting>
+</codepart>
+    </conceptparts>
+    <briefdescription>
+<para>Concept satisfied when the operands of a comparator can be written and compared. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The operands of the comparators must be written in the report of a failed check, and compared with the operator. A single concept for both conditions selects the comparator, and its negation selects the overload that explains why a call is rejected.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Op</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The comparison. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Lhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type deduced for the left hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Rhs_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type deduced for the right hand side operand. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="530" column="5"/>
+  </compounddef>
+</doxygen>

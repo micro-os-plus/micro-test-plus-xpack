@@ -36,12 +36,12 @@
 <codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>app</highlight></codeline>
 </programlisting></para>
-<para>Without such an operator, comparators such as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1gada610d1d5701b79f3df916f6e397ea06" kindref="member">eq()</ref></computeroutput> do not compile for user-defined types, since the operand values cannot be formatted; only the scoped enumerations are formatted without it, by their underlying value. Plain boolean checks, such as <computeroutput>expect (a == b)</computeroutput>, do not need it, but they report only the source location on failure. The same operator also writes the values appended to the messages of the checks (<computeroutput>expect (a == b) &lt;&lt; "a is " &lt;&lt; a</computeroutput>).</para>
+<para>Without such an operator, comparators such as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kindref="member">eq()</ref></computeroutput> do not compile for user-defined types, since the operand values cannot be formatted; only the scoped enumerations are formatted without it, by their underlying value. Plain boolean checks, such as <computeroutput>expect (a == b)</computeroutput>, do not need it, but they report only the source location on failure. The same operator also writes the values appended to the messages of the checks (<computeroutput>expect (a == b) &lt;&lt; "a is " &lt;&lt; a</computeroutput>).</para>
 <para>Applications use the <computeroutput>operator&lt;&lt;</computeroutput> overloads, and <computeroutput>str()</computeroutput> to test their own operators; the functions that manage the buffer are private to the framework. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="1720" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" bodystart="1720" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" line="1824" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/expression-formatter.h" bodystart="1824" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

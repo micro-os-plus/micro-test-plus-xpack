@@ -1255,7 +1255,7 @@ keywords:
 <p>This user-defined literal operator creates a named boolean constant, with the value <span class="doxyComputerOutput">true</span>, from a string literal (for example, <span class="doxyComputerOutput">"feature_enabled"<a href="#gad4203783cfbe141f41ee8515f7b2ea94">_b</a></span>).</p>
 
 
-<p>The returned <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/named-bool">detail::named_bool</a></span> converts implicitly to <span class="doxyComputerOutput">bool</span>, and the expression formatter prints its name instead of its value. With the operators in the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/operators">operators</a></span> namespace, a comparison like <span class="doxyComputerOutput">"feature_enabled"<a href="#gad4203783cfbe141f41ee8515f7b2ea94">_b</a> == flag</span> is true when <span class="doxyComputerOutput">flag</span> is true, and, when it fails, it is reported as <span class="doxyComputerOutput">feature_enabled == false</span>; the same applies to <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq</a> ("feature_enabled"<a href="#gad4203783cfbe141f41ee8515f7b2ea94">_b</a>, flag)</span>. Without these operators, the comparison is a plain <span class="doxyComputerOutput">bool</span> expression, and its operands are not reported.</p>
+<p>The returned <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/named-bool">detail::named_bool</a></span> converts implicitly to <span class="doxyComputerOutput">bool</span>, and the expression formatter prints its name instead of its value. With the operators in the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/operators">operators</a></span> namespace, a comparison like <span class="doxyComputerOutput">"feature_enabled"<a href="#gad4203783cfbe141f41ee8515f7b2ea94">_b</a> == flag</span> is true when <span class="doxyComputerOutput">flag</span> is true, and, when it fails, it is reported as <span class="doxyComputerOutput">feature_enabled == false</span>; the same applies to <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq</a> ("feature_enabled"<a href="#gad4203783cfbe141f41ee8515f7b2ea94">_b</a>, flag)</span>. Without these operators, the comparison is a plain <span class="doxyComputerOutput">bool</span> expression, and its operands are not reported.</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01240">1240</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
@@ -1323,7 +1323,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000071>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -1557,7 +1557,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000069>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -1633,7 +1633,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000081>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -1709,7 +1709,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000082>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -1785,7 +1785,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000083>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -1861,7 +1861,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000080>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -1937,7 +1937,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000073>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -2092,7 +2092,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000074>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -2168,7 +2168,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000070>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -2244,7 +2244,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000072>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -2320,7 +2320,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000075>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -2396,7 +2396,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000085>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -2472,7 +2472,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000086>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -2548,7 +2548,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000087>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -2624,7 +2624,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000084>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -2700,7 +2700,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000076>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -2776,7 +2776,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000078>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -2852,7 +2852,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000079>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -2928,7 +2928,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000077>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -3101,7 +3101,7 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Deprecated</dt>
-<dd><p>Pass the plain values to the function comparators <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gaa77076edd474fc10d8c0bd6da623e284">ne()</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gaf32fd09749f18635233613fa48f91b56">gt()</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga989e5966794d5c5487477aa782d844b1">ge()</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gaea39573e23de35872ace5b08d2514327">lt()</a></span>, and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gaf9e47a6e18771f969cdd840ec187734a">le()</a></span> instead; they report the operands in the same way. For the floating-point values compared with a tolerance, use <span class="doxyComputerOutput"><a href="#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a></span> (since 6.0.0).</p></dd>
+<dd><p>Pass the plain values to the function comparators <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga92cdc2dde6af040f2f5f5df677df0985">ne()</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga90da2cbc14b4562332a205d5b232356f">gt()</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga58c7dacabca3fe1b0dc025a0e0f30e9e">ge()</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga493a42c738ef38b45a28b06a2155aa00">lt()</a></span>, and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga9125d2dd997269eecc0d8239d5df67e5">le()</a></span> instead; they report the operands in the same way. For the floating-point values compared with a tolerance, use <span class="doxyComputerOutput"><a href="#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a></span> (since 6.0.0).</p></dd>
 </dl>
 
 
@@ -3160,7 +3160,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000008>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -3204,7 +3204,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000009>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -3336,7 +3336,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000012>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -3380,7 +3380,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000021>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -3424,7 +3424,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000022>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -3468,7 +3468,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000023>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -3512,7 +3512,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000020>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -3556,7 +3556,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000013>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -3644,7 +3644,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000014>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -3688,7 +3688,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000011>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -3732,7 +3732,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000010>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -3776,7 +3776,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000015>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -3820,7 +3820,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000025>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -3864,7 +3864,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000026>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -3908,7 +3908,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000027>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -3952,7 +3952,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000024>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -3996,7 +3996,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000016>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -4040,7 +4040,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000018>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -4084,7 +4084,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000019>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -4128,7 +4128,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000017>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -4157,7 +4157,7 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Deprecated</dt>
-<dd><p>Pass the plain values to the function comparators <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gaa77076edd474fc10d8c0bd6da623e284">ne()</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gaf32fd09749f18635233613fa48f91b56">gt()</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga989e5966794d5c5487477aa782d844b1">ge()</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gaea39573e23de35872ace5b08d2514327">lt()</a></span>, and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gaf9e47a6e18771f969cdd840ec187734a">le()</a></span> instead; the <span class="doxyComputerOutput">to_*</span> type wrappers that replaced these aliases (since 3.2.0) are deprecated too (since 6.0.0).</p></dd>
+<dd><p>Pass the plain values to the function comparators <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga92cdc2dde6af040f2f5f5df677df0985">ne()</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga90da2cbc14b4562332a205d5b232356f">gt()</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga58c7dacabca3fe1b0dc025a0e0f30e9e">ge()</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga493a42c738ef38b45a28b06a2155aa00">lt()</a></span>, and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga9125d2dd997269eecc0d8239d5df67e5">le()</a></span> instead; the <span class="doxyComputerOutput">to_*</span> type wrappers that replaced these aliases (since 3.2.0) are deprecated too (since 6.0.0).</p></dd>
 </dl>
 
 
@@ -4189,7 +4189,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000033>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -4227,7 +4227,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000034>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -4341,7 +4341,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000037>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -4379,7 +4379,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000046>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -4417,7 +4417,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000047>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -4455,7 +4455,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000048>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -4493,7 +4493,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000045>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -4531,7 +4531,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000038>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -4607,7 +4607,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000039>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -4645,7 +4645,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000036>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -4683,7 +4683,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000035>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -4734,7 +4734,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000056>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -4772,7 +4772,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000040>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -4810,7 +4810,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000050>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -4848,7 +4848,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000051>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -4886,7 +4886,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000052>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -4924,7 +4924,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000049>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -4962,7 +4962,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000041>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -5000,7 +5000,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000043>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -5038,7 +5038,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000044>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>
@@ -5076,7 +5076,7 @@ keywords:
 <dl class="doxyXrefSectList">
 <dt class="doxyXrefSectTitle"><a href=/micro-test-plus-xpack/docs/api/pages/deprecated/#_deprecated000042>Deprecated</a></dt>
 <dd class="doxyXrefSectDescription">
-<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#gada610d1d5701b79f3df916f6e397ea06">eq()</a> and the other comparators (since 6.0.0)</p>
+<p>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p>
 </dd>
 </dl>
 </div>

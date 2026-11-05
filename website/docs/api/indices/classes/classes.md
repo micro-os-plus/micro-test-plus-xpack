@@ -29,15 +29,15 @@ keywords:
 ## - B -
 
 <ul>
+<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/basic-c-string"><b>basic_c_string&lt;Char_T&gt;</b></a>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/basic-c-string">micro_os_plus::micro_test_plus::detail::basic_c_string&lt;Char_T&gt;</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op"><b>binary_op&lt;Lhs_T, Rhs_T&gt;</b></a>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/binary-op">micro_os_plus::micro_test_plus::detail::binary_op&lt;Lhs_T, Rhs_T&gt;</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/bound-callable"><b>bound_callable&lt;...&gt;</b></a>: as class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/bound-callable">micro_os_plus::micro_test_plus::detail::bound_callable&lt;Self_T, Callable_T, Args_T&gt;</a></li>
 </ul>
-<p>2 entries</p>
+<p>3 entries</p>
 
 ## - C -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/c-string"><b>c_string</b></a>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/c-string">micro_os_plus::micro_test_plus::detail::c_string</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op"><b>callable_op</b></a>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op">micro_os_plus::micro_test_plus::detail::callable_op</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/callable-ref"><b>callable_ref&lt;Self_T&gt;</b></a>: as class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/callable-ref">micro_os_plus::micro_test_plus::detail::callable_ref&lt;Self_T&gt;</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-result"><b>callable_result</b></a>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-result">micro_os_plus::micro_test_plus::detail::callable_result</a></li>
@@ -46,9 +46,11 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/colours"><b>colours</b></a>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/colours">micro_os_plus::micro_test_plus::detail::colours</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/compare-op"><b>compare_op&lt;Lhs_T, Rhs_T, Compare_T&gt;</b></a>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/compare-op">micro_os_plus::micro_test_plus::detail::compare_op&lt;Lhs_T, Rhs_T, Compare_T&gt;</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/extension/compare-op"><b>compare_op&lt;Lhs_T, Rhs_T, Compare_T&gt;</b></a>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/extension/compare-op">micro_os_plus::micro_test_plus::extension::compare_op&lt;Lhs_T, Rhs_T, Compare_T&gt;</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/comparison-integer"><b>comparison_integer&lt;T&gt;</b></a>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/comparison-integer">micro_os_plus::micro_test_plus::detail::comparison_integer&lt;T&gt;</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/comparison-integer-f7399366cd6336ecbea702c3289d9432"><b>comparison_integer&lt;T&gt;</b></a>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/comparison-integer-f7399366cd6336ecbea702c3289d9432">micro_os_plus::micro_test_plus::detail::comparison_integer&lt;T&gt;</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters"><b>counters</b></a>: as class <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters">micro_os_plus::micro_test_plus::counters</a></li>
 </ul>
-<p>10 entries</p>
+<p>11 entries</p>
 
 ## - E -
 
@@ -90,8 +92,9 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant"><b>integral_constant&lt;N&gt;</b></a>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">micro_os_plus::micro_test_plus::detail::integral_constant&lt;N&gt;</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant"><b>integral_constant&lt;N&gt;</b></a>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/integral-constant">micro_os_plus::micro_test_plus::type_traits::integral_constant&lt;N&gt;</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-min-magnitude"><b>integral_min_magnitude&lt;T&gt;</b></a>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-min-magnitude">micro_os_plus::micro_test_plus::detail::integral_min_magnitude&lt;T&gt;</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/is-bool-wrapper"><b>is_bool_wrapper&lt;T&gt;</b></a>: as struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/is-bool-wrapper">micro_os_plus::micro_test_plus::detail::is_bool_wrapper&lt;T&gt;</a></li>
 </ul>
-<p>6 entries</p>
+<p>7 entries</p>
 
 ## - L -
 
@@ -186,7 +189,7 @@ keywords:
 </ul>
 <p>4 entries</p>
 <br/>
-<p>Total: 74 entries.</p>
+<p>Total: 77 entries.</p>
 
 <hr/>
 

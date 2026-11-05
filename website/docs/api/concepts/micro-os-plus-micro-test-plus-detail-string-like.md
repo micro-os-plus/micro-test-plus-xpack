@@ -50,7 +50,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>The <span class="doxyComputerOutput">string_like</span> concept is satisfied when a <span class="doxyComputerOutput">const</span> object of type <span class="doxyComputerOutput">T</span> is implicitly convertible to a <span class="doxyComputerOutput">std::basic_string_view</span> of <span class="doxyComputerOutput">char</span>, <span class="doxyComputerOutput">wchar_t</span>, <span class="doxyComputerOutput">char8_t</span>, <span class="doxyComputerOutput">char16_t</span>, or <span class="doxyComputerOutput">char32_t</span>, as the standard strings and the string views are. It is used to detect the strings, which the formatter writes as text, not element by element (see <span class="doxyComputerOutput">formattable_range</span>). A container that has only a member named <span class="doxyComputerOutput">npos</span>, or that is not convertible, is not a string.</p>
 
 
-<p>Definition at line 455 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 550 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">

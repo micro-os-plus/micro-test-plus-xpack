@@ -50,11 +50,13 @@ keywords:
 ## - T -
 
 <ul>
+<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/comparison-integer/#aa758853c28ab3fc87d36ea582fd81b9e"><b>type</b></a>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/comparison-integer">micro_os_plus::micro_test_plus::detail::comparison_integer&lt;T&gt;</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/comparison-integer-f7399366cd6336ecbea702c3289d9432/#a14ebefa2abc73daf018aa6df27b34a18"><b>type</b></a>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/comparison-integer-f7399366cd6336ecbea702c3289d9432">micro_os_plus::micro_test_plus::detail::comparison_integer&lt;T&gt;</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/range-element-f7399366cd6336ecbea702c3289d9432/#aa2f9968426ee992c2e99aedc6226c145"><b>type</b></a>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/range-element-f7399366cd6336ecbea702c3289d9432">micro_os_plus::micro_test_plus::detail::range_element&lt;T&gt;</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/range-element-f7399366cd6336ecbea702c3289d9432/#ae9d6272e688f4f08412df6d6ee978bc2"><b>type</b></a>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/range-element-f7399366cd6336ecbea702c3289d9432">micro_os_plus::micro_test_plus::detail::range_element&lt;T&gt;</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity/#a6399364a09c1004ebbaab36b2d5dc0c8"><b>type</b></a>: as typedef in struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity">micro_os_plus::micro_test_plus::type_traits::identity&lt;T, Extra&gt;</a></li>
 </ul>
-<p>3 entries</p>
+<p>5 entries</p>
 
 ## - V -
 
@@ -66,7 +68,7 @@ keywords:
 </ul>
 <p>4 entries</p>
 <br/>
-<p>Total: 19 entries.</p>
+<p>Total: 21 entries.</p>
 
 <hr/>
 

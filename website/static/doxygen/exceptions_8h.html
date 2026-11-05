@@ -131,15 +131,18 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gacbf45f8ba39c0653bbf1035c70dd9529" id="r_gacbf45f8ba39c0653bbf1035c70dd9529"><td class="memTemplParams" colspan="2">template&lt;class Callable_T&gt; </td></tr>
-<tr class="memitem:gacbf45f8ba39c0653bbf1035c70dd9529 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#gacbf45f8ba39c0653bbf1035c70dd9529">micro_os_plus::micro_test_plus::nothrow</a> (const Callable_T &amp;func)</td></tr>
-<tr class="memdesc:gacbf45f8ba39c0653bbf1035c70dd9529"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a callable does not throw any exception, for <span class="tt">expect()</span> or <span class="tt">require()</span>.  <br /></td></tr>
-<tr class="memitem:gadf818920a5a7ba9905466c521deb342e" id="r_gadf818920a5a7ba9905466c521deb342e"><td class="memTemplParams" colspan="2">template&lt;class Callable_T&gt; </td></tr>
-<tr class="memitem:gadf818920a5a7ba9905466c521deb342e template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#gadf818920a5a7ba9905466c521deb342e">micro_os_plus::micro_test_plus::throws</a> (const Callable_T &amp;func)</td></tr>
-<tr class="memdesc:gadf818920a5a7ba9905466c521deb342e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a callable throws any exception, for <span class="tt">expect()</span> or <span class="tt">require()</span>.  <br /></td></tr>
-<tr class="memitem:ga63345b69c376caae707262748aa6aea1" id="r_ga63345b69c376caae707262748aa6aea1"><td class="memTemplParams" colspan="2">template&lt;class Exception_T, class Callable_T&gt; </td></tr>
-<tr class="memitem:ga63345b69c376caae707262748aa6aea1 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#ga63345b69c376caae707262748aa6aea1">micro_os_plus::micro_test_plus::throws</a> (const Callable_T &amp;func)</td></tr>
-<tr class="memdesc:ga63345b69c376caae707262748aa6aea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a callable throws a specific exception, for <span class="tt">expect()</span> or <span class="tt">require()</span>.  <br /></td></tr>
+<tr class="memitem:ga2989618cf5adca7a767c966895ab37a0" id="r_ga2989618cf5adca7a767c966895ab37a0"><td class="memTemplParams" colspan="2">template&lt;class Callable_T&gt; <br />
+requires std::invocable&lt;Callable_T&amp;&gt;</td></tr>
+<tr class="memitem:ga2989618cf5adca7a767c966895ab37a0 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#ga2989618cf5adca7a767c966895ab37a0">micro_os_plus::micro_test_plus::nothrow</a> (Callable_T &amp;&amp;func)</td></tr>
+<tr class="memdesc:ga2989618cf5adca7a767c966895ab37a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a callable does not throw any exception, for <span class="tt">expect()</span> or <span class="tt">require()</span>.  <br /></td></tr>
+<tr class="memitem:ga8fdcab2fe2567f6d6a735e89b936298d" id="r_ga8fdcab2fe2567f6d6a735e89b936298d"><td class="memTemplParams" colspan="2">template&lt;class Callable_T&gt; <br />
+requires std::invocable&lt;Callable_T&amp;&gt;</td></tr>
+<tr class="memitem:ga8fdcab2fe2567f6d6a735e89b936298d template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#ga8fdcab2fe2567f6d6a735e89b936298d">micro_os_plus::micro_test_plus::throws</a> (Callable_T &amp;&amp;func)</td></tr>
+<tr class="memdesc:ga8fdcab2fe2567f6d6a735e89b936298d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a callable throws any exception, for <span class="tt">expect()</span> or <span class="tt">require()</span>.  <br /></td></tr>
+<tr class="memitem:ga6a0ca4f8b757ea511c494189212812b3" id="r_ga6a0ca4f8b757ea511c494189212812b3"><td class="memTemplParams" colspan="2">template&lt;class Exception_T, class Callable_T&gt; <br />
+requires std::invocable&lt;Callable_T&amp;&gt;</td></tr>
+<tr class="memitem:ga6a0ca4f8b757ea511c494189212812b3 template"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-exceptions.html#ga6a0ca4f8b757ea511c494189212812b3">micro_os_plus::micro_test_plus::throws</a> (Callable_T &amp;&amp;func)</td></tr>
+<tr class="memdesc:ga6a0ca4f8b757ea511c494189212812b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether a callable throws a specific exception, for <span class="tt">expect()</span> or <span class="tt">require()</span>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This header provides the declarations for the exception-checking facilities of the µTest++ framework. It exposes three function templates — <span class="tt">throws&lt;Exception_T&gt;()</span>, <span class="tt">throws()</span>, and <span class="tt">nothrow()</span> — which allow test cases to verify that a callable throws a specific exception, throws any exception, or throws no exception, respectively.</p>

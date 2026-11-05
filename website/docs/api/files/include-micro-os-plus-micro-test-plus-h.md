@@ -110,7 +110,7 @@ keywords:
 <p>This header is the entry point of the µTest++ testing framework, for both embedded and general C++ projects.</p>
 
 
-<p>It provides all essential declarations required to write and manage tests, including test runner and reporter objects, test suite and test case management, expectations, assumptions, comparators, logical operators, exception verification, and utility functions.</p>
+<p>It provides all essential declarations required to write and manage tests, including test runner and reporter objects, test suite and test case management, expectations and requirements, function comparators, logical functions, exception verification, and utility functions.</p>
 
 
 <p>The header also includes all the other headers of the framework.</p>

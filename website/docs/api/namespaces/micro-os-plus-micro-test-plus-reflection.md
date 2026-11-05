@@ -142,7 +142,7 @@ namespace micro_os_plus::micro_test_plus::reflection { ... }
 <p>The expected layouts are verified at compile time by the <span class="doxyComputerOutput">static_assert</span> checks that follow the definition.</p>
 
 
-<p>The name is spelled as the compiler prints it, and is used to identify the expected exception type in the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-exceptions/#ga63345b69c376caae707262748aa6aea1">throws</a>&lt;E&gt;</span> failure messages. Only clang and GCC are supported; with other compilers the function returns <span class="doxyComputerOutput">"unknown"</span>.</p>
+<p>The name is spelled as the compiler prints it, and is used to identify the expected exception type in the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-exceptions/#ga6a0ca4f8b757ea511c494189212812b3">throws</a>&lt;E&gt;</span> failure messages. Only clang and GCC are supported; with other compilers the function returns <span class="doxyComputerOutput">"unknown"</span>.</p>
 
 
 <dl class="doxyParamsList">

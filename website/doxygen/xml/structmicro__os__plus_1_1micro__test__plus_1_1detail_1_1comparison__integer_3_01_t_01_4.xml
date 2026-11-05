@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparison__integer_3_01_t_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::detail::comparison_integer&lt; T &gt;</compoundname>
+    <includes refid="detail-inlines_8h" local="no">detail-inlines.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparison__integer_3_01_t_01_4_1a14ebefa2abc73daf018aa6df27b34a18" prot="public" static="no">
+        <type>std::conditional_t&lt; std::is_signed_v&lt; T &gt;, std::make_signed_t&lt; T &gt;, std::make_unsigned_t&lt; T &gt; &gt;</type>
+        <definition>using micro_os_plus::micro_test_plus::detail::comparison_integer&lt; T &gt;::type = std::conditional_t&lt;std::is_signed_v&lt;T&gt;, std::make_signed_t&lt;T&gt;,
+                              std::make_unsigned_t&lt;T&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::comparison_integer&lt; T &gt;::type</qualifiedname>
+        <briefdescription>
+<para>The integer type of the same size and signedness. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>std::make_signed_t</computeroutput> or <computeroutput>std::make_unsigned_t</computeroutput> of the character type, chosen by its signedness, which, for <computeroutput>char</computeroutput> and <computeroutput>wchar_t</computeroutput>, depends on the platform. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="311" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="311" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <requiresclause>character&lt;T&gt;    </requiresclause>
+    <briefdescription>
+<para>The integer type used to compare a character type. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Selected by the <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1character" kindref="compound">character</ref></computeroutput> concept, so that it applies also to the cv-qualified character types.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="301" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="302" bodyend="314"/>
+    <listofallmembers>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparison__integer_3_01_t_01_4_1a14ebefa2abc73daf018aa6df27b34a18" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::comparison_integer&lt; T &gt;</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

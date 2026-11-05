@@ -84,6 +84,42 @@
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" line="294" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" bodystart="294" bodyend="358"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1ae344ed13847263c08e39a3e9266c0109" compoundref="reporter-tap_8cpp" startline="294" endline="358">yaml_double_quoted</references>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1ae344ed13847263c08e39a3e9266c0109" compoundref="reporter-tap_8cpp" startline="294" endline="358">yaml_double_quoted</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1a27ca54c91d04ccb21bebc0f54b0c735b" compoundref="reporter-tap_8cpp" startline="377" endline="389">yaml_scalar</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1a27ca54c91d04ccb21bebc0f54b0c735b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::yaml_scalar</definition>
+        <argsstring>(std::string_view text)</argsstring>
+        <name>yaml_scalar</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::anonymous_namespace{reporter-tap.cpp}::yaml_scalar</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+<para>Formats a text as a YAML scalar, double-quoted only when needed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A text made only of letters, digits, and the characters <computeroutput>_</computeroutput>, <computeroutput>.</computeroutput>, <computeroutput>+</computeroutput>, <computeroutput>/</computeroutput>, and <computeroutput>-</computeroutput>, and not starting with <computeroutput>-</computeroutput>, is a valid plain scalar, whatever its meaning, and is returned unchanged, so that the usual values are written as before. Any other text, for example a file name with a space, a <computeroutput>#</computeroutput>, or a <computeroutput>:</computeroutput>, which a YAML parser would truncate, split, or reject as a plain scalar, is returned double-quoted, as <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1ae344ed13847263c08e39a3e9266c0109" kindref="member">yaml_double_quoted()</ref></computeroutput> does.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text to format. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The scalar. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" line="377" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/reporter-tap.cpp" bodystart="377" bodyend="389"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1ae344ed13847263c08e39a3e9266c0109" compoundref="reporter-tap_8cpp" startline="294" endline="358">yaml_double_quoted</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1a27ca54c91d04ccb21bebc0f54b0c735b" compoundref="reporter-tap_8cpp" startline="377" endline="389">yaml_scalar</references>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02reporter-tap_8cpp_03_1a27ca54c91d04ccb21bebc0f54b0c735b" compoundref="reporter-tap_8cpp" startline="377" endline="389">yaml_scalar</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string" kind="struct" language="C++" prot="public">
+    <compoundname>micro_os_plus::micro_test_plus::detail::basic_c_string</compoundname>
+    <includes refid="micro-test-plus_8h" local="yes">micro-os-plus/micro-test-plus.h</includes>
+    <templateparamlist>
+      <param>
+        <type>character</type>
+        <declname>Char_T</declname>
+        <defname>Char_T</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1af727574c085a72e7309c4e65f9fde693" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t micro_os_plus::micro_test_plus::detail::basic_c_string&lt; Char_T &gt;::size_</definition>
+        <argsstring></argsstring>
+        <name>size_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::basic_c_string::size_</qualifiedname>
+        <briefdescription>
+<para>The number of characters, without the terminator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Computed by the constructors; zero for a null pointer. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1726" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1726" bodyend="-1"/>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1a0851477f1a58ad82284847d1ebaf5201" compoundref="detail-inlines_8h" startline="1517" endline="1521">micro_os_plus::micro_test_plus::detail::basic_c_string&lt; Char_T &gt;::view</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1aaaeff461f662bc9fb7e54c666e4ee101" prot="private" static="no" mutable="no">
+        <type>const Char_T *</type>
+        <definition>const Char_T* micro_os_plus::micro_test_plus::detail::basic_c_string&lt; Char_T &gt;::str_</definition>
+        <argsstring></argsstring>
+        <name>str_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::basic_c_string::str_</qualifiedname>
+        <briefdescription>
+<para>The first character, or <computeroutput>nullptr</computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Not owned; points into the operand passed to the comparator. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1718" column="20" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1718" bodyend="-1"/>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1a6ab5a592f0a20330b2a68480d719bd6a" compoundref="detail-inlines_8h" startline="1484" endline="1489">micro_os_plus::micro_test_plus::detail::basic_c_string&lt; Char_T &gt;::basic_c_string</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1acdfd43d6d3d328ef3c40ea9a11340625" compoundref="detail-inlines_8h" startline="1497" endline="1509">micro_os_plus::micro_test_plus::detail::basic_c_string&lt; Char_T &gt;::basic_c_string</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1a02a4a3d852b5606cbac121e9bab8d69d" compoundref="detail-inlines_8h" startline="1529" endline="1532">micro_os_plus::micro_test_plus::detail::basic_c_string&lt; Char_T &gt;::is_null</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1a0851477f1a58ad82284847d1ebaf5201" compoundref="detail-inlines_8h" startline="1517" endline="1521">micro_os_plus::micro_test_plus::detail::basic_c_string&lt; Char_T &gt;::view</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1a6ab5a592f0a20330b2a68480d719bd6a" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>micro_os_plus::micro_test_plus::detail::basic_c_string&lt; Char_T &gt;::basic_c_string</definition>
+        <argsstring>(const Char_T *str) noexcept</argsstring>
+        <name>basic_c_string</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::basic_c_string::basic_c_string</qualifiedname>
+        <param>
+          <type>const Char_T *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Constructs the operand from a pointer to a null-terminated string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string, or <computeroutput>nullptr</computeroutput>.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The length is computed with <computeroutput>std::char_traits&lt;Char_T&gt;::length()</computeroutput>, which, unlike <computeroutput>strlen()</computeroutput>, can be evaluated at compile time. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1673" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1484" bodyend="1489"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1aaaeff461f662bc9fb7e54c666e4ee101" compoundref="detail_8h" startline="1718">micro_os_plus::micro_test_plus::detail::basic_c_string&lt; Char_T &gt;::str_</references>
+      </memberdef>
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1acdfd43d6d3d328ef3c40ea9a11340625" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>micro_os_plus::micro_test_plus::detail::basic_c_string&lt; Char_T &gt;::basic_c_string</definition>
+        <argsstring>(const Char_T *str, std::size_t capacity) noexcept</argsstring>
+        <name>basic_c_string</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::basic_c_string::basic_c_string</qualifiedname>
+        <param>
+          <type>const Char_T *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>capacity</declname>
+        </param>
+        <briefdescription>
+<para>Constructs the operand from an array of characters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The string ends at the first null character, or at the end of the array, so that an array without a terminator is not read beyond its end.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first character of the array. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>capacity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements of the array.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The characters are counted up to the first null character, or up to <computeroutput>capacity</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1686" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1497" bodyend="1509"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1aaaeff461f662bc9fb7e54c666e4ee101" compoundref="detail_8h" startline="1718">micro_os_plus::micro_test_plus::detail::basic_c_string&lt; Char_T &gt;::str_</references>
+      </memberdef>
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1a02a4a3d852b5606cbac121e9bab8d69d" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::basic_c_string&lt; Char_T &gt;::is_null</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>is_null</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::basic_c_string::is_null</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Returns whether the operand is a null pointer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>true</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operand is a null pointer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>false</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operand is a string, possibly empty.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Returns whether the stored pointer is null. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1709" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1529" bodyend="1532"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1aaaeff461f662bc9fb7e54c666e4ee101" compoundref="detail_8h" startline="1718">micro_os_plus::micro_test_plus::detail::basic_c_string&lt; Char_T &gt;::str_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1adc1852317cb922b2104918b8644a6714" compoundref="expression-formatter-inlines_8h" startline="431" endline="442">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1a0851477f1a58ad82284847d1ebaf5201" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>std::basic_string_view&lt; Char_T &gt;</type>
+        <definition>std::basic_string_view&lt; Char_T &gt; micro_os_plus::micro_test_plus::detail::basic_c_string&lt; Char_T &gt;::view</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>view</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::basic_c_string::view</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Returns the characters, as a string view. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>The characters, without the terminator; empty for a null pointer.</para>
+</simplesect>
+Returns an empty view for a null pointer. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1698" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1517" bodyend="1521"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1af727574c085a72e7309c4e65f9fde693" compoundref="detail_8h" startline="1726">micro_os_plus::micro_test_plus::detail::basic_c_string&lt; Char_T &gt;::size_</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1aaaeff461f662bc9fb7e54c666e4ee101" compoundref="detail_8h" startline="1718">micro_os_plus::micro_test_plus::detail::basic_c_string&lt; Char_T &gt;::str_</references>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1adc1852317cb922b2104918b8644a6714" compoundref="expression-formatter-inlines_8h" startline="431" endline="442">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A C string operand of a comparator. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The comparators convert the arrays (including the string literals) and the pointers of the character types to this type (see <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" kindref="member">as_operand()</ref></computeroutput>), so that they are compared by content, as a reader of a test expects, and not by address. A null pointer is equal only to another null pointer (not to an empty string), and is less than any string.</para>
+<para>The characters are not copied; the operand must outlive the comparison, which is always the case within a check.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Char_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The character type; it satisfies <computeroutput><ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1character" kindref="compound">character</ref></computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>Char_T</label>
+      </node>
+      <node id="1">
+        <label>micro_os_plus::micro_test_plus::detail::basic_c_string&lt; Char_T &gt;</label>
+        <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>str_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1665" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1666" bodyend="1727"/>
+    <listofallmembers>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1a6ab5a592f0a20330b2a68480d719bd6a" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::basic_c_string</scope><name>basic_c_string</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1acdfd43d6d3d328ef3c40ea9a11340625" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::basic_c_string</scope><name>basic_c_string</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1a02a4a3d852b5606cbac121e9bab8d69d" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::basic_c_string</scope><name>is_null</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1af727574c085a72e7309c4e65f9fde693" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::basic_c_string</scope><name>size_</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1aaaeff461f662bc9fb7e54c666e4ee101" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::basic_c_string</scope><name>str_</name></member>
+      <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1a0851477f1a58ad82284847d1ebaf5201" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::basic_c_string</scope><name>view</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

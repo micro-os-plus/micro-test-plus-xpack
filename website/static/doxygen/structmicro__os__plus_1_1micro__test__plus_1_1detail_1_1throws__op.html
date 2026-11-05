@@ -138,9 +138,10 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2f66d3b08e35734f7e38e5e4c924192a" id="r_a2f66d3b08e35734f7e38e5e4c924192a"><td class="memTemplParams" colspan="2">template&lt;class Callable_T&gt; </td></tr>
-<tr class="memitem:a2f66d3b08e35734f7e38e5e4c924192a template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2f66d3b08e35734f7e38e5e4c924192a">throws_op</a> (const Callable_T &amp;func)</td></tr>
-<tr class="memdesc:a2f66d3b08e35734f7e38e5e4c924192a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an exception checking operator for the given callable.  <br /></td></tr>
+<tr class="memitem:afd8240359ac650ab282fcbbf95628687" id="r_afd8240359ac650ab282fcbbf95628687"><td class="memTemplParams" colspan="2">template&lt;class Callable_T&gt; <br />
+requires std::invocable&lt;Callable_T&amp;&gt;</td></tr>
+<tr class="memitem:afd8240359ac650ab282fcbbf95628687 template"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#afd8240359ac650ab282fcbbf95628687">throws_op</a> (Callable_T &amp;&amp;func)</td></tr>
+<tr class="memdesc:afd8240359ac650ab282fcbbf95628687"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an exception checking operator for the given callable.  <br /></td></tr>
 <tr class="memitem:a086d26c7329afc11e6a8b2664d753494" id="r_a086d26c7329afc11e6a8b2664d753494"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a086d26c7329afc11e6a8b2664d753494">operator bool</a> () const</td></tr>
 <tr class="memdesc:a086d26c7329afc11e6a8b2664d753494"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion operator to boolean.  <br /></td></tr>
 <tr class="memitem:a69618b39f260cbd032e271881430e45c" id="r_a69618b39f260cbd032e271881430e45c"><td class="memItemLeft"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a879f218299b32f5eb9fe68e15dfe0edf">throw_outcome</a>&#160;</td><td class="memItemRight"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a69618b39f260cbd032e271881430e45c">outcome</a> (void) const noexcept</td></tr>
@@ -168,7 +169,7 @@ struct micro_os_plus::micro_test_plus::detail::throws_op&lt; Exception_T &gt;</d
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01441">1441</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01489">1489</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a384b1d115e493d6a554ebda4e3089b19" name="a384b1d115e493d6a554ebda4e3089b19"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a384b1d115e493d6a554ebda4e3089b19">&#9670;&#160;</a></span>op_type</h2>
@@ -191,20 +192,22 @@ struct micro_os_plus::micro_test_plus::detail::throws_op&lt; Exception_T &gt;</d
 </div><div class="memdoc">
 <p>Detected by the <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="C++20 concept satisfied when a type is a framework expression type.">extension::is_op</a></span> concept, and inherited by all types derived from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op.html" title="Empty base struct for the framework expression types.">op</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00131">131</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00132">132</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
 
 </div>
 </div>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2f66d3b08e35734f7e38e5e4c924192a" name="a2f66d3b08e35734f7e38e5e4c924192a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f66d3b08e35734f7e38e5e4c924192a">&#9670;&#160;</a></span>throws_op()</h2>
+<a id="afd8240359ac650ab282fcbbf95628687" name="afd8240359ac650ab282fcbbf95628687"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd8240359ac650ab282fcbbf95628687">&#9670;&#160;</a></span>throws_op()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Exception_T&gt; </div>
+template&lt;class Exception_T&gt; <br />
+requires std::invocable&lt;Callable_T&amp;&gt;</div>
 <div class="memtemplate">
-template&lt;class Callable_T&gt; </div>
+template&lt;class Callable_T&gt; <br />
+requires std::invocable&lt;Callable_T&amp;&gt;</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -212,7 +215,7 @@ template&lt;class Callable_T&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">micro_os_plus::micro_test_plus::detail::throws_op</a>&lt; Exception_T &gt;::throws_op </td>
           <td>(</td>
-          <td class="paramtype">const Callable_T &amp;</td>          <td class="paramname"><span class="paramname"><em>func</em></span></td><td>)</td>
+          <td class="paramtype">Callable_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>func</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -224,7 +227,7 @@ template&lt;class Callable_T&gt; </div>
 </div><div class="memdoc">
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Callable_T</td><td>The type of the callable object to be invoked. </td></tr>
+    <tr><td class="paramname">Callable_T</td><td>The type of the callable object to be invoked; it must be invocable without arguments, as an lvalue, so a <span class="tt">mutable</span> lambda is accepted. </td></tr>
   </table>
   </dd>
 </dl>
@@ -237,40 +240,40 @@ template&lt;class Callable_T&gt; </div>
 <p>Invokes <span class="tt">func</span> inside a try/catch block. If <span class="tt">func</span> throws an exception of type <span class="tt">Exception_T</span>, the result is <span class="tt">true</span>; if it throws any other exception the result is <span class="tt">false</span>; if no exception is thrown the result is <span class="tt">false</span>. The result is passed to the <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html" title="Common base struct for callable-wrapping operators.">callable_op</a></span> base class constructor, with what was thrown, if the result is <span class="tt">false</span>, to be written in the report: nothing, a <span class="tt">std::exception</span>, with its <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a996c2d87a98606a33f4e80ae62337bcb" title="Retrieves the what() of the std::exception thrown.">what()</a></span>, or another exception.</p>
 <p>The <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1failed__requirement.html" title="The exception thrown to stop a test case after a failed require().">failed_requirement</a></span> thrown to stop the test case after a failed <span class="tt">require()</span> in <span class="tt">func</span> is not an exception of <span class="tt">func</span>, and is rethrown. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00883">883</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  885</span>        : <a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a10bbade95c4d4446127d7bdf3bd58176">callable_op</a>{ [&amp;<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">func</a>] () -&gt; <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">callable_result</a></div>
-<div class="line"><span class="lineno">  886</span>      {</div>
-<div class="line"><span class="lineno">  887</span>        <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  888</span>          {</div>
-<div class="line"><span class="lineno">  889</span>            <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">func</a> ();</div>
-<div class="line"><span class="lineno">  890</span>          }</div>
-<div class="line"><span class="lineno">  891</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">failed_requirement</a>&amp;)</div>
-<div class="line"><span class="lineno">  892</span>          {</div>
-<div class="line"><span class="lineno">  893</span>            <span class="keywordflow">throw</span>;</div>
-<div class="line"><span class="lineno">  894</span>          }</div>
-<div class="line"><span class="lineno">  895</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">Exception_T</a>&amp;)</div>
-<div class="line"><span class="lineno">  896</span>          {</div>
-<div class="line"><span class="lineno">  897</span>            <span class="keywordflow">return</span> { <span class="keyword">true</span>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">throw_outcome::none</a>, {} };</div>
-<div class="line"><span class="lineno">  898</span>          }</div>
-<div class="line"><span class="lineno">  899</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">std::exception</a>&amp; <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">e</a>)</div>
-<div class="line"><span class="lineno">  900</span>          {</div>
-<div class="line"><span class="lineno">  901</span>            <span class="keywordflow">return</span> { <span class="keyword">false</span>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">throw_outcome::std_exception</a>,</div>
-<div class="line"><span class="lineno">  902</span>                     <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">e</a>.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a996c2d87a98606a33f4e80ae62337bcb">what</a> () != <span class="keyword">nullptr</span> ? <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">e</a>.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a996c2d87a98606a33f4e80ae62337bcb">what</a> () : <span class="stringliteral">&quot;&quot;</span> };</div>
-<div class="line"><span class="lineno">  903</span>          }</div>
-<div class="line"><span class="lineno">  904</span>        <span class="keywordflow">catch</span> (...)</div>
-<div class="line"><span class="lineno">  905</span>          {</div>
-<div class="line"><span class="lineno">  906</span>            <span class="keywordflow">return</span> { <span class="keyword">false</span>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">throw_outcome::unknown_exception</a>, {} };</div>
-<div class="line"><span class="lineno">  907</span>          }</div>
-<div class="line"><span class="lineno">  908</span>        <span class="keywordflow">return</span> { <span class="keyword">false</span>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">throw_outcome::none</a>, {} };</div>
-<div class="line"><span class="lineno">  909</span>      }() }</div>
-<div class="line"><span class="lineno">  910</span>    {</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_html_a10bbade95c4d4446127d7bdf3bd58176"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a10bbade95c4d4446127d7bdf3bd58176">micro_os_plus::micro_test_plus::detail::callable_op::callable_op</a></div><div class="ttdeci">callable_op(callable_result &amp;&amp;result)</div><div class="ttdoc">Constructs a callable operator with the pre-computed result.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00821">detail-inlines.h:821</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_html_a996c2d87a98606a33f4e80ae62337bcb"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a996c2d87a98606a33f4e80ae62337bcb">micro_os_plus::micro_test_plus::detail::callable_op::what</a></div><div class="ttdeci">const std::string &amp; what(void) const noexcept</div><div class="ttdoc">Retrieves the what() of the std::exception thrown.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00853">detail-inlines.h:853</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">micro_os_plus::micro_test_plus::detail::throws_op</a></div><div class="ttdoc">Operator struct template to check if an expression throws a specific exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01441">detail.h:1442</a></div></div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l01184">1184</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1186</span>        : <a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a10bbade95c4d4446127d7bdf3bd58176">callable_op</a>{ [&amp;<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">func</a>] () -&gt; <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">callable_result</a></div>
+<div class="line"><span class="lineno"> 1187</span>      {</div>
+<div class="line"><span class="lineno"> 1188</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno"> 1189</span>          {</div>
+<div class="line"><span class="lineno"> 1190</span>            <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">func</a> ();</div>
+<div class="line"><span class="lineno"> 1191</span>          }</div>
+<div class="line"><span class="lineno"> 1192</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">failed_requirement</a>&amp;)</div>
+<div class="line"><span class="lineno"> 1193</span>          {</div>
+<div class="line"><span class="lineno"> 1194</span>            <span class="keywordflow">throw</span>;</div>
+<div class="line"><span class="lineno"> 1195</span>          }</div>
+<div class="line"><span class="lineno"> 1196</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">Exception_T</a>&amp;)</div>
+<div class="line"><span class="lineno"> 1197</span>          {</div>
+<div class="line"><span class="lineno"> 1198</span>            <span class="keywordflow">return</span> { <span class="keyword">true</span>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">throw_outcome::none</a>, {} };</div>
+<div class="line"><span class="lineno"> 1199</span>          }</div>
+<div class="line"><span class="lineno"> 1200</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">std::exception</a>&amp; <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">e</a>)</div>
+<div class="line"><span class="lineno"> 1201</span>          {</div>
+<div class="line"><span class="lineno"> 1202</span>            <span class="keywordflow">return</span> { <span class="keyword">false</span>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">throw_outcome::std_exception</a>,</div>
+<div class="line"><span class="lineno"> 1203</span>                     <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">e</a>.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a996c2d87a98606a33f4e80ae62337bcb">what</a> () != <span class="keyword">nullptr</span> ? <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">e</a>.<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a996c2d87a98606a33f4e80ae62337bcb">what</a> () : <span class="stringliteral">&quot;&quot;</span> };</div>
+<div class="line"><span class="lineno"> 1204</span>          }</div>
+<div class="line"><span class="lineno"> 1205</span>        <span class="keywordflow">catch</span> (...)</div>
+<div class="line"><span class="lineno"> 1206</span>          {</div>
+<div class="line"><span class="lineno"> 1207</span>            <span class="keywordflow">return</span> { <span class="keyword">false</span>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">throw_outcome::unknown_exception</a>, {} };</div>
+<div class="line"><span class="lineno"> 1208</span>          }</div>
+<div class="line"><span class="lineno"> 1209</span>        <span class="keywordflow">return</span> { <span class="keyword">false</span>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">throw_outcome::none</a>, {} };</div>
+<div class="line"><span class="lineno"> 1210</span>      }() }</div>
+<div class="line"><span class="lineno"> 1211</span>    {</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_html_a10bbade95c4d4446127d7bdf3bd58176"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a10bbade95c4d4446127d7bdf3bd58176">micro_os_plus::micro_test_plus::detail::callable_op::callable_op</a></div><div class="ttdeci">callable_op(callable_result &amp;&amp;result)</div><div class="ttdoc">Constructs a callable operator with the pre-computed result.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l01121">detail-inlines.h:1121</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_html_a996c2d87a98606a33f4e80ae62337bcb"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a996c2d87a98606a33f4e80ae62337bcb">micro_os_plus::micro_test_plus::detail::callable_op::what</a></div><div class="ttdeci">const std::string &amp; what(void) const noexcept</div><div class="ttdoc">Retrieves the what() of the std::exception thrown.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l01153">detail-inlines.h:1153</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">micro_os_plus::micro_test_plus::detail::throws_op</a></div><div class="ttdoc">Operator struct template to check if an expression throws a specific exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01489">detail.h:1490</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00821">micro_os_plus::micro_test_plus::detail::callable_op::callable_op()</a>, <a class="el" href="detail_8h_source.html#l01284">micro_os_plus::micro_test_plus::detail::none</a>, <a class="el" href="detail_8h_source.html#l01290">micro_os_plus::micro_test_plus::detail::std_exception</a>, and <a class="el" href="detail_8h_source.html#l01295">micro_os_plus::micro_test_plus::detail::unknown_exception</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l01121">micro_os_plus::micro_test_plus::detail::callable_op::callable_op()</a>, <a class="el" href="detail_8h_source.html#l01332">micro_os_plus::micro_test_plus::detail::none</a>, <a class="el" href="detail_8h_source.html#l01338">micro_os_plus::micro_test_plus::detail::std_exception</a>, and <a class="el" href="detail_8h_source.html#l01343">micro_os_plus::micro_test_plus::detail::unknown_exception</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00930">micro_os_plus::micro_test_plus::detail::throws_op&lt; void &gt;::throws_op()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01232">micro_os_plus::micro_test_plus::detail::throws_op&lt; void &gt;::throws_op()</a>.</p>
 
 </div>
 </div>
@@ -301,12 +304,12 @@ template&lt;class Callable_T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The result of the callable invocation.</dd></dl>
 <p>Returns the result computed by the constructor of the derived operator; the callable is not invoked again. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00832">832</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  835</span>    {</div>
-<div class="line"><span class="lineno">  836</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#ad464d00d1f7b4add47e7e6258dd5164d">value_</a>;</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_html_ad464d00d1f7b4add47e7e6258dd5164d"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#ad464d00d1f7b4add47e7e6258dd5164d">micro_os_plus::micro_test_plus::detail::callable_op::value_</a></div><div class="ttdeci">const bool value_</div><div class="ttdoc">Stores the result of the callable invocation.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01397">detail.h:1397</a></div></div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l01132">1132</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1135</span>    {</div>
+<div class="line"><span class="lineno"> 1136</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#ad464d00d1f7b4add47e7e6258dd5164d">value_</a>;</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_html_ad464d00d1f7b4add47e7e6258dd5164d"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#ad464d00d1f7b4add47e7e6258dd5164d">micro_os_plus::micro_test_plus::detail::callable_op::value_</a></div><div class="ttdeci">const bool value_</div><div class="ttdoc">Stores the result of the callable invocation.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01445">detail.h:1445</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l01397">value_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l01445">value_</a>.</p>
 
 </div>
 </div>
@@ -336,14 +339,14 @@ template&lt;class Callable_T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The kind of the exception thrown, <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a879f218299b32f5eb9fe68e15dfe0edfa334c4a4c42fdb79d7ebc3e73b517e6f8" title="Nothing was thrown, or the expected exception was thrown.">throw_outcome::none</a></span> if the callable completed, or if the expected exception was thrown.</dd></dl>
 <p>Returns what was recorded when the check failed. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00843">843</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  845</span>    {</div>
-<div class="line"><span class="lineno">  846</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a5be2409b067dc5a12d19f26067327c82">outcome_</a>;</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_html_a5be2409b067dc5a12d19f26067327c82"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a5be2409b067dc5a12d19f26067327c82">micro_os_plus::micro_test_plus::detail::callable_op::outcome_</a></div><div class="ttdeci">throw_outcome outcome_</div><div class="ttdoc">Stores what the invocation threw, when the check failed.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01405">detail.h:1405</a></div></div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l01143">1143</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1145</span>    {</div>
+<div class="line"><span class="lineno"> 1146</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a5be2409b067dc5a12d19f26067327c82">outcome_</a>;</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_html_a5be2409b067dc5a12d19f26067327c82"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a5be2409b067dc5a12d19f26067327c82">micro_os_plus::micro_test_plus::detail::callable_op::outcome_</a></div><div class="ttdeci">throw_outcome outcome_</div><div class="ttdoc">Stores what the invocation threw, when the check failed.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01453">detail.h:1453</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l01405">outcome_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l01453">outcome_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00821">callable_op()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01121">callable_op()</a>.</p>
 
 </div>
 </div>
@@ -373,14 +376,14 @@ template&lt;class Callable_T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The text, empty unless the outcome is <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a879f218299b32f5eb9fe68e15dfe0edfa1702c8950d15f035273a3f192a9da2dc" title="A std::exception that was not the expected one was thrown; its what() is kept.">throw_outcome::std_exception</a></span>.</dd></dl>
 <p>Returns the text recorded when a <span class="tt">std::exception</span> was thrown. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00853">853</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  855</span>    {</div>
-<div class="line"><span class="lineno">  856</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a2e115acd4ddc044f458192bef80a2569">what_</a>;</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_html_a2e115acd4ddc044f458192bef80a2569"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a2e115acd4ddc044f458192bef80a2569">micro_os_plus::micro_test_plus::detail::callable_op::what_</a></div><div class="ttdeci">std::string what_</div><div class="ttdoc">Stores the what() of the std::exception thrown, when the check failed.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01415">detail.h:1415</a></div></div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l01153">1153</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1155</span>    {</div>
+<div class="line"><span class="lineno"> 1156</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a2e115acd4ddc044f458192bef80a2569">what_</a>;</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_html_a2e115acd4ddc044f458192bef80a2569"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op.html#a2e115acd4ddc044f458192bef80a2569">micro_os_plus::micro_test_plus::detail::callable_op::what_</a></div><div class="ttdeci">std::string what_</div><div class="ttdoc">Stores the what() of the std::exception thrown, when the check failed.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01463">detail.h:1463</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l01415">what_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l01463">what_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00821">callable_op()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01121">callable_op()</a>.</p>
 
 </div>
 </div>
@@ -406,9 +409,9 @@ template&lt;class Callable_T&gt; </div>
 </div><div class="memdoc">
 <p>Copied from the <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result.html" title="The result of the invocation of the callable of a check.">callable_result</a></span> by the constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01405">1405</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01453">1453</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00821">callable_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00843">outcome()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01121">callable_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l01143">outcome()</a>.</p>
 
 </div>
 </div>
@@ -433,9 +436,9 @@ template&lt;class Callable_T&gt; </div>
 </div><div class="memdoc">
 <p>Computed once, by the derived operator constructor, which invokes the callable. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01397">1397</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01445">1445</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00821">callable_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00833">operator bool()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01121">callable_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l01133">operator bool()</a>.</p>
 
 </div>
 </div>
@@ -460,9 +463,9 @@ template&lt;class Callable_T&gt; </div>
 </div><div class="memdoc">
 <p>Moved from the <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result.html" title="The result of the invocation of the callable of a check.">callable_result</a></span> by the constructor; empty in the usual case, so nothing is allocated. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01415">1415</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01463">1463</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00821">callable_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00853">what()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01121">callable_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l01153">what()</a>.</p>
 
 </div>
 </div>

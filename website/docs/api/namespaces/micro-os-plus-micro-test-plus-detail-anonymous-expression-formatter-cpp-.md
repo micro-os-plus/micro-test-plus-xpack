@@ -85,6 +85,40 @@ namespace micro_os_plus::micro_test_plus::detail::anonymous{expression-formatter
 <td class="doxyMemberIndexSeparator" colspan="2"></td>
 </tr>
 
+<tr class="doxyMemberIndexTemplate">
+<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Char_T&gt;</div></td>
+</tr>
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">void</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#aaa6956be6a440af9fcde6e11aa2239a3">append_wide_text</a> (std::string &amp;buffer, std::basic_string_view&lt; Char_T &gt; sv)</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Appends the text of a string of a wide character type, converted to UTF-8, as the <span class="doxyComputerOutput">char</span> text is appended. <a href="#aaa6956be6a440af9fcde6e11aa2239a3">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
+<tr class="doxyMemberIndexTemplate">
+<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class Char_T&gt;</div></td>
+</tr>
+<tr class="doxyMemberIndexItem">
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">auto </td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a3169704f317df72895180fef95637b30">bounded_view</a> (const Char_T *s, std::size_t capacity) noexcept -&gt; std::basic_string_view&lt; Char_T &gt;</td>
+</tr>
+<tr class="doxyMemberIndexDescription">
+<td class="doxyMemberIndexDescriptionLeft"></td>
+<td class="doxyMemberIndexDescriptionRight">
+<p>Gets the text of a C string held in a buffer of a known capacity. <a href="#a3169704f317df72895180fef95637b30">More...</a></p>
+</td>
+</tr>
+<tr class="doxyMemberIndexSeparator">
+<td class="doxyMemberIndexSeparator" colspan="2"></td>
+</tr>
+
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">constexpr bool</td>
 <td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#adacbf3f149b33729d20193f0057e51e9">is_escaped_in_plain</a> (char c) noexcept</td>
@@ -503,6 +537,179 @@ namespace micro_os_plus::micro_test_plus::detail::anonymous{expression-formatter
 
 
 <p>Referenced by <a href="#ae1dbe79a083ee23b9946e621e72b4191">append_utf8</a>, <a href="#ac857348d4c53f704f9f424ff78a3220e">utf16_to_utf8</a> and <a href="#ab0fcacdcde6203ee5fc0a95808abec62">utf32_to_utf8</a>.</p>
+
+</div>
+</div>
+
+### append\_wide\_text() {#aaa6956be6a440af9fcde6e11aa2239a3}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<div class="doxyMemberTemplate">template &lt;class Char_T&gt;</div>
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">void micro_os_plus::micro_test_plus::detail::anonymous{expression-formatter.cpp}::append_wide_text (std::string &amp; buffer, std::basic_string_view&lt; Char_T &gt; sv)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Appends the text of a string of a wide character type, converted to UTF-8, as the <span class="doxyComputerOutput">char</span> text is appended.</p>
+
+
+<p>The text is written by a formatter in the plain mode, so without quotes, with the control characters other than the tab and the line feed, and DEL, escaped, whatever the mode of the caller.</p>
+
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Template Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">Char_T</td>
+<td class="doxyParamItemDescription"><p>The character type.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">[inout] buffer</td>
+<td class="doxyParamItemDescription"><p>The buffer to append to.</p></td>
+</tr>
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">sv</td>
+<td class="doxyParamItemDescription"><p>The text.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="doxySectionUser">
+<dt>Returns</dt>
+<dd><p>Nothing.</p></dd>
+</dl>
+
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp/#l00385">385</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp">expression-formatter.cpp</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aaa6956be6a440af9fcde6e11aa2239a3">385</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#aaa6956be6a440af9fcde6e11aa2239a3">append_wide_text</a> (std::string&amp; buffer, std::basic_string_view&lt;Char_T&gt; sv)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">386</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">387</span><span class="doxyLineContent"><span class="doxyHighlight">      std::string text;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">388</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/plain-text/#a63b3cc3a8e725c2921787180f1244824">plain_text::append</a> (text, sv);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">389</span><span class="doxyLineContent"><span class="doxyHighlight">      buffer.append (text);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">390</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+
+</div>
+
+
+<p>References <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/plain-text/#a63b3cc3a8e725c2921787180f1244824">micro_os_plus::micro_test_plus::detail::plain_text::append</a> and <a href="#aaa6956be6a440af9fcde6e11aa2239a3">append_wide_text</a>.</p>
+
+
+<p>Referenced by <a href="#aaa6956be6a440af9fcde6e11aa2239a3">append_wide_text</a>.</p>
+
+</div>
+</div>
+
+### bounded\_view() {#a3169704f317df72895180fef95637b30}
+
+<div class="doxyMemberItem">
+<div class="doxyMemberProto">
+<div class="doxyMemberTemplate">template &lt;class Char_T&gt;</div>
+<table class="doxyMemberLabels">
+<tr class="doxyMemberLabels">
+<td class="doxyMemberLabelsLeft">
+<table class="doxyMemberName">
+<tr>
+<td class="doxyMemberName">std::basic_string_view&lt; Char_T &gt; micro_os_plus::micro_test_plus::detail::anonymous{expression-formatter.cpp}::bounded_view (const Char_T * s, std::size_t capacity)</td>
+</tr>
+</table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel noexcept">noexcept</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="doxyMemberDoc">
+
+<p>Gets the text of a C string held in a buffer of a known capacity.</p>
+
+
+<p>With <span class="doxyComputerOutput">npos</span>, the length is computed by the constructor of the view, which reads up to the terminator; otherwise only the <span class="doxyComputerOutput">capacity</span> characters are searched for the terminator, so that an array without one is not read beyond its end.</p>
+
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Template Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">Char_T</td>
+<td class="doxyParamItemDescription"><p>The character type.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="doxyParamsList">
+<dt class="doxyParamsTableTitle">Parameters</dt>
+<dd>
+<table class="doxyParamsTable">
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">s</td>
+<td class="doxyParamItemDescription"><p>The text; it must not be null.</p></td>
+</tr>
+<tr class="doxyParamItem">
+<td class="doxyParamItemName">capacity</td>
+<td class="doxyParamItemDescription"><p>The number of characters that may be read, or <span class="doxyComputerOutput">npos</span> if the text is null-terminated.</p></td>
+</tr>
+</table>
+</dd>
+</dl>
+
+<dl class="doxySectionUser">
+<dt>Returns</dt>
+<dd><p>A view of the characters before the first null character, or of the <span class="doxyComputerOutput">capacity</span> characters if there is none.</p></dd>
+</dl>
+
+
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp/#l00356">356</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp">expression-formatter.cpp</a>.</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a3169704f317df72895180fef95637b30">356</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a3169704f317df72895180fef95637b30">bounded_view</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Char_T* s, std::size_t capacity) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">357</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">358</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (capacity == std::basic_string_view&lt;Char_T&gt;::npos)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">359</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">360</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> std::basic_string_view&lt;Char_T&gt;{ s };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">361</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">362</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">363</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> std::basic_string_view&lt;Char_T&gt; buffer{ s, capacity };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">364</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> buffer.substr (0, buffer.find (Char_T{}));</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">365</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+
+</div>
+
+
+<p>Reference <a href="#a3169704f317df72895180fef95637b30">bounded_view</a>.</p>
+
+
+<p>Referenced by <a href="#a3169704f317df72895180fef95637b30">bounded_view</a>.</p>
 
 </div>
 </div>

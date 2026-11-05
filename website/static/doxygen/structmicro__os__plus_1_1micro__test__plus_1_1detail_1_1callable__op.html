@@ -162,7 +162,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The base of the exception-checking operators, <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html" title="Operator struct template to check if an expression throws a specific exception.">throws_op</a></span> and <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op.html" title="Operator struct to check if an expression does not throw any exception.">nothrow_op</a></span>, which invoke the callable in their constructors. It stores the pre-computed boolean result, and, when the check failed, what was thrown, so that the report can state why (see <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter.html#a2835213b70dc5f7b1748a6c27a848108" title="Appends the reason why a check of the exceptions failed.">expression_formatter::append_throw_reason()</a></span>). </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01346">1346</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01394">1394</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a384b1d115e493d6a554ebda4e3089b19" name="a384b1d115e493d6a554ebda4e3089b19"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a384b1d115e493d6a554ebda4e3089b19">&#9670;&#160;</a></span>op_type</h2>
@@ -185,7 +185,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Detected by the <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="C++20 concept satisfied when a type is a framework expression type.">extension::is_op</a></span> concept, and inherited by all types derived from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op.html" title="Empty base struct for the framework expression types.">op</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00131">131</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00132">132</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
 
 </div>
 </div>
@@ -220,17 +220,17 @@ Private Attributes</h2></td></tr>
 </dl>
 <p>Stores the pre-computed boolean result, and, when the check failed, what the invocation threw and the <span class="tt"><a class="el" href="#a996c2d87a98606a33f4e80ae62337bcb" title="Retrieves the what() of the std::exception thrown.">what()</a></span> of the exception. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00821">821</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  823</span>        : <a class="code hl_variable" href="#ad464d00d1f7b4add47e7e6258dd5164d">value_</a>{ result.value }, <a class="code hl_variable" href="#a5be2409b067dc5a12d19f26067327c82">outcome_</a>{ result.outcome },</div>
-<div class="line"><span class="lineno">  824</span>          <a class="code hl_variable" href="#a2e115acd4ddc044f458192bef80a2569">what_</a>{ std::move (result.what) }</div>
-<div class="line"><span class="lineno">  825</span>    {</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_html_a2e115acd4ddc044f458192bef80a2569"><div class="ttname"><a href="#a2e115acd4ddc044f458192bef80a2569">micro_os_plus::micro_test_plus::detail::callable_op::what_</a></div><div class="ttdeci">std::string what_</div><div class="ttdoc">Stores the what() of the std::exception thrown, when the check failed.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01415">detail.h:1415</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_html_a5be2409b067dc5a12d19f26067327c82"><div class="ttname"><a href="#a5be2409b067dc5a12d19f26067327c82">micro_os_plus::micro_test_plus::detail::callable_op::outcome_</a></div><div class="ttdeci">throw_outcome outcome_</div><div class="ttdoc">Stores what the invocation threw, when the check failed.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01405">detail.h:1405</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_html_ad464d00d1f7b4add47e7e6258dd5164d"><div class="ttname"><a href="#ad464d00d1f7b4add47e7e6258dd5164d">micro_os_plus::micro_test_plus::detail::callable_op::value_</a></div><div class="ttdeci">const bool value_</div><div class="ttdoc">Stores the result of the callable invocation.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01397">detail.h:1397</a></div></div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l01121">1121</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1123</span>        : <a class="code hl_variable" href="#ad464d00d1f7b4add47e7e6258dd5164d">value_</a>{ result.value }, <a class="code hl_variable" href="#a5be2409b067dc5a12d19f26067327c82">outcome_</a>{ result.outcome },</div>
+<div class="line"><span class="lineno"> 1124</span>          <a class="code hl_variable" href="#a2e115acd4ddc044f458192bef80a2569">what_</a>{ std::move (result.what) }</div>
+<div class="line"><span class="lineno"> 1125</span>    {</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_html_a2e115acd4ddc044f458192bef80a2569"><div class="ttname"><a href="#a2e115acd4ddc044f458192bef80a2569">micro_os_plus::micro_test_plus::detail::callable_op::what_</a></div><div class="ttdeci">std::string what_</div><div class="ttdoc">Stores the what() of the std::exception thrown, when the check failed.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01463">detail.h:1463</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_html_a5be2409b067dc5a12d19f26067327c82"><div class="ttname"><a href="#a5be2409b067dc5a12d19f26067327c82">micro_os_plus::micro_test_plus::detail::callable_op::outcome_</a></div><div class="ttdeci">throw_outcome outcome_</div><div class="ttdoc">Stores what the invocation threw, when the check failed.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01453">detail.h:1453</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_html_ad464d00d1f7b4add47e7e6258dd5164d"><div class="ttname"><a href="#ad464d00d1f7b4add47e7e6258dd5164d">micro_os_plus::micro_test_plus::detail::callable_op::value_</a></div><div class="ttdeci">const bool value_</div><div class="ttdoc">Stores the result of the callable invocation.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01445">detail.h:1445</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00843">outcome()</a>, <a class="el" href="detail_8h_source.html#l01405">outcome_</a>, <a class="el" href="detail_8h_source.html#l01397">value_</a>, <a class="el" href="detail-inlines_8h_source.html#l00853">what()</a>, and <a class="el" href="detail_8h_source.html#l01415">what_</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l01143">outcome()</a>, <a class="el" href="detail_8h_source.html#l01453">outcome_</a>, <a class="el" href="detail_8h_source.html#l01445">value_</a>, <a class="el" href="detail-inlines_8h_source.html#l01153">what()</a>, and <a class="el" href="detail_8h_source.html#l01463">what_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00966">micro_os_plus::micro_test_plus::detail::nothrow_op::nothrow_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00883">micro_os_plus::micro_test_plus::detail::throws_op&lt; Exception_T &gt;::throws_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00930">micro_os_plus::micro_test_plus::detail::throws_op&lt; void &gt;::throws_op()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01269">micro_os_plus::micro_test_plus::detail::nothrow_op::nothrow_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l01184">micro_os_plus::micro_test_plus::detail::throws_op&lt; Exception_T &gt;::throws_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l01232">micro_os_plus::micro_test_plus::detail::throws_op&lt; void &gt;::throws_op()</a>.</p>
 
 </div>
 </div>
@@ -261,11 +261,11 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The result of the callable invocation.</dd></dl>
 <p>Returns the result computed by the constructor of the derived operator; the callable is not invoked again. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00832">832</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  835</span>    {</div>
-<div class="line"><span class="lineno">  836</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#ad464d00d1f7b4add47e7e6258dd5164d">value_</a>;</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l01132">1132</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1135</span>    {</div>
+<div class="line"><span class="lineno"> 1136</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#ad464d00d1f7b4add47e7e6258dd5164d">value_</a>;</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l01397">value_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l01445">value_</a>.</p>
 
 </div>
 </div>
@@ -295,13 +295,13 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The kind of the exception thrown, <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a879f218299b32f5eb9fe68e15dfe0edfa334c4a4c42fdb79d7ebc3e73b517e6f8" title="Nothing was thrown, or the expected exception was thrown.">throw_outcome::none</a></span> if the callable completed, or if the expected exception was thrown.</dd></dl>
 <p>Returns what was recorded when the check failed. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00843">843</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  845</span>    {</div>
-<div class="line"><span class="lineno">  846</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a5be2409b067dc5a12d19f26067327c82">outcome_</a>;</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l01143">1143</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1145</span>    {</div>
+<div class="line"><span class="lineno"> 1146</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a5be2409b067dc5a12d19f26067327c82">outcome_</a>;</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l01405">outcome_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l01453">outcome_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00821">callable_op()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01121">callable_op()</a>.</p>
 
 </div>
 </div>
@@ -331,13 +331,13 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The text, empty unless the outcome is <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a879f218299b32f5eb9fe68e15dfe0edfa1702c8950d15f035273a3f192a9da2dc" title="A std::exception that was not the expected one was thrown; its what() is kept.">throw_outcome::std_exception</a></span>.</dd></dl>
 <p>Returns the text recorded when a <span class="tt">std::exception</span> was thrown. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00853">853</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  855</span>    {</div>
-<div class="line"><span class="lineno">  856</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a2e115acd4ddc044f458192bef80a2569">what_</a>;</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l01153">1153</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1155</span>    {</div>
+<div class="line"><span class="lineno"> 1156</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a2e115acd4ddc044f458192bef80a2569">what_</a>;</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail_8h_source.html#l01415">what_</a>.</p>
+<p class="reference">References <a class="el" href="detail_8h_source.html#l01463">what_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00821">callable_op()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01121">callable_op()</a>.</p>
 
 </div>
 </div>
@@ -363,9 +363,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Copied from the <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result.html" title="The result of the invocation of the callable of a check.">callable_result</a></span> by the constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01405">1405</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01453">1453</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00821">callable_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00843">outcome()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01121">callable_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l01143">outcome()</a>.</p>
 
 </div>
 </div>
@@ -390,9 +390,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Computed once, by the derived operator constructor, which invokes the callable. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01397">1397</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01445">1445</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00821">callable_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00833">operator bool()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01121">callable_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l01133">operator bool()</a>.</p>
 
 </div>
 </div>
@@ -417,9 +417,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Moved from the <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__result.html" title="The result of the invocation of the callable of a check.">callable_result</a></span> by the constructor; empty in the usual case, so nothing is allocated. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01415">1415</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01463">1463</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00821">callable_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00853">what()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01121">callable_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l01153">what()</a>.</p>
 
 </div>
 </div>

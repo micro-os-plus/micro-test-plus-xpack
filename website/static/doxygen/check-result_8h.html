@@ -156,7 +156,7 @@ Enumerations</h2></td></tr>
 <div class="textblock"><p>This header provides the <span class="tt">check_result</span> class, the object returned by <span class="tt">expect()</span> and <span class="tt">require()</span>, together with the <span class="tt">check_kind</span> enumeration and the <span class="tt">failure_info</span> structure, passed to the reporter. The check result captures the result of one check and reports the outcome only when it is destroyed (i.e. at the semicolon following the expression statement), after the optional user message was appended via <span class="tt">operator&lt;&lt;</span>.</p>
 <p>It also defines <span class="tt">failed_requirement</span>, the exception thrown to stop a test case after a failed <span class="tt">require()</span>.</p>
 <p>Both live in the <span class="tt">detail</span> namespace and are not part of the public API.</p>
-<p>This file is intended solely for internal use within the framework and should not be included directly by user code. </p>
+<p>This file is included by <span class="tt"><a class="el" href="micro-test-plus_8h.html" title="Main C++ header with the declarations for the µTest++ Testing Framework.">micro-os-plus/micro-test-plus.h</a></span>, which is the header that the applications include. </p>
 
 <p class="definition">Definition in file <a class="el" href="check-result_8h_source.html">check-result.h</a>.</p>
 </div></div><!-- contents -->

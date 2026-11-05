@@ -4,7 +4,7 @@
     <compoundname>micro-os-plus-micro-test-plus-cpp-api-exceptions</compoundname>
     <title>Checking Exceptions</title>
     <sectiondef kind="func">
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gacbf45f8ba39c0653bbf1035c70dd9529" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga2989618cf5adca7a767c966895ab37a0" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Callable_T</type>
@@ -12,13 +12,14 @@
         </templateparamlist>
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::nothrow</definition>
-        <argsstring>(const Callable_T &amp;func)</argsstring>
+        <argsstring>(Callable_T &amp;&amp;func)</argsstring>
         <name>nothrow</name>
         <qualifiedname>micro_os_plus::micro_test_plus::nothrow</qualifiedname>
         <param>
-          <type>const Callable_T &amp;</type>
+          <type>Callable_T &amp;&amp;</type>
           <declname>func</declname>
         </param>
+    <requiresclause>std::invocable&lt;Callable_T&amp;&gt;    </requiresclause>
         <briefdescription>
 <para>Checks whether a callable does not throw any exception, for <computeroutput>expect()</computeroutput> or <computeroutput>require()</computeroutput>. </para>
         </briefdescription>
@@ -28,7 +29,7 @@
 <parametername>Callable_T</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The type of the callable object to be invoked. </para>
+<para>The type of the callable object to be invoked; it must be invocable without arguments, as an lvalue, so a <computeroutput>mutable</computeroutput> lambda is accepted. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -43,16 +44,16 @@
 </parameterlist>
 <simplesect kind="return"><para>An object of an unspecified type, holding the result, to be passed to <computeroutput>expect()</computeroutput> or <computeroutput>require()</computeroutput>.</para>
 </simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gacbf45f8ba39c0653bbf1035c70dd9529" kindref="member">nothrow</ref></computeroutput> function template verifies whether invoking the provided callable object does not result in the throwing of any exception within the µTest++ framework. This is useful for ensuring that code under test does not unexpectedly signal error conditions.</para>
+The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga2989618cf5adca7a767c966895ab37a0" kindref="member">nothrow</ref></computeroutput> function template verifies whether invoking the provided callable object does not result in the throwing of any exception within the µTest++ framework. This is useful for ensuring that code under test does not unexpectedly signal error conditions.</para>
 <para>The callable is invoked immediately, when the comparator is constructed; the result is reported when the comparator is passed to <computeroutput>expect()</computeroutput> or <computeroutput>require()</computeroutput>, which also accept optional messages. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="117" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="117" bodyend="120" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="131" declcolumn="3"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gacbf45f8ba39c0653bbf1035c70dd9529" compoundref="exceptions-inlines_8h" startline="117" endline="120">micro_os_plus::micro_test_plus::nothrow</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gacbf45f8ba39c0653bbf1035c70dd9529" compoundref="exceptions-inlines_8h" startline="117" endline="120">micro_os_plus::micro_test_plus::nothrow</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="120" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="120" bodyend="123" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="140" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga2989618cf5adca7a767c966895ab37a0" compoundref="exceptions-inlines_8h" startline="120" endline="123">micro_os_plus::micro_test_plus::nothrow</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga2989618cf5adca7a767c966895ab37a0" compoundref="exceptions-inlines_8h" startline="120" endline="123">micro_os_plus::micro_test_plus::nothrow</referencedby>
       </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1gadf818920a5a7ba9905466c521deb342e" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga8fdcab2fe2567f6d6a735e89b936298d" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Callable_T</type>
@@ -60,13 +61,14 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exc
         </templateparamlist>
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::throws</definition>
-        <argsstring>(const Callable_T &amp;func)</argsstring>
+        <argsstring>(Callable_T &amp;&amp;func)</argsstring>
         <name>throws</name>
         <qualifiedname>micro_os_plus::micro_test_plus::throws</qualifiedname>
         <param>
-          <type>const Callable_T &amp;</type>
+          <type>Callable_T &amp;&amp;</type>
           <declname>func</declname>
         </param>
+    <requiresclause>std::invocable&lt;Callable_T&amp;&gt;    </requiresclause>
         <briefdescription>
 <para>Checks whether a callable throws any exception, for <computeroutput>expect()</computeroutput> or <computeroutput>require()</computeroutput>. </para>
         </briefdescription>
@@ -77,7 +79,7 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exc
 <parametername>Callable_T</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The type of the callable object to be invoked. </para>
+<para>The type of the callable object to be invoked; it must be invocable without arguments, as an lvalue, so a <computeroutput>mutable</computeroutput> lambda is accepted. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -92,14 +94,14 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exc
 </parameterlist>
 <simplesect kind="return"><para>An object of an unspecified type, holding the result, to be passed to <computeroutput>expect()</computeroutput> or <computeroutput>require()</computeroutput>.</para>
 </simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga63345b69c376caae707262748aa6aea1" kindref="member">throws</ref></computeroutput> function template verifies whether invoking the provided callable object results in the throwing of any exception within the µTest++ framework. This is useful for ensuring that code under test properly signals error conditions.</para>
+The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga6a0ca4f8b757ea511c494189212812b3" kindref="member">throws</ref></computeroutput> function template verifies whether invoking the provided callable object results in the throwing of any exception within the µTest++ framework. This is useful for ensuring that code under test properly signals error conditions.</para>
 <para>The callable is invoked immediately, when the comparator is constructed; the result is reported when the comparator is passed to <computeroutput>expect()</computeroutput> or <computeroutput>require()</computeroutput>, which also accept optional messages. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="99" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="99" bodyend="102" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="117" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="101" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="101" bodyend="104" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="123" declcolumn="3"/>
       </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga63345b69c376caae707262748aa6aea1" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga6a0ca4f8b757ea511c494189212812b3" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class Exception_T</type>
@@ -110,18 +112,19 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exc
         </templateparamlist>
         <type>auto</type>
         <definition>auto micro_os_plus::micro_test_plus::throws</definition>
-        <argsstring>(const Callable_T &amp;func)</argsstring>
+        <argsstring>(Callable_T &amp;&amp;func)</argsstring>
         <name>throws</name>
         <qualifiedname>micro_os_plus::micro_test_plus::throws</qualifiedname>
         <param>
-          <type>const Callable_T &amp;</type>
+          <type>Callable_T &amp;&amp;</type>
           <declname>func</declname>
         </param>
+    <requiresclause>std::invocable&lt;Callable_T&amp;&gt;    </requiresclause>
         <briefdescription>
 <para>Checks whether a callable throws a specific exception, for <computeroutput>expect()</computeroutput> or <computeroutput>require()</computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The callable is invoked once, immediately. The check passes if it throws an exception of type <computeroutput>Exception_T</computeroutput> or of a type derived from it, so <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga63345b69c376caae707262748aa6aea1" kindref="member">throws</ref>&lt;std::exception&gt;()</computeroutput> passes for any standard exception. An exception of another type, or no exception, fails the check, and the report states what was thrown.</para>
+<para>The callable is invoked once, immediately. The check passes if it throws an exception of type <computeroutput>Exception_T</computeroutput> or of a type derived from it, so <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga6a0ca4f8b757ea511c494189212812b3" kindref="member">throws</ref>&lt;std::exception&gt;()</computeroutput> passes for any standard exception. An exception of another type, or no exception, fails the check, and the report states what was thrown.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Exception_T</parametername>
@@ -135,7 +138,7 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exc
 <parametername>Callable_T</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The type of the callable object to be invoked. </para>
+<para>The type of the callable object to be invoked; it must be invocable without arguments, as an lvalue, so a <computeroutput>mutable</computeroutput> lambda is accepted. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -150,12 +153,12 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exc
 </parameterlist>
 <simplesect kind="return"><para>An object of an unspecified type, holding the result, to be passed to <computeroutput>expect()</computeroutput> or <computeroutput>require()</computeroutput>.</para>
 </simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga63345b69c376caae707262748aa6aea1" kindref="member">throws</ref></computeroutput> function template verifies whether invoking the provided callable object results in the throwing of a specific exception type within the µTest++ framework. This is useful for testing error handling in code under test. Exceptions of other types are reported as failures.</para>
+The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga6a0ca4f8b757ea511c494189212812b3" kindref="member">throws</ref></computeroutput> function template verifies whether invoking the provided callable object results in the throwing of a specific exception type within the µTest++ framework. This is useful for testing error handling in code under test. Exceptions of other types are reported as failures.</para>
 <para>The callable is invoked immediately, when the comparator is constructed; the result is reported when the comparator is passed to <computeroutput>expect()</computeroutput> or <computeroutput>require()</computeroutput>, which also accept optional messages. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="81" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="81" bodyend="84" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="98" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="82" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="82" bodyend="85" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="101" declcolumn="3"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

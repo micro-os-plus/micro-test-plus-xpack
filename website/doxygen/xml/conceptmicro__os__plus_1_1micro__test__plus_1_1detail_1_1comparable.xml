@@ -24,7 +24,7 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1com
           or function_pointer_pair&lt;<ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6bdf1e117e085a41c16e2dae63e72e52" kindref="member">comparison_operand_t</ref>&lt;Lhs_T&gt;,
                                    <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a6bdf1e117e085a41c16e2dae63e72e52" kindref="member">comparison_operand_t</ref>&lt;Rhs_T&gt;&gt;</initializer>
     <conceptparts>
-      <codepart line="427">    <programlisting>
+      <codepart line="508">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;comparison<sp/>Op,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Lhs_T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Rhs_T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">comparable<sp/>=<sp/>comparison_lookup::can_compare&lt;Op,<sp/>comparison_operand_t&lt;Lhs_T&gt;,</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comparison_operand_t&lt;Rhs_T&gt;&gt;</highlight></codeline>
@@ -67,6 +67,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1com
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="426" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="507" column="5"/>
   </compounddef>
 </doxygen>

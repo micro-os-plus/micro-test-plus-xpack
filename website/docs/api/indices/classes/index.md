@@ -28,7 +28,18 @@ The classes, structs, union and interfaces used by this project are:
 <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/array-operand">array_operand&lt;T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-An array operand of a comparator, other than a <span class="doxyComputerOutput">char</span> array
+An array operand of a comparator, other than a character array
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/basic-c-string">basic_c_string&lt;Char_T&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+A C string operand of a comparator
 </td>
 </tr>
 
@@ -40,17 +51,6 @@ An array operand of a comparator, other than a <span class="doxyComputerOutput">
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Function object that holds a callable and the additional arguments it is invoked with
-</td>
-</tr>
-
-<tr class="doxyTreeItem">
-<td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 12px; display: inline-block;"></span>
-<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
-<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/c-string">c_string</a>
-</td>
-<td class="doxyTreeItemRight" align="left" valign="top">
-A C string operand of a comparator
 </td>
 </tr>
 
@@ -106,6 +106,28 @@ An ANSI colour escape sequence, to be written as it is
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Colours used to highlight pass and fail results in test reports
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/comparison-integer">comparison_integer&lt;T&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+The integer type used to compare a value of type <span class="doxyComputerOutput">T</span>
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/comparison-integer-f7399366cd6336ecbea702c3289d9432">comparison_integer&lt;T&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+The integer type used to compare a character type
 </td>
 </tr>
 
@@ -282,6 +304,17 @@ The result of parsing the characters of an integer literal
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Struct template representing the absolute value of the minimum of a signed integral type, as written in a literal
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 12px; display: inline-block;"></span>
+<span class="doxyTreeIconBox"><span class="doxyTreeIcon">S</span></span>
+<a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/is-bool-wrapper">is_bool_wrapper&lt;T&gt;</a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Trait marking the wrappers of a <span class="doxyComputerOutput">bool</span>, whose condition is ambiguous
 </td>
 </tr>
 

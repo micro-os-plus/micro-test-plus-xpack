@@ -372,7 +372,7 @@ This function template determines, at compile time, the number of decimal (fract
 </parameterlist>
 <simplesect kind="par"><title>Parameters</title><para>None. </para>
 </simplesect>
-<simplesect kind="return"><para>The value of the literal, up to <computeroutput>max ()</computeroutput> of <computeroutput>T</computeroutput>, or, for the signed types, up to <computeroutput>max () + 1</computeroutput>, the absolute value of the minimum.</para>
+<simplesect kind="return"><para>The value of the literal, up to <computeroutput>max()</computeroutput> of <computeroutput>T</computeroutput>, or, for the signed types, up to <computeroutput>max () + 1</computeroutput>, the absolute value of the minimum.</para>
 </simplesect>
 The literal must be an integer literal, in any of the C++ forms (decimal, hexadecimal, binary, or octal, with digit separators), and its value must fit in <computeroutput>T</computeroutput>; otherwise the compilation fails with an explicit message.</para>
 <para>Negative values are obtained with the unary minus, so the literal itself is never negative. For the signed types, the limit is the absolute value of the minimum, <computeroutput>max () + 1</computeroutput>, so that the minimum can be written (e.g. <computeroutput>-128<ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga265f8609ef3d6ead78c7a66825553e24" kindref="member">_i8</ref></computeroutput>); the caller allows this magnitude only when it is negated.</para>
@@ -678,7 +678,7 @@ This function template provides a constexpr implementation for raising a base va
 <para>The constructor of <computeroutput>detail::timestamp</computeroutput> that reads the system clock is defined in <computeroutput><ref refid="deprecated_8cpp" kindref="compound">src/deprecated.cpp</ref></computeroutput>, with <computeroutput>detail::read_clock()</computeroutput>, the clock access used by <computeroutput>detail::stopwatch</computeroutput>.</para>
 <para>All definitions reside within the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></computeroutput> namespace.</para>
 <para>The header files are organised within the <computeroutput>include/micro-os-plus/micro-test-plus</computeroutput> folder to maintain a structured and modular codebase.</para>
-<para>This file is intended solely for internal use within the framework and should not be included directly by user code. </para>
+<para>This file is included by <computeroutput><ref refid="deprecated_8h" kindref="compound">deprecated.h</ref></computeroutput>; the applications include <computeroutput><ref refid="micro-test-plus_8h" kindref="compound">micro-os-plus/micro-test-plus.h</ref></computeroutput>, not this file. </para>
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
