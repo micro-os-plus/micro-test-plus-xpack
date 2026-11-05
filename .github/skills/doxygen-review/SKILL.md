@@ -36,6 +36,18 @@ right:
   every class, method, data member, type alias, macro, parameter, and
   return value, including `private` and `protected` members, deleted
   and defaulted special members, and deduction guides.
+- Exception: the overloads that differ from a documented function only in
+  their `requires` clause, and exist only to stop the compilation with a
+  readable message (the "Rejects ..." overloads of `expect()`, `test()`,
+  `eq()`, and the like, with their `static_assert`), are hidden from
+  Doxygen with `#if !defined(__DOXYGEN__)`, in the declaration and in the
+  definition, so that the applications do not read them as API. The same
+  applies to the out-of-line definitions of the deprecated overloads whose
+  declarations carry the complete comment. Doxygen ignores the `requires`
+  clause when it matches a definition to a declaration, so the comment of
+  such a definition would otherwise be merged into the documentation of
+  the real function. Keep their comments in the source, and add a guard
+  for any new overload of this kind.
 - The documentation is placed where the code is: the declarations and
   their comments are in the headers, the non-inline definitions in
   `src/`, and the inline and template definitions in `inlines/`.
