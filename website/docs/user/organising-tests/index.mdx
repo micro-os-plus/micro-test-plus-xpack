@@ -121,8 +121,9 @@ The top suite is optional; without `add_top_suite()`, there is no top suite,
 and `run_suites()` runs only the suites added with `add_suite()` and the static
 suites (see [Test suites](#test-suites)). It can be added **only once**, and
 before `run_suites()`; a second call returns the same suite, and a call once
-`run_suites()` has started is reported on `stderr` and rejected, so that the
-result is not 0. The same applies to a second call of `initialise()`.
+`run_suites()` has started is rejected, so that the result is not 0. The same
+applies to a second call of `initialise()`. A rejected call is reported on
+`stderr` and in the report (see [Rejected calls](#rejected-calls)).
 
 ### Test result
 
@@ -560,8 +561,9 @@ in a given order, start their names with zero-padded numbers (`"01 - Init"`,
 
 A `static_suite` may also be a local object, constructed in a function, but only
 before the `run_suites()` of its runner has started; one constructed later would
-never run, so it is rejected, the error is reported on `stderr`, and the result
-is not 0. The runner should outlive the static suites that refer to it.
+never run, so it is rejected, the error is reported (see [Rejected
+calls](#rejected-calls)), and the result is not 0. The runner should outlive the
+static suites that refer to it.
 
 ### Non-static test suites
 
@@ -616,8 +618,19 @@ for example with a numeric prefix, such as `"01 Setup"` and
 
 The suites **must be added before `run_suites()`** is called. A suite added
 while `run_suites()` runs, for example from the body of another suite, or after
-it returned, would never run; it is rejected, the error is reported on
-`stderr`, and the result is not 0.
+it returned, would never run; it is rejected, the error is reported (see
+[Rejected calls](#rejected-calls)), and the result is not 0.
+
+#### Rejected calls
+
+A rejected call is always written on `stderr`, for a script that discards the
+standard output, and the result of `run_suites()` is not 0. It is also reported
+in the report and in the output file, so that they tell why the session failed:
+as a failed check of the test case that is running, or of the suite that is
+running (the top suite included), shown as the message `suite 'X' added after
+run_suites() started, rejected`; and, when no test case or suite is running, for
+example after `run_suites()` returned, as a comment line after the summary,
+since the report is complete.
 
 The suite name can be a string literal, a `char` array, a `const char*`,
 a `std::string`, or a `std::string_view`, with the same rules as the name of

@@ -1026,8 +1026,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * Called by `add_suite()`. Once `run_suites()` has started, the suite is
-     * rejected: it is destroyed, the error is reported on `stderr`, and
-     * `has_rejected_calls_` is set.
+     * rejected: it is destroyed, the error is reported on `stderr` and by
+     * the reporter, and `has_rejected_calls_` is set.
      *
      * @param suite Owning pointer to the test suite to register.
      * @par Returns
@@ -1040,17 +1040,40 @@ namespace micro_os_plus::micro_test_plus
      * @brief Reject a suite constructed after `run_suites()` has started.
      *
      * @details
-     * Reports the error on `stderr`, and calls `mark_rejected()`. Used by
-     * `register_suite()`, by `add_top_suite()`, and by
-     * `link_static_suite()`.
+     * Reports the error with `reject_call()`. Used by `register_suite()`,
+     * by `add_top_suite()`, and by `link_static_suite()`.
      *
      * @param [in] name The name of the rejected suite.
+     * @param [in] location The location where the suite was named.
      *
      * @par Returns
      *   Nothing.
      */
     void
-    reject_suite (const char* name);
+    reject_suite (const char* name,
+                  const reflection::source_location& location);
+
+    /**
+     * @brief Reports a rejected call, and records it.
+     *
+     * @details
+     * Writes the message on `stderr`, calls `mark_rejected()`, and gives
+     * the message to the reporter, as a failed check of the running test
+     * case, as a failed test point of the running suite, or as a comment
+     * line, so that the report and the output file tell why the session
+     * failed. Used by `reject_suite()`, and by `initialise()` and
+     * `add_top_suite()` for the calls made twice.
+     *
+     * @param [in] message The message, without the prefix.
+     * @param [in] location The location of the call, or a null pointer
+     * if it is not known.
+     *
+     * @par Returns
+     *   Nothing.
+     */
+    void
+    reject_call (const std::string& message,
+                 const reflection::source_location* location = nullptr);
 
     /**
      * @brief Records that a call was rejected.
@@ -1059,8 +1082,7 @@ namespace micro_os_plus::micro_test_plus
      * Sets `has_rejected_calls_`, so that `run_suites()` returns 1 (unless
      * an option error requires 2), and, if the session has already
      * ended, updates the stored exit code, for the later calls of
-     * `run_suites()`. Used by `reject_suite()`, and by `initialise()` and
-     * `add_top_suite()` for the calls made twice.
+     * `run_suites()`. Used by `reject_call()`.
      *
      * @par Parameters
      *   None.

@@ -1874,8 +1874,10 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
       });
 
     // The suites added once run_suites() has started would never run; they are
-    // rejected, and the exit code is not 0. A call of run_suites() from a suite
-    // body is rejected too.
+    // rejected, the exit code is not 0, and, in a running suite, the rejection
+    // is reported as a failed check of that suite, so that the report tells
+    // why the session failed. A call of run_suites() from a suite body is
+    // rejected too.
     ts.test ("Late suites", [] (auto& t)
       {
         mt::runner_options options{};
@@ -1905,8 +1907,8 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
 
         t.expect (mt::eq (late_runs, 0)
                   and mt::eq (during_runner.added_suites_count (), 1u)
-                  and mt::eq (during_runner.totals ().failed_checks (), 0u))
-            << "rejected suite neither run nor counted";
+                  and mt::eq (during_runner.totals ().failed_checks (), 1u))
+            << "rejected suite not run, and reported as a failed check";
         local_counts.passed_checks++;
 
         t.expect (mt::eq (nested_run_code, 1))
@@ -1965,6 +1967,22 @@ static mt::static_suite ts_miscellaneous{ "Miscellaneous suite", tr,
                   and mt::eq (late_runs, 0)
                   and mt::eq (static_runner.static_suites_count (), 0u))
             << "static suite constructed after run_suites() rejected";
+        local_counts.passed_checks++;
+
+        // The calls made twice are rejected, and reported as failed checks
+        // of the running top suite.
+        mt::runner twice_runner;
+        twice_runner.initialise (options);
+        auto& twice_top = twice_runner.add_top_suite ("Local");
+        twice_runner.initialise (options);
+        twice_runner.add_top_suite ("Again");
+
+        t.expect (mt::eq (twice_top.totals ().failed_checks (), 2u))
+            << "calls made twice reported as failed checks of the top suite";
+        local_counts.passed_checks++;
+
+        t.expect (mt::eq (twice_runner.run_suites (), 1))
+            << "session with rejected calls failed";
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;

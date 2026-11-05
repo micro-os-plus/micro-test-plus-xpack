@@ -51,7 +51,7 @@ reporter as the session progresses:
 | `test_case::fail_unexpected_exception()` | `fail()` | an exception escapes the body of a test case |
 | `runnable_base::after_test_case_create()` | `skip_test_case()` | the filter does not select a test case |
 | `test_case::run()` | `end_test_case()` | a test case ends |
-| `suite::run()`, `accepts_test_case()` | `fail_suite()` | a suite fails outside its test cases; a rejected test case is reported by `accepts_test_case()` as a check of the running test case, if one runs |
+| `suite::run()`, `accepts_test_case()`, `runner::reject_call()` | `fail_suite()` | a suite fails outside its test cases; a rejected test case or call is reported by `accepts_test_case()` or `reject_call()` as a check of the running test case, if one runs |
 | `runner::run_suites()`, `suite::run()` | `end_suite()` | a suite ends |
 | `runner::run_suites()` | `end_session()` | the totals are written |
 | `runner::abort()` | `abort_session()` | the test execution is aborted |

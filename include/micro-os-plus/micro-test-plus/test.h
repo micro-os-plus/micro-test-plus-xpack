@@ -1346,6 +1346,12 @@ namespace micro_os_plus::micro_test_plus
   class test_case final : public detail::runnable_base
   {
     /**
+     * @brief The runner, which reports the rejected calls as failed checks
+     * of the running test case.
+     */
+    friend class micro_test_plus::runner;
+
+    /**
      * @brief The base of the nodes, which creates the test cases.
      *
      * @details

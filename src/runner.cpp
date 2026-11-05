@@ -283,8 +283,7 @@ namespace micro_os_plus::micro_test_plus
 
     if (session_state_ != session_state::created)
       {
-        fprintf (stderr, "error: test runner already initialised\n");
-        mark_rejected ();
+        reject_call ("test runner already initialised");
         return;
       }
 
@@ -443,8 +442,7 @@ namespace micro_os_plus::micro_test_plus
 
     if (has_top_suite_)
       {
-        fprintf (stderr, "error: top suite already added\n");
-        mark_rejected ();
+        reject_call ("top suite already added", &top_suite_name.location ());
         return top_suite_;
       }
 
@@ -486,7 +484,7 @@ namespace micro_os_plus::micro_test_plus
     // Named first, so that the rejection names it.
     if (session_state_ != session_state::initialised)
       {
-        reject_suite (top_suite_.name ());
+        reject_suite (top_suite_.name (), top_suite_name.location ());
         return top_suite_;
       }
 
@@ -611,7 +609,7 @@ namespace micro_os_plus::micro_test_plus
     if (session_state_ == session_state::running
         || session_state_ == session_state::finished)
       {
-        reject_suite (suite->name ());
+        reject_suite (suite->name (), suite->located_name_.location ());
         return;
       }
 
@@ -621,16 +619,75 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * The message is written on `stderr`, since the reporter may have
-   * ended. The suite itself is destroyed by the caller.
+   * Builds the message and passes it to `reject_call()`. The suite
+   * itself is destroyed by the caller.
    */
   void
-  runner::reject_suite (const char* name)
+  runner::reject_suite (const char* name,
+                        const reflection::source_location& location)
   {
-    fprintf (stderr,
-             "error: suite '%s' added after run_suites() started, rejected\n",
-             name);
+    std::string message{ "suite '" };
+    message.append (name);
+    message.append ("' added after run_suites() started, rejected");
+
+    reject_call (message, &location);
+  }
+
+  /**
+   * @details
+   * The message is always written on `stderr`, for a shell or a script
+   * that discards the standard output, and the rejection is recorded
+   * with `mark_rejected()`, so that the exit code is not 0.
+   *
+   * The message is also given to the reporter, so that the report and
+   * the output file tell why the session failed, where the reporter
+   * can still write it:
+   * - in a running test case, as a failed check of that test case, at
+   *   @p location, or at the location of the test case;
+   * - in a running suite, including the top suite, as a failed test
+   *   point of that suite;
+   * - otherwise, for example after `run_suites()` returned, as a comment
+   *   line, since the report is complete and the test points cannot be
+   *   changed.
+   *
+   * Nothing is given to the reporter if there is none yet, after the
+   * session was declined because of the options, after the execution was
+   * aborted, and while the test cases are listed.
+   */
+  void
+  runner::reject_call (const std::string& message,
+                       const reflection::source_location* location)
+  {
+    fprintf (stderr, "error: %s\n", message.c_str ());
     mark_rejected ();
+
+    if (reporter_ == nullptr || session_state_ == session_state::declined
+        || aborted_ || options_.list_tests)
+      {
+        return;
+      }
+
+    if (running_test_case_ != nullptr)
+      {
+        running_test_case_->report_rejected_test (
+            message, location != nullptr
+                         ? *location
+                         : running_test_case_->located_name_.location ());
+        return;
+      }
+
+    if (running_suite_ != nullptr)
+      {
+        running_suite_->next_test_point_number ();
+        reporter_->fail_suite (message, *running_suite_);
+        running_suite_->totals_.increment_failed_checks ();
+        return;
+      }
+
+    reporter_->write_line (options_.verbosity_level != verbosity::silent,
+                           "%serror: %s\n", reporter_->comment_prefix (),
+                           message.c_str ());
+    reporter_->flush_streams ();
   }
 
   /**
@@ -665,7 +722,8 @@ namespace micro_os_plus::micro_test_plus
       {
         if (started == &test_runner)
           {
-            test_runner.reject_suite (suite.name ());
+            test_runner.reject_suite (suite.name (),
+                                      suite.located_name_.location ());
             return;
           }
       }

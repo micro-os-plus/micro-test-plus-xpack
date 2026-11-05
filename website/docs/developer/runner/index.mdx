@@ -95,8 +95,14 @@ created ──initialise()──► initialised ──run_suites()──► runn
 
 A call made in the wrong state is either ignored, or rejected: a second
 `initialise()` or `add_top_suite()`, and a suite added after `run_suites()`
-started, write an error on `stderr` and set `has_rejected_calls_`, so that the
-exit code is not `0`.
+started, are passed to `reject_call()`, which writes the error on `stderr`, sets
+`has_rejected_calls_`, so that the exit code is not `0`, and gives the message
+to the reporter: as a failed check of the running test case, as a failed test
+point of the running suite (the top suite included), or, when none is running,
+for example after `run_suites()` returned, as a comment line after the summary,
+since the report is complete. The reporter is not used if there is none yet,
+after the options declined the session, after an abort, and while the test
+cases are listed.
 
 ## The options
 

@@ -576,7 +576,7 @@ runner::register_suite (std::unique_ptr<micro_test_plus::suite> suite)
   if (session_state_ == session_state::running
       || session_state_ == session_state::finished)
     {
-      reject_suite (suite->name ());
+      reject_suite (suite->name (), suite->located_name_.location ());
       return;
     }
   children_suites_.push_back (std::move (suite));
@@ -587,7 +587,10 @@ runner::register_suite (std::unique_ptr<micro_test_plus::suite> suite)
 The runner owns these suites, in a `std::vector<std::unique_ptr<suite>>`,
 and destroys them with itself; the list only refers to them. A suite added
 after `run_suites()` started is rejected, and destroyed when the function
-returns; a suite added to a declined session is discarded silently.
+returns; `reject_suite()` builds the message and passes it to `reject_call()`,
+which also reports it (see [The state of the
+session](/docs/developer/runner/#the-state-of-the-session)); a suite added to a
+declined session is discarded silently.
 
 ### Static suites
 
@@ -615,7 +618,8 @@ runner::link_static_suite (runner& test_runner,
     {
       if (started == &test_runner)
         {
-          test_runner.reject_suite (suite.name ());
+          test_runner.reject_suite (suite.name (),
+                                    suite.located_name_.location ());
           return;
         }
     }
