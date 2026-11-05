@@ -99,6 +99,7 @@ namespace micro_os_plus::micro_test_plus
                                detail::equal_to{} };
   }
 
+#if !defined(__DOXYGEN__)
   /**
    * @details
    * Never called; the compilation stops in `detail::reject_comparison()`,
@@ -113,6 +114,7 @@ namespace micro_os_plus::micro_test_plus
     detail::reject_comparison<detail::comparison::equal, Lhs_T, Rhs_T> ();
     return false;
   }
+#endif // !defined(__DOXYGEN__)
 
   /**
    * @details
@@ -133,6 +135,7 @@ namespace micro_os_plus::micro_test_plus
                                detail::not_equal_to{} };
   }
 
+#if !defined(__DOXYGEN__)
   /**
    * @details
    * Never called; the compilation stops in `detail::reject_comparison()`,
@@ -147,6 +150,7 @@ namespace micro_os_plus::micro_test_plus
     detail::reject_comparison<detail::comparison::not_equal, Lhs_T, Rhs_T> ();
     return false;
   }
+#endif // !defined(__DOXYGEN__)
 
   /**
    * @details
@@ -167,6 +171,7 @@ namespace micro_os_plus::micro_test_plus
                                detail::greater{} };
   }
 
+#if !defined(__DOXYGEN__)
   /**
    * @details
    * Never called; the compilation stops in `detail::reject_comparison()`,
@@ -181,6 +186,7 @@ namespace micro_os_plus::micro_test_plus
     detail::reject_comparison<detail::comparison::greater, Lhs_T, Rhs_T> ();
     return false;
   }
+#endif // !defined(__DOXYGEN__)
 
   /**
    * @details
@@ -201,6 +207,7 @@ namespace micro_os_plus::micro_test_plus
                                detail::greater_equal{} };
   }
 
+#if !defined(__DOXYGEN__)
   /**
    * @details
    * Never called; the compilation stops in `detail::reject_comparison()`,
@@ -216,6 +223,7 @@ namespace micro_os_plus::micro_test_plus
                               Rhs_T> ();
     return false;
   }
+#endif // !defined(__DOXYGEN__)
 
   /**
    * @details
@@ -236,6 +244,7 @@ namespace micro_os_plus::micro_test_plus
                                detail::less{} };
   }
 
+#if !defined(__DOXYGEN__)
   /**
    * @details
    * Never called; the compilation stops in `detail::reject_comparison()`,
@@ -250,6 +259,7 @@ namespace micro_os_plus::micro_test_plus
     detail::reject_comparison<detail::comparison::less, Lhs_T, Rhs_T> ();
     return false;
   }
+#endif // !defined(__DOXYGEN__)
 
   /**
    * @details
@@ -270,6 +280,7 @@ namespace micro_os_plus::micro_test_plus
                                detail::less_equal{} };
   }
 
+#if !defined(__DOXYGEN__)
   /**
    * @details
    * Never called; the compilation stops in `detail::reject_comparison()`,
@@ -284,6 +295,7 @@ namespace micro_os_plus::micro_test_plus
     detail::reject_comparison<detail::comparison::less_equal, Lhs_T, Rhs_T> ();
     return false;
   }
+#endif // !defined(__DOXYGEN__)
 
   /**
    * @details

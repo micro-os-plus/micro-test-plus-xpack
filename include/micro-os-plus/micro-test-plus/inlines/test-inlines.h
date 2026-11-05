@@ -583,6 +583,7 @@ namespace micro_os_plus::micro_test_plus
                       std::forward<Args_T> (arguments)...);
   }
 
+#if !defined(__DOXYGEN__)
   /**
    * @details
    * Never called; the compilation stops in `detail::reject_test_body()`,
@@ -597,6 +598,7 @@ namespace micro_os_plus::micro_test_plus
   {
     detail::reject_test_body<Callable_T, Args_T...> ();
   }
+#endif // !defined(__DOXYGEN__)
 
   /**
    * @details
@@ -637,6 +639,7 @@ namespace micro_os_plus::micro_test_plus
     return std::move (result);
   }
 
+#if !defined(__DOXYGEN__)
   /**
    * @details
    * Stops the compilation with the message of the `static_assert`, which
@@ -665,6 +668,7 @@ namespace micro_os_plus::micro_test_plus
       }
     return std::move (result);
   }
+#endif // !defined(__DOXYGEN__)
 
   /**
    * @details
@@ -696,6 +700,7 @@ namespace micro_os_plus::micro_test_plus
     return std::move (result);
   }
 
+#if !defined(__DOXYGEN__)
   /**
    * @details
    * Stops the compilation with the message of the `static_assert`, which
@@ -725,8 +730,14 @@ namespace micro_os_plus::micro_test_plus
       }
     return std::move (result);
   }
+#endif // !defined(__DOXYGEN__)
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
+#if !defined(__DOXYGEN__)
+  // Hidden from Doxygen: the comments of these definitions would be
+  // merged into the documentation of `expect()` and `require()`, which
+  // differ only in their `requires` clause; the comments of the
+  // declarations are the documentation.
   /**
    * @details
    * Deprecated; the check is the same as that of `expect()`, for the
@@ -761,6 +772,7 @@ namespace micro_os_plus::micro_test_plus
                  test_reporter ().writes_passed_checks ());
     return std::move (result);
   }
+#endif // !defined(__DOXYGEN__)
 
   /**
    * @details
@@ -984,6 +996,7 @@ namespace micro_os_plus::micro_test_plus
                       std::forward<Args_T> (arguments)...);
   }
 
+#if !defined(__DOXYGEN__)
   /**
    * @details
    * Never called; the compilation stops in `detail::reject_test_body()`,
@@ -998,6 +1011,7 @@ namespace micro_os_plus::micro_test_plus
   {
     detail::reject_test_body<Callable_T, Args_T...> ();
   }
+#endif // !defined(__DOXYGEN__)
 
   // --------------------------------------------------------------------------
 
@@ -1181,6 +1195,7 @@ namespace micro_os_plus::micro_test_plus
     link_or_reject ();
   }
 
+#if !defined(__DOXYGEN__)
   /**
    * @details
    * Never called; the compilation stops in `detail::reject_suite_body()`,
@@ -1198,6 +1213,7 @@ namespace micro_os_plus::micro_test_plus
   {
     detail::reject_suite_body<Callable_T, Args_T...> ();
   }
+#endif // !defined(__DOXYGEN__)
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**

@@ -208,6 +208,7 @@ namespace micro_os_plus::micro_test_plus
       return std::move (*this);
     }
 
+#if !defined(__DOXYGEN__)
     /**
      * @details
      * Never called; the compilation stops here, with a message that
@@ -237,6 +238,7 @@ namespace micro_os_plus::micro_test_plus
         }
       return std::move (*this);
     }
+#endif // !defined(__DOXYGEN__)
 
     // ------------------------------------------------------------------------
   } // namespace detail

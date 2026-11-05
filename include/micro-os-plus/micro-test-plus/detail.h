@@ -899,6 +899,7 @@ namespace micro_os_plus::micro_test_plus
                                         unwrapped_t<R>>
       constexpr compare_op (L&& lhs, R&& rhs, Compare_T);
 
+#if !defined(__DOXYGEN__)
       /**
        * @brief Rejects a tag that does not satisfy `extension::compare_tag`.
        *
@@ -918,6 +919,7 @@ namespace micro_os_plus::micro_test_plus
         requires (not extension::compare_tag<Compare_T, unwrapped_t<L>,
                                              unwrapped_t<R>>)
       constexpr compare_op (L&& lhs, R&& rhs, Compare_T);
+#endif // !defined(__DOXYGEN__)
     };
 
     /**
@@ -1261,6 +1263,7 @@ namespace micro_os_plus::micro_test_plus
         requires extension::predicate_tag<Predicate_T, unwrapped_t<U>>
       constexpr predicate_op (U&& t, Predicate_T);
 
+#if !defined(__DOXYGEN__)
       /**
        * @brief Rejects a tag that does not satisfy
        * `extension::predicate_tag`.
@@ -1278,6 +1281,7 @@ namespace micro_os_plus::micro_test_plus
       template <class U>
         requires (not extension::predicate_tag<Predicate_T, unwrapped_t<U>>)
       constexpr predicate_op (U&& t, Predicate_T);
+#endif // !defined(__DOXYGEN__)
     };
 
     /**

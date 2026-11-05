@@ -1492,6 +1492,7 @@ namespace micro_os_plus::micro_test_plus
     test (const located_name& name, Callable_T&& callable,
           Args_T&&... arguments);
 
+#if !defined(__DOXYGEN__)
     /**
      * @brief Rejects a callable that is not a valid test case body.
      *
@@ -1515,6 +1516,7 @@ namespace micro_os_plus::micro_test_plus
     void
     test (const located_name& name, Callable_T&& callable,
           Args_T&&... arguments);
+#endif // !defined(__DOXYGEN__)
 
     /**
      * @brief Adds a nested test case for each value of a range or a
@@ -1629,6 +1631,7 @@ namespace micro_os_plus::micro_test_plus
             = reflection::source_location::current (),
             detail::check_result&& result = detail::check_result{});
 
+#if !defined(__DOXYGEN__)
     /**
      * @brief Rejects a value that is not a condition.
      *
@@ -1655,6 +1658,7 @@ namespace micro_os_plus::micro_test_plus
             const reflection::source_location& sl
             = reflection::source_location::current (),
             detail::check_result&& result = detail::check_result{});
+#endif // !defined(__DOXYGEN__)
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-requirements
@@ -1706,6 +1710,7 @@ namespace micro_os_plus::micro_test_plus
              = reflection::source_location::current (),
              detail::check_result&& result = detail::check_result{});
 
+#if !defined(__DOXYGEN__)
     /**
      * @brief Rejects a value that is not a condition.
      *
@@ -1732,6 +1737,7 @@ namespace micro_os_plus::micro_test_plus
              const reflection::source_location& sl
              = reflection::source_location::current (),
              detail::check_result&& result = detail::check_result{});
+#endif // !defined(__DOXYGEN__)
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
@@ -2186,6 +2192,7 @@ namespace micro_os_plus::micro_test_plus
     test (const located_name& name, Callable_T&& callable,
           Args_T&&... arguments);
 
+#if !defined(__DOXYGEN__)
     /**
      * @brief Rejects a callable that is not a valid test case body.
      *
@@ -2209,6 +2216,7 @@ namespace micro_os_plus::micro_test_plus
     void
     test (const located_name& name, Callable_T&& callable,
           Args_T&&... arguments);
+#endif // !defined(__DOXYGEN__)
 
     /**
      * @brief Adds a test case to the suite for each value of a range or
@@ -2661,6 +2669,7 @@ namespace micro_os_plus::micro_test_plus
     static_suite (located_name name, runner& test_runner,
                   Callable_T&& callable, Args_T&&... arguments);
 
+#if !defined(__DOXYGEN__)
     /**
      * @brief Rejects a callable that is not a valid suite body.
      *
@@ -2682,6 +2691,7 @@ namespace micro_os_plus::micro_test_plus
                 && !detail::suite_body<Callable_T, Args_T...>)
     static_suite (located_name name, runner& test_runner,
                   Callable_T&& callable, Args_T&&... arguments);
+#endif // !defined(__DOXYGEN__)
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**

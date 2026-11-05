@@ -203,6 +203,7 @@ namespace micro_os_plus::micro_test_plus
     register_suite (std::move (child_suite));
   }
 
+#if !defined(__DOXYGEN__)
   /**
    * @details
    * Never called; the compilation stops in `detail::reject_suite_body()`,
@@ -217,6 +218,7 @@ namespace micro_os_plus::micro_test_plus
   {
     detail::reject_suite_body<Callable_T, Args_T...> ();
   }
+#endif // !defined(__DOXYGEN__)
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
   /**

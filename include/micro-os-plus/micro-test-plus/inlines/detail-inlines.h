@@ -893,6 +893,7 @@ namespace micro_os_plus::micro_test_plus
     {
     }
 
+#if !defined(__DOXYGEN__)
     /**
      * @details
      * Never called; the compilation stops in `reject_compare_tag()`, with a
@@ -912,6 +913,7 @@ namespace micro_os_plus::micro_test_plus
     {
       detail::reject_compare_tag<Compare_T> ();
     }
+#endif // !defined(__DOXYGEN__)
 
     // ------------------------------------------------------------------------
 
@@ -1096,6 +1098,7 @@ namespace micro_os_plus::micro_test_plus
     {
     }
 
+#if !defined(__DOXYGEN__)
     /**
      * @details
      * Never called; the compilation stops in `reject_predicate_tag()`, with
@@ -1109,6 +1112,7 @@ namespace micro_os_plus::micro_test_plus
     {
       detail::reject_predicate_tag<Predicate_T> ();
     }
+#endif // !defined(__DOXYGEN__)
 
     // ------------------------------------------------------------------------
 

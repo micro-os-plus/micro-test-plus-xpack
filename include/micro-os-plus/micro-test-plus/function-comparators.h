@@ -139,6 +139,7 @@ namespace micro_os_plus::micro_test_plus
   [[nodiscard]] constexpr auto
   eq (Lhs_T&& lhs, Rhs_T&& rhs);
 
+#if !defined(__DOXYGEN__)
   /**
    * @brief Rejects operands that cannot be compared with `==` or written.
    *
@@ -160,6 +161,7 @@ namespace micro_os_plus::micro_test_plus
                                               Rhs_T>)
   [[nodiscard]] constexpr bool
   eq (Lhs_T&& lhs, Rhs_T&& rhs);
+#endif // !defined(__DOXYGEN__)
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-cpp-api-function-comparators
@@ -178,6 +180,7 @@ namespace micro_os_plus::micro_test_plus
   [[nodiscard]] constexpr auto
   ne (Lhs_T&& lhs, Rhs_T&& rhs);
 
+#if !defined(__DOXYGEN__)
   /**
    * @brief Rejects operands that cannot be compared with `!=` or written.
    *
@@ -199,6 +202,7 @@ namespace micro_os_plus::micro_test_plus
                                               Lhs_T, Rhs_T>)
   [[nodiscard]] constexpr bool
   ne (Lhs_T&& lhs, Rhs_T&& rhs);
+#endif // !defined(__DOXYGEN__)
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-cpp-api-function-comparators
@@ -217,6 +221,7 @@ namespace micro_os_plus::micro_test_plus
   [[nodiscard]] constexpr auto
   gt (Lhs_T&& lhs, Rhs_T&& rhs);
 
+#if !defined(__DOXYGEN__)
   /**
    * @brief Rejects operands that cannot be compared with `>` or written.
    *
@@ -238,6 +243,7 @@ namespace micro_os_plus::micro_test_plus
                                               Lhs_T, Rhs_T>)
   [[nodiscard]] constexpr bool
   gt (Lhs_T&& lhs, Rhs_T&& rhs);
+#endif // !defined(__DOXYGEN__)
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-cpp-api-function-comparators
@@ -257,6 +263,7 @@ namespace micro_os_plus::micro_test_plus
   [[nodiscard]] constexpr auto
   ge (Lhs_T&& lhs, Rhs_T&& rhs);
 
+#if !defined(__DOXYGEN__)
   /**
    * @brief Rejects operands that cannot be compared with `>=` or written.
    *
@@ -278,6 +285,7 @@ namespace micro_os_plus::micro_test_plus
               detail::comparison::greater_equal, Lhs_T, Rhs_T>)
   [[nodiscard]] constexpr bool
   ge (Lhs_T&& lhs, Rhs_T&& rhs);
+#endif // !defined(__DOXYGEN__)
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-cpp-api-function-comparators
@@ -297,6 +305,7 @@ namespace micro_os_plus::micro_test_plus
   [[nodiscard]] constexpr auto
   lt (Lhs_T&& lhs, Rhs_T&& rhs);
 
+#if !defined(__DOXYGEN__)
   /**
    * @brief Rejects operands that cannot be compared with `<` or written.
    *
@@ -318,6 +327,7 @@ namespace micro_os_plus::micro_test_plus
                                               Rhs_T>)
   [[nodiscard]] constexpr bool
   lt (Lhs_T&& lhs, Rhs_T&& rhs);
+#endif // !defined(__DOXYGEN__)
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-cpp-api-function-comparators
@@ -337,6 +347,7 @@ namespace micro_os_plus::micro_test_plus
   [[nodiscard]] constexpr auto
   le (Lhs_T&& lhs, Rhs_T&& rhs);
 
+#if !defined(__DOXYGEN__)
   /**
    * @brief Rejects operands that cannot be compared with `<=` or written.
    *
@@ -358,6 +369,7 @@ namespace micro_os_plus::micro_test_plus
                                               Lhs_T, Rhs_T>)
   [[nodiscard]] constexpr bool
   le (Lhs_T&& lhs, Rhs_T&& rhs);
+#endif // !defined(__DOXYGEN__)
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-cpp-api-function-comparators

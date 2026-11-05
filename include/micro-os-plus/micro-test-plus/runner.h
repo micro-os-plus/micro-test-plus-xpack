@@ -579,6 +579,7 @@ namespace micro_os_plus::micro_test_plus
     add_suite (located_name name, Callable_T&& callable,
                Args_T&&... arguments);
 
+#if !defined(__DOXYGEN__)
     /**
      * @brief Rejects a callable that is not a valid suite body.
      *
@@ -602,6 +603,7 @@ namespace micro_os_plus::micro_test_plus
     void
     add_suite (located_name name, Callable_T&& callable,
                Args_T&&... arguments);
+#endif // !defined(__DOXYGEN__)
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**

@@ -319,6 +319,7 @@ namespace micro_os_plus::micro_test_plus
       check_result&&
       operator<< (const T& msg) &&;
 
+#if !defined(__DOXYGEN__)
       /**
        * @brief Rejects a message argument that cannot be written.
        *
@@ -337,6 +338,7 @@ namespace micro_os_plus::micro_test_plus
         requires (not detail::message_argument<T>)
       check_result&&
       operator<< (const T& msg) &&;
+#endif // !defined(__DOXYGEN__)
 
       /**
        * @brief Retrieves the result value.
