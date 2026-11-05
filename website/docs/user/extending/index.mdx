@@ -131,9 +131,10 @@ The failed check reports both values:
 The formatter accepts the standard arithmetic types, characters, strings,
 pointers, containers, scoped enumerations, pairs, tuples, and optionals, so the
 members can usually be written directly, as above. The `char` pointers and
-arrays, also when not `const`, are written as strings (a null pointer as
-`nullptr`); the other pointers, including the `signed char` and `unsigned char`
-(`uint8_t`) pointers, are written as addresses. A plain boolean check, such as
+arrays, also when not `const`, and those of the `wchar_t`, `char8_t`,
+`char16_t`, and `char32_t` types, converted to UTF-8, are written as strings
+(a null pointer as `nullptr`); the other pointers, including the `signed char`
+and `unsigned char` (`uint8_t`) pointers, are written as addresses. A plain boolean check, such as
 `t.expect (p == q)`, needs no formatter, but on failure it **reports only the
 source location**. The same `operator<<` also writes the values appended to the
 messages (`t.expect (p == q) << "p is " << p`).

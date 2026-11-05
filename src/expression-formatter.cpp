@@ -357,6 +357,31 @@ namespace micro_os_plus::micro_test_plus::detail
       const std::basic_string_view<Char_T> buffer{ s, capacity };
       return buffer.substr (0, buffer.find (Char_T{}));
     }
+
+    /**
+     * @brief Appends the text of a string of a wide character type,
+     * converted to UTF-8, as the `char` text is appended.
+     *
+     * @details
+     * The text is written by a formatter in the plain mode, so without
+     * quotes, with the control characters other than the tab and the line
+     * feed, and DEL, escaped, whatever the mode of the caller.
+     *
+     * @tparam Char_T The character type.
+     * @param [in,out] buffer The buffer to append to.
+     * @param sv The text.
+     *
+     * @par Returns
+     *   Nothing.
+     */
+    template <class Char_T>
+    void
+    append_wide_text (std::string& buffer, std::basic_string_view<Char_T> sv)
+    {
+      std::string text;
+      plain_text::append (text, sv);
+      buffer.append (text);
+    }
   } // namespace
 
   // --------------------------------------------------------------------------
@@ -591,26 +616,20 @@ namespace micro_os_plus::micro_test_plus::detail
 
   /**
    * @details
-   * In the plain mode the text, bounded by @p capacity as for the `char`
-   * text, is converted to UTF-8 and written as a `std::wstring_view` is;
-   * otherwise the address of the pointer is written, since the wide
-   * strings are not strings for the comparators.
+   * The text, bounded by @p capacity as for the `char` text, is converted
+   * to UTF-8 and written as the `char` text is, without quotes, with the
+   * control characters escaped, whatever the mode.
    */
   void
   expression_formatter::append_c_string (const wchar_t* s,
                                          std::size_t capacity)
   {
-    if (!plain_)
-      {
-        detail::append_pointer (buffer_, s);
-        return;
-      }
     if (s == nullptr)
       {
         buffer_.append ("nullptr");
         return;
       }
-    *this << bounded_view (s, capacity);
+    append_wide_text (buffer_, bounded_view (s, capacity));
   }
 
 #if defined(__cpp_lib_char8_t)
@@ -622,17 +641,12 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::append_c_string (const char8_t* s,
                                          std::size_t capacity)
   {
-    if (!plain_)
-      {
-        detail::append_pointer (buffer_, s);
-        return;
-      }
     if (s == nullptr)
       {
         buffer_.append ("nullptr");
         return;
       }
-    *this << bounded_view (s, capacity);
+    append_wide_text (buffer_, bounded_view (s, capacity));
   }
 #endif // defined(__cpp_lib_char8_t)
 
@@ -644,17 +658,12 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::append_c_string (const char16_t* s,
                                          std::size_t capacity)
   {
-    if (!plain_)
-      {
-        detail::append_pointer (buffer_, s);
-        return;
-      }
     if (s == nullptr)
       {
         buffer_.append ("nullptr");
         return;
       }
-    *this << bounded_view (s, capacity);
+    append_wide_text (buffer_, bounded_view (s, capacity));
   }
 
   /**
@@ -665,17 +674,12 @@ namespace micro_os_plus::micro_test_plus::detail
   expression_formatter::append_c_string (const char32_t* s,
                                          std::size_t capacity)
   {
-    if (!plain_)
-      {
-        detail::append_pointer (buffer_, s);
-        return;
-      }
     if (s == nullptr)
       {
         buffer_.append ("nullptr");
         return;
       }
-    *this << bounded_view (s, capacity);
+    append_wide_text (buffer_, bounded_view (s, capacity));
   }
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)

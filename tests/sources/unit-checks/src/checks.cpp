@@ -511,6 +511,18 @@ unit_checks_run_tests (mt::suite& ts)
     test_assert (formatter.str () == "wrapped{ 7 } handle{ 2 } 5u 1.5");
   }
 
+  // The text of the pointers of the wide character types is written by
+  // such a formatter as the `char` text is, without quotes, not as the
+  // address of the pointer.
+  {
+    mt::expression_formatter formatter;
+    const wchar_t* wide = L"wide";
+    const wchar_t* none = nullptr;
+    formatter << wide << " " << u"utf16" << " " << U"utf32" << " " << none;
+    test_assert (formatter.str ()
+                 == "wide utf16 utf32 nullptr");
+  }
+
   // --------------------------------------------------------------------------
 
   // The comparators compare the application types with their own

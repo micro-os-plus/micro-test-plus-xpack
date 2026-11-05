@@ -518,13 +518,13 @@ namespace micro_os_plus::micro_test_plus
        * `basic_c_string`; an application writes a quoted value with a
        * `std::string_view`.
        *
-       * The pointers and the arrays of the wide character types are not
-       * strings for the comparators, which compare the addresses, so, as
-       * operands, they are reported as addresses. In the plain mode, used
-       * for the messages and for the values written by the applications,
-       * their text is converted to UTF-8 and written as a
-       * `std::wstring_view` is; otherwise the address of the pointer is
-       * written.
+       * The text of the pointers and of the arrays of the wide character
+       * types is converted to UTF-8 and written as the `char` text is, in
+       * both modes, without quotes, so that the string literals of these
+       * types can be used by the applications, for example as separators.
+       * As operands of the comparators, these pointers and arrays are
+       * reported quoted, like the `std::wstring` values, by the overload
+       * for `basic_c_string`.
        *
        * @tparam Pointer_T The pointer type; it satisfies
        * `detail::character_pointer`.
@@ -1149,12 +1149,11 @@ namespace micro_os_plus::micro_test_plus
        * @details
        * The text ends at the first null character or after @p capacity
        * characters, whichever comes first. A null pointer is written as
-       * `"nullptr"`. In the plain mode the text is written as the
-       * overloads for the string views write it (the `char` text without
-       * quotes); out of it, the `char` text is written in the same way
-       * and the text of the other character types is replaced by the
-       * address of the pointer. Shared by the overloads for the
-       * character pointers (unbounded capacity) and for the arrays.
+       * `"nullptr"`. The text is written without quotes, with the
+       * control characters escaped, in both modes; the text of the other
+       * character types is first converted to UTF-8. Shared by the
+       * overloads for the character pointers (unbounded capacity) and for
+       * the arrays.
        *
        * @param s The text, or a null pointer.
        * @param capacity The number of characters that may be read.
