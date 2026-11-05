@@ -928,6 +928,40 @@ static mt::static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
                  == local_counts.failed_checks);
     test_assert (current_suite_totals.executed_test_cases ()
                  == local_counts.executed_test_cases);
+
+    // -------------------------------------------------------------------------
+
+    // The elements of the arrays are compared as the single integers are,
+    // by value, not by converting the signed one to the unsigned type.
+    ts.test ("Arrays of integers of different signedness", [] (auto& t)
+      {
+        constexpr unsigned maximum = std::numeric_limits<unsigned>::max ();
+        const int signed_values[] = { -1, 2 };
+        const unsigned unsigned_values[] = { maximum, 2u };
+        const std::array<unsigned, 2> unsigned_array{ maximum, 2u };
+
+        t.expect (mt::ne (signed_values, unsigned_values))
+            << "int[] != unsigned[]";
+        local_counts.passed_checks++;
+
+        t.expect (mt::ne (signed_values, unsigned_array))
+            << "int[] != std::array<unsigned>";
+        local_counts.passed_checks++;
+
+        const int equal_values[] = { 1, 2 };
+        t.expect (mt::eq (equal_values, std::array<unsigned, 2>{ 1u, 2u }))
+            << "int[] == std::array<unsigned> with equal values";
+        local_counts.passed_checks++;
+
+        local_counts.executed_test_cases++;
+      });
+
+    test_assert (current_suite_totals.passed_checks ()
+                 == local_counts.passed_checks);
+    test_assert (current_suite_totals.failed_checks ()
+                 == local_counts.failed_checks);
+    test_assert (current_suite_totals.executed_test_cases ()
+                 == local_counts.executed_test_cases);
   } };
 
 // ----------------------------------------------------------------------------

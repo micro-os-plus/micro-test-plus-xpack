@@ -188,7 +188,9 @@ feed FAILED (checks.cpp:390)
         ✗ all_of with a nested any_of FAILED (comparisons.cpp:916, (42 == 42 and (42 == 0 or 42 == 1)))
     ✗ Logical operations with more operands - FAILED (6 checks passed, 5 failed)
 
-✗ Comparisons suite - FAILED (94 checks passed, 58 failed, in 19 test cases), time: 1.298 ms
+    ✓ Arrays of integers of different signedness - passed (3 checks)
+
+✗ Comparisons suite - FAILED (97 checks passed, 58 failed, in 20 test cases), time: 1.169 ms
 
 • Dynamic suite
 
@@ -808,7 +810,7 @@ Matching test cases:
 
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases), time: 0.113 ms
 
-✗ Total: 736 checks passed, 378 failed, in 181 test cases, 15 test suites, time: 16.907 ms
+✗ Total: 739 checks passed, 378 failed, in 182 test cases, 15 test suites, time: 15.685 ms
 error: test runner already initialised
 error: top suite already added
 Overall, the µTest++ unit tests were successful!

@@ -1808,7 +1808,9 @@ namespace micro_os_plus::micro_test_plus
      * this type (see `as_operand()`), so that
      * they are compared element by element, and written as ranges,
      * instead of being compared and written as the addresses they decay
-     * to. Two arrays of different sizes are never equal.
+     * to. Two arrays of different sizes are never equal, and the
+     * elements are compared with `equal_to::apply()`, so integers of
+     * different signedness are compared by value.
      *
      * The elements are not copied; the operand must outlive the
      * comparison, which is always the case within a check.

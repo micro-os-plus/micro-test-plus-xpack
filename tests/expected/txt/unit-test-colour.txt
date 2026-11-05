@@ -571,7 +571,13 @@ feed [31mFAILED[0m (checks.cpp:390)
         [31m✗[0m all_of with a nested any_of [31mFAILED[0m (comparisons.cpp:916, ([32m42 == 42[0m[31m and [0m([31m42 == 0[0m[31m or [0m[31m42 == 1[0m)))
     [31m✗[0m Logical operations with more operands - [31mFAILED[0m (6 checks passed, 5 failed)
 
-[31m✗[0m Comparisons suite - [31mFAILED[0m (94 checks passed, 58 failed, in 19 test cases), time: 1.444 ms
+    • Arrays of integers of different signedness
+        [32m✓[0m int[] != unsigned[]
+        [32m✓[0m int[] != std::array<unsigned>
+        [32m✓[0m int[] == std::array<unsigned> with equal values
+    [32m✓[0m Arrays of integers of different signedness - passed (3 checks)
+
+[31m✗[0m Comparisons suite - [31mFAILED[0m (97 checks passed, 58 failed, in 20 test cases), time: 1.504 ms
 
 • Dynamic suite
 
@@ -1744,7 +1750,7 @@ Matching test cases:
 
 [31m✗[0m Utility suite - [31mFAILED[0m (21 checks passed, 5 failed, in 3 test cases), time: 0.158 ms
 
-[31m✗[0m Total: 736 checks passed, 378 failed, in 181 test cases, 15 test suites, time: 19.081 ms
+[31m✗[0m Total: 739 checks passed, 378 failed, in 182 test cases, 15 test suites, time: 18.974 ms
 error: test runner already initialised
 error: top suite already added
 Overall, the µTest++ unit tests were successful!

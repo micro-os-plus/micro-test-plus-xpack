@@ -469,7 +469,7 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
 #             fileName: comparisons.cpp
 #             lineNumber: 916
 #           ...
-not ok 4 - Comparisons suite # { FAILED, 94 checks passed, 58 failed, in 19 test cases, time: 2.256 ms }
+not ok 4 - Comparisons suite # { FAILED, 97 checks passed, 58 failed, in 20 test cases, time: 1.761 ms }
 ok 5 - Dynamic suite # { passed, 1 check in 1 test case, time: 0.040 ms }
 ok 6 - Dynamic suite with a temporary name # { passed, 1 check in 1 test case, time: 0.038 ms }
 # Exceptions suite > Failed thrown exceptions
@@ -2703,6 +2703,6 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.112 ms }
 #           ...
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.152 ms }
 1..15
-# { total: 736 checks passed, 378 failed, in 181 test cases, 15 test suites, time: 23.841 ms }
+# { total: 739 checks passed, 378 failed, in 182 test cases, 15 test suites, time: 18.347 ms }
 # error: test runner already initialised
 # error: top suite already added

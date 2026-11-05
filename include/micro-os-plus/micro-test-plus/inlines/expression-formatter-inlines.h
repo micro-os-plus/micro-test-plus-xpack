@@ -541,7 +541,9 @@ namespace micro_os_plus::micro_test_plus::detail
   /**
    * @details
    * Walks both ranges in step up to the first pair of elements that
-   * differ, or up to the end of the shorter one.
+   * differ, or up to the end of the shorter one. The elements are compared
+   * as the comparator does, with `equal_to::apply ()`, so that integers of
+   * different signedness are compared by value.
    */
   template <class Lhs_T, class Rhs_T>
   void
@@ -554,7 +556,7 @@ namespace micro_os_plus::micro_test_plus::detail
     const auto r_end = std::end (rhs);
 
     size_t index = 0;
-    while (l != l_end and r != r_end and *l == *r)
+    while (l != l_end and r != r_end and detail::equal_to::apply (*l, *r))
       {
         l = std::next (l);
         r = std::next (r);

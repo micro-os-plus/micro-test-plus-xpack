@@ -254,7 +254,10 @@ compare by address:
 - a pointer to a character type becomes a `basic_c_string` bounded by the null
   terminator; a null pointer is equal only to another null pointer, and is less
   than any string;
-- any other array becomes an `array_operand`, compared element by element;
+- any other array becomes an `array_operand`, compared element by element
+  with `equal_to::apply()`, so the elements follow the same rules as the
+  single operands, including the comparison of integers of different
+  signedness by value;
 - every other operand is forwarded unchanged.
 
 The concept `character` selects the five types (`signed char` and `unsigned

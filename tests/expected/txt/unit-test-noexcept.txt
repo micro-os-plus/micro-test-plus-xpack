@@ -510,7 +510,12 @@ feed FAILED (checks.cpp:390)
         ✗ any_of of two all_of FAILED (comparisons.cpp:909, ((42 == 0 and 42 == 42) or (42 == 1 and 42 == 42 and 42 == 2)))
         ✗ all_of with a nested any_of FAILED (comparisons.cpp:916, (42 == 42 and (42 == 0 or 42 == 1)))
     ✗ Logical operations with more operands - FAILED (6 checks passed, 5 failed)
-✗ Comparisons suite - FAILED (94 checks passed, 58 failed, in 19 test cases)
+    • Arrays of integers of different signedness
+        ✓ int[] != unsigned[]
+        ✓ int[] != std::array<unsigned>
+        ✓ int[] == std::array<unsigned> with equal values
+    ✓ Arrays of integers of different signedness - passed (3 checks)
+✗ Comparisons suite - FAILED (97 checks passed, 58 failed, in 20 test cases)
 • Dynamic suite
     • check in dynamic suite
         ✓ 1 == 1 in dynamic suite
@@ -1430,6 +1435,6 @@ next line FAILED (miscellaneous.cpp:978)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 713 checks passed, 361 failed, in 163 test cases, 13 test suites
+✗ Total: 716 checks passed, 361 failed, in 164 test cases, 13 test suites
 error: test runner already initialised
 error: top suite already added

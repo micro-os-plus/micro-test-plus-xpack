@@ -1582,7 +1582,10 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Ranges of different sizes are not equal, without comparing any
-     * element.
+     * element. The elements are compared as the scalar operands of
+     * `eq ()` are, with `equal_to::apply ()`, so that integers of different
+     * signedness are compared by value, not by converting the signed one to
+     * the unsigned type.
      */
     template <class T, class R>
       requires (container_like<R>
@@ -1591,7 +1594,9 @@ namespace micro_os_plus::micro_test_plus
     constexpr bool
     operator== (const array_operand<T>& lhs, const R& rhs)
     {
-      return std::equal (lhs.begin (), lhs.end (), rhs.begin (), rhs.end ());
+      return std::equal (lhs.begin (), lhs.end (), rhs.begin (), rhs.end (),
+                         [] (const auto& l, const auto& r)
+        { return equal_to::apply (l, r); });
     }
 
     /**

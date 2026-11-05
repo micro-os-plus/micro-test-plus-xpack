@@ -303,7 +303,9 @@ not the addresses; a null pointer is equal only to another null
 pointer (or `nullptr`), not to an empty string. The **other arrays**
 (including `uint8_t` buffers) **are compared element by element**, also with
 a container such as a `std::vector`, and are written as ranges on
-failure; arrays of different sizes are never equal. The other pointers
+failure; arrays of different sizes are never equal, and their elements
+are compared as single values are (see below), so an `int` array holding `-1`
+is not equal to an `unsigned` array holding `UINT_MAX`. The other pointers
 are compared by address.
 
 Two **integers of different signedness are compared by value**, not by

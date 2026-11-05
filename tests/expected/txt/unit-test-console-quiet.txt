@@ -536,6 +536,6 @@ Matching test cases:
         ✗ abc matches *C FAILED (utility.cpp:191)
         ✗ ab matches ??? FAILED (utility.cpp:195)
 
-✗ Total: 736 checks passed, 378 failed, in 181 test cases, 15 test suites, time: 14.885 ms
+✗ Total: 739 checks passed, 378 failed, in 182 test cases, 15 test suites, time: 15.776 ms
 error: test runner already initialised
 error: top suite already added

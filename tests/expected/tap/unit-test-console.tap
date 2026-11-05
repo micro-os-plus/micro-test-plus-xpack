@@ -600,9 +600,10 @@ ok 3 - Combinatorial integrals suite # { passed, 160 checks in 8 test cases, tim
           ...
         1..11
     not ok 19 - Logical operations with more operands # { FAILED, 6 checks passed, 5 failed }
+    ok 20 - Arrays of integers of different signedness # { passed, 3 checks }
 
-    1..19
-not ok 4 - Comparisons suite # { FAILED, 94 checks passed, 58 failed, in 19 test cases, time: 1.587 ms }
+    1..20
+not ok 4 - Comparisons suite # { FAILED, 97 checks passed, 58 failed, in 20 test cases, time: 1.564 ms }
 
 # Subtest: Dynamic suite
     ok 1 - check in dynamic suite # { passed, 1 check }
@@ -3126,7 +3127,7 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.128 ms }
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.169 ms }
 
 1..15
-# { total: 736 checks passed, 378 failed, in 181 test cases, 15 test suites, time: 18.457 ms }
+# { total: 739 checks passed, 378 failed, in 182 test cases, 15 test suites, time: 18.880 ms }
 # error: test runner already initialised
 # error: top suite already added
 Overall, the µTest++ unit tests were successful!

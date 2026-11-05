@@ -106,8 +106,9 @@ namespace micro_os_plus::micro_test_plus
    * are compared by content, also with the standard strings and string
    * views of the same character type; a null pointer is equal only to
    * another null pointer. The other arrays (e.g. byte buffers) are
-   * compared element by element, also with a container, and written as
-   * ranges; the other pointers are compared by address. The
+   * compared element by element, also with a container, with the elements
+   * compared as the single values are, and written as ranges; the other
+   * pointers are compared by address. The
    * integers of different signedness are compared by value, as by
    * `std::cmp_equal()`, not after the usual arithmetic conversions, so
    * `eq (-1, static_cast<unsigned> (-1))` fails.
