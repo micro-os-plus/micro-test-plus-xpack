@@ -78,7 +78,18 @@ the boards. In practice:
   allocate.
 - **Builds without exceptions**: guard the code that throws or catches with
   `#if defined(__cpp_exceptions)`, and provide the behaviour without them;
-  the reference outputs have `-noexcept` variants for these builds.
+  the reference outputs have `-noexcept` variants for these builds. The
+  embedded platforms are built without exceptions; on the native platform
+  (`synthetic-posix`), the `unit-test-noexcept` program compiles the framework
+  and the unit tests with `-fno-exceptions`, with the strict warnings of the
+  tests, so a warning that appears only without exceptions (such as a private
+  member that only the code under `#if defined(__cpp_exceptions)` uses) fails
+  the native build. The framework and the programs that use it must be
+  compiled with the same exception option, since some classes depend on it;
+  the other native programs link the static library, compiled with
+  exceptions, so this one also links the interface library, which compiles the
+  sources of the framework in the program, and the linker does not use the
+  members of the archive.
 - **Small stacks**: the nested test cases run at the deepest point of the
   stack, and the embedded targets have small stacks. Avoid large local
   arrays (`reporter::write_line()` formats into a local array of 128 bytes),

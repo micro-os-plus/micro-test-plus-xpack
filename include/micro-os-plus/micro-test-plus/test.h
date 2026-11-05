@@ -1955,7 +1955,8 @@ namespace micro_os_plus::micro_test_plus
      * The argument of `test()`, which lives until the end of that call,
      * after the test case ends. The name of the node points into it; the
      * location is used to report the failures that are not associated
-     * with a check.
+     * with a check, such as an exception escaping the body, and the
+     * calls rejected while the test case runs.
      */
     const located_name& located_name_;
 

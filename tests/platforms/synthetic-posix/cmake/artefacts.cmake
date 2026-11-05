@@ -1118,6 +1118,43 @@ if (XPACK_ENABLE_UNIT_TEST)
   )
 
   # ---------------------------------------------------------------------------
+  # The unit test without exceptions.
+  #
+  # The framework and the unit tests must be compiled with the same options,
+  # since the layout of some classes depends on `__cpp_exceptions`. The unit
+  # tests link the static library, compiled with exceptions, so the sources of
+  # the framework are also compiled in this executable, through the interface
+  # library, with `-fno-exceptions`; the linker takes the definitions from the
+  # objects of the executable, and does not use the members of the archive.
+  # It also checks that the framework builds without warnings, with the strict
+  # options of the tests.
+
+  add_native_test_executable (unit-test-noexcept)
+  target_link_native_test_libraries (
+    unit-test-noexcept micro-os-plus::micro-test-plus test::unit
+  )
+  target_compile_options (unit-test-noexcept PRIVATE -fno-exceptions)
+
+  xpack_display_target_lists (unit-test-noexcept)
+  message (VERBOSE "A> unit-test-noexcept")
+
+  add_test (NAME "unit-test-noexcept"
+            COMMAND unit-test-noexcept --output-file=unit-test-noexcept.tap one
+                    two
+  )
+  message (VERBOSE "T> unit-test-noexcept")
+  add_compare_files_test (
+    NAME "unit-test-noexcept-compare"
+    DEPENDS "unit-test-noexcept"
+    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-test-noexcept.tap"
+          "${CMAKE_CURRENT_SOURCE_DIR}/expected/tap/unit-test-noexcept.tap"
+  )
+  add_validate_tap_test (
+    NAME "unit-test-noexcept-validate" DEPENDS "unit-test-noexcept" FILE
+    "${CMAKE_CURRENT_BINARY_DIR}/unit-test-noexcept.tap"
+  )
+
+  # ---------------------------------------------------------------------------
   # Human-readable reporter
 
   # --verbose
