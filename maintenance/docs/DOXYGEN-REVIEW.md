@@ -418,14 +418,16 @@ and `test-qemu-cortex-m33-cmake-gcc` (14 of 14).
   function references without the space before the parentheses
   (`eq()`, not `eq ()`), as the other 1019 references are.
 
-### Code defects noticed after #278, not fixed
+### Code defects noticed after #278
 
-- #91 `detail-inlines.h`, `as_operand()`: a `volatile char*` operand of
+- #91 Fixed in `ff363279` (#279): `detail-inlines.h`, `as_operand()`: a `volatile char*` operand of
   `eq()` fails with "no matching constructor for initialization of
   `basic_c_string<char>`", followed by the rejection of the comparison,
-  instead of a single message that names the cause.
-- #92 `test.cpp`, `runnable_base::accepts_test_case()`: it does not use
+  instead of a single message that names the cause. Investigated in
+  `API-REVIEW-10.md` #5, which found that the `volatile` arrays of any
+  type fail too.
+- #92 Fixed in `67aa7242` (#280): `test.cpp`, `runnable_base::accepts_test_case()`: it does not use
   `runner::reject_call()`, so a test case started on a suite that is not
   running, while listing or after `run_suites()` returned, is written
   only to `stderr`, while the other rejected calls are also written in
-  the listing or in the report.
+  the listing or in the report. Investigated in `API-REVIEW-10.md` #6.

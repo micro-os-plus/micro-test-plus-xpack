@@ -27,13 +27,16 @@ reports no difference.
 Independence: the earlier reports in `maintenance/docs/`, and the commits
 and issues that refer to them, were deliberately not consulted.
 
-Summary: 4 problems (0 open, 4 fixed, 0 withdrawn), all defects, all
+Summary: 6 problems (0 open, 6 fixed, 0 withdrawn), all defects, all
 confirmed, none breaking. The most serious was #1 (a wrong result: arrays of
 integers of different signedness compare equal when they are not). #2 is
 undefined behaviour only for an expression with an array operand that is
 returned from a helper or kept after the array is destroyed, and is
 resolved by documenting the rule, since copying the arrays costs stack or
-heap for every check. All the problems are fixed.
+heap for every check. #5 and #6 were found later, by the Doxygen review
+of the fixes: the `volatile` operands did not compile (#5, fixed), and a
+misdirected test case was missing from the listing (#6, fixed). All the
+problems are fixed.
 
 Tags: **[breaking]** the suggested change alters the public API;
 **[internal]** it does not; **[confirmed]** a probe reproduced the problem.
@@ -202,3 +205,107 @@ Tags: **[breaking]** the suggested change alters the public API;
   reporter (`write_line()` with `comment_prefix()`, as the other listing
   errors are), so that they reach the output file, and mark the runner from
   the `catch` of the listing branch of `suite::run()`.
+
+- **#5 — The `volatile` operands do not compile, or are rejected with a
+  wrong reason.** (fixed) [internal] **[confirmed]**
+  Fixed in `ff363279` (#279): as suggested below, with tests for the
+  arrays and the pointers in `operands.cpp` and in the static assertions.
+  A `volatile char` array is compared as a range, not as a string.
+  Found after this review, on commit `4c3468e9`, by the Doxygen review
+  (`DOXYGEN-REVIEW.md` #91), and investigated with probes; part of it is a
+  regression of `abb8a98d` (#271).
+  `inlines/detail-inlines.h` lines 1690 to 1725, `as_operand()`: the type
+  is `std::remove_cvref_t<T>`, which, for an array, also removes the
+  qualifiers of the elements (the qualifiers of an array are those of its
+  elements), so a `volatile int[3]` is seen as an `int[3]`, and the
+  `static_cast` to `const int*` (line 1712) is ill-formed; the pointer
+  branch (line 1702) accepts the `volatile` characters, which
+  `basic_c_string` cannot refer to. The errors occur when the return type
+  is deduced, inside the constraint of the comparator, so they are hard
+  errors, followed by the rejection of the comparison. Separately,
+  `expression-formatter.h` lines 555 and 556 (and
+  `inlines/expression-formatter-inlines.h` lines 200 and 201): the
+  overload for the character arrays, added by #271, accepts the `volatile`
+  characters, and is then ambiguous with the overload for the pointers
+  (line 767), which excludes only the non-`volatile` character pointers
+  (`detail.h` line 1640, `character_pointer`); at `f6714bc5` a `volatile
+  char` array in a message was written as an address. The `volatile`
+  buffers are common on the embedded targets (for example a DMA buffer
+  `volatile std::uint8_t rx[N]`), and cannot be compared at all.
+
+  Evidence (probes `v` and `m`, Apple clang 17, `-std=c++20`):
+
+  ```text
+  volatile char* p;    eq (p, p)    no matching constructor for
+                                    initialization of 'basic_c_string<char>';
+                                    the operands of eq () cannot be compared
+                                    with ==
+  volatile int a[3];   eq (a, a)    static_cast from 'volatile int *' to
+                                    'const int *' is not allowed; the
+                                    operands of eq () cannot be compared
+                                    with ==
+  volatile char a[3];  eq (a, a)    an operand of the comparator cannot be
+                                    written in the report; define an
+                                    operator<< ...
+  volatile char a[3];  << a         a message argument must be a value that
+                                    can be written (compiles at f6714bc5)
+  volatile int* p;     eq (p, p)    compiles, compared by address
+  ```
+
+  Suggested change (prototyped; the 18 unit test sources compile with it,
+  with `-Weverything -Werror`): in `as_operand()`, take the element type
+  as `std::remove_const_t<std::remove_extent_t<std::remove_reference_t<
+  T>>>`, which keeps `volatile`, use it for the character test (excluding
+  the `volatile` characters) and for `array_operand`, and use
+  `character_pointer<type>` for the pointer branch; constrain the
+  overload of the formatter for the character arrays with `not
+  std::is_volatile_v<Char_T>`. The `volatile` arrays, including those of
+  characters, are then compared element by element and written as ranges
+  (`{1, 2, 3, 4} == {1, 2, 9, 4}`; `{-1, 2, 3} == {4294967295u, 2u, 3u}`
+  fails, as for the other arrays), the `volatile` character pointers are
+  compared by address, as the other pointers, and a `volatile` character
+  array in a message is written as an address again. A `volatile char`
+  array is not a string: `eq (volatile_text, "abc")` remains rejected,
+  since reading it as text would need a copy; this is to be documented.
+
+- **#6 — A test case started on a suite that is not running is missing
+  from the listing and from the output file.** (fixed) [internal]
+  **[confirmed]**
+  Fixed in `67aa7242` (#280): as suggested below, with the check added to
+  the test of the listing errors in `miscellaneous.cpp`; the branches for a
+  running test case or suite were kept.
+  Found after this review, on commit `4c3468e9`, by the Doxygen review
+  (`DOXYGEN-REVIEW.md` #92); the same gap as #4, in a path that #277
+  did not change.
+  `src/test.cpp` lines 237 to 277, `runnable_base::accepts_test_case()`:
+  when no test case or suite can take the failure (while the test cases
+  are listed, before `run_suites()`, or after it returned), the message is
+  written with `fprintf (stderr, ...)` and `runner_.mark_rejected()` (line
+  275), not with `runner::reject_call()`, which also writes it, as a
+  comment line, in the listing or in the report, and in the output file.
+  The exit code is 1, but the list is incomplete without saying so, while
+  a suite added too late, in the same listing, is reported in it. The
+  unit tests cover this path only with the `silent` verbosity, after the
+  session, and not while listing.
+
+  Evidence (probe `p92`, a suite body that starts a test case on another
+  suite, or adds a suite):
+
+  ```text
+  $ ./p92 --list --output-file=list.txt          (adds a suite)
+  # error: suite 'late' added after run_suites() started, rejected
+  exit=1                     (in the list, in list.txt, and on stderr)
+  $ MISDIRECTED=1 ./p92 --list --output-file=list.txt
+  error: test case 'misdirected' started on suite 'A', which is not running
+  exit=1                     (on stderr only; the list and list.txt omit it)
+  ```
+
+  Suggested change (prototyped): replace the `fprintf()` and the
+  `mark_rejected()` at the end of `accepts_test_case()` with
+  `runner_.reject_call (message, &name.location ())`; the message is then
+  written in the list, in the output file, and on `stderr`, and the
+  branches for a running test case or suite are unchanged. Delegating
+  them too would remove their duplication of `reject_call()`, but would
+  add a `stderr` line and `mark_rejected()` to the failed checks, unlike
+  `test_case::report_misdirected_test()`; the smaller change is
+  recommended. Add a listing test in `unit-miscellaneous`.
