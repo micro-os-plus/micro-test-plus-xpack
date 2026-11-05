@@ -39,7 +39,8 @@
  * pointers are compared by address.
  * The temporaries are moved into the returned expressions, and the named
  * operands are copied, so an expression can be returned from the function
- * that builds it, and kept after the operands are destroyed. The copy is
+ * that builds it, and kept after the operands are destroyed, except for the
+ * arrays, which are referred to and must outlive the expression. The copy is
  * made for every check, passing or failing, so a large container or string
  * costs an allocation; compare a `std::string_view` of a string instead,
  * when the cost matters.

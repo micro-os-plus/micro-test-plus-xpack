@@ -339,7 +339,14 @@ large container or string costs a copy and an allocation, which matters on a
 small target. When the cost matters, compare a view, which copies only a
 pointer and a size: `mt::eq (std::string_view{ text }, "abc")` makes no
 allocation. The operands that cannot be copied, such as a `std::unique_ptr`,
-are referred to, not copied.
+are referred to, not copied, and so are **the arrays**, including the C
+strings held in arrays: the expression refers to the array, which must
+outlive it. This matters only for an expression that is returned from a
+helper or kept in a variable, after the array is destroyed, since the report
+is written from the array; the check in the same statement is safe. For such
+an expression, compare a copy of the array, of the same type as the other
+operand: `mt::eq (std::to_array (buffer), expected_array)` for a numeric
+array, or `mt::eq (std::string{ name }, "abc")` for a character array.
 
 The `approx()` comparator **succeeds if its first two operands differ by
 at most the third one**, the tolerance, so a tolerance of zero requires
