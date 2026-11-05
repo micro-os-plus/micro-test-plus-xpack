@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions" kind="group">
     <compoundname>micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions</compoundname>
-    <title>Logical Functions</title>
+    <title>Old logical function names</title>
     <sectiondef kind="func">
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -30,7 +30,7 @@
 <para>Deprecated generic logical <bold>and</bold> operation, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" kindref="member">all_of()</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" kindref="member">all_of()</ref></computeroutput>. The name was changed since a leading underscore is not used by the other public names.</para>
+<para>The same as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" kindref="member">all_of()</ref></computeroutput>. The name was changed since a leading underscore is not used by the other current public names.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -73,10 +73,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="700" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="700" bodyend="703" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="835" declcolumn="3"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" compoundref="deprecated-inlines_8h" startline="700" endline="703">micro_os_plus::micro_test_plus::_and</references>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" compoundref="function-comparators-inlines_8h" startline="354" endline="368">micro_os_plus::micro_test_plus::all_of</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" compoundref="deprecated-inlines_8h" startline="700" endline="703">micro_os_plus::micro_test_plus::_and</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="696" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="696" bodyend="699" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="831" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" compoundref="deprecated-inlines_8h" startline="696" endline="699">micro_os_plus::micro_test_plus::_and</references>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" compoundref="function-comparators-inlines_8h" startline="360" endline="374">micro_os_plus::micro_test_plus::all_of</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" compoundref="deprecated-inlines_8h" startline="696" endline="699">micro_os_plus::micro_test_plus::_and</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -97,7 +97,7 @@
 <para>Deprecated generic logical <bold>not</bold> operation, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" kindref="member">negate()</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" kindref="member">negate()</ref></computeroutput>. The name was changed since a leading underscore is not used by the other public names.</para>
+<para>The same as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" kindref="member">negate()</ref></computeroutput>. The name was changed since a leading underscore is not used by the other current public names.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Expr_T</parametername>
@@ -124,10 +124,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="687" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="687" bodyend="690" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="814" declcolumn="3"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" compoundref="deprecated-inlines_8h" startline="687" endline="690">micro_os_plus::micro_test_plus::_not</references>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" compoundref="function-comparators-inlines_8h" startline="324" endline="329">micro_os_plus::micro_test_plus::negate</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" compoundref="deprecated-inlines_8h" startline="687" endline="690">micro_os_plus::micro_test_plus::_not</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="683" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="683" bodyend="686" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="810" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" compoundref="deprecated-inlines_8h" startline="683" endline="686">micro_os_plus::micro_test_plus::_not</references>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" compoundref="function-comparators-inlines_8h" startline="330" endline="335">micro_os_plus::micro_test_plus::negate</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" compoundref="deprecated-inlines_8h" startline="683" endline="686">micro_os_plus::micro_test_plus::_not</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -155,7 +155,7 @@
 <para>Deprecated generic logical (inclusive) <bold>or</bold> operation, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" kindref="member">any_of()</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
-<para>The same as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" kindref="member">any_of()</ref></computeroutput>. The name was changed since a leading underscore is not used by the other public names.</para>
+<para>The same as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" kindref="member">any_of()</ref></computeroutput>. The name was changed since a leading underscore is not used by the other current public names.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>Lhs_T</parametername>
@@ -198,17 +198,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="713" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="713" bodyend="716" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="856" declcolumn="3"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" compoundref="deprecated-inlines_8h" startline="713" endline="716">micro_os_plus::micro_test_plus::_or</references>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" compoundref="function-comparators-inlines_8h" startline="389" endline="403">micro_os_plus::micro_test_plus::any_of</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" compoundref="deprecated-inlines_8h" startline="713" endline="716">micro_os_plus::micro_test_plus::_or</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="709" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="709" bodyend="712" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="852" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" compoundref="deprecated-inlines_8h" startline="709" endline="712">micro_os_plus::micro_test_plus::_or</references>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" compoundref="function-comparators-inlines_8h" startline="395" endline="409">micro_os_plus::micro_test_plus::any_of</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" compoundref="deprecated-inlines_8h" startline="709" endline="712">micro_os_plus::micro_test_plus::_or</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Deprecated v5.0.1 names of the logical functions. </para>
     </briefdescription>
     <detaileddescription>
-<para>The functions <computeroutput>mt::_and()</computeroutput>, <computeroutput>mt::_or()</computeroutput>, and <computeroutput>mt::_not()</computeroutput> are the v5.0.1 names of <computeroutput>mt::all_of()</computeroutput>, <computeroutput>mt::any_of()</computeroutput>, and <computeroutput>mt::negate()</computeroutput>, and behave as them. They are deprecated since 6.0.0, because no other public name starts with an underscore.</para>
+<para>The functions <computeroutput>mt::_and()</computeroutput>, <computeroutput>mt::_or()</computeroutput>, and <computeroutput>mt::_not()</computeroutput> are the v5.0.1 names of <computeroutput>mt::all_of()</computeroutput>, <computeroutput>mt::any_of()</computeroutput>, and <computeroutput>mt::negate()</computeroutput>, and behave as them. They are deprecated since 6.0.0, because no other current public name starts with an underscore.</para>
 <para><table rows="4" cols="2"><row>
 <entry thead="yes"><para>Deprecated  </para>
 </entry><entry thead="yes"><para>Replacement  </para>

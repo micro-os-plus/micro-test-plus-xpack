@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="group__micro-os-plus-micro-test-plus-cpp-api-exceptions" kind="group">
     <compoundname>micro-os-plus-micro-test-plus-cpp-api-exceptions</compoundname>
-    <title>Checking Exceptions</title>
+    <title>Checking exceptions</title>
     <sectiondef kind="func">
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga2989618cf5adca7a767c966895ab37a0" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -49,9 +49,9 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exc
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="120" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="120" bodyend="123" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="140" declcolumn="3"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga2989618cf5adca7a767c966895ab37a0" compoundref="exceptions-inlines_8h" startline="120" endline="123">micro_os_plus::micro_test_plus::nothrow</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga2989618cf5adca7a767c966895ab37a0" compoundref="exceptions-inlines_8h" startline="120" endline="123">micro_os_plus::micro_test_plus::nothrow</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="116" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="116" bodyend="119" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="140" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga2989618cf5adca7a767c966895ab37a0" compoundref="exceptions-inlines_8h" startline="116" endline="119">micro_os_plus::micro_test_plus::nothrow</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga2989618cf5adca7a767c966895ab37a0" compoundref="exceptions-inlines_8h" startline="116" endline="119">micro_os_plus::micro_test_plus::nothrow</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga8fdcab2fe2567f6d6a735e89b936298d" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -99,7 +99,7 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exc
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="101" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="101" bodyend="104" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="123" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="97" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="97" bodyend="100" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="123" declcolumn="3"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga6a0ca4f8b757ea511c494189212812b3" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -158,7 +158,7 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exc
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="82" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="82" bodyend="85" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="101" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="78" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="78" bodyend="81" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="101" declcolumn="3"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

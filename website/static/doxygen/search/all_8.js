@@ -20,5 +20,5 @@ var searchData=
   ['help_17',['Help',['../group__micro-os-plus-micro-test-plus-cli.html#cli-help',1,'']]],
   ['help_18',['help',['../classmicro__os__plus_1_1micro__test__plus_1_1runner__options.html#a36b690e87d69f1124c8fff4d4a59f90c',1,'micro_os_plus::micro_test_plus::runner_options']]],
   ['help_5foptions_19',['help_options',['../namespacemicro__os__plus_1_1micro__test__plus_1_1anonymous__namespace_02runner_8cpp_03.html#a93bc763e06193fa6de523088f09a8816',1,'micro_os_plus::micro_test_plus::anonymous_namespace{runner.cpp}']]],
-  ['human_20',['human',['../namespacemicro__os__plus_1_1micro__test__plus.html#a913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70',1,'micro_os_plus::micro_test_plus']]]
+  ['human_20',['human',['../group__micro-os-plus-micro-test-plus-cpp-api-runners.html#gga913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70',1,'micro_os_plus::micro_test_plus']]]
 ];

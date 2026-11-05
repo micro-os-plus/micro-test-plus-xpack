@@ -2,12 +2,12 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="group__micro-os-plus-micro-test-plus-cli" kind="group">
     <compoundname>micro-os-plus-micro-test-plus-cli</compoundname>
-    <title>Command-Line Options</title>
+    <title>Command-line options</title>
     <briefdescription>
 <para>Options for controlling the test output at run time. </para>
     </briefdescription>
     <detaileddescription>
-<para>The test programs accept options on the command line, which <computeroutput>runner::initialise (argc, argv)</computeroutput> reads. On platforms without a command line, the same settings are made with <computeroutput>runner_options</computeroutput>, passed to <computeroutput>runner::initialise()</computeroutput>.</para>
+<para>The test programs accept options on the command line, which <computeroutput>runner::initialise()</computeroutput> reads. On platforms without a command line, the same settings are made with <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options" kindref="compound">runner_options</ref>, passed to <computeroutput>runner::initialise()</computeroutput>.</para>
 <para><table rows="8" cols="2"><row>
 <entry thead="yes"><para>Option  </para>
 </entry><entry thead="yes"><para>Effect  </para>
@@ -21,7 +21,7 @@
 </entry><entry thead="no"><para>the output format (TAP by default)  </para>
 </entry></row>
 <row>
-<entry thead="no"><para><computeroutput>--colour[=always,never,auto]</computeroutput>  </para>
+<entry thead="no"><para><computeroutput>--colour[=always</computeroutput>|<computeroutput>never</computeroutput>|<computeroutput>auto]</computeroutput>  </para>
 </entry><entry thead="no"><para>colour the human-readable output  </para>
 </entry></row>
 <row>
@@ -47,10 +47,11 @@
 </listitem><listitem><para>That argument, and all the following ones, are left to the application, uninterpreted; <computeroutput>runner::application_arguments()</computeroutput> returns them.</para>
 </listitem><listitem><para>The <computeroutput>--</computeroutput> that ends the options is not passed on. It is needed before an application argument that starts with a dash, which would otherwise be taken for an unknown µTest++ option. After the first application argument, a <computeroutput>--</computeroutput> is passed on like any other argument.</para>
 </listitem><listitem><para>The value of an option may be attached (<computeroutput>--reporter=human</computeroutput>) or given as the next argument (<computeroutput>--reporter human</computeroutput>), except for <computeroutput>--colour</computeroutput>, whose value must be attached.</para>
+</listitem><listitem><para>An option may be repeated: the last one takes effect (<computeroutput>--quiet --verbose</computeroutput> is <computeroutput>--verbose</computeroutput>), except for <computeroutput>--filter</computeroutput>, whose patterns are all kept, one for each nesting level.</para>
 </listitem></itemizedlist>
 </para>
 </simplesect>
-<simplesect kind="par"><title>Errors</title><para>An unknown option (an argument that starts with a dash before the end of the options, such as <computeroutput>-x</computeroutput>, <computeroutput>-</computeroutput>, or <computeroutput>-verbose</computeroutput>), an unknown reporter or colour mode, or a missing option value is an error. It is reported on <computeroutput>stderr</computeroutput>, on the console, and in the output file, if any; no test runs, and the exit code is 2. For an unknown option, the console also suggests <computeroutput>--help</computeroutput>.</para>
+<simplesect kind="par"><title>Errors</title><para>An unknown option (an argument that starts with a dash before the end of the options, such as <computeroutput>-x</computeroutput>, <computeroutput>-</computeroutput>, or <computeroutput>-verbose</computeroutput>), an unknown reporter or colour mode, or a missing option value is an error. It is reported on <computeroutput>stderr</computeroutput>, on the console (unless <computeroutput>--silent</computeroutput> is given), and in the output file, if any; no test runs, and the exit code is 2. For an unknown option, the console also suggests <computeroutput>--help</computeroutput>.</para>
 </simplesect>
 </para>
 <sect1 id="group__micro-os-plus-micro-test-plus-cli_1cli-help">
@@ -79,7 +80,7 @@
 <listitem><para>default – one line for each test case that passed, and the details of each failed check;</para>
 </listitem><listitem><para><computeroutput>--verbose</computeroutput> – every check, passed or failed;</para>
 </listitem><listitem><para><computeroutput>--quiet</computeroutput> – only the failed checks, with the names of their suites and test cases, and the session totals (and, with the TAP reporter, one result line for each suite);</para>
-</listitem><listitem><para><computeroutput>--silent</computeroutput> – nothing; only the exit code reports the result.</para>
+</listitem><listitem><para><computeroutput>--silent</computeroutput> – nothing on the console; only the exit code reports the result, and the errors are still written on <computeroutput>stderr</computeroutput>.</para>
 </listitem></itemizedlist>
 </para>
 <para>On platforms without a command line, the level is set in <computeroutput>runner_options::verbosity_level</computeroutput>. The examples below are the output of <computeroutput>tests/sources/minimal/src/main.cpp</computeroutput>.</para>
@@ -141,24 +142,27 @@
 <codeline><highlight class="normal">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>condition:<sp/>&quot;1<sp/>==<sp/>2&quot;</highlight></codeline>
 <codeline><highlight class="normal">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>at:</highlight></codeline>
 <codeline><highlight class="normal">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fileName:<sp/>checks.cpp</highlight></codeline>
-<codeline><highlight class="normal">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lineNumber:<sp/>454</highlight></codeline>
+<codeline><highlight class="normal">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lineNumber:<sp/>399</highlight></codeline>
 <codeline><highlight class="normal">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
 </programlisting></para>
-<para>To keep the complete report while the console shows only the failures, add an output file, which always receives the complete report:</para>
+<para>To keep the complete report while the console shows only the failures, add an output file, which always receives the complete report; the console then ends with a line that names the file:</para>
 <para><programlisting filename=".console"><codeline><highlight class="normal">$<sp/>sample-test<sp/>--quiet<sp/>--output-file=sample-test.tap</highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Test<sp/>output<sp/>written<sp/>to<sp/>&apos;sample-test.tap&apos;.</highlight></codeline>
 </programlisting></para>
 <para>When exceptions are not enabled and a failed requirement aborts the run, the results of the aborted test case are displayed in quiet mode too, since the totals are never reached.</para>
 </sect2>
 <sect2 id="group__micro-os-plus-micro-test-plus-cli_1cli-verbosity-silent">
-<title>Silent mode</title><para>Nothing is displayed on the console, and only the exit code reports the result; the output file, if any, is still written.</para>
+<title>Silent mode</title><para>Nothing is displayed on the console, and only the exit code reports the result; the output file, if any, is still written, and the errors of the options and of the rejected calls are still written on <computeroutput>stderr</computeroutput>. The output that was explicitly requested, with <computeroutput>--help</computeroutput> or <computeroutput>--list-tests</computeroutput>, is displayed.</para>
 </sect2>
 </sect1>
 <sect1 id="group__micro-os-plus-micro-test-plus-cli_1cli-output-file">
-<title>Output File</title><para><itemizedlist>
+<title>Output file</title><para><itemizedlist>
 <listitem><para><computeroutput>--output-file=&lt;path&gt;</computeroutput> or <computeroutput>--output-file &lt;path&gt;</computeroutput> – also write the report to a file.</para>
 </listitem></itemizedlist>
 </para>
 <para>The file receives the complete report, whatever the verbosity, with both reporters, and never receives colours, so it can be passed to other tools. It is truncated first, so it never keeps the results of an earlier run, and it also receives the option errors. If the file cannot be opened, the error is reported on <computeroutput>stderr</computeroutput> and on the console, no test runs, and the exit code is 2.</para>
+<para>When the run ends, the console shows a line with the path of the file (<computeroutput># Test output written to &apos;&lt;path&gt;&apos;.</computeroutput> with the TAP reporter, without the <computeroutput># </computeroutput> with the human-readable one); <computeroutput>--silent</computeroutput> omits it. An empty path (<computeroutput>--output-file=</computeroutput> or <computeroutput>--output-file ""</computeroutput>) writes no file, which also cancels an earlier <computeroutput>--output-file</computeroutput>.</para>
 <para>On platforms without a command line, the path is set in <computeroutput>runner_options::output_file_path</computeroutput>.</para>
 </sect1>
 <sect1 id="group__micro-os-plus-micro-test-plus-cli_1cli-filter">
@@ -215,7 +219,7 @@
 </programlisting></para>
 </sect1>
 <sect1 id="group__micro-os-plus-micro-test-plus-cli_1cli-list-tests">
-<title>Listing the Test Cases</title><para><itemizedlist>
+<title>Listing the test cases</title><para><itemizedlist>
 <listitem><para><computeroutput>--list-tests</computeroutput>, or <computeroutput>--list</computeroutput> – list the test cases instead of running them, as in Catch2 and Boost UT.</para>
 </listitem></itemizedlist>
 </para>

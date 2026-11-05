@@ -10,8 +10,20 @@ The condition is one of:
 - a function comparator, such as `mt::eq (actual, 42)`, or a combination
   of them, which reports the values of its operands;
 - an exception check, such as `mt::throws (...)`;
-- any value that converts to `bool`, such as `x == 1` or a
-  `std::optional`, which reports only the location of the failed check.
+- any other value that converts to `bool` in a condition, such as
+  `x == 1`, a pointer, or a `std::optional<int>`, which reports only the
+  location of the failed check.
+
+The values that would make the check pass by mistake do not compile: the
+string literals and the other character arrays and pointers, the function
+names, the pointers to functions and to members, and the wrappers of a
+`bool` (`std::optional<bool>` and the smart pointers to `bool`), whose
+condition tells whether a value is present, not what it is. The scoped
+enumerations do not compile either, since only a cast converts them. Write
+the comparison instead, such as `mt::eq (flag.value (), true)`. With the
+deprecated definitions enabled, all of these are accepted, with a
+deprecation warning, except the wrappers of a `bool` and the scoped
+enumerations.
 
 A message can be appended with `<<`, with any values that can be written,
 for example `t.expect (x == 2) << "x is " << x;`. The check is reported at

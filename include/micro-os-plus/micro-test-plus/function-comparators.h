@@ -31,10 +31,8 @@
  * (`negate`); their deprecated v5.0.1 names are declared in
  * `deprecated.h`.
  *
- * These comparators and logical operators enable expressive and type-safe test
- * expectations and assertions. The C strings (the arrays, including the
- * string literals, and the pointers of the character types) are compared
- * by content, and so are
+ * The C strings (the arrays, including the string literals, and the
+ * pointers of the character types) are compared by content, and so are
  * the other arrays (e.g. byte buffers), element by element; the other
  * pointers are compared by address.
  * The temporaries are moved into the returned expressions, and the named
@@ -50,10 +48,6 @@
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace.
- *
- * The header files are organised within the
- * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
- * modular codebase.
  *
  * This file is included by `micro-os-plus/micro-test-plus.h`, which is the
  * header that the applications include.

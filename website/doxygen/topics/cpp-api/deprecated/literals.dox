@@ -1,4 +1,4 @@
-@defgroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals Literals and Wrappers
+@defgroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals Literals and wrappers
 @brief Deprecated literal operators and wrappers for typed operands.
 
 @details
@@ -27,6 +27,14 @@ ts.test ("Check operands", [] (auto& t) {
 });
 @endcode
 
+@par The v5.0.1 aliases
+The wrappers had names with a leading underscore in v5.0.1: `_i`, `_u8`,
+`_f`, `_d`, `_t`, and the like, as in `mt::_i{ value }`. They are aliases
+of the `to_*` wrappers (`to_i`, `to_u8`, `to_f`, `to_d`, and `to_t`), and
+are deprecated since 6.0.0 in the same way, so the replacement is also the
+same: pass the plain value to the function comparators, or use
+`mt::approx (lhs, rhs, epsilon)` for the tolerances.
+
 @par Integer literals
 They follow the C++ syntax: decimal, hexadecimal (`0x10_i`), binary
 (`0b101_i`), and octal (`010_i`, which is 8), with digit separators
@@ -37,9 +45,9 @@ in the type of the literal (for example `300_u8`) is a compilation error.
 They are written with decimal digits and a decimal point, which is
 required (`42.0_f`, not `42_f`), optionally with digit separators
 (`1'000.000'5_d`), and without an exponent. The digits before the decimal
-point, and the decimals, are each limited to
-`std::numeric_limits<T>::digits10` of the type of the literal (for
-example 6 for `_f` and 15 for `_d`), otherwise the compilation fails.
+point, and the decimals, are each limited to 19 digits, the capacity of
+the `unsigned long long` that holds them at compile time, whatever the
+type of the literal (also for `_f`), otherwise the compilation fails.
 
 The floating-point literals (`1.5_d`) and wrappers (`mt::to_d{ 1.5 }`)
 compare with a tolerance of one unit of the last decimal written (0.1 for

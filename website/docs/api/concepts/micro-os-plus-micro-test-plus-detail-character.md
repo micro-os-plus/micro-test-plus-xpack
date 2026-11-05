@@ -17,7 +17,7 @@ keywords:
 
 # `character` Concept
 
-<p>C++20 concept satisfied by the character types. <a href="#details">More...</a></p>
+<p>Concept satisfied by the character types. <a href="#details">More...</a></p>
 
 ## Definition
 
@@ -32,7 +32,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 ## Description {#details}
 
-<p>C++20 concept satisfied by the character types.</p>
+<p>Concept satisfied by the character types.</p>
 
 
 <p>The <span class="doxyComputerOutput">character</span> concept is satisfied when the type, ignoring the cv-qualifiers, is one of <span class="doxyComputerOutput">char</span>, <span class="doxyComputerOutput">wchar_t</span>, <span class="doxyComputerOutput">char8_t</span>, <span class="doxyComputerOutput">char16_t</span>, or <span class="doxyComputerOutput">char32_t</span>. The comparators compare the arrays and the pointers of these types as strings (see <span class="doxyComputerOutput">basic_c_string</span>); <span class="doxyComputerOutput">signed char</span> and <span class="doxyComputerOutput">unsigned char</span> are not characters, but bytes.</p>
@@ -67,6 +67,6 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

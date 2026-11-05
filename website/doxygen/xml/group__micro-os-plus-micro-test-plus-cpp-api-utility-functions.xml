@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions" kind="group">
     <compoundname>micro-os-plus-micro-test-plus-cpp-api-utility-functions</compoundname>
-    <title>Utility Functions</title>
+    <title>Utility functions</title>
     <sectiondef kind="func">
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>const char *</type>
@@ -91,7 +91,7 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-uti
 </parameterlist>
 <simplesect kind="return"><para><computeroutput>true</computeroutput> if the input string matches the pattern; otherwise, <computeroutput>false</computeroutput>.</para>
 </simplesect>
-This function enables pattern-based string comparison for tests, supporting both exact matches and wildcard patterns. The pattern may include <computeroutput>*</computeroutput> to match any sequence of characters (including an empty one) and <computeroutput>?</computeroutput> to match any single character. This allows for flexible validation of string content in test assertions, accommodating variable or partially known values.</para>
+This function enables pattern-based string comparison for tests, supporting both exact matches and wildcard patterns. The pattern may include <computeroutput>*</computeroutput> to match any sequence of characters (including an empty one) and <computeroutput>?</computeroutput> to match any single character. This allows for flexible validation of string content in test checks, accommodating variable or partially known values.</para>
 <para>The match is iterative, with no recursion, so the stack usage is constant, which matters on embedded targets. When a mismatch occurs after a <computeroutput>*</computeroutput>, only the most recent <computeroutput>*</computeroutput> is retried, one character further in the input; the earlier ones never need to be, since any match they could produce is also found by the most recent one. The worst-case complexity is <computeroutput>O(n * m)</computeroutput>, for an input of length <computeroutput>n</computeroutput> and a pattern of length <computeroutput>m</computeroutput>.</para>
 <para>The function is also used by the runner to select the suites and the test cases matching the <computeroutput>--filter</computeroutput> patterns, for each of the alternatives separated by <computeroutput>|</computeroutput>.</para>
 <para><simplesect kind="par"><title>Examples</title><para>Both checks pass:</para>
@@ -160,7 +160,7 @@ The function iterates through the input, identifying the positions of any of the
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" line="214" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/utility.cpp" bodystart="214" bodyend="232" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/utility.h" declline="151" declcolumn="5"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" compoundref="utility-inlines_8h" startline="95" endline="113">micro_os_plus::micro_test_plus::utility::split</references>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" compoundref="utility-inlines_8h" startline="91" endline="109">micro_os_plus::micro_test_plus::utility::split</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -191,8 +191,9 @@ The function iterates through the input, identifying the positions of any of the
         <detaileddescription>
 <para>This function template splits a string into a vector of substrings, using the specified delimiter characters.</para>
 <para>The function iterates through the input string, identifying the positions of any of the delimiter characters (via <computeroutput>find_first_of()</computeroutput>) and extracting the substrings between them. Each non-empty substring is added to the output vector; empty substrings, such as those between consecutive delimiters, are omitted. This approach supports flexible parsing of delimited data, which is particularly useful for validating string processing logic in test cases.</para>
-<para><bold>Example</bold></para>
-<para><programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
+<para><simplesect kind="par"><title>Example</title><para></para>
+</simplesect>
+<programlisting filename=".cpp"><codeline><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal">t.expect<sp/>(std::vector&lt;std::string_view&gt;{<sp/></highlight><highlight class="stringliteral">&quot;a&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;b&quot;</highlight><highlight class="normal"><sp/>}</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>==<sp/>mt::utility::split&lt;std::string_view&gt;<sp/>(</highlight><highlight class="stringliteral">&quot;a.b&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal">))</highlight></codeline>
@@ -239,10 +240,10 @@ The function iterates through the input, identifying the positions of any of the
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/utility-inlines.h" line="95" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/utility-inlines.h" bodystart="95" bodyend="113" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/utility.h" declline="132" declcolumn="5"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" compoundref="utility-inlines_8h" startline="95" endline="113">micro_os_plus::micro_test_plus::utility::split</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/utility-inlines.h" line="91" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/utility-inlines.h" bodystart="91" bodyend="109" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/utility.h" declline="132" declcolumn="5"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" compoundref="utility-inlines_8h" startline="91" endline="109">micro_os_plus::micro_test_plus::utility::split</references>
         <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1gac17bb0b9be9a1ca01854c8bbbabc5def" compoundref="utility_8cpp" startline="214" endline="232">micro_os_plus::micro_test_plus::utility::split</referencedby>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" compoundref="utility-inlines_8h" startline="95" endline="113">micro_os_plus::micro_test_plus::utility::split</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga15af76191aa8ac1c6d679c55cc8847ff" compoundref="utility-inlines_8h" startline="91" endline="109">micro_os_plus::micro_test_plus::utility::split</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

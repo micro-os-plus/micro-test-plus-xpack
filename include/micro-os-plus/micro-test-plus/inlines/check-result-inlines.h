@@ -26,10 +26,6 @@
  * All definitions reside within the `micro_os_plus::micro_test_plus::detail`
  * namespace.
  *
- * The header files are organised within the
- * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
- * modular codebase.
- *
  * This file is included by `check-result.h`; the applications include
  * `micro-os-plus/micro-test-plus.h`, not this file.
  */

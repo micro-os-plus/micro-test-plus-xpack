@@ -17,7 +17,7 @@ keywords:
 
 # `character_pointer` Concept
 
-<p>C++20 concept satisfied by the pointers to the character types. <a href="#details">More...</a></p>
+<p>Concept satisfied by the pointers to the character types. <a href="#details">More...</a></p>
 
 ## Definition
 
@@ -29,7 +29,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 ## Description {#details}
 
-<p>C++20 concept satisfied by the pointers to the character types.</p>
+<p>Concept satisfied by the pointers to the character types.</p>
 
 
 <p>The <span class="doxyComputerOutput">character_pointer</span> concept is satisfied when the type is a pointer to a <span class="doxyComputerOutput">character</span>, possibly <span class="doxyComputerOutput">const</span>, but not <span class="doxyComputerOutput">volatile</span>. The formatter writes these pointers as C strings, and <span class="doxyComputerOutput">located_name</span> takes them as names.</p>
@@ -61,6 +61,6 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

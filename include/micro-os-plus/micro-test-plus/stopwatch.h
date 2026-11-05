@@ -14,7 +14,7 @@
 
 /**
  * @file
- * @brief C++ header file with the declaration of the µTest++ stopwatch.
+ * @brief C++ header file with declarations for the µTest++ stopwatch.
  *
  * @details
  * This header provides the `stopwatch` class, used to measure the

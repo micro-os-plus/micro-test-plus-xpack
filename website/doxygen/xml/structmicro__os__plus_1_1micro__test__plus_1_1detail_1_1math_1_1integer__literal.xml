@@ -18,8 +18,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="278" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="278" bodyend="-1"/>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" compoundref="deprecated-inlines_8h" startline="452" endline="471">micro_os_plus::micro_test_plus::detail::math::integer_magnitude</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="274" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="274" bodyend="-1"/>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" compoundref="deprecated-inlines_8h" startline="448" endline="467">micro_os_plus::micro_test_plus::detail::math::integer_magnitude</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_1a94438561fe06662519cf9687cc734fdb" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -35,8 +35,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="286" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="286" bodyend="-1"/>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" compoundref="deprecated-inlines_8h" startline="452" endline="471">micro_os_plus::micro_test_plus::detail::math::integer_magnitude</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="282" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="282" bodyend="-1"/>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" compoundref="deprecated-inlines_8h" startline="448" endline="467">micro_os_plus::micro_test_plus::detail::math::integer_magnitude</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_1a79fda0403a1ee1c8fafecbab9e80c815" prot="public" static="no" mutable="no">
         <type>unsigned long long</type>
@@ -52,8 +52,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="269" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="269" bodyend="-1"/>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" compoundref="deprecated-inlines_8h" startline="452" endline="471">micro_os_plus::micro_test_plus::detail::math::integer_magnitude</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="265" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="265" bodyend="-1"/>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" compoundref="deprecated-inlines_8h" startline="448" endline="467">micro_os_plus::micro_test_plus::detail::math::integer_magnitude</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -62,7 +62,7 @@
     <detaileddescription>
 <para>Returned by <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a9292deab69ef8584bc2604e76316ecfd" kindref="member">parse_integer_literal()</ref></computeroutput>; the checks of <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" kindref="member">integer_magnitude()</ref></computeroutput> are based on it. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="261" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="262" bodyend="287"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="257" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="258" bodyend="283"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_1ac09f666f846defca3cb8bd6e1b33c60e" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::math::integer_literal</scope><name>is_integer</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_1a94438561fe06662519cf9687cc734fdb" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::math::integer_literal</scope><name>is_too_large</name></member>

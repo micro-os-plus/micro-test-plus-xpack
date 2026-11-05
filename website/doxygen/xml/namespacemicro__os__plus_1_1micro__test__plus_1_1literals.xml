@@ -28,7 +28,7 @@
       <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" kind="function"><name>operator&quot;&quot;_us</name></member>
     </sectiondef>
     <briefdescription>
-<para>User-defined literals for the µTest++ testing framework. </para>
+<para>Deprecated user-defined literals of the test checks. </para>
     </briefdescription>
     <detaileddescription>
 <para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1literals" kindref="compound">literals</ref></computeroutput> namespace provides the deprecated user-defined literal operators, which set the type of the operands of the µTest++ comparators and operators.</para>
@@ -40,6 +40,6 @@
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1113" column="1"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1108" column="1"/>
   </compounddef>
 </doxygen>

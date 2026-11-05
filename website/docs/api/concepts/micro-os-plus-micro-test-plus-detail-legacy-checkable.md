@@ -17,7 +17,7 @@ keywords:
 
 # `legacy_checkable` Concept
 
-<p>C++20 concept satisfied when a type was accepted by <span class="doxyComputerOutput">expect()</span> and <span class="doxyComputerOutput">require()</span> before the exclusion of the suspicious conditions. <a href="#details">More...</a></p>
+<p>Concept satisfied when a type was accepted by <span class="doxyComputerOutput">expect()</span> and <span class="doxyComputerOutput">require()</span> before the exclusion of the suspicious conditions. <a href="#details">More...</a></p>
 
 ## Definition
 
@@ -29,7 +29,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 ## Description {#details}
 
-<p>C++20 concept satisfied when a type was accepted by <span class="doxyComputerOutput">expect()</span> and <span class="doxyComputerOutput">require()</span> before the exclusion of the suspicious conditions.</p>
+<p>Concept satisfied when a type was accepted by <span class="doxyComputerOutput">expect()</span> and <span class="doxyComputerOutput">require()</span> before the exclusion of the suspicious conditions.</p>
 
 
 <dl class="doxyParamsList">
@@ -47,7 +47,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>Satisfied by the types that are contextually convertible to <span class="doxyComputerOutput">bool</span> but are not <span class="doxyComputerOutput">checkable</span>, i.e. the <span class="doxyComputerOutput">suspicious_condition</span> types. It constrains the deprecated overloads of <span class="doxyComputerOutput">expect()</span> and <span class="doxyComputerOutput">require()</span>, which keep such code compiling for one release, with a warning.</p>
 
 
-<p>Definition at line 502 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 499 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -61,6 +61,6 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

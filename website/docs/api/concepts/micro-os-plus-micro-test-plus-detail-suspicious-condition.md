@@ -17,7 +17,7 @@ keywords:
 
 # `suspicious_condition` Concept
 
-<p>C++20 concept satisfied when a type is contextually convertible to <span class="doxyComputerOutput">bool</span>, but is most likely not a condition. <a href="#details">More...</a></p>
+<p>Concept satisfied when a type is contextually convertible to <span class="doxyComputerOutput">bool</span>, but is most likely not a condition. <a href="#details">More...</a></p>
 
 ## Definition
 
@@ -41,7 +41,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 ## Description {#details}
 
-<p>C++20 concept satisfied when a type is contextually convertible to <span class="doxyComputerOutput">bool</span>, but is most likely not a condition.</p>
+<p>Concept satisfied when a type is contextually convertible to <span class="doxyComputerOutput">bool</span>, but is most likely not a condition.</p>
 
 
 <dl class="doxyParamsList">
@@ -59,7 +59,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>The <span class="doxyComputerOutput">suspicious_condition</span> concept is satisfied by the arrays (including the string literals), the functions, the pointers to functions and to members, and the pointers to the character types. All of them are contextually convertible to <span class="doxyComputerOutput">bool</span>, so, when passed to <span class="doxyComputerOutput">expect()</span> or <span class="doxyComputerOutput">require()</span>, the check silently passes, usually because the description was written instead of the condition, or because a function name was written without the call. The pointers to other object types are not included, since checking a pointer for null is a legitimate use.</p>
 
 
-<p>Definition at line 242 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 238 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -85,6 +85,6 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

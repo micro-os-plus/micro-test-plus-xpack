@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>micro-test-plus: Logical Functions</title>
+<title>micro-test-plus: Logical functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__micro-o
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Logical Functions <div class="ingroups"><a class="el" href="group__micro-os-plus.html">µOS++ Topics</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus.html">µTest++</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api.html">C++ API</a></div></div></div>
+  <div class="headertitle"><div class="title">Logical functions <div class="ingroups"><a class="el" href="group__micro-os-plus.html">µOS++ Topics</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus.html">µTest++</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api.html">C++ API</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -207,34 +207,34 @@ requires (extension::checkable&lt;std::remove_cvref_t&lt;First_T&gt;&gt; and ext
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Constraints</dt><dd>Enabled only if each operand satisfies <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable.html" title="C++20 concept satisfied when a type can be used as a test expression in expect() or require().">extension::checkable</a></span>, as for <span class="tt">expect()</span>. </dd></dl>
+<dl class="section user"><dt>Constraints</dt><dd>Enabled only if each operand satisfies <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable.html" title="Concept satisfied when a type can be used as a test expression in expect() or require().">extension::checkable</a></span>, as for <span class="tt">expect()</span>. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>An object that evaluates to true if all the operand expressions are true.</dd></dl>
 <p>The <span class="tt"><a class="el" href="#ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" title="Generic logical and operation, for two or more operands.">all_of</a></span> function template provides a generic logical conjunction for any expression types. It constructs a <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html" title="Logical AND comparator struct template.">detail::and_op</a></span> logical conjunction object, which evaluates to <span class="tt">true</span> if all the operands are true. For more than two operands, the objects are nested from the left, <span class="tt">(a and b) and c</span>, and the expression formatter writes them as a single chain, <span class="tt">(a and b and c)</span>.</p>
 <p>All the operands are evaluated before the check, so, unlike the standard algorithm of the same name, the function does not stop at the first operand that is false.</p>
 <p>The name is the same as that of <span class="tt">std::all_of</span>: after a <span class="tt">using namespace std</span>, an unqualified call with three or more operands of the same type selects the standard algorithm, so the function must be called as <span class="tt">mt::all_of()</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00354">354</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  355</span>  {</div>
-<div class="line"><span class="lineno">  356</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">sizeof</span>...(Rest_T) == 0)</div>
-<div class="line"><span class="lineno">  357</span>      {</div>
-<div class="line"><span class="lineno">  358</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html">detail::and_op</a>{ std::forward&lt;First_T&gt; (first),</div>
-<div class="line"><span class="lineno">  359</span>                               std::forward&lt;Second_T&gt; (second) };</div>
-<div class="line"><span class="lineno">  360</span>      }</div>
-<div class="line"><span class="lineno">  361</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  362</span>      {</div>
-<div class="line"><span class="lineno">  363</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="#ga0a385c59a2f7d3c4cfef77d2d3b4f3d6">micro_test_plus::all_of</a> (</div>
-<div class="line"><span class="lineno">  364</span>            <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#abaf649db5561610c2f8bea816f2683d3">detail::and_op</a>{ std::forward&lt;First_T&gt; (first),</div>
-<div class="line"><span class="lineno">  365</span>                            std::forward&lt;Second_T&gt; (second) },</div>
-<div class="line"><span class="lineno">  366</span>            std::forward&lt;Rest_T&gt; (rest)...);</div>
-<div class="line"><span class="lineno">  367</span>      }</div>
-<div class="line"><span class="lineno">  368</span>  }</div>
-<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-cpp-api-logical-functions_html_ga0a385c59a2f7d3c4cfef77d2d3b4f3d6"><div class="ttname"><a href="#ga0a385c59a2f7d3c4cfef77d2d3b4f3d6">micro_os_plus::micro_test_plus::all_of</a></div><div class="ttdeci">constexpr auto all_of(First_T &amp;&amp;first, Second_T &amp;&amp;second, Rest_T &amp;&amp;... rest)</div><div class="ttdoc">Generic logical and operation, for two or more operands.</div><div class="ttdef"><b>Definition</b> <a href="function-comparators-inlines_8h_source.html#l00354">function-comparators-inlines.h:354</a></div></div>
+<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00360">360</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  361</span>  {</div>
+<div class="line"><span class="lineno">  362</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">sizeof</span>...(Rest_T) == 0)</div>
+<div class="line"><span class="lineno">  363</span>      {</div>
+<div class="line"><span class="lineno">  364</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html">detail::and_op</a>{ std::forward&lt;First_T&gt; (first),</div>
+<div class="line"><span class="lineno">  365</span>                               std::forward&lt;Second_T&gt; (second) };</div>
+<div class="line"><span class="lineno">  366</span>      }</div>
+<div class="line"><span class="lineno">  367</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  368</span>      {</div>
+<div class="line"><span class="lineno">  369</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="#ga0a385c59a2f7d3c4cfef77d2d3b4f3d6">micro_test_plus::all_of</a> (</div>
+<div class="line"><span class="lineno">  370</span>            <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#abaf649db5561610c2f8bea816f2683d3">detail::and_op</a>{ std::forward&lt;First_T&gt; (first),</div>
+<div class="line"><span class="lineno">  371</span>                            std::forward&lt;Second_T&gt; (second) },</div>
+<div class="line"><span class="lineno">  372</span>            std::forward&lt;Rest_T&gt; (rest)...);</div>
+<div class="line"><span class="lineno">  373</span>      }</div>
+<div class="line"><span class="lineno">  374</span>  }</div>
+<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-cpp-api-logical-functions_html_ga0a385c59a2f7d3c4cfef77d2d3b4f3d6"><div class="ttname"><a href="#ga0a385c59a2f7d3c4cfef77d2d3b4f3d6">micro_os_plus::micro_test_plus::all_of</a></div><div class="ttdeci">constexpr auto all_of(First_T &amp;&amp;first, Second_T &amp;&amp;second, Rest_T &amp;&amp;... rest)</div><div class="ttdoc">Generic logical and operation, for two or more operands.</div><div class="ttdef"><b>Definition</b> <a href="function-comparators-inlines_8h_source.html#l00360">function-comparators-inlines.h:360</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_abaf649db5561610c2f8bea816f2683d3"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#abaf649db5561610c2f8bea816f2683d3">micro_os_plus::micro_test_plus::detail::and_op</a></div><div class="ttdeci">and_op(Lhs_T &amp;&amp;, Rhs_T &amp;&amp;) -&gt; and_op&lt; stored_operand_t&lt; Lhs_T &gt;, stored_operand_t&lt; Rhs_T &gt; &gt;</div><div class="ttdoc">Deduction guide for the logical AND comparator.</div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html">micro_os_plus::micro_test_plus::detail::and_op</a></div><div class="ttdoc">Logical AND comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01075">detail.h:1076</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op.html">micro_os_plus::micro_test_plus::detail::and_op</a></div><div class="ttdoc">Logical AND comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01073">detail.h:1074</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="function-comparators-inlines_8h_source.html#l00354">all_of()</a>.</p>
+<p class="reference">References <a class="el" href="function-comparators-inlines_8h_source.html#l00360">all_of()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00700">_and()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00354">all_of()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00696">_and()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00360">all_of()</a>.</p>
 
 </div>
 </div>
@@ -289,33 +289,33 @@ requires (extension::checkable&lt;std::remove_cvref_t&lt;First_T&gt;&gt; and ext
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Constraints</dt><dd>Enabled only if each operand satisfies <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable.html" title="C++20 concept satisfied when a type can be used as a test expression in expect() or require().">extension::checkable</a></span>, as for <span class="tt">expect()</span>. </dd></dl>
+<dl class="section user"><dt>Constraints</dt><dd>Enabled only if each operand satisfies <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable.html" title="Concept satisfied when a type can be used as a test expression in expect() or require().">extension::checkable</a></span>, as for <span class="tt">expect()</span>. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>An object that evaluates to true if at least one of the operand expressions is true, including when all are.</dd></dl>
 <p>The <span class="tt"><a class="el" href="#gadc2224d07a9bf118c8772518a7d3c4fd" title="Generic logical (inclusive) or operation, for two or more operands.">any_of</a></span> function template provides a generic logical disjunction for any expression types. It constructs a <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op.html" title="Logical OR comparator struct template.">detail::or_op</a></span> logical disjunction object, which evaluates to <span class="tt">true</span> if at least one of the operands is true; the disjunction is inclusive, so the result is also true when all the conditions are true. For more than two operands, the objects are nested from the left, and the expression formatter writes them as a single chain, <span class="tt">(a or b or c)</span>.</p>
 <p>All the operands are evaluated before the check, so the function does not stop at the first operand that is true; and, as for <span class="tt"><a class="el" href="#ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" title="Generic logical and operation, for two or more operands.">all_of()</a></span>, it must be called as <span class="tt">mt::any_of()</span> after a <span class="tt">using namespace std</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00389">389</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  390</span>  {</div>
-<div class="line"><span class="lineno">  391</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">sizeof</span>...(Rest_T) == 0)</div>
-<div class="line"><span class="lineno">  392</span>      {</div>
-<div class="line"><span class="lineno">  393</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op.html">detail::or_op</a>{ std::forward&lt;First_T&gt; (first),</div>
-<div class="line"><span class="lineno">  394</span>                              std::forward&lt;Second_T&gt; (second) };</div>
-<div class="line"><span class="lineno">  395</span>      }</div>
-<div class="line"><span class="lineno">  396</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  397</span>      {</div>
-<div class="line"><span class="lineno">  398</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="#gadc2224d07a9bf118c8772518a7d3c4fd">micro_test_plus::any_of</a> (</div>
-<div class="line"><span class="lineno">  399</span>            <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a92a38209445666c9fdab2d9fb189cff0">detail::or_op</a>{ std::forward&lt;First_T&gt; (first),</div>
-<div class="line"><span class="lineno">  400</span>                           std::forward&lt;Second_T&gt; (second) },</div>
-<div class="line"><span class="lineno">  401</span>            std::forward&lt;Rest_T&gt; (rest)...);</div>
-<div class="line"><span class="lineno">  402</span>      }</div>
-<div class="line"><span class="lineno">  403</span>  }</div>
-<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-cpp-api-logical-functions_html_gadc2224d07a9bf118c8772518a7d3c4fd"><div class="ttname"><a href="#gadc2224d07a9bf118c8772518a7d3c4fd">micro_os_plus::micro_test_plus::any_of</a></div><div class="ttdeci">constexpr auto any_of(First_T &amp;&amp;first, Second_T &amp;&amp;second, Rest_T &amp;&amp;... rest)</div><div class="ttdoc">Generic logical (inclusive) or operation, for two or more operands.</div><div class="ttdef"><b>Definition</b> <a href="function-comparators-inlines_8h_source.html#l00389">function-comparators-inlines.h:389</a></div></div>
+<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00395">395</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  396</span>  {</div>
+<div class="line"><span class="lineno">  397</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">sizeof</span>...(Rest_T) == 0)</div>
+<div class="line"><span class="lineno">  398</span>      {</div>
+<div class="line"><span class="lineno">  399</span>        <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op.html">detail::or_op</a>{ std::forward&lt;First_T&gt; (first),</div>
+<div class="line"><span class="lineno">  400</span>                              std::forward&lt;Second_T&gt; (second) };</div>
+<div class="line"><span class="lineno">  401</span>      }</div>
+<div class="line"><span class="lineno">  402</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  403</span>      {</div>
+<div class="line"><span class="lineno">  404</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="#gadc2224d07a9bf118c8772518a7d3c4fd">micro_test_plus::any_of</a> (</div>
+<div class="line"><span class="lineno">  405</span>            <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a92a38209445666c9fdab2d9fb189cff0">detail::or_op</a>{ std::forward&lt;First_T&gt; (first),</div>
+<div class="line"><span class="lineno">  406</span>                           std::forward&lt;Second_T&gt; (second) },</div>
+<div class="line"><span class="lineno">  407</span>            std::forward&lt;Rest_T&gt; (rest)...);</div>
+<div class="line"><span class="lineno">  408</span>      }</div>
+<div class="line"><span class="lineno">  409</span>  }</div>
+<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-cpp-api-logical-functions_html_gadc2224d07a9bf118c8772518a7d3c4fd"><div class="ttname"><a href="#gadc2224d07a9bf118c8772518a7d3c4fd">micro_os_plus::micro_test_plus::any_of</a></div><div class="ttdeci">constexpr auto any_of(First_T &amp;&amp;first, Second_T &amp;&amp;second, Rest_T &amp;&amp;... rest)</div><div class="ttdoc">Generic logical (inclusive) or operation, for two or more operands.</div><div class="ttdef"><b>Definition</b> <a href="function-comparators-inlines_8h_source.html#l00395">function-comparators-inlines.h:395</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a92a38209445666c9fdab2d9fb189cff0"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a92a38209445666c9fdab2d9fb189cff0">micro_os_plus::micro_test_plus::detail::or_op</a></div><div class="ttdeci">or_op(Lhs_T &amp;&amp;, Rhs_T &amp;&amp;) -&gt; or_op&lt; stored_operand_t&lt; Lhs_T &gt;, stored_operand_t&lt; Rhs_T &gt; &gt;</div><div class="ttdoc">Deduction guide for the logical OR comparator.</div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op.html">micro_os_plus::micro_test_plus::detail::or_op</a></div><div class="ttdoc">Logical OR comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01130">detail.h:1131</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op.html">micro_os_plus::micro_test_plus::detail::or_op</a></div><div class="ttdoc">Logical OR comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01128">detail.h:1129</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="function-comparators-inlines_8h_source.html#l00389">any_of()</a>.</p>
+<p class="reference">References <a class="el" href="function-comparators-inlines_8h_source.html#l00395">any_of()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00713">_or()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00389">any_of()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00709">_or()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00395">any_of()</a>.</p>
 
 </div>
 </div>
@@ -356,22 +356,22 @@ requires extension::checkable&lt;std::remove_cvref_t&lt;Expr_T&gt;&gt;</div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Constraints</dt><dd>Enabled only if the operand satisfies <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable.html" title="C++20 concept satisfied when a type can be used as a test expression in expect() or require().">extension::checkable</a></span>, as for <span class="tt">expect()</span>; the values that are always true (C strings, arrays, function pointers) are rejected at compile time. </dd></dl>
+<dl class="section user"><dt>Constraints</dt><dd>Enabled only if the operand satisfies <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable.html" title="Concept satisfied when a type can be used as a test expression in expect() or require().">extension::checkable</a></span>, as for <span class="tt">expect()</span>; the values that are always true (C strings, arrays, function pointers) are rejected at compile time. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>An object that evaluates to true if the operand is false.</dd></dl>
 <p>The <span class="tt"><a class="el" href="#gae82d39ac86167bb4bfa6624676f3729e" title="Generic logical not operation.">negate</a></span> function template provides a generic logical negation for any expression type. It constructs a <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__op.html" title="Logical NOT comparator struct template.">detail::not_op</a></span> logical negator object, which evaluates to <span class="tt">true</span> if the operand is false; the template argument is named, since the class template argument deduction would copy an operand that is itself a <span class="tt">not_op</span>, instead of negating it.</p>
-<p>It is the function form of the <span class="tt">!</span> operator from the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1operators.html" title="Custom operator overloads for expressive and type-safe test assertions.">micro_test_plus::operators</a></span> namespace. </p>
+<p>It is the function form of the <span class="tt">!</span> operator from the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1operators.html" title="Deprecated comparison and logical operators of the test checks.">micro_test_plus::operators</a></span> namespace. </p>
 
-<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00324">324</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  325</span>  {</div>
-<div class="line"><span class="lineno">  326</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__op.html">detail::not_op&lt;detail::stored_operand_t&lt;Expr_T&gt;</a>&gt;{</div>
-<div class="line"><span class="lineno">  327</span>      std::forward&lt;Expr_T&gt; (expr)</div>
-<div class="line"><span class="lineno">  328</span>    };</div>
-<div class="line"><span class="lineno">  329</span>  }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__op.html">micro_os_plus::micro_test_plus::detail::not_op</a></div><div class="ttdoc">Logical NOT comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01188">detail.h:1189</a></div></div>
+<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00330">330</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  331</span>  {</div>
+<div class="line"><span class="lineno">  332</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__op.html">detail::not_op&lt;detail::stored_operand_t&lt;Expr_T&gt;</a>&gt;{</div>
+<div class="line"><span class="lineno">  333</span>      std::forward&lt;Expr_T&gt; (expr)</div>
+<div class="line"><span class="lineno">  334</span>    };</div>
+<div class="line"><span class="lineno">  335</span>  }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__op.html">micro_os_plus::micro_test_plus::detail::not_op</a></div><div class="ttdoc">Logical NOT comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01186">detail.h:1187</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="function-comparators-inlines_8h_source.html#l00324">negate()</a>.</p>
+<p class="reference">References <a class="el" href="function-comparators-inlines_8h_source.html#l00330">negate()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00687">_not()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00324">negate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00683">_not()</a>, and <a class="el" href="function-comparators-inlines_8h_source.html#l00330">negate()</a>.</p>
 
 </div>
 </div>

@@ -15,6 +15,6 @@
 <para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1utility" kindref="compound">micro_os_plus::micro_test_plus::utility</ref></computeroutput> namespace provides a suite of helper functions for the strings that the tests often check.</para>
 <para>These utilities include functions for extracting the file name from a path, for pattern matching (verifying whether a string matches a pattern with <computeroutput>*</computeroutput> and <computeroutput>?</computeroutput> wildcards), and for splitting strings into sub-strings based on delimiters. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/utility-inlines.h" line="63" column="3"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/utility-inlines.h" line="59" column="3"/>
   </compounddef>
 </doxygen>

@@ -191,7 +191,7 @@ On Windows, the current time is captured via <computeroutput>timespec_get()</com
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>C++ header file with the declaration of the µTest++ stopwatch. </para>
+<para>C++ header file with declarations for the µTest++ stopwatch. </para>
     </briefdescription>
     <detaileddescription>
 <para>This header provides the <computeroutput>stopwatch</computeroutput> class, used to measure the elapsed time of the test suites and of the test session within the µTest++ framework. The stopwatch is started before the measured operation, stopped after it, and then reports the elapsed time as a <computeroutput>std::chrono::microseconds</computeroutput> duration.</para>

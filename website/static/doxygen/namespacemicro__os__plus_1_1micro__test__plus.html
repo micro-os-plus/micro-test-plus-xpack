@@ -125,11 +125,11 @@ Namespaces</h2></td></tr>
 <tr class="memitem:detail" id="r_detail"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html">detail</a></td></tr>
 <tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1detail"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal implementation details for the µTest++ framework. <br /></td></tr>
 <tr class="memitem:extension" id="r_extension"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1extension.html">extension</a></td></tr>
-<tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1extension"><td class="mdescLeft">&#160;</td><td class="mdescRight">The concepts for extending the µTest++ testing framework. <br /></td></tr>
+<tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1extension"><td class="mdescLeft">&#160;</td><td class="mdescRight">The templates and the concepts for extending the µTest++ testing framework. <br /></td></tr>
 <tr class="memitem:literals" id="r_literals"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1literals.html">literals</a></td></tr>
-<tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1literals"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-defined literals for the µTest++ testing framework. <br /></td></tr>
+<tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1literals"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated user-defined literals of the test checks. <br /></td></tr>
 <tr class="memitem:operators" id="r_operators"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1operators.html">operators</a></td></tr>
-<tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1operators"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom operator overloads for expressive and type-safe test assertions. <br /></td></tr>
+<tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1operators"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated comparison and logical operators of the test checks. <br /></td></tr>
 <tr class="memitem:reflection" id="r_reflection"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection.html">reflection</a></td></tr>
 <tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1reflection"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reflection utilities for the µTest++ testing framework. <br /></td></tr>
 <tr class="memitem:type_5Ftraits" id="r_type_5Ftraits"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html">type_traits</a></td></tr>
@@ -226,7 +226,7 @@ Typedefs</h2></td></tr>
 <tr class="memdesc:gaeba32254fdd8159523b525745b13bfa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated strongly-typed wrapper for <span class="tt">long double</span> values.  <br /></td></tr>
 <tr id="typedef-members-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Deprecated Type Wrappers</div></td></tr>
 <tr><td colspan="2" class="ititle"><div class="groupText"><p>The v5.0.1 names of the <span class="tt">to_*</span> type wrappers.</p>
-<p>The Boost UT style names, with a leading underscore, kept for compatibility with the existing applications. Each one is an alias of the corresponding <span class="tt">to_*</span> wrapper, so the wrapped values are compared and reported in the same way. They do not conflict with the literal operators with the same suffixes (<span class="tt">42<a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga8468610e763177a8f569f7d618851288" title="Deprecated strongly-typed wrapper for int values, the v5.0.1 name of to_i.">_i</a></span>), which are in the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1literals.html" title="User-defined literals for the µTest++ testing framework.">literals</a></span> namespace.</p>
+<p>The Boost UT style names, with a leading underscore, kept for compatibility with the existing applications. Each one is an alias of the corresponding <span class="tt">to_*</span> wrapper, so the wrapped values are compared and reported in the same way. They do not conflict with the literal operators with the same suffixes (<span class="tt">42<a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga8468610e763177a8f569f7d618851288" title="Deprecated strongly-typed wrapper for int values, the v5.0.1 name of to_i.">_i</a></span>), which are in the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1literals.html" title="Deprecated user-defined literals of the test checks.">literals</a></span> namespace.</p>
 <p>GCC reports the deprecation only when the alias names the type of a declaration, not when it is used in an expression, as in <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga8468610e763177a8f569f7d618851288" title="Deprecated strongly-typed wrapper for int values, the v5.0.1 name of to_i.">_i</a> (expr)</span>; Clang reports it in both cases.</p>
 <dl class="section user"><dt>Deprecated</dt><dd>Pass the plain values to the function comparators <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga0fbc0f7ddf0107c1e5265bb79287487d" title="Generic equality comparator.">eq()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga92cdc2dde6af040f2f5f5df677df0985" title="Generic non-equality comparator.">ne()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga90da2cbc14b4562332a205d5b232356f" title="Generic greater than comparator.">gt()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga58c7dacabca3fe1b0dc025a0e0f30e9e" title="Generic greater than or equal comparator.">ge()</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga493a42c738ef38b45a28b06a2155aa00" title="Generic less than comparator.">lt()</a></span>, and <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga9125d2dd997269eecc0d8239d5df67e5" title="Generic less than or equal comparator.">le()</a></span> instead; the <span class="tt">to_*</span> type wrappers that replaced these aliases (since 3.2.0) are deprecated too (since 6.0.0). </dd></dl>
 </div></td></tr>
@@ -282,33 +282,33 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a603af2d1c9643caa351305180b2e905b" id="r_a603af2d1c9643caa351305180b2e905b"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a603af2d1c9643caa351305180b2e905b">colour_mode</a> { <br />
-&#160;&#160;<a class="el" href="#a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8">automatic</a>
+<tr class="memitem:ga603af2d1c9643caa351305180b2e905b" id="r_ga603af2d1c9643caa351305180b2e905b"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-runners.html#ga603af2d1c9643caa351305180b2e905b">colour_mode</a> { <br />
+&#160;&#160;<a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-runners.html#gga603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8">colour_mode::automatic</a>
 , <br />
-&#160;&#160;<a class="el" href="#a603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb">always</a>
+&#160;&#160;<a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-runners.html#gga603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb">colour_mode::always</a>
 , <br />
-&#160;&#160;<a class="el" href="#a603af2d1c9643caa351305180b2e905bac7561db7a418dd39b2201dfe110ab4a4">never</a>
+&#160;&#160;<a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-runners.html#gga603af2d1c9643caa351305180b2e905bac7561db7a418dd39b2201dfe110ab4a4">colour_mode::never</a>
 <br />
  }</td></tr>
-<tr class="memdesc:a603af2d1c9643caa351305180b2e905b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The use of colours in the console output.  <a href="#a603af2d1c9643caa351305180b2e905b">More...</a><br /></td></tr>
-<tr class="memitem:a913c4161963e9439b20857358486e8b2" id="r_a913c4161963e9439b20857358486e8b2"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a913c4161963e9439b20857358486e8b2">reporter_kind</a> { <br />
-&#160;&#160;<a class="el" href="#a913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b">tap</a>
+<tr class="memdesc:ga603af2d1c9643caa351305180b2e905b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The use of colours in the console output.  <a href="group__micro-os-plus-micro-test-plus-cpp-api-runners.html#ga603af2d1c9643caa351305180b2e905b">More...</a><br /></td></tr>
+<tr class="memitem:ga913c4161963e9439b20857358486e8b2" id="r_ga913c4161963e9439b20857358486e8b2"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-runners.html#ga913c4161963e9439b20857358486e8b2">reporter_kind</a> { <br />
+&#160;&#160;<a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-runners.html#gga913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b">reporter_kind::tap</a>
 , <br />
-&#160;&#160;<a class="el" href="#a913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70">human</a>
+&#160;&#160;<a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-runners.html#gga913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70">reporter_kind::human</a>
 <br />
  }</td></tr>
-<tr class="memdesc:a913c4161963e9439b20857358486e8b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The built-in reporters.  <a href="#a913c4161963e9439b20857358486e8b2">More...</a><br /></td></tr>
-<tr class="memitem:a809871d76f29309ed9c6fbd96d5a914b" id="r_a809871d76f29309ed9c6fbd96d5a914b"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a809871d76f29309ed9c6fbd96d5a914b">verbosity</a> { <br />
-&#160;&#160;<a class="el" href="#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">silent</a> = 0
+<tr class="memdesc:ga913c4161963e9439b20857358486e8b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The built-in reporters.  <a href="group__micro-os-plus-micro-test-plus-cpp-api-runners.html#ga913c4161963e9439b20857358486e8b2">More...</a><br /></td></tr>
+<tr class="memitem:ga809871d76f29309ed9c6fbd96d5a914b" id="r_ga809871d76f29309ed9c6fbd96d5a914b"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-runners.html#ga809871d76f29309ed9c6fbd96d5a914b">verbosity</a> { <br />
+&#160;&#160;<a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-runners.html#gga809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">verbosity::silent</a> = 0
 , <br />
-&#160;&#160;<a class="el" href="#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">quiet</a> = 1
+&#160;&#160;<a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-runners.html#gga809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">verbosity::quiet</a> = 1
 , <br />
-&#160;&#160;<a class="el" href="#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">normal</a> = 2
+&#160;&#160;<a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-runners.html#gga809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">verbosity::normal</a> = 2
 , <br />
-&#160;&#160;<a class="el" href="#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbose</a> = 3
+&#160;&#160;<a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-runners.html#gga809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbosity::verbose</a> = 3
 <br />
  }</td></tr>
-<tr class="memdesc:a809871d76f29309ed9c6fbd96d5a914b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The verbosity levels for test reporting.  <a href="#a809871d76f29309ed9c6fbd96d5a914b">More...</a><br /></td></tr>
+<tr class="memdesc:ga809871d76f29309ed9c6fbd96d5a914b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The verbosity levels for test reporting.  <a href="group__micro-os-plus-micro-test-plus-cpp-api-runners.html#ga809871d76f29309ed9c6fbd96d5a914b">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -339,42 +339,22 @@ requires (extension::approx_operand&lt;Lhs_T&gt; and extension::approx_operand&l
 requires std::is_floating_point_v&lt;T&gt;</td></tr>
 <tr class="memitem:gafe47800a219b00fcccf0a1dc596dbe20 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gafe47800a219b00fcccf0a1dc596dbe20">approx</a> (T value, std::type_identity_t&lt; T &gt; epsilon) noexcept -&gt; <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">detail::value</a>&lt; T &gt;</td></tr>
 <tr class="memdesc:gafe47800a219b00fcccf0a1dc596dbe20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated wrapping of a floating-point value with an explicit comparison tolerance.  <br /></td></tr>
-<tr class="memitem:ab88360ce7994d5e5ac71deff0450a638" id="r_ab88360ce7994d5e5ac71deff0450a638"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
-requires (not detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba465289687a70db7aa7217cc240c29f0f">detail::comparison::equal</a>, Lhs_T, Rhs_T&gt;)</td></tr>
-<tr class="memitem:ab88360ce7994d5e5ac71deff0450a638 template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#ab88360ce7994d5e5ac71deff0450a638">eq</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
-<tr class="memdesc:ab88360ce7994d5e5ac71deff0450a638"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rejects operands that cannot be compared with <span class="tt">==</span> or written.  <br /></td></tr>
 <tr class="memitem:ga0fbc0f7ddf0107c1e5265bb79287487d" id="r_ga0fbc0f7ddf0107c1e5265bb79287487d"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
 requires detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba465289687a70db7aa7217cc240c29f0f">detail::comparison::equal</a>, Lhs_T, Rhs_T&gt;</td></tr>
 <tr class="memitem:ga0fbc0f7ddf0107c1e5265bb79287487d template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga0fbc0f7ddf0107c1e5265bb79287487d">eq</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
 <tr class="memdesc:ga0fbc0f7ddf0107c1e5265bb79287487d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic equality comparator.  <br /></td></tr>
-<tr class="memitem:a7a3c75c65882a8e5a274500789cf3c94" id="r_a7a3c75c65882a8e5a274500789cf3c94"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
-requires (not detail::comparable_operands&lt; <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2">detail::comparison::greater_equal</a>, Lhs_T, Rhs_T&gt;)</td></tr>
-<tr class="memitem:a7a3c75c65882a8e5a274500789cf3c94 template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#a7a3c75c65882a8e5a274500789cf3c94">ge</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
-<tr class="memdesc:a7a3c75c65882a8e5a274500789cf3c94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rejects operands that cannot be compared with <span class="tt">&gt;=</span> or written.  <br /></td></tr>
 <tr class="memitem:ga58c7dacabca3fe1b0dc025a0e0f30e9e" id="r_ga58c7dacabca3fe1b0dc025a0e0f30e9e"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
 requires detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2">detail::comparison::greater_equal</a>, Lhs_T, Rhs_T&gt;</td></tr>
 <tr class="memitem:ga58c7dacabca3fe1b0dc025a0e0f30e9e template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga58c7dacabca3fe1b0dc025a0e0f30e9e">ge</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
 <tr class="memdesc:ga58c7dacabca3fe1b0dc025a0e0f30e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic greater than or equal comparator.  <br /></td></tr>
-<tr class="memitem:a2dd96a2ee35e669ddab6d883caeb3df2" id="r_a2dd96a2ee35e669ddab6d883caeb3df2"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
-requires (not detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba7b8dc4fb0fb55fc8eb69ff080c45ed7e">detail::comparison::greater</a>, Lhs_T, Rhs_T&gt;)</td></tr>
-<tr class="memitem:a2dd96a2ee35e669ddab6d883caeb3df2 template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#a2dd96a2ee35e669ddab6d883caeb3df2">gt</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
-<tr class="memdesc:a2dd96a2ee35e669ddab6d883caeb3df2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rejects operands that cannot be compared with <span class="tt">&gt;</span> or written.  <br /></td></tr>
 <tr class="memitem:ga90da2cbc14b4562332a205d5b232356f" id="r_ga90da2cbc14b4562332a205d5b232356f"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
 requires detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba7b8dc4fb0fb55fc8eb69ff080c45ed7e">detail::comparison::greater</a>, Lhs_T, Rhs_T&gt;</td></tr>
 <tr class="memitem:ga90da2cbc14b4562332a205d5b232356f template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga90da2cbc14b4562332a205d5b232356f">gt</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
 <tr class="memdesc:ga90da2cbc14b4562332a205d5b232356f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic greater than comparator.  <br /></td></tr>
-<tr class="memitem:a434995a43c1ab9d2b75f1ee5e535c48b" id="r_a434995a43c1ab9d2b75f1ee5e535c48b"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
-requires (not detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba77932225fb35fc4b74dc8fabf0992dac">detail::comparison::less_equal</a>, Lhs_T, Rhs_T&gt;)</td></tr>
-<tr class="memitem:a434995a43c1ab9d2b75f1ee5e535c48b template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#a434995a43c1ab9d2b75f1ee5e535c48b">le</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
-<tr class="memdesc:a434995a43c1ab9d2b75f1ee5e535c48b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rejects operands that cannot be compared with <span class="tt">&lt;=</span> or written.  <br /></td></tr>
 <tr class="memitem:ga9125d2dd997269eecc0d8239d5df67e5" id="r_ga9125d2dd997269eecc0d8239d5df67e5"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
 requires detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba77932225fb35fc4b74dc8fabf0992dac">detail::comparison::less_equal</a>, Lhs_T, Rhs_T&gt;</td></tr>
 <tr class="memitem:ga9125d2dd997269eecc0d8239d5df67e5 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga9125d2dd997269eecc0d8239d5df67e5">le</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
 <tr class="memdesc:ga9125d2dd997269eecc0d8239d5df67e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic less than or equal comparator.  <br /></td></tr>
-<tr class="memitem:a1584ff2a522d8d452b9b1b8b12ce0bb4" id="r_a1584ff2a522d8d452b9b1b8b12ce0bb4"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
-requires (not detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0bae37e8d912e8f7b8f9b5ef9452ba47ff1">detail::comparison::less</a>, Lhs_T, Rhs_T&gt;)</td></tr>
-<tr class="memitem:a1584ff2a522d8d452b9b1b8b12ce0bb4 template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#a1584ff2a522d8d452b9b1b8b12ce0bb4">lt</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
-<tr class="memdesc:a1584ff2a522d8d452b9b1b8b12ce0bb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rejects operands that cannot be compared with <span class="tt">&lt;</span> or written.  <br /></td></tr>
 <tr class="memitem:ga493a42c738ef38b45a28b06a2155aa00" id="r_ga493a42c738ef38b45a28b06a2155aa00"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
 requires detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0bae37e8d912e8f7b8f9b5ef9452ba47ff1">detail::comparison::less</a>, Lhs_T, Rhs_T&gt;</td></tr>
 <tr class="memitem:ga493a42c738ef38b45a28b06a2155aa00 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga493a42c738ef38b45a28b06a2155aa00">lt</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
@@ -382,10 +362,6 @@ requires detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__
 <tr class="memitem:ga00ea8f3dfb7cb0ef39919065321cf62f" id="r_ga00ea8f3dfb7cb0ef39919065321cf62f"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:ga00ea8f3dfb7cb0ef39919065321cf62f template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga00ea8f3dfb7cb0ef39919065321cf62f">mut</a> (const T &amp;t) noexcept -&gt; T &amp;</td></tr>
 <tr class="memdesc:ga00ea8f3dfb7cb0ef39919065321cf62f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated generic mutator to remove const qualification from a reference.  <br /></td></tr>
-<tr class="memitem:aa9d632f3209a350a25b6b57eebfacb6b" id="r_aa9d632f3209a350a25b6b57eebfacb6b"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
-requires (not detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba96ee5c0e2a7149613e7fd0b83316486e">detail::comparison::not_equal</a>, Lhs_T, Rhs_T&gt;)</td></tr>
-<tr class="memitem:aa9d632f3209a350a25b6b57eebfacb6b template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#aa9d632f3209a350a25b6b57eebfacb6b">ne</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
-<tr class="memdesc:aa9d632f3209a350a25b6b57eebfacb6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rejects operands that cannot be compared with <span class="tt">!=</span> or written.  <br /></td></tr>
 <tr class="memitem:ga92cdc2dde6af040f2f5f5df677df0985" id="r_ga92cdc2dde6af040f2f5f5df677df0985"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
 requires detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba96ee5c0e2a7149613e7fd0b83316486e">detail::comparison::not_equal</a>, Lhs_T, Rhs_T&gt;</td></tr>
 <tr class="memitem:ga92cdc2dde6af040f2f5f5df677df0985 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga92cdc2dde6af040f2f5f5df677df0985">ne</a> (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</td></tr>
@@ -409,483 +385,9 @@ requires std::invocable&lt;Callable_T&amp;&gt;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus.html" title="Primary namespace for the µTest++ testing framework.">micro_os_plus::micro_test_plus</a></span> namespace encapsulates all core components, types, and utilities of the µTest++ testing framework, providing a dedicated scope for its public API.</p>
-<p>The main classes (the runners, and the suites and test cases) are defined directly in this namespace. Several nested namespaces group specific aspects of the framework: <span class="tt">math</span> (mathematical utilities), <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1extension.html" title="The concepts for extending the µTest++ testing framework.">extension</a></span> (the concepts for custom comparators, operators, and helpers), <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection.html" title="Reflection utilities for the µTest++ testing framework.">reflection</a></span> (source locations and type names), <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1literals.html" title="User-defined literals for the µTest++ testing framework.">literals</a></span> (user-defined literals), <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1operators.html" title="Custom operator overloads for expressive and type-safe test assertions.">operators</a></span> (comparison and logical operators), <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1utility.html" title="Utility functions for the µTest++ testing framework.">utility</a></span> (utility functions), and <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html" title="Internal implementation details for the µTest++ framework.">detail</a></span> (internal implementation details, including the reporters and the value wrappers).</p>
+<p>The main classes (the runner, the suites, and the test cases) are defined directly in this namespace. Several nested namespaces group specific aspects of the framework: <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1extension.html" title="The templates and the concepts for extending the µTest++ testing framework.">extension</a></span> (the concepts for custom comparators, operators, and helpers), <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection.html" title="Reflection utilities for the µTest++ testing framework.">reflection</a></span> (source locations and type names), <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1utility.html" title="Utility functions for the µTest++ testing framework.">utility</a></span> (utility functions), and <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html" title="Internal implementation details for the µTest++ framework.">detail</a></span> (internal implementation details, including the reporters, the mathematical utilities of <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html" title="Internal mathematical utilities for the µTest++ testing framework.">detail::math</a></span>, and the value wrappers). The namespaces <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1literals.html" title="Deprecated user-defined literals of the test checks.">literals</a></span> (user-defined literals), <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1operators.html" title="Deprecated comparison and logical operators of the test checks.">operators</a></span> (comparison and logical operators), and <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html" title="Deprecated v5.0.1 namespace of the concepts and of the value wrapper templates.">type_traits</a></span> (the v5.0.1 concepts) are deprecated, and are kept for the earlier code.</p>
 <p>The declarations are in the headers of the <span class="tt">include/micro-os-plus/micro-test-plus</span> folder, and the non-inline definitions in the <span class="tt">src</span> folder. </p>
-</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
-<a id="a603af2d1c9643caa351305180b2e905b" name="a603af2d1c9643caa351305180b2e905b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a603af2d1c9643caa351305180b2e905b">&#9670;&#160;</a></span>colour_mode</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum class <a class="el" href="#a603af2d1c9643caa351305180b2e905b">micro_os_plus::micro_test_plus::colour_mode</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Selected with the <span class="tt">--colour</span> command-line option (or its American spelling <span class="tt">--color</span>, or its alternative <span class="tt">--use-colour</span>, also spelled <span class="tt">--use-color</span>), or with <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner__options.html#a48ed4dd71eff02911c2d6943ba616850" title="Whether the console output uses colours.">runner_options::colour</a></span>; the default is <span class="tt">automatic</span>. The names follow the values of <span class="tt">--color</span> in the GNU tools.</p>
-<p>Only the human-readable reporter uses colours; the TAP reporter never does, since the ANSI escape sequences are not part of the TAP syntax. The output file never receives colours, whatever the mode.</p>
-<dl class="section since"><dt>Since</dt><dd>6.0.0 </dd></dl>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8" name="a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8"></a>automatic&#160;</td><td class="fielddoc"><p>Colours are used when <span class="tt">stdout</span> is a terminal; on the platforms without <span class="tt">isatty()</span>, such as the embedded ones, they are not used. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb" name="a603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb"></a>always&#160;</td><td class="fielddoc"><p>Colours are always used, for example in the CI systems that render the ANSI escape sequences but do not provide a terminal, or on embedded targets whose output is displayed by a terminal. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a603af2d1c9643caa351305180b2e905bac7561db7a418dd39b2201dfe110ab4a4" name="a603af2d1c9643caa351305180b2e905bac7561db7a418dd39b2201dfe110ab4a4"></a>never&#160;</td><td class="fielddoc"><p>Colours are never used. </p>
-</td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00149">149</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  150</span>  {</div>
-<div class="line"><span class="lineno">  151</span>    <a class="code hl_enumvalue" href="#a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8">automatic</a>, </div>
-<div class="line"><span class="lineno">  154</span>    <a class="code hl_enumvalue" href="#a603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb">always</a>, </div>
-<div class="line"><span class="lineno">  158</span>    <a class="code hl_enumvalue" href="#a603af2d1c9643caa351305180b2e905bac7561db7a418dd39b2201dfe110ab4a4">never</a> </div>
-<div class="line"><span class="lineno">  159</span>  };</div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8"><div class="ttname"><a href="#a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8">micro_os_plus::micro_test_plus::colour_mode::automatic</a></div><div class="ttdeci">@ automatic</div><div class="ttdef"><b>Definition</b> <a href="runner-options_8h_source.html#l00151">runner-options.h:151</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a603af2d1c9643caa351305180b2e905bac7561db7a418dd39b2201dfe110ab4a4"><div class="ttname"><a href="#a603af2d1c9643caa351305180b2e905bac7561db7a418dd39b2201dfe110ab4a4">micro_os_plus::micro_test_plus::colour_mode::never</a></div><div class="ttdeci">@ never</div><div class="ttdef"><b>Definition</b> <a href="runner-options_8h_source.html#l00158">runner-options.h:158</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb"><div class="ttname"><a href="#a603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb">micro_os_plus::micro_test_plus::colour_mode::always</a></div><div class="ttdeci">@ always</div><div class="ttdef"><b>Definition</b> <a href="runner-options_8h_source.html#l00154">runner-options.h:154</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a913c4161963e9439b20857358486e8b2" name="a913c4161963e9439b20857358486e8b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a913c4161963e9439b20857358486e8b2">&#9670;&#160;</a></span>reporter_kind</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum class <a class="el" href="#a913c4161963e9439b20857358486e8b2">micro_os_plus::micro_test_plus::reporter_kind</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Selected with the <span class="tt">--reporter</span> command-line option, or with <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner__options.html#ad22d04df014c5b0658b6e7bd239f15b0" title="The reporter that displays the results.">runner_options::selected_reporter</a></span>; the default is <span class="tt">tap</span>.</p>
-<dl class="section since"><dt>Since</dt><dd>6.0.0 </dd></dl>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b" name="a913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b"></a>tap&#160;</td><td class="fielddoc"><p>The TAP reporter, compliant with TAP version 14. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70" name="a913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70"></a>human&#160;</td><td class="fielddoc"><p>The human-readable reporter, with optional colours. </p>
-</td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00125">125</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  126</span>  {</div>
-<div class="line"><span class="lineno">  127</span>    <a class="code hl_enumvalue" href="#a913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b">tap</a>, </div>
-<div class="line"><span class="lineno">  128</span>    <a class="code hl_enumvalue" href="#a913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70">human</a> </div>
-<div class="line"><span class="lineno">  129</span>  };</div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b"><div class="ttname"><a href="#a913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b">micro_os_plus::micro_test_plus::reporter_kind::tap</a></div><div class="ttdeci">@ tap</div><div class="ttdef"><b>Definition</b> <a href="runner-options_8h_source.html#l00127">runner-options.h:127</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70"><div class="ttname"><a href="#a913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70">micro_os_plus::micro_test_plus::reporter_kind::human</a></div><div class="ttdeci">@ human</div><div class="ttdef"><b>Definition</b> <a href="runner-options_8h_source.html#l00128">runner-options.h:128</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a809871d76f29309ed9c6fbd96d5a914b" name="a809871d76f29309ed9c6fbd96d5a914b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a809871d76f29309ed9c6fbd96d5a914b">&#9670;&#160;</a></span>verbosity</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum class <a class="el" href="#a809871d76f29309ed9c6fbd96d5a914b">micro_os_plus::micro_test_plus::verbosity</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>The level is selected with the <span class="tt">--silent</span>, <span class="tt">--quiet</span>, and <span class="tt">--verbose</span> command-line options, or with <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner__options.html#aff30f0303a958a549a2f4b6e67db00d5" title="The level of detail of the console output.">runner_options::verbosity_level</a></span>; the default is <span class="tt">normal</span>. The console output is intended for the people who watch the tests run, while the optional output file is intended for the integration with other tools. The level affects only the console output; the output file always receives the full report.</p>
-<p>The <span class="tt">quiet</span> level displays the failed checks, with the names of the suite and of the test cases that contain them, and the totals; the passed checks and the passed test cases are not displayed. To also see them, use the <span class="tt">verbose</span> level, or keep <span class="tt">quiet</span> and use an output file, which receives them. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15" name="a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15"></a>silent&#160;</td><td class="fielddoc"><p>No console output; only the exit code is returned. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d" name="a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d"></a>quiet&#160;</td><td class="fielddoc"><p>Displays only the failed checks and the overall session summary; the TAP reporter also displays one result line per test suite, counted by the plan, and the failed checks as comments. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" name="a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555"></a>normal&#160;</td><td class="fielddoc"><p>Displays test suite and test case results; the individual checks are shown only for failures, the passed checks being counted, and, in the TAP blocks, numbered by bare <span class="tt">ok</span> lines. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" name="a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0"></a>verbose&#160;</td><td class="fielddoc"><p>Displays all results, including passed checks, for maximum detail. </p>
-</td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="runner-options_8h_source.html#l00099">99</a> of file <a class="el" href="runner-options_8h_source.html">runner-options.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  100</span>  {</div>
-<div class="line"><span class="lineno">  101</span>    <a class="code hl_enumvalue" href="#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">silent</a> = 0, </div>
-<div class="line"><span class="lineno">  102</span>    <a class="code hl_enumvalue" href="#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">quiet</a> = 1, </div>
-<div class="line"><span class="lineno">  106</span>    <a class="code hl_enumvalue" href="#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">normal</a> = 2, </div>
-<div class="line"><span class="lineno">  110</span>    <a class="code hl_enumvalue" href="#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">verbose</a> = 3 </div>
-<div class="line"><span class="lineno">  112</span>  };</div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0"><div class="ttname"><a href="#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0">micro_os_plus::micro_test_plus::verbosity::verbose</a></div><div class="ttdeci">@ verbose</div><div class="ttdef"><b>Definition</b> <a href="runner-options_8h_source.html#l00110">runner-options.h:110</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d"><div class="ttname"><a href="#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d">micro_os_plus::micro_test_plus::verbosity::quiet</a></div><div class="ttdeci">@ quiet</div><div class="ttdef"><b>Definition</b> <a href="runner-options_8h_source.html#l00102">runner-options.h:102</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15"><div class="ttname"><a href="#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15">micro_os_plus::micro_test_plus::verbosity::silent</a></div><div class="ttdeci">@ silent</div><div class="ttdef"><b>Definition</b> <a href="runner-options_8h_source.html#l00101">runner-options.h:101</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html_a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555"><div class="ttname"><a href="#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555">micro_os_plus::micro_test_plus::verbosity::normal</a></div><div class="ttdeci">@ normal</div><div class="ttdef"><b>Definition</b> <a href="runner-options_8h_source.html#l00106">runner-options.h:106</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="ab88360ce7994d5e5ac71deff0450a638" name="ab88360ce7994d5e5ac71deff0450a638"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab88360ce7994d5e5ac71deff0450a638">&#9670;&#160;</a></span>eq()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Lhs_T, class Rhs_T&gt; <br />
-requires (not detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba465289687a70db7aa7217cc240c29f0f">detail::comparison::equal</a>, Lhs_T, Rhs_T&gt;)</div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool micro_os_plus::micro_test_plus::eq </td>
-          <td>(</td>
-          <td class="paramtype">Lhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Rhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Selected for the operands that <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga0fbc0f7ddf0107c1e5265bb79287487d" title="Generic equality comparator.">eq()</a></span> does not accept (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands.html" title="Concept satisfied when the operands of a comparator can be written and compared.">detail::comparable_operands</a></span>); it stops the compilation with a message that states what is wrong, instead of the notes of the concepts. Never called.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Lhs_T</td><td>Type of the left hand side operand. </td></tr>
-    <tr><td class="paramname">Rhs_T</td><td>Type of the right hand side operand. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lhs</td><td>Left hand side operand. </td></tr>
-    <tr><td class="paramname">rhs</td><td>Right hand side operand. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">false</span>, to avoid further errors in the check; the type is not deduced, so that the call can be used in an unevaluated operand.</dd></dl>
-<p>Never called; the compilation stops in <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5" title="Stops the compilation of a comparator whose operands are rejected, with a message that tells why.">detail::reject_comparison()</a></span>, with a message that names the mistake. </p>
-
-<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00111">111</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  112</span>  {</div>
-<div class="line"><span class="lineno">  113</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5">detail::reject_comparison&lt;detail::comparison::equal, Lhs_T, Rhs_T&gt;</a> ();</div>
-<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  115</span>  }</div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a767a45bfc1b9f58e87b03e2e7698ffc5"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5">micro_os_plus::micro_test_plus::detail::reject_comparison</a></div><div class="ttdeci">constexpr void reject_comparison(void) noexcept</div><div class="ttdoc">Stops the compilation of a comparator whose operands are rejected, with a message that tells why.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00557">detail-inlines.h:557</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="function-comparators-inlines_8h_source.html#l00095">eq()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00557">micro_os_plus::micro_test_plus::detail::reject_comparison()</a>.</p>
-
-</div>
-</div>
-<a id="a7a3c75c65882a8e5a274500789cf3c94" name="a7a3c75c65882a8e5a274500789cf3c94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a3c75c65882a8e5a274500789cf3c94">&#9670;&#160;</a></span>ge()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Lhs_T, class Rhs_T&gt; <br />
-requires (not detail::comparable_operands&lt; <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2">detail::comparison::greater_equal</a>, Lhs_T, Rhs_T&gt;)</div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool micro_os_plus::micro_test_plus::ge </td>
-          <td>(</td>
-          <td class="paramtype">Lhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Rhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Selected for the operands that <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga58c7dacabca3fe1b0dc025a0e0f30e9e" title="Generic greater than or equal comparator.">ge()</a></span> does not accept (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands.html" title="Concept satisfied when the operands of a comparator can be written and compared.">detail::comparable_operands</a></span>); it stops the compilation with a message that states what is wrong, instead of the notes of the concepts. Never called.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Lhs_T</td><td>Type of the left hand side operand. </td></tr>
-    <tr><td class="paramname">Rhs_T</td><td>Type of the right hand side operand. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lhs</td><td>Left hand side operand. </td></tr>
-    <tr><td class="paramname">rhs</td><td>Right hand side operand. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">false</span>, to avoid further errors in the check; the type is not deduced, so that the call can be used in an unevaluated operand.</dd></dl>
-<p>Never called; the compilation stops in <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5" title="Stops the compilation of a comparator whose operands are rejected, with a message that tells why.">detail::reject_comparison()</a></span>, with a message that names the mistake. </p>
-
-<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00213">213</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  214</span>  {</div>
-<div class="line"><span class="lineno">  215</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5">detail::reject_comparison</a>&lt;<a class="code hl_enumvalue" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2">detail::comparison::greater_equal</a>, Lhs_T,</div>
-<div class="line"><span class="lineno">  216</span>                              Rhs_T&gt; ();</div>
-<div class="line"><span class="lineno">  217</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  218</span>  }</div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2">micro_os_plus::micro_test_plus::detail::comparison::greater_equal</a></div><div class="ttdeci">@ greater_equal</div><div class="ttdoc">The &gt;= operator, checked by ge().</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00425">detail-inlines.h:425</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="function-comparators-inlines_8h_source.html#l00197">ge()</a>, <a class="el" href="detail-inlines_8h_source.html#l00425">micro_os_plus::micro_test_plus::detail::greater_equal</a>, and <a class="el" href="detail-inlines_8h_source.html#l00557">micro_os_plus::micro_test_plus::detail::reject_comparison()</a>.</p>
-
-</div>
-</div>
-<a id="a2dd96a2ee35e669ddab6d883caeb3df2" name="a2dd96a2ee35e669ddab6d883caeb3df2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2dd96a2ee35e669ddab6d883caeb3df2">&#9670;&#160;</a></span>gt()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Lhs_T, class Rhs_T&gt; <br />
-requires (not detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba7b8dc4fb0fb55fc8eb69ff080c45ed7e">detail::comparison::greater</a>, Lhs_T, Rhs_T&gt;)</div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool micro_os_plus::micro_test_plus::gt </td>
-          <td>(</td>
-          <td class="paramtype">Lhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Rhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Selected for the operands that <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga90da2cbc14b4562332a205d5b232356f" title="Generic greater than comparator.">gt()</a></span> does not accept (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands.html" title="Concept satisfied when the operands of a comparator can be written and compared.">detail::comparable_operands</a></span>); it stops the compilation with a message that states what is wrong, instead of the notes of the concepts. Never called.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Lhs_T</td><td>Type of the left hand side operand. </td></tr>
-    <tr><td class="paramname">Rhs_T</td><td>Type of the right hand side operand. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lhs</td><td>Left hand side operand. </td></tr>
-    <tr><td class="paramname">rhs</td><td>Right hand side operand. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">false</span>, to avoid further errors in the check; the type is not deduced, so that the call can be used in an unevaluated operand.</dd></dl>
-<p>Never called; the compilation stops in <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5" title="Stops the compilation of a comparator whose operands are rejected, with a message that tells why.">detail::reject_comparison()</a></span>, with a message that names the mistake. </p>
-
-<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00179">179</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  180</span>  {</div>
-<div class="line"><span class="lineno">  181</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5">detail::reject_comparison&lt;detail::comparison::greater, Lhs_T, Rhs_T&gt;</a> ();</div>
-<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  183</span>  }</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="function-comparators-inlines_8h_source.html#l00163">gt()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00557">micro_os_plus::micro_test_plus::detail::reject_comparison()</a>.</p>
-
-</div>
-</div>
-<a id="a434995a43c1ab9d2b75f1ee5e535c48b" name="a434995a43c1ab9d2b75f1ee5e535c48b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a434995a43c1ab9d2b75f1ee5e535c48b">&#9670;&#160;</a></span>le()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Lhs_T, class Rhs_T&gt; <br />
-requires (not detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba77932225fb35fc4b74dc8fabf0992dac">detail::comparison::less_equal</a>, Lhs_T, Rhs_T&gt;)</div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool micro_os_plus::micro_test_plus::le </td>
-          <td>(</td>
-          <td class="paramtype">Lhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Rhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Selected for the operands that <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga9125d2dd997269eecc0d8239d5df67e5" title="Generic less than or equal comparator.">le()</a></span> does not accept (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands.html" title="Concept satisfied when the operands of a comparator can be written and compared.">detail::comparable_operands</a></span>); it stops the compilation with a message that states what is wrong, instead of the notes of the concepts. Never called.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Lhs_T</td><td>Type of the left hand side operand. </td></tr>
-    <tr><td class="paramname">Rhs_T</td><td>Type of the right hand side operand. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lhs</td><td>Left hand side operand. </td></tr>
-    <tr><td class="paramname">rhs</td><td>Right hand side operand. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">false</span>, to avoid further errors in the check; the type is not deduced, so that the call can be used in an unevaluated operand.</dd></dl>
-<p>Never called; the compilation stops in <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5" title="Stops the compilation of a comparator whose operands are rejected, with a message that tells why.">detail::reject_comparison()</a></span>, with a message that names the mistake. </p>
-
-<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00282">282</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  283</span>  {</div>
-<div class="line"><span class="lineno">  284</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5">detail::reject_comparison&lt;detail::comparison::less_equal, Lhs_T, Rhs_T&gt;</a> ();</div>
-<div class="line"><span class="lineno">  285</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  286</span>  }</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="function-comparators-inlines_8h_source.html#l00266">le()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00557">micro_os_plus::micro_test_plus::detail::reject_comparison()</a>.</p>
-
-</div>
-</div>
-<a id="a1584ff2a522d8d452b9b1b8b12ce0bb4" name="a1584ff2a522d8d452b9b1b8b12ce0bb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1584ff2a522d8d452b9b1b8b12ce0bb4">&#9670;&#160;</a></span>lt()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Lhs_T, class Rhs_T&gt; <br />
-requires (not detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0bae37e8d912e8f7b8f9b5ef9452ba47ff1">detail::comparison::less</a>, Lhs_T, Rhs_T&gt;)</div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool micro_os_plus::micro_test_plus::lt </td>
-          <td>(</td>
-          <td class="paramtype">Lhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Rhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Selected for the operands that <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga493a42c738ef38b45a28b06a2155aa00" title="Generic less than comparator.">lt()</a></span> does not accept (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands.html" title="Concept satisfied when the operands of a comparator can be written and compared.">detail::comparable_operands</a></span>); it stops the compilation with a message that states what is wrong, instead of the notes of the concepts. Never called.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Lhs_T</td><td>Type of the left hand side operand. </td></tr>
-    <tr><td class="paramname">Rhs_T</td><td>Type of the right hand side operand. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lhs</td><td>Left hand side operand. </td></tr>
-    <tr><td class="paramname">rhs</td><td>Right hand side operand. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">false</span>, to avoid further errors in the check; the type is not deduced, so that the call can be used in an unevaluated operand.</dd></dl>
-<p>Never called; the compilation stops in <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5" title="Stops the compilation of a comparator whose operands are rejected, with a message that tells why.">detail::reject_comparison()</a></span>, with a message that names the mistake. </p>
-
-<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00248">248</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  249</span>  {</div>
-<div class="line"><span class="lineno">  250</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5">detail::reject_comparison&lt;detail::comparison::less, Lhs_T, Rhs_T&gt;</a> ();</div>
-<div class="line"><span class="lineno">  251</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  252</span>  }</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="function-comparators-inlines_8h_source.html#l00232">lt()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00557">micro_os_plus::micro_test_plus::detail::reject_comparison()</a>.</p>
-
-</div>
-</div>
-<a id="aa9d632f3209a350a25b6b57eebfacb6b" name="aa9d632f3209a350a25b6b57eebfacb6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9d632f3209a350a25b6b57eebfacb6b">&#9670;&#160;</a></span>ne()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Lhs_T, class Rhs_T&gt; <br />
-requires (not detail::comparable_operands&lt;<a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ada744f2df815ad518c8b897608907c0ba96ee5c0e2a7149613e7fd0b83316486e">detail::comparison::not_equal</a>, Lhs_T, Rhs_T&gt;)</div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool micro_os_plus::micro_test_plus::ne </td>
-          <td>(</td>
-          <td class="paramtype">Lhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Rhs_T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Selected for the operands that <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga92cdc2dde6af040f2f5f5df677df0985" title="Generic non-equality comparator.">ne()</a></span> does not accept (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1comparable__operands.html" title="Concept satisfied when the operands of a comparator can be written and compared.">detail::comparable_operands</a></span>); it stops the compilation with a message that states what is wrong, instead of the notes of the concepts. Never called.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Lhs_T</td><td>Type of the left hand side operand. </td></tr>
-    <tr><td class="paramname">Rhs_T</td><td>Type of the right hand side operand. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lhs</td><td>Left hand side operand. </td></tr>
-    <tr><td class="paramname">rhs</td><td>Right hand side operand. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">false</span>, to avoid further errors in the check; the type is not deduced, so that the call can be used in an unevaluated operand.</dd></dl>
-<p>Never called; the compilation stops in <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5" title="Stops the compilation of a comparator whose operands are rejected, with a message that tells why.">detail::reject_comparison()</a></span>, with a message that names the mistake. </p>
-
-<p class="definition">Definition at line <a class="el" href="function-comparators-inlines_8h_source.html#l00145">145</a> of file <a class="el" href="function-comparators-inlines_8h_source.html">function-comparators-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  146</span>  {</div>
-<div class="line"><span class="lineno">  147</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a767a45bfc1b9f58e87b03e2e7698ffc5">detail::reject_comparison&lt;detail::comparison::not_equal, Lhs_T, Rhs_T&gt;</a> ();</div>
-<div class="line"><span class="lineno">  148</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  149</span>  }</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="function-comparators-inlines_8h_source.html#l00129">ne()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00557">micro_os_plus::micro_test_plus::detail::reject_comparison()</a>.</p>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

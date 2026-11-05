@@ -152,11 +152,11 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:a2069fa6eef31eeb9cd9ce2ec3214c6e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the constant.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html" title="Struct representing a named boolean constant, created by the _b literal.">named_bool</a></span> struct holds the constant <span class="tt">true</span>, together with a name, which the expression formatter prints instead of the value, so that a failed comparison like <span class="tt">"flag"<a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gad4203783cfbe141f41ee8515f7b2ea94" title="Deprecated strongly-typed wrapper for bool values, the v5.0.1 name of to_b.">_b</a> == flag</span>, with the operators in the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1operators.html" title="Custom operator overloads for expressive and type-safe test assertions.">operators</a></span> namespace, is reported as <span class="tt">flag == false</span>.</p>
-<p>The value is available only via the implicit conversion to <span class="tt">bool</span>, and the struct has neither a <span class="tt">get()</span> accessor nor comparison operators. Thus <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a59eb53c96f68d26635c13df53b358ac8" title="Returns the value wrapped by a framework type, or the operand itself.">detail::unwrap()</a></span> returns the object itself, so that the formatter receives the name, the comparators compare it as the <span class="tt">bool</span> value <span class="tt">true</span>, and the generic operators in the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1operators.html" title="Custom operator overloads for expressive and type-safe test assertions.">operators</a></span> namespace, not a better matching operator of this struct, are selected for it.</p>
+<div class="textblock"><p>The <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool.html" title="Struct representing a named boolean constant, created by the _b literal.">named_bool</a></span> struct holds the constant <span class="tt">true</span>, together with a name, which the expression formatter prints instead of the value, so that a failed comparison like <span class="tt">"flag"<a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gad4203783cfbe141f41ee8515f7b2ea94" title="Deprecated strongly-typed wrapper for bool values, the v5.0.1 name of to_b.">_b</a> == flag</span>, with the operators in the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1operators.html" title="Deprecated comparison and logical operators of the test checks.">operators</a></span> namespace, is reported as <span class="tt">flag == false</span>.</p>
+<p>The value is available only via the implicit conversion to <span class="tt">bool</span>, and the struct has neither a <span class="tt">get()</span> accessor nor comparison operators. Thus <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a59eb53c96f68d26635c13df53b358ac8" title="Returns the value wrapped by a framework type, or the operand itself.">detail::unwrap()</a></span> returns the object itself, so that the formatter receives the name, the comparators compare it as the <span class="tt">bool</span> value <span class="tt">true</span>, and the generic operators in the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1operators.html" title="Deprecated comparison and logical operators of the test checks.">operators</a></span> namespace, not a better matching operator of this struct, are selected for it.</p>
 <p>The name is not owned; it refers to the string literal, which has static storage duration. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l00744">744</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l00740">740</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a384b1d115e493d6a554ebda4e3089b19" name="a384b1d115e493d6a554ebda4e3089b19"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a384b1d115e493d6a554ebda4e3089b19">&#9670;&#160;</a></span>op_type</h2>
@@ -177,9 +177,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Detected by the <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="C++20 concept satisfied when a type is a framework expression type.">extension::is_op</a></span> concept, and inherited by all types derived from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op.html" title="Empty base struct for the framework expression types.">op</a></span>. </p>
+<p>Detected by the <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="Concept satisfied when a type is a framework expression type.">extension::is_op</a></span> concept, and inherited by all types derived from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op.html" title="Empty base struct for the framework expression types.">op</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00132">132</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00128">128</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
 
 </div>
 </div>
@@ -196,7 +196,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The named literal behaves as a boolean value. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l00752">752</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l00748">748</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
 
 </div>
 </div>
@@ -231,14 +231,14 @@ Private Attributes</h2></td></tr>
 </dl>
 <p>Stores the view of the name; the characters are not copied. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00649">649</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  650</span>        : <a class="code hl_variable" href="#a2069fa6eef31eeb9cd9ce2ec3214c6e2">name_</a>{ <a class="code hl_function" href="#a00b50cd87531243cd42964982fc11bdd">name</a> }</div>
-<div class="line"><span class="lineno">  651</span>    {</div>
-<div class="line"><span class="lineno">  652</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_html_a00b50cd87531243cd42964982fc11bdd"><div class="ttname"><a href="#a00b50cd87531243cd42964982fc11bdd">micro_os_plus::micro_test_plus::detail::named_bool::name</a></div><div class="ttdeci">constexpr std::string_view name(void) const noexcept</div><div class="ttdoc">Returns the name of the constant.</div><div class="ttdef"><b>Definition</b> <a href="deprecated-inlines_8h_source.html#l00669">deprecated-inlines.h:669</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_html_a2069fa6eef31eeb9cd9ce2ec3214c6e2"><div class="ttname"><a href="#a2069fa6eef31eeb9cd9ce2ec3214c6e2">micro_os_plus::micro_test_plus::detail::named_bool::name_</a></div><div class="ttdeci">std::string_view name_</div><div class="ttdoc">The name of the constant.</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00788">deprecated.h:788</a></div></div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00645">645</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  646</span>        : <a class="code hl_variable" href="#a2069fa6eef31eeb9cd9ce2ec3214c6e2">name_</a>{ <a class="code hl_function" href="#a00b50cd87531243cd42964982fc11bdd">name</a> }</div>
+<div class="line"><span class="lineno">  647</span>    {</div>
+<div class="line"><span class="lineno">  648</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_html_a00b50cd87531243cd42964982fc11bdd"><div class="ttname"><a href="#a00b50cd87531243cd42964982fc11bdd">micro_os_plus::micro_test_plus::detail::named_bool::name</a></div><div class="ttdeci">constexpr std::string_view name(void) const noexcept</div><div class="ttdoc">Returns the name of the constant.</div><div class="ttdef"><b>Definition</b> <a href="deprecated-inlines_8h_source.html#l00665">deprecated-inlines.h:665</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_html_a2069fa6eef31eeb9cd9ce2ec3214c6e2"><div class="ttname"><a href="#a2069fa6eef31eeb9cd9ce2ec3214c6e2">micro_os_plus::micro_test_plus::detail::named_bool::name_</a></div><div class="ttdeci">std::string_view name_</div><div class="ttdoc">The name of the constant.</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00784">deprecated.h:784</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00669">name()</a>, and <a class="el" href="deprecated_8h_source.html#l00788">name_</a>.</p>
+<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00665">name()</a>, and <a class="el" href="deprecated_8h_source.html#l00784">name_</a>.</p>
 
 </div>
 </div>
@@ -269,14 +269,14 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The name passed to the constructor.</dd></dl>
 <p>Returns the stored view of the name. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00669">669</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  670</span>    {</div>
-<div class="line"><span class="lineno">  671</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a2069fa6eef31eeb9cd9ce2ec3214c6e2">name_</a>;</div>
-<div class="line"><span class="lineno">  672</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00665">665</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  666</span>    {</div>
+<div class="line"><span class="lineno">  667</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a2069fa6eef31eeb9cd9ce2ec3214c6e2">name_</a>;</div>
+<div class="line"><span class="lineno">  668</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="deprecated_8h_source.html#l00788">name_</a>.</p>
+<p class="reference">References <a class="el" href="deprecated_8h_source.html#l00784">name_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00649">named_bool()</a>, and <a class="el" href="expression-formatter_8cpp_source.html#l00698">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00645">named_bool()</a>, and <a class="el" href="expression-formatter_8cpp_source.html#l00698">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>.</p>
 
 </div>
 </div>
@@ -306,10 +306,10 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span>.</dd></dl>
 <p>Always returns <span class="tt">true</span>, the value of all named boolean constants. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00658">658</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  660</span>    {</div>
-<div class="line"><span class="lineno">  661</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  662</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00654">654</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  656</span>    {</div>
+<div class="line"><span class="lineno">  657</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  658</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -335,9 +335,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Not owned; refers to the characters of the string literal. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l00788">788</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l00784">784</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00649">named_bool()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00669">name()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00645">named_bool()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00665">name()</a>.</p>
 
 </div>
 </div>

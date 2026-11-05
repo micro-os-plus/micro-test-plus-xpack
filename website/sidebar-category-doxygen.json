@@ -36,17 +36,17 @@
               "items": [
                 {
                   "type": "doc",
-                  "label": "Test Runners",
+                  "label": "Test runners",
                   "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-runners"
                 },
                 {
                   "type": "doc",
-                  "label": "Test Suites",
+                  "label": "Test suites",
                   "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-test-suites"
                 },
                 {
                   "type": "doc",
-                  "label": "Test Cases",
+                  "label": "Test cases",
                   "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-test-case"
                 },
                 {
@@ -61,22 +61,22 @@
                 },
                 {
                   "type": "doc",
-                  "label": "Function Comparators",
+                  "label": "Function comparators",
                   "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators"
                 },
                 {
                   "type": "doc",
-                  "label": "Logical Functions",
+                  "label": "Logical functions",
                   "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions"
                 },
                 {
                   "type": "doc",
-                  "label": "Checking Exceptions",
+                  "label": "Checking exceptions",
                   "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-exceptions"
                 },
                 {
                   "type": "doc",
-                  "label": "Utility Functions",
+                  "label": "Utility functions",
                   "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-utility-functions"
                 },
                 {
@@ -100,12 +100,12 @@
                     },
                     {
                       "type": "doc",
-                      "label": "Logical Functions",
+                      "label": "Old logical function names",
                       "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions"
                     },
                     {
                       "type": "doc",
-                      "label": "Literals and Wrappers",
+                      "label": "Literals and wrappers",
                       "id": "api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals"
                     }
                   ]
@@ -124,7 +124,7 @@
             },
             {
               "type": "doc",
-              "label": "Command-Line Options",
+              "label": "Command-line options",
               "id": "api/groups/micro-os-plus-micro-test-plus-cli"
             }
           ]

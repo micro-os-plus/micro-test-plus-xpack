@@ -124,7 +124,7 @@
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga8decf36d3e0e7cc8242c6a2170743422" kindref="member">micro_os_plus::micro_test_plus::detail::not_equal_to::within_tolerance_result</ref>  </term></varlistentry>
 <listitem><para><anchor id="deprecated_1_deprecated000110"/>To be removed with the deprecated floating-point wrappers (since 6.0.0).  </para>
 </listitem>
-<varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a467d1332df523b9acaa3ff82b0ebb714" kindref="member">micro_os_plus::micro_test_plus::detail::reporter::verbosity</ref>  (void) const noexcept -&gt; <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kindref="member">micro_test_plus::verbosity</ref></term></varlistentry>
+<varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a467d1332df523b9acaa3ff82b0ebb714" kindref="member">micro_os_plus::micro_test_plus::detail::reporter::verbosity</ref>  (void) const noexcept -&gt; <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-runners_1ga809871d76f29309ed9c6fbd96d5a914b" kindref="member">micro_test_plus::verbosity</ref></term></varlistentry>
 <listitem><para><anchor id="deprecated_1_deprecated000118"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1dd0221dca8e7382f0b625ff6316ed92" kindref="member">runner::verbosity_level()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base_1aaf838b03cddfb039d1295611be8a5e32" kindref="member">micro_os_plus::micro_test_plus::detail::runnable_base::children_subtests_count</ref>  (void) const noexcept</term></varlistentry>
@@ -304,7 +304,7 @@
 <varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a7d3ccfaf760cb2f4ace586c222b22244" kindref="member">micro_os_plus::micro_test_plus::runner::timings</ref>  (void) noexcept</term></varlistentry>
 <listitem><para><anchor id="deprecated_1_deprecated000127"/>the timings are internal (since 6.0.0) </para>
 </listitem>
-<varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a94a9df0418776ebce476cd9a2e4f591f" kindref="member">micro_os_plus::micro_test_plus::runner::verbosity</ref>  (void) const noexcept -&gt; <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1a809871d76f29309ed9c6fbd96d5a914b" kindref="member">micro_test_plus::verbosity</ref></term></varlistentry>
+<varlistentry><term>Member <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a94a9df0418776ebce476cd9a2e4f591f" kindref="member">micro_os_plus::micro_test_plus::runner::verbosity</ref>  (void) const noexcept -&gt; <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-runners_1ga809871d76f29309ed9c6fbd96d5a914b" kindref="member">micro_test_plus::verbosity</ref></term></varlistentry>
 <listitem><para><anchor id="deprecated_1_deprecated000123"/>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a1dd0221dca8e7382f0b625ff6316ed92" kindref="member">verbosity_level()</ref> (since 6.0.0) </para>
 </listitem>
 <varlistentry><term>Member <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga47d2c99f85fc5597b82da402d4687e75" kindref="member">micro_os_plus::micro_test_plus::static_runner</ref>  </term></varlistentry>

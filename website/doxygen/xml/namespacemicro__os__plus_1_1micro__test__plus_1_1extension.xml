@@ -13,7 +13,7 @@
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__tag">micro_os_plus::micro_test_plus::extension::predicate_tag</innerconcept>
     <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable">micro_os_plus::micro_test_plus::extension::printable</innerconcept>
     <briefdescription>
-<para>The concepts for extending the µTest++ testing framework. </para>
+<para>The templates and the concepts for extending the µTest++ testing framework. </para>
     </briefdescription>
     <detaileddescription>
 <para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1extension" kindref="compound">extension</ref></computeroutput> namespace holds what the applications use to write their own comparators, predicates, operators, and helpers, reported as the built-in ones are:<itemizedlist>

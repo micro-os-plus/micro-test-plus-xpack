@@ -1,4 +1,4 @@
-@defgroup micro-os-plus-micro-test-plus-cpp-api-utility-functions Utility Functions
+@defgroup micro-os-plus-micro-test-plus-cpp-api-utility-functions Utility functions
 @brief Utility functions for handling strings in tests.
 
 @details

@@ -80,7 +80,7 @@ namespace micro_os_plus::micro_test_plus
    * the names of the application or of the other source files of the
    * framework. They are not declared in any header.
    *
-   * It contains `help_options`, the list of the command line options
+   * It contains `help_options`, the list of the command-line options
    * that `--help` displays after the usage line.
    */
   namespace

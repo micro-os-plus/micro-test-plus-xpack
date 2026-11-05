@@ -115,16 +115,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 </div><!--header-->
 <div class="contents">
 
-<p>C++20 concept satisfied by the wrappers of a <span class="tt">bool</span>, whose condition is ambiguous.  
+<p>Concept satisfied by the wrappers of a <span class="tt">bool</span>, whose condition is ambiguous.  
 <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="extension_8h_source.html">extension.h</a>&gt;</code></p>
 <h2 id="header-conceptdef" class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line">    <span class="keyword">concept </span><a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ambiguous__condition.html">ambiguous_condition</a> = <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1is__bool__wrapper.html">is_bool_wrapper&lt;std::remove_cv_t&lt;T&gt;</a>&gt;<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">::value</a></div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ambiguous__condition_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ambiguous__condition.html">micro_os_plus::micro_test_plus::detail::ambiguous_condition</a></div><div class="ttdoc">C++20 concept satisfied by the wrappers of a bool, whose condition is ambiguous.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00220">extension.h:220</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1is__bool__wrapper_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1is__bool__wrapper.html">micro_os_plus::micro_test_plus::detail::is_bool_wrapper</a></div><div class="ttdoc">Trait marking the wrappers of a bool, whose condition is ambiguous.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00149">extension.h:150</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">micro_os_plus::micro_test_plus::detail::value</a></div><div class="ttdoc">Struct template representing a generic value, accessible via a getter.</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00629">deprecated.h:630</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ambiguous__condition_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1ambiguous__condition.html">micro_os_plus::micro_test_plus::detail::ambiguous_condition</a></div><div class="ttdoc">Concept satisfied by the wrappers of a bool, whose condition is ambiguous.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00216">extension.h:216</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1is__bool__wrapper_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1is__bool__wrapper.html">micro_os_plus::micro_test_plus::detail::is_bool_wrapper</a></div><div class="ttdoc">Trait marking the wrappers of a bool, whose condition is ambiguous.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00145">extension.h:146</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">micro_os_plus::micro_test_plus::detail::value</a></div><div class="ttdoc">Struct template representing a generic value, accessible via a getter.</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00625">deprecated.h:626</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The condition of a <span class="tt">std::optional&lt;bool&gt;</span>, or of a smart pointer to a <span class="tt">bool</span>, tests the wrapper (a value is present, or the pointer is not null), not the <span class="tt">bool</span> that it holds, which is what a reader of <span class="tt">t.expect (flag)</span> assumes; a check with <span class="tt">false</span> inside would pass, and be reported as <span class="tt">true</span>, for another reason than the one the author had in mind, as the checks of the arguments that are always true (see <span class="tt">suspicious_condition</span>). A check that passes silently by mistake is worse than one that does not compile, so <span class="tt">extension::checkable</span> rejects these types, and the application writes <span class="tt">has_value()</span>, <span class="tt">!= nullptr</span>, or compares the value with <span class="tt">eq()</span>. The wrappers of the other types are accepted, since the presence of a value is then the only meaning of the condition.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00220">220</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00216">216</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

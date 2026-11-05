@@ -17,7 +17,7 @@ keywords:
 
 # `formattable_range` Concept
 
-<p>C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a range that the formatter writes element by element. <a href="#details">More...</a></p>
+<p>Concept satisfied when <span class="doxyComputerOutput">T</span> is a range that the formatter writes element by element. <a href="#details">More...</a></p>
 
 ## Definition
 
@@ -31,7 +31,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 ## Description {#details}
 
-<p>C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a range that the formatter writes element by element.</p>
+<p>Concept satisfied when <span class="doxyComputerOutput">T</span> is a range that the formatter writes element by element.</p>
 
 
 <dl class="doxyParamsList">
@@ -59,7 +59,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>The conditions are tested in this order, so the elements of a recursive range are not tested.</p>
 
 
-<p>Definition at line 662 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 659 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -75,6 +75,6 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

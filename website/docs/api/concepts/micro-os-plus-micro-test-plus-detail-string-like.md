@@ -17,7 +17,7 @@ keywords:
 
 # `string_like` Concept
 
-<p>C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a string, convertible to a <span class="doxyComputerOutput">std::basic_string_view</span> of a character type. <a href="#details">More...</a></p>
+<p>Concept satisfied when <span class="doxyComputerOutput">T</span> is a string, convertible to a <span class="doxyComputerOutput">std::basic_string_view</span> of a character type. <a href="#details">More...</a></p>
 
 ## Definition
 
@@ -32,7 +32,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 ## Description {#details}
 
-<p>C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a string, convertible to a <span class="doxyComputerOutput">std::basic_string_view</span> of a character type.</p>
+<p>Concept satisfied when <span class="doxyComputerOutput">T</span> is a string, convertible to a <span class="doxyComputerOutput">std::basic_string_view</span> of a character type.</p>
 
 
 <dl class="doxyParamsList">
@@ -50,7 +50,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>The <span class="doxyComputerOutput">string_like</span> concept is satisfied when a <span class="doxyComputerOutput">const</span> object of type <span class="doxyComputerOutput">T</span> is implicitly convertible to a <span class="doxyComputerOutput">std::basic_string_view</span> of <span class="doxyComputerOutput">char</span>, <span class="doxyComputerOutput">wchar_t</span>, <span class="doxyComputerOutput">char8_t</span>, <span class="doxyComputerOutput">char16_t</span>, or <span class="doxyComputerOutput">char32_t</span>, as the standard strings and the string views are. It is used to detect the strings, which the formatter writes as text, not element by element (see <span class="doxyComputerOutput">formattable_range</span>). A container that has only a member named <span class="doxyComputerOutput">npos</span>, or that is not convertible, is not a string.</p>
 
 
-<p>Definition at line 550 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 547 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -67,6 +67,6 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>micro-test-plus: Command-Line Options</title>
+<title>micro-test-plus: Command-line options</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -111,13 +111,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__micro-o
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Command-Line Options <div class="ingroups"><a class="el" href="group__micro-os-plus.html">µOS++ Topics</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus.html">µTest++</a></div></div></div>
+  <div class="headertitle"><div class="title">Command-line options <div class="ingroups"><a class="el" href="group__micro-os-plus.html">µOS++ Topics</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus.html">µTest++</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Options for controlling the test output at run time.  
 </p>
-<div class="textblock"><p>The test programs accept options on the command line, which <span class="tt">runner::initialise (argc, argv)</span> reads. On platforms without a command line, the same settings are made with <span class="tt">runner_options</span>, passed to <span class="tt">runner::initialise()</span>.</p>
+<div class="textblock"><p>The test programs accept options on the command line, which <span class="tt">runner::initialise()</span> reads. On platforms without a command line, the same settings are made with <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1runner__options.html" title="micro_os_plus::micro_test_plus::runner_options">runner_options</a>, passed to <span class="tt">runner::initialise()</span>.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Option  </th><th class="markdownTableHeadNone">Effect  </th></tr>
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__micro-o
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--reporter=tap</span>, <span class="tt">--reporter=human</span>  </td><td class="markdownTableBodyNone">the output format (TAP by default)  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">--colour[=always,never,auto]</span>  </td><td class="markdownTableBodyNone">colour the human-readable output  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">--colour[=always</span>|<span class="tt">never</span>|<span class="tt">auto]</span>  </td><td class="markdownTableBodyNone">colour the human-readable output  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">--verbose</span>, <span class="tt">--quiet</span>, <span class="tt">--silent</span>  </td><td class="markdownTableBodyNone">how much the console displays  </td></tr>
 <tr class="markdownTableRowOdd">
@@ -141,9 +141,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__micro-o
 <li>That argument, and all the following ones, are left to the application, uninterpreted; <span class="tt">runner::application_arguments()</span> returns them.</li>
 <li>The <span class="tt">--</span> that ends the options is not passed on. It is needed before an application argument that starts with a dash, which would otherwise be taken for an unknown µTest++ option. After the first application argument, a <span class="tt">--</span> is passed on like any other argument.</li>
 <li>The value of an option may be attached (<span class="tt">--reporter=human</span>) or given as the next argument (<span class="tt">--reporter human</span>), except for <span class="tt">--colour</span>, whose value must be attached.</li>
+<li>An option may be repeated: the last one takes effect (<span class="tt">--quiet
+    --verbose</span> is <span class="tt">--verbose</span>), except for <span class="tt">--filter</span>, whose patterns are all kept, one for each nesting level.</li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>Errors</dt><dd>An unknown option (an argument that starts with a dash before the end of the options, such as <span class="tt">-x</span>, <span class="tt">-</span>, or <span class="tt">-verbose</span>), an unknown reporter or colour mode, or a missing option value is an error. It is reported on <span class="tt">stderr</span>, on the console, and in the output file, if any; no test runs, and the exit code is 2. For an unknown option, the console also suggests <span class="tt">--help</span>.</dd></dl>
+<dl class="section user"><dt>Errors</dt><dd>An unknown option (an argument that starts with a dash before the end of the options, such as <span class="tt">-x</span>, <span class="tt">-</span>, or <span class="tt">-verbose</span>), an unknown reporter or colour mode, or a missing option value is an error. It is reported on <span class="tt">stderr</span>, on the console (unless <span class="tt">--silent</span> is given), and in the output file, if any; no test runs, and the exit code is 2. For an unknown option, the console also suggests <span class="tt">--help</span>.</dd></dl>
 <h1 class="doxsection"><a class="anchor" id="cli-help"></a>
 Help</h1>
 <p><span class="tt">--help</span>, or its short form <span class="tt">-h</span> (the only short option), writes the usage and the list of the options on the console, even with <span class="tt">--silent</span>, runs no test, and the exit code is 0. Errors in the other options take priority: they are reported as usual, and the exit code is 2.</p>
@@ -169,7 +171,7 @@ Verbosity</h1>
 <li>default – one line for each test case that passed, and the details of each failed check;</li>
 <li><span class="tt">--verbose</span> – every check, passed or failed;</li>
 <li><span class="tt">--quiet</span> – only the failed checks, with the names of their suites and test cases, and the session totals (and, with the TAP reporter, one result line for each suite);</li>
-<li><span class="tt">--silent</span> – nothing; only the exit code reports the result.</li>
+<li><span class="tt">--silent</span> – nothing on the console; only the exit code reports the result, and the errors are still written on <span class="tt">stderr</span>.</li>
 </ul>
 <p>On platforms without a command line, the level is set in <span class="tt">runner_options::verbosity_level</span>. The examples below are the output of <span class="tt">tests/sources/minimal/src/main.cpp</span>.</p>
 <h2 class="doxsection"><a class="anchor" id="cli-verbosity-default"></a>
@@ -227,20 +229,23 @@ Quiet mode</h2>
 <div class="line">#                   condition: &quot;1 == 2&quot;</div>
 <div class="line">#                   at:</div>
 <div class="line">#                     fileName: checks.cpp</div>
-<div class="line">#                     lineNumber: 454</div>
+<div class="line">#                     lineNumber: 399</div>
 <div class="line">#                   ...</div>
-</div><!-- fragment --><p>To keep the complete report while the console shows only the failures, add an output file, which always receives the complete report:</p>
+</div><!-- fragment --><p>To keep the complete report while the console shows only the failures, add an output file, which always receives the complete report; the console then ends with a line that names the file:</p>
 <div class="fragment"><div class="line">$ sample-test --quiet --output-file=sample-test.tap</div>
+<div class="line">...</div>
+<div class="line"># Test output written to &#39;sample-test.tap&#39;.</div>
 </div><!-- fragment --><p>When exceptions are not enabled and a failed requirement aborts the run, the results of the aborted test case are displayed in quiet mode too, since the totals are never reached.</p>
 <h2 class="doxsection"><a class="anchor" id="cli-verbosity-silent"></a>
 Silent mode</h2>
-<p>Nothing is displayed on the console, and only the exit code reports the result; the output file, if any, is still written.</p>
+<p>Nothing is displayed on the console, and only the exit code reports the result; the output file, if any, is still written, and the errors of the options and of the rejected calls are still written on <span class="tt">stderr</span>. The output that was explicitly requested, with <span class="tt">--help</span> or <span class="tt">--list-tests</span>, is displayed.</p>
 <h1 class="doxsection"><a class="anchor" id="cli-output-file"></a>
-Output File</h1>
+Output file</h1>
 <ul>
 <li><span class="tt">--output-file=&lt;path&gt;</span> or <span class="tt">--output-file &lt;path&gt;</span> – also write the report to a file.</li>
 </ul>
 <p>The file receives the complete report, whatever the verbosity, with both reporters, and never receives colours, so it can be passed to other tools. It is truncated first, so it never keeps the results of an earlier run, and it also receives the option errors. If the file cannot be opened, the error is reported on <span class="tt">stderr</span> and on the console, no test runs, and the exit code is 2.</p>
+<p>When the run ends, the console shows a line with the path of the file (<span class="tt"># Test output written to '&lt;path&gt;'.</span> with the TAP reporter, without the <span class="tt"># </span> with the human-readable one); <span class="tt">--silent</span> omits it. An empty path (<span class="tt">--output-file=</span> or <span class="tt">--output-file ""</span>) writes no file, which also cancels an earlier <span class="tt">--output-file</span>.</p>
 <p>On platforms without a command line, the path is set in <span class="tt">runner_options::output_file_path</span>.</p>
 <h1 class="doxsection"><a class="anchor" id="cli-filter"></a>
 Filter</h1>
@@ -291,7 +296,7 @@ Filter</h1>
 <div class="line">1..3</div>
 <div class="line"># { total: 1 check passed, 0 failed, in 1 test case, 10 skipped, 3 test suites, 1 skipped, time: X.XXX ms }</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="cli-list-tests"></a>
-Listing the Test Cases</h1>
+Listing the test cases</h1>
 <ul>
 <li><span class="tt">--list-tests</span>, or <span class="tt">--list</span> – list the test cases instead of running them, as in Catch2 and Boost UT.</li>
 </ul>

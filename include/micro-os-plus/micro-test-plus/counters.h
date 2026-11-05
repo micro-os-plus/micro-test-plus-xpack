@@ -79,6 +79,7 @@ namespace micro_os_plus::micro_test_plus
   // ==========================================================================
 
   /**
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-runners
    * @brief Aggregated check and test case counters for a node in the test
    * tree.
    *

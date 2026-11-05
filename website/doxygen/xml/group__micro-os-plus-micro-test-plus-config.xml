@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" line="76" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" bodystart="76" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" line="75" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" bodystart="75" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__micro-os-plus-micro-test-plus-config_1ga3dd1e70998580fe7d7f410e5cd83879b" prot="public" static="no">
         <name>MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</name>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" line="73" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" bodystart="73" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" line="72" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" bodystart="72" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__micro-os-plus-micro-test-plus-config_1ga27bb1b9066b162d868e0b1c557b91e0d" prot="public" static="no">
         <name>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</name>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" line="75" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" bodystart="75" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" line="74" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" bodystart="74" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__micro-os-plus-micro-test-plus-config_1ga039219e6edfdcaa8a5e07badd7f4830d" prot="public" static="no">
         <name>MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED</name>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" line="74" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" bodystart="74" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" line="73" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus.h" bodystart="73" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -69,13 +69,14 @@
 </para>
 <para><simplesect kind="par"><title>Where to define them</title><para>The application defines the macros; neither the library nor its CMake, meson, and xPack build files define them (the <computeroutput>defaultDefine</computeroutput> entries in <computeroutput>xcdl-package.jsonc</computeroutput> are informative only).</para>
 </simplesect>
-The application and the library sources must be compiled with the same macros, otherwise the link fails. The simplest way is a header named <computeroutput>micro-os-plus/micro-test-plus-defines.h</computeroutput> (or <computeroutput>micro-os-plus/project-config.h</computeroutput>) in the include path of the build: every µTest++ header includes it, if present, before its own definitions.</para>
+The application and the library sources must be compiled with the same <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-config_1ga3dd1e70998580fe7d7f410e5cd83879b" kindref="member">MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</ref></computeroutput> and <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-config_1ga67c701de5426ac340584ed038494a873" kindref="member">MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</ref></computeroutput> macros, otherwise the link fails (see the pages of the macros below); the trace macros only add trace calls to the function bodies. The simplest way is a header named <computeroutput>micro-os-plus/micro-test-plus-defines.h</computeroutput> (or <computeroutput>micro-os-plus/project-config.h</computeroutput>) in the include path of the build: every µTest++ header includes it, if present, before its own definitions.</para>
 <para>Guard each definition, so that the macro can also be given on the compiler command line:</para>
 <para><programlisting filename=".cpp"><codeline><highlight class="preprocessor">#if<sp/>!defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>!defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)</highlight></codeline>
 </programlisting></para>
-<para>A macro given only on the compiler command line (for example <computeroutput>-DMICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</computeroutput>) must be given for the whole build, for both the application and the library sources.  </para>
+<para>A macro given only on the compiler command line (for example <computeroutput>-DMICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</computeroutput>) must be given for the whole build, for both the application and the library sources.</para>
+<para>The definitions shown on the pages of the macros, with a line number in <computeroutput><ref refid="micro-test-plus_8h" kindref="compound">micro-test-plus.h</ref></computeroutput>, exist only for this documentation; the header does not define these macros, and neither does the library.  </para>
     </detaileddescription>
   </compounddef>
 </doxygen>

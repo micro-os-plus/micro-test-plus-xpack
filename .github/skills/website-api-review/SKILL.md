@@ -189,6 +189,82 @@ top-common.h    ─┘   (config.doxyfile)                       │
   inside an `@addtogroup ... @{ ... @}` block; the latter also pulls in
   members of classes declared inside the block.
 
+## The Doxygen Configuration
+
+The Doxygen configuration (`website/doxygen/config.doxyfile`,
+`common-config.doxyfile`, which is generated from a template of
+`docusaurus-template-liquid`, and `original-config.doxyfile`) is changed
+only for a real defect, such as a value that is wrong. Do not
+propose a change of an option to improve the pages; fix the comments or
+the topics instead, or report the finding as an observation. In
+particular, the maintainer keeps these on purpose:
+
+- `REFERENCES_RELATION = YES` and `REFERENCED_BY_RELATION = YES`, for the
+  "References" and "Referenced by" lists, including the entries that
+  Doxygen resolves by name, across overloads;
+- `EXTRACT_PRIVATE = YES` and `HIDE_FRIEND_COMPOUNDS = NO`, so that the
+  private members and the friends stay on the pages;
+- `EXTRACT_ANON_NSPACES = YES`, so that the anonymous namespaces of the
+  source files, with their local helpers, stay in the indices;
+- `INLINE_SOURCES = YES`, so that the file pages keep the source
+  listings, and the page sizes that result.
+
+## Decisions of the Maintainer
+
+The following were decided in the review `WEBSITE-API-REVIEW-3.md`. Do
+not report them again, and do not ask about them; if one of them seems
+wrong, say so in one line, without a numbered finding.
+
+Kept as they are (accepted):
+
+- the Doxygen options in "The Doxygen Configuration" above, and the page
+  sizes that result;
+- the root of the topic tree ("µOS++ Topics", "µTest++", "C++ API") and
+  its collapsed levels;
+- "Expectations" and "Requirements" as two topics;
+- the "C API" topic, in the reference;
+- the terms "test session", "test run", and "test execution", and the
+  name "subtest" (the deprecated alias, and real unit test cases);
+- the documentation-only files `top-common.h` and `topics.h` in the
+  Files index;
+- the duplicate entries of `compare_op`, `predicate_op`, and
+  `comparison_integer<T>` in the Classes index;
+- `detail::check_result&&` in the signatures of `expect()` and
+  `require()`, the alias `expression_formatter` of the `detail` class,
+  `class suite&` in the signatures (until the deprecated
+  `runner::suite()` is removed), and the inherited `name()` and
+  `totals()`, documented through `detail::runnable_base`;
+- the deprecated code, which is not changed: a defect in it is a finding
+  about the page, which states the actual behaviour;
+- the sentences "for diagnostic purposes" of the trace descriptions.
+
+Conventions (applied; report a deviation):
+
+- titles of topics and sections in sentence case ("Test runners",
+  "Command-line options"), except for the acronyms and the names;
+- "run-time" as an adjective and "run time" as a noun, "floating-point"
+  and "command-line" as adjectives, and "check" for a verification
+  ("assertion" only for the static assertions and the other frameworks);
+- `@ref` for the first mention, on a page, of a class or a function
+  that has a page, since a plain code span is not linked by Doxygen;
+- in a Markdown table, a bar inside a code span is written as separate
+  code spans joined by `\|`, since `\|` inside one code span is shown with
+  its backslash;
+- the stale `SITEMAP_URL` was a defect, fixed in the template
+  `common-config-liquid.doxyfile` of `docusaurus-template-liquid`, and
+  locally, as `{{packageHomepage}}doxygen/`; a project that still has
+  `reference/` has not regenerated its commons;
+- the rejecting overloads, and the out-of-line definitions of the
+  deprecated `expect()` and `require()`, are hidden from Doxygen (see
+  `doxygen-review`).
+
+Fixes of the converter (`@xpack/doxygen2docusaurus`) found by the
+review, to be present in the pages after its release: the descriptions
+of the enumerators, the access prefix of the enumerations of a class,
+and the sentences "The ... topics, with their brief descriptions, are:"
+and "The classes and structs used by this project are:". If the pages
+lack them, the converter is older.
+
 ## Step 1 — Baseline
 
 Use the session scratchpad (shown as `<scratch>`) for every output;
@@ -254,7 +330,10 @@ which is not tracked).
 
    Pages of hundreds of kilobytes are slow and usually come from
    `INLINE_SOURCES`, `REFERENCES_RELATION`, `REFERENCED_BY_RELATION`,
-   or inherited members.
+   or inherited members. The maintainer keeps these options as they are,
+   on purpose, and accepts the page sizes that result (see "The Doxygen
+   configuration" below): record the sizes in the report, but do not
+   report them as a defect.
 
 ## Step 2 — Read the Pages as the Reader Sees Them
 
@@ -417,9 +496,11 @@ Problems a reader would notice as broken or wrong. Report these first.
 - rendering defects: text that Doxygen or the converter garbles
   (a backslash inside backticks became `\\endiskip`), stray HTML tags,
   admonitions mapped to the wrong kind (`@important` as a tip),
-  members that leak into a topic through an `@addtogroup` block,
-  spurious "Referenced by" entries. Compare the page with the source
-  to decide between **[header]**/**[topic]** and **[converter]**.
+  members that leak into a topic through an `@addtogroup` block. Compare
+  the page with the source to decide between **[header]**/**[topic]** and
+  **[converter]**. The "References" and "Referenced by" lists are kept on
+  purpose (see "Step 1"); an entry in them that Doxygen resolved by name,
+  across overloads, is not a defect.
 
 ### 2. Missing information
 
@@ -427,19 +508,35 @@ The completeness list of Step 3; one item per missing subject.
 
 ### 3. Structure and presentation
 
-- depth of the topic tree and collapsed categories;
+- depth of the topic tree and collapsed categories; the root of the
+  tree ("µOS++ Topics", "µTest++", "C++ API") and its collapsed levels
+  are kept on purpose, since the API home page lists every topic and the
+  root is shared with the other µOS++ sites, so do not propose to change
+  them;
 - internal entities (`detail`, `math`, `reflection`, `inlines/`,
-  `src/`) mixed with the public ones in the indices, with the options
-  to separate them;
-- page size and the configuration options behind it;
+  `src/`, and the anonymous namespaces) mixed with the public ones in
+  the indices; do not propose a Doxygen option to separate them (see
+  "The Doxygen Configuration"), only a change of the converter, or of
+  the entry points of the topics and of the home page;
+- page size, as an observation only (see "The Doxygen configuration");
 - documentation-only files (`top-common.h`, `topics.h`) published as
-  library files;
+  library files, which the maintainer accepts, so do not report it;
+- duplicate entries in the class indices (`compare_op`, `predicate_op`,
+  and `comparison_integer<T>`, which are distinct entities with the same
+  brief), which the maintainer accepts, so do not report them;
 - order of the members in the class indices (deleted, deprecated, and
   special members before the useful ones), and the use of `@name`
-  groups to fix it;
+  groups to fix it; the private members (`EXTRACT_PRIVATE = YES`) and
+  the friends (`HIDE_FRIEND_COMPOUNDS = NO`) are kept on purpose, so do
+  not propose hiding them, or removing the private members from the
+  pages;
 - topics with a single member, or with two members, that would be
-  clearer as sections of a larger topic;
-- topics whose brief does not match their members.
+  clearer as sections of a larger topic; "Expectations" and
+  "Requirements" are kept as two topics on purpose, so do not propose to
+  merge them;
+- topics whose brief does not match their members; the "C API" topic,
+  which says that there is no C API, is kept in the reference on
+  purpose, so do not propose to move it.
 
 ### 4. API design, as seen in the reference
 
@@ -452,14 +549,23 @@ namespaces, long-deprecated entities. Read the latest
 API-REVIEW-<n> #m" or "Overlaps API-REVIEW-<n> #m" instead of repeating
 its analysis; when there is none, report only what the reference
 exposes. These items are decisions for the
-maintainer; say so.
+maintainer; say so. The maintainer has accepted these, so do not report
+them: `detail::check_result&&` in the signatures of `expect()` and
+`require()`, with the parameter that the applications never pass;
+`expression_formatter` as an alias of `detail::expression_formatter`;
+`class suite&` in the signatures, until the deprecated `runner::suite()`
+is removed; and the inherited members `name()` and `totals()` of `suite`
+and `test_case`, documented through `detail::runnable_base`.
 
 ### 5. Consistency
 
 Build a table of the names used for the same thing and propose one:
 
 - test case / subtest / test; check / expectation / assertion /
-  condition;
+  condition; the terms "test session", "test run", and "test
+  execution" are kept as they are, on purpose, and so is "subtest", the
+  name of the deprecated alias and of real test cases of the unit
+  tests, so do not report them;
 - command line / command-line, run time / run-time / runtime,
   floating point / floating-point;
 - topic title capitalisation (the website uses sentence case);
@@ -518,7 +624,11 @@ Code defects found while verifying the reference (e.g. an operator
 whose constraint accepts types it cannot compare, a stale forward
 declaration, swapped template parameters, configuration leftovers).
 Say whether the page or the code needs changing; cross-reference
-the latest `API-REVIEW-<n>.md` when it already lists the problem.
+the latest `API-REVIEW-<n>.md` when it already lists the problem. The
+maintainer leaves the deprecated code as it is, since it will be
+removed: a defect in it is a finding about the page, which must state
+the actual behaviour (for example, the digits accepted by the
+deprecated floating-point literals), not a change of the code.
 
 ## Numbering
 

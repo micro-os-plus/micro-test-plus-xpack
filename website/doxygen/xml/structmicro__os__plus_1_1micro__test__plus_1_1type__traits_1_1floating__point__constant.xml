@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="132" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="132" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="128" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="128" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1adcb16c95222c90598162fb5310bcd0f8" prot="public" static="no">
         <type>T</type>
@@ -61,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="568" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="568" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="564" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="564" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-static-attrib">
@@ -73,14 +73,14 @@
         <qualifiedname>micro_os_plus::micro_test_plus::type_traits::floating_point_constant::epsilon</qualifiedname>
         <initializer>= T (1) / <ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a121fbc662b8263c3b9ce605456fbc7d5" kindref="member">math::pow</ref> (T (10), Size)</initializer>
         <briefdescription>
-<para>The epsilon value used for floating point comparisons. </para>
+<para>The epsilon value used for floating-point comparisons. </para>
         </briefdescription>
         <detaileddescription>
 <para>Calculated as 1 divided by 10 raised to the power of <computeroutput>Size</computeroutput>, i.e. one unit of the last decimal digit of the literal. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="577" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="577" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="573" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="573" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1aab5138b851247527b8c8abdf28c5e5b1" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>auto</type>
@@ -97,7 +97,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="585" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="586" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="581" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="582" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -122,7 +122,7 @@ Returns the compile-time constant value as type <computeroutput>T</computeroutpu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="604" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="618" bodyend="621"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="600" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="614" bodyend="617"/>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1ad193f5a4c7c468860316b4e7d7a5ac05" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="yes" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -140,7 +140,7 @@ Returns the compile-time constant value as type <computeroutput>T</computeroutpu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="594" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="607" bodyend="610"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="590" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="603" bodyend="606"/>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1ab729a3603714779b81c47b8b57b1cbd8" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>auto</type>
@@ -158,11 +158,11 @@ Returns a new <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="612" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="630" bodyend="633"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="608" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="626" bodyend="629"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>Struct template representing a generic floating point constant with custom size and precision. </para>
+<para>Struct template representing a generic floating-point constant with custom size and precision. </para>
     </briefdescription>
     <detaileddescription>
 <para><parameterlist kind="templateparam"><parameteritem>
@@ -170,7 +170,7 @@ Returns a new <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__
 <parametername>T</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The floating point type (e.g., float, double). </para>
+<para>The floating-point type (e.g., float, double). </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -206,7 +206,7 @@ Returns a new <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" kindref="compound">floating_point_constant</ref></computeroutput> struct template provides a compile-time constant value of a floating point type, supporting custom size and precision. It inherits from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" kindref="compound">op</ref></computeroutput> directly rather than from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base" kindref="compound">value_base</ref>&lt;T&gt;</computeroutput>, since its value is the compile-time <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref></computeroutput> constant, and it needs no run-time storage; the struct is empty, and the literal operators create it with <computeroutput>{}</computeroutput>, without a constructor. Having no non-static floating point members, it is not a homogeneous floating point aggregate, so the <computeroutput>-Wpsabi</computeroutput> note described for <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base" kindref="compound">value_base</ref></computeroutput> does not apply to it, despite its empty base. On 32-bit Arm, GCC emits another note, about a change in GCC 7.1, for each function passing a <computeroutput>double</computeroutput> or <computeroutput>long double</computeroutput> constant by value, since the earlier versions computed its alignment from its static <computeroutput>double</computeroutput> members; the framework does not pass the constants by value.</para>
+The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" kindref="compound">floating_point_constant</ref></computeroutput> struct template provides a compile-time constant value of a floating-point type, supporting custom size and precision. It inherits from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op" kindref="compound">op</ref></computeroutput> directly rather than from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base" kindref="compound">value_base</ref>&lt;T&gt;</computeroutput>, since its value is the compile-time <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref></computeroutput> constant, and it needs no run-time storage; the struct is empty, and the literal operators create it with <computeroutput>{}</computeroutput>, without a constructor. Having no non-static floating-point members, it is not a homogeneous floating-point aggregate, so the <computeroutput>-Wpsabi</computeroutput> note described for <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base" kindref="compound">value_base</ref></computeroutput> does not apply to it, despite its empty base. On 32-bit Arm, GCC emits another note, about a change in GCC 7.1, for each function passing a <computeroutput>double</computeroutput> or <computeroutput>long double</computeroutput> constant by value, since the earlier versions computed its alignment from its static <computeroutput>double</computeroutput> members; the framework does not pass the constants by value.</para>
 <para>The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant_1adcb16c95222c90598162fb5310bcd0f8" kindref="member">value_type</ref></computeroutput> alias, explicit conversion operator, and <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant_1a0169d044ee9d39e5d1b63c0a1fc4ce95" kindref="member">get()</ref></computeroutput> accessor are provided directly by this struct. The compile-time <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant_1acc11936d636a95777208dc8e50f2546f" kindref="member">epsilon</ref></computeroutput> and <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref></computeroutput> static constants are retained, and a unary minus operator is provided to obtain the negative value as a new <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant" kindref="compound">floating_point_constant</ref></computeroutput> instance. </para>
     </detaileddescription>
     <inheritancegraph>
@@ -233,7 +233,7 @@ The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1ty
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="556" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="557" bodyend="613"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="552" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="553" bodyend="609"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1acc11936d636a95777208dc8e50f2546f" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::floating_point_constant</scope><name>epsilon</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_1a0169d044ee9d39e5d1b63c0a1fc4ce95" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::type_traits::floating_point_constant</scope><name>get</name></member>

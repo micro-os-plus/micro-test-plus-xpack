@@ -138,10 +138,6 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a71d82aa506f49748d884cd2b53bcf1b2" id="r_a71d82aa506f49748d884cd2b53bcf1b2"><td class="memTemplParams" colspan="2">template&lt;class L, class R&gt; <br />
-requires (not extension::compare_tag&lt;Compare_T, <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a2c197674df5b07499a4ea40d124f1082">unwrapped_t</a>&lt;L&gt;, <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a2c197674df5b07499a4ea40d124f1082">unwrapped_t</a>&lt;R&gt;&gt;)</td></tr>
-<tr class="memitem:a71d82aa506f49748d884cd2b53bcf1b2 template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a71d82aa506f49748d884cd2b53bcf1b2">compare_op</a> (L &amp;&amp;lhs, R &amp;&amp;rhs, Compare_T)</td></tr>
-<tr class="memdesc:a71d82aa506f49748d884cd2b53bcf1b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rejects a tag that does not satisfy <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1compare__tag.html" title="Concept satisfied by a tag that defines a custom comparator.">extension::compare_tag</a></span>.  <br /></td></tr>
 <tr class="memitem:a7e864eeb2250a0e6b7f4b11c2eeae663" id="r_a7e864eeb2250a0e6b7f4b11c2eeae663"><td class="memTemplParams" colspan="2">template&lt;class L, class R&gt; <br />
 requires extension::compare_tag&lt;Compare_T, <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a2c197674df5b07499a4ea40d124f1082">unwrapped_t</a>&lt;L&gt;, <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a2c197674df5b07499a4ea40d124f1082">unwrapped_t</a>&lt;R&gt;&gt;</td></tr>
 <tr class="memitem:a7e864eeb2250a0e6b7f4b11c2eeae663 template"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a7e864eeb2250a0e6b7f4b11c2eeae663">compare_op</a> (L &amp;&amp;lhs, R &amp;&amp;rhs, Compare_T)</td></tr>
@@ -164,12 +160,12 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class Lhs_T, class Rhs_T, class Compare_T&gt;<br />
-struct micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;</div><p>Derived from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html" title="Common base struct template for binary comparators.">binary_op</a></span>, this struct compares the left-hand operand with the right-hand operand, using the operator defined by the tag <span class="tt">Compare_T</span> (<span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to.html" title="Equality tag for compare_op.">equal_to</a></span>, <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to.html" title="Non-equality tag for compare_op.">not_equal_to</a></span>, <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater.html" title="Greater than tag for compare_op.">greater</a></span>, <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal.html" title="Greater than or equal tag for compare_op.">greater_equal</a></span>, <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less.html" title="Less than tag for compare_op.">less</a></span>, or <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal.html" title="Less than or equal tag for compare_op.">less_equal</a></span>). It is used within test expressions to provide human-readable relational assertions, with the actual and expected values, and the symbol of the tag, reported upon failure.</p>
+struct micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;</div><p>Derived from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html" title="Common base struct template for binary comparators.">binary_op</a></span>, this struct compares the left-hand operand with the right-hand operand, using the operator defined by the tag <span class="tt">Compare_T</span> (<span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to.html" title="Equality tag for compare_op.">equal_to</a></span>, <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to.html" title="Non-equality tag for compare_op.">not_equal_to</a></span>, <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater.html" title="Greater than tag for compare_op.">greater</a></span>, <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1greater__equal.html" title="Greater than or equal tag for compare_op.">greater_equal</a></span>, <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less.html" title="Less than tag for compare_op.">less</a></span>, or <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1less__equal.html" title="Less than or equal tag for compare_op.">less_equal</a></span>). It is used within test expressions to provide human-readable relational checks, with the actual and expected values, and the symbol of the tag, reported upon failure.</p>
 <p>The tag is passed as an empty constructor argument, so that all three template arguments are deduced, for example <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html" title="Relational comparator struct template.">compare_op</a>{ <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#a27b015b0e2b40e0f0bbb1b08588e1c20" title="Retrieves the left-hand operand.">lhs</a>, <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#ae1436f1b38c1062f7c733d3e8cb39b87" title="Retrieves the right-hand operand.">rhs</a>, <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1equal__to.html" title="Equality tag for compare_op.">equal_to</a>{} }</span>. A factory function would do the same, but at <span class="tt">-O0</span> it adds one function per instantiation.</p>
 <p>It is also public, as <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1extension_1_1compare__op.html" title="Relational comparator struct template.">extension::compare_op</a></span>, so that the applications can define their own comparisons with their own tags. A tag is an empty struct with:</p><ul>
 <li>a <span class="tt">static constexpr const char* symbol</span>, written between the operands in the failure reports, with the surrounding spaces (for example <span class="tt">" divides "</span>);</li>
 <li>a static <span class="tt">apply (<a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#a27b015b0e2b40e0f0bbb1b08588e1c20" title="Retrieves the left-hand operand.">lhs</a>, <a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#ae1436f1b38c1062f7c733d3e8cb39b87" title="Retrieves the right-hand operand.">rhs</a>)</span> member function template, which receives the unwrapped operands (the values of the <span class="tt">to_*</span> wrappers and of the literals) and returns the result as <span class="tt">bool</span>;</li>
-<li>optionally, a <span class="tt">static constexpr bool within_tolerance_result</span>; when present, and an operand is a floating-point wrapper (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html" title="Deprecated C++20 concept satisfied when T is a framework floating-point wrapper with a tolerance.">extension::has_epsilon</a></span>), the operands within the tolerance give this result, as for the built-in comparators; when absent, the tolerance is ignored.</li>
+<li>optionally, a <span class="tt">static constexpr bool within_tolerance_result</span>; when present, and an operand is a floating-point wrapper (see <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html" title="Deprecated concept satisfied when T is a framework floating-point wrapper with a tolerance.">extension::has_epsilon</a></span>), the operands within the tolerance give this result, as for the built-in comparators; when absent, the tolerance is ignored.</li>
 </ul>
 <p>The operands are reported as the built-in comparators report them: the stored operands are prepared by <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b" title="Prepares an operand of a comparator.">as_operand()</a></span>, so the C strings are written quoted, and the arrays as ranges; the tag still receives the operands as they were passed, without this conversion.</p>
 <p>The temporaries are moved into the comparator, and the named operands are copied (see <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ae9fe49cb0d38724533e9a27a2232bf09" title="The type with which an expression stores an operand.">stored_operand_t</a></span>), so a comparator built in a function from its <span class="tt">const&amp;</span> parameters can be returned from it.</p>
@@ -182,7 +178,7 @@ struct micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Comp
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00881">881</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00877">877</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a384b1d115e493d6a554ebda4e3089b19" name="a384b1d115e493d6a554ebda4e3089b19"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a384b1d115e493d6a554ebda4e3089b19">&#9670;&#160;</a></span>op_type</h2>
@@ -203,15 +199,15 @@ struct micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Comp
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Detected by the <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="C++20 concept satisfied when a type is a framework expression type.">extension::is_op</a></span> concept, and inherited by all types derived from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op.html" title="Empty base struct for the framework expression types.">op</a></span>. </p>
+<p>Detected by the <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="Concept satisfied when a type is a framework expression type.">extension::is_op</a></span> concept, and inherited by all types derived from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op.html" title="Empty base struct for the framework expression types.">op</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00132">132</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00128">128</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
 
 </div>
 </div>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7e864eeb2250a0e6b7f4b11c2eeae663" name="a7e864eeb2250a0e6b7f4b11c2eeae663"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e864eeb2250a0e6b7f4b11c2eeae663">&#9670;&#160;</a></span>compare_op() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e864eeb2250a0e6b7f4b11c2eeae663">&#9670;&#160;</a></span>compare_op()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -265,9 +261,8 @@ requires extension::compare_tag&lt;Compare_T, <a class="el" href="namespacemicro
 <p>Evaluates the comparison inside an immediately invoked lambda, which converts the result of <span class="tt">Compare_T::apply()</span> to <span class="tt">bool</span>, and passes it to the <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html" title="Common base struct template for binary comparators.">binary_op</a></span> base class constructor:</p><ul>
 <li>for the framework constants with static <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">value</a></span> members (the numeric literals), the two values are compared directly;</li>
 <li>if at least one operand is a framework floating-point wrapper with an <span class="tt">epsilon</span> member, and the tag defines a <span class="tt">within_tolerance_result</span> (all the built-in tags do), operands within the tolerance give this result; otherwise the unwrapped values are compared; the tags of the application without it ignore the tolerance;</li>
-<li>for all other types, the framework wrappers are unwrapped, and the values, including the types of the application, are compared as they are.</li>
+<li>for all other types, the framework wrappers are unwrapped, and the values, including the types of the application, are compared as they are. </li>
 </ul>
-<p>Never called; the compilation stops in <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a8f37cb82707a1ddb497f445f761d2b51" title="Stops the compilation of a compare_op whose tag is rejected, with a message that tells why.">reject_compare_tag()</a></span>, with a message that states what the tag needs. The base is built with the operands and a <span class="tt">false</span> result, so that the error is the only one. </p>
 
 <p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l00855">855</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  859</span>        : <a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#a33a6b26e134e3403ea52fcaf9ce92691">binary_op&lt;Lhs_T, Rhs_T&gt;</a>{ <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">detail::as_operand</a> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">std::forward&lt;L&gt;</a> (<a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#a27b015b0e2b40e0f0bbb1b08588e1c20">lhs</a>)),</div>
@@ -306,71 +301,13 @@ requires extension::compare_tag&lt;Compare_T, <a class="el" href="namespacemicro
 <div class="line"><span class="lineno">  892</span>      }() }</div>
 <div class="line"><span class="lineno">  893</span>    {</div>
 <div class="ttc" id="agroup__micro-os-plus-micro-test-plus-cpp-api-deprecated_html_ga6c5237ff6944278e8c5e3294cf99a3b9"><div class="ttname"><a href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga6c5237ff6944278e8c5e3294cf99a3b9">micro_os_plus::micro_test_plus::detail::within_tolerance</a></div><div class="ttdeci">constexpr bool within_tolerance(const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</div><div class="ttdoc">Deprecated check whether two operands are equal within the tolerance of the floating-point wrappers.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00212">detail-inlines.h:212</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a51e86043001b197561806d5c6297041b"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">micro_os_plus::micro_test_plus::detail::as_operand</a></div><div class="ttdeci">constexpr auto as_operand(T &amp;&amp;t) noexcept -&gt; decltype(auto)</div><div class="ttdoc">Prepares an operand of a comparator.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l01711">detail-inlines.h:1711</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a51e86043001b197561806d5c6297041b"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a51e86043001b197561806d5c6297041b">micro_os_plus::micro_test_plus::detail::as_operand</a></div><div class="ttdeci">constexpr auto as_operand(T &amp;&amp;t) noexcept -&gt; decltype(auto)</div><div class="ttdoc">Prepares an operand of a comparator.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l01715">detail-inlines.h:1715</a></div></div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_html_a27b015b0e2b40e0f0bbb1b08588e1c20"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#a27b015b0e2b40e0f0bbb1b08588e1c20">micro_os_plus::micro_test_plus::detail::binary_op::lhs</a></div><div class="ttdeci">constexpr decltype(auto) lhs(void) const</div><div class="ttdoc">Retrieves the left-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00181">detail-inlines.h:181</a></div></div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_html_a33a6b26e134e3403ea52fcaf9ce92691"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#a33a6b26e134e3403ea52fcaf9ce92691">micro_os_plus::micro_test_plus::detail::binary_op::binary_op</a></div><div class="ttdeci">constexpr binary_op(L &amp;&amp;lhs, R &amp;&amp;rhs, bool value)</div><div class="ttdoc">Constructs a binary comparator with the given operands and pre-computed result.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00155">detail-inlines.h:155</a></div></div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_html_ae1436f1b38c1062f7c733d3e8cb39b87"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#ae1436f1b38c1062f7c733d3e8cb39b87">micro_os_plus::micro_test_plus::detail::binary_op::rhs</a></div><div class="ttdeci">constexpr decltype(auto) rhs(void) const</div><div class="ttdoc">Retrieves the right-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00194">detail-inlines.h:194</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">micro_os_plus::micro_test_plus::detail::compare_op</a></div><div class="ttdoc">Relational comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00881">detail.h:882</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">micro_os_plus::micro_test_plus::detail::compare_op</a></div><div class="ttdoc">Relational comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00877">detail.h:878</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00155">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::binary_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l01711">micro_os_plus::micro_test_plus::detail::as_operand()</a>, <a class="el" href="detail-inlines_8h_source.html#l00181">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail-inlines_8h_source.html#l00194">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::rhs()</a>, <a class="el" href="detail-inlines_8h_source.html#l00098">micro_os_plus::micro_test_plus::detail::unwrap()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00212">micro_os_plus::micro_test_plus::detail::within_tolerance()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="#a71d82aa506f49748d884cd2b53bcf1b2">compare_op()</a>.</p>
-
-</div>
-</div>
-<a id="a71d82aa506f49748d884cd2b53bcf1b2" name="a71d82aa506f49748d884cd2b53bcf1b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71d82aa506f49748d884cd2b53bcf1b2">&#9670;&#160;</a></span>compare_op() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Lhs_T, class Rhs_T, class Compare_T&gt; </div>
-<div class="memtemplate">
-template&lt;class L, class R&gt; <br />
-requires (not extension::compare_tag&lt;Compare_T, <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a2c197674df5b07499a4ea40d124f1082">unwrapped_t</a>&lt;L&gt;, <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a2c197674df5b07499a4ea40d124f1082">unwrapped_t</a>&lt;R&gt;&gt;)</div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html">micro_os_plus::micro_test_plus::detail::compare_op</a>&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op </td>
-          <td>(</td>
-          <td class="paramtype">L &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>lhs</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">R &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Compare_T</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Selected when the tag has no printable static <span class="tt">symbol</span>, or no static <span class="tt">apply()</span> that can be called with the operands; it stops the compilation with a message that states what the tag needs, instead of the notes of the concept. Never called.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">L</td><td>The type of the left-hand operand argument. </td></tr>
-    <tr><td class="paramname">R</td><td>The type of the right-hand operand argument.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lhs</td><td>The left-hand operand. </td></tr>
-    <tr><td class="paramname">rhs</td><td>The right-hand operand. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00855">compare_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00181">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00194">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::rhs()</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00155">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::binary_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l01715">micro_os_plus::micro_test_plus::detail::as_operand()</a>, <a class="el" href="detail-inlines_8h_source.html#l00181">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::lhs()</a>, <a class="el" href="detail-inlines_8h_source.html#l00194">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::rhs()</a>, <a class="el" href="detail-inlines_8h_source.html#l00098">micro_os_plus::micro_test_plus::detail::unwrap()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00212">micro_os_plus::micro_test_plus::detail::within_tolerance()</a>.</p>
 
 </div>
 </div>
@@ -409,11 +346,11 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 <div class="line"><span class="lineno">  183</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a59eb53c96f68d26635c13df53b358ac8">detail::unwrap</a> (<a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#ac21255b7b6b6d4b9c71522cc997a5fc2">lhs_</a>);</div>
 <div class="line"><span class="lineno">  184</span>    }</div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a59eb53c96f68d26635c13df53b358ac8"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a59eb53c96f68d26635c13df53b358ac8">micro_os_plus::micro_test_plus::detail::unwrap</a></div><div class="ttdeci">decltype(auto) constexpr unwrap(const T &amp;t)</div><div class="ttdoc">Returns the value wrapped by a framework type, or the operand itself.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00098">detail-inlines.h:98</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_html_ac21255b7b6b6d4b9c71522cc997a5fc2"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#ac21255b7b6b6d4b9c71522cc997a5fc2">micro_os_plus::micro_test_plus::detail::binary_op::lhs_</a></div><div class="ttdeci">Lhs_T lhs_</div><div class="ttdoc">Stores the left-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00405">detail.h:405</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_html_ac21255b7b6b6d4b9c71522cc997a5fc2"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#ac21255b7b6b6d4b9c71522cc997a5fc2">micro_os_plus::micro_test_plus::detail::binary_op::lhs_</a></div><div class="ttdeci">Lhs_T lhs_</div><div class="ttdoc">Stores the left-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00401">detail.h:401</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00181">lhs()</a>, <a class="el" href="detail_8h_source.html#l00405">lhs_</a>, and <a class="el" href="detail-inlines_8h_source.html#l00098">micro_os_plus::micro_test_plus::detail::unwrap()</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00181">lhs()</a>, <a class="el" href="detail_8h_source.html#l00401">lhs_</a>, and <a class="el" href="detail-inlines_8h_source.html#l00098">micro_os_plus::micro_test_plus::detail::unwrap()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01039">micro_os_plus::micro_test_plus::detail::and_op&lt; Lhs_T, Rhs_T &gt;::and_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l01006">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00155">binary_op()</a>, <a class="el" href="#a71d82aa506f49748d884cd2b53bcf1b2">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l01057">micro_os_plus::micro_test_plus::detail::or_op&lt; Lhs_T, Rhs_T &gt;::or_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00181">lhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01041">micro_os_plus::micro_test_plus::detail::and_op&lt; Lhs_T, Rhs_T &gt;::and_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l01008">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00155">binary_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00855">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l01059">micro_os_plus::micro_test_plus::detail::or_op&lt; Lhs_T, Rhs_T &gt;::or_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00181">lhs()</a>.</p>
 
 </div>
 </div>
@@ -449,9 +386,9 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 <div class="fragment"><div class="line"><span class="lineno">  169</span>    {</div>
 <div class="line"><span class="lineno">  170</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#abbe4c20d03a94cac1a942d8e3af65aea">value_</a>;</div>
 <div class="line"><span class="lineno">  171</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_html_abbe4c20d03a94cac1a942d8e3af65aea"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#abbe4c20d03a94cac1a942d8e3af65aea">micro_os_plus::micro_test_plus::detail::binary_op::value_</a></div><div class="ttdeci">const bool value_</div><div class="ttdoc">Stores the result of the comparison.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00421">detail.h:421</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_html_abbe4c20d03a94cac1a942d8e3af65aea"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#abbe4c20d03a94cac1a942d8e3af65aea">micro_os_plus::micro_test_plus::detail::binary_op::value_</a></div><div class="ttdeci">const bool value_</div><div class="ttdoc">Stores the result of the comparison.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00417">detail.h:417</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00155">binary_op()</a>, and <a class="el" href="detail_8h_source.html#l00421">value_</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00155">binary_op()</a>, and <a class="el" href="detail_8h_source.html#l00417">value_</a>.</p>
 
 </div>
 </div>
@@ -488,11 +425,11 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 <div class="fragment"><div class="line"><span class="lineno">  195</span>    {</div>
 <div class="line"><span class="lineno">  196</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a59eb53c96f68d26635c13df53b358ac8">detail::unwrap</a> (<a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#a3111bc24739599066db41c6a5023672b">rhs_</a>);</div>
 <div class="line"><span class="lineno">  197</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_html_a3111bc24739599066db41c6a5023672b"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#a3111bc24739599066db41c6a5023672b">micro_os_plus::micro_test_plus::detail::binary_op::rhs_</a></div><div class="ttdeci">Rhs_T rhs_</div><div class="ttdoc">Stores the right-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00413">detail.h:413</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_html_a3111bc24739599066db41c6a5023672b"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#a3111bc24739599066db41c6a5023672b">micro_os_plus::micro_test_plus::detail::binary_op::rhs_</a></div><div class="ttdeci">Rhs_T rhs_</div><div class="ttdoc">Stores the right-hand operand.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l00409">detail.h:409</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00194">rhs()</a>, <a class="el" href="detail_8h_source.html#l00413">rhs_</a>, and <a class="el" href="detail-inlines_8h_source.html#l00098">micro_os_plus::micro_test_plus::detail::unwrap()</a>.</p>
+<p class="reference">References <a class="el" href="detail-inlines_8h_source.html#l00194">rhs()</a>, <a class="el" href="detail_8h_source.html#l00409">rhs_</a>, and <a class="el" href="detail-inlines_8h_source.html#l00098">micro_os_plus::micro_test_plus::detail::unwrap()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01039">micro_os_plus::micro_test_plus::detail::and_op&lt; Lhs_T, Rhs_T &gt;::and_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l01006">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00155">binary_op()</a>, <a class="el" href="#a71d82aa506f49748d884cd2b53bcf1b2">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l01057">micro_os_plus::micro_test_plus::detail::or_op&lt; Lhs_T, Rhs_T &gt;::or_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00194">rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01041">micro_os_plus::micro_test_plus::detail::and_op&lt; Lhs_T, Rhs_T &gt;::and_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l01008">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00155">binary_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l00855">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op()</a>, <a class="el" href="detail-inlines_8h_source.html#l01059">micro_os_plus::micro_test_plus::detail::or_op&lt; Lhs_T, Rhs_T &gt;::or_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00194">rhs()</a>.</p>
 
 </div>
 </div>
@@ -520,7 +457,7 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 </div><div class="memdoc">
 <p>A value, moved from a temporary or copied from a named operand, or, for a named operand that cannot be copied, a <span class="tt">const</span> reference to it (see <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ae9fe49cb0d38724533e9a27a2232bf09" title="The type with which an expression stores an operand.">stored_operand_t</a></span>). It is not <span class="tt">const</span>, so that a temporary expression can be moved into an enclosing one. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00405">405</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00401">401</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00155">binary_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00181">lhs()</a>.</p>
 
@@ -549,7 +486,7 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 </div><div class="memdoc">
 <p>Stored as the left-hand operand is. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00413">413</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00409">409</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00155">binary_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00194">rhs()</a>.</p>
 
@@ -578,7 +515,7 @@ template&lt;class Lhs_T, class Rhs_T&gt; </div>
 </div><div class="memdoc">
 <p>Computed once, by the derived comparator constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00421">421</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00417">417</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l00155">binary_op()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00168">operator bool()</a>.</p>
 

@@ -29,10 +29,6 @@
  * All definitions reside within the `micro_os_plus::micro_test_plus::utility`
  * namespace.
  *
- * The header files are organised within the
- * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
- * modular codebase.
- *
  * This file is included by `utility.h`; the applications include
  * `micro-os-plus/micro-test-plus.h`, not this file.
  */
@@ -75,7 +71,7 @@ namespace micro_os_plus::micro_test_plus
      * parsing of delimited data, which is particularly useful for validating
      * string processing logic in test cases.
      *
-     * **Example**
+     * @par Example
      *
      * @code{.cpp}
      * namespace mt = micro_os_plus::micro_test_plus;

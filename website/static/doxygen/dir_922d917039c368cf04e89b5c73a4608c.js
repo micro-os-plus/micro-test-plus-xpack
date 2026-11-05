@@ -2,7 +2,7 @@ var dir_922d917039c368cf04e89b5c73a4608c =
 [
     [ "inlines", "dir_b34942af1e28075bba4d79bf44077044.html", "dir_b34942af1e28075bba4d79bf44077044" ],
     [ "check-result.h", "check-result_8h.html", "check-result_8h" ],
-    [ "counters.h", "counters_8h.html", "counters_8h" ],
+    [ "counters.h", "counters_8h.html", null ],
     [ "deprecated.h", "deprecated_8h.html", "deprecated_8h" ],
     [ "detail.h", "detail_8h.html", "detail_8h" ],
     [ "exceptions.h", "exceptions_8h.html", "exceptions_8h" ],

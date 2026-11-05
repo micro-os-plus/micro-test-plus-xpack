@@ -1,4 +1,4 @@
-@defgroup micro-os-plus-micro-test-plus-cpp-api-test-case Test Cases
+@defgroup micro-os-plus-micro-test-plus-cpp-api-test-case Test cases
 @brief Test cases are named sequences of checks.
 
 @details
@@ -11,6 +11,19 @@ the test case received by the lambda (`t.expect (...)`).
 Write one test case for each behaviour of the code under test; the report
 shows the result of each test case, so a failure points to the behaviour
 that broke.
+
+A test case that makes no check passes, and is reported as `passed (0
+checks)`; a body that forgets its checks is not detected, so make at least
+one in each test case.
+
+An exception that escapes the body of a test case is caught, and reported
+as a failed check of that test case, with the text of its `what()`
+(`unexpected exception: ...`, or `unexpected exception of unknown type`);
+the test case ends, and the run continues with the next one. Nested test
+cases catch their own exceptions, so the exception is reported by the
+innermost test case whose body it escapes. An exception that escapes the
+body of a suite fails that suite in the same way. Without exceptions,
+nothing can be thrown, and this does not apply.
 
 A test case can contain other test cases, created with `test()` on the
 test case itself (`t.test (...)`); they are reported nested.

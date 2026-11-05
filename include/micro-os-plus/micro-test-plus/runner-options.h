@@ -78,6 +78,7 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-runners
    * @brief The verbosity levels for test reporting.
    *
    * @details
@@ -112,6 +113,7 @@ namespace micro_os_plus::micro_test_plus
   };
 
   /**
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-runners
    * @brief The built-in reporters.
    *
    * @details
@@ -129,6 +131,7 @@ namespace micro_os_plus::micro_test_plus
   };
 
   /**
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-runners
    * @brief The use of colours in the console output.
    *
    * @details
@@ -161,6 +164,7 @@ namespace micro_os_plus::micro_test_plus
   // ==========================================================================
 
   /**
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-runners
    * @brief The configuration of a test session, and its command-line
    * parser.
    *
@@ -197,7 +201,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * The configuration members are public, since any combination of their
    * values is valid; the command line and the results of the parsing
-   * (whether errors were found, whether the reporter was unknown, and
+   * (whether errors were found, whether an unknown option was found, and
    * where the application arguments start) are private, since they
    * depend on one another, and are read with the accessors.
    *

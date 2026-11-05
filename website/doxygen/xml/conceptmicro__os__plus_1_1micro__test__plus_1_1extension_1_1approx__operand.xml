@@ -30,7 +30,7 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1
 </codepart>
     </conceptparts>
     <briefdescription>
-<para>C++20 concept satisfied when <computeroutput>T</computeroutput> is a valid operand of the approximate comparator. </para>
+<para>Concept satisfied when <computeroutput>T</computeroutput> is a valid operand of the approximate comparator. </para>
     </briefdescription>
     <detaileddescription>
 <para><parameterlist kind="templateparam"><parameteritem>

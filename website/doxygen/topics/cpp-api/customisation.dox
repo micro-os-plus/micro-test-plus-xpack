@@ -21,15 +21,24 @@ appended to the messages of the checks.
 A comparator is an expression template, parametrised by a tag of the
 application: a type with a `symbol` text, which separates the operands in
 the report, and a static `apply()` function, which returns the result.
-`extension::compare_op` takes two operands and a tag, and
-`extension::predicate_op` takes one operand and a tag. The result is an
+@ref micro_os_plus::micro_test_plus::extension::compare_op
+"extension::compare_op" takes two operands and a tag, and
+@ref micro_os_plus::micro_test_plus::extension::predicate_op
+"extension::predicate_op" takes one operand and a tag. The result is an
 expression like those returned by `eq()` and `negate()`, so it can be
 combined with `all_of()`, `any_of()`, and `negate()`, and a failed check
 displays the operands and the symbol.
 
 The concepts of the `extension` namespace (`is_op`, `any_op`, `checkable`,
-`printable`, `compare_tag`, and `predicate_tag`) describe the types that
-these templates and the checks accept.
+`printable`, `compare_tag`, `predicate_tag`, and `approx_operand`)
+describe the types that these templates and the checks accept; the last
+one constrains the operands of `approx()`, for the helpers that forward
+their operands to it. Only the deprecated floating-point wrappers have a
+tolerance: with the deprecated definitions enabled, `has_epsilon` detects
+them, and a comparator tag may define a `static constexpr bool
+within_tolerance_result`, which is the result for the operands that are
+within the tolerance of such a wrapper; without it, the tolerance is
+ignored.
 
 @par Example
 
@@ -92,9 +101,48 @@ The failed checks are reported with the values and the symbol:
     • Check points
         ✗ differ FAILED (main.cpp:75, { 1, 2 } == { 1, 3 })
     • Check divisors
-        ✗ 5 divides 12 FAILED (main.cpp:80, 5 divides 12)
+        ✗ 5 divides 12 FAILED (main.cpp:79, 5 divides 12)
 @endcode
 
 A predicate is written in the same way, with a tag that has a `symbol`
 and an `apply()` function of one operand, and the template
-`extension::predicate_op`.
+`extension::predicate_op`. The report writes the symbol before the operand,
+so the symbol ends with the space that separates them (`"is even "`):
+
+@code{.cpp}
+namespace app
+{
+  struct is_even_tag
+  {
+    static constexpr const char* symbol = "is even ";
+
+    template <class T>
+    static constexpr bool
+    apply (const T& value)
+    {
+      return value % 2 == 0;
+    }
+  };
+
+  template <class T>
+  constexpr auto
+  is_even (const T& value)
+  {
+    return mt::extension::predicate_op{ value, is_even_tag{} };
+  }
+} // namespace app
+
+ts.test ("Check parity", [] (auto& t) {
+  t.expect (app::is_even (3)) << "3 is even";
+  t.expect (mt::negate (app::is_even (4))) << "4 is not even";
+});
+@endcode
+
+Both checks fail, and a predicate can be combined with `negate()`,
+`all_of()`, and `any_of()`, as the comparators are:
+
+@code{.console}
+    • Check parity
+        ✗ 3 is even FAILED (main.cpp:28, is even 3)
+        ✗ 4 is not even FAILED (main.cpp:29, not is even 4)
+@endcode

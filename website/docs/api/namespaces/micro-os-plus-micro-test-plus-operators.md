@@ -17,7 +17,7 @@ keywords:
 
 # `operators` Namespace
 
-<p>Custom operator overloads for expressive and type-safe test assertions. <a href="#details">More...</a></p>
+<p>Deprecated comparison and logical operators of the test checks. <a href="#details">More...</a></p>
 
 ## Definition
 
@@ -186,7 +186,7 @@ namespace micro_os_plus::micro_test_plus::operators { ... }
 
 ## Description {#details}
 
-<p>Custom operator overloads for expressive and type-safe test assertions.</p>
+<p>Deprecated comparison and logical operators of the test checks.</p>
 
 
 <p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/operators">micro_os_plus::micro_test_plus::operators</a></span> namespace provides the deprecated overloaded operators of the test checks.</p>
@@ -227,6 +227,6 @@ namespace micro_os_plus::micro_test_plus::operators { ... }
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

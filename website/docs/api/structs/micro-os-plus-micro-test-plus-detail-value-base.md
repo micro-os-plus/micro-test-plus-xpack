@@ -17,7 +17,7 @@ keywords:
 
 # `value_base` Struct Template
 
-<p>Base struct template providing common storage and accessors for runtime value-wrapper types. <a href="#details">More...</a></p>
+<p>Base struct template providing common storage and accessors for run-time value-wrapper types. <a href="#details">More...</a></p>
 
 ## Declaration
 
@@ -364,7 +364,7 @@ struct micro_os_plus::micro_test_plus::detail::value_base&lt;T&gt; { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Struct template representing a floating point value with precision control. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-f7399366cd6336ecbea702c3289d9432/#details">More...</a></p>
+<p>Struct template representing a floating-point value with precision control. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-f7399366cd6336ecbea702c3289d9432/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -392,7 +392,7 @@ struct micro_os_plus::micro_test_plus::detail::value_base&lt;T&gt; { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Struct template representing a floating point value with precision control. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-f7399366cd6336ecbea702c3289d9432/#details">More...</a></p>
+<p>Struct template representing a floating-point value with precision control. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-f7399366cd6336ecbea702c3289d9432/#details">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -535,7 +535,7 @@ struct micro_os_plus::micro_test_plus::detail::value_base&lt;T&gt; { ... }
 
 ## Description {#details}
 
-<p>Base struct template providing common storage and accessors for runtime value-wrapper types.</p>
+<p>Base struct template providing common storage and accessors for run-time value-wrapper types.</p>
 
 
 <dl class="doxyParamsList">
@@ -550,16 +550,16 @@ struct micro_os_plus::micro_test_plus::detail::value_base&lt;T&gt; { ... }
 </dd>
 </dl>
 
-<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-base">value_base</a></span> struct template stores the value in a private member, and provides an explicit <span class="doxyComputerOutput">operator T()</span> conversion and a <span class="doxyComputerOutput"><a href="#a9199f28db3a365b60ca6ef17053cec2a">get()</a></span> accessor, shared by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">integral_constant</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">value</a>&lt;T&gt;</span>, and the floating point specialisation of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">value</a>&lt;T&gt;</span>.</p>
+<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-base">value_base</a></span> struct template stores the value in a private member, and provides an explicit <span class="doxyComputerOutput">operator T()</span> conversion and a <span class="doxyComputerOutput"><a href="#a9199f28db3a365b60ca6ef17053cec2a">get()</a></span> accessor, shared by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">integral_constant</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">value</a>&lt;T&gt;</span>, and the floating-point specialisation of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">value</a>&lt;T&gt;</span>.</p>
 
 
 <p>It declares the <span class="doxyComputerOutput"><a href="#a4d0554be18a449d7b9176e868e631846">op_type</a></span> marker, so that all derived types satisfy the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span> concept without each struct needing to declare it.</p>
 
 
-<p>It does not derive from the empty <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/op">op</a></span> struct: a type with an empty base and only floating point members, like <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">value</a>&lt;float&gt;</span>, is a homogeneous floating point aggregate whose parameter passing with C++17 and later changed in GCC 10.1, and GCC emits a <span class="doxyComputerOutput">-Wpsabi</span> note for each function passing or returning it by value, like <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a></span>, on AArch64 and on 32-bit Arm with the hard-float ABI.</p>
+<p>It does not derive from the empty <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/op">op</a></span> struct: a type with an empty base and only floating-point members, like <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">value</a>&lt;float&gt;</span>, is a homogeneous floating-point aggregate whose parameter passing with C++17 and later changed in GCC 10.1, and GCC emits a <span class="doxyComputerOutput">-Wpsabi</span> note for each function passing or returning it by value, like <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a></span>, on AArch64 and on 32-bit Arm with the hard-float ABI.</p>
 
 
-<p>Definition at line 355 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line 351 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -591,12 +591,12 @@ struct micro_os_plus::micro_test_plus::detail::value_base&lt;T&gt; { ... }
 <p>Declared directly rather than inherited from <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/op">op</a></span>, to avoid the empty base; detected by the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span> concept.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00364">364</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00360">360</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4d0554be18a449d7b9176e868e631846">364</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a4d0554be18a449d7b9176e868e631846">op_type</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/op">op</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4d0554be18a449d7b9176e868e631846">360</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a4d0554be18a449d7b9176e868e631846">op_type</a> = <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/op">op</a>;</span></span></div>
 
 </div>
 
@@ -628,12 +628,12 @@ struct micro_os_plus::micro_test_plus::detail::value_base&lt;T&gt; { ... }
 <p>Exposed for use by generic code that inspects wrapper types.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00372">372</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00368">368</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#abb9873b49614cc55fae3f6dda7b08b48">372</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#abb9873b49614cc55fae3f6dda7b08b48">value_type</a> = T;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#abb9873b49614cc55fae3f6dda7b08b48">368</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#abb9873b49614cc55fae3f6dda7b08b48">value_type</a> = T;</span></span></div>
 
 </div>
 
@@ -690,14 +690,14 @@ struct micro_os_plus::micro_test_plus::detail::value_base&lt;T&gt; { ... }
 <p>Stores the supplied value in the <span class="doxyComputerOutput"><a href="#a5a34518dbc973dee068c7e4ae03cd217">value_</a></span> member.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00379">379</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00486">486</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00375">375</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00482">482</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ad2d04a9ef0d53c48107b13005ec0877d">486</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> <a href="#ad2d04a9ef0d53c48107b13005ec0877d">value_base&lt;T&gt;::value_base</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; v) noexcept : <a href="#a5a34518dbc973dee068c7e4ae03cd217">value_</a>{ v }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">487</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">488</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ad2d04a9ef0d53c48107b13005ec0877d">482</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> <a href="#ad2d04a9ef0d53c48107b13005ec0877d">value_base&lt;T&gt;::value_base</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; v) noexcept : <a href="#a5a34518dbc973dee068c7e4ae03cd217">value_</a>{ v }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">483</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">484</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -755,15 +755,15 @@ struct micro_os_plus::micro_test_plus::detail::value_base&lt;T&gt; { ... }
 <p>Allows explicit conversion to the encapsulated value.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00387">387</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00496">496</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00383">383</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00492">492</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber">496</span><span class="doxyLineContent"><span class="doxyHighlight">    operator T () const noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">497</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">498</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a5a34518dbc973dee068c7e4ae03cd217">value_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">499</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">492</span><span class="doxyLineContent"><span class="doxyHighlight">    operator T () const noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">493</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">494</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a5a34518dbc973dee068c7e4ae03cd217">value_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">495</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -826,15 +826,15 @@ struct micro_os_plus::micro_test_plus::detail::value_base&lt;T&gt; { ... }
 <p>Returns a <span class="doxyComputerOutput">const</span> reference to the stored value, valid as long as the wrapper.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00402">402</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00508">508</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00398">398</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00504">504</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a9199f28db3a365b60ca6ef17053cec2a">508</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a9199f28db3a365b60ca6ef17053cec2a">value_base&lt;T&gt;::get</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">509</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">510</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a5a34518dbc973dee068c7e4ae03cd217">value_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">511</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a9199f28db3a365b60ca6ef17053cec2a">504</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a9199f28db3a365b60ca6ef17053cec2a">value_base&lt;T&gt;::get</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">505</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">506</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a5a34518dbc973dee068c7e4ae03cd217">value_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">507</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -875,12 +875,12 @@ struct micro_os_plus::micro_test_plus::detail::value_base&lt;T&gt; { ... }
 <p>Set by the constructor. Derived wrappers and comparators access it via <span class="doxyComputerOutput"><a href="#a9199f28db3a365b60ca6ef17053cec2a">get()</a></span> or the explicit conversion operator.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00412">412</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00408">408</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a5a34518dbc973dee068c7e4ae03cd217">412</a></span><span class="doxyLineContent"><span class="doxyHighlight">      T <a href="#a5a34518dbc973dee068c7e4ae03cd217">value_</a>{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a5a34518dbc973dee068c7e4ae03cd217">408</a></span><span class="doxyLineContent"><span class="doxyHighlight">      T <a href="#a5a34518dbc973dee068c7e4ae03cd217">value_</a>{};</span></span></div>
 
 </div>
 
@@ -903,6 +903,6 @@ The documentation for this struct was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

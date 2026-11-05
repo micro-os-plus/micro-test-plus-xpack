@@ -67,24 +67,15 @@ keywords:
 
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a18e81b3839468cd82ad9c394d88a0e02"><b>endl()</b></a>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#ab88360ce7994d5e5ac71deff0450a638"><b>eq()</b></a>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#afe0adb93e576b2c11ba933ec65245d91"><b>escape_control_characters()</b></a>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></li>
 </ul>
-<p>3 entries</p>
+<p>2 entries</p>
 
 ## - F -
 
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-cpp-/#a0d696f5039163e76ec2e4005980ca285"><b>format_skipped()</b></a>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-cpp-">micro_os_plus::micro_test_plus::detail::anonymous{reporter.cpp}</a></li>
 </ul>
-
-## - G -
-
-<ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a7a3c75c65882a8e5a274500789cf3c94"><b>ge()</b></a>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a2dd96a2ee35e669ddab6d883caeb3df2"><b>gt()</b></a>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></li>
-</ul>
-<p>2 entries</p>
 
 ## - I -
 
@@ -96,14 +87,6 @@ keywords:
 </ul>
 <p>4 entries</p>
 
-## - L -
-
-<ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a434995a43c1ab9d2b75f1ee5e535c48b"><b>le()</b></a>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a1584ff2a522d8d452b9b1b8b12ce0bb4"><b>lt()</b></a>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></li>
-</ul>
-<p>2 entries</p>
-
 ## - M -
 
 <ul>
@@ -113,10 +96,8 @@ keywords:
 ## - N -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#aa9d632f3209a350a25b6b57eebfacb6b"><b>ne()</b></a>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus">micro_os_plus::micro_test_plus</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a6b03b257bb18615448fe9b4fca4a8402"><b>num()</b></a>: as function in namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math">micro_os_plus::micro_test_plus::detail::math</a></li>
 </ul>
-<p>2 entries</p>
 
 ## - O -
 
@@ -187,10 +168,10 @@ keywords:
 </ul>
 <p>2 entries</p>
 <br/>
-<p>Total: 65 entries.</p>
+<p>Total: 59 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

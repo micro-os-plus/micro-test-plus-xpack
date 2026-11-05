@@ -30,18 +30,12 @@
  * conjunction (`all_of`), disjunction (`any_of`), and negation
  * (`negate`).
  *
- * These comparators and logical operators enable expressive and type-safe test
- * expectations and assertions; the C strings are compared by content, the
- * other pointers by address.
+ * The C strings are compared by content, the other pointers by address.
  * The logical combinators have descriptive names, since `and`, `or`, and
  * `not` are alternative tokens and cannot be used as identifiers.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace.
- *
- * The header files are organised within the
- * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
- * modular codebase.
  *
  * This file is included by `function-comparators.h`; the applications include
  * `micro-os-plus/micro-test-plus.h`, not this file.

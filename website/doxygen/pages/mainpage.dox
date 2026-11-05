@@ -51,7 +51,11 @@ main (int argc, char* argv[])
 The topics of the @ref micro-os-plus-micro-test-plus-cpp-api group
 describe the runner, the suites, the test cases, and the checks, and the
 @ref micro-os-plus-micro-test-plus-cli group the options of the test
-programs. The installation, the first project, and the user manual are
+programs. The main classes are
+@ref micro_os_plus::micro_test_plus::runner "runner",
+@ref micro_os_plus::micro_test_plus::runner_options "runner_options",
+@ref micro_os_plus::micro_test_plus::suite "suite", and
+@ref micro_os_plus::micro_test_plus::test_case "test_case". The installation, the first project, and the user manual are
 in the
 <a href="../getting-started/">Getting Started</a>
 and

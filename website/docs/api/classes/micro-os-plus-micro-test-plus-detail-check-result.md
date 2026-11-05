@@ -107,23 +107,6 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a7f59d6943d0ad491a270cd6edea64c46">check_result</a> &amp;&amp;</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a5d811794dd00a694c7053e46f6db1cb5">operator&lt;&lt;</a> (const T &amp;msg) &amp;&amp;</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Rejects a message argument that cannot be written. <a href="#a5d811794dd00a694c7053e46f6db1cb5">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexTemplate">
-<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T&gt;</div></td>
-</tr>
-<tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a7f59d6943d0ad491a270cd6edea64c46">check_result</a> &amp;&amp;</td>
 <td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#aa3998c8c01e118bb1767652d8f334306">operator&lt;&lt;</a> (const T &amp;msg) &amp;&amp;</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
@@ -439,7 +422,7 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>Reference <a href="#ab81139f2b0c47e93b7d488976fcbbd66">init</a>.</p>
 
 
-<p>Referenced by <a href="#ac5423d6f891819a4bf2f0bb0d4df8996">check_result</a>, <a href="#adc3eb4dbb45d2dfa7b88aac996247f10">check_result</a>, <a href="#a5d811794dd00a694c7053e46f6db1cb5">operator&lt;&lt;</a>, <a href="#a26da353e3ea2577e00106c8f1f7b316b">operator=</a> and <a href="#a231681600fe29544efcdba22c56d5740">operator=</a>.</p>
+<p>Referenced by <a href="#ac5423d6f891819a4bf2f0bb0d4df8996">check_result</a>, <a href="#adc3eb4dbb45d2dfa7b88aac996247f10">check_result</a>, <a href="#aa3998c8c01e118bb1767652d8f334306">operator&lt;&lt;</a>, <a href="#a26da353e3ea2577e00106c8f1f7b316b">operator=</a> and <a href="#a231681600fe29544efcdba22c56d5740">operator=</a>.</p>
 
 </div>
 </div>
@@ -573,69 +556,6 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 
 ## Public Operators
 
-### operator&lt;&lt;() {#a5d811794dd00a694c7053e46f6db1cb5}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;class T&gt;</div>
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">check_result &amp;&amp; micro_os_plus::micro_test_plus::detail::check_result::operator&lt;&lt; (const T &amp; msg)</td>
-</tr>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Rejects a message argument that cannot be written.</p>
-
-
-<p>Selected for the arguments that the message operator does not accept (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/message-argument">detail::message_argument</a></span>); it stops the compilation with a message that states what a message argument is, instead of the trace of the overload resolution. Never called.</p>
-
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Template Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">T</td>
-<td class="doxyParamItemDescription"><p>The type of the argument.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">msg</td>
-<td class="doxyParamItemDescription"><p>The argument.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<dl class="doxySectionUser">
-<dt>Returns</dt>
-<dd><p>The current check result.</p></dd>
-</dl>
-
-
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00338">338</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
-
-
-<p>References <a href="#a7f59d6943d0ad491a270cd6edea64c46">check_result</a>, <a href="#a5fcb3f51a91f775a688a4e1fce55486a">start</a> and <a href="#a08d2a668e966f9914c1953658b4491b3">value</a>.</p>
-
-</div>
-</div>
-
 ### operator&lt;&lt;() {#aa3998c8c01e118bb1767652d8f334306}
 
 <div class="doxyMemberItem">
@@ -703,43 +623,40 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>A callable object (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/lazy-message">detail::lazy_message</a></span>) is called only if the check failed, and its result is appended as a value; after a success, even if the outcome is written, it appends nothing, since its purpose is to describe a failure with values that may not be valid otherwise, like the error of a <span class="doxyComputerOutput">std::expected</span> that holds a value. Being a class type, a lambda without captures is called too, although it is also printable, as a <span class="doxyComputerOutput">bool</span>.</p>
 
 
-<p>Never called; the compilation stops here, with a message that states what a message argument is.</p>
-
-
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00319">319</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h/#l00181">181</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h">check-result-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00319">319</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h/#l00177">177</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h">check-result-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber">181</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#aa3998c8c01e118bb1767652d8f334306">check_result::operator&lt;&lt;</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; msg) &amp;&amp;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">182</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">183</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> (<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/lazy-message">detail::lazy_message&lt;T&gt;</a>)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">184</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">185</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="#af07b63cd05745cf1c4ce1b2e26ea7f45">value_</a>)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">186</span><span class="doxyLineContent"><span class="doxyHighlight">            {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">187</span><span class="doxyLineContent"><span class="doxyHighlight">              </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> std::move (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">188</span><span class="doxyLineContent"><span class="doxyHighlight">            }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">189</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">190</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">else</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">191</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">192</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!<a href="#a9afc896b5f793149c125544eebbae21d">is_written_</a>)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">193</span><span class="doxyLineContent"><span class="doxyHighlight">            {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">194</span><span class="doxyLineContent"><span class="doxyHighlight">              </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> std::move (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">195</span><span class="doxyLineContent"><span class="doxyHighlight">            }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">196</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">197</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">198</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter">expression_formatter</a> formatter{ std::move (<a href="#af96f9a6d186ff05253e33d088cab8106">info_</a>.message) };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">199</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> (<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/lazy-message">detail::lazy_message&lt;T&gt;</a>)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">177</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#aa3998c8c01e118bb1767652d8f334306">check_result::operator&lt;&lt;</a>(</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; msg) &amp;&amp;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">178</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">179</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> (<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/lazy-message">detail::lazy_message&lt;T&gt;</a>)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">180</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">181</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="#af07b63cd05745cf1c4ce1b2e26ea7f45">value_</a>)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">182</span><span class="doxyLineContent"><span class="doxyHighlight">            {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">183</span><span class="doxyLineContent"><span class="doxyHighlight">              </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> std::move (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">184</span><span class="doxyLineContent"><span class="doxyHighlight">            }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">185</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">186</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">else</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">187</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">188</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (!<a href="#a9afc896b5f793149c125544eebbae21d">is_written_</a>)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">189</span><span class="doxyLineContent"><span class="doxyHighlight">            {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">190</span><span class="doxyLineContent"><span class="doxyHighlight">              </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> std::move (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">191</span><span class="doxyLineContent"><span class="doxyHighlight">            }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">192</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">193</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">194</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter">expression_formatter</a> formatter{ std::move (<a href="#af96f9a6d186ff05253e33d088cab8106">info_</a>.message) };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">195</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> (<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/lazy-message">detail::lazy_message&lt;T&gt;</a>)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">196</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">197</span><span class="doxyLineContent"><span class="doxyHighlight">          formatter &lt;&lt; std::invoke (msg);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">198</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">199</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">else</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">200</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">201</span><span class="doxyLineContent"><span class="doxyHighlight">          formatter &lt;&lt; std::invoke (msg);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">201</span><span class="doxyLineContent"><span class="doxyHighlight">          formatter &lt;&lt; msg;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">202</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">203</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">else</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">204</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">205</span><span class="doxyLineContent"><span class="doxyHighlight">          formatter &lt;&lt; msg;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">206</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">207</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="#af96f9a6d186ff05253e33d088cab8106">info_</a>.message = std::move (formatter.<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter/#a1e8f6c298a6a12d07bdb9afd47c9c52c">buffer_</a>);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">208</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> std::move (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">209</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">203</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="#af96f9a6d186ff05253e33d088cab8106">info_</a>.message = std::move (formatter.<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter/#a1e8f6c298a6a12d07bdb9afd47c9c52c">buffer_</a>);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">204</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> std::move (*</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">205</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -781,7 +698,7 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00285">285</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
 
 
-<p>Reference <a href="#a7f59d6943d0ad491a270cd6edea64c46">check_result</a>.</p>
+<p>References <a href="#a7f59d6943d0ad491a270cd6edea64c46">check_result</a>, <a href="#a5fcb3f51a91f775a688a4e1fce55486a">start</a> and <a href="#a08d2a668e966f9914c1953658b4491b3">value</a>.</p>
 
 </div>
 </div>
@@ -916,40 +833,40 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>The decision is taken here, while the operands are alive.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00245">245</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h/#l00105">105</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h">check-result-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00245">245</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h/#l00101">101</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h">check-result-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab81139f2b0c47e93b7d488976fcbbd66">105</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#ab81139f2b0c47e93b7d488976fcbbd66">check_result::init</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Expr_T&amp; expr, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a0726a1bc3b6f16245cb8a4b42fe0e70c">check_kind</a> kind,</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">106</span><span class="doxyLineContent"><span class="doxyHighlight">                        </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a>&amp; location,</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">107</span><span class="doxyLineContent"><span class="doxyHighlight">                        <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a>&amp; <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter">expression_formatter</a>&amp; expression,</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">108</span><span class="doxyLineContent"><span class="doxyHighlight">                        </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> writes_passed)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">109</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">110</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="#a5fcb3f51a91f775a688a4e1fce55486a">start</a> (</span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (expr), kind, <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op&lt;Expr_T&gt;</a>,</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">111</span><span class="doxyLineContent"><span class="doxyHighlight">             location, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a>, writes_passed);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab81139f2b0c47e93b7d488976fcbbd66">101</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#ab81139f2b0c47e93b7d488976fcbbd66">check_result::init</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> Expr_T&amp; expr, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a0726a1bc3b6f16245cb8a4b42fe0e70c">check_kind</a> kind,</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">102</span><span class="doxyLineContent"><span class="doxyHighlight">                        </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a>&amp; location,</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">103</span><span class="doxyLineContent"><span class="doxyHighlight">                        <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a>&amp; <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter">expression_formatter</a>&amp; expression,</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">104</span><span class="doxyLineContent"><span class="doxyHighlight">                        </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> writes_passed)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">105</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">106</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="#a5fcb3f51a91f775a688a4e1fce55486a">start</a> (</span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (expr), kind, <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op&lt;Expr_T&gt;</a>,</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">107</span><span class="doxyLineContent"><span class="doxyHighlight">             location, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a>, writes_passed);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">108</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">109</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">110</span><span class="doxyLineContent"><span class="doxyHighlight">      trace::printf (</span><span class="doxyHighlightStringLiteral">"%s\n"</span><span class="doxyHighlight">, __PRETTY_FUNCTION__);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">111</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">112</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">113</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">114</span><span class="doxyLineContent"><span class="doxyHighlight">      trace::printf (</span><span class="doxyHighlightStringLiteral">"%s\n"</span><span class="doxyHighlight">, __PRETTY_FUNCTION__);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">115</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">113</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// The same address is used by the destructor, to retrieve the text,</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">114</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// even if other checks used the formatter in the meantime.</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">115</span><span class="doxyLineContent"><span class="doxyHighlight">      expression.<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter/#a433e0e309292ccc3e42a35076e32d6c3">begin_check</a> (</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">116</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">117</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// The same address is used by the destructor, to retrieve the text,</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">118</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightComment">// even if other checks used the formatter in the meantime.</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">119</span><span class="doxyLineContent"><span class="doxyHighlight">      expression.<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter/#a433e0e309292ccc3e42a35076e32d6c3">begin_check</a> (</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">120</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">121</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="#a9afc896b5f793149c125544eebbae21d">is_written_</a>)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">122</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">123</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> (<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op&lt;Expr_T&gt;</a></span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">124</span><span class="doxyLineContent"><span class="doxyHighlight">                        or std::convertible_to&lt;Expr_T, bool&gt;)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">117</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="#a9afc896b5f793149c125544eebbae21d">is_written_</a>)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">118</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">119</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> (<a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op&lt;Expr_T&gt;</a></span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">120</span><span class="doxyLineContent"><span class="doxyHighlight">                        or std::convertible_to&lt;Expr_T, bool&gt;)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">121</span><span class="doxyLineContent"><span class="doxyHighlight">            {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">122</span><span class="doxyLineContent"><span class="doxyHighlight">              expression &lt;&lt; expr;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">123</span><span class="doxyLineContent"><span class="doxyHighlight">            }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">124</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">else</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">125</span><span class="doxyLineContent"><span class="doxyHighlight">            {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">126</span><span class="doxyLineContent"><span class="doxyHighlight">              expression &lt;&lt; expr;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">126</span><span class="doxyLineContent"><span class="doxyHighlight">              expression &lt;&lt; static_cast&lt;bool&gt; (expr);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">127</span><span class="doxyLineContent"><span class="doxyHighlight">            }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">128</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordFlow">else</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">129</span><span class="doxyLineContent"><span class="doxyHighlight">            {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">130</span><span class="doxyLineContent"><span class="doxyHighlight">              expression &lt;&lt; static_cast&lt;bool&gt; (expr);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">131</span><span class="doxyLineContent"><span class="doxyHighlight">            }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">132</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">133</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">128</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">129</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -1018,15 +935,15 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>Returns the result value stored in <span class="doxyComputerOutput"><a href="#af07b63cd05745cf1c4ce1b2e26ea7f45">value_</a></span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00354">354</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h/#l00142">142</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h">check-result-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00356">356</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h/#l00138">138</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/check-result-inlines-h">check-result-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a08d2a668e966f9914c1953658b4491b3">142</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a08d2a668e966f9914c1953658b4491b3">check_result::value</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">&amp;&amp; </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">143</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">144</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#af07b63cd05745cf1c4ce1b2e26ea7f45">value_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">145</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a08d2a668e966f9914c1953658b4491b3">138</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a08d2a668e966f9914c1953658b4491b3">check_result::value</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight">&amp;&amp; </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">139</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">140</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#af07b63cd05745cf1c4ce1b2e26ea7f45">value_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">141</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -1034,7 +951,7 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>Reference <a href="#af07b63cd05745cf1c4ce1b2e26ea7f45">value_</a>.</p>
 
 
-<p>Referenced by <a href="#a5d811794dd00a694c7053e46f6db1cb5">operator&lt;&lt;</a> and <a href="#a5fcb3f51a91f775a688a4e1fce55486a">start</a>.</p>
+<p>Referenced by <a href="#a26da353e3ea2577e00106c8f1f7b316b">operator=</a> and <a href="#a5fcb3f51a91f775a688a4e1fce55486a">start</a>.</p>
 
 </div>
 </div>
@@ -1107,13 +1024,13 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 </dl>
 
 
-<p>Stores the evaluated Boolean <span class="doxyComputerOutput">value</span>, and, in the failure details, the <span class="doxyComputerOutput">kind</span> of the check, the <span class="doxyComputerOutput">has_expression</span> flag, and the <span class="doxyComputerOutput">location</span> identifying the source line of the assertion, with an empty message; it also stores a pointer to the owning <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a></span>, which marks the result as initialised. The outcome is written when the check failed, or when the reporter writes the passed checks (<span class="doxyComputerOutput">writes_passed</span>). The check number is assigned later, by the destructor, when the check is reported.</p>
+<p>Stores the evaluated Boolean <span class="doxyComputerOutput">value</span>, and, in the failure details, the <span class="doxyComputerOutput">kind</span> of the check, the <span class="doxyComputerOutput">has_expression</span> flag, and the <span class="doxyComputerOutput">location</span> identifying the source line of the check, with an empty message; it also stores a pointer to the owning <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a></span>, which marks the result as initialised. The outcome is written when the check failed, or when the reporter writes the passed checks (<span class="doxyComputerOutput">writes_passed</span>). The check number is assigned later, by the destructor, when the check is reported.</p>
 
 
 <p>When exceptions are enabled, the number of uncaught exceptions is also stored, so that the destructor can tell whether it runs during stack unwinding.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00377">377</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/check-result-cpp/#l00089">89</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/check-result-cpp">check-result.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00379">379</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/check-result-cpp/#l00089">89</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/check-result-cpp">check-result.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1137,7 +1054,7 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>References <a href="#af96f9a6d186ff05253e33d088cab8106">info_</a>, <a href="#a9afc896b5f793149c125544eebbae21d">is_written_</a>, <a href="#a577a4b3a4a8ed4c1fd86c288636646a8">test_case_</a>, <a href="#a4a9f64710ef24d140b065ae5666badeb">uncaught_exceptions_</a>, <a href="#a08d2a668e966f9914c1953658b4491b3">value</a> and <a href="#af07b63cd05745cf1c4ce1b2e26ea7f45">value_</a>.</p>
 
 
-<p>Referenced by <a href="#ab81139f2b0c47e93b7d488976fcbbd66">init</a> and <a href="#a5d811794dd00a694c7053e46f6db1cb5">operator&lt;&lt;</a>.</p>
+<p>Referenced by <a href="#ab81139f2b0c47e93b7d488976fcbbd66">init</a> and <a href="#a26da353e3ea2577e00106c8f1f7b316b">operator=</a>.</p>
 
 </div>
 </div>
@@ -1172,12 +1089,12 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>The kind, the expression flag, and the location are set by <span class="doxyComputerOutput"><a href="#a5fcb3f51a91f775a688a4e1fce55486a">start()</a></span>; the message is collected via <span class="doxyComputerOutput">operator&lt;&lt;()</span>. Passed to the reporter by the destructor; the message is also displayed when the check passes.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00410">410</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00412">412</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#af96f9a6d186ff05253e33d088cab8106">410</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/failure-info">failure_info</a> <a href="#af96f9a6d186ff05253e33d088cab8106">info_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#af96f9a6d186ff05253e33d088cab8106">412</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/failure-info">failure_info</a> <a href="#af96f9a6d186ff05253e33d088cab8106">info_</a>;</span></span></div>
 
 </div>
 
@@ -1211,12 +1128,12 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>Set by <span class="doxyComputerOutput"><a href="#a5fcb3f51a91f775a688a4e1fce55486a">start()</a></span> for a failed check, and for a passed one when the reporter writes the passed checks. When not set, the expression and the messages are not formatted, and the destructor only updates the counters.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00399">399</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00401">401</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a9afc896b5f793149c125544eebbae21d">399</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#a9afc896b5f793149c125544eebbae21d">is_written_</a> = false;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a9afc896b5f793149c125544eebbae21d">401</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#a9afc896b5f793149c125544eebbae21d">is_written_</a> = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></span></div>
 
 </div>
 
@@ -1250,12 +1167,12 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>Provides access to the reporter and to the totals to be updated. Null in the initial state, which marks a result that was not initialised and reports nothing.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00434">434</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00436">436</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a577a4b3a4a8ed4c1fd86c288636646a8">434</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a>* <a href="#a577a4b3a4a8ed4c1fd86c288636646a8">test_case_</a> = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a577a4b3a4a8ed4c1fd86c288636646a8">436</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a>* <a href="#a577a4b3a4a8ed4c1fd86c288636646a8">test_case_</a> = </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">;</span></span></div>
 
 </div>
 
@@ -1289,12 +1206,12 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>If the destructor finds more, it runs during stack unwinding (an exception was thrown while the rest of the statement was evaluated, for example by the argument of a message), and must not throw. Present only when exceptions are enabled.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00423">423</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00425">425</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4a9f64710ef24d140b065ae5666badeb">423</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="#a4a9f64710ef24d140b065ae5666badeb">uncaught_exceptions_</a> = 0;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a4a9f64710ef24d140b065ae5666badeb">425</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight"> <a href="#a4a9f64710ef24d140b065ae5666badeb">uncaught_exceptions_</a> = 0;</span></span></div>
 
 </div>
 
@@ -1328,12 +1245,12 @@ class micro_os_plus::micro_test_plus::detail::check_result { ... }
 <p>The boolean value of the checked expression, computed by the template function <span class="doxyComputerOutput"><a href="#ab81139f2b0c47e93b7d488976fcbbd66">init()</a></span>.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00388">388</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h/#l00390">390</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">check-result.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#af07b63cd05745cf1c4ce1b2e26ea7f45">388</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#af07b63cd05745cf1c4ce1b2e26ea7f45">value_</a> = false;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#af07b63cd05745cf1c4ce1b2e26ea7f45">390</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#af07b63cd05745cf1c4ce1b2e26ea7f45">value_</a> = </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight">;</span></span></div>
 
 </div>
 
@@ -1357,6 +1274,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

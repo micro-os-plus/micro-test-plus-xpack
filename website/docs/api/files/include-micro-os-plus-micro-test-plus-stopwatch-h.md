@@ -17,7 +17,7 @@ keywords:
 
 # `stopwatch.h` File
 
-<p>C++ header file with the declaration of the µTest++ stopwatch. <a href="#details">More...</a></p>
+<p>C++ header file with declarations for the µTest++ stopwatch. <a href="#details">More...</a></p>
 
 ## Included Headers
 
@@ -117,7 +117,7 @@ keywords:
 
 ## Description {#details}
 
-<p>C++ header file with the declaration of the µTest++ stopwatch.</p>
+<p>C++ header file with declarations for the µTest++ stopwatch.</p>
 
 
 <p>This header provides the <span class="doxyComputerOutput">stopwatch</span> class, used to measure the elapsed time of the test suites and of the test session within the µTest++ framework. The stopwatch is started before the measured operation, stopped after it, and then reports the elapsed time as a <span class="doxyComputerOutput">std::chrono::microseconds</span> duration.</p>
@@ -383,6 +383,6 @@ The file content with the documentation metadata removed is:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

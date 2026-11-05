@@ -1,22 +1,31 @@
-@defgroup micro-os-plus-micro-test-plus-cpp-api-runners Test Runners
+@defgroup micro-os-plus-micro-test-plus-cpp-api-runners Test runners
 @brief The runner initialises the framework and returns the exit code.
 
 @details
-A test program has one runner, usually a global object, which `main()`
-uses in three steps:
-1. `initialise (argc, argv)` reads the command-line options (see
-   @ref micro-os-plus-micro-test-plus-cli); on platforms without a command
-   line, `initialise (runner_options)` sets the options directly. The call
-   is optional; without it, the default options are used;
-2. `add_top_suite()` returns the top suite, on which `main()` creates its
-   own test cases (see @ref micro-os-plus-micro-test-plus-cpp-api-test-suites).
-   The call is optional, for programs whose test cases are all in other
-   suites;
-3. `run_suites()` runs the other suites, writes the totals, and returns
-   the exit code, which `main()` returns to the system.
+A test program usually has one
+@ref micro_os_plus::micro_test_plus::runner "runner", a global object,
+which `main()` uses in three steps:
+1. `runner::initialise()` reads the command-line options, from `argc` and
+   `argv` (see @ref micro-os-plus-micro-test-plus-cli); on platforms
+   without a command line, the overload that takes the options,
+   @ref micro_os_plus::micro_test_plus::runner_options "runner_options",
+   sets them directly. The call is optional; without it, the default
+   options are used;
+2. `runner::add_top_suite()` returns the top suite, on which `main()`
+   creates its own test cases (see
+   @ref micro-os-plus-micro-test-plus-cpp-api-test-suites). The call is
+   optional, for programs whose test cases are all in other suites;
+3. @ref micro_os_plus::micro_test_plus::runner::run_suites
+   "runner::run_suites()" runs the other suites, writes the totals, and
+   returns the exit code, which `main()` returns to the system.
+
+Several runners may coexist, global or local, each with its own suites:
+a runner runs only the suites that refer to it, so the runners do not
+interfere (see @ref micro_os_plus::micro_test_plus::runner "runner").
 
 The exit code is:
-- 0 when all the checks passed, or when the test cases were only listed;
+- 0 when all the checks passed, when the test cases were only listed, or
+  when the usage was displayed by `--help`;
 - 1 when a check failed, or when the program used the runner wrongly (for
   example, it added no suite at all);
 - 2 when the command line had an error, or when the filters selected no
@@ -57,12 +66,48 @@ TAP version 14
     ok 1 - Check truth # { passed, 1 check }
 
     1..1
-ok 1 - Minimal # { passed, 1 check in 1 test case, time: 0.039 ms }
+ok 1 - Minimal # { passed, 1 check in 1 test case, time: X.XXX ms }
 
 1..1
-# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.074 ms }
+# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: X.XXX ms }
 @endcode
 
 The name of the top suite is optional. Without it, the suite is named
 after the program, the file name of `argv[0]` without its extension
 (`minimal` above); without `argv[0]`, it is named `default suite`.
+
+@par Without a command line
+On the platforms that have no command line, such as many embedded
+targets, `main()` defines the options with `runner_options`, starting from
+the defaults, and passes them to `initialise()`:
+
+@code{.cpp}
+#include <micro-os-plus/micro-test-plus.h>
+
+namespace mt = micro_os_plus::micro_test_plus;
+
+mt::runner tr;
+
+int
+main (void)
+{
+  mt::runner_options options{};
+  options.selected_reporter = mt::reporter_kind::human;
+  options.verbosity_level = mt::verbosity::verbose;
+
+  tr.initialise (options);
+
+  auto& ts = tr.add_top_suite ("Embedded");
+
+  ts.test ("Check truth", [] (auto& t) {
+    t.expect (mt::eq (6 * 7, 42));
+  });
+
+  return tr.run_suites ();
+}
+@endcode
+
+The members of `runner_options` are the options of the command line (see
+@ref micro-os-plus-micro-test-plus-cli): the reporter, the verbosity, the
+colours, the output file, the filter patterns, and the listing of the test
+cases.

@@ -51,9 +51,9 @@ Invokes <computeroutput>func</computeroutput> inside a try/catch block. If <comp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1534" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1232" bodyend="1250"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a10bbade95c4d4446127d7bdf3bd58176" compoundref="detail-inlines_8h" startline="1121" endline="1125">micro_os_plus::micro_test_plus::detail::callable_op::callable_op</references>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_1afd8240359ac650ab282fcbbf95628687" compoundref="detail-inlines_8h" startline="1184" endline="1211">micro_os_plus::micro_test_plus::detail::throws_op&lt; Exception_T &gt;::throws_op</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1534" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1236" bodyend="1254"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a10bbade95c4d4446127d7bdf3bd58176" compoundref="detail-inlines_8h" startline="1125" endline="1129">micro_os_plus::micro_test_plus::detail::callable_op::callable_op</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_1afd8240359ac650ab282fcbbf95628687" compoundref="detail-inlines_8h" startline="1188" endline="1215">micro_os_plus::micro_test_plus::detail::throws_op&lt; Exception_T &gt;::throws_op</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a879f218299b32f5eb9fe68e15dfe0edfa334c4a4c42fdb79d7ebc3e73b517e6f8" compoundref="detail_8h" startline="1332">micro_os_plus::micro_test_plus::detail::none</references>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a086d26c7329afc11e6a8b2664d753494" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
@@ -74,7 +74,7 @@ Returns the result computed by the constructor of the derived operator; the call
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1412" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1133" bodyend="1136"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1412" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1137" bodyend="1140"/>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a69618b39f260cbd032e271881430e45c" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a879f218299b32f5eb9fe68e15dfe0edf" kindref="member">throw_outcome</ref></type>
@@ -97,7 +97,7 @@ Returns what was recorded when the check failed. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1424" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1143" bodyend="1146"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1424" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1147" bodyend="1150"/>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__op_1a996c2d87a98606a33f4e80ae62337bcb" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>const std::string &amp;</type>
@@ -120,7 +120,7 @@ Returns the text recorded when a <computeroutput>std::exception</computeroutput>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1435" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1153" bodyend="1156"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1435" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1157" bodyend="1160"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-attrib">
@@ -188,7 +188,7 @@ Returns the text recorded when a <computeroutput>std::exception</computeroutput>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="132" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="132" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="128" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="128" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

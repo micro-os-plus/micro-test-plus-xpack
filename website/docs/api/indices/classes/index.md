@@ -16,7 +16,7 @@ keywords:
 
 <div class="doxyPage">
 
-The classes, structs, union and interfaces used by this project are:
+The classes and structs used by this project are:
 
 <table class="doxyTreeTable">
 <colgroup><col style="width:40%"><col></colgroup>
@@ -501,7 +501,7 @@ Operator struct to check if an expression throws any exception
 <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/floating-point-constant">floating_point_constant&lt;T, N, D, Size, P&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Struct template representing a generic floating point constant with custom size and precision
+Struct template representing a generic floating-point constant with custom size and precision
 </td>
 </tr>
 
@@ -512,7 +512,7 @@ Struct template representing a generic floating point constant with custom size 
 <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/floating-point-constant">floating_point_constant&lt;T, N, D, Size, P&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Struct template representing a generic floating point constant with custom size and precision
+Struct template representing a generic floating-point constant with custom size and precision
 </td>
 </tr>
 
@@ -798,7 +798,7 @@ Deprecated clock reading
 <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-base">value_base&lt;T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Base struct template providing common storage and accessors for runtime value-wrapper types
+Base struct template providing common storage and accessors for run-time value-wrapper types
 </td>
 </tr>
 
@@ -853,7 +853,7 @@ Struct template representing a generic value, accessible via a getter
 <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-f7399366cd6336ecbea702c3289d9432">value&lt;T&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Struct template representing a floating point value with precision control
+Struct template representing a floating-point value with precision control
 </td>
 </tr>
 
@@ -872,6 +872,6 @@ Deprecated generic strongly-typed wrapper for explicit type conversion
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

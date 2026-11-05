@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['suites_0',['Test Suites',['../group__micro-os-plus-micro-test-plus-cpp-api-test-suites.html',1,'']]]
+  ['requirements_0',['Requirements',['../group__micro-os-plus-micro-test-plus-cpp-api-requirements.html',1,'']]],
+  ['runners_1',['Test runners',['../group__micro-os-plus-micro-test-plus-cpp-api-runners.html',1,'']]]
 ];

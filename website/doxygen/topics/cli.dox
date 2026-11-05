@@ -1,17 +1,18 @@
-@defgroup micro-os-plus-micro-test-plus-cli Command-Line Options
+@defgroup micro-os-plus-micro-test-plus-cli Command-line options
 @brief Options for controlling the test output at run time.
 
 @details
 The test programs accept options on the command line, which
-`runner::initialise (argc, argv)` reads. On platforms without a command
-line, the same settings are made with `runner_options`, passed to
-`runner::initialise()`.
+`runner::initialise()` reads. On platforms without a command line, the
+same settings are made with
+@ref micro_os_plus::micro_test_plus::runner_options "runner_options",
+passed to `runner::initialise()`.
 
 | Option                               | Effect                                |
 | ------------------------------------ | ------------------------------------- |
 | `--help`, `-h`                       | list the options; run no test         |
 | `--reporter=tap`, `--reporter=human` | the output format (TAP by default)    |
-| `--colour[=always,never,auto]`       | colour the human-readable output      |
+| `--colour[=always`\|`never`\|`auto]` | colour the human-readable output      |
 | `--verbose`, `--quiet`, `--silent`   | how much the console displays         |
 | `--output-file=<path>`               | write the complete report to a file   |
 | `--filter=<pattern>`                 | run only the matching names           |
@@ -29,14 +30,17 @@ line, the same settings are made with `runner_options`, passed to
 - The value of an option may be attached (`--reporter=human`) or given as
   the next argument (`--reporter human`), except for `--colour`, whose
   value must be attached.
+- An option may be repeated: the last one takes effect (`--quiet
+  --verbose` is `--verbose`), except for `--filter`, whose patterns are all
+  kept, one for each nesting level.
 
 @par Errors
 An unknown option (an argument that starts with a dash before the end of
 the options, such as `-x`, `-`, or `-verbose`), an unknown reporter or
 colour mode, or a missing option value is an error. It is reported on
-`stderr`, on the console, and in the output file, if any; no test runs,
-and the exit code is 2. For an unknown option, the console also suggests
-`--help`.
+`stderr`, on the console (unless `--silent` is given), and in the output
+file, if any; no test runs, and the exit code is 2. For an unknown option,
+the console also suggests `--help`.
 
 @section cli-help Help
 
@@ -88,7 +92,8 @@ Four levels select how much the console displays:
 - `--quiet` – only the failed checks, with the names of their suites and
   test cases, and the session totals (and, with the TAP reporter, one
   result line for each suite);
-- `--silent` – nothing; only the exit code reports the result.
+- `--silent` – nothing on the console; only the exit code reports the
+  result, and the errors are still written on `stderr`.
 
 On platforms without a command line, the level is set in
 `runner_options::verbosity_level`. The examples below are the output of
@@ -169,15 +174,18 @@ suite and of its test cases:
 #                   condition: "1 == 2"
 #                   at:
 #                     fileName: checks.cpp
-#                     lineNumber: 454
+#                     lineNumber: 399
 #                   ...
 @endcode
 
 To keep the complete report while the console shows only the failures,
-add an output file, which always receives the complete report:
+add an output file, which always receives the complete report; the
+console then ends with a line that names the file:
 
 @code{.console}
 $ sample-test --quiet --output-file=sample-test.tap
+...
+# Test output written to 'sample-test.tap'.
 @endcode
 
 When exceptions are not enabled and a failed requirement aborts the run,
@@ -187,9 +195,12 @@ since the totals are never reached.
 @subsection cli-verbosity-silent Silent mode
 
 Nothing is displayed on the console, and only the exit code reports the
-result; the output file, if any, is still written.
+result; the output file, if any, is still written, and the errors of the
+options and of the rejected calls are still written on `stderr`. The
+output that was explicitly requested, with `--help` or `--list-tests`, is
+displayed.
 
-@section cli-output-file Output File
+@section cli-output-file Output file
 
 - `--output-file=<path>` or `--output-file <path>` – also write the
   report to a file.
@@ -200,6 +211,12 @@ tools. It is truncated first, so it never keeps the results of an
 earlier run, and it also receives the option errors. If the file cannot
 be opened, the error is reported on `stderr` and on the console, no test
 runs, and the exit code is 2.
+
+When the run ends, the console shows a line with the path of the file
+(`# Test output written to '<path>'.` with the TAP reporter, without the
+`# ` with the human-readable one); `--silent` omits it. An empty path
+(`--output-file=` or `--output-file ""`) writes no file, which also cancels
+an earlier `--output-file`.
 
 On platforms without a command line, the path is set in
 `runner_options::output_file_path`.
@@ -283,7 +300,7 @@ ok 3 - Static suite # { passed, 1 check in 1 test case, 1 skipped, time: X.XXX m
 # { total: 1 check passed, 0 failed, in 1 test case, 10 skipped, 3 test suites, 1 skipped, time: X.XXX ms }
 @endcode
 
-@section cli-list-tests Listing the Test Cases
+@section cli-list-tests Listing the test cases
 
 - `--list-tests`, or `--list` – list the test cases instead of running
   them, as in Catch2 and Boost UT.

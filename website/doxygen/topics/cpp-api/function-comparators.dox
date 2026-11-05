@@ -1,4 +1,4 @@
-@defgroup micro-os-plus-micro-test-plus-cpp-api-function-comparators Function Comparators
+@defgroup micro-os-plus-micro-test-plus-cpp-api-function-comparators Function comparators
 @brief Functions for comparing actual and expected values in tests.
 
 @details
@@ -60,9 +60,19 @@ the failed checks with the compared values:
   element, also with a container, with the elements compared as the
   single values are.
 - Other pointers are compared by address.
-- Values of the application types are displayed only if the application
-  provides an `operator<<` for them; see
-  @ref micro-os-plus-micro-test-plus-cpp-api-customisation.
+- The application types need an `operator<<` for the formatter, which
+  writes their values in the report; without it, the comparator does not
+  compile. See @ref micro-os-plus-micro-test-plus-cpp-api-customisation.
+
+@par Cost and lifetime of the operands
+A comparator moves the temporaries into the expression that it returns,
+and copies the named operands, for every check, passing or failing, so a
+large container or string costs an allocation; compare a
+`std::string_view` of the string instead, when the cost matters. Since the
+expression holds its own copies, it can be returned from the function that
+builds it, and kept after the operands are destroyed. The exceptions are
+the arrays and the characters of the C strings, which are only referred to
+and must outlive the expression.
 
 @par Comparing approximately
 The comparison of floating-point values with `eq()` is exact, so
@@ -70,7 +80,10 @@ The comparison of floating-point values with `eq()` is exact, so
 `mt::approx (a, b, epsilon)`, which is true when the operands differ by
 at most `epsilon`, the limit included:
 - the operands and the tolerance are integral or floating-point numbers,
-  of any type; the distance of integers is computed exactly, also for
+  of any such type, except `bool` and the character types (`char`,
+  `wchar_t`, `char8_t`, `char16_t`, and `char32_t`), which are not
+  numbers and are rejected; `signed char` and `unsigned char` are
+  accepted. The distance of integers is computed exactly, also for
   operands of different signedness;
 - a negative tolerance fails all the comparisons;
 - a failed check shows the operands and the tolerance, as in

@@ -35,10 +35,6 @@
  * implementation details of the literals and of the comparisons, not part
  * of the public API.
  *
- * The header files are organised within the
- * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
- * modular codebase.
- *
  * This file is included by `math.h`; the applications include
  * `micro-os-plus/micro-test-plus.h`, not this file.
  */

@@ -17,7 +17,7 @@ keywords:
 
 # `ambiguous_condition` Concept
 
-<p>C++20 concept satisfied by the wrappers of a <span class="doxyComputerOutput">bool</span>, whose condition is ambiguous. <a href="#details">More...</a></p>
+<p>Concept satisfied by the wrappers of a <span class="doxyComputerOutput">bool</span>, whose condition is ambiguous. <a href="#details">More...</a></p>
 
 ## Definition
 
@@ -28,7 +28,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 ## Description {#details}
 
-<p>C++20 concept satisfied by the wrappers of a <span class="doxyComputerOutput">bool</span>, whose condition is ambiguous.</p>
+<p>Concept satisfied by the wrappers of a <span class="doxyComputerOutput">bool</span>, whose condition is ambiguous.</p>
 
 
 <p>The condition of a <span class="doxyComputerOutput">std::optional&lt;bool&gt;</span>, or of a smart pointer to a <span class="doxyComputerOutput">bool</span>, tests the wrapper (a value is present, or the pointer is not null), not the <span class="doxyComputerOutput">bool</span> that it holds, which is what a reader of <span class="doxyComputerOutput">t.expect (flag)</span> assumes; a check with <span class="doxyComputerOutput">false</span> inside would pass, and be reported as <span class="doxyComputerOutput">true</span>, for another reason than the one the author had in mind, as the checks of the arguments that are always true (see <span class="doxyComputerOutput">suspicious_condition</span>). A check that passes silently by mistake is worse than one that does not compile, so <span class="doxyComputerOutput">extension::checkable</span> rejects these types, and the application writes <span class="doxyComputerOutput">has_value()</span>, <span class="doxyComputerOutput">!= nullptr</span>, or compares the value with <span class="doxyComputerOutput">eq()</span>. The wrappers of the other types are accepted, since the presence of a value is then the only meaning of the condition.</p>
@@ -46,7 +46,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 </dd>
 </dl>
 
-<p>Definition at line 220 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 216 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -59,6 +59,6 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

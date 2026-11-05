@@ -1,4 +1,4 @@
-@defgroup micro-os-plus-micro-test-plus-cpp-api-exceptions Checking Exceptions
+@defgroup micro-os-plus-micro-test-plus-cpp-api-exceptions Checking exceptions
 @brief Functions for verifying exceptions in test cases.
 
 @details

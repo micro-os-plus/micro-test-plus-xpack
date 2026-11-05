@@ -5,7 +5,6 @@ var classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result =
     [ "check_result", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result.html#ac5423d6f891819a4bf2f0bb0d4df8996", null ],
     [ "~check_result", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result.html#ae3b88e57597f9fcd04536b894bebef5e", null ],
     [ "init", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result.html#ab81139f2b0c47e93b7d488976fcbbd66", null ],
-    [ "operator<<", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result.html#a5d811794dd00a694c7053e46f6db1cb5", null ],
     [ "operator<<", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result.html#aa3998c8c01e118bb1767652d8f334306", null ],
     [ "operator=", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result.html#a26da353e3ea2577e00106c8f1f7b316b", null ],
     [ "operator=", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result.html#a231681600fe29544efcdba22c56d5740", null ],

@@ -50,10 +50,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" line="153" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" bodystart="153" bodyend="184" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="225" declcolumn="5"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" compoundref="reflection-inlines_8h" startline="153" endline="184">type_name</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" line="149" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" bodystart="149" bodyend="180" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="221" declcolumn="5"/>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" compoundref="reflection-inlines_8h" startline="149" endline="180">type_name</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6734ab254c188ce23514b5e84dd1232f" compoundref="expression-formatter-inlines_8h" startline="765" endline="780">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
-        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" compoundref="reflection-inlines_8h" startline="153" endline="184">type_name</referencedby>
+        <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" compoundref="reflection-inlines_8h" startline="149" endline="180">type_name</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -63,6 +63,6 @@
 <para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection" kindref="compound">reflection</ref></computeroutput> namespace provides facilities for obtaining source location information and type names at compile time, for the reports of the checks.</para>
 <para>It includes a local implementation of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location" kindref="compound">source_location</ref></computeroutput> for standard libraries that do not yet provide <computeroutput>std::source_location</computeroutput>, as well as utilities for extracting file names from paths and concise type names from the compiler-specific <computeroutput>__PRETTY_FUNCTION__</computeroutput> macro. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2248" column="3"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2243" column="3"/>
   </compounddef>
 </doxygen>

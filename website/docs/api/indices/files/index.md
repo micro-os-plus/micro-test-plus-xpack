@@ -238,7 +238,7 @@ C++ header file with declarations for the µTest++ counters
 <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h"><span class="doxyIconFile">deprecated.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++ header file with the declarations of the deprecated µTest++ definitions
+C++ header file with declarations for the deprecated µTest++ definitions
 </td>
 </tr>
 
@@ -258,7 +258,7 @@ C++ header file with declarations for the µTest++ internals
 <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/exceptions-h"><span class="doxyIconFile">exceptions.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++ header with declarations for the µTest++ exception-checking functions
+C++ header file with declarations for the µTest++ exception-checking functions
 </td>
 </tr>
 
@@ -368,7 +368,7 @@ C++ header file with declarations for the µTest++ test runner
 <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/stopwatch-h"><span class="doxyIconFile">stopwatch.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++ header file with the declaration of the µTest++ stopwatch
+C++ header file with declarations for the µTest++ stopwatch
 </td>
 </tr>
 
@@ -556,6 +556,6 @@ Project specific Doxygen topics definitions
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

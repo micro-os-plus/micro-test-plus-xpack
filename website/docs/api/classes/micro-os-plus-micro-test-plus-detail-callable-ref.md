@@ -162,7 +162,7 @@ class micro_os_plus::micro_test_plus::detail::callable_ref&lt;Self_T&gt; { ... }
 </dd>
 </dl>
 
-<p>Definition at line 1049 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>.</p>
+<p>Definition at line 1046 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -233,17 +233,17 @@ class micro_os_plus::micro_test_plus::detail::callable_ref&lt;Self_T&gt; { ... }
 <p>Stores the address of the callable, and the address of the <span class="doxyComputerOutput"><a href="#affde2e2f927df6b5ada7f5578f8d5c36">invoke_callable()</a></span> instantiation for its type.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l01071">1071</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00487">487</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l01068">1068</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00483">483</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a3e789d4fded524d5d5d088618d615026">487</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a3e789d4fded524d5d5d088618d615026">callable_ref&lt;Self_T&gt;::callable_ref</a> (Callable_T&amp; callable) noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">488</span><span class="doxyLineContent"><span class="doxyHighlight">        : <a href="#a7a5a1b1e001f34f819ac65e63c2d9567">callable_</a>{ </span><span class="doxyHighlightKeyword">const_cast&lt;</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">*</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">489</span><span class="doxyLineContent"><span class="doxyHighlight">              </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlightKeyword">const </span><span class="doxyHighlightKeyword">volatile </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">*</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (std::addressof (callable))) },</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">490</span><span class="doxyLineContent"><span class="doxyHighlight">          invoke_{ &amp;invoke_callable&lt;Callable_T&gt; }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">491</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">492</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a3e789d4fded524d5d5d088618d615026">483</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a3e789d4fded524d5d5d088618d615026">callable_ref&lt;Self_T&gt;::callable_ref</a> (Callable_T&amp; callable) noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">484</span><span class="doxyLineContent"><span class="doxyHighlight">        : <a href="#a7a5a1b1e001f34f819ac65e63c2d9567">callable_</a>{ </span><span class="doxyHighlightKeyword">const_cast&lt;</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">*</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">485</span><span class="doxyLineContent"><span class="doxyHighlight">              </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlightKeyword">const </span><span class="doxyHighlightKeyword">volatile </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">*</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (std::addressof (callable))) },</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">486</span><span class="doxyLineContent"><span class="doxyHighlight">          invoke_{ &amp;invoke_callable&lt;Callable_T&gt; }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">487</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">488</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -316,15 +316,15 @@ class micro_os_plus::micro_test_plus::detail::callable_ref&lt;Self_T&gt; { ... }
 <p>Passes the stored address and <span class="doxyComputerOutput">self</span> to the stored function.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l01088">1088</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00500">500</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l01085">1085</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00496">496</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a10148eb90e3393d8166e8712468d32e2">500</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a10148eb90e3393d8166e8712468d32e2">callable_ref&lt;Self_T&gt;::operator()</a>(Self_T&amp; self)</span><span class="doxyHighlightKeyword"> const</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">501</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">    </span><span class="doxyHighlight">{</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">502</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="#a7ca4453fe089a72345a476490212ae59">invoke_</a> (<a href="#a7a5a1b1e001f34f819ac65e63c2d9567">callable_</a>, self);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">503</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a10148eb90e3393d8166e8712468d32e2">496</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a10148eb90e3393d8166e8712468d32e2">callable_ref&lt;Self_T&gt;::operator()</a>(Self_T&amp; self)</span><span class="doxyHighlightKeyword"> const</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">497</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">    </span><span class="doxyHighlight">{</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">498</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="#a7ca4453fe089a72345a476490212ae59">invoke_</a> (<a href="#a7a5a1b1e001f34f819ac65e63c2d9567">callable_</a>, self);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">499</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -365,12 +365,12 @@ class micro_os_plus::micro_test_plus::detail::callable_ref&lt;Self_T&gt; { ... }
 <p>Its type is erased; only <span class="doxyComputerOutput"><a href="#a7ca4453fe089a72345a476490212ae59">invoke_</a></span> converts it back.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l01115">1115</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l01112">1112</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a7a5a1b1e001f34f819ac65e63c2d9567">1115</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">* <a href="#a7a5a1b1e001f34f819ac65e63c2d9567">callable_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a7a5a1b1e001f34f819ac65e63c2d9567">1112</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">* <a href="#a7a5a1b1e001f34f819ac65e63c2d9567">callable_</a>;</span></span></div>
 
 </div>
 
@@ -405,12 +405,12 @@ class micro_os_plus::micro_test_plus::detail::callable_ref&lt;Self_T&gt; { ... }
 <p>The <span class="doxyComputerOutput"><a href="#affde2e2f927df6b5ada7f5578f8d5c36">invoke_callable()</a></span> instantiation for the type of the callable; it receives <span class="doxyComputerOutput"><a href="#a7a5a1b1e001f34f819ac65e63c2d9567">callable_</a></span> and the <span class="doxyComputerOutput">Self_T&amp;</span> argument.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l01124">1124</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l01121">1121</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a7ca4453fe089a72345a476490212ae59">1124</a></span><span class="doxyLineContent"><span class="doxyHighlight">      void (*<a href="#a7ca4453fe089a72345a476490212ae59">invoke_</a>) (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">* callable, Self_T&amp; self);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a7ca4453fe089a72345a476490212ae59">1121</a></span><span class="doxyLineContent"><span class="doxyHighlight">      void (*<a href="#a7ca4453fe089a72345a476490212ae59">invoke_</a>) (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">* callable, Self_T&amp; self);</span></span></div>
 
 </div>
 
@@ -496,22 +496,22 @@ class micro_os_plus::micro_test_plus::detail::callable_ref&lt;Self_T&gt; { ... }
 <p>A function pointer or a function object is called directly, not through <span class="doxyComputerOutput">std::invoke()</span>, which, without optimisations, adds three frames to the call chain; a pointer to a member, which only <span class="doxyComputerOutput">std::invoke()</span> can call, is still passed to it.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l01107">1107</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00519">519</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h/#l01104">1104</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">test.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h/#l00515">515</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/test-inlines-h">test-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#affde2e2f927df6b5ada7f5578f8d5c36">519</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#affde2e2f927df6b5ada7f5578f8d5c36">callable_ref&lt;Self_T&gt;::invoke_callable</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">* callable, Self_T&amp; self)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">520</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">521</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> (std::is_member_pointer_v&lt;Callable_T&gt;)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#affde2e2f927df6b5ada7f5578f8d5c36">515</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#affde2e2f927df6b5ada7f5578f8d5c36">callable_ref&lt;Self_T&gt;::invoke_callable</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">* callable, Self_T&amp; self)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">516</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">517</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> (std::is_member_pointer_v&lt;Callable_T&gt;)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">518</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">519</span><span class="doxyLineContent"><span class="doxyHighlight">          std::invoke (*</span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight">Callable_T*</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (callable), self);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">520</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">521</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">else</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">522</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">523</span><span class="doxyLineContent"><span class="doxyHighlight">          std::invoke (*</span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight">Callable_T*</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (callable), self);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">523</span><span class="doxyLineContent"><span class="doxyHighlight">          (*</span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight">Callable_T*</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (callable)) (self);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">524</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">525</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">else</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">526</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">527</span><span class="doxyLineContent"><span class="doxyHighlight">          (*</span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight">Callable_T*</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (callable)) (self);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">528</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">529</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">525</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -531,6 +531,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

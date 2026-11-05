@@ -2,9 +2,7 @@ var test_8h =
 [
     [ "micro_os_plus::micro_test_plus::detail::bound_callable&lt; Self_T, Callable_T, Args_T &gt;", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable.html", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1bound__callable" ],
     [ "micro_os_plus::micro_test_plus::detail::callable_ref&lt; Self_T &gt;", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref.html", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1callable__ref" ],
-    [ "micro_os_plus::micro_test_plus::located_name", "classmicro__os__plus_1_1micro__test__plus_1_1located__name.html", "classmicro__os__plus_1_1micro__test__plus_1_1located__name" ],
     [ "micro_os_plus::micro_test_plus::detail::runnable_base", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html", "classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base" ],
-    [ "micro_os_plus::micro_test_plus::top_suite", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite" ],
     [ "micro_os_plus::micro_test_plus::detail::generic_callable", "conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1generic__callable.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::static_suite_body", "conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1static__suite__body.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::suite_body", "conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1suite__body.html", null ],

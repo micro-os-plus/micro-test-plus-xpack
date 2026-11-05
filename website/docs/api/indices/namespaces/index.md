@@ -127,7 +127,7 @@ Internal mathematical utilities for the µTest++ testing framework
 <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/extension">extension</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-The concepts for extending the µTest++ testing framework
+The templates and the concepts for extending the µTest++ testing framework
 </td>
 </tr>
 
@@ -138,7 +138,7 @@ The concepts for extending the µTest++ testing framework
 <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/literals">literals</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-User-defined literals for the µTest++ testing framework
+Deprecated user-defined literals of the test checks
 </td>
 </tr>
 
@@ -149,7 +149,7 @@ User-defined literals for the µTest++ testing framework
 <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/operators">operators</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Custom operator overloads for expressive and type-safe test assertions
+Deprecated comparison and logical operators of the test checks
 </td>
 </tr>
 
@@ -190,6 +190,6 @@ Utility functions for the µTest++ testing framework
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

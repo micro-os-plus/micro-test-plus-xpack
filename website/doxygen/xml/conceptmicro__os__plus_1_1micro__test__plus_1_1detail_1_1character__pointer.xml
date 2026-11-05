@@ -20,7 +20,7 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1cha
 </codepart>
     </conceptparts>
     <briefdescription>
-<para>C++20 concept satisfied by the pointers to the character types. </para>
+<para>Concept satisfied by the pointers to the character types. </para>
     </briefdescription>
     <detaileddescription>
 <para>The <computeroutput>character_pointer</computeroutput> concept is satisfied when the type is a pointer to a <computeroutput>character</computeroutput>, possibly <computeroutput>const</computeroutput>, but not <computeroutput>volatile</computeroutput>. The formatter writes these pointers as C strings, and <computeroutput>located_name</computeroutput> takes them as names.</para>

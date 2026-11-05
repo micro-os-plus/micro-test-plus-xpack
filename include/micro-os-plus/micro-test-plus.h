@@ -31,9 +31,8 @@
  * `micro_os_plus::micro_test_plus` namespace and its nested namespaces.
  *
  * This file is located in the top-level `include/micro-os-plus` folder; all
- * other header files are organised within the
- * `include/micro-os-plus/micro-test-plus` folder to maintain a structured
- * and modular codebase.
+ * the other header files are in the `include/micro-os-plus/micro-test-plus`
+ * folder.
  *
  * To access the complete functionality of the µTest++ framework, users should
  * include this header in their test projects.

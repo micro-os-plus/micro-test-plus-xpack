@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-µTest++ Testing Framework topics with brief descriptions are:
+The µTest++ Testing Framework topics, with their brief descriptions, are:
 
 <table class="doxyTreeTable">
 <colgroup><col style="width:40%"><col></colgroup>
@@ -53,7 +53,7 @@ How to write the tests
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-runners">Test Runners</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-runners">Test runners</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 The runner initialises the framework and returns the exit code
@@ -63,7 +63,7 @@ The runner initialises the framework and returns the exit code
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-test-suites">Test Suites</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-test-suites">Test suites</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Test suites are named groups of related test cases
@@ -73,7 +73,7 @@ Test suites are named groups of related test cases
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-test-case">Test Cases</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-test-case">Test cases</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Test cases are named sequences of checks
@@ -103,7 +103,7 @@ Requirements are checks that stop the test case when they fail
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators">Function Comparators</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators">Function comparators</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Functions for comparing actual and expected values in tests
@@ -113,7 +113,7 @@ Functions for comparing actual and expected values in tests
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions">Logical Functions</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions">Logical functions</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Functions used to compose logical expressions in tests
@@ -123,7 +123,7 @@ Functions used to compose logical expressions in tests
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-exceptions">Checking Exceptions</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-exceptions">Checking exceptions</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Functions for verifying exceptions in test cases
@@ -133,7 +133,7 @@ Functions for verifying exceptions in test cases
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-utility-functions">Utility Functions</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-utility-functions">Utility functions</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Utility functions for handling strings in tests
@@ -173,7 +173,7 @@ Deprecated overloaded operators for test comparisons
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 60px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions">Logical Functions</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions">Old logical function names</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Deprecated v5.0.1 names of the logical functions
@@ -183,7 +183,7 @@ Deprecated v5.0.1 names of the logical functions
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 60px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals">Literals and Wrappers</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals">Literals and wrappers</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Deprecated literal operators and wrappers for typed operands
@@ -213,7 +213,7 @@ The macros that enable and configure the framework
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
-<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cli">Command-Line Options</a>
+<a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cli">Command-line options</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Options for controlling the test output at run time
@@ -269,7 +269,7 @@ Options for controlling the test output at run time
 </div>
 
 
-<p>The topics of the <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api">C++ API</a> group describe the runner, the suites, the test cases, and the checks, and the <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cli">Command-Line Options</a> group the options of the test programs. The installation, the first project, and the user manual are in the <a href="../getting-started/">Getting Started</a> and <a href="../user/">User's Guide</a> pages of the site.</p>
+<p>The topics of the <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api">C++ API</a> group describe the runner, the suites, the test cases, and the checks, and the <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cli">Command-line options</a> group the options of the test programs. The main classes are <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner">runner</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-options">runner_options</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">suite</a>, and <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case">test_case</a>. The installation, the first project, and the user manual are in the <a href="../getting-started/">Getting Started</a> and <a href="../user/">User's Guide</a> pages of the site.</p>
 
 
 :::note
@@ -278,6 +278,6 @@ For comparison, the original Doxygen html pages continue to be available via the
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

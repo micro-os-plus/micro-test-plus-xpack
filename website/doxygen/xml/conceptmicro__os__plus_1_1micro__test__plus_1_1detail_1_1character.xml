@@ -26,7 +26,7 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1cha
 </codepart>
     </conceptparts>
     <briefdescription>
-<para>C++20 concept satisfied by the character types. </para>
+<para>Concept satisfied by the character types. </para>
     </briefdescription>
     <detaileddescription>
 <para>The <computeroutput>character</computeroutput> concept is satisfied when the type, ignoring the cv-qualifiers, is one of <computeroutput>char</computeroutput>, <computeroutput>wchar_t</computeroutput>, <computeroutput>char8_t</computeroutput>, <computeroutput>char16_t</computeroutput>, or <computeroutput>char32_t</computeroutput>. The comparators compare the arrays and the pointers of these types as strings (see <computeroutput>basic_c_string</computeroutput>); <computeroutput>signed char</computeroutput> and <computeroutput>unsigned char</computeroutput> are not characters, but bytes.</para>

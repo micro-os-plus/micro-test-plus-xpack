@@ -25,7 +25,7 @@ The primary template applies to the lambdas and to the function objects, and for
 <para><xrefsect id="deprecated_1_deprecated000101"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Not replaced (since 6.0.0). </para>
 </xrefdescription></xrefsect></para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2631" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="2637" bodyend="2638"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2626" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="2632" bodyend="2633"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

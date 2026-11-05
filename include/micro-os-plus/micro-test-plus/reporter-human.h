@@ -29,10 +29,6 @@
  * `micro_os_plus::micro_test_plus::detail` namespace, since the reporters
  * are internal to the framework.
  *
- * The header files are organised within the
- * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
- * modular codebase.
- *
  * This file is included by `micro-os-plus/micro-test-plus.h`, which is the
  * header that the applications include.
  */

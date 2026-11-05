@@ -15,7 +15,7 @@ keywords:
 
 <div class="doxyPage">
 
-# Test Cases
+# Test cases
 
 <p>Test cases are named sequences of checks. <a href="#details">More...</a></p>
 
@@ -48,6 +48,12 @@ keywords:
 
 
 <p>Write one test case for each behaviour of the code under test; the report shows the result of each test case, so a failure points to the behaviour that broke.</p>
+
+
+<p>A test case that makes no check passes, and is reported as <span class="doxyComputerOutput">passed (0 checks)</span>; a body that forgets its checks is not detected, so make at least one in each test case.</p>
+
+
+<p>An exception that escapes the body of a test case is caught, and reported as a failed check of that test case, with the text of its <span class="doxyComputerOutput">what()</span> (<span class="doxyComputerOutput">unexpected exception: ...</span>, or <span class="doxyComputerOutput">unexpected exception of unknown type</span>); the test case ends, and the run continues with the next one. Nested test cases catch their own exceptions, so the exception is reported by the innermost test case whose body it escapes. An exception that escapes the body of a suite fails that suite in the same way. Without exceptions, nothing can be thrown, and this does not apply.</p>
 
 
 <p>A test case can contain other test cases, created with <span class="doxyComputerOutput">test()</span> on the test case itself (<span class="doxyComputerOutput">t.test (...)</span>); they are reported nested.</p>
@@ -113,6 +119,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

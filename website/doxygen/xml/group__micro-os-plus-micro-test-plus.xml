@@ -6,7 +6,7 @@
     <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api">C++ API</innergroup>
     <innergroup refid="group__micro-os-plus-micro-test-plus-c-api">C API</innergroup>
     <innergroup refid="group__micro-os-plus-micro-test-plus-config">Configuration</innergroup>
-    <innergroup refid="group__micro-os-plus-micro-test-plus-cli">Command-Line Options</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cli">Command-line options</innergroup>
     <briefdescription>
 <para>The µTest++ Testing Framework. </para>
     </briefdescription>
@@ -23,7 +23,7 @@
 <listitem><para>how to write the tests, in <ref refid="group__micro-os-plus-micro-test-plus-cpp-api" kindref="compound">C++ API</ref>;</para>
 </listitem><listitem><para>how to test C code, in <ref refid="group__micro-os-plus-micro-test-plus-c-api" kindref="compound">C API</ref>;</para>
 </listitem><listitem><para>the macros that enable the framework, in <ref refid="group__micro-os-plus-micro-test-plus-config" kindref="compound">Configuration</ref>;</para>
-</listitem><listitem><para>the options of the test programs, in <ref refid="group__micro-os-plus-micro-test-plus-cli" kindref="compound">Command-Line Options</ref>.  </para>
+</listitem><listitem><para>the options of the test programs, in <ref refid="group__micro-os-plus-micro-test-plus-cli" kindref="compound">Command-line options</ref>.  </para>
 </listitem></itemizedlist>
 </para>
     </detaileddescription>

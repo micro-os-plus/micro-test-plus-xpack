@@ -36,10 +36,6 @@
  * All definitions reside within the
  * `micro_os_plus::micro_test_plus::reflection` namespace.
  *
- * The header files are organised within the
- * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
- * modular codebase.
- *
  * This file is included by `reflection.h`; the applications include
  * `micro-os-plus/micro-test-plus.h`, not this file.
  */
@@ -124,7 +120,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * This function template parses the compiler-specific
      * `__PRETTY_FUNCTION__` macro to extract a concise type name for the
-     * template parameter \c T.
+     * template parameter `T`.
      *
      * Rather than relying on fixed character offsets (which are fragile across
      * compiler versions and namespace changes), the implementation searches

@@ -55,11 +55,11 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Application comparators and predicates</dt>
-<dd><p>A comparator is an expression template, parametrised by a tag of the application: a type with a <span class="doxyComputerOutput">symbol</span> text, which separates the operands in the report, and a static <span class="doxyComputerOutput">apply()</span> function, which returns the result. <span class="doxyComputerOutput">extension::compare_op</span> takes two operands and a tag, and <span class="doxyComputerOutput">extension::predicate_op</span> takes one operand and a tag. The result is an expression like those returned by <span class="doxyComputerOutput">eq()</span> and <span class="doxyComputerOutput">negate()</span>, so it can be combined with <span class="doxyComputerOutput">all_of()</span>, <span class="doxyComputerOutput">any_of()</span>, and <span class="doxyComputerOutput">negate()</span>, and a failed check displays the operands and the symbol.</p></dd>
+<dd><p>A comparator is an expression template, parametrised by a tag of the application: a type with a <span class="doxyComputerOutput">symbol</span> text, which separates the operands in the report, and a static <span class="doxyComputerOutput">apply()</span> function, which returns the result. <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/extension/compare-op">extension::compare_op</a> takes two operands and a tag, and <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/extension/predicate-op">extension::predicate_op</a> takes one operand and a tag. The result is an expression like those returned by <span class="doxyComputerOutput">eq()</span> and <span class="doxyComputerOutput">negate()</span>, so it can be combined with <span class="doxyComputerOutput">all_of()</span>, <span class="doxyComputerOutput">any_of()</span>, and <span class="doxyComputerOutput">negate()</span>, and a failed check displays the operands and the symbol.</p></dd>
 </dl>
 
 
-<p>The concepts of the <span class="doxyComputerOutput">extension</span> namespace (<span class="doxyComputerOutput">is_op</span>, <span class="doxyComputerOutput">any_op</span>, <span class="doxyComputerOutput">checkable</span>, <span class="doxyComputerOutput">printable</span>, <span class="doxyComputerOutput">compare_tag</span>, and <span class="doxyComputerOutput">predicate_tag</span>) describe the types that these templates and the checks accept.</p>
+<p>The concepts of the <span class="doxyComputerOutput">extension</span> namespace (<span class="doxyComputerOutput">is_op</span>, <span class="doxyComputerOutput">any_op</span>, <span class="doxyComputerOutput">checkable</span>, <span class="doxyComputerOutput">printable</span>, <span class="doxyComputerOutput">compare_tag</span>, <span class="doxyComputerOutput">predicate_tag</span>, and <span class="doxyComputerOutput">approx_operand</span>) describe the types that these templates and the checks accept; the last one constrains the operands of <span class="doxyComputerOutput">approx()</span>, for the helpers that forward their operands to it. Only the deprecated floating-point wrappers have a tolerance: with the deprecated definitions enabled, <span class="doxyComputerOutput">has_epsilon</span> detects them, and a comparator tag may define a <span class="doxyComputerOutput">static constexpr bool within_tolerance_result</span>, which is the result for the operands that are within the tolerance of such a wrapper; without it, the tolerance is ignored.</p>
 
 
 <dl class="doxySectionUser">
@@ -132,12 +132,56 @@ keywords:
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">• Check points</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    ✗ differ FAILED (main.cpp:75, { 1, 2 } == { 1, 3 })</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">• Check divisors</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    ✗ 5 divides 12 FAILED (main.cpp:80, 5 divides 12)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    ✗ 5 divides 12 FAILED (main.cpp:79, 5 divides 12)</span></span></div>
 
 </div>
 
 
-<p>A predicate is written in the same way, with a tag that has a <span class="doxyComputerOutput">symbol</span> and an <span class="doxyComputerOutput">apply()</span> function of one operand, and the template <span class="doxyComputerOutput">extension::predicate_op</span>.</p>
+<p>A predicate is written in the same way, with a tag that has a <span class="doxyComputerOutput">symbol</span> and an <span class="doxyComputerOutput">apply()</span> function of one operand, and the template <span class="doxyComputerOutput">extension::predicate_op</span>. The report writes the symbol before the operand, so the symbol ends with the space that separates them (<span class="doxyComputerOutput">"is even "</span>):</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">namespace </span><span class="doxyHighlight">app</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">{</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">struct </span><span class="doxyHighlight">is_even_tag</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* symbol = </span><span class="doxyHighlightStringLiteral">"is even "</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> T&gt;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">bool</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    apply (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; value)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> value % 2 == 0;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">template</span><span class="doxyHighlight"> &lt;</span><span class="doxyHighlightKeyword">class</span><span class="doxyHighlight"> T&gt;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  is_even (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; value)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> mt::extension::predicate_op{ value, is_even_tag{} };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">} </span><span class="doxyHighlightComment">// namespace app</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">ts.test (</span><span class="doxyHighlightStringLiteral">"Check parity"</span><span class="doxyHighlight">, [] (</span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight">&amp; t) {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  t.expect (app::is_even (3)) &lt;&lt; </span><span class="doxyHighlightStringLiteral">"3 is even"</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">  t.expect (mt::negate (app::is_even (4))) &lt;&lt; </span><span class="doxyHighlightStringLiteral">"4 is not even"</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">});</span></span></div>
+
+</div>
+
+
+<p>Both checks fail, and a predicate can be combined with <span class="doxyComputerOutput">negate()</span>, <span class="doxyComputerOutput">all_of()</span>, and <span class="doxyComputerOutput">any_of()</span>, as the comparators are:</p>
+
+
+<div class="doxyProgramListing">
+
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">• Check parity</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    ✗ 3 is even FAILED (main.cpp:28, is even 3)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">    ✗ 4 is not even FAILED (main.cpp:29, not is even 4)</span></span></div>
+
+</div>
 
 
 <div class="doxySectionDef">
@@ -216,6 +260,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

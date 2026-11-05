@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structmicro__o
 </div><!--header-->
 <div class="contents">
 
-<p>Struct template representing a generic floating point constant with custom size and precision.  
+<p>Struct template representing a generic floating-point constant with custom size and precision.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &quot;<a class="el" href="micro-test-plus_8h_source.html">micro-os-plus/micro-test-plus.h</a>&quot;</code></p>
@@ -149,7 +149,7 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:acc11936d636a95777208dc8e50f2546f" id="r_acc11936d636a95777208dc8e50f2546f"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#acc11936d636a95777208dc8e50f2546f">epsilon</a> = T (1) / <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a121fbc662b8263c3b9ce605456fbc7d5">math::pow</a> (T (10), Size)</td></tr>
-<tr class="memdesc:acc11936d636a95777208dc8e50f2546f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The epsilon value used for floating point comparisons.  <br /></td></tr>
+<tr class="memdesc:acc11936d636a95777208dc8e50f2546f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The epsilon value used for floating-point comparisons.  <br /></td></tr>
 <tr class="memitem:aab5138b851247527b8c8abdf28c5e5b1" id="r_aab5138b851247527b8c8abdf28c5e5b1"><td class="memItemLeft">static constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#aab5138b851247527b8c8abdf28c5e5b1">value</a> = T (P) * (T (N) + (T (D) / <a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a121fbc662b8263c3b9ce605456fbc7d5">math::pow</a> (T (10), Size)))</td></tr>
 <tr class="memdesc:aab5138b851247527b8c8abdf28c5e5b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The compile-time constant value.  <br /></td></tr>
 </table>
@@ -157,7 +157,7 @@ Static Public Attributes</h2></td></tr>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class T, auto N, auto D, auto Size, auto P = 1&gt;<br />
 struct micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; T, N, D, Size, P &gt;</div><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>The floating point type (e.g., float, double). </td></tr>
+    <tr><td class="paramname">T</td><td>The floating-point type (e.g., float, double). </td></tr>
     <tr><td class="paramname">N</td><td>The integral part of the constant value. </td></tr>
     <tr><td class="paramname">D</td><td>The digits of the fractional part of the constant value, as returned by <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a154910632d01b827ab1b67f309064211" title="Computes the decimal part of a number represented as an array of characters.">math::den()</a></span> (e.g. 25 for <span class="tt">1.25</span>). </td></tr>
     <tr><td class="paramname">Size</td><td>The number of decimal digits, the scale of <span class="tt">D</span>, as returned by <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a3557a9ea7ea89e94be133fb78edcd01f" title="Counts the decimal places of a number represented as an array of characters.">math::den_size()</a></span> (e.g. 2 for <span class="tt">1.25</span>). </td></tr>
@@ -165,10 +165,10 @@ struct micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; 
   </table>
   </dd>
 </dl>
-<p>The <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html" title="Struct template representing a generic floating point constant with custom size and precision.">floating_point_constant</a></span> struct template provides a compile-time constant value of a floating point type, supporting custom size and precision. It inherits from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html" title="Empty base struct for the framework expression types.">op</a></span> directly rather than from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html" title="Base struct template providing common storage and accessors for runtime value-wrapper types.">value_base</a>&lt;T&gt;</span>, since its value is the compile-time <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">value</a></span> constant, and it needs no run-time storage; the struct is empty, and the literal operators create it with <span class="tt">{}</span>, without a constructor. Having no non-static floating point members, it is not a homogeneous floating point aggregate, so the <span class="tt">-Wpsabi</span> note described for <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html" title="Base struct template providing common storage and accessors for runtime value-wrapper types.">value_base</a></span> does not apply to it, despite its empty base. On 32-bit Arm, GCC emits another note, about a change in GCC 7.1, for each function passing a <span class="tt">double</span> or <span class="tt">long double</span> constant by value, since the earlier versions computed its alignment from its static <span class="tt">double</span> members; the framework does not pass the constants by value.</p>
-<p>The <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html#adcb16c95222c90598162fb5310bcd0f8" title="The type of the stored value.">value_type</a></span> alias, explicit conversion operator, and <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html#a0169d044ee9d39e5d1b63c0a1fc4ce95" title="Getter for the compile-time constant value.">get()</a></span> accessor are provided directly by this struct. The compile-time <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html#acc11936d636a95777208dc8e50f2546f" title="The epsilon value used for floating point comparisons.">epsilon</a></span> and <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">value</a></span> static constants are retained, and a unary minus operator is provided to obtain the negative value as a new <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html" title="Struct template representing a generic floating point constant with custom size and precision.">floating_point_constant</a></span> instance. </p>
+<p>The <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html" title="Struct template representing a generic floating-point constant with custom size and precision.">floating_point_constant</a></span> struct template provides a compile-time constant value of a floating-point type, supporting custom size and precision. It inherits from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html" title="Empty base struct for the framework expression types.">op</a></span> directly rather than from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html" title="Base struct template providing common storage and accessors for run-time value-wrapper types.">value_base</a>&lt;T&gt;</span>, since its value is the compile-time <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">value</a></span> constant, and it needs no run-time storage; the struct is empty, and the literal operators create it with <span class="tt">{}</span>, without a constructor. Having no non-static floating-point members, it is not a homogeneous floating-point aggregate, so the <span class="tt">-Wpsabi</span> note described for <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html" title="Base struct template providing common storage and accessors for run-time value-wrapper types.">value_base</a></span> does not apply to it, despite its empty base. On 32-bit Arm, GCC emits another note, about a change in GCC 7.1, for each function passing a <span class="tt">double</span> or <span class="tt">long double</span> constant by value, since the earlier versions computed its alignment from its static <span class="tt">double</span> members; the framework does not pass the constants by value.</p>
+<p>The <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html#adcb16c95222c90598162fb5310bcd0f8" title="The type of the stored value.">value_type</a></span> alias, explicit conversion operator, and <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html#a0169d044ee9d39e5d1b63c0a1fc4ce95" title="Getter for the compile-time constant value.">get()</a></span> accessor are provided directly by this struct. The compile-time <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html#acc11936d636a95777208dc8e50f2546f" title="The epsilon value used for floating-point comparisons.">epsilon</a></span> and <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">value</a></span> static constants are retained, and a unary minus operator is provided to obtain the negative value as a new <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html" title="Struct template representing a generic floating-point constant with custom size and precision.">floating_point_constant</a></span> instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l00556">556</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l00552">552</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a384b1d115e493d6a554ebda4e3089b19" name="a384b1d115e493d6a554ebda4e3089b19"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a384b1d115e493d6a554ebda4e3089b19">&#9670;&#160;</a></span>op_type</h2>
@@ -189,9 +189,9 @@ struct micro_os_plus::micro_test_plus::type_traits::floating_point_constant&lt; 
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Detected by the <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="C++20 concept satisfied when a type is a framework expression type.">extension::is_op</a></span> concept, and inherited by all types derived from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html" title="Empty base struct for the framework expression types.">op</a></span>. </p>
+<p>Detected by the <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html" title="Concept satisfied when a type is a framework expression type.">extension::is_op</a></span> concept, and inherited by all types derived from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html" title="Empty base struct for the framework expression types.">op</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00132">132</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00128">128</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
 
 </div>
 </div>
@@ -208,9 +208,9 @@ template&lt;class T, auto N, auto D, auto Size, auto P = 1&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Provided directly, since this struct does not derive from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html" title="Base struct template providing common storage and accessors for runtime value-wrapper types.">value_base</a></span>. </p>
+<p>Provided directly, since this struct does not derive from <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html" title="Base struct template providing common storage and accessors for run-time value-wrapper types.">value_base</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l00568">568</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l00564">564</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
 
 </div>
 </div>
@@ -243,11 +243,11 @@ template&lt;class T, auto N, auto D, auto Size, auto P&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The compile-time constant as type <span class="tt">T</span>.</dd></dl>
 <p>Returns the compile-time constant value as type <span class="tt">T</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00618">618</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  619</span>    {</div>
-<div class="line"><span class="lineno">  620</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#aab5138b851247527b8c8abdf28c5e5b1">value</a>;</div>
-<div class="line"><span class="lineno">  621</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_html_aab5138b851247527b8c8abdf28c5e5b1"><div class="ttname"><a href="#aab5138b851247527b8c8abdf28c5e5b1">micro_os_plus::micro_test_plus::type_traits::floating_point_constant::value</a></div><div class="ttdeci">static constexpr auto value</div><div class="ttdoc">The compile-time constant value.</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00585">deprecated.h:586</a></div></div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00614">614</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  615</span>    {</div>
+<div class="line"><span class="lineno">  616</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#aab5138b851247527b8c8abdf28c5e5b1">value</a>;</div>
+<div class="line"><span class="lineno">  617</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant_html_aab5138b851247527b8c8abdf28c5e5b1"><div class="ttname"><a href="#aab5138b851247527b8c8abdf28c5e5b1">micro_os_plus::micro_test_plus::type_traits::floating_point_constant::value</a></div><div class="ttdeci">static constexpr auto value</div><div class="ttdoc">The compile-time constant value.</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00581">deprecated.h:582</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -278,10 +278,10 @@ template&lt;class T, auto N, auto D, auto Size, auto P&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The compile-time constant as type <span class="tt">T</span>.</dd></dl>
 <p>Returns the compile-time constant value as type <span class="tt">T</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00606">606</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  608</span>    {</div>
-<div class="line"><span class="lineno">  609</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#aab5138b851247527b8c8abdf28c5e5b1">value</a>;</div>
-<div class="line"><span class="lineno">  610</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00602">602</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  604</span>    {</div>
+<div class="line"><span class="lineno">  605</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#aab5138b851247527b8c8abdf28c5e5b1">value</a>;</div>
+<div class="line"><span class="lineno">  606</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -309,14 +309,14 @@ template&lt;class T, auto N, auto D, auto Size, auto P&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html" title="Struct template representing a generic floating point constant with custom size and precision.">floating_point_constant</a></span> with negated sign parameter.</dd></dl>
-<p>Returns a new <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html" title="Struct template representing a generic floating point constant with custom size and precision.">floating_point_constant</a></span> instance representing the negative of the current value by flipping the sign parameter <span class="tt">P</span>. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html" title="Struct template representing a generic floating-point constant with custom size and precision.">floating_point_constant</a></span> with negated sign parameter.</dd></dl>
+<p>Returns a new <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1floating__point__constant.html" title="Struct template representing a generic floating-point constant with custom size and precision.">floating_point_constant</a></span> instance representing the negative of the current value by flipping the sign parameter <span class="tt">P</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00630">630</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  631</span>    {</div>
-<div class="line"><span class="lineno">  632</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html">floating_point_constant</a>&lt;<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html">T</a>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html">N</a>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html">D</a>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html">Size</a>, -<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html">P</a>&gt;{};</div>
-<div class="line"><span class="lineno">  633</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html">micro_os_plus::micro_test_plus::detail::floating_point_constant</a></div><div class="ttdoc">Struct template representing a generic floating point constant with custom size and precision.</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00556">deprecated.h:557</a></div></div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00626">626</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  627</span>    {</div>
+<div class="line"><span class="lineno">  628</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html">floating_point_constant</a>&lt;<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html">T</a>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html">N</a>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html">D</a>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html">Size</a>, -<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html">P</a>&gt;{};</div>
+<div class="line"><span class="lineno">  629</span>    }</div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant.html">micro_os_plus::micro_test_plus::detail::floating_point_constant</a></div><div class="ttdoc">Struct template representing a generic floating-point constant with custom size and precision.</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00552">deprecated.h:553</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -344,7 +344,7 @@ template&lt;class T, auto N, auto D, auto Size, auto P = 1&gt; </div>
 </div><div class="memdoc">
 <p>Calculated as 1 divided by 10 raised to the power of <span class="tt">Size</span>, i.e. one unit of the last decimal digit of the literal. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l00577">577</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l00573">573</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
 
 </div>
 </div>
@@ -371,7 +371,7 @@ template&lt;class T, auto N, auto D, auto Size, auto P = 1&gt; </div>
 </div><div class="memdoc">
 <p>Computed as <span class="tt">P * (N + D / 10^Size)</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l00585">585</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l00581">581</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
 
 </div>
 </div>

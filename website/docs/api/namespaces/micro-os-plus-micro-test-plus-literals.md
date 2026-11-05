@@ -17,7 +17,7 @@ keywords:
 
 # `literals` Namespace
 
-<p>User-defined literals for the µTest++ testing framework. <a href="#details">More...</a></p>
+<p>Deprecated user-defined literals of the test checks. <a href="#details">More...</a></p>
 
 ## Definition
 
@@ -421,7 +421,7 @@ namespace micro_os_plus::micro_test_plus::literals { ... }
 
 ## Description {#details}
 
-<p>User-defined literals for the µTest++ testing framework.</p>
+<p>Deprecated user-defined literals of the test checks.</p>
 
 
 <p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/literals">literals</a></span> namespace provides the deprecated user-defined literal operators, which set the type of the operands of the µTest++ comparators and operators.</p>
@@ -447,6 +447,6 @@ namespace micro_os_plus::micro_test_plus::literals { ... }
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

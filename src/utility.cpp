@@ -117,7 +117,7 @@ namespace micro_os_plus::micro_test_plus
      * supporting both exact matches and wildcard patterns. The pattern may
      * include `*` to match any sequence of characters (including an empty
      * one) and `?` to match any single character. This allows for flexible
-     * validation of string content in test assertions, accommodating
+     * validation of string content in test checks, accommodating
      * variable or partially known values.
      *
      * The match is iterative, with no recursion, so the stack usage is

@@ -11,14 +11,14 @@
     <initializer>template&lt;class T&gt;
 concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1is__floating__point" kindref="compound">micro_os_plus::micro_test_plus::type_traits::is_floating_point</ref> =  std::floating_point&lt;T&gt;</initializer>
     <conceptparts>
-      <codepart line="2568">    <programlisting>
+      <codepart line="2563">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">is_floating_point<sp/>=<sp/>std::floating_point&lt;T&gt;</highlight></codeline>
     </programlisting>
 </codepart>
     </conceptparts>
     <briefdescription>
-<para>Deprecated C++20 concept satisfied when <computeroutput>T</computeroutput> is a floating-point type. </para>
+<para>Deprecated concept satisfied when <computeroutput>T</computeroutput> is a floating-point type. </para>
     </briefdescription>
     <detaileddescription>
 <para><parameterlist kind="templateparam"><parameteritem>
@@ -34,6 +34,6 @@ The v5.0.1 name of <computeroutput>std::floating_point</computeroutput>, which t
 <para><xrefsect id="deprecated_1_deprecated000098"><xreftitle>Deprecated</xreftitle><xrefdescription><para>Use <computeroutput>std::floating_point</computeroutput> (since 6.0.0). </para>
 </xrefdescription></xrefsect></para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2568" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2563" column="5"/>
   </compounddef>
 </doxygen>

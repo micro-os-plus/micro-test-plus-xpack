@@ -99,7 +99,7 @@ keywords:
 <dd><p><a id="_deprecated000114"></a>To be removed with the deprecated floating-point wrappers (since 6.0.0).</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga8decf36d3e0e7cc8242c6a2170743422">micro_os_plus::micro_test_plus::detail::not_equal_to::within_tolerance_result</a></dt>
 <dd><p><a id="_deprecated000110"></a>To be removed with the deprecated floating-point wrappers (since 6.0.0).</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a467d1332df523b9acaa3ff82b0ebb714">micro_os_plus::micro_test_plus::detail::reporter::verbosity</a>  (void) const noexcept -&gt; <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914b">micro_test_plus::verbosity</a></dt>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a467d1332df523b9acaa3ff82b0ebb714">micro_os_plus::micro_test_plus::detail::reporter::verbosity</a>  (void) const noexcept -&gt; <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-runners/#ga809871d76f29309ed9c6fbd96d5a914b">micro_test_plus::verbosity</a></dt>
 <dd><p><a id="_deprecated000118"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a1dd0221dca8e7382f0b625ff6316ed92">runner::verbosity_level()</a> (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runnable-base/#aaf838b03cddfb039d1295611be8a5e32">micro_os_plus::micro_test_plus::detail::runnable_base::children_subtests_count</a>  (void) const noexcept</dt>
 <dd><p><a id="_deprecated000139"></a>internal to the framework (since 6.0.0)</p></dd>
@@ -219,7 +219,7 @@ keywords:
 <dd><p><a id="_deprecated000126"></a>the timings are internal (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a7d3ccfaf760cb2f4ace586c222b22244">micro_os_plus::micro_test_plus::runner::timings</a>  (void) noexcept</dt>
 <dd><p><a id="_deprecated000127"></a>the timings are internal (since 6.0.0)</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a94a9df0418776ebce476cd9a2e4f591f">micro_os_plus::micro_test_plus::runner::verbosity</a>  (void) const noexcept -&gt; <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914b">micro_test_plus::verbosity</a></dt>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a94a9df0418776ebce476cd9a2e4f591f">micro_os_plus::micro_test_plus::runner::verbosity</a>  (void) const noexcept -&gt; <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-runners/#ga809871d76f29309ed9c6fbd96d5a914b">micro_test_plus::verbosity</a></dt>
 <dd><p><a id="_deprecated000123"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a1dd0221dca8e7382f0b625ff6316ed92">verbosity_level()</a> (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga47d2c99f85fc5597b82da402d4687e75">micro_os_plus::micro_test_plus::static_runner</a></dt>
 <dd><p><a id="_deprecated000058"></a>use runner (since 6.0.0)</p></dd>
@@ -315,6 +315,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

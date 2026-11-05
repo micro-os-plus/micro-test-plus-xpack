@@ -80,12 +80,11 @@ keywords:
 
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a18e81b3839468cd82ad9c394d88a0e02"><b>endl()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">src/reporter.cpp</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#ab88360ce7994d5e5ac71deff0450a638"><b>eq()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d"><b>eq()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#afe0adb93e576b2c11ba933ec65245d91"><b>escape_control_characters()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/src/test-cpp">src/test.cpp</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-utility-functions/#ga791f22f0c85b6436c9016821907b0653"><b>extract_file_name()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/utility-h">include/micro-os-plus/micro-test-plus/utility.h</a></li>
 </ul>
-<p>5 entries</p>
+<p>4 entries</p>
 
 ## - F -
 
@@ -96,12 +95,10 @@ keywords:
 ## - G -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a7a3c75c65882a8e5a274500789cf3c94"><b>ge()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga58c7dacabca3fe1b0dc025a0e0f30e9e"><b>ge()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a2dd96a2ee35e669ddab6d883caeb3df2"><b>gt()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga90da2cbc14b4562332a205d5b232356f"><b>gt()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
 </ul>
-<p>4 entries</p>
+<p>2 entries</p>
 
 ## - I -
 
@@ -117,12 +114,10 @@ keywords:
 ## - L -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a434995a43c1ab9d2b75f1ee5e535c48b"><b>le()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga9125d2dd997269eecc0d8239d5df67e5"><b>le()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a1584ff2a522d8d452b9b1b8b12ce0bb4"><b>lt()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga493a42c738ef38b45a28b06a2155aa00"><b>lt()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
 </ul>
-<p>4 entries</p>
+<p>2 entries</p>
 
 ## - M -
 
@@ -135,13 +130,12 @@ keywords:
 ## - N -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#aa9d632f3209a350a25b6b57eebfacb6b"><b>ne()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga92cdc2dde6af040f2f5f5df677df0985"><b>ne()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/#gae82d39ac86167bb4bfa6624676f3729e"><b>negate()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-exceptions/#ga2989618cf5adca7a767c966895ab37a0"><b>nothrow()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/exceptions-h">include/micro-os-plus/micro-test-plus/exceptions.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a6b03b257bb18615448fe9b4fca4a8402"><b>num()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h</a></li>
 </ul>
-<p>5 entries</p>
+<p>4 entries</p>
 
 ## - O -
 
@@ -257,10 +251,10 @@ keywords:
 </ul>
 <p>2 entries</p>
 <br/>
-<p>Total: 121 entries.</p>
+<p>Total: 115 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

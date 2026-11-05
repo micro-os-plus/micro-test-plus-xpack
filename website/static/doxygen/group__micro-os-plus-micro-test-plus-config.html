@@ -136,12 +136,13 @@ Macros</h2></td></tr>
 <li><span class="tt"><a class="el" href="#ga039219e6edfdcaa8a5e07badd7f4830d" title="Enables the trace messages of the µTest++ member functions.">MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_ENABLED</a></span> and <span class="tt"><a class="el" href="#ga27bb1b9066b162d868e0b1c557b91e0d" title="Enables the trace messages of the µTest++ constructors and destructors.">MICRO_OS_PLUS_MICRO_TEST_PLUS_TRACE_CONSTRUCTORS_ENABLED</a></span> enable the trace messages.</li>
 </ul>
 <dl class="section user"><dt>Where to define them</dt><dd>The application defines the macros; neither the library nor its CMake, meson, and xPack build files define them (the <span class="tt">defaultDefine</span> entries in <span class="tt">xcdl-package.jsonc</span> are informative only).</dd></dl>
-<p>The application and the library sources must be compiled with the same macros, otherwise the link fails. The simplest way is a header named <span class="tt">micro-os-plus/micro-test-plus-defines.h</span> (or <span class="tt">micro-os-plus/project-config.h</span>) in the include path of the build: every µTest++ header includes it, if present, before its own definitions.</p>
+<p>The application and the library sources must be compiled with the same <span class="tt"><a class="el" href="#ga3dd1e70998580fe7d7f410e5cd83879b" title="Enables the µTest++ Testing Framework.">MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</a></span> and <span class="tt"><a class="el" href="#ga67c701de5426ac340584ed038494a873" title="Enables the deprecated definitions of the µTest++ Testing Framework.">MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</a></span> macros, otherwise the link fails (see the pages of the macros below); the trace macros only add trace calls to the function bodies. The simplest way is a header named <span class="tt">micro-os-plus/micro-test-plus-defines.h</span> (or <span class="tt">micro-os-plus/project-config.h</span>) in the include path of the build: every µTest++ header includes it, if present, before its own definitions.</p>
 <p>Guard each definition, so that the macro can also be given on the compiler command line:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#if !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)</span></div>
 <div class="line"><span class="preprocessor">#define MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</span></div>
 <div class="line"><span class="preprocessor">#endif </span><span class="comment">// !defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)</span></div>
-</div><!-- fragment --><p>A macro given only on the compiler command line (for example <span class="tt">-DMICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</span>) must be given for the whole build, for both the application and the library sources.  </p>
+</div><!-- fragment --><p>A macro given only on the compiler command line (for example <span class="tt">-DMICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</span>) must be given for the whole build, for both the application and the library sources.</p>
+<p>The definitions shown on the pages of the macros, with a line number in <span class="tt"><a class="el" href="micro-test-plus_8h.html" title="Main C++ header with the declarations for the µTest++ Testing Framework.">micro-test-plus.h</a></span>, exist only for this documentation; the header does not define these macros, and neither does the library.  </p>
 </div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
 <a id="ga67c701de5426ac340584ed038494a873" name="ga67c701de5426ac340584ed038494a873"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga67c701de5426ac340584ed038494a873">&#9670;&#160;</a></span>MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</h2>
@@ -159,7 +160,7 @@ Macros</h2></td></tr>
 <p>With it, they are available, but marked <span class="tt">[[deprecated]]</span>, so the compiler reports their use; the applications that build with <span class="tt">-Werror</span> fail until the deprecated definitions are replaced.</p>
 <p>The macro must be defined for the library sources too, otherwise the link of an application that uses the non-inline deprecated members fails with undefined references.   </p>
 
-<p class="definition">Definition at line <a class="el" href="micro-test-plus_8h_source.html#l00076">76</a> of file <a class="el" href="micro-test-plus_8h_source.html">micro-test-plus.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="micro-test-plus_8h_source.html#l00075">75</a> of file <a class="el" href="micro-test-plus_8h_source.html">micro-test-plus.h</a>.</p>
 
 </div>
 </div>
@@ -177,7 +178,7 @@ Macros</h2></td></tr>
 <p>This is the main configuration option of this library; it has no value, only its definition matters.</p>
 <p>Without it, <span class="tt"><a class="el" href="micro-test-plus_8h.html" title="Main C++ header with the declarations for the µTest++ Testing Framework.">micro-os-plus/micro-test-plus.h</a></span> declares nothing and the library sources compile to nothing. If it is defined on the compiler command line for the application, but not for the library sources, the link fails with undefined references.  </p>
 
-<p class="definition">Definition at line <a class="el" href="micro-test-plus_8h_source.html#l00073">73</a> of file <a class="el" href="micro-test-plus_8h_source.html">micro-test-plus.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="micro-test-plus_8h_source.html#l00072">72</a> of file <a class="el" href="micro-test-plus_8h_source.html">micro-test-plus.h</a>.</p>
 
 </div>
 </div>
@@ -194,7 +195,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 <p>Displays trace messages in the constructors and destructors of the µTest++ Testing Framework, through <span class="tt">trace::printf()</span>, which writes them only when <span class="tt">MICRO_OS_PLUS_DIAG_TRACE_ENABLED</span> is also defined.  </p>
 
-<p class="definition">Definition at line <a class="el" href="micro-test-plus_8h_source.html#l00075">75</a> of file <a class="el" href="micro-test-plus_8h_source.html">micro-test-plus.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="micro-test-plus_8h_source.html#l00074">74</a> of file <a class="el" href="micro-test-plus_8h_source.html">micro-test-plus.h</a>.</p>
 
 </div>
 </div>
@@ -211,7 +212,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 <p>Displays trace messages in the member functions of the µTest++ Testing Framework, through <span class="tt">trace::printf()</span>, which writes them only when <span class="tt">MICRO_OS_PLUS_DIAG_TRACE_ENABLED</span> is also defined.  </p>
 
-<p class="definition">Definition at line <a class="el" href="micro-test-plus_8h_source.html#l00074">74</a> of file <a class="el" href="micro-test-plus_8h_source.html">micro-test-plus.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="micro-test-plus_8h_source.html#l00073">73</a> of file <a class="el" href="micro-test-plus_8h_source.html">micro-test-plus.h</a>.</p>
 
 </div>
 </div>

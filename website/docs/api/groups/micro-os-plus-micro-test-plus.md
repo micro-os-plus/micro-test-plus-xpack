@@ -67,7 +67,7 @@ keywords:
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">&nbsp;</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cli">Command-Line Options</a></td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cli">Command-line options</a></td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -108,11 +108,11 @@ keywords:
 <li>how to write the tests, in <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api">C++ API</a>;</li>
 <li>how to test C code, in <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-c-api">C API</a>;</li>
 <li>the macros that enable the framework, in <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-config">Configuration</a>;</li>
-<li>the options of the test programs, in <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cli">Command-Line Options</a>.</li>
+<li>the options of the test programs, in <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cli">Command-line options</a>.</li>
 </ul>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

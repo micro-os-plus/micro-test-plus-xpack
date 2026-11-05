@@ -2,9 +2,11 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="group__micro-os-plus-micro-test-plus-cpp-api-test-suites" kind="group">
     <compoundname>micro-os-plus-micro-test-plus-cpp-api-test-suites</compoundname>
-    <title>Test Suites</title>
+    <title>Test suites</title>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1located__name" prot="public">micro_os_plus::micro_test_plus::located_name</innerclass>
     <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" prot="public">micro_os_plus::micro_test_plus::static_suite</innerclass>
     <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1suite" prot="public">micro_os_plus::micro_test_plus::suite</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1top__suite" prot="public">micro_os_plus::micro_test_plus::top_suite</innerclass>
     <briefdescription>
 <para>Test suites are named groups of related test cases. </para>
     </briefdescription>

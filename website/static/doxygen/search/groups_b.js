@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wrappers_0',['Literals and Wrappers',['../group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html',1,'']]]
+  ['utility_20functions_0',['Utility functions',['../group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html',1,'']]]
 ];

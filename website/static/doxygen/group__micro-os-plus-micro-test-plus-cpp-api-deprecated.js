@@ -1,8 +1,8 @@
 var group__micro_os_plus_micro_test_plus_cpp_api_deprecated =
 [
     [ "Operators", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators.html", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators" ],
-    [ "Logical Functions", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions.html", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions" ],
-    [ "Literals and Wrappers", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals" ],
+    [ "Old logical function names", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions.html", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions" ],
+    [ "Literals and wrappers", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html", "group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals" ],
     [ "micro_os_plus::micro_test_plus::type_traits", "namespacemicro__os__plus_1_1micro__test__plus_1_1type__traits.html", null ],
     [ "micro_os_plus::micro_test_plus::extension::has_epsilon", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html", null ],
     [ "micro_os_plus::micro_test_plus::type_traits::has_npos", "conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__npos.html", null ],

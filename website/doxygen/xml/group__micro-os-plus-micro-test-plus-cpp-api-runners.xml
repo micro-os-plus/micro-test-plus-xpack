@@ -2,20 +2,151 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="group__micro-os-plus-micro-test-plus-cpp-api-runners" kind="group">
     <compoundname>micro-os-plus-micro-test-plus-cpp-api-runners</compoundname>
-    <title>Test Runners</title>
+    <title>Test runners</title>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1counters" prot="public">micro_os_plus::micro_test_plus::counters</innerclass>
     <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" prot="public">micro_os_plus::micro_test_plus::runner</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options" prot="public">micro_os_plus::micro_test_plus::runner_options</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__micro-os-plus-micro-test-plus-cpp-api-runners_1ga603af2d1c9643caa351305180b2e905b" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>colour_mode</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::colour_mode</qualifiedname>
+        <enumvalue id="group__micro-os-plus-micro-test-plus-cpp-api-runners_1gga603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8" prot="public">
+          <name>automatic</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Colours are used when <computeroutput>stdout</computeroutput> is a terminal; on the platforms without <computeroutput>isatty()</computeroutput>, such as the embedded ones, they are not used. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__micro-os-plus-micro-test-plus-cpp-api-runners_1gga603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb" prot="public">
+          <name>always</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Colours are always used, for example in the CI systems that render the ANSI escape sequences but do not provide a terminal, or on embedded targets whose output is displayed by a terminal. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__micro-os-plus-micro-test-plus-cpp-api-runners_1gga603af2d1c9643caa351305180b2e905bac7561db7a418dd39b2201dfe110ab4a4" prot="public">
+          <name>never</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Colours are never used. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The use of colours in the console output. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Selected with the <computeroutput>--colour</computeroutput> command-line option (or its American spelling <computeroutput>--color</computeroutput>, or its alternative <computeroutput>--use-colour</computeroutput>, also spelled <computeroutput>--use-color</computeroutput>), or with <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a48ed4dd71eff02911c2d6943ba616850" kindref="member">runner_options::colour</ref></computeroutput>; the default is <computeroutput>automatic</computeroutput>. The names follow the values of <computeroutput>--color</computeroutput> in the GNU tools.</para>
+<para>Only the human-readable reporter uses colours; the TAP reporter never does, since the ANSI escape sequences are not part of the TAP syntax. The output file never receives colours, whatever the mode.</para>
+<para><simplesect kind="since"><para>6.0.0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="152" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="153" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__micro-os-plus-micro-test-plus-cpp-api-runners_1ga913c4161963e9439b20857358486e8b2" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>reporter_kind</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::reporter_kind</qualifiedname>
+        <enumvalue id="group__micro-os-plus-micro-test-plus-cpp-api-runners_1gga913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b" prot="public">
+          <name>tap</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The TAP reporter, compliant with TAP version 14. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__micro-os-plus-micro-test-plus-cpp-api-runners_1gga913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70" prot="public">
+          <name>human</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The human-readable reporter, with optional colours. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The built-in reporters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Selected with the <computeroutput>--reporter</computeroutput> command-line option, or with <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1ad22d04df014c5b0658b6e7bd239f15b0" kindref="member">runner_options::selected_reporter</ref></computeroutput>; the default is <computeroutput>tap</computeroutput>.</para>
+<para><simplesect kind="since"><para>6.0.0 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="127" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="128" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__micro-os-plus-micro-test-plus-cpp-api-runners_1ga809871d76f29309ed9c6fbd96d5a914b" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>verbosity</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::verbosity</qualifiedname>
+        <enumvalue id="group__micro-os-plus-micro-test-plus-cpp-api-runners_1gga809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15" prot="public">
+          <name>silent</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>No console output; only the exit code is returned. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__micro-os-plus-micro-test-plus-cpp-api-runners_1gga809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d" prot="public">
+          <name>quiet</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Displays only the failed checks and the overall session summary; the TAP reporter also displays one result line per test suite, counted by the plan, and the failed checks as comments. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__micro-os-plus-micro-test-plus-cpp-api-runners_1gga809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555" prot="public">
+          <name>normal</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Displays test suite and test case results; the individual checks are shown only for failures, the passed checks being counted, and, in the TAP blocks, numbered by bare <computeroutput>ok</computeroutput> lines. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__micro-os-plus-micro-test-plus-cpp-api-runners_1gga809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0" prot="public">
+          <name>verbose</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Displays all results, including passed checks, for maximum detail. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The verbosity levels for test reporting. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The level is selected with the <computeroutput>--silent</computeroutput>, <computeroutput>--quiet</computeroutput>, and <computeroutput>--verbose</computeroutput> command-line options, or with <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1aff30f0303a958a549a2f4b6e67db00d5" kindref="member">runner_options::verbosity_level</ref></computeroutput>; the default is <computeroutput>normal</computeroutput>. The console output is intended for the people who watch the tests run, while the optional output file is intended for the integration with other tools. The level affects only the console output; the output file always receives the full report.</para>
+<para>The <computeroutput>quiet</computeroutput> level displays the failed checks, with the names of the suite and of the test cases that contain them, and the totals; the passed checks and the passed test cases are not displayed. To also see them, use the <computeroutput>verbose</computeroutput> level, or keep <computeroutput>quiet</computeroutput> and use an output file, which receives them. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" line="100" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/runner-options.h" bodystart="101" bodyend="113"/>
+      </memberdef>
+    </sectiondef>
     <briefdescription>
 <para>The runner initialises the framework and returns the exit code. </para>
     </briefdescription>
     <detaileddescription>
-<para>A test program has one runner, usually a global object, which <computeroutput>main()</computeroutput> uses in three steps:<orderedlist>
-<listitem><para><computeroutput>initialise (argc, argv)</computeroutput> reads the command-line options (see <ref refid="group__micro-os-plus-micro-test-plus-cli" kindref="compound">Command-Line Options</ref>); on platforms without a command line, <computeroutput>initialise (runner_options)</computeroutput> sets the options directly. The call is optional; without it, the default options are used;</para>
-</listitem><listitem><para><computeroutput>add_top_suite()</computeroutput> returns the top suite, on which <computeroutput>main()</computeroutput> creates its own test cases (see <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-test-suites" kindref="compound">Test Suites</ref>). The call is optional, for programs whose test cases are all in other suites;</para>
-</listitem><listitem><para><computeroutput>run_suites()</computeroutput> runs the other suites, writes the totals, and returns the exit code, which <computeroutput>main()</computeroutput> returns to the system.</para>
+<para>A test program usually has one <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref>, a global object, which <computeroutput>main()</computeroutput> uses in three steps:<orderedlist>
+<listitem><para><computeroutput>runner::initialise()</computeroutput> reads the command-line options, from <computeroutput>argc</computeroutput> and <computeroutput>argv</computeroutput> (see <ref refid="group__micro-os-plus-micro-test-plus-cli" kindref="compound">Command-line options</ref>); on platforms without a command line, the overload that takes the options, <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options" kindref="compound">runner_options</ref>, sets them directly. The call is optional; without it, the default options are used;</para>
+</listitem><listitem><para><computeroutput>runner::add_top_suite()</computeroutput> returns the top suite, on which <computeroutput>main()</computeroutput> creates its own test cases (see <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-test-suites" kindref="compound">Test suites</ref>). The call is optional, for programs whose test cases are all in other suites;</para>
+</listitem><listitem><para><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a700e3ef1f955492cd84235bd388dcdf2" kindref="member">runner::run_suites()</ref> runs the other suites, writes the totals, and returns the exit code, which <computeroutput>main()</computeroutput> returns to the system.</para>
 </listitem></orderedlist>
 </para>
+<para>Several runners may coexist, global or local, each with its own suites: a runner runs only the suites that refer to it, so the runners do not interfere (see <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref>).</para>
 <para>The exit code is:<itemizedlist>
-<listitem><para>0 when all the checks passed, or when the test cases were only listed;</para>
+<listitem><para>0 when all the checks passed, when the test cases were only listed, or when the usage was displayed by <computeroutput>--help</computeroutput>;</para>
 </listitem><listitem><para>1 when a check failed, or when the program used the runner wrongly (for example, it added no suite at all);</para>
 </listitem><listitem><para>2 when the command line had an error, or when the filters selected no test case.</para>
 </listitem></itemizedlist>
@@ -50,12 +181,39 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ok<sp/>1<sp/>-<sp/>Check<sp/>truth<sp/>#<sp/>{<sp/>passed,<sp/>1<sp/>check<sp/>}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>1..1</highlight></codeline>
-<codeline><highlight class="normal">ok<sp/>1<sp/>-<sp/>Minimal<sp/>#<sp/>{<sp/>passed,<sp/>1<sp/>check<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>time:<sp/>0.039<sp/>ms<sp/>}</highlight></codeline>
+<codeline><highlight class="normal">ok<sp/>1<sp/>-<sp/>Minimal<sp/>#<sp/>{<sp/>passed,<sp/>1<sp/>check<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>time:<sp/>X.XXX<sp/>ms<sp/>}</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">1..1</highlight></codeline>
-<codeline><highlight class="normal">#<sp/>{<sp/>total:<sp/>1<sp/>check<sp/>passed,<sp/>0<sp/>failed,<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>1<sp/>test<sp/>suite,<sp/>time:<sp/>0.074<sp/>ms<sp/>}</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>{<sp/>total:<sp/>1<sp/>check<sp/>passed,<sp/>0<sp/>failed,<sp/>in<sp/>1<sp/>test<sp/>case,<sp/>1<sp/>test<sp/>suite,<sp/>time:<sp/>X.XXX<sp/>ms<sp/>}</highlight></codeline>
 </programlisting></para>
-<para>The name of the top suite is optional. Without it, the suite is named after the program, the file name of <computeroutput>argv[0]</computeroutput> without its extension (<computeroutput>minimal</computeroutput> above); without <computeroutput>argv[0]</computeroutput>, it is named <computeroutput>default suite</computeroutput>.  </para>
+<para>The name of the top suite is optional. Without it, the suite is named after the program, the file name of <computeroutput>argv[0]</computeroutput> without its extension (<computeroutput>minimal</computeroutput> above); without <computeroutput>argv[0]</computeroutput>, it is named <computeroutput>default suite</computeroutput>.</para>
+<para><simplesect kind="par"><title>Without a command line</title><para>On the platforms that have no command line, such as many embedded targets, <computeroutput>main()</computeroutput> defines the options with <computeroutput>runner_options</computeroutput>, starting from the defaults, and passes them to <computeroutput>initialise()</computeroutput>:</para>
+</simplesect>
+<programlisting filename=".cpp"><codeline><highlight class="preprocessor">#include<sp/>&lt;<ref refid="micro-test-plus_8h" kindref="compound">micro-os-plus/micro-test-plus.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mt<sp/>=<sp/><ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">mt::runner<sp/>tr;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">main<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>mt::runner_options<sp/>options{};</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>options.selected_reporter<sp/>=<sp/>mt::reporter_kind::human;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>options.verbosity_level<sp/>=<sp/>mt::verbosity::verbose;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>tr.initialise<sp/>(options);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>ts<sp/>=<sp/>tr.add_top_suite<sp/>(</highlight><highlight class="stringliteral">&quot;Embedded&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>ts.test<sp/>(</highlight><highlight class="stringliteral">&quot;Check<sp/>truth&quot;</highlight><highlight class="normal">,<sp/>[]<sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>t)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t.expect<sp/>(mt::eq<sp/>(6<sp/>*<sp/>7,<sp/>42));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>});</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tr.run_suites<sp/>();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para>The members of <computeroutput>runner_options</computeroutput> are the options of the command line (see <ref refid="group__micro-os-plus-micro-test-plus-cli" kindref="compound">Command-line options</ref>): the reporter, the verbosity, the colours, the output file, the filter patterns, and the listing of the test cases.  </para>
     </detaileddescription>
   </compounddef>
 </doxygen>

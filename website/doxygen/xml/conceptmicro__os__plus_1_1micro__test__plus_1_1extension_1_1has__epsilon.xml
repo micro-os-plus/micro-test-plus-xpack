@@ -11,14 +11,14 @@
     <initializer>template&lt;class T&gt;
 concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon" kindref="compound">micro_os_plus::micro_test_plus::extension::has_epsilon</ref> =  is_op&lt;T&gt; and requires (const T&amp; t) { t.epsilon; }</initializer>
     <conceptparts>
-      <codepart line="351">    <programlisting>
+      <codepart line="348">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">has_epsilon<sp/>=<sp/>is_op&lt;T&gt;<sp/>and<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>t)<sp/>{<sp/>t.epsilon;<sp/>}</highlight></codeline>
     </programlisting>
 </codepart>
     </conceptparts>
     <briefdescription>
-<para>Deprecated C++20 concept satisfied when <computeroutput>T</computeroutput> is a framework floating-point wrapper with a tolerance. </para>
+<para>Deprecated concept satisfied when <computeroutput>T</computeroutput> is a framework floating-point wrapper with a tolerance. </para>
     </briefdescription>
     <detaileddescription>
 <para><parameterlist kind="templateparam"><parameteritem>
@@ -36,6 +36,6 @@ The <computeroutput>has_epsilon</computeroutput> concept is satisfied when <comp
 <para><xrefsect id="deprecated_1_deprecated000117"><xreftitle>Deprecated</xreftitle><xrefdescription><para>To be removed with the deprecated floating-point wrappers (since 6.0.0). </para>
 </xrefdescription></xrefsect></para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="351" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="348" column="5"/>
   </compounddef>
 </doxygen>

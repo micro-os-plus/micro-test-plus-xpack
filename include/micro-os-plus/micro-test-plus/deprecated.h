@@ -17,7 +17,7 @@
 
 /**
  * @file
- * @brief C++ header file with the declarations of the deprecated µTest++
+ * @brief C++ header file with declarations for the deprecated µTest++
  * definitions.
  *
  * @details
@@ -52,10 +52,6 @@
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace.
- *
- * The header files are organised within the
- * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
- * modular codebase.
  *
  * This file is intended for internal use within the framework and should not
  * be included directly by user code.
@@ -134,9 +130,9 @@ namespace micro_os_plus::micro_test_plus
      * @tparam Exp_T The type of the exponent. Must be default-constructible
      * (to zero), and support the `<` and prefix `++` operators.
      *
-     * @param base The base value to be raised to the power of \p exp.
+     * @param base The base value to be raised to the power of @p exp.
      * @param exp The exponent value.
-     * @return The result of raising \p base to the power of \p exp.
+     * @return The result of raising @p base to the power of @p exp.
      */
     template <class T, class Exp_T>
     [[nodiscard]] constexpr auto
@@ -175,7 +171,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @par Parameters
      *   None.
-     * @return The parsed integral value of type \c T.
+     * @return The parsed integral value of type `T`.
      */
     template <class T, char... Cs>
     [[nodiscard]] consteval auto
@@ -192,7 +188,7 @@ namespace micro_os_plus::micro_test_plus
      * @par Parameters
      *   None.
      * @return The digits after the decimal point, as an integral value of
-     * type \c T (e.g. 25 for `1.25`), to be divided by ten raised to the
+     * type `T` (e.g. 25 for `1.25`), to be divided by ten raised to the
      * power returned by `den_size()`.
      */
     template <class T, char... Cs>
@@ -210,7 +206,7 @@ namespace micro_os_plus::micro_test_plus
      * @par Parameters
      *   None.
      * @return The number of decimal places (e.g. 2 for `1.25`), as a value
-     * of type \c T; it is the scale of the value returned by `den()`.
+     * of type `T`; it is the scale of the value returned by `den()`.
      */
     template <class T, char... Cs>
     [[nodiscard]] consteval auto
@@ -225,7 +221,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @param value The value whose decimal precision is to be determined;
      * it may be negative, infinite, or a NaN.
-     * @return The number of decimal places, as a value of type \c T, at
+     * @return The number of decimal places, as a value of type `T`, at
      * least one, or zero for a zero value; the leading zeros of a value
      * below one are counted; it is limited by the magnitude from which
      * `Value_T` represents only integers.
@@ -311,7 +307,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @par Parameters
      *   None.
-     * @return The value of the literal, up to `max()` of \c T, or, for the
+     * @return The value of the literal, up to `max()` of `T`, or, for the
      * signed types, up to `max () + 1`, the absolute value of the minimum.
      */
     template <class T, char... Cs>
@@ -327,7 +323,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief Base struct template providing common storage and accessors
-     * for runtime value-wrapper types.
+     * for run-time value-wrapper types.
      *
      * @tparam T The type of the stored value.
      *
@@ -335,15 +331,15 @@ namespace micro_os_plus::micro_test_plus
      * The `value_base` struct template stores the value in a private
      * member, and provides an explicit `operator T()` conversion and a
      * `get()` accessor, shared by `integral_constant`, `value<T>`, and the
-     * floating point specialisation of `value<T>`.
+     * floating-point specialisation of `value<T>`.
      *
      * It declares the `op_type` marker, so that all derived types satisfy
      * the `extension::is_op` concept without each struct needing to
      * declare it.
      *
      * It does not derive from the empty `op` struct: a type with an
-     * empty base and only floating point members, like `value<float>`,
-     * is a homogeneous floating point aggregate whose parameter passing
+     * empty base and only floating-point members, like `value<float>`,
+     * is a homogeneous floating-point aggregate whose parameter passing
      * with C++17 and later changed in GCC 10.1, and GCC emits a
      * `-Wpsabi` note for each function passing or returning it by value,
      * like `approx()`, on AArch64 and on 32-bit Arm with the hard-float
@@ -421,7 +417,7 @@ namespace micro_os_plus::micro_test_plus
      * The `integral_constant` struct template provides a compile-time constant
      * value of an integral type, created by the integer literals. It inherits
      * from `value_base<decltype(N)>`, which supplies the `value_type` alias,
-     * the runtime value storage, the explicit conversion operator, and the
+     * the run-time value storage, the explicit conversion operator, and the
      * `get()` accessor.
      *
      * This struct retains the compile-time `value` constant and provides a
@@ -516,10 +512,10 @@ namespace micro_os_plus::micro_test_plus
     integral_literal (void);
 
     /**
-     * @brief Struct template representing a generic floating point constant
+     * @brief Struct template representing a generic floating-point constant
      * with custom size and precision.
      *
-     * @tparam T The floating point type (e.g., float, double).
+     * @tparam T The floating-point type (e.g., float, double).
      * @tparam N The integral part of the constant value.
      * @tparam D The digits of the fractional part of the constant value,
      * as returned by `math::den()` (e.g. 25 for `1.25`).
@@ -530,13 +526,13 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The `floating_point_constant` struct template provides a compile-time
-     * constant value of a floating point type, supporting custom size and
+     * constant value of a floating-point type, supporting custom size and
      * precision. It inherits from `op` directly rather than from
      * `value_base<T>`, since its value is the compile-time `value`
      * constant, and it needs no run-time storage; the struct is empty, and
      * the literal operators create it with `{}`, without a constructor.
-     * Having no non-static floating point members, it is not a
-     * homogeneous floating point aggregate, so the `-Wpsabi` note
+     * Having no non-static floating-point members, it is not a
+     * homogeneous floating-point aggregate, so the `-Wpsabi` note
      * described for `value_base` does not apply to it, despite its empty
      * base. On 32-bit Arm, GCC emits another note, about a change in GCC
      * 7.1, for each function passing a `double` or `long double` constant
@@ -568,7 +564,7 @@ namespace micro_os_plus::micro_test_plus
       using value_type = T;
 
       /**
-       * @brief The epsilon value used for floating point comparisons.
+       * @brief The epsilon value used for floating-point comparisons.
        *
        * @details
        * Calculated as 1 divided by 10 raised to the power of `Size`, i.e.
@@ -640,18 +636,18 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
-     * @brief Struct template representing a floating point value with
+     * @brief Struct template representing a floating-point value with
      * precision control.
      *
-     * @tparam T The floating point type to be encapsulated.
+     * @tparam T The floating-point type to be encapsulated.
      *
      * @details
-     * The `value` struct template specialisation for floating point types
+     * The `value` struct template specialisation for floating-point types
      * encapsulates a value of type `T` and provides an associated `epsilon`
      * for precision control during comparisons. The stored value, explicit
      * conversion operator, and getter are provided by the `value_base` base.
      *
-     * The `epsilon` member defines the precision used for floating point
+     * The `epsilon` member defines the precision used for floating-point
      * comparisons and can be set explicitly (by `approx()`) or computed as
      * a default based on the number of decimal digits in the value (by
      * the `to_f`, `to_d`, and `to_ld` wrappers).
@@ -699,9 +695,9 @@ namespace micro_os_plus::micro_test_plus
       }
 
       /**
-       * @brief Constructs a floating point value with default precision.
+       * @brief Constructs a floating-point value with default precision.
        *
-       * @param val The floating point value to be stored.
+       * @param val The floating-point value to be stored.
        *
        * @details
        * The epsilon is computed by `math::decimal_epsilon()` as 1 divided
@@ -802,7 +798,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @details
    * The same as `negate()`. The name was changed since a leading
-   * underscore is not used by the other public names.
+   * underscore is not used by the other current public names.
    *
    * @tparam Expr_T Type of the operand.
    *
@@ -820,7 +816,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @details
    * The same as `all_of()`. The name was changed since a leading
-   * underscore is not used by the other public names.
+   * underscore is not used by the other current public names.
    *
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
@@ -841,7 +837,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @details
    * The same as `any_of()`. The name was changed since a leading
-   * underscore is not used by the other public names.
+   * underscore is not used by the other current public names.
    *
    * @tparam Lhs_T Type of the left hand side operand.
    * @tparam Rhs_T Type of the right hand side operand.
@@ -883,8 +879,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @namespace micro_os_plus::micro_test_plus::operators
-   * @brief Custom operator overloads for expressive and type-safe test
-   * assertions.
+   * @brief Deprecated comparison and logical operators of the test checks.
    *
    * @details
    * The `micro_os_plus::micro_test_plus::operators` namespace provides the
@@ -1111,7 +1106,7 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @namespace micro_os_plus::micro_test_plus::literals
-   * @brief User-defined literals for the µTest++ testing framework.
+   * @brief Deprecated user-defined literals of the test checks.
    *
    * @details
    * The `literals` namespace provides the deprecated user-defined literal
@@ -1877,7 +1872,7 @@ namespace micro_os_plus::micro_test_plus
    * with the operators of the `operators` namespace, the comparisons are
    * then reported with their operands.
    *
-   * **Example**
+   * @par Example
    *
    * @code
    * MyType obj;
@@ -2557,7 +2552,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
-     * @brief Deprecated C++20 concept satisfied when `T` provides a
+     * @brief Deprecated concept satisfied when `T` provides a
      * `npos` member.
      *
      * @tparam T The type to be checked.
@@ -2577,7 +2572,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
-     * @brief Deprecated C++20 concept satisfied when `T` has a member
+     * @brief Deprecated concept satisfied when `T` has a member
      * named `value`.
      *
      * @tparam T The type to be checked.
@@ -2598,7 +2593,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
-     * @brief Deprecated C++20 concept satisfied when `T` is a
+     * @brief Deprecated concept satisfied when `T` is a
      * floating-point type.
      *
      * @tparam T The type to be checked.

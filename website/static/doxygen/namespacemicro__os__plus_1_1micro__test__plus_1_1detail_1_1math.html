@@ -204,14 +204,14 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The absolute value of the input. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="math-inlines_8h_source.html#l00092">92</a> of file <a class="el" href="math-inlines_8h_source.html">math-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   93</span>    {</div>
-<div class="line"><span class="lineno">   94</span>      <span class="keywordflow">return</span> t &lt; T{} ? -t : t;</div>
-<div class="line"><span class="lineno">   95</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="math-inlines_8h_source.html#l00088">88</a> of file <a class="el" href="math-inlines_8h_source.html">math-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>    {</div>
+<div class="line"><span class="lineno">   90</span>      <span class="keywordflow">return</span> t &lt; T{} ? -t : t;</div>
+<div class="line"><span class="lineno">   91</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="math-inlines_8h_source.html#l00092">abs()</a>.</p>
+<p class="reference">References <a class="el" href="math-inlines_8h_source.html#l00088">abs()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="math-inlines_8h_source.html#l00092">abs()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00262">count_decimals()</a>, <a class="el" href="detail-inlines_8h_source.html#l00938">micro_os_plus::micro_test_plus::detail::differ_by_at_most()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00212">micro_os_plus::micro_test_plus::detail::within_tolerance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="math-inlines_8h_source.html#l00088">abs()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00258">count_decimals()</a>, <a class="el" href="detail-inlines_8h_source.html#l00940">micro_os_plus::micro_test_plus::detail::differ_by_at_most()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00212">micro_os_plus::micro_test_plus::detail::within_tolerance()</a>.</p>
 
 </div>
 </div>
@@ -252,71 +252,71 @@ template&lt;class T, class Value_T&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The number of decimal places, as a value of type <code>T</code>, at least one, or zero for a zero value; the leading zeros of a value below one are counted; it is limited by the magnitude from which <span class="tt">Value_T</span> represents only integers.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of decimal places, as a value of type <span class="tt">T</span>, at least one, or zero for a zero value; the leading zeros of a value below one are counted; it is limited by the magnitude from which <span class="tt">Value_T</span> represents only integers.</dd></dl>
 <p>This function template determines the number of decimal (fractional) digits present in a floating-point value, with a precision of about seven digits. Being <span class="tt">constexpr</span>, it can also be evaluated at compile time.</p>
 <p>The function repeatedly multiplies the absolute value by ten, incrementing a counter until the distance to the nearest integer is at most a defined precision threshold (1e-7). Using the distance to the nearest integer, not the fractional part, prevents the rounding noise of a value just below an integer (e.g. 2674.9999999999995) from being taken as more decimals.</p>
 <p>The nearest integer is never zero: while the scaled value is below one, its distance to one is used, so that the leading zeros of a small value are counted as decimals, as in its notation (12 for <span class="tt">1e-12</span>), instead of the count stopping as soon as the scaled value is below the threshold. A zero value has no significant digit, and the result is zero.</p>
 <p>The loop also stops when the value reaches the magnitude from which the type can represent only integers (2^23 for <span class="tt">float</span>, 2^52 for <span class="tt">double</span>), limited to 2^63 so that the conversion to <span class="tt">unsigned long long</span> is always defined. This bounds the number of steps for large values, infinities, and NaNs, for which the result is one; for small values, the number of steps is bounded by the decimal exponent of the smallest value of the type. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00262">262</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  263</span>    {</div>
-<div class="line"><span class="lineno">  264</span>      <span class="keyword">constexpr</span> <span class="keyword">auto</span> precision = Value_T (1e-7);</div>
-<div class="line"><span class="lineno">  265</span>      <span class="comment">// From this magnitude upwards all values are integers.</span></div>
-<div class="line"><span class="lineno">  266</span>      <span class="keyword">constexpr</span> <span class="keyword">auto</span> integral_limit</div>
-<div class="line"><span class="lineno">  267</span>          = <a class="code hl_function" href="#a67e71e2dce0120ad4839635830e80de8">min_value</a> (Value_T (1) / std::numeric_limits&lt;Value_T&gt;::epsilon (),</div>
-<div class="line"><span class="lineno">  268</span>                       Value_T (1ULL &lt;&lt; 63));</div>
-<div class="line"><span class="lineno">  269</span> </div>
-<div class="line"><span class="lineno">  270</span>      <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a> = <a class="code hl_function" href="#a515f68bbb31d64d07810f45f3b1118f6">abs</a> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a>);</div>
-<div class="line"><span class="lineno">  271</span> </div>
-<div class="line"><span class="lineno">  272</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  273</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
-<div class="line"><span class="lineno">  274</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wfloat-equal&quot;</span></div>
-<div class="line"><span class="lineno">  275</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  276</span>      <span class="keywordflow">if</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a> == Value_T (0))</div>
-<div class="line"><span class="lineno">  277</span>        {</div>
-<div class="line"><span class="lineno">  278</span>          <span class="comment">// A zero has no decimals.</span></div>
-<div class="line"><span class="lineno">  279</span>          <span class="keywordflow">return</span> T{};</div>
-<div class="line"><span class="lineno">  280</span>        }</div>
-<div class="line"><span class="lineno">  281</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  282</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
-<div class="line"><span class="lineno">  283</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  284</span> </div>
-<div class="line"><span class="lineno">  285</span>      T result{};</div>
-<div class="line"><span class="lineno">  286</span>      <span class="keywordflow">for</span> (;;)</div>
-<div class="line"><span class="lineno">  287</span>        {</div>
-<div class="line"><span class="lineno">  288</span>          value *= 10;</div>
-<div class="line"><span class="lineno">  289</span>          ++result;</div>
-<div class="line"><span class="lineno">  290</span> </div>
-<div class="line"><span class="lineno">  291</span>          <span class="comment">// Also true for infinities and NaNs.</span></div>
-<div class="line"><span class="lineno">  292</span>          <span class="keywordflow">if</span> (not(value &lt; integral_limit))</div>
-<div class="line"><span class="lineno">  293</span>            {</div>
-<div class="line"><span class="lineno">  294</span>              <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  295</span>            }</div>
-<div class="line"><span class="lineno">  296</span> </div>
-<div class="line"><span class="lineno">  297</span>          <span class="keyword">const</span> <span class="keyword">auto</span> fraction = value</div>
-<div class="line"><span class="lineno">  298</span>                                - <span class="keyword">static_cast&lt;</span>Value_T<span class="keyword">&gt;</span> (</div>
-<div class="line"><span class="lineno">  299</span>                                    <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span> (value));</div>
-<div class="line"><span class="lineno">  300</span>          <span class="comment">// Below one, the distance is to one, not to zero, so that the</span></div>
-<div class="line"><span class="lineno">  301</span>          <span class="comment">// leading zeros of a small value are counted.</span></div>
-<div class="line"><span class="lineno">  302</span>          <span class="keyword">const</span> <span class="keyword">auto</span> distance</div>
-<div class="line"><span class="lineno">  303</span>              = (value &lt; Value_T (1))</div>
-<div class="line"><span class="lineno">  304</span>                    ? Value_T (1) - fraction</div>
-<div class="line"><span class="lineno">  305</span>                    : <a class="code hl_function" href="#a67e71e2dce0120ad4839635830e80de8">min_value</a> (fraction, Value_T (1) - fraction);</div>
-<div class="line"><span class="lineno">  306</span>          <span class="keywordflow">if</span> (distance &lt;= precision)</div>
-<div class="line"><span class="lineno">  307</span>            {</div>
-<div class="line"><span class="lineno">  308</span>              <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  309</span>            }</div>
-<div class="line"><span class="lineno">  310</span>        }</div>
-<div class="line"><span class="lineno">  311</span> </div>
-<div class="line"><span class="lineno">  312</span>      <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">  313</span>    }</div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_html_a515f68bbb31d64d07810f45f3b1118f6"><div class="ttname"><a href="#a515f68bbb31d64d07810f45f3b1118f6">micro_os_plus::micro_test_plus::detail::math::abs</a></div><div class="ttdeci">constexpr auto abs(const T t) noexcept -&gt; T</div><div class="ttdoc">Computes the absolute value of a given comparable value.</div><div class="ttdef"><b>Definition</b> <a href="math-inlines_8h_source.html#l00092">math-inlines.h:92</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_html_a67e71e2dce0120ad4839635830e80de8"><div class="ttname"><a href="#a67e71e2dce0120ad4839635830e80de8">micro_os_plus::micro_test_plus::detail::math::min_value</a></div><div class="ttdeci">constexpr auto min_value(const T &amp;lhs, const T &amp;rhs) noexcept -&gt; const T &amp;</div><div class="ttdoc">Computes the minimum of two comparable values.</div><div class="ttdef"><b>Definition</b> <a href="math-inlines_8h_source.html#l00110">math-inlines.h:110</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">micro_os_plus::micro_test_plus::detail::value</a></div><div class="ttdoc">Struct template representing a generic value, accessible via a getter.</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00629">deprecated.h:630</a></div></div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00258">258</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  259</span>    {</div>
+<div class="line"><span class="lineno">  260</span>      <span class="keyword">constexpr</span> <span class="keyword">auto</span> precision = Value_T (1e-7);</div>
+<div class="line"><span class="lineno">  261</span>      <span class="comment">// From this magnitude upwards all values are integers.</span></div>
+<div class="line"><span class="lineno">  262</span>      <span class="keyword">constexpr</span> <span class="keyword">auto</span> integral_limit</div>
+<div class="line"><span class="lineno">  263</span>          = <a class="code hl_function" href="#a67e71e2dce0120ad4839635830e80de8">min_value</a> (Value_T (1) / std::numeric_limits&lt;Value_T&gt;::epsilon (),</div>
+<div class="line"><span class="lineno">  264</span>                       Value_T (1ULL &lt;&lt; 63));</div>
+<div class="line"><span class="lineno">  265</span> </div>
+<div class="line"><span class="lineno">  266</span>      <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a> = <a class="code hl_function" href="#a515f68bbb31d64d07810f45f3b1118f6">abs</a> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a>);</div>
+<div class="line"><span class="lineno">  267</span> </div>
+<div class="line"><span class="lineno">  268</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  269</span><span class="preprocessor">#pragma GCC diagnostic push</span></div>
+<div class="line"><span class="lineno">  270</span><span class="preprocessor">#pragma GCC diagnostic ignored &quot;-Wfloat-equal&quot;</span></div>
+<div class="line"><span class="lineno">  271</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  272</span>      <span class="keywordflow">if</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a> == Value_T (0))</div>
+<div class="line"><span class="lineno">  273</span>        {</div>
+<div class="line"><span class="lineno">  274</span>          <span class="comment">// A zero has no decimals.</span></div>
+<div class="line"><span class="lineno">  275</span>          <span class="keywordflow">return</span> T{};</div>
+<div class="line"><span class="lineno">  276</span>        }</div>
+<div class="line"><span class="lineno">  277</span><span class="preprocessor">#if defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  278</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
+<div class="line"><span class="lineno">  279</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  280</span> </div>
+<div class="line"><span class="lineno">  281</span>      T result{};</div>
+<div class="line"><span class="lineno">  282</span>      <span class="keywordflow">for</span> (;;)</div>
+<div class="line"><span class="lineno">  283</span>        {</div>
+<div class="line"><span class="lineno">  284</span>          value *= 10;</div>
+<div class="line"><span class="lineno">  285</span>          ++result;</div>
+<div class="line"><span class="lineno">  286</span> </div>
+<div class="line"><span class="lineno">  287</span>          <span class="comment">// Also true for infinities and NaNs.</span></div>
+<div class="line"><span class="lineno">  288</span>          <span class="keywordflow">if</span> (not(value &lt; integral_limit))</div>
+<div class="line"><span class="lineno">  289</span>            {</div>
+<div class="line"><span class="lineno">  290</span>              <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  291</span>            }</div>
+<div class="line"><span class="lineno">  292</span> </div>
+<div class="line"><span class="lineno">  293</span>          <span class="keyword">const</span> <span class="keyword">auto</span> fraction = value</div>
+<div class="line"><span class="lineno">  294</span>                                - <span class="keyword">static_cast&lt;</span>Value_T<span class="keyword">&gt;</span> (</div>
+<div class="line"><span class="lineno">  295</span>                                    <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span> (value));</div>
+<div class="line"><span class="lineno">  296</span>          <span class="comment">// Below one, the distance is to one, not to zero, so that the</span></div>
+<div class="line"><span class="lineno">  297</span>          <span class="comment">// leading zeros of a small value are counted.</span></div>
+<div class="line"><span class="lineno">  298</span>          <span class="keyword">const</span> <span class="keyword">auto</span> distance</div>
+<div class="line"><span class="lineno">  299</span>              = (value &lt; Value_T (1))</div>
+<div class="line"><span class="lineno">  300</span>                    ? Value_T (1) - fraction</div>
+<div class="line"><span class="lineno">  301</span>                    : <a class="code hl_function" href="#a67e71e2dce0120ad4839635830e80de8">min_value</a> (fraction, Value_T (1) - fraction);</div>
+<div class="line"><span class="lineno">  302</span>          <span class="keywordflow">if</span> (distance &lt;= precision)</div>
+<div class="line"><span class="lineno">  303</span>            {</div>
+<div class="line"><span class="lineno">  304</span>              <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  305</span>            }</div>
+<div class="line"><span class="lineno">  306</span>        }</div>
+<div class="line"><span class="lineno">  307</span> </div>
+<div class="line"><span class="lineno">  308</span>      <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  309</span>    }</div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_html_a515f68bbb31d64d07810f45f3b1118f6"><div class="ttname"><a href="#a515f68bbb31d64d07810f45f3b1118f6">micro_os_plus::micro_test_plus::detail::math::abs</a></div><div class="ttdeci">constexpr auto abs(const T t) noexcept -&gt; T</div><div class="ttdoc">Computes the absolute value of a given comparable value.</div><div class="ttdef"><b>Definition</b> <a href="math-inlines_8h_source.html#l00088">math-inlines.h:88</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_html_a67e71e2dce0120ad4839635830e80de8"><div class="ttname"><a href="#a67e71e2dce0120ad4839635830e80de8">micro_os_plus::micro_test_plus::detail::math::min_value</a></div><div class="ttdeci">constexpr auto min_value(const T &amp;lhs, const T &amp;rhs) noexcept -&gt; const T &amp;</div><div class="ttdoc">Computes the minimum of two comparable values.</div><div class="ttdef"><b>Definition</b> <a href="math-inlines_8h_source.html#l00106">math-inlines.h:106</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">micro_os_plus::micro_test_plus::detail::value</a></div><div class="ttdoc">Struct template representing a generic value, accessible via a getter.</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00625">deprecated.h:626</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="math-inlines_8h_source.html#l00092">abs()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00262">count_decimals()</a>, and <a class="el" href="math-inlines_8h_source.html#l00110">min_value()</a>.</p>
+<p class="reference">References <a class="el" href="math-inlines_8h_source.html#l00088">abs()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00258">count_decimals()</a>, and <a class="el" href="math-inlines_8h_source.html#l00106">min_value()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00262">count_decimals()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00330">decimal_epsilon()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00258">count_decimals()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00326">decimal_epsilon()</a>.</p>
 
 </div>
 </div>
@@ -356,27 +356,27 @@ template&lt;bool Fraction, char... Cs&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The number of digits.</dd></dl>
 <p>Walks the characters once, counting the decimal digits before the first decimal point (<span class="tt">Fraction</span> false) or after it (<span class="tt">Fraction</span> true); the digit separators are skipped. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00105">105</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  106</span>    {</div>
-<div class="line"><span class="lineno">  107</span>      std::size_t count = 0;</div>
-<div class="line"><span class="lineno">  108</span>      <span class="keywordtype">bool</span> is_fraction = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  109</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">char</span> c : { Cs... })</div>
-<div class="line"><span class="lineno">  110</span>        {</div>
-<div class="line"><span class="lineno">  111</span>          <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;.&#39;</span>)</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00101">101</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  102</span>    {</div>
+<div class="line"><span class="lineno">  103</span>      std::size_t count = 0;</div>
+<div class="line"><span class="lineno">  104</span>      <span class="keywordtype">bool</span> is_fraction = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  105</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">char</span> c : { Cs... })</div>
+<div class="line"><span class="lineno">  106</span>        {</div>
+<div class="line"><span class="lineno">  107</span>          <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;.&#39;</span>)</div>
+<div class="line"><span class="lineno">  108</span>            {</div>
+<div class="line"><span class="lineno">  109</span>              is_fraction = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  110</span>            }</div>
+<div class="line"><span class="lineno">  111</span>          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (c &gt;= <span class="charliteral">&#39;0&#39;</span> and c &lt;= <span class="charliteral">&#39;9&#39;</span> and is_fraction == Fraction)</div>
 <div class="line"><span class="lineno">  112</span>            {</div>
-<div class="line"><span class="lineno">  113</span>              is_fraction = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  113</span>              ++count;</div>
 <div class="line"><span class="lineno">  114</span>            }</div>
-<div class="line"><span class="lineno">  115</span>          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (c &gt;= <span class="charliteral">&#39;0&#39;</span> and c &lt;= <span class="charliteral">&#39;9&#39;</span> and is_fraction == Fraction)</div>
-<div class="line"><span class="lineno">  116</span>            {</div>
-<div class="line"><span class="lineno">  117</span>              ++count;</div>
-<div class="line"><span class="lineno">  118</span>            }</div>
-<div class="line"><span class="lineno">  119</span>        }</div>
-<div class="line"><span class="lineno">  120</span>      <span class="keywordflow">return</span> count;</div>
-<div class="line"><span class="lineno">  121</span>    }</div>
+<div class="line"><span class="lineno">  115</span>        }</div>
+<div class="line"><span class="lineno">  116</span>      <span class="keywordflow">return</span> count;</div>
+<div class="line"><span class="lineno">  117</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00105">count_literal_digits()</a>.</p>
+<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00101">count_literal_digits()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00105">count_literal_digits()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00181">den()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00224">den_size()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00138">num()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00101">count_literal_digits()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00177">den()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00220">den_size()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00134">num()</a>.</p>
 
 </div>
 </div>
@@ -420,23 +420,23 @@ template&lt;class Value_T&gt; </div>
 <p>The number of decimal places is computed by <span class="tt"><a class="el" href="#accba38bf51d261f330b594ca121e6f75" title="Computes the number of decimal places of a value, with a precision of about seven digits.">count_decimals()</a></span>, and the tolerance is one divided by ten raised to that number, as for the floating-point literals, which use the decimals written.</p>
 <p>A zero value has no decimals, and gets a zero tolerance, so that it is compared exactly; a tolerance of one unit of an arbitrary decimal would make the zero equal to unrelated small values. A zero tolerance is also returned when ten raised to the number of decimals would exceed the range of <span class="tt">Value_T</span> (values below about <span class="tt">1e-308</span> for <span class="tt">double</span>), instead of computing an infinite power. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00330">330</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  331</span>    {</div>
-<div class="line"><span class="lineno">  332</span>      <span class="keyword">const</span> <span class="keyword">auto</span> decimals = <a class="code hl_function" href="#accba38bf51d261f330b594ca121e6f75">count_decimals&lt;unsigned long long&gt;</a> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a>);</div>
-<div class="line"><span class="lineno">  333</span>      <span class="keywordflow">if</span> (decimals == 0</div>
-<div class="line"><span class="lineno">  334</span>          or decimals &gt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span> (</div>
-<div class="line"><span class="lineno">  335</span>                 std::numeric_limits&lt;Value_T&gt;::max_exponent10))</div>
-<div class="line"><span class="lineno">  336</span>        {</div>
-<div class="line"><span class="lineno">  337</span>          <span class="keywordflow">return</span> Value_T{};</div>
-<div class="line"><span class="lineno">  338</span>        }</div>
-<div class="line"><span class="lineno">  339</span>      <span class="keywordflow">return</span> Value_T (1) / <a class="code hl_function" href="#a121fbc662b8263c3b9ce605456fbc7d5">pow</a> (Value_T (10), decimals);</div>
-<div class="line"><span class="lineno">  340</span>    }</div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_html_a121fbc662b8263c3b9ce605456fbc7d5"><div class="ttname"><a href="#a121fbc662b8263c3b9ce605456fbc7d5">micro_os_plus::micro_test_plus::detail::math::pow</a></div><div class="ttdeci">constexpr auto pow(const T base, const Exp_T exp) noexcept -&gt; T</div><div class="ttdoc">Generic exponentiation function to compute the power of a base raised to an exponent.</div><div class="ttdef"><b>Definition</b> <a href="deprecated-inlines_8h_source.html#l00089">deprecated-inlines.h:89</a></div></div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_html_accba38bf51d261f330b594ca121e6f75"><div class="ttname"><a href="#accba38bf51d261f330b594ca121e6f75">micro_os_plus::micro_test_plus::detail::math::count_decimals</a></div><div class="ttdeci">constexpr auto count_decimals(Value_T value) -&gt; T</div><div class="ttdoc">Computes the number of decimal places of a value, with a precision of about seven digits.</div><div class="ttdef"><b>Definition</b> <a href="deprecated-inlines_8h_source.html#l00262">deprecated-inlines.h:262</a></div></div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00326">326</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  327</span>    {</div>
+<div class="line"><span class="lineno">  328</span>      <span class="keyword">const</span> <span class="keyword">auto</span> decimals = <a class="code hl_function" href="#accba38bf51d261f330b594ca121e6f75">count_decimals&lt;unsigned long long&gt;</a> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value.html">value</a>);</div>
+<div class="line"><span class="lineno">  329</span>      <span class="keywordflow">if</span> (decimals == 0</div>
+<div class="line"><span class="lineno">  330</span>          or decimals &gt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span> (</div>
+<div class="line"><span class="lineno">  331</span>                 std::numeric_limits&lt;Value_T&gt;::max_exponent10))</div>
+<div class="line"><span class="lineno">  332</span>        {</div>
+<div class="line"><span class="lineno">  333</span>          <span class="keywordflow">return</span> Value_T{};</div>
+<div class="line"><span class="lineno">  334</span>        }</div>
+<div class="line"><span class="lineno">  335</span>      <span class="keywordflow">return</span> Value_T (1) / <a class="code hl_function" href="#a121fbc662b8263c3b9ce605456fbc7d5">pow</a> (Value_T (10), decimals);</div>
+<div class="line"><span class="lineno">  336</span>    }</div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_html_a121fbc662b8263c3b9ce605456fbc7d5"><div class="ttname"><a href="#a121fbc662b8263c3b9ce605456fbc7d5">micro_os_plus::micro_test_plus::detail::math::pow</a></div><div class="ttdeci">constexpr auto pow(const T base, const Exp_T exp) noexcept -&gt; T</div><div class="ttdoc">Generic exponentiation function to compute the power of a base raised to an exponent.</div><div class="ttdef"><b>Definition</b> <a href="deprecated-inlines_8h_source.html#l00085">deprecated-inlines.h:85</a></div></div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_html_accba38bf51d261f330b594ca121e6f75"><div class="ttname"><a href="#accba38bf51d261f330b594ca121e6f75">micro_os_plus::micro_test_plus::detail::math::count_decimals</a></div><div class="ttdeci">constexpr auto count_decimals(Value_T value) -&gt; T</div><div class="ttdoc">Computes the number of decimal places of a value, with a precision of about seven digits.</div><div class="ttdef"><b>Definition</b> <a href="deprecated-inlines_8h_source.html#l00258">deprecated-inlines.h:258</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00262">count_decimals()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00330">decimal_epsilon()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00089">pow()</a>.</p>
+<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00258">count_decimals()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00326">decimal_epsilon()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00085">pow()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00330">decimal_epsilon()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00326">decimal_epsilon()</a>.</p>
 
 </div>
 </div>
@@ -472,43 +472,43 @@ template&lt;class T, char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Parameters</dt><dd>None. </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>The digits after the decimal point, as an integral value of type <code>T</code> (e.g. 25 for <span class="tt">1.25</span>), to be divided by ten raised to the power returned by <span class="tt"><a class="el" href="#a3557a9ea7ea89e94be133fb78edcd01f" title="Counts the decimal places of a number represented as an array of characters.">den_size()</a></span>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The digits after the decimal point, as an integral value of type <span class="tt">T</span> (e.g. 25 for <span class="tt">1.25</span>), to be divided by ten raised to the power returned by <span class="tt"><a class="el" href="#a3557a9ea7ea89e94be133fb78edcd01f" title="Counts the decimal places of a number represented as an array of characters.">den_size()</a></span>.</dd></dl>
 <p>This function template performs compile-time extraction of the decimal (fractional) part from a sequence of characters, typically provided as a template parameter pack.</p>
 <p>The function expects the character sequence to represent a numeric value, where all characters are either digits, a dot (<span class="tt">.</span>), or an apostrophe (<span class="tt">'</span>). Parsing begins after the first dot, accumulating the decimal digits as an integer value and skipping the digit separators (e.g. <span class="tt">1.25</span> yields 25), so that <span class="tt"><a class="el" href="#a154910632d01b827ab1b67f309064211" title="Computes the decimal part of a number represented as an array of characters.">den()</a> / 10^den_size()</span> gives the fraction. If the result could exceed <span class="tt">T</span>, the compilation fails with an explicit message. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00181">181</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  182</span>    {</div>
-<div class="line"><span class="lineno">  183</span>      <span class="keyword">static_assert</span> ((... || (Cs == <span class="charliteral">&#39;.&#39;</span>)),</div>
-<div class="line"><span class="lineno">  184</span>                     <span class="stringliteral">&quot;den(): no decimal point in literal&quot;</span>);</div>
-<div class="line"><span class="lineno">  185</span>      <span class="comment">// The result has as many digits as the decimals, and it must fit in</span></div>
-<div class="line"><span class="lineno">  186</span>      <span class="comment">// `T`.</span></div>
-<div class="line"><span class="lineno">  187</span>      <span class="keyword">static_assert</span> (</div>
-<div class="line"><span class="lineno">  188</span>          <a class="code hl_function" href="#af295fc92026927f8a453248655e7862e">count_literal_digits</a>&lt;<span class="keyword">true</span>, Cs...&gt; ()</div>
-<div class="line"><span class="lineno">  189</span>              &lt;= <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span> (std::numeric_limits&lt;T&gt;::digits10),</div>
-<div class="line"><span class="lineno">  190</span>          <span class="stringliteral">&quot;µTest++: the floating-point literal has too many &quot;</span></div>
-<div class="line"><span class="lineno">  191</span>          <span class="stringliteral">&quot;decimals&quot;</span>);</div>
-<div class="line"><span class="lineno">  192</span>      T result{};</div>
-<div class="line"><span class="lineno">  193</span>      <span class="keywordtype">bool</span> is_fraction = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  194</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">char</span> c : { Cs... })</div>
-<div class="line"><span class="lineno">  195</span>        {</div>
-<div class="line"><span class="lineno">  196</span>          <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;.&#39;</span>)</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00177">177</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  178</span>    {</div>
+<div class="line"><span class="lineno">  179</span>      <span class="keyword">static_assert</span> ((... || (Cs == <span class="charliteral">&#39;.&#39;</span>)),</div>
+<div class="line"><span class="lineno">  180</span>                     <span class="stringliteral">&quot;den(): no decimal point in literal&quot;</span>);</div>
+<div class="line"><span class="lineno">  181</span>      <span class="comment">// The result has as many digits as the decimals, and it must fit in</span></div>
+<div class="line"><span class="lineno">  182</span>      <span class="comment">// `T`.</span></div>
+<div class="line"><span class="lineno">  183</span>      <span class="keyword">static_assert</span> (</div>
+<div class="line"><span class="lineno">  184</span>          <a class="code hl_function" href="#af295fc92026927f8a453248655e7862e">count_literal_digits</a>&lt;<span class="keyword">true</span>, Cs...&gt; ()</div>
+<div class="line"><span class="lineno">  185</span>              &lt;= <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span> (std::numeric_limits&lt;T&gt;::digits10),</div>
+<div class="line"><span class="lineno">  186</span>          <span class="stringliteral">&quot;µTest++: the floating-point literal has too many &quot;</span></div>
+<div class="line"><span class="lineno">  187</span>          <span class="stringliteral">&quot;decimals&quot;</span>);</div>
+<div class="line"><span class="lineno">  188</span>      T result{};</div>
+<div class="line"><span class="lineno">  189</span>      <span class="keywordtype">bool</span> is_fraction = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  190</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">char</span> c : { Cs... })</div>
+<div class="line"><span class="lineno">  191</span>        {</div>
+<div class="line"><span class="lineno">  192</span>          <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;.&#39;</span>)</div>
+<div class="line"><span class="lineno">  193</span>            {</div>
+<div class="line"><span class="lineno">  194</span>              is_fraction = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  195</span>            }</div>
+<div class="line"><span class="lineno">  196</span>          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is_fraction and c &gt;= <span class="charliteral">&#39;0&#39;</span> and c &lt;= <span class="charliteral">&#39;9&#39;</span>)</div>
 <div class="line"><span class="lineno">  197</span>            {</div>
-<div class="line"><span class="lineno">  198</span>              is_fraction = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  199</span>            }</div>
-<div class="line"><span class="lineno">  200</span>          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is_fraction and c &gt;= <span class="charliteral">&#39;0&#39;</span> and c &lt;= <span class="charliteral">&#39;9&#39;</span>)</div>
-<div class="line"><span class="lineno">  201</span>            {</div>
-<div class="line"><span class="lineno">  202</span>              <span class="comment">// The digit separators are skipped.</span></div>
-<div class="line"><span class="lineno">  203</span>              result = <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span> (result * <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span> (10)</div>
-<div class="line"><span class="lineno">  204</span>                                       + <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span> (c - <span class="charliteral">&#39;0&#39;</span>));</div>
-<div class="line"><span class="lineno">  205</span>            }</div>
-<div class="line"><span class="lineno">  206</span>        }</div>
-<div class="line"><span class="lineno">  207</span>      <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">  208</span>    }</div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_html_af295fc92026927f8a453248655e7862e"><div class="ttname"><a href="#af295fc92026927f8a453248655e7862e">micro_os_plus::micro_test_plus::detail::math::count_literal_digits</a></div><div class="ttdeci">consteval auto count_literal_digits(void) -&gt; std::size_t</div><div class="ttdoc">Counts the decimal digits of a floating-point literal, before or after the decimal point.</div><div class="ttdef"><b>Definition</b> <a href="deprecated-inlines_8h_source.html#l00105">deprecated-inlines.h:105</a></div></div>
+<div class="line"><span class="lineno">  198</span>              <span class="comment">// The digit separators are skipped.</span></div>
+<div class="line"><span class="lineno">  199</span>              result = <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span> (result * <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span> (10)</div>
+<div class="line"><span class="lineno">  200</span>                                       + <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span> (c - <span class="charliteral">&#39;0&#39;</span>));</div>
+<div class="line"><span class="lineno">  201</span>            }</div>
+<div class="line"><span class="lineno">  202</span>        }</div>
+<div class="line"><span class="lineno">  203</span>      <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  204</span>    }</div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_html_af295fc92026927f8a453248655e7862e"><div class="ttname"><a href="#af295fc92026927f8a453248655e7862e">micro_os_plus::micro_test_plus::detail::math::count_literal_digits</a></div><div class="ttdeci">consteval auto count_literal_digits(void) -&gt; std::size_t</div><div class="ttdoc">Counts the decimal digits of a floating-point literal, before or after the decimal point.</div><div class="ttdef"><b>Definition</b> <a href="deprecated-inlines_8h_source.html#l00101">deprecated-inlines.h:101</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00105">count_literal_digits()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00181">den()</a>.</p>
+<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00101">count_literal_digits()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00177">den()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00181">den()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l01198">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_d()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l01180">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_f()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l01216">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ld()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00177">den()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l01194">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_d()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l01176">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_f()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l01212">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ld()</a>.</p>
 
 </div>
 </div>
@@ -544,20 +544,20 @@ template&lt;class T, char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Parameters</dt><dd>None. </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>The number of decimal places (e.g. 2 for <span class="tt">1.25</span>), as a value of type <code>T</code>; it is the scale of the value returned by <span class="tt"><a class="el" href="#a154910632d01b827ab1b67f309064211" title="Computes the decimal part of a number represented as an array of characters.">den()</a></span>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of decimal places (e.g. 2 for <span class="tt">1.25</span>), as a value of type <span class="tt">T</span>; it is the scale of the value returned by <span class="tt"><a class="el" href="#a154910632d01b827ab1b67f309064211" title="Computes the decimal part of a number represented as an array of characters.">den()</a></span>.</dd></dl>
 <p>This function template determines, at compile time, the number of decimal (fractional) digits present in a numeric value represented by a character sequence, typically provided as a template parameter pack.</p>
 <p>The function expects the character sequence to represent a numeric value, where all characters are either digits, a dot (<span class="tt">.</span>), or an apostrophe (<span class="tt">'</span>). It returns the number of digits that follow the first dot (the digit separators are not counted; e.g. 2 for <span class="tt">1.25</span>), which is the scale of the value returned by <span class="tt"><a class="el" href="#a154910632d01b827ab1b67f309064211" title="Computes the decimal part of a number represented as an array of characters.">den()</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00224">224</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  225</span>    {</div>
-<div class="line"><span class="lineno">  226</span>      <span class="keyword">static_assert</span> ((... || (Cs == <span class="charliteral">&#39;.&#39;</span>)),</div>
-<div class="line"><span class="lineno">  227</span>                     <span class="stringliteral">&quot;den_size(): no decimal point in literal&quot;</span>);</div>
-<div class="line"><span class="lineno">  228</span>      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span> (<a class="code hl_function" href="#af295fc92026927f8a453248655e7862e">count_literal_digits</a>&lt;<span class="keyword">true</span>, Cs...&gt; ());</div>
-<div class="line"><span class="lineno">  229</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00220">220</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  221</span>    {</div>
+<div class="line"><span class="lineno">  222</span>      <span class="keyword">static_assert</span> ((... || (Cs == <span class="charliteral">&#39;.&#39;</span>)),</div>
+<div class="line"><span class="lineno">  223</span>                     <span class="stringliteral">&quot;den_size(): no decimal point in literal&quot;</span>);</div>
+<div class="line"><span class="lineno">  224</span>      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span> (<a class="code hl_function" href="#af295fc92026927f8a453248655e7862e">count_literal_digits</a>&lt;<span class="keyword">true</span>, Cs...&gt; ());</div>
+<div class="line"><span class="lineno">  225</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00105">count_literal_digits()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00224">den_size()</a>.</p>
+<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00101">count_literal_digits()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00220">den_size()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00224">den_size()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l01198">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_d()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l01180">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_f()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l01216">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ld()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00220">den_size()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l01194">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_d()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l01176">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_f()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l01212">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ld()</a>.</p>
 
 </div>
 </div>
@@ -593,40 +593,40 @@ template&lt;class T, char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Parameters</dt><dd>None. </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>The value of the literal, up to <span class="tt">max()</span> of <code>T</code>, or, for the signed types, up to <span class="tt">max () + 1</span>, the absolute value of the minimum.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the literal, up to <span class="tt">max()</span> of <span class="tt">T</span>, or, for the signed types, up to <span class="tt">max () + 1</span>, the absolute value of the minimum.</dd></dl>
 <p>The literal must be an integer literal, in any of the C++ forms (decimal, hexadecimal, binary, or octal, with digit separators), and its value must fit in <span class="tt">T</span>; otherwise the compilation fails with an explicit message.</p>
 <p>Negative values are obtained with the unary minus, so the literal itself is never negative. For the signed types, the limit is the absolute value of the minimum, <span class="tt">max () + 1</span>, so that the minimum can be written (e.g. <span class="tt">-128<a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga265f8609ef3d6ead78c7a66825553e24" title="Deprecated strongly-typed wrapper for std::int8_t values, the v5.0.1 name of to_i8.">_i8</a></span>); the caller allows this magnitude only when it is negated.</p>
 <p>When a check fails, zero is returned, so that the callers report no further errors. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00452">452</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  453</span>    {</div>
-<div class="line"><span class="lineno">  454</span>      <span class="keyword">constexpr</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html">integer_literal</a> literal = <a class="code hl_function" href="#a9292deab69ef8584bc2604e76316ecfd">parse_integer_literal</a>&lt;Cs...&gt; ();</div>
-<div class="line"><span class="lineno">  455</span>      <span class="keyword">constexpr</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> max_magnitude</div>
-<div class="line"><span class="lineno">  456</span>          = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span> (std::numeric_limits&lt;T&gt;::max ())</div>
-<div class="line"><span class="lineno">  457</span>            + (std::numeric_limits&lt;T&gt;::is_signed ? 1u : 0u);</div>
-<div class="line"><span class="lineno">  458</span>      <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> fits = literal.<a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#ac09f666f846defca3cb8bd6e1b33c60e">is_integer</a> &amp;&amp; !literal.<a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#a94438561fe06662519cf9687cc734fdb">is_too_large</a></div>
-<div class="line"><span class="lineno">  459</span>                            &amp;&amp; literal.<a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#a79fda0403a1ee1c8fafecbab9e80c815">value</a> &lt;= max_magnitude;</div>
-<div class="line"><span class="lineno">  460</span> </div>
-<div class="line"><span class="lineno">  461</span>      <span class="keyword">static_assert</span> (literal.<a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#ac09f666f846defca3cb8bd6e1b33c60e">is_integer</a>,</div>
-<div class="line"><span class="lineno">  462</span>                     <span class="stringliteral">&quot;µTest++: an integer literal must not have a decimal &quot;</span></div>
-<div class="line"><span class="lineno">  463</span>                     <span class="stringliteral">&quot;point or an exponent&quot;</span>);</div>
-<div class="line"><span class="lineno">  464</span>      <span class="keyword">static_assert</span> (!literal.<a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#ac09f666f846defca3cb8bd6e1b33c60e">is_integer</a> || !literal.<a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#a94438561fe06662519cf9687cc734fdb">is_too_large</a>,</div>
-<div class="line"><span class="lineno">  465</span>                     <span class="stringliteral">&quot;µTest++: the integer literal is too large&quot;</span>);</div>
-<div class="line"><span class="lineno">  466</span>      <span class="keyword">static_assert</span> (!literal.<a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#ac09f666f846defca3cb8bd6e1b33c60e">is_integer</a> || literal.<a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#a94438561fe06662519cf9687cc734fdb">is_too_large</a> || fits,</div>
-<div class="line"><span class="lineno">  467</span>                     <span class="stringliteral">&quot;µTest++: the integer literal value does not fit in the &quot;</span></div>
-<div class="line"><span class="lineno">  468</span>                     <span class="stringliteral">&quot;type of the literal&quot;</span>);</div>
-<div class="line"><span class="lineno">  469</span> </div>
-<div class="line"><span class="lineno">  470</span>      <span class="keywordflow">return</span> fits ? literal.<a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#a79fda0403a1ee1c8fafecbab9e80c815">value</a> : 0;</div>
-<div class="line"><span class="lineno">  471</span>    }</div>
-<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_html_a9292deab69ef8584bc2604e76316ecfd"><div class="ttname"><a href="#a9292deab69ef8584bc2604e76316ecfd">micro_os_plus::micro_test_plus::detail::math::parse_integer_literal</a></div><div class="ttdeci">consteval auto parse_integer_literal(void) -&gt; integer_literal</div><div class="ttdoc">Parses the characters of an integer literal.</div><div class="ttdef"><b>Definition</b> <a href="deprecated-inlines_8h_source.html#l00358">deprecated-inlines.h:358</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html">micro_os_plus::micro_test_plus::detail::math::integer_literal</a></div><div class="ttdoc">The result of parsing the characters of an integer literal.</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00261">deprecated.h:262</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_html_a79fda0403a1ee1c8fafecbab9e80c815"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#a79fda0403a1ee1c8fafecbab9e80c815">micro_os_plus::micro_test_plus::detail::math::integer_literal::value</a></div><div class="ttdeci">unsigned long long value</div><div class="ttdoc">The value of the literal.</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00269">deprecated.h:269</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_html_a94438561fe06662519cf9687cc734fdb"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#a94438561fe06662519cf9687cc734fdb">micro_os_plus::micro_test_plus::detail::math::integer_literal::is_too_large</a></div><div class="ttdeci">bool is_too_large</div><div class="ttdoc">Whether the value exceeds unsigned long long.</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00286">deprecated.h:286</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_html_ac09f666f846defca3cb8bd6e1b33c60e"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#ac09f666f846defca3cb8bd6e1b33c60e">micro_os_plus::micro_test_plus::detail::math::integer_literal::is_integer</a></div><div class="ttdeci">bool is_integer</div><div class="ttdoc">Whether the characters form an integer literal.</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00278">deprecated.h:278</a></div></div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00448">448</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  449</span>    {</div>
+<div class="line"><span class="lineno">  450</span>      <span class="keyword">constexpr</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html">integer_literal</a> literal = <a class="code hl_function" href="#a9292deab69ef8584bc2604e76316ecfd">parse_integer_literal</a>&lt;Cs...&gt; ();</div>
+<div class="line"><span class="lineno">  451</span>      <span class="keyword">constexpr</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> max_magnitude</div>
+<div class="line"><span class="lineno">  452</span>          = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span> (std::numeric_limits&lt;T&gt;::max ())</div>
+<div class="line"><span class="lineno">  453</span>            + (std::numeric_limits&lt;T&gt;::is_signed ? 1u : 0u);</div>
+<div class="line"><span class="lineno">  454</span>      <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> fits = literal.<a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#ac09f666f846defca3cb8bd6e1b33c60e">is_integer</a> &amp;&amp; !literal.<a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#a94438561fe06662519cf9687cc734fdb">is_too_large</a></div>
+<div class="line"><span class="lineno">  455</span>                            &amp;&amp; literal.<a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#a79fda0403a1ee1c8fafecbab9e80c815">value</a> &lt;= max_magnitude;</div>
+<div class="line"><span class="lineno">  456</span> </div>
+<div class="line"><span class="lineno">  457</span>      <span class="keyword">static_assert</span> (literal.<a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#ac09f666f846defca3cb8bd6e1b33c60e">is_integer</a>,</div>
+<div class="line"><span class="lineno">  458</span>                     <span class="stringliteral">&quot;µTest++: an integer literal must not have a decimal &quot;</span></div>
+<div class="line"><span class="lineno">  459</span>                     <span class="stringliteral">&quot;point or an exponent&quot;</span>);</div>
+<div class="line"><span class="lineno">  460</span>      <span class="keyword">static_assert</span> (!literal.<a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#ac09f666f846defca3cb8bd6e1b33c60e">is_integer</a> || !literal.<a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#a94438561fe06662519cf9687cc734fdb">is_too_large</a>,</div>
+<div class="line"><span class="lineno">  461</span>                     <span class="stringliteral">&quot;µTest++: the integer literal is too large&quot;</span>);</div>
+<div class="line"><span class="lineno">  462</span>      <span class="keyword">static_assert</span> (!literal.<a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#ac09f666f846defca3cb8bd6e1b33c60e">is_integer</a> || literal.<a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#a94438561fe06662519cf9687cc734fdb">is_too_large</a> || fits,</div>
+<div class="line"><span class="lineno">  463</span>                     <span class="stringliteral">&quot;µTest++: the integer literal value does not fit in the &quot;</span></div>
+<div class="line"><span class="lineno">  464</span>                     <span class="stringliteral">&quot;type of the literal&quot;</span>);</div>
+<div class="line"><span class="lineno">  465</span> </div>
+<div class="line"><span class="lineno">  466</span>      <span class="keywordflow">return</span> fits ? literal.<a class="code hl_variable" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#a79fda0403a1ee1c8fafecbab9e80c815">value</a> : 0;</div>
+<div class="line"><span class="lineno">  467</span>    }</div>
+<div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_html_a9292deab69ef8584bc2604e76316ecfd"><div class="ttname"><a href="#a9292deab69ef8584bc2604e76316ecfd">micro_os_plus::micro_test_plus::detail::math::parse_integer_literal</a></div><div class="ttdeci">consteval auto parse_integer_literal(void) -&gt; integer_literal</div><div class="ttdoc">Parses the characters of an integer literal.</div><div class="ttdef"><b>Definition</b> <a href="deprecated-inlines_8h_source.html#l00354">deprecated-inlines.h:354</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html">micro_os_plus::micro_test_plus::detail::math::integer_literal</a></div><div class="ttdoc">The result of parsing the characters of an integer literal.</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00257">deprecated.h:258</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_html_a79fda0403a1ee1c8fafecbab9e80c815"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#a79fda0403a1ee1c8fafecbab9e80c815">micro_os_plus::micro_test_plus::detail::math::integer_literal::value</a></div><div class="ttdeci">unsigned long long value</div><div class="ttdoc">The value of the literal.</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00265">deprecated.h:265</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_html_a94438561fe06662519cf9687cc734fdb"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#a94438561fe06662519cf9687cc734fdb">micro_os_plus::micro_test_plus::detail::math::integer_literal::is_too_large</a></div><div class="ttdeci">bool is_too_large</div><div class="ttdoc">Whether the value exceeds unsigned long long.</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00282">deprecated.h:282</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal_html_ac09f666f846defca3cb8bd6e1b33c60e"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1_1integer__literal.html#ac09f666f846defca3cb8bd6e1b33c60e">micro_os_plus::micro_test_plus::detail::math::integer_literal::is_integer</a></div><div class="ttdeci">bool is_integer</div><div class="ttdoc">Whether the characters form an integer literal.</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00274">deprecated.h:274</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00452">integer_magnitude()</a>, <a class="el" href="deprecated_8h_source.html#l00278">micro_os_plus::micro_test_plus::detail::math::integer_literal::is_integer</a>, <a class="el" href="deprecated_8h_source.html#l00286">micro_os_plus::micro_test_plus::detail::math::integer_literal::is_too_large</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00358">parse_integer_literal()</a>, and <a class="el" href="deprecated_8h_source.html#l00269">micro_os_plus::micro_test_plus::detail::math::integer_literal::value</a>.</p>
+<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00448">integer_magnitude()</a>, <a class="el" href="deprecated_8h_source.html#l00274">micro_os_plus::micro_test_plus::detail::math::integer_literal::is_integer</a>, <a class="el" href="deprecated_8h_source.html#l00282">micro_os_plus::micro_test_plus::detail::math::integer_literal::is_too_large</a>, <a class="el" href="deprecated-inlines_8h_source.html#l00354">parse_integer_literal()</a>, and <a class="el" href="deprecated_8h_source.html#l00265">micro_os_plus::micro_test_plus::detail::math::integer_literal::value</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00452">integer_magnitude()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00583">micro_os_plus::micro_test_plus::detail::integral_literal()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00448">integer_magnitude()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00579">micro_os_plus::micro_test_plus::detail::integral_literal()</a>.</p>
 
 </div>
 </div>
@@ -675,14 +675,14 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the minimum of the two input values. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="math-inlines_8h_source.html#l00110">110</a> of file <a class="el" href="math-inlines_8h_source.html">math-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  111</span>    {</div>
-<div class="line"><span class="lineno">  112</span>      <span class="keywordflow">return</span> (rhs &lt; lhs) ? rhs : lhs;</div>
-<div class="line"><span class="lineno">  113</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="math-inlines_8h_source.html#l00106">106</a> of file <a class="el" href="math-inlines_8h_source.html">math-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  107</span>    {</div>
+<div class="line"><span class="lineno">  108</span>      <span class="keywordflow">return</span> (rhs &lt; lhs) ? rhs : lhs;</div>
+<div class="line"><span class="lineno">  109</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="math-inlines_8h_source.html#l00110">min_value()</a>.</p>
+<p class="reference">References <a class="el" href="math-inlines_8h_source.html#l00106">min_value()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00262">count_decimals()</a>, <a class="el" href="math-inlines_8h_source.html#l00110">min_value()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00212">micro_os_plus::micro_test_plus::detail::within_tolerance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00258">count_decimals()</a>, <a class="el" href="math-inlines_8h_source.html#l00106">min_value()</a>, and <a class="el" href="detail-inlines_8h_source.html#l00212">micro_os_plus::micro_test_plus::detail::within_tolerance()</a>.</p>
 
 </div>
 </div>
@@ -719,40 +719,40 @@ template&lt;class T, char... Cs&gt; </div>
   </dd>
 </dl>
 <dl class="section user"><dt>Parameters</dt><dd>None. </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>The parsed integral value of type <code>T</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The parsed integral value of type <span class="tt">T</span>.</dd></dl>
 <p>This function template performs compile-time parsing of a numeric value from a sequence of characters, typically provided as a template parameter pack.</p>
 <p>The characters must be decimal digits, a dot (<span class="tt">.</span>), or digit separators (<span class="tt">'</span>), which are skipped; otherwise (e.g. an exponent) the compilation fails with an explicit message, as it does if the integral part has more digits than <span class="tt">T</span> can always hold. Parsing stops at the first dot, allowing the function to extract only the integral part of the number. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00138">138</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  139</span>    {</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00134">134</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  135</span>    {</div>
+<div class="line"><span class="lineno">  136</span>      <span class="keyword">static_assert</span> (</div>
+<div class="line"><span class="lineno">  137</span>          ((Cs == <span class="charliteral">&#39;.&#39;</span> or Cs == <span class="charliteral">&#39;\&#39;&#39;</span> or (Cs &gt;= <span class="charliteral">&#39;0&#39;</span> and Cs &lt;= <span class="charliteral">&#39;9&#39;</span>)) and ...),</div>
+<div class="line"><span class="lineno">  138</span>          <span class="stringliteral">&quot;µTest++: a floating-point literal must be written with decimal &quot;</span></div>
+<div class="line"><span class="lineno">  139</span>          <span class="stringliteral">&quot;digits and a decimal point, without an exponent&quot;</span>);</div>
 <div class="line"><span class="lineno">  140</span>      <span class="keyword">static_assert</span> (</div>
-<div class="line"><span class="lineno">  141</span>          ((Cs == <span class="charliteral">&#39;.&#39;</span> or Cs == <span class="charliteral">&#39;\&#39;&#39;</span> or (Cs &gt;= <span class="charliteral">&#39;0&#39;</span> and Cs &lt;= <span class="charliteral">&#39;9&#39;</span>)) and ...),</div>
-<div class="line"><span class="lineno">  142</span>          <span class="stringliteral">&quot;µTest++: a floating-point literal must be written with decimal &quot;</span></div>
-<div class="line"><span class="lineno">  143</span>          <span class="stringliteral">&quot;digits and a decimal point, without an exponent&quot;</span>);</div>
-<div class="line"><span class="lineno">  144</span>      <span class="keyword">static_assert</span> (</div>
-<div class="line"><span class="lineno">  145</span>          <a class="code hl_function" href="#af295fc92026927f8a453248655e7862e">count_literal_digits</a>&lt;<span class="keyword">false</span>, Cs...&gt; ()</div>
-<div class="line"><span class="lineno">  146</span>              &lt;= <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span> (std::numeric_limits&lt;T&gt;::digits10),</div>
-<div class="line"><span class="lineno">  147</span>          <span class="stringliteral">&quot;µTest++: the floating-point literal has too many &quot;</span></div>
-<div class="line"><span class="lineno">  148</span>          <span class="stringliteral">&quot;digits before the decimal point&quot;</span>);</div>
-<div class="line"><span class="lineno">  149</span>      T result{};</div>
-<div class="line"><span class="lineno">  150</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">char</span> c : { Cs... })</div>
-<div class="line"><span class="lineno">  151</span>        {</div>
-<div class="line"><span class="lineno">  152</span>          <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;.&#39;</span>)</div>
+<div class="line"><span class="lineno">  141</span>          <a class="code hl_function" href="#af295fc92026927f8a453248655e7862e">count_literal_digits</a>&lt;<span class="keyword">false</span>, Cs...&gt; ()</div>
+<div class="line"><span class="lineno">  142</span>              &lt;= <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span> (std::numeric_limits&lt;T&gt;::digits10),</div>
+<div class="line"><span class="lineno">  143</span>          <span class="stringliteral">&quot;µTest++: the floating-point literal has too many &quot;</span></div>
+<div class="line"><span class="lineno">  144</span>          <span class="stringliteral">&quot;digits before the decimal point&quot;</span>);</div>
+<div class="line"><span class="lineno">  145</span>      T result{};</div>
+<div class="line"><span class="lineno">  146</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">char</span> c : { Cs... })</div>
+<div class="line"><span class="lineno">  147</span>        {</div>
+<div class="line"><span class="lineno">  148</span>          <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;.&#39;</span>)</div>
+<div class="line"><span class="lineno">  149</span>            {</div>
+<div class="line"><span class="lineno">  150</span>              <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  151</span>            }</div>
+<div class="line"><span class="lineno">  152</span>          <span class="keywordflow">if</span> (c &gt;= <span class="charliteral">&#39;0&#39;</span> and c &lt;= <span class="charliteral">&#39;9&#39;</span>)</div>
 <div class="line"><span class="lineno">  153</span>            {</div>
-<div class="line"><span class="lineno">  154</span>              <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  155</span>            }</div>
-<div class="line"><span class="lineno">  156</span>          <span class="keywordflow">if</span> (c &gt;= <span class="charliteral">&#39;0&#39;</span> and c &lt;= <span class="charliteral">&#39;9&#39;</span>)</div>
-<div class="line"><span class="lineno">  157</span>            {</div>
-<div class="line"><span class="lineno">  158</span>              result = <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span> (result * <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span> (10)</div>
-<div class="line"><span class="lineno">  159</span>                                       + <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span> (c - <span class="charliteral">&#39;0&#39;</span>));</div>
-<div class="line"><span class="lineno">  160</span>            }</div>
-<div class="line"><span class="lineno">  161</span>        }</div>
-<div class="line"><span class="lineno">  162</span>      <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">  163</span>    }</div>
+<div class="line"><span class="lineno">  154</span>              result = <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span> (result * <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span> (10)</div>
+<div class="line"><span class="lineno">  155</span>                                       + <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span> (c - <span class="charliteral">&#39;0&#39;</span>));</div>
+<div class="line"><span class="lineno">  156</span>            }</div>
+<div class="line"><span class="lineno">  157</span>        }</div>
+<div class="line"><span class="lineno">  158</span>      <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  159</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00105">count_literal_digits()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00138">num()</a>.</p>
+<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00101">count_literal_digits()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00134">num()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00138">num()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l01198">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_d()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l01180">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_f()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l01216">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ld()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00134">num()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l01194">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_d()</a>, <a class="el" href="deprecated-inlines_8h_source.html#l01176">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_f()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l01212">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ld()</a>.</p>
 
 </div>
 </div>
@@ -791,85 +791,85 @@ template&lt;char... Cs&gt; </div>
 <p>The characters are those of a valid C++ literal, already checked by the compiler (digits valid for the base, digit separators in valid positions). The base is given by the prefix: <span class="tt">0x</span> or <span class="tt">0X</span> for hexadecimal, <span class="tt">0b</span> or <span class="tt">0B</span> for binary, a leading <span class="tt">0</span> for octal, and none for decimal. The digit separators (<span class="tt">'</span>) are skipped.</p>
 <p>Any other character (a decimal point, an exponent, or a digit not valid for the base, as in the floating-point literal <span class="tt">09.5</span>) marks the literal as not an integer. The value is accumulated in <span class="tt">unsigned long long</span>, and the accumulation stops if it would overflow. </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00358">358</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  359</span>    {</div>
-<div class="line"><span class="lineno">  360</span>      <span class="keyword">constexpr</span> std::array&lt;char, <span class="keyword">sizeof</span>...(Cs)&gt; cs{ Cs... };</div>
-<div class="line"><span class="lineno">  361</span>      <span class="keyword">constexpr</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> max_value</div>
-<div class="line"><span class="lineno">  362</span>          = std::numeric_limits&lt;unsigned long long&gt;::max ();</div>
-<div class="line"><span class="lineno">  363</span> </div>
-<div class="line"><span class="lineno">  364</span>      integer_literal result{ 0, <span class="keyword">true</span>, <span class="keyword">false</span> };</div>
-<div class="line"><span class="lineno">  365</span> </div>
-<div class="line"><span class="lineno">  366</span>      <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> base = 10;</div>
-<div class="line"><span class="lineno">  367</span>      std::size_t i = 0;</div>
-<div class="line"><span class="lineno">  368</span>      <span class="keywordflow">if</span> (cs.size () &gt; 1 &amp;&amp; cs[0] == <span class="charliteral">&#39;0&#39;</span>)</div>
-<div class="line"><span class="lineno">  369</span>        {</div>
-<div class="line"><span class="lineno">  370</span>          <span class="keywordflow">if</span> (cs[1] == <span class="charliteral">&#39;x&#39;</span> || cs[1] == <span class="charliteral">&#39;X&#39;</span>)</div>
-<div class="line"><span class="lineno">  371</span>            {</div>
-<div class="line"><span class="lineno">  372</span>              base = 16;</div>
-<div class="line"><span class="lineno">  373</span>              i = 2;</div>
-<div class="line"><span class="lineno">  374</span>            }</div>
-<div class="line"><span class="lineno">  375</span>          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cs[1] == <span class="charliteral">&#39;b&#39;</span> || cs[1] == <span class="charliteral">&#39;B&#39;</span>)</div>
-<div class="line"><span class="lineno">  376</span>            {</div>
-<div class="line"><span class="lineno">  377</span>              base = 2;</div>
-<div class="line"><span class="lineno">  378</span>              i = 2;</div>
-<div class="line"><span class="lineno">  379</span>            }</div>
-<div class="line"><span class="lineno">  380</span>          <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  381</span>            {</div>
-<div class="line"><span class="lineno">  382</span>              base = 8;</div>
-<div class="line"><span class="lineno">  383</span>              i = 1;</div>
-<div class="line"><span class="lineno">  384</span>            }</div>
-<div class="line"><span class="lineno">  385</span>        }</div>
-<div class="line"><span class="lineno">  386</span> </div>
-<div class="line"><span class="lineno">  387</span>      <span class="keywordflow">for</span> (; i &lt; cs.size (); ++i)</div>
-<div class="line"><span class="lineno">  388</span>        {</div>
-<div class="line"><span class="lineno">  389</span>          <span class="keyword">const</span> <span class="keywordtype">char</span> c = cs[i];</div>
-<div class="line"><span class="lineno">  390</span>          <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;\&#39;&#39;</span>)</div>
-<div class="line"><span class="lineno">  391</span>            {</div>
-<div class="line"><span class="lineno">  392</span>              <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  393</span>            }</div>
-<div class="line"><span class="lineno">  394</span> </div>
-<div class="line"><span class="lineno">  395</span>          <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> digit = 0;</div>
-<div class="line"><span class="lineno">  396</span>          <span class="keywordflow">if</span> (c &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;9&#39;</span>)</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00354">354</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  355</span>    {</div>
+<div class="line"><span class="lineno">  356</span>      <span class="keyword">constexpr</span> std::array&lt;char, <span class="keyword">sizeof</span>...(Cs)&gt; cs{ Cs... };</div>
+<div class="line"><span class="lineno">  357</span>      <span class="keyword">constexpr</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> max_value</div>
+<div class="line"><span class="lineno">  358</span>          = std::numeric_limits&lt;unsigned long long&gt;::max ();</div>
+<div class="line"><span class="lineno">  359</span> </div>
+<div class="line"><span class="lineno">  360</span>      integer_literal result{ 0, <span class="keyword">true</span>, <span class="keyword">false</span> };</div>
+<div class="line"><span class="lineno">  361</span> </div>
+<div class="line"><span class="lineno">  362</span>      <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> base = 10;</div>
+<div class="line"><span class="lineno">  363</span>      std::size_t i = 0;</div>
+<div class="line"><span class="lineno">  364</span>      <span class="keywordflow">if</span> (cs.size () &gt; 1 &amp;&amp; cs[0] == <span class="charliteral">&#39;0&#39;</span>)</div>
+<div class="line"><span class="lineno">  365</span>        {</div>
+<div class="line"><span class="lineno">  366</span>          <span class="keywordflow">if</span> (cs[1] == <span class="charliteral">&#39;x&#39;</span> || cs[1] == <span class="charliteral">&#39;X&#39;</span>)</div>
+<div class="line"><span class="lineno">  367</span>            {</div>
+<div class="line"><span class="lineno">  368</span>              base = 16;</div>
+<div class="line"><span class="lineno">  369</span>              i = 2;</div>
+<div class="line"><span class="lineno">  370</span>            }</div>
+<div class="line"><span class="lineno">  371</span>          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cs[1] == <span class="charliteral">&#39;b&#39;</span> || cs[1] == <span class="charliteral">&#39;B&#39;</span>)</div>
+<div class="line"><span class="lineno">  372</span>            {</div>
+<div class="line"><span class="lineno">  373</span>              base = 2;</div>
+<div class="line"><span class="lineno">  374</span>              i = 2;</div>
+<div class="line"><span class="lineno">  375</span>            }</div>
+<div class="line"><span class="lineno">  376</span>          <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  377</span>            {</div>
+<div class="line"><span class="lineno">  378</span>              base = 8;</div>
+<div class="line"><span class="lineno">  379</span>              i = 1;</div>
+<div class="line"><span class="lineno">  380</span>            }</div>
+<div class="line"><span class="lineno">  381</span>        }</div>
+<div class="line"><span class="lineno">  382</span> </div>
+<div class="line"><span class="lineno">  383</span>      <span class="keywordflow">for</span> (; i &lt; cs.size (); ++i)</div>
+<div class="line"><span class="lineno">  384</span>        {</div>
+<div class="line"><span class="lineno">  385</span>          <span class="keyword">const</span> <span class="keywordtype">char</span> c = cs[i];</div>
+<div class="line"><span class="lineno">  386</span>          <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;\&#39;&#39;</span>)</div>
+<div class="line"><span class="lineno">  387</span>            {</div>
+<div class="line"><span class="lineno">  388</span>              <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  389</span>            }</div>
+<div class="line"><span class="lineno">  390</span> </div>
+<div class="line"><span class="lineno">  391</span>          <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> digit = 0;</div>
+<div class="line"><span class="lineno">  392</span>          <span class="keywordflow">if</span> (c &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;9&#39;</span>)</div>
+<div class="line"><span class="lineno">  393</span>            {</div>
+<div class="line"><span class="lineno">  394</span>              digit = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span> (c - <span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><span class="lineno">  395</span>            }</div>
+<div class="line"><span class="lineno">  396</span>          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (base == 16 &amp;&amp; c &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;f&#39;</span>)</div>
 <div class="line"><span class="lineno">  397</span>            {</div>
-<div class="line"><span class="lineno">  398</span>              digit = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span> (c - <span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><span class="lineno">  398</span>              digit = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span> (c - <span class="charliteral">&#39;a&#39;</span> + 10);</div>
 <div class="line"><span class="lineno">  399</span>            }</div>
-<div class="line"><span class="lineno">  400</span>          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (base == 16 &amp;&amp; c &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;f&#39;</span>)</div>
+<div class="line"><span class="lineno">  400</span>          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (base == 16 &amp;&amp; c &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;F&#39;</span>)</div>
 <div class="line"><span class="lineno">  401</span>            {</div>
-<div class="line"><span class="lineno">  402</span>              digit = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span> (c - <span class="charliteral">&#39;a&#39;</span> + 10);</div>
+<div class="line"><span class="lineno">  402</span>              digit = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span> (c - <span class="charliteral">&#39;A&#39;</span> + 10);</div>
 <div class="line"><span class="lineno">  403</span>            }</div>
-<div class="line"><span class="lineno">  404</span>          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (base == 16 &amp;&amp; c &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;F&#39;</span>)</div>
+<div class="line"><span class="lineno">  404</span>          <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">  405</span>            {</div>
-<div class="line"><span class="lineno">  406</span>              digit = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span> (c - <span class="charliteral">&#39;A&#39;</span> + 10);</div>
-<div class="line"><span class="lineno">  407</span>            }</div>
-<div class="line"><span class="lineno">  408</span>          <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  409</span>            {</div>
-<div class="line"><span class="lineno">  410</span>              <span class="comment">// A decimal point, an exponent, or a suffix character.</span></div>
-<div class="line"><span class="lineno">  411</span>              result.is_integer = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  412</span>              <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">  413</span>            }</div>
-<div class="line"><span class="lineno">  414</span> </div>
-<div class="line"><span class="lineno">  415</span>          <span class="keywordflow">if</span> (digit &gt;= base)</div>
-<div class="line"><span class="lineno">  416</span>            {</div>
-<div class="line"><span class="lineno">  417</span>              <span class="comment">// Possible only in a floating-point literal, like `09.5`.</span></div>
-<div class="line"><span class="lineno">  418</span>              result.is_integer = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  419</span>              <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">  420</span>            }</div>
-<div class="line"><span class="lineno">  421</span> </div>
-<div class="line"><span class="lineno">  422</span>          <span class="keywordflow">if</span> (result.value &gt; (max_value - digit) / base)</div>
-<div class="line"><span class="lineno">  423</span>            {</div>
-<div class="line"><span class="lineno">  424</span>              result.is_too_large = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  425</span>              <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">  426</span>            }</div>
-<div class="line"><span class="lineno">  427</span> </div>
-<div class="line"><span class="lineno">  428</span>          result.value = result.value * base + digit;</div>
-<div class="line"><span class="lineno">  429</span>        }</div>
-<div class="line"><span class="lineno">  430</span> </div>
-<div class="line"><span class="lineno">  431</span>      <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">  432</span>    }</div>
+<div class="line"><span class="lineno">  406</span>              <span class="comment">// A decimal point, an exponent, or a suffix character.</span></div>
+<div class="line"><span class="lineno">  407</span>              result.is_integer = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  408</span>              <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  409</span>            }</div>
+<div class="line"><span class="lineno">  410</span> </div>
+<div class="line"><span class="lineno">  411</span>          <span class="keywordflow">if</span> (digit &gt;= base)</div>
+<div class="line"><span class="lineno">  412</span>            {</div>
+<div class="line"><span class="lineno">  413</span>              <span class="comment">// Possible only in a floating-point literal, like `09.5`.</span></div>
+<div class="line"><span class="lineno">  414</span>              result.is_integer = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  415</span>              <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  416</span>            }</div>
+<div class="line"><span class="lineno">  417</span> </div>
+<div class="line"><span class="lineno">  418</span>          <span class="keywordflow">if</span> (result.value &gt; (max_value - digit) / base)</div>
+<div class="line"><span class="lineno">  419</span>            {</div>
+<div class="line"><span class="lineno">  420</span>              result.is_too_large = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  421</span>              <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  422</span>            }</div>
+<div class="line"><span class="lineno">  423</span> </div>
+<div class="line"><span class="lineno">  424</span>          result.value = result.value * base + digit;</div>
+<div class="line"><span class="lineno">  425</span>        }</div>
+<div class="line"><span class="lineno">  426</span> </div>
+<div class="line"><span class="lineno">  427</span>      <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  428</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00358">parse_integer_literal()</a>.</p>
+<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00354">parse_integer_literal()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00452">integer_magnitude()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00358">parse_integer_literal()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00448">integer_magnitude()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00354">parse_integer_literal()</a>.</p>
 
 </div>
 </div>
@@ -919,17 +919,17 @@ template&lt;class T, class Exp_T&gt; </div>
 <p>This function template provides a constexpr implementation for raising a base value to a given exponent, supporting any types that allow multiplication.</p>
 <p>The function starts from one and multiplies the result by the base <span class="tt">exp</span> times. If the exponent is zero (or negative), the function returns one (the multiplicative identity for the type). </p>
 
-<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00089">89</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   90</span>    {</div>
-<div class="line"><span class="lineno">   91</span>      T result{ 1 };</div>
-<div class="line"><span class="lineno">   92</span>      <span class="keywordflow">for</span> (Exp_T i{}; i &lt; exp; ++i)</div>
-<div class="line"><span class="lineno">   93</span>        result *= base;</div>
-<div class="line"><span class="lineno">   94</span>      <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">   95</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00085">85</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   86</span>    {</div>
+<div class="line"><span class="lineno">   87</span>      T result{ 1 };</div>
+<div class="line"><span class="lineno">   88</span>      <span class="keywordflow">for</span> (Exp_T i{}; i &lt; exp; ++i)</div>
+<div class="line"><span class="lineno">   89</span>        result *= base;</div>
+<div class="line"><span class="lineno">   90</span>      <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">   91</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00089">pow()</a>.</p>
+<p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00085">pow()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00330">decimal_epsilon()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00089">pow()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="deprecated-inlines_8h_source.html#l00326">decimal_epsilon()</a>, and <a class="el" href="deprecated-inlines_8h_source.html#l00085">pow()</a>.</p>
 
 </div>
 </div>

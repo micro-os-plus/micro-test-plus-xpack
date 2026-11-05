@@ -33,10 +33,6 @@
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace.
  *
- * The header files are organised within the
- * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
- * modular codebase.
- *
  * This file is included by `micro-os-plus/micro-test-plus.h`, which is the
  * header that the applications include.
  */
@@ -125,6 +121,7 @@ namespace micro_os_plus::micro_test_plus
   // --------------------------------------------------------------------------
 
   /**
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-test-suites
    * @brief A name of a suite or of a test case, with the location where
    * it was given.
    *
@@ -1127,7 +1124,7 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
     /**
-     * @brief C++20 concept satisfied when `T` is a range of values for
+     * @brief Concept satisfied when `T` is a range of values for
      * `test_each()`.
      *
      * @tparam T The type to be checked, possibly a reference.
@@ -1144,7 +1141,7 @@ namespace micro_os_plus::micro_test_plus
                                 or free_range<std::remove_cvref_t<T>>;
 
     /**
-     * @brief C++20 concept satisfied when `T` is a tuple of values for
+     * @brief Concept satisfied when `T` is a tuple of values for
      * `test_each()`.
      *
      * @tparam T The type to be checked, possibly a reference.
@@ -2471,6 +2468,7 @@ namespace micro_os_plus::micro_test_plus
   // ==========================================================================
 
   /**
+   * @ingroup micro-os-plus-micro-test-plus-cpp-api-test-suites
    * @brief The optional top suite owned by every `runner` instance.
    *
    * @details
@@ -2637,7 +2635,8 @@ namespace micro_os_plus::micro_test_plus
   {
   public:
     /**
-     * @brief Class template constructor for static_suite.
+     * @brief Constructs a static suite, and links it into the list of
+     * suites.
      *
      * @details
      * The runner is only referred to, not accessed, so it may be a

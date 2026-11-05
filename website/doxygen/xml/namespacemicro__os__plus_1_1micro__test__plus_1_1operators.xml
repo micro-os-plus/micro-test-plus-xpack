@@ -14,7 +14,7 @@
       <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga9d9f5f30c7d8973ef7ccd6f52f0cbd21" kind="function"><name>operator&gt;=</name></member>
     </sectiondef>
     <briefdescription>
-<para>Custom operator overloads for expressive and type-safe test assertions. </para>
+<para>Deprecated comparison and logical operators of the test checks. </para>
     </briefdescription>
     <detaileddescription>
 <para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1operators" kindref="compound">micro_os_plus::micro_test_plus::operators</ref></computeroutput> namespace provides the deprecated overloaded operators of the test checks.</para>
@@ -31,6 +31,6 @@ To minimise conflicts with application-defined operators, these overloads are en
 </simplesect>
 </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="885" column="1"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="881" column="1"/>
   </compounddef>
 </doxygen>

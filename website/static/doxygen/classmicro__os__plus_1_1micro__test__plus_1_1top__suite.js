@@ -24,7 +24,6 @@ var classmicro__os__plus_1_1micro__test__plus_1_1top__suite =
     [ "reject_body_exception", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#a1a5da2b1dbdcda50a7e570c5cefbe52b", null ],
     [ "run", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#a432deda5a8721472e8775cbc98451722", null ],
     [ "running_test_case", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#a3fd5730af8bd449cc56e29d5d14509e9", null ],
-    [ "test", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#ad1aa80580c1bdde8d30bba7bc0494fef", null ],
     [ "test", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#a0cfa76ba0ba0c308d246b2b5d506ab19", null ],
     [ "test_each", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#adc0f91f958d943f505dac6f73c2c240d", null ],
     [ "test_each", "classmicro__os__plus_1_1micro__test__plus_1_1top__suite.html#a61a886b526fef82564a3e4ec1ea0dee4", null ],

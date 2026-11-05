@@ -159,7 +159,7 @@ template&lt;class T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This function template parses the compiler-specific <span class="tt">__PRETTY_FUNCTION__</span> macro to extract a concise type name for the template parameter <code>T</code>.</p>
+<p>This function template parses the compiler-specific <span class="tt">__PRETTY_FUNCTION__</span> macro to extract a concise type name for the template parameter <span class="tt">T</span>.</p>
 <p>Rather than relying on fixed character offsets (which are fragile across compiler versions and namespace changes), the implementation searches for the marker that introduces the template argument in the function signature string:</p>
 <ul>
 <li>Clang formats the signature as <span class="tt">"... [T = &lt;typename&gt;]"</span>, so the type name lies between the first <span class="tt">"[T = "</span> and the last <span class="tt">']'</span>. The marker is searched for as a whole, since the type name may itself contain brackets (e.g. <span class="tt">int[3]</span>).</li>
@@ -177,42 +177,42 @@ template&lt;class T&gt; </div>
 <dl class="section user"><dt>Parameters</dt><dd>None. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>A <span class="tt">std::string_view</span> containing the extracted type name, or <span class="tt">"unknown"</span> if it cannot be determined. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="reflection-inlines_8h_source.html#l00153">153</a> of file <a class="el" href="reflection-inlines_8h_source.html">reflection-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  154</span>    {</div>
-<div class="line"><span class="lineno">  155</span><span class="preprocessor">#if defined(__clang__)</span></div>
-<div class="line"><span class="lineno">  156</span>      <span class="comment">// Clang: &quot;... [T = &lt;typename&gt;]&quot;</span></div>
-<div class="line"><span class="lineno">  157</span>      <span class="keyword">const</span> std::string_view sv = __PRETTY_FUNCTION__;</div>
-<div class="line"><span class="lineno">  158</span>      <span class="keyword">constexpr</span> std::string_view marker{ <span class="stringliteral">&quot;[T = &quot;</span> };</div>
-<div class="line"><span class="lineno">  159</span>      <span class="keyword">const</span> <span class="keyword">auto</span> pos = sv.find (marker);</div>
-<div class="line"><span class="lineno">  160</span>      <span class="keyword">const</span> <span class="keyword">auto</span> end = sv.rfind (<span class="charliteral">&#39;]&#39;</span>);</div>
-<div class="line"><span class="lineno">  161</span><span class="preprocessor">#elif defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  162</span>      <span class="comment">// GCC: &quot;... [with T = &lt;typename&gt;]&quot; or, on some versions,</span></div>
-<div class="line"><span class="lineno">  163</span>      <span class="comment">//      &quot;... [with T = &lt;typename&gt;; std::string_view = ...]&quot;</span></div>
-<div class="line"><span class="lineno">  164</span>      <span class="keyword">const</span> std::string_view sv = __PRETTY_FUNCTION__;</div>
-<div class="line"><span class="lineno">  165</span>      <span class="keyword">constexpr</span> std::string_view marker{ <span class="stringliteral">&quot;[with T = &quot;</span> };</div>
-<div class="line"><span class="lineno">  166</span>      <span class="keyword">const</span> <span class="keyword">auto</span> pos = sv.find (marker);</div>
-<div class="line"><span class="lineno">  167</span>      <span class="keyword">const</span> <span class="keyword">auto</span> semi = sv.find (<span class="charliteral">&#39;;&#39;</span>, pos);</div>
-<div class="line"><span class="lineno">  168</span>      <span class="keyword">const</span> <span class="keyword">auto</span> end</div>
-<div class="line"><span class="lineno">  169</span>          = (semi != std::string_view::npos) ? semi : sv.rfind (<span class="stringliteral">&#39;]&#39;</span>);</div>
-<div class="line"><span class="lineno">  170</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">  171</span>      <span class="comment">// Unsupported compiler; no portable signature string is available.</span></div>
-<div class="line"><span class="lineno">  172</span>      <span class="keyword">const</span> std::string_view sv{};</div>
-<div class="line"><span class="lineno">  173</span>      <span class="keyword">constexpr</span> std::string_view marker{};</div>
-<div class="line"><span class="lineno">  174</span>      <span class="keyword">const</span> <span class="keyword">auto</span> pos = std::string_view::npos;</div>
-<div class="line"><span class="lineno">  175</span>      <span class="keyword">const</span> <span class="keyword">auto</span> end = std::string_view::npos;</div>
-<div class="line"><span class="lineno">  176</span><span class="preprocessor">#endif </span><span class="comment">// defined(__clang__) || defined(__GNUC__)</span></div>
-<div class="line"><span class="lineno">  177</span>      <span class="keywordflow">if</span> (pos == std::string_view::npos || end == std::string_view::npos</div>
-<div class="line"><span class="lineno">  178</span>          || end &lt; pos + marker.size ())</div>
-<div class="line"><span class="lineno">  179</span>        {</div>
-<div class="line"><span class="lineno">  180</span>          return <span class="stringliteral">&quot;unknown&quot;</span>;</div>
-<div class="line"><span class="lineno">  181</span>        }</div>
-<div class="line"><span class="lineno">  182</span>      <span class="keyword">const</span> <span class="keyword">auto</span> start = pos + marker.size ();</div>
-<div class="line"><span class="lineno">  183</span>      <span class="keywordflow">return</span> sv.substr (start, end - start);</div>
-<div class="line"><span class="lineno">  184</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="reflection-inlines_8h_source.html#l00149">149</a> of file <a class="el" href="reflection-inlines_8h_source.html">reflection-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>    {</div>
+<div class="line"><span class="lineno">  151</span><span class="preprocessor">#if defined(__clang__)</span></div>
+<div class="line"><span class="lineno">  152</span>      <span class="comment">// Clang: &quot;... [T = &lt;typename&gt;]&quot;</span></div>
+<div class="line"><span class="lineno">  153</span>      <span class="keyword">const</span> std::string_view sv = __PRETTY_FUNCTION__;</div>
+<div class="line"><span class="lineno">  154</span>      <span class="keyword">constexpr</span> std::string_view marker{ <span class="stringliteral">&quot;[T = &quot;</span> };</div>
+<div class="line"><span class="lineno">  155</span>      <span class="keyword">const</span> <span class="keyword">auto</span> pos = sv.find (marker);</div>
+<div class="line"><span class="lineno">  156</span>      <span class="keyword">const</span> <span class="keyword">auto</span> end = sv.rfind (<span class="charliteral">&#39;]&#39;</span>);</div>
+<div class="line"><span class="lineno">  157</span><span class="preprocessor">#elif defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  158</span>      <span class="comment">// GCC: &quot;... [with T = &lt;typename&gt;]&quot; or, on some versions,</span></div>
+<div class="line"><span class="lineno">  159</span>      <span class="comment">//      &quot;... [with T = &lt;typename&gt;; std::string_view = ...]&quot;</span></div>
+<div class="line"><span class="lineno">  160</span>      <span class="keyword">const</span> std::string_view sv = __PRETTY_FUNCTION__;</div>
+<div class="line"><span class="lineno">  161</span>      <span class="keyword">constexpr</span> std::string_view marker{ <span class="stringliteral">&quot;[with T = &quot;</span> };</div>
+<div class="line"><span class="lineno">  162</span>      <span class="keyword">const</span> <span class="keyword">auto</span> pos = sv.find (marker);</div>
+<div class="line"><span class="lineno">  163</span>      <span class="keyword">const</span> <span class="keyword">auto</span> semi = sv.find (<span class="charliteral">&#39;;&#39;</span>, pos);</div>
+<div class="line"><span class="lineno">  164</span>      <span class="keyword">const</span> <span class="keyword">auto</span> end</div>
+<div class="line"><span class="lineno">  165</span>          = (semi != std::string_view::npos) ? semi : sv.rfind (<span class="stringliteral">&#39;]&#39;</span>);</div>
+<div class="line"><span class="lineno">  166</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  167</span>      <span class="comment">// Unsupported compiler; no portable signature string is available.</span></div>
+<div class="line"><span class="lineno">  168</span>      <span class="keyword">const</span> std::string_view sv{};</div>
+<div class="line"><span class="lineno">  169</span>      <span class="keyword">constexpr</span> std::string_view marker{};</div>
+<div class="line"><span class="lineno">  170</span>      <span class="keyword">const</span> <span class="keyword">auto</span> pos = std::string_view::npos;</div>
+<div class="line"><span class="lineno">  171</span>      <span class="keyword">const</span> <span class="keyword">auto</span> end = std::string_view::npos;</div>
+<div class="line"><span class="lineno">  172</span><span class="preprocessor">#endif </span><span class="comment">// defined(__clang__) || defined(__GNUC__)</span></div>
+<div class="line"><span class="lineno">  173</span>      <span class="keywordflow">if</span> (pos == std::string_view::npos || end == std::string_view::npos</div>
+<div class="line"><span class="lineno">  174</span>          || end &lt; pos + marker.size ())</div>
+<div class="line"><span class="lineno">  175</span>        {</div>
+<div class="line"><span class="lineno">  176</span>          return <span class="stringliteral">&quot;unknown&quot;</span>;</div>
+<div class="line"><span class="lineno">  177</span>        }</div>
+<div class="line"><span class="lineno">  178</span>      <span class="keyword">const</span> <span class="keyword">auto</span> start = pos + marker.size ();</div>
+<div class="line"><span class="lineno">  179</span>      <span class="keywordflow">return</span> sv.substr (start, end - start);</div>
+<div class="line"><span class="lineno">  180</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reflection-inlines_8h_source.html#l00153">type_name()</a>.</p>
+<p class="reference">References <a class="el" href="reflection-inlines_8h_source.html#l00149">type_name()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="expression-formatter-inlines_8h_source.html#l00765">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, and <a class="el" href="reflection-inlines_8h_source.html#l00153">type_name()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="expression-formatter-inlines_8h_source.html#l00765">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;()</a>, and <a class="el" href="reflection-inlines_8h_source.html#l00149">type_name()</a>.</p>
 
 </div>
 </div>

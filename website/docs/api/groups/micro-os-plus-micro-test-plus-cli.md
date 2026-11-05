@@ -15,14 +15,14 @@ keywords:
 
 <div class="doxyPage">
 
-# Command-Line Options
+# Command-line options
 
 <p>Options for controlling the test output at run time.</p>
 
 ## Description {#details}
 
 
-<p>The test programs accept options on the command line, which <span class="doxyComputerOutput">runner::initialise (argc, argv)</span> reads. On platforms without a command line, the same settings are made with <span class="doxyComputerOutput">runner_options</span>, passed to <span class="doxyComputerOutput">runner::initialise()</span>.</p>
+<p>The test programs accept options on the command line, which <span class="doxyComputerOutput">runner::initialise()</span> reads. On platforms without a command line, the same settings are made with <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-options">runner_options</a>, passed to <span class="doxyComputerOutput">runner::initialise()</span>.</p>
 
 
 <table class="doxyTable">
@@ -39,7 +39,7 @@ keywords:
 <td>the output format (TAP by default)</td>
 </tr>
 <tr>
-<td><span class="doxyComputerOutput">--colour[=always,never,auto]</span></td>
+<td><span class="doxyComputerOutput">--colour[=always</span>|<span class="doxyComputerOutput">never</span>|<span class="doxyComputerOutput">auto]</span></td>
 <td>colour the human-readable output</td>
 </tr>
 <tr>
@@ -68,6 +68,7 @@ keywords:
 <li>That argument, and all the following ones, are left to the application, uninterpreted; <span class="doxyComputerOutput">runner::application_arguments()</span> returns them.</li>
 <li>The <span class="doxyComputerOutput">--</span> that ends the options is not passed on. It is needed before an application argument that starts with a dash, which would otherwise be taken for an unknown µTest++ option. After the first application argument, a <span class="doxyComputerOutput">--</span> is passed on like any other argument.</li>
 <li>The value of an option may be attached (<span class="doxyComputerOutput">--reporter=human</span>) or given as the next argument (<span class="doxyComputerOutput">--reporter human</span>), except for <span class="doxyComputerOutput">--colour</span>, whose value must be attached.</li>
+<li>An option may be repeated: the last one takes effect (<span class="doxyComputerOutput">--quiet --verbose</span> is <span class="doxyComputerOutput">--verbose</span>), except for <span class="doxyComputerOutput">--filter</span>, whose patterns are all kept, one for each nesting level.</li>
 </ul>
 </dd>
 </dl>
@@ -75,7 +76,7 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Errors</dt>
-<dd><p>An unknown option (an argument that starts with a dash before the end of the options, such as <span class="doxyComputerOutput">-x</span>, <span class="doxyComputerOutput">-</span>, or <span class="doxyComputerOutput">-verbose</span>), an unknown reporter or colour mode, or a missing option value is an error. It is reported on <span class="doxyComputerOutput">stderr</span>, on the console, and in the output file, if any; no test runs, and the exit code is 2. For an unknown option, the console also suggests <span class="doxyComputerOutput">--help</span>.</p></dd>
+<dd><p>An unknown option (an argument that starts with a dash before the end of the options, such as <span class="doxyComputerOutput">-x</span>, <span class="doxyComputerOutput">-</span>, or <span class="doxyComputerOutput">-verbose</span>), an unknown reporter or colour mode, or a missing option value is an error. It is reported on <span class="doxyComputerOutput">stderr</span>, on the console (unless <span class="doxyComputerOutput">--silent</span> is given), and in the output file, if any; no test runs, and the exit code is 2. For an unknown option, the console also suggests <span class="doxyComputerOutput">--help</span>.</p></dd>
 </dl>
 
 
@@ -127,7 +128,7 @@ keywords:
 <li>default – one line for each test case that passed, and the details of each failed check;</li>
 <li><span class="doxyComputerOutput">--verbose</span> – every check, passed or failed;</li>
 <li><span class="doxyComputerOutput">--quiet</span> – only the failed checks, with the names of their suites and test cases, and the session totals (and, with the TAP reporter, one result line for each suite);</li>
-<li><span class="doxyComputerOutput">--silent</span> – nothing; only the exit code reports the result.</li>
+<li><span class="doxyComputerOutput">--silent</span> – nothing on the console; only the exit code reports the result, and the errors are still written on <span class="doxyComputerOutput">stderr</span>.</li>
 </ul>
 
 <p>On platforms without a command line, the level is set in <span class="doxyComputerOutput">runner_options::verbosity_level</span>. The examples below are the output of <span class="doxyComputerOutput">tests/sources/minimal/src/main.cpp</span>.</p>
@@ -219,18 +220,20 @@ keywords:
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">#                   condition: "1 == 2"</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">#                   at:</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">#                     fileName: checks.cpp</span></span></div>
-<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">#                     lineNumber: 454</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">#                     lineNumber: 399</span></span></div>
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">#                   ...</span></span></div>
 
 </div>
 
 
-<p>To keep the complete report while the console shows only the failures, add an output file, which always receives the complete report:</p>
+<p>To keep the complete report while the console shows only the failures, add an output file, which always receives the complete report; the console then ends with a line that names the file:</p>
 
 
 <div class="doxyProgramListing">
 
 <div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">$ sample-test --quiet --output-file=sample-test.tap</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight">...</span></span></div>
+<div class="doxyCodeLine"><span class="doxyNoLineNumber">&nbsp;</span><span class="doxyLineContent"><span class="doxyHighlight"># Test output written to 'sample-test.tap'.</span></span></div>
 
 </div>
 
@@ -241,10 +244,10 @@ keywords:
 ### Silent mode {#cli-verbosity-silent}
 
 
-<p>Nothing is displayed on the console, and only the exit code reports the result; the output file, if any, is still written.</p>
+<p>Nothing is displayed on the console, and only the exit code reports the result; the output file, if any, is still written, and the errors of the options and of the rejected calls are still written on <span class="doxyComputerOutput">stderr</span>. The output that was explicitly requested, with <span class="doxyComputerOutput">--help</span> or <span class="doxyComputerOutput">--list-tests</span>, is displayed.</p>
 
 
-## Output File {#cli-output-file}
+## Output file {#cli-output-file}
 
 
 <ul class="doxyList ">
@@ -252,6 +255,9 @@ keywords:
 </ul>
 
 <p>The file receives the complete report, whatever the verbosity, with both reporters, and never receives colours, so it can be passed to other tools. It is truncated first, so it never keeps the results of an earlier run, and it also receives the option errors. If the file cannot be opened, the error is reported on <span class="doxyComputerOutput">stderr</span> and on the console, no test runs, and the exit code is 2.</p>
+
+
+<p>When the run ends, the console shows a line with the path of the file (<span class="doxyComputerOutput"># Test output written to '&lt;path&gt;'.</span> with the TAP reporter, without the <span class="doxyComputerOutput"># </span> with the human-readable one); <span class="doxyComputerOutput">--silent</span> omits it. An empty path (<span class="doxyComputerOutput">--output-file=</span> or <span class="doxyComputerOutput">--output-file ""</span>) writes no file, which also cancels an earlier <span class="doxyComputerOutput">--output-file</span>.</p>
 
 
 <p>On platforms without a command line, the path is set in <span class="doxyComputerOutput">runner_options::output_file_path</span>.</p>
@@ -338,7 +344,7 @@ keywords:
 </div>
 
 
-## Listing the Test Cases {#cli-list-tests}
+## Listing the test cases {#cli-list-tests}
 
 
 <ul class="doxyList ">
@@ -373,6 +379,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

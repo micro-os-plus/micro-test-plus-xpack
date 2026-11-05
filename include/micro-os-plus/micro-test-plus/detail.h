@@ -30,10 +30,6 @@
  * All definitions reside within the `micro_os_plus::micro_test_plus::detail`
  * namespace.
  *
- * The header files are organised within the
- * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
- * modular codebase.
- *
  * This file is included by `micro-os-plus/micro-test-plus.h`, which is the
  * header that the applications include.
  */
@@ -241,7 +237,7 @@ namespace micro_os_plus::micro_test_plus
      * result of a unary operation. Derived structs such as `not_op` inherit
      * from this to provide logical negation. The result is computed at
      * construction time, enabling consistent handling and reporting of
-     * operations throughout the assertion framework.
+     * operations throughout the framework.
      *
      * @tparam T The type of the stored operand, either the operand type,
      * or a `const` reference to it (see `stored_operand_t`).
@@ -833,7 +829,7 @@ namespace micro_os_plus::micro_test_plus
      * with the right-hand operand, using the operator defined by the tag
      * `Compare_T` (`equal_to`, `not_equal_to`, `greater`, `greater_equal`,
      * `less`, or `less_equal`). It is used within test expressions to
-     * provide human-readable relational assertions, with the actual and
+     * provide human-readable relational checks, with the actual and
      * expected values, and the symbol of the tag, reported upon failure.
      *
      * The tag is passed as an empty constructor argument, so that all
@@ -1059,7 +1055,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Derived from `binary_op`, this struct combines two sub-expressions
      * with a logical AND operation. It enables composition of complex
-     * assertions by combining multiple conditions into a single logical
+     * checks by combining multiple conditions into a single logical
      * whole, with reporting that shows the combined result and individual
      * operand outcomes.
      *
@@ -1114,7 +1110,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Derived from `binary_op`, this struct combines two sub-expressions
      * with a logical OR operation. It enables composition of complex
-     * assertions by combining multiple conditions into a single logical
+     * checks by combining multiple conditions into a single logical
      * whole, with reporting that shows the combined result and individual
      * operand outcomes.
      *
@@ -1170,7 +1166,7 @@ namespace micro_os_plus::micro_test_plus
      * Derived from `unary_op`, this struct negates a single sub-expression,
      * enabling test writers to assert that a condition does not hold. The
      * negation result is computed at construction time, ensuring consistent
-     * reporting throughout the assertion framework.
+     * reporting throughout the framework.
      *
      * A temporary is moved into the comparator, and a named
      * sub-expression is copied (see `stored_operand_t`).
@@ -1612,7 +1608,7 @@ namespace micro_os_plus::micro_test_plus
     // ========================================================================
 
     /**
-     * @brief C++20 concept satisfied by the character types.
+     * @brief Concept satisfied by the character types.
      *
      * @details
      * The `character` concept is satisfied when the type, ignoring the
@@ -1631,7 +1627,7 @@ namespace micro_os_plus::micro_test_plus
                         or std::is_same_v<std::remove_cv_t<T>, char32_t>;
 
     /**
-     * @brief C++20 concept satisfied by the pointers to the character
+     * @brief Concept satisfied by the pointers to the character
      * types.
      *
      * @details
@@ -1943,7 +1939,7 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
     /**
-     * @brief C++20 concept satisfied when `T` is a valid operand of the
+     * @brief Concept satisfied when `T` is a valid operand of the
      * approximate comparator.
      *
      * @tparam T The type to be checked, possibly a reference.

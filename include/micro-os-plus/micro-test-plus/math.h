@@ -36,10 +36,6 @@
  * `micro_os_plus::micro_test_plus::detail::math` namespace, since they are
  * implementation details of the comparisons, not part of the public API.
  *
- * The header files are organised within the
- * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
- * modular codebase.
- *
  * This file is included by `micro-os-plus/micro-test-plus.h`, which is the
  * header that the applications include.
  */

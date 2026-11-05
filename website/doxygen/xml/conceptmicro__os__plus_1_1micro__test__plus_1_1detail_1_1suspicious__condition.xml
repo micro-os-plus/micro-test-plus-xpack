@@ -24,7 +24,7 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1sus
                    or std::is_same_v&lt;
                        std::remove_cv_t&lt;std::remove_pointer_t&lt;T&gt;&gt;, char32_t&gt;))</initializer>
     <conceptparts>
-      <codepart line="243">    <programlisting>
+      <codepart line="239">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">suspicious_condition<sp/>=<sp/>std::is_array_v&lt;T&gt;<sp/>or<sp/>std::is_function_v&lt;T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>or<sp/>std::is_member_pointer_v&lt;T&gt;</highlight></codeline>
@@ -44,7 +44,7 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1sus
 </codepart>
     </conceptparts>
     <briefdescription>
-<para>C++20 concept satisfied when a type is contextually convertible to <computeroutput>bool</computeroutput>, but is most likely not a condition. </para>
+<para>Concept satisfied when a type is contextually convertible to <computeroutput>bool</computeroutput>, but is most likely not a condition. </para>
     </briefdescription>
     <detaileddescription>
 <para><parameterlist kind="templateparam"><parameteritem>
@@ -58,6 +58,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1sus
 </parameterlist>
 The <computeroutput>suspicious_condition</computeroutput> concept is satisfied by the arrays (including the string literals), the functions, the pointers to functions and to members, and the pointers to the character types. All of them are contextually convertible to <computeroutput>bool</computeroutput>, so, when passed to <computeroutput>expect()</computeroutput> or <computeroutput>require()</computeroutput>, the check silently passes, usually because the description was written instead of the condition, or because a function name was written without the call. The pointers to other object types are not included, since checking a pointer for null is a legitimate use. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="242" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="238" column="5"/>
   </compounddef>
 </doxygen>

@@ -30,10 +30,6 @@
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace.
  *
- * The header files are organised within the
- * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
- * modular codebase.
- *
  * This file is included by `micro-os-plus/micro-test-plus.h`, which is the
  * header that the applications include.
  */
@@ -95,14 +91,16 @@
  * components, types, and utilities of the µTest++ testing framework, providing
  * a dedicated scope for its public API.
  *
- * The main classes (the runners, and the suites and test cases) are defined
+ * The main classes (the runner, the suites, and the test cases) are defined
  * directly in this namespace. Several nested namespaces group specific
- * aspects of the framework: `math` (mathematical utilities), `extension`
- * (the concepts for custom comparators, operators, and helpers),
- * `reflection` (source locations and type names), `literals` (user-defined
- * literals), `operators` (comparison and logical operators), `utility`
- * (utility functions), and `detail` (internal implementation details,
- * including the reporters and the value wrappers).
+ * aspects of the framework: `extension` (the concepts for custom
+ * comparators, operators, and helpers), `reflection` (source locations and
+ * type names), `utility` (utility functions), and `detail` (internal
+ * implementation details, including the reporters, the mathematical
+ * utilities of `detail::math`, and the value wrappers). The namespaces
+ * `literals` (user-defined literals), `operators` (comparison and logical
+ * operators), and `type_traits` (the v5.0.1 concepts) are deprecated, and
+ * are kept for the earlier code.
  *
  * The declarations are in the headers of the
  * `include/micro-os-plus/micro-test-plus` folder, and the non-inline
@@ -356,9 +354,11 @@ namespace micro_os_plus::micro_test_plus
      * The call is optional; without it, the runner is initialised with the
      * default options by the first call of `add_top_suite()` or
      * `run_suites()`. If used, it must therefore precede them; a later
-     * call, or a call after the test execution was aborted, reports an
-     * error on `stderr`, without other effects; the options are then not
-     * parsed, so their errors do not change the exit code.
+     * call reports an error on `stderr` and in the report, and is
+     * rejected, so that `run_suites()` returns 1; a call after the test
+     * execution was aborted reports an error on `stderr`, without other
+     * effects. In both cases the options are not parsed, so their errors
+     * do not change the exit code.
      *
      * @param argc The argument count from main().
      * @param argv The argument vector from main().
@@ -497,8 +497,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @par Parameters
      *   None.
-     * @return 0 if all checks passed, or if the test cases were listed
-     * without errors;
+     * @return 0 if all checks passed, if the test cases were listed
+     * without errors, or if the usage was displayed by `--help`;
      * 1 if a check failed, if a suite was rejected by `add_suite()` or
      * `add_top_suite()`, if `initialise()` or `add_top_suite()` was called
      * twice, if a test case was started on a suite that is not running,

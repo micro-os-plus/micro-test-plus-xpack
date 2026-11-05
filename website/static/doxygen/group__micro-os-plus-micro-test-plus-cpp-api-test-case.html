@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>micro-test-plus: Test Cases</title>
+<title>micro-test-plus: Test cases</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__micro-o
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Test Cases <div class="ingroups"><a class="el" href="group__micro-os-plus.html">µOS++ Topics</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus.html">µTest++</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api.html">C++ API</a></div></div></div>
+  <div class="headertitle"><div class="title">Test cases <div class="ingroups"><a class="el" href="group__micro-os-plus.html">µOS++ Topics</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus.html">µTest++</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api.html">C++ API</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -126,6 +126,9 @@ Classes</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A test case is created with <span class="tt">test()</span>, called on a suite, with a name and a callable, usually a lambda that receives the test case (<span class="tt">[] (auto&amp; t) { ... }</span>), followed by any arguments for the callable. The test case runs immediately, within the call, and its checks are made on the test case received by the lambda (<span class="tt">t.expect (...)</span>).</p>
 <p>Write one test case for each behaviour of the code under test; the report shows the result of each test case, so a failure points to the behaviour that broke.</p>
+<p>A test case that makes no check passes, and is reported as <span class="tt">passed (0
+    checks)</span>; a body that forgets its checks is not detected, so make at least one in each test case.</p>
+<p>An exception that escapes the body of a test case is caught, and reported as a failed check of that test case, with the text of its <span class="tt">what()</span> (<span class="tt">unexpected exception: ...</span>, or <span class="tt">unexpected exception of unknown type</span>); the test case ends, and the run continues with the next one. Nested test cases catch their own exceptions, so the exception is reported by the innermost test case whose body it escapes. An exception that escapes the body of a suite fails that suite in the same way. Without exceptions, nothing can be thrown, and this does not apply.</p>
 <p>A test case can contain other test cases, created with <span class="tt">test()</span> on the test case itself (<span class="tt">t.test (...)</span>); they are reported nested.</p>
 <dl class="section user"><dt>Example</dt><dd></dd></dl>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>mt = <a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a>;</div>

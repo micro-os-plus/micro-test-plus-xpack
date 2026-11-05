@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>micro-test-plus: Checking Exceptions</title>
+<title>micro-test-plus: Checking exceptions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__micro-o
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Checking Exceptions <div class="ingroups"><a class="el" href="group__micro-os-plus.html">µOS++ Topics</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus.html">µTest++</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api.html">C++ API</a></div></div></div>
+  <div class="headertitle"><div class="title">Checking exceptions <div class="ingroups"><a class="el" href="group__micro-os-plus.html">µOS++ Topics</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus.html">µTest++</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api.html">C++ API</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -220,15 +220,15 @@ requires std::invocable&lt;Callable_T&amp;&gt;</div>
 <p>The <span class="tt"><a class="el" href="#ga2989618cf5adca7a767c966895ab37a0" title="Checks whether a callable does not throw any exception, for expect() or require().">nothrow</a></span> function template verifies whether invoking the provided callable object does not result in the throwing of any exception within the µTest++ framework. This is useful for ensuring that code under test does not unexpectedly signal error conditions.</p>
 <p>The callable is invoked immediately, when the comparator is constructed; the result is reported when the comparator is passed to <span class="tt">expect()</span> or <span class="tt">require()</span>, which also accept optional messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="exceptions-inlines_8h_source.html#l00120">120</a> of file <a class="el" href="exceptions-inlines_8h_source.html">exceptions-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  121</span>  {</div>
-<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op.html">detail::nothrow_op</a>{ func };</div>
-<div class="line"><span class="lineno">  123</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="exceptions-inlines_8h_source.html#l00116">116</a> of file <a class="el" href="exceptions-inlines_8h_source.html">exceptions-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  117</span>  {</div>
+<div class="line"><span class="lineno">  118</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op.html">detail::nothrow_op</a>{ func };</div>
+<div class="line"><span class="lineno">  119</span>  }</div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1nothrow__op.html">micro_os_plus::micro_test_plus::detail::nothrow_op</a></div><div class="ttdoc">Operator struct to check if an expression does not throw any exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01554">detail.h:1555</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="exceptions-inlines_8h_source.html#l00120">nothrow()</a>.</p>
+<p class="reference">References <a class="el" href="exceptions-inlines_8h_source.html#l00116">nothrow()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="exceptions-inlines_8h_source.html#l00120">nothrow()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="exceptions-inlines_8h_source.html#l00116">nothrow()</a>.</p>
 
 </div>
 </div>
@@ -274,10 +274,10 @@ requires std::invocable&lt;Callable_T&amp;&gt;</div>
 <p>The <span class="tt"><a class="el" href="#ga6a0ca4f8b757ea511c494189212812b3" title="Checks whether a callable throws a specific exception, for expect() or require().">throws</a></span> function template verifies whether invoking the provided callable object results in the throwing of any exception within the µTest++ framework. This is useful for ensuring that code under test properly signals error conditions.</p>
 <p>The callable is invoked immediately, when the comparator is constructed; the result is reported when the comparator is passed to <span class="tt">expect()</span> or <span class="tt">require()</span>, which also accept optional messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="exceptions-inlines_8h_source.html#l00101">101</a> of file <a class="el" href="exceptions-inlines_8h_source.html">exceptions-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  102</span>  {</div>
-<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">detail::throws_op&lt;&gt;</a>{ func };</div>
-<div class="line"><span class="lineno">  104</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="exceptions-inlines_8h_source.html#l00097">97</a> of file <a class="el" href="exceptions-inlines_8h_source.html">exceptions-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   98</span>  {</div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">detail::throws_op&lt;&gt;</a>{ func };</div>
+<div class="line"><span class="lineno">  100</span>  }</div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">micro_os_plus::micro_test_plus::detail::throws_op</a></div><div class="ttdoc">Operator struct template to check if an expression throws a specific exception.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01489">detail.h:1490</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -325,10 +325,10 @@ requires std::invocable&lt;Callable_T&amp;&gt;</div>
 <p>The <span class="tt"><a class="el" href="#ga6a0ca4f8b757ea511c494189212812b3" title="Checks whether a callable throws a specific exception, for expect() or require().">throws</a></span> function template verifies whether invoking the provided callable object results in the throwing of a specific exception type within the µTest++ framework. This is useful for testing error handling in code under test. Exceptions of other types are reported as failures.</p>
 <p>The callable is invoked immediately, when the comparator is constructed; the result is reported when the comparator is passed to <span class="tt">expect()</span> or <span class="tt">require()</span>, which also accept optional messages. </p>
 
-<p class="definition">Definition at line <a class="el" href="exceptions-inlines_8h_source.html#l00082">82</a> of file <a class="el" href="exceptions-inlines_8h_source.html">exceptions-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   83</span>  {</div>
-<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">detail::throws_op&lt;Exception_T&gt;</a>{ func };</div>
-<div class="line"><span class="lineno">   85</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="exceptions-inlines_8h_source.html#l00078">78</a> of file <a class="el" href="exceptions-inlines_8h_source.html">exceptions-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   79</span>  {</div>
+<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1throws__op.html">detail::throws_op&lt;Exception_T&gt;</a>{ func };</div>
+<div class="line"><span class="lineno">   81</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>

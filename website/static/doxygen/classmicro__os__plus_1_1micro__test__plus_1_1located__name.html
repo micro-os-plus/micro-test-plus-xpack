@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classmicro__os
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">micro_os_plus::micro_test_plus::located_name Class Reference</div></div>
+  <div class="headertitle"><div class="title">micro_os_plus::micro_test_plus::located_name Class Reference<div class="ingroups"><a class="el" href="group__micro-os-plus.html">µOS++ Topics</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus.html">µTest++</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api.html">C++ API</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-test-suites.html">Test suites</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -161,11 +161,11 @@ Private Attributes</h2></td></tr>
 <div class="line">{</div>
 <div class="line">  ts.test (<a class="code hl_function" href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a>, [v] (<span class="keyword">auto</span>&amp; t) { t.expect (mt::eq (v, 42)); });</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1located__name_html_aa2ec3a20974c59b2f5a64a50b41db444"><div class="ttname"><a href="#aa2ec3a20974c59b2f5a64a50b41db444">micro_os_plus::micro_test_plus::located_name::name</a></div><div class="ttdeci">const char * name(void) const noexcept</div><div class="ttdoc">Gets the name.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00173">test-inlines.h:173</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1located__name_html_aa2ec3a20974c59b2f5a64a50b41db444"><div class="ttname"><a href="#aa2ec3a20974c59b2f5a64a50b41db444">micro_os_plus::micro_test_plus::located_name::name</a></div><div class="ttdeci">const char * name(void) const noexcept</div><div class="ttdoc">Gets the name.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00169">test-inlines.h:169</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div><div class="ttdef"><b>Definition</b> <a href="check-result_8h_source.html#l00075">check-result.h:76</a></div></div>
 </div><!-- fragment --><dl class="section since"><dt>Since</dt><dd>6.0.0 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00179">179</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00176">176</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab66a15ccc3f4b66fb2f8f897b2cb91ec" name="ab66a15ccc3f4b66fb2f8f897b2cb91ec"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab66a15ccc3f4b66fb2f8f897b2cb91ec">&#9670;&#160;</a></span>located_name() <span class="overload">[1/5]</span></h2>
@@ -204,19 +204,19 @@ requires (std::is_same_v&lt;Pointer_T, const char*&gt; or std::is_same_v&lt;Poin
 </dl>
 <p>Copies the name, or stores an empty name if the pointer is null, and the location; the control characters of the name are escaped. When called implicitly, the location is the place of the conversion, in the user code. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00105">105</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  107</span>      : <a class="code hl_variable" href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>{ <a class="code hl_function" href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a> != <span class="keyword">nullptr</span> ? <a class="code hl_function" href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a> : <span class="stringliteral">&quot;&quot;</span> }, <a class="code hl_variable" href="#a199094a3c03b40d8621279a30a152784">location_</a>{ <a class="code hl_function" href="#ade35aacdde746abad6be66a9fcab251b">location</a> }</div>
-<div class="line"><span class="lineno">  108</span>  {</div>
-<div class="line"><span class="lineno">  109</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#afe0adb93e576b2c11ba933ec65245d91">detail::escape_control_characters</a> (<a class="code hl_variable" href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>);</div>
-<div class="line"><span class="lineno">  110</span>  }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1located__name_html_a199094a3c03b40d8621279a30a152784"><div class="ttname"><a href="#a199094a3c03b40d8621279a30a152784">micro_os_plus::micro_test_plus::located_name::location_</a></div><div class="ttdeci">reflection::source_location location_</div><div class="ttdoc">The location where the name was given.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00301">test.h:301</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1located__name_html_a73d82df6b0bafcf4dfef0f15433185ca"><div class="ttname"><a href="#a73d82df6b0bafcf4dfef0f15433185ca">micro_os_plus::micro_test_plus::located_name::name_</a></div><div class="ttdeci">std::string name_</div><div class="ttdoc">The copy of the name.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00292">test.h:292</a></div></div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1located__name_html_ade35aacdde746abad6be66a9fcab251b"><div class="ttname"><a href="#ade35aacdde746abad6be66a9fcab251b">micro_os_plus::micro_test_plus::located_name::location</a></div><div class="ttdeci">const reflection::source_location &amp; location(void) const noexcept</div><div class="ttdoc">Gets the location where the name was given.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00183">test-inlines.h:183</a></div></div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00101">101</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>      : <a class="code hl_variable" href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>{ <a class="code hl_function" href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a> != <span class="keyword">nullptr</span> ? <a class="code hl_function" href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a> : <span class="stringliteral">&quot;&quot;</span> }, <a class="code hl_variable" href="#a199094a3c03b40d8621279a30a152784">location_</a>{ <a class="code hl_function" href="#ade35aacdde746abad6be66a9fcab251b">location</a> }</div>
+<div class="line"><span class="lineno">  104</span>  {</div>
+<div class="line"><span class="lineno">  105</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#afe0adb93e576b2c11ba933ec65245d91">detail::escape_control_characters</a> (<a class="code hl_variable" href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>);</div>
+<div class="line"><span class="lineno">  106</span>  }</div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1located__name_html_a199094a3c03b40d8621279a30a152784"><div class="ttname"><a href="#a199094a3c03b40d8621279a30a152784">micro_os_plus::micro_test_plus::located_name::location_</a></div><div class="ttdeci">reflection::source_location location_</div><div class="ttdoc">The location where the name was given.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00298">test.h:298</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1located__name_html_a73d82df6b0bafcf4dfef0f15433185ca"><div class="ttname"><a href="#a73d82df6b0bafcf4dfef0f15433185ca">micro_os_plus::micro_test_plus::located_name::name_</a></div><div class="ttdeci">std::string name_</div><div class="ttdoc">The copy of the name.</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l00289">test.h:289</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1located__name_html_ade35aacdde746abad6be66a9fcab251b"><div class="ttname"><a href="#ade35aacdde746abad6be66a9fcab251b">micro_os_plus::micro_test_plus::located_name::location</a></div><div class="ttdeci">const reflection::source_location &amp; location(void) const noexcept</div><div class="ttdoc">Gets the location where the name was given.</div><div class="ttdef"><b>Definition</b> <a href="test-inlines_8h_source.html#l00179">test-inlines.h:179</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_afe0adb93e576b2c11ba933ec65245d91"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#afe0adb93e576b2c11ba933ec65245d91">micro_os_plus::micro_test_plus::detail::escape_control_characters</a></div><div class="ttdeci">void escape_control_characters(std::string &amp;name)</div><div class="ttdoc">Escapes the control characters of a name.</div><div class="ttdef"><b>Definition</b> <a href="test_8cpp_source.html#l00080">test.cpp:80</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00105">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00183">location()</a>, <a class="el" href="test-inlines_8h_source.html#l00173">name()</a>, and <a class="el" href="test_8h_source.html#l00292">name_</a>.</p>
+<p class="reference">References <a class="el" href="test-inlines_8h_source.html#l00101">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00179">location()</a>, <a class="el" href="test-inlines_8h_source.html#l00169">name()</a>, and <a class="el" href="test_8h_source.html#l00289">name_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00105">located_name()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00101">located_name()</a>.</p>
 
 </div>
 </div>
@@ -256,15 +256,15 @@ template&lt;std::size_t N&gt; </div>
 </dl>
 <p>Copies the characters up to the first null character, or all the elements of the array if there is none, and stores the location; when called implicitly, the location is the place of the conversion, in the user code. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00120">120</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  122</span>      : <a class="code hl_variable" href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>{ std::string_view{ <a class="code hl_function" href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a>, N }.substr (</div>
-<div class="line"><span class="lineno">  123</span>            0, std::string_view{ <a class="code hl_function" href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a>, N }.find (<span class="charliteral">&#39;\0&#39;</span>)) },</div>
-<div class="line"><span class="lineno">  124</span>        <a class="code hl_variable" href="#a199094a3c03b40d8621279a30a152784">location_</a>{ <a class="code hl_function" href="#ade35aacdde746abad6be66a9fcab251b">location</a> }</div>
-<div class="line"><span class="lineno">  125</span>  {</div>
-<div class="line"><span class="lineno">  126</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#afe0adb93e576b2c11ba933ec65245d91">detail::escape_control_characters</a> (<a class="code hl_variable" href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>);</div>
-<div class="line"><span class="lineno">  127</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00116">116</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  118</span>      : <a class="code hl_variable" href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>{ std::string_view{ <a class="code hl_function" href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a>, N }.substr (</div>
+<div class="line"><span class="lineno">  119</span>            0, std::string_view{ <a class="code hl_function" href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a>, N }.find (<span class="charliteral">&#39;\0&#39;</span>)) },</div>
+<div class="line"><span class="lineno">  120</span>        <a class="code hl_variable" href="#a199094a3c03b40d8621279a30a152784">location_</a>{ <a class="code hl_function" href="#ade35aacdde746abad6be66a9fcab251b">location</a> }</div>
+<div class="line"><span class="lineno">  121</span>  {</div>
+<div class="line"><span class="lineno">  122</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#afe0adb93e576b2c11ba933ec65245d91">detail::escape_control_characters</a> (<a class="code hl_variable" href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>);</div>
+<div class="line"><span class="lineno">  123</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8cpp_source.html#l00080">micro_os_plus::micro_test_plus::detail::escape_control_characters()</a>, <a class="el" href="test-inlines_8h_source.html#l00183">location()</a>, <a class="el" href="test_8h_source.html#l00301">location_</a>, <a class="el" href="test-inlines_8h_source.html#l00173">name()</a>, and <a class="el" href="test_8h_source.html#l00292">name_</a>.</p>
+<p class="reference">References <a class="el" href="test_8cpp_source.html#l00080">micro_os_plus::micro_test_plus::detail::escape_control_characters()</a>, <a class="el" href="test-inlines_8h_source.html#l00179">location()</a>, <a class="el" href="test_8h_source.html#l00298">location_</a>, <a class="el" href="test-inlines_8h_source.html#l00169">name()</a>, and <a class="el" href="test_8h_source.html#l00289">name_</a>.</p>
 
 </div>
 </div>
@@ -303,13 +303,13 @@ template&lt;std::size_t N&gt; </div>
 </dl>
 <p>Copies the content of the string, and stores the location; when called implicitly, the location is the place of the conversion, in the user code. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00135">135</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  137</span>      : <a class="code hl_variable" href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>{ <a class="code hl_function" href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a> }, <a class="code hl_variable" href="#a199094a3c03b40d8621279a30a152784">location_</a>{ <a class="code hl_function" href="#ade35aacdde746abad6be66a9fcab251b">location</a> }</div>
-<div class="line"><span class="lineno">  138</span>  {</div>
-<div class="line"><span class="lineno">  139</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#afe0adb93e576b2c11ba933ec65245d91">detail::escape_control_characters</a> (<a class="code hl_variable" href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>);</div>
-<div class="line"><span class="lineno">  140</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00131">131</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  133</span>      : <a class="code hl_variable" href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>{ <a class="code hl_function" href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a> }, <a class="code hl_variable" href="#a199094a3c03b40d8621279a30a152784">location_</a>{ <a class="code hl_function" href="#ade35aacdde746abad6be66a9fcab251b">location</a> }</div>
+<div class="line"><span class="lineno">  134</span>  {</div>
+<div class="line"><span class="lineno">  135</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#afe0adb93e576b2c11ba933ec65245d91">detail::escape_control_characters</a> (<a class="code hl_variable" href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>);</div>
+<div class="line"><span class="lineno">  136</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8cpp_source.html#l00080">micro_os_plus::micro_test_plus::detail::escape_control_characters()</a>, <a class="el" href="test-inlines_8h_source.html#l00183">location()</a>, <a class="el" href="test_8h_source.html#l00301">location_</a>, <a class="el" href="test-inlines_8h_source.html#l00173">name()</a>, and <a class="el" href="test_8h_source.html#l00292">name_</a>.</p>
+<p class="reference">References <a class="el" href="test_8cpp_source.html#l00080">micro_os_plus::micro_test_plus::detail::escape_control_characters()</a>, <a class="el" href="test-inlines_8h_source.html#l00179">location()</a>, <a class="el" href="test_8h_source.html#l00298">location_</a>, <a class="el" href="test-inlines_8h_source.html#l00169">name()</a>, and <a class="el" href="test_8h_source.html#l00289">name_</a>.</p>
 
 </div>
 </div>
@@ -348,13 +348,13 @@ template&lt;std::size_t N&gt; </div>
 </dl>
 <p>Takes over the content of the string, without copying it, and stores the location; when called implicitly, the location is the place of the conversion, in the user code. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00148">148</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  150</span>      : <a class="code hl_variable" href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>{ std::move (<a class="code hl_function" href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a>) }, <a class="code hl_variable" href="#a199094a3c03b40d8621279a30a152784">location_</a>{ <a class="code hl_function" href="#ade35aacdde746abad6be66a9fcab251b">location</a> }</div>
-<div class="line"><span class="lineno">  151</span>  {</div>
-<div class="line"><span class="lineno">  152</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#afe0adb93e576b2c11ba933ec65245d91">detail::escape_control_characters</a> (<a class="code hl_variable" href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>);</div>
-<div class="line"><span class="lineno">  153</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00144">144</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  146</span>      : <a class="code hl_variable" href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>{ std::move (<a class="code hl_function" href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a>) }, <a class="code hl_variable" href="#a199094a3c03b40d8621279a30a152784">location_</a>{ <a class="code hl_function" href="#ade35aacdde746abad6be66a9fcab251b">location</a> }</div>
+<div class="line"><span class="lineno">  147</span>  {</div>
+<div class="line"><span class="lineno">  148</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#afe0adb93e576b2c11ba933ec65245d91">detail::escape_control_characters</a> (<a class="code hl_variable" href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>);</div>
+<div class="line"><span class="lineno">  149</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8cpp_source.html#l00080">micro_os_plus::micro_test_plus::detail::escape_control_characters()</a>, <a class="el" href="test-inlines_8h_source.html#l00183">location()</a>, <a class="el" href="test_8h_source.html#l00301">location_</a>, <a class="el" href="test-inlines_8h_source.html#l00173">name()</a>, and <a class="el" href="test_8h_source.html#l00292">name_</a>.</p>
+<p class="reference">References <a class="el" href="test_8cpp_source.html#l00080">micro_os_plus::micro_test_plus::detail::escape_control_characters()</a>, <a class="el" href="test-inlines_8h_source.html#l00179">location()</a>, <a class="el" href="test_8h_source.html#l00298">location_</a>, <a class="el" href="test-inlines_8h_source.html#l00169">name()</a>, and <a class="el" href="test_8h_source.html#l00289">name_</a>.</p>
 
 </div>
 </div>
@@ -393,13 +393,13 @@ template&lt;std::size_t N&gt; </div>
 </dl>
 <p>Copies the characters of the view, which need not be null-terminated, and stores the location; when called implicitly, the location is the place of the conversion, in the user code. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00161">161</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  163</span>      : <a class="code hl_variable" href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>{ <a class="code hl_function" href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a> }, <a class="code hl_variable" href="#a199094a3c03b40d8621279a30a152784">location_</a>{ <a class="code hl_function" href="#ade35aacdde746abad6be66a9fcab251b">location</a> }</div>
-<div class="line"><span class="lineno">  164</span>  {</div>
-<div class="line"><span class="lineno">  165</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#afe0adb93e576b2c11ba933ec65245d91">detail::escape_control_characters</a> (<a class="code hl_variable" href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>);</div>
-<div class="line"><span class="lineno">  166</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00157">157</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  159</span>      : <a class="code hl_variable" href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>{ <a class="code hl_function" href="#aa2ec3a20974c59b2f5a64a50b41db444">name</a> }, <a class="code hl_variable" href="#a199094a3c03b40d8621279a30a152784">location_</a>{ <a class="code hl_function" href="#ade35aacdde746abad6be66a9fcab251b">location</a> }</div>
+<div class="line"><span class="lineno">  160</span>  {</div>
+<div class="line"><span class="lineno">  161</span>    <a class="code hl_function" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#afe0adb93e576b2c11ba933ec65245d91">detail::escape_control_characters</a> (<a class="code hl_variable" href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>);</div>
+<div class="line"><span class="lineno">  162</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8cpp_source.html#l00080">micro_os_plus::micro_test_plus::detail::escape_control_characters()</a>, <a class="el" href="test-inlines_8h_source.html#l00183">location()</a>, <a class="el" href="test_8h_source.html#l00301">location_</a>, <a class="el" href="test-inlines_8h_source.html#l00173">name()</a>, and <a class="el" href="test_8h_source.html#l00292">name_</a>.</p>
+<p class="reference">References <a class="el" href="test_8cpp_source.html#l00080">micro_os_plus::micro_test_plus::detail::escape_control_characters()</a>, <a class="el" href="test-inlines_8h_source.html#l00179">location()</a>, <a class="el" href="test_8h_source.html#l00298">location_</a>, <a class="el" href="test-inlines_8h_source.html#l00169">name()</a>, and <a class="el" href="test_8h_source.html#l00289">name_</a>.</p>
 
 </div>
 </div>
@@ -430,14 +430,14 @@ template&lt;std::size_t N&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the stored source location.</dd></dl>
 <p>Returns a reference to the location stored in <span class="tt"><a class="el" href="#a199094a3c03b40d8621279a30a152784" title="The location where the name was given.">location_</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00183">183</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  184</span>  {</div>
-<div class="line"><span class="lineno">  185</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a199094a3c03b40d8621279a30a152784">location_</a>;</div>
-<div class="line"><span class="lineno">  186</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00179">179</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  180</span>  {</div>
+<div class="line"><span class="lineno">  181</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a199094a3c03b40d8621279a30a152784">location_</a>;</div>
+<div class="line"><span class="lineno">  182</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8h_source.html#l00301">location_</a>.</p>
+<p class="reference">References <a class="el" href="test_8h_source.html#l00298">location_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00120">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00135">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00105">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00148">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00161">located_name()</a>, <a class="el" href="test_8cpp_source.html#l00239">micro_os_plus::micro_test_plus::detail::runnable_base::accepts_test_case()</a>, <a class="el" href="runner_8cpp_source.html#l00420">micro_os_plus::micro_test_plus::runner::add_top_suite()</a>, <a class="el" href="test_8cpp_source.html#l00535">micro_os_plus::micro_test_plus::test_case::fail_unexpected_exception()</a>, <a class="el" href="runner_8cpp_source.html#l00660">micro_os_plus::micro_test_plus::runner::reject_call()</a>, <a class="el" href="test_8cpp_source.html#l00472">micro_os_plus::micro_test_plus::test_case::report_misdirected_test()</a>, and <a class="el" href="test-inlines_8h_source.html#l01019">micro_os_plus::micro_test_plus::detail::test_each_value()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00116">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00131">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00101">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00144">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00157">located_name()</a>, <a class="el" href="test_8cpp_source.html#l00239">micro_os_plus::micro_test_plus::detail::runnable_base::accepts_test_case()</a>, <a class="el" href="runner_8cpp_source.html#l00420">micro_os_plus::micro_test_plus::runner::add_top_suite()</a>, <a class="el" href="test_8cpp_source.html#l00535">micro_os_plus::micro_test_plus::test_case::fail_unexpected_exception()</a>, <a class="el" href="runner_8cpp_source.html#l00660">micro_os_plus::micro_test_plus::runner::reject_call()</a>, <a class="el" href="test_8cpp_source.html#l00472">micro_os_plus::micro_test_plus::test_case::report_misdirected_test()</a>, and <a class="el" href="test-inlines_8h_source.html#l01029">micro_os_plus::micro_test_plus::detail::test_each_value()</a>.</p>
 
 </div>
 </div>
@@ -467,14 +467,14 @@ template&lt;std::size_t N&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the null-terminated name, valid while this object exists and is not modified.</dd></dl>
 <p>Returns <span class="tt">name_.c_str()</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00173">173</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  174</span>  {</div>
-<div class="line"><span class="lineno">  175</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>.c_str ();</div>
-<div class="line"><span class="lineno">  176</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="test-inlines_8h_source.html#l00169">169</a> of file <a class="el" href="test-inlines_8h_source.html">test-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  170</span>  {</div>
+<div class="line"><span class="lineno">  171</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a73d82df6b0bafcf4dfef0f15433185ca">name_</a>.c_str ();</div>
+<div class="line"><span class="lineno">  172</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="test_8h_source.html#l00292">name_</a>.</p>
+<p class="reference">References <a class="el" href="test_8h_source.html#l00289">name_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00120">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00135">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00105">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00148">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00161">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00884">micro_os_plus::micro_test_plus::suite::suite()</a>, <a class="el" href="test_8cpp_source.html#l00239">micro_os_plus::micro_test_plus::detail::runnable_base::accepts_test_case()</a>, <a class="el" href="runner-inlines_8h_source.html#l00191">micro_os_plus::micro_test_plus::runner::add_suite()</a>, <a class="el" href="runner_8cpp_source.html#l00420">micro_os_plus::micro_test_plus::runner::add_top_suite()</a>, <a class="el" href="test_8cpp_source.html#l00472">micro_os_plus::micro_test_plus::test_case::report_misdirected_test()</a>, <a class="el" href="test-inlines_8h_source.html#l00960">micro_os_plus::micro_test_plus::suite::test()</a>, <a class="el" href="test-inlines_8h_source.html#l00568">micro_os_plus::micro_test_plus::test_case::test()</a>, and <a class="el" href="test-inlines_8h_source.html#l01019">micro_os_plus::micro_test_plus::detail::test_each_value()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00116">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00131">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00101">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00144">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00157">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00892">micro_os_plus::micro_test_plus::suite::suite()</a>, <a class="el" href="test_8cpp_source.html#l00239">micro_os_plus::micro_test_plus::detail::runnable_base::accepts_test_case()</a>, <a class="el" href="runner-inlines_8h_source.html#l00191">micro_os_plus::micro_test_plus::runner::add_suite()</a>, <a class="el" href="runner_8cpp_source.html#l00420">micro_os_plus::micro_test_plus::runner::add_top_suite()</a>, <a class="el" href="test_8cpp_source.html#l00472">micro_os_plus::micro_test_plus::test_case::report_misdirected_test()</a>, <a class="el" href="test-inlines_8h_source.html#l00968">micro_os_plus::micro_test_plus::suite::test()</a>, <a class="el" href="test-inlines_8h_source.html#l00564">micro_os_plus::micro_test_plus::test_case::test()</a>, and <a class="el" href="test-inlines_8h_source.html#l01029">micro_os_plus::micro_test_plus::detail::test_each_value()</a>.</p>
 
 </div>
 </div>
@@ -500,9 +500,9 @@ template&lt;std::size_t N&gt; </div>
 </div><div class="memdoc">
 <p>Captured by the default argument of the constructor, at the place of the conversion to <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1located__name.html" title="A name of a suite or of a test case, with the location where it was given.">located_name</a></span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00301">301</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00298">298</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00120">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00135">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00148">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00161">located_name()</a>, and <a class="el" href="test-inlines_8h_source.html#l00183">location()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00116">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00131">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00144">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00157">located_name()</a>, and <a class="el" href="test-inlines_8h_source.html#l00179">location()</a>.</p>
 
 </div>
 </div>
@@ -527,9 +527,9 @@ template&lt;std::size_t N&gt; </div>
 </div><div class="memdoc">
 <p>Owned, so that the name does not depend on the lifetime of the argument; the name of the node points into it. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00292">292</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l00289">289</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00120">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00135">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00105">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00148">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00161">located_name()</a>, and <a class="el" href="test-inlines_8h_source.html#l00173">name()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="test-inlines_8h_source.html#l00116">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00131">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00101">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00144">located_name()</a>, <a class="el" href="test-inlines_8h_source.html#l00157">located_name()</a>, and <a class="el" href="test-inlines_8h_source.html#l00169">name()</a>.</p>
 
 </div>
 </div>

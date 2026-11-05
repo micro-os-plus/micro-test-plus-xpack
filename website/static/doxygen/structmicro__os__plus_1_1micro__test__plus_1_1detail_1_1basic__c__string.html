@@ -144,7 +144,7 @@ struct micro_os_plus::micro_test_plus::detail::basic_c_string&lt; Char_T &gt;</d
 <p>The characters are not copied; the operand must outlive the comparison, which is always the case within a check.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Char_T</td><td>The character type; it satisfies <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1character.html" title="C++20 concept satisfied by the character types.">character</a></span>. </td></tr>
+    <tr><td class="paramname">Char_T</td><td>The character type; it satisfies <span class="tt"><a class="el" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1character.html" title="Concept satisfied by the character types.">character</a></span>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -183,10 +183,10 @@ template&lt;character Char_T&gt; </div>
 </dl>
 <p>The length is computed with <span class="tt">std::char_traits&lt;Char_T&gt;::length()</span>, which, unlike <span class="tt">strlen()</span>, can be evaluated at compile time. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l01484">1484</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1487</span>        : <a class="code hl_variable" href="#aaaeff461f662bc9fb7e54c666e4ee101">str_</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">str</a> },</div>
-<div class="line"><span class="lineno"> 1488</span>          <a class="code hl_variable" href="#af727574c085a72e7309c4e65f9fde693">size_</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">str</a> == <span class="keyword">nullptr</span> ? 0 : <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">std::char_traits&lt;Char_T&gt;::length</a> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">str</a>) }</div>
-<div class="line"><span class="lineno"> 1489</span>    {</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l01488">1488</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1491</span>        : <a class="code hl_variable" href="#aaaeff461f662bc9fb7e54c666e4ee101">str_</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">str</a> },</div>
+<div class="line"><span class="lineno"> 1492</span>          <a class="code hl_variable" href="#af727574c085a72e7309c4e65f9fde693">size_</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">str</a> == <span class="keyword">nullptr</span> ? 0 : <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">std::char_traits&lt;Char_T&gt;::length</a> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">str</a>) }</div>
+<div class="line"><span class="lineno"> 1493</span>    {</div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">micro_os_plus::micro_test_plus::detail::basic_c_string</a></div><div class="ttdoc">A C string operand of a comparator.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01665">detail.h:1666</a></div></div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_html_aaaeff461f662bc9fb7e54c666e4ee101"><div class="ttname"><a href="#aaaeff461f662bc9fb7e54c666e4ee101">micro_os_plus::micro_test_plus::detail::basic_c_string::str_</a></div><div class="ttdeci">const Char_T * str_</div><div class="ttdoc">The first character, or nullptr.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01718">detail.h:1718</a></div></div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_html_af727574c085a72e7309c4e65f9fde693"><div class="ttname"><a href="#af727574c085a72e7309c4e65f9fde693">micro_os_plus::micro_test_plus::detail::basic_c_string::size_</a></div><div class="ttdeci">std::size_t size_</div><div class="ttdoc">The number of characters, without the terminator.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01726">detail.h:1726</a></div></div>
@@ -233,17 +233,17 @@ template&lt;character Char_T&gt; </div>
 </dl>
 <p>The characters are counted up to the first null character, or up to <span class="tt">capacity</span>. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l01497">1497</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1500</span>        : <a class="code hl_variable" href="#aaaeff461f662bc9fb7e54c666e4ee101">str_</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">str</a> }, <a class="code hl_variable" href="#af727574c085a72e7309c4e65f9fde693">size_</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">capacity</a> }</div>
-<div class="line"><span class="lineno"> 1501</span>    {</div>
-<div class="line"><span class="lineno"> 1502</span>      <span class="comment">// Search within the array only; the view avoids indexing the raw</span></div>
-<div class="line"><span class="lineno"> 1503</span>      <span class="comment">// pointer.</span></div>
-<div class="line"><span class="lineno"> 1504</span>      <span class="keyword">const</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">std::size_t</a> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">terminator</a></div>
-<div class="line"><span class="lineno"> 1505</span>          = <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">std::basic_string_view&lt;Char_T&gt;</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">str</a>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">capacity</a> }.find (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">Char_T</a>{});</div>
-<div class="line"><span class="lineno"> 1506</span>      <span class="keywordflow">if</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">terminator</a> != <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">std::basic_string_view&lt;Char_T&gt;::npos</a>)</div>
-<div class="line"><span class="lineno"> 1507</span>        {</div>
-<div class="line"><span class="lineno"> 1508</span>          <a class="code hl_variable" href="#af727574c085a72e7309c4e65f9fde693">size_</a> = <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">terminator</a>;</div>
-<div class="line"><span class="lineno"> 1509</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l01501">1501</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1504</span>        : <a class="code hl_variable" href="#aaaeff461f662bc9fb7e54c666e4ee101">str_</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">str</a> }, <a class="code hl_variable" href="#af727574c085a72e7309c4e65f9fde693">size_</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">capacity</a> }</div>
+<div class="line"><span class="lineno"> 1505</span>    {</div>
+<div class="line"><span class="lineno"> 1506</span>      <span class="comment">// Search within the array only; the view avoids indexing the raw</span></div>
+<div class="line"><span class="lineno"> 1507</span>      <span class="comment">// pointer.</span></div>
+<div class="line"><span class="lineno"> 1508</span>      <span class="keyword">const</span> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">std::size_t</a> <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">terminator</a></div>
+<div class="line"><span class="lineno"> 1509</span>          = <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">std::basic_string_view&lt;Char_T&gt;</a>{ <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">str</a>, <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">capacity</a> }.find (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">Char_T</a>{});</div>
+<div class="line"><span class="lineno"> 1510</span>      <span class="keywordflow">if</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">terminator</a> != <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">std::basic_string_view&lt;Char_T&gt;::npos</a>)</div>
+<div class="line"><span class="lineno"> 1511</span>        {</div>
+<div class="line"><span class="lineno"> 1512</span>          <a class="code hl_variable" href="#af727574c085a72e7309c4e65f9fde693">size_</a> = <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">terminator</a>;</div>
+<div class="line"><span class="lineno"> 1513</span>        }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="detail_8h_source.html#l01718">str_</a>.</p>
 
@@ -284,9 +284,9 @@ template&lt;character Char_T&gt; </div>
 </dl>
 <p>Returns whether the stored pointer is null. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l01529">1529</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1531</span>    {</div>
-<div class="line"><span class="lineno"> 1532</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#aaaeff461f662bc9fb7e54c666e4ee101">str_</a> == <span class="keyword">nullptr</span>;</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l01533">1533</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1535</span>    {</div>
+<div class="line"><span class="lineno"> 1536</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#aaaeff461f662bc9fb7e54c666e4ee101">str_</a> == <span class="keyword">nullptr</span>;</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="detail_8h_source.html#l01718">str_</a>.</p>
 
@@ -322,10 +322,10 @@ template&lt;character Char_T&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The characters, without the terminator; empty for a null pointer.</dd></dl>
 <p>Returns an empty view for a null pointer. </p>
 
-<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l01517">1517</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1519</span>    {</div>
-<div class="line"><span class="lineno"> 1520</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#aaaeff461f662bc9fb7e54c666e4ee101">str_</a> == <span class="keyword">nullptr</span> ? <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">std::basic_string_view&lt;Char_T&gt;</a>{}</div>
-<div class="line"><span class="lineno"> 1521</span>                             : <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">std::basic_string_view&lt;Char_T&gt;</a>{ <a class="code hl_variable" href="#aaaeff461f662bc9fb7e54c666e4ee101">str_</a>, <a class="code hl_variable" href="#af727574c085a72e7309c4e65f9fde693">size_</a> };</div>
+<p class="definition">Definition at line <a class="el" href="detail-inlines_8h_source.html#l01521">1521</a> of file <a class="el" href="detail-inlines_8h_source.html">detail-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1523</span>    {</div>
+<div class="line"><span class="lineno"> 1524</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#aaaeff461f662bc9fb7e54c666e4ee101">str_</a> == <span class="keyword">nullptr</span> ? <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">std::basic_string_view&lt;Char_T&gt;</a>{}</div>
+<div class="line"><span class="lineno"> 1525</span>                             : <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html">std::basic_string_view&lt;Char_T&gt;</a>{ <a class="code hl_variable" href="#aaaeff461f662bc9fb7e54c666e4ee101">str_</a>, <a class="code hl_variable" href="#af727574c085a72e7309c4e65f9fde693">size_</a> };</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="detail_8h_source.html#l01726">size_</a>, and <a class="el" href="detail_8h_source.html#l01718">str_</a>.</p>
 
@@ -359,7 +359,7 @@ template&lt;character Char_T&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01726">1726</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01517">view()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01521">view()</a>.</p>
 
 </div>
 </div>
@@ -388,7 +388,7 @@ template&lt;character Char_T&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l01718">1718</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01484">basic_c_string()</a>, <a class="el" href="detail-inlines_8h_source.html#l01497">basic_c_string()</a>, <a class="el" href="detail-inlines_8h_source.html#l01529">is_null()</a>, and <a class="el" href="detail-inlines_8h_source.html#l01517">view()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="detail-inlines_8h_source.html#l01488">basic_c_string()</a>, <a class="el" href="detail-inlines_8h_source.html#l01501">basic_c_string()</a>, <a class="el" href="detail-inlines_8h_source.html#l01533">is_null()</a>, and <a class="el" href="detail-inlines_8h_source.html#l01521">view()</a>.</p>
 
 </div>
 </div>

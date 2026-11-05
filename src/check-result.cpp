@@ -74,7 +74,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Stores the evaluated Boolean @p value, and, in the failure details,
      * the @p kind of the check, the @p has_expression flag, and the
-     * @p location identifying the source line of the assertion, with an
+     * @p location identifying the source line of the check, with an
      * empty message; it also stores a pointer to the owning
      * @p test_case, which marks the result as initialised. The outcome is
      * written when the check failed, or when the reporter writes the passed

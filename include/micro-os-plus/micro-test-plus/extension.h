@@ -28,10 +28,10 @@
  * the concepts that detect the framework expressions, and the types
  * accepted by `expect()`, `require()`, and the message operator.
  *
- * The public concepts reside within the
- * `micro_os_plus::micro_test_plus::extension` namespace, separate from the
- * top namespace, so that `using namespace` on the top namespace does not
- * bring their generic names into the application code.
+ * The public concepts, and the templates `compare_op` and `predicate_op`,
+ * reside within the `micro_os_plus::micro_test_plus::extension` namespace,
+ * separate from the top namespace, so that `using namespace` on the top
+ * namespace does not bring their generic names into the application code.
  *
  * The concepts used only by the implementation, which detect the framework
  * constants, the containers, and the strings, reside within the `detail`
@@ -43,10 +43,6 @@
  *
  * The deprecated v5.0.1 `type_traits` namespace, which refers to these
  * concepts and to the value wrappers, is declared in `deprecated.h`.
- *
- * All header files are organised within the
- * `include/micro-os-plus/micro-test-plus` folder to maintain a structured and
- * modular codebase.
  *
  * This file is intended for internal use within the framework and should not
  * be included directly by user code.
@@ -197,7 +193,7 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
-     * @brief C++20 concept satisfied by the wrappers of a `bool`, whose
+     * @brief Concept satisfied by the wrappers of a `bool`, whose
      * condition is ambiguous.
      *
      * @details
@@ -222,7 +218,7 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
     /**
-     * @brief C++20 concept satisfied when a type is contextually
+     * @brief Concept satisfied when a type is contextually
      * convertible to `bool`, but is most likely not a condition.
      *
      * @tparam T The type to be checked.
@@ -262,7 +258,8 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @namespace micro_os_plus::micro_test_plus::extension
-   * @brief The concepts for extending the µTest++ testing framework.
+   * @brief The templates and the concepts for extending the µTest++ testing
+   * framework.
    *
    * @details
    * The `extension` namespace holds what the applications use to write
@@ -297,7 +294,7 @@ namespace micro_os_plus::micro_test_plus
     // Concepts.
 
     /**
-     * @brief C++20 concept satisfied when a type is a framework expression
+     * @brief Concept satisfied when a type is a framework expression
      * type.
      *
      * @tparam T The type to be checked.
@@ -324,7 +321,7 @@ namespace micro_os_plus::micro_test_plus
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated
-     * @brief Deprecated C++20 concept satisfied when `T` is a framework
+     * @brief Deprecated concept satisfied when `T` is a framework
      * floating-point wrapper with a tolerance.
      *
      * @tparam T The type to be checked.
@@ -352,7 +349,7 @@ namespace micro_os_plus::micro_test_plus
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
     /**
-     * @brief C++20 concept satisfied when at least one of two types is a
+     * @brief Concept satisfied when at least one of two types is a
      * framework expression type.
      *
      * @tparam Lhs_T The type of the left-hand operand.
@@ -370,7 +367,7 @@ namespace micro_os_plus::micro_test_plus
     concept any_op = is_op<Lhs_T> or is_op<Rhs_T>;
 
     /**
-     * @brief C++20 concept satisfied when a type can be used as a test
+     * @brief Concept satisfied when a type can be used as a test
      * expression in `expect()` or `require()`.
      *
      * @tparam T The type to be checked.
@@ -406,7 +403,7 @@ namespace micro_os_plus::micro_test_plus
                             and requires (const T& t) { t ? true : false; });
 
     /**
-     * @brief C++20 concept satisfied when a type can be appended to the
+     * @brief Concept satisfied when a type can be appended to the
      * message of a check result via `operator<<`.
      *
      * @tparam T The type to be checked.
@@ -486,7 +483,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
-     * @brief C++20 concept satisfied when a type was accepted by
+     * @brief Concept satisfied when a type was accepted by
      * `expect()` and `require()` before the exclusion of the suspicious
      * conditions.
      *
@@ -508,7 +505,7 @@ namespace micro_os_plus::micro_test_plus
     // Concepts used only by the implementation.
 
     /**
-     * @brief C++20 concept satisfied when `T` provides both `begin()` and
+     * @brief Concept satisfied when `T` provides both `begin()` and
      * `end()` member functions returning an iterator and its sentinel.
      *
      * @tparam T The type to be checked.
@@ -532,7 +529,7 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
-     * @brief C++20 concept satisfied when `T` is a string, convertible to
+     * @brief Concept satisfied when `T` is a string, convertible to
      * a `std::basic_string_view` of a character type.
      *
      * @tparam T The type to be checked.
@@ -555,7 +552,7 @@ namespace micro_os_plus::micro_test_plus
           or std::convertible_to<const T&, std::basic_string_view<char32_t>>;
 
     /**
-     * @brief C++20 concept satisfied when `T` provides `begin()` and
+     * @brief Concept satisfied when `T` provides `begin()` and
      * `end()` only as functions found by argument-dependent lookup.
      *
      * @tparam T The type to be checked.
@@ -632,7 +629,7 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
-     * @brief C++20 concept satisfied when `T` is a range that the formatter
+     * @brief Concept satisfied when `T` is a range that the formatter
      * writes element by element.
      *
      * @tparam T The type to be checked.
@@ -666,7 +663,7 @@ namespace micro_os_plus::micro_test_plus
           and extension::printable<typename range_element<T>::type>;
 
     /**
-     * @brief C++20 concept satisfied when `T` is a callable object that
+     * @brief Concept satisfied when `T` is a callable object that
      * returns a printable message.
      *
      * @tparam T The type to be checked.
@@ -693,7 +690,7 @@ namespace micro_os_plus::micro_test_plus
           and extension::printable<std::invoke_result_t<const T&>>;
 
     /**
-     * @brief C++20 concept satisfied when `T` can be appended to the
+     * @brief Concept satisfied when `T` can be appended to the
      * message of a check.
      *
      * @tparam T The type to be checked.
@@ -715,7 +712,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
-     * @brief C++20 concept satisfied when `T` is a framework compile-time
+     * @brief Concept satisfied when `T` is a framework compile-time
      * constant.
      *
      * @tparam T The type to be checked.

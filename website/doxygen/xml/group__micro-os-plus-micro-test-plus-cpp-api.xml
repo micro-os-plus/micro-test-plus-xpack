@@ -3,15 +3,15 @@
   <compounddef id="group__micro-os-plus-micro-test-plus-cpp-api" kind="group">
     <compoundname>micro-os-plus-micro-test-plus-cpp-api</compoundname>
     <title>C++ API</title>
-    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-runners">Test Runners</innergroup>
-    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-test-suites">Test Suites</innergroup>
-    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-test-case">Test Cases</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-runners">Test runners</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-test-suites">Test suites</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-test-case">Test cases</innergroup>
     <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-expectations">Expectations</innergroup>
     <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-requirements">Requirements</innergroup>
-    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators">Function Comparators</innergroup>
-    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions">Logical Functions</innergroup>
-    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions">Checking Exceptions</innergroup>
-    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions">Utility Functions</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators">Function comparators</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions">Logical functions</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions">Checking exceptions</innergroup>
+    <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions">Utility functions</innergroup>
     <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-customisation">Customisation</innergroup>
     <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated">Deprecated</innergroup>
     <briefdescription>

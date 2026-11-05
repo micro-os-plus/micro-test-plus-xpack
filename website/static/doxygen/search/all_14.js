@@ -10,7 +10,7 @@ var searchData=
   ['unwrapped_5ft_7',['unwrapped_t',['../namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a2c197674df5b07499a4ea40d124f1082',1,'micro_os_plus::micro_test_plus::detail']]],
   ['utf16_5fto_5futf8_8',['utf16_to_utf8',['../namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03.html#ac857348d4c53f704f9f424ff78a3220e',1,'micro_os_plus::micro_test_plus::detail::anonymous_namespace{expression-formatter.cpp}']]],
   ['utf32_5fto_5futf8_9',['utf32_to_utf8',['../namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03.html#ab0fcacdcde6203ee5fc0a95808abec62',1,'micro_os_plus::micro_test_plus::detail::anonymous_namespace{expression-formatter.cpp}']]],
-  ['utility_20functions_10',['Utility Functions',['../group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html',1,'']]],
+  ['utility_20functions_10',['Utility functions',['../group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html',1,'']]],
   ['utility_2dinlines_2eh_11',['utility-inlines.h',['../utility-inlines_8h.html',1,'']]],
   ['utility_2ecpp_12',['utility.cpp',['../utility_8cpp.html',1,'']]],
   ['utility_2eh_13',['utility.h',['../utility_8h.html',1,'']]]

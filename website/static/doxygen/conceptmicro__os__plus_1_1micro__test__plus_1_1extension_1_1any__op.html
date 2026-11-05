@@ -115,15 +115,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 </div><!--header-->
 <div class="contents">
 
-<p>C++20 concept satisfied when at least one of two types is a framework expression type.  
+<p>Concept satisfied when at least one of two types is a framework expression type.  
 <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="extension_8h_source.html">extension.h</a>&gt;</code></p>
 <h2 id="header-conceptdef" class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Lhs_T, <span class="keyword">class</span> Rhs_T&gt;</div>
 <div class="line">    <span class="keyword">concept </span><a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1any__op.html">any_op</a> = <a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html">is_op&lt;Lhs_T&gt;</a> or <a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html">is_op&lt;Rhs_T&gt;</a></div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1any__op_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1any__op.html">micro_os_plus::micro_test_plus::extension::any_op</a></div><div class="ttdoc">C++20 concept satisfied when at least one of two types is a framework expression type.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00370">extension.h:370</a></div></div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html">micro_os_plus::micro_test_plus::extension::is_op</a></div><div class="ttdoc">C++20 concept satisfied when a type is a framework expression type.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00321">extension.h:322</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1any__op_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1any__op.html">micro_os_plus::micro_test_plus::extension::any_op</a></div><div class="ttdoc">Concept satisfied when at least one of two types is a framework expression type.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00367">extension.h:367</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html">micro_os_plus::micro_test_plus::extension::is_op</a></div><div class="ttdoc">Concept satisfied when a type is a framework expression type.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00318">extension.h:319</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 </dl>
 <p>The <span class="tt">any_op</span> concept is satisfied when <span class="tt">Lhs_T</span> or <span class="tt">Rhs_T</span> (or both) are framework expression types (see <span class="tt">is_op</span>). A custom operator constrains its overload with it, so that the overload is enabled only when at least one operand is a framework expression, and does not compete with the operators of the application types. The framework itself uses it only for the deprecated operators. </p>
 
-<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00370">370</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00367">367</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

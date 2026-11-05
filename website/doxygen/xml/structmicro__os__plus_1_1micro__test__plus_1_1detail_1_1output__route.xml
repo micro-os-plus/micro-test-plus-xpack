@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="233" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="233" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="229" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="229" bodyend="-1"/>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1a66f620b093f92e0def6bf5297fb6d6ee" compoundref="reporter-human_8cpp" startline="751" endline="810">micro_os_plus::micro_test_plus::detail::reporter_human::abort_session</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1aa8802baefcb360f48451418c783ac413" compoundref="reporter-tap_8cpp" startline="1159" endline="1212">micro_os_plus::micro_test_plus::detail::reporter_tap::abort_session</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__human_1aa3cefeb72e745b2424b48ed4a31102e7" compoundref="reporter-human_8cpp" startline="127" endline="147">micro_os_plus::micro_test_plus::detail::reporter_human::begin_session</referencedby>
@@ -53,7 +53,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="242" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="242" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="238" column="12" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="238" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -62,7 +62,7 @@
     <detaileddescription>
 <para>Returned by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1af33f2f6498a97383cdb75020e32ccf23" kindref="member">reporter::route()</ref></computeroutput>. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="225" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="226" bodyend="243"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" line="221" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reporter.h" bodystart="222" bodyend="239"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1output__route_1a5ffc75b90c3290f21a2126bba91a759a" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::output_route</scope><name>console</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1output__route_1a9e8864f658fa4382fe94008f0a5efd6e" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::output_route</scope><name>file</name></member>

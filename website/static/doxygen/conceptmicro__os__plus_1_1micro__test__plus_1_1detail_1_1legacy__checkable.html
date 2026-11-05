@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 </div><!--header-->
 <div class="contents">
 
-<p>C++20 concept satisfied when a type was accepted by <span class="tt">expect()</span> and <span class="tt">require()</span> before the exclusion of the suspicious conditions.  
+<p>Concept satisfied when a type was accepted by <span class="tt">expect()</span> and <span class="tt">require()</span> before the exclusion of the suspicious conditions.  
 <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="extension_8h_source.html">extension.h</a>&gt;</code></p>
@@ -123,9 +123,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 <div class="fragment"><div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line">    <span class="keyword">concept </span><a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1legacy__checkable.html">legacy_checkable</a> = (not <a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable.html">extension::checkable&lt;T&gt;</a>) and <a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1suspicious__condition.html">suspicious_condition&lt;T&gt;</a></div>
 <div class="line">          and <span class="keyword">requires</span> (<span class="keyword">const</span> T&amp; t) { t ? true : <span class="keyword">false</span>; }</div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1legacy__checkable_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1legacy__checkable.html">micro_os_plus::micro_test_plus::detail::legacy_checkable</a></div><div class="ttdoc">C++20 concept satisfied when a type was accepted by expect() and require() before the exclusion of th...</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00502">extension.h:503</a></div></div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1suspicious__condition_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1suspicious__condition.html">micro_os_plus::micro_test_plus::detail::suspicious_condition</a></div><div class="ttdoc">C++20 concept satisfied when a type is contextually convertible to bool, but is most likely not a con...</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00242">extension.h:243</a></div></div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable.html">micro_os_plus::micro_test_plus::extension::checkable</a></div><div class="ttdoc">C++20 concept satisfied when a type can be used as a test expression in expect() or require().</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00403">extension.h:403</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1legacy__checkable_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1legacy__checkable.html">micro_os_plus::micro_test_plus::detail::legacy_checkable</a></div><div class="ttdoc">Concept satisfied when a type was accepted by expect() and require() before the exclusion of the susp...</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00499">extension.h:500</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1suspicious__condition_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1suspicious__condition.html">micro_os_plus::micro_test_plus::detail::suspicious_condition</a></div><div class="ttdoc">Concept satisfied when a type is contextually convertible to bool, but is most likely not a condition...</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00238">extension.h:239</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable.html">micro_os_plus::micro_test_plus::extension::checkable</a></div><div class="ttdoc">Concept satisfied when a type can be used as a test expression in expect() or require().</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00400">extension.h:400</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 </dl>
 <p>Satisfied by the types that are contextually convertible to <span class="tt">bool</span> but are not <span class="tt">checkable</span>, i.e. the <span class="tt">suspicious_condition</span> types. It constrains the deprecated overloads of <span class="tt">expect()</span> and <span class="tt">require()</span>, which keep such code compiling for one release, with a warning. </p>
 
-<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00502">502</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00499">499</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

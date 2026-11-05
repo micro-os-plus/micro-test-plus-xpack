@@ -18,7 +18,10 @@ meson, and xPack build files define them (the `defaultDefine` entries in
 `xcdl-package.jsonc` are informative only).
 
 The application and the library sources must be compiled with the same
-macros, otherwise the link fails. The simplest way is a header named
+`MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED` and
+`MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED` macros, otherwise the
+link fails (see the pages of the macros below); the trace macros only add
+trace calls to the function bodies. The simplest way is a header named
 `micro-os-plus/micro-test-plus-defines.h` (or
 `micro-os-plus/project-config.h`) in the include path of the build: every
 µTest++ header includes it, if present, before its own definitions.
@@ -35,3 +38,7 @@ command line:
 A macro given only on the compiler command line (for example
 `-DMICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED`) must be given for the whole
 build, for both the application and the library sources.
+
+The definitions shown on the pages of the macros, with a line number in
+`micro-test-plus.h`, exist only for this documentation; the header does not
+define these macros, and neither does the library.

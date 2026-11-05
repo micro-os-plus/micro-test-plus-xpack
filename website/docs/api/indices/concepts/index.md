@@ -63,7 +63,7 @@ Internal implementation details for the µTest++ framework
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/ambiguous-condition">ambiguous_condition</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied by the wrappers of a <span class="doxyComputerOutput">bool</span>, whose condition is ambiguous
+Concept satisfied by the wrappers of a <span class="doxyComputerOutput">bool</span>, whose condition is ambiguous
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -73,7 +73,7 @@ C++20 concept satisfied by the wrappers of a <span class="doxyComputerOutput">bo
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/character">character</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied by the character types
+Concept satisfied by the character types
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -83,7 +83,7 @@ C++20 concept satisfied by the character types
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/character-pointer">character_pointer</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied by the pointers to the character types
+Concept satisfied by the pointers to the character types
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -113,7 +113,7 @@ Concept satisfied when the operands of a comparator can be written and compared
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/container-like">container_like</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied when <span class="doxyComputerOutput">T</span> provides both <span class="doxyComputerOutput">begin()</span> and <span class="doxyComputerOutput">end()</span> member functions returning an iterator and its sentinel
+Concept satisfied when <span class="doxyComputerOutput">T</span> provides both <span class="doxyComputerOutput">begin()</span> and <span class="doxyComputerOutput">end()</span> member functions returning an iterator and its sentinel
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -123,7 +123,7 @@ C++20 concept satisfied when <span class="doxyComputerOutput">T</span> provides 
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/formattable-range">formattable_range</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a range that the formatter writes element by element
+Concept satisfied when <span class="doxyComputerOutput">T</span> is a range that the formatter writes element by element
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -143,7 +143,7 @@ Concept satisfied by the types that have a free <span class="doxyComputerOutput"
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/free-range">free_range</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied when <span class="doxyComputerOutput">T</span> provides <span class="doxyComputerOutput">begin()</span> and <span class="doxyComputerOutput">end()</span> only as functions found by argument-dependent lookup
+Concept satisfied when <span class="doxyComputerOutput">T</span> provides <span class="doxyComputerOutput">begin()</span> and <span class="doxyComputerOutput">end()</span> only as functions found by argument-dependent lookup
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -173,7 +173,7 @@ Concept satisfied by a callable object whose call operator is not a single non-t
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/has-value">has_value</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a framework compile-time constant
+Concept satisfied when <span class="doxyComputerOutput">T</span> is a framework compile-time constant
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -183,7 +183,7 @@ C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a fram
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/lazy-message">lazy_message</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a callable object that returns a printable message
+Concept satisfied when <span class="doxyComputerOutput">T</span> is a callable object that returns a printable message
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -193,7 +193,7 @@ C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a call
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/legacy-checkable">legacy_checkable</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied when a type was accepted by <span class="doxyComputerOutput">expect()</span> and <span class="doxyComputerOutput">require()</span> before the exclusion of the suspicious conditions
+Concept satisfied when a type was accepted by <span class="doxyComputerOutput">expect()</span> and <span class="doxyComputerOutput">require()</span> before the exclusion of the suspicious conditions
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -213,7 +213,7 @@ Concept satisfied by the types that the formatter writes with one of its own mem
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/message-argument">message_argument</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied when <span class="doxyComputerOutput">T</span> can be appended to the message of a check
+Concept satisfied when <span class="doxyComputerOutput">T</span> can be appended to the message of a check
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -243,7 +243,7 @@ The body of a static suite written for v5.0.1, whose first parameter is a <span 
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/string-like">string_like</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a string, convertible to a <span class="doxyComputerOutput">std::basic_string_view</span> of a character type
+Concept satisfied when <span class="doxyComputerOutput">T</span> is a string, convertible to a <span class="doxyComputerOutput">std::basic_string_view</span> of a character type
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -263,7 +263,7 @@ Concept satisfied by a callable object that can be the body of a suite
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/suspicious-condition">suspicious_condition</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied when a type is contextually convertible to <span class="doxyComputerOutput">bool</span>, but is most likely not a condition
+Concept satisfied when a type is contextually convertible to <span class="doxyComputerOutput">bool</span>, but is most likely not a condition
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -293,7 +293,7 @@ Concept satisfied by a callable object that can be the body of a test case
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/test-values-range">test_values_range</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a range of values for <span class="doxyComputerOutput">test_each()</span>
+Concept satisfied when <span class="doxyComputerOutput">T</span> is a range of values for <span class="doxyComputerOutput">test_each()</span>
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -303,7 +303,7 @@ C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a rang
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/test-values-tuple">test_values_tuple</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a tuple of values for <span class="doxyComputerOutput">test_each()</span>
+Concept satisfied when <span class="doxyComputerOutput">T</span> is a tuple of values for <span class="doxyComputerOutput">test_each()</span>
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -346,7 +346,7 @@ Satisfied if the comparison selected by <span class="doxyComputerOutput">Op</spa
 <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/extension">extension</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-The concepts for extending the µTest++ testing framework
+The templates and the concepts for extending the µTest++ testing framework
 </td>
 </tr>
 
@@ -357,7 +357,7 @@ The concepts for extending the µTest++ testing framework
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/any-op">any_op</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied when at least one of two types is a framework expression type
+Concept satisfied when at least one of two types is a framework expression type
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -367,7 +367,7 @@ C++20 concept satisfied when at least one of two types is a framework expression
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/approx-operand">approx_operand</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a valid operand of the approximate comparator
+Concept satisfied when <span class="doxyComputerOutput">T</span> is a valid operand of the approximate comparator
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -377,7 +377,7 @@ C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a vali
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/checkable">checkable</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied when a type can be used as a test expression in <span class="doxyComputerOutput">expect()</span> or <span class="doxyComputerOutput">require()</span>
+Concept satisfied when a type can be used as a test expression in <span class="doxyComputerOutput">expect()</span> or <span class="doxyComputerOutput">require()</span>
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -397,7 +397,7 @@ Concept satisfied by a tag that defines a custom comparator
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/has-epsilon">has_epsilon</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Deprecated C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a framework floating-point wrapper with a tolerance
+Deprecated concept satisfied when <span class="doxyComputerOutput">T</span> is a framework floating-point wrapper with a tolerance
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -407,7 +407,7 @@ Deprecated C++20 concept satisfied when <span class="doxyComputerOutput">T</span
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">is_op</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied when a type is a framework expression type
+Concept satisfied when a type is a framework expression type
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -427,7 +427,7 @@ Concept satisfied by a tag that defines a custom predicate
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/printable">printable</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-C++20 concept satisfied when a type can be appended to the message of a check result via <span class="doxyComputerOutput">operator&lt;&lt;</span>
+Concept satisfied when a type can be appended to the message of a check result via <span class="doxyComputerOutput">operator&lt;&lt;</span>
 </td>
 </tr>
 
@@ -449,7 +449,7 @@ Deprecated v5.0.1 namespace of the concepts and of the value wrapper templates
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-npos">has_npos</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Deprecated C++20 concept satisfied when <span class="doxyComputerOutput">T</span> provides a <span class="doxyComputerOutput">npos</span> member
+Deprecated concept satisfied when <span class="doxyComputerOutput">T</span> provides a <span class="doxyComputerOutput">npos</span> member
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -459,7 +459,7 @@ Deprecated C++20 concept satisfied when <span class="doxyComputerOutput">T</span
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-value">has_value</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Deprecated C++20 concept satisfied when <span class="doxyComputerOutput">T</span> has a member named <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value</a></span>
+Deprecated concept satisfied when <span class="doxyComputerOutput">T</span> has a member named <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value">value</a></span>
 </td>
 </tr>
 <tr class="doxyTreeItem">
@@ -469,7 +469,7 @@ Deprecated C++20 concept satisfied when <span class="doxyComputerOutput">T</span
 <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-floating-point">is_floating_point</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Deprecated C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a floating-point type
+Deprecated concept satisfied when <span class="doxyComputerOutput">T</span> is a floating-point type
 </td>
 </tr>
 
@@ -477,6 +477,6 @@ Deprecated C++20 concept satisfied when <span class="doxyComputerOutput">T</span
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

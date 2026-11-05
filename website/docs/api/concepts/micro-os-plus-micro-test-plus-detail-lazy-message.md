@@ -17,7 +17,7 @@ keywords:
 
 # `lazy_message` Concept
 
-<p>C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a callable object that returns a printable message. <a href="#details">More...</a></p>
+<p>Concept satisfied when <span class="doxyComputerOutput">T</span> is a callable object that returns a printable message. <a href="#details">More...</a></p>
 
 ## Definition
 
@@ -30,7 +30,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 ## Description {#details}
 
-<p>C++20 concept satisfied when <span class="doxyComputerOutput">T</span> is a callable object that returns a printable message.</p>
+<p>Concept satisfied when <span class="doxyComputerOutput">T</span> is a callable object that returns a printable message.</p>
 
 
 <dl class="doxyParamsList">
@@ -51,7 +51,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>The function pointers are excluded, since they are printable (as addresses), and calling them by mistake could have side effects; a lambda without captures, which converts to a function pointer and then to <span class="doxyComputerOutput">bool</span>, is printable too, and is called, since it is a class type.</p>
 
 
-<p>Definition at line 690 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 687 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -66,6 +66,6 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

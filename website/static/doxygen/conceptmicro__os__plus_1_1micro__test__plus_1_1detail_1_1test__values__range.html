@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 </div><!--header-->
 <div class="contents">
 
-<p>C++20 concept satisfied when <span class="tt">T</span> is a range of values for <span class="tt">test_each()</span>.  
+<p>Concept satisfied when <span class="tt">T</span> is a range of values for <span class="tt">test_each()</span>.  
 <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="test_8h_source.html">test.h</a>&gt;</code></p>
@@ -124,9 +124,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 <div class="line">    <span class="keyword">concept </span><a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__range.html">test_values_range</a> = std::is_array_v&lt;std::remove_cvref_t&lt;T&gt;&gt;</div>
 <div class="line">                                or <a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1container__like.html">container_like&lt;std::remove_cvref_t&lt;T&gt;</a>&gt;</div>
 <div class="line">                                or <a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1free__range.html">free_range&lt;std::remove_cvref_t&lt;T&gt;</a>&gt;</div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1container__like_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1container__like.html">micro_os_plus::micro_test_plus::detail::container_like</a></div><div class="ttdoc">C++20 concept satisfied when T provides both begin() and end() member functions returning an iterator...</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00529">extension.h:529</a></div></div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1free__range_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1free__range.html">micro_os_plus::micro_test_plus::detail::free_range</a></div><div class="ttdoc">C++20 concept satisfied when T provides begin() and end() only as functions found by argument-depende...</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00571">extension.h:571</a></div></div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__range_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__range.html">micro_os_plus::micro_test_plus::detail::test_values_range</a></div><div class="ttdoc">C++20 concept satisfied when T is a range of values for test_each().</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01142">test.h:1142</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1container__like_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1container__like.html">micro_os_plus::micro_test_plus::detail::container_like</a></div><div class="ttdoc">Concept satisfied when T provides both begin() and end() member functions returning an iterator and i...</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00526">extension.h:526</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1free__range_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1free__range.html">micro_os_plus::micro_test_plus::detail::free_range</a></div><div class="ttdoc">Concept satisfied when T provides begin() and end() only as functions found by argument-dependent loo...</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00568">extension.h:568</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__range_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1test__values__range.html">micro_os_plus::micro_test_plus::detail::test_values_range</a></div><div class="ttdoc">Concept satisfied when T is a range of values for test_each().</div><div class="ttdef"><b>Definition</b> <a href="test_8h_source.html#l01139">test.h:1139</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 </dl>
 <p>Satisfied by the types that a range-based <span class="tt">for</span> statement can iterate: the arrays, and the types with <span class="tt">begin()</span> and <span class="tt">end()</span> members or functions, like the standard containers, the spans, and the views. </p>
 
-<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l01142">1142</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="test_8h_source.html#l01139">1139</a> of file <a class="el" href="test_8h_source.html">test.h</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

@@ -15,7 +15,6 @@ var classmicro__os__plus_1_1micro__test__plus_1_1runner =
     [ "~runner", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#aea1a1eff9cac943c1cd84e48b9add92f", null ],
     [ "abort", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#af0682165f5d07b13fd21e3f6f8da546c", null ],
     [ "abort", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a7bc806540e65c21095ef1ea1ef970db2", null ],
-    [ "add_suite", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a79dff532b8c37823378afe77c205daf3", null ],
     [ "add_suite", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#abdb31c03509a40a041b8f0ea8e12ebd1", null ],
     [ "add_top_suite", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a7170624ca4a3a92b17ced71472726529", null ],
     [ "add_top_suite", "classmicro__os__plus_1_1micro__test__plus_1_1runner.html#a9ec7d561fe8eab9df03da792f62518ae", null ],

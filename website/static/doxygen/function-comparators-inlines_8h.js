@@ -3,17 +3,11 @@ var function_comparators_inlines_8h =
     [ "micro_os_plus::micro_test_plus::all_of", "group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#ga0a385c59a2f7d3c4cfef77d2d3b4f3d6", null ],
     [ "micro_os_plus::micro_test_plus::any_of", "group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gadc2224d07a9bf118c8772518a7d3c4fd", null ],
     [ "micro_os_plus::micro_test_plus::approx", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga0d374ffc56933dccd3ffba008ab7eaa5", null ],
-    [ "micro_os_plus::micro_test_plus::eq", "namespacemicro__os__plus_1_1micro__test__plus.html#ab88360ce7994d5e5ac71deff0450a638", null ],
     [ "micro_os_plus::micro_test_plus::eq", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga0fbc0f7ddf0107c1e5265bb79287487d", null ],
-    [ "micro_os_plus::micro_test_plus::ge", "namespacemicro__os__plus_1_1micro__test__plus.html#a7a3c75c65882a8e5a274500789cf3c94", null ],
     [ "micro_os_plus::micro_test_plus::ge", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga58c7dacabca3fe1b0dc025a0e0f30e9e", null ],
-    [ "micro_os_plus::micro_test_plus::gt", "namespacemicro__os__plus_1_1micro__test__plus.html#a2dd96a2ee35e669ddab6d883caeb3df2", null ],
     [ "micro_os_plus::micro_test_plus::gt", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga90da2cbc14b4562332a205d5b232356f", null ],
-    [ "micro_os_plus::micro_test_plus::le", "namespacemicro__os__plus_1_1micro__test__plus.html#a434995a43c1ab9d2b75f1ee5e535c48b", null ],
     [ "micro_os_plus::micro_test_plus::le", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga9125d2dd997269eecc0d8239d5df67e5", null ],
-    [ "micro_os_plus::micro_test_plus::lt", "namespacemicro__os__plus_1_1micro__test__plus.html#a1584ff2a522d8d452b9b1b8b12ce0bb4", null ],
     [ "micro_os_plus::micro_test_plus::lt", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga493a42c738ef38b45a28b06a2155aa00", null ],
-    [ "micro_os_plus::micro_test_plus::ne", "namespacemicro__os__plus_1_1micro__test__plus.html#aa9d632f3209a350a25b6b57eebfacb6b", null ],
     [ "micro_os_plus::micro_test_plus::ne", "group__micro-os-plus-micro-test-plus-cpp-api-function-comparators.html#ga92cdc2dde6af040f2f5f5df677df0985", null ],
     [ "micro_os_plus::micro_test_plus::negate", "group__micro-os-plus-micro-test-plus-cpp-api-logical-functions.html#gae82d39ac86167bb4bfa6624676f3729e", null ]
 ];

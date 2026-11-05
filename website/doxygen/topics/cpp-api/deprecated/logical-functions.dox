@@ -1,11 +1,11 @@
-@defgroup micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions Logical Functions
+@defgroup micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions Old logical function names
 @brief Deprecated v5.0.1 names of the logical functions.
 
 @details
 The functions `mt::_and()`, `mt::_or()`, and `mt::_not()` are the v5.0.1
 names of `mt::all_of()`, `mt::any_of()`, and `mt::negate()`, and behave
-as them. They are deprecated since 6.0.0, because no other public name
-starts with an underscore.
+as them. They are deprecated since 6.0.0, because no other current public
+name starts with an underscore.
 
 | Deprecated    | Replacement    |
 | ------------- | -------------- |

@@ -171,7 +171,7 @@ namespace micro_os_plus::micro_test_plus::detail
         output_file_ = fopen (opts.output_file_path.c_str (), "w");
         if (output_file_ == nullptr)
           {
-            fprintf (stderr, "error: Failed to open output file '%s'\n",
+            fprintf (stderr, "error: failed to open output file '%s'\n",
                      opts.output_file_path.c_str ());
             has_output_file_error_ = true;
           }

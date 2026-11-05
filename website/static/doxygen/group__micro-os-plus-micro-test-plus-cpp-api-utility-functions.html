@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>micro-test-plus: Utility Functions</title>
+<title>micro-test-plus: Utility functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__micro-o
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Utility Functions <div class="ingroups"><a class="el" href="group__micro-os-plus.html">µOS++ Topics</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus.html">µTest++</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api.html">C++ API</a></div></div></div>
+  <div class="headertitle"><div class="title">Utility functions <div class="ingroups"><a class="el" href="group__micro-os-plus.html">µOS++ Topics</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus.html">µTest++</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api.html">C++ API</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -242,7 +242,7 @@ requires requires (T s, Delim_T d) { T::npos; s.find_first_of (d, std::size_t{})
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the input string matches the pattern; otherwise, <span class="tt">false</span>.</dd></dl>
-<p>This function enables pattern-based string comparison for tests, supporting both exact matches and wildcard patterns. The pattern may include <span class="tt">*</span> to match any sequence of characters (including an empty one) and <span class="tt">?</span> to match any single character. This allows for flexible validation of string content in test assertions, accommodating variable or partially known values.</p>
+<p>This function enables pattern-based string comparison for tests, supporting both exact matches and wildcard patterns. The pattern may include <span class="tt">*</span> to match any sequence of characters (including an empty one) and <span class="tt">?</span> to match any single character. This allows for flexible validation of string content in test checks, accommodating variable or partially known values.</p>
 <p>The match is iterative, with no recursion, so the stack usage is constant, which matters on embedded targets. When a mismatch occurs after a <span class="tt">*</span>, only the most recent <span class="tt">*</span> is retried, one character further in the input; the earlier ones never need to be, since any match they could produce is also found by the most recent one. The worst-case complexity is <span class="tt">O(n * m)</span>, for an input of length <span class="tt">n</span> and a pattern of length <span class="tt">m</span>.</p>
 <p>The function is also used by the runner to select the suites and the test cases matching the <span class="tt">--filter</span> patterns, for each of the alternatives separated by <span class="tt">|</span>.</p>
 <dl class="section user"><dt>Examples</dt><dd>Both checks pass:</dd></dl>
@@ -367,7 +367,7 @@ requires requires (T s, Delim_T d) { T::npos; s.find_first_of (d, std::size_t{})
 <div class="line"><span class="lineno">  231</span>      <span class="keywordflow">return</span> output;</div>
 <div class="line"><span class="lineno">  232</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="utility-inlines_8h_source.html#l00095">split()</a>.</p>
+<p class="reference">References <a class="el" href="utility-inlines_8h_source.html#l00091">split()</a>.</p>
 
 </div>
 </div>
@@ -402,7 +402,7 @@ requires requires (T s, Delim_T d) { T::npos; s.find_first_of (d, std::size_t{})
 </div><div class="memdoc">
 <p>This function template splits a string into a vector of substrings, using the specified delimiter characters.</p>
 <p>The function iterates through the input string, identifying the positions of any of the delimiter characters (via <span class="tt">find_first_of()</span>) and extracting the substrings between them. Each non-empty substring is added to the output vector; empty substrings, such as those between consecutive delimiters, are omitted. This approach supports flexible parsing of delimited data, which is particularly useful for validating string processing logic in test cases.</p>
-<p><b>Example</b></p>
+<dl class="section user"><dt>Example</dt><dd></dd></dl>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>mt = <a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a>;</div>
 <div class="line"> </div>
 <div class="line">t.expect (std::vector&lt;std::string_view&gt;{ <span class="stringliteral">&quot;a&quot;</span>, <span class="stringliteral">&quot;b&quot;</span> }</div>
@@ -425,29 +425,29 @@ requires requires (T s, Delim_T d) { T::npos; s.find_first_of (d, std::size_t{})
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A vector containing the resulting sub-strings; empty sub-strings (e.g. between consecutive delimiters) are omitted. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="utility-inlines_8h_source.html#l00095">95</a> of file <a class="el" href="utility-inlines_8h_source.html">utility-inlines.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   96</span>    {</div>
-<div class="line"><span class="lineno">   97</span>      std::vector&lt;T&gt; output{};</div>
-<div class="line"><span class="lineno">   98</span>      std::size_t first{};</div>
-<div class="line"><span class="lineno">   99</span>      <span class="keywordflow">while</span> (first &lt; std::size (input))</div>
-<div class="line"><span class="lineno">  100</span>        {</div>
-<div class="line"><span class="lineno">  101</span>          <span class="keyword">const</span> <span class="keyword">auto</span> second = input.find_first_of (delim, first);</div>
-<div class="line"><span class="lineno">  102</span>          <span class="keywordflow">if</span> (first != second)</div>
+<p class="definition">Definition at line <a class="el" href="utility-inlines_8h_source.html#l00091">91</a> of file <a class="el" href="utility-inlines_8h_source.html">utility-inlines.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>    {</div>
+<div class="line"><span class="lineno">   93</span>      std::vector&lt;T&gt; output{};</div>
+<div class="line"><span class="lineno">   94</span>      std::size_t first{};</div>
+<div class="line"><span class="lineno">   95</span>      <span class="keywordflow">while</span> (first &lt; std::size (input))</div>
+<div class="line"><span class="lineno">   96</span>        {</div>
+<div class="line"><span class="lineno">   97</span>          <span class="keyword">const</span> <span class="keyword">auto</span> second = input.find_first_of (delim, first);</div>
+<div class="line"><span class="lineno">   98</span>          <span class="keywordflow">if</span> (first != second)</div>
+<div class="line"><span class="lineno">   99</span>            {</div>
+<div class="line"><span class="lineno">  100</span>              output.emplace_back (input.substr (first, second - first));</div>
+<div class="line"><span class="lineno">  101</span>            }</div>
+<div class="line"><span class="lineno">  102</span>          <span class="keywordflow">if</span> (second == T::npos)</div>
 <div class="line"><span class="lineno">  103</span>            {</div>
-<div class="line"><span class="lineno">  104</span>              output.emplace_back (input.substr (first, second - first));</div>
+<div class="line"><span class="lineno">  104</span>              <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">  105</span>            }</div>
-<div class="line"><span class="lineno">  106</span>          <span class="keywordflow">if</span> (second == T::npos)</div>
-<div class="line"><span class="lineno">  107</span>            {</div>
-<div class="line"><span class="lineno">  108</span>              <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  109</span>            }</div>
-<div class="line"><span class="lineno">  110</span>          first = second + 1;</div>
-<div class="line"><span class="lineno">  111</span>        }</div>
-<div class="line"><span class="lineno">  112</span>      <span class="keywordflow">return</span> output;</div>
-<div class="line"><span class="lineno">  113</span>    }</div>
+<div class="line"><span class="lineno">  106</span>          first = second + 1;</div>
+<div class="line"><span class="lineno">  107</span>        }</div>
+<div class="line"><span class="lineno">  108</span>      <span class="keywordflow">return</span> output;</div>
+<div class="line"><span class="lineno">  109</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="utility-inlines_8h_source.html#l00095">split()</a>.</p>
+<p class="reference">References <a class="el" href="utility-inlines_8h_source.html#l00091">split()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="utility_8cpp_source.html#l00214">split()</a>, and <a class="el" href="utility-inlines_8h_source.html#l00095">split()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="utility_8cpp_source.html#l00214">split()</a>, and <a class="el" href="utility-inlines_8h_source.html#l00091">split()</a>.</p>
 
 </div>
 </div>

@@ -78,7 +78,7 @@ Evaluates the logical disjunction <computeroutput>static_cast&lt;bool&gt;(<ref r
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1146" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1057" bodyend="1063"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1144" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1059" bodyend="1065"/>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1a33a6b26e134e3403ea52fcaf9ce92691" compoundref="detail-inlines_8h" startline="155" endline="159">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::binary_op</references>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1a27b015b0e2b40e0f0bbb1b08588e1c20" compoundref="detail-inlines_8h" startline="181" endline="184">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::lhs</references>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1ae1436f1b38c1062f7c733d3e8cb39b87" compoundref="detail-inlines_8h" startline="194" endline="197">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::rhs</references>
@@ -105,15 +105,15 @@ Returns the value of the left-hand operand, unwrapped by <computeroutput><ref re
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="379" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="181" bodyend="184"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="375" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="181" bodyend="184"/>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1a27b015b0e2b40e0f0bbb1b08588e1c20" compoundref="detail-inlines_8h" startline="181" endline="184">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::lhs</references>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1ac21255b7b6b6d4b9c71522cc997a5fc2" compoundref="detail_8h" startline="405">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::lhs_</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1ac21255b7b6b6d4b9c71522cc997a5fc2" compoundref="detail_8h" startline="401">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::lhs_</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a59eb53c96f68d26635c13df53b358ac8" compoundref="detail-inlines_8h" startline="98" endline="106">micro_os_plus::micro_test_plus::detail::unwrap</references>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op_1a3a37dcd754e3d79a0db8479afe00a6c8" compoundref="detail-inlines_8h" startline="1039" endline="1045">micro_os_plus::micro_test_plus::detail::and_op&lt; Lhs_T, Rhs_T &gt;::and_op</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op_1a5b53c23cc06ec1d830f7a99ddcb26259" compoundref="detail-inlines_8h" startline="1006" endline="1016">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op_1a3a37dcd754e3d79a0db8479afe00a6c8" compoundref="detail-inlines_8h" startline="1041" endline="1047">micro_os_plus::micro_test_plus::detail::and_op&lt; Lhs_T, Rhs_T &gt;::and_op</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op_1a5b53c23cc06ec1d830f7a99ddcb26259" compoundref="detail-inlines_8h" startline="1008" endline="1018">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op</referencedby>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1a33a6b26e134e3403ea52fcaf9ce92691" compoundref="detail-inlines_8h" startline="155" endline="159">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::binary_op</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op_1a71d82aa506f49748d884cd2b53bcf1b2">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op_1af76c42f67671cf8657d3c104383c0818" compoundref="detail-inlines_8h" startline="1057" endline="1063">micro_os_plus::micro_test_plus::detail::or_op&lt; Lhs_T, Rhs_T &gt;::or_op</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op_1a7e864eeb2250a0e6b7f4b11c2eeae663" compoundref="detail-inlines_8h" startline="855" endline="893">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op_1af76c42f67671cf8657d3c104383c0818" compoundref="detail-inlines_8h" startline="1059" endline="1065">micro_os_plus::micro_test_plus::detail::or_op&lt; Lhs_T, Rhs_T &gt;::or_op</referencedby>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1a27b015b0e2b40e0f0bbb1b08588e1c20" compoundref="detail-inlines_8h" startline="181" endline="184">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::lhs</referencedby>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1ae9bf4f9ead2b8a63695988d37aa6f6f7" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
@@ -134,9 +134,9 @@ Returns the pre-computed boolean result stored by the derived comparator&apos;s 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="365" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="168" bodyend="171"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="361" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="168" bodyend="171"/>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1a33a6b26e134e3403ea52fcaf9ce92691" compoundref="detail-inlines_8h" startline="155" endline="159">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::binary_op</references>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1abbe4c20d03a94cac1a942d8e3af65aea" compoundref="detail_8h" startline="421" endline="421">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::value_</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1abbe4c20d03a94cac1a942d8e3af65aea" compoundref="detail_8h" startline="417" endline="417">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::value_</references>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1ae1436f1b38c1062f7c733d3e8cb39b87" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>decltype(auto)</type>
@@ -160,15 +160,15 @@ Returns the value of the right-hand operand, unwrapped by <computeroutput><ref r
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="393" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="194" bodyend="197"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="389" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="194" bodyend="197"/>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1ae1436f1b38c1062f7c733d3e8cb39b87" compoundref="detail-inlines_8h" startline="194" endline="197">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::rhs</references>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1a3111bc24739599066db41c6a5023672b" compoundref="detail_8h" startline="413">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::rhs_</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1a3111bc24739599066db41c6a5023672b" compoundref="detail_8h" startline="409">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::rhs_</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a59eb53c96f68d26635c13df53b358ac8" compoundref="detail-inlines_8h" startline="98" endline="106">micro_os_plus::micro_test_plus::detail::unwrap</references>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op_1a3a37dcd754e3d79a0db8479afe00a6c8" compoundref="detail-inlines_8h" startline="1039" endline="1045">micro_os_plus::micro_test_plus::detail::and_op&lt; Lhs_T, Rhs_T &gt;::and_op</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op_1a5b53c23cc06ec1d830f7a99ddcb26259" compoundref="detail-inlines_8h" startline="1006" endline="1016">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1and__op_1a3a37dcd754e3d79a0db8479afe00a6c8" compoundref="detail-inlines_8h" startline="1041" endline="1047">micro_os_plus::micro_test_plus::detail::and_op&lt; Lhs_T, Rhs_T &gt;::and_op</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1approx__op_1a5b53c23cc06ec1d830f7a99ddcb26259" compoundref="detail-inlines_8h" startline="1008" endline="1018">micro_os_plus::micro_test_plus::detail::approx_op&lt; Lhs_T, Rhs_T, Epsilon_T &gt;::approx_op</referencedby>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1a33a6b26e134e3403ea52fcaf9ce92691" compoundref="detail-inlines_8h" startline="155" endline="159">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::binary_op</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op_1a71d82aa506f49748d884cd2b53bcf1b2">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op_1af76c42f67671cf8657d3c104383c0818" compoundref="detail-inlines_8h" startline="1057" endline="1063">micro_os_plus::micro_test_plus::detail::or_op&lt; Lhs_T, Rhs_T &gt;::or_op</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op_1a7e864eeb2250a0e6b7f4b11c2eeae663" compoundref="detail-inlines_8h" startline="855" endline="893">micro_os_plus::micro_test_plus::detail::compare_op&lt; Lhs_T, Rhs_T, Compare_T &gt;::compare_op</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op_1af76c42f67671cf8657d3c104383c0818" compoundref="detail-inlines_8h" startline="1059" endline="1065">micro_os_plus::micro_test_plus::detail::or_op&lt; Lhs_T, Rhs_T &gt;::or_op</referencedby>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1ae1436f1b38c1062f7c733d3e8cb39b87" compoundref="detail-inlines_8h" startline="194" endline="197">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::rhs</referencedby>
       </memberdef>
     </sectiondef>
@@ -187,7 +187,7 @@ Returns the value of the right-hand operand, unwrapped by <computeroutput><ref r
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="405" column="13" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="405" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="401" column="13" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="401" bodyend="-1"/>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1a33a6b26e134e3403ea52fcaf9ce92691" compoundref="detail-inlines_8h" startline="155" endline="159">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::binary_op</referencedby>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1a27b015b0e2b40e0f0bbb1b08588e1c20" compoundref="detail-inlines_8h" startline="181" endline="184">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::lhs</referencedby>
       </memberdef>
@@ -205,7 +205,7 @@ Returns the value of the right-hand operand, unwrapped by <computeroutput><ref r
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="413" column="13" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="413" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="409" column="13" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="409" bodyend="-1"/>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1a33a6b26e134e3403ea52fcaf9ce92691" compoundref="detail-inlines_8h" startline="155" endline="159">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::binary_op</referencedby>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1ae1436f1b38c1062f7c733d3e8cb39b87" compoundref="detail-inlines_8h" startline="194" endline="197">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::rhs</referencedby>
       </memberdef>
@@ -224,7 +224,7 @@ Returns the value of the right-hand operand, unwrapped by <computeroutput><ref r
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="421" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="421" bodyend="421"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="417" column="18" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="417" bodyend="417"/>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1a33a6b26e134e3403ea52fcaf9ce92691" compoundref="detail-inlines_8h" startline="155" endline="159">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::binary_op</referencedby>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1ae9bf4f9ead2b8a63695988d37aa6f6f7" compoundref="detail-inlines_8h" startline="168" endline="171">micro_os_plus::micro_test_plus::detail::binary_op&lt; Lhs_T, Rhs_T &gt;::operator bool</referencedby>
       </memberdef>
@@ -244,14 +244,14 @@ Returns the value of the right-hand operand, unwrapped by <computeroutput><ref r
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="132" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="132" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="128" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" bodystart="128" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Logical OR comparator struct template. </para>
     </briefdescription>
     <detaileddescription>
-<para>Derived from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op" kindref="compound">binary_op</ref></computeroutput>, this struct combines two sub-expressions with a logical OR operation. It enables composition of complex assertions by combining multiple conditions into a single logical whole, with reporting that shows the combined result and individual operand outcomes.</para>
+<para>Derived from <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op" kindref="compound">binary_op</ref></computeroutput>, this struct combines two sub-expressions with a logical OR operation. It enables composition of complex checks by combining multiple conditions into a single logical whole, with reporting that shows the combined result and individual operand outcomes.</para>
 <para>The temporaries are moved into the comparator, and the named sub-expressions are copied (see <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ae9fe49cb0d38724533e9a27a2232bf09" kindref="member">stored_operand_t</ref></computeroutput>).</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
@@ -308,7 +308,7 @@ Returns the value of the right-hand operand, unwrapped by <computeroutput><ref r
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1130" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1131" bodyend="1147"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1128" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1129" bodyend="1145"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1a33a6b26e134e3403ea52fcaf9ce92691" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::or_op</scope><name>binary_op</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op_1a27b015b0e2b40e0f0bbb1b08588e1c20" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::or_op</scope><name>lhs</name></member>

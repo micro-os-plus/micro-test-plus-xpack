@@ -17,7 +17,7 @@
 
 /**
  * @file
- * @brief C++ header with declarations for the µTest++ exception-checking
+ * @brief C++ header file with declarations for the µTest++ exception-checking
  * functions.
  *
  * @details

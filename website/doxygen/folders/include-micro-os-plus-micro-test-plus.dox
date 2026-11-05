@@ -15,8 +15,8 @@ templates for the application extensions (`extension.h`), the formatter
 of the operand values (`expression-formatter.h`), and the deprecated
 definitions (`deprecated.h`).
 
-The other headers belong to the implementation, in the `detail`
-namespace and the like, and the applications do not need to name their
+The other headers belong to the implementation, in the `detail` and
+`reflection` namespaces, and the applications do not need to name their
 contents: the check results (`check-result.h`), the reporters
 (`reporter.h`, `reporter-human.h`, and `reporter-tap.h`), the shared
 templates (`detail.h`), the source location (`reflection.h`), the

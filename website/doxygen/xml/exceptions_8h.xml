@@ -183,7 +183,7 @@
       <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga6a0ca4f8b757ea511c494189212812b3" kind="function"><name>throws</name></member>
     </sectiondef>
     <briefdescription>
-<para>C++ header with declarations for the µTest++ exception-checking functions. </para>
+<para>C++ header file with declarations for the µTest++ exception-checking functions. </para>
     </briefdescription>
     <detaileddescription>
 <para>This header provides the declarations for the exception-checking facilities of the µTest++ framework. It exposes three function templates — <computeroutput>throws&lt;Exception_T&gt;()</computeroutput>, <computeroutput>throws()</computeroutput>, and <computeroutput>nothrow()</computeroutput> — which allow test cases to verify that a callable throws a specific exception, throws any exception, or throws no exception, respectively.</para>

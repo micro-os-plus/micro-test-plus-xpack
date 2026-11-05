@@ -56,7 +56,6 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#af25a23e4451135649a8207c3a0ea30b5a5bb94a1c12413a2e5d14deabab29f2aa"><b>abort</b></a>: as enum value in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">include/micro-os-plus/micro-test-plus/reporter.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a515f68bbb31d64d07810f45f3b1118f6"><b>abs()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/math-h">include/micro-os-plus/micro-test-plus/math.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/#ga0a385c59a2f7d3c4cfef77d2d3b4f3d6"><b>all_of()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb"><b>always</b></a>: as enum value in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">include/micro-os-plus/micro-test-plus/runner-options.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/ambiguous-condition"><b>ambiguous_condition</b></a>: as concept in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">include/micro-os-plus/micro-test-plus/extension.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#abaf649db5561610c2f8bea816f2683d3"><b>and_op()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/and-op"><b>and_op&lt;Lhs_T, Rhs_T&gt;</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
@@ -82,9 +81,8 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/array-operand"><b>array_operand&lt;T&gt;</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#aadebcd6c243d90bd0bdb4acc807ce1e1"><b>as_comparison_integer()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b"><b>as_operand()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8"><b>automatic</b></a>: as enum value in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">include/micro-os-plus/micro-test-plus/runner-options.h</a></li>
 </ul>
-<p>30 entries</p>
+<p>28 entries</p>
 
 ## - B -
 
@@ -111,7 +109,7 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/check-result"><b>check_result</b></a>: as class in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">include/micro-os-plus/micro-test-plus/check-result.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/checkable"><b>checkable</b></a>: as concept in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">include/micro-os-plus/micro-test-plus/extension.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/expression-formatter/colour-code"><b>colour_code</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h">include/micro-os-plus/micro-test-plus/expression-formatter.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a603af2d1c9643caa351305180b2e905b"><b>colour_mode</b></a>: as enum in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">include/micro-os-plus/micro-test-plus/runner-options.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-runners/#ga603af2d1c9643caa351305180b2e905b"><b>colour_mode</b></a>: as enum in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">include/micro-os-plus/micro-test-plus/runner-options.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/colours"><b>colours</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h">include/micro-os-plus/micro-test-plus/expression-formatter.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a48c790000ed3d766b705c6c5223d8767"><b>colours_none</b></a>: as variable in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h">include/micro-os-plus/micro-test-plus/expression-formatter.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ad59e204218aa41581652a072be0e8a8a"><b>colours_red_green</b></a>: as variable in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/expression-formatter-h">include/micro-os-plus/micro-test-plus/expression-formatter.h</a></li>
@@ -150,7 +148,6 @@ keywords:
 
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a18e81b3839468cd82ad9c394d88a0e02"><b>endl()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">src/reporter.cpp</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#ab88360ce7994d5e5ac71deff0450a638"><b>eq()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d"><b>eq()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ada744f2df815ad518c8b897608907c0ba465289687a70db7aa7217cc240c29f0f"><b>equal</b></a>: as enum value in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/equal-to"><b>equal_to</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
@@ -161,7 +158,7 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/extension"><b>extension</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">include/micro-os-plus/micro-test-plus/extension.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-utility-functions/#ga791f22f0c85b6436c9016821907b0653"><b>extract_file_name()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/utility-h">include/micro-os-plus/micro-test-plus/utility.h</a></li>
 </ul>
-<p>11 entries</p>
+<p>10 entries</p>
 
 ## - F -
 
@@ -188,7 +185,6 @@ keywords:
 ## - G -
 
 <ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a7a3c75c65882a8e5a274500789cf3c94"><b>ge()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga58c7dacabca3fe1b0dc025a0e0f30e9e"><b>ge()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/generic-callable"><b>generic_callable</b></a>: as concept in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">include/micro-os-plus/micro-test-plus/test.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga67890916b8d3d8cbaab893cc6b599745"><b>genuine_integral_value</b></a>: as typedef in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">include/micro-os-plus/micro-test-plus/deprecated.h</a></li>
@@ -196,10 +192,9 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/greater"><b>greater</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ada744f2df815ad518c8b897608907c0ba5675102b0e596d9d43bbb0e0f8ea07e2"><b>greater_equal</b></a>: as enum value in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/greater-equal"><b>greater_equal</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a2dd96a2ee35e669ddab6d883caeb3df2"><b>gt()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga90da2cbc14b4562332a205d5b232356f"><b>gt()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
 </ul>
-<p>10 entries</p>
+<p>8 entries</p>
 
 ## - H -
 
@@ -209,9 +204,8 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-value"><b>has_value</b></a>: as concept in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">include/micro-os-plus/micro-test-plus/deprecated.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/has-value"><b>has_value</b></a>: as concept in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">include/micro-os-plus/micro-test-plus/extension.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/anonymous-runner-cpp-/#a93bc763e06193fa6de523088f09a8816"><b>help_options</b></a>: as variable in file <a href="/micro-test-plus-xpack/docs/api/files/src/runner-cpp">src/runner.cpp</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a913c4161963e9439b20857358486e8b2a99e9bae675b12967251c175696f00a70"><b>human</b></a>: as enum value in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">include/micro-os-plus/micro-test-plus/runner-options.h</a></li>
 </ul>
-<p>6 entries</p>
+<p>5 entries</p>
 
 ## - I -
 
@@ -238,7 +232,6 @@ keywords:
 
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/lazy-message"><b>lazy_message</b></a>: as concept in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">include/micro-os-plus/micro-test-plus/extension.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a434995a43c1ab9d2b75f1ee5e535c48b"><b>le()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga9125d2dd997269eecc0d8239d5df67e5"><b>le()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/legacy-checkable"><b>legacy_checkable</b></a>: as concept in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">include/micro-os-plus/micro-test-plus/extension.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ada744f2df815ad518c8b897608907c0bae37e8d912e8f7b8f9b5ef9452ba47ff1"><b>less</b></a>: as enum value in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
@@ -248,10 +241,9 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list"><b>list&lt;Types&gt;</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">include/micro-os-plus/micro-test-plus/deprecated.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/literals"><b>literals</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/located-name"><b>located_name</b></a>: as class in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">include/micro-os-plus/micro-test-plus/test.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a1584ff2a522d8d452b9b1b8b12ce0bb4"><b>lt()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga493a42c738ef38b45a28b06a2155aa00"><b>lt()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
 </ul>
-<p>13 entries</p>
+<p>11 entries</p>
 
 ## - M -
 
@@ -275,12 +267,9 @@ keywords:
 
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/named-bool"><b>named_bool</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">include/micro-os-plus/micro-test-plus/deprecated.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#aa9d632f3209a350a25b6b57eebfacb6b"><b>ne()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga92cdc2dde6af040f2f5f5df677df0985"><b>ne()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/#gae82d39ac86167bb4bfa6624676f3729e"><b>negate()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/function-comparators-h">include/micro-os-plus/micro-test-plus/function-comparators.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a603af2d1c9643caa351305180b2e905bac7561db7a418dd39b2201dfe110ab4a4"><b>never</b></a>: as enum value in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">include/micro-os-plus/micro-test-plus/runner-options.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a879f218299b32f5eb9fe68e15dfe0edfa334c4a4c42fdb79d7ebc3e73b517e6f8"><b>none</b></a>: as enum value in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914bafea087517c26fadd409bd4b9dc642555"><b>normal</b></a>: as enum value in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">include/micro-os-plus/micro-test-plus/runner-options.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ada744f2df815ad518c8b897608907c0ba96ee5c0e2a7149613e7fd0b83316486e"><b>not_equal</b></a>: as enum value in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-equal-to"><b>not_equal_to</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/not-op"><b>not_op&lt;T&gt;</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/detail-h">include/micro-os-plus/micro-test-plus/detail.h</a></li>
@@ -288,7 +277,7 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-exceptions/#ga2989618cf5adca7a767c966895ab37a0"><b>nothrow()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/exceptions-h">include/micro-os-plus/micro-test-plus/exceptions.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a6b03b257bb18615448fe9b4fca4a8402"><b>num()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h</a></li>
 </ul>
-<p>13 entries</p>
+<p>10 entries</p>
 
 ## - O -
 
@@ -358,12 +347,6 @@ keywords:
 </ul>
 <p>10 entries</p>
 
-## - Q -
-
-<ul>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba556966c7830465dc4623d62e32cec31d"><b>quiet</b></a>: as enum value in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">include/micro-os-plus/micro-test-plus/runner-options.h</a></li>
-</ul>
-
 ## - R -
 
 <ul>
@@ -378,7 +361,7 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ab1f64ac2ae5a8acc8b198e7f44cf0747"><b>reject_test_body()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">include/micro-os-plus/micro-test-plus/test.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter"><b>reporter</b></a>: as class in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">include/micro-os-plus/micro-test-plus/reporter.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-human"><b>reporter_human</b></a>: as class in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">include/micro-os-plus/micro-test-plus/reporter-human.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a913c4161963e9439b20857358486e8b2"><b>reporter_kind</b></a>: as enum in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">include/micro-os-plus/micro-test-plus/runner-options.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-runners/#ga913c4161963e9439b20857358486e8b2"><b>reporter_kind</b></a>: as enum in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">include/micro-os-plus/micro-test-plus/runner-options.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-tap"><b>reporter_tap</b></a>: as class in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-tap-h">include/micro-os-plus/micro-test-plus/reporter-tap.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a0726a1bc3b6f16245cb8a4b42fe0e70caba12fb48e2d23bb2bd2819f64d02ec7e"><b>requirement</b></a>: as enum value in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/check-result-h">include/micro-os-plus/micro-test-plus/check-result.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runnable-base"><b>runnable_base</b></a>: as class in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">include/micro-os-plus/micro-test-plus/test.h</a></li>
@@ -393,7 +376,6 @@ keywords:
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#gafc93799846770e521c4721d0de0a81cc"><b>short_name()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">include/micro-os-plus/micro-test-plus/deprecated.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/sign-mixed-integers"><b>sign_mixed_integers</b></a>: as concept in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba73be252ca82217b1458a25e6b4e99f15"><b>silent</b></a>: as enum value in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">include/micro-os-plus/micro-test-plus/runner-options.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#af25a23e4451135649a8207c3a0ea30b5ae52e279299e912838f689d4380c81f4a"><b>skipped</b></a>: as enum value in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">include/micro-os-plus/micro-test-plus/reporter.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location"><b>source_location</b></a>: as class in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">include/micro-os-plus/micro-test-plus/reflection.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-utility-functions/#ga15af76191aa8ac1c6d679c55cc8847ff"><b>split()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/utility-inlines-h">include/micro-os-plus/micro-test-plus/inlines/utility-inlines.h</a></li>
@@ -412,13 +394,12 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#af25a23e4451135649a8207c3a0ea30b5a89dde41a0e1f6b1091218e741a26f257"><b>suite_result</b></a>: as enum value in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">include/micro-os-plus/micro-test-plus/reporter.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/suspicious-condition"><b>suspicious_condition</b></a>: as concept in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">include/micro-os-plus/micro-test-plus/extension.h</a></li>
 </ul>
-<p>20 entries</p>
+<p>19 entries</p>
 
 ## - T -
 
 <ul>
 <li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/tag-has-symbol"><b>tag_has_symbol</b></a>: as concept in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/detail-inlines-h">include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a913c4161963e9439b20857358486e8b2a8f98645041aa7d5f53913329c6946a6b"><b>tap</b></a>: as enum value in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">include/micro-os-plus/micro-test-plus/runner-options.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/anonymous-reporter-tap-cpp-/tap-name"><b>tap_name</b></a>: as class in file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-tap-cpp">src/reporter-tap.cpp</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-reporter-tap-cpp-/#aec79a35b7936b91bee63d9baf4f8c861"><b>tap_text()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-tap-cpp">src/reporter-tap.cpp</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/detail/test-body"><b>test_body</b></a>: as concept in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/test-h">include/micro-os-plus/micro-test-plus/test.h</a></li>
@@ -464,7 +445,7 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection/#a6580ad54ad22a1d3ab43a1d9d49d1f26"><b>type_name()</b></a>: as function in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reflection-h">include/micro-os-plus/micro-test-plus/reflection.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits"><b>type_traits</b></a>: as namespace in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">include/micro-os-plus/micro-test-plus/deprecated.h</a></li>
 </ul>
-<p>46 entries</p>
+<p>45 entries</p>
 
 ## - U -
 
@@ -489,10 +470,9 @@ keywords:
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value"><b>value&lt;T&gt;</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">include/micro-os-plus/micro-test-plus/deprecated.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-f7399366cd6336ecbea702c3289d9432"><b>value&lt;T&gt;</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">include/micro-os-plus/micro-test-plus/deprecated.h</a></li>
 <li><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/value"><b>value&lt;T&gt;</b></a>: as struct in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">include/micro-os-plus/micro-test-plus/deprecated.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914ba2c7aea4237e25b4f8ee3b0bf77d6fed0"><b>verbose</b></a>: as enum value in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">include/micro-os-plus/micro-test-plus/runner-options.h</a></li>
-<li><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/#a809871d76f29309ed9c6fbd96d5a914b"><b>verbosity</b></a>: as enum in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">include/micro-os-plus/micro-test-plus/runner-options.h</a></li>
+<li><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-runners/#ga809871d76f29309ed9c6fbd96d5a914b"><b>verbosity</b></a>: as enum in file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/runner-options-h">include/micro-os-plus/micro-test-plus/runner-options.h</a></li>
 </ul>
-<p>7 entries</p>
+<p>6 entries</p>
 
 ## - W -
 
@@ -510,10 +490,10 @@ keywords:
 </ul>
 <p>2 entries</p>
 <br/>
-<p>Total: 356 entries.</p>
+<p>Total: 341 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.6 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

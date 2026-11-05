@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="505" column="35" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="505" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="501" column="35" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="501" bodyend="-1"/>
       </memberdef>
       <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga8decf36d3e0e7cc8242c6a2170743422" kind="variable"><name>within_tolerance_result</name></member>
     </sectiondef>
@@ -91,7 +91,7 @@ The using-declarations make the standard operators visible to unqualified lookup
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="541" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="631" bodyend="644"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="537" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="631" bodyend="644"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1aadebcd6c243d90bd0bdb4acc807ce1e1" compoundref="detail-inlines_8h" startline="343" endline="346">micro_os_plus::micro_test_plus::detail::as_comparison_integer</references>
       </memberdef>
     </sectiondef>
@@ -101,7 +101,7 @@ The using-declarations make the standard operators visible to unqualified lookup
     <detaileddescription>
 <para>Defines the operator applied by <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" kindref="compound">compare_op</ref></computeroutput>, its symbol in the failure reports, and the result when the operands are within the tolerance of the floating-point wrappers. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="495" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="496" bodyend="542"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="491" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="492" bodyend="538"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to_1a6911d4baf097b704280eebbead545ba1" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::not_equal_to</scope><name>apply</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__equal__to_1ababd5d29f7521518a978c737f2d481ec" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::not_equal_to</scope><name>symbol</name></member>
