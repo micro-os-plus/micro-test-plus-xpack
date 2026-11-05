@@ -1366,6 +1366,12 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief The runner, which reports the rejected calls as failed checks
      * of the running test case.
+     *
+     * @details
+     * `runner::reject_call()` calls the private `report_rejected_test()`,
+     * at the location of the rejected call, if known, or otherwise at
+     * the location of the test case, which it reads from the private
+     * `located_name_`.
      */
     friend class micro_test_plus::runner;
 
@@ -1894,18 +1900,20 @@ namespace micro_os_plus::micro_test_plus
     report_misdirected_test (const located_name& name);
 
     /**
-     * @brief Reports a rejected test case as a failed check of this test
+     * @brief Reports a rejected call as a failed check of this test
      * case.
      *
      * @details
      * Called on the running test case, by `report_misdirected_test()` and
      * by `runnable_base::accepts_test_case()`, when a test case is
-     * started where it cannot be reported. The failed check is counted
-     * and numbered as any other check of this test case, so that its
-     * plan stays valid. Non-template, defined in `src/test.cpp`.
+     * started where it cannot be reported, and by `runner::reject_call()`,
+     * for the other calls rejected while the test case runs. The failed
+     * check is counted and numbered as any other check of this test
+     * case, so that its plan stays valid. Non-template, defined in
+     * `src/test.cpp`.
      *
      * @param message The message of the failure.
-     * @param location The location of the rejected `test()` call.
+     * @param location The location of the rejected call.
      * @par Returns
      *   Nothing.
      */

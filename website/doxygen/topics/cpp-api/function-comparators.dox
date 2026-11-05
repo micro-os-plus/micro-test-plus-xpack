@@ -45,14 +45,20 @@ the failed checks with the compared values:
   for example, `mt::eq (a, b)` does not compile when `a == b` would not.
 - Integers of different signedness are compared by value, as by
   `std::cmp_equal()`: `mt::eq (-1, static_cast<unsigned> (-1))` fails,
-  although `-1 == static_cast<unsigned> (-1)` is true.
-- C strings (`char` arrays, including the string literals, and `char`
-  pointers) are compared by content, also with `std::string` and
-  `std::string_view`, so `mt::eq (actual, "abc")` checks the characters,
-  not the addresses. A null `char` pointer is equal only to another null
-  pointer (or `nullptr`), not to an empty string.
+  although `-1 == static_cast<unsigned> (-1)` is true. The single
+  characters (`char`, `wchar_t`, `char8_t`, `char16_t`, and `char32_t`)
+  are compared in the same way, as the integers of the same size and
+  signedness.
+- C strings (the arrays, including the string literals, and the pointers
+  of `char`, `wchar_t`, `char8_t`, `char16_t`, and `char32_t`) are
+  compared by content, also with the standard strings and string views of
+  the same character type, so `mt::eq (actual, "abc")` checks the
+  characters, not the addresses. The text of an array ends at its first
+  null character, or at its end. A null pointer is equal only to another
+  null pointer (or `nullptr`), not to an empty string.
 - Other arrays (including `uint8_t` buffers) are compared element by
-  element, also with a container.
+  element, also with a container, with the elements compared as the
+  single values are.
 - Other pointers are compared by address.
 - Values of the application types are displayed only if the application
   provides an `operator<<` for them; see

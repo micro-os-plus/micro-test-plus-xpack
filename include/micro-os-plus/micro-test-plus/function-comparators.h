@@ -40,7 +40,8 @@
  * The temporaries are moved into the returned expressions, and the named
  * operands are copied, so an expression can be returned from the function
  * that builds it, and kept after the operands are destroyed, except for the
- * arrays, which are referred to and must outlive the expression. The copy is
+ * arrays and the characters of the C strings, which are referred to and
+ * must outlive the expression. The copy is
  * made for every check, passing or failing, so a large container or string
  * costs an allocation; compare a `std::string_view` of a string instead,
  * when the cost matters.
@@ -106,13 +107,15 @@ namespace micro_os_plus::micro_test_plus
    * pointers of `char`, `wchar_t`, `char8_t`, `char16_t`, and `char32_t`)
    * are compared by content, also with the standard strings and string
    * views of the same character type; a null pointer is equal only to
-   * another null pointer. The other arrays (e.g. byte buffers) are
+   * another null pointer, and the text of an array ends at its first
+   * null character, or at its end. The other arrays (e.g. byte buffers) are
    * compared element by element, also with a container, with the elements
    * compared as the single values are, and written as ranges; the other
    * pointers are compared by address. The
    * integers of different signedness are compared by value, as by
    * `std::cmp_equal()`, not after the usual arithmetic conversions, so
-   * `eq (-1, static_cast<unsigned> (-1))` fails.
+   * `eq (-1, static_cast<unsigned> (-1))` fails; the single characters
+   * take part as the integers of the same size and signedness.
    *
    * Both operands must satisfy `extension::printable`, since they are
    * reported on failure; an application type needs an `operator<<` for

@@ -542,7 +542,7 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * Walks both ranges in step up to the first pair of elements that
    * differ, or up to the end of the shorter one. The elements are compared
-   * as the comparator does, with `equal_to::apply ()`, so that integers of
+   * as the comparator does, with `equal_to::apply()`, so that integers of
    * different signedness are compared by value.
    */
   template <class Lhs_T, class Rhs_T>

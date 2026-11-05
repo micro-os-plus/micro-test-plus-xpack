@@ -153,7 +153,11 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief The specialisation for `std::optional<bool>`.
      *
-     * @tparam T The element type.
+     * @details
+     * `true`; the condition of the optional tells whether a value is
+     * present, not the value itself.
+     *
+     * @tparam T The element type, `bool`, possibly cv-qualified.
      */
     template <class T>
       requires std::is_same_v<std::remove_cv_t<T>, bool>
@@ -164,7 +168,11 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief The specialisation for `std::unique_ptr` of `bool`.
      *
-     * @tparam T The element type.
+     * @details
+     * `true`, for any deleter; the condition of the pointer tells whether
+     * it is not null, not the value it points to.
+     *
+     * @tparam T The element type, `bool`, possibly cv-qualified.
      * @tparam Deleter_T The type of the deleter.
      */
     template <class T, class Deleter_T>
@@ -176,7 +184,11 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief The specialisation for `std::shared_ptr` of `bool`.
      *
-     * @tparam T The element type.
+     * @details
+     * `true`; the condition of the pointer tells whether it is not null,
+     * not the value it points to.
+     *
+     * @tparam T The element type, `bool`, possibly cv-qualified.
      */
     template <class T>
       requires std::is_same_v<std::remove_cv_t<T>, bool>
@@ -198,8 +210,8 @@ namespace micro_os_plus::micro_test_plus
      * always true (see `suspicious_condition`). A check that passes
      * silently by mistake is worse than one that does not compile, so
      * `extension::checkable` rejects these types, and the application
-     * writes `has_value ()`, `!= nullptr`, or compares the value with
-     * `eq ()`. The wrappers of the other types are accepted, since the
+     * writes `has_value()`, `!= nullptr`, or compares the value with
+     * `eq()`. The wrappers of the other types are accepted, since the
      * presence of a value is then the only meaning of the condition.
      *
      * @tparam T The type to check.
@@ -630,8 +642,11 @@ namespace micro_os_plus::micro_test_plus
      * iterated by a range-based `for` statement, with `begin()` and
      * `end()` members (`container_like`) or functions (`free_range`),
      * and:
-     * - is not an array, since the arrays are compared by address, and
-     *   are written as addresses, as the pointers they decay to;
+     * - is not an array, since the comparators convert the arrays to
+     *   `basic_c_string`, written as text, or to `array_operand`, a
+     *   range (see `as_operand()`), and an array given to the formatter
+     *   directly is written as text, if it holds characters, or
+     *   otherwise as the address it decays to;
      * - is not a string (see `string_like`), which is written as text;
      * - does not have elements of its own type, like
      *   `std::filesystem::path`, whose elements are paths, so that

@@ -311,7 +311,7 @@ namespace micro_os_plus::micro_test_plus
      *
      * @par Parameters
      *   None.
-     * @return The value of the literal, up to `max ()` of \c T, or, for the
+     * @return The value of the literal, up to `max()` of \c T, or, for the
      * signed types, up to `max () + 1`, the absolute value of the minimum.
      */
     template <class T, char... Cs>

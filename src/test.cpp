@@ -227,11 +227,11 @@ namespace micro_os_plus::micro_test_plus
      * that test case, so that it stays in its report. Otherwise, if a
      * suite runs, the failure is reported as a check of that suite, with
      * the same numbering and counting as the unexpected exceptions of the
-     * suite body. Otherwise (the runner
-     * was not initialised, has not started the suites, or has finished
-     * them) the message is
-     * written to `stderr`, and `runner::mark_rejected()` makes the exit
-     * code non-zero, as for the suites added too late.
+     * suite body. Otherwise (the runner was not initialised, has not
+     * started the suites, or has finished them, or the test cases are
+     * listed) the message is written only to `stderr`, not by the
+     * reporter, and `runner::mark_rejected()` makes the exit code
+     * non-zero.
      */
     bool
     runnable_base::accepts_test_case (const suite& target,
@@ -583,8 +583,9 @@ namespace micro_os_plus::micro_test_plus
    * While the test cases are listed (see `runner_options::list_tests`),
    * the body is called only to create its test cases, which are listed;
    * the suite is neither reported nor timed, and an exception that
-   * escapes the body is written to `stderr`, and the listing continues
-   * with the next suite.
+   * escapes the body is reported by `reject_body_exception()`, on
+   * `stderr` and in the listing, the exit code is not 0, and the
+   * listing continues with the next suite.
    *
    * When exceptions are enabled, an exception that escapes the callable,
    * which can be thrown only outside the test cases, since they catch
@@ -620,8 +621,8 @@ namespace micro_os_plus::micro_test_plus
 
     // While the test cases are listed, the body only creates them, so
     // that they are listed; the suite is not reported. An exception
-    // thrown by the body is reported on stderr, and the listing
-    // continues with the next suite.
+    // thrown by the body is reported on stderr and in the listing, and
+    // the listing continues with the next suite.
     if (is_listing ())
       {
 #if defined(__cpp_exceptions)

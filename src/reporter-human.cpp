@@ -118,8 +118,8 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * If verbosity is not silent, a blank line is printed to `stdout`
    * before the build-information block emitted by `write_info()`. A
-   * fixed "µTest++ human-readable report" heading is then written to the output
-   * file (if open) and, unless verbosity is silent, to `stdout`. The
+   * fixed "µTest++ human-readable report" heading is then written to the
+   * output file (if open) and, unless verbosity is silent, to `stdout`. The
    * `add_empty_line_` flag is set so that subsequent suite output is
    * visually separated.
    */

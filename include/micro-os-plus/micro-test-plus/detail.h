@@ -211,6 +211,12 @@ namespace micro_os_plus::micro_test_plus
      * statement, like `auto op = eq (f (), 1);`, does not refer to a
      * destroyed temporary.
      *
+     * The arrays and the character pointers are first converted by
+     * `as_operand()` to `basic_c_string` or `array_operand`, which are
+     * stored, but which refer to the characters or to the elements of
+     * the operand, without copying them; such an expression is valid
+     * only as long as the operand.
+     *
      * Only an lvalue of a class type that cannot be copied (for example
      * a `std::unique_ptr`) is stored as a `const` reference; such a
      * reference remains valid only as long as the named operand, which
@@ -780,11 +786,11 @@ namespace micro_os_plus::micro_test_plus
      * The arrays and the pointers of the character types (`char`,
      * `wchar_t`, `char8_t`, `char16_t`, and `char32_t`, but not `signed
      * char` or `unsigned char`, which are byte buffers) are converted to
-     * `basic_c_string`, so that they are compared by content; the other arrays
-     * are converted to `array_operand`, so that they are compared by
-     * content, the functions to function pointers, and all other operands
-     * are returned unchanged, so the other pointers and the functions are
-     * compared by address.
+     * `basic_c_string`, so that they are compared by content; the other
+     * arrays are converted to `array_operand`, so that they are compared
+     * element by element, the functions to function pointers, and all
+     * other operands are returned unchanged, so the other pointers and
+     * the functions are compared by address.
      *
      * The other operands are forwarded, so that the comparator moves a
      * temporary, and refers to a named operand.
@@ -1720,6 +1726,12 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @brief The C string operand of `char` strings.
+     *
+     * @details
+     * The type to which `as_operand()` converts the `char` arrays,
+     * including the string literals, and the `char` pointers; the
+     * framework itself names `basic_c_string`, and the alias is kept for
+     * the tests that name the type of a comparator.
      */
     using c_string = basic_c_string<char>;
 

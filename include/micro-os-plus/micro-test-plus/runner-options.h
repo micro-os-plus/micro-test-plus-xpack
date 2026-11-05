@@ -138,9 +138,9 @@ namespace micro_os_plus::micro_test_plus
    * `automatic`. The names follow the values of `--color` in the GNU
    * tools.
    *
-   * Only the human-readable reporter uses colours; the TAP reporter never does,
-   * since the ANSI escape sequences are not part of the TAP syntax. The
-   * output file never receives colours, whatever the mode.
+   * Only the human-readable reporter uses colours; the TAP reporter never
+   * does, since the ANSI escape sequences are not part of the TAP syntax.
+   * The output file never receives colours, whatever the mode.
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    *
@@ -440,7 +440,9 @@ namespace micro_os_plus::micro_test_plus
      * is made of plain lines, the same with both reporters and with all
      * the verbosity levels, and is written to the console and to the
      * output file, if any; no report is written, and `run_suites()`
-     * returns 0, or 2 after an option error.
+     * returns 0, 1 if a call was rejected or an exception escaped a
+     * suite body, which makes the list incomplete, or 2 after an option
+     * error, or if the filters selected no test case.
      *
      * @since 6.0.0
      */

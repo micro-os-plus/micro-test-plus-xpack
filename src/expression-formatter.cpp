@@ -338,6 +338,12 @@ namespace micro_os_plus::micro_test_plus::detail
      * @brief Gets the text of a C string held in a buffer of a known
      * capacity.
      *
+     * @details
+     * With `npos`, the length is computed by the constructor of the
+     * view, which reads up to the terminator; otherwise only the
+     * @p capacity characters are searched for the terminator, so that an
+     * array without one is not read beyond its end.
+     *
      * @tparam Char_T The character type.
      * @param s The text; it must not be null.
      * @param capacity The number of characters that may be read, or

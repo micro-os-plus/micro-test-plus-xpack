@@ -387,9 +387,10 @@ namespace micro_os_plus::micro_test_plus
      * The call is optional; without it, the runner is initialised with the
      * default options by the first call of `add_top_suite()` or
      * `run_suites()`. If used, it must therefore precede them; a later
-     * call reports an error on `stderr` and is rejected, so that
-     * `run_suites()` returns 1; a call after the test execution was
-     * aborted reports an error on `stderr`, without other effects.
+     * call reports an error on `stderr` and in the report, and is
+     * rejected, so that `run_suites()` returns 1; a call after the test
+     * execution was aborted reports an error on `stderr`, without other
+     * effects.
      *
      * If the options have errors (see `runner_options::has_errors()`), or
      * if the output file cannot be opened, the errors are written on the
@@ -429,8 +430,9 @@ namespace micro_os_plus::micro_test_plus
      * without the extension, when available, or "default suite".
      *
      * The top suite can be added only once, and before `run_suites()`; a
-     * second call, or a call made once `run_suites()` has started, is reported
-     * on `stderr` and rejected, so that `run_suites()` returns 1, and the
+     * second call, or a call made once `run_suites()` has started, is
+     * reported on `stderr` and in the report, and rejected, so that
+     * `run_suites()` returns 1, and the
      * existing top suite is returned. With errors in the options, the top
      * suite is returned, but no test is run.
      *
@@ -480,8 +482,10 @@ namespace micro_os_plus::micro_test_plus
      * number of listed test cases is written; the result of the checks
      * does not affect the exit code, since no check is evaluated; a
      * rejected call or an exception that escapes a suite body, which
-     * make the list incomplete, are written in the list, on `stderr`
-     * and in the output file, and make the exit code 1.
+     * make the list incomplete, are written on `stderr`, and make the
+     * exit code 1; except for a test case started on a suite that is not
+     * running, they are also written in the list, on the console and in
+     * the output file.
      *
      * A session without any suite (no top suite, no suite added with
      * `add_suite()`, and no static suite) is reported as an error, since
@@ -499,7 +503,9 @@ namespace micro_os_plus::micro_test_plus
      * without errors;
      * 1 if a check failed, if a suite was rejected by `add_suite()` or
      * `add_top_suite()`, if `initialise()` or `add_top_suite()` was called
-     * twice, if there was no suite, if the runner is running, or if the
+     * twice, if a test case was started on a suite that is not running,
+     * if an exception escaped a suite body while the test cases were
+     * listed, if there was no suite, if the runner is running, or if the
      * test execution was aborted; 2 if `initialise()` reported an option
      * error, or if the filters selected no test case, regardless of the
      * checks.
@@ -547,7 +553,8 @@ namespace micro_os_plus::micro_test_plus
      * The suites must be added before `run_suites()` is called. A suite added
      * while `run_suites()` runs (for example from the body of another
      * suite), or after it returned, would never run; it is rejected, the
-     * error is reported on `stderr`, and the exit code is not 0, so that
+     * error is reported on `stderr` and in the report, and the exit code
+     * is not 0, so that
      * the omission cannot pass unnoticed.
      *
      * @tparam Callable_T The type of a callable object.

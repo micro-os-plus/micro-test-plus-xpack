@@ -496,8 +496,8 @@ namespace micro_os_plus::micro_test_plus
       operator<< (wchar_t c);
 
       /**
-       * @brief Appends a null-terminated C string, or the address of the
-       * pointer.
+       * @brief Appends the text of a null-terminated C string of any
+       * character type.
        *
        * @details
        * Selected for the pointers to the character types (`char`,
@@ -1156,7 +1156,8 @@ namespace micro_os_plus::micro_test_plus
        * the arrays.
        *
        * @param s The text, or a null pointer.
-       * @param capacity The number of characters that may be read.
+       * @param capacity The number of characters that may be read, or
+       * `std::string_view::npos` if the text is null-terminated.
        * @par Returns
        *   Nothing.
        */
@@ -1164,27 +1165,71 @@ namespace micro_os_plus::micro_test_plus
       append_c_string (const char* s, std::size_t capacity);
 
       /**
-       * @copydoc append_c_string(const char*, std::size_t)
+       * @brief Appends the text of a wide C string held in a buffer of a
+       * known capacity.
+       *
+       * @details
+       * As the overload for `char`, with the text converted to UTF-8
+       * first.
+       *
+       * @param s The text, or a null pointer.
+       * @param capacity The number of characters that may be read, or
+       * `std::string_view::npos` if the text is null-terminated.
+       * @par Returns
+       *   Nothing.
        */
       void
       append_c_string (const wchar_t* s, std::size_t capacity);
 
 #if defined(__cpp_lib_char8_t)
       /**
-       * @copydoc append_c_string(const char*, std::size_t)
+       * @brief Appends the text of a UTF-8 C string held in a buffer of a
+       * known capacity.
+       *
+       * @details
+       * As the overload for `char`, with the text converted to UTF-8
+       * first.
+       *
+       * @param s The text, or a null pointer.
+       * @param capacity The number of characters that may be read, or
+       * `std::string_view::npos` if the text is null-terminated.
+       * @par Returns
+       *   Nothing.
        */
       void
       append_c_string (const char8_t* s, std::size_t capacity);
 #endif // defined(__cpp_lib_char8_t)
 
       /**
-       * @copydoc append_c_string(const char*, std::size_t)
+       * @brief Appends the text of a UTF-16 C string held in a buffer of a
+       * known capacity.
+       *
+       * @details
+       * As the overload for `char`, with the text converted to UTF-8
+       * first.
+       *
+       * @param s The text, or a null pointer.
+       * @param capacity The number of characters that may be read, or
+       * `std::string_view::npos` if the text is null-terminated.
+       * @par Returns
+       *   Nothing.
        */
       void
       append_c_string (const char16_t* s, std::size_t capacity);
 
       /**
-       * @copydoc append_c_string(const char*, std::size_t)
+       * @brief Appends the text of a UTF-32 C string held in a buffer of a
+       * known capacity.
+       *
+       * @details
+       * As the overload for `char`, with the text converted to UTF-8
+       * first.
+       *
+       * @param s The text, or a null pointer.
+       * @param capacity The number of characters that may be read, or
+       * `std::string_view::npos` if the text is null-terminated.
+       * @par Returns
+       *   Nothing.
        */
       void
       append_c_string (const char32_t* s, std::size_t capacity);

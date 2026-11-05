@@ -264,7 +264,8 @@ namespace micro_os_plus::micro_test_plus
    * `run_suites()` returns 2.
    *
    * The runner is initialised only once; a later call reports an error
-   * on `stderr` and is rejected, so that `run_suites()` returns 1 (or 2,
+   * with `reject_call()`, on `stderr` and in the report, and is
+   * rejected, so that `run_suites()` returns 1 (or 2,
    * if the options have errors); a call after the test execution was
    * aborted reports an error on `stderr`, without other effects.
    */
@@ -412,8 +413,8 @@ namespace micro_os_plus::micro_test_plus
    * `stderr`. With errors in the options or in the output file, the
    * session has already finished, and the top suite is returned without
    * other effects. A second call, or a call once `run_suites()` has
-   * started, is reported on `stderr` and rejected, so that the exit code
-   * is not 0.
+   * started, is reported with `reject_call()`, on `stderr` and in the
+   * report, and rejected, so that the exit code is not 0.
    */
   suite&
   runner::add_top_suite (const located_name& top_suite_name)
@@ -588,10 +589,11 @@ namespace micro_os_plus::micro_test_plus
    * Once `run_suites()` has started, the suite is rejected, since it would
    * never run: `run_child_suites()` takes the number of suites only once,
    * before running them, and after the session has ended nothing runs.
-   * The error is reported on `stderr`, the suite is destroyed when the
-   * pointer goes out of scope, and `has_rejected_calls_` is set, so that
-   * the exit code is not 0; if the session has already ended, the stored
-   * exit code is updated, for the later calls of `run_suites()`.
+   * The error is reported with `reject_suite()`, on `stderr` and in
+   * the report, the suite is destroyed when the pointer goes out of
+   * scope, and `has_rejected_calls_` is set, so that the exit code is
+   * not 0; if the session has already ended, the stored exit code is
+   * updated, for the later calls of `run_suites()`.
    */
   void
   runner::register_suite (std::unique_ptr<micro_test_plus::suite> suite)
@@ -815,19 +817,19 @@ namespace micro_os_plus::micro_test_plus
    * totals. Subsequently invokes `run_child_suites()` to execute, sorted by
    * name, and accumulate the registered and the static child suites.
    * Finally, stops the session stopwatch, notifies the reporter, and
-   * returns `0` if all checks passed or `1` otherwise, or if a suite was
-   * rejected by `register_suite()` or `add_top_suite()`, or if there was
-   * no suite at all; if `initialise()` reported an option error, or if
-   * the filters selected no test case, `2` is returned, regardless of
-   * the checks.
+   * returns `0` if all checks passed or `1` otherwise, or if a call was
+   * rejected (see `mark_rejected()`), or if there was no suite at all;
+   * if `initialise()` reported an option error, or if the filters
+   * selected no test case, `2` is returned, regardless of the checks.
    *
    * While the suites run, the session is in the `running` state, so that
    * the suites added by them are rejected.
    *
    * While the test cases are listed, the top suite is not reported, the
    * suites run only to create their test cases, the numbers of listed
-   * test cases and suites end the list, and the exit code is `0`, or
-   * `2` after an option error.
+   * test cases and suites end the list, and the exit code is `0`, `1`
+   * if a call was rejected or an exception escaped a suite body, or `2`
+   * after an option error, or if the filters selected no test case.
    *
    * The result is stored, and the later calls return it without running
    * anything again. If the runner is already running (a call from a

@@ -280,12 +280,19 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief The type used for the comparison.
+       *
+       * @details
+       * The type itself, for all the types other than the characters.
        */
       using type = T;
     };
 
     /**
      * @brief The integer type used to compare a character type.
+     *
+     * @details
+     * Selected by the `character` concept, so that it applies also to
+     * the cv-qualified character types.
      *
      * @tparam T The character type.
      */
@@ -295,6 +302,11 @@ namespace micro_os_plus::micro_test_plus
     {
       /**
        * @brief The integer type of the same size and signedness.
+       *
+       * @details
+       * `std::make_signed_t` or `std::make_unsigned_t` of the character
+       * type, chosen by its signedness, which, for `char` and `wchar_t`,
+       * depends on the platform.
        */
       using type
           = std::conditional_t<std::is_signed_v<T>, std::make_signed_t<T>,
@@ -304,6 +316,10 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Alias of the integer type used to compare the type @p T.
      *
+     * @details
+     * Used by `sign_mixed_integers`, to tell the signedness, and by
+     * `as_comparison_integer()`, to convert the operands.
+     *
      * @tparam T The type of the operand.
      */
     template <class T>
@@ -312,6 +328,11 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @brief Converts an integer or a character to the type used to
      * compare it.
+     *
+     * @details
+     * The conversion keeps the value, since the type has the same size
+     * and signedness. Applied to both operands of the `std::cmp_*()`
+     * functions, which do not accept the character types.
      *
      * @tparam T The type of the operand.
      * @param value The operand.
@@ -339,6 +360,9 @@ namespace micro_os_plus::micro_test_plus
      * `int`, has the same problem. `bool` is excluded, since
      * `std::cmp_*()` do not accept it and its comparison with integers
      * is not a sign problem.
+     *
+     * @tparam Lhs_T The type of the left operand.
+     * @tparam Rhs_T The type of the right operand.
      */
     template <class Lhs_T, class Rhs_T>
     concept sign_mixed_integers
@@ -353,8 +377,8 @@ namespace micro_os_plus::micro_test_plus
      *
      * @details
      * The type of the operand after `as_operand()` and `unwrap()`, without
-     * references and qualifiers; for example `detail::basic_c_string<char>` for
-     * a string literal.
+     * references and qualifiers; for example `detail::basic_c_string<char>`
+     * for a string literal.
      *
      * @tparam T The type deduced for the operand, possibly a reference.
      */
@@ -502,11 +526,25 @@ namespace micro_os_plus::micro_test_plus
           and comparable<Op, Lhs_T, Rhs_T>;
 
     /**
+     * @brief Stops the compilation of a comparator whose operands are
+     * rejected, with a message that tells why.
+     *
      * @details
      * Always fails the static assertion that applies, since it is called
      * only when `comparable_operands` is not satisfied: an operand that
      * cannot be written is reported first, then the operator that the
-     * operands do not support.
+     * operands do not support. Called by the overloads of the comparators
+     * that accept the rejected operands, so that the compiler shows this
+     * message instead of a list of the unsatisfied constraints.
+     *
+     * @tparam Op The comparison of the comparator.
+     * @tparam Lhs_T The type of the left operand.
+     * @tparam Rhs_T The type of the right operand.
+     *
+     * @par Parameters
+     *   None.
+     * @par Returns
+     *   Nothing.
      */
     template <comparison Op, class Lhs_T, class Rhs_T>
     constexpr void
@@ -705,12 +743,22 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
+     * @brief Stops the compilation of a `compare_op` whose tag is
+     * rejected, with a message that tells why.
+     *
      * @details
      * Always fails the static assertion that applies, since it is called
      * only when `extension::compare_tag` is not satisfied: the missing or
      * unprintable `symbol` is reported first, then the `apply()` that
      * cannot be called with the operands, or whose result is not
      * convertible to `bool`.
+     *
+     * @tparam Tag_T The tag of the comparator.
+     *
+     * @par Parameters
+     *   None.
+     * @par Returns
+     *   Nothing.
      */
     template <class Tag_T>
     constexpr void
@@ -734,9 +782,20 @@ namespace micro_os_plus::micro_test_plus
     }
 
     /**
+     * @brief Stops the compilation of a `predicate_op` whose tag is
+     * rejected, with a message that tells why.
+     *
      * @details
      * As `reject_compare_tag()`, for the tag of a predicate, whose
-     * `apply()` takes one operand.
+     * `apply()` takes one operand; called only when
+     * `extension::predicate_tag` is not satisfied.
+     *
+     * @tparam Tag_T The tag of the predicate.
+     *
+     * @par Parameters
+     *   None.
+     * @par Returns
+     *   Nothing.
      */
     template <class Tag_T>
     constexpr void
@@ -1583,7 +1642,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Ranges of different sizes are not equal, without comparing any
      * element. The elements are compared as the scalar operands of
-     * `eq ()` are, with `equal_to::apply ()`, so that integers of different
+     * `eq()` are, with `equal_to::apply()`, so that integers of different
      * signedness are compared by value, not by converting the signed one to
      * the unsigned type.
      */
@@ -1619,11 +1678,12 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * Arrays of the character types are converted using their size as a
-     * bound, pointers to them using the null terminator; the
-     * cv-qualifiers of the characters are ignored. The other arrays are
-     * converted to
-     * `array_operand`. Every other operand is forwarded, unchanged, as an
-     * lvalue or an rvalue reference.
+     * bound, pointers to them using the null terminator; the `const`
+     * qualifier of the characters is ignored, but the `volatile`
+     * characters are not accepted, since `basic_c_string` cannot refer
+     * to them. The other arrays are converted to `array_operand`, and
+     * the functions to function pointers. Every other operand is
+     * forwarded, unchanged, as an lvalue or an rvalue reference.
      */
     template <class T>
     constexpr auto
