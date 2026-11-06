@@ -533,7 +533,7 @@ class micro_os_plus::micro_test_plus::runner_options { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">micro_os_plus::micro_test_plus::runner_options::runner_options (int argc, char * argv=[])</td>
+<td class="doxyMemberName">micro_os_plus::micro_test_plus::runner_options::runner_options (int argc, char * argv[])</td>
 </tr>
 </table>
 </td>

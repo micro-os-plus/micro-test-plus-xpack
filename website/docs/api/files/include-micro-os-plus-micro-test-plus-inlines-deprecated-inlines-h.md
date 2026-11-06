@@ -1814,7 +1814,7 @@ keywords:
 <p>The characters are those of a valid C++ literal, already checked by the compiler (digits valid for the base, digit separators in valid positions). The base is given by the prefix: <span class="doxyComputerOutput">0x</span> or <span class="doxyComputerOutput">0X</span> for hexadecimal, <span class="doxyComputerOutput">0b</span> or <span class="doxyComputerOutput">0B</span> for binary, a leading <span class="doxyComputerOutput">0</span> for octal, and none for decimal. The digit separators (<span class="doxyComputerOutput">'</span>) are skipped.</p>
 
 
-<p>Any other character (a decimal point, an exponent, or a digit not valid for the base, as in the floating-point literal <span class="doxyComputerOutput">9.5</span>) marks the literal as not an integer. The value is accumulated in <span class="doxyComputerOutput">unsigned long long</span>, and the accumulation stops if it would overflow.</p>
+<p>Any other character (a decimal point, an exponent, or a digit not valid for the base, as in the floating-point literal <span class="doxyComputerOutput">09.5</span>) marks the literal as not an integer. The value is accumulated in <span class="doxyComputerOutput">unsigned long long</span>, and the accumulation stops if it would overflow.</p>
 
 
 <p>Definition at line <a href="#l00354">354</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
@@ -2025,7 +2025,7 @@ The file content with the documentation metadata removed is:
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00009"></a>9</span><span class="doxyLineContent"><span class="doxyHighlightComment"> * obtained from https://opensource.org/licenses/mit.</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00010"></a>10</span><span class="doxyLineContent"><span class="doxyHighlightComment"> *</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00011"></a>11</span><span class="doxyLineContent"><span class="doxyHighlightComment"> * Major parts of the code are inspired from v1.1.8 of the Boost UT project,</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00012"></a>12</span><span class="doxyLineContent"><span class="doxyHighlightComment"> * released under the terms of the Boost Version 1 Software License,</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00012"></a>12</span><span class="doxyLineContent"><span class="doxyHighlightComment"> * released under the terms of the Boost Version 1.0 Software License,</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00013"></a>13</span><span class="doxyLineContent"><span class="doxyHighlightComment"> * which can be obtained from https://www.boost.org/LICENSE_1_0.txt.</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00014"></a>14</span><span class="doxyLineContent"><span class="doxyHighlightComment"> */</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00015"></a>15</span></div>

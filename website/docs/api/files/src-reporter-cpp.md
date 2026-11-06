@@ -273,7 +273,7 @@ keywords:
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void micro_os_plus::micro_test_plus::detail::anonymous{reporter.cpp}::format_skipped (size_t count, char(&amp;) message=[fragment_size])</td>
+<td class="doxyMemberName">void micro_os_plus::micro_test_plus::detail::anonymous{reporter.cpp}::format_skipped (size_t count, char(&amp;message)[fragment_size])</td>
 </tr>
 </table>
 </td>

@@ -1177,7 +1177,7 @@ keywords:
 
 <dl class="doxySectionUser">
 <dt>Integer literals</dt>
-<dd><p>They follow the C++ syntax: decimal, hexadecimal (<span class="doxyComputerOutput">0x10_i</span>), binary (<span class="doxyComputerOutput">0b101_i</span>), and octal (<span class="doxyComputerOutput">10<a href="#ga8468610e763177a8f569f7d618851288">_i</a></span>, which is 8), with digit separators (<span class="doxyComputerOutput">1'000<a href="#ga8468610e763177a8f569f7d618851288">_i</a></span>). A decimal point, an exponent, or a value that does not fit in the type of the literal (for example <span class="doxyComputerOutput">300<a href="#gaf27e37e2e29af1a3ffd5c4fb07e77ff9">_u8</a></span>) is a compilation error.</p></dd>
+<dd><p>They follow the C++ syntax: decimal, hexadecimal (<span class="doxyComputerOutput">0x10_i</span>), binary (<span class="doxyComputerOutput">0b101_i</span>), and octal (<span class="doxyComputerOutput">010<a href="#ga8468610e763177a8f569f7d618851288">_i</a></span>, which is 8), with digit separators (<span class="doxyComputerOutput">1'000<a href="#ga8468610e763177a8f569f7d618851288">_i</a></span>). A decimal point, an exponent, or a value that does not fit in the type of the literal (for example <span class="doxyComputerOutput">300<a href="#gaf27e37e2e29af1a3ffd5c4fb07e77ff9">_u8</a></span>) is a compilation error.</p></dd>
 </dl>
 
 

@@ -2266,7 +2266,7 @@ class micro_os_plus::micro_test_plus::runner { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">void micro_os_plus::micro_test_plus::runner::initialise (int argc, char * argv=[])</td>
+<td class="doxyMemberName">void micro_os_plus::micro_test_plus::runner::initialise (int argc, char * argv[])</td>
 </tr>
 </table>
 </td>
@@ -2471,9 +2471,9 @@ class micro_os_plus::micro_test_plus::runner { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber">296</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// With errors in the options, do not proceed: the errors are written on</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">297</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// the console and in the output file, if any, which is truncated, so</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">298</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// that it never keeps the results of an earlier run; no test is run, and</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">299</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// `run_suites()` returns 2 The same for `--help`, which writes the</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">299</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// `run_suites()` returns 2. The same for `--help`, which writes the</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">300</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// usage instead of the errors, only on the console, and `run_suites()`</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">301</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// returns 0 A reporter is still created, since the suites and the test</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">301</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// returns 0. A reporter is still created, since the suites and the test</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">302</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// cases refer to it.</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">303</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (<a href="#acea30e98ccf65d97e8c0e0d0ff8edda0">options_</a>.<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-options/#a4ed347422b26dded0244c3926ef384a8">has_errors</a> () || <a href="#acea30e98ccf65d97e8c0e0d0ff8edda0">options_</a>.<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-options/#a36b690e87d69f1124c8fff4d4a59f90c">help</a>)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">304</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
@@ -4059,7 +4059,7 @@ class micro_os_plus::micro_test_plus::runner { ... }
 
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a061939d61f7f2d4a4523c427b0dc98f2">778</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a061939d61f7f2d4a4523c427b0dc98f2">runner::run_child_suites</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">779</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">780</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// The top suite, if added, has index 1</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">780</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// The top suite, if added, has index 1.</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">781</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> own_index = <a href="#a4a43729c815ce9b3e3f15a650f011f66">has_top_suite_</a> ? 1 : 0;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">782</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">for</span><span class="doxyHighlight"> (<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">micro_test_plus::suite</a>* suite_ptr = <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite/#a612f5529e08321a2e44c714d60c2ba1e">suite::first_</a>;</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">783</span><span class="doxyLineContent"><span class="doxyHighlight">         suite_ptr != </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">; suite_ptr = suite_ptr-&gt;<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite/#a65d1fed18566774295fcbc7df44c216e">next_</a>)</span></span></div>
@@ -5080,7 +5080,7 @@ class micro_os_plus::micro_test_plus::runner { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">suite &amp; micro_os_plus::micro_test_plus::runner::initialise (int argc, char * argv=[], const char * top_suite_name)</td>
+<td class="doxyMemberName">suite &amp; micro_os_plus::micro_test_plus::runner::initialise (int argc, char * argv[], const char * top_suite_name)</td>
 </tr>
 </table>
 </td>

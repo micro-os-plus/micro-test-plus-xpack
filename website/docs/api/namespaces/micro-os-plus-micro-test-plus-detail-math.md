@@ -1214,7 +1214,7 @@ namespace micro_os_plus::micro_test_plus::detail::math { ... }
 <p>The characters are those of a valid C++ literal, already checked by the compiler (digits valid for the base, digit separators in valid positions). The base is given by the prefix: <span class="doxyComputerOutput">0x</span> or <span class="doxyComputerOutput">0X</span> for hexadecimal, <span class="doxyComputerOutput">0b</span> or <span class="doxyComputerOutput">0B</span> for binary, a leading <span class="doxyComputerOutput">0</span> for octal, and none for decimal. The digit separators (<span class="doxyComputerOutput">'</span>) are skipped.</p>
 
 
-<p>Any other character (a decimal point, an exponent, or a digit not valid for the base, as in the floating-point literal <span class="doxyComputerOutput">9.5</span>) marks the literal as not an integer. The value is accumulated in <span class="doxyComputerOutput">unsigned long long</span>, and the accumulation stops if it would overflow.</p>
+<p>Any other character (a decimal point, an exponent, or a digit not valid for the base, as in the floating-point literal <span class="doxyComputerOutput">09.5</span>) marks the literal as not an integer. The value is accumulated in <span class="doxyComputerOutput">unsigned long long</span>, and the accumulation stops if it would overflow.</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00354">354</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
