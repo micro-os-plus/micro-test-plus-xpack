@@ -49,7 +49,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>The <span class="doxyComputerOutput">free_range</span> concept is satisfied when <span class="doxyComputerOutput">T</span> has no <span class="doxyComputerOutput">begin()</span> and <span class="doxyComputerOutput">end()</span> members (see <span class="doxyComputerOutput">container_like</span>), but calls of <span class="doxyComputerOutput">begin()</span> and <span class="doxyComputerOutput">end()</span> with a <span class="doxyComputerOutput">const T&amp;</span> argument are valid and return an iterator and its sentinel, as in a range-based <span class="doxyComputerOutput">for</span> statement, which then uses them.</p>
 
 
-<p>Definition at line 568 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 574 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -65,6 +65,6 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

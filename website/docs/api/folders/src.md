@@ -206,7 +206,7 @@ keywords:
 <li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/counters-cpp">counters.cpp</a></span> — <span class="doxyComputerOutput">counters</span> accumulation and <span class="doxyComputerOutput">operator+=</span></li>
 <li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/deprecated-cpp">deprecated.cpp</a></span> — the non-inline definitions of the deprecated <span class="doxyComputerOutput">reflection::short_name()</span> and of the <span class="doxyComputerOutput">detail::timestamp</span> constructor</li>
 <li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/expression-formatter-cpp">expression-formatter.cpp</a></span> — non-template <span class="doxyComputerOutput">operator&lt;&lt;</span> overloads of the expression formatter, and the texts of the pending checks</li>
-<li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/runner-options-cpp">runner-options.cpp</a></span> — <span class="doxyComputerOutput">runner_options</span> command-line parsing, and the reporting of the option errors</li>
+<li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/runner-options-cpp">runner-options.cpp</a></span> — <span class="doxyComputerOutput">runner_options</span> command-line parsing, and the recording of the option errors</li>
 <li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a></span> — human-readable reporter implementation</li>
 <li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/reporter-tap-cpp">reporter-tap.cpp</a></span> — TAP-format reporter implementation</li>
 <li><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a></span> — base <span class="doxyComputerOutput">reporter</span> class and <span class="doxyComputerOutput">operator&lt;&lt;</span> overloads</li>
@@ -218,6 +218,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

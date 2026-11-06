@@ -189,7 +189,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Gets the text of a C string held in a buffer of a known capacity. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-expression-formatter-cpp-/#a3169704f317df72895180fef95637b30">More...</a></p>
+<p>Returns the text of a C string held in a buffer of a known capacity. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/anonymous-expression-formatter-cpp-/#a3169704f317df72895180fef95637b30">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -820,7 +820,7 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>Gets the text of a C string held in a buffer of a known capacity.</p>
+<p>Returns the text of a C string held in a buffer of a known capacity.</p>
 
 
 <p>With <span class="doxyComputerOutput">npos</span>, the length is computed by the constructor of the view, which reads up to the terminator; otherwise only the <span class="doxyComputerOutput">capacity</span> characters are searched for the terminator, so that an array without one is not read beyond its end.</p>
@@ -1916,6 +1916,6 @@ The file content with the documentation metadata removed is:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

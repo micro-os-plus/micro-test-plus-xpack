@@ -23,7 +23,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1883" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1883" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1882" column="19" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1882" bodyend="-1"/>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1afe9138ceb8877c6f13281c240008a762" compoundref="detail-inlines_8h" startline="1648" endline="1651">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::end</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1a81af19b59f044e9adfee2dc5edabbc6f" prot="private" static="no" mutable="no">
@@ -40,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1875" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1875" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1874" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1874" bodyend="-1"/>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1a9c2ee9c42136a485b41aebd85c3597c1" compoundref="detail-inlines_8h" startline="1617" endline="1621">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::array_operand</referencedby>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1a8f44a4be9bb4c412b551818b378395c4" compoundref="detail-inlines_8h" startline="1629" endline="1632">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::begin</referencedby>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1afe9138ceb8877c6f13281c240008a762" compoundref="detail-inlines_8h" startline="1648" endline="1651">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::end</referencedby>
@@ -86,8 +86,8 @@ Stores the pointer and the count; nothing is copied. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1846" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1617" bodyend="1621"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1a81af19b59f044e9adfee2dc5edabbc6f" compoundref="detail_8h" startline="1875">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::first_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1845" column="17" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1617" bodyend="1621"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1a81af19b59f044e9adfee2dc5edabbc6f" compoundref="detail_8h" startline="1874">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::first_</references>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1a8f44a4be9bb4c412b551818b378395c4" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>const T *</type>
@@ -110,8 +110,8 @@ Returns the stored pointer. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1856" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1629" bodyend="1632"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1a81af19b59f044e9adfee2dc5edabbc6f" compoundref="detail_8h" startline="1875">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::first_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1855" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1629" bodyend="1632"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1a81af19b59f044e9adfee2dc5edabbc6f" compoundref="detail_8h" startline="1874">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::first_</references>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ade4fe4b187a8ded1bb42910536d86235" compoundref="detail-inlines_8h" startline="1687" endline="1691">micro_os_plus::micro_test_plus::detail::operator&lt;=&gt;</referencedby>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ad7b514fb92021548630dbeb2cd8189bc" compoundref="detail-inlines_8h" startline="1671" endline="1676">micro_os_plus::micro_test_plus::detail::operator==</referencedby>
       </memberdef>
@@ -136,9 +136,9 @@ Returns the pointer past the last element. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1866" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1648" bodyend="1651"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1a07aad5c8d860e3c487df8a0f6948d0a2" compoundref="detail_8h" startline="1883">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::count_</references>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1a81af19b59f044e9adfee2dc5edabbc6f" compoundref="detail_8h" startline="1875">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::first_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1865" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1648" bodyend="1651"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1a07aad5c8d860e3c487df8a0f6948d0a2" compoundref="detail_8h" startline="1882">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::count_</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1a81af19b59f044e9adfee2dc5edabbc6f" compoundref="detail_8h" startline="1874">micro_os_plus::micro_test_plus::detail::array_operand&lt; T &gt;::first_</references>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ade4fe4b187a8ded1bb42910536d86235" compoundref="detail-inlines_8h" startline="1687" endline="1691">micro_os_plus::micro_test_plus::detail::operator&lt;=&gt;</referencedby>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1ad7b514fb92021548630dbeb2cd8189bc" compoundref="detail-inlines_8h" startline="1671" endline="1676">micro_os_plus::micro_test_plus::detail::operator==</referencedby>
       </memberdef>
@@ -160,7 +160,7 @@ Returns the pointer past the last element. </para>
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1837" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1838" bodyend="1884"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1836" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1837" bodyend="1883"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1a9c2ee9c42136a485b41aebd85c3597c1" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::array_operand</scope><name>array_operand</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1array__operand_1a8f44a4be9bb4c412b551818b378395c4" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::array_operand</scope><name>begin</name></member>

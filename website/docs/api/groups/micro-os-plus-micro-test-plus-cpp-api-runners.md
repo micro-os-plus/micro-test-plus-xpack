@@ -138,8 +138,30 @@ keywords:
 <ul class="doxyList ">
 <li>0 when all the checks passed, when the test cases were only listed, or when the usage was displayed by <span class="doxyComputerOutput">--help</span>;</li>
 <li>1 when a check failed, or when the program used the runner wrongly (for example, it added no suite at all);</li>
-<li>2 when the command line had an error, or when the filters selected no test case.</li>
+<li>2 when the command line had an error, when the output file could not be opened, or when the filters selected no test case.</li>
 </ul>
+
+<dl class="doxySectionUser">
+<dt>Aborting the session</dt>
+<dd><p><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a7bc806540e65c21095ef1ea1ef970db2">runner::abort()</a> ends the session immediately: the report is completed (with a <span class="doxyComputerOutput">Bail out!</span> line with the TAP reporter, in place of the totals), then the handler is called, if there is one, and, if there is none, or if it returns, the process is terminated with <span class="doxyComputerOutput">::abort()</span>. A failed <span class="doxyComputerOutput">require()</span> calls it in the builds without exceptions (see <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-requirements">Requirements</a>). <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a711756a8c6958c4036527a290c481f86">runner::set_abort_handler()</a> sets the handler, which can, for example, reset an embedded target or signal the result to a debugger; it returns the previous handler, and <span class="doxyComputerOutput">nullptr</span> restores the default behaviour. With exceptions, the handler may throw, to return control to the application, but the runner cannot be used afterwards.</p></dd>
+</dl>
+
+
+<dl class="doxySectionUser">
+<dt>Reading the session</dt>
+<dd>
+<p>These functions of the runner are useful to the code of <span class="doxyComputerOutput">main()</span>:</p>
+
+
+<ul class="doxyList ">
+<li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a2c8a999cc273356ea10ed34fb12dcf5a">runner::totals()</a> returns the totals of the session, complete after <span class="doxyComputerOutput">run_suites()</span> returned;</li>
+<li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a1dd0221dca8e7382f0b625ff6316ed92">runner::verbosity_level()</a> returns the verbosity of the console, which the tests may use to decide whether to display their own messages;</li>
+<li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#ae5df469f7aaccc8e24bfadff4c209688">runner::is_listing()</a> tells whether the test cases are only listed, when their bodies do not run;</li>
+<li><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a7ec833574071080a76dfddb01983dea9">runner::application_arguments()</a> returns the command-line arguments left to the application.</li>
+</ul>
+</dd>
+</dl>
+
 
 <dl class="doxySectionUser">
 <dt>Example</dt>
@@ -230,7 +252,7 @@ keywords:
 </div>
 
 
-<p>The members of <span class="doxyComputerOutput">runner_options</span> are the options of the command line (see <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cli">Command-line options</a>): the reporter, the verbosity, the colours, the output file, the filter patterns, and the listing of the test cases.</p>
+<p>The members of <span class="doxyComputerOutput">runner_options</span> are the options of the command line (see <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cli">Command-line options</a>): the reporter, the verbosity, the colours, the output file, the filter patterns, the listing of the test cases, and the display of the usage.</p>
 
 
 <div class="doxySectionDef">
@@ -488,6 +510,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

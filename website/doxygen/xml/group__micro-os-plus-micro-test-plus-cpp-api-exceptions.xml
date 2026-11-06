@@ -44,12 +44,12 @@
 </parameterlist>
 <simplesect kind="return"><para>An object of an unspecified type, holding the result, to be passed to <computeroutput>expect()</computeroutput> or <computeroutput>require()</computeroutput>.</para>
 </simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga2989618cf5adca7a767c966895ab37a0" kindref="member">nothrow</ref></computeroutput> function template verifies whether invoking the provided callable object does not result in the throwing of any exception within the µTest++ framework. This is useful for ensuring that code under test does not unexpectedly signal error conditions.</para>
+The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga2989618cf5adca7a767c966895ab37a0" kindref="member">nothrow</ref></computeroutput> function template checks whether invoking the provided callable object does not result in the throwing of any exception. This is useful for ensuring that code under test does not unexpectedly signal error conditions.</para>
 <para>The callable is invoked immediately, when the comparator is constructed; the result is reported when the comparator is passed to <computeroutput>expect()</computeroutput> or <computeroutput>require()</computeroutput>, which also accept optional messages. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="116" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="116" bodyend="119" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="140" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="116" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="116" bodyend="119" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="138" declcolumn="3"/>
         <references refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga2989618cf5adca7a767c966895ab37a0" compoundref="exceptions-inlines_8h" startline="116" endline="119">micro_os_plus::micro_test_plus::nothrow</references>
         <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga2989618cf5adca7a767c966895ab37a0" compoundref="exceptions-inlines_8h" startline="116" endline="119">micro_os_plus::micro_test_plus::nothrow</referencedby>
       </memberdef>
@@ -94,12 +94,12 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exc
 </parameterlist>
 <simplesect kind="return"><para>An object of an unspecified type, holding the result, to be passed to <computeroutput>expect()</computeroutput> or <computeroutput>require()</computeroutput>.</para>
 </simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga6a0ca4f8b757ea511c494189212812b3" kindref="member">throws</ref></computeroutput> function template verifies whether invoking the provided callable object results in the throwing of any exception within the µTest++ framework. This is useful for ensuring that code under test properly signals error conditions.</para>
+The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga6a0ca4f8b757ea511c494189212812b3" kindref="member">throws</ref></computeroutput> function template checks whether invoking the provided callable object results in the throwing of any exception. This is useful for ensuring that code under test properly signals error conditions.</para>
 <para>The callable is invoked immediately, when the comparator is constructed; the result is reported when the comparator is passed to <computeroutput>expect()</computeroutput> or <computeroutput>require()</computeroutput>, which also accept optional messages. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="97" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="97" bodyend="100" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="123" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="97" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="97" bodyend="100" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="121" declcolumn="3"/>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga6a0ca4f8b757ea511c494189212812b3" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -153,12 +153,12 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exc
 </parameterlist>
 <simplesect kind="return"><para>An object of an unspecified type, holding the result, to be passed to <computeroutput>expect()</computeroutput> or <computeroutput>require()</computeroutput>.</para>
 </simplesect>
-The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga6a0ca4f8b757ea511c494189212812b3" kindref="member">throws</ref></computeroutput> function template verifies whether invoking the provided callable object results in the throwing of a specific exception type within the µTest++ framework. This is useful for testing error handling in code under test. Exceptions of other types are reported as failures.</para>
+The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga6a0ca4f8b757ea511c494189212812b3" kindref="member">throws</ref></computeroutput> function template checks whether invoking the provided callable object results in the throwing of a specific exception type. This is useful for testing error handling in code under test. Exceptions of other types are reported as failures.</para>
 <para>The callable is invoked immediately, when the comparator is constructed; the result is reported when the comparator is passed to <computeroutput>expect()</computeroutput> or <computeroutput>require()</computeroutput>, which also accept optional messages. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="78" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="78" bodyend="81" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="101" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" line="78" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/exceptions-inlines.h" bodystart="78" bodyend="81" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/exceptions.h" declline="99" declcolumn="3"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

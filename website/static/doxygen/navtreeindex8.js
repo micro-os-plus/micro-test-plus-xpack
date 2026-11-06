@@ -1,10 +1,5 @@
 var NAVTREEINDEX8 =
 {
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op.html#a27b015b0e2b40e0f0bbb1b08588e1c20":[6,0,0,0,0,34,2],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op.html#a3111bc24739599066db41c6a5023672b":[4,0,0,0,1,37,6],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op.html#a3111bc24739599066db41c6a5023672b":[6,0,0,0,0,34,6],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op.html#a384b1d115e493d6a554ebda4e3089b19":[4,0,0,0,1,37,0],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op.html#a384b1d115e493d6a554ebda4e3089b19":[6,0,0,0,0,34,0],
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op.html#abbe4c20d03a94cac1a942d8e3af65aea":[4,0,0,0,1,37,7],
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op.html#abbe4c20d03a94cac1a942d8e3af65aea":[6,0,0,0,0,34,7],
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1or__op.html#ac21255b7b6b6d4b9c71522cc997a5fc2":[4,0,0,0,1,37,5],
@@ -249,5 +244,10 @@ var NAVTREEINDEX8 =
 "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html":[6,0,0,0,3,9],
 "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html#a384b1d115e493d6a554ebda4e3089b19":[4,0,0,0,6,9,0],
 "structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1op.html#a384b1d115e493d6a554ebda4e3089b19":[6,0,0,0,3,9,0],
-"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html":[4,0,0,0,6,10]
+"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html":[4,0,0,0,6,10],
+"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html":[6,0,0,0,3,10],
+"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html#a4d0554be18a449d7b9176e868e631846":[4,0,0,0,6,10,0],
+"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html#a4d0554be18a449d7b9176e868e631846":[6,0,0,0,3,10,0],
+"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html#a53d900a34b6e094537044952ccda7ca2":[4,0,0,0,1,53,8],
+"structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html#a53d900a34b6e094537044952ccda7ca2":[4,0,0,0,6,10,2]
 };

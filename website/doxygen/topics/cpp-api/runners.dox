@@ -28,8 +28,38 @@ The exit code is:
   when the usage was displayed by `--help`;
 - 1 when a check failed, or when the program used the runner wrongly (for
   example, it added no suite at all);
-- 2 when the command line had an error, or when the filters selected no
-  test case.
+- 2 when the command line had an error, when the output file could not be
+  opened, or when the filters selected no test case.
+
+@par Aborting the session
+@ref micro_os_plus::micro_test_plus::runner::abort "runner::abort()" ends
+the session immediately: the report is completed (with a `Bail out!` line
+with the TAP reporter, in place of the totals), then the handler is called,
+if there is one, and, if there is none, or if it returns, the process is
+terminated with `::abort()`. A failed `require()` calls it in
+the builds without exceptions (see
+@ref micro-os-plus-micro-test-plus-cpp-api-requirements).
+@ref micro_os_plus::micro_test_plus::runner::set_abort_handler
+"runner::set_abort_handler()" sets the handler, which can, for example,
+reset an embedded target or signal the result to a debugger; it returns the
+previous handler, and `nullptr` restores the default behaviour. With
+exceptions, the handler may throw, to return control to the application,
+but the runner cannot be used afterwards.
+
+@par Reading the session
+These functions of the runner are useful to the code of `main()`:
+- @ref micro_os_plus::micro_test_plus::runner::totals "runner::totals()"
+  returns the totals of the session, complete after `run_suites()`
+  returned;
+- @ref micro_os_plus::micro_test_plus::runner::verbosity_level
+  "runner::verbosity_level()" returns the verbosity of the console, which
+  the tests may use to decide whether to display their own messages;
+- @ref micro_os_plus::micro_test_plus::runner::is_listing
+  "runner::is_listing()" tells whether the test cases are only listed, when
+  their bodies do not run;
+- @ref micro_os_plus::micro_test_plus::runner::application_arguments
+  "runner::application_arguments()" returns the command-line arguments left
+  to the application.
 
 @par Example
 
@@ -109,5 +139,5 @@ main (void)
 
 The members of `runner_options` are the options of the command line (see
 @ref micro-os-plus-micro-test-plus-cli): the reporter, the verbosity, the
-colours, the output file, the filter patterns, and the listing of the test
-cases.
+colours, the output file, the filter patterns, the listing of the test
+cases, and the display of the usage.

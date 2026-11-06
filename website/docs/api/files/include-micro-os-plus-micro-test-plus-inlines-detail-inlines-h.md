@@ -1583,8 +1583,8 @@ keywords:
 <div class="doxyCodeLine"><span class="doxyLineNumber">1408</span><span class="doxyLineContent"><span class="doxyHighlight">              </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (ec == std::errc{})</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">1409</span><span class="doxyLineContent"><span class="doxyHighlight">                buffer.append (buf, ptr);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">1410</span><span class="doxyLineContent"><span class="doxyHighlight">            }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1411</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// long double formatting</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op/#a086d26c7329afc11e6a8b2664d753494">1412</a></span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op/#a086d26c7329afc11e6a8b2664d753494">1411</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// long double formatting</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1412</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">1413</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">else</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">1414</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">1415</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> buf[32];</span></span></div>
@@ -2427,7 +2427,7 @@ keywords:
 <p>Returns the value wrapped by a framework type, or the operand itself.</p>
 
 
-<p>If the type <span class="doxyComputerOutput">T</span> is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>) that provides a <span class="doxyComputerOutput">get()</span> member function, it is invoked and its result returned. Otherwise a reference to the argument itself is returned, so that the types of the application, even those with a <span class="doxyComputerOutput">get()</span> member function, are compared with their own operators, without a copy. The selection is performed at compile time via <span class="doxyComputerOutput">if constexpr</span> with an inline <span class="doxyComputerOutput">requires</span> expression; the return type is deduced with <span class="doxyComputerOutput">decltype (auto)</span> from the selected branch.</p>
+<p>If the type <span class="doxyComputerOutput">T</span> is a framework expression type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>) that provides a <span class="doxyComputerOutput">get()</span> member function, it is invoked and its result returned. Otherwise a reference to the argument itself is returned, so that the types of the application, even those with a <span class="doxyComputerOutput">get()</span> member function, are compared with their own operators, without a copy. The selection is performed at compile time via <span class="doxyComputerOutput">if constexpr</span> with an inline <span class="doxyComputerOutput">requires</span> expression; the return type is deduced with <span class="doxyComputerOutput">decltype (auto)</span> from the selected branch.</p>
 
 
 <p>Always call it qualified, as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a59eb53c96f68d26635c13df53b358ac8">detail::unwrap()</a></span>, so that argument-dependent lookup cannot select a function of the application, defined in the namespace of an operand.</p>
@@ -3384,8 +3384,8 @@ The file content with the documentation metadata removed is:
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l01408"></a>1408</span><span class="doxyLineContent"><span class="doxyHighlight">              </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> (ec == std::errc{})</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l01409"></a>1409</span><span class="doxyLineContent"><span class="doxyHighlight">                buffer.append (buf, ptr);</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l01410"></a>1410</span><span class="doxyLineContent"><span class="doxyHighlight">            }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l01411"></a>1411</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// long double formatting</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l01412"></a><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op/#a086d26c7329afc11e6a8b2664d753494">1412</a></span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l01411"></a><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op/#a086d26c7329afc11e6a8b2664d753494">1411</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// long double formatting</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l01412"></a>1412</span><span class="doxyLineContent"><span class="doxyHighlight">        }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l01413"></a>1413</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">else</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l01414"></a>1414</span><span class="doxyLineContent"><span class="doxyHighlight">        {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l01415"></a>1415</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight"> buf[32];</span></span></div>
@@ -3396,8 +3396,8 @@ The file content with the documentation metadata removed is:
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l01420"></a>1420</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l01421"></a>1421</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l01422"></a>1422</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#if defined(__GNUC__)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l01423"></a>1423</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#pragma GCC diagnostic pop</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l01424"></a><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op/#a69618b39f260cbd032e271881430e45c">1424</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(__GNUC__)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l01423"></a><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/callable-op/#a69618b39f260cbd032e271881430e45c">1423</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#pragma GCC diagnostic pop</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l01424"></a>1424</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(__GNUC__)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l01425"></a>1425</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l01426"></a>1426</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// ------------------------------------------------------------------------</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l01427"></a>1427</span></div>
@@ -3659,6 +3659,6 @@ The file content with the documentation metadata removed is:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

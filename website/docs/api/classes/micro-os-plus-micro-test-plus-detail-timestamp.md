@@ -171,7 +171,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Gets the stored time. <a href="#ab5cdd20fcc69d0a7539d0fa219206e68">More...</a></p>
+<p>Returns the stored time. <a href="#ab5cdd20fcc69d0a7539d0fa219206e68">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -185,7 +185,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Gets the stored time, for modification. <a href="#a1538d7ab5b57c425c61510adfca32012">More...</a></p>
+<p>Returns the stored time, for modification. <a href="#a1538d7ab5b57c425c61510adfca32012">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -237,7 +237,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 </dl>
 </div>
 
-<p>Definition at line 2324 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line 2335 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -289,7 +289,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 <p>Copies <span class="doxyComputerOutput">ts</span> into the stored value.</p>
 
 
-<p>Declaration at line 2345 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01295">1295</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Declaration at line 2356 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01295">1295</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -335,7 +335,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 <p>A timestamp is a plain value, so it may be copied.</p>
 
 
-<p>Definition at line 2353 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line 2364 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 </div>
 </div>
@@ -369,7 +369,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 <p>Equivalent to the copy, since the value is trivially copyable.</p>
 
 
-<p>Definition at line 2361 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line 2372 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <p>Reference <a href="#a5bc1f0da3e55b740b16c2269012e141e">timestamp</a>.</p>
@@ -409,7 +409,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 <p>Reads the system clock into the stored value, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a60dcef812e43e13d1e30f602a572e27a">read_clock()</a></span>, the same clock as <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/stopwatch">stopwatch</a></span>; without a clock, the value remains zero.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l02334">2334</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/deprecated-cpp/#l00100">100</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/deprecated-cpp">deprecated.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l02345">2345</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/deprecated-cpp/#l00100">100</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/deprecated-cpp">deprecated.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -465,7 +465,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 <p>No resources are owned, so there is nothing to release.</p>
 
 
-<p>Definition at line 2394 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line 2405 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <p>Reference <a href="#a5bc1f0da3e55b740b16c2269012e141e">timestamp</a>.</p>
@@ -514,7 +514,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l02372">2372</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l02383">2383</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <p>Reference <a href="#a5bc1f0da3e55b740b16c2269012e141e">timestamp</a>.</p>
@@ -557,7 +557,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 </dl>
 
 
-<p>Definition at line 2385 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line 2396 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <p>Reference <a href="#a5bc1f0da3e55b740b16c2269012e141e">timestamp</a>.</p>
@@ -627,7 +627,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 <p>Returns <span class="doxyComputerOutput">true</span> if either the seconds or the nanoseconds member is not zero.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l02408">2408</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01307">1307</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l02419">2419</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01307">1307</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -673,7 +673,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Gets the stored time.</p>
+<p>Returns the stored time.</p>
 
 
 <dl class="doxySectionUser">
@@ -691,7 +691,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 <p>The returned reference is valid as long as the object exists.</p>
 
 
-<p>Declaration at line 2428 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01332">1332</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Declaration at line 2439 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01332">1332</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -734,7 +734,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Gets the stored time, for modification.</p>
+<p>Returns the stored time, for modification.</p>
 
 
 <dl class="doxySectionUser">
@@ -752,7 +752,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 <p>The caller may modify the stored time through the returned reference.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l02418">2418</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01320">1320</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l02429">2429</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01320">1320</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -808,7 +808,7 @@ class micro_os_plus::micro_test_plus::detail::timestamp { ... }
 <p>Set by the constructors; zero if the clock was not read.</p>
 
 
-<p>Definition at line 2437 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
+<p>Definition at line 2448 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
 
 
 <p>Referenced by <a href="#a5877a6dda459f5dc695f0e4569175a82">timestamp</a>, <a href="#a5bc1f0da3e55b740b16c2269012e141e">timestamp</a>, <a href="#ae5494fb57bcc3b577c914a0cc95ff667">has_clock</a>, <a href="#ab5cdd20fcc69d0a7539d0fa219206e68">value</a> and <a href="#a1538d7ab5b57c425c61510adfca32012">value</a>.</p>
@@ -830,6 +830,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

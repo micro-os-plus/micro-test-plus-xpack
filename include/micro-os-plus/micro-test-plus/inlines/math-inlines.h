@@ -22,13 +22,13 @@
  *
  * @details
  * This header provides the inline implementations for the mathematical utility
- * templates used within the µTest++ framework. It defines constexpr logic for
- * common mathematical operations, including absolute value, minimum value
- * selection, exponentiation, and compile-time parsing of numeric values from
- * character sequences.
+ * templates used within the µTest++ framework. It defines the `constexpr`
+ * absolute value, used by the approximate comparison, and, only if the
+ * deprecated functionality is enabled, the minimum value, used by the
+ * tolerance of the deprecated wrappers. The exponentiation and the
+ * compile-time parsing of the numeric literals are in `deprecated-inlines.h`.
  *
- * These utilities are lightweight, `constexpr` or `consteval`, and
- * support both integral and floating-point types.
+ * These utilities support both integral and floating-point types.
  *
  * All definitions reside within the
  * `micro_os_plus::micro_test_plus::detail::math` namespace, since they are

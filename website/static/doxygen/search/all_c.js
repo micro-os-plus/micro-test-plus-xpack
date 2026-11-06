@@ -34,5 +34,5 @@ var searchData=
   ['micro_5ftest_5fplus_3a_3atest_5fcase_31',['test_case',['../classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter.html#a904f410e240644fa77d65e686e6fc3eb',1,'micro_os_plus::micro_test_plus::detail::reporter']]],
   ['min_5fvalue_32',['min_value',['../namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a67e71e2dce0120ad4839635830e80de8',1,'micro_os_plus::micro_test_plus::detail::math']]],
   ['mode_33',['mode',['../group__micro-os-plus-micro-test-plus-cli.html#cli-verbosity-default',1,'Default mode'],['../group__micro-os-plus-micro-test-plus-cli.html#cli-verbosity-quiet',1,'Quiet mode'],['../group__micro-os-plus-micro-test-plus-cli.html#cli-verbosity-silent',1,'Silent mode'],['../group__micro-os-plus-micro-test-plus-cli.html#cli-verbosity-verbose',1,'Verbose mode']]],
-  ['mut_34',['mut',['../group__micro-os-plus-micro-test-plus-cpp-api-deprecated.html#ga00ea8f3dfb7cb0ef39919065321cf62f',1,'micro_os_plus::micro_test_plus']]]
+  ['mut_34',['mut',['../group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions.html#ga00ea8f3dfb7cb0ef39919065321cf62f',1,'micro_os_plus::micro_test_plus']]]
 ];

@@ -10,7 +10,7 @@
 <para>Thrown by the destructor of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result" kindref="compound">check_result</ref></computeroutput>, after the failure was reported and counted, when exceptions are enabled, and caught by <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1adb4333ecb107fee477156b661f0b1512" kindref="member">test_case::run()</ref></computeroutput>, which ends the test case normally; the run continues with the next test case.</para>
 <para>It is deliberately not derived from <computeroutput>std::exception</computeroutput>, so that a <computeroutput>catch (const std::exception&amp;)</computeroutput> in the test case body does not stop it; a <computeroutput>catch (...)</computeroutput> does, and should rethrow it. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1313" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1314" bodyend="1315"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1312" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="1313" bodyend="1314"/>
     <listofallmembers>
     </listofallmembers>
   </compounddef>

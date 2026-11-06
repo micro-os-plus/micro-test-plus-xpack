@@ -26,9 +26,10 @@
  * namespace.
  *
  * The class is public, since `totals()` returns it, and the tests may
- * read their own counters through it; the header itself is included
- * through `micro-test-plus.h` and should not be included directly by
- * user code.
+ * read their own counters through it.
+ *
+ * This file is included by `micro-os-plus/micro-test-plus.h`, which is the
+ * header that the applications include.
  */
 
 #ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_COUNTERS_H_

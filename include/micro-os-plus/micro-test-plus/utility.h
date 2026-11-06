@@ -23,6 +23,9 @@
  * This header provides declarations for the utility helper functions used
  * within the µTest++ framework. It defines interfaces for string operations
  * including file-name extraction, pattern matching, and string splitting.
+ *
+ * This file is included by `micro-os-plus/micro-test-plus.h`, which is the
+ * header that the applications include.
  */
 
 #ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_UTILITY_H_

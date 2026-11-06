@@ -19,10 +19,10 @@
  * @details
  * This source file contains the non-template members of the
  * `detail::check_result` class, which reports the result of one check
- * when destroyed. The constructor captures the result value, the kind of
- * the check, the source location, and the test case reference; the
- * destructor updates the test case counters and, after a failed
- * `require()`, stops the test case.
+ * when destroyed. The private `start()` function, called by `init()`,
+ * captures the result value, the kind of the check, the source location,
+ * and the test case reference; the destructor updates the test case
+ * counters and, after a failed `require()`, stops the test case.
  *
  * All definitions reside within the
  * `micro_os_plus::micro_test_plus::detail` namespace.

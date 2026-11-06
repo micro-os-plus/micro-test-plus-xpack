@@ -129,11 +129,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:gafc93799846770e521c4721d0de0a81cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated extraction of the file name from a path.  <br /></td></tr>
 <tr class="memitem:a6580ad54ad22a1d3ab43a1d9d49d1f26" id="r_a6580ad54ad22a1d3ab43a1d9d49d1f26"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
 <tr class="memitem:a6580ad54ad22a1d3ab43a1d9d49d1f26 template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a6580ad54ad22a1d3ab43a1d9d49d1f26">type_name</a> (void) -&gt; std::string_view</td></tr>
-<tr class="memdesc:a6580ad54ad22a1d3ab43a1d9d49d1f26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the type name from the <span class="tt">__PRETTY_FUNCTION__</span> macro.  <br /></td></tr>
+<tr class="memdesc:a6580ad54ad22a1d3ab43a1d9d49d1f26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the type name from the <span class="tt">__PRETTY_FUNCTION__</span> identifier.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection.html" title="Reflection utilities for the µTest++ testing framework.">reflection</a></span> namespace provides facilities for obtaining source location information and type names at compile time, for the reports of the checks.</p>
-<p>It includes a local implementation of <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html" title="Local implementation of source location information for diagnostics.">source_location</a></span> for standard libraries that do not yet provide <span class="tt">std::source_location</span>, as well as utilities for extracting file names from paths and concise type names from the compiler-specific <span class="tt">__PRETTY_FUNCTION__</span> macro. </p>
+<p>It includes a local implementation of <span class="tt"><a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location.html" title="Local implementation of source location information for diagnostics.">source_location</a></span> for standard libraries that do not yet provide <span class="tt">std::source_location</span>, as well as a utility for extracting concise type names from the compiler-specific <span class="tt">__PRETTY_FUNCTION__</span> identifier. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a6580ad54ad22a1d3ab43a1d9d49d1f26" name="a6580ad54ad22a1d3ab43a1d9d49d1f26"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6580ad54ad22a1d3ab43a1d9d49d1f26">&#9670;&#160;</a></span>type_name()</h2>
@@ -159,7 +159,7 @@ template&lt;class T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This function template parses the compiler-specific <span class="tt">__PRETTY_FUNCTION__</span> macro to extract a concise type name for the template parameter <span class="tt">T</span>.</p>
+<p>This function template parses the compiler-specific <span class="tt">__PRETTY_FUNCTION__</span> identifier to extract a concise type name for the template parameter <span class="tt">T</span>.</p>
 <p>Rather than relying on fixed character offsets (which are fragile across compiler versions and namespace changes), the implementation searches for the marker that introduces the template argument in the function signature string:</p>
 <ul>
 <li>Clang formats the signature as <span class="tt">"... [T = &lt;typename&gt;]"</span>, so the type name lies between the first <span class="tt">"[T = "</span> and the last <span class="tt">']'</span>. The marker is searched for as a whole, since the type name may itself contain brackets (e.g. <span class="tt">int[3]</span>).</li>

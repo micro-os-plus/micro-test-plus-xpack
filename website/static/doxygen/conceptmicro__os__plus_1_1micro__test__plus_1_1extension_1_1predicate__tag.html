@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">micro_os_plus::micro_test_plus::extension::predicate_tag Concept Reference</div></div>
+  <div class="headertitle"><div class="title">micro_os_plus::micro_test_plus::extension::predicate_tag Concept Reference<div class="ingroups"><a class="el" href="group__micro-os-plus.html">µOS++ Topics</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus.html">µTest++</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api.html">C++ API</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-customisation.html">Customisation</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -125,8 +125,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 <div class="line">      <span class="keyword">requires</span> <a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable.html">printable</a>&lt;std::remove_cvref_t&lt;<span class="keyword">decltype</span> (Tag_T::symbol)&gt;&gt;;</div>
 <div class="line">      { Tag_T::apply (operand) } -&gt; std::convertible_to&lt;bool&gt;;</div>
 <div class="line">    }</div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__tag_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__tag.html">micro_os_plus::micro_test_plus::extension::predicate_tag</a></div><div class="ttdoc">Concept satisfied by a tag that defines a custom predicate.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00471">extension.h:471</a></div></div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable.html">micro_os_plus::micro_test_plus::extension::printable</a></div><div class="ttdoc">Concept satisfied when a type can be appended to the message of a check result via operator&lt;&lt;.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00429">extension.h:429</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__tag_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__tag.html">micro_os_plus::micro_test_plus::extension::predicate_tag</a></div><div class="ttdoc">Concept satisfied by a tag that defines a custom predicate.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00477">extension.h:477</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable.html">micro_os_plus::micro_test_plus::extension::printable</a></div><div class="ttdoc">Concept satisfied when a type can be appended to the message of a check result via operator&lt;&lt;.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00433">extension.h:433</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The tag of <span class="tt">extension::predicate_op</span> is a structure with a static <span class="tt">symbol</span>, which the failure reports write before the operand, and a static <span class="tt">apply()</span> member function template, which receives the operand, unwrapped, and returns the result of the predicate. The <span class="tt">symbol</span> must be printable; the result of <span class="tt">apply()</span> must be convertible to <span class="tt">bool</span>.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00471">471</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00477">477</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

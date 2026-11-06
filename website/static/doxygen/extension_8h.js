@@ -12,11 +12,5 @@ var extension_8h =
     [ "micro_os_plus::micro_test_plus::detail::legacy_checkable", "conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1legacy__checkable.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::message_argument", "conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1message__argument.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::string_like", "conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1string__like.html", null ],
-    [ "micro_os_plus::micro_test_plus::detail::suspicious_condition", "conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1suspicious__condition.html", null ],
-    [ "micro_os_plus::micro_test_plus::extension::any_op", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1any__op.html", null ],
-    [ "micro_os_plus::micro_test_plus::extension::checkable", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable.html", null ],
-    [ "micro_os_plus::micro_test_plus::extension::compare_tag", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1compare__tag.html", null ],
-    [ "micro_os_plus::micro_test_plus::extension::is_op", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html", null ],
-    [ "micro_os_plus::micro_test_plus::extension::predicate_tag", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__tag.html", null ],
-    [ "micro_os_plus::micro_test_plus::extension::printable", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable.html", null ]
+    [ "micro_os_plus::micro_test_plus::detail::suspicious_condition", "conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1suspicious__condition.html", null ]
 ];

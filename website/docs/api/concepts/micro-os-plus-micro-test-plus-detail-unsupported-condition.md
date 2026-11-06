@@ -31,7 +31,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>Concept satisfied by a value that <span class="doxyComputerOutput">expect()</span> and <span class="doxyComputerOutput">require()</span> do not accept.</p>
 
 
-<p>A value that is neither a framework expression nor contextually convertible to <span class="doxyComputerOutput">bool</span>, for example a <span class="doxyComputerOutput">std::string</span>, and, if the deprecated functionality is not enabled, the string literals, the arrays, and the function names, which only the deprecated overloads accept. Selects the overloads that stop the compilation with a message that states what the functions take.</p>
+<p>A value that is neither a framework expression type nor contextually convertible to <span class="doxyComputerOutput">bool</span>, for example a <span class="doxyComputerOutput">std::string</span>, and, if the deprecated functionality is not enabled, the string literals, the arrays, and the function names, which only the deprecated overloads accept. Selects the overloads that stop the compilation with a message that states what the functions take.</p>
 
 
 <dl class="doxyParamsList">
@@ -59,6 +59,6 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

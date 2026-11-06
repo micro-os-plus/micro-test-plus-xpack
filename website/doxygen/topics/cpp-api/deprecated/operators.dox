@@ -4,9 +4,10 @@
 @details
 The `mt::operators` namespace defines the comparison operators `==`,
 `!=`, `<`, `>`, `<=`, and `>=`, and the logical operators `and`, `or`, and
-`not`, for the framework types. After `using namespace mt::operators`, a
-check such as `t.expect (mt::to_i{ compute_answer () } == 42_i)` reports
-the values of its operands, as the function comparators do.
+`not`, for the framework expression types. After
+`using namespace mt::operators`, a check such as
+`t.expect (mt::to_i{ compute_answer () } == 42_i)` reports the values of
+its operands, as the function comparators do.
 
 @par Deprecated
 The operators are deprecated since 6.0.0, in favour of the function
@@ -16,11 +17,11 @@ and `mt::ge()`, and of the logical functions `mt::all_of()`,
 values, without literal suffixes or wrappers.
 
 @par Limitations
-- The operators apply only when at least one operand is a framework type
-  (see `extension::is_op`): a deprecated literal, such as `1_i`, or a
-  deprecated wrapper, such as `mt::to_i{ value }`. When neither operand
-  is, the standard operator is selected; it returns a plain `bool`, so a
-  failed check cannot show the operands.
+- The operators apply only when at least one operand is a framework
+  expression type (see `extension::is_op`): a deprecated literal, such as
+  `1_i`, or a deprecated wrapper, such as `mt::to_i{ value }`. When
+  neither operand is, the standard operator is selected; it returns a plain
+  `bool`, so a failed check cannot show the operands.
 - The overloaded `and` and `or` operators evaluate both operands before
   the check, so they do not short-circuit like the built-in ones.
 

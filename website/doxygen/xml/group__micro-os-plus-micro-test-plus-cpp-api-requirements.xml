@@ -80,8 +80,8 @@ Initialises the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test_
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="1705" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="683" bodyend="697"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1ab81139f2b0c47e93b7d488976fcbbd66" compoundref="check-result-inlines_8h" startline="101" endline="129">micro_os_plus::micro_test_plus::detail::check_result::init</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/test.h" line="1707" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/test-inlines.h" bodystart="683" bodyend="697"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1check__result_1ab81139f2b0c47e93b7d488976fcbbd66" compoundref="check-result-inlines_8h" startline="102" endline="130">micro_os_plus::micro_test_plus::detail::check_result::init</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a82e48e546c5a5034be69412c1641482d" compoundref="test-inlines_8h" startline="605" endline="609">micro_os_plus::micro_test_plus::test_case::is_misdirected</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case_1a9b25dc50ced0df2821d7a984eb142c1a" compoundref="test_8cpp" startline="444" endline="461">micro_os_plus::micro_test_plus::test_case::report_misdirected</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a0726a1bc3b6f16245cb8a4b42fe0e70caba12fb48e2d23bb2bd2819f64d02ec7e" compoundref="check-result_8h" startline="110">micro_os_plus::micro_test_plus::detail::requirement</references>

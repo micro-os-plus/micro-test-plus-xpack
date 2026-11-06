@@ -172,8 +172,8 @@ namespace micro_os_plus::micro_test_plus
      * Used only by the deprecated floating-point wrappers, it is available
      * only when `MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED` is defined.
      *
-     * @deprecated To be removed with the deprecated floating-point
-     * wrappers (since 6.0.0).
+     * @deprecated to be removed with the deprecated floating-point
+     * wrappers (since 6.0.0)
      *
      * @tparam Lhs_T The type of the left-hand operand.
      * @tparam Rhs_T The type of the right-hand operand.
@@ -453,8 +453,8 @@ namespace micro_os_plus::micro_test_plus
        * Used only by the tolerance of the deprecated floating-point
        * wrappers.
        *
-       * @deprecated To be removed with the deprecated floating-point
-       * wrappers (since 6.0.0).
+       * @deprecated to be removed with the deprecated floating-point
+       * wrappers (since 6.0.0)
        */
       static constexpr bool within_tolerance_result = true;
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
@@ -512,8 +512,8 @@ namespace micro_os_plus::micro_test_plus
        * Used only by the tolerance of the deprecated floating-point
        * wrappers.
        *
-       * @deprecated To be removed with the deprecated floating-point
-       * wrappers (since 6.0.0).
+       * @deprecated to be removed with the deprecated floating-point
+       * wrappers (since 6.0.0)
        */
       static constexpr bool within_tolerance_result = false;
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
@@ -571,8 +571,8 @@ namespace micro_os_plus::micro_test_plus
        * Used only by the tolerance of the deprecated floating-point
        * wrappers.
        *
-       * @deprecated To be removed with the deprecated floating-point
-       * wrappers (since 6.0.0).
+       * @deprecated to be removed with the deprecated floating-point
+       * wrappers (since 6.0.0)
        */
       static constexpr bool within_tolerance_result = false;
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
@@ -630,8 +630,8 @@ namespace micro_os_plus::micro_test_plus
        * Used only by the tolerance of the deprecated floating-point
        * wrappers.
        *
-       * @deprecated To be removed with the deprecated floating-point
-       * wrappers (since 6.0.0).
+       * @deprecated to be removed with the deprecated floating-point
+       * wrappers (since 6.0.0)
        */
       static constexpr bool within_tolerance_result = true;
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
@@ -689,8 +689,8 @@ namespace micro_os_plus::micro_test_plus
        * Used only by the tolerance of the deprecated floating-point
        * wrappers.
        *
-       * @deprecated To be removed with the deprecated floating-point
-       * wrappers (since 6.0.0).
+       * @deprecated to be removed with the deprecated floating-point
+       * wrappers (since 6.0.0)
        */
       static constexpr bool within_tolerance_result = false;
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
@@ -748,8 +748,8 @@ namespace micro_os_plus::micro_test_plus
        * Used only by the tolerance of the deprecated floating-point
        * wrappers.
        *
-       * @deprecated To be removed with the deprecated floating-point
-       * wrappers (since 6.0.0).
+       * @deprecated to be removed with the deprecated floating-point
+       * wrappers (since 6.0.0)
        */
       static constexpr bool within_tolerance_result = true;
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
@@ -1165,8 +1165,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Derived from `unary_op`, this struct negates a single sub-expression,
      * enabling test writers to assert that a condition does not hold. The
-     * negation result is computed at construction time, ensuring consistent
-     * reporting throughout the framework.
+     * negation result is computed at construction time.
      *
      * A temporary is moved into the comparator, and a named
      * sub-expression is copied (see `stored_operand_t`).
@@ -1939,6 +1938,7 @@ namespace micro_os_plus::micro_test_plus
     // ------------------------------------------------------------------------
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-customisation
      * @brief Concept satisfied when `T` is a valid operand of the
      * approximate comparator.
      *

@@ -258,7 +258,7 @@ namespace micro_os_plus::micro_test_plus
                   = reflection::source_location::current ());
 
     /**
-     * @brief Gets the name.
+     * @brief Returns the name.
      *
      * @par Parameters
      *   None.
@@ -269,7 +269,7 @@ namespace micro_os_plus::micro_test_plus
     name (void) const noexcept;
 
     /**
-     * @brief Gets the location where the name was given.
+     * @brief Returns the location where the name was given.
      *
      * @par Parameters
      *   None.
@@ -444,7 +444,7 @@ namespace micro_os_plus::micro_test_plus
       // ----------------------------------------------------------------------
 
       /**
-       * @brief Gets the node name.
+       * @brief Returns the node name.
        *
        * @par Parameters
        *   None.
@@ -454,7 +454,7 @@ namespace micro_os_plus::micro_test_plus
       name (void) const noexcept;
 
       /**
-       * @brief Gets the totals of the node.
+       * @brief Returns the totals of the node.
        *
        * @details
        * The reference is read-only, for the `const` and the non-`const`
@@ -472,7 +472,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
       /**
-       * @name Deprecated Functions
+       * @name Deprecated Functions of runnable_base
        * @{
        */
 
@@ -570,7 +570,7 @@ namespace micro_os_plus::micro_test_plus
 
     protected:
       /**
-       * @brief Gets the test runner that owns this test runnable.
+       * @brief Returns the test runner that owns this test runnable.
        *
        * @details
        * Protected, since the runner is internal to the framework; it is
@@ -589,7 +589,7 @@ namespace micro_os_plus::micro_test_plus
       test_runner (void) const noexcept;
 
       /**
-       * @brief Gets the test reporter associated with this test runnable.
+       * @brief Returns the test reporter associated with this test runnable.
        *
        * @details
        * Protected, since the reporter is internal to the framework; it is
@@ -607,7 +607,7 @@ namespace micro_os_plus::micro_test_plus
       test_reporter (void) const noexcept;
 
       /**
-       * @brief Gets the innermost test case being run by the owning
+       * @brief Returns the innermost test case being run by the owning
        * runner, if any.
        *
        * @details
@@ -1225,7 +1225,7 @@ namespace micro_os_plus::micro_test_plus
      * do not accept.
      *
      * @details
-     * A value that is neither a framework expression nor contextually
+     * A value that is neither a framework expression type nor contextually
      * convertible to `bool`, for example a `std::string`, and, if the
      * deprecated functionality is not enabled, the string literals, the
      * arrays, and the function names, which only the deprecated
@@ -1530,7 +1530,9 @@ namespace micro_os_plus::micro_test_plus
      * ts.test_each ("Sizes", std::vector<int>{ 1, 16, 512 },
      *               [] (auto& t, int size) { t.expect (mt::gt (size, 0)); });
      * ts.test_each ("Types", std::tuple{ 42, 1.5, "text" },
-     *               [] (auto& t, const auto& value) { ... });
+     *               [] (auto& t, const auto& value) {
+     *                 t.expect (mt::eq (value, value));
+     *               });
      * @endcode
      *
      * Each test case is named after the common name, followed by the
@@ -1759,6 +1761,9 @@ namespace micro_os_plus::micro_test_plus
      * @param result The check result, a temporary created by the caller as
      * the default argument, which the applications do not pass.
      * @return A reference to the check result.
+     *
+     * @deprecated the argument is always true; write the condition
+     * (since 6.0.0)
      */
     template <class Expr_T>
       requires detail::legacy_checkable<Expr_T>
@@ -1783,6 +1788,9 @@ namespace micro_os_plus::micro_test_plus
      * @param result The check result, a temporary created by the caller as
      * the default argument, which the applications do not pass.
      * @return A reference to the check result.
+     *
+     * @deprecated the argument is always true; write the condition
+     * (since 6.0.0)
      */
     template <class Expr_T>
       requires detail::legacy_checkable<Expr_T>
@@ -2230,7 +2238,9 @@ namespace micro_os_plus::micro_test_plus
      * ts.test_each ("Sizes", std::vector<int>{ 1, 16, 512 },
      *               [] (auto& t, int size) { t.expect (mt::gt (size, 0)); });
      * ts.test_each ("Types", std::tuple{ 42, 1.5, "text" },
-     *               [] (auto& t, const auto& value) { ... });
+     *               [] (auto& t, const auto& value) {
+     *                 t.expect (mt::eq (value, value));
+     *               });
      * @endcode
      *
      * Each test case is named after the common name, followed by the
@@ -2291,7 +2301,7 @@ namespace micro_os_plus::micro_test_plus
 
 #if defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
     /**
-     * @name Deprecated Functions
+     * @name Deprecated Functions of suite
      * @{
      */
 
@@ -2793,7 +2803,7 @@ namespace micro_os_plus::micro_test_plus
 
   private:
     /**
-     * @brief Insert this suite into the list of suites, or reject it.
+     * @brief Inserts this suite into the list of suites, or reject it.
      *
      * @details
      * Called by the constructors, after the base was constructed. The

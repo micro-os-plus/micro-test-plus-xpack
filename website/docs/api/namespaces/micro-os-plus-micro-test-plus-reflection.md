@@ -59,7 +59,7 @@ namespace micro_os_plus::micro_test_plus::reflection { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Extracts the type name from the <span class="doxyComputerOutput">__PRETTY_FUNCTION__</span> macro. <a href="#a6580ad54ad22a1d3ab43a1d9d49d1f26">More...</a></p>
+<p>Extracts the type name from the <span class="doxyComputerOutput">__PRETTY_FUNCTION__</span> identifier. <a href="#a6580ad54ad22a1d3ab43a1d9d49d1f26">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -90,7 +90,7 @@ namespace micro_os_plus::micro_test_plus::reflection { ... }
 <p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection">reflection</a></span> namespace provides facilities for obtaining source location information and type names at compile time, for the reports of the checks.</p>
 
 
-<p>It includes a local implementation of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source_location</a></span> for standard libraries that do not yet provide <span class="doxyComputerOutput">std::source_location</span>, as well as utilities for extracting file names from paths and concise type names from the compiler-specific <span class="doxyComputerOutput">__PRETTY_FUNCTION__</span> macro.</p>
+<p>It includes a local implementation of <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">source_location</a></span> for standard libraries that do not yet provide <span class="doxyComputerOutput">std::source_location</span>, as well as a utility for extracting concise type names from the compiler-specific <span class="doxyComputerOutput">__PRETTY_FUNCTION__</span> identifier.</p>
 
 
 <div class="doxySectionDef">
@@ -122,10 +122,10 @@ namespace micro_os_plus::micro_test_plus::reflection { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Extracts the type name from the <span class="doxyComputerOutput">__PRETTY_FUNCTION__</span> macro.</p>
+<p>Extracts the type name from the <span class="doxyComputerOutput">__PRETTY_FUNCTION__</span> identifier.</p>
 
 
-<p>This function template parses the compiler-specific <span class="doxyComputerOutput">__PRETTY_FUNCTION__</span> macro to extract a concise type name for the template parameter <span class="doxyComputerOutput">T</span>.</p>
+<p>This function template parses the compiler-specific <span class="doxyComputerOutput">__PRETTY_FUNCTION__</span> identifier to extract a concise type name for the template parameter <span class="doxyComputerOutput">T</span>.</p>
 
 
 <p>Rather than relying on fixed character offsets (which are fragile across compiler versions and namespace changes), the implementation searches for the marker that introduces the template argument in the function signature string:</p>
@@ -230,6 +230,6 @@ The documentation for this namespace was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

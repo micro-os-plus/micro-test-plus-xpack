@@ -181,7 +181,7 @@ keywords:
 <p>C++ source file with implementations for the µTest++ test reporter member functions.</p>
 
 
-<p>This source file contains the core implementations for the test reporting facilities of the µTest++ framework. It provides lifecycle and utility behaviour for reporters, including output-file handling, informational banner emission, buffering helpers, stream operators, the formatting of the totals and of the elapsed times, and pass/fail dispatch to reporter-specific prefix/suffix hooks. The command-line options are parsed by the runner.</p>
+<p>This source file contains the core implementations for the test reporting facilities of the µTest++ framework. It provides lifecycle and utility behaviour for reporters, including output-file handling, informational banner emission, buffering helpers, stream operators, the formatting of the totals and of the elapsed times, and pass/fail dispatch to reporter-specific prefix/suffix hooks. The command-line options are parsed by <span class="doxyComputerOutput">runner_options</span>.</p>
 
 
 <p>Concrete formatting behaviour is implemented by derived reporters (<span class="doxyComputerOutput">reporter_human</span> and <span class="doxyComputerOutput">reporter_tap</span>).</p>
@@ -1274,6 +1274,6 @@ The file content with the documentation metadata removed is:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

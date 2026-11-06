@@ -443,7 +443,7 @@
     <detaileddescription>
 <para>This header provides the <computeroutput>check_result</computeroutput> class, the object returned by <computeroutput>expect()</computeroutput> and <computeroutput>require()</computeroutput>, together with the <computeroutput>check_kind</computeroutput> enumeration and the <computeroutput>failure_info</computeroutput> structure, passed to the reporter. The check result captures the result of one check and reports the outcome only when it is destroyed (i.e. at the semicolon following the expression statement), after the optional user message was appended via <computeroutput>operator&lt;&lt;</computeroutput>.</para>
 <para>It also defines <computeroutput>failed_requirement</computeroutput>, the exception thrown to stop a test case after a failed <computeroutput>require()</computeroutput>.</para>
-<para>Both live in the <computeroutput>detail</computeroutput> namespace and are not part of the public API.</para>
+<para>All live in the <computeroutput>detail</computeroutput> namespace and are not part of the public API.</para>
 <para>This file is included by <computeroutput><ref refid="micro-test-plus_8h" kindref="compound">micro-os-plus/micro-test-plus.h</ref></computeroutput>, which is the header that the applications include. </para>
     </detaileddescription>
     <programlisting>

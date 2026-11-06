@@ -121,7 +121,7 @@ class micro_os_plus::micro_test_plus::located_name { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Gets the location where the name was given. <a href="#ade35aacdde746abad6be66a9fcab251b">More...</a></p>
+<p>Returns the location where the name was given. <a href="#ade35aacdde746abad6be66a9fcab251b">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -135,7 +135,7 @@ class micro_os_plus::micro_test_plus::located_name { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Gets the name. <a href="#aa2ec3a20974c59b2f5a64a50b41db444">More...</a></p>
+<p>Returns the name. <a href="#aa2ec3a20974c59b2f5a64a50b41db444">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -613,7 +613,7 @@ class micro_os_plus::micro_test_plus::located_name { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Gets the location where the name was given.</p>
+<p>Returns the location where the name was given.</p>
 
 
 <dl class="doxySectionUser">
@@ -677,7 +677,7 @@ class micro_os_plus::micro_test_plus::located_name { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Gets the name.</p>
+<p>Returns the name.</p>
 
 
 <dl class="doxySectionUser">
@@ -813,6 +813,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

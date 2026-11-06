@@ -735,8 +735,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Constructs a comparator object, with the `equal_to` tag, from the two
      * operands and returns it. The comparator evaluates to `true` if the
-     * operands are equal. At least one operand must be a framework type (see
-     * `extension::is_op`).
+     * operands are equal. At least one operand must be a framework expression
+     * type (see `extension::is_op`).
      */
     template <class Lhs_T, class Rhs_T>
       requires extension::any_op<std::remove_cvref_t<Lhs_T>,
@@ -753,8 +753,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Constructs a comparator object, with the `not_equal_to` tag, from the
      * two operands and returns it. The comparator evaluates to `true` if the
-     * operands are not equal. At least one operand must be a framework type
-     * (see `extension::is_op`).
+     * operands are not equal. At least one operand must be a framework
+     * expression type (see `extension::is_op`).
      */
     template <class Lhs_T, class Rhs_T>
       requires extension::any_op<std::remove_cvref_t<Lhs_T>,
@@ -771,8 +771,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Constructs a comparator object, with the `greater` tag, from the two
      * operands and returns it. The comparator evaluates to `true` if `lhs` is
-     * greater than `rhs`. At least one operand must be a framework type (see
-     * `extension::is_op`).
+     * greater than `rhs`. At least one operand must be a framework expression
+     * type (see `extension::is_op`).
      */
     template <class Lhs_T, class Rhs_T>
       requires extension::any_op<std::remove_cvref_t<Lhs_T>,
@@ -790,7 +790,7 @@ namespace micro_os_plus::micro_test_plus
      * Constructs a comparator object, with the `greater_equal` tag, from the
      * two operands and returns it. The comparator evaluates to `true` if `lhs`
      * is greater than or equal to `rhs`. At least one operand must be a
-     * framework type (see `extension::is_op`).
+     * framework expression type (see `extension::is_op`).
      */
     template <class Lhs_T, class Rhs_T>
       requires extension::any_op<std::remove_cvref_t<Lhs_T>,
@@ -807,8 +807,8 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Constructs a comparator object, with the `less` tag, from the two
      * operands and returns it. The comparator evaluates to `true` if `lhs` is
-     * less than `rhs`. At least one operand must be a framework type (see
-     * `extension::is_op`).
+     * less than `rhs`. At least one operand must be a framework expression
+     * type (see `extension::is_op`).
      */
     template <class Lhs_T, class Rhs_T>
       requires extension::any_op<std::remove_cvref_t<Lhs_T>,
@@ -842,7 +842,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Constructs an `and_op` logical conjunction object from the two operands
      * and returns it. The object evaluates to `true` if both operands are
-     * true. At least one operand must be a framework type (see
+     * true. At least one operand must be a framework expression type (see
      * `extension::is_op`).
      */
     template <class Lhs_T, class Rhs_T>
@@ -859,7 +859,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Constructs an `or_op` logical disjunction object from the two operands
      * and returns it. The object evaluates to `true` if at least one operand
-     * is true. At least one operand must be a framework type (see
+     * is true. At least one operand must be a framework expression type (see
      * `extension::is_op`).
      */
     template <class Lhs_T, class Rhs_T>
@@ -876,7 +876,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Constructs a `not_op` logical negator object from the operand and
      * returns it. The object evaluates to `true` if the operand is false. The
-     * operand must be a framework type (see `extension::is_op`).
+     * operand must be a framework expression type (see `extension::is_op`).
      */
     template <class T>
       requires extension::is_op<std::remove_cvref_t<T>>

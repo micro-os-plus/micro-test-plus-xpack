@@ -346,8 +346,8 @@
 <para>C++ header file with inline implementations for the µTest++ mathematical utilities. </para>
     </briefdescription>
     <detaileddescription>
-<para>This header provides the inline implementations for the mathematical utility templates used within the µTest++ framework. It defines constexpr logic for common mathematical operations, including absolute value, minimum value selection, exponentiation, and compile-time parsing of numeric values from character sequences.</para>
-<para>These utilities are lightweight, <computeroutput>constexpr</computeroutput> or <computeroutput>consteval</computeroutput>, and support both integral and floating-point types.</para>
+<para>This header provides the inline implementations for the mathematical utility templates used within the µTest++ framework. It defines the <computeroutput>constexpr</computeroutput> absolute value, used by the approximate comparison, and, only if the deprecated functionality is enabled, the minimum value, used by the tolerance of the deprecated wrappers. The exponentiation and the compile-time parsing of the numeric literals are in <computeroutput><ref refid="deprecated-inlines_8h" kindref="compound">deprecated-inlines.h</ref></computeroutput>.</para>
+<para>These utilities support both integral and floating-point types.</para>
 <para>All definitions reside within the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math" kindref="compound">micro_os_plus::micro_test_plus::detail::math</ref></computeroutput> namespace, since they are implementation details of the literals and of the comparisons, not part of the public API.</para>
 <para>This file is included by <computeroutput><ref refid="math_8h" kindref="compound">math.h</ref></computeroutput>; the applications include <computeroutput><ref refid="micro-test-plus_8h" kindref="compound">micro-os-plus/micro-test-plus.h</ref></computeroutput>, not this file. </para>
     </detaileddescription>

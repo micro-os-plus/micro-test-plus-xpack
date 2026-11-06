@@ -30,10 +30,8 @@
  * All declarations are conditionally compiled under `__cpp_exceptions` and
  * reside within the `micro_os_plus::micro_test_plus` namespace.
  *
- * This header is located in the `include/micro-os-plus/micro-test-plus`
- * folder.
- * Users should include `"micro-os-plus/micro-test-plus.h"` rather than this
- * header directly.
+ * This file is included by `micro-os-plus/micro-test-plus.h`, which is the
+ * header that the applications include.
  */
 
 #ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_EXCEPTIONS_H_

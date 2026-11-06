@@ -118,7 +118,7 @@ keywords:
 <dd>
 <ul class="doxyList ">
 <li>All the operands are evaluated before the check; unlike <span class="doxyComputerOutput">&amp;&amp;</span> and <span class="doxyComputerOutput">||</span>, the functions do not stop at the first operand that decides the result, so do not write <span class="doxyComputerOutput">mt::all_of (mt::ne (p, nullptr), mt::eq (*p, 1))</span>.</li>
-<li>After a <span class="doxyComputerOutput">using namespace std</span>, an unqualified <span class="doxyComputerOutput">all_of()</span> or <span class="doxyComputerOutput">any_of()</span> with three or more operands of the same type selects the standard algorithm, which does not compile; write <span class="doxyComputerOutput">mt::all_of()</span> and <span class="doxyComputerOutput">mt::any_of()</span>.</li>
+<li>After a <span class="doxyComputerOutput">using namespace std</span>, an unqualified <span class="doxyComputerOutput">all_of()</span> or <span class="doxyComputerOutput">any_of()</span> with three or more operands of the same type selects the standard algorithm, which does not compile, and an unqualified <span class="doxyComputerOutput">negate()</span> is ambiguous with <span class="doxyComputerOutput">std::negate</span>; write <span class="doxyComputerOutput">mt::all_of()</span>, <span class="doxyComputerOutput">mt::any_of()</span>, and <span class="doxyComputerOutput">mt::negate()</span>.</li>
 </ul>
 </dd>
 </dl>
@@ -467,6 +467,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

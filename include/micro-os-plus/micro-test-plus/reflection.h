@@ -27,11 +27,10 @@
  * reports of the checks.
  *
  * The reflection utilities include a local implementation of `source_location`
- * for standard libraries that do not yet provide `std::source_location`, a
- * function to extract the file name from a path, and a function to extract
- * concise type names using the compiler-specific `__PRETTY_FUNCTION__`
- * macro. These facilities enable precise identification of code locations
- * and types in test reports.
+ * for standard libraries that do not yet provide `std::source_location`,
+ * and a function to extract concise type names using the compiler-specific
+ * `__PRETTY_FUNCTION__` identifier. These facilities enable precise
+ * identification of code locations and types in test reports.
  *
  * All definitions reside within the
  * `micro_os_plus::micro_test_plus::reflection` namespace.
@@ -96,8 +95,8 @@ namespace micro_os_plus::micro_test_plus
    *
    * It includes a local implementation of `source_location` for standard
    * libraries that do not yet provide `std::source_location`, as well as
-   * utilities for extracting file names from paths and concise type names
-   * from the compiler-specific `__PRETTY_FUNCTION__` macro.
+   * a utility for extracting concise type names from the compiler-specific
+   * `__PRETTY_FUNCTION__` identifier.
    */
   namespace reflection
   {
@@ -161,7 +160,7 @@ namespace micro_os_plus::micro_test_plus
               ) noexcept;
 
       /**
-       * @brief Gets the file name associated with this source location.
+       * @brief Returns the file name associated with this source location.
        *
        * @par Parameters
        *   None.
@@ -171,7 +170,7 @@ namespace micro_os_plus::micro_test_plus
       file_name (void) const noexcept;
 
       /**
-       * @brief Gets the line number associated with this source location.
+       * @brief Returns the line number associated with this source location.
        *
        * @par Parameters
        *   None.
@@ -201,7 +200,7 @@ namespace micro_os_plus::micro_test_plus
 #endif // defined(__cpp_lib_source_location)
 
     /**
-     * @brief Extracts the type name from the `__PRETTY_FUNCTION__` macro.
+     * @brief Extracts the type name from the `__PRETTY_FUNCTION__` identifier.
      *
      * @details
      * The name is spelled as the compiler prints it, and is used to

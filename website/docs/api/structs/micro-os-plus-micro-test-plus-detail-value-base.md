@@ -556,7 +556,7 @@ struct micro_os_plus::micro_test_plus::detail::value_base&lt;T&gt; { ... }
 <p>It declares the <span class="doxyComputerOutput"><a href="#a4d0554be18a449d7b9176e868e631846">op_type</a></span> marker, so that all derived types satisfy the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span> concept without each struct needing to declare it.</p>
 
 
-<p>It does not derive from the empty <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/op">op</a></span> struct: a type with an empty base and only floating-point members, like <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">value</a>&lt;float&gt;</span>, is a homogeneous floating-point aggregate whose parameter passing with C++17 and later changed in GCC 10.1, and GCC emits a <span class="doxyComputerOutput">-Wpsabi</span> note for each function passing or returning it by value, like <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a></span>, on AArch64 and on 32-bit Arm with the hard-float ABI.</p>
+<p>It does not derive from the empty <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/op">op</a></span> struct: a type with an empty base and only floating-point members, like <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">value</a>&lt;float&gt;</span>, is a homogeneous floating-point aggregate whose parameter passing with C++17 and later changed in GCC 10.1, and GCC emits a <span class="doxyComputerOutput">-Wpsabi</span> note for each function passing or returning it by value, like <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions/#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a></span>, on AArch64 and on 32-bit Arm with the hard-float ABI.</p>
 
 
 <p>Definition at line 351 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>.</p>
@@ -903,6 +903,6 @@ The documentation for this struct was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

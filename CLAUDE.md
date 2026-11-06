@@ -30,7 +30,7 @@ programs against it on many toolchains and platforms.
   `utility.h`, `exceptions.h`, `detail.h`, and `deprecated.h`, which
   groups the deprecated
   definitions that are not class members, including the operators, the
-  literals, and the type wrappers).
+  literals, and the value wrappers).
 - `include/micro-os-plus/micro-test-plus/inlines/*.h` — inline/template
   definitions for the above headers (kept separate from the declarations).
 - `src/*.cpp` — non-inline definitions, one file per header of the same

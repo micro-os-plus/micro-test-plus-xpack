@@ -245,7 +245,7 @@ keywords:
 <dl class="doxySectionUser">
 <dt>Comparing approximately</dt>
 <dd>
-<p>The comparison of floating-point values with <span class="doxyComputerOutput">eq()</span> is exact, so <span class="doxyComputerOutput">mt::eq (0.1 + 0.2, 0.3)</span> fails. To accept a difference, use <span class="doxyComputerOutput">mt::approx (a, b, epsilon)</span>, which is true when the operands differ by at most <span class="doxyComputerOutput">epsilon</span>, the limit included:</p>
+<p>The comparison of floating-point values with <span class="doxyComputerOutput">eq()</span> is exact, so <span class="doxyComputerOutput">mt::eq (0.1 + 0.2, 0.3)</span> fails. To accept a difference, use <span class="doxyComputerOutput">mt::approx (a, b, epsilon)</span>, which is true when the operands differ by at most <span class="doxyComputerOutput">epsilon</span>, the limit included (for floating-point values, the distance is computed and rounded, so a distance that should be equal to a decimal limit, such as <span class="doxyComputerOutput">mt::approx (1.0, 1.1, 0.1)</span>, may be slightly above it and fail; do not rely on the exact limit):</p>
 
 
 <ul class="doxyList ">
@@ -320,7 +320,7 @@ keywords:
 <p>Approximate equality comparator, with an explicit tolerance.</p>
 
 
-<p>The comparison succeeds if the distance between <span class="doxyComputerOutput">lhs</span> and <span class="doxyComputerOutput">rhs</span> is less than or equal to <span class="doxyComputerOutput">epsilon</span>, so a tolerance of zero requires equal values. The operands are numbers, integral or floating-point, possibly of different types (the deprecated value wrappers and numeric literals are also accepted, and their own tolerance is not used). For the integers, the distance is computed exactly, also for operands of different signedness, so <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gafe47800a219b00fcccf0a1dc596dbe20">approx</a> (0u, -1, 2)</span> succeeds; for the other types, in their common floating-point type. A failure is reported as <span class="doxyComputerOutput">lhs ~ (rhs +/- epsilon)</span>.</p>
+<p>The comparison succeeds if the distance between <span class="doxyComputerOutput">lhs</span> and <span class="doxyComputerOutput">rhs</span> is less than or equal to <span class="doxyComputerOutput">epsilon</span>, so a tolerance of zero requires equal values. The operands are numbers, integral or floating-point, possibly of different types (the deprecated value wrappers and numeric literals are also accepted, and their own tolerance is not used). For the integers, the distance is computed exactly, also for operands of different signedness, so <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions/#gafe47800a219b00fcccf0a1dc596dbe20">approx</a> (0u, -1, 2)</span> succeeds; for the other types, in their common floating-point type. A failure is reported as <span class="doxyComputerOutput">lhs ~ (rhs +/- epsilon)</span>.</p>
 
 
 <div class="doxyProgramListing">
@@ -331,7 +331,7 @@ keywords:
 </div>
 
 
-<p>The deprecated <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gafe47800a219b00fcccf0a1dc596dbe20">approx</a> (value, epsilon)</span> form, available only with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-config/#ga67c701de5426ac340584ed038494a873">MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</a></span>, is a value wrapper instead, which applies its tolerance to the six comparisons and to the operators; it accepts only floating-point values.</p>
+<p>The deprecated <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions/#gafe47800a219b00fcccf0a1dc596dbe20">approx</a> (value, epsilon)</span> form, available only with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-config/#ga67c701de5426ac340584ed038494a873">MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</a></span>, is a value wrapper instead, which applies its tolerance to the six comparisons and to the operators; it accepts only floating-point values.</p>
 
 
 <dl class="doxyParamsList">
@@ -386,7 +386,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gafe47800a219b00fcccf0a1dc596dbe20">approx</a></span> function template constructs a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/approx-op">detail::approx_op</a></span> from the forwarded operands and tolerance; the operands are numbers, so <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand()</a></span>, which converts the C strings, is not needed.</p>
+<p>The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions/#gafe47800a219b00fcccf0a1dc596dbe20">approx</a></span> function template constructs a <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/approx-op">detail::approx_op</a></span> from the forwarded operands and tolerance; the operands are numbers, so <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a51e86043001b197561806d5c6297041b">detail::as_operand()</a></span>, which converts the C strings, is not needed.</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h/#l00306">306</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines-h">function-comparators-inlines.h</a>.</p>
@@ -394,7 +394,7 @@ keywords:
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga0d374ffc56933dccd3ffba008ab7eaa5">306</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gafe47800a219b00fcccf0a1dc596dbe20">approx</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs, Epsilon_T&amp;&amp; epsilon)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga0d374ffc56933dccd3ffba008ab7eaa5">306</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions/#gafe47800a219b00fcccf0a1dc596dbe20">approx</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs, Epsilon_T&amp;&amp; epsilon)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">307</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">308</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/approx-op">detail::approx_op</a>{ std::forward&lt;Lhs_T&gt; (lhs),</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">309</span><span class="doxyLineContent"><span class="doxyHighlight">                              std::forward&lt;Rhs_T&gt; (rhs),</span></span></div>
@@ -404,7 +404,7 @@ keywords:
 </div>
 
 
-<p>Reference <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gafe47800a219b00fcccf0a1dc596dbe20">micro_os_plus::micro_test_plus::approx</a>.</p>
+<p>Reference <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions/#gafe47800a219b00fcccf0a1dc596dbe20">micro_os_plus::micro_test_plus::approx</a>.</p>
 
 </div>
 </div>
@@ -977,6 +977,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

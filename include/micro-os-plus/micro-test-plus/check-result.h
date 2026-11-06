@@ -27,7 +27,7 @@
  * It also defines `failed_requirement`, the exception thrown to stop a
  * test case after a failed `require()`.
  *
- * Both live in the `detail` namespace and are not part of the
+ * All live in the `detail` namespace and are not part of the
  * public API.
  *
  * This file is included by `micro-os-plus/micro-test-plus.h`, which is the

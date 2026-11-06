@@ -31,7 +31,7 @@
  * By consolidating the formatting operators into a single class (using the
  * shared `detail::append_number()` helper for numbers), the `reporter` is
  * relieved of those responsibilities, and `detail::check_result` can
- * pre-format expression text at construction time without requiring
+ * pre-format expression text, when initialised, without requiring
  * `reporter` or `test_case` to be complete at that point.
  *
  * The formatter shares the colour configuration of the owning `reporter`:

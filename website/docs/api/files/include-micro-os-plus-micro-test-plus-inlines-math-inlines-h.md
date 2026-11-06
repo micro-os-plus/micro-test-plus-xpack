@@ -131,10 +131,10 @@ keywords:
 <p>C++ header file with inline implementations for the µTest++ mathematical utilities.</p>
 
 
-<p>This header provides the inline implementations for the mathematical utility templates used within the µTest++ framework. It defines constexpr logic for common mathematical operations, including absolute value, minimum value selection, exponentiation, and compile-time parsing of numeric values from character sequences.</p>
+<p>This header provides the inline implementations for the mathematical utility templates used within the µTest++ framework. It defines the <span class="doxyComputerOutput">constexpr</span> absolute value, used by the approximate comparison, and, only if the deprecated functionality is enabled, the minimum value, used by the tolerance of the deprecated wrappers. The exponentiation and the compile-time parsing of the numeric literals are in <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a></span>.</p>
 
 
-<p>These utilities are lightweight, <span class="doxyComputerOutput">constexpr</span> or <span class="doxyComputerOutput">consteval</span>, and support both integral and floating-point types.</p>
+<p>These utilities support both integral and floating-point types.</p>
 
 
 <p>All definitions reside within the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math">micro_os_plus::micro_test_plus::detail::math</a></span> namespace, since they are implementation details of the literals and of the comparisons, not part of the public API.</p>
@@ -422,6 +422,6 @@ The file content with the documentation metadata removed is:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

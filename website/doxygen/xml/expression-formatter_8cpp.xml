@@ -837,7 +837,7 @@ The characters selected by <computeroutput><ref refid="namespacemicro__os__plus_
           <declname>capacity</declname>
         </param>
         <briefdescription>
-<para>Gets the text of a C string held in a buffer of a known capacity. </para>
+<para>Returns the text of a C string held in a buffer of a known capacity. </para>
         </briefdescription>
         <detaileddescription>
 <para>With <computeroutput>npos</computeroutput>, the length is computed by the constructor of the view, which reads up to the terminator; otherwise only the <computeroutput>capacity</computeroutput> characters are searched for the terminator, so that an array without one is not read beyond its end.</para>

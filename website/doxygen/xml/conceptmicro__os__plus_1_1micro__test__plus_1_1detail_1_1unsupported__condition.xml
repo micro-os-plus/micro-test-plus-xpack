@@ -21,7 +21,7 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1uns
 <para>Concept satisfied by a value that <computeroutput>expect()</computeroutput> and <computeroutput>require()</computeroutput> do not accept. </para>
     </briefdescription>
     <detaileddescription>
-<para>A value that is neither a framework expression nor contextually convertible to <computeroutput>bool</computeroutput>, for example a <computeroutput>std::string</computeroutput>, and, if the deprecated functionality is not enabled, the string literals, the arrays, and the function names, which only the deprecated overloads accept. Selects the overloads that stop the compilation with a message that states what the functions take.</para>
+<para>A value that is neither a framework expression type nor contextually convertible to <computeroutput>bool</computeroutput>, for example a <computeroutput>std::string</computeroutput>, and, if the deprecated functionality is not enabled, the string literals, the arrays, and the function names, which only the deprecated overloads accept. Selects the overloads that stop the compilation with a message that states what the functions take.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>T</parametername>

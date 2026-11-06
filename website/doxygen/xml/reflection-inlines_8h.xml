@@ -222,10 +222,10 @@
           <type>void</type>
         </param>
         <briefdescription>
-<para>Extracts the type name from the <computeroutput>__PRETTY_FUNCTION__</computeroutput> macro. </para>
+<para>Extracts the type name from the <computeroutput>__PRETTY_FUNCTION__</computeroutput> identifier. </para>
         </briefdescription>
         <detaileddescription>
-<para>This function template parses the compiler-specific <computeroutput>__PRETTY_FUNCTION__</computeroutput> macro to extract a concise type name for the template parameter <computeroutput>T</computeroutput>.</para>
+<para>This function template parses the compiler-specific <computeroutput>__PRETTY_FUNCTION__</computeroutput> identifier to extract a concise type name for the template parameter <computeroutput>T</computeroutput>.</para>
 <para>Rather than relying on fixed character offsets (which are fragile across compiler versions and namespace changes), the implementation searches for the marker that introduces the template argument in the function signature string:</para>
 <para><itemizedlist>
 <listitem><para>Clang formats the signature as <computeroutput>"... [T = &lt;typename&gt;]"</computeroutput>, so the type name lies between the first <computeroutput>"[T = "</computeroutput> and the last <computeroutput>&apos;]&apos;</computeroutput>. The marker is searched for as a whole, since the type name may itself contain brackets (e.g. <computeroutput>int[3]</computeroutput>).</para>
@@ -252,7 +252,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" line="149" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" bodystart="149" bodyend="180" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="221" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" line="149" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/reflection-inlines.h" bodystart="149" bodyend="180" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/reflection.h" declline="220" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" compoundref="reflection-inlines_8h" startline="149" endline="180">micro_os_plus::micro_test_plus::reflection::type_name</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a6734ab254c188ce23514b5e84dd1232f" compoundref="expression-formatter-inlines_8h" startline="765" endline="780">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1reflection_1a6580ad54ad22a1d3ab43a1d9d49d1f26" compoundref="reflection-inlines_8h" startline="149" endline="180">micro_os_plus::micro_test_plus::reflection::type_name</referencedby>

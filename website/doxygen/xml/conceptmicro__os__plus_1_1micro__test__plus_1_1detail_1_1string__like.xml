@@ -15,7 +15,7 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1str
           or std::convertible_to&lt;const T&amp;, std::basic_string_view&lt;char16_t&gt;&gt;
           or std::convertible_to&lt;const T&amp;, std::basic_string_view&lt;char32_t&gt;&gt;</initializer>
     <conceptparts>
-      <codepart line="548">    <programlisting>
+      <codepart line="554">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">string_like<sp/>=<sp/>std::convertible_to&lt;const<sp/>T&amp;,<sp/>std::basic_string_view&lt;char&gt;&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>or<sp/>std::convertible_to&lt;const<sp/>T&amp;,<sp/>std::basic_string_view&lt;wchar_t&gt;&gt;</highlight></codeline>
@@ -40,6 +40,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1str
 </parameterlist>
 The <computeroutput>string_like</computeroutput> concept is satisfied when a <computeroutput>const</computeroutput> object of type <computeroutput>T</computeroutput> is implicitly convertible to a <computeroutput>std::basic_string_view</computeroutput> of <computeroutput>char</computeroutput>, <computeroutput>wchar_t</computeroutput>, <computeroutput>char8_t</computeroutput>, <computeroutput>char16_t</computeroutput>, or <computeroutput>char32_t</computeroutput>, as the standard strings and the string views are. It is used to detect the strings, which the formatter writes as text, not element by element (see <computeroutput>formattable_range</computeroutput>). A container that has only a member named <computeroutput>npos</computeroutput>, or that is not convertible, is not a string. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="547" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="553" column="5"/>
   </compounddef>
 </doxygen>

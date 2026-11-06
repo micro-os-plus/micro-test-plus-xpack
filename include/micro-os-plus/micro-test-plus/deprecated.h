@@ -31,7 +31,7 @@
  *   user-defined literals of the `literals` namespace, the `to_*` type
  *   wrappers, `to_t<T>`, and `approx (value, epsilon)`, deprecated since
  *   6.0.0 in favour of the function comparators;
- * - the v5.0.1 names of the type wrappers (`_i`, `_u8`, etc.);
+ * - the v5.0.1 names of the value wrappers (`_i`, `_u8`, etc.);
  * - the v5.0.1 names of the classes (`subtest`, `static_runner`,
  *   `detail::runner_totals`, and `detail::timestamps`);
  * - the `detail::timestamp` class;
@@ -53,8 +53,8 @@
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace.
  *
- * This file is intended for internal use within the framework and should not
- * be included directly by user code.
+ * This file is included by `micro-os-plus/micro-test-plus.h`, which is the
+ * header that the applications include.
  */
 
 #ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_H_
@@ -116,7 +116,7 @@ namespace micro_os_plus::micro_test_plus
 {
   // --------------------------------------------------------------------------
   // The value wrappers and the parsing of the numeric literals, used only
-  // by the deprecated literals and type wrappers, and the constants that
+  // by the deprecated literals and value wrappers, and the constants that
   // they define (moved here from `values.h` and `math.h`).
 
   namespace detail::math
@@ -438,7 +438,10 @@ namespace micro_os_plus::micro_test_plus
       static constexpr auto value = N;
 
       /**
-       * @brief Default constructor. Initialises the base with `N`.
+       * @brief Default constructor.
+       *
+       * @details
+       * Initialises the base with `N`.
        */
       constexpr integral_constant (void) noexcept;
 
@@ -792,6 +795,11 @@ namespace micro_os_plus::micro_test_plus
   // `function-comparators.h`.
 
   /**
+   * @name Deprecated Functions
+   * @{
+   */
+
+  /**
    * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions
    * @brief Deprecated generic logical **not** operation, the v5.0.1 name of
    * `negate()`.
@@ -875,6 +883,10 @@ namespace micro_os_plus::micro_test_plus
   [[deprecated ("use const_cast<T&> (since 6.0.0)"), nodiscard]] constexpr auto
   mut (const T& t) noexcept -> T&;
 
+  /**
+   * @}
+   */
+
   // --------------------------------------------------------------------------
 
   /**
@@ -886,17 +898,16 @@ namespace micro_os_plus::micro_test_plus
    * deprecated overloaded operators of the test checks.
    *
    * This namespace includes the equality, inequality, relational, and
-   * logical operators of the framework types, which apply to the
+   * logical operators of the framework expression types, which apply to the
    * strongly-typed constants (the user-defined literals) and to the
    * dynamic values (the wrappers).
    *
-   * @warning Please be aware that these operators
-   * may conflict with other operators defined within the application under
-   * test.
+   * @warning These operators may conflict with other operators defined
+   * within the application under test.
    *
    * To minimise conflicts with application-defined operators, these
    * overloads are enabled only when an operand is a framework expression
-   * or value wrapper (see `extension::is_op`). Constants typically
+   * type (see `extension::is_op`). Constants typically
    * require a literal suffix (e.g.,
    * `1_i`), while dynamic values should be wrapped using the provided
    * casting utilities (e.g., `mt::to_i{...}`). When neither operand is of
@@ -905,8 +916,8 @@ namespace micro_os_plus::micro_test_plus
    *
    * The operands are forwarded, as by the function comparators: the
    * temporaries are moved into the returned expression, and the named
-   * operands of class type, including the nested expressions, are
-   * referred to, without copies.
+   * operands are copied, unless they cannot be copied, when they are
+   * referred to.
    *
    * There are no operators for strings and containers: the standard
    * operators would be selected for `std::string` objects and for
@@ -914,10 +925,6 @@ namespace micro_os_plus::micro_test_plus
    * `std::string_view` objects would also replace the standard ones in the
    * application code that follows the using directive. Use `mt::eq()` and
    * `mt::ne()` to compare strings and containers.
-   *
-   * All definitions within this namespace are implemented in the
-   * `include/micro-os-plus/micro-test-plus` folder, ensuring a modular and
-   * maintainable codebase.
    *
    * @par Deprecated
    * Use the function comparators `eq()`, `ne()`, `gt()`, `ge()`, `lt()`,
@@ -933,8 +940,7 @@ namespace micro_os_plus::micro_test_plus
   {
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-operators
-     * @brief Deprecated equality operator. Matches only if at least one
-     * operand is a framework type (see `extension::is_op`).
+     * @brief Deprecated equality operator.
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -952,8 +958,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-operators
-     * @brief Deprecated non-equality operator. Matches only if at least one
-     * operand is a framework type (see `extension::is_op`).
+     * @brief Deprecated non-equality operator.
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -971,8 +976,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-operators
-     * @brief Deprecated greater than operator. Matches only if at least one
-     * operand is a framework type (see `extension::is_op`).
+     * @brief Deprecated greater than operator.
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -990,8 +994,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-operators
-     * @brief Deprecated greater than or equal operator. Matches only if at
-     * least one operand is a framework type (see `extension::is_op`).
+     * @brief Deprecated greater than or equal operator.
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -1009,8 +1012,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-operators
-     * @brief Deprecated less than operator. Matches only if at least one
-     * operand is a framework type (see `extension::is_op`).
+     * @brief Deprecated less than operator.
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -1028,8 +1030,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-operators
-     * @brief Deprecated less than or equal operator. Matches only if at least
-     * one operand is a framework type (see `extension::is_op`).
+     * @brief Deprecated less than or equal operator.
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -1047,8 +1048,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-operators
-     * @brief Deprecated logical `&&` (and) operator. Matches only if at least
-     * one operand is a framework type (see `extension::is_op`).
+     * @brief Deprecated logical `&&` (and) operator.
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -1066,8 +1066,7 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-operators
-     * @brief Deprecated logical `||` (or) operator. Matches only if at least
-     * one operand is a framework type (see `extension::is_op`).
+     * @brief Deprecated logical `||` (or) operator.
      *
      * @tparam Lhs_T Type of the left hand side operand.
      * @tparam Rhs_T Type of the right hand side operand.
@@ -1085,10 +1084,10 @@ namespace micro_os_plus::micro_test_plus
 
     /**
      * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-operators
-     * @brief Deprecated logical `!` (not) operator. Matches only if the
-     * operand is a framework type (see `extension::is_op`).
+     * @brief Deprecated logical `!` (not) operator.
      *
-     * @tparam T Type of the operand, constrained to the framework types.
+     * @tparam T Type of the operand, constrained to the framework expression
+     * types.
      *
      * @param t Operand to be logically negated.
      * @return A logical negator object that evaluates to true if the operand
@@ -1517,7 +1516,7 @@ namespace micro_os_plus::micro_test_plus
    */
 
   /**
-   * @name Type Wrappers
+   * @name Value Wrappers
    * @brief Strongly-typed wrappers for converting dynamic values and
    * expressions to specific types recognised by µTest++ comparators.
    *
@@ -1540,9 +1539,11 @@ namespace micro_os_plus::micro_test_plus
    * @par Example
    *
    * @code
+   * namespace mt = micro_os_plus::micro_test_plus;
+   *
    * int x = 42;
    * // Explicitly treat x as an int for test comparison.
-   * auto wrapped = to_i{x};
+   * auto wrapped = mt::to_i{x};
    * @endcode
    *
    * @since 3.2.0
@@ -1875,16 +1876,17 @@ namespace micro_os_plus::micro_test_plus
    * @par Example
    *
    * @code
+   * namespace mt = micro_os_plus::micro_test_plus;
+   *
    * MyType obj;
    * // Explicitly treat obj as MyType for test comparison.
-   * auto wrapped = to_t<MyType>{obj};
+   * auto wrapped = mt::to_t<MyType>{obj};
    * @endcode
    *
-   * @par Deprecated
+   * @par Replacement
    * Pass the plain value to the function comparators `eq()`, `ne()`,
    * `gt()`, `ge()`, `lt()`, and `le()` instead; the application types
-   * are reported with the `operator<<` of `expression_formatter`
-   * (since 6.0.0).
+   * are reported with the `operator<<` of `expression_formatter`.
    *
    * @headerfile micro-test-plus.h "micro-os-plus/micro-test-plus.h"
    */
@@ -1900,6 +1902,11 @@ namespace micro_os_plus::micro_test_plus
      */
     constexpr explicit to_t (const T& t);
   };
+
+  /**
+   * @name Deprecated Functions
+   * @{
+   */
 
   /**
    * @ingroup micro-os-plus-micro-test-plus-cpp-api-deprecated-literals
@@ -1942,6 +1949,10 @@ namespace micro_os_plus::micro_test_plus
   approx (T value, std::type_identity_t<T> epsilon) noexcept
       -> detail::value<T>;
 
+  /**
+   * @}
+   */
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 // The aliases refer to the `to_*` names, deprecated too.
@@ -1954,8 +1965,8 @@ namespace micro_os_plus::micro_test_plus
    */
 
   /**
-   * @name Deprecated Type Wrappers
-   * @brief The v5.0.1 names of the `to_*` type wrappers.
+   * @name Deprecated Value Wrappers
+   * @brief The v5.0.1 names of the `to_*` value wrappers.
    *
    * @details
    * The Boost UT style names, with a leading underscore, kept for
@@ -1971,7 +1982,7 @@ namespace micro_os_plus::micro_test_plus
    *
    * @par Deprecated
    * Pass the plain values to the function comparators `eq()`, `ne()`,
-   * `gt()`, `ge()`, `lt()`, and `le()` instead; the `to_*` type wrappers
+   * `gt()`, `ge()`, `lt()`, and `le()` instead; the `to_*` value wrappers
    * that replaced these aliases (since 3.2.0) are deprecated too (since
    * 6.0.0).
    *
@@ -2455,7 +2466,7 @@ namespace micro_os_plus::micro_test_plus
       has_clock (void) const noexcept;
 
       /**
-       * @brief Gets the stored time, for modification.
+       * @brief Returns the stored time, for modification.
        *
        * @par Parameters
        *   None.
@@ -2465,7 +2476,7 @@ namespace micro_os_plus::micro_test_plus
       value (void) noexcept;
 
       /**
-       * @brief Gets the stored time.
+       * @brief Returns the stored time.
        *
        * @par Parameters
        *   None.
@@ -2564,8 +2575,8 @@ namespace micro_os_plus::micro_test_plus
      * containers with a member named `npos` are compared element by
      * element.
      *
-     * @deprecated There is no replacement; the concept used by the
-     * framework is internal (since 6.0.0).
+     * @deprecated there is no replacement; the concept used by the
+     * framework is internal (since 6.0.0)
      */
     template <class T>
     concept has_npos = requires { T::npos; };
@@ -2585,8 +2596,8 @@ namespace micro_os_plus::micro_test_plus
      * which is satisfied only by the framework types, so that the
      * application types with a `value` member are compared as values.
      *
-     * @deprecated There is no replacement; the concept used by the
-     * framework is internal (since 6.0.0).
+     * @deprecated there is no replacement; the concept used by the
+     * framework is internal (since 6.0.0)
      */
     template <class T>
     concept has_value = requires (const T& t) { t.value; };
@@ -2602,7 +2613,7 @@ namespace micro_os_plus::micro_test_plus
      * The v5.0.1 name of `std::floating_point`, which the framework now
      * uses directly.
      *
-     * @deprecated Use `std::floating_point` (since 6.0.0).
+     * @deprecated use `std::floating_point` (since 6.0.0)
      */
     template <class T>
     concept is_floating_point = std::floating_point<T>;
@@ -2620,7 +2631,7 @@ namespace micro_os_plus::micro_test_plus
      * Used only as the type of `function_traits<>::args`; the framework no
      * longer uses it.
      *
-     * @deprecated Not replaced (since 6.0.0).
+     * @deprecated not replaced (since 6.0.0)
      */
     template <class... Types>
     struct list
@@ -2638,7 +2649,7 @@ namespace micro_os_plus::micro_test_plus
      * Exposes `T` as the member type `type`, like `std::type_identity`,
      * which replaces it.
      *
-     * @deprecated Use `std::type_identity` (since 6.0.0).
+     * @deprecated use `std::type_identity` (since 6.0.0)
      */
     template <class T, class... Extra>
     struct identity
@@ -2665,7 +2676,7 @@ namespace micro_os_plus::micro_test_plus
      * `operator()`. The specialisations expose the return type as
      * `result_type`, and the parameter types as `args`, a `list`.
      *
-     * @deprecated Not replaced (since 6.0.0).
+     * @deprecated not replaced (since 6.0.0)
      */
     template <class T>
     struct function_traits
@@ -2688,7 +2699,7 @@ namespace micro_os_plus::micro_test_plus
      * Exposes the return type and the parameter types of a pointer to a
      * free function.
      *
-     * @deprecated Not replaced (since 6.0.0).
+     * @deprecated not replaced (since 6.0.0)
      */
     template <class R, class... Args_T>
     struct function_traits<R (*) (Args_T...)>
@@ -2721,7 +2732,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Exposes the return type and the parameter types of a function type.
      *
-     * @deprecated Not replaced (since 6.0.0).
+     * @deprecated not replaced (since 6.0.0)
      */
     template <class R, class... Args_T>
     struct function_traits<R (Args_T...)>
@@ -2756,7 +2767,7 @@ namespace micro_os_plus::micro_test_plus
      * Exposes the return type and the parameter types of a pointer to a
      * non-`const` member function.
      *
-     * @deprecated Not replaced (since 6.0.0).
+     * @deprecated not replaced (since 6.0.0)
      */
     template <class R, class T, class... Args_T>
     struct function_traits<R (T::*) (Args_T...)>
@@ -2792,7 +2803,7 @@ namespace micro_os_plus::micro_test_plus
      * Exposes the return type and the parameter types of a pointer to a
      * `const` member function, like the `operator()` of a lambda.
      *
-     * @deprecated Not replaced (since 6.0.0).
+     * @deprecated not replaced (since 6.0.0)
      */
     template <class R, class T, class... Args_T>
     struct function_traits<R (T::*) (Args_T...) const>
@@ -2835,7 +2846,7 @@ namespace micro_os_plus::micro_test_plus
      * `get()` or with the explicit conversion, not through the v5.0.1
      * public member `value_`.
      *
-     * @deprecated The value wrappers are internal (since 6.0.0).
+     * @deprecated the value wrappers are internal (since 6.0.0)
      */
     template <class T>
     using value_base_ = detail::value_base<T>;
@@ -2851,7 +2862,7 @@ namespace micro_os_plus::micro_test_plus
      * never created by the framework; now `value<T>`, so the values are
      * compared and reported in the same way.
      *
-     * @deprecated The value wrappers are internal (since 6.0.0).
+     * @deprecated the value wrappers are internal (since 6.0.0)
      */
     template <class T>
     using genuine_integral_value = detail::value<T>;

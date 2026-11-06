@@ -1188,7 +1188,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p><span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-human">reporter_human</a></span> provides a concrete implementation of the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter">reporter</a></span> abstract interface, formatting and presenting test results in a human-readable form. It accumulates output in an internal string buffer and writes it to the standard output stream, supporting colour-coded diagnostics (when the output is a terminal, or when forced with <span class="doxyComputerOutput">--colour</span>) and multiple verbosity levels.</p>
 
 
-<p>The reporter is intended for the people who read the console output. Most writes to the optional output file follow the console verbosity, so the file receives the full report only with normal or verbose verbosity; for the integration with other tools, the TAP reporter, whose output file is always complete, is the one to use.</p>
+<p>The reporter is intended for the people who read the console output. The optional output file receives the complete report, whatever the verbosity of the console, and never receives colours, as with the TAP reporter.</p>
 
 
 <p>The reporter is created by the runner, as selected by the <span class="doxyComputerOutput">--<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter">reporter</a></span> command-line option, or by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-options/#ad22d04df014c5b0658b6e7bd239f15b0">runner_options::selected_reporter</a></span>. A different output format requires a new class derived from <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter">reporter</a></span>, and an extension of the runner to create it.</p>
@@ -1197,7 +1197,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>All members are defined within the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail">micro_os_plus::micro_test_plus::detail</a></span> namespace, since the reporters are internal to the framework.</p>
 
 
-<p>Definition at line 102 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>.</p>
+<p>Definition at line 101 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -1233,7 +1233,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>The reporter owns the output buffer and the output file, which must not be shared.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00120">120</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00119">119</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>.</p>
 
 
 <p>Reference <a href="#a82221fa355584dbaa75c7e66fbefa6b8">reporter_human</a>.</p>
@@ -1282,7 +1282,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>Delegates construction to the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter">reporter</a></span> base class with the supplied options. Colour output is enabled, by selecting the red/green colour scheme, when <span class="doxyComputerOutput">opts.colour</span> is <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-runners/#gga603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb">colour_mode::always</a></span>, or when it is <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-runners/#gga603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8">colour_mode::automatic</a></span> and, on POSIX platforms, <span class="doxyComputerOutput">stdout</span> is connected to a terminal (<span class="doxyComputerOutput">isatty()</span>). If tracing is enabled, the function signature is output for diagnostic purposes.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00111">111</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00080">80</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00110">110</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00080">80</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1349,7 +1349,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>The reporter is owned by the runner, through a pointer, and is never relocated.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00129">129</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00128">128</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>.</p>
 
 
 <p>Reference <a href="#a82221fa355584dbaa75c7e66fbefa6b8">reporter_human</a>.</p>
@@ -1390,7 +1390,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>No resources are owned directly by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter-human">reporter_human</a></span>; the destructor performs no explicit clean-up. If tracing is enabled, the function signature is output for diagnostic purposes.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00159">159</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00108">108</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00158">158</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00108">108</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -2022,7 +2022,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>The reporter owns the output buffer and the output file, which must not be shared.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00139">139</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00138">138</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>.</p>
 
 
 <p>Reference <a href="#a82221fa355584dbaa75c7e66fbefa6b8">reporter_human</a>.</p>
@@ -2059,7 +2059,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>The reporter is owned by the runner, through a pointer, and is never relocated.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00150">150</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00149">149</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>.</p>
 
 
 <p>References <a href="#a82221fa355584dbaa75c7e66fbefa6b8">reporter_human</a>, <a href="#a66f620b093f92e0def6bf5297fb6d6ee">abort_session</a>, <a href="#aa3cefeb72e745b2424b48ed4a31102e7">begin_session</a>, <a href="#a58c85919422801369d1d4d9a8efe77d0">begin_suite</a>, <a href="#a04cef97a62731931038355a1b5f23556">begin_test_case</a>, <a href="#af52c5b9d4731cdcd431d27e6db8ab649">comment_prefix</a>, <a href="#adf27b1d3d7cb168f295e4bf198bb0dbf">commit_buffer</a>, <a href="#a5c1cab1018f0e1f5b070ee327faef4ca">display_open_heading</a>, <a href="#abcfa63d8c5ca8acd458383102b7e99e9">display_open_names</a>, <a href="#ace9c2dfffc49a97516b96dacaf87b943">end_session</a>, <a href="#af8dc976373fc0976c8486693d9b9f835">end_suite</a>, <a href="#a7987c7a524058211a73d048d28943fb9">end_test_case</a>, <a href="#afd98d9a322823d67448d4ba301846392">fail_suite</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a68a030feff1f481126e9a6d170331420">micro_os_plus::micro_test_plus::detail::reporter::micro_test_plus::runner</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a904f410e240644fa77d65e686e6fc3eb">micro_os_plus::micro_test_plus::detail::reporter::micro_test_plus::test_case</a>, <a href="#a032be7e38aad40c8bc44b2376ad90e29">output_fail_prefix</a>, <a href="#ab9fdb57e1a5497af22de7cf4a252ce4b">output_fail_suffix</a>, <a href="#a043919044274838f8030d53630e3b1f5">output_pass_prefix</a>, <a href="#aeb5fb6ae953d2250360968c5582f73ab">output_pass_suffix</a>, <a href="#affeaf431bef88a17bb79e00e355ad031">pass_without_text</a>, <a href="#aca37d52611ed87d102dce89c3c6cc99d">skip_suite</a> and <a href="#af28ab5a9448645fb8976c0b139bf302b">skip_test_case</a>.</p>
@@ -2136,7 +2136,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>The buffer is then cleared, so that its results are not written again, should the abort handler throw an exception that the application catches.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00298">298</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00751">751</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00297">297</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00751">751</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -2260,7 +2260,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>If verbosity is not silent, a blank line is printed to <span class="doxyComputerOutput">stdout</span> before the build-information block emitted by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a6b48a4007c568c28fffbc2f2fe3f32e7">write_info()</a></span>. A fixed "µTest++ human-readable report" heading is then written to the output file (if open) and, unless verbosity is silent, to <span class="doxyComputerOutput">stdout</span>. The <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a38252f2ef24feabcb7f55e7bdac30bd2">add_empty_line_</a></span> flag is set so that subsequent suite output is visually separated.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00171">171</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00127">127</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00170">170</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00127">127</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -2345,7 +2345,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>This member function writes a <span class="doxyComputerOutput">"• &lt;name&gt;"</span> line, marking the beginning of the test suite, to the output file (if open) and, with normal or verbose verbosity, to <span class="doxyComputerOutput">stdout</span>, preceded on <span class="doxyComputerOutput">stdout</span> by an empty line when <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a38252f2ef24feabcb7f55e7bdac30bd2">add_empty_line_</a></span> is set. For silent or quiet verbosity levels, nothing is written to <span class="doxyComputerOutput">stdout</span>; with quiet verbosity, the heading is displayed later, if the suite has a failure (see <span class="doxyComputerOutput"><a href="#abcfa63d8c5ca8acd458383102b7e99e9">display_open_names()</a></span>).</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00191">191</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00208">208</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00190">190</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00208">208</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -2436,7 +2436,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>A <span class="doxyComputerOutput">"• &lt;name&gt;"</span> line, indented according to the nesting depth, is written to the output file (if open) and, with verbose verbosity, to <span class="doxyComputerOutput">stdout</span>, preceded by an empty line when <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a38252f2ef24feabcb7f55e7bdac30bd2">add_empty_line_</a></span> is set. With the other verbosity levels, the heading is displayed later, only if something is displayed under it (see <span class="doxyComputerOutput"><a href="#abcfa63d8c5ca8acd458383102b7e99e9">display_open_names()</a></span>).</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00240">240</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00398">398</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00239">239</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00398">398</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -2523,7 +2523,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>Returns an empty string. The human-readable reporter does not prefix comment lines; the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a6b48a4007c568c28fffbc2f2fe3f32e7">write_info()</a></span> output appears as plain text.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00310">310</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00538">538</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00309">309</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00538">538</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -2648,7 +2648,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>Prints a summary line to the output file (if open) and, unless verbosity is silent, to <span class="doxyComputerOutput">stdout</span>, showing the total number of successful checks, failed checks, executed test cases, and test suites, each count followed by the number skipped by the filter (only when not zero), together with the elapsed time when timing data is available. The line is prefixed with a green <span class="doxyComputerOutput">✓</span> tick on success or a red <span class="doxyComputerOutput">✗</span> cross on failure, using ANSI colour codes when colour output is enabled.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00181">181</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00161">161</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00180">180</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00161">161</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -2754,7 +2754,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>Finally, the streams are flushed and the buffer is cleared.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00201">201</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00255">255</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00200">200</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00255">255</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -2896,7 +2896,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>Finally, the streams are flushed and the buffer is cleared.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00250">250</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00452">452</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00249">249</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00452">452</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -3191,7 +3191,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>Adds a <span class="doxyComputerOutput">"✗ &lt;message&gt; FAILED"</span> line to the output buffer, indented as the test cases of the suite, with the same colours as the failed checks; since there is no source location, no parenthesised location follows. The line is displayed by <span class="doxyComputerOutput"><a href="#af8dc976373fc0976c8486693d9b9f835">end_suite()</a></span>, with the other buffered output of the failed suite.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00230">230</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00366">366</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00229">229</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00366">366</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -3492,7 +3492,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>Does nothing; the passed checks are displayed only with the verbose verbosity, or written to the output file, and in both cases they are written in full, by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#ad9e6ccebc1904f723409ddb0caaddb3e">pass()</a></span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00279">279</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00718">718</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00278">278</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00718">718</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -3563,7 +3563,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>This member function writes a <span class="doxyComputerOutput">"• &lt;name&gt; - skipped (filtered)"</span> line, instead of the suite body and results, to the output file (if open) and, with normal or verbose verbosity, to <span class="doxyComputerOutput">stdout</span>, preceded on <span class="doxyComputerOutput">stdout</span> by an empty line when <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a38252f2ef24feabcb7f55e7bdac30bd2">add_empty_line_</a></span> is set. For silent or quiet verbosity levels, nothing is written to <span class="doxyComputerOutput">stdout</span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00215">215</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00334">334</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00214">214</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00334">334</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -3655,7 +3655,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>A <span class="doxyComputerOutput">"• &lt;name&gt; - skipped (filtered)"</span> line, indented according to the nesting depth, is then written to the output file (if open) and, with normal or verbose verbosity, to <span class="doxyComputerOutput">stdout</span>, preceded by the names of the outer test cases, if not displayed yet, and on <span class="doxyComputerOutput">stdout</span> by an empty line when <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a38252f2ef24feabcb7f55e7bdac30bd2">add_empty_line_</a></span> is set. For silent or quiet verbosity levels, nothing is written to <span class="doxyComputerOutput">stdout</span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00264">264</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00677">677</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00263">263</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00677">677</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -5036,7 +5036,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>With normal verbosity, the passed checks committed here are not displayed, even if the outer test case fails later; the output file always contains them.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00380">380</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00829">829</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00379">379</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00829">829</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -5144,7 +5144,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>Writes the indented <span class="doxyComputerOutput">"• &lt;name&gt;"</span> line. An empty line is written before the first one, unless <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a38252f2ef24feabcb7f55e7bdac30bd2">add_empty_line_</a></span> is set, in which case the caller has already written it.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00418">418</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00901">901</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00417">417</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00901">901</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -5217,7 +5217,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>If the heading of the suite was not displayed (with quiet verbosity), it is displayed first, followed by an empty line. Then displays, on <span class="doxyComputerOutput">stdout</span>, the indented <span class="doxyComputerOutput">"• &lt;name&gt;"</span> line of each open test case whose name was not displayed yet (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#ae0a4d6478487a011e331e653d1a618b3">display_open_test_cases()</a></span>). The innermost one is skipped unless <span class="doxyComputerOutput">include_last</span> is true.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00401">401</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00876">876</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00400">400</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00876">876</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -5310,7 +5310,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>This member function outputs the prefix for a failing check result, indented one level deeper than the test case. The prefix includes a cross symbol (<span class="doxyComputerOutput">✗</span>), an optional message, and the label "FAILED", both symbol and label in the fail colour. The source location (file name and line number) follows, after an opening parenthesis; when the failure has an expression, a comma separator is added, so that the expression follows inside the parentheses.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00347">347</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00595">595</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00346">346</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00595">595</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -5417,7 +5417,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>The effect depends on the build, as in <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/check-result">check_result</a></span>: with exceptions, only the test case is stopped (<span class="doxyComputerOutput">" - test case stopped"</span>), and the run continues with the next test case; without, the test execution is aborted (<span class="doxyComputerOutput">" - test execution aborted"</span>).</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00363">363</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00646">646</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00362">362</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00646">646</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -5503,7 +5503,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>The prefix/suffix member functions help shorten the code generated by the template member functions.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00322">322</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00554">554</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00321">321</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00554">554</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -5582,7 +5582,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 <p>The prefix/suffix member functions help shorten the code generated by the template member functions.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00333">333</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00578">578</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h/#l00332">332</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-human-h">reporter-human.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp/#l00578">578</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-human-cpp">reporter-human.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -6739,7 +6739,7 @@ class micro_os_plus::micro_test_plus::detail::reporter_human { ... }
 
 ## Deprecated Functions
 
-### verbosity {#a467d1332df523b9acaa3ff82b0ebb714}
+### verbosity() {#a467d1332df523b9acaa3ff82b0ebb714}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -6831,6 +6831,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

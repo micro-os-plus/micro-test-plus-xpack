@@ -86,7 +86,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Extracts the type name from the <span class="doxyComputerOutput">__PRETTY_FUNCTION__</span> macro. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection/#a6580ad54ad22a1d3ab43a1d9d49d1f26">More...</a></p>
+<p>Extracts the type name from the <span class="doxyComputerOutput">__PRETTY_FUNCTION__</span> identifier. <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/reflection/#a6580ad54ad22a1d3ab43a1d9d49d1f26">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -141,10 +141,10 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>Extracts the type name from the <span class="doxyComputerOutput">__PRETTY_FUNCTION__</span> macro.</p>
+<p>Extracts the type name from the <span class="doxyComputerOutput">__PRETTY_FUNCTION__</span> identifier.</p>
 
 
-<p>This function template parses the compiler-specific <span class="doxyComputerOutput">__PRETTY_FUNCTION__</span> macro to extract a concise type name for the template parameter <span class="doxyComputerOutput">T</span>.</p>
+<p>This function template parses the compiler-specific <span class="doxyComputerOutput">__PRETTY_FUNCTION__</span> identifier to extract a concise type name for the template parameter <span class="doxyComputerOutput">T</span>.</p>
 
 
 <p>Rather than relying on fixed character offsets (which are fragile across compiler versions and namespace changes), the implementation searches for the marker that introduces the template argument in the function signature string:</p>
@@ -391,6 +391,6 @@ The file content with the documentation metadata removed is:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

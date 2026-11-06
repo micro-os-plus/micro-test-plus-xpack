@@ -25,7 +25,7 @@
  * extend the framework with their own comparators, operators, and helpers
  * (the expressions they return, `extension::compare_op` and
  * `extension::predicate_op`, are declared in `detail.h`):
- * the concepts that detect the framework expressions, and the types
+ * the concepts that detect the framework expression types, and the types
  * accepted by `expect()`, `require()`, and the message operator.
  *
  * The public concepts, and the templates `compare_op` and `predicate_op`,
@@ -44,8 +44,8 @@
  * The deprecated v5.0.1 `type_traits` namespace, which refers to these
  * concepts and to the value wrappers, is declared in `deprecated.h`.
  *
- * This file is intended for internal use within the framework and should not
- * be included directly by user code.
+ * This file is included by `micro-os-plus/micro-test-plus.h`, which is the
+ * header that the applications include.
  */
 
 #ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_EXTENSION_H_
@@ -273,7 +273,7 @@ namespace micro_os_plus::micro_test_plus
    *   template arguments deduced, and the tag satisfies `compare_tag`
    *   (`predicate_tag` for the predicates);
    * - the C++20 concepts with the same constraints as the framework
-   *   itself: whether a type is a framework expression (`is_op`,
+   *   itself: whether a type is a framework expression type (`is_op`,
    *   `any_op`), and whether it is accepted by `expect()` and
    *   `require()` (`checkable`) or by the message operator (`printable`),
    *   and the constraints of the tags (`compare_tag`, `predicate_tag`)
@@ -294,6 +294,7 @@ namespace micro_os_plus::micro_test_plus
     // Concepts.
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-customisation
      * @brief Concept satisfied when a type is a framework expression
      * type.
      *
@@ -341,14 +342,15 @@ namespace micro_os_plus::micro_test_plus
      * concept is deprecated with them, and is available only when
      * `MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED` is defined.
      *
-     * @deprecated To be removed with the deprecated floating-point
-     * wrappers (since 6.0.0).
+     * @deprecated to be removed with the deprecated floating-point
+     * wrappers (since 6.0.0)
      */
     template <class T>
     concept has_epsilon = is_op<T> and requires (const T& t) { t.epsilon; };
 #endif // defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED)
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-customisation
      * @brief Concept satisfied when at least one of two types is a
      * framework expression type.
      *
@@ -359,7 +361,7 @@ namespace micro_os_plus::micro_test_plus
      * The `any_op` concept is satisfied when `Lhs_T` or `Rhs_T` (or both)
      * are framework expression types (see `is_op`). A custom operator
      * constrains its overload with it, so that the overload is enabled only
-     * when at least one operand is a framework expression, and does not
+     * when at least one operand is a framework expression type, and does not
      * compete with the operators of the application types. The framework
      * itself uses it only for the deprecated operators.
      */
@@ -367,6 +369,7 @@ namespace micro_os_plus::micro_test_plus
     concept any_op = is_op<Lhs_T> or is_op<Rhs_T>;
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-customisation
      * @brief Concept satisfied when a type can be used as a test
      * expression in `expect()` or `require()`.
      *
@@ -403,6 +406,7 @@ namespace micro_os_plus::micro_test_plus
                             and requires (const T& t) { t ? true : false; });
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-customisation
      * @brief Concept satisfied when a type can be appended to the
      * message of a check result via `operator<<`.
      *
@@ -430,6 +434,7 @@ namespace micro_os_plus::micro_test_plus
                                   const T& value) { formatter << value; };
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-customisation
      * @brief Concept satisfied by a tag that defines a custom comparator.
      *
      * @details
@@ -454,6 +459,7 @@ namespace micro_os_plus::micro_test_plus
     };
 
     /**
+     * @ingroup micro-os-plus-micro-test-plus-cpp-api-customisation
      * @brief Concept satisfied by a tag that defines a custom predicate.
      *
      * @details

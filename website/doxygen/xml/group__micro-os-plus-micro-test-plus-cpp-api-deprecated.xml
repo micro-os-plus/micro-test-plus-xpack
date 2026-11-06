@@ -19,264 +19,9 @@
     <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators">Operators</innergroup>
     <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions">Old logical function names</innergroup>
     <innergroup refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals">Literals and wrappers</innergroup>
-    <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga67890916b8d3d8cbaab893cc6b599745" prot="public" static="no">
-        <templateparamlist>
-          <param>
-            <type>class T</type>
-          </param>
-        </templateparamlist>
-        <type>detail::value&lt; T &gt;</type>
-        <definition>using micro_os_plus::micro_test_plus::type_traits::genuine_integral_value = detail::value&lt;T&gt;</definition>
-        <argsstring></argsstring>
-        <name>genuine_integral_value</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::genuine_integral_value</qualifiedname>
-        <briefdescription>
-<para>Deprecated integral value wrapper. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The integral type of the stored value.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-In v5.0.1, a separate wrapper with the same members as <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref>&lt;T&gt;</computeroutput>, never created by the framework; now <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref>&lt;T&gt;</computeroutput>, so the values are compared and reported in the same way.</para>
-<para><xrefsect id="deprecated_1_deprecated000107"><xreftitle>Deprecated</xreftitle><xrefdescription><para>The value wrappers are internal (since 6.0.0). </para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2812" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="2812" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gaf123417aafc76c826760101bcc517dfa" prot="public" static="no">
-        <type>counters</type>
-        <definition>using micro_os_plus::micro_test_plus::detail::runner_totals = counters</definition>
-        <argsstring></argsstring>
-        <name>runner_totals</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::detail::runner_totals</qualifiedname>
-        <briefdescription>
-<para>Deprecated name of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters" kindref="compound">counters</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The v5.0.1 name of the class returned by <computeroutput>totals()</computeroutput>, renamed since the suites and the test cases own one too, not only the runner. <xrefsect id="deprecated_1_deprecated000093"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use counters (since 6.0.0)</para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2284" column="5"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga47d2c99f85fc5597b82da402d4687e75" prot="public" static="no">
-        <type>runner</type>
-        <definition>using micro_os_plus::micro_test_plus::static_runner = runner</definition>
-        <argsstring></argsstring>
-        <name>static_runner</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::static_runner</qualifiedname>
-        <briefdescription>
-<para>Deprecated name of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref></computeroutput> also runs the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref></computeroutput> objects that refer to it, so a separate runner class is no longer needed. <xrefsect id="deprecated_1_deprecated000058"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use runner (since 6.0.0)</para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2239" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga1424c18b26d5fdaed11439c77e6bf561" prot="public" static="no">
-        <type>test_case</type>
-        <definition>using micro_os_plus::micro_test_plus::subtest = test_case</definition>
-        <argsstring></argsstring>
-        <name>subtest</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::subtest</qualifiedname>
-        <briefdescription>
-<para>Deprecated name of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" kindref="compound">test_case</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The v5.0.1 name of the class passed to the test case bodies, kept for the functions and the lambdas that name it as the type of their first parameter (<computeroutput>void f (mt::subtest&amp; t)</computeroutput>); the lambdas with an <computeroutput>auto&amp;</computeroutput> parameter are not affected. <xrefsect id="deprecated_1_deprecated000057"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" kindref="compound">test_case</ref> (since 6.0.0)</para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2226" column="3"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga53a6bc7f86b15378c8296b3647e7013f" prot="public" static="no">
-        <type>stopwatch</type>
-        <definition>using micro_os_plus::micro_test_plus::detail::timestamps = stopwatch</definition>
-        <argsstring></argsstring>
-        <name>timestamps</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::detail::timestamps</qualifiedname>
-        <briefdescription>
-<para>Deprecated name of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch" kindref="compound">stopwatch</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The v5.0.1 name of the class returned by the <computeroutput>timings()</computeroutput> functions of the runner and of the suites, which kept the two timestamps of the measured interval. Its public members are kept, on <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch" kindref="compound">stopwatch</ref></computeroutput>; its protected members, the two optional <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp" kindref="compound">timestamp</ref></computeroutput> objects, are not. The timings are internal; the elapsed times are shown by the reporters. <xrefsect id="deprecated_1_deprecated000094"><xreftitle>Deprecated</xreftitle><xrefdescription><para>the timings are internal (since 6.0.0)</para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2301" column="5"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga65ad920b21a6c0df6848aa939659b92e" prot="public" static="no">
-        <templateparamlist>
-          <param>
-            <type>class T</type>
-          </param>
-        </templateparamlist>
-        <type>detail::value_base&lt; T &gt;</type>
-        <definition>using micro_os_plus::micro_test_plus::type_traits::value_base_ = detail::value_base&lt;T&gt;</definition>
-        <argsstring></argsstring>
-        <name>value_base_</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::value_base_</qualifiedname>
-        <briefdescription>
-<para>Deprecated name of <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base" kindref="compound">detail::value_base</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The type of the stored value.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-The v5.0.1 name, with a trailing underscore. The stored value is now private, and <computeroutput>get()</computeroutput> returns a reference; the value is read with <computeroutput>get()</computeroutput> or with the explicit conversion, not through the v5.0.1 public member <computeroutput>value_</computeroutput>.</para>
-<para><xrefsect id="deprecated_1_deprecated000106"><xreftitle>Deprecated</xreftitle><xrefdescription><para>The value wrappers are internal (since 6.0.0). </para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2796" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="2796" bodyend="-1"/>
-      </memberdef>
-    </sectiondef>
-    <sectiondef kind="var">
-      <memberdef kind="variable" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gad1e3d2d57c0ed04d4bb90eb72dd89b71" prot="public" static="yes" constexpr="yes" mutable="no">
-        <type>bool</type>
-        <definition>bool micro_os_plus::micro_test_plus::detail::equal_to::within_tolerance_result</definition>
-        <argsstring></argsstring>
-        <name>within_tolerance_result</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::detail::equal_to::within_tolerance_result</qualifiedname>
-        <initializer>= true</initializer>
-        <briefdescription>
-<para>Deprecated result when the operands are within the tolerance. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>Values within the tolerance are equal.</para>
-<para>Used only by the tolerance of the deprecated floating-point wrappers.</para>
-<para><xrefsect id="deprecated_1_deprecated000109"><xreftitle>Deprecated</xreftitle><xrefdescription><para>To be removed with the deprecated floating-point wrappers (since 6.0.0). </para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="459" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="459" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga3770982b9b7025e79d30c44f8b6de981" prot="public" static="yes" constexpr="yes" mutable="no">
-        <type>bool</type>
-        <definition>bool micro_os_plus::micro_test_plus::detail::greater::within_tolerance_result</definition>
-        <argsstring></argsstring>
-        <name>within_tolerance_result</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::detail::greater::within_tolerance_result</qualifiedname>
-        <initializer>= false</initializer>
-        <briefdescription>
-<para>Deprecated result when the operands are within the tolerance. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>Values within the tolerance are equal, not ordered.</para>
-<para>Used only by the tolerance of the deprecated floating-point wrappers.</para>
-<para><xrefsect id="deprecated_1_deprecated000111"><xreftitle>Deprecated</xreftitle><xrefdescription><para>To be removed with the deprecated floating-point wrappers (since 6.0.0). </para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="577" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="577" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga1e6e1923184c1e15b8dfe69053010c83" prot="public" static="yes" constexpr="yes" mutable="no">
-        <type>bool</type>
-        <definition>bool micro_os_plus::micro_test_plus::detail::greater_equal::within_tolerance_result</definition>
-        <argsstring></argsstring>
-        <name>within_tolerance_result</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::detail::greater_equal::within_tolerance_result</qualifiedname>
-        <initializer>= true</initializer>
-        <briefdescription>
-<para>Deprecated result when the operands are within the tolerance. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>Values within the tolerance are equal.</para>
-<para>Used only by the tolerance of the deprecated floating-point wrappers.</para>
-<para><xrefsect id="deprecated_1_deprecated000112"><xreftitle>Deprecated</xreftitle><xrefdescription><para>To be removed with the deprecated floating-point wrappers (since 6.0.0). </para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="636" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="636" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gaf95d91c9cae67c4ce138146b2cdab25e" prot="public" static="yes" constexpr="yes" mutable="no">
-        <type>bool</type>
-        <definition>bool micro_os_plus::micro_test_plus::detail::less::within_tolerance_result</definition>
-        <argsstring></argsstring>
-        <name>within_tolerance_result</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::detail::less::within_tolerance_result</qualifiedname>
-        <initializer>= false</initializer>
-        <briefdescription>
-<para>Deprecated result when the operands are within the tolerance. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>Values within the tolerance are equal, not ordered.</para>
-<para>Used only by the tolerance of the deprecated floating-point wrappers.</para>
-<para><xrefsect id="deprecated_1_deprecated000113"><xreftitle>Deprecated</xreftitle><xrefdescription><para>To be removed with the deprecated floating-point wrappers (since 6.0.0). </para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="695" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="695" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gadcaedd85e07d96bd7230d06c5c258df7" prot="public" static="yes" constexpr="yes" mutable="no">
-        <type>bool</type>
-        <definition>bool micro_os_plus::micro_test_plus::detail::less_equal::within_tolerance_result</definition>
-        <argsstring></argsstring>
-        <name>within_tolerance_result</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::detail::less_equal::within_tolerance_result</qualifiedname>
-        <initializer>= true</initializer>
-        <briefdescription>
-<para>Deprecated result when the operands are within the tolerance. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>Values within the tolerance are equal.</para>
-<para>Used only by the tolerance of the deprecated floating-point wrappers.</para>
-<para><xrefsect id="deprecated_1_deprecated000114"><xreftitle>Deprecated</xreftitle><xrefdescription><para>To be removed with the deprecated floating-point wrappers (since 6.0.0). </para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="754" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="754" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga8decf36d3e0e7cc8242c6a2170743422" prot="public" static="yes" constexpr="yes" mutable="no">
-        <type>bool</type>
-        <definition>bool micro_os_plus::micro_test_plus::detail::not_equal_to::within_tolerance_result</definition>
-        <argsstring></argsstring>
-        <name>within_tolerance_result</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::detail::not_equal_to::within_tolerance_result</qualifiedname>
-        <initializer>= false</initializer>
-        <briefdescription>
-<para>Deprecated result when the operands are within the tolerance. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>Values within the tolerance are equal.</para>
-<para>Used only by the tolerance of the deprecated floating-point wrappers.</para>
-<para><xrefsect id="deprecated_1_deprecated000110"><xreftitle>Deprecated</xreftitle><xrefdescription><para>To be removed with the deprecated floating-point wrappers (since 6.0.0). </para>
-</xrefdescription></xrefsect></para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="518" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="518" bodyend="-1"/>
-      </memberdef>
-    </sectiondef>
-    <sectiondef kind="func">
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga00ea8f3dfb7cb0ef39919065321cf62f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+    <sectiondef kind="user-defined">
+      <header>Deprecated Functions</header>
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
@@ -324,10 +69,268 @@ The v5.0.1 name, with a trailing underscore. The stored value is now private, an
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="723" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="723" bodyend="726" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="876" declcolumn="3"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga00ea8f3dfb7cb0ef39919065321cf62f" compoundref="deprecated-inlines_8h" startline="723" endline="726">micro_os_plus::micro_test_plus::mut</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga00ea8f3dfb7cb0ef39919065321cf62f" compoundref="deprecated-inlines_8h" startline="723" endline="726">micro_os_plus::micro_test_plus::mut</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="723" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="723" bodyend="726" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="884" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" compoundref="deprecated-inlines_8h" startline="723" endline="726">micro_os_plus::micro_test_plus::mut</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" compoundref="deprecated-inlines_8h" startline="723" endline="726">micro_os_plus::micro_test_plus::mut</referencedby>
       </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga67890916b8d3d8cbaab893cc6b599745" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>detail::value&lt; T &gt;</type>
+        <definition>using micro_os_plus::micro_test_plus::type_traits::genuine_integral_value = detail::value&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>genuine_integral_value</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::genuine_integral_value</qualifiedname>
+        <briefdescription>
+<para>Deprecated integral value wrapper. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The integral type of the stored value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+In v5.0.1, a separate wrapper with the same members as <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref>&lt;T&gt;</computeroutput>, never created by the framework; now <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value" kindref="compound">value</ref>&lt;T&gt;</computeroutput>, so the values are compared and reported in the same way.</para>
+<para><xrefsect id="deprecated_1_deprecated000107"><xreftitle>Deprecated</xreftitle><xrefdescription><para>the value wrappers are internal (since 6.0.0) </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2823" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="2823" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gaf123417aafc76c826760101bcc517dfa" prot="public" static="no">
+        <type>counters</type>
+        <definition>using micro_os_plus::micro_test_plus::detail::runner_totals = counters</definition>
+        <argsstring></argsstring>
+        <name>runner_totals</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::runner_totals</qualifiedname>
+        <briefdescription>
+<para>Deprecated name of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1counters" kindref="compound">counters</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The v5.0.1 name of the class returned by <computeroutput>totals()</computeroutput>, renamed since the suites and the test cases own one too, not only the runner. <xrefsect id="deprecated_1_deprecated000093"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use counters (since 6.0.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2295" column="5"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga47d2c99f85fc5597b82da402d4687e75" prot="public" static="no">
+        <type>runner</type>
+        <definition>using micro_os_plus::micro_test_plus::static_runner = runner</definition>
+        <argsstring></argsstring>
+        <name>static_runner</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::static_runner</qualifiedname>
+        <briefdescription>
+<para>Deprecated name of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1runner" kindref="compound">runner</ref></computeroutput> also runs the <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1static__suite" kindref="compound">static_suite</ref></computeroutput> objects that refer to it, so a separate runner class is no longer needed. <xrefsect id="deprecated_1_deprecated000058"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use runner (since 6.0.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2250" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga1424c18b26d5fdaed11439c77e6bf561" prot="public" static="no">
+        <type>test_case</type>
+        <definition>using micro_os_plus::micro_test_plus::subtest = test_case</definition>
+        <argsstring></argsstring>
+        <name>subtest</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::subtest</qualifiedname>
+        <briefdescription>
+<para>Deprecated name of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" kindref="compound">test_case</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The v5.0.1 name of the class passed to the test case bodies, kept for the functions and the lambdas that name it as the type of their first parameter (<computeroutput>void f (mt::subtest&amp; t)</computeroutput>); the lambdas with an <computeroutput>auto&amp;</computeroutput> parameter are not affected. <xrefsect id="deprecated_1_deprecated000057"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="classmicro__os__plus_1_1micro__test__plus_1_1test__case" kindref="compound">test_case</ref> (since 6.0.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2237" column="3"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga53a6bc7f86b15378c8296b3647e7013f" prot="public" static="no">
+        <type>stopwatch</type>
+        <definition>using micro_os_plus::micro_test_plus::detail::timestamps = stopwatch</definition>
+        <argsstring></argsstring>
+        <name>timestamps</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::timestamps</qualifiedname>
+        <briefdescription>
+<para>Deprecated name of <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch" kindref="compound">stopwatch</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The v5.0.1 name of the class returned by the <computeroutput>timings()</computeroutput> functions of the runner and of the suites, which kept the two timestamps of the measured interval. Its public members are kept, on <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch" kindref="compound">stopwatch</ref></computeroutput>; its protected members, the two optional <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1timestamp" kindref="compound">timestamp</ref></computeroutput> objects, are not. The timings are internal; the elapsed times are shown by the reporters. <xrefsect id="deprecated_1_deprecated000094"><xreftitle>Deprecated</xreftitle><xrefdescription><para>the timings are internal (since 6.0.0)</para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2312" column="5"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga65ad920b21a6c0df6848aa939659b92e" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>detail::value_base&lt; T &gt;</type>
+        <definition>using micro_os_plus::micro_test_plus::type_traits::value_base_ = detail::value_base&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>value_base_</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::type_traits::value_base_</qualifiedname>
+        <briefdescription>
+<para>Deprecated name of <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base" kindref="compound">detail::value_base</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the stored value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The v5.0.1 name, with a trailing underscore. The stored value is now private, and <computeroutput>get()</computeroutput> returns a reference; the value is read with <computeroutput>get()</computeroutput> or with the explicit conversion, not through the v5.0.1 public member <computeroutput>value_</computeroutput>.</para>
+<para><xrefsect id="deprecated_1_deprecated000106"><xreftitle>Deprecated</xreftitle><xrefdescription><para>the value wrappers are internal (since 6.0.0) </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2807" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="2807" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gad1e3d2d57c0ed04d4bb90eb72dd89b71" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::equal_to::within_tolerance_result</definition>
+        <argsstring></argsstring>
+        <name>within_tolerance_result</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::equal_to::within_tolerance_result</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+<para>Deprecated result when the operands are within the tolerance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Values within the tolerance are equal.</para>
+<para>Used only by the tolerance of the deprecated floating-point wrappers.</para>
+<para><xrefsect id="deprecated_1_deprecated000109"><xreftitle>Deprecated</xreftitle><xrefdescription><para>to be removed with the deprecated floating-point wrappers (since 6.0.0) </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="459" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="459" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga3770982b9b7025e79d30c44f8b6de981" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::greater::within_tolerance_result</definition>
+        <argsstring></argsstring>
+        <name>within_tolerance_result</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::greater::within_tolerance_result</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Deprecated result when the operands are within the tolerance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Values within the tolerance are equal, not ordered.</para>
+<para>Used only by the tolerance of the deprecated floating-point wrappers.</para>
+<para><xrefsect id="deprecated_1_deprecated000111"><xreftitle>Deprecated</xreftitle><xrefdescription><para>to be removed with the deprecated floating-point wrappers (since 6.0.0) </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="577" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="577" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga1e6e1923184c1e15b8dfe69053010c83" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::greater_equal::within_tolerance_result</definition>
+        <argsstring></argsstring>
+        <name>within_tolerance_result</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::greater_equal::within_tolerance_result</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+<para>Deprecated result when the operands are within the tolerance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Values within the tolerance are equal.</para>
+<para>Used only by the tolerance of the deprecated floating-point wrappers.</para>
+<para><xrefsect id="deprecated_1_deprecated000112"><xreftitle>Deprecated</xreftitle><xrefdescription><para>to be removed with the deprecated floating-point wrappers (since 6.0.0) </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="636" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="636" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gaf95d91c9cae67c4ce138146b2cdab25e" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::less::within_tolerance_result</definition>
+        <argsstring></argsstring>
+        <name>within_tolerance_result</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::less::within_tolerance_result</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Deprecated result when the operands are within the tolerance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Values within the tolerance are equal, not ordered.</para>
+<para>Used only by the tolerance of the deprecated floating-point wrappers.</para>
+<para><xrefsect id="deprecated_1_deprecated000113"><xreftitle>Deprecated</xreftitle><xrefdescription><para>to be removed with the deprecated floating-point wrappers (since 6.0.0) </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="695" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="695" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gadcaedd85e07d96bd7230d06c5c258df7" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::less_equal::within_tolerance_result</definition>
+        <argsstring></argsstring>
+        <name>within_tolerance_result</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::less_equal::within_tolerance_result</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+<para>Deprecated result when the operands are within the tolerance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Values within the tolerance are equal.</para>
+<para>Used only by the tolerance of the deprecated floating-point wrappers.</para>
+<para><xrefsect id="deprecated_1_deprecated000114"><xreftitle>Deprecated</xreftitle><xrefdescription><para>to be removed with the deprecated floating-point wrappers (since 6.0.0) </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="754" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="754" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga8decf36d3e0e7cc8242c6a2170743422" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool micro_os_plus::micro_test_plus::detail::not_equal_to::within_tolerance_result</definition>
+        <argsstring></argsstring>
+        <name>within_tolerance_result</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::detail::not_equal_to::within_tolerance_result</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Deprecated result when the operands are within the tolerance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Values within the tolerance are equal.</para>
+<para>Used only by the tolerance of the deprecated floating-point wrappers.</para>
+<para><xrefsect id="deprecated_1_deprecated000110"><xreftitle>Deprecated</xreftitle><xrefdescription><para>to be removed with the deprecated floating-point wrappers (since 6.0.0) </para>
+</xrefdescription></xrefsect></para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="518" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="518" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gafc93799846770e521c4721d0de0a81cc" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>const char *</type>
         <definition>const char * micro_os_plus::micro_test_plus::reflection::short_name</definition>
@@ -360,8 +363,8 @@ The v5.0.1 name, with a trailing underscore. The stored value is now private, an
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/deprecated.cpp" line="78" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/deprecated.cpp" bodystart="78" bodyend="81" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="2264" declcolumn="5"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" compoundref="utility_8cpp" startline="94" endline="108">micro_os_plus::micro_test_plus::utility::extract_file_name</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/deprecated.cpp" line="78" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/deprecated.cpp" bodystart="78" bodyend="81" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="2275" declcolumn="5"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions_1ga791f22f0c85b6436c9016821907b0653" compoundref="utility_8cpp" startline="95" endline="109">micro_os_plus::micro_test_plus::utility::extract_file_name</references>
         <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gafc93799846770e521c4721d0de0a81cc" compoundref="deprecated_8cpp" startline="78" endline="81">micro_os_plus::micro_test_plus::reflection::short_name</references>
         <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gafc93799846770e521c4721d0de0a81cc" compoundref="deprecated_8cpp" startline="78" endline="81">micro_os_plus::micro_test_plus::reflection::short_name</referencedby>
       </memberdef>
@@ -392,9 +395,9 @@ The v5.0.1 name, with a trailing underscore. The stored value is now private, an
 <para>Deprecated check whether two operands are equal within the tolerance of the floating-point wrappers. </para>
         </briefdescription>
         <detaileddescription>
-<para>Used by <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" kindref="compound">compare_op</ref></computeroutput> for all six tags, so that a value within the tolerance is equal, and neither less nor greater; at least one operand must have an <computeroutput>epsilon</computeroutput> member (a floating-point literal, a <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5368740b47e92605914b6c38ea88aebf" kindref="member">to_f</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kindref="member">to_d</ref></computeroutput>, or <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaeba32254fdd8159523b525745b13bfa9" kindref="member">to_ld</ref></computeroutput> wrapper, or <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref></computeroutput>).</para>
+<para>Used by <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op" kindref="compound">compare_op</ref></computeroutput> for all six tags, so that a value within the tolerance is equal, and neither less nor greater; at least one operand must have an <computeroutput>epsilon</computeroutput> member (a floating-point literal, a <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5368740b47e92605914b6c38ea88aebf" kindref="member">to_f</ref></computeroutput>, <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kindref="member">to_d</ref></computeroutput>, or <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaeba32254fdd8159523b525745b13bfa9" kindref="member">to_ld</ref></computeroutput> wrapper, or <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref></computeroutput>).</para>
 <para>Used only by the deprecated floating-point wrappers, it is available only when <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-config_1ga67c701de5426ac340584ed038494a873" kindref="member">MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</ref></computeroutput> is defined.</para>
-<para><xrefsect id="deprecated_1_deprecated000108"><xreftitle>Deprecated</xreftitle><xrefdescription><para>To be removed with the deprecated floating-point wrappers (since 6.0.0).</para>
+<para><xrefsect id="deprecated_1_deprecated000108"><xreftitle>Deprecated</xreftitle><xrefdescription><para>to be removed with the deprecated floating-point wrappers (since 6.0.0)</para>
 </xrefdescription></xrefsect></para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
@@ -481,7 +484,7 @@ The tolerance is the smaller <computeroutput>epsilon</computeroutput> of the two
 </programlisting></para>
 <para><simplesect kind="par"><title>Deprecated groups</title><para>Three groups of deprecated definitions have topics of their own:<itemizedlist>
 <listitem><para>the overloaded comparison and logical operators (see <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators" kindref="compound">Operators</ref>), replaced by the function comparators and the logical functions;</para>
-</listitem><listitem><para>the user-defined literals and the type wrappers (see <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals" kindref="compound">Literals and wrappers</ref>), replaced by the plain values passed to the function comparators;</para>
+</listitem><listitem><para>the user-defined literals and the value wrappers (see <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals" kindref="compound">Literals and wrappers</ref>), replaced by the plain values passed to the function comparators;</para>
 </listitem><listitem><para>the logical functions <computeroutput>_and()</computeroutput>, <computeroutput>_or()</computeroutput>, and <computeroutput>_not()</computeroutput> (see <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions" kindref="compound">Old logical function names</ref>), replaced by <computeroutput>all_of()</computeroutput>, <computeroutput>any_of()</computeroutput>, and <computeroutput>negate()</computeroutput>.</para>
 </listitem></itemizedlist>
 </para>
@@ -494,11 +497,16 @@ The tolerance is the smaller <computeroutput>epsilon</computeroutput> of the two
 </listitem><listitem><para><computeroutput>runner::suite()</computeroutput>, replaced by <computeroutput>runner::add_suite()</computeroutput>;</para>
 </listitem><listitem><para><computeroutput>runner::suites_count()</computeroutput>, replaced by <computeroutput>added_suites_count()</computeroutput> or <computeroutput>total_suites_count()</computeroutput>;</para>
 </listitem><listitem><para><computeroutput>runner::verbosity()</computeroutput>, and <computeroutput>runner::reporter()</computeroutput> with its <computeroutput>verbosity()</computeroutput> member, replaced by <computeroutput>runner::verbosity_level()</computeroutput>;</para>
-</listitem><listitem><para><computeroutput>runner::timings()</computeroutput> and <computeroutput>test_case::timings()</computeroutput>, and the members of <computeroutput>detail::stopwatch</computeroutput> kept from the v5.0.1 timestamps, which are internal and not replaced;</para>
+</listitem><listitem><para><computeroutput>runner::timings()</computeroutput> and <computeroutput>suite::timings()</computeroutput>, and the members of <computeroutput>detail::stopwatch</computeroutput> kept from the v5.0.1 timestamps, which are internal and not replaced;</para>
 </listitem><listitem><para>the <computeroutput>counters</computeroutput> members <computeroutput>successful_checks()</computeroutput>, <computeroutput>executed_subtests()</computeroutput>, and <computeroutput>was_successful()</computeroutput>, replaced by <computeroutput>passed_checks()</computeroutput>, <computeroutput>executed_test_cases()</computeroutput>, and <computeroutput>passed()</computeroutput> (the deprecated mutators <computeroutput>increment_successful_checks()</computeroutput> and <computeroutput>increment_executed_subtests()</computeroutput> were removed, since the counters are updated only by the framework);</para>
 </listitem><listitem><para><computeroutput>test_case::assume()</computeroutput>, replaced by <computeroutput>test_case::require()</computeroutput>;</para>
 </listitem><listitem><para>the overloads of <computeroutput>test_case::expect()</computeroutput> and <computeroutput>test_case::require()</computeroutput> that accept an argument that is always true (a string literal or a function name), replaced by writing the condition;</para>
 </listitem><listitem><para>the <computeroutput>static_suite</computeroutput> constructor whose callable takes a <computeroutput>static_suite&amp;</computeroutput>, replaced by a callable taking a <computeroutput>suite&amp;</computeroutput>;</para>
+</listitem><listitem><para><computeroutput>mut()</computeroutput>, replaced by <computeroutput>const_cast&lt;T&amp;&gt;</computeroutput>;</para>
+</listitem><listitem><para><computeroutput>runner::name()</computeroutput>, which always returned <computeroutput>"runner"</computeroutput>, not replaced: the names in the reports are those of the suites (see <computeroutput>add_top_suite()</computeroutput>);</para>
+</listitem><listitem><para><computeroutput>detail::expression_formatter::c_str()</computeroutput> and <computeroutput>empty()</computeroutput>, replaced by <computeroutput>str().c_str()</computeroutput> and <computeroutput>str().empty()</computeroutput>;</para>
+</listitem><listitem><para>the members <computeroutput>children_subtests_count()</computeroutput>, <computeroutput>current_subtest_index()</computeroutput>, and <computeroutput>own_index()</computeroutput> of the test nodes, which are internal and not replaced;</para>
+</listitem><listitem><para><computeroutput>extension::has_epsilon</computeroutput>, the concept that detects the floating-point wrappers with a tolerance, to be removed with them;</para>
 </listitem><listitem><para><computeroutput>reflection::short_name()</computeroutput>, replaced by <computeroutput>utility::extract_file_name()</computeroutput>;</para>
 </listitem><listitem><para>the <computeroutput>type_traits</computeroutput> namespace, with the concepts and the value wrapper templates of v5.0.1, replaced by the <computeroutput>extension</computeroutput> namespace;</para>
 </listitem><listitem><para>the traits of the <computeroutput>type_traits</computeroutput> namespace: <computeroutput>function_traits</computeroutput> and <computeroutput>list</computeroutput>, which are not replaced, and <computeroutput>identity</computeroutput>, replaced by <computeroutput>std::type_identity</computeroutput>.  </para>

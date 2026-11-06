@@ -39,11 +39,15 @@
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math">micro_os_plus::micro_test_plus::detail::math</innernamespace>
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1literals">micro_os_plus::micro_test_plus::literals</innernamespace>
     <innernamespace refid="namespacemicro__os__plus_1_1micro__test__plus_1_1operators">micro_os_plus::micro_test_plus::operators</innernamespace>
-    <sectiondef kind="func">
+    <sectiondef kind="user-defined">
+      <header>Deprecated Functions</header>
       <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" kind="function"><name>_and</name></member>
       <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" kind="function"><name>_not</name></member>
       <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" kind="function"><name>_or</name></member>
-      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
+      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" kind="function"><name>mut</name></member>
+    </sectiondef>
+    <sectiondef kind="func">
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1accba38bf51d261f330b594ca121e6f75" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -438,7 +442,7 @@ The value is checked by <computeroutput><ref refid="namespacemicro__os__plus_1_1
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="579" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="579" bodyend="593" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="512" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="579" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="579" bodyend="593" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="515" declcolumn="5"/>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant_1a4f40fb20314c21d4c8320fe43a413103" compoundref="deprecated-inlines_8h" startline="516" endline="519">micro_os_plus::micro_test_plus::detail::integral_constant&lt; N &gt;::integral_constant</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" compoundref="deprecated-inlines_8h" startline="448" endline="467">micro_os_plus::micro_test_plus::detail::math::integer_magnitude</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" compoundref="deprecated-inlines_8h" startline="579" endline="593">micro_os_plus::micro_test_plus::detail::integral_literal</references>
@@ -463,7 +467,6 @@ The value is checked by <computeroutput><ref refid="namespacemicro__os__plus_1_1
         <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga01adcd3866da43c393b7fba8a5e72bb2" compoundref="deprecated-inlines_8h" startline="1049" endline="1052">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_ull</referencedby>
         <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9017debdc1eafd64e3c53c80157ad6f5" compoundref="deprecated-inlines_8h" startline="1021" endline="1024">micro_os_plus::micro_test_plus::literals::operator&quot;&quot;_us</referencedby>
       </memberdef>
-      <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga00ea8f3dfb7cb0ef39919065321cf62f" kind="function"><name>mut</name></member>
       <memberdef kind="function" id="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" prot="public" static="no" nodiscard="yes" consteval="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -1170,7 +1173,7 @@ This function template provides a constexpr implementation for raising a base va
 <codeline lineno="720"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Deprecated<sp/>since<sp/>6.0.0;<sp/>use<sp/>const_cast&lt;T&amp;&gt;.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="721"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline lineno="722"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="723" refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga00ea8f3dfb7cb0ef39919065321cf62f" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga00ea8f3dfb7cb0ef39919065321cf62f" kindref="member">mut</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>t)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>-&gt;<sp/>T&amp;</highlight></codeline>
+<codeline lineno="723" refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" kindref="member">mut</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>t)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"><sp/>-&gt;<sp/>T&amp;</highlight></codeline>
 <codeline lineno="724"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="725"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const_cast&lt;</highlight><highlight class="normal">T&amp;</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal"><sp/>(t);</highlight></codeline>
 <codeline lineno="726"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
@@ -1477,7 +1480,7 @@ This function template provides a constexpr implementation for raising a base va
 <codeline lineno="1272"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline lineno="1273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>std::is_floating_point_v&lt;T&gt;</highlight></codeline>
 <codeline lineno="1274"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1275" refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx</ref><sp/>(T<sp/>value,<sp/>std::type_identity_t&lt;T&gt;<sp/>epsilon)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1275" refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gafe47800a219b00fcccf0a1dc596dbe20" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx</ref><sp/>(T<sp/>value,<sp/>std::type_identity_t&lt;T&gt;<sp/>epsilon)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;<sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" kindref="compound">detail::value&lt;T&gt;</ref></highlight></codeline>
 <codeline lineno="1277"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="1278"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" kindref="compound">detail::value&lt;T&gt;</ref>{<sp/>value,<sp/>epsilon<sp/>};</highlight></codeline>

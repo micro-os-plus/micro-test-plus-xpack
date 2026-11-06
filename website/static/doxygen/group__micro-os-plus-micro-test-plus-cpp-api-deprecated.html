@@ -181,9 +181,6 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga00ea8f3dfb7cb0ef39919065321cf62f" id="r_ga00ea8f3dfb7cb0ef39919065321cf62f"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
-<tr class="memitem:ga00ea8f3dfb7cb0ef39919065321cf62f template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#ga00ea8f3dfb7cb0ef39919065321cf62f">micro_os_plus::micro_test_plus::mut</a> (const T &amp;t) noexcept -&gt; T &amp;</td></tr>
-<tr class="memdesc:ga00ea8f3dfb7cb0ef39919065321cf62f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated generic mutator to remove const qualification from a reference.  <br /></td></tr>
 <tr class="memitem:gafc93799846770e521c4721d0de0a81cc" id="r_gafc93799846770e521c4721d0de0a81cc"><td class="memItemLeft">const char *&#160;</td><td class="memItemRight"><a class="el" href="#gafc93799846770e521c4721d0de0a81cc">micro_os_plus::micro_test_plus::reflection::short_name</a> (const char *name) noexcept</td></tr>
 <tr class="memdesc:gafc93799846770e521c4721d0de0a81cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated extraction of the file name from a path.  <br /></td></tr>
 <tr class="memitem:ga6c5237ff6944278e8c5e3294cf99a3b9" id="r_ga6c5237ff6944278e8c5e3294cf99a3b9"><td class="memTemplParams" colspan="2">template&lt;class Lhs_T, class Rhs_T&gt; <br />
@@ -205,6 +202,12 @@ Variables</h2></td></tr>
 <tr class="memdesc:gadcaedd85e07d96bd7230d06c5c258df7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated result when the operands are within the tolerance.  <br /></td></tr>
 <tr class="memitem:ga8decf36d3e0e7cc8242c6a2170743422" id="r_ga8decf36d3e0e7cc8242c6a2170743422"><td class="memItemLeft">static constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#ga8decf36d3e0e7cc8242c6a2170743422">micro_os_plus::micro_test_plus::detail::not_equal_to::within_tolerance_result</a> = false</td></tr>
 <tr class="memdesc:ga8decf36d3e0e7cc8242c6a2170743422"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated result when the operands are within the tolerance.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-member-group" class="groupheader"><a id="member-group" name="member-group"></a>
+Deprecated Functions</h2></td></tr>
+<tr class="memitem:ga00ea8f3dfb7cb0ef39919065321cf62f" id="r_ga00ea8f3dfb7cb0ef39919065321cf62f"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:ga00ea8f3dfb7cb0ef39919065321cf62f template"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions.html#ga00ea8f3dfb7cb0ef39919065321cf62f">micro_os_plus::micro_test_plus::mut</a> (const T &amp;t) noexcept -&gt; T &amp;</td></tr>
+<tr class="memdesc:ga00ea8f3dfb7cb0ef39919065321cf62f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated generic mutator to remove const qualification from a reference.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The deprecated definitions are kept so that the tests written for the earlier releases still compile; they will be removed in a future major release. The compiler reports each use, with a message that names the replacement and the version that deprecated it (most of them since 6.0.0).</p>
@@ -222,7 +225,7 @@ Variables</h2></td></tr>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_html"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a></div><div class="ttdoc">Primary namespace for the µTest++ testing framework.</div><div class="ttdef"><b>Definition</b> <a href="check-result_8h_source.html#l00075">check-result.h:76</a></div></div>
 </div><!-- fragment --><dl class="section user"><dt>Deprecated groups</dt><dd>Three groups of deprecated definitions have topics of their own:<ul>
 <li>the overloaded comparison and logical operators (see <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators.html" title="Operators">Operators</a>), replaced by the function comparators and the logical functions;</li>
-<li>the user-defined literals and the type wrappers (see <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html" title="Literals and wrappers">Literals and wrappers</a>), replaced by the plain values passed to the function comparators;</li>
+<li>the user-defined literals and the value wrappers (see <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html" title="Literals and wrappers">Literals and wrappers</a>), replaced by the plain values passed to the function comparators;</li>
 <li>the logical functions <span class="tt">_and()</span>, <span class="tt">_or()</span>, and <span class="tt">_not()</span> (see <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions.html" title="Old logical function names">Old logical function names</a>), replaced by <span class="tt">all_of()</span>, <span class="tt">any_of()</span>, and <span class="tt">negate()</span>.</li>
 </ul>
 </dd></dl>
@@ -234,11 +237,16 @@ Variables</h2></td></tr>
 <li><span class="tt">runner::suite()</span>, replaced by <span class="tt">runner::add_suite()</span>;</li>
 <li><span class="tt">runner::suites_count()</span>, replaced by <span class="tt">added_suites_count()</span> or <span class="tt">total_suites_count()</span>;</li>
 <li><span class="tt">runner::verbosity()</span>, and <span class="tt">runner::reporter()</span> with its <span class="tt">verbosity()</span> member, replaced by <span class="tt">runner::verbosity_level()</span>;</li>
-<li><span class="tt">runner::timings()</span> and <span class="tt">test_case::timings()</span>, and the members of <span class="tt">detail::stopwatch</span> kept from the v5.0.1 timestamps, which are internal and not replaced;</li>
+<li><span class="tt">runner::timings()</span> and <span class="tt">suite::timings()</span>, and the members of <span class="tt">detail::stopwatch</span> kept from the v5.0.1 timestamps, which are internal and not replaced;</li>
 <li>the <span class="tt">counters</span> members <span class="tt">successful_checks()</span>, <span class="tt">executed_subtests()</span>, and <span class="tt">was_successful()</span>, replaced by <span class="tt">passed_checks()</span>, <span class="tt">executed_test_cases()</span>, and <span class="tt">passed()</span> (the deprecated mutators <span class="tt">increment_successful_checks()</span> and <span class="tt">increment_executed_subtests()</span> were removed, since the counters are updated only by the framework);</li>
 <li><span class="tt">test_case::assume()</span>, replaced by <span class="tt">test_case::require()</span>;</li>
 <li>the overloads of <span class="tt">test_case::expect()</span> and <span class="tt">test_case::require()</span> that accept an argument that is always true (a string literal or a function name), replaced by writing the condition;</li>
 <li>the <span class="tt">static_suite</span> constructor whose callable takes a <span class="tt">static_suite&amp;</span>, replaced by a callable taking a <span class="tt">suite&amp;</span>;</li>
+<li><span class="tt">mut()</span>, replaced by <span class="tt">const_cast&lt;T&amp;&gt;</span>;</li>
+<li><span class="tt">runner::name()</span>, which always returned <span class="tt">"runner"</span>, not replaced: the names in the reports are those of the suites (see <span class="tt">add_top_suite()</span>);</li>
+<li><span class="tt">detail::expression_formatter::c_str()</span> and <span class="tt">empty()</span>, replaced by <span class="tt">str().c_str()</span> and <span class="tt">str().empty()</span>;</li>
+<li>the members <span class="tt">children_subtests_count()</span>, <span class="tt">current_subtest_index()</span>, and <span class="tt">own_index()</span> of the test nodes, which are internal and not replaced;</li>
+<li><span class="tt">extension::has_epsilon</span>, the concept that detects the floating-point wrappers with a tolerance, to be removed with them;</li>
 <li><span class="tt">reflection::short_name()</span>, replaced by <span class="tt">utility::extract_file_name()</span>;</li>
 <li>the <span class="tt">type_traits</span> namespace, with the concepts and the value wrapper templates of v5.0.1, replaced by the <span class="tt">extension</span> namespace;</li>
 <li>the traits of the <span class="tt">type_traits</span> namespace: <span class="tt">function_traits</span> and <span class="tt">list</span>, which are not replaced, and <span class="tt">identity</span>, replaced by <span class="tt">std::type_identity</span>.  </li>
@@ -265,9 +273,9 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 <p>In v5.0.1, a separate wrapper with the same members as <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">value</a>&lt;T&gt;</span>, never created by the framework; now <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1value.html" title="Struct template representing a generic value, accessible via a getter.">value</a>&lt;T&gt;</span>, so the values are compared and reported in the same way.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000107">Deprecated</a></b></dt><dd>The value wrappers are internal (since 6.0.0). </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000107">Deprecated</a></b></dt><dd>the value wrappers are internal (since 6.0.0) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l02812">2812</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l02823">2823</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
 
 </div>
 </div>
@@ -351,9 +359,9 @@ template&lt;class T&gt; </div>
   </dd>
 </dl>
 <p>The v5.0.1 name, with a trailing underscore. The stored value is now private, and <span class="tt">get()</span> returns a reference; the value is read with <span class="tt">get()</span> or with the explicit conversion, not through the v5.0.1 public member <span class="tt">value_</span>.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000106">Deprecated</a></b></dt><dd>The value wrappers are internal (since 6.0.0). </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000106">Deprecated</a></b></dt><dd>the value wrappers are internal (since 6.0.0) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l02796">2796</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deprecated_8h_source.html#l02807">2807</a> of file <a class="el" href="deprecated_8h_source.html">deprecated.h</a>.</p>
 
 </div>
 </div>
@@ -448,9 +456,9 @@ template&lt;class T&gt; </div>
 <div class="fragment"><div class="line"><span class="lineno">   79</span>    {</div>
 <div class="line"><span class="lineno">   80</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html#ga791f22f0c85b6436c9016821907b0653">utility::extract_file_name</a> (name);</div>
 <div class="line"><span class="lineno">   81</span>    }</div>
-<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-cpp-api-utility-functions_html_ga791f22f0c85b6436c9016821907b0653"><div class="ttname"><a href="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html#ga791f22f0c85b6436c9016821907b0653">micro_os_plus::micro_test_plus::utility::extract_file_name</a></div><div class="ttdeci">const char * extract_file_name(const char *path) noexcept</div><div class="ttdoc">Extracts the file name component from a full path.</div><div class="ttdef"><b>Definition</b> <a href="utility_8cpp_source.html#l00094">utility.cpp:94</a></div></div>
+<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-cpp-api-utility-functions_html_ga791f22f0c85b6436c9016821907b0653"><div class="ttname"><a href="group__micro-os-plus-micro-test-plus-cpp-api-utility-functions.html#ga791f22f0c85b6436c9016821907b0653">micro_os_plus::micro_test_plus::utility::extract_file_name</a></div><div class="ttdeci">const char * extract_file_name(const char *path) noexcept</div><div class="ttdoc">Extracts the file name component from a full path.</div><div class="ttdef"><b>Definition</b> <a href="utility_8cpp_source.html#l00095">utility.cpp:95</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="utility_8cpp_source.html#l00094">micro_os_plus::micro_test_plus::utility::extract_file_name()</a>, and <a class="el" href="deprecated_8cpp_source.html#l00078">short_name()</a>.</p>
+<p class="reference">References <a class="el" href="utility_8cpp_source.html#l00095">micro_os_plus::micro_test_plus::utility::extract_file_name()</a>, and <a class="el" href="deprecated_8cpp_source.html#l00078">short_name()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="deprecated_8cpp_source.html#l00078">short_name()</a>.</p>
 
@@ -485,9 +493,9 @@ requires (extension::has_epsilon&lt;Lhs_T&gt; or extension::has_epsilon&lt;Rhs_T
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Used by <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html" title="Relational comparator struct template.">compare_op</a></span> for all six tags, so that a value within the tolerance is equal, and neither less nor greater; at least one operand must have an <span class="tt">epsilon</span> member (a floating-point literal, a <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga5368740b47e92605914b6c38ea88aebf" title="Deprecated strongly-typed wrapper for float values.">to_f</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga9608f4a6f0a61bc159a66a46fb8cd630" title="Deprecated strongly-typed wrapper for double values.">to_d</a></span>, or <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gaeba32254fdd8159523b525745b13bfa9" title="Deprecated strongly-typed wrapper for long double values.">to_ld</a></span> wrapper, or <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a></span>).</p>
+<p>Used by <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1compare__op.html" title="Relational comparator struct template.">compare_op</a></span> for all six tags, so that a value within the tolerance is equal, and neither less nor greater; at least one operand must have an <span class="tt">epsilon</span> member (a floating-point literal, a <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga5368740b47e92605914b6c38ea88aebf" title="Deprecated strongly-typed wrapper for float values.">to_f</a></span>, <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#ga9608f4a6f0a61bc159a66a46fb8cd630" title="Deprecated strongly-typed wrapper for double values.">to_d</a></span>, or <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals.html#gaeba32254fdd8159523b525745b13bfa9" title="Deprecated strongly-typed wrapper for long double values.">to_ld</a></span> wrapper, or <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions.html#gafe47800a219b00fcccf0a1dc596dbe20" title="Deprecated wrapping of a floating-point value with an explicit comparison tolerance.">approx()</a></span>).</p>
 <p>Used only by the deprecated floating-point wrappers, it is available only when <span class="tt"><a class="el" href="group__micro-os-plus-micro-test-plus-config.html#ga67c701de5426ac340584ed038494a873" title="Enables the deprecated definitions of the µTest++ Testing Framework.">MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</a></span> is defined.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000108">Deprecated</a></b></dt><dd>To be removed with the deprecated floating-point wrappers (since 6.0.0).</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000108">Deprecated</a></b></dt><dd>to be removed with the deprecated floating-point wrappers (since 6.0.0)</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Lhs_T</td><td>The type of the left-hand operand. </td></tr>
@@ -544,7 +552,7 @@ requires (extension::has_epsilon&lt;Lhs_T&gt; or extension::has_epsilon&lt;Rhs_T
 <div class="line"><span class="lineno">  242</span><span class="preprocessor">#pragma GCC diagnostic pop</span></div>
 <div class="line"><span class="lineno">  243</span><span class="preprocessor">#endif </span><span class="comment">// defined(__GNUC__)</span></div>
 <div class="line"><span class="lineno">  244</span>    }</div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html">micro_os_plus::micro_test_plus::extension::has_epsilon</a></div><div class="ttdoc">Deprecated concept satisfied when T is a framework floating-point wrapper with a tolerance.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00348">extension.h:348</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1has__epsilon.html">micro_os_plus::micro_test_plus::extension::has_epsilon</a></div><div class="ttdoc">Deprecated concept satisfied when T is a framework floating-point wrapper with a tolerance.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00349">extension.h:349</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_html_a515f68bbb31d64d07810f45f3b1118f6"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a515f68bbb31d64d07810f45f3b1118f6">micro_os_plus::micro_test_plus::detail::math::abs</a></div><div class="ttdeci">constexpr auto abs(const T t) noexcept -&gt; T</div><div class="ttdoc">Computes the absolute value of a given comparable value.</div><div class="ttdef"><b>Definition</b> <a href="math-inlines_8h_source.html#l00088">math-inlines.h:88</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_html_a67e71e2dce0120ad4839635830e80de8"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math.html#a67e71e2dce0120ad4839635830e80de8">micro_os_plus::micro_test_plus::detail::math::min_value</a></div><div class="ttdeci">constexpr auto min_value(const T &amp;lhs, const T &amp;rhs) noexcept -&gt; const T &amp;</div><div class="ttdoc">Computes the minimum of two comparable values.</div><div class="ttdef"><b>Definition</b> <a href="math-inlines_8h_source.html#l00106">math-inlines.h:106</a></div></div>
 <div class="ttc" id="anamespacemicro__os__plus_1_1micro__test__plus_1_1detail_html_a59eb53c96f68d26635c13df53b358ac8"><div class="ttname"><a href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#a59eb53c96f68d26635c13df53b358ac8">micro_os_plus::micro_test_plus::detail::unwrap</a></div><div class="ttdeci">decltype(auto) constexpr unwrap(const T &amp;t)</div><div class="ttdoc">Returns the value wrapped by a framework type, or the operand itself.</div><div class="ttdef"><b>Definition</b> <a href="detail-inlines_8h_source.html#l00098">detail-inlines.h:98</a></div></div>
@@ -577,7 +585,7 @@ requires (extension::has_epsilon&lt;Lhs_T&gt; or extension::has_epsilon&lt;Rhs_T
 </div><div class="memdoc">
 <p>Values within the tolerance are equal.</p>
 <p>Used only by the tolerance of the deprecated floating-point wrappers.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000109">Deprecated</a></b></dt><dd>To be removed with the deprecated floating-point wrappers (since 6.0.0). </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000109">Deprecated</a></b></dt><dd>to be removed with the deprecated floating-point wrappers (since 6.0.0) </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00459">459</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
@@ -604,7 +612,7 @@ requires (extension::has_epsilon&lt;Lhs_T&gt; or extension::has_epsilon&lt;Rhs_T
 </div><div class="memdoc">
 <p>Values within the tolerance are equal, not ordered.</p>
 <p>Used only by the tolerance of the deprecated floating-point wrappers.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000111">Deprecated</a></b></dt><dd>To be removed with the deprecated floating-point wrappers (since 6.0.0). </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000111">Deprecated</a></b></dt><dd>to be removed with the deprecated floating-point wrappers (since 6.0.0) </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00577">577</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
@@ -631,7 +639,7 @@ requires (extension::has_epsilon&lt;Lhs_T&gt; or extension::has_epsilon&lt;Rhs_T
 </div><div class="memdoc">
 <p>Values within the tolerance are equal.</p>
 <p>Used only by the tolerance of the deprecated floating-point wrappers.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000112">Deprecated</a></b></dt><dd>To be removed with the deprecated floating-point wrappers (since 6.0.0). </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000112">Deprecated</a></b></dt><dd>to be removed with the deprecated floating-point wrappers (since 6.0.0) </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00636">636</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
@@ -658,7 +666,7 @@ requires (extension::has_epsilon&lt;Lhs_T&gt; or extension::has_epsilon&lt;Rhs_T
 </div><div class="memdoc">
 <p>Values within the tolerance are equal, not ordered.</p>
 <p>Used only by the tolerance of the deprecated floating-point wrappers.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000113">Deprecated</a></b></dt><dd>To be removed with the deprecated floating-point wrappers (since 6.0.0). </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000113">Deprecated</a></b></dt><dd>to be removed with the deprecated floating-point wrappers (since 6.0.0) </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00695">695</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
@@ -685,7 +693,7 @@ requires (extension::has_epsilon&lt;Lhs_T&gt; or extension::has_epsilon&lt;Rhs_T
 </div><div class="memdoc">
 <p>Values within the tolerance are equal.</p>
 <p>Used only by the tolerance of the deprecated floating-point wrappers.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000114">Deprecated</a></b></dt><dd>To be removed with the deprecated floating-point wrappers (since 6.0.0). </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000114">Deprecated</a></b></dt><dd>to be removed with the deprecated floating-point wrappers (since 6.0.0) </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00754">754</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 
@@ -712,7 +720,7 @@ requires (extension::has_epsilon&lt;Lhs_T&gt; or extension::has_epsilon&lt;Rhs_T
 </div><div class="memdoc">
 <p>Values within the tolerance are equal.</p>
 <p>Used only by the tolerance of the deprecated floating-point wrappers.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000110">Deprecated</a></b></dt><dd>To be removed with the deprecated floating-point wrappers (since 6.0.0). </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000110">Deprecated</a></b></dt><dd>to be removed with the deprecated floating-point wrappers (since 6.0.0) </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="detail_8h_source.html#l00518">518</a> of file <a class="el" href="detail_8h_source.html">detail.h</a>.</p>
 

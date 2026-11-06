@@ -63,10 +63,10 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * The `throws` function template verifies whether invoking the provided
-   * callable object results in the throwing of a specific exception type
-   * within the µTest++ framework. This is useful for testing error handling
-   * in code under test. Exceptions of other types are reported as failures.
+   * The `throws` function template checks whether invoking the provided
+   * callable object results in the throwing of a specific exception type.
+   * This is useful for testing error handling in code under test.
+   * Exceptions of other types are reported as failures.
    *
    * The callable is invoked immediately, when the comparator is
    * constructed; the result is reported when the comparator is passed to
@@ -82,10 +82,10 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * The `throws` function template verifies whether invoking the provided
-   * callable object results in the throwing of any exception within the
-   * µTest++ framework. This is useful for ensuring that code under test
-   * properly signals error conditions.
+   * The `throws` function template checks whether invoking the provided
+   * callable object results in the throwing of any exception. This is
+   * useful for ensuring that code under test properly signals error
+   * conditions.
    *
    * The callable is invoked immediately, when the comparator is
    * constructed; the result is reported when the comparator is passed to
@@ -101,10 +101,10 @@ namespace micro_os_plus::micro_test_plus
 
   /**
    * @details
-   * The `nothrow` function template verifies whether invoking the provided
-   * callable object does not result in the throwing of any exception within
-   * the µTest++ framework. This is useful for ensuring that code under test
-   * does not unexpectedly signal error conditions.
+   * The `nothrow` function template checks whether invoking the provided
+   * callable object does not result in the throwing of any exception. This
+   * is useful for ensuring that code under test does not unexpectedly
+   * signal error conditions.
    *
    * The callable is invoked immediately, when the comparator is
    * constructed; the result is reported when the comparator is passed to

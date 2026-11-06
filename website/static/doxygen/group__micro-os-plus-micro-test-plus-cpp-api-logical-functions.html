@@ -151,7 +151,7 @@ requires extension::checkable&lt;std::remove_cvref_t&lt;Expr_T&gt;&gt;</td></tr>
 <div class="line">});</div>
 </div><!-- fragment --><dl class="section user"><dt>Differences from the built-in operators</dt><dd><ul>
 <li>All the operands are evaluated before the check; unlike <span class="tt">&amp;&amp;</span> and <span class="tt">||</span>, the functions do not stop at the first operand that decides the result, so do not write <span class="tt">mt::all_of (mt::ne (p, nullptr), mt::eq (*p, 1))</span>.</li>
-<li>After a <span class="tt">using namespace std</span>, an unqualified <span class="tt">all_of()</span> or <span class="tt">any_of()</span> with three or more operands of the same type selects the standard algorithm, which does not compile; write <span class="tt">mt::all_of()</span> and <span class="tt">mt::any_of()</span>.</li>
+<li>After a <span class="tt">using namespace std</span>, an unqualified <span class="tt">all_of()</span> or <span class="tt">any_of()</span> with three or more operands of the same type selects the standard algorithm, which does not compile, and an unqualified <span class="tt">negate()</span> is ambiguous with <span class="tt">std::negate</span>; write <span class="tt">mt::all_of()</span>, <span class="tt">mt::any_of()</span>, and <span class="tt">mt::negate()</span>.</li>
 </ul>
 </dd></dl>
 <p>The overloaded logical operators of the <span class="tt">mt::operators</span> namespace are deprecated since 6.0.0, in favour of these functions.  </p>
@@ -367,7 +367,7 @@ requires extension::checkable&lt;std::remove_cvref_t&lt;Expr_T&gt;&gt;</div>
 <div class="line"><span class="lineno">  333</span>      std::forward&lt;Expr_T&gt; (expr)</div>
 <div class="line"><span class="lineno">  334</span>    };</div>
 <div class="line"><span class="lineno">  335</span>  }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__op.html">micro_os_plus::micro_test_plus::detail::not_op</a></div><div class="ttdoc">Logical NOT comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01186">detail.h:1187</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__op_html"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1not__op.html">micro_os_plus::micro_test_plus::detail::not_op</a></div><div class="ttdoc">Logical NOT comparator struct template.</div><div class="ttdef"><b>Definition</b> <a href="detail_8h_source.html#l01185">detail.h:1186</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="function-comparators-inlines_8h_source.html#l00330">negate()</a>.</p>
 

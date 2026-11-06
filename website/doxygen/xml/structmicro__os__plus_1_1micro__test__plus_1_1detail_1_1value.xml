@@ -37,7 +37,7 @@ Delegates to <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__p
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="635" column="17"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="638" column="17"/>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a9199f28db3a365b60ca6ef17053cec2a" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>const T &amp;</type>
@@ -180,7 +180,7 @@ The <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1de
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base"/>
       </node>
     </collaborationgraph>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="625" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="626" bodyend="636"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="628" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="629" bodyend="639"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a9199f28db3a365b60ca6ef17053cec2a" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value</scope><name>get</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a4d0554be18a449d7b9176e868e631846" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::value</scope><name>op_type</name></member>

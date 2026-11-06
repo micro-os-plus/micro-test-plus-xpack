@@ -2,9 +2,9 @@
 @brief Deprecated literal operators and wrappers for typed operands.
 
 @details
-The deprecated overloaded operators compare only the framework types. The
-literals of the `mt::literals` namespace, such as `1_i` and `42.0_f`,
-create such operands from constants, and the wrappers, such as
+The deprecated overloaded operators compare only the framework expression
+types. The literals of the `mt::literals` namespace, such as `1_i` and
+`42.0_f`, create such operands from constants, and the wrappers, such as
 `mt::to_i{ value }`, from the values computed at run time.
 
 @par Deprecated

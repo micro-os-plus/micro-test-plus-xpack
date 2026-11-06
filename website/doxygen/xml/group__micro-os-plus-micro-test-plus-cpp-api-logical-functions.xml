@@ -280,7 +280,7 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-log
 </programlisting></para>
 <para><simplesect kind="par"><title>Differences from the built-in operators</title><para><itemizedlist>
 <listitem><para>All the operands are evaluated before the check; unlike <computeroutput>&amp;&amp;</computeroutput> and <computeroutput>||</computeroutput>, the functions do not stop at the first operand that decides the result, so do not write <computeroutput>mt::all_of (mt::ne (p, nullptr), mt::eq (*p, 1))</computeroutput>.</para>
-</listitem><listitem><para>After a <computeroutput>using namespace std</computeroutput>, an unqualified <computeroutput>all_of()</computeroutput> or <computeroutput>any_of()</computeroutput> with three or more operands of the same type selects the standard algorithm, which does not compile; write <computeroutput>mt::all_of()</computeroutput> and <computeroutput>mt::any_of()</computeroutput>.</para>
+</listitem><listitem><para>After a <computeroutput>using namespace std</computeroutput>, an unqualified <computeroutput>all_of()</computeroutput> or <computeroutput>any_of()</computeroutput> with three or more operands of the same type selects the standard algorithm, which does not compile, and an unqualified <computeroutput>negate()</computeroutput> is ambiguous with <computeroutput>std::negate</computeroutput>; write <computeroutput>mt::all_of()</computeroutput>, <computeroutput>mt::any_of()</computeroutput>, and <computeroutput>mt::negate()</computeroutput>.</para>
 </listitem></itemizedlist>
 </para>
 </simplesect>

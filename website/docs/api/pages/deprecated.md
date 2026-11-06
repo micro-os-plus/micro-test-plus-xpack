@@ -28,9 +28,9 @@ keywords:
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gafdd897d040f92df9cd42e551ebc88cd8">micro_os_plus::micro_test_plus::_c</a></dt>
 <dd><p><a id="_deprecated000034"></a>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#ga7c6c0169d894a7dd589d96df49e8df26">micro_os_plus::micro_test_plus::_d</a></dt>
-<dd><p><a id="_deprecated000054"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a> for tolerances (since 6.0.0)</p></dd>
+<dd><p><a id="_deprecated000054"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions/#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a> for tolerances (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#ga231cd51e76a2f426703275739d605ad4">micro_os_plus::micro_test_plus::_f</a></dt>
-<dd><p><a id="_deprecated000053"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a> for tolerances (since 6.0.0)</p></dd>
+<dd><p><a id="_deprecated000053"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions/#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a> for tolerances (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#ga8468610e763177a8f569f7d618851288">micro_os_plus::micro_test_plus::_i</a></dt>
 <dd><p><a id="_deprecated000037"></a>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gad2d95793c99112ad2889c6663789d1e3">micro_os_plus::micro_test_plus::_i16</a></dt>
@@ -44,7 +44,7 @@ keywords:
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#ga429a848542fc4ffafd3dd22bc1832654">micro_os_plus::micro_test_plus::_l</a></dt>
 <dd><p><a id="_deprecated000038"></a>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gacfe28c6fb7bfb47ca8891cb61e7f58d9">micro_os_plus::micro_test_plus::_ld</a></dt>
-<dd><p><a id="_deprecated000055"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a> for tolerances (since 6.0.0)</p></dd>
+<dd><p><a id="_deprecated000055"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions/#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a> for tolerances (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#ga9c597ca04848620b8570c29a4741e77d">micro_os_plus::micro_test_plus::_ll</a></dt>
 <dd><p><a id="_deprecated000039"></a>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions/#gaa465723bc4fe309f15d30a4e7207d40f">micro_os_plus::micro_test_plus::_not</a>  (Expr_T &amp;&amp;expr)</dt>
@@ -75,7 +75,7 @@ keywords:
 <dd><p><a id="_deprecated000044"></a>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#ga65aea7fc6324806cc029041a1c785611">micro_os_plus::micro_test_plus::_us</a></dt>
 <dd><p><a id="_deprecated000042"></a>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gafe47800a219b00fcccf0a1dc596dbe20">micro_os_plus::micro_test_plus::approx</a>  (T value, std::type_identity_t&lt; T &gt; epsilon) noexcept -&gt; <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-f7399366cd6336ecbea702c3289d9432">detail::value&lt; T &gt;</a></dt>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions/#gafe47800a219b00fcccf0a1dc596dbe20">micro_os_plus::micro_test_plus::approx</a>  (T value, std::type_identity_t&lt; T &gt; epsilon) noexcept -&gt; <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value-f7399366cd6336ecbea702c3289d9432">detail::value&lt; T &gt;</a></dt>
 <dd><p><a id="_deprecated000032"></a>use approx (lhs, rhs, epsilon) (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#a3cd85c566bdf2b3b92e27db4c29c7bc5">micro_os_plus::micro_test_plus::counters::executed_subtests</a>  (void) const noexcept</dt>
 <dd><p><a id="_deprecated000002"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#a3d33b96c8d1a299929ead1f830e91853">executed_test_cases()</a> (since 6.0.0)</p></dd>
@@ -84,21 +84,21 @@ keywords:
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#ae27ffc4d38a71b5c7d54f4a3b56c2203">micro_os_plus::micro_test_plus::counters::was_successful</a>  (void) const noexcept</dt>
 <dd><p><a id="_deprecated000003"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/counters/#a14690f9880df505f9dd90a9f2c3dfc96">passed()</a> (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#gad1e3d2d57c0ed04d4bb90eb72dd89b71">micro_os_plus::micro_test_plus::detail::equal_to::within_tolerance_result</a></dt>
-<dd><p><a id="_deprecated000109"></a>To be removed with the deprecated floating-point wrappers (since 6.0.0).</p></dd>
+<dd><p><a id="_deprecated000109"></a>to be removed with the deprecated floating-point wrappers (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter/#a6a426d5cae4216ba3ed17bd20069f8a2">micro_os_plus::micro_test_plus::detail::expression_formatter::c_str</a>  (void) const noexcept</dt>
 <dd><p><a id="_deprecated000115"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter/#a57a2737ff5f067461e4f220acd9fcd4b">str()</a>.<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter/#a6a426d5cae4216ba3ed17bd20069f8a2">c_str()</a> (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter/#a1c8635cbb51fea4f2b1ef839c85599e8">micro_os_plus::micro_test_plus::detail::expression_formatter::empty</a>  (void) const noexcept</dt>
 <dd><p><a id="_deprecated000116"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter/#a57a2737ff5f067461e4f220acd9fcd4b">str()</a>.<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter/#a1c8635cbb51fea4f2b1ef839c85599e8">empty()</a> (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga3770982b9b7025e79d30c44f8b6de981">micro_os_plus::micro_test_plus::detail::greater::within_tolerance_result</a></dt>
-<dd><p><a id="_deprecated000111"></a>To be removed with the deprecated floating-point wrappers (since 6.0.0).</p></dd>
+<dd><p><a id="_deprecated000111"></a>to be removed with the deprecated floating-point wrappers (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga1e6e1923184c1e15b8dfe69053010c83">micro_os_plus::micro_test_plus::detail::greater_equal::within_tolerance_result</a></dt>
-<dd><p><a id="_deprecated000112"></a>To be removed with the deprecated floating-point wrappers (since 6.0.0).</p></dd>
+<dd><p><a id="_deprecated000112"></a>to be removed with the deprecated floating-point wrappers (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#gaf95d91c9cae67c4ce138146b2cdab25e">micro_os_plus::micro_test_plus::detail::less::within_tolerance_result</a></dt>
-<dd><p><a id="_deprecated000113"></a>To be removed with the deprecated floating-point wrappers (since 6.0.0).</p></dd>
+<dd><p><a id="_deprecated000113"></a>to be removed with the deprecated floating-point wrappers (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#gadcaedd85e07d96bd7230d06c5c258df7">micro_os_plus::micro_test_plus::detail::less_equal::within_tolerance_result</a></dt>
-<dd><p><a id="_deprecated000114"></a>To be removed with the deprecated floating-point wrappers (since 6.0.0).</p></dd>
+<dd><p><a id="_deprecated000114"></a>to be removed with the deprecated floating-point wrappers (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga8decf36d3e0e7cc8242c6a2170743422">micro_os_plus::micro_test_plus::detail::not_equal_to::within_tolerance_result</a></dt>
-<dd><p><a id="_deprecated000110"></a>To be removed with the deprecated floating-point wrappers (since 6.0.0).</p></dd>
+<dd><p><a id="_deprecated000110"></a>to be removed with the deprecated floating-point wrappers (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/reporter/#a467d1332df523b9acaa3ff82b0ebb714">micro_os_plus::micro_test_plus::detail::reporter::verbosity</a>  (void) const noexcept -&gt; <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-runners/#ga809871d76f29309ed9c6fbd96d5a914b">micro_test_plus::verbosity</a></dt>
 <dd><p><a id="_deprecated000118"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a1dd0221dca8e7382f0b625ff6316ed92">runner::verbosity_level()</a> (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/runnable-base/#aaf838b03cddfb039d1295611be8a5e32">micro_os_plus::micro_test_plus::detail::runnable_base::children_subtests_count</a>  (void) const noexcept</dt>
@@ -130,17 +130,17 @@ keywords:
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga53a6bc7f86b15378c8296b3647e7013f">micro_os_plus::micro_test_plus::detail::timestamps</a></dt>
 <dd><p><a id="_deprecated000094"></a>the timings are internal (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga6c5237ff6944278e8c5e3294cf99a3b9">micro_os_plus::micro_test_plus::detail::within_tolerance</a>  (const Lhs_T &amp;lhs, const Rhs_T &amp;rhs)</dt>
-<dd><p><a id="_deprecated000108"></a>To be removed with the deprecated floating-point wrappers (since 6.0.0).</p></dd>
+<dd><p><a id="_deprecated000108"></a>to be removed with the deprecated floating-point wrappers (since 6.0.0)</p></dd>
 <dt>Concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/has-epsilon">micro_os_plus::micro_test_plus::extension::has_epsilon</a></dt>
-<dd><p><a id="_deprecated000117"></a>To be removed with the deprecated floating-point wrappers (since 6.0.0).</p></dd>
+<dd><p><a id="_deprecated000117"></a>to be removed with the deprecated floating-point wrappers (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gaa2bfc74376f8c110053bfa6e06e40772">micro_os_plus::micro_test_plus::literals::operator</a> "_b" (const char *name, decltype(sizeof("")) size)</dt>
 <dd><p><a id="_deprecated000091"></a>use a plain bool and a check message (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gae521cebfd48332f44d01e4f880b4aafa">micro_os_plus::micro_test_plus::literals::operator</a> "_c" ()</dt>
 <dd><p><a id="_deprecated000071"></a>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#ga9d9b0d77e96cc46e7c9fabbb6cf671da">micro_os_plus::micro_test_plus::literals::operator</a> "_d" ()</dt>
-<dd><p><a id="_deprecated000089"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a> for tolerances (since 6.0.0)</p></dd>
+<dd><p><a id="_deprecated000089"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions/#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a> for tolerances (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef">micro_os_plus::micro_test_plus::literals::operator</a> "_f" ()</dt>
-<dd><p><a id="_deprecated000088"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a> for tolerances (since 6.0.0)</p></dd>
+<dd><p><a id="_deprecated000088"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions/#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a> for tolerances (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#ga366a0d47aec3241e659816067c94fcdf">micro_os_plus::micro_test_plus::literals::operator</a> "_i" ()</dt>
 <dd><p><a id="_deprecated000069"></a>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gabce6e838737bf25be6e7527f69e75590">micro_os_plus::micro_test_plus::literals::operator</a> "_i16" ()</dt>
@@ -154,7 +154,7 @@ keywords:
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#ga96e891b439024e116cb845bc65bc9c4f">micro_os_plus::micro_test_plus::literals::operator</a> "_l" ()</dt>
 <dd><p><a id="_deprecated000073"></a>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gaecd8c981d99602a0d0a44ebf6d1d4f75">micro_os_plus::micro_test_plus::literals::operator</a> "_ld" ()</dt>
-<dd><p><a id="_deprecated000090"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a> for tolerances (since 6.0.0)</p></dd>
+<dd><p><a id="_deprecated000090"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions/#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a> for tolerances (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gaf5ab66b00c9486ade5d49f34a83783f5">micro_os_plus::micro_test_plus::literals::operator</a> "_ll" ()</dt>
 <dd><p><a id="_deprecated000074"></a>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#ga812816a2e9b23de1f8d8b2d86553d96d">micro_os_plus::micro_test_plus::literals::operator</a> "_s" ()</dt>
@@ -179,7 +179,7 @@ keywords:
 <dd><p><a id="_deprecated000079"></a>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#ga9017debdc1eafd64e3c53c80157ad6f5">micro_os_plus::micro_test_plus::literals::operator</a> "_us" ()</dt>
 <dd><p><a id="_deprecated000077"></a>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p></dd>
-<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga00ea8f3dfb7cb0ef39919065321cf62f">micro_os_plus::micro_test_plus::mut</a>  (const T &amp;t) noexcept -&gt; T &amp;</dt>
+<dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions/#ga00ea8f3dfb7cb0ef39919065321cf62f">micro_os_plus::micro_test_plus::mut</a>  (const T &amp;t) noexcept -&gt; T &amp;</dt>
 <dd><p><a id="_deprecated000007"></a>use const_cast&lt;T&amp;&gt; (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-operators/#gad47ea22957940a08ff56104d3c0c16f7">micro_os_plus::micro_test_plus::operators::operator and</a>  (Lhs_T &amp;&amp;lhs, Rhs_T &amp;&amp;rhs)</dt>
 <dd><p><a id="_deprecated000066"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/#ga0a385c59a2f7d3c4cfef77d2d3b4f3d6">all_of()</a> (since 6.0.0)</p></dd>
@@ -204,9 +204,9 @@ keywords:
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a7f8403f1ccc6a0e8171ef077bcd9cbd4">micro_os_plus::micro_test_plus::runner::exit_code</a>  (void)</dt>
 <dd><p><a id="_deprecated000121"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a700e3ef1f955492cd84235bd388dcdf2">run_suites()</a> (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a39ee9ec53f8df687cd84092de5118592">micro_os_plus::micro_test_plus::runner::initialise</a>  (int argc, char *argv[], const char *top_suite_name)</dt>
-<dd><p><a id="_deprecated000120"></a></p></dd>
+<dd><p><a id="_deprecated000120"></a>use <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a39ee9ec53f8df687cd84092de5118592">initialise</a> (argc, argv)</span> and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a9ec7d561fe8eab9df03da792f62518ae">add_top_suite()</a></span> (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a5f1698a93a8b09c39b87c23452335646">micro_os_plus::micro_test_plus::runner::name</a>  (void) const noexcept</dt>
-<dd><p><a id="_deprecated000124"></a></p></dd>
+<dd><p><a id="_deprecated000124"></a>the runner has no name; see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a9ec7d561fe8eab9df03da792f62518ae">add_top_suite()</a></span> (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a65250ff363fbb3b5869bbe4de9578e86">micro_os_plus::micro_test_plus::runner::reporter</a>  (void) const noexcept</dt>
 <dd><p><a id="_deprecated000128"></a>use <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a1dd0221dca8e7382f0b625ff6316ed92">verbosity_level()</a> (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a10788baa079e19676a8cdbaa253285dc">micro_os_plus::micro_test_plus::runner::runner</a>  (const char *top_suite_name)</dt>
@@ -234,17 +234,17 @@ keywords:
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case/#adeccc20d1919ae7f8fc697997dc9bb98">micro_os_plus::micro_test_plus::test_case::assume</a>  (const Expr_T &amp;expr, const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a> &amp;sl=<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current()</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/check-result">detail::check_result</a> &amp;&amp;result=<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/check-result">detail::check_result</a>{})</dt>
 <dd><p><a id="_deprecated000142"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-requirements/#gaad1feafeef2f3cea336be3ebe0b27e14">require()</a> (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case/#af5d04e3477e209f8989d13dfd36239b4">micro_os_plus::micro_test_plus::test_case::expect</a>  (const Expr_T &amp;expr, const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a> &amp;sl=<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current()</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/check-result">detail::check_result</a> &amp;&amp;result=<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/check-result">detail::check_result</a>{})</dt>
-<dd><p><a id="_deprecated000140"></a></p></dd>
+<dd><p><a id="_deprecated000140"></a>the argument is always true; write the condition (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/test-case/#a6fb4545d5dc1dbc82c837ce1565f7f26">micro_os_plus::micro_test_plus::test_case::require</a>  (const Expr_T &amp;expr, const <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location">reflection::source_location</a> &amp;sl=<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/reflection/source-location/#af2ee3ac5db96f13680291736d58fe327">reflection::source_location::current()</a>, <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/check-result">detail::check_result</a> &amp;&amp;result=<a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/check-result">detail::check_result</a>{})</dt>
-<dd><p><a id="_deprecated000141"></a></p></dd>
+<dd><p><a id="_deprecated000141"></a>the argument is always true; write the condition (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#ga5570e36fb3e73be3edf734ac80a23d93">micro_os_plus::micro_test_plus::to_b</a></dt>
 <dd><p><a id="_deprecated000008"></a>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#ga6ccf42d05ae14c445f602128f8ffd831">micro_os_plus::micro_test_plus::to_c</a></dt>
 <dd><p><a id="_deprecated000009"></a>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#ga9608f4a6f0a61bc159a66a46fb8cd630">micro_os_plus::micro_test_plus::to_d</a></dt>
-<dd><p><a id="_deprecated000029"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a> for tolerances (since 6.0.0)</p></dd>
+<dd><p><a id="_deprecated000029"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions/#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a> for tolerances (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#ga5368740b47e92605914b6c38ea88aebf">micro_os_plus::micro_test_plus::to_f</a></dt>
-<dd><p><a id="_deprecated000028"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a> for tolerances (since 6.0.0)</p></dd>
+<dd><p><a id="_deprecated000028"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions/#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a> for tolerances (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gaf3ee271cefcffa625e40d476305da62f">micro_os_plus::micro_test_plus::to_i</a></dt>
 <dd><p><a id="_deprecated000012"></a>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#ga5cc1961eb074bb0740d8a593c411e0f9">micro_os_plus::micro_test_plus::to_i16</a></dt>
@@ -258,7 +258,7 @@ keywords:
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#ga09028a1e0e713723257afba48b9ee551">micro_os_plus::micro_test_plus::to_l</a></dt>
 <dd><p><a id="_deprecated000013"></a>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gaeba32254fdd8159523b525745b13bfa9">micro_os_plus::micro_test_plus::to_ld</a></dt>
-<dd><p><a id="_deprecated000030"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a> for tolerances (since 6.0.0)</p></dd>
+<dd><p><a id="_deprecated000030"></a>use <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions/#gafe47800a219b00fcccf0a1dc596dbe20">approx()</a> for tolerances (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#ga0d0ae1e784a8a4da6630ab06addcad34">micro_os_plus::micro_test_plus::to_ll</a></dt>
 <dd><p><a id="_deprecated000014"></a>pass plain values to <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq()</a> and the other comparators (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-literals/#gabc8f58b457f42435bcb51f53e6fe6b78">micro_os_plus::micro_test_plus::to_s</a></dt>
@@ -288,33 +288,33 @@ keywords:
 <dt>Namespace <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/type-traits">micro_os_plus::micro_test_plus::type_traits</a></dt>
 <dd><p><a id="_deprecated000059"></a>use the extension namespace (since 6.0.0)</p></dd>
 <dt>Struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-c8ae4832b74f8fe701e29e20410c0d5a">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(*)(Args_T...)&gt;</a></dt>
-<dd><p><a id="_deprecated000102"></a>Not replaced (since 6.0.0).</p></dd>
+<dd><p><a id="_deprecated000102"></a>not replaced (since 6.0.0)</p></dd>
 <dt>Struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-567248e3f9c17aff751ce83e3c5b4d55">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(Args_T...)&gt;</a></dt>
-<dd><p><a id="_deprecated000103"></a>Not replaced (since 6.0.0).</p></dd>
+<dd><p><a id="_deprecated000103"></a>not replaced (since 6.0.0)</p></dd>
 <dt>Struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-05ab90b3270445bd2304511210cefdc8">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...) const &gt;</a></dt>
-<dd><p><a id="_deprecated000105"></a>Not replaced (since 6.0.0).</p></dd>
+<dd><p><a id="_deprecated000105"></a>not replaced (since 6.0.0)</p></dd>
 <dt>Struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits-aa0970b0a1efa305c0cfd55ce14bb11b">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; R(T::*)(Args_T...)&gt;</a></dt>
-<dd><p><a id="_deprecated000104"></a>Not replaced (since 6.0.0).</p></dd>
+<dd><p><a id="_deprecated000104"></a>not replaced (since 6.0.0)</p></dd>
 <dt>Struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/function-traits">micro_os_plus::micro_test_plus::type_traits::function_traits&lt; T &gt;</a></dt>
-<dd><p><a id="_deprecated000101"></a>Not replaced (since 6.0.0).</p></dd>
+<dd><p><a id="_deprecated000101"></a>not replaced (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga67890916b8d3d8cbaab893cc6b599745">micro_os_plus::micro_test_plus::type_traits::genuine_integral_value</a></dt>
-<dd><p><a id="_deprecated000107"></a>The value wrappers are internal (since 6.0.0).</p></dd>
+<dd><p><a id="_deprecated000107"></a>the value wrappers are internal (since 6.0.0)</p></dd>
 <dt>Concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-npos">micro_os_plus::micro_test_plus::type_traits::has_npos</a></dt>
-<dd><p><a id="_deprecated000096"></a>There is no replacement; the concept used by the framework is internal (since 6.0.0).</p></dd>
+<dd><p><a id="_deprecated000096"></a>there is no replacement; the concept used by the framework is internal (since 6.0.0)</p></dd>
 <dt>Concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/has-value">micro_os_plus::micro_test_plus::type_traits::has_value</a></dt>
-<dd><p><a id="_deprecated000097"></a>There is no replacement; the concept used by the framework is internal (since 6.0.0).</p></dd>
+<dd><p><a id="_deprecated000097"></a>there is no replacement; the concept used by the framework is internal (since 6.0.0)</p></dd>
 <dt>Struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/identity">micro_os_plus::micro_test_plus::type_traits::identity&lt; T, Extra &gt;</a></dt>
-<dd><p><a id="_deprecated000100"></a>Use <span class="doxyComputerOutput">std::type_identity</span> (since 6.0.0).</p></dd>
+<dd><p><a id="_deprecated000100"></a>use <span class="doxyComputerOutput">std::type_identity</span> (since 6.0.0)</p></dd>
 <dt>Concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/type-traits/is-floating-point">micro_os_plus::micro_test_plus::type_traits::is_floating_point</a></dt>
-<dd><p><a id="_deprecated000098"></a>Use <span class="doxyComputerOutput">std::floating_point</span> (since 6.0.0).</p></dd>
+<dd><p><a id="_deprecated000098"></a>use <span class="doxyComputerOutput">std::floating_point</span> (since 6.0.0)</p></dd>
 <dt>Struct <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/type-traits/list">micro_os_plus::micro_test_plus::type_traits::list&lt; Types &gt;</a></dt>
-<dd><p><a id="_deprecated000099"></a>Not replaced (since 6.0.0).</p></dd>
+<dd><p><a id="_deprecated000099"></a>not replaced (since 6.0.0)</p></dd>
 <dt>Member <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated/#ga65ad920b21a6c0df6848aa939659b92e">micro_os_plus::micro_test_plus::type_traits::value_base_</a></dt>
-<dd><p><a id="_deprecated000106"></a>The value wrappers are internal (since 6.0.0).</p></dd>
+<dd><p><a id="_deprecated000106"></a>the value wrappers are internal (since 6.0.0)</p></dd>
 </dl>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

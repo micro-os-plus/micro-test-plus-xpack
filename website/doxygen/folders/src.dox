@@ -13,7 +13,7 @@ more related components:
 - `expression-formatter.cpp` — non-template `operator<<` overloads of the
   expression formatter, and the texts of the pending checks
 - `runner-options.cpp` — `runner_options` command-line parsing, and the
-  reporting of the option errors
+  recording of the option errors
 - `reporter-human.cpp` — human-readable reporter implementation
 - `reporter-tap.cpp` — TAP-format reporter implementation
 - `reporter.cpp` — base `reporter` class and `operator<<` overloads

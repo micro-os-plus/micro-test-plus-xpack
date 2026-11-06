@@ -18,10 +18,11 @@
  *
  * @details
  * This header provides the inline and template implementations for the
- * check result: the template constructor, the result accessor, and the
- * `operator<<` that accumulates the expectation messages (written by the
- * expression formatter, in its plain mode). The non-template constructor
- * and the destructor are defined in `src/check-result.cpp`.
+ * check result: the template function `init()`, the result accessor, and the
+ * `operator<<` that accumulates the messages of the checks (written by the
+ * expression formatter, in its plain mode). The default constructor, the
+ * non-template function `start()`, and the destructor are defined in
+ * `src/check-result.cpp`.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus::detail`
  * namespace.

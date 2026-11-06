@@ -223,7 +223,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput"><a href="#ga2989618cf5adca7a767c966895ab37a0">nothrow</a></span> function template verifies whether invoking the provided callable object does not result in the throwing of any exception within the µTest++ framework. This is useful for ensuring that code under test does not unexpectedly signal error conditions.</p>
+<p>The <span class="doxyComputerOutput"><a href="#ga2989618cf5adca7a767c966895ab37a0">nothrow</a></span> function template checks whether invoking the provided callable object does not result in the throwing of any exception. This is useful for ensuring that code under test does not unexpectedly signal error conditions.</p>
 
 
 <p>The callable is invoked immediately, when the comparator is constructed; the result is reported when the comparator is passed to <span class="doxyComputerOutput">expect()</span> or <span class="doxyComputerOutput">require()</span>, which also accept optional messages.</p>
@@ -310,7 +310,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput"><a href="#ga6a0ca4f8b757ea511c494189212812b3">throws</a></span> function template verifies whether invoking the provided callable object results in the throwing of any exception within the µTest++ framework. This is useful for ensuring that code under test properly signals error conditions.</p>
+<p>The <span class="doxyComputerOutput"><a href="#ga6a0ca4f8b757ea511c494189212812b3">throws</a></span> function template checks whether invoking the provided callable object results in the throwing of any exception. This is useful for ensuring that code under test properly signals error conditions.</p>
 
 
 <p>The callable is invoked immediately, when the comparator is constructed; the result is reported when the comparator is passed to <span class="doxyComputerOutput">expect()</span> or <span class="doxyComputerOutput">require()</span>, which also accept optional messages.</p>
@@ -395,7 +395,7 @@ keywords:
 </dl>
 
 
-<p>The <span class="doxyComputerOutput"><a href="#ga6a0ca4f8b757ea511c494189212812b3">throws</a></span> function template verifies whether invoking the provided callable object results in the throwing of a specific exception type within the µTest++ framework. This is useful for testing error handling in code under test. Exceptions of other types are reported as failures.</p>
+<p>The <span class="doxyComputerOutput"><a href="#ga6a0ca4f8b757ea511c494189212812b3">throws</a></span> function template checks whether invoking the provided callable object results in the throwing of a specific exception type. This is useful for testing error handling in code under test. Exceptions of other types are reported as failures.</p>
 
 
 <p>The callable is invoked immediately, when the comparator is constructed; the result is reported when the comparator is passed to <span class="doxyComputerOutput">expect()</span> or <span class="doxyComputerOutput">require()</span>, which also accept optional messages.</p>
@@ -420,6 +420,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

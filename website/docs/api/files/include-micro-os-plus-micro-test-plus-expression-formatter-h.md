@@ -263,7 +263,7 @@ keywords:
 <p>This header provides the <span class="doxyComputerOutput">expression_formatter</span> class, which encapsulates all value-formatting logic used by the µTest++ framework. The class owns a <span class="doxyComputerOutput">std::string</span> buffer and exposes <span class="doxyComputerOutput">operator&lt;&lt;</span> overloads for every standard arithmetic type, character type, string, pointer, container, scoped enumeration, pair, tuple, optional, and framework expression type (see <span class="doxyComputerOutput">extension::is_op</span>).</p>
 
 
-<p>By consolidating the formatting operators into a single class (using the shared <span class="doxyComputerOutput">detail::append_number()</span> helper for numbers), the <span class="doxyComputerOutput">reporter</span> is relieved of those responsibilities, and <span class="doxyComputerOutput">detail::check_result</span> can pre-format expression text at construction time without requiring <span class="doxyComputerOutput">reporter</span> or <span class="doxyComputerOutput">test_case</span> to be complete at that point.</p>
+<p>By consolidating the formatting operators into a single class (using the shared <span class="doxyComputerOutput">detail::append_number()</span> helper for numbers), the <span class="doxyComputerOutput">reporter</span> is relieved of those responsibilities, and <span class="doxyComputerOutput">detail::check_result</span> can pre-format expression text, when initialised, without requiring <span class="doxyComputerOutput">reporter</span> or <span class="doxyComputerOutput">test_case</span> to be complete at that point.</p>
 
 
 <p>The formatter shares the colour configuration of the owning <span class="doxyComputerOutput">reporter</span>: comparator expressions are wrapped in pass/fail colour codes, which are empty strings unless the reporter enables colours.</p>
@@ -1004,6 +1004,6 @@ The file content with the documentation metadata removed is:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

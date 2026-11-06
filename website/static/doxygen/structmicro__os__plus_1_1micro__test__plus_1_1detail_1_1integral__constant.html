@@ -140,7 +140,7 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4f40fb20314c21d4c8320fe43a413103" id="r_a4f40fb20314c21d4c8320fe43a413103"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="#a4f40fb20314c21d4c8320fe43a413103">integral_constant</a> (void) noexcept</td></tr>
-<tr class="memdesc:a4f40fb20314c21d4c8320fe43a413103"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. Initialises the base with <span class="tt">N</span>.  <br /></td></tr>
+<tr class="memdesc:a4f40fb20314c21d4c8320fe43a413103"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <br /></td></tr>
 <tr class="memitem:a9199f28db3a365b60ca6ef17053cec2a" id="r_a9199f28db3a365b60ca6ef17053cec2a"><td class="memItemLeft">constexpr const decltype(N) &amp;&#160;</td><td class="memItemRight"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html#a9199f28db3a365b60ca6ef17053cec2a">get</a> (void) const noexcept</td></tr>
 <tr class="memdesc:a9199f28db3a365b60ca6ef17053cec2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the stored value.  <br /></td></tr>
 <tr class="memitem:ad81a4f621493097416d74f16aa458c6f" id="r_ad81a4f621493097416d74f16aa458c6f"><td class="memItemLeft">constexpr&#160;</td><td class="memItemRight"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html#ad81a4f621493097416d74f16aa458c6f">operator decltype(N)</a> () const noexcept</td></tr>
@@ -246,6 +246,7 @@ template&lt;auto N&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Initialises the base with <span class="tt">N</span>.</p>
 <p>Delegates to <span class="tt"><a class="el" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html" title="Base struct template providing common storage and accessors for run-time value-wrapper types.">value_base</a>&lt;decltype(N)&gt;{ N }</span> to initialise the base. </p>
 
 <p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00516">516</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
@@ -378,7 +379,7 @@ template&lt;auto N&gt; </div>
 <div class="line"><span class="lineno">  550</span>          <span class="keywordflow">return</span> <a class="code hl_function" href="#a4f40fb20314c21d4c8320fe43a413103">integral_constant&lt;static_cast&lt;value_type&gt;</a> (-<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html">N</a>)&gt;{};</div>
 <div class="line"><span class="lineno">  551</span>        }</div>
 <div class="line"><span class="lineno">  552</span>    }</div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant_html_a4f40fb20314c21d4c8320fe43a413103"><div class="ttname"><a href="#a4f40fb20314c21d4c8320fe43a413103">micro_os_plus::micro_test_plus::detail::integral_constant::integral_constant</a></div><div class="ttdeci">constexpr integral_constant(void) noexcept</div><div class="ttdoc">Default constructor. Initialises the base with N.</div><div class="ttdef"><b>Definition</b> <a href="deprecated-inlines_8h_source.html#l00516">deprecated-inlines.h:516</a></div></div>
+<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant_html_a4f40fb20314c21d4c8320fe43a413103"><div class="ttname"><a href="#a4f40fb20314c21d4c8320fe43a413103">micro_os_plus::micro_test_plus::detail::integral_constant::integral_constant</a></div><div class="ttdeci">constexpr integral_constant(void) noexcept</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition</b> <a href="deprecated-inlines_8h_source.html#l00516">deprecated-inlines.h:516</a></div></div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_html_abb9873b49614cc55fae3f6dda7b08b48"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html#abb9873b49614cc55fae3f6dda7b08b48">micro_os_plus::micro_test_plus::detail::value_base&lt; decltype(N)&gt;::value_type</a></div><div class="ttdeci">decltype(N) value_type</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00368">deprecated.h:368</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="deprecated-inlines_8h_source.html#l00516">integral_constant()</a>.</p>

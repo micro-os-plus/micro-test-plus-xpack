@@ -11,7 +11,7 @@
     <initializer>template&lt;class T&gt;
 concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_1_1has__npos" kindref="compound">micro_os_plus::micro_test_plus::type_traits::has_npos</ref> =  requires { T::npos; }</initializer>
     <conceptparts>
-      <codepart line="2526">    <programlisting>
+      <codepart line="2537">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">has_npos<sp/>=<sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>{<sp/>T::npos;<sp/>}</highlight></codeline>
     </programlisting>
@@ -31,9 +31,9 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1type__traits_
 </parameteritem>
 </parameterlist>
 Restored with its v5.0.1 definition, satisfied by any type with a member named <computeroutput>npos</computeroutput>. It is not used by the framework any more, which detects the strings with <computeroutput>detail::string_like</computeroutput>, so that the containers with a member named <computeroutput>npos</computeroutput> are compared element by element.</para>
-<para><xrefsect id="deprecated_1_deprecated000096"><xreftitle>Deprecated</xreftitle><xrefdescription><para>There is no replacement; the concept used by the framework is internal (since 6.0.0). </para>
+<para><xrefsect id="deprecated_1_deprecated000096"><xreftitle>Deprecated</xreftitle><xrefdescription><para>there is no replacement; the concept used by the framework is internal (since 6.0.0) </para>
 </xrefdescription></xrefsect></para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2526" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="2537" column="5"/>
   </compounddef>
 </doxygen>

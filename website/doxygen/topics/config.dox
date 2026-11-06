@@ -18,10 +18,12 @@ meson, and xPack build files define them (the `defaultDefine` entries in
 `xcdl-package.jsonc` are informative only).
 
 The application and the library sources must be compiled with the same
-`MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED` and
-`MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED` macros, otherwise the
-link fails (see the pages of the macros below); the trace macros only add
-trace calls to the function bodies. The simplest way is a header named
+`MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED` macro, otherwise the link fails;
+the same holds for `MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED`, for
+the applications that use the non-inline deprecated members (see the pages
+of the macros below). The trace macros only add trace calls to the function
+bodies, and need the `micro-os-plus/diag/trace.h` header (see the pages of
+the macros). The simplest way is a header named
 `micro-os-plus/micro-test-plus-defines.h` (or
 `micro-os-plus/project-config.h`) in the include path of the build: every
 µTest++ header includes it, if present, before its own definitions.

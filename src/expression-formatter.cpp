@@ -335,7 +335,7 @@ namespace micro_os_plus::micro_test_plus::detail
     }
 
     /**
-     * @brief Gets the text of a C string held in a buffer of a known
+     * @brief Returns the text of a C string held in a buffer of a known
      * capacity.
      *
      * @details

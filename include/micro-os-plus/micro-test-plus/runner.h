@@ -334,6 +334,9 @@ namespace micro_os_plus::micro_test_plus
      * @param top_suite_name The name given to the top suite; if empty, the
      * name is chosen as by `add_top_suite()`.
      * @return Reference to the top suite.
+     *
+     * @deprecated use `initialise (argc, argv)` and `add_top_suite()`
+     * (since 6.0.0)
      */
     [[deprecated ("use initialise (argc, argv) and add_top_suite() "
                   "(since 6.0.0)")]] class suite&
@@ -838,6 +841,9 @@ namespace micro_os_plus::micro_test_plus
      * @par Parameters
      *   None.
      * @return The constant string `"runner"`.
+     *
+     * @deprecated the runner has no name; see `add_top_suite()`
+     * (since 6.0.0)
      */
     [[deprecated ("the runner has no name; see add_top_suite() "
                   "(since 6.0.0)"),
@@ -905,7 +911,7 @@ namespace micro_os_plus::micro_test_plus
     skipped_suites_count (void) const noexcept;
 
     /**
-     * @brief Gets the totals of the test session.
+     * @brief Returns the totals of the test session.
      *
      * @details
      * The counters include the checks and the test cases of all the
@@ -922,7 +928,7 @@ namespace micro_os_plus::micro_test_plus
     totals (void) const noexcept;
 
     /**
-     * @brief Gets the command-line arguments left to the application.
+     * @brief Returns the command-line arguments left to the application.
      *
      * @details
      * The arguments that follow the µTest++ options: the first argument
@@ -1048,7 +1054,7 @@ namespace micro_os_plus::micro_test_plus
     register_suite (std::unique_ptr<class suite> suite);
 
     /**
-     * @brief Reject a suite constructed after `run_suites()` has started.
+     * @brief Rejects a suite constructed after `run_suites()` has started.
      *
      * @details
      * Reports the error with `reject_call()`. Used by `register_suite()`,
@@ -1108,7 +1114,7 @@ namespace micro_os_plus::micro_test_plus
     mark_rejected (void) noexcept;
 
     /**
-     * @brief Insert a static suite into the list of suites, or reject it.
+     * @brief Inserts a static suite into the list of suites, or reject it.
      *
      * @details
      * Called by the `static_suite` constructors. A static suite may be
@@ -1178,6 +1184,8 @@ namespace micro_os_plus::micro_test_plus
      * Before `initialise()` created the reporter, there is no output
      * file, and the result is `false`.
      *
+     * @par Parameters
+     *   None.
      * @return `true` if an option error was found.
      */
     [[nodiscard]] bool
@@ -1192,8 +1200,8 @@ namespace micro_os_plus::micro_test_plus
      * `runner_options::list_tests`). The name of the suite is written
      * before its first listed test case, indented by two spaces, and the
      * name of the test case after it, indented by four spaces, through the
-     * reporter, to the console, unless the verbosity is `silent`, and to
-     * the output file, if any.
+     * reporter, to the console, whatever the verbosity, and to the output
+     * file, if any.
      *
      * @param suite The suite of the test case.
      * @param test_case The test case to list.

@@ -26,7 +26,6 @@ var detail_8h =
     [ "micro_os_plus::micro_test_plus::detail::unary_op&lt; T &gt;", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op.html", "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1unary__op" ],
     [ "micro_os_plus::micro_test_plus::detail::character", "conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1character.html", null ],
     [ "micro_os_plus::micro_test_plus::detail::character_pointer", "conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1character__pointer.html", null ],
-    [ "micro_os_plus::micro_test_plus::extension::approx_operand", "conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1approx__operand.html", null ],
     [ "MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE", "detail_8h.html#aaec16ed032c8fc52ba753a273b788381", null ],
     [ "micro_os_plus::micro_test_plus::detail::c_string", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ab21dca8f57bf59dbf7ffdd97742f9e28", null ],
     [ "micro_os_plus::micro_test_plus::detail::stored_operand_t", "namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html#ae9fe49cb0d38724533e9a27a2232bf09", null ],

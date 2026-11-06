@@ -3,6 +3,13 @@
   <compounddef id="group__micro-os-plus-micro-test-plus-cpp-api-customisation" kind="group">
     <compoundname>micro-os-plus-micro-test-plus-cpp-api-customisation</compoundname>
     <title>Customisation</title>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1any__op">micro_os_plus::micro_test_plus::extension::any_op</innerconcept>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1approx__operand">micro_os_plus::micro_test_plus::extension::approx_operand</innerconcept>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1checkable">micro_os_plus::micro_test_plus::extension::checkable</innerconcept>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1compare__tag">micro_os_plus::micro_test_plus::extension::compare_tag</innerconcept>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op">micro_os_plus::micro_test_plus::extension::is_op</innerconcept>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1predicate__tag">micro_os_plus::micro_test_plus::extension::predicate_tag</innerconcept>
+    <innerconcept refid="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1printable">micro_os_plus::micro_test_plus::extension::printable</innerconcept>
     <sectiondef kind="typedef">
       <memberdef kind="typedef" id="group__micro-os-plus-micro-test-plus-cpp-api-customisation_1gabecc05360d0941067222d827ff8e3f08" prot="public" static="no">
         <type>detail::expression_formatter</type>

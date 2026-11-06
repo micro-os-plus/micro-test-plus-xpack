@@ -24,6 +24,9 @@
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace.
+ *
+ * This file is included by `counters.h`; the applications include
+ * `micro-os-plus/micro-test-plus.h`, not this file.
  */
 
 #ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_INLINES_COUNTERS_INLINES_H_

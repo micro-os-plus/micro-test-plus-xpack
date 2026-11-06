@@ -133,7 +133,7 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespacemicro__os__plus_1_1micro__test__plus_1_1detail"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal implementation details for the µTest++ framework. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This source file contains the non-template members of the <span class="tt">detail::check_result</span> class, which reports the result of one check when destroyed. The constructor captures the result value, the kind of the check, the source location, and the test case reference; the destructor updates the test case counters and, after a failed <span class="tt">require()</span>, stops the test case.</p>
+<div class="textblock"><p>This source file contains the non-template members of the <span class="tt">detail::check_result</span> class, which reports the result of one check when destroyed. The private <span class="tt">start()</span> function, called by <span class="tt">init()</span>, captures the result value, the kind of the check, the source location, and the test case reference; the destructor updates the test case counters and, after a failed <span class="tt">require()</span>, stops the test case.</p>
 <p>All definitions reside within the <span class="tt"><a class="el" href="namespacemicro__os__plus_1_1micro__test__plus_1_1detail.html" title="Internal implementation details for the µTest++ framework.">micro_os_plus::micro_test_plus::detail</a></span> namespace.</p>
 <p>This file must be included when building the µTest++ library. </p>
 

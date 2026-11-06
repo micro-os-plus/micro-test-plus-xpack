@@ -55,8 +55,8 @@ programs. The main classes are
 @ref micro_os_plus::micro_test_plus::runner "runner",
 @ref micro_os_plus::micro_test_plus::runner_options "runner_options",
 @ref micro_os_plus::micro_test_plus::suite "suite", and
-@ref micro_os_plus::micro_test_plus::test_case "test_case". The installation, the first project, and the user manual are
-in the
+@ref micro_os_plus::micro_test_plus::test_case "test_case". The installation,
+the first project, and the user manual are in the
 <a href="../getting-started/">Getting Started</a>
 and
 <a href="../user/">User's Guide</a>

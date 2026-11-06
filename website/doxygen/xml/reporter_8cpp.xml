@@ -682,7 +682,7 @@ The <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_
 <para>C++ source file with implementations for the µTest++ test reporter member functions. </para>
     </briefdescription>
     <detaileddescription>
-<para>This source file contains the core implementations for the test reporting facilities of the µTest++ framework. It provides lifecycle and utility behaviour for reporters, including output-file handling, informational banner emission, buffering helpers, stream operators, the formatting of the totals and of the elapsed times, and pass/fail dispatch to reporter-specific prefix/suffix hooks. The command-line options are parsed by the runner.</para>
+<para>This source file contains the core implementations for the test reporting facilities of the µTest++ framework. It provides lifecycle and utility behaviour for reporters, including output-file handling, informational banner emission, buffering helpers, stream operators, the formatting of the totals and of the elapsed times, and pass/fail dispatch to reporter-specific prefix/suffix hooks. The command-line options are parsed by <computeroutput>runner_options</computeroutput>.</para>
 <para>Concrete formatting behaviour is implemented by derived reporters (<computeroutput>reporter_human</computeroutput> and <computeroutput>reporter_tap</computeroutput>).</para>
 <para>All definitions reside within the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail" kindref="compound">micro_os_plus::micro_test_plus::detail</ref></computeroutput> namespace, since the reporters are internal to the framework.</para>
 <para>This file must be included when building the µTest++ library. </para>

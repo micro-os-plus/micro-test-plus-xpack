@@ -33,7 +33,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated logical <span class="doxyComputerOutput">&amp;&amp;</span> (and) operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>). <a href="#gad47ea22957940a08ff56104d3c0c16f7">More...</a></p>
+<p>Deprecated logical <span class="doxyComputerOutput">&amp;&amp;</span> (and) operator. <a href="#gad47ea22957940a08ff56104d3c0c16f7">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -50,7 +50,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated logical <span class="doxyComputerOutput">!</span> (not) operator. Matches only if the operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>). <a href="#ga1d79c807e0d12684f1a850d7269c077b">More...</a></p>
+<p>Deprecated logical <span class="doxyComputerOutput">!</span> (not) operator. <a href="#ga1d79c807e0d12684f1a850d7269c077b">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -67,7 +67,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated logical <span class="doxyComputerOutput">||</span> (or) operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>). <a href="#gac008174d3b00512dc53b3e9e26ed45ec">More...</a></p>
+<p>Deprecated logical <span class="doxyComputerOutput">||</span> (or) operator. <a href="#gac008174d3b00512dc53b3e9e26ed45ec">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -84,7 +84,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated non-equality operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>). <a href="#ga0cc55025bbf6cac2f1b64242784559cb">More...</a></p>
+<p>Deprecated non-equality operator. <a href="#ga0cc55025bbf6cac2f1b64242784559cb">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -101,7 +101,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated less than operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>). <a href="#ga1d1c66d2cce699e0e64d8307e3951090">More...</a></p>
+<p>Deprecated less than operator. <a href="#ga1d1c66d2cce699e0e64d8307e3951090">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -118,7 +118,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated less than or equal operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>). <a href="#gaa0bcc006277ab947cf9ff7f13ab9b8ed">More...</a></p>
+<p>Deprecated less than or equal operator. <a href="#gaa0bcc006277ab947cf9ff7f13ab9b8ed">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -135,7 +135,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated equality operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>). <a href="#ga6f2d36e79581db77f3aa9f8d7a958c78">More...</a></p>
+<p>Deprecated equality operator. <a href="#ga6f2d36e79581db77f3aa9f8d7a958c78">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -152,7 +152,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated greater than operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>). <a href="#gaa7e34201bb41a287742c3c08a88924d3">More...</a></p>
+<p>Deprecated greater than operator. <a href="#gaa7e34201bb41a287742c3c08a88924d3">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -169,7 +169,7 @@ keywords:
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Deprecated greater than or equal operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>). <a href="#ga9d9f5f30c7d8973ef7ccd6f52f0cbd21">More...</a></p>
+<p>Deprecated greater than or equal operator. <a href="#ga9d9f5f30c7d8973ef7ccd6f52f0cbd21">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -183,7 +183,7 @@ keywords:
 <p>Deprecated overloaded operators for test comparisons.</p>
 
 
-<p>The <span class="doxyComputerOutput">mt::operators</span> namespace defines the comparison operators <span class="doxyComputerOutput">==</span>, <span class="doxyComputerOutput">!=</span>, <span class="doxyComputerOutput">&lt;</span>, <span class="doxyComputerOutput">&gt;</span>, <span class="doxyComputerOutput">&lt;=</span>, and <span class="doxyComputerOutput">&gt;=</span>, and the logical operators <span class="doxyComputerOutput">and</span>, <span class="doxyComputerOutput">or</span>, and <span class="doxyComputerOutput">not</span>, for the framework types. After <span class="doxyComputerOutput">using namespace mt::operators</span>, a check such as <span class="doxyComputerOutput">t.expect (mt::to_i{ compute_answer () } == 42_i)</span> reports the values of its operands, as the function comparators do.</p>
+<p>The <span class="doxyComputerOutput">mt::operators</span> namespace defines the comparison operators <span class="doxyComputerOutput">==</span>, <span class="doxyComputerOutput">!=</span>, <span class="doxyComputerOutput">&lt;</span>, <span class="doxyComputerOutput">&gt;</span>, <span class="doxyComputerOutput">&lt;=</span>, and <span class="doxyComputerOutput">&gt;=</span>, and the logical operators <span class="doxyComputerOutput">and</span>, <span class="doxyComputerOutput">or</span>, and <span class="doxyComputerOutput">not</span>, for the framework expression types. After <span class="doxyComputerOutput">using namespace mt::operators</span>, a check such as <span class="doxyComputerOutput">t.expect (mt::to_i{ compute_answer () } == 42_i)</span> reports the values of its operands, as the function comparators do.</p>
 
 
 <dl class="doxySectionUser">
@@ -196,7 +196,7 @@ keywords:
 <dt>Limitations</dt>
 <dd>
 <ul class="doxyList ">
-<li>The operators apply only when at least one operand is a framework type (see <span class="doxyComputerOutput">extension::is_op</span>): a deprecated literal, such as <span class="doxyComputerOutput">1_i</span>, or a deprecated wrapper, such as <span class="doxyComputerOutput">mt::to_i{ value }</span>. When neither operand is, the standard operator is selected; it returns a plain <span class="doxyComputerOutput">bool</span>, so a failed check cannot show the operands.</li>
+<li>The operators apply only when at least one operand is a framework expression type (see <span class="doxyComputerOutput">extension::is_op</span>): a deprecated literal, such as <span class="doxyComputerOutput">1_i</span>, or a deprecated wrapper, such as <span class="doxyComputerOutput">mt::to_i{ value }</span>. When neither operand is, the standard operator is selected; it returns a plain <span class="doxyComputerOutput">bool</span>, so a failed check cannot show the operands.</li>
 <li>The overloaded <span class="doxyComputerOutput">and</span> and <span class="doxyComputerOutput">or</span> operators evaluate both operands before the check, so they do not short-circuit like the built-in ones.</li>
 </ul>
 </dd>
@@ -256,7 +256,7 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>Deprecated logical <span class="doxyComputerOutput">&amp;&amp;</span> (and) operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
+<p>Deprecated logical <span class="doxyComputerOutput">&amp;&amp;</span> (and) operator.</p>
 
 
 <dl class="doxyParamsList">
@@ -306,7 +306,7 @@ keywords:
 </dl>
 </div>
 
-<p>Constructs an <span class="doxyComputerOutput">and_op</span> logical conjunction object from the two operands and returns it. The object evaluates to <span class="doxyComputerOutput">true</span> if both operands are true. At least one operand must be a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
+<p>Constructs an <span class="doxyComputerOutput">and_op</span> logical conjunction object from the two operands and returns it. The object evaluates to <span class="doxyComputerOutput">true</span> if both operands are true. At least one operand must be a framework expression type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00852">852</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
@@ -350,7 +350,7 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>Deprecated logical <span class="doxyComputerOutput">!</span> (not) operator. Matches only if the operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
+<p>Deprecated logical <span class="doxyComputerOutput">!</span> (not) operator.</p>
 
 
 <dl class="doxyParamsList">
@@ -359,7 +359,7 @@ keywords:
 <table class="doxyParamsTable">
 <tr class="doxyParamItem">
 <td class="doxyParamItemName">T</td>
-<td class="doxyParamItemDescription"><p>Type of the operand, constrained to the framework types.</p></td>
+<td class="doxyParamItemDescription"><p>Type of the operand, constrained to the framework expression types.</p></td>
 </tr>
 </table>
 </dd>
@@ -392,7 +392,7 @@ keywords:
 </dl>
 </div>
 
-<p>Constructs a <span class="doxyComputerOutput">not_op</span> logical negator object from the operand and returns it. The object evaluates to <span class="doxyComputerOutput">true</span> if the operand is false. The operand must be a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
+<p>Constructs a <span class="doxyComputerOutput">not_op</span> logical negator object from the operand and returns it. The object evaluates to <span class="doxyComputerOutput">true</span> if the operand is false. The operand must be a framework expression type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00884">884</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
@@ -438,7 +438,7 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>Deprecated logical <span class="doxyComputerOutput">||</span> (or) operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
+<p>Deprecated logical <span class="doxyComputerOutput">||</span> (or) operator.</p>
 
 
 <dl class="doxyParamsList">
@@ -488,7 +488,7 @@ keywords:
 </dl>
 </div>
 
-<p>Constructs an <span class="doxyComputerOutput">or_op</span> logical disjunction object from the two operands and returns it. The object evaluates to <span class="doxyComputerOutput">true</span> if at least one operand is true. At least one operand must be a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
+<p>Constructs an <span class="doxyComputerOutput">or_op</span> logical disjunction object from the two operands and returns it. The object evaluates to <span class="doxyComputerOutput">true</span> if at least one operand is true. At least one operand must be a framework expression type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00869">869</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
@@ -532,7 +532,7 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>Deprecated non-equality operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
+<p>Deprecated non-equality operator.</p>
 
 
 <dl class="doxyParamsList">
@@ -582,7 +582,7 @@ keywords:
 </dl>
 </div>
 
-<p>Constructs a comparator object, with the <span class="doxyComputerOutput">not_equal_to</span> tag, from the two operands and returns it. The comparator evaluates to <span class="doxyComputerOutput">true</span> if the operands are not equal. At least one operand must be a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
+<p>Constructs a comparator object, with the <span class="doxyComputerOutput">not_equal_to</span> tag, from the two operands and returns it. The comparator evaluates to <span class="doxyComputerOutput">true</span> if the operands are not equal. At least one operand must be a framework expression type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00763">763</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
@@ -627,7 +627,7 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>Deprecated less than operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
+<p>Deprecated less than operator.</p>
 
 
 <dl class="doxyParamsList">
@@ -677,7 +677,7 @@ keywords:
 </dl>
 </div>
 
-<p>Constructs a comparator object, with the <span class="doxyComputerOutput">less</span> tag, from the two operands and returns it. The comparator evaluates to <span class="doxyComputerOutput">true</span> if <span class="doxyComputerOutput">lhs</span> is less than <span class="doxyComputerOutput">rhs</span>. At least one operand must be a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
+<p>Constructs a comparator object, with the <span class="doxyComputerOutput">less</span> tag, from the two operands and returns it. The comparator evaluates to <span class="doxyComputerOutput">true</span> if <span class="doxyComputerOutput">lhs</span> is less than <span class="doxyComputerOutput">rhs</span>. At least one operand must be a framework expression type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00816">816</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
@@ -721,7 +721,7 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>Deprecated less than or equal operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
+<p>Deprecated less than or equal operator.</p>
 
 
 <dl class="doxyParamsList">
@@ -816,7 +816,7 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>Deprecated equality operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
+<p>Deprecated equality operator.</p>
 
 
 <dl class="doxyParamsList">
@@ -866,7 +866,7 @@ keywords:
 </dl>
 </div>
 
-<p>Constructs a comparator object, with the <span class="doxyComputerOutput">equal_to</span> tag, from the two operands and returns it. The comparator evaluates to <span class="doxyComputerOutput">true</span> if the operands are equal. At least one operand must be a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
+<p>Constructs a comparator object, with the <span class="doxyComputerOutput">equal_to</span> tag, from the two operands and returns it. The comparator evaluates to <span class="doxyComputerOutput">true</span> if the operands are equal. At least one operand must be a framework expression type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00745">745</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
@@ -911,7 +911,7 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>Deprecated greater than operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
+<p>Deprecated greater than operator.</p>
 
 
 <dl class="doxyParamsList">
@@ -961,7 +961,7 @@ keywords:
 </dl>
 </div>
 
-<p>Constructs a comparator object, with the <span class="doxyComputerOutput">greater</span> tag, from the two operands and returns it. The comparator evaluates to <span class="doxyComputerOutput">true</span> if <span class="doxyComputerOutput">lhs</span> is greater than <span class="doxyComputerOutput">rhs</span>. At least one operand must be a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
+<p>Constructs a comparator object, with the <span class="doxyComputerOutput">greater</span> tag, from the two operands and returns it. The comparator evaluates to <span class="doxyComputerOutput">true</span> if <span class="doxyComputerOutput">lhs</span> is greater than <span class="doxyComputerOutput">rhs</span>. At least one operand must be a framework expression type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00781">781</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
@@ -1006,7 +1006,7 @@ keywords:
 </div>
 <div class="doxyMemberDoc">
 
-<p>Deprecated greater than or equal operator. Matches only if at least one operand is a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
+<p>Deprecated greater than or equal operator.</p>
 
 
 <dl class="doxyParamsList">
@@ -1056,7 +1056,7 @@ keywords:
 </dl>
 </div>
 
-<p>Constructs a comparator object, with the <span class="doxyComputerOutput">greater_equal</span> tag, from the two operands and returns it. The comparator evaluates to <span class="doxyComputerOutput">true</span> if <span class="doxyComputerOutput">lhs</span> is greater than or equal to <span class="doxyComputerOutput">rhs</span>. At least one operand must be a framework type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
+<p>Constructs a comparator object, with the <span class="doxyComputerOutput">greater_equal</span> tag, from the two operands and returns it. The comparator evaluates to <span class="doxyComputerOutput">true</span> if <span class="doxyComputerOutput">lhs</span> is greater than or equal to <span class="doxyComputerOutput">rhs</span>. At least one operand must be a framework expression type (see <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-test-plus/extension/is-op">extension::is_op</a></span>).</p>
 
 
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00799">799</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
@@ -1080,6 +1080,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

@@ -238,7 +238,7 @@ namespace micro_os_plus::micro_test_plus
       has_elapsed (void) const noexcept;
 
       /**
-       * @brief Gets the time elapsed between `start()` and `stop()`.
+       * @brief Returns the time elapsed between `start()` and `stop()`.
        *
        * @details
        * The interval is truncated to whole microseconds. Without both

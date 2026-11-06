@@ -47,10 +47,10 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 </dd>
 </dl>
 
-<p>The <span class="doxyComputerOutput">any_op</span> concept is satisfied when <span class="doxyComputerOutput">Lhs_T</span> or <span class="doxyComputerOutput">Rhs_T</span> (or both) are framework expression types (see <span class="doxyComputerOutput">is_op</span>). A custom operator constrains its overload with it, so that the overload is enabled only when at least one operand is a framework expression, and does not compete with the operators of the application types. The framework itself uses it only for the deprecated operators.</p>
+<p>The <span class="doxyComputerOutput">any_op</span> concept is satisfied when <span class="doxyComputerOutput">Lhs_T</span> or <span class="doxyComputerOutput">Rhs_T</span> (or both) are framework expression types (see <span class="doxyComputerOutput">is_op</span>). A custom operator constrains its overload with it, so that the overload is enabled only when at least one operand is a framework expression type, and does not compete with the operators of the application types. The framework itself uses it only for the deprecated operators.</p>
 
 
-<p>Definition at line 367 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 369 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -63,6 +63,6 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

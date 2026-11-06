@@ -37,7 +37,7 @@ Three groups of deprecated definitions have topics of their own:
 - the overloaded comparison and logical operators (see
   @ref micro-os-plus-micro-test-plus-cpp-api-deprecated-operators),
   replaced by the function comparators and the logical functions;
-- the user-defined literals and the type wrappers (see
+- the user-defined literals and the value wrappers (see
   @ref micro-os-plus-micro-test-plus-cpp-api-deprecated-literals),
   replaced by the plain values passed to the function comparators;
 - the logical functions `_and()`, `_or()`, and `_not()` (see
@@ -59,7 +59,7 @@ Three groups of deprecated definitions have topics of their own:
   `total_suites_count()`;
 - `runner::verbosity()`, and `runner::reporter()` with its `verbosity()`
   member, replaced by `runner::verbosity_level()`;
-- `runner::timings()` and `test_case::timings()`, and the members of
+- `runner::timings()` and `suite::timings()`, and the members of
   `detail::stopwatch` kept from the v5.0.1 timestamps, which are
   internal and not replaced;
 - the `counters` members `successful_checks()`, `executed_subtests()`,
@@ -73,6 +73,15 @@ Three groups of deprecated definitions have topics of their own:
   name), replaced by writing the condition;
 - the `static_suite` constructor whose callable takes a `static_suite&`,
   replaced by a callable taking a `suite&`;
+- `mut()`, replaced by `const_cast<T&>`;
+- `runner::name()`, which always returned `"runner"`, not replaced: the
+  names in the reports are those of the suites (see `add_top_suite()`);
+- `detail::expression_formatter::c_str()` and `empty()`, replaced by
+  `str().c_str()` and `str().empty()`;
+- the members `children_subtests_count()`, `current_subtest_index()`, and
+  `own_index()` of the test nodes, which are internal and not replaced;
+- `extension::has_epsilon`, the concept that detects the floating-point
+  wrappers with a tolerance, to be removed with them;
 - `reflection::short_name()`, replaced by `utility::extract_file_name()`;
 - the `type_traits` namespace, with the concepts and the value wrapper
   templates of v5.0.1, replaced by the `extension` namespace;

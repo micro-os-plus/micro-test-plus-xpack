@@ -91,7 +91,7 @@ struct micro_os_plus::micro_test_plus::detail::range_element&lt;T&gt; { ... }
 </dd>
 </dl>
 
-<p>Definition at line 596 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 602 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -123,12 +123,12 @@ struct micro_os_plus::micro_test_plus::detail::range_element&lt;T&gt; { ... }
 <p>The type of the dereferenced <span class="doxyComputerOutput">begin()</span> function, found by argument-dependent lookup, as in a range-based <span class="doxyComputerOutput">for</span> statement over a <span class="doxyComputerOutput">const</span> range.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h/#l00627">627</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h/#l00633">633</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aa2f9968426ee992c2e99aedc6226c145">627</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ae9d6272e688f4f08412df6d6ee978bc2">type</a></span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aa2f9968426ee992c2e99aedc6226c145">633</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ae9d6272e688f4f08412df6d6ee978bc2">type</a></span></span></div>
 
 </div>
 
@@ -161,12 +161,12 @@ struct micro_os_plus::micro_test_plus::detail::range_element&lt;T&gt; { ... }
 <p>The type of the dereferenced <span class="doxyComputerOutput">begin()</span> member, as iterated by a range-based <span class="doxyComputerOutput">for</span> statement over a <span class="doxyComputerOutput">const</span> range.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h/#l00605">605</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h/#l00611">611</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae9d6272e688f4f08412df6d6ee978bc2">605</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ae9d6272e688f4f08412df6d6ee978bc2">type</a> = std::remove_cvref_t&lt;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ae9d6272e688f4f08412df6d6ee978bc2">611</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ae9d6272e688f4f08412df6d6ee978bc2">type</a> = std::remove_cvref_t&lt;</span></span></div>
 
 </div>
 
@@ -185,6 +185,6 @@ The documentation for this struct was generated from the following file:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

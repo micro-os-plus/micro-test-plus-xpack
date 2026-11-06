@@ -1285,25 +1285,25 @@
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga7c6c0169d894a7dd589d96df49e8df26" kind="typedef"><name>_d</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gacfe28c6fb7bfb47ca8891cb61e7f58d9" kind="typedef"><name>_ld</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga15147e343475e219c2e46dce07b4127c" kind="typedef"><name>_t</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" kind="function"><name>_not</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" kind="function"><name>_and</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" kind="function"><name>_or</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" kind="function"><name>mut</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-runners_1ga603af2d1c9643caa351305180b2e905b" kind="enum"><name>colour_mode</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-runners_1ga913c4161963e9439b20857358486e8b2" kind="enum"><name>reporter_kind</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-runners_1ga809871d76f29309ed9c6fbd96d5a914b" kind="enum"><name>verbosity</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-customisation_1gabecc05360d0941067222d827ff8e3f08" kind="typedef"><name>expression_formatter</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga47d2c99f85fc5597b82da402d4687e75" kind="typedef"><name>static_runner</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga1424c18b26d5fdaed11439c77e6bf561" kind="typedef"><name>subtest</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" kind="function"><name>_and</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" kind="function"><name>_not</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" kind="function"><name>_or</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" kind="function"><name>all_of</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" kind="function"><name>any_of</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0d374ffc56933dccd3ffba008ab7eaa5" kind="function"><name>approx</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" kind="function"><name>eq</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga58c7dacabca3fe1b0dc025a0e0f30e9e" kind="function"><name>ge</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga90da2cbc14b4562332a205d5b232356f" kind="function"><name>gt</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9125d2dd997269eecc0d8239d5df67e5" kind="function"><name>le</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga493a42c738ef38b45a28b06a2155aa00" kind="function"><name>lt</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga00ea8f3dfb7cb0ef39919065321cf62f" kind="function"><name>mut</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga92cdc2dde6af040f2f5f5df677df0985" kind="function"><name>ne</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" kind="function"><name>negate</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-exceptions_1ga2989618cf5adca7a767c966895ab37a0" kind="function"><name>nothrow</name></member>
@@ -1533,16 +1533,17 @@
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga32c7eef01fcaef2f1a9478427d951f62" kind="typedef"><name>_ul</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gada8a165060d3d3b3ab51272b9da58761" kind="typedef"><name>_ull</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga65aea7fc6324806cc029041a1c785611" kind="typedef"><name>_us</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" kind="function"><name>_and</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" kind="function"><name>_not</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" kind="function"><name>_or</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" kind="function"><name>mut</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga67890916b8d3d8cbaab893cc6b599745" kind="typedef"><name>genuine_integral_value</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gaf123417aafc76c826760101bcc517dfa" kind="typedef"><name>runner_totals</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga47d2c99f85fc5597b82da402d4687e75" kind="typedef"><name>static_runner</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga1424c18b26d5fdaed11439c77e6bf561" kind="typedef"><name>subtest</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga53a6bc7f86b15378c8296b3647e7013f" kind="typedef"><name>timestamps</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga65ad920b21a6c0df6848aa939659b92e" kind="typedef"><name>value_base_</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" kind="function"><name>_and</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" kind="function"><name>_not</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" kind="function"><name>_or</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1accba38bf51d261f330b594ca121e6f75" kind="function"><name>count_decimals</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1af295fc92026927f8a453248655e7862e" kind="function"><name>count_literal_digits</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1ae474285acf7f49d66bb721b8ab5f8fa8" kind="function"><name>decimal_epsilon</name></member>
@@ -1550,7 +1551,6 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" kind="function"><name>den_size</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" kind="function"><name>integer_magnitude</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kind="function"><name>integral_literal</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga00ea8f3dfb7cb0ef39919065321cf62f" kind="function"><name>mut</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" kind="function"><name>num</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gad47ea22957940a08ff56104d3c0c16f7" kind="function"><name>operator and</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga1d79c807e0d12684f1a850d7269c077b" kind="function"><name>operator not</name></member>
@@ -1649,7 +1649,8 @@
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" kind="function"><name>_and</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" kind="function"><name>_not</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" kind="function"><name>_or</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" kind="function"><name>mut</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1accba38bf51d261f330b594ca121e6f75" kind="function"><name>count_decimals</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1af295fc92026927f8a453248655e7862e" kind="function"><name>count_literal_digits</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1ae474285acf7f49d66bb721b8ab5f8fa8" kind="function"><name>decimal_epsilon</name></member>
@@ -1657,7 +1658,6 @@
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a3557a9ea7ea89e94be133fb78edcd01f" kind="function"><name>den_size</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a4f5af9be6a23a49f942e72de92adc91e" kind="function"><name>integer_magnitude</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a8e476a4d97076ce7f016a18821d66c40" kind="function"><name>integral_literal</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga00ea8f3dfb7cb0ef39919065321cf62f" kind="function"><name>mut</name></member>
     <member refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a6b03b257bb18615448fe9b4fca4a8402" kind="function"><name>num</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1gad47ea22957940a08ff56104d3c0c16f7" kind="function"><name>operator and</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga1d79c807e0d12684f1a850d7269c077b" kind="function"><name>operator not</name></member>
@@ -1938,6 +1938,7 @@
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-customisation_1gabecc05360d0941067222d827ff8e3f08" kind="typedef"><name>expression_formatter</name></member>
   </compound>
   <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-deprecated</name>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" kind="function"><name>mut</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga67890916b8d3d8cbaab893cc6b599745" kind="typedef"><name>genuine_integral_value</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gaf123417aafc76c826760101bcc517dfa" kind="typedef"><name>runner_totals</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga47d2c99f85fc5597b82da402d4687e75" kind="typedef"><name>static_runner</name></member>
@@ -1950,7 +1951,6 @@
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gaf95d91c9cae67c4ce138146b2cdab25e" kind="variable"><name>within_tolerance_result</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gadcaedd85e07d96bd7230d06c5c258df7" kind="variable"><name>within_tolerance_result</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga8decf36d3e0e7cc8242c6a2170743422" kind="variable"><name>within_tolerance_result</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga00ea8f3dfb7cb0ef39919065321cf62f" kind="function"><name>mut</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gafc93799846770e521c4721d0de0a81cc" kind="function"><name>short_name</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga6c5237ff6944278e8c5e3294cf99a3b9" kind="function"><name>within_tolerance</name></member>
   </compound>
@@ -1966,9 +1966,11 @@
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-operators_1ga9d9f5f30c7d8973ef7ccd6f52f0cbd21" kind="function"><name>operator&gt;=</name></member>
   </compound>
   <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions</name>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" kind="function"><name>_and</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" kind="function"><name>_not</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" kind="function"><name>_and</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" kind="function"><name>_or</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" kind="function"><name>mut</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
   </compound>
   <compound refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals" kind="group"><name>micro-os-plus-micro-test-plus-cpp-api-deprecated-literals</name>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga5570e36fb3e73be3edf734ac80a23d93" kind="typedef"><name>to_b</name></member>
@@ -2018,7 +2020,7 @@
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga7c6c0169d894a7dd589d96df49e8df26" kind="typedef"><name>_d</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gacfe28c6fb7bfb47ca8891cb61e7f58d9" kind="typedef"><name>_ld</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga15147e343475e219c2e46dce07b4127c" kind="typedef"><name>_t</name></member>
-    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
+    <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gafe47800a219b00fcccf0a1dc596dbe20" kind="function"><name>approx</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gaa2bfc74376f8c110053bfa6e06e40772" kind="function"><name>operator&quot;&quot;_b</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1gae521cebfd48332f44d01e4f880b4aafa" kind="function"><name>operator&quot;&quot;_c</name></member>
     <member refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9d9b0d77e96cc46e7c9fabbb6cf671da" kind="function"><name>operator&quot;&quot;_d</name></member>

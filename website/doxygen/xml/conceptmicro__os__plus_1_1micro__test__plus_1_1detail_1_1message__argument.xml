@@ -13,7 +13,7 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1mes
           or (extension::printable&lt;T&gt;
               and not(std::is_class_v&lt;T&gt; and std::invocable&lt;const T&amp;&gt;))</initializer>
     <conceptparts>
-      <codepart line="709">    <programlisting>
+      <codepart line="715">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">message_argument<sp/>=<sp/>lazy_message&lt;T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>or<sp/>(extension::printable&lt;T&gt;</highlight></codeline>
@@ -36,6 +36,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1mes
 </parameterlist>
 The <computeroutput>message_argument</computeroutput> concept is satisfied by a <computeroutput>lazy_message</computeroutput>, or by a value that satisfies <computeroutput>extension::printable</computeroutput>, except a class type callable without arguments that is not a <computeroutput>lazy_message</computeroutput>. A lambda without captures, which returns <computeroutput>void</computeroutput> or a value that cannot be written, converts to a function pointer and then to <computeroutput>bool</computeroutput>, so it would be written as <computeroutput>true</computeroutput> instead of being rejected; the message must be a value, or a callable object that returns one. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="708" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/extension.h" line="714" column="5"/>
   </compounddef>
 </doxygen>

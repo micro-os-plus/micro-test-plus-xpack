@@ -49,7 +49,7 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 <p>A custom comparator or operator uses it to tell the framework expressions, like the result of <span class="doxyComputerOutput">eq()</span> or <span class="doxyComputerOutput">lt()</span>, from the values of the application. The applications build their own expressions with <span class="doxyComputerOutput">extension::compare_op</span> and <span class="doxyComputerOutput">extension::predicate_op</span>, not by declaring the <span class="doxyComputerOutput">op_type</span> marker, which the formatter could not report.</p>
 
 
-<p>Definition at line 318 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
+<p>Definition at line 319 of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/extension-h">extension.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -62,6 +62,6 @@ concept <a href="/micro-test-plus-xpack/docs/api/concepts/micro-os-plus/micro-te
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

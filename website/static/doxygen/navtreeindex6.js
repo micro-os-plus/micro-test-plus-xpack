@@ -1,10 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"group__micro-os-plus-micro-test-plus-cpp-api-requirements.html#gaad1feafeef2f3cea336be3ebe0b27e14":[3,0,0,0,4,0],
-"group__micro-os-plus-micro-test-plus-cpp-api-runners.html":[3,0,0,0,0],
-"group__micro-os-plus-micro-test-plus-cpp-api-runners.html#ga603af2d1c9643caa351305180b2e905b":[3,0,0,0,0,3],
-"group__micro-os-plus-micro-test-plus-cpp-api-runners.html#ga809871d76f29309ed9c6fbd96d5a914b":[3,0,0,0,0,5],
-"group__micro-os-plus-micro-test-plus-cpp-api-runners.html#ga913c4161963e9439b20857358486e8b2":[3,0,0,0,0,4],
 "group__micro-os-plus-micro-test-plus-cpp-api-runners.html#gga603af2d1c9643caa351305180b2e905ba2bd9c0ed00116be1258e0cc66617d7c8":[3,0,0,0,0,3,0],
 "group__micro-os-plus-micro-test-plus-cpp-api-runners.html#gga603af2d1c9643caa351305180b2e905bac7561db7a418dd39b2201dfe110ab4a4":[3,0,0,0,0,3,2],
 "group__micro-os-plus-micro-test-plus-cpp-api-runners.html#gga603af2d1c9643caa351305180b2e905baf9f90eeaf400d228facde6bc48da5cfb":[3,0,0,0,0,3,1],
@@ -249,5 +244,10 @@ var NAVTREEINDEX6 =
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html#aaaeff461f662bc9fb7e54c666e4ee101":[6,0,0,0,0,5,5],
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html#acdfd43d6d3d328ef3c40ea9a11340625":[4,0,0,0,1,8,1],
 "structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html#acdfd43d6d3d328ef3c40ea9a11340625":[6,0,0,0,0,5,1],
-"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html#af727574c085a72e7309c4e65f9fde693":[4,0,0,0,1,8,4]
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html#af727574c085a72e7309c4e65f9fde693":[4,0,0,0,1,8,4],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string.html#af727574c085a72e7309c4e65f9fde693":[6,0,0,0,0,5,4],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html":[4,0,0,0,1,9],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html":[6,0,0,0,0,6],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#a27b015b0e2b40e0f0bbb1b08588e1c20":[4,0,0,0,1,9,2],
+"structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1binary__op.html#a27b015b0e2b40e0f0bbb1b08588e1c20":[6,0,0,0,0,6,2]
 };

@@ -6,3 +6,7 @@ destructors.
 Displays trace messages in the constructors and destructors of the µTest++
 Testing Framework, through `trace::printf()`, which writes them only when
 `MICRO_OS_PLUS_DIAG_TRACE_ENABLED` is also defined.
+
+The code compiled with this macro includes `micro-os-plus/diag/trace.h`, of
+the µOS++ `diag-trace` package, which must be in the include path of the
+build; without it, the compilation fails.

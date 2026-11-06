@@ -239,7 +239,7 @@ class micro_os_plus::micro_test_plus::detail::runnable_base { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Gets the node name. <a href="#a6c652cd5dc8194269c1cc5f0dc1945e0">More...</a></p>
+<p>Returns the node name. <a href="#a6c652cd5dc8194269c1cc5f0dc1945e0">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -253,7 +253,7 @@ class micro_os_plus::micro_test_plus::detail::runnable_base { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Gets the totals of the node. <a href="#aa83553cf6bf351153328304ebc71e545">More...</a></p>
+<p>Returns the totals of the node. <a href="#aa83553cf6bf351153328304ebc71e545">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -402,7 +402,7 @@ class micro_os_plus::micro_test_plus::detail::runnable_base { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Gets the innermost test case being run by the owning runner, if any. <a href="#a3fd5730af8bd449cc56e29d5d14509e9">More...</a></p>
+<p>Returns the innermost test case being run by the owning runner, if any. <a href="#a3fd5730af8bd449cc56e29d5d14509e9">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -416,7 +416,7 @@ class micro_os_plus::micro_test_plus::detail::runnable_base { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Gets the test reporter associated with this test runnable. <a href="#a7e4a578732a0464480e211f6591fa69f">More...</a></p>
+<p>Returns the test reporter associated with this test runnable. <a href="#a7e4a578732a0464480e211f6591fa69f">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -430,7 +430,7 @@ class micro_os_plus::micro_test_plus::detail::runnable_base { ... }
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Gets the test runner that owns this test runnable. <a href="#a0224080b4433f538798354eca0f4c8c5">More...</a></p>
+<p>Returns the test runner that owns this test runnable. <a href="#a0224080b4433f538798354eca0f4c8c5">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -563,7 +563,7 @@ class micro_os_plus::micro_test_plus::detail::runnable_base { ... }
 
 </table>
 
-## Deprecated Functions Index
+## Deprecated Functions of runnable_base Index
 
 <table class="doxyMembersIndex">
 
@@ -1128,7 +1128,7 @@ class micro_os_plus::micro_test_plus::detail::runnable_base { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Gets the node name.</p>
+<p>Returns the node name.</p>
 
 
 <dl class="doxySectionUser">
@@ -1192,7 +1192,7 @@ class micro_os_plus::micro_test_plus::detail::runnable_base { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Gets the totals of the node.</p>
+<p>Returns the totals of the node.</p>
 
 
 <p>The reference is read-only, for the <span class="doxyComputerOutput">const</span> and the non-<span class="doxyComputerOutput">const</span> nodes alike, so that a test case or a suite cannot modify its own counters, which decide the exit code. The counters are updated only by the framework, which accesses the protected member directly.</p>
@@ -2127,7 +2127,7 @@ class micro_os_plus::micro_test_plus::detail::runnable_base { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Gets the innermost test case being run by the owning runner, if any.</p>
+<p>Returns the innermost test case being run by the owning runner, if any.</p>
 
 
 <p>Protected, since it is used only by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite/#a0cfa76ba0ba0c308d246b2b5d506ab19">suite::test()</a></span>, to run a test case started on the suite from inside a running test case as a nested test case of it.</p>
@@ -2194,7 +2194,7 @@ class micro_os_plus::micro_test_plus::detail::runnable_base { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Gets the test reporter associated with this test runnable.</p>
+<p>Returns the test reporter associated with this test runnable.</p>
 
 
 <p>Protected, since the reporter is internal to the framework; it is used by the suites and the test cases, which derive from this class, and by the check result, which is a friend.</p>
@@ -2265,7 +2265,7 @@ class micro_os_plus::micro_test_plus::detail::runnable_base { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Gets the test runner that owns this test runnable.</p>
+<p>Returns the test runner that owns this test runnable.</p>
 
 
 <p>Protected, since the runner is internal to the framework; it is used by the suites and the test cases, which derive from this class and pass it to their nested test cases, and by the runner, which is a friend and selects the static suites it runs.</p>
@@ -2706,9 +2706,9 @@ class micro_os_plus::micro_test_plus::detail::runnable_base { ... }
 
 <div class="doxySectionDef">
 
-## Deprecated Functions
+## Deprecated Functions of runnable_base
 
-### children\_subtests\_count {#aaf838b03cddfb039d1295611be8a5e32}
+### children\_subtests\_count() {#aaf838b03cddfb039d1295611be8a5e32}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2784,7 +2784,7 @@ class micro_os_plus::micro_test_plus::detail::runnable_base { ... }
 </div>
 </div>
 
-### current\_subtest\_index {#a7ad637d38c035d54c872f72e1b9ac358}
+### current\_subtest\_index() {#a7ad637d38c035d54c872f72e1b9ac358}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2860,7 +2860,7 @@ class micro_os_plus::micro_test_plus::detail::runnable_base { ... }
 </div>
 </div>
 
-### own\_index {#a8def9cddbb5bc877918104c785271753}
+### own\_index() {#a8def9cddbb5bc877918104c785271753}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -2950,6 +2950,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

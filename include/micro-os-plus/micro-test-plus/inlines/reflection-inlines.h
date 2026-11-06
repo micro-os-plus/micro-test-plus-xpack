@@ -119,7 +119,7 @@ namespace micro_os_plus::micro_test_plus
     /**
      * @details
      * This function template parses the compiler-specific
-     * `__PRETTY_FUNCTION__` macro to extract a concise type name for the
+     * `__PRETTY_FUNCTION__` identifier to extract a concise type name for the
      * template parameter `T`.
      *
      * Rather than relying on fixed character offsets (which are fragile across

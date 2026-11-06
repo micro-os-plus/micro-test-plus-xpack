@@ -328,7 +328,7 @@ Copies the characters of the view, which need not be null-terminated, and stores
           <type>void</type>
         </param>
         <briefdescription>
-<para>Gets the location where the name was given. </para>
+<para>Returns the location where the name was given. </para>
         </briefdescription>
         <detaileddescription>
 <para><simplesect kind="par"><title>Parameters</title><para>None. </para>
@@ -363,7 +363,7 @@ Returns a reference to the location stored in <computeroutput><ref refid="classm
           <type>void</type>
         </param>
         <briefdescription>
-<para>Gets the name. </para>
+<para>Returns the name. </para>
         </briefdescription>
         <detaileddescription>
 <para><simplesect kind="par"><title>Parameters</title><para>None. </para>

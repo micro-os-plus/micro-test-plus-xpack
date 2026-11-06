@@ -6,7 +6,7 @@ This option has no value, only its definition matters.
 
 Without it, the deprecated definitions (the old names of the functions,
 the classes, and the members, the overloaded operators, the user-defined
-literals, the type wrappers, and the deprecated overloads and
+literals, the value wrappers, and the deprecated overloads and
 constructors) are neither declared nor defined, so the applications that
 still use them fail to compile.
 

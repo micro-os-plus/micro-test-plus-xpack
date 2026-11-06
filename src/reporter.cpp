@@ -23,7 +23,7 @@
  * banner emission, buffering helpers, stream operators, the formatting of
  * the totals and of the elapsed times, and pass/fail dispatch to
  * reporter-specific prefix/suffix hooks. The command-line options are
- * parsed by the runner.
+ * parsed by `runner_options`.
  *
  * Concrete formatting behaviour is implemented by derived reporters
  * (`reporter_human` and `reporter_tap`).

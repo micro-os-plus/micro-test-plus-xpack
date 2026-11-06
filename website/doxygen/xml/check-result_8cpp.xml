@@ -413,7 +413,7 @@
 <para>C++ source file with implementations for the µTest++ check result member functions. </para>
     </briefdescription>
     <detaileddescription>
-<para>This source file contains the non-template members of the <computeroutput>detail::check_result</computeroutput> class, which reports the result of one check when destroyed. The constructor captures the result value, the kind of the check, the source location, and the test case reference; the destructor updates the test case counters and, after a failed <computeroutput>require()</computeroutput>, stops the test case.</para>
+<para>This source file contains the non-template members of the <computeroutput>detail::check_result</computeroutput> class, which reports the result of one check when destroyed. The private <computeroutput>start()</computeroutput> function, called by <computeroutput>init()</computeroutput>, captures the result value, the kind of the check, the source location, and the test case reference; the destructor updates the test case counters and, after a failed <computeroutput>require()</computeroutput>, stops the test case.</para>
 <para>All definitions reside within the <computeroutput><ref refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail" kindref="compound">micro_os_plus::micro_test_plus::detail</ref></computeroutput> namespace.</para>
 <para>This file must be included when building the µTest++ library. </para>
     </detaileddescription>

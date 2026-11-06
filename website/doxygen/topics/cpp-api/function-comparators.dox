@@ -78,7 +78,10 @@ and must outlive the expression.
 The comparison of floating-point values with `eq()` is exact, so
 `mt::eq (0.1 + 0.2, 0.3)` fails. To accept a difference, use
 `mt::approx (a, b, epsilon)`, which is true when the operands differ by
-at most `epsilon`, the limit included:
+at most `epsilon`, the limit included (for floating-point values, the
+distance is computed and rounded, so a distance that should be equal to a
+decimal limit, such as `mt::approx (1.0, 1.1, 0.1)`, may be slightly above it
+and fail; do not rely on the exact limit):
 - the operands and the tolerance are integral or floating-point numbers,
   of any such type, except `bool` and the character types (`char`,
   `wchar_t`, `char8_t`, `char16_t`, and `char32_t`), which are not

@@ -11,7 +11,7 @@
         </briefdescription>
         <detaileddescription>
 <para>This option has no value, only its definition matters.</para>
-<para>Without it, the deprecated definitions (the old names of the functions, the classes, and the members, the overloaded operators, the user-defined literals, the type wrappers, and the deprecated overloads and constructors) are neither declared nor defined, so the applications that still use them fail to compile.</para>
+<para>Without it, the deprecated definitions (the old names of the functions, the classes, and the members, the overloaded operators, the user-defined literals, the value wrappers, and the deprecated overloads and constructors) are neither declared nor defined, so the applications that still use them fail to compile.</para>
 <para>With it, they are available, but marked <computeroutput>[[deprecated]]</computeroutput>, so the compiler reports their use; the applications that build with <computeroutput>-Werror</computeroutput> fail until the deprecated definitions are replaced.</para>
 <para>The macro must be defined for the library sources too, otherwise the link of an application that uses the non-inline deprecated members fails with undefined references.   </para>
         </detaileddescription>
@@ -38,7 +38,8 @@
 <para>Enables the trace messages of the µTest++ constructors and destructors. </para>
         </briefdescription>
         <detaileddescription>
-<para>Displays trace messages in the constructors and destructors of the µTest++ Testing Framework, through <computeroutput>trace::printf()</computeroutput>, which writes them only when <computeroutput>MICRO_OS_PLUS_DIAG_TRACE_ENABLED</computeroutput> is also defined.  </para>
+<para>Displays trace messages in the constructors and destructors of the µTest++ Testing Framework, through <computeroutput>trace::printf()</computeroutput>, which writes them only when <computeroutput>MICRO_OS_PLUS_DIAG_TRACE_ENABLED</computeroutput> is also defined.</para>
+<para>The code compiled with this macro includes <computeroutput>micro-os-plus/diag/trace.h</computeroutput>, of the µOS++ <computeroutput>diag-trace</computeroutput> package, which must be in the include path of the build; without it, the compilation fails.  </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -50,7 +51,8 @@
 <para>Enables the trace messages of the µTest++ member functions. </para>
         </briefdescription>
         <detaileddescription>
-<para>Displays trace messages in the member functions of the µTest++ Testing Framework, through <computeroutput>trace::printf()</computeroutput>, which writes them only when <computeroutput>MICRO_OS_PLUS_DIAG_TRACE_ENABLED</computeroutput> is also defined.  </para>
+<para>Displays trace messages in the member functions of the µTest++ Testing Framework, through <computeroutput>trace::printf()</computeroutput>, which writes them only when <computeroutput>MICRO_OS_PLUS_DIAG_TRACE_ENABLED</computeroutput> is also defined.</para>
+<para>The code compiled with this macro includes <computeroutput>micro-os-plus/diag/trace.h</computeroutput>, of the µOS++ <computeroutput>diag-trace</computeroutput> package, which must be in the include path of the build; without it, the compilation fails.  </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -69,7 +71,7 @@
 </para>
 <para><simplesect kind="par"><title>Where to define them</title><para>The application defines the macros; neither the library nor its CMake, meson, and xPack build files define them (the <computeroutput>defaultDefine</computeroutput> entries in <computeroutput>xcdl-package.jsonc</computeroutput> are informative only).</para>
 </simplesect>
-The application and the library sources must be compiled with the same <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-config_1ga3dd1e70998580fe7d7f410e5cd83879b" kindref="member">MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</ref></computeroutput> and <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-config_1ga67c701de5426ac340584ed038494a873" kindref="member">MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</ref></computeroutput> macros, otherwise the link fails (see the pages of the macros below); the trace macros only add trace calls to the function bodies. The simplest way is a header named <computeroutput>micro-os-plus/micro-test-plus-defines.h</computeroutput> (or <computeroutput>micro-os-plus/project-config.h</computeroutput>) in the include path of the build: every µTest++ header includes it, if present, before its own definitions.</para>
+The application and the library sources must be compiled with the same <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-config_1ga3dd1e70998580fe7d7f410e5cd83879b" kindref="member">MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</ref></computeroutput> macro, otherwise the link fails; the same holds for <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-config_1ga67c701de5426ac340584ed038494a873" kindref="member">MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</ref></computeroutput>, for the applications that use the non-inline deprecated members (see the pages of the macros below). The trace macros only add trace calls to the function bodies, and need the <computeroutput>micro-os-plus/diag/trace.h</computeroutput> header (see the pages of the macros). The simplest way is a header named <computeroutput>micro-os-plus/micro-test-plus-defines.h</computeroutput> (or <computeroutput>micro-os-plus/project-config.h</computeroutput>) in the include path of the build: every µTest++ header includes it, if present, before its own definitions.</para>
 <para>Guard each definition, so that the macro can also be given on the compiler command line:</para>
 <para><programlisting filename=".cpp"><codeline><highlight class="preprocessor">#if<sp/>!defined(MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED)</highlight><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</highlight><highlight class="normal"></highlight></codeline>

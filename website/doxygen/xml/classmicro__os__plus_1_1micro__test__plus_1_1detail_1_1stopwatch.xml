@@ -44,8 +44,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="274" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="87" bodyend="90"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="72" endline="75">is_recorded</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="274" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="90" bodyend="93"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="75" endline="78">is_recorded</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5f1f1e5b3faeb79b81bb7eb3602aefd1" compoundref="stopwatch_8h" startline="430" endline="430">start_time_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2">~stopwatch</referencedby>
       </memberdef>
@@ -88,8 +88,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="291" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="99" bodyend="102"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="72" endline="75">is_recorded</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="291" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="102" bodyend="105"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="75" endline="78">is_recorded</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afa5a38b18b6f14b904fafac9f0bd74fa" compoundref="stopwatch_8h" startline="439" endline="439">stop_time_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2">~stopwatch</referencedby>
       </memberdef>
@@ -117,8 +117,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="305" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="110" bodyend="113"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" compoundref="stopwatch-inlines_8h" startline="61" endline="64">has_elapsed</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="305" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="113" bodyend="116"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" compoundref="stopwatch-inlines_8h" startline="64" endline="67">has_elapsed</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2">~stopwatch</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afd1213b3e3ffa9997ab0eba78b944ecf" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
@@ -165,7 +165,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="324" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="123" bodyend="129"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="324" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="126" bodyend="132"/>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" compoundref="stopwatch_8cpp" startline="116" endline="128">elapsed</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2">~stopwatch</referencedby>
       </memberdef>
@@ -194,7 +194,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="344" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/stopwatch.cpp" bodystart="139" bodyend="145"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="72" endline="75">is_recorded</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="75" endline="78">is_recorded</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a60dcef812e43e13d1e30f602a572e27a" compoundref="stopwatch_8cpp" startline="66" endline="75">micro_os_plus::micro_test_plus::detail::read_clock</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5f1f1e5b3faeb79b81bb7eb3602aefd1" compoundref="stopwatch_8h" startline="430" endline="430">start_time_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2">~stopwatch</referencedby>
@@ -231,8 +231,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="360" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="137" bodyend="143"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="72" endline="75">is_recorded</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="360" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="140" bodyend="146"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="75" endline="78">is_recorded</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5f1f1e5b3faeb79b81bb7eb3602aefd1" compoundref="stopwatch_8h" startline="430" endline="430">start_time_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a4c1a4d8b22d04205be49f8289ed7abd6" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
@@ -260,7 +260,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="377" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/stopwatch.cpp" bodystart="155" bodyend="161"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="72" endline="75">is_recorded</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="75" endline="78">is_recorded</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a60dcef812e43e13d1e30f602a572e27a" compoundref="stopwatch_8cpp" startline="66" endline="75">micro_os_plus::micro_test_plus::detail::read_clock</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afa5a38b18b6f14b904fafac9f0bd74fa" compoundref="stopwatch_8h" startline="439" endline="439">stop_time_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2">~stopwatch</referencedby>
@@ -297,8 +297,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="393" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="151" bodyend="157"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="72" endline="75">is_recorded</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="393" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="154" bodyend="160"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="75" endline="78">is_recorded</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afa5a38b18b6f14b904fafac9f0bd74fa" compoundref="stopwatch_8h" startline="439" endline="439">stop_time_</references>
       </memberdef>
     </sectiondef>
@@ -321,7 +321,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="408" column="21" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" bodystart="408" bodyend="-1"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="72" endline="75">is_recorded</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="75" endline="78">is_recorded</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1acdcaae1b9c3790cb15df661d99efcba4" compoundref="stopwatch_8h" startline="408">stopwatch_test_access</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1acdcaae1b9c3790cb15df661d99efcba4" compoundref="stopwatch_8h" startline="408">stopwatch_test_access</referencedby>
       </memberdef>
@@ -344,10 +344,10 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="430" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" bodystart="430" bodyend="430"/>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" compoundref="stopwatch_8cpp" startline="116" endline="128">elapsed</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a306d33023758a96948a6b24ea7a5dc06" compoundref="stopwatch-inlines_8h" startline="87" endline="90">has_begin</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" compoundref="stopwatch-inlines_8h" startline="61" endline="64">has_elapsed</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a306d33023758a96948a6b24ea7a5dc06" compoundref="stopwatch-inlines_8h" startline="90" endline="93">has_begin</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" compoundref="stopwatch-inlines_8h" startline="64" endline="67">has_elapsed</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" compoundref="stopwatch_8cpp" startline="87" endline="92">start</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adcdd0817f5db5db49eac3562c52e5470" compoundref="stopwatch-inlines_8h" startline="137" endline="143">timestamp_begin</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adcdd0817f5db5db49eac3562c52e5470" compoundref="stopwatch-inlines_8h" startline="140" endline="146">timestamp_begin</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a621a32c96a4950306c0a1aef8c577740" compoundref="stopwatch_8cpp" startline="139" endline="145">timestamp_begin</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afa5a38b18b6f14b904fafac9f0bd74fa" prot="private" static="no" mutable="no">
@@ -367,11 +367,11 @@
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="439" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" bodystart="439" bodyend="439"/>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" compoundref="stopwatch_8cpp" startline="116" endline="128">elapsed</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" compoundref="stopwatch-inlines_8h" startline="61" endline="64">has_elapsed</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adbabde73dd4f7588ae46f8d051d120e1" compoundref="stopwatch-inlines_8h" startline="99" endline="102">has_end</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" compoundref="stopwatch-inlines_8h" startline="64" endline="67">has_elapsed</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adbabde73dd4f7588ae46f8d051d120e1" compoundref="stopwatch-inlines_8h" startline="102" endline="105">has_end</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" compoundref="stopwatch_8cpp" startline="87" endline="92">start</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" compoundref="stopwatch_8cpp" startline="101" endline="105">stop</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1aaa80547cfa783c321b0ce88ecaa39648" compoundref="stopwatch-inlines_8h" startline="151" endline="157">timestamp_end</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1aaa80547cfa783c321b0ce88ecaa39648" compoundref="stopwatch-inlines_8h" startline="154" endline="160">timestamp_end</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a4c1a4d8b22d04205be49f8289ed7abd6" compoundref="stopwatch_8cpp" startline="155" endline="161">timestamp_end</referencedby>
       </memberdef>
     </sectiondef>
@@ -454,12 +454,12 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="191" column="7"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afd1213b3e3ffa9997ab0eba78b944ecf" compoundref="stopwatch-inlines_8h" startline="123" endline="129">compute_elapsed_time</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afd1213b3e3ffa9997ab0eba78b944ecf" compoundref="stopwatch-inlines_8h" startline="126" endline="132">compute_elapsed_time</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" compoundref="stopwatch_8cpp" startline="116" endline="128">elapsed</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a306d33023758a96948a6b24ea7a5dc06" compoundref="stopwatch-inlines_8h" startline="87" endline="90">has_begin</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" compoundref="stopwatch-inlines_8h" startline="61" endline="64">has_elapsed</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adbabde73dd4f7588ae46f8d051d120e1" compoundref="stopwatch-inlines_8h" startline="99" endline="102">has_end</references>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1ac698189ef451dfe398d779eb7cccda7f" compoundref="stopwatch-inlines_8h" startline="110" endline="113">has_timestamps</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a306d33023758a96948a6b24ea7a5dc06" compoundref="stopwatch-inlines_8h" startline="90" endline="93">has_begin</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" compoundref="stopwatch-inlines_8h" startline="64" endline="67">has_elapsed</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adbabde73dd4f7588ae46f8d051d120e1" compoundref="stopwatch-inlines_8h" startline="102" endline="105">has_end</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1ac698189ef451dfe398d779eb7cccda7f" compoundref="stopwatch-inlines_8h" startline="113" endline="116">has_timestamps</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" compoundref="stopwatch_8cpp" startline="87" endline="92">start</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" compoundref="stopwatch_8cpp" startline="101" endline="105">stop</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a621a32c96a4950306c0a1aef8c577740" compoundref="stopwatch_8cpp" startline="139" endline="145">timestamp_begin</references>
@@ -475,7 +475,7 @@
           <type>void</type>
         </param>
         <briefdescription>
-<para>Gets the time elapsed between <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref></computeroutput> and <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref></computeroutput>. </para>
+<para>Returns the time elapsed between <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1af5ebb1e454867633db12fef45db9788d" kindref="member">start()</ref></computeroutput> and <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a83ab4e25e25a4a81ed1d3277ac09390d" kindref="member">stop()</ref></computeroutput>. </para>
         </briefdescription>
         <detaileddescription>
 <para>The interval is truncated to whole microseconds. Without both readings (see <computeroutput><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" kindref="member">has_elapsed()</ref></computeroutput>), the elapsed time is zero.</para>
@@ -488,11 +488,11 @@ Converts the differences of the seconds and of the nanoseconds members to a sing
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="252" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/stopwatch.cpp" bodystart="116" bodyend="128"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" compoundref="stopwatch-inlines_8h" startline="61" endline="64">has_elapsed</references>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" compoundref="stopwatch-inlines_8h" startline="64" endline="67">has_elapsed</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5f1f1e5b3faeb79b81bb7eb3602aefd1" compoundref="stopwatch_8h" startline="430" endline="430">start_time_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afa5a38b18b6f14b904fafac9f0bd74fa" compoundref="stopwatch_8h" startline="439" endline="439">stop_time_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2">~stopwatch</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afd1213b3e3ffa9997ab0eba78b944ecf" compoundref="stopwatch-inlines_8h" startline="123" endline="129">compute_elapsed_time</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afd1213b3e3ffa9997ab0eba78b944ecf" compoundref="stopwatch-inlines_8h" startline="126" endline="132">compute_elapsed_time</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1ac6dca3d3fa34870f3960fe5e226e45d8" compoundref="reporter_8cpp" startline="810" endline="825">micro_os_plus::micro_test_plus::detail::reporter::format_elapsed_time</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
@@ -532,13 +532,13 @@ Returns <computeroutput>true</computeroutput> only when both the start and the s
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="238" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="61" bodyend="64"/>
-        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="72" endline="75">is_recorded</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="238" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="64" bodyend="67"/>
+        <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a197be08374692404afd4b07ae8b30e75" compoundref="stopwatch-inlines_8h" startline="75" endline="78">is_recorded</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5f1f1e5b3faeb79b81bb7eb3602aefd1" compoundref="stopwatch_8h" startline="430" endline="430">start_time_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afa5a38b18b6f14b904fafac9f0bd74fa" compoundref="stopwatch_8h" startline="439" endline="439">stop_time_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2">~stopwatch</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3719382123c6741054a89e4f76b55d90" compoundref="stopwatch_8cpp" startline="116" endline="128">elapsed</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1ac698189ef451dfe398d779eb7cccda7f" compoundref="stopwatch-inlines_8h" startline="110" endline="113">has_timestamps</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1ac698189ef451dfe398d779eb7cccda7f" compoundref="stopwatch-inlines_8h" startline="113" endline="116">has_timestamps</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1ac97586198c6e6ef9c8ff0b8dd1fb8e34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a5564c4e3d0806e45b40ee16e7ae1b185" kindref="member">stopwatch</ref> &amp;</type>
@@ -687,14 +687,14 @@ Returns <computeroutput>true</computeroutput> if at least one of the <computerou
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="422" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="72" bodyend="75"/>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a306d33023758a96948a6b24ea7a5dc06" compoundref="stopwatch-inlines_8h" startline="87" endline="90">has_begin</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" compoundref="stopwatch-inlines_8h" startline="61" endline="64">has_elapsed</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adbabde73dd4f7588ae46f8d051d120e1" compoundref="stopwatch-inlines_8h" startline="99" endline="102">has_end</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/stopwatch.h" line="422" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/stopwatch-inlines.h" bodystart="75" bodyend="78"/>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a306d33023758a96948a6b24ea7a5dc06" compoundref="stopwatch-inlines_8h" startline="90" endline="93">has_begin</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a3f84d3511f9130c9daefac85e2a772d7" compoundref="stopwatch-inlines_8h" startline="64" endline="67">has_elapsed</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adbabde73dd4f7588ae46f8d051d120e1" compoundref="stopwatch-inlines_8h" startline="102" endline="105">has_end</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1acdcaae1b9c3790cb15df661d99efcba4" compoundref="stopwatch_8h" startline="408">stopwatch_test_access</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adcdd0817f5db5db49eac3562c52e5470" compoundref="stopwatch-inlines_8h" startline="137" endline="143">timestamp_begin</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1adcdd0817f5db5db49eac3562c52e5470" compoundref="stopwatch-inlines_8h" startline="140" endline="146">timestamp_begin</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a621a32c96a4950306c0a1aef8c577740" compoundref="stopwatch_8cpp" startline="139" endline="145">timestamp_begin</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1aaa80547cfa783c321b0ce88ecaa39648" compoundref="stopwatch-inlines_8h" startline="151" endline="157">timestamp_end</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1aaa80547cfa783c321b0ce88ecaa39648" compoundref="stopwatch-inlines_8h" startline="154" endline="160">timestamp_end</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1a4c1a4d8b22d04205be49f8289ed7abd6" compoundref="stopwatch_8cpp" startline="155" endline="161">timestamp_end</referencedby>
       </memberdef>
     </sectiondef>

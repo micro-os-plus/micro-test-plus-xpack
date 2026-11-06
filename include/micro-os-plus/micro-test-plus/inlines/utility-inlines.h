@@ -23,7 +23,7 @@
  * @details
  * This header provides the inline implementations for the utility function
  * templates used within the µTest++ framework. It defines the logic for
- * splitting strings into substrings using a specified delimiter, enabling
+ * splitting strings into sub-strings using a specified delimiter, enabling
  * convenient and type-safe string parsing in test expressions.
  *
  * All definitions reside within the `micro_os_plus::micro_test_plus::utility`
@@ -60,16 +60,16 @@ namespace micro_os_plus::micro_test_plus
   {
     /**
      * @details
-     * This function template splits a string into a vector of substrings,
+     * This function template splits a string into a vector of sub-strings,
      * using the specified delimiter characters.
      *
      * The function iterates through the input string, identifying the
      * positions of any of the delimiter characters (via `find_first_of()`)
-     * and extracting the substrings between them. Each non-empty substring
-     * is added to the output vector; empty substrings, such as those between
+     * and extracting the sub-strings between them. Each non-empty sub-string
+     * is added to the output vector; empty sub-strings, such as those between
      * consecutive delimiters, are omitted. This approach supports flexible
-     * parsing of delimited data, which is particularly useful for validating
-     * string processing logic in test cases.
+     * parsing of delimited data, which is useful for validating string
+     * processing logic in test cases.
      *
      * @par Example
      *

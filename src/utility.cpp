@@ -75,8 +75,7 @@ namespace micro_os_plus::micro_test_plus
      * file name within the input string, or the original string if no
      * separators are found.
      *
-     * This utility is particularly useful for test reporting, allowing for
-     * concise display of file names without full paths.
+     * The reports use it to display concise file names without full paths.
      *
      * A `nullptr` path, which a default-constructed source location may
      * provide, is accepted and yields an empty string, instead of
@@ -85,8 +84,10 @@ namespace micro_os_plus::micro_test_plus
      * @par Example
      *
      * @code{.cpp}
+     * namespace mt = micro_os_plus::micro_test_plus;
+     *
      * const char* path = "/home/user/project/test.cpp";
-     * const char* filename = utility::extract_file_name (path);
+     * const char* filename = mt::utility::extract_file_name (path);
      * // filename now points to "test.cpp"
      * @endcode
      */

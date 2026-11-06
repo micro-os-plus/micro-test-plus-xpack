@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">micro_os_plus::micro_test_plus::extension::any_op Concept Reference</div></div>
+  <div class="headertitle"><div class="title">micro_os_plus::micro_test_plus::extension::any_op Concept Reference<div class="ingroups"><a class="el" href="group__micro-os-plus.html">µOS++ Topics</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus.html">µTest++</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api.html">C++ API</a> &raquo; <a class="el" href="group__micro-os-plus-micro-test-plus-cpp-api-customisation.html">Customisation</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -122,8 +122,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
 <h2 id="header-conceptdef" class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Lhs_T, <span class="keyword">class</span> Rhs_T&gt;</div>
 <div class="line">    <span class="keyword">concept </span><a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1any__op.html">any_op</a> = <a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html">is_op&lt;Lhs_T&gt;</a> or <a class="code hl_concept" href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html">is_op&lt;Rhs_T&gt;</a></div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1any__op_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1any__op.html">micro_os_plus::micro_test_plus::extension::any_op</a></div><div class="ttdoc">Concept satisfied when at least one of two types is a framework expression type.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00367">extension.h:367</a></div></div>
-<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html">micro_os_plus::micro_test_plus::extension::is_op</a></div><div class="ttdoc">Concept satisfied when a type is a framework expression type.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00318">extension.h:319</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1any__op_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1any__op.html">micro_os_plus::micro_test_plus::extension::any_op</a></div><div class="ttdoc">Concept satisfied when at least one of two types is a framework expression type.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00369">extension.h:369</a></div></div>
+<div class="ttc" id="aconceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op_html"><div class="ttname"><a href="conceptmicro__os__plus_1_1micro__test__plus_1_1extension_1_1is__op.html">micro_os_plus::micro_test_plus::extension::is_op</a></div><div class="ttdoc">Concept satisfied when a type is a framework expression type.</div><div class="ttdef"><b>Definition</b> <a href="extension_8h_source.html#l00319">extension.h:320</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -132,9 +132,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('conceptmicro__
   </table>
   </dd>
 </dl>
-<p>The <span class="tt">any_op</span> concept is satisfied when <span class="tt">Lhs_T</span> or <span class="tt">Rhs_T</span> (or both) are framework expression types (see <span class="tt">is_op</span>). A custom operator constrains its overload with it, so that the overload is enabled only when at least one operand is a framework expression, and does not compete with the operators of the application types. The framework itself uses it only for the deprecated operators. </p>
+<p>The <span class="tt">any_op</span> concept is satisfied when <span class="tt">Lhs_T</span> or <span class="tt">Rhs_T</span> (or both) are framework expression types (see <span class="tt">is_op</span>). A custom operator constrains its overload with it, so that the overload is enabled only when at least one operand is a framework expression type, and does not compete with the operators of the application types. The framework itself uses it only for the deprecated operators. </p>
 
-<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00367">367</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="extension_8h_source.html#l00369">369</a> of file <a class="el" href="extension_8h_source.html">extension.h</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

@@ -178,33 +178,34 @@ requires requires (T s, Delim_T d) { T::npos; s.find_first_of (d, std::size_t{})
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the first character of the file name within <span class="tt">path</span>, or <span class="tt">path</span> itself if no path separator (<span class="tt">/</span> or the backslash) is found; an empty string if <span class="tt">path</span> is <span class="tt">nullptr</span>.</dd></dl>
 <p>The <span class="tt"><a class="el" href="#ga791f22f0c85b6436c9016821907b0653" title="Extracts the file name component from a full path.">extract_file_name</a></span> function extracts the file name from a given file path, handling both Unix-style (<span class="tt">/</span>) and Windows-style (the backslash) path separators. It returns a pointer to the start of the file name within the input string, or the original string if no separators are found.</p>
-<p>This utility is particularly useful for test reporting, allowing for concise display of file names without full paths.</p>
+<p>The reports use it to display concise file names without full paths.</p>
 <p>A <span class="tt">nullptr</span> path, which a default-constructed source location may provide, is accepted and yields an empty string, instead of reaching the <span class="tt">std::string_view</span> constructor, which does not allow it.</p>
 <dl class="section user"><dt>Example</dt><dd></dd></dl>
-<div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span>* path = <span class="stringliteral">&quot;/home/user/project/test.cpp&quot;</span>;</div>
-<div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span>* filename = <a class="code hl_function" href="#ga791f22f0c85b6436c9016821907b0653">utility::extract_file_name</a> (path);</div>
+<div class="fragment"><div class="line"><span class="keyword">namespace </span>mt = <a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span>* path = <span class="stringliteral">&quot;/home/user/project/test.cpp&quot;</span>;</div>
+<div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span>* filename = mt::utility::extract_file_name (path);</div>
 <div class="line"><span class="comment">// filename now points to &quot;test.cpp&quot;</span></div>
-<div class="ttc" id="agroup__micro-os-plus-micro-test-plus-cpp-api-utility-functions_html_ga791f22f0c85b6436c9016821907b0653"><div class="ttname"><a href="#ga791f22f0c85b6436c9016821907b0653">micro_os_plus::micro_test_plus::utility::extract_file_name</a></div><div class="ttdeci">const char * extract_file_name(const char *path) noexcept</div><div class="ttdoc">Extracts the file name component from a full path.</div><div class="ttdef"><b>Definition</b> <a href="utility_8cpp_source.html#l00094">utility.cpp:94</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="utility_8cpp_source.html#l00094">94</a> of file <a class="el" href="utility_8cpp_source.html">utility.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   95</span>    {</div>
-<div class="line"><span class="lineno">   96</span>      <span class="keywordflow">if</span> (path == <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   97</span>        {</div>
-<div class="line"><span class="lineno">   98</span>          <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>; <span class="comment">// No path, return an empty string.</span></div>
-<div class="line"><span class="lineno">   99</span>        }</div>
-<div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>      <span class="keyword">const</span> std::string_view sv{ path };</div>
-<div class="line"><span class="lineno">  102</span>      <span class="keyword">const</span> <span class="keyword">auto</span> pos = sv.find_last_of (<span class="stringliteral">&quot;/\\&quot;</span>);</div>
-<div class="line"><span class="lineno">  103</span>      <span class="keywordflow">if</span> (pos == std::string_view::npos)</div>
-<div class="line"><span class="lineno">  104</span>        {</div>
-<div class="line"><span class="lineno">  105</span>          <span class="keywordflow">return</span> path; <span class="comment">// No separators found, return original string.</span></div>
-<div class="line"><span class="lineno">  106</span>        }</div>
-<div class="line"><span class="lineno">  107</span>      <span class="keywordflow">return</span> sv.substr (pos + 1).data ();</div>
-<div class="line"><span class="lineno">  108</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="utility_8cpp_source.html#l00095">95</a> of file <a class="el" href="utility_8cpp_source.html">utility.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>    {</div>
+<div class="line"><span class="lineno">   97</span>      <span class="keywordflow">if</span> (path == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   98</span>        {</div>
+<div class="line"><span class="lineno">   99</span>          <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>; <span class="comment">// No path, return an empty string.</span></div>
+<div class="line"><span class="lineno">  100</span>        }</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>      <span class="keyword">const</span> std::string_view sv{ path };</div>
+<div class="line"><span class="lineno">  103</span>      <span class="keyword">const</span> <span class="keyword">auto</span> pos = sv.find_last_of (<span class="stringliteral">&quot;/\\&quot;</span>);</div>
+<div class="line"><span class="lineno">  104</span>      <span class="keywordflow">if</span> (pos == std::string_view::npos)</div>
+<div class="line"><span class="lineno">  105</span>        {</div>
+<div class="line"><span class="lineno">  106</span>          <span class="keywordflow">return</span> path; <span class="comment">// No separators found, return original string.</span></div>
+<div class="line"><span class="lineno">  107</span>        }</div>
+<div class="line"><span class="lineno">  108</span>      <span class="keywordflow">return</span> sv.substr (pos + 1).data ();</div>
+<div class="line"><span class="lineno">  109</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="utility_8cpp_source.html#l00094">extract_file_name()</a>.</p>
+<p class="reference">References <a class="el" href="utility_8cpp_source.html#l00095">extract_file_name()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="runner_8cpp_source.html#l01025">micro_os_plus::micro_test_plus::runner::abort()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00751">micro_os_plus::micro_test_plus::detail::reporter_human::abort_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l01159">micro_os_plus::micro_test_plus::detail::reporter_tap::abort_session()</a>, <a class="el" href="runner_8cpp_source.html#l00420">micro_os_plus::micro_test_plus::runner::add_top_suite()</a>, <a class="el" href="utility_8cpp_source.html#l00094">extract_file_name()</a>, <a class="el" href="runner_8cpp_source.html#l00273">micro_os_plus::micro_test_plus::runner::initialise()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00595">micro_os_plus::micro_test_plus::detail::reporter_human::output_fail_prefix()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l01057">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_suffix()</a>, <a class="el" href="deprecated_8cpp_source.html#l00078">micro_os_plus::micro_test_plus::reflection::short_name()</a>, and <a class="el" href="reporter_8cpp_source.html#l00547">micro_os_plus::micro_test_plus::detail::reporter::write_info()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="runner_8cpp_source.html#l01025">micro_os_plus::micro_test_plus::runner::abort()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00751">micro_os_plus::micro_test_plus::detail::reporter_human::abort_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l01159">micro_os_plus::micro_test_plus::detail::reporter_tap::abort_session()</a>, <a class="el" href="runner_8cpp_source.html#l00420">micro_os_plus::micro_test_plus::runner::add_top_suite()</a>, <a class="el" href="utility_8cpp_source.html#l00095">extract_file_name()</a>, <a class="el" href="runner_8cpp_source.html#l00273">micro_os_plus::micro_test_plus::runner::initialise()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00595">micro_os_plus::micro_test_plus::detail::reporter_human::output_fail_prefix()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l01057">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_suffix()</a>, <a class="el" href="deprecated_8cpp_source.html#l00078">micro_os_plus::micro_test_plus::reflection::short_name()</a>, and <a class="el" href="reporter_8cpp_source.html#l00547">micro_os_plus::micro_test_plus::detail::reporter::write_info()</a>.</p>
 
 </div>
 </div>
@@ -251,56 +252,56 @@ requires requires (T s, Delim_T d) { T::npos; s.find_first_of (d, std::size_t{})
 <div class="line">t.expect (mt::utility::is_match (<span class="stringliteral">&quot;abc&quot;</span>, <span class="stringliteral">&quot;a?c&quot;</span>)) &lt;&lt; <span class="stringliteral">&quot;abc matches a?c&quot;</span>;</div>
 <div class="line">t.expect (mt::utility::is_match (<span class="stringliteral">&quot;abc&quot;</span>, <span class="stringliteral">&quot;a*c&quot;</span>)) &lt;&lt; <span class="stringliteral">&quot;abc matches a*c&quot;</span>;</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="utility_8cpp_source.html#l00146">146</a> of file <a class="el" href="utility_8cpp_source.html">utility.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  147</span>    {</div>
-<div class="line"><span class="lineno">  148</span>      <span class="keyword">constexpr</span> <span class="keyword">auto</span> npos = std::string_view::npos;</div>
-<div class="line"><span class="lineno">  149</span> </div>
-<div class="line"><span class="lineno">  150</span>      std::size_t i = 0; <span class="comment">// Index in the input.</span></div>
-<div class="line"><span class="lineno">  151</span>      std::size_t p = 0; <span class="comment">// Index in the pattern.</span></div>
-<div class="line"><span class="lineno">  152</span> </div>
-<div class="line"><span class="lineno">  153</span>      <span class="comment">// The position of the most recent `*` in the pattern, and the input</span></div>
-<div class="line"><span class="lineno">  154</span>      <span class="comment">// index where its match ends.</span></div>
-<div class="line"><span class="lineno">  155</span>      std::size_t star_p = npos;</div>
-<div class="line"><span class="lineno">  156</span>      std::size_t star_i = 0;</div>
-<div class="line"><span class="lineno">  157</span> </div>
-<div class="line"><span class="lineno">  158</span>      <span class="keywordflow">while</span> (i &lt; input.size ())</div>
-<div class="line"><span class="lineno">  159</span>        {</div>
-<div class="line"><span class="lineno">  160</span>          <span class="keywordflow">if</span> (p &lt; pattern.size ()</div>
-<div class="line"><span class="lineno">  161</span>              &amp;&amp; (pattern[p] == <span class="charliteral">&#39;?&#39;</span> || pattern[p] == input[i]))</div>
-<div class="line"><span class="lineno">  162</span>            {</div>
-<div class="line"><span class="lineno">  163</span>              ++i;</div>
-<div class="line"><span class="lineno">  164</span>              ++p;</div>
-<div class="line"><span class="lineno">  165</span>            }</div>
-<div class="line"><span class="lineno">  166</span>          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (p &lt; pattern.size () &amp;&amp; pattern[p] == <span class="charliteral">&#39;*&#39;</span>)</div>
-<div class="line"><span class="lineno">  167</span>            {</div>
-<div class="line"><span class="lineno">  168</span>              <span class="comment">// Start by matching an empty sequence.</span></div>
-<div class="line"><span class="lineno">  169</span>              star_p = p++;</div>
-<div class="line"><span class="lineno">  170</span>              star_i = i;</div>
-<div class="line"><span class="lineno">  171</span>            }</div>
-<div class="line"><span class="lineno">  172</span>          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (star_p != npos)</div>
-<div class="line"><span class="lineno">  173</span>            {</div>
-<div class="line"><span class="lineno">  174</span>              <span class="comment">// Extend the match of the most recent `*` by one character.</span></div>
-<div class="line"><span class="lineno">  175</span>              p = star_p + 1;</div>
-<div class="line"><span class="lineno">  176</span>              i = ++star_i;</div>
-<div class="line"><span class="lineno">  177</span>            }</div>
-<div class="line"><span class="lineno">  178</span>          <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  179</span>            {</div>
-<div class="line"><span class="lineno">  180</span>              <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  181</span>            }</div>
-<div class="line"><span class="lineno">  182</span>        }</div>
-<div class="line"><span class="lineno">  183</span> </div>
-<div class="line"><span class="lineno">  184</span>      <span class="comment">// The input is exhausted; the rest of the pattern must be only `*`.</span></div>
-<div class="line"><span class="lineno">  185</span>      <span class="keywordflow">while</span> (p &lt; pattern.size () &amp;&amp; pattern[p] == <span class="charliteral">&#39;*&#39;</span>)</div>
-<div class="line"><span class="lineno">  186</span>        {</div>
-<div class="line"><span class="lineno">  187</span>          ++p;</div>
-<div class="line"><span class="lineno">  188</span>        }</div>
-<div class="line"><span class="lineno">  189</span> </div>
-<div class="line"><span class="lineno">  190</span>      <span class="keywordflow">return</span> p == pattern.size ();</div>
-<div class="line"><span class="lineno">  191</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="utility_8cpp_source.html#l00147">147</a> of file <a class="el" href="utility_8cpp_source.html">utility.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  148</span>    {</div>
+<div class="line"><span class="lineno">  149</span>      <span class="keyword">constexpr</span> <span class="keyword">auto</span> npos = std::string_view::npos;</div>
+<div class="line"><span class="lineno">  150</span> </div>
+<div class="line"><span class="lineno">  151</span>      std::size_t i = 0; <span class="comment">// Index in the input.</span></div>
+<div class="line"><span class="lineno">  152</span>      std::size_t p = 0; <span class="comment">// Index in the pattern.</span></div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>      <span class="comment">// The position of the most recent `*` in the pattern, and the input</span></div>
+<div class="line"><span class="lineno">  155</span>      <span class="comment">// index where its match ends.</span></div>
+<div class="line"><span class="lineno">  156</span>      std::size_t star_p = npos;</div>
+<div class="line"><span class="lineno">  157</span>      std::size_t star_i = 0;</div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>      <span class="keywordflow">while</span> (i &lt; input.size ())</div>
+<div class="line"><span class="lineno">  160</span>        {</div>
+<div class="line"><span class="lineno">  161</span>          <span class="keywordflow">if</span> (p &lt; pattern.size ()</div>
+<div class="line"><span class="lineno">  162</span>              &amp;&amp; (pattern[p] == <span class="charliteral">&#39;?&#39;</span> || pattern[p] == input[i]))</div>
+<div class="line"><span class="lineno">  163</span>            {</div>
+<div class="line"><span class="lineno">  164</span>              ++i;</div>
+<div class="line"><span class="lineno">  165</span>              ++p;</div>
+<div class="line"><span class="lineno">  166</span>            }</div>
+<div class="line"><span class="lineno">  167</span>          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (p &lt; pattern.size () &amp;&amp; pattern[p] == <span class="charliteral">&#39;*&#39;</span>)</div>
+<div class="line"><span class="lineno">  168</span>            {</div>
+<div class="line"><span class="lineno">  169</span>              <span class="comment">// Start by matching an empty sequence.</span></div>
+<div class="line"><span class="lineno">  170</span>              star_p = p++;</div>
+<div class="line"><span class="lineno">  171</span>              star_i = i;</div>
+<div class="line"><span class="lineno">  172</span>            }</div>
+<div class="line"><span class="lineno">  173</span>          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (star_p != npos)</div>
+<div class="line"><span class="lineno">  174</span>            {</div>
+<div class="line"><span class="lineno">  175</span>              <span class="comment">// Extend the match of the most recent `*` by one character.</span></div>
+<div class="line"><span class="lineno">  176</span>              p = star_p + 1;</div>
+<div class="line"><span class="lineno">  177</span>              i = ++star_i;</div>
+<div class="line"><span class="lineno">  178</span>            }</div>
+<div class="line"><span class="lineno">  179</span>          <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  180</span>            {</div>
+<div class="line"><span class="lineno">  181</span>              <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  182</span>            }</div>
+<div class="line"><span class="lineno">  183</span>        }</div>
+<div class="line"><span class="lineno">  184</span> </div>
+<div class="line"><span class="lineno">  185</span>      <span class="comment">// The input is exhausted; the rest of the pattern must be only `*`.</span></div>
+<div class="line"><span class="lineno">  186</span>      <span class="keywordflow">while</span> (p &lt; pattern.size () &amp;&amp; pattern[p] == <span class="charliteral">&#39;*&#39;</span>)</div>
+<div class="line"><span class="lineno">  187</span>        {</div>
+<div class="line"><span class="lineno">  188</span>          ++p;</div>
+<div class="line"><span class="lineno">  189</span>        }</div>
+<div class="line"><span class="lineno">  190</span> </div>
+<div class="line"><span class="lineno">  191</span>      <span class="keywordflow">return</span> p == pattern.size ();</div>
+<div class="line"><span class="lineno">  192</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="utility_8cpp_source.html#l00146">is_match()</a>.</p>
+<p class="reference">References <a class="el" href="utility_8cpp_source.html#l00147">is_match()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="utility_8cpp_source.html#l00146">is_match()</a>, and <a class="el" href="runner_8cpp_source.html#l00530">micro_os_plus::micro_test_plus::runner::is_selected()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="utility_8cpp_source.html#l00147">is_match()</a>, and <a class="el" href="runner_8cpp_source.html#l00530">micro_os_plus::micro_test_plus::runner::is_selected()</a>.</p>
 
 </div>
 </div>
@@ -347,25 +348,25 @@ requires requires (T s, Delim_T d) { T::npos; s.find_first_of (d, std::size_t{})
 <div class="line">          == mt::utility::split (<span class="stringliteral">&quot;a.b&quot;</span>, <span class="stringliteral">&quot;.&quot;</span>))</div>
 <div class="line">    &lt;&lt; <span class="stringliteral">&quot;a.b splits into [a,b]&quot;</span>;</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="utility_8cpp_source.html#l00214">214</a> of file <a class="el" href="utility_8cpp_source.html">utility.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  215</span>    {</div>
-<div class="line"><span class="lineno">  216</span>      std::vector&lt;std::string_view&gt; output{};</div>
-<div class="line"><span class="lineno">  217</span>      std::size_t first{};</div>
-<div class="line"><span class="lineno">  218</span>      <span class="keywordflow">while</span> (first &lt; input.size ())</div>
-<div class="line"><span class="lineno">  219</span>        {</div>
-<div class="line"><span class="lineno">  220</span>          <span class="keyword">const</span> <span class="keyword">auto</span> second = input.find_first_of (delimiters, first);</div>
-<div class="line"><span class="lineno">  221</span>          <span class="keywordflow">if</span> (first != second)</div>
-<div class="line"><span class="lineno">  222</span>            {</div>
-<div class="line"><span class="lineno">  223</span>              output.emplace_back (input.substr (first, second - first));</div>
-<div class="line"><span class="lineno">  224</span>            }</div>
-<div class="line"><span class="lineno">  225</span>          <span class="keywordflow">if</span> (second == std::string_view::npos)</div>
-<div class="line"><span class="lineno">  226</span>            {</div>
-<div class="line"><span class="lineno">  227</span>              <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  228</span>            }</div>
-<div class="line"><span class="lineno">  229</span>          first = second + 1;</div>
-<div class="line"><span class="lineno">  230</span>        }</div>
-<div class="line"><span class="lineno">  231</span>      <span class="keywordflow">return</span> output;</div>
-<div class="line"><span class="lineno">  232</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="utility_8cpp_source.html#l00215">215</a> of file <a class="el" href="utility_8cpp_source.html">utility.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  216</span>    {</div>
+<div class="line"><span class="lineno">  217</span>      std::vector&lt;std::string_view&gt; output{};</div>
+<div class="line"><span class="lineno">  218</span>      std::size_t first{};</div>
+<div class="line"><span class="lineno">  219</span>      <span class="keywordflow">while</span> (first &lt; input.size ())</div>
+<div class="line"><span class="lineno">  220</span>        {</div>
+<div class="line"><span class="lineno">  221</span>          <span class="keyword">const</span> <span class="keyword">auto</span> second = input.find_first_of (delimiters, first);</div>
+<div class="line"><span class="lineno">  222</span>          <span class="keywordflow">if</span> (first != second)</div>
+<div class="line"><span class="lineno">  223</span>            {</div>
+<div class="line"><span class="lineno">  224</span>              output.emplace_back (input.substr (first, second - first));</div>
+<div class="line"><span class="lineno">  225</span>            }</div>
+<div class="line"><span class="lineno">  226</span>          <span class="keywordflow">if</span> (second == std::string_view::npos)</div>
+<div class="line"><span class="lineno">  227</span>            {</div>
+<div class="line"><span class="lineno">  228</span>              <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  229</span>            }</div>
+<div class="line"><span class="lineno">  230</span>          first = second + 1;</div>
+<div class="line"><span class="lineno">  231</span>        }</div>
+<div class="line"><span class="lineno">  232</span>      <span class="keywordflow">return</span> output;</div>
+<div class="line"><span class="lineno">  233</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="utility-inlines_8h_source.html#l00091">split()</a>.</p>
 
@@ -400,8 +401,8 @@ requires requires (T s, Delim_T d) { T::npos; s.find_first_of (d, std::size_t{})
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This function template splits a string into a vector of substrings, using the specified delimiter characters.</p>
-<p>The function iterates through the input string, identifying the positions of any of the delimiter characters (via <span class="tt">find_first_of()</span>) and extracting the substrings between them. Each non-empty substring is added to the output vector; empty substrings, such as those between consecutive delimiters, are omitted. This approach supports flexible parsing of delimited data, which is particularly useful for validating string processing logic in test cases.</p>
+<p>This function template splits a string into a vector of sub-strings, using the specified delimiter characters.</p>
+<p>The function iterates through the input string, identifying the positions of any of the delimiter characters (via <span class="tt">find_first_of()</span>) and extracting the sub-strings between them. Each non-empty sub-string is added to the output vector; empty sub-strings, such as those between consecutive delimiters, are omitted. This approach supports flexible parsing of delimited data, which is useful for validating string processing logic in test cases.</p>
 <dl class="section user"><dt>Example</dt><dd></dd></dl>
 <div class="fragment"><div class="line"><span class="keyword">namespace </span>mt = <a class="code hl_namespace" href="namespacemicro__os__plus_1_1micro__test__plus.html">micro_os_plus::micro_test_plus</a>;</div>
 <div class="line"> </div>
@@ -447,7 +448,7 @@ requires requires (T s, Delim_T d) { T::npos; s.find_first_of (d, std::size_t{})
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="utility-inlines_8h_source.html#l00091">split()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="utility_8cpp_source.html#l00214">split()</a>, and <a class="el" href="utility-inlines_8h_source.html#l00091">split()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="utility_8cpp_source.html#l00215">split()</a>, and <a class="el" href="utility-inlines_8h_source.html#l00091">split()</a>.</p>
 
 </div>
 </div>

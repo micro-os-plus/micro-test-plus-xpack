@@ -101,7 +101,7 @@ keywords:
 </dl>
 
 
-<p>The application and the library sources must be compiled with the same <span class="doxyComputerOutput"><a href="#ga3dd1e70998580fe7d7f410e5cd83879b">MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</a></span> and <span class="doxyComputerOutput"><a href="#ga67c701de5426ac340584ed038494a873">MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</a></span> macros, otherwise the link fails (see the pages of the macros below); the trace macros only add trace calls to the function bodies. The simplest way is a header named <span class="doxyComputerOutput">micro-os-plus/micro-test-plus-defines.h</span> (or <span class="doxyComputerOutput">micro-os-plus/project-config.h</span>) in the include path of the build: every µTest++ header includes it, if present, before its own definitions.</p>
+<p>The application and the library sources must be compiled with the same <span class="doxyComputerOutput"><a href="#ga3dd1e70998580fe7d7f410e5cd83879b">MICRO_OS_PLUS_MICRO_TEST_PLUS_ENABLED</a></span> macro, otherwise the link fails; the same holds for <span class="doxyComputerOutput"><a href="#ga67c701de5426ac340584ed038494a873">MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED</a></span>, for the applications that use the non-inline deprecated members (see the pages of the macros below). The trace macros only add trace calls to the function bodies, and need the <span class="doxyComputerOutput">micro-os-plus/diag/trace.h</span> header (see the pages of the macros). The simplest way is a header named <span class="doxyComputerOutput">micro-os-plus/micro-test-plus-defines.h</span> (or <span class="doxyComputerOutput">micro-os-plus/project-config.h</span>) in the include path of the build: every µTest++ header includes it, if present, before its own definitions.</p>
 
 
 <p>Guard each definition, so that the macro can also be given on the compiler command line:</p>
@@ -150,7 +150,7 @@ keywords:
 <p>This option has no value, only its definition matters.</p>
 
 
-<p>Without it, the deprecated definitions (the old names of the functions, the classes, and the members, the overloaded operators, the user-defined literals, the type wrappers, and the deprecated overloads and constructors) are neither declared nor defined, so the applications that still use them fail to compile.</p>
+<p>Without it, the deprecated definitions (the old names of the functions, the classes, and the members, the overloaded operators, the user-defined literals, the value wrappers, and the deprecated overloads and constructors) are neither declared nor defined, so the applications that still use them fail to compile.</p>
 
 
 <p>With it, they are available, but marked <span class="doxyComputerOutput">[[deprecated]]</span>, so the compiler reports their use; the applications that build with <span class="doxyComputerOutput">-Werror</span> fail until the deprecated definitions are replaced.</p>
@@ -234,6 +234,9 @@ keywords:
 <p>Displays trace messages in the constructors and destructors of the µTest++ Testing Framework, through <span class="doxyComputerOutput">trace::printf()</span>, which writes them only when <span class="doxyComputerOutput">MICRO_OS_PLUS_DIAG_TRACE_ENABLED</span> is also defined.</p>
 
 
+<p>The code compiled with this macro includes <span class="doxyComputerOutput">micro-os-plus/diag/trace.h</span>, of the µOS++ <span class="doxyComputerOutput">diag-trace</span> package, which must be in the include path of the build; without it, the compilation fails.</p>
+
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00074">74</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</a>.</p>
 
 
@@ -270,6 +273,9 @@ keywords:
 <p>Displays trace messages in the member functions of the µTest++ Testing Framework, through <span class="doxyComputerOutput">trace::printf()</span>, which writes them only when <span class="doxyComputerOutput">MICRO_OS_PLUS_DIAG_TRACE_ENABLED</span> is also defined.</p>
 
 
+<p>The code compiled with this macro includes <span class="doxyComputerOutput">micro-os-plus/diag/trace.h</span>, of the µOS++ <span class="doxyComputerOutput">diag-trace</span> package, which must be in the include path of the build; without it, the compilation fails.</p>
+
+
 <p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h/#l00073">73</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus-h">micro-test-plus.h</a>.</p>
 
 
@@ -286,6 +292,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

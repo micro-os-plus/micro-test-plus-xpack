@@ -7614,7 +7614,7 @@ class micro_os_plus::micro_test_plus::detail::expression_formatter { ... }
 
 ## Deprecated Functions
 
-### c\_str {#a6a426d5cae4216ba3ed17bd20069f8a2}
+### c\_str() {#a6a426d5cae4216ba3ed17bd20069f8a2}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -7690,7 +7690,7 @@ class micro_os_plus::micro_test_plus::detail::expression_formatter { ... }
 </div>
 </div>
 
-### empty {#a1c8635cbb51fea4f2b1ef839c85599e8}
+### empty() {#a1c8635cbb51fea4f2b1ef839c85599e8}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -7790,6 +7790,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.7 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.8 by <a href="https://www.doxygen.nl">Doxygen</a> 1.18.0.</p>
 
 </div>

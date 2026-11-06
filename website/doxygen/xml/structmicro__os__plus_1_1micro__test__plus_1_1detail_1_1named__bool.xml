@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="748" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="748" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="751" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="751" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-attrib">
@@ -53,7 +53,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="784" column="24" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="784" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="787" column="24" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="787" bodyend="-1"/>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1ada5dc84fd655a188ac350568572dddb8" compoundref="deprecated-inlines_8h" startline="645" endline="648">named_bool</referencedby>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a00b50cd87531243cd42964982fc11bdd" compoundref="deprecated-inlines_8h" startline="665" endline="668">name</referencedby>
       </memberdef>
@@ -86,9 +86,9 @@ Stores the view of the name; the characters are not copied. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="755" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="645" bodyend="648"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="758" column="26" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="645" bodyend="648"/>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a00b50cd87531243cd42964982fc11bdd" compoundref="deprecated-inlines_8h" startline="665" endline="668">name</references>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a2069fa6eef31eeb9cd9ce2ec3214c6e2" compoundref="deprecated_8h" startline="784">name_</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a2069fa6eef31eeb9cd9ce2ec3214c6e2" compoundref="deprecated_8h" startline="787">name_</references>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a00b50cd87531243cd42964982fc11bdd" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>std::string_view</type>
@@ -111,8 +111,8 @@ Returns the stored view of the name. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="775" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="665" bodyend="668"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a2069fa6eef31eeb9cd9ce2ec3214c6e2" compoundref="deprecated_8h" startline="784">name_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="778" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="665" bodyend="668"/>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a2069fa6eef31eeb9cd9ce2ec3214c6e2" compoundref="deprecated_8h" startline="787">name_</references>
         <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1ada5dc84fd655a188ac350568572dddb8" compoundref="deprecated-inlines_8h" startline="645" endline="648">named_bool</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1a46392700e7eabfa2e18655ac6b04c670" compoundref="expression-formatter_8cpp" startline="698" endline="702">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
       </memberdef>
@@ -134,7 +134,7 @@ Always returns <computeroutput>true</computeroutput>, the value of all named boo
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="765" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="655" bodyend="658"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="768" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="655" bodyend="658"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -169,7 +169,7 @@ Always returns <computeroutput>true</computeroutput>, the value of all named boo
         <link refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1op"/>
       </node>
     </collaborationgraph>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="740" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="741" bodyend="785"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="743" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="744" bodyend="788"/>
     <listofallmembers>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a00b50cd87531243cd42964982fc11bdd" prot="public" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::named_bool</scope><name>name</name></member>
       <member refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1named__bool_1a2069fa6eef31eeb9cd9ce2ec3214c6e2" prot="private" virt="non-virtual"><scope>micro_os_plus::micro_test_plus::detail::named_bool</scope><name>name_</name></member>

@@ -33,8 +33,8 @@
  * All definitions reside within the `micro_os_plus::micro_test_plus`
  * namespace.
  *
- * The header is included through `micro-test-plus.h` and should not be
- * included directly by user code.
+ * This file is included by `micro-os-plus/micro-test-plus.h`, which is the
+ * header that the applications include.
  */
 
 #ifndef MICRO_OS_PLUS_MICRO_TEST_PLUS_RUNNER_OPTIONS_H_
@@ -445,8 +445,10 @@ namespace micro_os_plus::micro_test_plus
      * the verbosity levels, and is written to the console and to the
      * output file, if any; no report is written, and `run_suites()`
      * returns 0, 1 if a call was rejected or an exception escaped a
-     * suite body, which makes the list incomplete, or 2 after an option
-     * error, or if the filters selected no test case.
+     * suite body, which makes the list incomplete (the error is written
+     * in the list, as an `error:` line, or a `# error:` comment with the
+     * TAP reporter), or 2 after an option error, or if the filters
+     * selected no test case.
      *
      * @since 6.0.0
      */
@@ -459,7 +461,7 @@ namespace micro_os_plus::micro_test_plus
      * @details
      * Set by the `--help` option, or by its short form `-h`, which is the
      * only short option. The runner then writes, on the console,
-     * the usage and one line for each option, runs no test, creates no
+     * the usage and the list of the options, runs no test, creates no
      * output file, and `run_suites()` returns 0, or 2 after an option
      * error. The text is written also with the `silent` verbosity, since
      * it was requested.
@@ -477,6 +479,8 @@ namespace micro_os_plus::micro_test_plus
      * no test and `runner::run_suites()` returns 2. Never set for the
      * default options.
      *
+     * @par Parameters
+     *   None.
      * @return `true` if at least one error was found.
      *
      * @since 6.0.0
@@ -492,6 +496,8 @@ namespace micro_os_plus::micro_test_plus
      * Set together with the corresponding error; the runner then adds a
      * line suggesting `--help` to the errors it writes on the console.
      *
+     * @par Parameters
+     *   None.
      * @return `true` if at least one unknown option was found.
      *
      * @since 6.0.0

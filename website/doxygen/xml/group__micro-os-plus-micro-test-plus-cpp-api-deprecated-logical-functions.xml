@@ -3,7 +3,59 @@
   <compounddef id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions" kind="group">
     <compoundname>micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions</compoundname>
     <title>Old logical function names</title>
-    <sectiondef kind="func">
+    <sectiondef kind="user-defined">
+      <header>Deprecated Functions</header>
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Expr_T</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto micro_os_plus::micro_test_plus::_not</definition>
+        <argsstring>(Expr_T &amp;&amp;expr)</argsstring>
+        <name>_not</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::_not</qualifiedname>
+        <param>
+          <type>Expr_T &amp;&amp;</type>
+          <declname>expr</declname>
+        </param>
+        <briefdescription>
+<para>Deprecated generic logical <bold>not</bold> operation, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" kindref="member">negate()</ref></computeroutput>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" kindref="member">negate()</ref></computeroutput>. The name was changed since a leading underscore is not used by the other current public names.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Expr_T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the operand.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>expr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Logical expression to be negated. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An object that evaluates to true if the operand is false. </para>
+</simplesect>
+<xrefsect id="deprecated_1_deprecated000004"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" kindref="member">negate()</ref> (since 6.0.0)</para>
+</xrefdescription></xrefsect></para>
+<para>Forwards to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" kindref="member">negate()</ref></computeroutput>, so the returned expression is the same, and is reported in the same way. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="683" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="683" bodyend="686" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="818" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" compoundref="deprecated-inlines_8h" startline="683" endline="686">micro_os_plus::micro_test_plus::_not</references>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" compoundref="function-comparators-inlines_8h" startline="330" endline="335">micro_os_plus::micro_test_plus::negate</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" compoundref="deprecated-inlines_8h" startline="683" endline="686">micro_os_plus::micro_test_plus::_not</referencedby>
+      </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -73,61 +125,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="696" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="696" bodyend="699" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="831" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="696" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="696" bodyend="699" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="839" declcolumn="3"/>
         <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" compoundref="deprecated-inlines_8h" startline="696" endline="699">micro_os_plus::micro_test_plus::_and</references>
         <references refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1ga0a385c59a2f7d3c4cfef77d2d3b4f3d6" compoundref="function-comparators-inlines_8h" startline="360" endline="374">micro_os_plus::micro_test_plus::all_of</references>
         <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga9998cd63972fac8b24a2f0138322e7c1" compoundref="deprecated-inlines_8h" startline="696" endline="699">micro_os_plus::micro_test_plus::_and</referencedby>
-      </memberdef>
-      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>class Expr_T</type>
-          </param>
-        </templateparamlist>
-        <type>auto</type>
-        <definition>auto micro_os_plus::micro_test_plus::_not</definition>
-        <argsstring>(Expr_T &amp;&amp;expr)</argsstring>
-        <name>_not</name>
-        <qualifiedname>micro_os_plus::micro_test_plus::_not</qualifiedname>
-        <param>
-          <type>Expr_T &amp;&amp;</type>
-          <declname>expr</declname>
-        </param>
-        <briefdescription>
-<para>Deprecated generic logical <bold>not</bold> operation, the v5.0.1 name of <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" kindref="member">negate()</ref></computeroutput>. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>The same as <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" kindref="member">negate()</ref></computeroutput>. The name was changed since a leading underscore is not used by the other current public names.</para>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>Expr_T</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Type of the operand.</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>expr</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Logical expression to be negated. </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>An object that evaluates to true if the operand is false. </para>
-</simplesect>
-<xrefsect id="deprecated_1_deprecated000004"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use <ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" kindref="member">negate()</ref> (since 6.0.0)</para>
-</xrefdescription></xrefsect></para>
-<para>Forwards to <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" kindref="member">negate()</ref></computeroutput>, so the returned expression is the same, and is reported in the same way. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="683" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="683" bodyend="686" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="810" declcolumn="3"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" compoundref="deprecated-inlines_8h" startline="683" endline="686">micro_os_plus::micro_test_plus::_not</references>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gae82d39ac86167bb4bfa6624676f3729e" compoundref="function-comparators-inlines_8h" startline="330" endline="335">micro_os_plus::micro_test_plus::negate</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gaa465723bc4fe309f15d30a4e7207d40f" compoundref="deprecated-inlines_8h" startline="683" endline="686">micro_os_plus::micro_test_plus::_not</referencedby>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -198,10 +199,133 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="709" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="709" bodyend="712" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="852" declcolumn="3"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="709" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="709" bodyend="712" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="860" declcolumn="3"/>
         <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" compoundref="deprecated-inlines_8h" startline="709" endline="712">micro_os_plus::micro_test_plus::_or</references>
         <references refid="group__micro-os-plus-micro-test-plus-cpp-api-logical-functions_1gadc2224d07a9bf118c8772518a7d3c4fd" compoundref="function-comparators-inlines_8h" startline="395" endline="409">micro_os_plus::micro_test_plus::any_of</references>
         <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga1c7ddbf53764ab67240f1cf0e0fb4b8d" compoundref="deprecated-inlines_8h" startline="709" endline="712">micro_os_plus::micro_test_plus::_or</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>T &amp;</type>
+        <definition>T &amp; micro_os_plus::micro_test_plus::mut</definition>
+        <argsstring>(const T &amp;t) noexcept</argsstring>
+        <name>mut</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::mut</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Deprecated generic mutator to remove const qualification from a reference. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Not used by the framework. Equivalent to <computeroutput>const_cast&lt;T&amp;&gt; (t)</computeroutput>, which replaces it.</para>
+<para><simplesect kind="warning"><para>Modifying an object that was originally declared as <computeroutput>const</computeroutput> through the returned reference is undefined behaviour.</para>
+</simplesect>
+<parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the input object.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object from which to remove const qualification. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A non-const reference to the input object. </para>
+</simplesect>
+<xrefsect id="deprecated_1_deprecated000007"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use const_cast&lt;T&amp;&gt; (since 6.0.0)</para>
+</xrefdescription></xrefsect></para>
+<para>Removes the <computeroutput>const</computeroutput> qualifier from the reference with <computeroutput>const_cast</computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="723" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="723" bodyend="726" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="884" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" compoundref="deprecated-inlines_8h" startline="723" endline="726">micro_os_plus::micro_test_plus::mut</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" compoundref="deprecated-inlines_8h" startline="723" endline="726">micro_os_plus::micro_test_plus::mut</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gafe47800a219b00fcccf0a1dc596dbe20" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>detail::value&lt; T &gt;</type>
+        <definition>detail::value&lt; T &gt; micro_os_plus::micro_test_plus::approx</definition>
+        <argsstring>(T value, std::type_identity_t&lt; T &gt; epsilon) noexcept</argsstring>
+        <name>approx</name>
+        <qualifiedname>micro_os_plus::micro_test_plus::approx</qualifiedname>
+        <param>
+          <type>T</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>std::type_identity_t&lt; T &gt;</type>
+          <declname>epsilon</declname>
+        </param>
+    <requiresclause>std::is_floating_point_v&lt;T&gt;    </requiresclause>
+        <briefdescription>
+<para>Deprecated wrapping of a floating-point value with an explicit comparison tolerance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The floating-point literals (<computeroutput>1.5_d</computeroutput>) and wrappers (<computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-literals_1ga9608f4a6f0a61bc159a66a46fb8cd630" kindref="member">to_d</ref>{ 1.5 }</computeroutput>) compare with a tolerance derived from the number of decimals written (0.1 for <computeroutput>1.5</computeroutput>). <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx()</ref></computeroutput> makes the tolerance explicit, independent of how the value is written. All six comparisons apply it: values whose difference is less than the tolerance are equal, and neither less nor greater. If both operands have a tolerance, the smaller one is used.</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal">t.expect<sp/>(mt::eq<sp/>(compute_float<sp/>(),<sp/>mt::approx<sp/>(42.0f,<sp/>0.001f)));</highlight></codeline>
+</programlisting></para>
+<para>For a single comparison, also of integers, the <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx</ref> (lhs, rhs, epsilon)</computeroutput> function comparator may be used instead.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The floating-point type of the value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The expected value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>epsilon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tolerance, converted to <computeroutput>T</computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" kindref="compound">detail::value</ref>&lt;T&gt;</computeroutput> wrapper, recognised by the comparators and the operators.</para>
+</simplesect>
+<simplesect kind="par"><title>Deprecated</title><para>Use the function comparator <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gafe47800a219b00fcccf0a1dc596dbe20" kindref="member">approx</ref> (lhs, rhs, epsilon)</computeroutput> instead (since 6.0.0).</para>
+</simplesect>
+<simplesect kind="since"><para>6.0.0 </para>
+</simplesect>
+<xrefsect id="deprecated_1_deprecated000032"><xreftitle>Deprecated</xreftitle><xrefdescription><para>use approx (lhs, rhs, epsilon) (since 6.0.0)</para>
+</xrefdescription></xrefsect></para>
+<para>Constructs the floating-point <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value" kindref="compound">detail::value</ref>&lt;T&gt;</computeroutput> with the given tolerance, instead of the one derived from the number of decimals of the value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="1275" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1275" bodyend="1279" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="1926" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gafe47800a219b00fcccf0a1dc596dbe20" compoundref="deprecated-inlines_8h" startline="1275" endline="1279">micro_os_plus::micro_test_plus::approx</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0d374ffc56933dccd3ffba008ab7eaa5" compoundref="function-comparators-inlines_8h" startline="306" endline="311">micro_os_plus::micro_test_plus::approx</referencedby>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gafe47800a219b00fcccf0a1dc596dbe20" compoundref="deprecated-inlines_8h" startline="1275" endline="1279">micro_os_plus::micro_test_plus::approx</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>

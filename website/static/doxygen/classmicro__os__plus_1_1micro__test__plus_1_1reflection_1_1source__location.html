@@ -123,9 +123,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classmicro__os
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3df499675aacb7ab9192cfb9a5371874" id="r_a3df499675aacb7ab9192cfb9a5371874"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#a3df499675aacb7ab9192cfb9a5371874">file_name</a> (void) const noexcept</td></tr>
-<tr class="memdesc:a3df499675aacb7ab9192cfb9a5371874"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the file name associated with this source location.  <br /></td></tr>
+<tr class="memdesc:a3df499675aacb7ab9192cfb9a5371874"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the file name associated with this source location.  <br /></td></tr>
 <tr class="memitem:aab9d006004611ac0526852a09f675c66" id="r_aab9d006004611ac0526852a09f675c66"><td class="memItemLeft">constexpr auto&#160;</td><td class="memItemRight"><a class="el" href="#aab9d006004611ac0526852a09f675c66">line</a> (void) const noexcept</td></tr>
-<tr class="memdesc:aab9d006004611ac0526852a09f675c66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the line number associated with this source location.  <br /></td></tr>
+<tr class="memdesc:aab9d006004611ac0526852a09f675c66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the line number associated with this source location.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -145,7 +145,7 @@ Private Attributes</h2></td></tr>
 <p>The static member function <span class="tt"><a class="el" href="#af2ee3ac5db96f13680291736d58fe327" title="Returns the current source location.">current()</a></span> captures the current source location, using compiler built-ins where available, or defaulting to <span class="tt">"unknown"</span> and zero otherwise.</p>
 <dl class="section since"><dt>Since</dt><dd>3.0.0 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="reflection_8h_source.html#l00143">143</a> of file <a class="el" href="reflection_8h_source.html">reflection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reflection_8h_source.html#l00142">142</a> of file <a class="el" href="reflection_8h_source.html">reflection.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="af2ee3ac5db96f13680291736d58fe327" name="af2ee3ac5db96f13680291736d58fe327"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af2ee3ac5db96f13680291736d58fe327">&#9670;&#160;</a></span>current()</h2>
@@ -191,9 +191,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   91</span>      sl.line_ = <a class="code hl_function" href="#aab9d006004611ac0526852a09f675c66">line</a>;</div>
 <div class="line"><span class="lineno">   92</span>      <span class="keywordflow">return</span> sl;</div>
 <div class="line"><span class="lineno">   93</span>    }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_html_aab9d006004611ac0526852a09f675c66"><div class="ttname"><a href="#aab9d006004611ac0526852a09f675c66">micro_os_plus::micro_test_plus::reflection::source_location::line</a></div><div class="ttdeci">constexpr auto line(void) const noexcept</div><div class="ttdoc">Gets the line number associated with this source location.</div><div class="ttdef"><b>Definition</b> <a href="reflection-inlines_8h_source.html#l00112">reflection-inlines.h:112</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_html_aab9d006004611ac0526852a09f675c66"><div class="ttname"><a href="#aab9d006004611ac0526852a09f675c66">micro_os_plus::micro_test_plus::reflection::source_location::line</a></div><div class="ttdeci">constexpr auto line(void) const noexcept</div><div class="ttdoc">Returns the line number associated with this source location.</div><div class="ttdef"><b>Definition</b> <a href="reflection-inlines_8h_source.html#l00112">reflection-inlines.h:112</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reflection_8h_source.html#l00190">file_</a>, <a class="el" href="reflection-inlines_8h_source.html#l00112">line()</a>, and <a class="el" href="reflection_8h_source.html#l00198">line_</a>.</p>
+<p class="reference">References <a class="el" href="reflection_8h_source.html#l00189">file_</a>, <a class="el" href="reflection-inlines_8h_source.html#l00112">line()</a>, and <a class="el" href="reflection_8h_source.html#l00197">line_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__case.html#af5d04e3477e209f8989d13dfd36239b4">micro_os_plus::micro_test_plus::test_case::expect()</a>, <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__case.html#ac2e310ec902a0c3e786d4c415269c23e">micro_os_plus::micro_test_plus::test_case::operator=()</a>, <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1test__case.html#a6fb4545d5dc1dbc82c837ce1565f7f26">micro_os_plus::micro_test_plus::test_case::require()</a>, and <a class="el" href="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1runnable__base.html#a1bffa5c8f05ffb464857521badd6ecef">micro_os_plus::micro_test_plus::detail::runnable_base::run()</a>.</p>
 
@@ -229,9 +229,9 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">  102</span>    {</div>
 <div class="line"><span class="lineno">  103</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#ae648fa43322766fbeb3f9103b43bcc4b">file_</a>;</div>
 <div class="line"><span class="lineno">  104</span>    }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_html_ae648fa43322766fbeb3f9103b43bcc4b"><div class="ttname"><a href="#ae648fa43322766fbeb3f9103b43bcc4b">micro_os_plus::micro_test_plus::reflection::source_location::file_</a></div><div class="ttdeci">const char * file_</div><div class="ttdoc">The file name where the source location was captured.</div><div class="ttdef"><b>Definition</b> <a href="reflection_8h_source.html#l00190">reflection.h:190</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_html_ae648fa43322766fbeb3f9103b43bcc4b"><div class="ttname"><a href="#ae648fa43322766fbeb3f9103b43bcc4b">micro_os_plus::micro_test_plus::reflection::source_location::file_</a></div><div class="ttdeci">const char * file_</div><div class="ttdoc">The file name where the source location was captured.</div><div class="ttdef"><b>Definition</b> <a href="reflection_8h_source.html#l00189">reflection.h:189</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reflection_8h_source.html#l00190">file_</a>.</p>
+<p class="reference">References <a class="el" href="reflection_8h_source.html#l00189">file_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="runner_8cpp_source.html#l01025">micro_os_plus::micro_test_plus::runner::abort()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00751">micro_os_plus::micro_test_plus::detail::reporter_human::abort_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l01159">micro_os_plus::micro_test_plus::detail::reporter_tap::abort_session()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00595">micro_os_plus::micro_test_plus::detail::reporter_human::output_fail_prefix()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l01057">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_suffix()</a>.</p>
 
@@ -267,9 +267,9 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">  113</span>    {</div>
 <div class="line"><span class="lineno">  114</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="#a0e805c2ed2234f2c004fd7196b844fc5">line_</a>;</div>
 <div class="line"><span class="lineno">  115</span>    }</div>
-<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_html_a0e805c2ed2234f2c004fd7196b844fc5"><div class="ttname"><a href="#a0e805c2ed2234f2c004fd7196b844fc5">micro_os_plus::micro_test_plus::reflection::source_location::line_</a></div><div class="ttdeci">unsigned int line_</div><div class="ttdoc">The line number where the source location was captured.</div><div class="ttdef"><b>Definition</b> <a href="reflection_8h_source.html#l00198">reflection.h:198</a></div></div>
+<div class="ttc" id="aclassmicro__os__plus_1_1micro__test__plus_1_1reflection_1_1source__location_html_a0e805c2ed2234f2c004fd7196b844fc5"><div class="ttname"><a href="#a0e805c2ed2234f2c004fd7196b844fc5">micro_os_plus::micro_test_plus::reflection::source_location::line_</a></div><div class="ttdeci">unsigned int line_</div><div class="ttdoc">The line number where the source location was captured.</div><div class="ttdef"><b>Definition</b> <a href="reflection_8h_source.html#l00197">reflection.h:197</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="reflection_8h_source.html#l00198">line_</a>.</p>
+<p class="reference">References <a class="el" href="reflection_8h_source.html#l00197">line_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="runner_8cpp_source.html#l01025">micro_os_plus::micro_test_plus::runner::abort()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00751">micro_os_plus::micro_test_plus::detail::reporter_human::abort_session()</a>, <a class="el" href="reporter-tap_8cpp_source.html#l01159">micro_os_plus::micro_test_plus::detail::reporter_tap::abort_session()</a>, <a class="el" href="reflection-inlines_8h_source.html#l00087">current()</a>, <a class="el" href="reporter-human_8cpp_source.html#l00595">micro_os_plus::micro_test_plus::detail::reporter_human::output_fail_prefix()</a>, and <a class="el" href="reporter-tap_8cpp_source.html#l01057">micro_os_plus::micro_test_plus::detail::reporter_tap::output_fail_suffix()</a>.</p>
 
@@ -297,7 +297,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Defaults to <span class="tt">"unknown"</span> when no location was provided. </p>
 
-<p class="definition">Definition at line <a class="el" href="reflection_8h_source.html#l00190">190</a> of file <a class="el" href="reflection_8h_source.html">reflection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reflection_8h_source.html#l00189">189</a> of file <a class="el" href="reflection_8h_source.html">reflection.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reflection-inlines_8h_source.html#l00087">current()</a>, and <a class="el" href="reflection-inlines_8h_source.html#l00101">file_name()</a>.</p>
 
@@ -324,7 +324,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Defaults to zero when no location was provided. </p>
 
-<p class="definition">Definition at line <a class="el" href="reflection_8h_source.html#l00198">198</a> of file <a class="el" href="reflection_8h_source.html">reflection.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="reflection_8h_source.html#l00197">197</a> of file <a class="el" href="reflection_8h_source.html">reflection.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="reflection-inlines_8h_source.html#l00087">current()</a>, and <a class="el" href="reflection-inlines_8h_source.html#l00112">line()</a>.</p>
 
