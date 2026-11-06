@@ -813,7 +813,7 @@ The characters selected by <computeroutput><ref refid="namespacemicro__os__plus_
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" line="385" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/src/expression-formatter.cpp" bodystart="385" bodyend="390"/>
-        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text_1a63b3cc3a8e725c2921787180f1244824" compoundref="expression-formatter-inlines_8h" startline="839" endline="844">micro_os_plus::micro_test_plus::detail::plain_text::append</references>
+        <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1plain__text_1a63b3cc3a8e725c2921787180f1244824" compoundref="expression-formatter-inlines_8h" startline="846" endline="851">micro_os_plus::micro_test_plus::detail::plain_text::append</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1aaa6956be6a440af9fcde6e11aa2239a3" compoundref="expression-formatter_8cpp" startline="385" endline="390">micro_os_plus::micro_test_plus::detail::anonymous_namespace{expression-formatter.cpp}::append_wide_text</references>
         <referencedby refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1anonymous__namespace_02expression-formatter_8cpp_03_1aaa6956be6a440af9fcde6e11aa2239a3" compoundref="expression-formatter_8cpp" startline="385" endline="390">micro_os_plus::micro_test_plus::detail::anonymous_namespace{expression-formatter.cpp}::append_wide_text</referencedby>
       </memberdef>

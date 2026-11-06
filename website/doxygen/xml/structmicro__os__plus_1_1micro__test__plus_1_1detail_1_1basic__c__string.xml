@@ -161,7 +161,7 @@ Returns whether the stored pointer is null. </para>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1708" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1533" bodyend="1536"/>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1aaaeff461f662bc9fb7e54c666e4ee101" compoundref="detail_8h" startline="1717">micro_os_plus::micro_test_plus::detail::basic_c_string&lt; Char_T &gt;::str_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1adc1852317cb922b2104918b8644a6714" compoundref="expression-formatter-inlines_8h" startline="431" endline="442">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1adc1852317cb922b2104918b8644a6714" compoundref="expression-formatter-inlines_8h" startline="438" endline="449">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1a0851477f1a58ad82284847d1ebaf5201" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>std::basic_string_view&lt; Char_T &gt;</type>
@@ -187,7 +187,7 @@ Returns an empty view for a null pointer. </para>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1697" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="1521" bodyend="1525"/>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1af727574c085a72e7309c4e65f9fde693" compoundref="detail_8h" startline="1725">micro_os_plus::micro_test_plus::detail::basic_c_string&lt; Char_T &gt;::size_</references>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1basic__c__string_1aaaeff461f662bc9fb7e54c666e4ee101" compoundref="detail_8h" startline="1717">micro_os_plus::micro_test_plus::detail::basic_c_string&lt; Char_T &gt;::str_</references>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1adc1852317cb922b2104918b8644a6714" compoundref="expression-formatter-inlines_8h" startline="431" endline="442">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1expression__formatter_1adc1852317cb922b2104918b8644a6714" compoundref="expression-formatter-inlines_8h" startline="438" endline="449">micro_os_plus::micro_test_plus::detail::expression_formatter::operator&lt;&lt;</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
