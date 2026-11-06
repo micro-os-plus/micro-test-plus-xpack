@@ -361,7 +361,9 @@ namespace micro_os_plus::micro_test_plus::detail
    * @details
    * Writes the count with `append_number()`, without a type suffix, then
    * the unit selected from the period; the periods without a standard
-   * unit are written as the ratio, `[N/D]s`.
+   * unit are written as the ratio, `[N/D]s`, with the numerator and the
+   * denominator also written with `append_number()`, without type
+   * suffixes.
    */
   template <class Rep, class Period>
     requires std::is_arithmetic_v<Rep>
@@ -397,8 +399,13 @@ namespace micro_os_plus::micro_test_plus::detail
       }
     else
       {
-        return *this << "[" << static_cast<long long> (Period::num) << "/"
-                     << static_cast<long long> (Period::den) << "]s";
+        *this << "[";
+        detail::append_number (buffer_,
+                               static_cast<long long> (Period::num));
+        *this << "/";
+        detail::append_number (buffer_,
+                               static_cast<long long> (Period::den));
+        return *this << "]s";
       }
   }
 

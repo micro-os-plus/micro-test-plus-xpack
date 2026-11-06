@@ -22,6 +22,7 @@
 #include <memory>
 #include <numeric>
 #include <optional>
+#include <ratio>
 #include <string>
 #include <string_view>
 #include <tuple>
@@ -774,6 +775,13 @@ static mt::static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
         t.expect (mt::eq (std::chrono::milliseconds{ 5 },
                           std::chrono::milliseconds{ 6 }))
             << "5ms == 6ms";
+        local_counts.failed_checks++;
+
+        // A period without a standard unit is written as the ratio, `[N/D]s`,
+        // without the type suffixes of the numbers.
+        t.expect (mt::eq (std::chrono::duration<int, std::ratio<1, 30>>{ 3 },
+                          std::chrono::duration<int, std::ratio<1, 30>>{ 4 }))
+            << "3[1/30]s == 4[1/30]s";
         local_counts.failed_checks++;
 
         local_counts.executed_test_cases++;

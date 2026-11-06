@@ -137,6 +137,7 @@ reported by the human-readable reporter, is:
 | `std::tuple<int, double>` | `(1, 2.0) == (1, 3.0)` |
 | `std::optional<int>` | `1 == nullopt` |
 | `std::chrono::milliseconds` | `10ms == 20ms` |
+| `std::chrono::duration<int, std::ratio<1, 30>>` | `3[1/30]s == 4[1/30]s` |
 | a scoped enumeration | `0 == 1` |
 | a pointer and `nullptr` | `0x7ff7ba03c994 == nullptr` |
 | an application type | `(1, 2) == (1, 3)` |
@@ -166,8 +167,11 @@ The rules are:
   ```
 
 - **Pairs and tuples** are written in parentheses; an empty `std::optional`
-  as `nullopt`, a non-empty one as its value; a duration with the suffix of
-  its period.
+  as `nullopt`, a non-empty one as its value; a duration as its count,
+  followed by the suffix of its period (`ns`, `us`, `ms`, `s`, `min`, or `h`).
+  A period without a standard suffix is written as the ratio, `[N/D]s`, with
+  the two numbers written by `append_number()`, like the count, without type
+  suffixes.
 - **Scoped enumerations**, which have no names at run time, are written as
   the value of their underlying type, unless the application defines an
   `operator<<` for the enumeration (see [The application

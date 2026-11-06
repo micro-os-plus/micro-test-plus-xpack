@@ -30,9 +30,8 @@ decisions recorded in them were not reopened (for example, the preview showing
 the unreleased 6.0.0, which is why the `v6.0.0` tag link and the npm links of
 6.0.0 are not reported).
 
-Summary: 60 problems (2 open, 58 fixed, 0 withdrawn). The open items are #7
-(the code or the page must change, a decision for the maintainer) and #31 (to
-re-measure before the release).
+Summary: 60 problems (1 open, 59 fixed, 0 withdrawn). The open item is #31 (the
+memory and stack figures must be re-measured on the boards before the release).
 
 ## Note on generated files
 
@@ -135,13 +134,19 @@ are project files, edited in place.
   of the strings. Correct the sample.
 
   Fixed: The sample shows the quoted strings.
-- **#7 — The other periods of a duration.** [project, or code]
+- **#7 — The other periods of a duration.** (fixed) [project, or code]
   `docs/user/checks/index.mdx` line 518: "as `3[1/30]s`". The output with Apple
   clang is `3[1ll/30ll]s`, since `inlines/expression-formatter-inlines.h` lines
   400 and 401 write the ratio as `long long` values, with the suffix. The code
   needs checking first: the page describes the sensible text, so write the two
   numbers without a suffix (in plain mode, or with `append_number()`), and add
   a check to the unit tests.
+
+  Fixed: The code writes the numerator and the denominator of the ratio with
+  `append_number()`, without type suffixes, so the page was right; a failed
+  check of a duration with the period `std::ratio<1, 30>` is added to
+  `operands.cpp`, and the unit reference outputs and the formatter page of the
+  developer manual are updated (issue #282).
 - **#8 — The exit code of a filter that selects nothing.** (fixed)
   [project]
   `docs/user/organising-tests/index.mdx` lines 138 to 152, "Test result": the

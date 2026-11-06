@@ -2730,28 +2730,28 @@ not ok 11 - Miscellaneous suite # { FAILED, 225 checks passed, 8 failed, in 59 t
           condition: "{42} != {42}"
           at:
             fileName: operands.cpp
-            lineNumber: 368
+            lineNumber: 369
           ...
         not ok 2 - array{ 42 } eq array{ 43 }
           ---
           condition: "{42} == {43}"
           at:
             fileName: operands.cpp
-            lineNumber: 372
+            lineNumber: 373
           ...
         not ok 3 - array{ 1, 2 } ne array{ 1, 2 }
           ---
           condition: "{1, 2} != {1, 2}"
           at:
             fileName: operands.cpp
-            lineNumber: 376
+            lineNumber: 377
           ...
         not ok 4 - array{ 1, 2, 3 } eq array{ 1, 2, 4 }
           ---
           condition: "{1, 2, 3} == {1, 2, 4}"
           at:
             fileName: operands.cpp
-            lineNumber: 380
+            lineNumber: 381
           ...
         1..4
     not ok 2 - Arrays bad # { FAILED, 0 checks passed, 4 failed }
@@ -2763,42 +2763,42 @@ not ok 11 - Miscellaneous suite # { FAILED, 225 checks passed, 8 failed, in 59 t
           condition: "{} != {}"
           at:
             fileName: operands.cpp
-            lineNumber: 432
+            lineNumber: 433
           ...
         not ok 2
           ---
           condition: "{} != {}"
           at:
             fileName: operands.cpp
-            lineNumber: 436
+            lineNumber: 437
           ...
         not ok 3 - vector{ 42 } != vector{ 42 }
           ---
           condition: "{42} != {42}"
           at:
             fileName: operands.cpp
-            lineNumber: 439
+            lineNumber: 440
           ...
         not ok 4 - vector{ 42 } == vector{ 43 }
           ---
           condition: "{42} == {43}"
           at:
             fileName: operands.cpp
-            lineNumber: 443
+            lineNumber: 444
           ...
         not ok 5 - vector{ 1, 2 } != vector{ 1, 2 }
           ---
           condition: "{1, 2} != {1, 2}"
           at:
             fileName: operands.cpp
-            lineNumber: 447
+            lineNumber: 448
           ...
         not ok 6 - vector{ 1, 2, 3 } == vector{ 1, 2, 4 }
           ---
           condition: "{1, 2, 3} == {1, 2, 4}"
           at:
             fileName: operands.cpp
-            lineNumber: 451
+            lineNumber: 452
           ...
         1..6
     not ok 4 - Vectors bad # { FAILED, 0 checks passed, 6 failed }
@@ -2810,21 +2810,21 @@ not ok 11 - Miscellaneous suite # { FAILED, 225 checks passed, 8 failed, in 59 t
           condition: "{ 1, 2 } == { 1, 3 }"
           at:
             fileName: operands.cpp
-            lineNumber: 488
+            lineNumber: 489
           ...
         not ok 2
           ---
           condition: "{ 1, 2 } == { 1, 3 }"
           at:
             fileName: operands.cpp
-            lineNumber: 493
+            lineNumber: 494
           ...
         not ok 3 - point{ 1, 2 } != point{ 1, 2 }
           ---
           condition: "{ 1, 2 } != { 1, 2 }"
           at:
             fileName: operands.cpp
-            lineNumber: 496
+            lineNumber: 497
           ...
         1..3
     not ok 6 - Custom types bad # { FAILED, 0 checks passed, 3 failed }
@@ -2836,34 +2836,34 @@ not ok 11 - Miscellaneous suite # { FAILED, 225 checks passed, 8 failed, in 59 t
           condition: "\"café\" == \"cafe\""
           at:
             fileName: operands.cpp
-            lineNumber: 540
+            lineNumber: 541
           ...
         not ok 2
           ---
           condition: "\"a\\tb\" == \"a b\""
           at:
             fileName: operands.cpp
-            lineNumber: 544
+            lineNumber: 545
           ...
         not ok 3
           ---
           condition: "\"😀\" == \"x\""
           at:
             fileName: operands.cpp
-            lineNumber: 548
+            lineNumber: 549
           ...
         not ok 4
           ---
           condition: "\"naïve\" == \"naive\""
           at:
             fileName: operands.cpp
-            lineNumber: 552
+            lineNumber: 553
           ...
         not ok 5 - utf-16 utf-32 utf-8 wide
           ---
           at:
             fileName: operands.cpp
-            lineNumber: 557
+            lineNumber: 558
           ...
         1..5
     not ok 8 - Wide strings bad # { FAILED, 0 checks passed, 5 failed }
@@ -2874,14 +2874,14 @@ not ok 11 - Miscellaneous suite # { FAILED, 225 checks passed, 8 failed, in 59 t
           condition: "119.10 EUR == 119.0 EUR"
           at:
             fileName: operands.cpp
-            lineNumber: 575
+            lineNumber: 576
           ...
         not ok 2
           ---
           condition: "(1, 0.10 RON) == (1, 0.20 RON)"
           at:
             fileName: operands.cpp
-            lineNumber: 578
+            lineNumber: 579
           ...
         1..2
     not ok 9 - Custom types with members bad # { FAILED, 0 checks passed, 2 failed }
@@ -2892,21 +2892,21 @@ not ok 11 - Miscellaneous suite # { FAILED, 225 checks passed, 8 failed, in 59 t
           condition: "stop/0 == go/1"
           at:
             fileName: operands.cpp
-            lineNumber: 597
+            lineNumber: 598
           ...
         not ok 2
           ---
           condition: "basket of 1 == basket of 1"
           at:
             fileName: operands.cpp
-            lineNumber: 600
+            lineNumber: 601
           ...
         not ok 3
           ---
           condition: "{stop/0} == {go/1}"
           at:
             fileName: operands.cpp
-            lineNumber: 603
+            lineNumber: 604
           ...
         1..3
     not ok 10 - Custom enumerations and ranges bad # { FAILED, 0 checks passed, 3 failed }
@@ -2919,28 +2919,28 @@ not ok 11 - Miscellaneous suite # { FAILED, 225 checks passed, 8 failed, in 59 t
           condition: "5 divides 12"
           at:
             fileName: operands.cpp
-            lineNumber: 656
+            lineNumber: 657
           ...
         not ok 2
           ---
           condition: "5 divides 12"
           at:
             fileName: operands.cpp
-            lineNumber: 659
+            lineNumber: 660
           ...
         not ok 3
           ---
           condition: "even 7"
           at:
             fileName: operands.cpp
-            lineNumber: 662
+            lineNumber: 663
           ...
         not ok 4
           ---
           condition: "(3 divides 12 and even 7)"
           at:
             fileName: operands.cpp
-            lineNumber: 665
+            lineNumber: 666
           ...
         1..4
     not ok 13 - Custom comparators bad # { FAILED, 0 checks passed, 4 failed }
@@ -2951,14 +2951,14 @@ not ok 11 - Miscellaneous suite # { FAILED, 225 checks passed, 8 failed, in 59 t
           condition: "\"hello\" has prefix \"help\""
           at:
             fileName: operands.cpp
-            lineNumber: 676
+            lineNumber: 677
           ...
         not ok 2
           ---
           condition: "\"\" has prefix \"help\""
           at:
             fileName: operands.cpp
-            lineNumber: 680
+            lineNumber: 681
           ...
         1..2
     not ok 14 - Custom comparators with strings bad # { FAILED, 0 checks passed, 2 failed }
@@ -2970,38 +2970,45 @@ not ok 11 - Miscellaneous suite # { FAILED, 225 checks passed, 8 failed, in 59 t
           condition: "0 == 1"
           at:
             fileName: operands.cpp
-            lineNumber: 757
+            lineNumber: 758
           ...
         not ok 2 - std::byte{ 1 } == std::byte{ 2 }
           ---
           condition: "(unsigned char)1 == (unsigned char)2"
           at:
             fileName: operands.cpp
-            lineNumber: 761
+            lineNumber: 762
           ...
         not ok 3 - pairs1 == pairs2
           ---
           condition: "{(1, 2)} == {(1, 3)}"
           at:
             fileName: operands.cpp
-            lineNumber: 767
+            lineNumber: 768
           ...
         not ok 4 - optional == nullopt
           ---
           condition: "42 == nullopt"
           at:
             fileName: operands.cpp
-            lineNumber: 770
+            lineNumber: 771
           ...
         not ok 5 - 5ms == 6ms
           ---
           condition: "5ms == 6ms"
           at:
             fileName: operands.cpp
-            lineNumber: 774
+            lineNumber: 775
           ...
-        1..5
-    not ok 16 - Standard types bad # { FAILED, 0 checks passed, 5 failed }
+        not ok 6 - 3[1/30]s == 4[1/30]s
+          ---
+          condition: "3[1/30]s == 4[1/30]s"
+          at:
+            fileName: operands.cpp
+            lineNumber: 782
+          ...
+        1..6
+    not ok 16 - Standard types bad # { FAILED, 0 checks passed, 6 failed }
     ok 17 - Explicit conversions to bool # { passed, 5 checks }
 
     # Subtest: Explicit conversions to bool bad
@@ -3009,25 +3016,25 @@ not ok 11 - Miscellaneous suite # { FAILED, 225 checks passed, 8 failed, in 59 t
           ---
           at:
             fileName: operands.cpp
-            lineNumber: 825
+            lineNumber: 833
           ...
         not ok 2 - null unique_ptr
           ---
           at:
             fileName: operands.cpp
-            lineNumber: 828
+            lineNumber: 836
           ...
         not ok 3 - empty function
           ---
           at:
             fileName: operands.cpp
-            lineNumber: 831
+            lineNumber: 839
           ...
         not ok 4
           ---
           at:
             fileName: operands.cpp
-            lineNumber: 834
+            lineNumber: 842
           ...
         1..4
     not ok 18 - Explicit conversions to bool bad # { FAILED, 0 checks passed, 4 failed }
@@ -3042,7 +3049,7 @@ not ok 11 - Miscellaneous suite # { FAILED, 225 checks passed, 8 failed, in 59 t
           condition: "{1, 2, 3} == {1, 2, 4}"
           at:
             fileName: operands.cpp
-            lineNumber: 951
+            lineNumber: 959
           ...
         1..1
     not ok 23 - Raw arrays bad # { FAILED, 0 checks passed, 1 failed }
@@ -3054,7 +3061,7 @@ not ok 11 - Miscellaneous suite # { FAILED, 225 checks passed, 8 failed, in 59 t
           condition: "{1, 2, 3} == {1, 2, 4}"
           at:
             fileName: operands.cpp
-            lineNumber: 993
+            lineNumber: 1001
           ...
         1..1
     not ok 25 - Volatile operands bad # { FAILED, 0 checks passed, 1 failed }
@@ -3065,20 +3072,20 @@ not ok 11 - Miscellaneous suite # { FAILED, 225 checks passed, 8 failed, in 59 t
           condition: "{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} == {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... (20 elements)} (first difference at index 19)"
           at:
             fileName: operands.cpp
-            lineNumber: 1007
+            lineNumber: 1015
           ...
         not ok 2 - 16 bytes eq
           ---
           condition: "{7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7} == {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8}"
           at:
             fileName: operands.cpp
-            lineNumber: 1014
+            lineNumber: 1022
           ...
         1..2
     not ok 26 - Long ranges bad # { FAILED, 0 checks passed, 2 failed }
 
     1..26
-not ok 12 - Operands suite # { FAILED, 60 checks passed, 42 failed, in 26 test cases, time: 2.587 ms }
+not ok 12 - Operands suite # { FAILED, 60 checks passed, 43 failed, in 26 test cases, time: 0.404 ms }
 
 # Subtest: Runner options suite
     ok 1 - Default options # { passed, 7 checks }
@@ -3146,7 +3153,7 @@ ok 14 - Stopwatch suite # { passed, 20 checks in 5 test cases, time: 0.193 ms }
 not ok 15 - Utility suite # { FAILED, 21 checks passed, 5 failed, in 3 test cases, time: 0.167 ms }
 
 1..15
-# { total: 748 checks passed, 379 failed, in 185 test cases, 15 test suites, time: 26.755 ms }
+# { total: 748 checks passed, 380 failed, in 185 test cases, 15 test suites, time: 10.222 ms }
 # error: test runner already initialised
 # error: top suite already added
 Overall, the µTest++ unit tests were successful!
