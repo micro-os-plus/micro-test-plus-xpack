@@ -1,6 +1,6 @@
 ---
 title: Running tests
-description: "The command line options of the test programs: verbosity, filtering, listing test cases, the output file, the reporters, and the colours."
+description: "The command-line options of the test programs: verbosity, filtering, listing test cases, the output file, the reporters, and the colours."
 keywords:
   - micro-os-plus
   - xpack
@@ -18,11 +18,24 @@ date: 2026-11-03 10:00:00 +0200
 
 # Running tests
 
-This page describes the command line options of the test programs: how to
+This page describes the command-line options of the test programs: how to
 select the **verbosity**, the **test cases**, the **reporter**, the **output
 file**, and the **colours**.
 
 ## Command line options
+
+The options are summarised in the following table; each one is described in the
+section named in the last column:
+
+| Option | Effect | Described in |
+| --- | --- | --- |
+| `--help`, `-h` | write the usage and the options, and return 0, without running any test | [Test result](/docs/user/organising-tests/#test-result) |
+| `--verbose`, `--quiet`, `--silent` | select what is displayed on the console | [Verbosity](#verbosity) |
+| `--filter=<pattern>` | run only the matching suites and test cases; repeat for each nesting level | [Filter](#filter) |
+| `--list-tests`, `--list` | list the test cases, without running them | [List test cases](#list-test-cases) |
+| `--reporter=<name>` | select the reporter, `tap` (the default) or `human` | [The human-readable reporter](#the-human-readable-reporter) |
+| `--output-file=<path>` | also write the complete report to a file | [Output file](#output-file) |
+| `--colour[=<mode>]`, `--use-colour=<mode>` (also spelled `--color`, `--use-color`) | select the colours of the human-readable reporter | [Colours](#colours) |
 
 The µTest++ options come first, before the arguments of the application: the
 **parsing** of the options **ends** at the first argument that does **not start
@@ -148,7 +161,7 @@ pattern per nesting level: the first pattern applies to the suite names, the
 second to the test case names, and each further one to the nested test cases.
 
 ```sh
-sample-test --filter='Args*|*namespace*'
+sample-test --filter='Args*|Static*'
 sample-test --filter='*' --filter='Check one'
 ```
 
@@ -156,11 +169,13 @@ In a pattern, `*` matches any sequence of characters, `?` matches any single
 character, and `|` separates alternatives; the match is **case-sensitive**, and
 the pattern must **cover the whole name**. The suites and test cases that do
 not match are not run, and are reported as skipped
-(`ok 2 - Args suite # SKIP filtered` in TAP); the totals lines show how many
-were skipped.
+(for example `ok 2 - Args suite # SKIP filtered` in TAP, with
+`--filter='Static*'`); the totals lines show how many were skipped.
 
 The top suite is **never skipped as a whole**, since its body is `main()`, but
-its test cases are filtered like those of any other suite.
+the first pattern is also applied to its name: when it does not match, all its
+test cases are skipped. To select test cases of the top suite, make the first
+pattern match its name, or use `*` as the first pattern.
 
 ## List test cases
 
@@ -174,10 +189,19 @@ All available test cases:
   Sample
     Check various conditions
     Check strings
-  Explicit namespace suite
+    Check compound conditions
+    Check multiple function invocations
+    Check args
+    Check complex logic
+    Check if exceptions are thrown
+    Check if exceptions are not thrown
+    Check containers
+  Args suite
+    args
+  Static suite
     Check one
     Check two
-4 test cases in 2 test suites
+12 test cases in 3 test suites
 ```
 
 The list is made of plain lines, the same with both reporters and with all the

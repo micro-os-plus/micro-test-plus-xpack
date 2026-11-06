@@ -8,21 +8,29 @@ with test suites, test cases, and results reported in
 [node-tap](https://node-tap.org); the function comparators were inspired by
 [Boost UT](https://boost-ext.github.io/ut/).
 
-- Results reported in **TAP** format, enabling straightforward integration
+- Results reported in **TAP** format, enabling simple integration
   with standard TAP-aware tooling, with a human-readable reporter available on
   request.
-- Test **suites** and **test cases**, which may be nested, created with a
+- Test **suites**, and **test cases** that may be nested, created with a
   `t.test()` and `t.expect()` mechanism modelled on node-tap.
+- **Parametrised tests**, with `test_each()`, which runs a test case for each
+  value of a list, a range, or a tuple.
 - Support for **expectations**, **requirements**, and **exceptions**.
+- **Custom types** and **custom comparators**, reported with their operands as
+  the built-in ones.
+- **Selection** of the suites and of the test cases by name, and **listing** of
+  the test cases, from the command line.
+- Builds **without exceptions**, common on embedded targets, where a failed
+  requirement aborts the test execution.
 - **Automatic registration** of test suites: each test suite can be defined as a
   static global object in its own source file, and registration with the test
   runner is performed automatically via the C++ static constructors mechanism,
   eliminating the need for any explicit registration calls.
-- **Macro-free** implementation, whilst retaining the ability to report the
+- **Macro-free** implementation, while retaining the ability to report the
   file name and line number for failed tests.
 - Written in modern **C++20**, improving code readability and maintainability.
-- Designed to facilitate testing of **both C and C++** projects (the tests
-  themselves are written in C++20).
+- Designed for testing **both C and C++** projects (the tests themselves are
+  written in C++20).
 
 Key distinctions from Boost UT include:
 

@@ -178,8 +178,9 @@ downstream projects via one of:
 
 - **CMake** (`CMakeLists.txt`): defines `micro-os-plus::micro-test-plus`
   (INTERFACE), `micro-os-plus::micro-test-plus-objects-library` (OBJECT),
-  and a STATIC library variant, all built from the same `src/*.cpp` list
-  and depending on `micro-os-plus::diag-trace`.
+  and a STATIC library variant, all built from the same `src/*.cpp` list;
+  they do not link `micro-os-plus::diag-trace`, which is an optional
+  dependency of the package (see `xcdl-package.jsonc`).
 - **meson** (`meson.build`): declares an equivalent
   `micro_os_plus_micro_test_plus_dependency`.
 - **xPack/xCDL** (`xcdl-package.jsonc`): package metadata for the xpm

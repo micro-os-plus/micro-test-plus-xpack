@@ -132,12 +132,12 @@ The formatter accepts the standard arithmetic types, characters, strings,
 pointers, containers, scoped enumerations, pairs, tuples, and optionals, so the
 members can usually be written directly, as above. The `char` pointers and
 arrays, also when not `const`, and those of the `wchar_t`, `char8_t`,
-`char16_t`, and `char32_t` types, converted to UTF-8, are written as strings
-(a null pointer as `nullptr`); the other pointers, including the `signed char`
-and `unsigned char` (`uint8_t`) pointers, are written as addresses. A plain boolean check, such as
-`t.expect (p == q)`, needs no formatter, but on failure it **reports only the
-source location**. The same `operator<<` also writes the values appended to the
-messages (`t.expect (p == q) << "p is " << p`).
+`char16_t`, and `char32_t` types, converted to UTF-8, are written as strings (a
+null pointer as `nullptr`); the other pointers, including the `signed char` and
+`unsigned char` (`uint8_t`) pointers, are written as addresses. A plain boolean
+check, such as `t.expect (p == q)`, needs no formatter, but on failure it
+**reports only the source location**. The same `operator<<` also writes the
+values appended to the messages (`t.expect (p == q) << "p is " << p`).
 
 To test such an `operator<<` on its own, construct a formatter, write
 the value, and compare `str()` with the expected text:
@@ -272,11 +272,11 @@ A temporary operand is **moved** into the expression, and a named operand is
 **copied**, so an expression can be returned from the function that builds it,
 or kept in a variable, after the operands are destroyed; the C strings and the
 other arrays are the exception, since the expression refers to their characters
-or elements. An operand whose class cannot be copied (for example a
-`std::unique_ptr`) is referred to instead, and **must outlive the check**. To
-move the temporaries, and not copy them, take the operands as forwarding
-references (`Lhs_T&& lhs`) and pass them on with `std::forward<Lhs_T> (lhs)`,
-as `eq()` does.
+or elements. An operand whose class cannot be copied (for example an
+application type with a deleted copy constructor) is referred to instead, and
+**must outlive the check**. To move the temporaries, and not copy them, take
+the operands as forwarding references (`Lhs_T&& lhs`) and pass them on with
+`std::forward<Lhs_T> (lhs)`, as `eq()` does.
 
 A helper that passes its argument on to `expect()` or `require()` can be
 constrained with `extension::checkable`, as these functions are, and one

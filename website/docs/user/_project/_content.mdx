@@ -14,7 +14,7 @@ Testing frameworks address this need by providing convenient mechanisms for
 writing various checks and generating clear, structured reports.
 
 The xPack Framework already includes ready-to-use support for several testing
-frameworks ([Google Test](https://github.com/xpack-3rd-party/googletest-xpack),
+frameworks ([GoogleTest](https://github.com/xpack-3rd-party/googletest-xpack),
 [Catch2](https://github.com/xpack-3rd-party/catch2-xpack), [Boost
 UT](https://github.com/xpack-3rd-party/boost-ut-xpack)). Nevertheless, these
 frameworks tend to be quite demanding in terms of memory resources, and the
@@ -47,9 +47,9 @@ see the [History](/docs/project/history/) page.
   applications, test cases are organised into test suites.
 - Test suites can reside in separate compilation units and **automatically
   register themselves** with the runner.
-- A **test case** comprises a sequence of **test conditions** (also referred to
-  as **tests** or **checks**), which are expectations or requirements —
-  conditions anticipated to be true.
+- A **test case** comprises a sequence of **checks** (the test conditions of
+  the [Glossary](/docs/getting-started/glossary/)), which are expectations or
+  requirements — conditions anticipated to be true.
 - Checks are based on logical expressions, typically evaluating a result and
   comparing it to an expected value; each check either passes or fails.
 - For C++ projects, it is also possible to verify whether evaluating an
@@ -58,14 +58,14 @@ see the [History](/docs/project/history/) page.
 - **Requirements** are critical conditions that must be satisfied for the test
   case to proceed; a failed requirement stops the current test case, and the run
   continues with the next one.
-- The **reporter** displays the test progress on STDOUT, with each test on a
-  separate line, prefixed by an indication of whether the test passed or failed;
-  failed tests indicate the location within the file and, where possible, the
-  actual values used in the evaluation.
-- Optionally, the detailed test results can be written to a separate file, for
-  example in TAP format.
+- The **reporter** writes the results on `stdout`, in TAP format by default:
+  one line for each passed test case and, for the failed ones, the failed
+  checks, with their location and, where possible, the values of their
+  operands.
+- Optionally, the complete report is also written to a file (see [Output
+  file](/docs/user/running-tests/#output-file)).
 
-A test suite is deemed successful if there are **no failed tests**.
+A test suite is deemed successful if there are **no failed checks**.
 
 If all the test suites are successful, the test is successful, and this is
 indicated by an **exit code of 0** (see [Test
@@ -81,7 +81,7 @@ The guide is organised by the task of the reader:
   function comparators, and the checks for strings, containers, and exceptions;
 - [Organising tests](/docs/user/organising-tests/): the runner, the top suite,
   test cases, and test suites;
-- [Running tests](/docs/user/running-tests/): the command line options, the
+- [Running tests](/docs/user/running-tests/): the command-line options, the
   reporters, and the colours;
 - [Extending the framework](/docs/user/extending/): custom types, custom
   comparators, and the utility functions;
@@ -94,7 +94,7 @@ The exact declarations are in the [API reference](/docs/api/).
 
 ## C API
 
-Whilst µTest++ can be used to test C code, its implementation relies
+While µTest++ can be used to test C code, its implementation relies
 extensively on modern C++ features that cannot be replicated in C.
 
 Consequently, there are **no C equivalents** for the C++ definitions provided

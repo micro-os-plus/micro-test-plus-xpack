@@ -86,7 +86,7 @@ The library is a header and a set of source files:
   definitions of the templates and of the inline functions declared in
   `<name>.h`; it is included at the end of that header.
 - `src/<name>.cpp` holds the non-inline definitions of `<name>.h`. CMake and
-  meson compile all of them into the library; their top files are generated
+  Meson compile all of them into the library; their top files are generated
   from `xcdl-package.jsonc`.
 
 The headers, in the order in which `micro-test-plus.h` includes them, and the
@@ -173,7 +173,7 @@ The following program, the same as on the home page, has one test case with one
 check:
 
 ```cpp title="minimal-test.cpp"
-#include <micro-os-plus/micro-test-plus.h>
+#include "micro-os-plus/micro-test-plus.h"
 
 namespace mt = micro_os_plus::micro_test_plus;
 
@@ -304,6 +304,6 @@ code, `0` when all the checks passed (see
 | how a type is displayed in the reports | `expression-formatter.h`, its inlines, and `src/expression-formatter.cpp` |
 | what happens when a check passes or fails | `check-result.h` and `src/check-result.cpp` |
 | how test cases and suites are created and run | `test.h`, `inlines/test-inlines.h`, and `src/test.cpp` |
-| a command line option | `runner-options.h` and `src/runner-options.cpp` |
+| a command-line option | `runner-options.h` and `src/runner-options.cpp` |
 | the order of the session, the exit code | `runner.h` and `src/runner.cpp` |
 | the layout of the reports | `reporter.h`, `reporter-human.h`, `reporter-tap.h`, and their `src/` files |

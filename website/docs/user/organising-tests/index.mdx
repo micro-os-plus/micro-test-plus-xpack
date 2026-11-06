@@ -69,7 +69,7 @@ tr.initialise (options);
 
 The members of `runner_options` correspond to the command-line options:
 `selected_reporter` to `--reporter`, `verbosity_level` to `--silent`, `--quiet`,
-and `--verbose`, `output_file_path` to `--output-file`, `colour` to `--color`
+and `--verbose`, `output_file_path` to `--output-file`, `colour` to `--colour`
 (or `--use-colour`), `filter_patterns` to `--filter`, `list_tests` to
 `--list-tests` (or `--list`), and `help` to `--help` (or `-h`).
 
@@ -147,147 +147,24 @@ parsed and written on the console by the reporter (for TAP, as `Bail out!`
 lines, followed, for an unknown option, by a comment line suggesting `--help`),
 no output file is created, no test is run, and the result is 2. If the output
 file cannot be opened, the error is reported in the same way, no test is run,
-and the result is 2. With the `--help` option (or `-h`), the usage and the list
-of the options are written on the console, no test is run, and the result is 0.
+and the result is 2. If the `--filter` option selects no test case, the error
+`the filters selected no test case` is reported, and the result is 2, also when
+the test cases are listed. With the `--help` option (or `-h`), the usage and the
+list of the options are written on the console, no test is run, and the result
+is 0. When exceptions are not enabled, a failed requirement, and a call of
+`tr.abort ()`, end the test execution before the result is returned (see
+[Aborting the test execution](#aborting-the-test-execution)).
 
-### Aborting the test execution
+### Rejected calls
 
-When exceptions are not enabled, a failed requirement cannot stop only its test
-case (see [Requirements](/docs/user/checks/#requirements)), so it **aborts the
-whole test execution**: the remaining test cases and suites do not run,
-`run_suites()` does not return, and no totals are written. The test execution
-can also be aborted explicitly, from a test case, from a suite, or from the
-application, by calling `tr.abort ()`. Before the process is terminated, the
-reporter completes the report, in place of the totals:
-
-1. it displays the results of the running test case, if any; after a failed
-   requirement, they end with it, and the human-readable reporter marks it as
-   `test execution aborted` (the TAP reporter adds no marker, since its
-   `Bail out!` line, below, reports the abort); they are preceded by the name of
-   the test case, and by those of the outer test cases, unless already
-   displayed, so that a failure cannot be attributed to the previous test case;
-2. it ends the output with a line with the location of the failed requirement,
-   or of the `abort()` call: `✗ Test execution aborted at <file>:<line>` for the
-   human-readable reporter, and `Bail out! Requirement failed at <file>:<line>`
-   (or `Bail out! Test execution aborted at <file>:<line>`, for an explicit
-   abort) for the TAP reporter, which tells the TAP consumers that the run
-   stopped early, not that the output was truncated.
-
-Then `runner::abort()` flushes the standard streams, calls the abort handler, if
-one was set (see below), and then `::abort()`. An abort before `initialise()`,
-or after `run_suites()`, when there is no report to complete, is reported on
-`stderr`, as `error: test execution aborted at <file>:<line>`.
-
-With `--quiet`, which otherwise displays only the failed checks and the totals,
-the failed checks of the aborted test case are displayed as well, since the
-totals are never reached. With `--silent`, nothing is displayed. If an output
-file is used, the results and the final line are written to it too, whatever the
-verbosity.
-
-For example, with the human-readable reporter, the end of the output is:
-
-```
-    ✓ Check various conditions - passed (2 checks)
-
-    • Parse configuration
-        ✓ file found
-        ✗ sections parsed FAILED (main.cpp:42, 0 > 0) - test execution aborted
-
-✗ Test execution aborted at main.cpp:42
-```
-
-and with the TAP reporter:
-
-```
-    # Subtest: Parse configuration
-        ok 1 - file found
-        not ok 2 - sections parsed
-          ---
-          condition: "0 > 0"
-          at:
-            fileName: main.cpp
-            lineNumber: 42
-          ...
-Bail out! Requirement failed at main.cpp:42
-```
-
-An explicit abort is intended for the failures after which running the other
-tests is pointless, or even harmful, whether exceptions are enabled or not: for
-example, when the device or the environment that all the tests use cannot be
-initialised. Unlike a failed `require()` with exceptions, which stops only its
-test case, `tr.abort ()` **always stops the whole test execution**. The runner
-must be reachable from the test case, for example captured by reference:
-
-```cpp
-ts.test ("Open the device", [&tr] (auto& t)
-  {
-    t.expect (device.open ()) << "device opened";
-    if (!device.is_open ())
-      {
-        // No other test can run without the device.
-        tr.abort ();
-      }
-  });
-```
-
-With the TAP reporter, the end of the output is then:
-
-```
-    # Subtest: Open the device
-        not ok 1 - device opened
-          ---
-          at:
-            fileName: main.cpp
-            lineNumber: 57
-          ...
-Bail out! Test execution aborted at main.cpp:61
-```
-
-Unless the abort handler ends the program otherwise, the process **ends with
-`SIGABRT`**, so a test harness sees a terminated process, not an exit code
-returned by `run_suites()`.
-
-On embedded targets, where terminating the process is not meaningful, the
-application can set a handler, called before `::abort()`, for example to reset
-the target or to signal the result to the debugger:
-
-```cpp
-tr.set_abort_handler ([] (const mt::reflection::source_location& sl)
-  {
-    // Signal the failure, then reset the target; do not return.
-  });
-```
-
-If the handler returns, `::abort()` is **still called**.
-
-When exceptions are enabled, the handler may also throw an exception, to return
-control to the application without terminating the process, for example when the
-test runner is only one part of a larger program. The test cases and the suites
-do not catch it, as they do with the other exceptions, so it leaves
-`run_suites()`, or the `test()` call that started a test case of the top suite,
-and reaches the application:
-
-```cpp
-struct test_aborted {};
-
-tr.set_abort_handler ([] (const mt::reflection::source_location&)
-  { throw test_aborted{}; });
-
-int result;
-try
-  {
-    result = tr.run_suites ();
-  }
-catch (const test_aborted&)
-  {
-    result = 3; // The report is already complete.
-  }
-```
-
-**The abort is final**: the report is complete, no test case runs afterwards,
-and `initialise()` and `run_suites()` report an error on `stderr`
-(`run_suites()` returns 1). Without exceptions, the handler **must not
-return**.
+A rejected call is always written on `stderr`, for a script that discards the
+standard output, and the result of `run_suites()` is not 0. It is also reported
+in the report and in the output file, so that they tell why the session failed:
+as a failed check of the test case that is running, or of the suite that is
+running (the top suite included), shown as the message `suite 'X' added after
+run_suites() started, rejected`; and, when no test case or suite is running, for
+example after `run_suites()` returned, as a comment line after the summary,
+since the report is complete.
 
 Refer to the [Test
 Runners](/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-runners/)
@@ -322,16 +199,16 @@ checked, since checking it would instantiate its code; a mistake inside it is
 reported by the compiler at its place.
 
 The name is a string literal, a `const char*`, a `std::string`, or a
-`std::string_view`, converted implicitly to `located_name`, which copies
-it and also records the location of the `test()` call. A temporary
-string, such as `prefix + " overflow"`, is moved instead of copied, and
-a view need not be null-terminated. A `char` array is copied up to its
-first null character, or up to its end if it has none, so that a
-fixed-size name field that is full, without a terminator, is read only
-within the array; a `char` pointer must point to a null-terminated
-string. The copy is freed when the test case ends. The names of the suites, given to `add_suite()`,
-`add_top_suite()`, and the `static_suite` constructor, are
-`located_name` objects too, and are kept by the suites.
+`std::string_view`, converted implicitly to `located_name`, which copies it and
+also records the location of the `test()` call. A temporary string, such as
+`prefix + " overflow"`, is moved instead of copied, and a view need not be
+null-terminated. A `char` array is copied up to its first null character, or up
+to its end if it has none, so that a fixed-size name field that is full,
+without a terminator, is read only within the array; a `char` pointer must
+point to a null-terminated string. The copy is freed when the test case ends.
+The names of the suites, given to `add_suite()`, `add_top_suite()`, and the
+`static_suite` constructor, are `located_name` objects too, and are kept by the
+suites.
 
 A helper function that adds test cases on behalf of its caller can take
 a `const mt::located_name&` parameter and pass it to `test()`, so that
@@ -585,7 +462,7 @@ suite_function (mt::suite& ts);
 mt::runner tr;
 
 int
-main(int argc, char* argv[])
+main (int argc, char* argv[])
 {
   tr.initialise (argc, argv);
 
@@ -595,7 +472,7 @@ main(int argc, char* argv[])
     t.expect (true);
   });
 
-  tr.add_suite("External suite", suite_function);
+  tr.add_suite ("External suite", suite_function);
 
   return tr.run_suites ();
 }
@@ -620,17 +497,6 @@ The suites **must be added before `run_suites()`** is called. A suite added
 while `run_suites()` runs, for example from the body of another suite, or after
 it returned, would never run; it is rejected, the error is reported (see
 [Rejected calls](#rejected-calls)), and the result is not 0.
-
-#### Rejected calls
-
-A rejected call is always written on `stderr`, for a script that discards the
-standard output, and the result of `run_suites()` is not 0. It is also reported
-in the report and in the output file, so that they tell why the session failed:
-as a failed check of the test case that is running, or of the suite that is
-running (the top suite included), shown as the message `suite 'X' added after
-run_suites() started, rejected`; and, when no test case or suite is running, for
-example after `run_suites()` returned, as a comment line after the summary,
-since the report is complete.
 
 The suite name can be a string literal, a `char` array, a `const char*`,
 a `std::string`, or a `std::string_view`, with the same rules as the name of
@@ -764,4 +630,149 @@ static mt::static_suite ts_double_list_links
 
 Refer to the [Test
 Suites](/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-test-suites/)
+reference page.
+
+## Aborting the test execution
+
+When exceptions are not enabled, a failed requirement cannot stop only its test
+case (see [Requirements](/docs/user/checks/#requirements)), so it **aborts the
+whole test execution**: the remaining test cases and suites do not run,
+`run_suites()` does not return, and no totals are written. The test execution
+can also be aborted explicitly, from a test case, from a suite, or from the
+application, by calling `tr.abort ()`. Before the process is terminated, the
+reporter completes the report, in place of the totals:
+
+1. it displays the results of the running test case, if any; after a failed
+   requirement, they end with it, and the human-readable reporter marks it as
+   `test execution aborted` (the TAP reporter adds no marker, since its
+   `Bail out!` line, below, reports the abort); they are preceded by the name of
+   the test case, and by those of the outer test cases, unless already
+   displayed, so that a failure cannot be attributed to the previous test case;
+2. it ends the output with a line with the location of the failed requirement,
+   or of the `abort()` call: `✗ Test execution aborted at <file>:<line>` for the
+   human-readable reporter, and `Bail out! Requirement failed at <file>:<line>`
+   (or `Bail out! Test execution aborted at <file>:<line>`, for an explicit
+   abort) for the TAP reporter, which tells the TAP consumers that the run
+   stopped early, not that the output was truncated.
+
+Then `runner::abort()` flushes the standard streams, calls the abort handler, if
+one was set (see below), and then `::abort()`. An abort before `initialise()`,
+or after `run_suites()`, when there is no report to complete, is reported on
+`stderr`, as `error: test execution aborted at <file>:<line>`.
+
+With `--quiet`, which otherwise displays only the failed checks and the totals,
+the failed checks of the aborted test case are displayed as well, since the
+totals are never reached. With `--silent`, nothing is displayed. If an output
+file is used, the results and the final line are written to it too, whatever the
+verbosity.
+
+For example, with the human-readable reporter, the end of the output is:
+
+```
+    ✓ Check various conditions - passed (2 checks)
+
+    • Parse configuration
+        ✓ file found
+        ✗ sections parsed FAILED (main.cpp:42, 0 > 0) - test execution aborted
+
+✗ Test execution aborted at main.cpp:42
+```
+
+and with the TAP reporter:
+
+```
+    # Subtest: Parse configuration
+        ok 1 - file found
+        not ok 2 - sections parsed
+          ---
+          condition: "0 > 0"
+          at:
+            fileName: main.cpp
+            lineNumber: 42
+          ...
+Bail out! Requirement failed at main.cpp:42
+```
+
+An explicit abort is intended for the failures after which running the other
+tests is pointless, or even harmful, whether exceptions are enabled or not: for
+example, when the device or the environment that all the tests use cannot be
+initialised. Unlike a failed `require()` with exceptions, which stops only its
+test case, `tr.abort ()` **always stops the whole test execution**. The runner
+must be reachable from the test case: a global runner, as in the examples of
+this guide, can be used directly, while a local one must be captured by
+reference, as in `[&tr]`:
+
+```cpp
+ts.test ("Open the device", [] (auto& t)
+  {
+    t.expect (device.open ()) << "device opened";
+    if (!device.is_open ())
+      {
+        // No other test can run without the device.
+        tr.abort ();
+      }
+  });
+```
+
+With the TAP reporter, the end of the output is then:
+
+```
+    # Subtest: Open the device
+        not ok 1 - device opened
+          ---
+          at:
+            fileName: main.cpp
+            lineNumber: 57
+          ...
+Bail out! Test execution aborted at main.cpp:61
+```
+
+Unless the abort handler ends the program otherwise, the process **ends with
+`SIGABRT`**, so a test harness sees a terminated process, not an exit code
+returned by `run_suites()`.
+
+On embedded targets, where terminating the process is not meaningful, the
+application can set a handler, called before `::abort()`, for example to reset
+the target or to signal the result to the debugger:
+
+```cpp
+tr.set_abort_handler ([] (const mt::reflection::source_location& sl)
+  {
+    // Signal the failure, then reset the target; do not return.
+  });
+```
+
+If the handler returns, `::abort()` is **still called**.
+
+When exceptions are enabled, the handler may also throw an exception, to return
+control to the application without terminating the process, for example when the
+test runner is only one part of a larger program. The test cases and the suites
+do not catch it, as they do with the other exceptions, so it leaves
+`run_suites()`, or the `test()` call that started a test case of the top suite,
+and reaches the application:
+
+```cpp
+struct test_aborted {};
+
+tr.set_abort_handler ([] (const mt::reflection::source_location&)
+  { throw test_aborted{}; });
+
+int result;
+try
+  {
+    result = tr.run_suites ();
+  }
+catch (const test_aborted&)
+  {
+    result = 3; // The report is already complete.
+  }
+```
+
+**The abort is final**: the report is complete, no test case runs afterwards,
+and `initialise()` and `run_suites()` report an error on `stderr`
+(`run_suites()` returns 1). Without exceptions, the handler **must not
+return**.
+
+Refer to the [Test
+Runners](/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-runners/)
 reference page.

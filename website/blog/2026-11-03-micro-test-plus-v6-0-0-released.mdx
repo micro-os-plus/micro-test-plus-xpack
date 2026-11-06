@@ -36,10 +36,10 @@ import CommonDownloadAnalytics from './_common/_download-analytics.mdx';
 Version **6.0.0** is a new major release. It adds parametrised tests
 (`test_each()`), new function comparators (`all_of()`, `any_of()`,
 `negate()`, and `approx()`), an `extension` namespace for the comparators of
-the applications, and the `--filter`, `--colour`, and `--list-tests` options.
-It deprecates the overloaded operators, the literals, and the type wrappers,
-and it contains changes that break the compilation or change the behaviour of
-existing code (see [Detailed changes](/blog/2026/11/03/micro-test-plus-v6-0-0-released/#details)).
+the applications, and the `--filter`, `--colour`, `--list-tests`, and `--help`
+options. It deprecates the overloaded operators, the literals, and the type
+wrappers, and it contains changes that break the compilation or change the
+behaviour of existing code (see [Detailed changes](/blog/2026/11/03/micro-test-plus-v6-0-0-released/#details)).
 
 <!-- truncate -->
 
@@ -90,6 +90,9 @@ Detailed instructions are available in the [Integration Guide](/docs/install/).
 - [[#228](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/228)]: The suites and the test cases have no common name type, and reject `std::string_view`
 - [[#230](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/230)]: The result of expect() and require() dangles when it is kept
 - [[#238](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/238)]: The comparators accept operands that cannot be compared
+- [[#261](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/261)]: A test case started on the wrong suite or test case is nested in the running one
+- [[#264](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/264)]: An `optional<bool>` passes as a condition when it holds false
+- [[#270](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/270)]: The extension namespace exports two internal concepts
 
 ## Bug fixes
 
@@ -181,6 +184,21 @@ Detailed instructions are available in the [Integration Guide](/docs/install/).
 - [[#253](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/253)]: A container that declares npos cannot be compared
 - [[#254](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/254)]: The long double values are written with an invalid suffix
 - [[#258](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/258)]: The TAP console omits passed checks counted by the block plans
+- [[#259](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/259)]: `test()` on a static suite before `initialise()` dereferences a null pointer
+- [[#260](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/260)]: The wide and Unicode C strings are compared as arrays or addresses
+- [[#262](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/262)]: throws() and nothrow() reject the mutable callables
+- [[#263](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/263)]: A non-copyable test case body is copied
+- [[#266](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/266)]: A message argument that cannot be written is diagnosed by the overloads
+- [[#269](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/269)]: The TAP file name is not quoted when it needs to be
+- [[#271](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/271)]: A full `char` array without a terminator is read past its end
+- [[#272](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/272)]: The comparison of a character with an integer of the other signedness is wrong
+- [[#273](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/273)]: The `operator<<` of an enumeration or of a range of the application is written with the decorations
+- [[#274](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/274)]: A call rejected during or after the run is missing from the report
+- [[#276](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/276)]: The arrays of integers of different signedness are compared by conversion
+- [[#277](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/277)]: The errors while listing the test cases do not change the exit code
+- [[#278](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/278)]: The wide strings are written as addresses by the formatter
+- [[#279](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/279)]: The volatile arrays and character pointers are not valid operands
+- [[#280](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/280)]: A test case started on a suite that is not running is not listed
 
 ## Enhancements
 
@@ -199,9 +217,9 @@ Detailed instructions are available in the [Integration Guide](/docs/install/).
 - [[#65](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/65)]: Member functions named after classes
 - [[#66](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/66)]: `math` exposes literal-parsing internals
 - [[#68](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/68)]: `test_node` has a single derived class
-- [[#69](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/69)]: Three names for a test case & subtest_index` counts TAP test points
+- [[#69](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/69)]: Three names for a test case, and `subtest_index` counts TAP test points
 - [[#70](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/70)]: `runner_totals` is not specific to the runner
-- [[#71](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/71)]: The timing vocabulary is inconsisten
+- [[#71](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/71)]: The timing vocabulary is inconsistent
 - [[#72](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/72)]: `deferred_reporter` is not a reporter
 - [[#73](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/73)]: The name suffixes are used inconsistently
 - [[#74](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/74)]: `_not()`, `_and()`, and `_or()` stand apart from the other comparators
@@ -302,6 +320,10 @@ Detailed instructions are available in the [Integration Guide](/docs/install/).
 - [[#250](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/250)]: The constraint of approx() is in the detail namespace
 - [[#255](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/255)]: The comparison concepts repeat the same disjunction twelve times
 - [[#256](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/256)]: The diagnostic of an invalid comparison does not name the operator
+- [[#265](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/265)]: The diagnostic of a wrong test case or suite body shows the concepts
+- [[#267](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/267)]: The diagnostic of an invalid comparison shows the concepts
+- [[#268](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/268)]: The diagnostic of an invalid extension tag shows the concepts
+- [[#275](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/275)]: The native tests do not build the framework without exceptions
 
 ## Known issues
 
@@ -338,7 +360,7 @@ different output.
   example to reset an embedded target.
 - The command-line options `--filter=<pattern>` (or `--filter <pattern>`)
   select the suites and the test cases to run by name; `--colour`
-  (or `--color`, GNU style) and `--use-colour=<mode>` force the colours of the human
+  (or `--color`, GNU style) and `--use-colour=<mode>` force the colours of the human-readable
   reporter on or off; `--list-tests`, or `--list`, lists the suites and
   the test cases instead of running them. An application that passes its
   whole command line to `initialise()` and uses its own option with one
@@ -346,6 +368,15 @@ different output.
   now filters the tests, a `--colour`, `--color`, or `--use-colour` value that is not
   a colour mode is an error (`run_suites()` returns 2), and `--list` lists
   instead of running.
+- The command-line option `--help`, or `-h`, writes the usage and the list of
+  the options, and returns 0 without running any test; an application that
+  passes its whole command line to `initialise()`, and uses `--help` or `-h`
+  itself, must rename them or remove them from the arguments, as for the
+  options above.
+- `runner::is_listing()` tells whether the test cases are being listed
+  (`--list-tests`), so that the code of `main()` and of the suite bodies can
+  skip the parts that depend on the results, and the messages that would be
+  mixed with the list.
 - New function comparators: `all_of()` and `any_of()` (two or more
   operands, reported as a single group, `(a and b and c)`), `negate()`,
   and `approx (lhs, rhs, epsilon)`, reported as `lhs ~ (rhs +/- epsilon)`.
@@ -362,7 +393,8 @@ different output.
 - `expect()` and `require()` accept the values that are only explicitly
   convertible to `bool`: `std::optional`, `std::unique_ptr`,
   `std::shared_ptr`, `std::function`, and the application types with an
-  `explicit operator bool`.
+  `explicit operator bool`; the wrappers of a `bool` are rejected (see
+  below).
 - The messages appended to the checks (`t.expect (...) << value`) accept
   the same values as the operands of the comparators, and the callable
   objects (lambdas, `std::function`) that return such a value; a callable
@@ -500,12 +532,12 @@ function of the reporters was removed.
   the end of its statement, and the messages are appended to the result in
   the same statement.
 - The comparators and the operators move the temporary operands into the
-  expression, instead of copying them, and copy the named operands; only
-  a named operand that cannot be copied (for example a
-  `std::unique_ptr`) is referred to, and must outlive the check. An
-  expression kept in a variable, as in `auto op = mt::eq (v, w);`,
-  therefore holds the values that `v` and `w` had when it was built.
-  `not not (x == 1_i)` is now negated twice; it was negated once.
+  expression, instead of copying them, and copy the named operands; only a
+  named operand that cannot be copied (for example an application type with a
+  deleted copy constructor) is referred to, and must outlive the check. An
+  expression kept in a variable, as in `auto op = mt::eq (v, w);`, therefore
+  holds the values that `v` and `w` had when it was built. `not not (x == 1_i)`
+  is now negated twice; it was negated once.
 - The `==` and `!=` operators for `std::string_view` were removed from
   `operators`; the standard ones return a `bool`, so a failed
   `t.expect (sv == "abc"sv)` no longer shows the operands. Use
@@ -513,12 +545,25 @@ function of the reporters was removed.
 - `detail::named_bool`, returned by the `_b` literal, no longer derives
   from `std::string_view`; `name()` returns the name.
 - The `extension::checkable` concept no longer holds for the always-true
-  arguments; the new `extension::suspicious_condition` concept tells
-  which they are.
+  arguments (the arrays, the functions, and the pointers to functions, to
+  members, and to characters), which `expect()` and `require()` reject.
 - The constructor of `suite` is private, and its members are private,
   so a class derived from `suite` cannot be constructed any more; only
   `top_suite` and `static_suite` derive from it. Create the suites with
   `add_suite()` or `static_suite`.
+- `std::optional<bool>`, `std::unique_ptr<bool>`, and `std::shared_ptr<bool>`
+  are rejected as conditions, since the condition of such a wrapper tests the
+  wrapper, not the `bool`, and a check of a `false` value would pass. Write
+  `flag.has_value ()`, `ptr != nullptr`, or `mt::eq (*flag, true)`.
+- The concepts that exclude the always-true arguments and the wrappers of a
+  `bool`, `suspicious_condition` and `ambiguous_condition`, are in the `detail`
+  namespace, not in `extension`; an application that writes an extension needs
+  only `extension::checkable`.
+- The CMake libraries and the Meson dependency no longer link
+  `micro-os-plus::diag-trace`, since the sources include
+  `micro-os-plus/diag/trace.h` only if it is available. An application that
+  uses the trace functions must add the `@micro-os-plus/diag-trace` package to
+  its own build, as the Integration Guide describes.
 
 ### Changes of behaviour
 
@@ -547,14 +592,21 @@ function of the reporters was removed.
 - The comparators compare two integers of different signedness by value;
   previously the signed operand was converted to the unsigned type, so
   `mt::lt (-1, 1u)` failed and `mt::eq (-1, UINT_MAX)` passed. Checks
-  that relied on the old results now give the correct ones. `bool` and
-  the character types are unchanged.
+  that relied on the old results now give the correct ones. The character
+  types are compared as the integers of the same size and signedness, so
+  `mt::gt (U'a', -1)` passes; only `bool` is compared as before.
 - The C strings (`char` arrays, string literals, and `char` pointers) are
   compared by content, also with `std::string`; two `const char*` were
   compared by address. To compare the addresses, cast the pointers to
   `const void*`. The pointer overloads of the comparators were removed.
 - The comparators ignore the members named `value` and `epsilon` of the
   application types, and compare them with their own operators.
+- The arrays other than the character arrays are compared element by element,
+  by value, also against containers, with the integers of different signedness
+  compared as single values are; they were compared by address. The wide and
+  Unicode strings (`wchar_t`, `char8_t`, `char16_t`, and `char32_t`) are
+  compared by content, with the strings of the same character type, as the
+  `char` strings are; they were compared as arrays or by address.
 
 #### Values in the reports
 
@@ -580,6 +632,14 @@ function of the reporters was removed.
   the shortest form that reads back unchanged, so a value converted from
   `double` may show the digits of the conversion error
   (`42.420000000000001705L`); it was six significant digits.
+- The wide and Unicode strings are written as text, converted to UTF-8, in the
+  reports and in the messages; they were written as addresses.
+- A full `char` array, without a terminator (for example a fixed-size name
+  field), is read only within its bounds, in the names, the messages, and the
+  operands.
+- The values that the `operator<<` of an application type, enumeration, or
+  range writes are shown as that function writes them, without the type
+  suffixes and the quotes, as in the messages.
 
 #### Test cases, suites, and requirements
 
@@ -614,6 +674,11 @@ function of the reporters was removed.
   suite. The abort is final: afterwards no test case runs, and
   `initialise()` and `run_suites()` report an error (`run_suites()`
   returns 1).
+- A test case started on a suite other than the running one, or on an outer
+  test case while a nested one runs, is rejected, since it cannot be reported
+  in order: it is not run, and is reported as a failed check of the running
+  test case, or of the running suite, or on `stderr` when none runs, and
+  `run_suites()` returns 1.
 
 #### Session and runner
 
@@ -647,6 +712,14 @@ function of the reporters was removed.
   before `main()` run first, then the added suites in the order of the
   calls. The reports and the TAP numbers may change. To force an order,
   start the names with zero-padded numbers (`"01 - Init"`).
+- A call rejected during or after the run (a suite added late, a second
+  `initialise()`) is written on `stderr` and in the report, as a failed check
+  of the running test case or suite, or, when none runs, as a comment line
+  after the summary.
+- The errors while listing the test cases (a rejected call, an exception that
+  escapes a suite body, and a test case started on a suite that is not running)
+  are written in the list, as `error:` lines and on `stderr`, and the exit code
+  is 1, as for a run.
 
 #### Reporters and TAP output
 
@@ -660,7 +733,7 @@ function of the reporters was removed.
 - With the normal verbosity, the TAP reporter displays a passed test case
   as a single `ok` line, without its `# Subtest:` block, and a failed or
   outer one as a complete block, whose plan counts all the displayed test
-  points; the strict TAP parsers rejected the previous plans. The human
+  points; the strict TAP parsers rejected the previous plans. The human-readable
   reporter displays the name of the outer test case before a passed
   nested one.
 - In the TAP `ok` and `not ok` lines, the `#` and `\` characters are
@@ -673,3 +746,6 @@ function of the reporters was removed.
   as node-tap does, instead of `filename:` and `line:`. The consumers
   remove the quotes and the escapes; the tools that read the TAP lines
   as plain text must be updated.
+- In the TAP location, the file name is written in double quotes when a YAML
+  parser would not accept it as a plain scalar (for example a name with ` #` or
+  `: `); the usual names are unchanged.

@@ -35,7 +35,7 @@ namespace mt = micro_os_plus::micro_test_plus;
 mt::runner tr;
 
 int
-main(int argc, char* argv[])
+main (int argc, char* argv[])
 {
   // Initialise the runner with the command-line options.
   tr.initialise (argc, argv);
@@ -86,10 +86,10 @@ TAP version 14
     ok 1 - Check truth # { passed, 1 check }
 
     1..1
-ok 1 - minimal-test # { passed, 1 check in 1 test case, time: 0.04 ms }
+ok 1 - minimal-test # { passed, 1 check in 1 test case, time: 0.040 ms }
 
 1..1
-# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.04 ms }
+# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.040 ms }
 ```
 
 The first two lines show the command line and the compiler. A passed test case
@@ -109,10 +109,10 @@ TAP version 14
     ok 1 - Check truth # { passed, 1 check }
 
     1..1
-ok 1 - minimal-test # { passed, 1 check in 1 test case, time: 0.04 ms }
+ok 1 - minimal-test # { passed, 1 check in 1 test case, time: 0.040 ms }
 
 1..1
-# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.04 ms }
+# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.040 ms }
 ```
 
 In the `ok`/`not ok` lines, the names of the suites and test cases, the
@@ -135,7 +135,7 @@ for instance:
 namespace mt = micro_os_plus::micro_test_plus;
 
 static int
-compute_answer()
+compute_answer ()
 {
   return 42;
 }
@@ -143,14 +143,14 @@ compute_answer()
 mt::runner tr;
 
 int
-main(int argc, char* argv[])
+main (int argc, char* argv[])
 {
   tr.initialise (argc, argv);
 
   auto& ts = tr.add_top_suite ("The Answer");
 
   ts.test ("Check answer", [] (auto& t) {
-    t.expect (compute_answer() == 42) << "the answer is 42";
+    t.expect (compute_answer () == 42) << "the answer is 42";
   });
 
   return tr.run_suites ();
@@ -169,17 +169,17 @@ TAP version 14
     ok 1 - Check answer # { passed, 1 check }
 
     1..1
-ok 1 - The Answer # { passed, 1 check in 1 test case, time: 0.04 ms }
+ok 1 - The Answer # { passed, 1 check in 1 test case, time: 0.040 ms }
 
 1..1
-# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.04 ms }
+# { total: 1 check passed, 0 failed, in 1 test case, 1 test suite, time: 0.040 ms }
 ```
 
 If the function returns an incorrect value, the test will fail; for example:
 
 ```cpp
 static int
-compute_answer()
+compute_answer ()
 {
   return 42 + 1;
 }
@@ -204,10 +204,10 @@ TAP version 14
     not ok 1 - Check answer # { FAILED, 0 checks passed, 1 failed }
 
     1..1
-not ok 1 - The Answer # { FAILED, 0 checks passed, 1 failed, in 1 test case, time: 0.04 ms }
+not ok 1 - The Answer # { FAILED, 0 checks passed, 1 failed, in 1 test case, time: 0.040 ms }
 
 1..1
-# { total: 0 checks passed, 1 failed, in 1 test case, 1 test suite, time: 0.04 ms }
+# { total: 0 checks passed, 1 failed, in 1 test case, 1 test suite, time: 0.040 ms }
 ```
 
 The output identifies the failed test at line 21, but **does not provide further
@@ -225,15 +225,15 @@ example:
 namespace mt = micro_os_plus::micro_test_plus;
 
 static int
-compute_answer()
+compute_answer ()
 {
-  return 42+1;
+  return 42 + 1;
 }
 
 mt::runner tr;
 
 int
-main(int argc, char* argv[])
+main (int argc, char* argv[])
 {
   tr.initialise (argc, argv);
   auto& ts = tr.add_top_suite ("The Answer");
@@ -266,10 +266,10 @@ TAP version 14
     not ok 1 - Check answer with comparator # { FAILED, 0 checks passed, 1 failed }
 
     1..1
-not ok 1 - The Answer # { FAILED, 0 checks passed, 1 failed, in 1 test case, time: 0.04 ms }
+not ok 1 - The Answer # { FAILED, 0 checks passed, 1 failed, in 1 test case, time: 0.040 ms }
 
 1..1
-# { total: 0 checks passed, 1 failed, in 1 test case, 1 test suite, time: 0.04 ms }
+# { total: 0 checks passed, 1 failed, in 1 test case, 1 test suite, time: 0.040 ms }
 ```
 
 Here, `eq()` is a **function comparator**, a function not only capable of

@@ -367,7 +367,7 @@ another suite:
   `runner::reject_call()`, which writes the message on `stderr`, counts the
   call as rejected, so that the exit code is not `0`, and, where the reporter
   can still write it, adds it as a comment line, which in a listing is part of
-  the list and of the output file (#280). Before `initialise()` the runner
+  the list and of the output file. Before `initialise()` the runner
   has no reporter yet, so `has_option_errors()` treats the missing reporter as
   no error, and the call, for example on a static suite from `main()`, is
   rejected like the others.

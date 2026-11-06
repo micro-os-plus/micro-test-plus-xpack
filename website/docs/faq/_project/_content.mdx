@@ -24,7 +24,7 @@ A failure then also reports the operands, for example
 <details>
 <summary>What happens when a requirement fails?</summary>
 
-The failure is reported like a failed expectation, marked by the human
+The failure is reported like a failed expectation, marked by the human-readable
 reporter with the effect that follows, and then, when exceptions are
 enabled, the **current test case is
 stopped**: the rest of its body is skipped, and the run continues with
@@ -172,11 +172,11 @@ C equivalent. Include the C headers in the C++ test sources, within
 <summary>In what order do the tests run?</summary>
 
 The test cases added to the top suite in `main()`, with `ts.test (…)`,
-run immediately, in the order of the calls. The suites registered with
-the runner and the static suites run later, when `run_suites()` is called,
+run immediately, in the order of the calls. The suites added with
+`add_suite()` and the static suites run later, when `run_suites()` is called,
 together, sorted by name; for equal names, they run in the order of
 their creation, so the static suites, constructed before `main()`, run
-before the suites registered with the runner.
+before the suites added with `add_suite()`.
 
 The names are compared byte by byte, as with `strcmp()`, not in the
 order of registration and not alphabetically: the comparison is

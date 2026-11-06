@@ -233,7 +233,7 @@ of the array, and an array that is full, without a terminator (a fixed-size
 name field), is not read beyond its end. The arrays of `volatile` characters
 are excluded: the function that reads the text cannot take a pointer to
 `volatile` characters, and without the exclusion the array overload is
-ambiguous with the one for the pointers (#279).
+ambiguous with the one for the pointers.
 
 These are templates on purpose. A non-template `operator<< (const char*)`
 would tie with a template for the arrays, since the array-to-pointer

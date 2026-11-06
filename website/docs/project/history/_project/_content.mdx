@@ -46,7 +46,7 @@ file included automatically, `micro-os-plus/micro-test-plus-defines.h`.
 ## October 2026 (v6.0)
 
 After v5.0.1, the C++ API and the implementation were reviewed systematically,
-in seven successive reviews, between 12 October and 1 November 2026. Each review
+in successive reviews, from 12 October 2026. Each review
 read the code without its comments, and confirmed the suspected defects with
 small test programs. The reviews found defects that made tests behave
 wrongly, for example a nested test case that aborted the program, an exception
@@ -55,7 +55,7 @@ compared by conversion, and TAP output that was not valid TAP. They also found
 design weaknesses: classes whose internal state was public, two places that parsed
 the command line with different policies, a library that terminated the process
 in many places, and names that were inconsistent. The findings were registered
-as 223 [GitHub issues](https://github.com/micro-os-plus/micro-test-plus-xpack/milestone/5),
+as [GitHub issues](https://github.com/micro-os-plus/micro-test-plus-xpack/milestone/5),
 assigned to the 6.0.0 milestone.
 
 The result is the most extensive rework of the library since v4.0, which also simplified the API, by hiding the internals of the library classes and removing the redundant ways of writing the same check:

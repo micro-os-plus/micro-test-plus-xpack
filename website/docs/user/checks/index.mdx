@@ -61,9 +61,9 @@ boolean values; they differ in **what happens after a failure**.
 
 Both are created with member functions of the test case objects, and return an
 object to which a message can be appended with `<<`; the check is **reported at
-the end of the statement**, so the returned object **must not be named or
-stored**, not even in a reference. The declarations below show the parameters
-that an application passes; the return type is internal:
+the end of the statement**, so the returned object **must not be named** (see
+below). The declarations below show the parameters that an application passes;
+the return type is internal:
 
 ```cpp
 template <class Expr_T>
@@ -134,15 +134,15 @@ t.expect (mt::eq (*enabled, true));  // Correct, the value is true.
 A failed **expectation** is reported and counted, and the test case
 continues, so that all its checks are evaluated and reported in one run.
 
-The result of `t.expect (...)` and `t.require (...)` lives until the end of
-the statement, where the check is reported, so that the checks are
-reported in the order of the statements. It must never be named. A variable
-of its type, `auto r = t.expect (...)`, does not compile; a reference,
-`auto&& r = t.expect (...)`, compiles, but **dangles after the statement**,
-since the temporary is destroyed there, and the check is reported there, not
-later. The message operator and `value()` can be called only on the temporary,
-so the named result cannot be used, and forcing it with `std::move()` is
-undefined. Append the message in the same statement, with `<<`.
+The result of `t.expect (...)` and `t.require (...)` lives until the end of the
+statement, where the check is reported, so that the checks are reported in the
+order of the statements, so it must never be named or stored. A variable of its
+type, `auto r = t.expect (...)`, does not compile; a reference, `auto&& r =
+t.expect (...)`, compiles, but **dangles after the statement**, since the
+temporary is destroyed there, and the check is reported there, not later. The
+message operator and `value()` can be called only on the temporary, so the
+named result cannot be used, and forcing it with `std::move()` is undefined.
+Append the message in the same statement, with `<<`.
 
 The message accepts the same values as the operands of the [function
 comparators](#function-comparators), including the [custom
@@ -164,6 +164,7 @@ message; it is **called only if the check fails**, and its result is appended,
 while after a success it appends nothing:
 
 ```cpp
+// std::expected requires C++23.
 std::expected<config, std::string> result = parse ("config.json");
 t.require (result.has_value ())
     << "parse failed: " << [&result] { return result.error (); };
@@ -220,44 +221,9 @@ targets), the test case cannot be stopped, and a failed requirement **aborts
 the whole test execution**, as described in [Aborting the test
 execution](/docs/user/organising-tests/#aborting-the-test-execution): the
 results of the test case are displayed, ending with the failed requirement, but
-the remaining test cases do not run and no totals are written.
-
-### Comparison with other frameworks
-
-The plain `assert()` macro, mentioned in the [Rationale](/docs/user/#rationale),
-terminates the whole program at the first failure. Test frameworks
-distinguish the non-fatal checks, which only report the failure, from
-the fatal ones, which also stop the test; most of them stop only the
-current test case, which is also the behaviour of `require()`:
-
-| Framework | Non-fatal | Fatal | After a fatal failure |
-| --- | --- | --- | --- |
-| µTest++ | `expect()` | `require()` | the test case is stopped |
-| GoogleTest | `EXPECT_*()` | `ASSERT_*()` | the current function returns |
-| Catch2 | `CHECK()` | `REQUIRE()` | the test case is stopped |
-| doctest | `CHECK()` | `REQUIRE()` | the test case is stopped |
-| Boost.Test | `BOOST_CHECK()` | `BOOST_REQUIRE()` | the test case is stopped |
-| Boost UT | `expect()` | `expect (...) << fatal` | the program exits |
-| Unity (C) | — | `TEST_ASSERT_*()` | the test is stopped |
-| JUnit | — | `assert*()` | the test is stopped |
-| C library | — | `assert()` | the program is aborted |
-
-Some differences are worth noting:
-
-- in GoogleTest, `ASSERT_*()` returns only from the function in which
-  it is used; if this is a helper function, the test continues after
-  the call;
-- Catch2, doctest, and Boost.Test also stop the test case with an
-  exception; without exceptions, Catch2 calls `std::terminate()`,
-  and doctest either removes `REQUIRE()`, or makes it behave as
-  `CHECK()`;
-- Boost UT reports the fatal failure and calls `std::exit()`, so the
-  remaining tests do not run, as with the previous versions of
-  `assume()`;
-- Unity, a C framework, stops the test with `longjmp()`, which does not
-  run the destructors of the C++ objects;
-- in JUnit, an unmet `assume*()` aborts the test, which is reported as
-  skipped, not as failed.
+the remaining test cases do not run and no totals are written. The other test
+frameworks make the same distinction between the fatal and the non-fatal checks
+(see [Comparison with other frameworks](#comparison-with-other-frameworks)).
 
 Refer to the
 [Expectations](/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-expectations/)
@@ -265,12 +231,10 @@ and
 [Requirements](/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-requirements/)
 reference pages.
 
-
 ## Function comparators
 
-To facilitate clear reporting of differences between expected and
-actual values in failed conditions, several **generic comparator functions**
-are provided.
+To report the differences between the expected and the actual values in failed
+conditions, several **generic comparator functions** are provided.
 
 ```cpp
 template <class Lhs_T, class Rhs_T>
@@ -295,65 +259,9 @@ template <class Lhs_T, class Rhs_T, class Epsilon_T>
 auto approx(Lhs_T&& lhs, Rhs_T&& rhs, Epsilon_T&& epsilon);
 ```
 
-The **C strings** (the arrays, including the string literals, and the
-pointers of `char`, `wchar_t`, `char8_t`, `char16_t`, and `char32_t`)
-**are compared by content**, also with the standard strings and string views
-of the same character type, so `mt::eq (actual, "abc")` checks the characters,
-not the addresses; a null pointer is equal only to another null
-pointer (or `nullptr`), not to an empty string. The **other arrays**
-(including `uint8_t` buffers) **are compared element by element**, also with
-a container such as a `std::vector`, and are written as ranges on
-failure; arrays of different sizes are never equal, and their elements
-are compared as single values are (see below), so an `int` array holding `-1`
-is not equal to an `unsigned` array holding `UINT_MAX`. The other pointers
-are compared by address.
-
-The `volatile` operands, such as a buffer filled by a DMA controller, are
-accepted: an array of `volatile` elements is compared element by element, and
-written as a range, like the other arrays; this includes a `volatile char`
-array, which is a buffer of characters, not a string, so it is not compared
-with a string literal (compare it with a `std::array<char, N>`). A pointer to
-`volatile` characters is compared by address, like the other pointers.
-
-Two **integers of different signedness are compared by value**, not by
-converting the signed operand to the unsigned type, so
-`mt::lt (-1, 1u)` succeeds and `mt::eq (-1, UINT_MAX)` fails. The character
-types are compared as the numbers that they hold, with the same rule, as the
-integers of the same size and signedness (the signedness of `char` and
-`wchar_t` is that of the platform), so `mt::gt (U'a', -1)` succeeds, and a
-`char` with the value `-1` is less than `1u` where `char` is signed. Two
-characters of different types are compared in the same way, so `mt::eq ('a',
-U'a')` succeeds. This does not apply to `bool`, which is compared as the
-language does.
-
-The wide and Unicode strings are reported as text, converted to UTF-8 and
-quoted as the `std::string` values are; the messages write the text of the
-pointers and arrays of these types in the same way. A C string of one
-character type is not comparable with a string of another type, for example
-`L"abc"` with a `std::string`; the comparison is rejected at compile time.
-
-Operands that cannot be compared with the operator of the comparator, such as
-a structure and an integer, or that cannot be written in the report, such as an
-application type without an `operator<<` for the formatter, are **rejected with
-a message** that names the comparator and the operator, or says that the
-operand cannot be written, not with the trace of the concepts.
-
-The comparators **copy the named operands** and move the temporaries into the
-expression, so that an expression built in a helper function from its
-parameters and returned, or kept in a variable, stays valid after the operands
-are destroyed. The copy is made for every check, passing or failing, so a
-large container or string costs a copy and an allocation, which matters on a
-small target. When the cost matters, compare a view, which copies only a
-pointer and a size: `mt::eq (std::string_view{ text }, "abc")` makes no
-allocation. The operands that cannot be copied, such as a `std::unique_ptr`,
-are referred to, not copied, and so are **the arrays**, including the C
-strings held in arrays: the expression refers to the array, which must
-outlive it. This matters only for an expression that is returned from a
-helper or kept in a variable, after the array is destroyed, since the report
-is written from the array; the check in the same statement is safe. For such
-an expression, compare a copy of the array, of the same type as the other
-operand: `mt::eq (std::to_array (buffer), expected_array)` for a numeric
-array, or `mt::eq (std::string{ name }, "abc")` for a character array.
+The rules for the operands (the strings, the arrays, the integers, and the
+copies) are in [How the operands are compared and
+stored](#how-the-operands-are-compared-and-stored), at the end of this page.
 
 The `approx()` comparator **succeeds if its first two operands differ by
 at most the third one**, the tolerance, so a tolerance of zero requires
@@ -398,7 +306,7 @@ such as string literals, C strings, arrays, and pointers to functions, are
 
 `all_of()` and `any_of()` **take two or more operands**. A chain of the same
 operation is reported as a single group, for example
-`(1 == 1 and abc == abd and 3 < 2)`.
+`(1 == 1 and "abc" == "abd" and 3 < 2)`.
 
 **All the operands are evaluated before the check**, so, unlike the standard
 algorithms of the same names, the functions do not stop at the first operand
@@ -541,3 +449,109 @@ its first null character, or up to its end if it has none, so an array that is
 full, without a terminator, is read only within its bounds. A `char` pointer
 is a null-terminated string, read up to its terminator; when only the array is
 available, write the array itself, not a pointer to its first element.
+
+## How the operands are compared and stored
+
+These rules apply to all the function comparators described above.
+
+The **C strings** (the arrays, including the string literals, and the
+pointers of `char`, `wchar_t`, `char8_t`, `char16_t`, and `char32_t`)
+**are compared by content**, also with the standard strings and string views
+of the same character type, so `mt::eq (actual, "abc")` checks the characters,
+not the addresses; a null pointer is equal only to another null
+pointer (or `nullptr`), not to an empty string. The **other arrays**
+(including `uint8_t` buffers) **are compared element by element**, also with
+a container such as a `std::vector`, and are written as ranges on
+failure; arrays of different sizes are never equal, and their elements
+are compared as single values are (see below), so an `int` array holding `-1`
+is not equal to an `unsigned` array holding `UINT_MAX`. The other pointers
+are compared by address.
+
+The `volatile` operands, such as a buffer filled by a DMA controller, are
+accepted: an array of `volatile` elements is compared element by element, and
+written as a range, like the other arrays; this includes a `volatile char`
+array, which is a buffer of characters, not a string, so it is not compared
+with a string literal (compare it with a `std::array<char, N>`). A pointer to
+`volatile` characters is compared by address, like the other pointers.
+
+Two **integers of different signedness are compared by value**, not by
+converting the signed operand to the unsigned type, so
+`mt::lt (-1, 1u)` succeeds and `mt::eq (-1, UINT_MAX)` fails. The character
+types are compared as the numbers that they hold, with the same rule, as the
+integers of the same size and signedness (the signedness of `char` and
+`wchar_t` is that of the platform), so `mt::gt (U'a', -1)` succeeds, and a
+`char` with the value `-1` is less than `1u` where `char` is signed. Two
+characters of different types are compared in the same way, so `mt::eq ('a',
+U'a')` succeeds. This does not apply to `bool`, which is compared as the
+language does.
+
+The wide and Unicode strings are reported as text, converted to UTF-8 and
+quoted as the `std::string` values are; the messages write the text of the
+pointers and arrays of these types in the same way. A C string of one
+character type is not comparable with a string of another type, for example
+`L"abc"` with a `std::string`; the comparison is rejected at compile time.
+
+Operands that cannot be compared with the operator of the comparator, such as
+a structure and an integer, or that cannot be written in the report, such as an
+application type without an `operator<<` for the formatter, are **rejected with
+a message** that names the comparator and the operator, or says that the
+operand cannot be written, not with the trace of the concepts.
+
+The comparators **copy the named operands** and move the temporaries into the
+expression, so that an expression built in a helper function from its
+parameters and returned, or kept in a variable, stays valid after the operands
+are destroyed. The copy is made for every check, passing or failing, so a
+large container or string costs a copy and an allocation, which matters on a
+small target. When the cost matters, compare a view, which copies only a
+pointer and a size: `mt::eq (std::string_view{ text }, "abc")` makes no
+allocation. The operands whose class cannot be copied (an application type with
+a deleted copy constructor, which needs an `operator<<` like any other operand)
+are referred to, not copied, and so are **the arrays**, including the C
+strings held in arrays: the expression refers to the array, which must
+outlive it. This matters only for an expression that is returned from a
+helper or kept in a variable, after the array is destroyed, since the report
+is written from the array; the check in the same statement is safe. For such
+an expression, compare a copy of the array, of the same type as the other
+operand: `mt::eq (std::to_array (buffer), expected_array)` for a numeric
+array, or `mt::eq (std::string{ name }, "abc")` for a character array.
+
+A smart pointer cannot be written in a report, so it is not a valid operand:
+compare the pointer that it holds, `mt::ne (p.get (), nullptr)`, or pass it as
+a condition, `t.expect (p)`, as shown above.
+
+## Comparison with other frameworks
+
+The plain `assert()` macro, mentioned in the [Rationale](/docs/user/#rationale),
+terminates the whole program at the first failure. Test frameworks
+distinguish the non-fatal checks, which only report the failure, from
+the fatal ones, which also stop the test; most of them stop only the
+current test case, which is also the behaviour of `require()`:
+
+| Framework | Non-fatal | Fatal | After a fatal failure |
+| --- | --- | --- | --- |
+| µTest++ | `expect()` | `require()` | the test case is stopped |
+| GoogleTest | `EXPECT_*()` | `ASSERT_*()` | the current function returns |
+| Catch2 | `CHECK()` | `REQUIRE()` | the test case is stopped |
+| doctest | `CHECK()` | `REQUIRE()` | the test case is stopped |
+| Boost.Test | `BOOST_CHECK()` | `BOOST_REQUIRE()` | the test case is stopped |
+| Boost UT | `expect()` | `expect (...) << fatal` | the program exits |
+| Unity (C) | — | `TEST_ASSERT_*()` | the test is stopped |
+| JUnit | — | `assert*()` | the test is stopped |
+| C library | — | `assert()` | the program is aborted |
+
+Some differences are worth noting:
+
+- in GoogleTest, `ASSERT_*()` returns only from the function in which
+  it is used; if this is a helper function, the test continues after
+  the call;
+- Catch2, doctest, and Boost.Test also stop the test case with an
+  exception; without exceptions, Catch2 calls `std::terminate()`, and
+  doctest rejects `REQUIRE()` at compile time or, with a configuration macro,
+  makes it behave as `CHECK()`;
+- Boost UT reports the fatal failure and calls `std::exit()`, so the
+  remaining tests do not run, as `require()`, then named `assume()`, did
+  before version 6.0;
+- Unity, a C framework, stops the test with `longjmp()`, which does not
+  run the destructors of the C++ objects;
+- in JUnit, an unmet `assume*()` aborts the test, which is reported as
+  skipped, not as failed.

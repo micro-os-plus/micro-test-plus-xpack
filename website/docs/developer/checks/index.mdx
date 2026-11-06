@@ -187,7 +187,7 @@ public:
   ~check_result () noexcept (false);
 
   template <class T>
-    requires (extension::printable<T> or detail::lazy_message<T>)
+    requires detail::message_argument<T>
   check_result&&
   operator<< (const T& msg) &&;
 

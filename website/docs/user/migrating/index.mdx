@@ -19,19 +19,45 @@ date: 2026-11-03 10:00:00 +0200
 
 # Migrating from earlier versions
 
-Version 6.0.0 deprecated the overloaded operators, the literals, and the type
-wrappers, in favour of the function comparators. This page describes how to
-migrate the existing tests; the other changes that may break existing code are
-listed in the
-[compatibility notices](/docs/getting-started/compatibility-notices/).
+Version 6.0.0 changed the initialisation of the runner and of the top suite,
+and deprecated the overloaded operators, the literals, and the type wrappers,
+in favour of the function comparators. This page describes how to migrate the
+existing tests; the other changes that may break existing code are listed in the
+[compatibility notices](/docs/getting-started/compatibility-notices/) and, with
+all the details, in the
+[release post](/blog/2026/11/03/micro-test-plus-v6-0-0-released/#details).
+
+## From version 5.x
+
+The changes that most programs meet first are the following; the old names are
+available only with `MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED` (see
+below):
+
+| Version 5.x | Version 6.0 |
+| --- | --- |
+| `auto& ts = tr.initialise (argc, argv, "Main");` | `tr.initialise (argc, argv);` and `auto& ts = tr.add_top_suite ("Main");` |
+| `mt::runner tr{ "Main" };` | `mt::runner tr;` and `tr.add_top_suite ("Main")` |
+| `return tr.exit_code ();` | `return tr.run_suites ();` |
+| `tr.suite (name, function)` | `tr.add_suite (name, function)` |
+| `t.assume (...)` | `t.require (...)`, which stops only the test case |
+| `mt::subtest&` | `mt::test_case&` |
+| `mt::static_suite&` in the function of a suite | `mt::suite&` |
 
 ## Deprecated operators, literals, and wrappers
 
 The overloaded operators of the `operators` namespace, the literals of the
 `literals` namespace, the `to_*` type wrappers, `to_t<T>`, and the
 `approx (value, epsilon)` wrapper are deprecated since 6.0.0, and will be
-removed in a future release. They are still available, but the compiler
-reports their use.
+removed in a future release.
+
+They are available only when the macro
+`MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED` is defined, for the
+application and for the library sources, usually in
+`micro-os-plus/micro-test-plus-defines.h` (see
+[Configuration](/docs/install/#configuration)). When it is defined, the
+compiler reports their use. Without it, a program that uses them does not
+compile, so define the macro first, to migrate the tests step by step, and
+remove it when the last use is gone.
 
 The function comparators provide the same checks and the same reports, with
 plain values, so that the constants do not need a literal suffix and the

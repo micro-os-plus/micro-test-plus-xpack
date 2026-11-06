@@ -16,7 +16,7 @@ argument-hint: 'Optional: URL, page, or folder to review (e.g. docs/user, blog);
 This skill reports problems and suggests improvements; it does not edit
 the website, unless the user asks for that separately (e.g. "fix #4").
 
-The API reference pages (`website/docs/api/`, generated from the Doxygen
+The API reference pages (`/docs/api/*`, generated from the Doxygen
 comments) are **out of scope**; they are reviewed separately (see the
 `website-api-review` skill). Links from the reviewed pages into
 `/docs/api/` are in scope: check that they point to the right group.

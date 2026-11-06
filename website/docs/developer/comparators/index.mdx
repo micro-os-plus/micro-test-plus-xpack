@@ -160,7 +160,8 @@ struct equal_to
     using std::operator==;
     if constexpr (sign_mixed_integers<Lhs_T, Rhs_T>)
       {
-        return std::cmp_equal (lhs, rhs);
+        return std::cmp_equal (as_comparison_integer (lhs),
+                               as_comparison_integer (rhs));
       }
     else
       {
@@ -218,8 +219,8 @@ parameter of the comparison, such as a tolerance, must be an operand.
 
 ```cpp title="function-comparators.h and its inlines (simplified)"
 template <class Lhs_T, class Rhs_T>
-  requires (extension::printable<Lhs_T> and extension::printable<Rhs_T>
-            and detail::comparable<detail::comparison::equal, Lhs_T, Rhs_T>)
+  requires detail::comparable_operands<detail::comparison::equal, Lhs_T,
+                                       Rhs_T>
 [[nodiscard]] constexpr auto
 eq (Lhs_T&& lhs, Rhs_T&& rhs)
 {
@@ -374,8 +375,8 @@ The reasons are:
   ```
 
   The C strings and the other arrays are an exception: they are stored as a
-  `basic_c_string` or an `array_operand`, which refer to the original characters or
-  elements (see [The operands that change
+  `basic_c_string` or an `array_operand`, which refer to the original
+  characters or elements (see [The operands that change
   type](#the-operands-that-change-type)), so an expression built from a local
   array must not outlive the array.
 
@@ -573,14 +574,14 @@ An application tag is accepted if it satisfies `extension::compare_tag` (or
 result converts to `bool`. The constructors of `compare_op` and `predicate_op`
 require the concept; for a tag that does not satisfy it, a second constructor,
 selected by the negated concept, only stops the compilation, with a
-`static_assert` in `reject_compare_tag()` or `reject_predicate_tag()` that
-says what the tag needs (the `symbol` first, then the `apply()`), and builds
-the base with a `false` result, so that the error is the only one. The
-formatter writes the `symbol` of a tag only when it has one
-(`tag_has_symbol`), for the same reason. The expressions so created are ordinary framework
-expressions: they can be combined with `all_of()` and `negate()`, and are
-reported by the same formatter. The User's Guide shows an example, in
-[Custom comparators](/docs/user/extending/#custom-comparators).
+`static_assert` in `reject_compare_tag()` or `reject_predicate_tag()` that says
+what the tag needs (the `symbol` first, then the `apply()`), and builds the
+base with a `false` result, so that the error is the only one. The formatter
+writes the `symbol` of a tag only when it has one (`tag_has_symbol`), for the
+same reason. The expressions so created are ordinary framework expressions:
+they can be combined with `all_of()` and `negate()`, and are reported by the
+same formatter. The User's Guide shows an example, in [Custom
+comparators](/docs/user/extending/#custom-comparators).
 
 ## Adding a comparator
 

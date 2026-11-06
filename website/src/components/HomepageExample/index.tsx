@@ -1,7 +1,7 @@
 import CodeBlock from '@theme/CodeBlock';
 import Heading from '@theme/Heading';
 
-const source = `#include <micro-os-plus/micro-test-plus.h>
+const source = `#include "micro-os-plus/micro-test-plus.h"
 
 // Define a shortcut for the namespace.
 namespace mt = micro_os_plus::micro_test_plus;

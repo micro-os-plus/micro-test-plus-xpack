@@ -77,15 +77,35 @@ library includes `micro-os-plus/diag/trace.h` only if it is available, so to
 enable the trace messages, install the `@micro-os-plus/diag-trace` package, add
 it to the build of the application, and define the trace macros
 (see [Configuration](#configuration)). The CMake and
-meson files of this library do not link it.
+Meson files of this library do not link it.
+
+### Static suites
+
+The test suites of the application, defined as `static_suite` objects, must not
+be packed in a static library, however µTest++ itself is built (see the
+[FAQ](/docs/faq/)).
 
 <CommonCmakeIntegration />
 
+#### CMake language standard
+
+The library requires C++20, but its CMake files do not select it. Set the
+`CMAKE_CXX_STANDARD` variable in the project, **before** the
+`add_subdirectory()` call shown above:
+
+```cmake
+set (CMAKE_CXX_STANDARD 20)
+set (CMAKE_CXX_STANDARD_REQUIRED ON)
+```
+
+Without `CMAKE_CXX_STANDARD_REQUIRED`, CMake may silently fall back to an older
+standard if the compiler does not support C++20.
+
 #### CMake library targets
 
-The `CMakeLists.txt` file defines three libraries, which differ only in how
-the µTest++ sources are built; all of them provide the same headers and the
-same definitions.
+The `CMakeLists.txt` file defines three libraries, which differ in how the
+µTest++ sources are built, and in the options that the sources get; all of them
+provide the same headers and the same definitions.
 
 | Target | Library | Sources |
 | --- | --- | --- |
@@ -99,9 +119,52 @@ the static library avoids compiling the sources again for each executable.
 Like the interface library, they are excluded from the default build; they
 are built when a target links them.
 
-The choice concerns only the µTest++ sources. The test suites of the
-application, defined as `static_suite` objects, must not be packed in a static
-library, whichever target is used for µTest++ (see the
-[FAQ](/docs/faq/)).
+#### CMake common options
+
+The interface library is compiled in the target of the application, so its
+sources automatically get the include folders, the compile definitions, and the
+compile options of that target. The object and the static libraries are
+separate targets, which do not inherit them: they must be given exactly the
+same common options as the application, otherwise the library and the
+application are built differently. This matters in particular for the folder of
+the `micro-os-plus/micro-test-plus-defines.h` header, which enables the library
+(see [Configuration](#configuration)), since the sources of the library are
+empty without it, and the application then fails to link, with undefined
+symbols. It matters also for the options that change the generated code, such
+as `-fno-exceptions` (see above).
+
+A simple way to give the same options to the application and to the library is
+to collect them in an interface library of the project, and link it to both.
+The library must be linked by its real name,
+`micro-os-plus-micro-test-plus-objects-library` or
+`micro-os-plus-micro-test-plus-static-library`, since CMake does not allow the
+aliases to be modified:
+
+```cmake
+add_library (app-common-options INTERFACE)
+# The folder with micro-os-plus/micro-test-plus-defines.h.
+target_include_directories (app-common-options INTERFACE "include")
+# The common compile options for the application and the library.
+target_compile_options (app-common-options INTERFACE -fno-exceptions ...)
+
+add_subdirectory ("xpacks/@micro-os-plus/micro-test-plus")
+
+target_link_libraries (
+  micro-os-plus-micro-test-plus-static-library PRIVATE app-common-options
+)
+
+add_executable (your-target main.cpp)
+target_link_libraries (
+  your-target PRIVATE app-common-options
+                      micro-os-plus::micro-test-plus-static-library
+)
+```
 
 <CommonMesonIntegration />
+
+Due to differences in the build model, the Meson configurations currently do
+not support the object and static library targets for µTest++. They rely on the
+interface library approach, where the sources are compiled directly into each
+target that links them, so the options of the application, including the folder
+of the `micro-os-plus/micro-test-plus-defines.h` header, apply to them
+automatically.
