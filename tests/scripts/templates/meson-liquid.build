@@ -29,6 +29,7 @@
 # for production it might need some refinements.
 
 # -----------------------------------------------------------------------------
+
 message('Processing \'tests/{{outputFolderPath}}/\'...')
 
 # -----------------------------------------------------------------------------
@@ -37,6 +38,8 @@ message('Processing \'tests/{{outputFolderPath}}/\'...')
 # to retrieve their properties after creation. The `_local_*` variables
 # therefore serve a dual purpose: populating the dependency object and
 # iterating over its components for the `message()` calls at the end.
+
+# -----------------------------------------------------------------------------
 
 {%- for component in xcdl.cdlComponents %}
 {%- assign nameUnderscore = component.id | replace: '-', '_' | replace: '.', '_' %}
@@ -96,6 +99,7 @@ _local_dependencies += [
   {{dependencyUnderscore}}_dependency,
 {%- endfor %}
 ]
+
 # The dependencies' C/C++ args are lists; add them without brackets,
 # to concatenate their elements rather than nest the lists.
 {%- for dependency in component.dependencies %}

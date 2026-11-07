@@ -17,16 +17,19 @@
 #
 # `add_subdirectory("sources/suite")`
 #
-# This creates an interface library that can be linked to a target with:
+# This creates interface libraries that can be linked to a target with:
 #
-# `target_link_libraries(your-target PUBLIC test-suite)`
+# ~~~
+# target_link_libraries(your-target PUBLIC test::suite)
+# ~~~
+
+# -----------------------------------------------------------------------------
+
+message (VERBOSE "Processing 'tests/sources/suite/'...")
 
 # -----------------------------------------------------------------------------
 
 # The source code for a test to exercise separate suites.
-message (VERBOSE "Processing 'tests/sources/suite/'...")
-
-# -----------------------------------------------------------------------------
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
 # Visibility keywords: INTERFACE passes properties up to targets that link

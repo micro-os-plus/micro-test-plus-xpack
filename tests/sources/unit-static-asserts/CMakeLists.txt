@@ -17,16 +17,19 @@
 #
 # `add_subdirectory("sources/unit-static-asserts")`
 #
-# This creates an interface library that can be linked to a target with:
+# This creates interface libraries that can be linked to a target with:
 #
-# `target_link_libraries(your-target PUBLIC test-unit-static-asserts)`
+# ~~~
+# target_link_libraries(your-target PUBLIC test::unit-static-asserts)
+# ~~~
+
+# -----------------------------------------------------------------------------
+
+message (VERBOSE "Processing 'tests/sources/unit-static-asserts/'...")
 
 # -----------------------------------------------------------------------------
 
 # The source code for a static asserts test of the whole test framework.
-message (VERBOSE "Processing 'tests/sources/unit-static-asserts/'...")
-
-# -----------------------------------------------------------------------------
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
 # Visibility keywords: INTERFACE passes properties up to targets that link

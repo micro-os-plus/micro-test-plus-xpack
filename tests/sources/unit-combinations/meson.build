@@ -26,6 +26,7 @@
 # for production it might need some refinements.
 
 # -----------------------------------------------------------------------------
+
 message('Processing \'tests/sources/unit-combinations/\'...')
 
 # -----------------------------------------------------------------------------
@@ -34,6 +35,8 @@ message('Processing \'tests/sources/unit-combinations/\'...')
 # to retrieve their properties after creation. The `_local_*` variables
 # therefore serve a dual purpose: populating the dependency object and
 # iterating over its components for the `message()` calls at the end.
+
+# -----------------------------------------------------------------------------
 
 # The test code of the combinations unit test, without main().
 
@@ -64,6 +67,7 @@ _local_dependencies += [
   micro_os_plus_micro_test_plus_dependency,
   test_unit_common_dependency,
 ]
+
 # The dependencies' C/C++ args are lists; add them without brackets,
 # to concatenate their elements rather than nest the lists.
 _local_compile_c_args += micro_os_plus_micro_test_plus_dependency_compile_c_args
@@ -117,6 +121,7 @@ _local_sources += [
 _local_dependencies += [
   test_unit_combinations_body_dependency,
 ]
+
 # The dependencies' C/C++ args are lists; add them without brackets,
 # to concatenate their elements rather than nest the lists.
 _local_compile_c_args += test_unit_combinations_body_dependency_compile_c_args

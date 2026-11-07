@@ -25,6 +25,7 @@
 # for production it might need some refinements.
 
 # -----------------------------------------------------------------------------
+
 message('Processing \'tests/sources/unit-common/\'...')
 
 # -----------------------------------------------------------------------------
@@ -33,6 +34,8 @@ message('Processing \'tests/sources/unit-common/\'...')
 # to retrieve their properties after creation. The `_local_*` variables
 # therefore serve a dual purpose: populating the dependency object and
 # iterating over its components for the `message()` calls at the end.
+
+# -----------------------------------------------------------------------------
 
 # The support code shared by the unit tests of the test framework.
 

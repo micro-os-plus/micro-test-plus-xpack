@@ -17,16 +17,19 @@
 #
 # `add_subdirectory("sources/minimal")`
 #
-# This creates an interface library that can be linked to a target with:
+# This creates interface libraries that can be linked to a target with:
 #
-# `target_link_libraries(your-target PUBLIC test-minimal)`
+# ~~~
+# target_link_libraries(your-target PUBLIC test::minimal)
+# ~~~
+
+# -----------------------------------------------------------------------------
+
+message (VERBOSE "Processing 'tests/sources/minimal/'...")
 
 # -----------------------------------------------------------------------------
 
 # The source code for a minimal test.
-message (VERBOSE "Processing 'tests/sources/minimal/'...")
-
-# -----------------------------------------------------------------------------
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
 # Visibility keywords: INTERFACE passes properties up to targets that link
