@@ -400,11 +400,9 @@ namespace micro_os_plus::micro_test_plus::detail
     else
       {
         *this << "[";
-        detail::append_number (buffer_,
-                               static_cast<long long> (Period::num));
+        detail::append_number (buffer_, static_cast<long long> (Period::num));
         *this << "/";
-        detail::append_number (buffer_,
-                               static_cast<long long> (Period::den));
+        detail::append_number (buffer_, static_cast<long long> (Period::den));
         return *this << "]s";
       }
   }
