@@ -878,11 +878,15 @@ namespace micro_os_plus::micro_test_plus
       {
         run_child_suites ();
 
-        const unsigned long test_cases = listed_test_cases_count_;
-        const unsigned long suites = listed_suites_count_;
-        reporter_->write_line (true, "%lu test case%s in %lu test suite%s\n",
-                               test_cases, (test_cases == 1) ? "" : "s",
-                               suites, (suites == 1) ? "" : "s");
+        const size_t test_cases = listed_test_cases_count_;
+        const size_t suites = listed_suites_count_;
+        reporter_->write_line (
+            true,
+            "%" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+            " test case%s in %" MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE
+            " test suite%s\n",
+            test_cases, (test_cases == 1) ? "" : "s", suites,
+            (suites == 1) ? "" : "s");
 
         // As for a run, filters that select no test case are an error.
         const bool listed_nothing = total_suites_count () != 0
