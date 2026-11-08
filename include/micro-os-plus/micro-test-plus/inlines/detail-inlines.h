@@ -1383,8 +1383,18 @@ namespace micro_os_plus::micro_test_plus
           for (int precision = min_precision; precision <= LDBL_DECIMAL_DIG;
                ++precision)
             {
+              // GCC 11 does not know the range of the precision, and
+              // warns that the text may be truncated; it cannot be, since
+              // the precision is at most LDBL_DECIMAL_DIG.
+#if defined(__GNUC__) && !defined(__clang__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wformat-truncation"
+#endif // defined(__GNUC__) && !defined(__clang__)
               snprintf (buf, sizeof (buf), "%.*Lg", precision, v);
-              // A NaN is never equal to itself, and has no digits.
+#if defined(__GNUC__) && !defined(__clang__)
+#pragma GCC diagnostic pop
+#endif // defined(__GNUC__) && !defined(__clang__)
+          // A NaN is never equal to itself, and has no digits.
               if (v != v || strtold (buf, nullptr) == v)
                 {
                   is_exact = true;
