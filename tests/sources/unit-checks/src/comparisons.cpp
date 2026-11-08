@@ -508,12 +508,15 @@ static mt::static_suite ts_comparisons{ "Comparisons suite", tr, [] (auto& ts)
         const wchar_t* null_wide = nullptr;
         wchar_t unterminated[3] = { L'a', L'b', L'c' };
 
-        t.expect (mt::eq (L"abc", std::wstring{ L"abc" })) << "wide literal";
-        t.expect (mt::eq (std::wstring{ L"abc" }, wide)) << "wstring == wide";
+        t.expect (mt::eq (L"abc", std::wstring{ L"abc", 3 }))
+            << "wide literal";
+        t.expect (mt::eq (std::wstring{ L"abc", 3 }, wide))
+            << "wstring == wide";
         t.expect (mt::eq (wide, L"abc")) << "wide == wide literal";
         t.expect (mt::eq (u8"abc", std::u8string{ u8"abc" })) << "u8 literal";
-        // The explicit length avoids a GCC 14 `-Wstringop-overread` false
-        // positive with `-O3 -flto`, which source pragmas cannot silence.
+        // The explicit length avoids a GCC 14 and 15 `-Wstringop-overread`
+        // false positive with `-O3 -flto`, which source pragmas cannot
+        // silence.
         t.expect (mt::eq (u"abc", std::u16string{ u"abc", 3 }))
             << "u16 literal";
         t.expect (mt::eq (utf16, u"abc")) << "utf16 == u16 literal";

@@ -510,13 +510,14 @@ static mt::static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
 
     // The strings of the wide character types are compared by content, and
     // reported as UTF-8 text; their pointers and arrays are not strings
-    // (#236). The `std::u16string` objects are constructed with an explicit
-    // length, to avoid a GCC 14 and 15 `-Wstringop-overread` false positive
-    // with `-O3 -flto`, which source pragmas cannot silence (#283).
+    // (#236). The `std::wstring` and `std::u16string` objects are
+    // constructed with an explicit length, to avoid a GCC 14 and 15
+    // `-Wstringop-overread` false positive with `-O3 -flto`, which source
+    // pragmas cannot silence (#283).
     ts.test ("Wide strings", [] (auto& t)
       {
-        t.expect (mt::eq (std::wstring{ L"caf\u00e9" },
-                          std::wstring{ L"caf\u00e9" }))
+        t.expect (mt::eq (std::wstring{ L"caf\u00e9", 4 },
+                          std::wstring{ L"caf\u00e9", 4 }))
             << L"wide " << L"string";
         local_counts.passed_checks++;
 
