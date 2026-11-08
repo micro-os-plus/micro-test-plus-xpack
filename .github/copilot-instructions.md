@@ -163,6 +163,13 @@ powered up.
   or a dependency, follow
   the separate instructions in `.github/skills/xcdl/SKILL.md`.
 
+## JavaScript scripts
+
+- When asked to create a new `.mjs` (Node.js) script, follow the separate
+  instructions in `.github/skills/create-javascript-mjs/SKILL.md`; for the
+  conversion of an existing bash script, follow
+  `.github/skills/rewrite-bash-to-javascript/SKILL.md`.
+
 ## Verbal questions
 
 If the agent requires more input from the user, in addition to writing the
