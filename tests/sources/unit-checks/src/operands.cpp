@@ -510,7 +510,9 @@ static mt::static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
 
     // The strings of the wide character types are compared by content, and
     // reported as UTF-8 text; their pointers and arrays are not strings
-    // (#236).
+    // (#236). The `std::u16string` objects are constructed with an explicit
+    // length, to avoid a GCC 14 and 15 `-Wstringop-overread` false positive
+    // with `-O3 -flto`, which source pragmas cannot silence (#283).
     ts.test ("Wide strings", [] (auto& t)
       {
         t.expect (mt::eq (std::wstring{ L"caf\u00e9" },
@@ -519,7 +521,7 @@ static mt::static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
         local_counts.passed_checks++;
 
         t.expect (mt::eq (std::u16string_view{ u"caf\u00e9" },
-                          std::u16string{ u"caf\u00e9" }));
+                          std::u16string{ u"caf\u00e9", 4 }));
         local_counts.passed_checks++;
 
         t.expect (mt::eq (std::u32string{ U"\U0001F600" },
@@ -530,7 +532,8 @@ static mt::static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
                           std::u8string_view{ u8"caf\u00e9" }));
         local_counts.passed_checks++;
 
-        t.expect (mt::ne (std::u16string{ u"abc" }, std::u16string{ u"abd" }));
+        t.expect (mt::ne (std::u16string{ u"abc", 3 },
+                          std::u16string{ u"abd", 3 }));
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
@@ -538,8 +541,8 @@ static mt::static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
 
     ts.test ("Wide strings bad", [] (auto& t)
       {
-        t.expect (mt::eq (std::u16string{ u"caf\u00e9" },
-                          std::u16string{ u"cafe" }));
+        t.expect (mt::eq (std::u16string{ u"caf\u00e9", 4 },
+                          std::u16string{ u"cafe", 4 }));
         local_counts.failed_checks++;
 
         t.expect (mt::eq (std::wstring_view{ L"a\tb" },
