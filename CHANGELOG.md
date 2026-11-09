@@ -6,10 +6,938 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2026-11-09
+
+* v6.0.0 prepared
+* b5983b7a compatibility-notices update
+* d7cc6138 build-boards.yml: disable windows
+* 2b78274c separate build-board workflow
+* ffaf1d26 tests/package.json: shortConfigurationName
+* de794b1c Merge branch 'xpack-development' of https://github.com/micro-os-plus/micro-test-plus-xpack into xpack-development
+* bb37ec79 website: add comparison
+* b8529f33 tests/package*.json update
+* d8331639 workflows: fix windows clean cache
+* 70699392 package*.json bump deps
+* df03d27c website: bump deps and update
+* 73d99ac1 workflows updates
+* cd708964 workflows updates
+* 6eb2787f re-generate commons for latest gh hosts
+* 7acbab33 test-ci.yml: try ubuntu 26 and macos 26
+* bca94d8e add trigger-workflow-test-all.mjs using curl
+* 214322de #287: Use gcc-ar for the LTO archives on Windows
+* 1afb57ce #286: Silence the GCC 11 format truncations
+* f25162cd skills updates
+* 3a54cb51 add trigger-workflow-test-all.mjs using gh
+* fe8dd77b #285: Rename the alias that shadows value_type
+* 0c37b0eb #284: Guard the sized operator delete
+* f0ae2c37 #284: Silence -Wpadded in the operands test
+* 653a017f #283: Pass the wstring lengths explicitly
+* 07b1d09c #284: Use llu for size_t with MinGW GCC
+* d2d769a1 The Windows CI build with MinGW-w64 GCC failed, because the size_t conversion macro expanded to "zu", which the ms_printf format checker of GCC rejects, and because the listed test case and suite counts were narrowed from size_t to unsigned long, which is 32-bit there.
+* ba9bf347 #283: Pass the u16string lengths explicitly
+* e63e9858 #283: Avoid a GCC 14 LTO false positive
+* 04d27645 tests/package.json bump deps
+* 35a742e9 tests/package.json: raspberry-pi-dependencies
+* 1935c42a tests/pacakge.json update
+* 961098f2 re-generate tests commons
+* 946c4889 #282: re-format
+* 3b1a2468 website update
+* 7f38f714 website update blog post
+* 3aa2f527 website: add comparison
+* 6507c054 tests/package*.json update
+* 395e3502 workflows: fix windows clean cache
+* 44c9c6a7 package*.json bump deps
+* 292ef8e2 website: bump deps and update
+* 2a580137 workflows updates
+* 8c7f3091 workflows updates
+* 83b54650 re-generate commons for latest gh hosts
+* 870916fd test-ci.yml: try ubuntu 26 and macos 26
+
+## 2026-11-08
+
+* cc97d50e add trigger-workflow-test-all.mjs using curl
+* bfd9d5b7 #287: Use gcc-ar for the LTO archives on Windows
+* 905b81c9 #286: Silence the GCC 11 format truncations
+* 6055123e skills updates
+* 028d5db2 add trigger-workflow-test-all.mjs using gh
+* 4845186d #285: Rename the alias that shadows value_type
+* 6c764cbb #284: Guard the sized operator delete
+* 04090403 #284: Silence -Wpadded in the operands test
+* 9d91b102 #283: Pass the wstring lengths explicitly
+* c8bb215c #284: Use llu for size_t with MinGW GCC
+* 49f9be46 The Windows CI build with MinGW-w64 GCC failed, because the size_t conversion macro expanded to "zu", which the ms_printf format checker of GCC rejects, and because the listed test case and suite counts were narrowed from size_t to unsigned long, which is 32-bit there.
+* 6e6f6cb4 #283: Pass the u16string lengths explicitly
+* 60585a5d #283: Avoid a GCC 14 LTO false positive
+* 324fb638 tests/package.json bump deps
+* 4b2c31ea tests/package.json: raspberry-pi-dependencies
+* 52a408f8 tests/pacakge.json update
+* 4a3e9f99 re-generate tests commons
+* 415e5c62 #282: re-format
+
+## 2026-11-07
+
+* a495ade7 website re-generate
+* c5ef2c19 website updates
+* d8ab16c5 #282: Write the duration ratio without suffixes
+* 0c1919b0 Fix the findings of the website review 4
+
+## 2026-11-06
+
+* 99339c89 WEBSITE-API-REVIEW-4.md and updates
+* 4659806f re-generate website
+
+## 2026-11-05
+
+* 01834cff WEBSITE-API-REVIEW-3.md and fixes
+* f7003aaf Review the published pages in website-api-review
+* 55868b39 Hide the rejecting overloads from Doxygen
+* 101bb480 website update
+* af053101 Fix the website-api-review skill
+* d51bb01c package-lock.json
+* 8904784b website update
+* d561cdcd Fix the warnings of doxygen2docusaurus
+* 1b0ad1c7 API-REVIEW-10.md and DOXYGEN-REVIEW.md
+* 67aa7242 #280: Report the misplaced test cases when listing
+* ff363279 #279: Accept the volatile arrays as operands
+* 4c3468e9 DOXYGEN-REVIEW.md
+* ba2ba243 Update the comments that were stale after #278
+* 18ae7408 re-format cmake
+* f7ad1e8c API-REVIEW-10.md
+* 4d4ed367 #278: Write the wide strings as text
+* 576641d7 #277: Report the errors while listing the tests
+* 308bd4ac Document that the arrays are referred to
+* 1be46e35 #276: Compare the array elements by their value
+* bfb5c5e3 API-REVIEW-9.md
+* 11f1366e #275: Test the framework without exceptions
+* 007a0d3d #274: Report the rejected calls
+* d577784b #273: Write the application types in plain mode
+* 8637f7e9 #272: Compare the characters by their value
+* abb8a98d #271: Bound the character arrays by their size
+* aaadbe4b skill update
+* 1be9456a API-REVIEW-8.md
+
+## 2026-11-04
+
+* f6714bc5 Update the comments and the pages that were stale
+* d74a9b38 #270: Move two internal concepts out of extension
+* 06c94f00 Correct the quoting of the members of the types
+* c130b482 #269: Quote the file name of the TAP location
+* 5ebf9cca Document more design decisions of the API review
+* 05736e96 Wrap a comment line of the human-readable reporter
+* 268ca111 Document the design decisions of the API review
+* e5c75804 #268: State what the tag of an expression needs
+* e733b9ff #267: State why a comparison is rejected
+* 5c9fa10a Update the developer pages for the recent fixes
+* 728d5090 #266: State what a message argument is
+* aad44356 #265: State what the body of a test takes
+* 0a4b61d7 #229: Document the copies of the operands
+* 14f5144f skill update
+* 10479a1d #264: Reject the wrappers of a bool as conditions
+* 44a355d2 #263: Do not copy the body of a test case
+* cb8f6a7a #262: Accept the mutable callables in throws()
+* 888eeb30 #230: Document that a check result is not named
+* 5a14844e #261: Reject the misdirected test cases
+* e5d7f766 skill update
+* d85947d0 #260: Compare the wide strings by content
+* 5ec9632e #259: Reject early test cases of static suites
+* 38d88189 skills updates
+* 35a688d0 website update credits
+* 7b5e3582 website update claude link
+* 26c8b8eb doxygen updates
+* 77738c6f re-generate doxygen
+* 43ba4fe2 website updates
+* 298299a3 website: add the additional developer pages
+
+## 2026-11-03
+
+* 5faa077c copilot & claude update
+* 0bacbd67 #258: Number the unwritten passed TAP checks
+* da6ebfb8 website updates
+* 00ffcc30 .npmignore no LICENSE-Boost
+* f3b568f3 WEBSITE-REVIEW-2.md and changes
+* 025dae98 website move compatibility notices to releases
+* 4d4c8a84 website review updates
+
+## 2026-11-02
+
+* ccab3ace website review updates
+* 06e3e166 re-format cmake
+* cef82bb4 xcdl-package.jsonc: make diag-trace optional
+* 19390757 website review updates
+* b58cc6ee website/package.json bump deps
+* cfcdfcc3 WEBSITE-REVIEW-1.md added
+* 4f44037f update skill file
+* 485efc2b re-generate website
+* 3f6fd3df add missing doxygen definitions
+* 18aaa6e0 skills updates
+* 22ea84bb WEBSITE-API-REVIEW-?.md added
+* 2657381c website consistency updates
+* 3de4ebe1 website/doxygen/topics updates
+* a4890979 rephrase human-readable
+* 817de3d5 Doxygen and website updates
+* 90eed7fe website re-generate
+* 56ac326d Colour the closing parenthesis of a negation
+* f3429c4e List all the option spellings in the help
+* 885ad544 #237: Write the colour sequences without escaping
+* 411bcff2 CLAUDE.md update
+* ec9557f8 Update the Doxygen comments to match the code
+
+## 2026-11-01
+
+* 26cbe023 skill update
+* 72ec2a6e API-REVIEW-7.md added
+* 3e7f46ac Silence the warning of throws<std::exception>
+* e5e5fbd4 Fix the documentation items of API-REVIEW-7.md
+* 45139a09 #256: Report the missing comparison first
+* eb68e27d #255: Merge the comparison concepts
+* bddd782e #254: Write the long double suffix as L
+* 60af1266 #253: Detect the strings by their conversion
+* a099a4ff copilot & skill updated
+* 868f7efa #252: Move the misplaced test case checks
+* e8246e85 #252: Reject test cases on a suite not running
+* 691bfaf7 API-REVIEW-6.md added
+* c2a19d23 Fix the documentation items of API-REVIEW-6.md
+* 05ba6d48 #251: Qualify the calls of the internal functions
+* e570bdf7 #250: Move approx_operand to the extension namespace
+* d651fa6e #249: Avoid copying the names in the TAP reporter
+* 30d379dc #248: Match the options with a value in one table
+* 7b084117 #247: Guard the deprecated value wrappers
+* 5e6cc586 #246: Do not instantiate the generic bodies when checking
+* 9b405683 #245: Fail the listing when the filters select nothing
+* 3040e93a #244: Describe the filter levels in the help
+* bf1aa796 #243: State what expect() and require() take
+* 1011aad1 #242: Write the negated comparisons in parentheses
+* f4873dc0 #241: Report why the exception checks failed
+* 398787cf #240: Check the tags of the extension expressions
+* bd1d33c4 #239: Check the bodies of the tests and the suites
+* 2bddb862 #238: Reject the operands that cannot be compared
+* 099d0d5c #237: Escape the control characters of the text
+* 36a441c8 #236: Check and report the wide strings
+* 78700952 #235: Accept equal infinities in approx()
+* d0e3af3d #234: Do not swallow a failed requirement
+* 8ad82b6b #233: Report the values of application types as written
+* f51ded85 #232: Write the option errors to the output file
+* a9e314a6 #231: Report a misdirected check as a failure
+* e9ad5539 #230: Prevent using a bound check result
+* 6fc1a779 #229: Store the operands of the comparisons
+* 52881542 update compare-size.py
+
+## 2026-10-31
+
+* 444d9a3e copilot-instructions updates
+* 87e3c16b api-review skill update
+* df38a724 API-REVIEW-5.md updated
+* 48776691 #228: Name the suites and the test cases alike
+* 6104e382 API-REVIEW-5.md added
+* bcb876fe #227: Give the real reason for the string_view names
+* 557d765b #226: Make the counters mutators private
+* a5458f6c #225: Add a default constructor to the formatter
+* 6ecbc779 #224: Document the stateless extension tags
+* a5904145 #223: Keep the options constructor free of output
+* e54ddb7d detail.h re-format
+* e0fcb270 #222: Prevent keeping a check result in a variable
+* 079b4aa9 CLAUDE.md update
+* ab67099c #221: Write the types without a suffix as casts
+* c824ff2d #220: Reject a mode after a bare --colour
+* 1123a982 #219: Quote the C strings in the reports
+* a3d6d3d6 #218: Make the options command line read-only
+* e6e58964 #217: Constrain the logical function operands
+* fec5ed7d .github copilot 7 skills updates
+* 44491d81 add .claude/skills symlink
+* c826cd6a #216: Discard suites added to a declined session
+* bc0c39ce tests-template.jsonc hasUnitCommon
+* 72d815e3 #215: Rename the tests assets folder to expected
+* ccae0625 #214: Use the mt alias and share session check
+* 61fe800f re-generate tests commons
+* d83fe8f3 #213: Build the unit tests as a single program
+
+## 2026-10-30
+
+* 6333715d #212: Write the list of test cases as plain lines
+* b88ae289 #211: Report the unknown single-dash arguments
+* 1c6720a3 #210: Add the --help option
+* db0045ec api-review-4.md updated
+* 727842cb #209: Guard the tolerance definitions as deprecated
+* e550feed Fix the empty @par paragraphs in utility.cpp
+* 231e021c #208: Limit the elements of a range in the reports
+* 7a3e2867 #207: Make run_suites() nodiscard
+* 7fc46067 #206: Share the loop that displays the open headings
+* 5d621c32 #205: Accept a null path in extract_file_name()
+* ad6582aa #204: Accept both spellings of the colour options
+* 5239bd53 #203: Accept the same names for suites and tests
+* d853c6ca #202: Make the suite constructor private
+* 90ca4c69 #201: Explain the options terminator
+* 3d004354 #201: End the options at the application arguments
+* 1e4db6b9 The test programs were run with the arguments one and two ...
+* d2275b4c #200: Write the test case list as TAP comments
+* 7ab637d5 #199: Fail the session on a repeated setup call
+* 71aa55ce #198: Constrain the formatters of std types
+* a7ebaaa6 #197: Write the output file note as a comment
+* 832768b7 #175: Stop the run on command-line errors
+* 6484dfa7 #196: Make approx() inclusive of the tolerance
+* c1f961a0 #195: Compare mixed-sign integers by value
+* 4bb459bc API-REVIEW-4.md
+* e9e79e78 6.0.0
+* 3e4a23e5 website: update configuration and deprecations
+
+## 2026-10-29
+
+* fd2fcce1 #194: Keep a few removed definitions deprecated
+* 6da63ce0 #193: Rename runner::run to run_suites
+* b9bb6ac0 #193: Rename runner::run_suites to run_child_suites
+* 1c163cdf website updates
+* 6fadb04b doxygen deprecated grouping
+* 123bf7a7 prefer --xxx=yyy
+* 7d66091a prefer --xxx=yyy
+* f5779028 website update
+* 947f9692 re-generate top commons
+* 98bf6cdb website update
+
+## 2026-10-28
+
+* f14cba6e website update
+* 711b329f re-generate website
+* 0de8b140 #191: Use singular for the test library names
+* 7fde75c3 #190: Make the deprecated definitions optional
+* d9d64701 #60: Document the use of several runners
+* dd28f5d6 #189: Regenerate the board human references
+* 974cbd5a #189: Decouple initialise() from the top suite
+* a2f0ad33 #188: Make runner_options a parsing class
+
+## 2026-10-26
+
+* 8be06822 package.json update
+* 18d013bf re-generate top commons
+* 392cc770 re-generate tests commons
+* 6cf382be re-generate top commons templates
+* 27f1174f tests re-format cmake
+* e5d65e5d #187: Make split() accept string literals
+* f90df1ff re-format code
+* e5ee994e #186: Make the classes not meant for derivation final
+* 091a288f silence warning
+
+## 2026-10-25
+
+* 9b4f1d71 document that the alphabetical suite order is kept
+* fb91a5b3 #185: Make the totals of the nodes read-only
+* 6032fdda #184: Reject the always-true check arguments
+* dc2e824e #183: Compare the raw arrays by content
+* 731850e7 #182: Do not suffix inf and nan
+* 53ac5328 #181: Ignore -Wdocumentation in the concept headers
+* 9adfef35 #endif cosmetics
+* ef3ff658 #179: Guard uncaught_exceptions_ by exceptions
+* bb32344a #178: Do not format passed checks when normal
+* 551dd181 #177: Do not copy the values of test_each()
+* 34bc8ccb #176: Format std::chrono durations in checks
+* 0770184e #175: Stop on command-line errors
+* 8ca45534 #174: Route the reporter output through one policy
+* a4cb125b #173: Quote string operands in failure messages
+* c82e9493 #172: Accept null test and suite names
+* 3fc247f5 #171: Require iterators in container_like
+* 664850de #170: Reject the late static suites
+* 42ab3ca3 API-REVIEW-3 update suggeted order
+* fec2bc0b api-review update
+* 1b55e954 #169: Move the operators and literals
+* e7f7d5f7 #168: Add the variadic all_of and any_of
+* 1efc4e8f #167: Use the noexcept references on RISC-V
+* 1bb68ad0 #166: Add the third API review
+* 0b707ed6 #166: Deprecate the operators and literals
+
+## 2026-10-23
+
+* 1e491028 website update
+* 4344d9fc tests semihosting-defines.h cosmetics
+* 7efba8da .cmake-format.py update
+* b303beb9 update skills & copilot
+* ef9de694 tests split unit-combinations & miscellaneous
+* ac80b965 split unit-checks, unit-exceptions and unit-deprecated
+* b727a45f rename unit-static-asserts
+* d6781883 add static asserts test
+
+## 2026-10-22
+
+* 8d51ce2e tests/pacakge.json: add synthetic-posix-sys to all
+* 7d56bd9a tests/pacakge.json: remove clang16
+* 49bd1c5b #165: Build the library with clang 17 and 18
+* e7547ccb #164: Group the deprecated definitions separately
+* e79e8440 remove duplicate @deprecated
+* 335bab7f update doxygen
+* c2b83fc1 DOXYGE-REVIEW.md added
+* 3a58bccd doxygen-review skill updated
+
+## 2026-10-21
+
+* de08c022 re-indent code
+* e89ab070 Remove the unneeded pragmas from the tests
+* 243c7bdd package.json 5.1.0-pre
+* f77342cf maintenance docs updates
+* cb741fbf skills updates
+* c148dddf #163: Add the --list-tests option
+* 87e470fc #162: Add the --color and --use-colour options
+* 1e21b785 #160: Add test_each() to the suites and test cases
+* 9f98e14f #159: Detect the formatted ranges as range-for
+* d3c3cdb8 #158: Require printable operands in comparators
+* 23f1a2ce #157: Add the three-argument approx() comparator
+* ffa6845c add more copilot instructions & claude skills
+* 03af21b0 #156: Call the callable messages only on failure
+* 2933857e #155: Accept explicit bool conversions in checks
+* b0afe2fd cleanups in copyright messages
+* dbe0c110 #153: Restore the v5.0.1 type_traits::has_value
+* 2569b329 #153: Restore the deprecated type_traits, timestamp
+* 2a61dc46 #153: Restore the deprecated subtest
+* af9720f5 #153: Document the suite order and --filter
+* 72a7b401 #153: Restore the deprecated runner::reporter()
+* 87a5272e #153: Restore the deprecated timings()
+* c0c7238a #153: Restore the non-const totals()
+* 2605063f #153: Restore the deprecated counters members
+* bf5a50e1 #153: Restore the deprecated wrapper types
+
+## 2026-10-20
+
+* feeaf486 #153: Restore the deprecated logical functions
+* d35ad6e1 #153: Accept the static_suite& suite functions
+* 1b39ac05 tests/package.json update configs-selected
+* 5b151f54 revert -Og to -O0 in aarch64, f411re, h533re
+* 123f0c76 #154: Reduce the stack used by nested test cases
+* 4fc532df #153: Move the deprecated feature tests to one file
+* 70660a6c #151: Report the wide characters as literals
+* 025a723d #148: Validate the TAP outputs against TAP 14
+* 2ae68d6b #143: Explain the second initialise() branch
+* 0f623d56 #142: Use the size format macro everywhere
+* 3de2002b #141: Use the standard exception and Windows macros
+* 3d7ec5fa #140: Refer to the test case bodies
+* 8d3b836a #139: Forward the operands of the comparators
+* fdcab206 #138: Format the passed checks only when written
+* a451f903 #152: Write the report lines to both streams once
+* 0bf23316 #137: Remove the callable type from throws_op
+* dd9c8cbf #136: Simplify the floating-point literal encoding
+* efbebd50 #135: Deprecate reflection::short_name()
+* 48a2b3b8 #134: Move the common reporter logic to reporter
+* 71f381a6 #133: Move the test case creation to runnable_base
+* fdaa1f64 #132: Keep all the suites in one sorted list
+* 6d33fa75 #131: Write the messages with the formatter
+* 8fa29e9b tests/scripts/README update
+* 74e84dcd tests/package*.json update
+* 3b6272d8 skill update
+* 5d000eaf #150: Say member functions and data members
+* eca85089 #130: Align noexcept and restart the stopwatch
+* 01efcbac #129: Remove the underscore from member functions
+
+## 2026-10-19
+
+* a46e6f17 #127: Add added_suites_count() and passed_checks()
+* d3132ec3 re-format clang
+* aa662c25 #126: Deprecate suite() and verbosity()
+* cee35ed9 #125: Make the non-public members private
+* 6dec41fb #124: Make the counters copyable
+
+## 2026-10-18
+
+* d029d08b #123: Document the output redirection
+* c8295c08 #122: Report aborts through the reporter
+* f497d3ec #121: Document that quiet does not show failures
+* 81bce73b #120: Document the byte order of the suite names
+* 47d987d4 #149: Make custom comparators report operands
+* 0ee0278b #118: Rename type_traits to extension
+* b43b0fcd #117: Make the formatter protocol private
+* c51d8477 #116: Make the test case name a public type
+* b200ea72 #115: Make the test node protocol private
+* 620cfbcd #146: Rename the TAP location fields
+* a3445ab3 #147: Quote the TAP condition values
+* e7421411 #144: Remove the aborted marker from TAP
+* a309b387 #114: Respect the silent verbosity for the output file
+* 287a15d9 #113: Format the common standard types
+* 75e921f8 #112: Remove the string_view operators
+* 850957df #111: Escape the names in the TAP output
+* b5c7a6a6 #110: Document the purpose of the output file
+* 2b83ff31 #109: Count the suites in the quiet TAP plan
+* 5167fe2e #108: Keep the type of negated integer literals
+* 257d4962 #107: Print long double in the shortest exact form
+* 977e9755 #106: Quote the characters in the reports
+* 0ba39b82 #105: Restrict value concepts to framework types
+* 1be5557f copilot-instructions update
+* 3739ef5b Count the leading zeros of small wrapped values
+* cac5faac copilot-instructions update
+* f6fa0d4f Report the named boolean literals by name
+* 604b608e Remove the empty base of the value wrappers
+* 2d89d03e Report the aborted test case before aborting
+* 6f7509a3 Nest the test cases started on a running suite
+* a176c555 Correct the begin_suite() and end_suite() callers
+* d7cf21a1 Catch the exceptions thrown in the suite bodies
+* 2ddf8780 Reject the suites added after run() started
+* 72a5bc37 Correct the filter_patterns_ description
+* e81de8ab tests/package.json update ci & selected
+* a2bd9576 claude & copilot updates
+* 552ae9eb Copy the filter patterns in the runner
+* 9de58bfd Keep the verbosity in the runner
+* a8733dc2 Make source_location independent of include order
+* 56c4d722 configurable st-openocd
+
+## 2026-10-16
+
+* 97989e68 package description update
+
+## 2026-10-15
+
+* 821ca8ab api-review update
+* f279ee54 add new skills
+* 970c4231 re-format
+* f58dff49 #95: Remove the unused helpers
+* 6265f4cb #94: Parse the type name by its full marker
+* 0c84df54 #93: Add the wrapper tolerance compatibility notice
+* aab11b2e #93: Count the decimals of a value safely
+* ee9e4810 #92: Print the TAP test point as size_t
+* 97c81428 #91: Undefine the size format macro
+* 9316deee #90: Pass the names to the reporter writes
+* 20b23129 #88: Destroy the test cases after they run
+* 488fc7b3 #87: Add the get() compatibility notice
+* 660b5121 #87: Return the operands by reference
+* 7d846b8a #86: Capture the callable arguments in a lambda
+* 9ab5f925 #85: Remove the container operators
+* ac6a2bb5 #84: Merge the six comparison structures
+* 9c61e33a #83: Remove the duplicated code
+* a84c9e75 #82: Use const references in the reporter hooks
+* e37df158 #81: Name the check kind in the failure reports
+* 96d63e7f #80: Unify the declaration style
+* 55ba0be4 #79: Fix the number suffixes in failure messages
+* 420694bf #78: Rename endline() and flush()
+* 66fd6880 #77: Rename get_comment_prefix()
+* b0c6561a #76: Add the deprecated attributes
+* 71f0d26f #75: Remove the deprecated type wrappers
+* a04d37f8 #74: Rename the logical functions
+* fee79766 #73: Apply the name suffix rules
+* dc890c5b #72: Merge deferred reporters into check_result
+* eada5504 #69: Replace the remaining subtest references
+* 0fbebfa8 #71: Replace the timing classes with a stopwatch
+* 0fbf32a3 #70: Rename runner_totals to counters
+* f28083ac #69: Rename subtest to test_case
+
+## 2026-10-14
+
+* c53c45c8 #68: Merge test_node into runnable_base
+* d9767eff #66: Move the math namespace to detail
+* 59698efd #65: Rename runnable_base::runner() to test_runner
+* a4bca562 #64: Move the value wrappers to detail
+* 5a6009ca website/package*.json bump deps
+* f663eee6 #63: Add the --filter option to select tests
+* 395c980d #62: Include detail.h in two public headers
+* 02fb0de0 #61: Run all suites in a single name order
+* 866693e0 #60: Merge static_runner into runner
+* 0e2dd5cc #59: Pass suite& to the static suite callables
+* b55760e6 #58: Remove the runnable template layer
+* 06a6783e #57: Stop deriving the runner from test_node
+* 3ee4a3f6 #56: Stop only the test case on failed require
+* ad4a1a9c #55: Stop terminating the process on errors
+* 438ebb5a #44: Fix the doxygen match of as_operand_
+* badcf376 #54: Configure the runner without a command line
+* f9a962b5 #53: Parse the command-line options once
+* aedc6117 #52: Move the reporters to the detail namespace
+* 4d893432 #51: Remove the detail types from public signatures
+* 9253f119 #50: Make the test node constructors non-public
+
+## 2026-10-13
+
+* 3bd15439 #49: Make the test counters and indices read-only
+* 35ece3b5 #48: Write null C strings in messages as nullptr
+* 56b99ca9 #46: Report exceptions escaping a test case
+* 4fd2c4ae #47: Raise the stack size of the test platforms
+* fd6220ab #45: Print char pointers as strings
+* 96da278a #44: Compare C strings by content
+* 38c89353 #43: Copy the names of the suites
+* 7032feb4 #42: Fix floating-point literals on 32-bit targets
+* 4dc047e4 #41: Apply the float tolerance in all comparisons
+* 0d280c51 #40: Define reporter bool and nullptr operators
+* 19b02b56 #39: Parse integer literals with C++ syntax
+* 40d58127 #38: Allow bool values in check messages
+* 2f29e6c8 #37: Ignore application get() in comparators
+* c4c3597c #36: Report stored checks with their own text
+* b5139d83 #35: Rename exit_code() to run(), run once
+* c0af8a17 #34: Fail test cases with failed nested ones
+* d9b694e0 #33: Allow nested test cases after checks
+* f1827b97 website: update CustomFeatureList
+
+## 2026-10-12
+
+* 38bb4962 website: HomepageExmple update
+* 00a0f8c4 #32: Document how to use custom types
+* ffcb8e36 website description cosmetics
+* 3f95b554 website: add userGuideDescription
+* 945fbfc6 website: add faq content
+* 0fd71bc0 website: fix about typo
+* 635fb82a website: add _more-intro.mdx content
+* e203fa11 website cleanup
+* 5d601583 website: make test pages draft
+* e9ffb1d0 website cleanup developer/install/prerequisites
+* fd7a5b05 website: make Glossry not collapsed
+* 44c6cf33 website: add home page example
+* 3a436c78 launch.com add nodegenerate-website-commons.mjs
+* f3cae730 website: update home page features
+* 87931611 update device-raspberry-pi references
+* 7f54df68 tests/README update
+* 9d9dcd3a package.json consistency updates
+* 058ef42d okatforms README updates for wrap.c
+* 21c8d507 skills updates
+* 95915aeb tests consistencies fixes
+* 31004e10 tests cleanups
+* be23271e add consistency-check skill
+* 6af9731d website doxygen update
+* 639d3053 add doxygen-review skill
+* 625c6cf1 update doxygen comments
+* 3b339d40 website update folder hierarchy
+* 970ee671 fix include guards
+* 4857922a fix exception-inlines.h (plural) name
+* f683d416 update READMEs
+* 8b446e8e launch.json fix synthetic-posix
+* 654074dd tests/package.json add missing link-dependencies-raspberry-pi*
+* 0c190807 tests/package.json fix zero-2-w configuration
+* 78076ae8 rename platforms qemu-aarch32/64
+* 90500ede update for specific device names
+
+## 2026-10-11
+
+* adf6efb1 update for device (singular)
+* 28077455 re-generate tests commons
+* 86b21a73 re-generate top commons
+* ba1aba2f update for architecture (singlular)
+
+## 2026-10-08
+
+* ec773ea7 platforms *-cubemx vectors cosmetics
+* 785349fb scripts/convert-startup-to-vectors.mjs update rmSync
+* 224373c0 tests/package.json configs-platforms-vectors
+* a156a0c4 tests/meson define-executables fix synthetic-posix
+* 6fecffef tests/pacakge.json fix synthetic-posix
+* 992c6041 rename synthetic-posix
+
+## 2026-10-07
+
+* a702d272 re-generate tests commons
+* 0ada31c7 tests-template.json add all platforms
+* 75d93864 tests reformat
+* 434a1bb5 common-functions.cmake update
+* 60eade7c platforms README updates
+
+## 2026-10-06
+
+* 879de4d2 remove DO NOT EDIT from artefacts
+* a7614ad5 re-generate tests commons
+* 73b831ac re-generate top commons
+
+## 2026-10-05
+
+* 427f0f51 RPi openocd cosmetics
+* 0298b33c ST openocd cosmetics
+* 97e80f39 move code to maintenance
+* 57f1ad3a copilot-instructions: add xcdl section
+* 5bef38f4 qemu-riscv-*: smp 2 to test cpu parking
+* 52acc325 project-config.h __ASSEMBLER__ notice
+
+## 2026-09-30
+
+* ce612370 raspberry-pi-zero-2-w-jtag.md update
+* cbdba1f0 copilot-instructions.md update
+* 76b38a09 raspberry-pi-zero-2-w-jtag.md update
+* 6ab0de56 workflows update
+* 057adc13 workflow updates
+* 0d81c355 reporter: strip colour sequences from the output file
+* f282049b website: document the console output path
+* 945474bd reporter: route console and file output through helpers
+* 60e8b753 reporter-human: do not write colour codes to the output file
+* 475ef647 tests nucleo-h533 st-openocd temporary fix
+
+## 2026-09-29
+
+* 65883d5b pico-2-ricv no exceptions
+* a89c3ffa tests openocd reset halt + resume
+* 9b3188f3 pico-2-riscv-sdk: run each SDK initialiser once, in SDK order
+* 2b0f634c pico-sdk: run each SDK initialiser once, in SDK order
+* 3d9473ec pico-2-arm-sdk: run each SDK initialiser once, in SDK order
+
+## 2026-09-27
+
+* 4a8bae42 add raspberry pi jtag docs
+
+## 2026-09-26
+
+* 67401eb4 pico-2-*-sdk updated for device-raspberry-pi
+* 48a5a91e pico-sdk updated for device-raspberry-pi
+* 91288db9 update device-defines.h to use _CORE_XXX
+* cf2a5f18 update architecture-defines.h
+* fe9cd380 include device-defines.h in all device.h
+
+## 2026-09-25
+
+* 9417772c rename pico vectors to support
+* 5df6ef12 bring back pico-2-riscv mem.ld
+* e71dfb73 pico & pico 2 non-sdk updated for devices-raspberry-pi
+* b7397666 pico-sdk cleanup experimental
+
+## 2026-09-23
+
+* 1d882ca3 fix architecture macro names
+* 74635c1d pico clen warnings
+* ff7da80e pico add -Werror
+
+## 2026-09-22
+
+* ecad2fa1 launch.json add svdPath to cppdbg
+* 9d0446b6 pico hooks %lu Hz
+* 2de30718 launch & tasks update
+* c3ff0a0a add pico-2-riscv
+* c95df21c pico 2 arm rename embedded-block-rp2350-arm.c
+* a27d998b pico cmake cleanups
+* 5fd5104d tests: add placeholders for pi zero
+* 1117c7d0 tests/package.json add pico-2-riscv (no sdk)
+* d1d2cc4c copilot-instructions.md update
+* 4b01c92c tests/package.json add pico-2-riscv-sdk
+* 7e34766d launch.json more pico 2 riscv targets
+* 23ccadf7 explicit PICO_PLATFORM rp2350-arm-s
+* 64408952 add platform pico-2-riscv-sdk, one run only
+
+## 2026-09-21
+
+* b1411373 re-format cmake
+* b3275c8a nucleo boards max clocks
+* 8639197e align standalone f411 clock to 96MHz
+* fd3c5d37 rework cubemx_main & hooks
+* b15e1771 tests/package.json add more boards
+* c59f8b5a vectors use MICRO_OS_PLUS_DEBUG_ENABLED
+* 543c3bd5 hooks fix format
+* 9845c179 wraps pico use architecture instead of cmsis
+* 0ef1226e display clock in pico-*-sdk platforms
+* 6cded85b display clock in nucleo-*-cubemx platforms
+* 642db6bd display SystemCoreClock
+
+## 2026-09-20
+
+* feed3ad8 add new nucleo-standalon-platform skill
+* a36e3812 re-format cmake
+* a35a892d change f767zi clock to hse
+* 68d7dac0 add platform nucleo-h533re with rc clock
+* b7e950b2 add platform nucleo-f767zi
+* 9415a929 platforms pico* shorten platform namespace
+* 68a08751 change the clock to c++ in pico and pico-2-arm
+* 1c984102 rename to system-clock for pico*
+* b0891b87 aggregate headers
+
+## 2026-09-19
+
+* e0adac3c nucleo-* rework headers, simplify namespace
+* dbaa7c0b add platform nucleo-f411re
+* b80c27bf rename micro_os_plus_*_clock_initialise
+* 21edb0ef hooks.cpp document hooks
+* a20e94eb use micro_os_plus_startup_post_init_array_hook for pico too
+* cbfe3b30 nucleo-h533re-cubemx-startup add green led
+* 90255632 nucleo-f767zi-cubemx-startup add green led
+* b0026b88 nucleo-f411re-cubemx-startup add green led
+* 6614f798 copilot-instructions.md update
+* 8eb0cb65 clock.c reformat
+* 2fea7b0b update namespace and led names
+* 4c328762 more #if defined(__GNUC__) guards on pragmas
+* 3b0b60d6 nucleo-f411re-cubemx add green led
+* b5f6cd74 tests/package.json add link-dependencies for pico
+* d788d9f7 rename cubemx platforms
+* e66df188 raspberry-pi-pico-arm-sdk add green led
+* ca653d6b tests/package.json bump deps
+* fcf654db raspberry-pi-pico-2-arm-sdk add green led
+* 9f6048d5 CLAUDE.md update
+* bd520d8b .npmignore CLAUDE.md
+* 30ba8cde tests/package.json bump deps
+* fcb7f8b6 clear-build-folder.mjs: check folder presence
+
+## 2026-09-18
+
+* d5d8fbd9 cosmetics
+* 39c2c4ed pico-2 add led
+* 2b1dff07 tests/package.json bump deps
+* 9a28ff64 update skills
+* b002f3be raspberry-pi-pico add led
+* 82fac327 tests/package.json bump deps
+* 44f2e6b2 raspberry-pi-pico add MICRO_OS_PLUS_ARCHITECTURES_CORTEXM_VTOR_PRESENT
+* ebbd5938 pico-sdk show libs content
+* 0206d2c8 add clock to rp2040
+* 6b09ce6c meson: swap library and artefacts
+
+## 2026-09-17
+
+* babc53bc tests/package.json bump deps
+
+## 2026-09-16
+
+* 7f03227b package.json fix aarch64 actions
+* 9999f1b1 setting.json python.analysis.exclude **
+* b6a762d7 rename micro_os_plus_platform_dependency
+* 8acb0a00 fix riscv section-reset-entry.ld
+* b5769465 rename all cmake device libraries
+* 98380b61 rename all cmake platform libraries
+* afb6f8a7 launch.json update
+* 4ad33eee cmake cosmetics
+* 117a0f7e rename pico2 platform-interface
+* d327c44c add pico-2-arm clock
+* a578bfad project-config.h cosmetics
+* e007ba96 add raspberry-pi-pico-2-arm
+* 5d188f9a raspberry-pi-pico __vectors_align=256
+* bec331cd fix cortex-m3 meson
+
+## 2026-09-15
+
+* d5fb986e tests/package.json add build actions
+* 639ad809 reference section-interrupt-vectors.ld & architecture
+* d358ba5a more comments in dependencies-folders.cmake
+* 3a9ef4cc more comments in dependencies-libraries.cmake
+* 95f018c9 raspberry-pi-pico updates
+* 74458566 launch.json updates
+* 15024fc2 defines.h cosmetics
+* 42d163b1 comments
+* dec9ba36 tests/package.json update pico link-dependencies
+* 95025c36 add platform raspberry-pi-pico
+
+## 2026-09-14
+
+* c06688f7 add -sdk suffix to pico & pico 2
+* c20326c7 tests/package.json add clear actions
+* 47090b09 f411re cosmetics
+* ca3c06d0 pico & pico2 use wrap main & __libc_init_array
+* 38d335d2 pico cleanups
+* 4149d7eb copilot-instructions.md update
+* f297e5c8 add sleep to openocd for nucleo boards
+* 5d137132 add pico2-arm
+
+## 2026-09-13
+
+* 8603084b add pico experimental files
+
+## 2026-09-12
+
+* 5fd81fee add raspberry-pi-pico
+* 54998276 update copyright year 2026
+* f0a8c5e7 launch.json update
+* 866b3822 nucleo device README updates
+* bd6d6d04 update STM32F411.svd in second project
+* 6d019ce4 STM32F411.svd add system peripherals
+* db18ce21 add STM32F411.svd from CMSIS Pack
+* 9084314c STM32F767.svd add system peripherals
+* 1fe5a93e add STM32F767.svd from CMSIS Pack
+* dd177eb1 STM32H533.svd add system peripherals
+* c8aaadd9 add STM32H533.svd from CMSIS Pack
+* f029da0d update copyright dates
+* 32db2998 update nucleo platforms cmake to import cubemx cmake
+
+## 2026-09-11
+
+* 48ad0b61 nucleo-f411re README updates & cleanups
+* faecbbb4 nucleo-f411re-cubemx-startup README update
+* a9e41336 cmake-format.mjs ignore stm32cubemx
+* 97a4c9ac nucleo-f411re-cubemx-startup cleanups
+* 91e44c37 tests/package.json bump deps
+* 4baa3155 add nucleo-f411re-cubemx-startup
+
+## 2026-09-10
+
+* c7fd0596 cleanups
+* 001cba5d test/package.json nucleo dependencies
+* 1ba2a5c6 tests/package.json bump deps
+* 66aa6d12 qemu-risc updates sections.ld
+* 08cb9505 qemu-cortex README updates
+* b18e0153 nucleo README updates
+* 66defb97 stm32cubemx main.c use hook
+
+## 2026-09-08
+
+* 3ef02ef8 cmake add ADDITIONAL_CLEAN_FILES
+
+## 2026-09-07
+
+* 7b76350c vectors-liquid.c: check MICRO_OS_PLUS_DEBUG_ENABLED
+* a16879c8 convert-startup: accept IRQ_Vectors
+* aa02fd1f tests: add dependencies-libraries
+* 08e71d58 add CLAUDE.md
+* adb913b4 tests: use cortex-m architecture handlers
+
+## 2026-09-04
+
+* a96b3327 add CLAUDE.md
+* 0fd4d96f fix double dot in script copyright
+* 8e1d2bc1 tests/package.json add m33 to qemu cortexm variants
+* dbcaf6eb tests/xcdl-project.json add m33
+* 5797c29a meson_options.txt updates
+* 8790389a nucleo-f411 cleanup *.jdebug
+* 35bba598 nucleo-h533 exception handlers with SecureFault
+* 239b712e platform update memory maps
+* c82d90b8 use startup sections.ld
+
+## 2026-09-03
+
+* e22632cb re-generate vectors for SecureFault_Handler
+* f61ce79c convert-startup...: add isArmArch8m
+* 9801b7d0 package*.json add prettier
+* 854b2e92 add cpu_reset to qemu debug options
+* 5944c221 re-generate vectors-*.c
+* 0dacd738 add convert-startup-to-vectors
+* c387e5a5 cmake/common-functions: add qemu log
+
+## 2026-09-02
+
+* 30d909e3 tests/package.json ignore errors for celan
+* 7326d5bb tests/package.json add clean-nucleo-*
+* 0926e5fc platforms cmake-format
+* 0d778470 add platforms/nucleo-h533re
+
+## 2026-09-01
+
+* 0d327355 prepend_compile_common_private_option & stm32cubemx-drivers-objects-library
+
+## 2026-08-31
+
+* a6091cf0 platforms/nucleo-f411re update
+* 89b61681 add platforms/nucleo-f767zi
+* 63ea4b2f platforms/nucleo-f411re update
+* b10664a3 .vscode/settingd.json: variableUseNaturalFormat
+* ee767b4e cmake cosmetics
+* 55b73931 tests/cmake: shorten map path
+* 88aa7752 clanf-format.mjs update to avoid stm32cubemx
+* 0620328a tests/package.json: add nucleo-f411re
+* 1b95d1d3 tests/sources: [[noreturn]]
+* 7ff39576 platforms/nucleo-f411re: update reset-handler.c
+* fc8cf11b platforms/nucleo-f411re: update stm32cubemx
+
+## 2026-08-29
+
+* e0558def platforms/nucleo-f411re update
+
+## 2026-08-13
+
+* 54cd55ec test-inlines.h: silence warnings on windows
+
+## 2026-08-12
+
+* 2c59d16f test/package.json deps
+* e5891c91 native meson check get-libraries-paths.mjs exit code
+* f72c7bfb common-functions ccleanups
+* 2effc685 workflows updates
+* d5856218 cmake template file paths updates
+
+## 2026-08-08
+
+* 60153ce6 swap cmake platform-library with artefacts
+
 ## 2026-08-06
 
-* v5.0.1 published on npmjs.com
-* v5.0.1
+* 54d26027 blog post update
+* ca96b3d7 publish with retries
+* c5331d60 blog post update
+* c8abd8a4 worklfows update concurency
+* 10d1dc54 blog post update
+* 011ee646 website update group references
+* 83d8b8dc website: blog post release 5.0.1 published
+* 397ebebd Revert "website: blog post release 5.0.0 updated"
+* 491f7297 5.0.1
+* 886b068e re-generate website
+* 441199cf prepare 5.0.1
+* eba9729a website: blog post release 5.0.0 updated
+* 68cd2a59 5.0.0
+* c29e9801 CHANGELOG: publish npm v5.0.0
+* a65d59b7 prepare 5.0.0
 * 265b70bf cosmetics
 * c7dab306 #if __has_include("micro-os-plus/diag/trace.h")
 * 389ab6ce re-generate top commons for test-all
