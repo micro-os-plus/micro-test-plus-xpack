@@ -8,6 +8,8 @@ and close existing issues and pull requests.
 
 ## 2026-11-09
 
+* v6.0.0 published on npmjs.com
+* 7e99bcea CHANGELOG update
 * v6.0.0 prepared
 * b5983b7a compatibility-notices update
 * d7cc6138 build-boards.yml: disable windows
