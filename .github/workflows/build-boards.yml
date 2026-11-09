@@ -54,8 +54,9 @@ jobs:
             'macos-15-intel',
             'macos-26',
             'macos-15',
-            'windows-2025',
-            'windows-2022'
+            # The pico builds trigger 'The command line is too long.'
+            # 'windows-2025',
+            # 'windows-2022'
           ]
         # https://nodejs.org/en - use LTS
         node-version: ['24']
