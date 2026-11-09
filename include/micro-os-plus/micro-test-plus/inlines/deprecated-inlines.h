@@ -531,23 +531,25 @@ namespace micro_os_plus::micro_test_plus
     constexpr auto
     integral_constant<N>::operator- () const noexcept
     {
-      using value_type = decltype (N);
+      // Not named `value_type`, which would shadow the member inherited
+      // from the base (`-Wshadow`).
+      using constant_type = decltype (N);
 
-      if constexpr (!std::is_signed_v<value_type>)
+      if constexpr (!std::is_signed_v<constant_type>)
         {
-          return integral_constant<static_cast<value_type> (value_type{}
-                                                            - N)>{};
+          return integral_constant<static_cast<constant_type> (constant_type{}
+                                                               - N)>{};
         }
-      else if constexpr (N == std::numeric_limits<value_type>::min ())
+      else if constexpr (N == std::numeric_limits<constant_type>::min ())
         {
-          static_assert (N != std::numeric_limits<value_type>::min (),
+          static_assert (N != std::numeric_limits<constant_type>::min (),
                          "µTest++: the negation of the minimum value does "
                          "not fit in the type of the literal");
           return *this;
         }
       else
         {
-          return integral_constant<static_cast<value_type> (-N)>{};
+          return integral_constant<static_cast<constant_type> (-N)>{};
         }
     }
 
