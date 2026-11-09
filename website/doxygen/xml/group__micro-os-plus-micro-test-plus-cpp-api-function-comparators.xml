@@ -102,7 +102,7 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-dep
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="306" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="306" bodyend="311" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="411" declcolumn="3"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gafe47800a219b00fcccf0a1dc596dbe20" compoundref="deprecated-inlines_8h" startline="1275" endline="1279">micro_os_plus::micro_test_plus::approx</references>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1gafe47800a219b00fcccf0a1dc596dbe20" compoundref="deprecated-inlines_8h" startline="1277" endline="1281">micro_os_plus::micro_test_plus::approx</references>
       </memberdef>
       <memberdef kind="function" id="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" prot="public" static="no" nodiscard="yes" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -176,7 +176,7 @@ The <computeroutput><ref refid="group__micro-os-plus-micro-test-plus-cpp-api-fun
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="89" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="89" bodyend="94" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="134" declcolumn="3"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1715" endline="1752">micro_os_plus::micro_test_plus::detail::as_operand</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1725" endline="1762">micro_os_plus::micro_test_plus::detail::as_operand</references>
         <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" compoundref="function-comparators-inlines_8h" startline="89" endline="94">micro_os_plus::micro_test_plus::eq</references>
         <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga0fbc0f7ddf0107c1e5265bb79287487d" compoundref="function-comparators-inlines_8h" startline="89" endline="94">micro_os_plus::micro_test_plus::eq</referencedby>
       </memberdef>
@@ -248,7 +248,7 @@ The operands are passed to <computeroutput><ref refid="namespacemicro__os__plus_
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="197" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="197" bodyend="202" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="258" declcolumn="3"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1715" endline="1752">micro_os_plus::micro_test_plus::detail::as_operand</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1725" endline="1762">micro_os_plus::micro_test_plus::detail::as_operand</references>
         <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga58c7dacabca3fe1b0dc025a0e0f30e9e" compoundref="function-comparators-inlines_8h" startline="197" endline="202">micro_os_plus::micro_test_plus::ge</references>
         <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga58c7dacabca3fe1b0dc025a0e0f30e9e" compoundref="function-comparators-inlines_8h" startline="197" endline="202">micro_os_plus::micro_test_plus::ge</referencedby>
       </memberdef>
@@ -320,7 +320,7 @@ The operands are passed to <computeroutput><ref refid="namespacemicro__os__plus_
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="161" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="161" bodyend="166" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="216" declcolumn="3"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1715" endline="1752">micro_os_plus::micro_test_plus::detail::as_operand</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1725" endline="1762">micro_os_plus::micro_test_plus::detail::as_operand</references>
         <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga90da2cbc14b4562332a205d5b232356f" compoundref="function-comparators-inlines_8h" startline="161" endline="166">micro_os_plus::micro_test_plus::gt</references>
         <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga90da2cbc14b4562332a205d5b232356f" compoundref="function-comparators-inlines_8h" startline="161" endline="166">micro_os_plus::micro_test_plus::gt</referencedby>
       </memberdef>
@@ -392,7 +392,7 @@ The operands are passed to <computeroutput><ref refid="namespacemicro__os__plus_
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="270" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="270" bodyend="275" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="342" declcolumn="3"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1715" endline="1752">micro_os_plus::micro_test_plus::detail::as_operand</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1725" endline="1762">micro_os_plus::micro_test_plus::detail::as_operand</references>
         <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9125d2dd997269eecc0d8239d5df67e5" compoundref="function-comparators-inlines_8h" startline="270" endline="275">micro_os_plus::micro_test_plus::le</references>
         <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga9125d2dd997269eecc0d8239d5df67e5" compoundref="function-comparators-inlines_8h" startline="270" endline="275">micro_os_plus::micro_test_plus::le</referencedby>
       </memberdef>
@@ -464,7 +464,7 @@ The operands are passed to <computeroutput><ref refid="namespacemicro__os__plus_
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="234" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="234" bodyend="239" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="300" declcolumn="3"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1715" endline="1752">micro_os_plus::micro_test_plus::detail::as_operand</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1725" endline="1762">micro_os_plus::micro_test_plus::detail::as_operand</references>
         <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga493a42c738ef38b45a28b06a2155aa00" compoundref="function-comparators-inlines_8h" startline="234" endline="239">micro_os_plus::micro_test_plus::lt</references>
         <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga493a42c738ef38b45a28b06a2155aa00" compoundref="function-comparators-inlines_8h" startline="234" endline="239">micro_os_plus::micro_test_plus::lt</referencedby>
       </memberdef>
@@ -536,7 +536,7 @@ The operands are passed to <computeroutput><ref refid="namespacemicro__os__plus_
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" line="125" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/function-comparators-inlines.h" bodystart="125" bodyend="130" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/function-comparators.h" declline="175" declcolumn="3"/>
-        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1715" endline="1752">micro_os_plus::micro_test_plus::detail::as_operand</references>
+        <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a51e86043001b197561806d5c6297041b" compoundref="detail-inlines_8h" startline="1725" endline="1762">micro_os_plus::micro_test_plus::detail::as_operand</references>
         <references refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga92cdc2dde6af040f2f5f5df677df0985" compoundref="function-comparators-inlines_8h" startline="125" endline="130">micro_os_plus::micro_test_plus::ne</references>
         <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-function-comparators_1ga92cdc2dde6af040f2f5f5df677df0985" compoundref="function-comparators-inlines_8h" startline="125" endline="130">micro_os_plus::micro_test_plus::ne</referencedby>
       </memberdef>

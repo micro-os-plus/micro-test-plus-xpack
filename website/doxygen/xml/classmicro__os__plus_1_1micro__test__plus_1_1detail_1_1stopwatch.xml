@@ -638,7 +638,7 @@ Clears the stop reading, then reads the system clock into <computeroutput><ref r
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1afa5a38b18b6f14b904fafac9f0bd74fa" compoundref="stopwatch_8h" startline="439" endline="439">stop_time_</references>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1stopwatch_1addee5d2a57a6465734840797ff23cdc2">~stopwatch</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1suite_1a432deda5a8721472e8775cbc98451722" compoundref="test_8cpp" startline="604" endline="684">micro_os_plus::micro_test_plus::suite::run</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a700e3ef1f955492cd84235bd388dcdf2" compoundref="runner_8cpp" startline="840" endline="965">micro_os_plus::micro_test_plus::runner::run_suites</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a700e3ef1f955492cd84235bd388dcdf2" compoundref="runner_8cpp" startline="840" endline="969">micro_os_plus::micro_test_plus::runner::run_suites</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-static-func">

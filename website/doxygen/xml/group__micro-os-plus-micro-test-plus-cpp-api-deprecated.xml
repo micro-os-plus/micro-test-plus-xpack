@@ -69,9 +69,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="723" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="723" bodyend="726" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="884" declcolumn="3"/>
-        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" compoundref="deprecated-inlines_8h" startline="723" endline="726">micro_os_plus::micro_test_plus::mut</references>
-        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" compoundref="deprecated-inlines_8h" startline="723" endline="726">micro_os_plus::micro_test_plus::mut</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" line="725" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="725" bodyend="728" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" declline="884" declcolumn="3"/>
+        <references refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" compoundref="deprecated-inlines_8h" startline="725" endline="728">micro_os_plus::micro_test_plus::mut</references>
+        <referencedby refid="group__micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions_1ga00ea8f3dfb7cb0ef39919065321cf62f" compoundref="deprecated-inlines_8h" startline="725" endline="728">micro_os_plus::micro_test_plus::mut</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="typedef">
@@ -227,7 +227,7 @@ The v5.0.1 name, with a trailing underscore. The stored value is now private, an
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="459" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="459" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="468" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="468" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga3770982b9b7025e79d30c44f8b6de981" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>bool</type>
@@ -247,7 +247,7 @@ The v5.0.1 name, with a trailing underscore. The stored value is now private, an
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="577" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="577" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="586" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="586" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga1e6e1923184c1e15b8dfe69053010c83" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>bool</type>
@@ -267,7 +267,7 @@ The v5.0.1 name, with a trailing underscore. The stored value is now private, an
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="636" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="636" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="645" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="645" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gaf95d91c9cae67c4ce138146b2cdab25e" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>bool</type>
@@ -287,7 +287,7 @@ The v5.0.1 name, with a trailing underscore. The stored value is now private, an
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="695" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="695" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="704" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="704" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1gadcaedd85e07d96bd7230d06c5c258df7" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>bool</type>
@@ -307,7 +307,7 @@ The v5.0.1 name, with a trailing underscore. The stored value is now private, an
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="754" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="754" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="763" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="763" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="group__micro-os-plus-micro-test-plus-cpp-api-deprecated_1ga8decf36d3e0e7cc8242c6a2170743422" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>bool</type>
@@ -327,7 +327,7 @@ The v5.0.1 name, with a trailing underscore. The stored value is now private, an
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="518" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="518" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="527" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" bodystart="527" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -454,7 +454,7 @@ The tolerance is the smaller <computeroutput>epsilon</computeroutput> of the two
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="212" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="212" bodyend="244" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="190" declcolumn="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" line="212" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/detail-inlines.h" bodystart="212" bodyend="244" declfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" declline="199" declcolumn="5"/>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a515f68bbb31d64d07810f45f3b1118f6" compoundref="math-inlines_8h" startline="88" endline="91">micro_os_plus::micro_test_plus::detail::math::abs</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1_1math_1a67e71e2dce0120ad4839635830e80de8" compoundref="math-inlines_8h" startline="106" endline="109">micro_os_plus::micro_test_plus::detail::math::min_value</references>
         <references refid="namespacemicro__os__plus_1_1micro__test__plus_1_1detail_1a59eb53c96f68d26635c13df53b358ac8" compoundref="detail-inlines_8h" startline="98" endline="106">micro_os_plus::micro_test_plus::detail::unwrap</references>
