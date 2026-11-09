@@ -23,6 +23,6 @@
 </para>
 <para>The namespace is separate from the top namespace, so that <computeroutput>using namespace <ref refid="namespacemicro__os__plus_1_1micro__test__plus" kindref="compound">micro_os_plus::micro_test_plus</ref></computeroutput> does not bring these generic names into the application code; refer to them qualified, as <computeroutput>mt::extension::is_op&lt;T&gt;</computeroutput>. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1925" column="3"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1934" column="3"/>
   </compounddef>
 </doxygen>

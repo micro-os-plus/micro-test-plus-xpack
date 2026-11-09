@@ -37,7 +37,7 @@ Constructs a <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__p
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1880" column="24" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1258" bodyend="1260"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="1880" column="24" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="1260" bodyend="1262"/>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value_3_01_t_01_4_1a56168e5434409f1021bb86160e2352e4" compoundref="deprecated_8h" startline="695" endline="698">micro_os_plus::micro_test_plus::detail::value&lt; T &gt;::value</references>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_1a9199f28db3a365b60ca6ef17053cec2a" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">

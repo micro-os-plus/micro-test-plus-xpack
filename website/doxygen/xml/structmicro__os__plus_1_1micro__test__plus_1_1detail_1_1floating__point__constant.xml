@@ -98,8 +98,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="584" column="29" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" bodystart="585" bodyend="-1"/>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant_1a0169d044ee9d39e5d1b63c0a1fc4ce95" compoundref="deprecated-inlines_8h" startline="614" endline="617">micro_os_plus::micro_test_plus::detail::floating_point_constant&lt; T, N, D, Size, P &gt;::get</referencedby>
-        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant_1ad193f5a4c7c468860316b4e7d7a5ac05" compoundref="deprecated-inlines_8h" startline="603" endline="606">micro_os_plus::micro_test_plus::detail::floating_point_constant&lt; T, N, D, Size, P &gt;::operator T</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant_1a0169d044ee9d39e5d1b63c0a1fc4ce95" compoundref="deprecated-inlines_8h" startline="616" endline="619">micro_os_plus::micro_test_plus::detail::floating_point_constant&lt; T, N, D, Size, P &gt;::get</referencedby>
+        <referencedby refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant_1ad193f5a4c7c468860316b4e7d7a5ac05" compoundref="deprecated-inlines_8h" startline="605" endline="608">micro_os_plus::micro_test_plus::detail::floating_point_constant&lt; T, N, D, Size, P &gt;::operator T</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -124,7 +124,7 @@ Returns the compile-time constant value as type <computeroutput>T</computeroutpu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="603" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="614" bodyend="617"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="603" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="616" bodyend="619"/>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant_1aab5138b851247527b8c8abdf28c5e5b1" compoundref="deprecated_8h" startline="585">micro_os_plus::micro_test_plus::detail::floating_point_constant&lt; T, N, D, Size, P &gt;::value</references>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant_1ad193f5a4c7c468860316b4e7d7a5ac05" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="yes" inline="no" noexcept="yes" virt="non-virtual">
@@ -143,7 +143,7 @@ Returns the compile-time constant value as type <computeroutput>T</computeroutpu
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="593" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="603" bodyend="606"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="593" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="605" bodyend="608"/>
         <references refid="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant_1aab5138b851247527b8c8abdf28c5e5b1" compoundref="deprecated_8h" startline="585">micro_os_plus::micro_test_plus::detail::floating_point_constant&lt; T, N, D, Size, P &gt;::value</references>
       </memberdef>
       <memberdef kind="function" id="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1floating__point__constant_1ab729a3603714779b81c47b8b57b1cbd8" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
@@ -162,7 +162,7 @@ Returns a new <computeroutput><ref refid="structmicro__os__plus_1_1micro__test__
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="611" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="626" bodyend="629"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/deprecated.h" line="611" column="7" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines.h" bodystart="628" bodyend="631"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

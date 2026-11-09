@@ -15,7 +15,7 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1cha
                         or std::is_same_v&lt;std::remove_cv_t&lt;T&gt;, char16_t&gt;
                         or std::is_same_v&lt;std::remove_cv_t&lt;T&gt;, char32_t&gt;</initializer>
     <conceptparts>
-      <codepart line="1622">    <programlisting>
+      <codepart line="1631">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">character<sp/>=<sp/>std::is_same_v&lt;std::remove_cv_t&lt;T&gt;,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>or<sp/>std::is_same_v&lt;std::remove_cv_t&lt;T&gt;,<sp/></highlight><highlight class="keywordtype">wchar_t</highlight><highlight class="normal">&gt;</highlight></codeline>
@@ -41,6 +41,6 @@ concept <ref refid="conceptmicro__os__plus_1_1micro__test__plus_1_1detail_1_1cha
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1622" column="5"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/micro-test-plus-xpack.git/include/micro-os-plus/micro-test-plus/detail.h" line="1631" column="5"/>
   </compounddef>
 </doxygen>

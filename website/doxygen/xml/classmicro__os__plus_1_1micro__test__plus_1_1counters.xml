@@ -481,7 +481,7 @@ Returns the value of the <computeroutput><ref refid="classmicro__os__plus_1_1mic
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a3cd85c566bdf2b3b92e27db4c29c7bc5" compoundref="counters-inlines_8h" startline="165" endline="168">executed_subtests</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a6bf3aac88a5e66e2f93eb32c54dbdd14" compoundref="reporter_8cpp" startline="896" endline="925">micro_os_plus::micro_test_plus::detail::reporter::format_session_totals</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a570030599ccc9f4133ed6a9eda2c2a1c" compoundref="reporter_8cpp" startline="933" endline="962">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a700e3ef1f955492cd84235bd388dcdf2" compoundref="runner_8cpp" startline="840" endline="965">micro_os_plus::micro_test_plus::runner::run_suites</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a700e3ef1f955492cd84235bd388dcdf2" compoundref="runner_8cpp" startline="840" endline="969">micro_os_plus::micro_test_plus::runner::run_suites</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ab1684c7c6101a4d534356d9d16807bee" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>size_t</type>
@@ -657,7 +657,7 @@ A node with no checks at all is considered successful, as it did not fail any ch
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter__tap_1ad15f7dbbf6a683441df40c502125adc3" compoundref="reporter-tap_8cpp" startline="779" endline="879">micro_os_plus::micro_test_plus::detail::reporter_tap::end_test_case</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a570030599ccc9f4133ed6a9eda2c2a1c" compoundref="reporter_8cpp" startline="933" endline="962">micro_os_plus::micro_test_plus::detail::reporter::format_suite_totals</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1detail_1_1reporter_1a60b8564f54a6a1230e6d4ce110de93f5" compoundref="reporter_8cpp" startline="970" endline="1000">micro_os_plus::micro_test_plus::detail::reporter::format_test_case_totals</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a700e3ef1f955492cd84235bd388dcdf2" compoundref="runner_8cpp" startline="840" endline="965">micro_os_plus::micro_test_plus::runner::run_suites</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a700e3ef1f955492cd84235bd388dcdf2" compoundref="runner_8cpp" startline="840" endline="969">micro_os_plus::micro_test_plus::runner::run_suites</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1ae27ffc4d38a71b5c7d54f4a3b56c2203" compoundref="counters-inlines_8h" startline="211" endline="214">was_successful</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a6d478407d2416d3d19a4041fa1c12c9b" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
@@ -945,7 +945,7 @@ Adds the passed check count, failed check count, executed test case count, faile
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a72fb6b1038be0ac8b09b4da60aa292e8" compoundref="counters_8h" startline="494">executed_test_cases_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a903b0e792447e149a032a7e46570bfc1" compoundref="counters_8h" startline="485">failed_checks_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a09550bb4fd851f9b704904311bba27b6" compoundref="counters_8h" startline="506">failed_test_cases_</references>
-        <references refid="detail_8h_1aaec16ed032c8fc52ba753a273b788381" compoundref="detail_8h" startline="93">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</references>
+        <references refid="detail_8h_1aaec16ed032c8fc52ba753a273b788381" compoundref="detail_8h" startline="102">MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a454de640619adaeeb5cbc2ada7144946" compoundref="counters_8h" startline="477">passed_checks_</references>
         <references refid="classmicro__os__plus_1_1micro__test__plus_1_1counters_1a4399ece2b4eb697927d7cf205d5b18d9" compoundref="counters_8h" startline="516">skipped_test_cases_</references>
       </memberdef>

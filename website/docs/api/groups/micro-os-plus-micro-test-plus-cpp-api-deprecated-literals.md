@@ -1264,15 +1264,15 @@ keywords:
 <p>The returned <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/named-bool">detail::named_bool</a></span> converts implicitly to <span class="doxyComputerOutput">bool</span>, and the expression formatter prints its name instead of its value. With the operators in the <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/operators">operators</a></span> namespace, a comparison like <span class="doxyComputerOutput">"feature_enabled"<a href="#gad4203783cfbe141f41ee8515f7b2ea94">_b</a> == flag</span> is true when <span class="doxyComputerOutput">flag</span> is true, and, when it fails, it is reported as <span class="doxyComputerOutput">feature_enabled == false</span>; the same applies to <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-function-comparators/#ga0fbc0f7ddf0107c1e5265bb79287487d">eq</a> ("feature_enabled"<a href="#gad4203783cfbe141f41ee8515f7b2ea94">_b</a>, flag)</span>. Without these operators, the comparison is a plain <span class="doxyComputerOutput">bool</span> expression, and its operands are not reported.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01236">1236</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01238">1238</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaa2bfc74376f8c110053bfa6e06e40772">1236</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gad4203783cfbe141f41ee8515f7b2ea94">_b</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* name, </span><span class="doxyHighlightKeyword">decltype</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight"> (</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight">)) size)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1237</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1238</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/named-bool">detail::named_bool</a>{ std::string_view{ name, size } };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1239</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaa2bfc74376f8c110053bfa6e06e40772">1238</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gad4203783cfbe141f41ee8515f7b2ea94">_b</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">char</span><span class="doxyHighlight">* name, </span><span class="doxyHighlightKeyword">decltype</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">sizeof</span><span class="doxyHighlight"> (</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight">)) size)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1239</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1240</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/named-bool">detail::named_bool</a>{ std::string_view{ name, size } };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1241</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -1337,15 +1337,15 @@ keywords:
 <p>Creates a compile-time <span class="doxyComputerOutput">char</span> constant, for example <span class="doxyComputerOutput">65<a href="#gafdd897d040f92df9cd42e551ebc88cd8">_c</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00937">937</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00939">939</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gae521cebfd48332f44d01e4f880b4aafa">937</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gafdd897d040f92df9cd42e551ebc88cd8">_c</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">938</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">939</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;char, Cs...&gt; ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">940</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gae521cebfd48332f44d01e4f880b4aafa">939</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gafdd897d040f92df9cd42e551ebc88cd8">_c</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">940</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">941</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;char, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">942</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -1413,18 +1413,18 @@ keywords:
 <p>Creates a compile-time <span class="doxyComputerOutput">double</span> constant, for example <span class="doxyComputerOutput">2.718_d</span>, from the integral part, the decimals, and the number of decimals of the literal, parsed at compile time by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a6b03b257bb18615448fe9b4fca4a8402">detail::math::num()</a></span>, <span class="doxyComputerOutput">den()</span>, and <span class="doxyComputerOutput">den_size()</span>; the comparison tolerance is one unit of the last decimal written.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01194">1194</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01196">1196</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9d9b0d77e96cc46e7c9fabbb6cf671da">1194</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga7c6c0169d894a7dd589d96df49e8df26">_d</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1195</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1196</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/floating-point-constant">detail::floating_point_constant</a>&lt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1197</span><span class="doxyLineContent"><span class="doxyHighlight">          double, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a6b03b257bb18615448fe9b4fca4a8402">detail::math::num</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; (),</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1198</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a154910632d01b827ab1b67f309064211">detail::math::den&lt;unsigned long long, Cs...&gt;</a> (),</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1199</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a3557a9ea7ea89e94be133fb78edcd01f">detail::math::den_size</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1200</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9d9b0d77e96cc46e7c9fabbb6cf671da">1196</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga7c6c0169d894a7dd589d96df49e8df26">_d</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1197</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1198</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/floating-point-constant">detail::floating_point_constant</a>&lt;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1199</span><span class="doxyLineContent"><span class="doxyHighlight">          double, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a6b03b257bb18615448fe9b4fca4a8402">detail::math::num</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; (),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1200</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a154910632d01b827ab1b67f309064211">detail::math::den&lt;unsigned long long, Cs...&gt;</a> (),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1201</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a3557a9ea7ea89e94be133fb78edcd01f">detail::math::den_size</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; ()&gt;{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1202</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -1492,18 +1492,18 @@ keywords:
 <p>Creates a compile-time <span class="doxyComputerOutput">float</span> constant, for example <span class="doxyComputerOutput">3.14_f</span>, from the integral part, the decimals, and the number of decimals of the literal, parsed at compile time by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a6b03b257bb18615448fe9b4fca4a8402">detail::math::num()</a></span>, <span class="doxyComputerOutput">den()</span>, and <span class="doxyComputerOutput">den_size()</span>; the comparison tolerance is one unit of the last decimal written.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01176">1176</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01178">1178</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef">1176</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga231cd51e76a2f426703275739d605ad4">_f</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1177</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1178</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/floating-point-constant">detail::floating_point_constant</a>&lt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1179</span><span class="doxyLineContent"><span class="doxyHighlight">          float, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a6b03b257bb18615448fe9b4fca4a8402">detail::math::num</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; (),</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1180</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a154910632d01b827ab1b67f309064211">detail::math::den&lt;unsigned long long, Cs...&gt;</a> (),</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1181</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a3557a9ea7ea89e94be133fb78edcd01f">detail::math::den_size</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1182</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gab9d0b5fe567e9ea4b2cf4e7edd6ec2ef">1178</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga231cd51e76a2f426703275739d605ad4">_f</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1179</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1180</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/floating-point-constant">detail::floating_point_constant</a>&lt;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1181</span><span class="doxyLineContent"><span class="doxyHighlight">          float, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a6b03b257bb18615448fe9b4fca4a8402">detail::math::num</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; (),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1182</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a154910632d01b827ab1b67f309064211">detail::math::den&lt;unsigned long long, Cs...&gt;</a> (),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1183</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a3557a9ea7ea89e94be133fb78edcd01f">detail::math::den_size</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; ()&gt;{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1184</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -1571,15 +1571,15 @@ keywords:
 <p>Creates a compile-time <span class="doxyComputerOutput">int</span> constant, for example <span class="doxyComputerOutput">42<a href="#ga8468610e763177a8f569f7d618851288">_i</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00909">909</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00911">911</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga366a0d47aec3241e659816067c94fcdf">909</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga8468610e763177a8f569f7d618851288">_i</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">910</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">911</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;int, Cs...&gt; ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">912</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga366a0d47aec3241e659816067c94fcdf">911</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga8468610e763177a8f569f7d618851288">_i</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">912</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">913</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;int, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">914</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -1647,15 +1647,15 @@ keywords:
 <p>Creates a compile-time <span class="doxyComputerOutput">int16_t</span> constant, for example <span class="doxyComputerOutput">32767<a href="#gad2d95793c99112ad2889c6663789d1e3">_i16</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01077">1077</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01079">1079</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gabce6e838737bf25be6e7527f69e75590">1077</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gad2d95793c99112ad2889c6663789d1e3">_i16</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1078</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1079</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::int16_t, Cs...&gt; ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1080</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gabce6e838737bf25be6e7527f69e75590">1079</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gad2d95793c99112ad2889c6663789d1e3">_i16</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1080</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1081</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::int16_t, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1082</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -1723,15 +1723,15 @@ keywords:
 <p>Creates a compile-time <span class="doxyComputerOutput">int32_t</span> constant, for example <span class="doxyComputerOutput">2147483647<a href="#ga917a1759e37cd0d3fe3786da11729a4b">_i32</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01091">1091</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01093">1093</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga6a192d3dfff5a4a98aa7532d36d1b1bd">1091</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga917a1759e37cd0d3fe3786da11729a4b">_i32</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1092</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1093</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::int32_t, Cs...&gt; ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1094</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga6a192d3dfff5a4a98aa7532d36d1b1bd">1093</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga917a1759e37cd0d3fe3786da11729a4b">_i32</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1094</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1095</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::int32_t, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1096</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -1799,15 +1799,15 @@ keywords:
 <p>Creates a compile-time <span class="doxyComputerOutput">int64_t</span> constant, for example <span class="doxyComputerOutput">9223372036854775807<a href="#ga290a150eae030e183ca2e14e9095c93b">_i64</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01105">1105</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01107">1107</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gab0bb5d1e37cbe8de6477c11ecd60956d">1105</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga290a150eae030e183ca2e14e9095c93b">_i64</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1106</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1107</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::int64_t, Cs...&gt; ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1108</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gab0bb5d1e37cbe8de6477c11ecd60956d">1107</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga290a150eae030e183ca2e14e9095c93b">_i64</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1108</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1109</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::int64_t, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1110</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -1875,15 +1875,15 @@ keywords:
 <p>Creates a compile-time <span class="doxyComputerOutput">int8_t</span> constant, for example <span class="doxyComputerOutput">127<a href="#ga265f8609ef3d6ead78c7a66825553e24">_i8</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01063">1063</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01065">1065</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9ca6fecc72b6da90acee52977eb077d7">1063</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga265f8609ef3d6ead78c7a66825553e24">_i8</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1064</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1065</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::int8_t, Cs...&gt; ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1066</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9ca6fecc72b6da90acee52977eb077d7">1065</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga265f8609ef3d6ead78c7a66825553e24">_i8</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1066</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1067</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::int8_t, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1068</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -1951,15 +1951,15 @@ keywords:
 <p>Creates a compile-time <span class="doxyComputerOutput">long</span> constant, for example <span class="doxyComputerOutput">123<a href="#ga429a848542fc4ffafd3dd22bc1832654">_l</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00965">965</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00967">967</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga96e891b439024e116cb845bc65bc9c4f">965</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga429a848542fc4ffafd3dd22bc1832654">_l</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">966</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">967</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;long, Cs...&gt; ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">968</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga96e891b439024e116cb845bc65bc9c4f">967</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga429a848542fc4ffafd3dd22bc1832654">_l</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">968</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">969</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;long, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">970</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -2027,18 +2027,18 @@ keywords:
 <p>Creates a compile-time <span class="doxyComputerOutput">long double</span> constant, for example <span class="doxyComputerOutput">1.618_ld</span>, from the integral part, the decimals, and the number of decimals of the literal, parsed at compile time by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a6b03b257bb18615448fe9b4fca4a8402">detail::math::num()</a></span>, <span class="doxyComputerOutput">den()</span>, and <span class="doxyComputerOutput">den_size()</span>; the comparison tolerance is one unit of the last decimal written.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01212">1212</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01214">1214</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaecd8c981d99602a0d0a44ebf6d1d4f75">1212</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gacfe28c6fb7bfb47ca8891cb61e7f58d9">_ld</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1213</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1214</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/floating-point-constant">detail::floating_point_constant</a>&lt;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1215</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> double, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a6b03b257bb18615448fe9b4fca4a8402">detail::math::num</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; (),</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1216</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a154910632d01b827ab1b67f309064211">detail::math::den&lt;unsigned long long, Cs...&gt;</a> (),</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1217</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a3557a9ea7ea89e94be133fb78edcd01f">detail::math::den_size</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1218</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaecd8c981d99602a0d0a44ebf6d1d4f75">1214</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gacfe28c6fb7bfb47ca8891cb61e7f58d9">_ld</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1215</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1216</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/floating-point-constant">detail::floating_point_constant</a>&lt;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1217</span><span class="doxyLineContent"><span class="doxyHighlight">          </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> double, <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a6b03b257bb18615448fe9b4fca4a8402">detail::math::num</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; (),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1218</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a154910632d01b827ab1b67f309064211">detail::math::den&lt;unsigned long long, Cs...&gt;</a> (),</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1219</span><span class="doxyLineContent"><span class="doxyHighlight">          <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/math/#a3557a9ea7ea89e94be133fb78edcd01f">detail::math::den_size</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; ()&gt;{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1220</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -2106,15 +2106,15 @@ keywords:
 <p>Creates a compile-time <span class="doxyComputerOutput">long long</span> constant, for example <span class="doxyComputerOutput">123<a href="#ga9c597ca04848620b8570c29a4741e77d">_ll</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00979">979</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00981">981</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaf5ab66b00c9486ade5d49f34a83783f5">979</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga9c597ca04848620b8570c29a4741e77d">_ll</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">980</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">981</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;</span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">982</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaf5ab66b00c9486ade5d49f34a83783f5">981</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga9c597ca04848620b8570c29a4741e77d">_ll</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">982</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">983</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;</span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">984</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -2182,15 +2182,15 @@ keywords:
 <p>Creates a compile-time <span class="doxyComputerOutput">short</span> constant, for example <span class="doxyComputerOutput">123<a href="#ga461a956b7e308ed6e8c64afa3cf160f2">_s</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00923">923</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00925">925</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga812816a2e9b23de1f8d8b2d86553d96d">923</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga461a956b7e308ed6e8c64afa3cf160f2">_s</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">924</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">925</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;short, Cs...&gt; ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">926</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga812816a2e9b23de1f8d8b2d86553d96d">925</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga461a956b7e308ed6e8c64afa3cf160f2">_s</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">926</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">927</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;short, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">928</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -2258,15 +2258,15 @@ keywords:
 <p>Creates a compile-time <span class="doxyComputerOutput">signed char</span> constant, for example <span class="doxyComputerOutput">65<a href="#ga0cc4baab5f421ac7adee10218d8ee8a2">_sc</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00951">951</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00953">953</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga57d27f1a76de2d2b2a067134cbe61457">951</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga0cc4baab5f421ac7adee10218d8ee8a2">_sc</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">952</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">953</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;</span><span class="doxyHighlightKeywordType">signed</span><span class="doxyHighlight"> char, Cs...&gt; ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">954</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga57d27f1a76de2d2b2a067134cbe61457">953</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga0cc4baab5f421ac7adee10218d8ee8a2">_sc</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">954</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">955</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;</span><span class="doxyHighlightKeywordType">signed</span><span class="doxyHighlight"> char, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">956</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -2334,15 +2334,15 @@ keywords:
 <p>Creates a compile-time <span class="doxyComputerOutput">unsigned</span> constant, for example <span class="doxyComputerOutput">123<a href="#gaaa486af2418a24076237fbe26940f5ae">_u</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00993">993</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00995">995</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaf45bf641153a462a1ba7c12b908e667f">993</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gaaa486af2418a24076237fbe26940f5ae">_u</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">994</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">995</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;unsigned, Cs...&gt; ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">996</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaf45bf641153a462a1ba7c12b908e667f">995</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gaaa486af2418a24076237fbe26940f5ae">_u</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">996</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">997</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;unsigned, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">998</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -2410,15 +2410,15 @@ keywords:
 <p>Creates a compile-time <span class="doxyComputerOutput">uint16_t</span> constant, for example <span class="doxyComputerOutput">65535<a href="#ga97f7bc9a25eb4b7c663bd2388ade01ae">_u16</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01133">1133</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01135">1135</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga96d12d563093f297a73a8b984ae7a3a5">1133</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga97f7bc9a25eb4b7c663bd2388ade01ae">_u16</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1134</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1135</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::uint16_t, Cs...&gt; ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1136</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga96d12d563093f297a73a8b984ae7a3a5">1135</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga97f7bc9a25eb4b7c663bd2388ade01ae">_u16</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1136</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1137</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::uint16_t, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1138</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -2486,15 +2486,15 @@ keywords:
 <p>Creates a compile-time <span class="doxyComputerOutput">uint32_t</span> constant, for example <span class="doxyComputerOutput">4294967295<a href="#ga4afa32150456241245bfc641a6f17bbc">_u32</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01147">1147</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01149">1149</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga3171e605b5c2e1d9a0e55ae34e904674">1147</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga4afa32150456241245bfc641a6f17bbc">_u32</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1148</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1149</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::uint32_t, Cs...&gt; ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1150</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga3171e605b5c2e1d9a0e55ae34e904674">1149</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga4afa32150456241245bfc641a6f17bbc">_u32</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1150</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1151</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::uint32_t, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1152</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -2562,15 +2562,15 @@ keywords:
 <p>Creates a compile-time <span class="doxyComputerOutput">uint64_t</span> constant, for example <span class="doxyComputerOutput">18446744073709551615<a href="#ga1241e84fc4457af1b4df5f053eec6aa5">_u64</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01161">1161</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01163">1163</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga622b4808b7ebfc26ddf9db9128533f28">1161</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga1241e84fc4457af1b4df5f053eec6aa5">_u64</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1162</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1163</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::uint64_t, Cs...&gt; ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1164</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga622b4808b7ebfc26ddf9db9128533f28">1163</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga1241e84fc4457af1b4df5f053eec6aa5">_u64</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1164</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1165</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::uint64_t, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1166</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -2638,15 +2638,15 @@ keywords:
 <p>Creates a compile-time <span class="doxyComputerOutput">uint8_t</span> constant, for example <span class="doxyComputerOutput">255<a href="#gaf27e37e2e29af1a3ffd5c4fb07e77ff9">_u8</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01119">1119</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01121">1121</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga80f43260f6a1afd8260355136858df48">1119</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gaf27e37e2e29af1a3ffd5c4fb07e77ff9">_u8</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1120</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1121</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::uint8_t, Cs...&gt; ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1122</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga80f43260f6a1afd8260355136858df48">1121</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gaf27e37e2e29af1a3ffd5c4fb07e77ff9">_u8</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1122</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1123</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;std::uint8_t, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1124</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -2714,15 +2714,15 @@ keywords:
 <p>Creates a compile-time <span class="doxyComputerOutput">unsigned char</span> constant, for example <span class="doxyComputerOutput">65<a href="#gaa8bb559065ea34a9645fdfd6339b9b7a">_uc</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01007">1007</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01009">1009</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga6c1b46d4b967bdbc573e3192c2d9f98a">1007</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gaa8bb559065ea34a9645fdfd6339b9b7a">_uc</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1008</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1009</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> char, Cs...&gt; ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1010</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga6c1b46d4b967bdbc573e3192c2d9f98a">1009</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gaa8bb559065ea34a9645fdfd6339b9b7a">_uc</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1010</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1011</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> char, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1012</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -2790,15 +2790,15 @@ keywords:
 <p>Creates a compile-time <span class="doxyComputerOutput">unsigned long</span> constant, for example <span class="doxyComputerOutput">123<a href="#ga32c7eef01fcaef2f1a9478427d951f62">_ul</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01035">1035</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01037">1037</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaef96b19b140b5007ec33a944c3b72cae">1035</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga32c7eef01fcaef2f1a9478427d951f62">_ul</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1036</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1037</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> long, Cs...&gt; ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1038</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaef96b19b140b5007ec33a944c3b72cae">1037</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga32c7eef01fcaef2f1a9478427d951f62">_ul</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1038</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1039</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> long, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1040</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -2866,15 +2866,15 @@ keywords:
 <p>Creates a compile-time <span class="doxyComputerOutput">unsigned long long</span> constant, for example <span class="doxyComputerOutput">123<a href="#gada8a165060d3d3b3ab51272b9da58761">_ull</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01049">1049</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01051">1051</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga01adcd3866da43c393b7fba8a5e72bb2">1049</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gada8a165060d3d3b3ab51272b9da58761">_ull</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1050</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1051</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1052</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga01adcd3866da43c393b7fba8a5e72bb2">1051</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#gada8a165060d3d3b3ab51272b9da58761">_ull</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1052</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1053</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">long</span><span class="doxyHighlight"> long, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1054</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -2942,15 +2942,15 @@ keywords:
 <p>Creates a compile-time <span class="doxyComputerOutput">unsigned short</span> constant, for example <span class="doxyComputerOutput">123<a href="#ga65aea7fc6324806cc029041a1c785611">_us</a></span>, with <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal()</a></span>. The literal is parsed, and its value checked against the range of the type, at compile time; a negative constant is written with the unary minus.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01021">1021</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01023">1023</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9017debdc1eafd64e3c53c80157ad6f5">1021</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga65aea7fc6324806cc029041a1c785611">_us</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1022</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1023</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> short, Cs...&gt; ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1024</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9017debdc1eafd64e3c53c80157ad6f5">1023</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">operator</span><span class="doxyHighlightStringLiteral">""</span><span class="doxyHighlight"><a href="#ga65aea7fc6324806cc029041a1c785611">_us</a> ()</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1024</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1025</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#a8e476a4d97076ce7f016a18821d66c40">detail::integral_literal</a>&lt;</span><span class="doxyHighlightKeywordType">unsigned</span><span class="doxyHighlight"> short, Cs...&gt; ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1026</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 
@@ -5072,16 +5072,16 @@ keywords:
 <p>Constructs the floating-point <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value</a>&lt;T&gt;</span> with the given tolerance, instead of the one derived from the number of decimals of the value.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01275">1275</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01277">1277</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions/#gafe47800a219b00fcccf0a1dc596dbe20">1275</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions/#gafe47800a219b00fcccf0a1dc596dbe20">approx</a> (T value, std::type_identity_t&lt;T&gt; epsilon) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1276</span><span class="doxyLineContent"><span class="doxyHighlight">      -&gt; <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;T&gt;</a></span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1277</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1278</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;T&gt;</a>{ value, epsilon };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1279</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions/#gafe47800a219b00fcccf0a1dc596dbe20">1277</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-deprecated-logical-functions/#gafe47800a219b00fcccf0a1dc596dbe20">approx</a> (T value, std::type_identity_t&lt;T&gt; epsilon) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1278</span><span class="doxyLineContent"><span class="doxyHighlight">      -&gt; <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;T&gt;</a></span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1279</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1280</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;T&gt;</a>{ value, epsilon };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1281</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 

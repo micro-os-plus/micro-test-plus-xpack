@@ -51,7 +51,7 @@
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a561d969dc26eb39663173a4a6684b0d9" compoundref="runner-options_8cpp" startline="119" endline="363">runner_options</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ae87c4a8f0e08e069b6d1a393f88e040e" compoundref="runner_8cpp" startline="273" endline="397">micro_os_plus::micro_test_plus::runner::initialise</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a2b0adeef059676a455d9506ba8a06d26" compoundref="runner_8cpp" startline="530" endline="551">micro_os_plus::micro_test_plus::runner::is_selected</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a700e3ef1f955492cd84235bd388dcdf2" compoundref="runner_8cpp" startline="840" endline="965">micro_os_plus::micro_test_plus::runner::run_suites</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a700e3ef1f955492cd84235bd388dcdf2" compoundref="runner_8cpp" startline="840" endline="969">micro_os_plus::micro_test_plus::runner::run_suites</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a36b690e87d69f1124c8fff4d4a59f90c" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -113,7 +113,7 @@
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ae87c4a8f0e08e069b6d1a393f88e040e" compoundref="runner_8cpp" startline="273" endline="397">micro_os_plus::micro_test_plus::runner::initialise</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a6a5ba9415486617bc64b8d764fef6ba6" compoundref="runner_8cpp" startline="660" endline="702">micro_os_plus::micro_test_plus::runner::reject_call</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a061939d61f7f2d4a4523c427b0dc98f2" compoundref="runner_8cpp" startline="778" endline="810">micro_os_plus::micro_test_plus::runner::run_child_suites</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a700e3ef1f955492cd84235bd388dcdf2" compoundref="runner_8cpp" startline="840" endline="965">micro_os_plus::micro_test_plus::runner::run_suites</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a700e3ef1f955492cd84235bd388dcdf2" compoundref="runner_8cpp" startline="840" endline="969">micro_os_plus::micro_test_plus::runner::run_suites</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a86bc6ef13bb488a933f6001c98aa2c6e" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -175,7 +175,7 @@
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner__options_1a561d969dc26eb39663173a4a6684b0d9" compoundref="runner-options_8cpp" startline="119" endline="363">runner_options</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1ae87c4a8f0e08e069b6d1a393f88e040e" compoundref="runner_8cpp" startline="273" endline="397">micro_os_plus::micro_test_plus::runner::initialise</referencedby>
         <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a6a5ba9415486617bc64b8d764fef6ba6" compoundref="runner_8cpp" startline="660" endline="702">micro_os_plus::micro_test_plus::runner::reject_call</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a700e3ef1f955492cd84235bd388dcdf2" compoundref="runner_8cpp" startline="840" endline="965">micro_os_plus::micro_test_plus::runner::run_suites</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1micro__test__plus_1_1runner_1a700e3ef1f955492cd84235bd388dcdf2" compoundref="runner_8cpp" startline="840" endline="969">micro_os_plus::micro_test_plus::runner::run_suites</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-attrib">

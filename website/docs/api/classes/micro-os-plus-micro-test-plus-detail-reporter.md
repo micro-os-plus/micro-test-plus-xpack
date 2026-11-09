@@ -1124,7 +1124,7 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemType" align="left" valign="top">static constexpr size_t</td>
-<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2bf85bc5dd65df1816b52b7fd7c6c627">elapsed_time_size_</a> = 32</td>
+<td class="doxyMemberIndexItemName" align="left" valign="top"><a href="#a2bf85bc5dd65df1816b52b7fd7c6c627">elapsed_time_size_</a> = 40</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
@@ -3417,7 +3417,7 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01161">1161</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01163">1163</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <p>Reference <a href="#a5cf73aaf67484b50c25ef42363d49337">commit_outer_results</a>.</p>
@@ -3472,7 +3472,7 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <p>For a nested test case, the outer test case may have performed checks before it; their results are written first, by <span class="doxyComputerOutput"><a href="#a844e80839c81133b52ee3beabf64d942">commit_buffer()</a></span>. For a top-level test case, the buffer is expected to be empty, since the checks are performed only by the test cases, and each one writes its results when it ends; should it not be, its content is written in the same way, rather than lost or attributed to the next test case, and the run continues.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01179">1179</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l01013">1013</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01181">1181</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l01013">1013</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -3632,7 +3632,7 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01388">1388</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01390">1390</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <p>Referenced by <a href="#ae0a4d6478487a011e331e653d1a618b3">display_open_test_cases</a>.</p>
@@ -3690,7 +3690,7 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <p>The innermost open test case is skipped unless <span class="doxyComputerOutput">include_last</span> is true.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01370">1370</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00382">382</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01372">1372</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00382">382</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -3937,7 +3937,7 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01228">1228</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01230">1230</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <p>Reference <a href="#a904f410e240644fa77d65e686e6fc3eb">micro_test_plus::test_case</a>.</p>
@@ -4003,7 +4003,7 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01249">1249</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01251">1251</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <p>Reference <a href="#a904f410e240644fa77d65e686e6fc3eb">micro_test_plus::test_case</a>.</p>
@@ -4065,7 +4065,7 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01194">1194</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01196">1196</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <p>Reference <a href="#a904f410e240644fa77d65e686e6fc3eb">micro_test_plus::test_case</a>.</p>
@@ -4123,7 +4123,7 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 </dl>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01209">1209</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01211">1211</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <p>Reference <a href="#a904f410e240644fa77d65e686e6fc3eb">micro_test_plus::test_case</a>.</p>
@@ -4830,12 +4830,12 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <p>Set and cleared by the concrete reporters, to separate the groups of console lines, such as the suites and the failed test cases; the output file is not affected.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01432">1432</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01434">1434</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a38252f2ef24feabcb7f55e7bdac30bd2">1432</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#a38252f2ef24feabcb7f55e7bdac30bd2">add_empty_line_</a>{ </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight"> };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a38252f2ef24feabcb7f55e7bdac30bd2">1434</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#a38252f2ef24feabcb7f55e7bdac30bd2">add_empty_line_</a>{ </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight"> };</span></span></div>
 
 </div>
 
@@ -4874,12 +4874,12 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <p>Accumulates all reporter output until it is written to the console or the output file via <span class="doxyComputerOutput"><a href="#a887f23131eb91fecf060982dcbd3b1ca">write_console_text()</a></span> or <span class="doxyComputerOutput"><a href="#a37cba38a47d66a928a936ee081c6d88c">write_buffer_to_file()</a></span>.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01292">1292</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01294">1294</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a0972f104175c075295a8aa385e90aad4">1292</a></span><span class="doxyLineContent"><span class="doxyHighlight">      std::string <a href="#a0972f104175c075295a8aa385e90aad4">buffer_</a>{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a0972f104175c075295a8aa385e90aad4">1294</a></span><span class="doxyLineContent"><span class="doxyHighlight">      std::string <a href="#a0972f104175c075295a8aa385e90aad4">buffer_</a>{};</span></span></div>
 
 </div>
 
@@ -4918,12 +4918,12 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <p>Set by <span class="doxyComputerOutput"><a href="#a406cf77b7adcd5fe9417ce7bce4f3afb">fail()</a></span> and reset by <span class="doxyComputerOutput"><a href="#a5859ce31641330b243cfb5d1c6080859">clear_buffer()</a></span>. When a nested test case begins, the concrete reporters use it to decide whether the results already buffered for the outer test case are displayed with normal verbosity.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01303">1303</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01305">1305</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a970a08a00e70f1574033085350656230">1303</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#a970a08a00e70f1574033085350656230">buffer_has_failures_</a>{ </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight"> };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a970a08a00e70f1574033085350656230">1305</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#a970a08a00e70f1574033085350656230">buffer_has_failures_</a>{ </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight"> };</span></span></div>
 
 </div>
 
@@ -4962,12 +4962,12 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <p>Empty strings by default; the human-readable reporter assigns <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/namespaces/micro-os-plus/micro-test-plus/detail/#ad59e204218aa41581652a072be0e8a8a">detail::colours_red_green</a></span> when colours are enabled by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner-options/#a48ed4dd71eff02911c2d6943ba616850">runner_options::colour</a></span>, explicitly or because the console is a terminal.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01282">1282</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01284">1284</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a69616e251ebb3d22e481ada0831bec3c">1282</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/colours">colours</a> <a href="#a69616e251ebb3d22e481ada0831bec3c">colours_</a>{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a69616e251ebb3d22e481ada0831bec3c">1284</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/colours">colours</a> <a href="#a69616e251ebb3d22e481ada0831bec3c">colours_</a>{};</span></span></div>
 
 </div>
 
@@ -5006,12 +5006,12 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <p>Set by <span class="doxyComputerOutput"><a href="#a5ddd6ca6ce847ca89d7a3fcf9751f97d">enter_suite()</a></span>; null outside the suites.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01397">1397</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01399">1399</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ad0a2ebe9aedaecf71fc76993122e661f">1397</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">suite</a>* <a href="#ad0a2ebe9aedaecf71fc76993122e661f">current_suite_</a>{ </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight"> };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ad0a2ebe9aedaecf71fc76993122e661f">1399</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/suite">suite</a>* <a href="#ad0a2ebe9aedaecf71fc76993122e661f">current_suite_</a>{ </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight"> };</span></span></div>
 
 </div>
 
@@ -5050,12 +5050,12 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <p>Used by the checks (<span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-expectations/#ga6db7427ada09e476aec67306ca5c0b74">test_case::expect()</a></span>, <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-requirements/#gaad1feafeef2f3cea336be3ebe0b27e14">test_case::require()</a></span>, and <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/check-result">detail::check_result</a></span>), which are friends, to pre-format expressions at construction time; <span class="doxyComputerOutput"><a href="#ad9e6ccebc1904f723409ddb0caaddb3e">pass()</a></span> and <span class="doxyComputerOutput"><a href="#a406cf77b7adcd5fe9417ce7bce4f3afb">fail()</a></span> then append the formatted text to <span class="doxyComputerOutput"><a href="#a0972f104175c075295a8aa385e90aad4">buffer_</a></span>. The applications format their own types by defining <span class="doxyComputerOutput">operator&lt;&lt;</span> for the public <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter">expression_formatter</a></span> alias.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01421">1421</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01423">1423</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ac928cbe8852ca0c0273482b905c6301b">1421</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter">expression_formatter</a> <a href="#ac928cbe8852ca0c0273482b905c6301b">expression_</a>{ <a href="#a69616e251ebb3d22e481ada0831bec3c">colours_</a> };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ac928cbe8852ca0c0273482b905c6301b">1423</a></span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/detail/expression-formatter">expression_formatter</a> <a href="#ac928cbe8852ca0c0273482b905c6301b">expression_</a>{ <a href="#a69616e251ebb3d22e481ada0831bec3c">colours_</a> };</span></span></div>
 
 </div>
 
@@ -5094,12 +5094,12 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <p>With the quiet verbosity, the console displays only the failed checks, while <span class="doxyComputerOutput"><a href="#a0972f104175c075295a8aa385e90aad4">buffer_</a></span> may also contain the passed checks, for the output file. Filled by <span class="doxyComputerOutput"><a href="#a2d5e5125b8c71fe0dedbe92d730647ec">mark_failure()</a></span> and emptied by <span class="doxyComputerOutput"><a href="#a5859ce31641330b243cfb5d1c6080859">clear_buffer()</a></span>; not used with the other verbosity levels.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01314">1314</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01316">1316</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab8acd7e0c7bc5240a0912affd115305b">1314</a></span><span class="doxyLineContent"><span class="doxyHighlight">      std::string <a href="#ab8acd7e0c7bc5240a0912affd115305b">failures_</a>{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab8acd7e0c7bc5240a0912affd115305b">1316</a></span><span class="doxyLineContent"><span class="doxyHighlight">      std::string <a href="#ab8acd7e0c7bc5240a0912affd115305b">failures_</a>{};</span></span></div>
 
 </div>
 
@@ -5138,12 +5138,12 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <p>Set by the constructor, and returned by <span class="doxyComputerOutput"><a href="#a083ecdfa952d7f8c372a61fbea309357">has_output_file_error()</a></span>. Kept next to the other flags, so that the class does not end with padding, which the derived classes would report.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01442">1442</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01444">1444</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a0d73674812cca717a754137b4b26ed89">1442</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#a0d73674812cca717a754137b4b26ed89">has_output_file_error_</a>{ </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight"> };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a0d73674812cca717a754137b4b26ed89">1444</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#a0d73674812cca717a754137b4b26ed89">has_output_file_error_</a>{ </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight"> };</span></span></div>
 
 </div>
 
@@ -5182,12 +5182,12 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <p>The last element is the test case that owns the buffered results.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01350">1350</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01352">1352</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ad7db34b25d785eacf98d4a50f1951d5b">1350</a></span><span class="doxyLineContent"><span class="doxyHighlight">      std::vector&lt;open_test_case&gt; <a href="#ad7db34b25d785eacf98d4a50f1951d5b">open_test_cases_</a>{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ad7db34b25d785eacf98d4a50f1951d5b">1352</a></span><span class="doxyLineContent"><span class="doxyHighlight">      std::vector&lt;open_test_case&gt; <a href="#ad7db34b25d785eacf98d4a50f1951d5b">open_test_cases_</a>{};</span></span></div>
 
 </div>
 
@@ -5226,12 +5226,12 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <p>When non-null, the report is written to this file in addition to the console, without colour sequences. The file receives the full report, regardless of the verbosity. The file is opened by the constructor and closed by the destructor.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01463">1463</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01465">1465</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a270178ed5fbe0d3f4d72766c2984582a">1463</a></span><span class="doxyLineContent"><span class="doxyHighlight">      FILE* <a href="#a270178ed5fbe0d3f4d72766c2984582a">output_file_</a>{ </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight"> };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a270178ed5fbe0d3f4d72766c2984582a">1465</a></span><span class="doxyLineContent"><span class="doxyHighlight">      FILE* <a href="#a270178ed5fbe0d3f4d72766c2984582a">output_file_</a>{ </span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight"> };</span></span></div>
 
 </div>
 
@@ -5270,12 +5270,12 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <p>Copied by the constructor from the session options. Used to name the file in the confirmation message displayed when the file is closed (not displayed with the <span class="doxyComputerOutput">silent</span> verbosity).</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01452">1452</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01454">1454</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ac3878d2e85ed2cae4c71c793d7a8f52e">1452</a></span><span class="doxyLineContent"><span class="doxyHighlight">      std::string <a href="#ac3878d2e85ed2cae4c71c793d7a8f52e">output_file_path_</a>{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ac3878d2e85ed2cae4c71c793d7a8f52e">1454</a></span><span class="doxyLineContent"><span class="doxyHighlight">      std::string <a href="#ac3878d2e85ed2cae4c71c793d7a8f52e">output_file_path_</a>{};</span></span></div>
 
 </div>
 
@@ -5314,12 +5314,12 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <p>Set by <span class="doxyComputerOutput"><a href="#a5ddd6ca6ce847ca89d7a3fcf9751f97d">enter_suite()</a></span>; with the quiet verbosity, which does not display the headings, the heading is displayed when the first failure of the suite is.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01408">1408</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01410">1410</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6b07e60aa8baeb90821690d1ff9c65e6">1408</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#a6b07e60aa8baeb90821690d1ff9c65e6">suite_displayed_</a>{ </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight"> };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6b07e60aa8baeb90821690d1ff9c65e6">1410</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordType">bool</span><span class="doxyHighlight"> <a href="#a6b07e60aa8baeb90821690d1ff9c65e6">suite_displayed_</a>{ </span><span class="doxyHighlightKeyword">false</span><span class="doxyHighlight"> };</span></span></div>
 
 </div>
 
@@ -5358,12 +5358,12 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <p>A copy of the level kept by the runner, set by the constructor from the same session options and not changed afterwards. The public accessor is <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a1dd0221dca8e7382f0b625ff6316ed92">runner::verbosity_level()</a></span>.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01271">1271</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01273">1273</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a2560a0f1cf935e420a2e584ccddf1a1e">1271</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-runners/#ga809871d76f29309ed9c6fbd96d5a914b">micro_test_plus::verbosity</a> <a href="#a2560a0f1cf935e420a2e584ccddf1a1e">verbosity_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a2560a0f1cf935e420a2e584ccddf1a1e">1273</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-runners/#ga809871d76f29309ed9c6fbd96d5a914b">micro_test_plus::verbosity</a> <a href="#a2560a0f1cf935e420a2e584ccddf1a1e">verbosity_</a>;</span></span></div>
 
 </div>
 
@@ -5437,7 +5437,7 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <p>The elapsed time, in microseconds, is displayed in milliseconds, with three decimals. When it is zero, either because the stopwatch has no readings or because the interval was shorter than a microsecond, the text is empty.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01059">1059</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00810">810</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01061">1061</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00810">810</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -5525,7 +5525,7 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <p>The suites are counted by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#ac29e4b993bb3fe795eb8900231cbf5c4">runner::total_suites_count()</a></span>, which includes the suites skipped by the filter, counted separately by <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/classes/micro-os-plus/micro-test-plus/runner/#a2c2a6d7cb45b714026d124d0ca432360">runner::skipped_suites_count()</a></span>.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01102">1102</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00896">896</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01104">1104</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00896">896</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -5627,7 +5627,7 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <p>A passed suite has no failed checks, so only the number of checks is shown.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01123">1123</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00933">933</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01125">1125</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00933">933</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -5729,7 +5729,7 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <p>A passed test case has no failed checks and no failed nested test cases, so only the number of checks is shown.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01144">1144</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00970">970</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01146">1146</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp/#l00970">970</a> of file <a href="/micro-test-plus-xpack/docs/api/files/src/reporter-cpp">reporter.cpp</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -5792,7 +5792,7 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::detail::reporter::elapsed_time_size_ = 32</td>
+<td class="doxyMemberName">size_t micro_os_plus::micro_test_plus::detail::reporter::elapsed_time_size_ = 40</td>
 </tr>
 </table>
 </td>
@@ -5811,15 +5811,15 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <p>Size of the array that receives the elapsed time text.</p>
 
 
-<p>Large enough for <span class="doxyComputerOutput">", time: 4294967295.999 ms"</span>, the longest text produced by <span class="doxyComputerOutput"><a href="#ac6dca3d3fa34870f3960fe5e226e45d8">format_elapsed_time()</a></span>.</p>
+<p>Large enough for <span class="doxyComputerOutput">", time: 4294967295.999 ms"</span>, the longest text produced by <span class="doxyComputerOutput"><a href="#ac6dca3d3fa34870f3960fe5e226e45d8">format_elapsed_time()</a></span> (26 bytes with the terminator), and for the worst case assumed by GCC 11, which does not know that the fraction is below 1000 and counts ten digits for it (33 bytes).</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01038">1038</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01040">1040</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a2bf85bc5dd65df1816b52b7fd7c6c627">1038</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a2bf85bc5dd65df1816b52b7fd7c6c627">elapsed_time_size_</a> = 32;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a2bf85bc5dd65df1816b52b7fd7c6c627">1040</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a2bf85bc5dd65df1816b52b7fd7c6c627">elapsed_time_size_</a> = 40;</span></span></div>
 
 </div>
 
@@ -5860,12 +5860,12 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <p>Used by the concrete reporters to indent the lines of the nested test cases; four spaces is also the TAP 14 subtest indentation.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01261">1261</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01263">1263</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a7ee7d450c03e89bb0beb6cd97056aa4e">1261</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a7ee7d450c03e89bb0beb6cd97056aa4e">indent_size_</a> = 4;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a7ee7d450c03e89bb0beb6cd97056aa4e">1263</a></span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">static</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeywordType">size_t</span><span class="doxyHighlight"> <a href="#a7ee7d450c03e89bb0beb6cd97056aa4e">indent_size_</a> = 4;</span></span></div>
 
 </div>
 
@@ -5909,12 +5909,12 @@ class micro_os_plus::micro_test_plus::detail::reporter { ... }
 <p>The array is a local variable of the functions that end the test cases, which run at the deepest point of the stack, so it is not larger than needed on the 32-bit embedded targets.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01080">1080</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h/#l01082">1082</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/reporter-h">reporter.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber">1081</span><span class="doxyLineContent"><span class="doxyHighlight">          = 94 + 6 * (std::numeric_limits&lt;size_t&gt;::digits10 + 1);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1083</span><span class="doxyLineContent"><span class="doxyHighlight">          = 94 + 6 * (std::numeric_limits&lt;size_t&gt;::digits10 + 1);</span></span></div>
 
 </div>
 

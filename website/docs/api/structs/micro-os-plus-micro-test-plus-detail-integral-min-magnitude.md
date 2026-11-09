@@ -122,15 +122,15 @@ struct micro_os_plus::micro_test_plus::detail::integral_min_magnitude&lt;T&gt; {
 <p>Returns the minimum of <span class="doxyComputerOutput">T</span>, which is the negation of the absolute value represented by this type.</p>
 
 
-<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00494">494</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00563">563</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Declaration at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h/#l00494">494</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/deprecated-h">deprecated.h</a>, definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00565">565</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a30671e3b97a6c4c108d47358e9e40b35">563</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a30671e3b97a6c4c108d47358e9e40b35">integral_min_magnitude&lt;T&gt;::operator-</a>() const noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">564</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">565</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">integral_constant&lt;std::numeric_limits&lt;T&gt;::min</a> ()&gt;{};</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">566</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a30671e3b97a6c4c108d47358e9e40b35">565</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a30671e3b97a6c4c108d47358e9e40b35">integral_min_magnitude&lt;T&gt;::operator-</a>() const noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">566</span><span class="doxyLineContent"><span class="doxyHighlight">    {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">567</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/integral-constant">integral_constant&lt;std::numeric_limits&lt;T&gt;::min</a> ()&gt;{};</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">568</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
 

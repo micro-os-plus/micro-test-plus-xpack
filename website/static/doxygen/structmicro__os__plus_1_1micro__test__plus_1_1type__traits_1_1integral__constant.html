@@ -356,27 +356,28 @@ template&lt;auto N&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="deprecated-inlines_8h_source.html#l00532">532</a> of file <a class="el" href="deprecated-inlines_8h_source.html">deprecated-inlines.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  533</span>    {</div>
-<div class="line"><span class="lineno">  534</span>      <span class="keyword">using </span><a class="code hl_typedef" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html#abb9873b49614cc55fae3f6dda7b08b48">value_type</a> = <span class="keyword">decltype</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html">N</a>);</div>
-<div class="line"><span class="lineno">  535</span> </div>
-<div class="line"><span class="lineno">  536</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (!<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html">std::is_signed_v&lt;value_type&gt;</a>)</div>
-<div class="line"><span class="lineno">  537</span>        {</div>
-<div class="line"><span class="lineno">  538</span>          <span class="keywordflow">return</span> <a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html#a4f40fb20314c21d4c8320fe43a413103">integral_constant&lt;static_cast&lt;value_type&gt;</a> (<a class="code hl_typedef" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html#abb9873b49614cc55fae3f6dda7b08b48">value_type</a>{}</div>
-<div class="line"><span class="lineno">  539</span>                                                            - <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html">N</a>)&gt;{};</div>
-<div class="line"><span class="lineno">  540</span>        }</div>
-<div class="line"><span class="lineno">  541</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html">N</a> == <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html">std::numeric_limits&lt;value_type&gt;::min</a> ())</div>
-<div class="line"><span class="lineno">  542</span>        {</div>
-<div class="line"><span class="lineno">  543</span>          <span class="keyword">static_assert</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html">N</a> != <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html">std::numeric_limits&lt;value_type&gt;::min</a> (),</div>
-<div class="line"><span class="lineno">  544</span>                         <span class="stringliteral">&quot;µTest++: the negation of the minimum value does &quot;</span></div>
-<div class="line"><span class="lineno">  545</span>                         <span class="stringliteral">&quot;not fit in the type of the literal&quot;</span>);</div>
-<div class="line"><span class="lineno">  546</span>          <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">  547</span>        }</div>
-<div class="line"><span class="lineno">  548</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  549</span>        {</div>
-<div class="line"><span class="lineno">  550</span>          <span class="keywordflow">return</span> <a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html#a4f40fb20314c21d4c8320fe43a413103">integral_constant&lt;static_cast&lt;value_type&gt;</a> (-<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html">N</a>)&gt;{};</div>
-<div class="line"><span class="lineno">  551</span>        }</div>
-<div class="line"><span class="lineno">  552</span>    }</div>
+<div class="line"><span class="lineno">  534</span>      <span class="comment">// Not named `value_type`, which would shadow the member inherited</span></div>
+<div class="line"><span class="lineno">  535</span>      <span class="comment">// from the base (`-Wshadow`).</span></div>
+<div class="line"><span class="lineno">  536</span>      <span class="keyword">using </span><a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html">constant_type</a> = <span class="keyword">decltype</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html">N</a>);</div>
+<div class="line"><span class="lineno">  537</span> </div>
+<div class="line"><span class="lineno">  538</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (!<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html">std::is_signed_v&lt;constant_type&gt;</a>)</div>
+<div class="line"><span class="lineno">  539</span>        {</div>
+<div class="line"><span class="lineno">  540</span>          <span class="keywordflow">return</span> <a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html#a4f40fb20314c21d4c8320fe43a413103">integral_constant&lt;static_cast&lt;constant_type&gt;</a> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html">constant_type</a>{}</div>
+<div class="line"><span class="lineno">  541</span>                                                               - <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html">N</a>)&gt;{};</div>
+<div class="line"><span class="lineno">  542</span>        }</div>
+<div class="line"><span class="lineno">  543</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html">N</a> == <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html">std::numeric_limits&lt;constant_type&gt;::min</a> ())</div>
+<div class="line"><span class="lineno">  544</span>        {</div>
+<div class="line"><span class="lineno">  545</span>          <span class="keyword">static_assert</span> (<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html">N</a> != <a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html">std::numeric_limits&lt;constant_type&gt;::min</a> (),</div>
+<div class="line"><span class="lineno">  546</span>                         <span class="stringliteral">&quot;µTest++: the negation of the minimum value does &quot;</span></div>
+<div class="line"><span class="lineno">  547</span>                         <span class="stringliteral">&quot;not fit in the type of the literal&quot;</span>);</div>
+<div class="line"><span class="lineno">  548</span>          <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  549</span>        }</div>
+<div class="line"><span class="lineno">  550</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  551</span>        {</div>
+<div class="line"><span class="lineno">  552</span>          <span class="keywordflow">return</span> <a class="code hl_function" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html#a4f40fb20314c21d4c8320fe43a413103">integral_constant&lt;static_cast&lt;constant_type&gt;</a> (-<a class="code hl_struct" href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html">N</a>)&gt;{};</div>
+<div class="line"><span class="lineno">  553</span>        }</div>
+<div class="line"><span class="lineno">  554</span>    }</div>
 <div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant_html_a4f40fb20314c21d4c8320fe43a413103"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1integral__constant.html#a4f40fb20314c21d4c8320fe43a413103">micro_os_plus::micro_test_plus::detail::integral_constant::integral_constant</a></div><div class="ttdeci">constexpr integral_constant(void) noexcept</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition</b> <a href="deprecated-inlines_8h_source.html#l00516">deprecated-inlines.h:516</a></div></div>
-<div class="ttc" id="astructmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base_html_abb9873b49614cc55fae3f6dda7b08b48"><div class="ttname"><a href="structmicro__os__plus_1_1micro__test__plus_1_1detail_1_1value__base.html#abb9873b49614cc55fae3f6dda7b08b48">micro_os_plus::micro_test_plus::detail::value_base&lt; decltype(N)&gt;::value_type</a></div><div class="ttdeci">decltype(N) value_type</div><div class="ttdef"><b>Definition</b> <a href="deprecated_8h_source.html#l00368">deprecated.h:368</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

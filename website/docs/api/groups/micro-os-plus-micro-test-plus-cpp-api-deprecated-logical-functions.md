@@ -247,15 +247,15 @@ keywords:
 <p>Forwards to <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/#ga0a385c59a2f7d3c4cfef77d2d3b4f3d6">all_of()</a></span>, so the returned expression is the same, and is reported in the same way.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00696">696</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00698">698</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9998cd63972fac8b24a2f0138322e7c1">696</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga9998cd63972fac8b24a2f0138322e7c1">_and</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">697</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">698</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/#ga0a385c59a2f7d3c4cfef77d2d3b4f3d6">all_of</a> (std::forward&lt;Lhs_T&gt; (lhs), std::forward&lt;Rhs_T&gt; (rhs));</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">699</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga9998cd63972fac8b24a2f0138322e7c1">698</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga9998cd63972fac8b24a2f0138322e7c1">_and</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">699</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">700</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/#ga0a385c59a2f7d3c4cfef77d2d3b4f3d6">all_of</a> (std::forward&lt;Lhs_T&gt; (lhs), std::forward&lt;Rhs_T&gt; (rhs));</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">701</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -341,15 +341,15 @@ keywords:
 <p>Forwards to <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/#gae82d39ac86167bb4bfa6624676f3729e">negate()</a></span>, so the returned expression is the same, and is reported in the same way.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00683">683</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00685">685</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaa465723bc4fe309f15d30a4e7207d40f">683</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gaa465723bc4fe309f15d30a4e7207d40f">_not</a> (Expr_T&amp;&amp; expr)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">684</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">685</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/#gae82d39ac86167bb4bfa6624676f3729e">negate</a> (std::forward&lt;Expr_T&gt; (expr));</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">686</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaa465723bc4fe309f15d30a4e7207d40f">685</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gaa465723bc4fe309f15d30a4e7207d40f">_not</a> (Expr_T&amp;&amp; expr)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">686</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">687</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/#gae82d39ac86167bb4bfa6624676f3729e">negate</a> (std::forward&lt;Expr_T&gt; (expr));</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">688</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -443,15 +443,15 @@ keywords:
 <p>Forwards to <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/#gadc2224d07a9bf118c8772518a7d3c4fd">any_of()</a></span>, so the returned expression is the same, and is reported in the same way.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00709">709</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00711">711</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga1c7ddbf53764ab67240f1cf0e0fb4b8d">709</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga1c7ddbf53764ab67240f1cf0e0fb4b8d">_or</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">710</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">711</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/#gadc2224d07a9bf118c8772518a7d3c4fd">any_of</a> (std::forward&lt;Lhs_T&gt; (lhs), std::forward&lt;Rhs_T&gt; (rhs));</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">712</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga1c7ddbf53764ab67240f1cf0e0fb4b8d">711</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga1c7ddbf53764ab67240f1cf0e0fb4b8d">_or</a> (Lhs_T&amp;&amp; lhs, Rhs_T&amp;&amp; rhs)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">712</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">713</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/#gadc2224d07a9bf118c8772518a7d3c4fd">any_of</a> (std::forward&lt;Lhs_T&gt; (lhs), std::forward&lt;Rhs_T&gt; (rhs));</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">714</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -564,16 +564,16 @@ keywords:
 <p>Constructs the floating-point <span class="doxyComputerOutput"><a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value</a>&lt;T&gt;</span> with the given tolerance, instead of the one derived from the number of decimals of the value.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01275">1275</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l01277">1277</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gafe47800a219b00fcccf0a1dc596dbe20">1275</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gafe47800a219b00fcccf0a1dc596dbe20">approx</a> (T value, std::type_identity_t&lt;T&gt; epsilon) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1276</span><span class="doxyLineContent"><span class="doxyHighlight">      -&gt; <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;T&gt;</a></span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1277</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1278</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;T&gt;</a>{ value, epsilon };</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">1279</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gafe47800a219b00fcccf0a1dc596dbe20">1277</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#gafe47800a219b00fcccf0a1dc596dbe20">approx</a> (T value, std::type_identity_t&lt;T&gt; epsilon) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1278</span><span class="doxyLineContent"><span class="doxyHighlight">      -&gt; <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;T&gt;</a></span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1279</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1280</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="/micro-test-plus-xpack/docs/api/structs/micro-os-plus/micro-test-plus/detail/value">detail::value&lt;T&gt;</a>{ value, epsilon };</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">1281</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -666,15 +666,15 @@ keywords:
 <p>Removes the <span class="doxyComputerOutput">const</span> qualifier from the reference with <span class="doxyComputerOutput">const_cast</span>.</p>
 
 
-<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00723">723</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
+<p>Definition at line <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h/#l00725">725</a> of file <a href="/micro-test-plus-xpack/docs/api/files/include/micro-os-plus/micro-test-plus/inlines/deprecated-inlines-h">deprecated-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga00ea8f3dfb7cb0ef39919065321cf62f">723</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga00ea8f3dfb7cb0ef39919065321cf62f">mut</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; t) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight"> -&gt; T&amp;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">724</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">725</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">const_cast&lt;</span><span class="doxyHighlight">T&amp;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (t);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">726</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga00ea8f3dfb7cb0ef39919065321cf62f">725</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ga00ea8f3dfb7cb0ef39919065321cf62f">mut</a> (</span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> T&amp; t) </span><span class="doxyHighlightKeyword">noexcept</span><span class="doxyHighlight"> -&gt; T&amp;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">726</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">727</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">const_cast&lt;</span><span class="doxyHighlight">T&amp;</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (t);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">728</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
