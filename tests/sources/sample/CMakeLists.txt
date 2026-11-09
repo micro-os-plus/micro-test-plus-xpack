@@ -17,16 +17,19 @@
 #
 # `add_subdirectory("sources/sample")`
 #
-# This creates an interface library that can be linked to a target with:
+# This creates interface libraries that can be linked to a target with:
 #
-# `target_link_libraries(your-target PUBLIC test-sample)`
+# ~~~
+# target_link_libraries(your-target PUBLIC test::sample)
+# ~~~
+
+# -----------------------------------------------------------------------------
+
+message (VERBOSE "Processing 'tests/sources/sample/'...")
 
 # -----------------------------------------------------------------------------
 
 # The source code for a sample test.
-message (VERBOSE "Processing 'tests/sources/sample/'...")
-
-# -----------------------------------------------------------------------------
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
 # Visibility keywords: INTERFACE passes properties up to targets that link
