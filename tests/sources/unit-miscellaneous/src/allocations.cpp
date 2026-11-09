@@ -57,10 +57,15 @@ operator delete (void* pointer) noexcept
   std::free (pointer);
 }
 
+// The sized form is declared only when the sized deallocation is enabled,
+// which Clang for Windows does not do by default; without it, a definition
+// would have no previous prototype (`-Wmissing-prototypes`).
+#if defined(__cpp_sized_deallocation)
 void
 operator delete (void* pointer, std::size_t) noexcept
 {
   std::free (pointer);
 }
+#endif // defined(__cpp_sized_deallocation)
 
 // ----------------------------------------------------------------------------
