@@ -15,7 +15,8 @@
     "json": "https://www.npmjs.com/package/json",
     "json5": "https://www.npmjs.com/package/json5",
     "liquidjs": "https://www.npmjs.com/package/liquidjs",
-    "tap-parser": "https://www.npmjs.com/package/tap-parser"
+    "tap-parser": "https://www.npmjs.com/package/tap-parser",
+    "glob": "https://www.npmjs.com/package/glob"
   },
   "dependencies": {},
   "devDependencies": {
@@ -25,7 +26,8 @@
     "json": "^11.0.0",
     "json5": "^2.2.3",
     "liquidjs": "^10.28.0",
-    "tap-parser": "^18.3.4"
+    "tap-parser": "^18.3.4",
+    "glob": "^14.0.4"
   },
   "scripts": {
     "generate-tests-commons": "node node_modules/@micro-os-plus/build-helper/maintenance/scripts/generate-tests-commons.mjs --micro-os-plus",
