@@ -1033,9 +1033,11 @@ namespace micro_os_plus::micro_test_plus
        *
        * @details
        * Large enough for `", time: 4294967295.999 ms"`, the longest text
-       * produced by `format_elapsed_time()`.
+       * produced by `format_elapsed_time()` (26 bytes with the terminator),
+       * and for the worst case assumed by GCC 11, which does not know that
+       * the fraction is below 1000 and counts ten digits for it (33 bytes).
        */
-      static constexpr size_t elapsed_time_size_ = 32;
+      static constexpr size_t elapsed_time_size_ = 40;
 
       /**
        * @brief Formats the elapsed time of a suite or of the session.
