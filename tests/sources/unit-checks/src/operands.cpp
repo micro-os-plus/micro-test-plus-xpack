@@ -35,6 +35,8 @@ namespace mt = micro_os_plus::micro_test_plus;
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic ignored "-Waggregate-return"
+// On Windows `long` has 4 bytes, so `money` has padding.
+#pragma GCC diagnostic ignored "-Wpadded"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wexit-time-destructors"
