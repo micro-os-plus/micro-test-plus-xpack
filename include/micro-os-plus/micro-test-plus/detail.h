@@ -71,10 +71,11 @@
  * @brief Portable `printf()` conversion for the `size_t` values.
  *
  * @details
- * Clang's format checker on Windows (the "ms_printf" archetype) rejects the
- * standard `z` modifier, even though the UCRT `printf()` implementation
- * supports it at run time, so the Microsoft-specific `I` modifier is used
- * there instead (`"Iu"`); elsewhere it is `"zu"`.
+ * The format checkers of Clang (MSVC target) and of GCC (MinGW-w64, the
+ * "ms_printf" archetype) on Windows reject the standard `z` modifier, even
+ * though the C runtime `printf()` implementation supports it; the
+ * Microsoft-specific `I` modifier is accepted by both, so it is used there
+ * instead (`"Iu"`); elsewhere, including Clang for MinGW, it is `"zu"`.
  *
  * It is used in all the library formats that print `size_t` values, in
  * the reporter output and in the trace messages alike, concatenated with
@@ -87,11 +88,11 @@
  * the headers, to keep it out of the application code. The library
  * sources include the individual headers, which keep it defined.
  */
-#if defined(_WIN32) && defined(__clang__) && !defined(__MINGW32__)
+#if defined(_WIN32) && !(defined(__clang__) && defined(__MINGW32__))
 #define MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "Iu"
 #else
 #define MICRO_OS_PLUS_MICRO_TEST_PLUS_PRI_SIZE "zu"
-#endif // defined(_WIN32) && defined(__clang__) && !defined(__MINGW32__)
+#endif // defined(_WIN32) && !(defined(__clang__) && defined(__MINGW32__))
 
 // ----------------------------------------------------------------------------
 
