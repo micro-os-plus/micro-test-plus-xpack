@@ -254,7 +254,7 @@
         "@micro-os-plus/architecture-synthetic-posix": "^6.0.0",
         "@micro-os-plus/architecture-cortexm": "^9.0.0",
         "@micro-os-plus/devices-qemu-cortexm": "^8.0.0",
-        "@micro-os-plus/architecture-riscv": "^7.0.0",
+        "@micro-os-plus/architecture-riscv": "^7.0.1",
         "@micro-os-plus/devices-qemu-riscv": "^3.0.0",
         "@micro-os-plus/devices-raspberry-pi": "^1.0.0",
         "@micro-os-plus/architecture-aarch32": "^5.0.0",
