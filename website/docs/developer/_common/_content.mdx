@@ -30,21 +30,15 @@ uses the xPack Framework tools during development.
 
 ## Satisfy dependencies
 
-Navigate to the project folder:
+Execute the following commands:
 
 ```sh
-cd ~/Work/micro-os-plus/micro-test-plus-xpack.git
+npm --prefix ~/Work/micro-os-plus/micro-test-plus-xpack.git install
+npm --prefix ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests install
+xpm install -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 ```
 
-and execute the following commands:
-
-```sh
-npm install
-npm --prefix tests install
-xpm install -C tests
-```
-
-The last command installs the dependencies of the tests project, such as the
+The last two commands install the dependencies of the tests project, such as the
 build tools. The toolchains required by each build configuration are
 installed later, by the `install` actions, as described in
 [Manual tests](#manual-tests); those actions also run `xpm install`, so

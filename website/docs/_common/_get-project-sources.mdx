@@ -13,8 +13,8 @@ The project is hosted on GitHub:
 
 <BranchesDetails />
 
-To clone the stable branch (`xpack`), execute the following commands in a
-terminal (on Windows use the _Git Bash_ console):
+To clone the stable branch (`xpack`), execute the following
+commands in a terminal (on Windows use the _Git Bash_ console):
 
 ```sh
 rm -rf ~/Work/micro-os-plus/micro-test-plus-xpack.git && \
@@ -26,7 +26,8 @@ git clone \
 ```
 
 <details>
-<summary>For development purposes, clone the `xpack-development` branch.</summary>
+<summary>For development purposes, clone the
+`xpack-development` branch.</summary>
 
 ```sh
 rm -rf ~/Work/micro-os-plus/micro-test-plus-xpack.git && \
@@ -47,7 +48,8 @@ git -C ~/Work/micro-os-plus/micro-test-plus-xpack.git pull
 
 :::tip
 
-To contribute Pull Requests, fork the project and ensure that **Copy the xpack branch only** is **disabled**.
+To contribute Pull Requests, fork the project and ensure that
+**Copy the xpack branch only** is **disabled**.
 
 Use the `xpack-development` branch, and direct the Pull Requests to the
 same branch.
@@ -56,20 +58,44 @@ same branch.
 
 ## Add links for development
 
-During development, it is convenient to maintain a writable instance of the
-library to enable changes in parallel with the parent project.
+By default, to prevent inadvertent changes, xpm dependencies are
+installed in read-only folders.
 
-To facilitate the use of a writable instance of this library in other
-projects, add a link from the user's global xPacks store to this local
-development folder:
+However, during development, it is convenient to maintain a writable
+instance of the code to enable changes in parallel with the parent
+project.
+
+Similarly to the npm link mechanism, xpm allows linking local
+development folders to the global xPacks store, enabling changes to
+be reflected in dependent projects without reinstalling.
+
+The process has two steps:
+
+1. Tell the global xpm configuration where the local development
+   folder is located.
+2. Tell the local project to use the linked development folder
+   instead of the installed read-only dependency.
+
+The first step requires executing the `xpm link` command in the
+local development folder, as shown below:
 
 ```sh
 xpm link -C ~/Work/micro-os-plus/micro-test-plus-xpack.git
 ```
 
-And in the projects that refer to it:
+The result is the creation of a symbolic link in the global xPacks
+store pointing to the local development folder.
+
+For example:
+
+```console
+% ls -l xPacks/micro-os-plus/micro-test-plus-xpack/.link
+lrwxr-xr-x  1 ilg  staff  75 Oct 26 21:57 xPacks/micro-os-plus/micro-test-plus-xpack/.link -> /Users/ilg/Work/micro-os-plus/micro-test-plus-xpack.git
+```
+
+For the second step, in the local project, instead of adding the
+dependency by installing it, run the command to link it:
 
 ```sh
 xpm link @micro-os-plus/micro-test-plus
 ```
-
