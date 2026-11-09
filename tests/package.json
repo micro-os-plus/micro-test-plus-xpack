@@ -2209,7 +2209,8 @@
         "properties": {
           "buildType": "Debug",
           "platformName": "nucleo-f411re",
-          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+          "toolchainFileName": "arm-none-eabi-gcc.cmake",
+          "shortConfigurationName": "n411cgd"
         },
         "actions": {
           "link-dependencies": [
@@ -2222,7 +2223,8 @@
           "nucleo-f411re-cmake-gcc-debug"
         ],
         "properties": {
-          "buildType": "MinSizeRel"
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "n411cgr"
         }
       },
       "nucleo-f411re-cubemx-cmake-gcc-debug": {
@@ -2240,7 +2242,8 @@
         "properties": {
           "buildType": "Debug",
           "platformName": "nucleo-f411re-cubemx",
-          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+          "toolchainFileName": "arm-none-eabi-gcc.cmake",
+          "shortConfigurationName": "n411xcgd"
         },
         "actions": {
           "link-dependencies": [
@@ -2253,7 +2256,8 @@
           "nucleo-f411re-cubemx-cmake-gcc-debug"
         ],
         "properties": {
-          "buildType": "MinSizeRel"
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "n411xcgr"
         }
       },
       "nucleo-f411re-cubemx-startup-cmake-gcc-debug": {
@@ -2271,7 +2275,8 @@
         "properties": {
           "buildType": "Debug",
           "platformName": "nucleo-f411re-cubemx-startup",
-          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+          "toolchainFileName": "arm-none-eabi-gcc.cmake",
+          "shortConfigurationName": "n411xscgd"
         },
         "actions": {
           "link-dependencies": [
@@ -2284,7 +2289,8 @@
           "nucleo-f411re-cubemx-startup-cmake-gcc-debug"
         ],
         "properties": {
-          "buildType": "MinSizeRel"
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "n411xscgr"
         }
       },
       "nucleo-f767zi-cmake-gcc-debug": {
@@ -2302,7 +2308,8 @@
         "properties": {
           "buildType": "Debug",
           "platformName": "nucleo-f767zi",
-          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+          "toolchainFileName": "arm-none-eabi-gcc.cmake",
+          "shortConfigurationName": "n767cgd"
         },
         "actions": {
           "link-dependencies": [
@@ -2315,7 +2322,8 @@
           "nucleo-f767zi-cmake-gcc-debug"
         ],
         "properties": {
-          "buildType": "MinSizeRel"
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "n767cgr"
         }
       },
       "nucleo-f767zi-cubemx-cmake-gcc-debug": {
@@ -2333,7 +2341,8 @@
         "properties": {
           "buildType": "Debug",
           "platformName": "nucleo-f767zi-cubemx",
-          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+          "toolchainFileName": "arm-none-eabi-gcc.cmake",
+          "shortConfigurationName": "n767xcgd"
         },
         "actions": {
           "link-dependencies": [
@@ -2346,7 +2355,8 @@
           "nucleo-f767zi-cubemx-cmake-gcc-debug"
         ],
         "properties": {
-          "buildType": "MinSizeRel"
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "n767xcgr"
         }
       },
       "nucleo-h533re-cmake-gcc-debug": {
@@ -2364,7 +2374,8 @@
         "properties": {
           "buildType": "Debug",
           "platformName": "nucleo-h533re",
-          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+          "toolchainFileName": "arm-none-eabi-gcc.cmake",
+          "shortConfigurationName": "n533cgd"
         },
         "actions": {
           "link-dependencies": [
@@ -2377,7 +2388,8 @@
           "nucleo-h533re-cmake-gcc-debug"
         ],
         "properties": {
-          "buildType": "MinSizeRel"
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "n533cgr"
         }
       },
       "nucleo-h533re-cubemx-cmake-gcc-debug": {
@@ -2395,7 +2407,8 @@
         "properties": {
           "buildType": "Debug",
           "platformName": "nucleo-h533re-cubemx",
-          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+          "toolchainFileName": "arm-none-eabi-gcc.cmake",
+          "shortConfigurationName": "n533xcgd"
         },
         "actions": {
           "link-dependencies": [
@@ -2408,7 +2421,8 @@
           "nucleo-h533re-cubemx-cmake-gcc-debug"
         ],
         "properties": {
-          "buildType": "MinSizeRel"
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "n533xcgr"
         }
       },
       "raspberry-pi-pico-cmake-gcc-debug": {
@@ -2425,7 +2439,8 @@
         "properties": {
           "buildType": "Debug",
           "platformName": "raspberry-pi-pico",
-          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+          "toolchainFileName": "arm-none-eabi-gcc.cmake",
+          "shortConfigurationName": "pccgd"
         },
         "devDependencies": {
           "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}",
@@ -2443,7 +2458,8 @@
           "raspberry-pi-pico-cmake-gcc-debug"
         ],
         "properties": {
-          "buildType": "MinSizeRel"
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "pccgr"
         }
       },
       "raspberry-pi-pico-sdk-cmake-gcc-debug": {
@@ -2460,7 +2476,8 @@
         "properties": {
           "buildType": "Debug",
           "platformName": "raspberry-pi-pico-sdk",
-          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+          "toolchainFileName": "arm-none-eabi-gcc.cmake",
+          "shortConfigurationName": "pcscgd"
         },
         "devDependencies": {
           "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}",
@@ -2478,7 +2495,8 @@
           "raspberry-pi-pico-sdk-cmake-gcc-debug"
         ],
         "properties": {
-          "buildType": "MinSizeRel"
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "pcscgr"
         }
       },
       "raspberry-pi-pico-2-arm-cmake-gcc-debug": {
@@ -2495,7 +2513,8 @@
         "properties": {
           "buildType": "Debug",
           "platformName": "raspberry-pi-pico-2-arm",
-          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+          "toolchainFileName": "arm-none-eabi-gcc.cmake",
+          "shortConfigurationName": "pc2acgd"
         },
         "devDependencies": {
           "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}",
@@ -2513,7 +2532,8 @@
           "raspberry-pi-pico-2-arm-cmake-gcc-debug"
         ],
         "properties": {
-          "buildType": "MinSizeRel"
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "pc2acgr"
         }
       },
       "raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug": {
@@ -2530,7 +2550,8 @@
         "properties": {
           "buildType": "Debug",
           "platformName": "raspberry-pi-pico-2-arm-sdk",
-          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+          "toolchainFileName": "arm-none-eabi-gcc.cmake",
+          "shortConfigurationName": "pc2ascgd"
         },
         "devDependencies": {
           "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}",
@@ -2548,7 +2569,8 @@
           "raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug"
         ],
         "properties": {
-          "buildType": "MinSizeRel"
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "pc2ascgr"
         }
       },
       "raspberry-pi-pico-2-riscv-cmake-gcc-debug": {
@@ -2564,7 +2586,8 @@
         "properties": {
           "buildType": "Debug",
           "platformName": "raspberry-pi-pico-2-riscv",
-          "toolchainFileName": "riscv-none-elf-gcc.cmake"
+          "toolchainFileName": "riscv-none-elf-gcc.cmake",
+          "shortConfigurationName": "pc2rscgd"
         },
         "devDependencies": {
           "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}",
@@ -2583,7 +2606,8 @@
           "raspberry-pi-pico-2-riscv-cmake-gcc-debug"
         ],
         "properties": {
-          "buildType": "MinSizeRel"
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "pc2rscgr"
         }
       },
       "raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug": {
@@ -2599,7 +2623,8 @@
         "properties": {
           "buildType": "Debug",
           "platformName": "raspberry-pi-pico-2-riscv-sdk",
-          "toolchainFileName": "riscv-none-elf-gcc.cmake"
+          "toolchainFileName": "riscv-none-elf-gcc.cmake",
+          "shortConfigurationName": "pc2rscgd"
         },
         "devDependencies": {
           "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}",
@@ -2618,7 +2643,8 @@
           "raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug"
         ],
         "properties": {
-          "buildType": "MinSizeRel"
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "pc2rscgr"
         }
       },
       "raspberry-pi-zero-2-w-aarch32-cmake-gcc-debug": {
@@ -2633,7 +2659,8 @@
         "properties": {
           "buildType": "Debug",
           "platformName": "raspberry-pi-zero-2-w-aarch32",
-          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+          "toolchainFileName": "arm-none-eabi-gcc.cmake",
+          "shortConfigurationName": "pz232cgd"
         },
         "devDependencies": {
           "@micro-os-plus/architecture-aarch32": "{{ properties.dependencies-releases['@micro-os-plus/architecture-aarch32'] }}"
@@ -2649,7 +2676,8 @@
           "raspberry-pi-zero-2-w-aarch32-cmake-gcc-debug"
         ],
         "properties": {
-          "buildType": "MinSizeRel"
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "pz232cgr"
         }
       },
       "raspberry-pi-zero-2-w-aarch64-cmake-gcc-debug": {
@@ -2664,7 +2692,8 @@
         "properties": {
           "buildType": "Debug",
           "platformName": "raspberry-pi-zero-2-w-aarch64",
-          "toolchainFileName": "aarch64-none-elf-gcc.cmake"
+          "toolchainFileName": "aarch64-none-elf-gcc.cmake",
+          "shortConfigurationName": "pz264cgd"
         },
         "devDependencies": {
           "@micro-os-plus/architecture-aarch64": "{{ properties.dependencies-releases['@micro-os-plus/architecture-aarch64'] }}"
@@ -2680,7 +2709,8 @@
           "raspberry-pi-zero-2-w-aarch64-cmake-gcc-debug"
         ],
         "properties": {
-          "buildType": "MinSizeRel"
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "pz264cgr"
         }
       }
     }
