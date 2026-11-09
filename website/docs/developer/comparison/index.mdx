@@ -1,0 +1,624 @@
+---
+title: Comparison with other frameworks
+description: "How the design of µTest++ compares with Boost UT, GoogleTest, Catch2, doctest, Boost.Test, Unity, and CppUTest, and where its choices differ or leave out features."
+keywords:
+  - micro-os-plus
+  - xpack
+  - micro-test-plus
+  - developer
+  - comparison
+  - googletest
+  - catch2
+  - doctest
+  - boost-ut
+  - unity
+  - cpputest
+
+date: 2026-11-09 10:00:00 +0200
+---
+
+{/* ------------------------------------------------------------------------ */}
+
+# Comparison with other frameworks
+
+This page places µTest++ among the major C and C++ testing frameworks, to help
+the contributors judge which design choices are deliberate, and which are
+limitations. It is not a benchmark: no footprint or timing figures are given,
+since they depend on the toolchain, the target, and the configuration.
+
+The fatal and non-fatal checks of the same frameworks are compared in the
+[User's Guide](/docs/user/checks/#comparison-with-other-frameworks); that
+table is not repeated here.
+
+## The frameworks
+
+| Framework | Language | Why it is compared |
+| --- | --- | --- |
+| [Boost UT](https://boost-ext.github.io/ut/) | C++20 | The closest relative: the function comparators of µTest++ were inspired by it. |
+| [GoogleTest](https://github.com/google/googletest) | C++ (the 1.18.x branch requires C++17) | The most widely used C++ framework, with GoogleMock included. |
+| [Catch2](https://github.com/catchorg/Catch2) | C++ (v3 requires C++14) | Popular, with sections, matchers, and benchmarking. |
+| [doctest](https://github.com/doctest/doctest) | C++ (C++11 and later) | Light on compile times, with a single header. |
+| [Boost.Test](https://www.boost.org/doc/libs/release/libs/test/) | C++ | The test library of Boost, with header-only, static, and shared variants. |
+| [Unity](https://github.com/ThrowTheSwitch/Unity) | C | The common baseline for tests on microcontrollers. |
+| [CppUTest](https://cpputest.github.io/) | C++ (for C and C++ code) | The other reference for embedded testing, with built-in leak detection. |
+
+Embedded Unit was not included, and JUnit is not a C++ framework.
+
+## Summary matrix
+
+| | µTest++ | Boost UT | GoogleTest | Catch2 | doctest | Boost.Test | Unity | CppUTest |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Checks written as | functions (macro-free) | operators and functions | macros | macros | macros | macros | macros | macros |
+| Operands printed on failure | yes | yes | yes | yes | yes | yes | typed macros | typed macros |
+| Output reports | human-readable, TAP | console, JUnit, selectable with `--reporter`, replaceable | text, XML | several (including JUnit and JSON) | console, replaceable | human-readable, XML, JUnit | text | text, JUnit, TeamCity, Eclipse |
+| Nested test cases | yes | yes (`should` is an alias of `test`) | no | sections | subcases | suites | no | no |
+| Parametrised tests | `test_each()` | yes | yes | yes | yes | yes | via the runner generator | no dedicated macro found |
+| Built-in mocking | no | no | yes (GoogleMock) | no | no | no | no (CMock is separate) | yes (CppUMock) |
+| Leak detection | no | no | no | no | no | no | optional add-on | built in |
+| Builds without exceptions | yes | yes (`__cpp_exceptions` guards) | yes (`GTEST_HAS_EXCEPTIONS`) | yes (`CATCH_CONFIG_DISABLE_EXCEPTIONS`) | yes (`DOCTEST_CONFIG_NO_EXCEPTIONS`) | yes (`BOOST_NO_EXCEPTIONS`) | not applicable (C) | yes (`CPPUTEST_HAVE_EXCEPTIONS`) |
+| Licence | MIT | Boost 1.0 | BSD-3-Clause | Boost 1.0 | MIT | Boost 1.0 | MIT | BSD-3-Clause |
+
+The entries come from the documentation and from the source code of the
+frameworks (the repositories at the commits listed in
+[Sources](#sources)). The exceptions row records that the source has a
+configuration for disabled exceptions; it does not mean that the framework was
+built and run in that configuration for this page.
+
+## Framework by framework
+
+Each section below describes how the same checks are written in the framework,
+how a failed requirement stops the test, how the tests are registered, what the
+framework needs from the standard library, and how it differs from µTest++.
+
+The reference is a small suite with a failing number check, a failing string
+check, a test case run for several values, and a failing requirement. This is
+the µTest++ version; it was compiled and run for this page, with the output of
+the human-readable reporter:
+
+```cpp
+auto& ts = tr.add_top_suite ("Answer");
+
+ts.test ("Number", [] (auto& t)
+  { 
+    t.expect (mt::eq (answer (), 43)) << "answer is 43"; 
+  }
+);
+
+ts.test ("Text", [] (auto& t)
+  { 
+    t.expect (mt::eq ("abc"sv, "abd"sv)); 
+  }
+);
+
+ts.test_each ("Sizes", { 1, 16, 512 }, [] (auto& t, int size) 
+  { 
+    t.expect (mt::lt (size, 100)); 
+  }
+);
+
+ts.test ("Requirement", [] (auto& t)
+  {
+    t.require (mt::eq (answer (), 43));
+    t.expect (true) << "not reached";
+  });
+```
+
+```text
+    • Number
+        ✗ answer is 43 FAILED (mtp.cpp:12, 42 == 43)
+    ✗ Number - FAILED (0 checks passed, 1 failed)
+
+    • Text
+        ✗ FAILED (mtp.cpp:15, "abc" == "abd")
+    ✗ Text - FAILED (0 checks passed, 1 failed)
+
+    ✓ Sizes (1) - passed (1 check)
+    ✓ Sizes (16) - passed (1 check)
+
+    • Sizes (512)
+        ✗ FAILED (mtp.cpp:18, 512 < 100)
+    ✗ Sizes (512) - FAILED (0 checks passed, 1 failed)
+
+    • Requirement
+        ✗ FAILED (mtp.cpp:21, 42 == 43) - test case stopped
+    ✗ Requirement - FAILED (0 checks passed, 1 failed)
+```
+
+The snippets for the other frameworks are written from their documentation and
+headers, and were **not compiled** for this page; the descriptions of the
+mechanisms were read in the source code at the commits listed in
+[Sources](#sources).
+
+### Boost UT
+
+```cpp
+using namespace boost::ut;
+
+"number"_test = [] { 
+  expect (eq (answer (), 43)) << "answer is 43"; 
+};
+
+"sizes"_test
+    = [] (int size) { 
+        expect (lt (size, 100)); 
+      } | std::vector{ 1, 16, 512 };
+
+"requirement"_test = [] { 
+  expect (eq (answer (), 43) >> fatal); 
+};
+```
+
+- **Checks.** `expect()` accepts the comparators (`eq()`, `lt()`) and the
+  operators on typed literals (`42_i`); the comparators of µTest++ come from
+  here. A failed check prints the operands.
+- **Fatal failure.** `fatal` makes the failure terminate the program, with
+  `std::exit()`, so the remaining tests do not run (see the
+  [User's Guide](/docs/user/checks/#comparison-with-other-frameworks)).
+  `require()` of µTest++ stops only the current test case.
+- **Registration.** A test is created by assigning a lambda to the result of the
+  `_test` literal, with no macros and no separate registration step.
+  Parametrised tests use `operator|` with a container or a tuple.
+- **Standard library.** The header includes `<iostream>`, `<sstream>`,
+  `<fstream>`, `<functional>`, `<unordered_map>`, `<string>`, and `<vector>`,
+  among others, and keeps the output in a `std::ostringstream`.
+  µTest++ does not use the stream library, which is expected to reduce its
+  footprint on embedded targets (not measured for this page).
+- **Reports.** A console reporter and a JUnit reporter, selected with
+  `--reporter`; the reporter, runner, and printer can be replaced with
+  `cfg<override>`. µTest++ has TAP and human-readable reports only.
+- **Other.** BDD and Gherkin styles, tags, skipping. The `aborts` check works
+  only on Unix-like systems.
+- **Differences.** Same C++20 baseline and same idea of function-like
+  comparators; µTest++ adds suites registered by static objects, a runner with
+  filtering and listing, the TAP report, and the avoidance of the stream
+  library for constrained targets. Boost UT has more styles (BDD, Gherkin) and
+  a replaceable reporter.
+
+### GoogleTest
+
+```cpp
+TEST (Answer, Number)
+{
+  EXPECT_EQ (answer (), 43) << "answer is 43";
+}
+
+TEST (Answer, Requirement)
+{
+  ASSERT_EQ (answer (), 43);
+}
+
+class Sizes : public testing::TestWithParam<int>
+{
+};
+
+TEST_P (Sizes, Below)
+{
+  EXPECT_LT (GetParam (), 100);
+}
+
+INSTANTIATE_TEST_SUITE_P (Values, Sizes, testing::Values (1, 16, 512));
+```
+
+- **Checks.** Macros of the form `EXPECT_*` and `ASSERT_*` for each
+  comparison. The expression is not decomposed: the operands are printed
+  because the macro receives them as arguments.
+- **Fatal failure.** `ASSERT_*` expands to a `return` statement
+  (`GTEST_FATAL_FAILURE_`), so it can be used only in functions returning
+  `void`, and, in a helper function, it leaves only the helper. `require()`
+  of µTest++ stops the whole test case, from any call depth, by throwing, or
+  aborts the execution when exceptions are disabled.
+- **Registration.** The `TEST` macros define a class and register it at the
+  static initialisation, with `MakeAndRegisterTestInfo()`. Fixtures are
+  classes (`TEST_F`), and `TEST_P` with `INSTANTIATE_TEST_SUITE_P` give the
+  parametrised tests.
+- **Standard library.** `<ostream>`, `<sstream>`, `<string>`, `<set>`,
+  `<vector>`, and `<memory>` are included by `gtest.h`; the framework uses the
+  heap freely. The documentation states C++17 for the 1.18.x branch.
+- **Reports.** Console output and XML (`XmlUnitTestResultPrinter`); the
+  listeners can be replaced.
+- **Other.** GoogleMock is in the same repository; the death tests, the
+  typed tests, and the environment classes have no equivalent in µTest++.
+- **Differences.** GoogleTest is the broadest framework and the one with the
+  largest ecosystem, and it uses the heap and the stream library freely.
+  µTest++ has no mocking, no fixture classes, and a smaller feature set.
+
+### Catch2
+
+```cpp
+TEST_CASE ("number")
+{
+  CHECK (answer () == 43);
+}
+
+TEST_CASE ("sizes")
+{
+  int size = GENERATE (1, 16, 512);
+  CHECK (size < 100);
+}
+
+TEST_CASE ("requirement")
+{
+  REQUIRE (answer () == 43);
+}
+```
+
+- **Checks.** The macros `CHECK()` and `REQUIRE()` decompose the expression
+  with `Decomposer` and `ExprLhs` (`catch_decomposer.hpp`), so the natural
+  operators are used and the operands are reported. µTest++ obtains the same
+  report with function comparators and no macro.
+- **Fatal failure.** `REQUIRE()` throws a `TestFailureException`, caught by the
+  run context, which stops the test case. With exceptions disabled
+  (`CATCH_CONFIG_DISABLE_EXCEPTIONS`) a failed `REQUIRE()` calls
+  `std::terminate()`, as described in the User's Guide.
+- **Registration.** `TEST_CASE` registers at the static initialisation.
+  `SECTION` re-runs the test case once for each leaf section, a model different
+  from the nested test cases of µTest++, which run once. `GENERATE` runs the
+  test case for each generated value, and `TEST_CASE_METHOD` provides fixtures.
+- **Standard library.** `<string>`, `<vector>`, and `<iosfwd>` in the public
+  headers; the library is compiled (a static library target, with the C++14
+  minimum), and the single-header use is no longer the primary distribution.
+- **Reports.** Several reporters, including console, compact, JUnit, JSON, and
+  Automake, and event listeners.
+- **Other.** Matchers, micro benchmarking, and BDD macros.
+- **Differences.** Catch2 offers the richest assertion and generator facilities
+  of the macro frameworks; its features come with a compiled library and
+  heavier machinery than µTest++, which was not compared by measurement.
+
+### doctest
+
+```cpp
+TEST_CASE ("number")
+{
+  CHECK_EQ (answer (), 43);
+}
+
+TEST_CASE ("sizes")
+{
+  for (int size : { 1, 16, 512 })
+    {
+      SUBCASE (std::to_string (size).c_str ())
+      {
+        CHECK_LT (size, 100);
+      }
+    }
+}
+
+TEST_CASE ("requirement")
+{
+  REQUIRE_EQ (answer (), 43);
+}
+```
+
+- **Checks.** `CHECK()` decomposes the expression with `Expression_lhs`, and
+  the `CHECK_EQ()` family takes the operands as arguments. The framework
+  has its own `String` class and includes few standard headers; its
+  documentation claims low compile times, which were not measured here.
+- **Fatal failure.** `REQUIRE()` calls `throwException()`, which throws a
+  `TestFailureException` and stops the test case. With
+  `DOCTEST_CONFIG_NO_EXCEPTIONS`, the fatal macros are rejected at compile time
+  or, with a configuration macro, behave as `CHECK()` (see the User's Guide).
+- **Registration.** `TEST_CASE` registers at the static initialisation.
+  `SUBCASE` re-runs the test case as the sections of Catch2.
+  `TEST_CASE_FIXTURE` and `TEST_CASE_TEMPLATE` provide fixtures and templates.
+- **Reports.** `IReporter` and `DOCTEST_REGISTER_REPORTER` allow custom
+  reporters; the console reporter is the default.
+- **Other.** The tests can be written in the production code and removed from
+  the binary with `DOCTEST_CONFIG_DISABLE`. Requires C++11.
+- **Differences.** The closest to µTest++ in the concern for the footprint and
+  the compile times. It is a single header with macros; it has subcases,
+  fixtures, and replaceable reporters; µTest++ has the TAP report and the
+  platform support of the µOS++ project.
+
+### Boost.Test
+
+```cpp
+BOOST_AUTO_TEST_CASE (number)
+{
+  BOOST_CHECK_EQUAL (answer (), 43);
+}
+
+BOOST_AUTO_TEST_CASE (requirement)
+{
+  BOOST_REQUIRE_EQUAL (answer (), 43);
+}
+```
+
+- **Checks.** `BOOST_CHECK*`, `BOOST_REQUIRE*`, and `BOOST_TEST()`, which
+  decomposes the expression. The family of floating-point, string, and
+  collection comparisons is among the largest.
+- **Fatal failure.** `BOOST_REQUIRE*` aborts the test case through the
+  execution monitor (`execution_monitor.ipp`), which catches the
+  `execution_aborted` exception; the monitor also reports the signals and the
+  system errors. `BOOST_NO_EXCEPTIONS` is handled in the source.
+- **Registration.** `BOOST_AUTO_TEST_CASE` and `BOOST_FIXTURE_TEST_SUITE`
+  register at the static initialisation; the decorators set the labels,
+  the dependencies, and the expected failures. `BOOST_DATA_TEST_CASE`
+  (`boost/test/data`) provides the data-driven tests.
+- **Standard library.** The utilities include `<sstream>`, `<iostream>`, and
+  `<ostream>`; the library is used header-only, static, or shared, and it
+  depends on other Boost libraries. The sources were read, but not built, for
+  this page, since a build needs the rest of Boost.
+- **Reports.** Human-readable, XML, and JUnit log and report formats.
+- **Differences.** A large, mature framework with a rich test tree (decorators,
+  dependencies, timeouts); µTest++ has only suites and nested test cases, and
+  it does not depend on Boost.
+
+### Unity
+
+```c
+void
+test_number (void)
+{
+  TEST_ASSERT_EQUAL_INT_MESSAGE (43, answer (), "answer is 43");
+}
+
+void
+test_text (void)
+{
+  TEST_ASSERT_EQUAL_STRING ("abd", "abc");
+}
+
+int
+main (void)
+{
+  UNITY_BEGIN ();
+  RUN_TEST (test_number);
+  RUN_TEST (test_text);
+  return UNITY_END ();
+}
+```
+
+- **Checks.** One macro for each type and comparison
+  (`TEST_ASSERT_EQUAL_INT`, `TEST_ASSERT_EQUAL_STRING`, ...), written in C. The
+  macros are typed, so the operands are printed with the right format, but
+  there is no generic comparison, and no custom types.
+- **Fatal failure.** All the assertions are fatal: `TEST_ABORT()` calls
+  `longjmp()` to the frame saved with `setjmp()` by `TEST_PROTECT()`, which
+  does not run the destructors of C++ objects. `UNITY_EXCLUDE_SETJMP_H`
+  removes the dependency.
+- **Registration.** None in the core: the tests are listed in `main()` with
+  `RUN_TEST()`, or collected by the Ruby script `auto/generate_test_runner.rb`,
+  which also gives the `TEST_CASE`, `TEST_RANGE`, and `TEST_MATRIX`
+  parametrised tests.
+- **Standard library.** The core has no allocation (`malloc` is not used in
+  `unity.c`); the output goes through `UNITY_OUTPUT_CHAR`, which defaults to
+  `putchar()`, and can be redirected.
+- **Reports.** Text on the console; the scripts under `auto/` convert it.
+- **Other.** The `extras` folder has the fixture, BDD, and memory tracking
+  add-ons; CMock, for mocking, is a separate project.
+- **Differences.** Unity is the minimal baseline: a C file and two headers. It
+  tests C well, but it has no generic comparisons, no nested tests, and no
+  suites. µTest++ requires C++20 and a C++ runtime, and gives in exchange the
+  generic checks, the suites, and the TAP reports; the difference in footprint
+  was not measured.
+
+### CppUTest
+
+```cpp
+TEST_GROUP (Answer){};
+
+TEST (Answer, Number)
+{
+  LONGS_EQUAL_TEXT (43, answer (), "answer is 43");
+}
+
+TEST (Answer, Text)
+{
+  STRCMP_EQUAL ("abd", "abc");
+}
+```
+
+- **Checks.** Typed macros (`LONGS_EQUAL`, `STRCMP_EQUAL`, `CHECK_EQUAL`),
+  with no non-fatal variants: a failed check stops the test.
+- **Fatal failure.** With exceptions, the failure throws a
+  `CppUTestFailedException` (`Utest.cpp`), caught by the test shell; without
+  them, `TestTerminatorWithoutExceptions` is used.
+- **Registration.** `TEST_GROUP` and `TEST` define a class and a static
+  instance of it, which registers at the static initialisation; `setup()` and
+  `teardown()` of the group wrap each test.
+- **Memory.** `MemoryLeakDetectorNewMacros.h` redefines `new` to pass the file
+  and line, so the leaks are reported with their location; a checkpoint is
+  compared before `setup()` and after `teardown()`. µTest++ has no equivalent.
+- **Standard library.** The use of the C and C++ libraries is switched by
+  `CPPUTEST_USE_STD_C_LIB` and `CPPUTEST_USE_STD_CPP_LIB`; exceptions and RTTI
+  are detected (`CPPUTEST_HAVE_EXCEPTIONS`, `CPPUTEST_HAVE_RTTI`).
+- **Reports.** Console, JUnit (`-ojunit`), TeamCity, and Eclipse.
+- **Other.** CppUMock, for mocks.
+- **Differences.** The other embedded reference. It has mocking, leak
+  detection, and a long record on small targets, with macros and typed checks.
+  µTest++ has generic checks and nested test cases, with C++20 as the price.
+
+## Design choices of µTest++
+
+### Checks without macros
+
+The checks of µTest++ are function calls that capture the source location with
+a defaulted parameter, in place of the macros of GoogleTest, Catch2, doctest,
+Boost.Test, Unity, and CppUTest. Boost UT also offers a macro-free usage. The
+consequence is that the checks obey the rules of the language (scope, types,
+overloads), and that an application comparator is an ordinary template, as
+described in [Expression templates and
+comparators](/docs/developer/comparators/).
+
+### Operands reported by the comparators
+
+Like Boost UT, µTest++ reports the actual operands and the operator of a failed
+check. The difference is that it does so through function comparators such as
+`eq()` and `lt()`, with the operators kept only as a deprecated feature, and
+without the C++ stream library; this is the origin of the smaller footprint
+claimed in the [features](/docs/getting-started/). The
+formatting is described in [The expression
+formatter](/docs/developer/formatter/).
+
+### Reports in TAP
+
+The reports are in the TAP format, which the TAP-aware tools consume
+directly, with a human-readable reporter on request. The reporter is selected
+with an option; custom reporters are not supported, whereas Boost UT can
+replace its reporter and runner, doctest can register reporters, and
+Boost.Test, Catch2, GoogleTest, and CppUTest provide several output formats.
+
+### Registration with static objects
+
+The suites are defined as static global objects, registered by the static
+constructors, with the intrusive list of
+[Test cases and suites](/docs/developer/test-cases-and-suites/) that does not
+depend on the construction order. The test cases are not registered: they run
+within the call that creates them. This differs from the macro-based
+registration of GoogleTest, Catch2, doctest, Boost.Test, and CppUTest, and from
+the runner generation used with Unity.
+
+### Embedded targets
+
+The framework is built to run on bare-metal targets, with no dependency on the
+stream library, with a stack-based execution of the test cases, and with a
+build that does not use exceptions, where a failed requirement aborts the test
+execution. Unity and CppUTest also target embedded systems; Unity is written
+in C and CppUTest is a C++ framework, both with macros for the checks.
+
+## Learning curve
+
+The estimate below is an editorial judgement, not a measurement: no user study
+was made. It is based on how much a new user must learn before writing a first
+useful test, how many distinct concepts the framework has, and which mistakes
+the design makes easy. The sizes are approximate counts from the sources and
+the documentation folders at the commits in [Sources](#sources).
+
+| Framework | First test | Full use | API size (approximate) | Main source of difficulty |
+| --- | --- | --- | --- | --- |
+| µTest++ | easy for C++ developers | moderate | 12 function comparators and helpers, plus the runner, the suites, and the test cases | the object model (runner, suite, test case, `t`) and the `mt::` qualification |
+| Boost UT | moderate | steep | 48 exported names and 3370 lines in a single header | operators, literals, and the `\|` syntax |
+| GoogleTest | easy | moderate to steep | about 42 `EXPECT_*` and `ASSERT_*` macros; 19 documentation pages, about 66 000 words | fixtures, parametrised tests, GoogleMock |
+| Catch2 | easy | moderate | few assertion macros; 35 documentation pages, about 51 000 words | sections and generators re-run the test case |
+| doctest | easy | moderate | about 66 assertion macros; 16 documentation pages, about 18 000 words | subcases, configuration macros |
+| Boost.Test | moderate | steep | about 93 assertion and suite macros | several usage variants, the Boost build, the test tree |
+| Unity | easy | moderate | about 450 typed `TEST_ASSERT_*` macros | choosing the right typed macro, the runner generator |
+| CppUTest | moderate | moderate | about 60 assertion macros | the build flags, the memory-leak detector |
+
+The first-test column is the effort to get a failing check reported; the
+full-use column is the effort to use fixtures, parametrised tests, custom
+types, and the command line with confidence.
+
+### µTest++
+
+The comparators are few and regular (`eq()`, `ne()`, `lt()`, `le()`, `gt()`,
+`ge()`, and the others), and there are no macros, so the compiler diagnostics
+refer to ordinary functions. The difficulties are of another kind:
+
+- **The object model must be learned first.** A test is written on an object
+  (`t.expect (...)`), obtained from a suite, itself obtained from a runner. A
+  test is not a free function or a macro as in the other frameworks.
+- **The function comparators are an unusual idiom.** A user who writes
+  `t.expect (answer () == 42)` gets a check that passes or fails without the
+  operands; `t.expect (mt::eq (answer (), 42))` is needed for the report. The
+  deprecated operators are a source of confusion in older examples.
+- **The namespace must be written.** The guide recommends the `mt::` prefix, so
+  the checks are longer than `CHECK_EQ`.
+- **The requirement of C++20** can be a difficulty for a project that does not
+  yet use it; the header stops older compilers with an explicit `#error`.
+- **No fixtures, mocks, or leak detection.** A user coming from GoogleTest or
+  CppUTest must find other ways; the framework has no page that maps their
+  concepts.
+- **The embedded set-up is outside the framework.** Semihosting, the console,
+  and the start-up code are explained in the User's Guide, but they remain a
+  larger task than the first check.
+
+### Boost UT
+
+The macro-free syntax is compact but unusual: the literals (`"name"_test`,
+`42_i`), the assignment of lambdas, the `|` operator for parametrised tests,
+the `>> fatal` suffix, and the `cfg<override>` configuration. Errors in
+template-heavy expressions produce long compiler messages. The single header
+has 3370 lines and relies on concepts and, when available, `<format>`.
+
+### GoogleTest
+
+The first test is easy, and the documentation is complete, but long. The
+difficulties come later: the difference between `EXPECT_*` and `ASSERT_*`
+(which only returns from the current function), the fixtures with `TEST_F`,
+the parametrised tests with `TEST_P` and `INSTANTIATE_TEST_SUITE_P`, the
+death tests, and the matcher language of GoogleMock. The build is the other
+cost: the library must be built with the same flags as the tests.
+
+### Catch2
+
+The first test is the simplest of all: one macro, and natural comparison
+operators. The model needs care later: the `SECTION` blocks re-run the test
+case from the start for each leaf, which surprises the users who expect a
+single run; `GENERATE` has the same effect. The split of v3 into a compiled
+library, and the many reporters, listeners, and matchers, add to the
+documentation that must be read.
+
+### doctest
+
+The API follows Catch2 closely, so the first test is equally easy, and the
+documentation is the shortest of the C++ frameworks. The configuration is by
+macros defined before the include (`DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN`, and
+others), which must be set in exactly one source file. The
+`SUBCASE` semantics are those of the Catch2 sections.
+
+### Boost.Test
+
+The several usage variants (header-only, static, shared) and the choice of the
+entry point are the first obstacle. The test tree with decorators,
+dependencies, labels, and fixtures is powerful and takes time to master. The
+tools are numerous (`BOOST_CHECK`, `BOOST_REQUIRE`, `BOOST_TEST`, and the
+`_EQUAL` and `_MESSAGE` variants). The dependence on the rest of Boost makes
+the set-up heavier outside a Boost project.
+
+### Unity
+
+Writing a test is simple: a function and `RUN_TEST()`. The difficulties are the
+size of the macro set, since each type has its own assertion (`_INT`, `_UINT8`,
+`_FLOAT`, `_STRING`, `_MEMORY`, and so on) and a wrong choice gives a wrong or
+unreadable report; the need to run the Ruby script, or to maintain the list
+of tests by hand; and the absence of C++ features, such as the destructors on
+failure (`longjmp()`). The documentation is split between the core, the
+`extras`, Ceedling, and CMock.
+
+### CppUTest
+
+The macros are few and the test groups are easy to read. The difficulties are
+the build configuration (the C and C++ library switches, the exceptions, and
+the RTTI), and the memory-leak detector, which redefines `new` and conflicts
+with the code that declares its own `operator new`, so the include order
+matters. The leak failures that come from the lazy initialisation of the
+tested code are confusing at first.
+
+## Limits and trade-offs of µTest++
+
+- **No mocking.** GoogleTest includes GoogleMock and CppUTest includes
+  CppUMock. With Unity, the mocks come from the separate CMock project.
+- **No leak detection.** CppUTest takes a checkpoint of the allocations before
+  the set-up and compares it after the tear-down; Unity has an optional
+  add-on that tracks the `malloc()` and `free()` calls.
+- **No fixture classes.** The body of a suite or of a test case is ordinary
+  code, shared by the nested test cases; the fixtures of GoogleTest,
+  Boost.Test, and doctest have no direct equivalent.
+- **No custom reporters.** See above.
+- **A requirement of C++20.** Boost UT has the same requirement, but doctest
+  needs C++11, Catch2 v3 needs C++14, and GoogleTest 1.18.x needs C++17. An
+  embedded toolchain without C++20 cannot build µTest++.
+- **A small ecosystem.** The user community and the third-party tooling are
+  much smaller than those of GoogleTest and Catch2.
+
+## Sources
+
+The statements about the other frameworks come from their documentation and
+from their source code, consulted in November 2026, at these commits of the
+branches that were checked out (the µTest++ working tree also had uncommitted
+changes):
+
+| Framework | Commit |
+| --- | --- |
+| µTest++ | `6507c054` (2026-11-09) |
+| Boost UT | `872b8b9` (2026-10-24) |
+| GoogleTest | `6450691` (2026-11-06) |
+| Catch2 | `a1a991f` (2026-10-30) |
+| doctest | `d44d4f6` (2026-03-28) |
+| Boost.Test | `35bb91a` (2026-10-30) |
+| Unity | `54f864c` (2026-10-31) |
+| CppUTest | `42feb87` (2026-11-03) |
+
+The frameworks change; verify the details before relying on them, and update
+this page when a statement is found to be out of date.
