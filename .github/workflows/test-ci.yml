@@ -112,7 +112,6 @@ jobs:
           npm ci
           npm --prefix tests ci
           xpm install -C tests
-          xpm run install-ci -C tests
 
       - name: Clean xPack cache Linux
         if: runner.os == 'Linux'
@@ -130,7 +129,11 @@ jobs:
         run: |
           Remove-Item -LiteralPath "$env:LOCALAPPDATA\Caches\xPacks" -Force -Recurse
 
-      - name: Run tests on ${{ matrix.os }}
+      - name: Satisfy platforms dependencies on ${{ matrix.os }}
+        run: |
+          xpm run install-ci -C tests
+
+      - name: Run platforms tests on ${{ matrix.os }}
         run: xpm run test-ci -C tests
         env:
           CI: true
