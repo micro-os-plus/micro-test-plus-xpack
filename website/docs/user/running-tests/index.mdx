@@ -22,14 +22,14 @@ This page describes the command-line options of the test programs: how to
 select the **verbosity**, the **test cases**, the **reporter**, the **output
 file**, and the **colours**.
 
-## Command line options
+## Command-line options
 
 The options are summarised in the following table; each one is described in the
 section named in the last column:
 
 | Option | Effect | Described in |
 | --- | --- | --- |
-| `--help`, `-h` | write the usage and the options, and return 0, without running any test | [Test result](/docs/user/organising-tests/#test-result) |
+| `--help`, `-h` | write the usage and the options, and return 0, without running any test | [Help](#help) |
 | `--verbose`, `--quiet`, `--silent` | select what is displayed on the console | [Verbosity](#verbosity) |
 | `--filter=<pattern>` | run only the matching suites and test cases; repeat for each nesting level | [Filter](#filter) |
 | `--list-tests`, `--list` | list the test cases, without running them | [List test cases](#list-test-cases) |
@@ -81,6 +81,20 @@ for (const std::string& argument : tr.application_arguments ())
   }
 ```
 
+## Help
+
+The `--help` option, or its short form `-h`, writes the usage and the list of
+the options on the console, runs no test, and makes `run_suites()` return 0
+(see [Test result](/docs/user/organising-tests/#test-result)):
+
+```sh
+sample-test --help
+```
+
+Like the other µTest++ options, it must come before the arguments of the
+application. An application that passes its whole command line to the runner,
+and uses `--help` or `-h` itself, must rename them, or precede them with `--`.
+
 ## Verbosity
 
 By default, µTest++ displays a **summary line for each test case**, and, for
@@ -105,10 +119,10 @@ each level displays on the console:
 
 | Level | Option | Console |
 | --- | --- | --- |
-| verbose | `‑‑verbose` | everything displayed by the normal level, plus the heading of every test case and each passed check |
+| verbose | `--verbose` | everything displayed by the normal level, plus the heading of every test case and each passed check |
 | normal | (none) | the informational lines, the result of each suite and of each test case, passed or failed, with the counts of checks, and the failed checks, under the headings of the test cases that contain them; the passed checks are only counted (with TAP, bare `ok` lines in the blocks) |
-| quiet | `‑‑quiet` | the failed checks, with the names of the suite and of the test cases that contain them, and the totals; with TAP, also one `ok`/`not ok` line per test suite, and the failed checks as comments |
-| silent | `‑‑silent` | nothing; only the exit code |
+| quiet | `--quiet` | the failed checks, with the names of the suite and of the test cases that contain them, and the totals; with TAP, also one `ok`/`not ok` line per test suite, and the failed checks as comments |
+| silent | `--silent` | nothing; only the exit code |
 
 In short, the levels differ as follows:
 
