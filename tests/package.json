@@ -1332,6 +1332,13 @@
           "@micro-os-plus/startup": "{{ properties.dependencies-releases['@micro-os-plus/startup'] }}"
         }
       },
+      "raspberry-pi-dependencies": {
+        "hidden": true,
+        "devDependencies": {
+          "@xpack-3rd-party/raspberrypi-pico-sdk": "{{ properties.dependencies-releases['@xpack-3rd-party/raspberrypi-pico-sdk'] }}",
+          "@micro-os-plus/devices-raspberry-pi": "{{ properties.dependencies-releases['@micro-os-plus/devices-raspberry-pi'] }}"
+        }
+      },
       "arm-cmsis-core-dependencies": {
         "hidden": true,
         "devDependencies": {
@@ -2410,7 +2417,8 @@
           "arm-cmsis-core-dependencies",
           "bare-metal-dependencies",
           "cross-arm-none-eabi-gcc-dependencies",
-          "openocd-dependencies"
+          "openocd-dependencies",
+          "raspberry-pi-dependencies"
         ],
         "properties": {
           "buildType": "Debug",
@@ -2444,7 +2452,8 @@
           "arm-cmsis-core-dependencies",
           "bare-metal-dependencies",
           "cross-arm-none-eabi-gcc-dependencies",
-          "openocd-dependencies"
+          "openocd-dependencies",
+          "raspberry-pi-dependencies"
         ],
         "properties": {
           "buildType": "Debug",
@@ -2453,8 +2462,8 @@
         },
         "devDependencies": {
           "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}",
-          "@micro-os-plus/devices-raspberry-pi": "{{ properties.dependencies-releases['@micro-os-plus/devices-raspberry-pi'] }}",
-          "@xpack-3rd-party/raspberrypi-pico-sdk": "{{ properties.dependencies-releases['@xpack-3rd-party/raspberrypi-pico-sdk'] }}"
+          "@xpack-3rd-party/raspberrypi-pico-sdk": "{{ properties.dependencies-releases['@xpack-3rd-party/raspberrypi-pico-sdk'] }}",
+          "@micro-os-plus/devices-raspberry-pi": "{{ properties.dependencies-releases['@micro-os-plus/devices-raspberry-pi'] }}"
         },
         "actions": {
           "link-dependencies": [
@@ -2478,7 +2487,8 @@
           "arm-cmsis-core-dependencies",
           "bare-metal-dependencies",
           "cross-arm-none-eabi-gcc-dependencies",
-          "openocd-dependencies"
+          "openocd-dependencies",
+          "raspberry-pi-dependencies"
         ],
         "properties": {
           "buildType": "Debug",
@@ -2487,8 +2497,8 @@
         },
         "devDependencies": {
           "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}",
-          "@micro-os-plus/devices-raspberry-pi": "{{ properties.dependencies-releases['@micro-os-plus/devices-raspberry-pi'] }}",
-          "@xpack-3rd-party/raspberrypi-pico-sdk": "{{ properties.dependencies-releases['@xpack-3rd-party/raspberrypi-pico-sdk'] }}"
+          "@xpack-3rd-party/raspberrypi-pico-sdk": "{{ properties.dependencies-releases['@xpack-3rd-party/raspberrypi-pico-sdk'] }}",
+          "@micro-os-plus/devices-raspberry-pi": "{{ properties.dependencies-releases['@micro-os-plus/devices-raspberry-pi'] }}"
         },
         "actions": {
           "link-dependencies": [
@@ -2512,7 +2522,8 @@
           "arm-cmsis-core-dependencies",
           "bare-metal-dependencies",
           "cross-arm-none-eabi-gcc-dependencies",
-          "openocd-dependencies"
+          "openocd-dependencies",
+          "raspberry-pi-dependencies"
         ],
         "properties": {
           "buildType": "Debug",
@@ -2521,8 +2532,8 @@
         },
         "devDependencies": {
           "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}",
-          "@micro-os-plus/devices-raspberry-pi": "{{ properties.dependencies-releases['@micro-os-plus/devices-raspberry-pi'] }}",
-          "@xpack-3rd-party/raspberrypi-pico-sdk": "{{ properties.dependencies-releases['@xpack-3rd-party/raspberrypi-pico-sdk'] }}"
+          "@xpack-3rd-party/raspberrypi-pico-sdk": "{{ properties.dependencies-releases['@xpack-3rd-party/raspberrypi-pico-sdk'] }}",
+          "@micro-os-plus/devices-raspberry-pi": "{{ properties.dependencies-releases['@micro-os-plus/devices-raspberry-pi'] }}"
         },
         "actions": {
           "link-dependencies": [
@@ -2545,7 +2556,8 @@
           "riscv-actions",
           "bare-metal-dependencies",
           "cross-riscv-none-elf-gcc-dependencies",
-          "openocd-dependencies"
+          "openocd-dependencies",
+          "raspberry-pi-dependencies"
         ],
         "properties": {
           "buildType": "Debug",
@@ -2553,9 +2565,10 @@
           "toolchainFileName": "riscv-none-elf-gcc.cmake"
         },
         "devDependencies": {
-          "@micro-os-plus/architecture-riscv": "{{ properties.dependencies-releases['@micro-os-plus/architecture-riscv'] }}",
+          "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}",
+          "@xpack-3rd-party/raspberrypi-pico-sdk": "{{ properties.dependencies-releases['@xpack-3rd-party/raspberrypi-pico-sdk'] }}",
           "@micro-os-plus/devices-raspberry-pi": "{{ properties.dependencies-releases['@micro-os-plus/devices-raspberry-pi'] }}",
-          "@xpack-3rd-party/raspberrypi-pico-sdk": "{{ properties.dependencies-releases['@xpack-3rd-party/raspberrypi-pico-sdk'] }}"
+          "@micro-os-plus/architecture-riscv": "{{ properties.dependencies-releases['@micro-os-plus/architecture-riscv'] }}"
         },
         "actions": {
           "link-dependencies": [
@@ -2578,7 +2591,8 @@
           "riscv-actions",
           "bare-metal-dependencies",
           "cross-riscv-none-elf-gcc-dependencies",
-          "openocd-dependencies"
+          "openocd-dependencies",
+          "raspberry-pi-dependencies"
         ],
         "properties": {
           "buildType": "Debug",
@@ -2586,9 +2600,10 @@
           "toolchainFileName": "riscv-none-elf-gcc.cmake"
         },
         "devDependencies": {
-          "@micro-os-plus/architecture-riscv": "{{ properties.dependencies-releases['@micro-os-plus/architecture-riscv'] }}",
+          "@micro-os-plus/architecture-cortexm": "{{ properties.dependencies-releases['@micro-os-plus/architecture-cortexm'] }}",
+          "@xpack-3rd-party/raspberrypi-pico-sdk": "{{ properties.dependencies-releases['@xpack-3rd-party/raspberrypi-pico-sdk'] }}",
           "@micro-os-plus/devices-raspberry-pi": "{{ properties.dependencies-releases['@micro-os-plus/devices-raspberry-pi'] }}",
-          "@xpack-3rd-party/raspberrypi-pico-sdk": "{{ properties.dependencies-releases['@xpack-3rd-party/raspberrypi-pico-sdk'] }}"
+          "@micro-os-plus/architecture-riscv": "{{ properties.dependencies-releases['@micro-os-plus/architecture-riscv'] }}"
         },
         "actions": {
           "link-dependencies": [
