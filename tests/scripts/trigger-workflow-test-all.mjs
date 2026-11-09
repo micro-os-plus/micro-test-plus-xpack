@@ -12,11 +12,16 @@
 // ----------------------------------------------------------------------------
 
 // Trigger the `test-all.yml` workflow (manual `workflow_dispatch`) on GitHub,
-// using the GitHub CLI (`gh`), which must be installed and authenticated.
+// using `curl` and the GitHub REST API.
 //
 // Usage: node trigger-workflow-test-all.mjs [<branch>]
 //
 // Without arguments, the workflow runs on the current Git branch.
+//
+// The environment variable GITHUB_API_DISPATCH_TOKEN must hold a token
+// with the permission to write Actions (a classic token with the `repo`
+// scope, or a fine-grained token with the `Actions: Read and write`
+// permission on this repository).
 
 import { spawnSync } from 'child_process'
 
@@ -41,21 +46,57 @@ if (!branch) {
   branch = result.stdout.trim()
 }
 
+const token = process.env.GITHUB_API_DISPATCH_TOKEN
+if (!token) {
+  console.error('Error: GITHUB_API_DISPATCH_TOKEN is not set.')
+  process.exit(1)
+}
+
+const apiUrl = `https://api.github.com/repos/${repository}` +
+  `/actions/workflows/${workflowFile}/dispatches`
+
 console.log(`Triggering ${workflowFile} on branch '${branch}'...`)
 
-const result = spawnSync('gh', [
-  'workflow', 'run', workflowFile,
-  '--repo', repository,
-  '--ref', branch
-], { stdio: 'inherit' })
+// The headers, which include the token, are passed via stdin (`-H @-`),
+// to keep the token out of the process list.
+const headers = [
+  `Authorization: Bearer ${token}`,
+  'Accept: application/vnd.github+json',
+  'X-GitHub-Api-Version: 2022-11-28',
+  'Content-Type: application/json'
+].join('\n')
+
+const result = spawnSync('curl', [
+  '--silent', '--show-error',
+  '--output', '-',
+  '--write-out', '\n%{http_code}\n',
+  '--request', 'POST',
+  '--header', '@-',
+  '--data', JSON.stringify({ ref: branch }),
+  apiUrl
+], { input: headers, encoding: 'utf8' })
 
 if (result.error) {
-  console.error(`Error: cannot run 'gh' (${result.error.message}).`)
+  console.error(`Error: cannot run 'curl' (${result.error.message}).`)
   process.exit(1)
 }
 
 if (result.status !== 0) {
+  console.error(result.stderr)
   process.exit(result.status ?? 1)
+}
+
+const lines = result.stdout.trimEnd().split('\n')
+const httpCode = lines.pop()
+const body = lines.join('\n').trim()
+
+// The API replies with 204 (no content) on success.
+if (httpCode !== '204') {
+  console.error(`Error: GitHub replied with HTTP ${httpCode}.`)
+  if (body) {
+    console.error(body)
+  }
+  process.exit(1)
 }
 
 console.log('Done. See https://github.com/' + repository +

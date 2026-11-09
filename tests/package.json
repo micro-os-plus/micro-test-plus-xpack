@@ -1157,7 +1157,7 @@
         "xpm run clean --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-debug",
         "xpm run clean --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-release"
       ],
-      "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh"
+      "trigger-workflow-test-all": "node scripts/trigger-workflow-test-all.mjs"
     },
     "buildConfigurations": {
       "short-win-paths-properties": {
