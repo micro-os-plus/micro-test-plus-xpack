@@ -1,4 +1,7 @@
 /*
+ * DO NOT EDIT! Automatically generated from template file:
+ * build-helper/templates/common/_micro-os-plus/tests/scripts/trigger-workflow-test-all-liquid.mjs
+ *
  * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
  * Copyright (c) 2026 Liviu Ionescu. All rights reserved.
  *
@@ -26,13 +29,24 @@
 import { spawnSync } from 'child_process'
 
 const workflowFile = 'test-all.yml'
-const repository = 'micro-os-plus/micro-test-plus-xpack'
 
 if (process.argv.length > 3) {
   console.error('Error: too many arguments.')
   console.error('Usage: node trigger-workflow-test-all.mjs [<branch>]')
   process.exit(1)
 }
+
+// Derive `<owner>/<repository>` from the URL of the `origin` remote.
+const originResult = spawnSync('git', ['remote', 'get-url', 'origin'], {
+  encoding: 'utf8'
+})
+const originMatch = originResult.stdout?.trim()
+  .match(/github\.com[:/]([^/]+\/[^/]+?)(?:\.git)?$/)
+if (originResult.status !== 0 || !originMatch) {
+  console.error("Error: cannot determine the GitHub repository from 'origin'.")
+  process.exit(1)
+}
+const repository = originMatch[1]
 
 let branch = process.argv[2]
 if (!branch) {

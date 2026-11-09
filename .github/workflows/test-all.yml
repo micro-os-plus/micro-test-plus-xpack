@@ -46,11 +46,15 @@ jobs:
         # https://github.com/actions/runner-images
         os:
           [
+            'ubuntu-26.04',
             'ubuntu-24.04',
             'ubuntu-22.04',
+            'ubuntu-26.04-arm',
             'ubuntu-24.04-arm',
             'ubuntu-22.04-arm',
+            'macos-26-intel',
             'macos-15-intel',
+            'macos-26',
             'macos-15',
             'windows-2025',
             'windows-2022'
@@ -69,7 +73,7 @@ jobs:
 
       - name: Setup Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
         # https://github.com/actions/setup-node
-        uses: actions/setup-node@v7.0.0
+        uses: actions/setup-node@v7.1.0
         with:
           node-version: ${{ matrix.node-version }}
 
