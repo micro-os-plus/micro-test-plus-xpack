@@ -10,64 +10,42 @@ argument-hint: 'Path to the .sh script to convert, e.g. maintenance/scripts/cmak
 
 - The user asks to rewrite, convert, port, or translate a
   `maintenance/scripts/*.sh` file into JavaScript/Node.js.
-- The user wants a new `.mjs` equivalent of an existing shell script,
-  matching the style of
-  [jsonc-format.mjs](../../../maintenance/scripts/jsonc-format.mjs) and
-  [xcdl-export.mjs](../../../maintenance/scripts/xcdl-export.mjs).
 
-## Step 1 — Conversion Conventions
+For a new script that has no `.sh` original, use
+[create-javascript-mjs](../create-javascript-mjs/SKILL.md) instead.
 
-Follow the style already established by
-[jsonc-format.mjs](../../../maintenance/scripts/jsonc-format.mjs) and
-[xcdl-export.mjs](../../../maintenance/scripts/xcdl-export.mjs):
+## Step 1 — General Conventions
 
-- **Module system**: use ES module syntax (`import`/`export`) with a
-  `.mjs` extension; `package.json` does not set `"type": "module"`, so the
-  extension is what enables ESM. Node `>=20` is required (see `engines` in
-  `package.json`).
-- **Header comment**: keep a `/* ... */` block comment with the same
-  copyright and MIT permission notice used in the `.sh` version, adapted to
-  block-comment style. Only include the "DO NOT EDIT! Automatically
-  generated from template file" line if the script is genuinely generated
-  from a Liquid template (see Step 1); do not add it to hand-written
-  scripts.
+Follow all the conventions of
+[create-javascript-mjs](../create-javascript-mjs/SKILL.md) (module
+system, header, arguments, style, external tools, file discovery,
+dependencies, wiring). The steps below add only what is specific to
+converting a bash script.
+
+## Step 2 — Bash-Specific Replacements
+
+- **Header comment**: keep the copyright and MIT permission notice of the
+  `.sh` version, adapted to block-comment style.
 - **Script location**: replace `$0` / `dirname "$0"` with
   `fileURLToPath(import.meta.url)` and `path.dirname(...)`.
-- **Template processing**: if the script renders Liquid templates, use the
-  `liquidjs` package rather than hand-rolled string substitution.
-- **File discovery**: replace `find` invocations with the `glob` package
-  (`globSync`), using the same ignore patterns already used elsewhere in
-  this project (`**/node_modules/**`, `**/xpacks/**`, `**/build/**`,
-  `**/website/**`, as appropriate to the script).
-- **Error handling**: replace bash's `set -o errexit`/`set -o nounset`
-  guards with explicit checks that `console.error(...)` a clear message and
+- **File discovery**: replace `find` invocations with `globSync`, keeping
+  the ignore patterns of the original.
+- **Error handling**: replace `set -o errexit` / `set -o nounset` with
+  explicit checks that `console.error(...)` a clear message and
   `process.exit(1)`.
-- **Permission preservation**: if the script edits files that may be
-  read-only, preserve permissions with `statSync`/`chmodSync` around the
-  read/write, as done in `jsonc-format.mjs`.
-- **Output**: use `console.log`/`console.error` instead of `echo`.
-- **Functions**: use arrow functions rather than the `function` keyword.
-- **Synchronous APIs**: prefer synchronous calls (e.g. `readFileSync`,
-  `execFileSync`) over their async/callback or Promise-based equivalents
-  when both are available, matching the script's non-interactive, linear
-  execution style.
+- **Output**: replace `echo` with `console.log` / `console.error`.
 - **Running external tools**: replace the bash `run_verbose` helper (which
-  echoes the command and runs it) with Node's `child_process`
-  (`execFileSync` or `spawnSync`), passing `stdio: 'inherit'` so the
-  external tool's output streams through directly.
-- **Dependencies**: add any new npm package (e.g. `glob`) to
-  `devDependencies` in `package.json`, matching the versions already
-  pinned for existing dependencies.
-- **Wiring**: update the corresponding entry under `xpack.actions` in
-  `package.json` to invoke the script directly with `node`, e.g.
-  `"cmake-format": "node maintenance/scripts/cmake-format.mjs"`,
-  mirroring the existing `xcdl-export` action. Remove the now-unused
-  `.sh` file only if the user confirms it is no longer needed elsewhere.
+  echoes the command and runs it) with `execFileSync` or `spawnSync` and
+  `stdio: 'inherit'`.
+- **Wiring**: update the corresponding `xpack.actions` entry in
+  `package.json` to invoke the script with `node`, e.g.
+  `"cmake-format": "node maintenance/scripts/cmake-format.mjs"`. Remove
+  the now-unused `.sh` file only if the user confirms it is no longer
+  needed elsewhere.
 
-## Step 2 — Verify
+## Step 3 — Verify
 
-- Run the new `.mjs` script directly
-  (`node maintenance/scripts/<name>.mjs ...`) and compare its effect
-  against the original `.sh` script on the same input.
+- Run the new `.mjs` script directly and compare its effect against the
+  original `.sh` script on the same input.
 - Run the corresponding `xpm run <action>` command to confirm the
-  `package.json` wiring works end-to-end.
+  `package.json` wiring end-to-end.
