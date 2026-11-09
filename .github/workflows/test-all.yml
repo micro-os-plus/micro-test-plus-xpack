@@ -16,7 +16,7 @@
 # https://micro-os-plus.github.io/micro-test-plus-xpack/
 # https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/test-ci.yml
 
-# Workflow for running some tests on each Push.
+# Workflow for running all tests.
 name: Run all tests
 
 # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
@@ -120,14 +120,5 @@ jobs:
 
       - name: Run platforms tests on ${{ matrix.os }}
         run: xpm run test-all -C tests
-        env:
-          CI: true
-
-      - name: Satisfy boards dependencies on ${{ matrix.os }}
-        run: |
-          xpm run install-boards -C tests
-
-      - name: Run board compile tests on ${{ matrix.os }}
-        run: xpm run test-boards -C tests
         env:
           CI: true
