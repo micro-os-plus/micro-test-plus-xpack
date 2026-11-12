@@ -54,6 +54,13 @@ xpm run install-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 xpm run test-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 ```
 
+To build the physical boards binaries with the latest versions of toolchains:
+
+```sh
+xpm run install-boards -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run build-boards -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
 ### Clean-ups
 
 Executing all tests may require several gigabytes of space.
