@@ -45,6 +45,7 @@ on:
       - 'maintenance/**'
       - 'tests/scripts/**'
       - 'website/**'
+      - 'docs/**'
       - 'LICENSE*'
       - '**.md'
       - '.gitignore'
@@ -94,6 +95,7 @@ jobs:
         uses: actions/setup-node@v7.1.0
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
       - name: Install xpm@${{ matrix.xpm-version }} on ${{ matrix.os }}
         run: npm install -g xpm@${{ matrix.xpm-version }}
