@@ -63,7 +63,7 @@ with colours (`-colour`).
 <summary>Example: the reference output of the minimal test</summary>
 
 The reference file `tests/expected/tap/minimal-test.tap` is the output file of
-the `minimal` program, run as shown on the first line. The output file receives
+the `minimal-test` program, run as shown on the first line. The output file receives
 every check, whatever the verbosity of the console:
 
 ```console
@@ -80,6 +80,25 @@ TAP version 14
 ok 1 - minimal-test # { passed, 2 checks in 1 test case, time: 0.069 ms }
 1..1
 # { total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.147 ms }
+```
+
+Similarly, the reference file `tests/expected/txt/minimal-test.txt` is the
+output file of
+the `minimal-test` program, run as with the human-readable reporter. The output
+file receives
+every check, whatever the verbosity of the console:
+
+```console
+Running: minimal-test --reporter=human --output-file=minimal-test.txt one two
+Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), with exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+µTest++ human-readable report
+• minimal-test
+    • Check various conditions
+        ✓ answer is 42
+        ✓ condition is true
+    ✓ Check various conditions - passed (2 checks)
+✓ minimal-test - passed (2 checks in 1 test case), time: 0.045 ms
+✓ Total: 2 checks passed, 0 failed, in 1 test case, 1 test suite, time: 0.095 ms
 ```
 
 </details>
