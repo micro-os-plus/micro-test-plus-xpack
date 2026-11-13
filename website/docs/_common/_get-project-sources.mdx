@@ -25,16 +25,25 @@ After making changes, direct the Pull Requests to the
 
 :::
 
-The next step would normally be to **clone the forked repository**.
-
-However, if Pull Requests are not intended, directly clone the
-`xpack-development` branch of the original repository:
+The next step would normally be to **clone the forked repository**:
 
 ```sh
 rm -rf ~/Work/micro-os-plus/micro-test-plus-xpack.git && \
 mkdir -p ~/Work/micro-os-plus && \
 git clone \
-  --branch xpack-development \
+  --branch xpack \
+  https://github.com/<your-account>/micro-test-plus-xpack.git \
+  ~/Work/micro-os-plus/micro-test-plus-xpack.git
+```
+
+However, if Pull Requests are not intended, you can directly clone the
+`xpack` branch of the original repository:
+
+```sh
+rm -rf ~/Work/micro-os-plus/micro-test-plus-xpack.git && \
+mkdir -p ~/Work/micro-os-plus && \
+git clone \
+  --branch xpack \
   https://github.com/micro-os-plus/micro-test-plus-xpack.git \
   ~/Work/micro-os-plus/micro-test-plus-xpack.git
 ```
