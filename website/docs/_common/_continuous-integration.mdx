@@ -14,4 +14,15 @@ using QEMU.
 The native tests run with the GCC and LLVM/clang compilers.
 
 A workflow that runs the tests on all the supported platforms and
-configurations can be triggered manually.
+configurations can be triggered manually in the GitHub Actions interface, the
+`Eun all tests` workflow.
+
+In the upstream project repository, the workflow can also be triggered
+manually with:
+
+```sh
+xpm run trigger-workflow-test-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
+(this requires `curl` and the `GITHUB_API_DISPATCH_TOKEN` environment
+variable to be set.)
