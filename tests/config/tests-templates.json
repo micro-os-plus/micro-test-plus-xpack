@@ -39,6 +39,29 @@
     "unit-deprecated",
     "unit"
   ],
+  "boards": [
+    "nucleo-f411re",
+    "nucleo-f767zi",
+    "nucleo-h533re",
+    "raspberry-pi-pico",
+    "raspberry-pi-pico-2-arm",
+    "raspberry-pi-pico-2-riscv"
+  ],
+  "boardConfigurations": [
+    "nucleo-f411re",
+    "nucleo-f411re-cubemx",
+    "nucleo-f411re-cubemx-startup",
+    "nucleo-f767zi",
+    "nucleo-f767zi-cubemx",
+    "nucleo-h533re",
+    "nucleo-h533re-cubemx",
+    "raspberry-pi-pico",
+    "raspberry-pi-pico-sdk",
+    "raspberry-pi-pico-2-arm",
+    "raspberry-pi-pico-2-arm-sdk",
+    "raspberry-pi-pico-2-riscv",
+    "raspberry-pi-pico-2-riscv-sdk"
+  ],
   "useStaticLibrary": true,
   "hasUnitCommon": true
 }
