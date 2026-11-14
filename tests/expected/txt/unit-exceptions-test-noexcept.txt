@@ -1,0 +1,8 @@
+Running: unit-exceptions-test --reporter=human --output-file=unit-exceptions-test-noexcept.txt one two
+Built with clang Apple LLVM 17.0.0 (clang-1700.6.4.2), no exceptions, with MICRO_OS_PLUS_DEBUG_ENABLED, with MICRO_OS_PLUS_DIAG_TRACE_ENABLED
+µTest++ human-readable report
+• Top suite
+✓ Top suite - passed (0 checks in 0 test cases)
+✓ Total: 0 checks passed, 0 failed, in 0 test cases, 1 test suite
+error: test runner already initialised
+error: top suite already added

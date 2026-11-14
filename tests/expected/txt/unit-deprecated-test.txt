@@ -268,3 +268,5 @@ Built with GCC 15.2.1 20251203, with FP, with exceptions, with MICRO_OS_PLUS_DEB
     ✓ Kept helpers - passed (9 checks)
 ✗ Deprecated suite - FAILED (152 checks passed, 38 failed, in 36 test cases)
 ✗ Total: 152 checks passed, 38 failed, in 36 test cases, 2 test suites
+error: test runner already initialised
+error: top suite already added

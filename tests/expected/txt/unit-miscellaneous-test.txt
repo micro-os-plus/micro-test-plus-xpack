@@ -24,8 +24,11 @@ Built with GCC 15.2.1 20251203, with FP, with exceptions, with MICRO_OS_PLUS_DEB
         ✓ char*
         ✓ const char*
         ✓ null char pointers
+        ✓ unterminated const char array
+        ✓ char array with an early terminator
+        ✓ unterminated wide array
         ✓ unsigned char array
-    ✓ Formatter character pointers - passed (5 checks)
+    ✓ Formatter character pointers - passed (8 checks)
     • Formatter number suffixes
         ✓ signed char
         ✓ unsigned char
@@ -93,21 +96,21 @@ Built with GCC 15.2.1 20251203, with FP, with exceptions, with MICRO_OS_PLUS_DEB
     ✓ Formatter standard types - passed (16 checks)
     • Message types
         ✓ numbers 1 2 3 1.5 2 true
-        ✓ pointer 0x804cc68
+        ✓ pointer 0x1007e694
         ✓ container {1, 2}
         ✓ standard types (1, a) nullopt 1
         ✓ custom type { 1, 2 } on
         ✓ wide characters u'x' U'x' L'x'
-        ✗ failed {3} FAILED (miscellaneous.cpp:856)
+        ✗ failed {3} FAILED (miscellaneous.cpp:912)
     ✗ Message types - FAILED (6 checks passed, 1 failed)
     • Lazy messages
         ✓ passed
         ✓ true
         ✓ not called after a success
-        ✗ failed and appended FAILED (miscellaneous.cpp:884)
+        ✗ failed and appended FAILED (miscellaneous.cpp:940)
         ✓ called after a failure
-        ✗ 42 FAILED (miscellaneous.cpp:895)
-        ✗ from a function FAILED (miscellaneous.cpp:900)
+        ✗ 42 FAILED (miscellaneous.cpp:951)
+        ✗ from a function FAILED (miscellaneous.cpp:956)
     ✗ Lazy messages - FAILED (4 checks passed, 3 failed)
     • TAP escapes # TODO in names \ messages
         ✓ message with # hash and \ backslash
@@ -115,11 +118,11 @@ Built with GCC 15.2.1 20251203, with FP, with exceptions, with MICRO_OS_PLUS_DEB
         ✓ first line
 second line
         ✗ failed # TODO not a directive
-next line FAILED (miscellaneous.cpp:922)
+next line FAILED (miscellaneous.cpp:978)
     ✗ TAP escapes # TODO in names \ messages - FAILED (3 checks passed, 1 failed)
     • TAP condition values are quoted
-        ✗ FAILED (miscellaneous.cpp:933, "key: \"value\" # not a comment" == "a\\b")
-        ✗ FAILED (miscellaneous.cpp:937, "line\nbreak\ttab" == "x")
+        ✗ FAILED (miscellaneous.cpp:989, "key: \"value\" # not a comment" == "a\\b")
+        ✗ FAILED (miscellaneous.cpp:993, "line\nbreak\ttab" == "x")
     ✗ TAP condition values are quoted - FAILED (0 checks passed, 2 failed)
     • Runner options
         ✓ default verbosity before initialise()
@@ -139,15 +142,28 @@ next line FAILED (miscellaneous.cpp:922)
         ✓ a top suite added after run_suites() is rejected
         ✓ without initialise(), the default options are used
     ✓ Optional top suite - passed (7 checks)
+    • Misplaced test cases
+        ✓ a test case started on a suite that is not running fails
+        ✓ a test case started after run_suites() is not run
+    ✓ Misplaced test cases - passed (2 checks)
+    • Misdirected test cases
+        ✓ the misdirected test cases are not run, and fail the running test case
+    ✓ Misdirected test cases - passed (1 check)
+    • Early test cases
+        ✓ a test case started before initialise() is rejected
+    ✓ Early test cases - passed (1 check)
     • Runner option errors
         ✓ valid options still applied
         ✓ unknown reporter
         ✓ unknown option
         ✓ suite added after an option error
+        ✓ option error with an output file
+        ✓ earlier content removed
+        ✓ error written to the output file
         ✓ missing argument
         ✓ output file not opened
         ✓ suite added after an output file error
-    ✓ Runner option errors - passed (7 checks)
+    ✓ Runner option errors - passed (10 checks)
     • Runner application arguments
         ✓ none without a command line
         ✓ the arguments after the options
@@ -187,16 +203,26 @@ next line FAILED (miscellaneous.cpp:922)
         ✓ filtered, exit code 0
         ✓ matching test cases listed
         ✓ still no test case body run
-    ✓ List test cases - passed (7 checks)
+        ✓ nothing selected, exit code 2
+        ✓ nothing selected, error listed
+    ✓ List test cases - passed (9 checks)
+    • List test cases with errors
+        ✓ errors while listing, exit code 1
+        ✓ rejected suite listed as an error
+        ✓ misplaced test case listed as an error
+        ✓ exception of a suite body listed as an error
+    ✓ List test cases with errors - passed (4 checks)
     • Late suites
         ✓ suite added during run_suites() rejected
-        ✓ rejected suite neither run nor counted
+        ✓ rejected suite not run, and reported as a failed check
         ✓ nested run_suites() rejected
         ✓ session passed
         ✓ suite added after run_suites() rejected
         ✓ static suites constructed during run_suites() rejected
         ✓ static suite constructed after run_suites() rejected
-    ✓ Late suites - passed (7 checks)
+        ✓ calls made twice reported as failed checks of the top suite
+        ✓ session with rejected calls failed
+    ✓ Late suites - passed (9 checks)
     • Test case started on the suite
         ✓ check before the test case
         • test case started on the suite
@@ -258,6 +284,15 @@ next line FAILED (miscellaneous.cpp:922)
     • Each uncopied callable (3)
         ✓ callable not copied
     ✓ Each uncopied callable (3) - passed (1 check)
+    • Uncopyable body
+        ✓ uncopyable body called
+    ✓ Uncopyable body - passed (1 check)
+    • Uncopyable body again
+        ✓ uncopyable body called
+    ✓ Uncopyable body again - passed (1 check)
+    • Uncopyable body calls
+        ✓ the lvalue body was called
+    ✓ Uncopyable body calls - passed (1 check)
     • Nested test_each
         • Each nested value (10)
             ✓ multiple of 10
@@ -270,7 +305,7 @@ next line FAILED (miscellaneous.cpp:922)
         ✓ value 1 == 1
     ✓ Failed each value (1) - passed (1 check)
     • Failed each value (2)
-        ✗ value 2 == 1 FAILED (miscellaneous.cpp:1813, 2 == 1)
+        ✗ value 2 == 1 FAILED (miscellaneous.cpp:2186, 2 == 1)
     ✗ Failed each value (2) - FAILED (0 checks passed, 1 failed)
     • Callable arguments
         ✓ reference parameter refers to a copy
@@ -314,14 +349,15 @@ next line FAILED (miscellaneous.cpp:922)
         ✓ temporary string name
         ✓ string name
         ✓ string view name
+        ✓ unterminated array name
         ✓ helper test cases run
         ✓ location of the caller
         ✓ local session passed
         ✓ string suite name copied
         ✓ C string suite name copied
         ✓ string view suite name copied
-    ✓ Test case and suite names - passed (9 checks)
-✗ Miscellaneous suite - FAILED (203 checks passed, 8 failed, in 52 test cases)
+    ✓ Test case and suite names - passed (10 checks)
+✗ Miscellaneous suite - FAILED (225 checks passed, 8 failed, in 59 test cases)
 • Runner options suite
     • Default options
         ✓ the TAP reporter
@@ -472,4 +508,6 @@ next line FAILED (miscellaneous.cpp:922)
         ✗ ab matches ??? FAILED (utility.cpp:195)
     ✗ utility::is_match() — failing - FAILED (0 checks passed, 5 failed)
 ✗ Utility suite - FAILED (21 checks passed, 5 failed, in 3 test cases)
-✗ Total: 308 checks passed, 13 failed, in 69 test cases, 5 test suites
+✗ Total: 330 checks passed, 13 failed, in 76 test cases, 5 test suites
+error: test runner already initialised
+error: top suite already added
