@@ -101,6 +101,6 @@ endif ()
 
 set (XPACK_ENABLE_REPORT_SIZE true)
 set (XPACK_ENABLE_CREATE_HEX false)
-set (XPACK_ENABLE_CREATE_LISTING true)
+set (XPACK_ENABLE_CREATE_LISTING false)
 
 # -----------------------------------------------------------------------------
