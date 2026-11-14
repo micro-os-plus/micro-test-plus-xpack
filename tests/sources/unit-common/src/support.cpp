@@ -50,7 +50,7 @@ unit_common_verify_session (int argc, char* argv[],
 {
   // The session runs only once; the later calls of run_suites() return the same
   // code without running the suites again, and a second initialise() or
-  // add_top_suite() changes nothing.
+  // add_top_suite() is rejected, without other effects.
   {
     const size_t executed_checks = tr.totals ().executed_checks ();
     const size_t executed_test_cases = tr.totals ().executed_test_cases ();
@@ -58,7 +58,8 @@ unit_common_verify_session (int argc, char* argv[],
     test_assert (tr.run_suites () == code);
     tr.initialise (argc, argv);
     test_assert (&tr.add_top_suite () == &ts);
-    test_assert (tr.run_suites () == code);
+    // The rejected calls change the stored code of a passed session to 1.
+    test_assert (tr.run_suites () == (code == 0 ? 1 : code));
 
     test_assert (tr.totals ().executed_checks () == executed_checks);
     test_assert (tr.totals ().executed_test_cases () == executed_test_cases);
