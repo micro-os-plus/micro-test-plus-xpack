@@ -3,40 +3,62 @@
 
 import BranchesDetails from './_branches-details.mdx'
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 {/* ------------------------------------------------------------------------ */}
 
 ## Obtain project sources
 
-The project is hosted on GitHub:
+The **@micro-os-plus/micro-test-plus** project is hosted on GitHub:
 
 - https://github.com/micro-os-plus/micro-test-plus-xpack.git
 
 <BranchesDetails />
 
-To contribute **Pull Requests**, fork the project and make sure the
-**Copy the xpack branch only** option is **disabled**, so that
-the `xpack-development` branch is also copied and can be used for
-contributions.
+<Tabs groupId="clone">
+
+<TabItem value="fork" label="Use Fork" default>
+
+To contribute **Pull Requests**, fork the project. For this, go to the
+GitHub project page and click on the
+**[Fork](https://github.com/micro-os-plus/micro-test-plus-xpack/fork)**
+button.
 
 :::tip
 
-After making changes, direct the Pull Requests to the
-`xpack-development` branch.
+To get the all branches of the repository, be sure to **disable** the
+**Copy the xpack branch only** button in the fork dialog.
 
 :::
 
-The next step would normally be to **clone the forked repository**:
+After creating the fork, the next step is to **clone the forked repository**:
+
+```sh
+USER_ACCOUNT_ID=<your-account>
+```
 
 ```sh
 rm -rf ~/Work/micro-os-plus/micro-test-plus-xpack.git && \
 mkdir -p ~/Work/micro-os-plus && \
 git clone \
-  --branch xpack \
-  https://github.com/<your-account>/micro-test-plus-xpack.git \
+  --branch xpack-development \
+  https://github.com/${USER_ACCOUNT_ID}/micro-test-plus-xpack.git \
   ~/Work/micro-os-plus/micro-test-plus-xpack.git
 ```
 
-However, if Pull Requests are not intended, you can directly clone the
+:::tip
+
+After making changes, be sure to direct the Pull Requests to the
+`xpack-development` branch, otherwise it may be rejected.
+
+:::
+
+</TabItem>
+
+<TabItem value="original" label="Use Original">
+
+If Pull Requests are not intended, you can directly clone the
 `xpack` branch of the original repository:
 
 ```sh
@@ -47,6 +69,14 @@ git clone \
   https://github.com/micro-os-plus/micro-test-plus-xpack.git \
   ~/Work/micro-os-plus/micro-test-plus-xpack.git
 ```
+
+To work from the development branch instead, clone `xpack-development`
+from the original repository.
+
+</TabItem>
+
+</Tabs>
+
 
 If the repository has already been cloned, update it with:
 

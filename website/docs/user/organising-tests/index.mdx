@@ -25,7 +25,8 @@ several values), and the **test suites**.
 ## Test runner
 
 The test framework is implemented as a runner object, which must be
-instantiated; it can then be initialised, and given a top suite.
+instantiated; it starts with a default configuration, which can optionally be
+changed by initialising it, and it can be given a top suite.
 
 ### Instantiation
 
@@ -42,18 +43,53 @@ static suites** that refer to it.
 
 ### Initialisation
 
-After instantiation, the runner is usually initialised with the options parsed
+A newly instantiated runner is **ready to use**: it has a **default
+configuration** (the TAP reporter, the `normal` verbosity, no output file, and
+no filter), so an explicit call to `initialise()` is **not required**. The
+simplest programs can add suites and run them straight after instantiation:
+
+```cpp
+mt::runner tr;
+
+int
+main ()
+{
+  auto& ts = tr.add_top_suite ("Main");
+
+  ts.test ("Check something", [] (auto& t)
+    {
+      t.expect (true);
+    });
+
+  return tr.run_suites ();
+}
+```
+
+Such a program ignores the command line, so the default options always apply.
+
+The call is needed only to change this configuration, either by parsing the main
+arguments or by passing options set by the application. In both cases,
+`initialise()` **must precede** `add_top_suite()` and `run_suites()`, which
+otherwise initialise the runner with the default options; a later call is
+reported as an error.
+
+#### Command-line options
+
+The most common way to change the configuration is to apply the options parsed
 from the main arguments:
 
 ```cpp
 tr.initialise (argc, argv);
 ```
 
-The initialisation is optional; without it, the runner uses the **default
-options** (the TAP reporter, the `normal` verbosity, no output file, and no
-filter). If used, `initialise()` **must precede** `add_top_suite()` and
-`run_suites()`, which otherwise initialise the runner with the default options;
-a later call is reported as an error.
+The arguments recognised by the runner are `--help` (or `-h`), `--verbose`,
+`--quiet`, `--silent`, `--filter`, `--list-tests` (or `--list`), `--reporter`,
+`--output-file`, and `--colour` (or `--use-colour`). The parsing stops at the first argument that does not start with a dash, which,
+with the following arguments, is left to the application. The effect of each
+option, and the details of the parsing, are described in the
+[Running tests](/docs/user/running-tests/#command-line-options) page.
+
+#### Programmatic options
 
 On platforms without a command line, such as embedded applications without
 semihosting arguments, the runner can be initialised with the options set
@@ -67,11 +103,22 @@ options.verbosity_level = mt::verbosity::verbose;
 tr.initialise (options);
 ```
 
-The members of `runner_options` correspond to the command-line options:
-`selected_reporter` to `--reporter`, `verbosity_level` to `--silent`, `--quiet`,
-and `--verbose`, `output_file_path` to `--output-file`, `colour` to `--colour`
-(or `--use-colour`), `filter_patterns` to `--filter`, `list_tests` to
-`--list-tests` (or `--list`), and `help` to `--help` (or `-h`).
+The members of `runner_options`, with their types and default values, are the
+following; the last column gives the command-line option that sets each one:
+
+| Member | Type | Default | Command-line option |
+| --- | --- | --- | --- |
+| `selected_reporter` | `reporter_kind` | `tap` | `--reporter` |
+| `verbosity_level` | `verbosity` | `normal` | `--silent`, `--quiet`, `--verbose` |
+| `output_file_path` | `std::string` | empty (no file) | `--output-file` |
+| `colour` | `colour_mode` | `automatic` | `--colour`, `--use-colour` |
+| `filter_patterns` | `std::vector<std::string>` | empty (no filter) | `--filter` |
+| `list_tests` | `bool` | `false` | `--list-tests`, `--list` |
+| `help` | `bool` | `false` | `--help`, `-h` |
+
+The enumerations have the values `tap` and `human` (`reporter_kind`), `silent`,
+`quiet`, `normal`, and `verbose` (`verbosity`), and `automatic`, `always`, and
+`never` (`colour_mode`).
 
 The application can also construct the options from the main arguments itself,
 and adjust them before initialising the runner:
@@ -106,9 +153,10 @@ application adds explicitly; the name is optional:
 ```cpp
 auto& ts = tr.add_top_suite ("Main");
 
-ts.test ("Check something", [] (auto& t) {
-  t.expect (true);
-});
+ts.test ("Check something", [] (auto& t)
+  {
+    t.expect (true);
+  });
 ```
 
 The test cases of the top suite **run immediately**, when `test()` is called;
@@ -135,23 +183,30 @@ session runs only once, and later calls return the same result:
 return tr.run_suites ();
 ```
 
-The result is **0 if all checks passed**, and 1 otherwise, including when a
-suite was added too late (see [Non-static test
-suites](#non-static-test-suites)), when `initialise()` or `add_top_suite()` was
-called twice, and when there is no suite at all (no top suite, no suite added
-with `add_suite()`, and no static suite), since a test program that runs
-nothing must not pass unnoticed. If the command-line options were not valid (an
-unknown option, an unknown reporter name, an unknown colour mode, or a missing
-option argument), the errors are reported on `stderr` when the options are
-parsed and written on the console by the reporter (for TAP, as `Bail out!`
-lines, followed, for an unknown option, by a comment line suggesting `--help`),
-no output file is created, no test is run, and the result is 2. If the output
-file cannot be opened, the error is reported in the same way, no test is run,
-and the result is 2. If the `--filter` option selects no test case, the error
-`the filters selected no test case` is reported, and the result is 2, also when
-the test cases are listed. With the `--help` option (or `-h`), the usage and the
-list of the options are written on the console, no test is run, and the result
-is 0. When exceptions are not enabled, a failed requirement, and a call of
+The result is one of the following:
+
+- **0** if all checks passed; also after `--help` (or `-h`), when the usage and
+  the list of the options are written on the console and no test is run.
+- **1** if a check failed, and also when a suite was added too late (see
+  [Non-static test suites](#non-static-test-suites)), when `initialise()` or
+  `add_top_suite()` was called twice, and when there is no suite at all (no top
+  suite, no suite added with `add_suite()`, and no static suite), since a test
+  program that runs nothing must not pass unnoticed.
+- **2** if no test was run because of an error in the configuration:
+  - a command-line option is not valid (an unknown option, an unknown reporter
+    name, an unknown colour mode, or a missing option argument); the errors are
+    reported on `stderr` when the options are parsed, and written on the console
+    by the reporter (for TAP, as `Bail out!` lines, followed, for an unknown
+    option, by a comment line suggesting `--help`);
+  - the output file cannot be opened, which is reported in the same way;
+  - the `--filter` option selects no test case; the error
+    `the filters selected no test case` is reported, also when the test cases
+    are listed.
+
+  After an option error, or when the output file cannot be opened, no output
+  file is created.
+
+When exceptions are not enabled, a failed requirement, and a call of
 `tr.abort ()`, end the test execution before the result is returned (see
 [Aborting the test execution](#aborting-the-test-execution)).
 
@@ -200,12 +255,16 @@ reported by the compiler at its place.
 
 The name is a string literal, a `const char*`, a `std::string`, or a
 `std::string_view`, converted implicitly to `located_name`, which copies it and
-also records the location of the `test()` call. A temporary string, such as
+also records the location of the `test()` call. The copy is freed when the test
+case ends.
+
+A temporary string, such as
 `prefix + " overflow"`, is moved instead of copied, and a view need not be
 null-terminated. A `char` array is copied up to its first null character, or up
 to its end if it has none, so that a fixed-size name field that is full,
 without a terminator, is read only within the array; a `char` pointer must
-point to a null-terminated string. The copy is freed when the test case ends.
+point to a null-terminated string.
+
 The names of the suites, given to `add_suite()`, `add_top_suite()`, and the
 `static_suite` constructor, are `located_name` objects too, and are kept by the
 suites.
@@ -219,7 +278,10 @@ helper:
 void
 check_answer (mt::suite& ts, const mt::located_name& name, int value)
 {
-  ts.test (name, [value] (auto& t) { t.expect (mt::eq (value, 42)); });
+  ts.test (name, [value] (auto& t)
+    {
+      t.expect (mt::eq (value, 42));
+    });
 }
 ```
 
@@ -358,7 +420,26 @@ within the iteration; a parameter declared by value receives its own copy.
 
 ## Test suites
 
-Test suites are **named sequences of test cases**.
+Test suites are **named sequences of test cases**. They group the test cases of
+a component or of a feature, usually in a separate source file, so that the
+tests of an application are organised like its code.
+
+The suites run when `run_suites()` is called, ordered by name, and there are two
+ways to give them to the runner:
+
+- **static suites**, which are objects of the `static_suite` class that
+  register themselves with their runner, before `main()` is called, so that the
+  runner finds them without any action from the application;
+- **non-static suites**, which the application adds explicitly to the runner,
+  with `add_suite()`, from `main()`.
+
+The **static suites are recommended**: each source file defines its own suites,
+`main()` does not need to know them, and adding a test file to the build is
+enough to have its tests run, provided that the file is linked as an object
+file (see below). The non-static suites are useful when the
+application must decide at run time which suites to add, or when the static
+construction is not wanted. A program can mix the two, and the test cases
+written directly in `main()` belong to the optional [top suite](#top-suite).
 
 ### Static test suites
 
@@ -406,9 +487,10 @@ suite_function (mt::suite& ts)
 {
   ts.test ("Check various conditions", [] (auto& t)
     {
-      t.test ("Check truth", [] (auto& nt) {
-        nt.expect (true);
-      });
+      t.test ("Check truth", [] (auto& nt)
+        {
+          nt.expect (true);
+        });
     });
 }
 
@@ -416,10 +498,10 @@ static mt::static_suite static_suite_1 = { "Static suite", tr, suite_function };
 ```
 
 The implementation uses the **C++ static constructors** that are performed
-before the `main()` function is called. The order of registration is not
-defined; to provide a certain degree of **predictability**, the framework runs
-all suites when the `run_suites()` member function is called, after **ordering
-them by name**.
+before the `main()` function is called. The order in which the constructors of
+different source files run is not defined; to provide a certain degree of
+**predictability**, the suites are kept **ordered by name**, and
+`run_suites()` runs them in that order.
 
 The source files that define static suites **must be linked into the program as
 object files**. If they are packed in a static library, the linker drops the
@@ -437,17 +519,17 @@ in a given order, start their names with zero-padded numbers (`"01 - Init"`,
 A `static_suite` may also be a local object, constructed in a function, but only
 before the `run_suites()` of its runner has started; one constructed later would
 never run, so it is rejected, the error is reported (see [Rejected
-calls](#rejected-calls)), and the result is not 0. The runner should outlive the
-static suites that refer to it.
+calls](#rejected-calls)), and the result is not 0.
 
 ### Non-static test suites
 
-Static test suites are just a convenience, since they are run automatically by
-their runner, and not including the source file with the test suite in the build
-automatically disables the tests.
+Static test suites are only a convenience, since they are run automatically by
+their runner. The drawback is that a source file that is not linked, for example
+because it is missing from the build or is packed in a static library, silently
+disables its tests.
 
-However, they are not mandatory; suites can also be added to the runner
-explicitly, with `add_suite()`.
+The static suites are not mandatory; suites can also be added to the runner
+explicitly, with `add_suite()`, so that the application lists what runs.
 
 ```cpp showLineNumbers
 #include "micro-os-plus/micro-test-plus.h"
@@ -466,9 +548,10 @@ main (int argc, char* argv[])
 
   auto& ts = tr.add_top_suite ("Minimal");
 
-  ts.test ("Check truth", [] (auto& t) {
-    t.expect (true);
-  });
+  ts.test ("Check truth", [] (auto& t)
+    {
+      t.expect (true);
+    });
 
   tr.add_suite ("External suite", suite_function);
 

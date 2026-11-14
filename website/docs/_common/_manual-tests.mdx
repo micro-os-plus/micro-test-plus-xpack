@@ -26,12 +26,16 @@ can be relatively large, up to several hundred megabytes.
 
 :::
 
+#### Native system compiler tests
+
 To execute the tests with the system compiler (usually not available on Windows):
 
 ```sh
 xpm run install -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 xpm run test -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 ```
+
+#### More native and QEMU tests
 
 To execute a selection of tests with the latest versions of toolchains:
 
@@ -54,11 +58,82 @@ xpm run install-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 xpm run test-all -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 ```
 
+#### Physical boards tests
+
 To build the physical boards binaries with the latest versions of toolchains:
 
 ```sh
 xpm run install-boards -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 xpm run build-boards -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
+Running the tests on a physical board requires the board to be connected and
+powered up. To execute the tests for a specific board configuration with the
+latest versions of toolchains:
+
+```sh
+xpm run install-nucleo-f411re-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test-nucleo-f411re-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
+```sh
+xpm run install-nucleo-f411re-cubemx-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test-nucleo-f411re-cubemx-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
+```sh
+xpm run install-nucleo-f411re-cubemx-startup-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test-nucleo-f411re-cubemx-startup-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
+```sh
+xpm run install-nucleo-f767zi-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test-nucleo-f767zi-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
+```sh
+xpm run install-nucleo-f767zi-cubemx-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test-nucleo-f767zi-cubemx-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
+```sh
+xpm run install-nucleo-h533re-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test-nucleo-h533re-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
+```sh
+xpm run install-nucleo-h533re-cubemx-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test-nucleo-h533re-cubemx-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
+```sh
+xpm run install-raspberry-pi-pico-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test-raspberry-pi-pico-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
+```sh
+xpm run install-raspberry-pi-pico-sdk-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test-raspberry-pi-pico-sdk-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
+```sh
+xpm run install-raspberry-pi-pico-2-arm-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test-raspberry-pi-pico-2-arm-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
+```sh
+xpm run install-raspberry-pi-pico-2-arm-sdk-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test-raspberry-pi-pico-2-arm-sdk-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
+```sh
+xpm run install-raspberry-pi-pico-2-riscv-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test-raspberry-pi-pico-2-riscv-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+```
+
+```sh
+xpm run install-raspberry-pi-pico-2-riscv-sdk-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm run test-raspberry-pi-pico-2-riscv-sdk-cmake-gcc -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
 ```
 
 ### Clean-ups

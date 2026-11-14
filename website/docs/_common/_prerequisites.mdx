@@ -8,21 +8,47 @@ import CodeBlock from '@theme/CodeBlock';
 ## Prerequisites
 
 **@micro-os-plus/micro-test-plus** is
-an xpm package that provides a C++ source code library;
+an xpm package that provides **a C++ source code library**;
 development can be
-conducted on macOS, GNU/Linux, and Windows.
+conducted on **macOS**, **GNU/Linux**, and **Windows**.
 
 The prerequisites are:
 
 - git
 - curl
 - node >= {props.nodeVersion || 'N.N.N'}
-- npm
+- npm / xpm
 
 
 To execute the native tests with the system tools,
 **a C++ development environment** is required.
-On macOS, install **Command Line Tools**; on Ubuntu, install `build-essential`.
+On macOS, install **Command Line Tools**; on Ubuntu, install `build-essential`,
+on Arch/Manjaro install `base-devel`, on Fedora/Red Hat install the 
+`Development Tools` group.
 
 For details on installing the prerequisites, please refer to the
-[Prerequisites](https://xpack.github.io/docs/getting-started/prerequisites/) page.
+**[Prerequisites](https://xpack.github.io/docs/getting-started/prerequisites/)** page.
+
+## Install xpm
+
+[`xpm`](https://xpack.github.io/xpm/) is also a portable
+[Node.js](https://nodejs.org/) command line application that can be
+installed with `npm`.
+
+On macOS and GNU/Linux, if you followed the _Quick instructions_ in the
+Prerequisites page,
+it is already installed. Otherwise, to install it, follow the steps in the
+**[xpm install](https://xpack.github.io/xpm/install/)** page.
+
+If you're confident and prefer a shortcut,
+run the following command:
+
+```sh
+npm install -location=global xpm@latest
+```
+
+To check the result of the installation, run:
+
+```sh
+xpm --version
+```

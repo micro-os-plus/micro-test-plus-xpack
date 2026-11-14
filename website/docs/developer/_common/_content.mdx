@@ -35,7 +35,7 @@ Execute the following commands:
 ```sh
 npm --prefix ~/Work/micro-os-plus/micro-test-plus-xpack.git install
 npm --prefix ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests install
-xpm install -C ~/Work/micro-os-plus/micro-test-plus-xpack.git/tests
+xpm install -C ~/Work/micro-os-plus/micro-test-plus-xpack.git
 ```
 
 The last two commands install the dependencies of the tests project, such as the
@@ -56,6 +56,15 @@ The µOS++ testing strategy involves compiling the sources with
 as many toolchains as possible and executing them on a wide
 range of platforms.
 
+Therefore, **after making any changes**, it is necessary to **run the tests**.
+
+For simple changes, it may be sufficient to run the tests only on the
+host platforms (`xpm run test`).
+
+For more complex changes it is necessary to run the tests on both the host
+and target platforms to ensure correctness (`xpm run test-selected` or
+`xpm run test-latest`).
+
 ### Host platforms
 
 The tests may be executed on any of the supported host
@@ -63,7 +72,7 @@ platforms:
 
 - GNU/Linux (x64 and arm64, **GLIBC>=2.28**); to execute the native
 tests, **a C++ development environment** is required
-(on Ubuntu install `build-essential`)
+(on Ubuntu install `build-essential`, on Arch/Manjaro install `base-devel`)
 - macOS (>= **11.0**);
 as C++ development environment use **Command Line Tools**
 - Windows 10, Windows 11
@@ -112,8 +121,11 @@ to run them, the board must be connected and powered up:
 
 Note: The Raspberry Pi Zero 2 W platform is work in progress.
 
-The build configurations use exactly the same source files on all platforms,
-without changes.
+### Portable test sources
+
+The test sources are **highly portable**: they are identical on all platforms
+and in all build configurations; only the platform-specific code and the
+build configuration files differ.
 
 ### Semihosting
 
@@ -121,6 +133,16 @@ On embedded platforms, the applications interact with the
 host via the
 [semihosting mechanism](https://github.com/ARM-software/abi-aa/blob/main/semihosting/semihosting.rst),
 defined by Arm and used with the same protocol on RISC-V.
+
+The semihosting implementation must support at least
+`SYS_GETCMDLINE` (to pass the command line arguments),
+`SYS_EXIT` (to return the exit code),
+and the file operations `SYS_OPEN`, `SYS_WRITE` and `SYS_CLOSE`
+(to write the test output).
+
+A complete implementation is provided by the
+[@micro-os-plus/semihosting](https://github.com/micro-os-plus/semihosting-xpack)
+package.
 
 ### Toolchains
 
