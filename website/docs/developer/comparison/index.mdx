@@ -1,6 +1,6 @@
 ---
 title: Comparison with other frameworks
-description: "How the design of µTest++ compares with Boost UT, GoogleTest, Catch2, doctest, Boost.Test, Unity, and CppUTest, and where its choices differ or leave out features."
+description: "How the design of µTest++ compares with Boost UT, snitch, GoogleTest, Catch2, doctest, Boost.Test, Unity, and CppUTest, and where its choices differ or leave out features."
 keywords:
   - micro-os-plus
   - xpack
@@ -11,6 +11,7 @@ keywords:
   - catch2
   - doctest
   - boost-ut
+  - snitch
   - unity
   - cpputest
 
@@ -35,6 +36,7 @@ table is not repeated here.
 | Framework | Language | Why it is compared |
 | --- | --- | --- |
 | [Boost UT](https://boost-ext.github.io/ut/) | C++20 | The closest relative: the function comparators of µTest++ were inspired by it. |
+| [snitch](https://github.com/snitch-org/snitch) | C++20 | The closest in purpose: a lightweight C++20 framework for constrained targets, with no heap allocation and no stream library. |
 | [GoogleTest](https://github.com/google/googletest) | C++ (the 1.18.x branch requires C++17) | The most widely used C++ framework, with GoogleMock included. |
 | [Catch2](https://github.com/catchorg/Catch2) | C++ (v3 requires C++14) | Popular, with sections, matchers, and benchmarking. |
 | [doctest](https://github.com/doctest/doctest) | C++ (C++11 and later) | Light on compile times, with a single header. |
@@ -46,17 +48,17 @@ Embedded Unit was not included, and JUnit is not a C++ framework.
 
 ## Summary matrix
 
-| | µTest++ | Boost UT | GoogleTest | Catch2 | doctest | Boost.Test | Unity | CppUTest |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Checks written as | functions (macro-free) | operators and functions | macros | macros | macros | macros | macros | macros |
-| Operands printed on failure | yes | yes | yes | yes | yes | yes | typed macros | typed macros |
-| Output reports | human-readable, TAP | console, JUnit, selectable with `--reporter`, replaceable | text, XML | several (including JUnit and JSON) | console, replaceable | human-readable, XML, JUnit | text | text, JUnit, TeamCity, Eclipse |
-| Nested test cases | yes | yes (`should` is an alias of `test`) | no | sections | subcases | suites | no | no |
-| Parametrised tests | `test_each()` | yes | yes | yes | yes | yes | via the runner generator | no dedicated macro found |
-| Built-in mocking | no | no | yes (GoogleMock) | no | no | no | no (CMock is separate) | yes (CppUMock) |
-| Leak detection | no | no | no | no | no | no | optional add-on | built in |
-| Builds without exceptions | yes | yes (`__cpp_exceptions` guards) | yes (`GTEST_HAS_EXCEPTIONS`) | yes (`CATCH_CONFIG_DISABLE_EXCEPTIONS`) | yes (`DOCTEST_CONFIG_NO_EXCEPTIONS`) | yes (`BOOST_NO_EXCEPTIONS`) | not applicable (C) | yes (`CPPUTEST_HAVE_EXCEPTIONS`) |
-| Licence | MIT | Boost 1.0 | BSD-3-Clause | Boost 1.0 | MIT | Boost 1.0 | MIT | BSD-3-Clause |
+| | µTest++ | Boost UT | snitch | GoogleTest | Catch2 | doctest | Boost.Test | Unity | CppUTest |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Checks written as | functions (macro-free) | operators and functions | macros | macros | macros | macros | macros | macros | macros |
+| Operands printed on failure | yes | yes | yes | yes | yes | yes | yes | typed macros | typed macros |
+| Output reports | human-readable, TAP | console, JUnit, selectable with `--reporter`, replaceable | console, TeamCity, Catch2 XML, selectable with `--reporter`, extensible | text, XML | several (including JUnit and JSON) | console, replaceable | human-readable, XML, JUnit | text | text, JUnit, TeamCity, Eclipse |
+| Nested test cases | yes | yes (`should` is an alias of `test`) | sections | no | sections | subcases | suites | no | no |
+| Parametrised tests | `test_each()` | yes | by type (`TEMPLATE_TEST_CASE`), no value generators | yes | yes | yes | yes | via the runner generator | no dedicated macro found |
+| Built-in mocking | no | no | no | yes (GoogleMock) | no | no | no | no (CMock is separate) | yes (CppUMock) |
+| Leak detection | no | no | no (the framework itself does not allocate) | no | no | no | no | optional add-on | built in |
+| Builds without exceptions | yes | yes (`__cpp_exceptions` guards) | yes (`SNITCH_WITH_EXCEPTIONS`) | yes (`GTEST_HAS_EXCEPTIONS`) | yes (`CATCH_CONFIG_DISABLE_EXCEPTIONS`) | yes (`DOCTEST_CONFIG_NO_EXCEPTIONS`) | yes (`BOOST_NO_EXCEPTIONS`) | not applicable (C) | yes (`CPPUTEST_HAVE_EXCEPTIONS`) |
+| Licence | MIT | Boost 1.0 | Boost 1.0 | BSD-3-Clause | Boost 1.0 | MIT | Boost 1.0 | MIT | BSD-3-Clause |
 
 The entries come from the documentation and from the source code of the
 frameworks (the repositories at the commits listed in
@@ -173,6 +175,87 @@ using namespace boost::ut;
   filtering and listing, the TAP report, and the avoidance of the stream
   library for constrained targets. Boost UT has more styles (BDD, Gherkin) and
   a replaceable reporter.
+
+### snitch
+
+```cpp
+TEST_CASE ("number")
+{
+  CHECK (answer () == 43);
+}
+
+TEST_CASE ("text")
+{
+  CHECK (std::string_view ("abc") == std::string_view ("abd"));
+}
+
+TEMPLATE_TEST_CASE ("sizes", "[sizes]", short, int, long)
+{
+  CHECK (sizeof (TestType) < 4);
+}
+
+TEST_CASE ("requirement")
+{
+  REQUIRE (answer () == 43);
+  CHECK (true);
+}
+```
+
+The reference test case run for the values 1, 16, and 512 has no direct
+equivalent: snitch has no `GENERATE`, so the snippet parametrises by type, which
+is what `TEMPLATE_TEST_CASE` offers.
+
+- **Checks.** Catch2-style macros: `CHECK` and `REQUIRE` with the natural
+  comparison operators, plus the `_FALSE`, `_THAT` (matchers), and
+  `_THROWS_AS` variants. The expression is decomposed, so a failed check prints
+  the operands. `CONSTEXPR_*` and `CONSTEVAL_*` variants check the expressions
+  at compile time. The messages are limited: `INFO` and `CAPTURE` exist, but
+  streaming into them is not supported.
+- **Fatal failure.** `REQUIRE`, `FAIL`, and `SKIP` throw to abandon the current
+  test case, as `require()` of µTest++ does. When exceptions are disabled
+  (`SNITCH_WITH_EXCEPTIONS` set to 0, or not available), they call
+  `std::terminate()`, so the **whole test application stops**; the documentation
+  recommends the `CHECK*()`, `FAIL_CHECK()`, and `SKIP_CHECK()` variants and a
+  manual return. `require()` of µTest++ also aborts the execution when
+  exceptions are disabled (see the
+  [User's Guide](/docs/user/checks/#comparison-with-other-frameworks)).
+- **Registration.** `TEST_CASE` defines a function and a static variable whose
+  initialiser calls `snitch::tests.add()` at the static initialisation, into a
+  global registry; the sections nest inside a test case, as in Catch2, and the
+  test case is re-run for each leaf section. `TEST_CASE_METHOD` gives the
+  fixtures, and `TEMPLATE_TEST_CASE` and `TEMPLATE_LIST_TEST_CASE` the
+  parametrisation by type. The main function is generated with
+  `SNITCH_DEFINE_MAIN`, or written by the application.
+- **Standard library.** The headers include `<string_view>`, `<array>`,
+  `<optional>`, `<variant>`, `<utility>`, `<type_traits>`, `<bit>`, and a few
+  other light headers, but no stream library, no `std::string`, and no
+  `std::vector`. The documentation states that the framework does **no heap
+  allocation** while running the tests, so the tests can monitor the heap use of
+  the tested code. The price is a set of **fixed capacities** set at build time
+  (`SNITCH_MAX_TEST_CASES`, 5000 by default, and the maximum lengths of the
+  names, tags, messages, and expressions); longer strings are truncated.
+- **Freestanding.** The console (`SNITCH_WITH_STDOUT`) and the file output
+  (`SNITCH_WITH_STD_FILE_IO`) can be disabled, and the application supplies
+  `snitch::cli::console_print` and the `snitch::io::file_*` functions.
+- **Reports.** The default console reporter, plus TeamCity and Catch2 XML,
+  selected with `--reporter`; an application can add its own with
+  `REGISTER_REPORTER`, which µTest++ does not offer. The verbosity has four
+  levels (`quiet`, `normal`, `high`, `full`), and the output can go to a file,
+  with the listing of the tests, the tags, and the reporters. There is no TAP
+  reporter.
+- **Other.** Tags, matchers, and a library or header-only build
+  (`snitch_all.hpp`). The framework can be compiled out
+  (`SNITCH_ENABLE`), to keep tests in the same file as the code. The API is a
+  deliberate subset of Catch2, with its own list of differences; the
+  `GENERATE`, `BENCHMARK`, and streaming messages are not planned. Test cases
+  are not run in parallel.
+- **Differences.** The closest framework to µTest++ in purpose: C++20, built for
+  constrained targets, no stream library, and runs without exceptions. snitch
+  keeps the Catch2 macros and sections, with a stronger and explicit commitment
+  of no heap allocation, fixed capacities, compile-time checks, and replaceable
+  reporters, and adds a build step (a library, or the header-only
+  implementation file). µTest++ has macro-free function comparators, the TAP
+  report, and test cases nested in the code, without the re-running of sections.
 
 ### GoogleTest
 
@@ -433,7 +516,7 @@ TEST (Answer, Text)
 ### Checks without macros
 
 The checks of µTest++ are function calls that capture the source location with
-a defaulted parameter, in place of the macros of GoogleTest, Catch2, doctest,
+a defaulted parameter, in place of the macros of snitch, GoogleTest, Catch2, doctest,
 Boost.Test, Unity, and CppUTest. Boost UT also offers a macro-free usage. The
 consequence is that the checks obey the rules of the language (scope, types,
 overloads), and that an application comparator is an ordinary template, as
@@ -455,7 +538,7 @@ formatter](/docs/developer/formatter/).
 The reports are in the TAP format, which the TAP-aware tools consume
 directly, with a human-readable reporter on request. The reporter is selected
 with an option; custom reporters are not supported, whereas Boost UT can
-replace its reporter and runner, doctest can register reporters, and
+replace its reporter and runner, snitch and doctest can register reporters, and
 Boost.Test, Catch2, GoogleTest, and CppUTest provide several output formats.
 
 ### Registration with static objects
@@ -465,7 +548,7 @@ constructors, with the intrusive list of
 [Test cases and suites](/docs/developer/test-cases-and-suites/) that does not
 depend on the construction order. The test cases are not registered: they run
 within the call that creates them. This differs from the macro-based
-registration of GoogleTest, Catch2, doctest, Boost.Test, and CppUTest, and from
+registration of snitch, GoogleTest, Catch2, doctest, Boost.Test, and CppUTest, and from
 the runner generation used with Unity.
 
 ### Embedded targets
@@ -473,8 +556,10 @@ the runner generation used with Unity.
 The framework is built to run on bare-metal targets, with no dependency on the
 stream library, with a stack-based execution of the test cases, and with a
 build that does not use exceptions, where a failed requirement aborts the test
-execution. Unity and CppUTest also target embedded systems; Unity is written
-in C and CppUTest is a C++ framework, both with macros for the checks.
+execution. snitch, Unity, and CppUTest also target embedded systems; snitch
+is the closest, a C++20 framework with no stream library and no heap
+allocation; Unity is written in C and CppUTest is a C++ framework, all three
+with macros for the checks.
 
 ## Learning curve
 
@@ -488,6 +573,7 @@ the documentation folders at the commits in [Sources](#sources).
 | --- | --- | --- | --- | --- |
 | µTest++ | easy for C++ developers | moderate | 12 function comparators and helpers, plus the runner, the suites, and the test cases | the object model (runner, suite, test case, `t`) and the `mt::` qualification |
 | Boost UT | moderate | steep | 48 exported names and 3370 lines in a single header | operators, literals, and the `\|` syntax |
+| snitch | easy | moderate | 36 documented macros; a README and 3 documentation pages, about 11 000 words, and about 4100 lines of headers | the fixed capacities, the build configuration macros, and the missing Catch2 features |
 | GoogleTest | easy | moderate to steep | about 42 `EXPECT_*` and `ASSERT_*` macros; 19 documentation pages, about 66 000 words | fixtures, parametrised tests, GoogleMock |
 | Catch2 | easy | moderate | few assertion macros; 35 documentation pages, about 51 000 words | sections and generators re-run the test case |
 | doctest | easy | moderate | about 66 assertion macros; 16 documentation pages, about 18 000 words | subcases, configuration macros |
@@ -530,6 +616,28 @@ The macro-free syntax is compact but unusual: the literals (`"name"_test`,
 the `>> fatal` suffix, and the `cfg<override>` configuration. Errors in
 template-heavy expressions produce long compiler messages. The single header
 has 3370 lines and relies on concepts and, when available, `<format>`.
+
+### snitch
+
+The first test is as simple as in Catch2, since the macros and the comparison
+operators are the same, and the documentation is short. The difficulties are of
+the embedded kind:
+
+- **The API is a subset of Catch2.** A user who knows Catch2 must check the
+  [comparison page](https://github.com/snitch-org/snitch/blob/main/doc/comparison_catch2.md):
+  no `GENERATE`, no streaming in `INFO`, no `BENCHMARK`, and only some of the
+  exception checks.
+- **The capacities are fixed.** The number of test cases, the length of the
+  names, of the expressions, and of the messages are set at build time; a
+  larger application needs the configuration, and long text is truncated.
+- **The behaviour changes without exceptions.** A failed `REQUIRE` stops the
+  application, not only the test case, so the `CHECK` variants and a manual
+  return must be used.
+- **The configuration is by build options.** The console, the file output, the
+  exceptions, the timings, and the reporters are switched by CMake or meson
+  options, or by macros, and the freestanding functions must be set before any
+  other call.
+- **Sections re-run the test case**, as in Catch2.
 
 ### GoogleTest
 
@@ -587,6 +695,9 @@ tested code are confusing at first.
 
 ## Limits and trade-offs of µTest++
 
+- **No compile-time variants of the checks.** `expect()` and `require()` run
+  at run time; snitch has `CONSTEXPR_*` and `CONSTEVAL_*` variants of its check
+  macros.
 - **No mocking.** GoogleTest includes GoogleMock and CppUTest includes
   CppUMock. With Unity, the mocks come from the separate CMock project.
 - **No leak detection.** CppUTest takes a checkpoint of the allocations before
@@ -595,8 +706,9 @@ tested code are confusing at first.
 - **No fixture classes.** The body of a suite or of a test case is ordinary
   code, shared by the nested test cases; the fixtures of GoogleTest,
   Boost.Test, and doctest have no direct equivalent.
-- **No custom reporters.** See above.
-- **A requirement of C++20.** Boost UT has the same requirement, but doctest
+- **No custom reporters.** See above; snitch registers them with
+  `REGISTER_REPORTER`.
+- **A requirement of C++20.** Boost UT and snitch have the same requirement, but doctest
   needs C++11, Catch2 v3 needs C++14, and GoogleTest 1.18.x needs C++17. An
   embedded toolchain without C++20 cannot build µTest++.
 - **A small ecosystem.** The user community and the third-party tooling are
@@ -613,6 +725,7 @@ changes):
 | --- | --- |
 | µTest++ | `6507c054` (2026-11-09) |
 | Boost UT | `872b8b9` (2026-10-24) |
+| snitch | `c29ce5b` (2026-10-07, version 1.4.0) |
 | GoogleTest | `6450691` (2026-11-06) |
 | Catch2 | `a1a991f` (2026-10-30) |
 | doctest | `d44d4f6` (2026-03-28) |
