@@ -787,7 +787,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     COMMAND
       "${CMAKE_COMMAND}" -D "EXECUTABLE=$<TARGET_FILE:unit-checks-test>" -D
       "OUTPUT=unit-checks-test-colour.txt" -P
-      "${CMAKE_CURRENT_LIST_DIR}/capture-stdout.cmake" -- --reporter human
+      "${CMAKE_CURRENT_LIST_DIR}/capture-stdout.cmake" -- --reporter=human
       --color --verbose one two
   )
   message (VERBOSE "T> unit-checks-test-reporter-human-colour")
@@ -806,7 +806,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     COMMAND
       "${CMAKE_COMMAND}" -D "EXECUTABLE=$<TARGET_FILE:unit-checks-test>" -D
       "OUTPUT=unit-checks-test-console.txt" -P
-      "${CMAKE_CURRENT_LIST_DIR}/capture-stdout.cmake" -- --reporter human one
+      "${CMAKE_CURRENT_LIST_DIR}/capture-stdout.cmake" -- --reporter=human one
       two
   )
   message (VERBOSE "T> unit-checks-test-reporter-human-console")
@@ -825,7 +825,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     COMMAND
       "${CMAKE_COMMAND}" -D "EXECUTABLE=$<TARGET_FILE:unit-checks-test>" -D
       "OUTPUT=unit-checks-test-console-quiet.txt" -P
-      "${CMAKE_CURRENT_LIST_DIR}/capture-stdout.cmake" -- --reporter human
+      "${CMAKE_CURRENT_LIST_DIR}/capture-stdout.cmake" -- --reporter=human
       --quiet one two
   )
   message (VERBOSE "T> unit-checks-test-reporter-human-console-quiet")
@@ -1177,7 +1177,7 @@ if (XPACK_ENABLE_UNIT_TEST)
     COMMAND
       "${CMAKE_COMMAND}" -D "EXECUTABLE=$<TARGET_FILE:unit-test>" -D
       "OUTPUT=unit-test-colour.txt" -P
-      "${CMAKE_CURRENT_LIST_DIR}/capture-stdout.cmake" -- --reporter human
+      "${CMAKE_CURRENT_LIST_DIR}/capture-stdout.cmake" -- --reporter=human
       --color --verbose one two
   )
   message (VERBOSE "T> unit-test-reporter-human-colour")
@@ -1196,7 +1196,7 @@ if (XPACK_ENABLE_UNIT_TEST)
     COMMAND
       "${CMAKE_COMMAND}" -D "EXECUTABLE=$<TARGET_FILE:unit-test>" -D
       "OUTPUT=unit-test-console.txt" -P
-      "${CMAKE_CURRENT_LIST_DIR}/capture-stdout.cmake" -- --reporter human one
+      "${CMAKE_CURRENT_LIST_DIR}/capture-stdout.cmake" -- --reporter=human one
       two
   )
   message (VERBOSE "T> unit-test-reporter-human-console")
@@ -1214,7 +1214,7 @@ if (XPACK_ENABLE_UNIT_TEST)
     COMMAND
       "${CMAKE_COMMAND}" -D "EXECUTABLE=$<TARGET_FILE:unit-test>" -D
       "OUTPUT=unit-test-console-quiet.txt" -P
-      "${CMAKE_CURRENT_LIST_DIR}/capture-stdout.cmake" -- --reporter human
+      "${CMAKE_CURRENT_LIST_DIR}/capture-stdout.cmake" -- --reporter=human
       --quiet one two
   )
   message (VERBOSE "T> unit-test-reporter-human-console-quiet")

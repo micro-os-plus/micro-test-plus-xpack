@@ -285,8 +285,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     "unit-checks-test-reporter-human"
     COMMAND
     unit-checks-test
-    --reporter
-    human
+    --reporter=human
     --output-file=unit-checks-test-noexcept.txt
     one
     two
@@ -297,6 +296,38 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     FILES
       "${CMAKE_CURRENT_BINARY_DIR}/unit-checks-test-noexcept.txt"
       "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-checks-test-noexcept.txt"
+  )
+
+  message (VERBOSE "") # Separator for readability
+endif ()
+
+# -----------------------------------------------------------------------------
+
+if (XPACK_ENABLE_UNIT_COMBINATIONS_TEST)
+  add_cross_test_executable (unit-combinations-test)
+  target_link_cross_tests_libraries (
+    unit-combinations-test test::unit-combinations
+  )
+
+  xpack_display_target_lists (unit-combinations-test)
+  message (VERBOSE "A> unit-combinations-test")
+
+  add_openocd_test (
+    NAME
+    "unit-combinations-test-reporter-human"
+    COMMAND
+    unit-combinations-test
+    --reporter=human
+    --output-file=unit-combinations-test-noexcept.txt
+    one
+    two
+  )
+  add_compare_files_test (
+    NAME "unit-combinations-test-reporter-human-compare"
+    DEPENDS "unit-combinations-test-reporter-human"
+    FILES
+      "${CMAKE_CURRENT_BINARY_DIR}/unit-combinations-test-noexcept.txt"
+      "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-combinations-test-noexcept.txt"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -316,17 +347,49 @@ if (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST)
     "unit-exceptions-test-reporter-human"
     COMMAND
     unit-exceptions-test
-    --reporter
-    human
-    --output-file=unit-exceptions-test.txt
+    --reporter=human
+    --output-file=unit-exceptions-test-noexcept.txt
     one
     two
   )
   add_compare_files_test (
     NAME "unit-exceptions-test-reporter-human-compare"
     DEPENDS "unit-exceptions-test-reporter-human"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-exceptions-test.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-exceptions-test.txt"
+    FILES
+      "${CMAKE_CURRENT_BINARY_DIR}/unit-exceptions-test-noexcept.txt"
+      "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-exceptions-test-noexcept.txt"
+  )
+
+  message (VERBOSE "") # Separator for readability
+endif ()
+
+# -----------------------------------------------------------------------------
+
+if (XPACK_ENABLE_UNIT_MISCELLANEOUS_TEST)
+  add_cross_test_executable (unit-miscellaneous-test)
+  target_link_cross_tests_libraries (
+    unit-miscellaneous-test test::unit-miscellaneous
+  )
+
+  xpack_display_target_lists (unit-miscellaneous-test)
+  message (VERBOSE "A> unit-miscellaneous-test")
+
+  add_openocd_test (
+    NAME
+    "unit-miscellaneous-test-reporter-human"
+    COMMAND
+    unit-miscellaneous-test
+    --reporter=human
+    --output-file=unit-miscellaneous-test-noexcept.txt
+    one
+    two
+  )
+  add_compare_files_test (
+    NAME "unit-miscellaneous-test-reporter-human-compare"
+    DEPENDS "unit-miscellaneous-test-reporter-human"
+    FILES
+      "${CMAKE_CURRENT_BINARY_DIR}/unit-miscellaneous-test-noexcept.txt"
+      "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-miscellaneous-test-noexcept.txt"
   )
 
   message (VERBOSE "") # Separator for readability
@@ -346,17 +409,17 @@ if (XPACK_ENABLE_UNIT_DEPRECATED_TEST)
     "unit-deprecated-test-reporter-human"
     COMMAND
     unit-deprecated-test
-    --reporter
-    human
-    --output-file=unit-deprecated-test.txt
+    --reporter=human
+    --output-file=unit-deprecated-test-noexcept.txt
     one
     two
   )
   add_compare_files_test (
     NAME "unit-deprecated-test-reporter-human-compare"
     DEPENDS "unit-deprecated-test-reporter-human"
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/unit-deprecated-test.txt"
-          "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-deprecated-test.txt"
+    FILES
+      "${CMAKE_CURRENT_BINARY_DIR}/unit-deprecated-test-noexcept.txt"
+      "${CMAKE_CURRENT_SOURCE_DIR}/expected/txt/unit-deprecated-test-noexcept.txt"
   )
 
   message (VERBOSE "") # Separator for readability

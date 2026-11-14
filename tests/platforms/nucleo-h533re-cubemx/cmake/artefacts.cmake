@@ -272,8 +272,7 @@ if (XPACK_ENABLE_UNIT_CHECKS_TEST)
     "unit-checks-test-reporter-human"
     COMMAND
     unit-checks-test
-    --reporter
-    human
+    --reporter=human
     --output-file=unit-checks-test.txt
     one
     two
@@ -304,8 +303,7 @@ if (XPACK_ENABLE_UNIT_COMBINATIONS_TEST)
     "unit-combinations-test-reporter-human"
     COMMAND
     unit-combinations-test
-    --reporter
-    human
+    --reporter=human
     --output-file=unit-combinations-test.txt
     one
     two
@@ -334,8 +332,7 @@ if (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST)
     "unit-exceptions-test-reporter-human"
     COMMAND
     unit-exceptions-test
-    --reporter
-    human
+    --reporter=human
     --output-file=unit-exceptions-test.txt
     one
     two
@@ -366,8 +363,7 @@ if (XPACK_ENABLE_UNIT_MISCELLANEOUS_TEST)
     "unit-miscellaneous-test-reporter-human"
     COMMAND
     unit-miscellaneous-test
-    --reporter
-    human
+    --reporter=human
     --output-file=unit-miscellaneous-test.txt
     one
     two
@@ -396,8 +392,7 @@ if (XPACK_ENABLE_UNIT_DEPRECATED_TEST)
     "unit-deprecated-test-reporter-human"
     COMMAND
     unit-deprecated-test
-    --reporter
-    human
+    --reporter=human
     --output-file=unit-deprecated-test.txt
     one
     two
