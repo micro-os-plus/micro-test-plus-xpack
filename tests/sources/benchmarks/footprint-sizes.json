@@ -1,0 +1,529 @@
+{
+  "description": "The text, data, and bss sizes, in bytes, of the footprint programs in tests/sources/benchmarks/footprint, as reported by size --format=berkeley; null when the program was not built.",
+  "date": "2026-11-15",
+  "microTestPlusCommit": "59947cf1",
+  "modifiedFiles": [
+    "tests/cmake/project-definitions.cmake"
+  ],
+  "frameworks": "the release tags listed in tests/sources/benchmarks/frameworks.jsonc",
+  "build": "the <platform>-cmake-gcc-release configurations (-Os), with XPACK_ENABLE_FOOTPRINT_BENCHMARKS_TEST set to true",
+  "toolchains": {
+    "arm-none-eabi-gcc": "15.2.1",
+    "aarch64-none-elf-gcc": "15.2.1",
+    "riscv-none-elf-gcc": "15.2.0"
+  },
+  "microTestPlusSymbols": {
+    "qemu-cortex-m0": 24063,
+    "qemu-cortex-m3": 23925,
+    "qemu-cortex-m4f": 23929,
+    "qemu-cortex-m7f": 23935,
+    "qemu-cortex-m33": 23925,
+    "qemu-aarch32-a15": 35819,
+    "qemu-aarch64-a72": 32762,
+    "qemu-riscv-rv32imac": 24760,
+    "qemu-riscv-rv64imafdc": 24772
+  },
+  "sizes": {
+    "qemu-cortex-m0": {
+      "baseline": {
+        "text": 90960,
+        "data": 2404,
+        "bss": 9344
+      },
+      "printf": {
+        "text": 101108,
+        "data": 2404,
+        "bss": 9344
+      },
+      "micro-test-plus": {
+        "text": 139000,
+        "data": 2528,
+        "bss": 9728
+      },
+      "unity": {
+        "text": 92404,
+        "data": 2412,
+        "bss": 9544
+      },
+      "cpputest": {
+        "text": 196172,
+        "data": 2712,
+        "bss": 11672
+      },
+      "doctest": {
+        "text": 498536,
+        "data": 4676,
+        "bss": 17104
+      },
+      "catch2": {
+        "text": 623544,
+        "data": 4688,
+        "bss": 16760
+      },
+      "boost-ut": {
+        "text": 464096,
+        "data": 4952,
+        "bss": 16592
+      },
+      "boost-test": {
+        "text": 595160,
+        "data": 5236,
+        "bss": 20688
+      },
+      "googletest": {
+        "text": 523420,
+        "data": 4704,
+        "bss": 15768
+      },
+      "snitch": {
+        "text": 320044,
+        "data": 263116,
+        "bss": 9384
+      }
+    },
+    "qemu-cortex-m3": {
+      "baseline": {
+        "text": 80076,
+        "data": 2404,
+        "bss": 9352
+      },
+      "printf": {
+        "text": 89336,
+        "data": 2404,
+        "bss": 9352
+      },
+      "micro-test-plus": {
+        "text": 127436,
+        "data": 2528,
+        "bss": 9728
+      },
+      "unity": {
+        "text": 81500,
+        "data": 2412,
+        "bss": 9552
+      },
+      "cpputest": {
+        "text": 184380,
+        "data": 2712,
+        "bss": 11672
+      },
+      "doctest": {
+        "text": 474664,
+        "data": 4676,
+        "bss": 17112
+      },
+      "catch2": {
+        "text": 596388,
+        "data": 4688,
+        "bss": 16760
+      },
+      "boost-ut": {
+        "text": 440072,
+        "data": 4952,
+        "bss": 16600
+      },
+      "boost-test": {
+        "text": 567880,
+        "data": 5236,
+        "bss": 20696
+      },
+      "googletest": {
+        "text": 498780,
+        "data": 4704,
+        "bss": 15776
+      },
+      "snitch": {
+        "text": 306864,
+        "data": 263116,
+        "bss": 9384
+      }
+    },
+    "qemu-cortex-m4f": {
+      "baseline": {
+        "text": 80388,
+        "data": 2404,
+        "bss": 9352
+      },
+      "printf": {
+        "text": 89584,
+        "data": 2404,
+        "bss": 9352
+      },
+      "micro-test-plus": {
+        "text": 127656,
+        "data": 2528,
+        "bss": 9728
+      },
+      "unity": {
+        "text": 81788,
+        "data": 2412,
+        "bss": 9552
+      },
+      "cpputest": {
+        "text": 184808,
+        "data": 2712,
+        "bss": 11672
+      },
+      "doctest": {
+        "text": 475156,
+        "data": 4676,
+        "bss": 17112
+      },
+      "catch2": {
+        "text": 596936,
+        "data": 4688,
+        "bss": 16760
+      },
+      "boost-ut": {
+        "text": 440452,
+        "data": 4952,
+        "bss": 16600
+      },
+      "boost-test": {
+        "text": 568236,
+        "data": 5236,
+        "bss": 20696
+      },
+      "googletest": {
+        "text": 499168,
+        "data": 4704,
+        "bss": 15776
+      },
+      "snitch": {
+        "text": 305852,
+        "data": 263116,
+        "bss": 9384
+      }
+    },
+    "qemu-cortex-m7f": {
+      "baseline": {
+        "text": 77160,
+        "data": 2404,
+        "bss": 9352
+      },
+      "printf": {
+        "text": 86020,
+        "data": 2404,
+        "bss": 9352
+      },
+      "micro-test-plus": {
+        "text": 124096,
+        "data": 2528,
+        "bss": 9728
+      },
+      "unity": {
+        "text": 78560,
+        "data": 2412,
+        "bss": 9552
+      },
+      "cpputest": {
+        "text": 181440,
+        "data": 2712,
+        "bss": 11672
+      },
+      "doctest": {
+        "text": 472760,
+        "data": 4676,
+        "bss": 17112
+      },
+      "catch2": {
+        "text": 594556,
+        "data": 4688,
+        "bss": 16760
+      },
+      "boost-ut": {
+        "text": 436456,
+        "data": 4952,
+        "bss": 16600
+      },
+      "boost-test": {
+        "text": 564632,
+        "data": 5236,
+        "bss": 20696
+      },
+      "googletest": {
+        "text": 494588,
+        "data": 4704,
+        "bss": 15776
+      },
+      "snitch": {
+        "text": 302740,
+        "data": 263116,
+        "bss": 9384
+      }
+    },
+    "qemu-cortex-m33": {
+      "baseline": {
+        "text": 79528,
+        "data": 2772,
+        "bss": 9352
+      },
+      "printf": {
+        "text": 88692,
+        "data": 2772,
+        "bss": 9352
+      },
+      "micro-test-plus": {
+        "text": 126772,
+        "data": 2896,
+        "bss": 9728
+      },
+      "unity": {
+        "text": 80952,
+        "data": 2780,
+        "bss": 9552
+      },
+      "cpputest": {
+        "text": 184324,
+        "data": 3080,
+        "bss": 11672
+      },
+      "doctest": {
+        "text": 459592,
+        "data": 5044,
+        "bss": 17112
+      },
+      "catch2": {
+        "text": 581276,
+        "data": 5056,
+        "bss": 16760
+      },
+      "boost-ut": {
+        "text": 425024,
+        "data": 5320,
+        "bss": 16600
+      },
+      "boost-test": {
+        "text": 552864,
+        "data": 5604,
+        "bss": 20696
+      },
+      "googletest": {
+        "text": 483700,
+        "data": 5072,
+        "bss": 15776
+      },
+      "snitch": {
+        "text": 306952,
+        "data": 263484,
+        "bss": 9384
+      }
+    },
+    "qemu-aarch32-a15": {
+      "baseline": {
+        "text": 83860,
+        "data": 2212,
+        "bss": 33924
+      },
+      "printf": {
+        "text": 93022,
+        "data": 2212,
+        "bss": 33924
+      },
+      "micro-test-plus": {
+        "text": 143424,
+        "data": 2332,
+        "bss": 34304
+      },
+      "unity": {
+        "text": 85716,
+        "data": 2220,
+        "bss": 34124
+      },
+      "cpputest": {
+        "text": 208124,
+        "data": 2516,
+        "bss": 36244
+      },
+      "doctest": {
+        "text": 488460,
+        "data": 4484,
+        "bss": 41688
+      },
+      "catch2": {
+        "text": 652652,
+        "data": 4496,
+        "bss": 41332
+      },
+      "boost-ut": {
+        "text": 443348,
+        "data": 4760,
+        "bss": 41176
+      },
+      "boost-test": {
+        "text": 618292,
+        "data": 5044,
+        "bss": 45272
+      },
+      "googletest": {
+        "text": 521340,
+        "data": 4512,
+        "bss": 40352
+      },
+      "snitch": {
+        "text": 333600,
+        "data": 262920,
+        "bss": 33960
+      }
+    },
+    "qemu-aarch64-a72": {
+      "baseline": {
+        "text": 7689,
+        "data": 140,
+        "bss": 30008
+      },
+      "printf": {
+        "text": 55556,
+        "data": 3492,
+        "bss": 30704
+      },
+      "micro-test-plus": {
+        "text": 228776,
+        "data": 3708,
+        "bss": 31524
+      },
+      "unity": {
+        "text": 18804,
+        "data": 2836,
+        "bss": 30960
+      },
+      "cpputest": {
+        "text": 267056,
+        "data": 3828,
+        "bss": 33844
+      },
+      "doctest": {
+        "text": 809674,
+        "data": 5980,
+        "bss": 42704
+      },
+      "catch2": {
+        "text": 952923,
+        "data": 6004,
+        "bss": 42000
+      },
+      "boost-ut": {
+        "text": 764299,
+        "data": 6372,
+        "bss": 42672
+      },
+      "boost-test": null,
+      "googletest": {
+        "text": 833585,
+        "data": 6020,
+        "bss": 41008
+      },
+      "snitch": {
+        "text": 462488,
+        "data": 524804,
+        "bss": 30964
+      }
+    },
+    "qemu-riscv-rv32imac": {
+      "baseline": {
+        "text": 1563,
+        "data": 32,
+        "bss": 8920
+      },
+      "printf": {
+        "text": 44002,
+        "data": 1880,
+        "bss": 9304
+      },
+      "micro-test-plus": {
+        "text": 186058,
+        "data": 2096,
+        "bss": 9872
+      },
+      "unity": {
+        "text": 9155,
+        "data": 1456,
+        "bss": 9648
+      },
+      "cpputest": {
+        "text": 217072,
+        "data": 2288,
+        "bss": 13200
+      },
+      "doctest": {
+        "text": 655873,
+        "data": 4896,
+        "bss": 17424
+      },
+      "catch2": {
+        "text": 778395,
+        "data": 5692,
+        "bss": 17080
+      },
+      "boost-ut": {
+        "text": 619751,
+        "data": 5032,
+        "bss": 16960
+      },
+      "boost-test": null,
+      "googletest": {
+        "text": 672095,
+        "data": 4876,
+        "bss": 16088
+      },
+      "snitch": {
+        "text": 374446,
+        "data": 262724,
+        "bss": 9520
+      }
+    },
+    "qemu-riscv-rv64imafdc": {
+      "baseline": {
+        "text": 1671,
+        "data": 36,
+        "bss": 9520
+      },
+      "printf": {
+        "text": 34256,
+        "data": 3052,
+        "bss": 10216
+      },
+      "micro-test-plus": {
+        "text": 178858,
+        "data": 3284,
+        "bss": 11056
+      },
+      "unity": {
+        "text": 9673,
+        "data": 2576,
+        "bss": 10504
+      },
+      "cpputest": {
+        "text": 210958,
+        "data": 3420,
+        "bss": 13696
+      },
+      "doctest": {
+        "text": 654301,
+        "data": 6100,
+        "bss": 22024
+      },
+      "catch2": {
+        "text": 781565,
+        "data": 6748,
+        "bss": 21320
+      },
+      "boost-ut": {
+        "text": 618121,
+        "data": 6364,
+        "bss": 21992
+      },
+      "boost-test": null,
+      "googletest": {
+        "text": 670791,
+        "data": 6068,
+        "bss": 20328
+      },
+      "snitch": {
+        "text": 415250,
+        "data": 524460,
+        "bss": 10504
+      }
+    }
+  }
+}
