@@ -303,3 +303,33 @@ if (XPACK_ENABLE_UNIT_TEST)
 endif ()
 
 # -----------------------------------------------------------------------------
+
+if (XPACK_ENABLE_FOOTPRINT_BENCHMARKS_TEST)
+
+  # The footprint benchmark programs, selected in the project definitions. They
+  # are not tests of µTest++; each run passes if the program exits with zero,
+  # and the size of each program is shown after it is linked. Those listed in
+  # `xpack_footprint_benchmarks_not_run` are only built, and those listed in
+  # `xpack_footprint_benchmarks_not_built` are skipped.
+
+  foreach (benchmark_name ${xpack_footprint_benchmarks})
+    if (benchmark_name IN_LIST xpack_footprint_benchmarks_not_built)
+      continue ()
+    endif ()
+
+    set (name "footprint-${benchmark_name}")
+
+    add_cross_test_executable (${name})
+    target_link_cross_tests_libraries (${name} benchmark::${name})
+
+    xpack_display_target_lists (${name})
+    message (VERBOSE "A> ${name}")
+
+    if (NOT benchmark_name IN_LIST xpack_footprint_benchmarks_not_run)
+      add_qemu_test (NAME "${name}" COMMAND ${name})
+    endif ()
+  endforeach ()
+
+endif ()
+
+# -----------------------------------------------------------------------------

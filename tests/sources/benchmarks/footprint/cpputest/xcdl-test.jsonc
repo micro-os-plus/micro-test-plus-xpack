@@ -1,0 +1,46 @@
+{
+  "$schema": "https://xpack.github.io/xcdl/schemas/xcdl-2.0.0.json",
+  "minimumXcdlRequired": "2.0.0",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Liviu Ionescu. All rights reserved.",
+  "cdlComponents": [
+    {
+      "id": "benchmark.footprint-cpputest",
+      "display": "Footprint CppUTest",
+      "description": "The footprint benchmark program of CppUTest",
+      "publicIncludeFolders": [
+        "include",
+        "../../../../benchmarks-frameworks/cpputest/include"
+      ],
+      "sourceFiles": [
+        "src/main.cpp",
+        "../../../../benchmarks-frameworks/cpputest/src/CppUTest/CommandLineArguments.cpp",
+        "../../../../benchmarks-frameworks/cpputest/src/CppUTest/CommandLineTestRunner.cpp",
+        "../../../../benchmarks-frameworks/cpputest/src/CppUTest/JUnitTestOutput.cpp",
+        "../../../../benchmarks-frameworks/cpputest/src/CppUTest/MemoryLeakDetector.cpp",
+        "../../../../benchmarks-frameworks/cpputest/src/CppUTest/MemoryLeakWarningPlugin.cpp",
+        "../../../../benchmarks-frameworks/cpputest/src/CppUTest/SimpleMutex.cpp",
+        "../../../../benchmarks-frameworks/cpputest/src/CppUTest/SimpleString.cpp",
+        "../../../../benchmarks-frameworks/cpputest/src/CppUTest/SimpleStringInternalCache.cpp",
+        "../../../../benchmarks-frameworks/cpputest/src/CppUTest/TeamCityTestOutput.cpp",
+        "../../../../benchmarks-frameworks/cpputest/src/CppUTest/TestFailure.cpp",
+        "../../../../benchmarks-frameworks/cpputest/src/CppUTest/TestFilter.cpp",
+        "../../../../benchmarks-frameworks/cpputest/src/CppUTest/TestHarness_c.cpp",
+        "../../../../benchmarks-frameworks/cpputest/src/CppUTest/TestMemoryAllocator.cpp",
+        "../../../../benchmarks-frameworks/cpputest/src/CppUTest/TestOutput.cpp",
+        "../../../../benchmarks-frameworks/cpputest/src/CppUTest/TestPlugin.cpp",
+        "../../../../benchmarks-frameworks/cpputest/src/CppUTest/TestRegistry.cpp",
+        "../../../../benchmarks-frameworks/cpputest/src/CppUTest/TestResult.cpp",
+        "../../../../benchmarks-frameworks/cpputest/src/CppUTest/TestTestingFixture.cpp",
+        "../../../../benchmarks-frameworks/cpputest/src/CppUTest/Utest.cpp",
+        "../../../../benchmarks-frameworks/cpputest/src/Platforms/Gcc/UtestPlatform.cpp"
+      ],
+      "publicDefines": [
+        "HAVE_CONFIG_H"
+      ],
+      "publicCompilerOptions": [
+        "-w"
+      ]
+    }
+  ]
+}

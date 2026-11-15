@@ -17,6 +17,7 @@
 import { existsSync, readFileSync } from 'fs'
 import path from 'path'
 import { pathToFileURL } from 'url'
+import { globSync } from 'glob'
 import json5 from 'json5'
 
 // ----------------------------------------------------------------------------
@@ -49,9 +50,30 @@ const argv = process.argv.slice(2)
 
 if (argv.length < 1) {
   console.log(
-    `Usage: ${scriptName} <xcdl-package.jsonc> [<xcdl-package.jsonc>...]`
+    `Usage: ${scriptName} <xcdl-file-or-pattern> [<xcdl-file-or-pattern>...]`
   )
   process.exit(1)
+}
+
+// Expand the arguments that are glob patterns, such as
+// `sources/**/xcdl-*.jsonc`; quote them in the command, since the Windows
+// command processor does not expand patterns, and a POSIX shell expands
+// `**` to a single folder level. The plain paths are kept as they are.
+const xcdlJsoncPaths = []
+for (const arg of argv) {
+  if (/[*?[{]/.test(arg)) {
+    const matches = globSync(arg, {
+      posix: true,
+      ignore: ['**/node_modules/**', '**/xpacks/**', '**/build/**'],
+    }).sort()
+    if (matches.length === 0) {
+      console.error(`no files match '${arg}'...`)
+      process.exit(1)
+    }
+    xcdlJsoncPaths.push(...matches)
+  } else {
+    xcdlJsoncPaths.push(arg)
+  }
 }
 
 // ----------------------------------------------------------------------------
@@ -212,8 +234,8 @@ const substituteFile = (xcdlJsoncPath) => {
   })
 }
 
-for (const arg of argv) {
-  substituteFile(arg)
+for (const xcdlJsoncPath of xcdlJsoncPaths) {
+  substituteFile(xcdlJsoncPath)
 }
 
 console.log()

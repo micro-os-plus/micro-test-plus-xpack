@@ -1,0 +1,23 @@
+{
+  "$schema": "https://xpack.github.io/xcdl/schemas/xcdl-2.0.0.json",
+  "minimumXcdlRequired": "2.0.0",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Liviu Ionescu. All rights reserved.",
+  "cdlComponents": [
+    {
+      "id": "benchmark.footprint-unity",
+      "display": "Footprint Unity",
+      "description": "The footprint benchmark program of Unity",
+      "publicIncludeFolders": [
+        "../../../../benchmarks-frameworks/unity/src"
+      ],
+      "sourceFiles": [
+        "src/main.c",
+        "../../../../benchmarks-frameworks/unity/src/unity.c"
+      ],
+      "publicCompilerOptions": [
+        "-w"
+      ]
+    }
+  ]
+}

@@ -1,7 +1,10 @@
 # Tests
 
-There are five test programs available: `empty`, `minimal`, `sample`,
-`suite`, and `unit`.
+The test programs are `empty`, `minimal`, `sample`, `suite`, and the
+unit tests (`unit`, `unit-checks`, `unit-combinations`,
+`unit-exceptions`, `unit-miscellaneous`, `unit-deprecated`, and
+`unit-static-asserts`). The programs in `sources/benchmarks/` compare
+µTest++ with other frameworks; they are not tests of µTest++.
 
 The CI workflow runs several tests, both as native processes and as
 semihosted applications emulated by QEMU; for details see
@@ -11,8 +14,16 @@ Exactly the same source files are built on all platforms, without
 changes.
 
 Each test lives in its own `sources/<name>` folder, with the source
-files in `src/` and its own `CMakeLists.txt`, `meson.build`, and
-`xcdl-test.jsonc`. The resulting executables are named `<name>-test`.
+files in `src/`, the headers, if any, in `include/`, and its own
+`CMakeLists.txt`, `meson.build`, and `xcdl-test.jsonc`. The resulting
+executables are named `<name>-test`.
+
+The output of each program is compared with the reference files in
+`expected/tap` and `expected/txt`. The `-noexcept` variants are for
+the builds without exceptions; the `-console`, `-console-quiet`, and
+`-colour` variants hold the console output of the unit tests, captured
+on the synthetic-posix platform. A change that alters the reports, or
+adds or removes checks, must update these files.
 
 ## Empty
 
@@ -35,15 +46,95 @@ test that checks if exceptions are caught properly.
 
 ## Suite
 
-The files in `sources/suite/src/` exercise the test hierarchy: local
-runners, a static runner, and suites, including a statically
-allocated suite defined in a separate file (`suite.cpp`).
+The files in `sources/suite/src/` exercise the test hierarchy: a global
+runner, local runners, and suites, including the static suites defined
+in a separate file (`suite.cpp`).
 
 ## Unit
 
-The files in `sources/unit/src/` check if the framework counts the
-test results (successes and failures) correctly. Some checks are
-expected to fail.
+The unit tests check that the framework evaluates and reports the
+checks, and counts the results (successes and failures), correctly.
+Some checks are expected to fail.
+
+- `unit-checks`: the checks, the comparators, and the reported
+  operands;
+- `unit-combinations`: the integral and floating-point comparators,
+  for many combinations of the numeric types;
+- `unit-exceptions`: the `throws()` and `nothrow()` comparators, the
+  unexpected exceptions, and the failed `require()`; without
+  exceptions, it has no suites;
+- `unit-miscellaneous`: the formatter and reporter output, the
+  messages, the runner options and filters, the test hierarchy, the
+  abort handler, the utility functions, and the stopwatch;
+- `unit-deprecated`: the deprecated features, kept for compatibility
+  with the previous releases;
+- `unit-static-asserts`: the checks done at compile time; there is
+  nothing to run.
+
+The `unit` program links the bodies of `unit-checks`,
+`unit-combinations`, `unit-exceptions`, and `unit-miscellaneous` into a
+single program. The platforms with enough memory (QEMU and
+synthetic-posix) build it instead of the four separate programs; the
+physical boards, where it does not fit, build the four separate
+programs instead. The choice is made in each platform's
+`cmake/definitions.cmake` and `meson/definitions/meson.build`.
+
+The helpers shared by the unit tests are in `sources/unit-common`,
+which is a library, not a program.
+
+## Benchmarks
+
+The folders in `sources/benchmarks/` hold the programs that compare
+µTest++ with other testing frameworks; they are not tests of µTest++.
+
+The programs in `sources/benchmarks/footprint/<name>/src/` measure the
+code and data sizes: `baseline` is an empty program, `printf` adds a
+single `printf()` call, and each of the others (`micro-test-plus`,
+`unity`, `cpputest`, `doctest`, `catch2`, `boost-ut`, `boost-test`,
+`googletest`, and `snitch`) runs one test case with the same two
+checks, written with one framework. The POSIX stubs required by some
+of the frameworks on bare metal are in `common/src/`.
+
+The other frameworks are not part of this repository; their versions
+(the release tags and the expected commits) are listed in
+`sources/benchmarks/frameworks.jsonc`, and they are fetched, once for
+all the platforms, into the `benchmarks-frameworks` folder (ignored by
+git, and removed by `npm run deep-clean`) with:
+
+```sh
+xpm run fetch-benchmarks-frameworks -C tests
+```
+
+The frameworks already at the listed versions are skipped; use
+`node scripts/fetch-benchmarks-frameworks.mjs --force [name ...]`, in
+the `tests` folder, to fetch them again.
+
+On the synthetic-posix and QEMU platforms, the footprint programs are
+built and run, as `footprint-<name>`, only in the CMake configurations,
+and only when `XPACK_ENABLE_FOOTPRINT_BENCHMARKS_TEST` is set to `true`
+in `cmake/project-definitions.cmake` (generated from the build-helper
+template, where it is `false`); they then replace all the other test
+programs. Each run passes if the program exits with zero. The programs without a third-party framework (`baseline`,
+`printf`, and `micro-test-plus`) are always built; those of the other
+frameworks only if the framework was fetched. The selection is in
+`cmake/project-definitions.cmake` (generated from the build-helper
+template), and the executables are defined in each platform's
+`cmake/artefacts.cmake`.
+
+The programs that fail on a platform are only built, not run; they are
+listed in `xpack_footprint_benchmarks_not_run`, in the platform's
+`cmake/definitions.cmake`. The programs that cannot be built on a
+platform are listed in `xpack_footprint_benchmarks_not_built`, in the
+same file, and are skipped. Currently:
+
+- `boost-test` overflows the stack at any size, and its run does not
+  end, so it is not run on the Cortex-M and AArch32 platforms; it
+  requires exceptions, so it is not built on the platforms without
+  them (AArch64 and RISC-V);
+- `snitch` needs more than the 8 KB stack, so it is not run on
+  qemu-cortex-m33, which checks the stack limit (on the other
+  Cortex-M platforms, the overflow goes undetected and the run
+  passes).
 
 ## Platforms
 

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://xpack.github.io/xcdl/schemas/xcdl-2.0.0.json",
+  "minimumXcdlRequired": "2.0.0",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Liviu Ionescu. All rights reserved.",
+  "cdlComponents": [
+    {
+      "id": "benchmark.footprint-common",
+      "display": "Footprint Common",
+      "description": "The POSIX stubs required by some of the frameworks of the footprint benchmark on bare metal",
+      "sourceFiles": [
+        "src/posix-stubs.c"
+      ],
+      "publicCompilerOptions": [
+        "-w"
+      ]
+    }
+  ]
+}

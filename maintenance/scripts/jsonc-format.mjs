@@ -25,6 +25,8 @@ const files = globSync(['**/*.jsonc', '**/xcdl*.json'], {
     '**/xpacks/**',
     '**/builds/**',
     '**/website/**',
+    // The third-party frameworks cloned for the benchmarks.
+    '**/benchmarks-frameworks/**',
   ],
 })
 

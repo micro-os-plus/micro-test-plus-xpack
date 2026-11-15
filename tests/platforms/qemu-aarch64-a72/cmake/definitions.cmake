@@ -21,3 +21,12 @@ set (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST false)
 set (XPACK_ENABLE_UNIT_MISCELLANEOUS_TEST false)
 
 # -----------------------------------------------------------------------------
+# The benchmarks that are not built, since they cannot be built on this
+# platform: Boost.Test requires exceptions, which are disabled here.
+set (xpack_footprint_benchmarks_not_built boost-test)
+
+# The benchmarks that are only built, not run, since they fail on this
+# platform.
+set (xpack_footprint_benchmarks_not_run)
+
+# -----------------------------------------------------------------------------

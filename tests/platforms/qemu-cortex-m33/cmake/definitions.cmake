@@ -21,3 +21,9 @@ set (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST false)
 set (XPACK_ENABLE_UNIT_MISCELLANEOUS_TEST false)
 
 # -----------------------------------------------------------------------------
+# The benchmarks that are only built, not run, since they fail on this
+# platform: snitch needs more than the 8 KB stack (its default capacities
+# use more than 64 KB), and Boost.Test overflows the stack at any size.
+set (xpack_footprint_benchmarks_not_run snitch boost-test)
+
+# -----------------------------------------------------------------------------

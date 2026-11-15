@@ -1,0 +1,29 @@
+{
+  "$schema": "https://xpack.github.io/xcdl/schemas/xcdl-2.0.0.json",
+  "minimumXcdlRequired": "2.0.0",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Liviu Ionescu. All rights reserved.",
+  "cdlComponents": [
+    {
+      "id": "benchmark.footprint-doctest",
+      "display": "Footprint doctest",
+      "description": "The footprint benchmark program of doctest",
+      "publicIncludeFolders": [
+        "../../../../benchmarks-frameworks/doctest"
+      ],
+      "sourceFiles": [
+        "src/main.cpp"
+      ],
+      "publicDefines": [
+        // On macOS, `_POSIX_C_SOURCE` hides the BSD types used by
+        // `<sys/sysctl.h>`; the other C libraries ignore this macro.
+        "_DARWIN_C_SOURCE",
+        "DOCTEST_CONFIG_NO_MULTITHREADING",
+        "DOCTEST_CONFIG_NO_POSIX_SIGNALS"
+      ],
+      "publicCompilerOptions": [
+        "-w"
+      ]
+    }
+  ]
+}

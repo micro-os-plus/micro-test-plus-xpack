@@ -1323,3 +1323,26 @@ if (XPACK_ENABLE_UNIT_TEST)
 endif ()
 
 # -----------------------------------------------------------------------------
+
+if (XPACK_ENABLE_FOOTPRINT_BENCHMARKS_TEST)
+
+  # The footprint benchmark programs, selected in the project definitions. They
+  # are not tests of µTest++; each run passes if the program exits with zero,
+  # and the size of each program is shown after it is linked.
+
+  foreach (benchmark_name ${xpack_footprint_benchmarks})
+    set (name "footprint-${benchmark_name}")
+
+    add_native_test_executable (${name})
+    target_link_native_test_libraries (${name} benchmark::${name})
+
+    xpack_display_target_lists (${name})
+    message (VERBOSE "A> ${name}")
+
+    add_test (NAME "${name}" COMMAND ${name})
+    message (VERBOSE "T> ${name}")
+  endforeach ()
+
+endif ()
+
+# -----------------------------------------------------------------------------

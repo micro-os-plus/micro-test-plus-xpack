@@ -36,6 +36,8 @@ const files = globSync(['**/CMakeLists.txt', '**/*.cmake'], {
     '**/xpacks/**',
     '**/node_modules/**',
     '**/stm32cubemx/**',
+    // The third-party frameworks cloned for the benchmarks.
+    '**/benchmarks-frameworks/**',
   ],
 })
 

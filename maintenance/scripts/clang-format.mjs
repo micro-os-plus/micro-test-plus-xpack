@@ -17,11 +17,17 @@
 import { execFileSync } from 'child_process'
 import { globSync } from 'glob'
 
+// The third-party frameworks cloned for the benchmarks are not formatted.
+const globOptions = { ignore: ['**/benchmarks-frameworks/**'] }
+
 const files = [
-  ...globSync('{include,src}/**/*.{cpp,c,h}'),
-  ...globSync('tests/sources/**/{include,src}/**/*.{cpp,c,h}'),
-  ...globSync('tests/platforms/*/{include,src}/**/*.{cpp,c,h}'),
-  ...globSync('tests/platforms/*/device/{include,src}/**/*.{cpp,c,h}'),
+  ...globSync('{include,src}/**/*.{cpp,c,h}', globOptions),
+  ...globSync('tests/sources/**/{include,src}/**/*.{cpp,c,h}', globOptions),
+  ...globSync('tests/platforms/*/{include,src}/**/*.{cpp,c,h}', globOptions),
+  ...globSync(
+    'tests/platforms/*/device/{include,src}/**/*.{cpp,c,h}',
+    globOptions
+  ),
 ]
 
 const args = [

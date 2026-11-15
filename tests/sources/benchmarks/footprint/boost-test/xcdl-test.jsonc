@@ -1,0 +1,35 @@
+{
+  "$schema": "https://xpack.github.io/xcdl/schemas/xcdl-2.0.0.json",
+  "minimumXcdlRequired": "2.0.0",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Liviu Ionescu. All rights reserved.",
+  "cdlComponents": [
+    {
+      "id": "benchmark.footprint-boost-test",
+      "display": "Footprint Boost.Test",
+      "description": "The footprint benchmark program of Boost.Test",
+      "publicIncludeFolders": [
+        "../../../../benchmarks-frameworks/boost"
+      ],
+      "sourceFiles": [
+        "src/main.cpp"
+      ],
+      "publicDefines": [
+        // On macOS, `_POSIX_C_SOURCE` hides the BSD types used by
+        // `<sys/sysctl.h>`; the other C libraries ignore this macro.
+        "_DARWIN_C_SOURCE",
+        "_POSIX_MONOTONIC_CLOCK=200112L",
+        "_POSIX_TIMERS=1",
+        // The program is single-threaded; without it, the `shared_ptr`
+        // counts use atomic operations, which ARMv6-M (Cortex-M0) lacks.
+        "BOOST_SP_DISABLE_THREADS"
+      ],
+      "publicCompilerOptions": [
+        "-w"
+      ],
+      "dependencies": [
+        "benchmark.footprint-common"
+      ]
+    }
+  ]
+}

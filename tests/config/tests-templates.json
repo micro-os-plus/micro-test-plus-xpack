@@ -63,5 +63,6 @@
     "raspberry-pi-pico-2-riscv-sdk"
   ],
   "useStaticLibrary": true,
-  "hasUnitCommon": true
+  "hasUnitCommon": true,
+  "hasFootprintBenchmarks": true
 }
