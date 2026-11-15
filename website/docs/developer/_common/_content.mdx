@@ -15,6 +15,8 @@ import CommonPublishWebsite from '@site/docs/_common/_publish-website.mdx';
 import CommonStartLocalWebServer from '@site/docs/_common/_start-local-web-server.mdx';
 import CommonContinuousIntegration from '@site/docs/_common/_continuous-integration.mdx';
 
+import CodeBlock from '@theme/CodeBlock';
+
 import ProjectTestDetails from '../_project/_test-details.mdx';
 
 {/* ------------------------------------------------------------------------ */}
@@ -26,7 +28,25 @@ uses the xPack Framework tools during development.
 
 <CommonGetProjectSources />
 
+<details>
+<summary>How to obtain the writable helper sources?</summary>
+
+The project has a dependency on a common helper, which is normally installed
+as a read-only dependency; for development purposes, to enable modifications
+to the scripts located within the helper, clone the
+<code>xpack-development</code> branch and link it to the
+global packages location:
+
 <CommonGetHelperSources helperOrganizationName="micro-os-plus"  helperProjectName="build-helper-xpack" helperBranchName="xpack-development" />
+
+Similarly, for the website helper, clone the
+<code>master</code> branch and link it to the
+global packages location:
+
+<CommonGetHelperSources helperOrganizationName="xpack"  helperProjectName="docusaurus-template-liquid" helperBranchName="master" />
+
+After this, run the `npm-link-helpers` script to link all the local helper sources.
+</details>
 
 ## Satisfy dependencies
 

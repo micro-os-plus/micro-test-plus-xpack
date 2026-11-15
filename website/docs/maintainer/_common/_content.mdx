@@ -45,7 +45,19 @@ import ProjectMore from '../_project/_more.mdx';
 
 <CommonGetProjectSources />
 
+<details>
+<summary>How to obtain the writable helper sources?</summary>
+
+The project has a dependency on a common helper, which is normally installed
+as a read-only dependency; for development purposes, to enable modifications
+to the scripts located within the helper, clone the
+<code>xpack-development</code> branch and link it to the
+global packages location:
+
 <CommonGetHelperSources helperOrganizationName="micro-os-plus"  helperProjectName="build-helper-xpack" helperBranchName="xpack-development" />
+
+After this, run the `npm-link-helpers` script to link all the local helper sources.
+</details>
 
 <CommonCodeFormatting />
 

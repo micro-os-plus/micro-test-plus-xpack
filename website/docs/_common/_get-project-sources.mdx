@@ -27,16 +27,19 @@ button.
 
 :::tip
 
-To get the all branches of the repository, be sure to **disable** the
-**Copy the xpack branch only** button in the fork dialog.
+To get all the branches of the repository, be sure to **disable** the
+**Copy the xpack branch only** option in the fork dialog.
 
 :::
 
-After creating the fork, the next step is to **clone the forked repository**:
+After creating the fork, the next step is to **clone the forked repository**.
+First set your GitHub account name:
 
 ```sh
 USER_ACCOUNT_ID=<your-account>
 ```
+
+Then clone the `xpack-development` branch:
 
 ```sh
 rm -rf ~/Work/micro-os-plus/micro-test-plus-xpack.git && \
@@ -50,7 +53,7 @@ git clone \
 :::tip
 
 After making changes, be sure to direct the Pull Requests to the
-`xpack-development` branch, otherwise it may be rejected.
+`xpack-development` branch, otherwise they may be rejected.
 
 :::
 
@@ -77,7 +80,6 @@ from the original repository.
 
 </Tabs>
 
-
 If the repository has already been cloned, update it with:
 
 ```sh
@@ -85,11 +87,11 @@ git -C ~/Work/micro-os-plus/micro-test-plus-xpack.git pull
 ```
 
 <details>
-<summary>Add links for development</summary>
+<summary>What are npm/xpm links?</summary>
 
 By default, to prevent inadvertent changes, xpm dependencies are
 installed in read-only folders with filtered content; developer-related
-files are not installed
+files are not installed.
 
 However, during development, it is convenient to maintain a writable
 instance of the code to enable changes in parallel with the parent
@@ -132,4 +134,17 @@ dependency by installing it, run the command to link it:
 ```sh
 xpm link @micro-os-plus/micro-test-plus
 ```
+
+Similarly, this project, which uses multiple xpm dependencies, can also
+benefit from linking them during development.
+
+For this, clone each xpm dependency in a local folder and run the
+`xpm link` command in each cloned folder, as described above.
+
+Then, in the `tests` folder, run `xpm link <dependency>` for each linked
+dependency.
+
+As a shortcut, the configuration provides `link-dependencies` xpm actions
+that link multiple dependencies at once.
+
 </details>

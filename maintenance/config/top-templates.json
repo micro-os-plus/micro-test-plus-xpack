@@ -17,6 +17,7 @@
   ],
   "hasObjectLibrary": true,
   "hasTestAll": true,
+  "hasWebsite": true,
   "useDoxygen": true,
   "useSelfHostedRunners": false
 }
