@@ -102,6 +102,8 @@ variables (`data`); the RAM is the statically allocated memory (`data` plus
 
 ### Flash
 
+{/* BEGIN generated footprint-flash */}
+
 | Program | Cortex-M0 | Cortex-M3 | Cortex-M4F | Cortex-M7F | Cortex-M33 | Cortex-A15 (AArch32) | Cortex-A72 (AArch64) | RV32IMAC | RV64IMAFDC |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | Empty program | 91 | 81 | 81 | 78 | 80 | 84 | 7.6 | 1.6 | 1.7 |
@@ -116,7 +118,11 @@ variables (`data`); the RAM is the statically allocated memory (`data` plus
 | Unity | 93 (+1.4) | 82 (+1.4) | 82 (+1.4) | 79 (+1.4) | 82 (+1.4) | 86 (+1.8) | 21 (+13) | 10 (+8.8) | 12 (+10) |
 | CppUTest | 194 (+103) | 183 (+102) | 183 (+102) | 180 (+102) | 183 (+103) | 206 (+122) | 265 (+257) | 214 (+213) | 209 (+208) |
 
+{/* END generated footprint-flash */}
+
 ### RAM
+
+{/* BEGIN generated footprint-ram */}
 
 | Program | Cortex-M0 | Cortex-M3 | Cortex-M4F | Cortex-M7F | Cortex-M33 | Cortex-A15 (AArch32) | Cortex-A72 (AArch64) | RV32IMAC | RV64IMAFDC |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -131,6 +137,8 @@ variables (`data`); the RAM is the statically allocated memory (`data` plus
 | Boost.Test | 25 (+14) | 25 (+14) | 25 (+14) | 25 (+14) | 26 (+14) | 49 (+14) | — | — | — |
 | Unity | 12 (+0.2) | 12 (+0.2) | 12 (+0.2) | 12 (+0.2) | 12 (+0.2) | 35 (+0.2) | 33 (+3.6) | 11 (+2.1) | 13 (+3.4) |
 | CppUTest | 14 (+2.6) | 14 (+2.6) | 14 (+2.6) | 14 (+2.6) | 14 (+2.6) | 38 (+2.6) | 37 (+7.3) | 15 (+6.4) | 17 (+7.4) |
+
+{/* END generated footprint-ram */}
 
 ### Reading the figures
 
@@ -172,6 +180,8 @@ was not measured. The run time was not measured either.
 ### Sizes
 
 The sizes reported by `size --format=berkeley`, in bytes, for each platform:
+
+{/* BEGIN generated footprint-details */}
 
 <details>
 <summary>Cortex-M0 (<code>qemu-cortex-m0</code>)</summary>
@@ -343,6 +353,8 @@ The sizes reported by `size --format=berkeley`, in bytes, for each platform:
 | CppUTest | 210958 | 3420 | 13696 |
 
 </details>
+
+{/* END generated footprint-details */}
 
 ## Framework by framework
 
