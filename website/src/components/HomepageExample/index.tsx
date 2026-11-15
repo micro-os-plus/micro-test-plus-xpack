@@ -75,8 +75,8 @@ export default function HomepageExample(): JSX.Element {
             on <b>QEMU</b>, which emulates Cortex-M, Cortex-A, and RISC-V
             cores with no hardware, also in CI. On hardware, prefer
             the <b>Raspberry Pi Pico 2</b> and <b>Pico</b>, then
-            the <b>STM32 Nucleo</b> boards with 256 KB of flash or more,
-            preferably 512 KB (<Link to="/docs/user/#intended-use">details</Link>).
+            the <b>STM32 Nucleo</b> boards with 256 KB of flash (preferably
+            512 KB) or more (<Link to="/docs/user/#intended-use">details</Link>).
           </p>
         </div>
       </div>
