@@ -271,8 +271,7 @@ main (int argc, char* argv[])
 // ----------------------------------------------------------------------------
 // Additional test suites. They may be located in separate source files.
 
-static mt::static_suite ts_static
-    = { "Static suite", tr, [] (auto& ts)
+static mt::static_suite ts_static = { "Static suite", tr, [] (auto& ts)
   {
     ts.test ("Check one", [] (auto& t) { t.expect (true) << "Passed"; });
     ts.test ("Check two", [] (auto& t) { t.expect (true) << "Passed"; });

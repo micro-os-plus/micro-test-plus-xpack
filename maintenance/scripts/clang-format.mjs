@@ -19,7 +19,7 @@ import { globSync } from 'glob'
 
 const files = [
   ...globSync('{include,src}/**/*.{cpp,c,h}'),
-  ...globSync('tests/sources/{include,src}/*.{cpp,c,h}'),
+  ...globSync('tests/sources/**/{include,src}/**/*.{cpp,c,h}'),
   ...globSync('tests/platforms/*/{include,src}/**/*.{cpp,c,h}'),
   ...globSync('tests/platforms/*/device/{include,src}/**/*.{cpp,c,h}'),
 ]

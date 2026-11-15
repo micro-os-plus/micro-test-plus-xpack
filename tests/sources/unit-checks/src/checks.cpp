@@ -519,8 +519,7 @@ unit_checks_run_tests (mt::suite& ts)
     const wchar_t* wide = L"wide";
     const wchar_t* none = nullptr;
     formatter << wide << " " << u"utf16" << " " << U"utf32" << " " << none;
-    test_assert (formatter.str ()
-                 == "wide utf16 utf32 nullptr");
+    test_assert (formatter.str () == "wide utf16 utf32 nullptr");
   }
 
   // --------------------------------------------------------------------------

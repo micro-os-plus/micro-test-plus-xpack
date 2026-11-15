@@ -535,8 +535,8 @@ static mt::static_suite ts_operands{ "Operands suite", tr, [] (auto& ts)
                           std::u8string_view{ u8"caf\u00e9" }));
         local_counts.passed_checks++;
 
-        t.expect (mt::ne (std::u16string{ u"abc", 3 },
-                          std::u16string{ u"abd", 3 }));
+        t.expect (
+            mt::ne (std::u16string{ u"abc", 3 }, std::u16string{ u"abd", 3 }));
         local_counts.passed_checks++;
 
         local_counts.executed_test_cases++;
