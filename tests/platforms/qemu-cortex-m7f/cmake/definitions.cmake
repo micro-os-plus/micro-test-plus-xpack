@@ -21,9 +21,9 @@ set (XPACK_ENABLE_UNIT_EXCEPTIONS_TEST false)
 set (XPACK_ENABLE_UNIT_MISCELLANEOUS_TEST false)
 
 # -----------------------------------------------------------------------------
-# The benchmarks that are only built, not run, since they fail on this
-# platform: Boost.Test overflows the stack at any size; without a stack
-# limit check, the run does not end until the test times out.
+# The benchmarks that are only built, not run, since they fail on this platform:
+# Boost.Test overflows the stack at any size; without a stack limit check, the
+# run does not end until the test times out.
 set (xpack_footprint_benchmarks_not_run boost-test)
 
 # -----------------------------------------------------------------------------

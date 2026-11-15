@@ -97,18 +97,25 @@ endif ()
 # -flto seems ok now with clang too, but on Linux it requires -fuse-ld=lld
 list (APPEND xpack_platform_common_args $<$<CONFIG:Release,MinSizeRel>:-flto>)
 
-# On Windows, the default `ar` of the system GCC (MinGW) does not index the
-# LTO objects, so the programs fail to link with the static library. Use
-# `gcc-ar`, as the toolchain files do. The platform folder is a sibling of
-# the folder that builds the library, so the variable is set in the parent
-# scope.
+# On Windows, the default `ar` of the system GCC (MinGW) does not index the LTO
+# objects, so the programs fail to link with the static library. Use `gcc-ar`,
+# as the toolchain files do. The platform folder is a sibling of the folder that
+# builds the library, so the variable is set in the parent scope.
 if (CMAKE_SYSTEM_NAME STREQUAL "Windows"
     AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU"
     AND CMAKE_CXX_COMPILER_AR
     AND NOT CMAKE_AR MATCHES "gcc-ar"
 )
-  set (CMAKE_AR "${CMAKE_CXX_COMPILER_AR}" PARENT_SCOPE)
-  set (CMAKE_RANLIB "${CMAKE_CXX_COMPILER_RANLIB}" PARENT_SCOPE)
+  set (
+    CMAKE_AR
+    "${CMAKE_CXX_COMPILER_AR}"
+    PARENT_SCOPE
+  )
+  set (
+    CMAKE_RANLIB
+    "${CMAKE_CXX_COMPILER_RANLIB}"
+    PARENT_SCOPE
+  )
 endif ()
 
 # Possible workaround for the bug in recent CLT for Ventura 13.6. However it is
