@@ -70,6 +70,14 @@ export default function HomepageExample(): JSX.Element {
             GoogleTest, Boost.Test, and Catch2; an empty program takes 81
             KiB (<Link to="/docs/developer/comparison/#footprint">measurements</Link>).
           </p>
+          <p>
+            <b>Where to run.</b> Natively while developing, then
+            on <b>QEMU</b>, which emulates Cortex-M, Cortex-A, and RISC-V
+            cores with no hardware, also in CI. On hardware, prefer
+            the <b>Raspberry Pi Pico 2</b> and <b>Pico</b>, then
+            the <b>STM32 Nucleo</b> boards with 256 KB of flash or more,
+            preferably 512 KB (<Link to="/docs/user/#intended-use">details</Link>).
+          </p>
         </div>
       </div>
     </section>

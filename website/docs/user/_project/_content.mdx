@@ -23,6 +23,74 @@ learning curve required to master them can be rather steep.
 Therefore, for embedded projects, a **simpler solution** with a **smaller
 memory footprint** was considered a valuable addition.
 
+## Intended use
+
+µTest++ is intended for **unit tests**: tests that exercise the functions,
+the classes, and the modules of a project through their interfaces, in
+isolation from the hardware.
+
+### Portable tests
+
+Such tests are best written as **portable programs**: the same test sources
+build both natively, for the development machine, and for the embedded target,
+while the access to the hardware stays behind interfaces that the tests can
+replace. The tests of µTest++ itself are written this way, and the same
+sources run on the native platforms, on nine QEMU platforms, and on physical
+boards.
+
+The two kinds of runs complement each other:
+
+- the **native runs** are fast, and allow the use of a debugger and of the
+  compiler sanitisers, so they are the place for the day-to-day iterations;
+- the **runs on the target**, on QEMU or on a board, reveal what only the
+  target shows: the sizes and the alignment of the types, the behaviour of the
+  cross toolchain and of its C library, the builds without exceptions, and the
+  limits of the stack and of the memory (see
+  [Embedded targets](/docs/user/embedded-targets/)).
+
+### Running on QEMU
+
+For the runs on the target, the recommended platform is **QEMU**: it emulates
+the Cortex-M, Cortex-A, and RISC-V cores, with the same cross toolchains as
+the boards; it needs no hardware and no debugger, forwards the output and the
+exit code to the host through semihosting, and runs unattended, so the same
+tests can run in the continuous integration workflows. The xPack builds of
+QEMU (`@xpack-dev-tools/qemu-arm` and `@xpack-dev-tools/qemu-riscv`) are
+installed with **xpm**, as dependencies of the project, like the toolchains.
+
+### Running on physical boards
+
+The physical boards remain useful for the final checks: the peripherals, the
+real timings, and the exact memory limits of a device. The recommended boards
+are, in order of preference:
+
+- the **Raspberry Pi Pico 2** and the **Raspberry Pi Pico**: inexpensive,
+  with plenty of flash (4 MB and 2 MB), and, on the Pico 2, a choice of Arm
+  Cortex-M33 or RISC-V cores; they are connected to the host through the
+  [Raspberry Pi Debug Probe](https://www.raspberrypi.com/products/debug-probe/),
+  which runs the tests with semihosting, through OpenOCD (version 0.12 or
+  later); the models with headers connect to the probe with no custom wiring;
+- the **STM32 Nucleo** boards, with at least **256 KB** of flash, and
+  preferably **512 KB** or more; their on-board ST-LINK debug probe runs the
+  tests with semihosting, through OpenOCD, with no other hardware.
+
+The flash size matters, since even a minimal test program takes over 120 KB
+with the full newlib (see
+[Memory footprint](/docs/user/embedded-targets/#memory-footprint)). The test
+platforms of µTest++ include all these boards: the Raspberry Pi Pico, the
+Pico 2 (Arm and RISC-V), the NUCLEO-F411RE, the NUCLEO-F767ZI, and the
+NUCLEO-H533RE.
+
+### Tests that depend on the hardware
+
+The tests that depend on the peripherals, or on the timing, can also use the
+checks and the reports of µTest++; for them, the mocks and the simulation of
+the hardware, when needed, must be provided by the application, or by a
+dedicated library, and so must the timing measurements on bare metal, where
+the framework does not measure the time (see the
+[limits and trade-offs](/docs/developer/comparison/#limits-and-trade-offs-of-µtest)
+of µTest++).
+
 ## Overview
 
 The initial version of the **µTest++ Testing Framework** drew its primary
