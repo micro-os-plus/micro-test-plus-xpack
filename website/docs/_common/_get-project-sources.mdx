@@ -6,6 +6,9 @@ import BranchesDetails from './_branches-details.mdx'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+export const OnlyForKind = (props) =>
+  props.kind === props.show ? <>{props.children}</> : null;
+
 {/* ------------------------------------------------------------------------ */}
 
 ## Obtain project sources
@@ -15,6 +18,8 @@ The **@micro-os-plus/micro-test-plus** project is hosted on GitHub:
 - https://github.com/micro-os-plus/micro-test-plus-xpack.git
 
 <BranchesDetails />
+
+<OnlyForKind kind={props.kind} show="developer">
 
 <Tabs groupId="clone">
 
@@ -79,6 +84,24 @@ from the original repository.
 </TabItem>
 
 </Tabs>
+
+</OnlyForKind>
+
+<OnlyForKind kind={props.kind} show="maintainer">
+
+Clone the
+`xpack-development` branch of the original repository:
+
+```sh
+rm -rf ~/Work/micro-os-plus/micro-test-plus-xpack.git && \
+mkdir -p ~/Work/micro-os-plus && \
+git clone \
+  --branch xpack-development \
+  https://github.com/micro-os-plus/micro-test-plus-xpack.git \
+  ~/Work/micro-os-plus/micro-test-plus-xpack.git
+```
+
+</OnlyForKind>
 
 If the repository has already been cloned, update it with:
 
