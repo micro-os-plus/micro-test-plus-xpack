@@ -177,6 +177,13 @@ instructions in `.github/skills/xcdl/SKILL.md`.
 - When asked to add a standalone variant of a Nucleo board, follow
   `.github/skills/nucleo-standalone-platform/SKILL.md`.
 
+## Footprint Benchmarks
+
+When asked to measure the footprint of µTest++ or of the compared
+frameworks, to upgrade the compared frameworks, or to update the
+footprint figures of the website, follow the separate instructions in
+`.github/skills/footprint-benchmarks/SKILL.md`.
+
 ## JavaScript Scripts
 
 When asked to create a new `.mjs` (Node.js) script, follow the separate
