@@ -6,8 +6,56 @@ Please check
 [GitHub](https://github.com/micro-os-plus/micro-test-plus-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2026-11-15
+
+* v6.0.1 prepared
+* e0119d0f re-generate website commons for v6.0.1
+* 78d74371 website update
+* 5e36d054 tests/source/bechmarks/footprint-sizes.json
+* 111fc11a add skills/footprint-benchmarks
+* 57d5033c website update
+* 7f143875 #292: Give the footprint figures on the website
+* 59947cf1 #291: Add the footprint benchmark programs
+* 3858efad skills/xcdl update
+* d0e3b42a re-format tests
+* 5867d758 package.json: add more 'say'
+* 5fddfdf5 copilot-instructions.md update
+* 947437fd website updates
+
+## 2026-11-14
+
+* 22d76919 website update
+* 9b4ec012 Add the boards to the tests templates
+* a364cad1 #290: Disable the listings by default
+* f6430482 Fix the session check of the unit programs
+* 1c2e0204 Regenerate the platform artefacts
+* 2b6bd311 Define the semihosting command line buffer size
+* 35344023 #289: Update the human reference outputs
+* b16ab0a9 add comparison with snitch
+
+## 2026-11-13
+
+* 669cfba3 add .npmrc
+* e8ef28a8 website update
+* eadff413 website update
+* e23b25b1 website update
+* d930bfa5 website update
+* 18d7f7fe website update
+* 56f4752e re-generate website commons
+
+## 2026-11-12
+
+* db328589 package-lock.json update
+* a2fe5b22 website re-generate commons
+* 319161be re-generate top commons
+
 ## 2026-11-09
 
+* 34e0123b blog post update
+* 083edfb9 fix broken links
+* 6acdb7f5 website: blog post release 6.0.0 published
+* ffceb78d 6.0.0
+* feb38996 CHANGELOG: publish npm v6.0.0
 * v6.0.0 published on npmjs.com
 * 7e99bcea CHANGELOG update
 * v6.0.0 prepared
