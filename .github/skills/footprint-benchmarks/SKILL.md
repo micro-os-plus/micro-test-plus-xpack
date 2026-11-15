@@ -67,11 +67,27 @@ size of the µTest++ symbols).
    (cd tests && node scripts/fetch-benchmarks-frameworks.mjs --force <name>)
    ```
 
+   The fetch script (`tests/scripts/fetch-benchmarks-frameworks.mjs`)
+   clones each git entry with `--depth 1 --branch <tag>` and checks the
+   commit; it downloads Boost as a tarball, checks its SHA-256, extracts
+   only `boost_1_92_0/boost` into `benchmarks-frameworks/boost/boost`,
+   and writes a `.version` marker; and it generates the snitch
+   configuration header with `tests/xpacks/.bin/cmake`, into
+   `benchmarks-frameworks/snitch-config`. The frameworks already at the
+   listed versions are skipped, unless `--force` names them.
+
    A new release may need new configuration macros, new POSIX stubs,
    or a different source list; see "Known Problems". When the
    `xcdl-test.jsonc` of a program changes, regenerate its CMake and
-   meson files with `xpm run xcdl-export -C tests`, and format the
-   CMake files with `cmake-format` (see the xcdl skill).
+   meson files with `xpm run xcdl-export -C tests`; the exporter
+   writes the CMake files unformatted, so format those that changed:
+
+   ```sh
+   (cd tests && git diff --name-only -- sources | grep CMakeLists.txt |
+     sed 's|^tests/||' |
+     xargs -n1 "$(python3 -m site --user-base)/bin/cmake-format" \
+       --config-file ../maintenance/config/.cmake-format.py -i)
+   ```
 
 2. **Enable the programs**, temporarily:
 
@@ -162,13 +178,65 @@ size of the µTest++ symbols).
      the "Built for bare-metal" card, which states the footprint only
      qualitatively; check that it still holds.
 
-8. **Verify**: compile the pages (`npm run build` in `website`, which
-   also checks the `#footprint` links), and run `xpm run test -C tests`,
-   to confirm that the regular tests are back.
+8. **Verify**: check the syntax of the edited pages quickly, then
+   build the website (`npm run build` in `website`, which also checks
+   the `#footprint` links and anchors), and run `xpm run test -C tests`,
+   to confirm that the regular tests are back:
+
+   ```sh
+   node .github/skills/footprint-benchmarks/scripts/check-mdx.mjs website \
+     website/docs/developer/comparison/index.mdx \
+     website/docs/user/embedded-targets/index.mdx \
+     website/docs/getting-started/_project/_features.mdx
+   ```
+
+   In MDX, Markdown is not rendered inside an HTML element on the same
+   line: write `<summary>... <code>name</code></summary>`, not
+   backticks.
 
 9. **Commit**, with the github-commit skill: the sizes file, the
    website pages, and, separately, any change of the programs or of
    the platforms.
+
+## Presentation on the Website
+
+These choices were agreed with the maintainer; keep them when the
+figures are updated:
+
+- **The reference is the empty program** (`baseline`), not the
+  `printf()` program: with `printf()` as the reference, Unity, which
+  does not call it, would get negative values. The `printf()` program
+  is an ordinary row, "A `printf()` call", which shows the cost of the
+  formatted output of the C library.
+- **Each cell is the absolute value followed by the increase**, as
+  `127 (+46)`, in KiB, with one decimal below 10 KiB, and `+0` for no
+  increase; the first row, "Empty program", has the absolute values
+  only. The absolute values of the µTest++ row are bold.
+- **The text quotes**: the increase on Cortex-M3 in the summary matrix
+  row; the absolute Cortex-M4F values on the landing page, always with
+  the size of the empty program, so that the reader does not take the
+  startup and the C library for the framework; and the Cortex-M7F
+  `size` output on the embedded targets page.
+- **No unquantified claims**: "lightweight" was removed from the
+  tagline, since the figures show that µTest++ is small only compared
+  with the C++ frameworks that report the operands (Boost UT, doctest,
+  GoogleTest, Boost.Test, Catch2, and snitch), not compared with Unity
+  (1.4 KiB) or CppUTest (102 KiB, about twice µTest++), nor on a small
+  microcontroller. State a claim with its figures, or with its
+  reference.
+
+The texts come from these sources:
+
+- the tagline: `website/config/website-templates.json`, from which
+  `npm run generate-website-commons` (in `website`) generates
+  `docusaurus.config.ts`; the `_websiteConfig` key of
+  `website/package.json` is obsolete and is not read;
+- the landing page: `website/src/components/HomepageExample/index.tsx`
+  (the figures, next to the example) and
+  `website/src/components/HomepageFeatures/CustomFeatureList.tsx` (the
+  cards); both are hand-written, unlike `HomepageFeatures/index.tsx`;
+- the blog posts: the "lightweight testing framework" sentence of a new
+  release post comes from the blog template; correct it in each post.
 
 ## Reading the Results
 
@@ -186,8 +254,27 @@ size of the µTest++ symbols).
   the libraries.
 - **The RAM figures** are the static RAM (`data` plus `bss`); the heap
   and the stack used at run time are not measured.
-- To find what a program brings, list its largest symbols:
-  `<prefix>-nm --size-sort -S -C --radix=d <elf> | tail -20`.
+## Diagnostics
+
+- **What a program brings**: list its largest symbols,
+  `<prefix>-nm --size-sort -S -C --radix=d <elf> | tail -20`, or read
+  the map file, `footprint-<name>-map.txt`, in the build folder. This
+  is how the demangler (`d_print_comp_inner`) and `_vfprintf_r` were
+  found in the empty program of the Arm platforms.
+- **All the build failures at once**: Ninja stops at the first one;
+  from the build folder, run
+  `PATH="$PWD/xpacks/.bin:$PWD/../../xpacks/.bin:$PATH" cmake --build . -- -k 0`.
+- **A stack problem**: relink the program by hand with
+  `-Wl,--defsym=__stack_size=128K` added at the end of the link
+  command (from `ninja -v`); the last definition wins over the 8K of
+  the platform. snitch passes with 128K; Boost.Test fails even with
+  1M.
+- **A hanging program**: `ps -axo pid,etime,%cpu,command | grep '[q]emu-system'`
+  shows its elapsed time; kill it, and stop the background run, before
+  changing anything.
+- **Avoid**: QEMU `-d exec` traces (one reached 5 GB in seconds), and
+  GDB backtraces of the Boost.Test overflow, which did not lead to its
+  cause.
 
 ## Known Problems
 
