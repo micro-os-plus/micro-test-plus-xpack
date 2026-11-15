@@ -33,9 +33,10 @@ export const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/check-badge.svg').default,
     description: (
       <>
-        The framework does not use <code>iostream</code>, so
-        its <b>small footprint</b> suits microcontrollers with limited
-        memory. Results are written to <code>stdout</code>, so <b>semihosting</b> or
+        The framework does not use <code>iostream</code>, which keeps
+        its <b>footprint</b> to a fraction of that of the major C++ testing
+        frameworks (see the figures next to the example below).
+        Results are written to <code>stdout</code>, so <b>semihosting</b> or
         a serial port is sufficient. The same tests run on Cortex-M,
         Cortex-A, and RISC-V devices, on QEMU, and on native macOS,
         Windows and GNU/Linux hosts.

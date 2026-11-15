@@ -15,7 +15,7 @@ keywords:
   - unity
   - cpputest
 
-date: 2026-11-09 10:00:00 +0200
+date: 2026-11-15 10:00:00 +0200
 ---
 
 {/* ------------------------------------------------------------------------ */}
@@ -24,8 +24,9 @@ date: 2026-11-09 10:00:00 +0200
 
 This page places µTest++ among the major C and C++ testing frameworks, to help
 the contributors judge which design choices are deliberate, and which are
-limitations. It is not a benchmark: no footprint or timing figures are given,
-since they depend on the toolchain, the target, and the configuration.
+limitations. The footprint of a minimal test program is measured in
+[Footprint](#footprint); no timing figures are given, since they depend on the
+toolchain, the target, and the configuration.
 
 The fatal and non-fatal checks of the same frameworks are compared in the
 [User's Guide](/docs/user/checks/#comparison-with-other-frameworks); that
@@ -57,14 +58,291 @@ Embedded Unit was not included, and JUnit is not a C++ framework.
 | Parametrised tests | `test_each()` | yes | by type (`TEMPLATE_TEST_CASE`), no value generators | yes | yes | yes | yes | via the runner generator | no dedicated macro found |
 | Built-in mocking | no | no | no | yes (GoogleMock) | no | no | no | no (CMock is separate) | yes (CppUMock) |
 | Leak detection | no | no | no (the framework itself does not allocate) | no | no | no | no | optional add-on | built in |
-| Builds without exceptions | yes | yes (`__cpp_exceptions` guards) | yes (`SNITCH_WITH_EXCEPTIONS`) | yes (`GTEST_HAS_EXCEPTIONS`) | yes (`CATCH_CONFIG_DISABLE_EXCEPTIONS`) | yes (`DOCTEST_CONFIG_NO_EXCEPTIONS`) | yes (`BOOST_NO_EXCEPTIONS`) | not applicable (C) | yes (`CPPUTEST_HAVE_EXCEPTIONS`) |
+| Builds without exceptions | yes | yes (`__cpp_exceptions` guards) | yes (`SNITCH_WITH_EXCEPTIONS`) | yes (`GTEST_HAS_EXCEPTIONS`) | yes (`CATCH_CONFIG_DISABLE_EXCEPTIONS`) | yes (`DOCTEST_CONFIG_NO_EXCEPTIONS`) | not the single-header variant (see [Footprint](#footprint)) | not applicable (C) | yes (`CPPUTEST_HAVE_EXCEPTIONS`) |
+| Flash added on Cortex-M3 ([Footprint](#footprint)) | 46 KiB | 354 KiB | 476 KiB | 411 KiB | 506 KiB | 388 KiB | 479 KiB | 1.4 KiB | 102 KiB |
 | Licence | MIT | Boost 1.0 | Boost 1.0 | BSD-3-Clause | Boost 1.0 | MIT | Boost 1.0 | MIT | BSD-3-Clause |
 
 The entries come from the documentation and from the source code of the
 frameworks (the repositories at the commits listed in
 [Sources](#sources)). The exceptions row records that the source has a
-configuration for disabled exceptions; it does not mean that the framework was
-built and run in that configuration for this page.
+configuration for disabled exceptions; the footprint programs were built in
+that configuration for the AArch64 and RISC-V platforms, and all of them
+built except Boost.Test.
+
+## Footprint
+
+The footprint of each framework was measured with the smallest useful
+program: one test case with the same two checks (an equality and a condition,
+on `volatile` values, so that they are not evaluated at build time), written
+with the API of the framework, in its default configuration. The reference is
+an empty program, a `main()` that only returns; one more program, with a single
+`printf()` call, shows the cost of the formatted output of the C library. The
+programs are in
+[`tests/sources/benchmarks/footprint`](https://github.com/micro-os-plus/micro-test-plus-xpack/tree/xpack-development/tests/sources/benchmarks/footprint),
+and are built by the test platforms of the project.
+
+They were built for the QEMU platforms of the tests, with the µOS++ startup
+and the semihosting support:
+
+- with the xPack GNU toolchains (`arm-none-eabi-gcc` 15.2.1,
+  `aarch64-none-elf-gcc` 15.2.1, and `riscv-none-elf-gcc` 15.2.0), in the
+  CMake release configuration (`-Os`), with `-ffunction-sections`,
+  `-fdata-sections`, and `--gc-sections`, and with the full newlib (not
+  newlib-nano);
+- with the exceptions enabled on the Cortex-M and Cortex-A15 platforms, and
+  disabled on the AArch64 and RISC-V platforms, where they do not work at run
+  time;
+- with the frameworks at the release tags listed in [Sources](#sources).
+
+The tables give the size of each program, in KiB (1024 bytes), followed, in
+parentheses, by the increase over the empty program of the same platform. The
+flash is the code and the constants (`text`) plus the initial values of the
+variables (`data`); the RAM is the statically allocated memory (`data` plus
+`bss`), without the heap and the stack used at run time.
+
+### Flash
+
+| Program | Cortex-M0 | Cortex-M3 | Cortex-M4F | Cortex-M7F | Cortex-M33 | Cortex-A15 (AArch32) | Cortex-A72 (AArch64) | RV32IMAC | RV64IMAFDC |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Empty program | 91 | 81 | 81 | 78 | 80 | 84 | 7.6 | 1.6 | 1.7 |
+| A `printf()` call | 101 (+9.9) | 90 (+9.0) | 90 (+9.0) | 86 (+8.7) | 89 (+8.9) | 93 (+8.9) | 58 (+50) | 45 (+43) | 36 (+35) |
+| **µTest++** | **138** (+47) | **127** (+46) | **127** (+46) | **124** (+46) | **127** (+46) | **142** (+58) | **227** (+219) | **184** (+182) | **178** (+176) |
+| Boost UT | 458 (+367) | 435 (+354) | 435 (+354) | 431 (+353) | 420 (+340) | 438 (+354) | 753 (+745) | 610 (+609) | 610 (+608) |
+| snitch | 569 (+478) | 557 (+476) | 556 (+475) | 553 (+475) | 557 (+477) | 583 (+498) | 964 (+957) | 622 (+621) | 918 (+916) |
+| GoogleTest | 516 (+425) | 492 (+411) | 492 (+411) | 488 (+410) | 477 (+397) | 514 (+429) | 820 (+812) | 661 (+660) | 661 (+659) |
+| Catch2 | 614 (+522) | 587 (+506) | 588 (+507) | 585 (+508) | 573 (+492) | 642 (+558) | 936 (+929) | 766 (+764) | 770 (+768) |
+| doctest | 491 (+400) | 468 (+388) | 469 (+388) | 466 (+389) | 454 (+373) | 481 (+397) | 797 (+789) | 645 (+644) | 645 (+643) |
+| Boost.Test | 586 (+495) | 560 (+479) | 560 (+479) | 557 (+479) | 545 (+465) | 609 (+525) | — | — | — |
+| Unity | 93 (+1.4) | 82 (+1.4) | 82 (+1.4) | 79 (+1.4) | 82 (+1.4) | 86 (+1.8) | 21 (+13) | 10 (+8.8) | 12 (+10) |
+| CppUTest | 194 (+103) | 183 (+102) | 183 (+102) | 180 (+102) | 183 (+103) | 206 (+122) | 265 (+257) | 214 (+213) | 209 (+208) |
+
+### RAM
+
+| Program | Cortex-M0 | Cortex-M3 | Cortex-M4F | Cortex-M7F | Cortex-M33 | Cortex-A15 (AArch32) | Cortex-A72 (AArch64) | RV32IMAC | RV64IMAFDC |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Empty program | 11 | 11 | 11 | 11 | 12 | 35 | 29 | 8.7 | 9.3 |
+| A `printf()` call | 11 (+0) | 11 (+0) | 11 (+0) | 11 (+0) | 12 (+0) | 35 (+0) | 33 (+4.0) | 11 (+2.2) | 13 (+3.6) |
+| **µTest++** | **12** (+0.5) | **12** (+0.5) | **12** (+0.5) | **12** (+0.5) | **12** (+0.5) | **36** (+0.5) | **34** (+5.0) | **12** (+2.9) | **14** (+4.7) |
+| Boost UT | 21 (+9.6) | 21 (+9.6) | 21 (+9.6) | 21 (+9.6) | 21 (+9.6) | 45 (+9.6) | 48 (+18) | 21 (+13) | 28 (+18) |
+| snitch | 266 (+255) | 266 (+255) | 266 (+255) | 266 (+255) | 266 (+255) | 290 (+255) | 543 (+513) | 266 (+257) | 522 (+513) |
+| GoogleTest | 20 (+8.5) | 20 (+8.5) | 20 (+8.5) | 20 (+8.5) | 20 (+8.5) | 44 (+8.5) | 46 (+16) | 20 (+12) | 26 (+16) |
+| Catch2 | 21 (+9.5) | 21 (+9.5) | 21 (+9.5) | 21 (+9.5) | 21 (+9.5) | 45 (+9.5) | 47 (+17) | 22 (+13) | 27 (+18) |
+| doctest | 21 (+9.8) | 21 (+9.8) | 21 (+9.8) | 21 (+9.8) | 22 (+9.8) | 45 (+9.8) | 48 (+18) | 22 (+13) | 27 (+18) |
+| Boost.Test | 25 (+14) | 25 (+14) | 25 (+14) | 25 (+14) | 26 (+14) | 49 (+14) | — | — | — |
+| Unity | 12 (+0.2) | 12 (+0.2) | 12 (+0.2) | 12 (+0.2) | 12 (+0.2) | 35 (+0.2) | 33 (+3.6) | 11 (+2.1) | 13 (+3.4) |
+| CppUTest | 14 (+2.6) | 14 (+2.6) | 14 (+2.6) | 14 (+2.6) | 14 (+2.6) | 38 (+2.6) | 37 (+7.3) | 15 (+6.4) | 17 (+7.4) |
+
+### Reading the figures
+
+- **Compare within a column.** On the Arm platforms, the µOS++ startup already
+  links the formatted output of newlib and the C++ run-time support of the
+  exceptions, including the demangler of the terminate handler, so the empty
+  program takes 78 to 91 KiB and the increase is mostly the framework. On the
+  AArch64 and RISC-V platforms the empty program has none of them (less than
+  8 KiB), so the increase also includes these libraries, which explains the
+  larger figures; even the `printf()` call adds 35 to 50 KiB there.
+- **µTest++.** Of the 46 KiB added on the Cortex-M platforms, the functions of
+  µTest++ take about 24 KiB; the rest are functions of the C and C++ libraries.
+- **Unity** is the smallest, as expected from a C framework with no generic
+  comparisons. **CppUTest** is the next, at about twice µTest++.
+- **Boost UT, doctest, GoogleTest, Boost.Test, and Catch2** add 340 to 560 KiB
+  each on the Arm platforms, six to eleven times as much as µTest++.
+- **snitch** keeps the default capacities of its static buffers, which take
+  255 KiB of initialised data (513 KiB on the 64-bit platforms), in the flash
+  and in the RAM; they can be reduced with its configuration options, and the
+  figures shrink accordingly. With these defaults, its test case also needs
+  more than the 8 KiB stack of the test platforms; on the Cortex-M33, which
+  has a stack limit check, the overflow stops the program, while on the other
+  platforms it goes undetected.
+- **Boost.Test** is the single-header variant. It does not build without
+  exceptions, since `framework_shutdown_helper` uses `try` and `catch`
+  unconditionally, and, where it builds, the program does not complete on the
+  bare-metal platforms. It also needs `BOOST_SP_DISABLE_THREADS` on the
+  Cortex-M0, which has no atomic instructions.
+- **POSIX stubs.** GoogleTest, Catch2, and Boost.Test call functions that a
+  bare-metal newlib does not have (`getcwd()`, `mkdir()`, `_getentropy()`, and
+  `clock_gettime()`); the programs link small stubs, included in the figures.
+  CppUTest, built without exceptions, also needs
+  `CPPUTEST_STD_CPP_LIB_DISABLED` and `CPPUTEST_MEM_LEAK_DETECTION_DISABLED`.
+
+The figures are for a single test case with two checks; the cost of each
+additional check depends on the types of the operands and on the inlining, and
+was not measured. The run time was not measured either.
+
+### Sizes
+
+The sizes reported by `size --format=berkeley`, in bytes, for each platform:
+
+<details>
+<summary>Cortex-M0 (<code>qemu-cortex-m0</code>)</summary>
+
+| Program | text | data | bss |
+| --- | ---: | ---: | ---: |
+| Empty program | 90960 | 2404 | 9344 |
+| A `printf()` call | 101108 | 2404 | 9344 |
+| **µTest++** | 139000 | 2528 | 9728 |
+| Boost UT | 464096 | 4952 | 16592 |
+| snitch | 320044 | 263116 | 9384 |
+| GoogleTest | 523420 | 4704 | 15768 |
+| Catch2 | 623544 | 4688 | 16760 |
+| doctest | 498536 | 4676 | 17104 |
+| Boost.Test | 595160 | 5236 | 20688 |
+| Unity | 92404 | 2412 | 9544 |
+| CppUTest | 196172 | 2712 | 11672 |
+
+</details>
+
+<details>
+<summary>Cortex-M3 (<code>qemu-cortex-m3</code>)</summary>
+
+| Program | text | data | bss |
+| --- | ---: | ---: | ---: |
+| Empty program | 80076 | 2404 | 9352 |
+| A `printf()` call | 89336 | 2404 | 9352 |
+| **µTest++** | 127436 | 2528 | 9728 |
+| Boost UT | 440072 | 4952 | 16600 |
+| snitch | 306864 | 263116 | 9384 |
+| GoogleTest | 498780 | 4704 | 15776 |
+| Catch2 | 596388 | 4688 | 16760 |
+| doctest | 474664 | 4676 | 17112 |
+| Boost.Test | 567880 | 5236 | 20696 |
+| Unity | 81500 | 2412 | 9552 |
+| CppUTest | 184380 | 2712 | 11672 |
+
+</details>
+
+<details>
+<summary>Cortex-M4F (<code>qemu-cortex-m4f</code>)</summary>
+
+| Program | text | data | bss |
+| --- | ---: | ---: | ---: |
+| Empty program | 80388 | 2404 | 9352 |
+| A `printf()` call | 89584 | 2404 | 9352 |
+| **µTest++** | 127656 | 2528 | 9728 |
+| Boost UT | 440452 | 4952 | 16600 |
+| snitch | 305852 | 263116 | 9384 |
+| GoogleTest | 499168 | 4704 | 15776 |
+| Catch2 | 596936 | 4688 | 16760 |
+| doctest | 475156 | 4676 | 17112 |
+| Boost.Test | 568236 | 5236 | 20696 |
+| Unity | 81788 | 2412 | 9552 |
+| CppUTest | 184808 | 2712 | 11672 |
+
+</details>
+
+<details>
+<summary>Cortex-M7F (<code>qemu-cortex-m7f</code>)</summary>
+
+| Program | text | data | bss |
+| --- | ---: | ---: | ---: |
+| Empty program | 77160 | 2404 | 9352 |
+| A `printf()` call | 86020 | 2404 | 9352 |
+| **µTest++** | 124096 | 2528 | 9728 |
+| Boost UT | 436456 | 4952 | 16600 |
+| snitch | 302740 | 263116 | 9384 |
+| GoogleTest | 494588 | 4704 | 15776 |
+| Catch2 | 594556 | 4688 | 16760 |
+| doctest | 472760 | 4676 | 17112 |
+| Boost.Test | 564632 | 5236 | 20696 |
+| Unity | 78560 | 2412 | 9552 |
+| CppUTest | 181440 | 2712 | 11672 |
+
+</details>
+
+<details>
+<summary>Cortex-M33 (<code>qemu-cortex-m33</code>)</summary>
+
+| Program | text | data | bss |
+| --- | ---: | ---: | ---: |
+| Empty program | 79528 | 2772 | 9352 |
+| A `printf()` call | 88692 | 2772 | 9352 |
+| **µTest++** | 126772 | 2896 | 9728 |
+| Boost UT | 425024 | 5320 | 16600 |
+| snitch | 306952 | 263484 | 9384 |
+| GoogleTest | 483700 | 5072 | 15776 |
+| Catch2 | 581276 | 5056 | 16760 |
+| doctest | 459592 | 5044 | 17112 |
+| Boost.Test | 552864 | 5604 | 20696 |
+| Unity | 80952 | 2780 | 9552 |
+| CppUTest | 184324 | 3080 | 11672 |
+
+</details>
+
+<details>
+<summary>Cortex-A15 (AArch32) (<code>qemu-aarch32-a15</code>)</summary>
+
+| Program | text | data | bss |
+| --- | ---: | ---: | ---: |
+| Empty program | 83860 | 2212 | 33924 |
+| A `printf()` call | 93022 | 2212 | 33924 |
+| **µTest++** | 143424 | 2332 | 34304 |
+| Boost UT | 443348 | 4760 | 41176 |
+| snitch | 333600 | 262920 | 33960 |
+| GoogleTest | 521340 | 4512 | 40352 |
+| Catch2 | 652652 | 4496 | 41332 |
+| doctest | 488460 | 4484 | 41688 |
+| Boost.Test | 618292 | 5044 | 45272 |
+| Unity | 85716 | 2220 | 34124 |
+| CppUTest | 208124 | 2516 | 36244 |
+
+</details>
+
+<details>
+<summary>Cortex-A72 (AArch64) (<code>qemu-aarch64-a72</code>)</summary>
+
+| Program | text | data | bss |
+| --- | ---: | ---: | ---: |
+| Empty program | 7689 | 140 | 30008 |
+| A `printf()` call | 55556 | 3492 | 30704 |
+| **µTest++** | 228776 | 3708 | 31524 |
+| Boost UT | 764299 | 6372 | 42672 |
+| snitch | 462488 | 524804 | 30964 |
+| GoogleTest | 833585 | 6020 | 41008 |
+| Catch2 | 952923 | 6004 | 42000 |
+| doctest | 809674 | 5980 | 42704 |
+| Boost.Test | — | — | — |
+| Unity | 18804 | 2836 | 30960 |
+| CppUTest | 267056 | 3828 | 33844 |
+
+</details>
+
+<details>
+<summary>RV32IMAC (<code>qemu-riscv-rv32imac</code>)</summary>
+
+| Program | text | data | bss |
+| --- | ---: | ---: | ---: |
+| Empty program | 1563 | 32 | 8920 |
+| A `printf()` call | 44002 | 1880 | 9304 |
+| **µTest++** | 186058 | 2096 | 9872 |
+| Boost UT | 619751 | 5032 | 16960 |
+| snitch | 374446 | 262724 | 9520 |
+| GoogleTest | 672095 | 4876 | 16088 |
+| Catch2 | 778395 | 5692 | 17080 |
+| doctest | 655873 | 4896 | 17424 |
+| Boost.Test | — | — | — |
+| Unity | 9155 | 1456 | 9648 |
+| CppUTest | 217072 | 2288 | 13200 |
+
+</details>
+
+<details>
+<summary>RV64IMAFDC (<code>qemu-riscv-rv64imafdc</code>)</summary>
+
+| Program | text | data | bss |
+| --- | ---: | ---: | ---: |
+| Empty program | 1671 | 36 | 9520 |
+| A `printf()` call | 34256 | 3052 | 10216 |
+| **µTest++** | 178858 | 3284 | 11056 |
+| Boost UT | 618121 | 6364 | 21992 |
+| snitch | 415250 | 524460 | 10504 |
+| GoogleTest | 670791 | 6068 | 20328 |
+| Catch2 | 781565 | 6748 | 21320 |
+| doctest | 654301 | 6100 | 22024 |
+| Boost.Test | — | — | — |
+| Unity | 9673 | 2576 | 10504 |
+| CppUTest | 210958 | 3420 | 13696 |
+
+</details>
 
 ## Framework by framework
 
@@ -163,8 +441,9 @@ using namespace boost::ut;
 - **Standard library.** The header includes `<iostream>`, `<sstream>`,
   `<fstream>`, `<functional>`, `<unordered_map>`, `<string>`, and `<vector>`,
   among others, and keeps the output in a `std::ostringstream`.
-  µTest++ does not use the stream library, which is expected to reduce its
-  footprint on embedded targets (not measured for this page).
+  µTest++ does not use the stream library; on the Cortex-M platforms, a
+  minimal Boost UT program adds about 350 KiB of flash, and the same program
+  written with µTest++ about 46 KiB (see [Footprint](#footprint)).
 - **Reports.** A console reporter and a JUnit reporter, selected with
   `--reporter`; the reporter, runner, and printer can be replaced with
   `cfg<override>`. µTest++ has TAP and human-readable reports only.
@@ -412,7 +691,9 @@ BOOST_AUTO_TEST_CASE (requirement)
 - **Fatal failure.** `BOOST_REQUIRE*` aborts the test case through the
   execution monitor (`execution_monitor.ipp`), which catches the
   `execution_aborted` exception; the monitor also reports the signals and the
-  system errors. `BOOST_NO_EXCEPTIONS` is handled in the source.
+  system errors. `BOOST_NO_EXCEPTIONS` is handled in most of the source, but
+  not in `unit_test_main.ipp`, so the single-header variant does not build
+  without exceptions (see [Footprint](#footprint)).
 - **Registration.** `BOOST_AUTO_TEST_CASE` and `BOOST_FIXTURE_TEST_SUITE`
   register at the static initialisation; the decorators set the labels,
   the dependencies, and the expected failures. `BOOST_DATA_TEST_CASE`
@@ -472,8 +753,9 @@ main (void)
 - **Differences.** Unity is the minimal baseline: a C file and two headers. It
   tests C well, but it has no generic comparisons, no nested tests, and no
   suites. µTest++ requires C++20 and a C++ runtime, and gives in exchange the
-  generic checks, the suites, and the TAP reports; the difference in footprint
-  was not measured.
+  generic checks, the suites, and the TAP reports, for about 46 KiB of flash
+  on the Cortex-M platforms, against 1.4 KiB for Unity (see
+  [Footprint](#footprint)).
 
 ### CppUTest
 
@@ -528,8 +810,8 @@ comparators](/docs/developer/comparators/).
 Like Boost UT, µTest++ reports the actual operands and the operator of a failed
 check. The difference is that it does so through function comparators such as
 `eq()` and `lt()`, with the operators kept only as a deprecated feature, and
-without the C++ stream library; this is the origin of the smaller footprint
-claimed in the [features](/docs/getting-started/). The
+without the C++ stream library; this is the origin of its smaller footprint,
+measured in [Footprint](#footprint). The
 formatting is described in [The expression
 formatter](/docs/developer/formatter/).
 
@@ -716,22 +998,27 @@ tested code are confusing at first.
 
 ## Sources
 
-The statements about the other frameworks come from their documentation and
-from their source code, consulted in November 2026, at these commits of the
-branches that were checked out (the µTest++ working tree also had uncommitted
-changes):
+The footprint was measured at the release tags below, with µTest++ at commit
+`59947cf1` (2026-11-15); the versions are also listed in
+[`frameworks.jsonc`](https://github.com/micro-os-plus/micro-test-plus-xpack/blob/xpack-development/tests/sources/benchmarks/frameworks.jsonc),
+from which the test scripts fetch them.
 
-| Framework | Commit |
-| --- | --- |
-| µTest++ | `6507c054` (2026-11-09) |
-| Boost UT | `872b8b9` (2026-10-24) |
-| snitch | `c29ce5b` (2026-10-07, version 1.4.0) |
-| GoogleTest | `6450691` (2026-11-06) |
-| Catch2 | `a1a991f` (2026-10-30) |
-| doctest | `d44d4f6` (2026-03-28) |
-| Boost.Test | `35bb91a` (2026-10-30) |
-| Unity | `54f864c` (2026-10-31) |
-| CppUTest | `42feb87` (2026-11-03) |
+| Framework | Release | Commit |
+| --- | --- | --- |
+| Boost UT | `v2.3.1` | `f923e6fe` |
+| snitch | `v1.3.2` | `cec4a04b` |
+| GoogleTest | `v1.18.0` | `063de7e9` |
+| Catch2 | `v3.16.1` | `08092139` |
+| doctest | `v2.5.3` | `2d0a9359` |
+| Boost.Test | Boost 1.92.0 | the release archive |
+| Unity | `v2.7.0` | `b6763fbd` |
+| CppUTest | `v4.0` | `67d2dfd4` |
+
+The other statements about the frameworks come from their documentation and
+from their source code, consulted in November 2026 on the development
+branches, close to these releases; a feature that is only on a development
+branch (snitch, for example, was at version 1.4.0) may be described here
+before it is released.
 
 The frameworks change; verify the details before relying on them, and update
 this page when a statement is found to be out of date.

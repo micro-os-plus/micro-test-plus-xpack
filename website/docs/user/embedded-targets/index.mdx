@@ -12,7 +12,7 @@ keywords:
   - stack
   - timings
 
-date: 2026-11-03 10:00:00 +0200
+date: 2026-11-15 10:00:00 +0200
 ---
 
 {/* ------------------------------------------------------------------------ */}
@@ -25,67 +25,101 @@ without exceptions.
 
 ## Memory footprint
 
-The memory footprint of unit tests based on µTest++ is generally smaller than
-that of traditional C++ testing frameworks, primarily because the `iostream`
-library is **not used**.
+The memory footprint of the tests based on µTest++ is smaller than that of the
+other C++ testing frameworks, primarily because the `iostream` library is **not
+used**. It is measured with the footprint programs of the project, in
+[`tests/sources/benchmarks/footprint`](https://github.com/micro-os-plus/micro-test-plus-xpack/tree/xpack-development/tests/sources/benchmarks/footprint),
+which run the same test case, with two checks, written with each framework.
 
-As an example, for Cortex-M7F, consider a minimal test that checks a single
-condition:
+The µTest++ program is:
 
 ```cpp
-mt::runner tr;
+static volatile int answer_ = 42;
+static volatile bool condition_ = true;
+
+static int
+compute_answer (void)
+{
+  return answer_;
+}
+
+static bool
+compute_condition (void)
+{
+  return condition_;
+}
+
+static mt::runner tr;
 
 int
 main (int argc, char* argv[])
 {
   tr.initialise (argc, argv);
+
   auto& ts = tr.add_top_suite ();
 
-  ts.test ("Check truth", [] (auto& t)
+  ts.test ("Check various conditions", [] (auto& t)
     {
-      t.expect (true);
+      t.expect (mt::eq (compute_answer (), 42)) << "answer is 42";
+      t.expect (compute_condition ()) << "condition is true";
     });
 
   return tr.run_suites ();
 }
 ```
 
-Built with µTest++ 6.0.0 and the xPack GNU Arm Embedded GCC 15.2.1, as a
-`release` build with `-Os`, the binary requires **about 130 KB**:
+The values are `volatile`, so that the compiler cannot evaluate the checks at
+build time.
+
+Built for the Cortex-M7F QEMU test platform, with the xPack GNU Arm Embedded
+GCC 15.2.1, as a `release` build with `-Os`, it requires **about 46 KiB** more
+flash than an empty `main()` (the baseline); of these, about 24 KiB are the
+functions of µTest++, and the rest are functions of the C and C++ libraries
+that it uses:
 
 ```text
    text    data     bss     dec     hex filename
- 121188    2504    9728  133420   2092c minimal-test.elf
+  77160    2404    9352   88916   15b54 footprint-baseline.elf
+ 124096    2528    9728  136352   214a0 footprint-micro-test-plus.elf
 ```
 
-<details>
-<summary>A similar test using Boost UT produced a binary over 415 KB in size.</summary>
+The baseline is already about 77 KiB on this platform, since the µOS++ startup
+links the formatted output of newlib and the C++ run-time support of the
+exceptions.
 
-The equivalent minimal test, with [Boost UT](https://boost-ext.github.io/ut/)
-2.3.1 and the same toolchain and options, was:
+<details>
+<summary>The same test written with Boost UT adds about 350 KiB.</summary>
+
+The program with [Boost UT](https://boost-ext.github.io/ut/) 2.3.1, built with
+the same toolchain and options, is:
 
 ```cpp
-#include <boost/ut.hpp>
-
 int
-main(int argc, char* argv[])
+main ()
 {
   using namespace boost::ut;
 
-  "Check truth"_test = [] {
-    expect(true);
-  };
+  "Check various conditions"_test = []
+    {
+      expect (eq (compute_answer (), 42)) << "answer is 42";
+      expect (compute_condition ()) << "condition is true";
+    };
 
+  // The tests run and are reported when the global runner is destroyed.
   return 0;
 }
 ```
 
 ```text
    text    data     bss     dec     hex filename
- 410200    4452   10556  425208   67cf8 ut-minimal-test.elf
+ 436456    4952   16600  458008   6fd18 footprint-boost-ut.elf
 ```
 
 </details>
+
+The figures of the other frameworks (Unity, CppUTest, doctest, Catch2,
+Boost.Test, GoogleTest, and snitch), and those of the other platforms, are in
+the [comparison with other frameworks](/docs/developer/comparison/#footprint).
 
 However, the use of templates for implementing comparators should be used with
 care on platforms with severely limited memory resources, as **each unique pair

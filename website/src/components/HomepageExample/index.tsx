@@ -1,3 +1,4 @@
+import Link from '@docusaurus/Link';
 import CodeBlock from '@theme/CodeBlock';
 import Heading from '@theme/Heading';
 
@@ -62,6 +63,13 @@ export default function HomepageExample(): JSX.Element {
         <div className="col col--6">
           <CodeBlock language="text" title="TAP output (default)">{tapOutput}</CodeBlock>
           <CodeBlock language="text" title="Human-readable output (--reporter=human)">{humanOutput}</CodeBlock>
+          <p>
+            <b>Footprint.</b> On a Cortex-M4F, a similar program, with one
+            test case and two checks, takes <b>127 KiB</b> of flash with
+            µTest++, against 435 to 588 KiB with Boost UT, doctest,
+            GoogleTest, Boost.Test, and Catch2; an empty program takes 81
+            KiB (<Link to="/docs/developer/comparison/#footprint">measurements</Link>).
+          </p>
         </div>
       </div>
     </section>
