@@ -8,7 +8,14 @@ and close existing issues and pull requests.
 
 ## 2026-11-15
 
-* v6.0.1 prepared
+* v6.0.1 published on npmjs.com
+* 17eef9ad website update
+* 0828de0f package-lock.json update
+* 8207e6dd website update
+* c34c96f0 website update
+* f4160964 cmake re-format
+* e906daa8 CHANGELOG: prepare v6.0.1
+* 9619b734 website update
 * e0119d0f re-generate website commons for v6.0.1
 * 78d74371 website update
 * 5e36d054 tests/source/bechmarks/footprint-sizes.json
