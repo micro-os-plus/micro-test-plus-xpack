@@ -2,78 +2,79 @@
 
 ## Project Overview
 
-This is the **µTest++ Testing Framework** project, part of
-µOS++.
+This is the **µTest++ Testing Framework** project, part of µOS++.
 
 ## General
 
-- Avoid sycophantic behaviour; for all conversation, never soften criticism
-  to protect the person's ego.
+These rules apply to every response.
+
+- Avoid sycophantic behaviour; never soften criticism to protect the
+  person's ego.
 - If something has a flaw, say so directly.
-- When the meaning of a question is uncertain, say so and ask questions
-  rather than guess.
+- When the meaning of a question is uncertain, or when you do not know the
+  answer, say so and ask questions rather than guess.
 - When multiple valid answers are possible, say so and ask questions to
-  identify the most appropriate one, rather than assuming a single
-  correct answer.
-- This applies to every response.
+  identify the most appropriate one, rather than assuming that a single
+  answer is correct.
 
 ## Language and Tone
 
-- Use British English spelling and grammar (e.g., "behaviour", "colour",
-  "organise", "analyse", "favour", "initialise", etc.)
-- Maintain a professional and formal tone in all generated content
-- Avoid colloquialisms, slang, or informal expressions
-- Avoid humour, jokes, or casual remarks
-- Use clear, precise, and professional language appropriate for technical
-  documentation
-- Avoid contractions (e.g., use "do not" instead of "don't")
-- Use the Oxford comma in lists for clarity
-- Maintain consistency in terminology throughout the codebase
-- Prefer "folder" to "directory"
+- Use British English spelling and grammar (for example, "behaviour",
+  "colour", "organise", "analyse", "favour", and "initialise").
+- Maintain a professional and formal tone in all generated content.
+- Avoid colloquialisms, slang, and informal expressions.
+- Avoid humour, jokes, and casual remarks.
+- Use clear and precise language, appropriate for technical documentation.
+- Avoid contractions (for example, use "do not" instead of "don't").
+- Use the Oxford comma in lists.
+- Use the same terminology consistently throughout the project.
+- Prefer "folder" to "directory".
 
 ## Code Style
 
-- Follow the existing C++ code style defined in the .clang-format file.
-- Use consistent formatting and naming conventions based on prettier and
-  clang-format configurations.
-- For C/C++, the naming convention is snake_case.
-- For C++, write multiple level namespaces on the same line.
+- Format the C/C++ code as defined by `maintenance/config/.clang-format`,
+  the CMake files as defined by `maintenance/config/.cmake-format.py`, and
+  the JavaScript scripts as defined by `maintenance/config/.prettierrc.json`.
+- For C/C++, use the snake_case naming convention.
+- For C++, write nested namespaces on a single line (for example,
+  `namespace micro_os_plus::micro_test_plus`).
 
 ## Folder Structure
 
-- `/src`: Contains the C++ source code
-- `/include`: Contains the C++ header files
-- `/tests`: Contains the test suites and test cases
-- `/website`: Contains the project documentation and guides
-- `/maintenance`: Contains the project maintenance resources, which are
-  not published with the package: `/maintenance/config` (the formatter
-  configuration files), `/maintenance/scripts` (the maintenance scripts
-  and their templates), and `/maintenance/docs` (the developer notes)
+- `src/`: the C++ source files.
+- `include/`: the C++ header files.
+- `tests/`: the test suites and test cases.
+- `website/`: the project documentation and guides.
+- `maintenance/`: the project maintenance resources, which are not
+  published with the package: `maintenance/config/` (the formatter
+  configuration files), `maintenance/scripts/` (the maintenance scripts
+  and their templates), and `maintenance/docs/` (the developer notes).
 
-When adding new source files, place them in the appropriate `src` or `include`
-folder, and add them to `xcdl-package.jsonc`, from which the top CMake and Meson
-configurations are generated with `xpm run xcdl-export` (see the xcdl section
-below); do not edit the generated files.
+When adding new source files, place them in the appropriate `src/` or
+`include/` folder, and add them to `xcdl-package.jsonc`, from which the
+top-level CMake and meson configurations are generated with
+`xpm run xcdl-export` (see the xcdl section below); do not edit the
+generated files.
 
-Avoid running `find /` commands that search the entire filesystem, as this
-always times out.
+## Includes Order
 
-## Includes order
+Group the `#include` directives in the following order:
 
-- Project-specific headers.
-- µOS++ headers
-- Third-party library headers.
-- Standard library headers.
-- Use alphabetical order within each group.
-- Separate each group with a blank line.
-- Brace the whole group of includes by separator lines
+1. Project-specific headers.
+2. µOS++ headers.
+3. Third-party library headers.
+4. Standard library headers.
 
-## Compiler pragmas
+Use alphabetical order within each group, separate the groups with a
+blank line, and enclose the whole block of includes between two separator
+lines (`// ---...---`, up to column 79).
 
-When needed to silence warnings, use separate groups of pragmas for each compiler.
+## Compiler Pragmas
 
-Always use `__GNUC__` guards, and, if necessary, `__clang__` guards to apply
-compiler-specific pragmas.
+When warnings must be silenced, use a separate group of pragmas for each
+compiler. Guard all of them with `__GNUC__`, and the clang-specific ones
+also with `__clang__`, nested inside, since clang also defines
+`__GNUC__`:
 
 ```c++
 #if defined(__GNUC__)
@@ -86,7 +87,7 @@ compiler-specific pragmas.
 #endif // defined(__GNUC__)
 ```
 
-Brace the whole group of pragmas by separator lines.
+Enclose the whole block of pragmas between two separator lines.
 
 ## Doxygen Documentation
 
@@ -98,80 +99,93 @@ Brace the whole group of pragmas by separator lines.
 - Apply the rules and the checks described in
   `.github/skills/doxygen-review/SKILL.md` to every edit that touches the
   code or the comments, not only when asked for a documentation review.
-- Review and improve the existing comments of the entities that are edited.
+- Review and improve the existing comments of the entities that are
+  edited.
 
-## Tools binaries
+## Tool Binaries
 
-The binary tools required for the project are located in the `xpacks/.bin`
-folder within the build folders and the project root, and the JavaScript 
-tools are in `node_modules/.bin`
+The binary tools are installed in the `xpacks/.bin` folders, in the
+project root and in each build folder; the JavaScript tools are in the
+`node_modules/.bin` folders.
+
+Never run `find /` or other commands that search the entire file system,
+since they always time out; limit the search to the relevant folders.
 
 ## Testing
 
-After making major changes, run in a terminal:
+After major changes, run a minimal selection of tests:
 
-- `xpm run test-selected -C tests` -- to execute a minimal selection of tests
+- `xpm run test-selected -C tests`
 
-After minor changes, take a shortcut and run only:
+After minor changes, run only the tests built with the system compiler:
 
-- `xpm run test -C tests` -- to execute the test with the system compiler.
+- `xpm run test -C tests`
 
-When using linked writable projects, it is necessary to run the linking step to ensure all dependencies are correctly resolved.
+When the dependencies are linked to writable projects, run the linking
+step first, so that they are resolved correctly:
 
-- `xpm run link-dependencies --config <name>`
+- `xpm run link-dependencies --config <name> -C tests`
 
-When using non-native platforms, run one by one specific actions for the given configuration.
+For the non-native platforms, run the actions of the given configuration
+one by one:
 
-- `xpm run setup --config <name>`
-- `xpm run build --config <name>`
+- `xpm run setup --config <name> -C tests`
+- `xpm run build --config <name> -C tests`
+- `xpm run test --config <name> -C tests`
 
-For non-qemu platforms, running the tests can be done only after confirming that the board is
-powered up, with the command:
+The QEMU tests can be run directly; on physical boards, run the `test`
+action only after the user confirms that the board is powered up.
 
-- `xpm run test --config <name>`
+## Reviews
 
-QEMU tests can be done directly, without confirmation that the board is
-powered up.
+When asked for one of the following reviews, follow the separate
+instructions of the corresponding skill:
 
-## Code Review
-
-- When asked for an API review, follow the separate instructions in
-  `.github/skills/api-review/SKILL.md` for a thorough and uncompromising
-  review of the codebase API.
-- When asked for a code review, follow the separate instructions in
-  `.github/skills/code-review/SKILL.md` for a thorough and uncompromising
-  review of the codebase implementation.
+- an API review: `.github/skills/api-review/SKILL.md`;
+- a code review: `.github/skills/code-review/SKILL.md`;
+- a website review: `.github/skills/website-review/SKILL.md`;
+- a review of the API reference pages:
+  `.github/skills/website-api-review/SKILL.md`;
+- a consistency check: `.github/skills/consistency-check/SKILL.md`.
 
 ## Git Commits
 
-- When asked to commit (to Git), or to write a commit message, follow the
-  separate instructions in `.github/skills/github-commit/SKILL.md`, which
-  cover the commit message format, the issue references, and the issue comment.
+- When asked to commit, or to write a commit message, follow the separate
+  instructions in `.github/skills/github-commit/SKILL.md`, which cover the
+  commit message format, the issue references, and the issue comment.
 - Do not commit without user review and approval.
 
-## Issue Updates
+## Issues
 
-- After committing a fix for a GitHub issue, add the closing comment to that
-  issue, as described in `.github/skills/github-commit/SKILL.md` ("Issue
-  Comment"); that skill also covers the issues without a number.
+- When asked to open an issue, follow the separate instructions in
+  `.github/skills/create-github-issue/SKILL.md`.
+- After committing a fix for a GitHub issue, add the closing comment to
+  that issue, as described in `.github/skills/github-commit/SKILL.md`
+  ("Issue Comment"); that skill also covers the issues without a number.
 
 ## xcdl
 
-- When working with `xcdl-package.jsonc`, and `xcdl-test.jsonc`,
-  or when adding, removing, or
-  renaming a source file, an include folder, compiler/linker options,
-  or a dependency, follow
-  the separate instructions in `.github/skills/xcdl/SKILL.md`.
+When working with `xcdl-package.jsonc` or `xcdl-test.jsonc`, or when
+adding, removing, or renaming a source file, an include folder, a
+compiler or linker option, or a dependency, follow the separate
+instructions in `.github/skills/xcdl/SKILL.md`.
 
-## JavaScript scripts
+## Platforms
 
-- When asked to create a new `.mjs` (Node.js) script, follow the separate
-  instructions in `.github/skills/create-javascript-mjs/SKILL.md`; for the
-  conversion of an existing bash script, follow
-  `.github/skills/rewrite-bash-to-javascript/SKILL.md`.
+- When asked to add or fix a board LED driver, follow the separate
+  instructions in `.github/skills/led/SKILL.md`.
+- When asked to add a standalone variant of a Nucleo board, follow
+  `.github/skills/nucleo-standalone-platform/SKILL.md`.
 
-## Verbal questions
+## JavaScript Scripts
 
-If the agent requires more input from the user, in addition to writing the
-full question in the chat window, the agent must also prompt the user verbally,
-by passing a short question via the macOS `say` pprogram.
+When asked to create a new `.mjs` (Node.js) script, follow the separate
+instructions in `.github/skills/create-javascript-mjs/SKILL.md`; for the
+conversion of an existing bash script, follow
+`.github/skills/rewrite-bash-to-javascript/SKILL.md`.
+
+## Verbal Questions
+
+When more input from the user is required, in addition to writing the
+full question in the chat window, also ask a short version of it aloud,
+with the macOS `say` program.
