@@ -13,20 +13,23 @@ mt::runner tr;
 int
 main (int argc, char* argv[])
 {
-  // Initialise the runner with command line arguments.
+  // Initialise the runner with the options
+  // passed as command line arguments.
   tr.initialise (argc, argv);
 
   // Add the top suite and get a reference to it.
   auto& ts = tr.add_top_suite ();
 
-  // Add a test case to the top suite; its body runs immediately.
+  // Add a test case to the top suite; 
+  // its body runs immediately.
   ts.test ("Check truth", [] (auto& t)
     {
       // Check that 6 times 7 equals 42.
       t.expect (mt::eq (6 * 7, 42)) << "the answer is 42";
     });
 
-  // Run the registered suites, if any, and return the test result.
+  // Run the registered suites, if any, and return
+  // the test result as process exit code.
   return tr.run_suites ();
 }`;
 
