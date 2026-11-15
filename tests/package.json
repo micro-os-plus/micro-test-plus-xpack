@@ -733,7 +733,8 @@
         "xpm run test --config nucleo-f411re-cmake-gcc-debug",
         "xpm run setup --config nucleo-f411re-cmake-gcc-release",
         "xpm run build --config nucleo-f411re-cmake-gcc-release",
-        "xpm run test --config nucleo-f411re-cmake-gcc-release"
+        "xpm run test --config nucleo-f411re-cmake-gcc-release",
+        "{% if os.platform == 'darwin' %}say done{% endif %}"
       ],
       "clean-nucleo-f411re-cmake-gcc": [
         "xpm run clean --config nucleo-f411re-cmake-gcc-debug --ignore-errors",
@@ -763,7 +764,8 @@
         "xpm run test --config nucleo-f411re-cubemx-cmake-gcc-debug",
         "xpm run setup --config nucleo-f411re-cubemx-cmake-gcc-release",
         "xpm run build --config nucleo-f411re-cubemx-cmake-gcc-release",
-        "xpm run test --config nucleo-f411re-cubemx-cmake-gcc-release"
+        "xpm run test --config nucleo-f411re-cubemx-cmake-gcc-release",
+        "{% if os.platform == 'darwin' %}say done{% endif %}"
       ],
       "clean-nucleo-f411re-cubemx-cmake-gcc": [
         "xpm run clean --config nucleo-f411re-cubemx-cmake-gcc-debug --ignore-errors",
@@ -793,7 +795,8 @@
         "xpm run test --config nucleo-f411re-cubemx-startup-cmake-gcc-debug",
         "xpm run setup --config nucleo-f411re-cubemx-startup-cmake-gcc-release",
         "xpm run build --config nucleo-f411re-cubemx-startup-cmake-gcc-release",
-        "xpm run test --config nucleo-f411re-cubemx-startup-cmake-gcc-release"
+        "xpm run test --config nucleo-f411re-cubemx-startup-cmake-gcc-release",
+        "{% if os.platform == 'darwin' %}say done{% endif %}"
       ],
       "clean-nucleo-f411re-cubemx-startup-cmake-gcc": [
         "xpm run clean --config nucleo-f411re-cubemx-startup-cmake-gcc-debug --ignore-errors",
@@ -823,7 +826,8 @@
         "xpm run test --config nucleo-f767zi-cmake-gcc-debug",
         "xpm run setup --config nucleo-f767zi-cmake-gcc-release",
         "xpm run build --config nucleo-f767zi-cmake-gcc-release",
-        "xpm run test --config nucleo-f767zi-cmake-gcc-release"
+        "xpm run test --config nucleo-f767zi-cmake-gcc-release",
+        "{% if os.platform == 'darwin' %}say done{% endif %}"
       ],
       "clean-nucleo-f767zi-cmake-gcc": [
         "xpm run clean --config nucleo-f767zi-cmake-gcc-debug --ignore-errors",
@@ -853,7 +857,8 @@
         "xpm run test --config nucleo-f767zi-cubemx-cmake-gcc-debug",
         "xpm run setup --config nucleo-f767zi-cubemx-cmake-gcc-release",
         "xpm run build --config nucleo-f767zi-cubemx-cmake-gcc-release",
-        "xpm run test --config nucleo-f767zi-cubemx-cmake-gcc-release"
+        "xpm run test --config nucleo-f767zi-cubemx-cmake-gcc-release",
+        "{% if os.platform == 'darwin' %}say done{% endif %}"
       ],
       "clean-nucleo-f767zi-cubemx-cmake-gcc": [
         "xpm run clean --config nucleo-f767zi-cubemx-cmake-gcc-debug --ignore-errors",
@@ -883,7 +888,8 @@
         "xpm run test --config nucleo-h533re-cmake-gcc-debug",
         "xpm run setup --config nucleo-h533re-cmake-gcc-release",
         "xpm run build --config nucleo-h533re-cmake-gcc-release",
-        "xpm run test --config nucleo-h533re-cmake-gcc-release"
+        "xpm run test --config nucleo-h533re-cmake-gcc-release",
+        "{% if os.platform == 'darwin' %}say done{% endif %}"
       ],
       "clean-nucleo-h533re-cmake-gcc": [
         "xpm run clean --config nucleo-h533re-cmake-gcc-debug --ignore-errors",
@@ -913,7 +919,8 @@
         "xpm run test --config nucleo-h533re-cubemx-cmake-gcc-debug",
         "xpm run setup --config nucleo-h533re-cubemx-cmake-gcc-release",
         "xpm run build --config nucleo-h533re-cubemx-cmake-gcc-release",
-        "xpm run test --config nucleo-h533re-cubemx-cmake-gcc-release"
+        "xpm run test --config nucleo-h533re-cubemx-cmake-gcc-release",
+        "{% if os.platform == 'darwin' %}say done{% endif %}"
       ],
       "clean-nucleo-h533re-cubemx-cmake-gcc": [
         "xpm run clean --config nucleo-h533re-cubemx-cmake-gcc-debug --ignore-errors",
@@ -943,7 +950,8 @@
         "xpm run test --config raspberry-pi-pico-cmake-gcc-debug",
         "xpm run setup --config raspberry-pi-pico-cmake-gcc-release",
         "xpm run build --config raspberry-pi-pico-cmake-gcc-release",
-        "xpm run test --config raspberry-pi-pico-cmake-gcc-release"
+        "xpm run test --config raspberry-pi-pico-cmake-gcc-release",
+        "{% if os.platform == 'darwin' %}say done{% endif %}"
       ],
       "clean-raspberry-pi-pico-cmake-gcc": [
         "xpm run clean --config raspberry-pi-pico-cmake-gcc-debug",
@@ -973,7 +981,8 @@
         "xpm run test --config raspberry-pi-pico-sdk-cmake-gcc-debug",
         "xpm run setup --config raspberry-pi-pico-sdk-cmake-gcc-release",
         "xpm run build --config raspberry-pi-pico-sdk-cmake-gcc-release",
-        "xpm run test --config raspberry-pi-pico-sdk-cmake-gcc-release"
+        "xpm run test --config raspberry-pi-pico-sdk-cmake-gcc-release",
+        "{% if os.platform == 'darwin' %}say done{% endif %}"
       ],
       "clean-raspberry-pi-pico-sdk-cmake-gcc": [
         "xpm run clean --config raspberry-pi-pico-sdk-cmake-gcc-debug",
@@ -1003,7 +1012,8 @@
         "xpm run test --config raspberry-pi-pico-2-arm-cmake-gcc-debug",
         "xpm run setup --config raspberry-pi-pico-2-arm-cmake-gcc-release",
         "xpm run build --config raspberry-pi-pico-2-arm-cmake-gcc-release",
-        "xpm run test --config raspberry-pi-pico-2-arm-cmake-gcc-release"
+        "xpm run test --config raspberry-pi-pico-2-arm-cmake-gcc-release",
+        "{% if os.platform == 'darwin' %}say done{% endif %}"
       ],
       "clean-raspberry-pi-pico-2-arm-cmake-gcc": [
         "xpm run clean --config raspberry-pi-pico-2-arm-cmake-gcc-debug",
@@ -1033,7 +1043,8 @@
         "xpm run test --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug",
         "xpm run setup --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-release",
         "xpm run build --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-release",
-        "xpm run test --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-release"
+        "xpm run test --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-release",
+        "{% if os.platform == 'darwin' %}say done{% endif %}"
       ],
       "clean-raspberry-pi-pico-2-arm-sdk-cmake-gcc": [
         "xpm run clean --config raspberry-pi-pico-2-arm-sdk-cmake-gcc-debug",
@@ -1063,7 +1074,8 @@
         "xpm run test --config raspberry-pi-pico-2-riscv-cmake-gcc-debug",
         "xpm run setup --config raspberry-pi-pico-2-riscv-cmake-gcc-release",
         "xpm run build --config raspberry-pi-pico-2-riscv-cmake-gcc-release",
-        "xpm run test --config raspberry-pi-pico-2-riscv-cmake-gcc-release"
+        "xpm run test --config raspberry-pi-pico-2-riscv-cmake-gcc-release",
+        "{% if os.platform == 'darwin' %}say done{% endif %}"
       ],
       "clean-raspberry-pi-pico-2-riscv-cmake-gcc": [
         "xpm run clean --config raspberry-pi-pico-2-riscv-cmake-gcc-debug",
@@ -1093,7 +1105,8 @@
         "xpm run test --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug",
         "xpm run setup --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-release",
         "xpm run build --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-release",
-        "xpm run test --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-release"
+        "xpm run test --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-release",
+        "{% if os.platform == 'darwin' %}say done{% endif %}"
       ],
       "clean-raspberry-pi-pico-2-riscv-sdk-cmake-gcc": [
         "xpm run clean --config raspberry-pi-pico-2-riscv-sdk-cmake-gcc-debug",
@@ -1123,7 +1136,8 @@
         "xpm run test --config raspberry-pi-zero-2-w-aarch32-cmake-gcc-debug",
         "xpm run setup --config raspberry-pi-zero-2-w-aarch32-cmake-gcc-release",
         "xpm run build --config raspberry-pi-zero-2-w-aarch32-cmake-gcc-release",
-        "xpm run test --config raspberry-pi-zero-2-w-aarch32-cmake-gcc-release"
+        "xpm run test --config raspberry-pi-zero-2-w-aarch32-cmake-gcc-release",
+        "{% if os.platform == 'darwin' %}say done{% endif %}"
       ],
       "clean-raspberry-pi-zero-2-w-aarch32-cmake-gcc": [
         "xpm run clean --config raspberry-pi-zero-2-w-aarch32-cmake-gcc-debug",
@@ -1153,7 +1167,8 @@
         "xpm run test --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-debug",
         "xpm run setup --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-release",
         "xpm run build --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-release",
-        "xpm run test --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-release"
+        "xpm run test --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-release",
+        "{% if os.platform == 'darwin' %}say done{% endif %}"
       ],
       "clean-raspberry-pi-zero-2-w-aarch64-cmake-gcc": [
         "xpm run clean --config raspberry-pi-zero-2-w-aarch64-cmake-gcc-debug",
