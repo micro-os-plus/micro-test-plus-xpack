@@ -24,9 +24,10 @@ several values), and the **test suites**.
 
 ## Test runner
 
-The test framework is implemented as a runner object, which must be
-instantiated; it starts with a default configuration, which can optionally be
-changed by initialising it, and it can be given a top suite.
+To use the framework, create a runner object. A new runner is ready to use,
+with a default configuration; call `initialise()` only to change it, for
+example from the command-line options. The test cases written directly in
+`main()` belong to the optional top suite, which `add_top_suite()` adds.
 
 ### Instantiation
 
@@ -434,10 +435,16 @@ ways to give them to the runner:
 - **non-static suites**, which the application adds explicitly to the runner,
   with `add_suite()`, from `main()`.
 
+:::tip
+
 The **static suites are recommended**: each source file defines its own suites,
 `main()` does not need to know them, and adding a test file to the build is
 enough to have its tests run, provided that the file is linked as an object
-file (see below). The non-static suites are useful when the
+file (see below). 
+
+:::
+
+The non-static suites are useful when the
 application must decide at run time which suites to add, or when the static
 construction is not wanted. A program can mix the two, and the test cases
 written directly in `main()` belong to the optional [top suite](#top-suite).

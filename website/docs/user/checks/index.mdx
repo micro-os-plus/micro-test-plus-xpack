@@ -554,6 +554,7 @@ current test case, which is also the behaviour of `require()`:
 | µTest++ | `expect()` | `require()` | the test case is stopped |
 | GoogleTest | `EXPECT_*()` | `ASSERT_*()` | the current function returns |
 | Catch2 | `CHECK()` | `REQUIRE()` | the test case is stopped |
+| snitch | `CHECK()` | `REQUIRE()` | the test case is stopped |
 | doctest | `CHECK()` | `REQUIRE()` | the test case is stopped |
 | Boost.Test | `BOOST_CHECK()` | `BOOST_REQUIRE()` | the test case is stopped |
 | Boost UT | `expect()` | `expect (... >> fatal)` | the test is stopped |
@@ -566,8 +567,8 @@ Some differences are worth noting:
 - in GoogleTest, `ASSERT_*()` returns only from the function in which
   it is used; if this is a helper function, the test continues after
   the call;
-- Catch2, doctest, and Boost.Test also stop the test case with an
-  exception; without exceptions, Catch2 calls `std::terminate()`, and
+- Catch2, snitch, doctest, and Boost.Test also stop the test case with an
+  exception; without exceptions, Catch2 and snitch call `std::terminate()`, and
   doctest rejects `REQUIRE()` at compile time or, with a configuration macro,
   makes it behave as `CHECK()`;
 - Boost UT also stops the test with an exception; without exceptions, it
