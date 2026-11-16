@@ -32,7 +32,7 @@ export const customDocsGettingStartedSidebarCategory =
     {
       type: 'doc',
       id: 'getting-started/comparison/index',
-      label: 'Comparison with other frameworks'
+      label: 'Comparison of frameworks'
     },
   ]
 }
