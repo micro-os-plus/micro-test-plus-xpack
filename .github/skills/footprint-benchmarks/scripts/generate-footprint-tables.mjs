@@ -18,7 +18,7 @@
 // Usage (from the repository root):
 //   node .github/skills/footprint-benchmarks/scripts/generate-footprint-tables.mjs \
 //     tests/sources/benchmarks/footprint-sizes.json \
-//     [--update website/docs/developer/comparison/index.mdx]
+//     [--update website/docs/getting-started/comparison/index.mdx]
 //
 // Without `--update`, the tables are printed. With it, the content between
 // the markers `{/* BEGIN generated <name> */}` and
@@ -29,7 +29,9 @@
 // flash is `text` plus `data`, the RAM is `data` plus `bss`. Each cell is
 // the absolute value followed, in parentheses, by the increase over the
 // empty program (`baseline`) of the same platform; the absolute values of
-// the µTest++ row are bold.
+// the µTest++ row are bold. The `footprint-details` block is a single
+// collapsed `<details>` element with three tables, of the `text`, `data`,
+// and `bss` sizes, in bytes, with the platforms as columns.
 
 import fs from 'fs'
 
@@ -117,29 +119,37 @@ function summaryTable(measure) {
   return lines.join('\n')
 }
 
-function detailsBlocks() {
+function detailsBlock() {
   const labels = Object.fromEntries([['baseline', 'Empty program'], ...rows])
-  const blocks = []
-  for (const [platform, title] of columns) {
-    const lines = []
-    lines.push('<details>')
-    lines.push(`<summary>${title} (<code>${platform}</code>)</summary>`)
+  const programs = ['baseline', ...rows.map((r) => r[0])]
+  const fields = [
+    ['text', 'The code and the constants (`text`):'],
+    ['data', 'The initial values of the variables (`data`):'],
+    ['bss', 'The variables initialised to zero (`bss`):'],
+  ]
+  const lines = []
+  lines.push('<details>')
+  lines.push(
+    '<summary>The <code>text</code>, <code>data</code>, and ' +
+      '<code>bss</code> sizes, in bytes</summary>'
+  )
+  for (const [field, caption] of fields) {
     lines.push('')
-    lines.push('| Program | text | data | bss |')
-    lines.push('| --- | ---: | ---: | ---: |')
-    for (const program of ['baseline', ...rows.map((r) => r[0])]) {
-      const s = sizes[platform][program]
-      lines.push(
-        s
-          ? `| ${labels[program]} | ${s.text} | ${s.data} | ${s.bss} |`
-          : `| ${labels[program]} | — | — | — |`
-      )
+    lines.push(caption)
+    lines.push('')
+    lines.push('| Program | ' + columns.map((c) => c[1]).join(' | ') + ' |')
+    lines.push('| --- |' + columns.map(() => ' ---: |').join(''))
+    for (const program of programs) {
+      const cells = columns.map(([platform]) => {
+        const s = sizes[platform][program]
+        return s ? `${s[field]}` : '—'
+      })
+      lines.push(`| ${labels[program]} | ${cells.join(' | ')} |`)
     }
-    lines.push('')
-    lines.push('</details>')
-    blocks.push(lines.join('\n'))
   }
-  return blocks.join('\n\n')
+  lines.push('')
+  lines.push('</details>')
+  return lines.join('\n')
 }
 
 // ----------------------------------------------------------------------------
@@ -147,7 +157,7 @@ function detailsBlocks() {
 const generated = {
   'footprint-flash': summaryTable(flash),
   'footprint-ram': summaryTable(ram),
-  'footprint-details': detailsBlocks(),
+  'footprint-details': detailsBlock(),
 }
 
 if (pageFilePath) {

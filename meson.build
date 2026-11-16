@@ -26,7 +26,7 @@
 
 # -----------------------------------------------------------------------------
 
-# A source code library with µTest++, a lightweight, macro-free C++ testing framework for embedded projects, with TAP output.
+# A source code library with µTest++, a macro-free C++ testing framework for embedded projects, with TAP output.
 message('Processing xpm package @micro-os-plus/micro-test-plus...')
 
 # -----------------------------------------------------------------------------

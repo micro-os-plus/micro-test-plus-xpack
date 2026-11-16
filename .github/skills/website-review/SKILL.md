@@ -83,6 +83,19 @@ The site is a static build, so `curl` returns the rendered text. This
 does not hold for the Docusaurus development server (`npm run start`
 in `website/`), which returns only the client-side shell.
 
+The text extracted from the HTML loses the layout, so do not report a
+problem of layout from it alone:
+
+- keep the empty lines inside the code blocks, since the sample outputs
+  show the blank lines of the console (removing all the empty lines of
+  the extracted text made the outputs look different from the program,
+  in `WEBSITE-REVIEW-6.md` #23);
+- keep the `<details>` and `<summary>` elements, or mark them, since
+  their content is folded on the page (a flattened list of folded
+  tables looked like a long page, in `WEBSITE-REVIEW-6.md` #36);
+- confirm every finding about blank lines, folding, headings, or
+  tables against the source file, before reporting it.
+
 ## The Site Sources
 
 For each published page, find its sources in `website/`:

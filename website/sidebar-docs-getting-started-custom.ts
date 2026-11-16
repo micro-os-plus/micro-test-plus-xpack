@@ -29,5 +29,10 @@ export const customDocsGettingStartedSidebarCategory =
       id: 'getting-started/glossary/index',
       label: 'Glossary'
     },
+    {
+      type: 'doc',
+      id: 'getting-started/comparison/index',
+      label: 'Comparison with other frameworks'
+    },
   ]
 }

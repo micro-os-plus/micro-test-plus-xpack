@@ -317,6 +317,29 @@ Refer to the [Logical
 Functions](/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-logical-functions/)
 reference page.
 
+## Compile-time checks
+
+The function comparators and the logical functions are `constexpr`, so, when
+their operands are constant expressions, they can also be used in a
+`static_assert()`, which checks the condition when the program is compiled:
+
+```cpp
+constexpr int
+answer ()
+{
+  return 42;
+}
+
+static_assert (mt::eq (answer (), 42));
+static_assert (mt::all_of (mt::lt (1, 2), mt::approx (1.0, 1.05, 0.1)));
+```
+
+Such a check is not counted or reported by the runner; a failure stops the
+compilation, and the compiler reports the expression, for example
+`static assertion failed due to requirement 'mt::eq(answer(), 43)'`, but not
+the values of the operands. The operands must be printable, as for the
+checks made at run time.
+
 ## Checking exceptions
 
 It is also possible to check various **exception-related conditions**.
@@ -533,7 +556,7 @@ current test case, which is also the behaviour of `require()`:
 | Catch2 | `CHECK()` | `REQUIRE()` | the test case is stopped |
 | doctest | `CHECK()` | `REQUIRE()` | the test case is stopped |
 | Boost.Test | `BOOST_CHECK()` | `BOOST_REQUIRE()` | the test case is stopped |
-| Boost UT | `expect()` | `expect (...) << fatal` | the program exits |
+| Boost UT | `expect()` | `expect (... >> fatal)` | the test is stopped |
 | Unity (C) | — | `TEST_ASSERT_*()` | the test is stopped |
 | JUnit | — | `assert*()` | the test is stopped |
 | C library | — | `assert()` | the program is aborted |
@@ -547,13 +570,14 @@ Some differences are worth noting:
   exception; without exceptions, Catch2 calls `std::terminate()`, and
   doctest rejects `REQUIRE()` at compile time or, with a configuration macro,
   makes it behave as `CHECK()`;
-- Boost UT reports the fatal failure and calls `std::exit()`, so the
-  remaining tests do not run, as `require()`, then named `assume()`, did
-  before version 6.0;
+- Boost UT also stops the test with an exception; without exceptions, it
+  writes the summary and calls `std::abort()`, so the remaining tests do
+  not run;
 - Unity, a C framework, stops the test with `longjmp()`, which does not
   run the destructors of the C++ objects;
 - in JUnit, an unmet `assume*()` aborts the test, which is reported as
   skipped, not as failed.
 
-A broader, design-level comparison is in the [Contributor's
-Guide](/docs/developer/comparison/).
+A broader, design-level comparison, with the footprint of each framework, is
+on the [Comparison with other
+frameworks](/docs/getting-started/comparison/) page.

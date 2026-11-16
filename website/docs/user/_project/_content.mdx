@@ -65,16 +65,16 @@ real timings, and the exact memory limits of a device. The recommended boards
 are, in order of preference:
 
 - the **Raspberry Pi Pico 2** and the **Raspberry Pi Pico**: inexpensive,
-  with plenty of flash (4 MB and 2 MB), and, on the Pico 2, a choice of Arm
+  with plenty of flash (4 MiB and 2 MiB), and, on the Pico 2, a choice of Arm
   Cortex-M33 or RISC-V cores; they are connected to the host through the
   [Raspberry Pi Debug Probe](https://www.raspberrypi.com/products/debug-probe/),
   which runs the tests with semihosting, through OpenOCD (version 0.12 or
   later); the models with headers connect to the probe with no custom wiring;
-- the **STM32 Nucleo** boards, with at least **256 KB** of flash, and
-  preferably **512 KB** or more; their on-board ST-LINK debug probe runs the
+- the **STM32 Nucleo** boards, with at least **256 KiB** of flash, and
+  preferably **512 KiB** or more; their on-board ST-LINK debug probe runs the
   tests with semihosting, through OpenOCD, with no other hardware.
 
-The flash size matters, since even a minimal test program takes over 120 KB
+The flash size matters, since even a minimal test program takes over 120 KiB
 with the full newlib (see
 [Memory footprint](/docs/user/embedded-targets/#memory-footprint)). The test
 platforms of µTest++ include all these boards: the Raspberry Pi Pico, the
@@ -88,7 +88,7 @@ checks and the reports of µTest++; for them, the mocks and the simulation of
 the hardware, when needed, must be provided by the application, or by a
 dedicated library, and so must the timing measurements on bare metal, where
 the framework does not measure the time (see the
-[limits and trade-offs](/docs/developer/comparison/#limits-and-trade-offs-of-µtest)
+[limits and trade-offs](/docs/getting-started/comparison/#limits-and-trade-offs-of-µtest)
 of µTest++).
 
 ## Overview

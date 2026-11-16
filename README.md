@@ -5,7 +5,7 @@
 
 # The µTest++ Testing Framework
 
-A source code library with µTest++, a lightweight, macro-free C++ testing framework for embedded projects, with TAP output.
+A source code library with µTest++, a macro-free C++ testing framework for embedded projects, with TAP output.
 
 ## Project documentation
 

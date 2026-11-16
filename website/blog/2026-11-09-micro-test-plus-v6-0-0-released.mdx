@@ -711,9 +711,9 @@ function of the reporters was removed.
 - The option errors (an unknown option, an unknown `--reporter` name or
   colour mode, a missing option argument) no longer terminate the
   program: they are reported on `stderr` and on the console (for TAP, as
-  `Bail out!` lines), no output file is created, no test is run, and
-  `run_suites()` returns 2. An output file that cannot be opened is
-  treated in the same way.
+  `Bail out!` lines), the output file, if any, receives the same lines,
+  no test is run, and `run_suites()` returns 2. An output file that
+  cannot be opened is treated in the same way.
 - All the suites, the added ones and the `static_suite` objects, run in a
   single order, by name; for equal names, the static suites constructed
   before `main()` run first, then the added suites in the order of the

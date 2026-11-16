@@ -33,13 +33,14 @@ export const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/check-badge.svg').default,
     description: (
       <>
-        The framework does not use <code>iostream</code>, which keeps
-        its <b>footprint</b> to a fraction of that of the major C++ testing
-        frameworks (see the figures next to the example below).
+        The framework does not use <code>iostream</code>, so, on Cortex-M,
+        the flash it adds to a program is <b>less than half</b> of that
+        added by the other C++ testing frameworks measured (see the figures
+        next to the example below).
         Results are written to <code>stdout</code>, so <b>semihosting</b> or
         a serial port is sufficient. The same tests run on Cortex-M,
         Cortex-A, and RISC-V devices, on QEMU, and on native macOS,
-        Windows and GNU/Linux hosts.
+        Windows, and GNU/Linux hosts.
       </>
     ),
   },
@@ -49,9 +50,9 @@ export const FeatureList: FeatureItem[] = [
     description: (
       <>
         Results use the <b>TAP 14</b> format by default, so standard TAP
-        tools and CI pipelines can process them. 
-        Use <code>--reporter=human</code> for readable console output, 
-        and <code>--output-file</code> to also save the results to a file. 
+        tools and CI pipelines can process them.
+        Use <code>--reporter=human</code> for readable console output,
+        and <code>--output-file</code> to also save the results to a file.
         The overall outcome is returned as the process exit code.
       </>
     ),

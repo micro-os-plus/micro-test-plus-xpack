@@ -5,7 +5,6 @@ keywords:
   - micro-os-plus
   - xpack
   - micro-test-plus
-  - developer
   - comparison
   - googletest
   - catch2
@@ -23,10 +22,13 @@ date: 2026-11-15 10:00:00 +0200
 # Comparison with other frameworks
 
 This page places µTest++ among the major C and C++ testing frameworks, to help
-the contributors judge which design choices are deliberate, and which are
-limitations. The footprint of a minimal test program is measured in
-[Footprint](#footprint); no timing figures are given, since they depend on the
-toolchain, the target, and the configuration.
+choose a framework for a project: how the checks are written, what happens
+after a failure, how the tests are registered and reported, what each
+framework needs from the standard library, and how difficult it is to learn.
+It also tells the contributors which design choices of µTest++ are
+deliberate, and which are limitations. The footprint of a minimal test
+program is measured in [Footprint](#footprint); no timing figures are given,
+since they depend on the toolchain, the target, and the configuration.
 
 The fatal and non-fatal checks of the same frameworks are compared in the
 [User's Guide](/docs/user/checks/#comparison-with-other-frameworks); that
@@ -78,7 +80,7 @@ with the API of the framework, in its default configuration. The reference is
 an empty program, a `main()` that only returns; one more program, with a single
 `printf()` call, shows the cost of the formatted output of the C library. The
 programs are in
-[`tests/sources/benchmarks/footprint`](https://github.com/micro-os-plus/micro-test-plus-xpack/tree/xpack-development/tests/sources/benchmarks/footprint),
+[`tests/sources/benchmarks/footprint`](https://github.com/micro-os-plus/micro-test-plus-xpack/tree/xpack/tests/sources/benchmarks/footprint),
 and are built by the test platforms of the project.
 
 They were built for the QEMU platforms of the tests, with the µOS++ startup
@@ -150,7 +152,7 @@ variables (`data`); the RAM is the statically allocated memory (`data` plus
   8 KiB), so the increase also includes these libraries, which explains the
   larger figures; even the `printf()` call adds 35 to 50 KiB there.
 - **µTest++.** Of the 46 KiB added on the Cortex-M platforms, the functions of
-  µTest++ take about 24 KiB; the rest are functions of the C and C++ libraries.
+  µTest++ take about 23 KiB; the rest are functions of the C and C++ libraries.
 - **Unity** is the smallest, as expected from a C framework with no generic
   comparisons. **CppUTest** is the next, at about twice µTest++.
 - **Boost UT, doctest, GoogleTest, Boost.Test, and Catch2** add 340 to 560 KiB
@@ -179,178 +181,61 @@ was not measured. The run time was not measured either.
 
 ### Sizes
 
-The sizes reported by `size --format=berkeley`, in bytes, for each platform:
+The sizes reported by `size --format=berkeley`, in bytes, for all the
+platforms:
 
 {/* BEGIN generated footprint-details */}
 
 <details>
-<summary>Cortex-M0 (<code>qemu-cortex-m0</code>)</summary>
+<summary>The <code>text</code>, <code>data</code>, and <code>bss</code> sizes, in bytes</summary>
 
-| Program | text | data | bss |
-| --- | ---: | ---: | ---: |
-| Empty program | 90960 | 2404 | 9344 |
-| A `printf()` call | 101108 | 2404 | 9344 |
-| **µTest++** | 139000 | 2528 | 9728 |
-| Boost UT | 464096 | 4952 | 16592 |
-| snitch | 320044 | 263116 | 9384 |
-| GoogleTest | 523420 | 4704 | 15768 |
-| Catch2 | 623544 | 4688 | 16760 |
-| doctest | 498536 | 4676 | 17104 |
-| Boost.Test | 595160 | 5236 | 20688 |
-| Unity | 92404 | 2412 | 9544 |
-| CppUTest | 196172 | 2712 | 11672 |
+The code and the constants (`text`):
 
-</details>
+| Program | Cortex-M0 | Cortex-M3 | Cortex-M4F | Cortex-M7F | Cortex-M33 | Cortex-A15 (AArch32) | Cortex-A72 (AArch64) | RV32IMAC | RV64IMAFDC |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Empty program | 90960 | 80076 | 80388 | 77160 | 79528 | 83860 | 7689 | 1563 | 1671 |
+| A `printf()` call | 101108 | 89336 | 89584 | 86020 | 88692 | 93022 | 55556 | 44002 | 34256 |
+| **µTest++** | 139000 | 127436 | 127656 | 124096 | 126772 | 143424 | 228776 | 186058 | 178858 |
+| Boost UT | 464096 | 440072 | 440452 | 436456 | 425024 | 443348 | 764299 | 619751 | 618121 |
+| snitch | 320044 | 306864 | 305852 | 302740 | 306952 | 333600 | 462488 | 374446 | 415250 |
+| GoogleTest | 523420 | 498780 | 499168 | 494588 | 483700 | 521340 | 833585 | 672095 | 670791 |
+| Catch2 | 623544 | 596388 | 596936 | 594556 | 581276 | 652652 | 952923 | 778395 | 781565 |
+| doctest | 498536 | 474664 | 475156 | 472760 | 459592 | 488460 | 809674 | 655873 | 654301 |
+| Boost.Test | 595160 | 567880 | 568236 | 564632 | 552864 | 618292 | — | — | — |
+| Unity | 92404 | 81500 | 81788 | 78560 | 80952 | 85716 | 18804 | 9155 | 9673 |
+| CppUTest | 196172 | 184380 | 184808 | 181440 | 184324 | 208124 | 267056 | 217072 | 210958 |
 
-<details>
-<summary>Cortex-M3 (<code>qemu-cortex-m3</code>)</summary>
+The initial values of the variables (`data`):
 
-| Program | text | data | bss |
-| --- | ---: | ---: | ---: |
-| Empty program | 80076 | 2404 | 9352 |
-| A `printf()` call | 89336 | 2404 | 9352 |
-| **µTest++** | 127436 | 2528 | 9728 |
-| Boost UT | 440072 | 4952 | 16600 |
-| snitch | 306864 | 263116 | 9384 |
-| GoogleTest | 498780 | 4704 | 15776 |
-| Catch2 | 596388 | 4688 | 16760 |
-| doctest | 474664 | 4676 | 17112 |
-| Boost.Test | 567880 | 5236 | 20696 |
-| Unity | 81500 | 2412 | 9552 |
-| CppUTest | 184380 | 2712 | 11672 |
+| Program | Cortex-M0 | Cortex-M3 | Cortex-M4F | Cortex-M7F | Cortex-M33 | Cortex-A15 (AArch32) | Cortex-A72 (AArch64) | RV32IMAC | RV64IMAFDC |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Empty program | 2404 | 2404 | 2404 | 2404 | 2772 | 2212 | 140 | 32 | 36 |
+| A `printf()` call | 2404 | 2404 | 2404 | 2404 | 2772 | 2212 | 3492 | 1880 | 3052 |
+| **µTest++** | 2528 | 2528 | 2528 | 2528 | 2896 | 2332 | 3708 | 2096 | 3284 |
+| Boost UT | 4952 | 4952 | 4952 | 4952 | 5320 | 4760 | 6372 | 5032 | 6364 |
+| snitch | 263116 | 263116 | 263116 | 263116 | 263484 | 262920 | 524804 | 262724 | 524460 |
+| GoogleTest | 4704 | 4704 | 4704 | 4704 | 5072 | 4512 | 6020 | 4876 | 6068 |
+| Catch2 | 4688 | 4688 | 4688 | 4688 | 5056 | 4496 | 6004 | 5692 | 6748 |
+| doctest | 4676 | 4676 | 4676 | 4676 | 5044 | 4484 | 5980 | 4896 | 6100 |
+| Boost.Test | 5236 | 5236 | 5236 | 5236 | 5604 | 5044 | — | — | — |
+| Unity | 2412 | 2412 | 2412 | 2412 | 2780 | 2220 | 2836 | 1456 | 2576 |
+| CppUTest | 2712 | 2712 | 2712 | 2712 | 3080 | 2516 | 3828 | 2288 | 3420 |
 
-</details>
+The variables initialised to zero (`bss`):
 
-<details>
-<summary>Cortex-M4F (<code>qemu-cortex-m4f</code>)</summary>
-
-| Program | text | data | bss |
-| --- | ---: | ---: | ---: |
-| Empty program | 80388 | 2404 | 9352 |
-| A `printf()` call | 89584 | 2404 | 9352 |
-| **µTest++** | 127656 | 2528 | 9728 |
-| Boost UT | 440452 | 4952 | 16600 |
-| snitch | 305852 | 263116 | 9384 |
-| GoogleTest | 499168 | 4704 | 15776 |
-| Catch2 | 596936 | 4688 | 16760 |
-| doctest | 475156 | 4676 | 17112 |
-| Boost.Test | 568236 | 5236 | 20696 |
-| Unity | 81788 | 2412 | 9552 |
-| CppUTest | 184808 | 2712 | 11672 |
-
-</details>
-
-<details>
-<summary>Cortex-M7F (<code>qemu-cortex-m7f</code>)</summary>
-
-| Program | text | data | bss |
-| --- | ---: | ---: | ---: |
-| Empty program | 77160 | 2404 | 9352 |
-| A `printf()` call | 86020 | 2404 | 9352 |
-| **µTest++** | 124096 | 2528 | 9728 |
-| Boost UT | 436456 | 4952 | 16600 |
-| snitch | 302740 | 263116 | 9384 |
-| GoogleTest | 494588 | 4704 | 15776 |
-| Catch2 | 594556 | 4688 | 16760 |
-| doctest | 472760 | 4676 | 17112 |
-| Boost.Test | 564632 | 5236 | 20696 |
-| Unity | 78560 | 2412 | 9552 |
-| CppUTest | 181440 | 2712 | 11672 |
-
-</details>
-
-<details>
-<summary>Cortex-M33 (<code>qemu-cortex-m33</code>)</summary>
-
-| Program | text | data | bss |
-| --- | ---: | ---: | ---: |
-| Empty program | 79528 | 2772 | 9352 |
-| A `printf()` call | 88692 | 2772 | 9352 |
-| **µTest++** | 126772 | 2896 | 9728 |
-| Boost UT | 425024 | 5320 | 16600 |
-| snitch | 306952 | 263484 | 9384 |
-| GoogleTest | 483700 | 5072 | 15776 |
-| Catch2 | 581276 | 5056 | 16760 |
-| doctest | 459592 | 5044 | 17112 |
-| Boost.Test | 552864 | 5604 | 20696 |
-| Unity | 80952 | 2780 | 9552 |
-| CppUTest | 184324 | 3080 | 11672 |
-
-</details>
-
-<details>
-<summary>Cortex-A15 (AArch32) (<code>qemu-aarch32-a15</code>)</summary>
-
-| Program | text | data | bss |
-| --- | ---: | ---: | ---: |
-| Empty program | 83860 | 2212 | 33924 |
-| A `printf()` call | 93022 | 2212 | 33924 |
-| **µTest++** | 143424 | 2332 | 34304 |
-| Boost UT | 443348 | 4760 | 41176 |
-| snitch | 333600 | 262920 | 33960 |
-| GoogleTest | 521340 | 4512 | 40352 |
-| Catch2 | 652652 | 4496 | 41332 |
-| doctest | 488460 | 4484 | 41688 |
-| Boost.Test | 618292 | 5044 | 45272 |
-| Unity | 85716 | 2220 | 34124 |
-| CppUTest | 208124 | 2516 | 36244 |
-
-</details>
-
-<details>
-<summary>Cortex-A72 (AArch64) (<code>qemu-aarch64-a72</code>)</summary>
-
-| Program | text | data | bss |
-| --- | ---: | ---: | ---: |
-| Empty program | 7689 | 140 | 30008 |
-| A `printf()` call | 55556 | 3492 | 30704 |
-| **µTest++** | 228776 | 3708 | 31524 |
-| Boost UT | 764299 | 6372 | 42672 |
-| snitch | 462488 | 524804 | 30964 |
-| GoogleTest | 833585 | 6020 | 41008 |
-| Catch2 | 952923 | 6004 | 42000 |
-| doctest | 809674 | 5980 | 42704 |
-| Boost.Test | — | — | — |
-| Unity | 18804 | 2836 | 30960 |
-| CppUTest | 267056 | 3828 | 33844 |
-
-</details>
-
-<details>
-<summary>RV32IMAC (<code>qemu-riscv-rv32imac</code>)</summary>
-
-| Program | text | data | bss |
-| --- | ---: | ---: | ---: |
-| Empty program | 1563 | 32 | 8920 |
-| A `printf()` call | 44002 | 1880 | 9304 |
-| **µTest++** | 186058 | 2096 | 9872 |
-| Boost UT | 619751 | 5032 | 16960 |
-| snitch | 374446 | 262724 | 9520 |
-| GoogleTest | 672095 | 4876 | 16088 |
-| Catch2 | 778395 | 5692 | 17080 |
-| doctest | 655873 | 4896 | 17424 |
-| Boost.Test | — | — | — |
-| Unity | 9155 | 1456 | 9648 |
-| CppUTest | 217072 | 2288 | 13200 |
-
-</details>
-
-<details>
-<summary>RV64IMAFDC (<code>qemu-riscv-rv64imafdc</code>)</summary>
-
-| Program | text | data | bss |
-| --- | ---: | ---: | ---: |
-| Empty program | 1671 | 36 | 9520 |
-| A `printf()` call | 34256 | 3052 | 10216 |
-| **µTest++** | 178858 | 3284 | 11056 |
-| Boost UT | 618121 | 6364 | 21992 |
-| snitch | 415250 | 524460 | 10504 |
-| GoogleTest | 670791 | 6068 | 20328 |
-| Catch2 | 781565 | 6748 | 21320 |
-| doctest | 654301 | 6100 | 22024 |
-| Boost.Test | — | — | — |
-| Unity | 9673 | 2576 | 10504 |
-| CppUTest | 210958 | 3420 | 13696 |
+| Program | Cortex-M0 | Cortex-M3 | Cortex-M4F | Cortex-M7F | Cortex-M33 | Cortex-A15 (AArch32) | Cortex-A72 (AArch64) | RV32IMAC | RV64IMAFDC |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Empty program | 9344 | 9352 | 9352 | 9352 | 9352 | 33924 | 30008 | 8920 | 9520 |
+| A `printf()` call | 9344 | 9352 | 9352 | 9352 | 9352 | 33924 | 30704 | 9304 | 10216 |
+| **µTest++** | 9728 | 9728 | 9728 | 9728 | 9728 | 34304 | 31524 | 9872 | 11056 |
+| Boost UT | 16592 | 16600 | 16600 | 16600 | 16600 | 41176 | 42672 | 16960 | 21992 |
+| snitch | 9384 | 9384 | 9384 | 9384 | 9384 | 33960 | 30964 | 9520 | 10504 |
+| GoogleTest | 15768 | 15776 | 15776 | 15776 | 15776 | 40352 | 41008 | 16088 | 20328 |
+| Catch2 | 16760 | 16760 | 16760 | 16760 | 16760 | 41332 | 42000 | 17080 | 21320 |
+| doctest | 17104 | 17112 | 17112 | 17112 | 17112 | 41688 | 42704 | 17424 | 22024 |
+| Boost.Test | 20688 | 20696 | 20696 | 20696 | 20696 | 45272 | — | — | — |
+| Unity | 9544 | 9552 | 9552 | 9552 | 9552 | 34124 | 30960 | 9648 | 10504 |
+| CppUTest | 11672 | 11672 | 11672 | 11672 | 11672 | 36244 | 33844 | 13200 | 13696 |
 
 </details>
 
@@ -371,20 +256,20 @@ the human-readable reporter:
 auto& ts = tr.add_top_suite ("Answer");
 
 ts.test ("Number", [] (auto& t)
-  { 
-    t.expect (mt::eq (answer (), 43)) << "answer is 43"; 
+  {
+    t.expect (mt::eq (answer (), 43)) << "answer is 43";
   }
 );
 
 ts.test ("Text", [] (auto& t)
-  { 
-    t.expect (mt::eq ("abc"sv, "abd"sv)); 
+  {
+    t.expect (mt::eq ("abc"sv, "abd"sv));
   }
 );
 
-ts.test_each ("Sizes", { 1, 16, 512 }, [] (auto& t, int size) 
-  { 
-    t.expect (mt::lt (size, 100)); 
+ts.test_each ("Sizes", { 1, 16, 512 }, [] (auto& t, int size)
+  {
+    t.expect (mt::lt (size, 100));
   }
 );
 
@@ -426,27 +311,28 @@ mechanisms were read in the source code at the commits listed in
 ```cpp
 using namespace boost::ut;
 
-"number"_test = [] { 
-  expect (eq (answer (), 43)) << "answer is 43"; 
+"number"_test = [] {
+  expect (eq (answer (), 43)) << "answer is 43";
 };
 
 "sizes"_test
-    = [] (int size) { 
-        expect (lt (size, 100)); 
+    = [] (int size) {
+        expect (lt (size, 100));
       } | std::vector{ 1, 16, 512 };
 
-"requirement"_test = [] { 
-  expect (eq (answer (), 43) >> fatal); 
+"requirement"_test = [] {
+  expect (eq (answer (), 43) >> fatal);
 };
 ```
 
 - **Checks.** `expect()` accepts the comparators (`eq()`, `lt()`) and the
   operators on typed literals (`42_i`); the comparators of µTest++ come from
   here. A failed check prints the operands.
-- **Fatal failure.** `fatal` makes the failure terminate the program, with
-  `std::exit()`, so the remaining tests do not run (see the
+- **Fatal failure.** `fatal` makes the failure throw
+  `events::fatal_assertion`, which the runner catches around each test, so
+  only the current test stops, as with `require()` of µTest++; without
+  exceptions, the runner writes the summary and calls `std::abort()` (see the
   [User's Guide](/docs/user/checks/#comparison-with-other-frameworks)).
-  `require()` of µTest++ stops only the current test case.
 - **Registration.** A test is created by assigning a lambda to the result of the
   `_test` literal, with no macros and no separate registration step.
   Parametrised tests use `operator|` with a container or a tuple.
@@ -636,7 +522,7 @@ TEST_CASE ("requirement")
 - **Other.** Matchers, micro benchmarking, and BDD macros.
 - **Differences.** Catch2 offers the richest assertion and generator facilities
   of the macro frameworks; its features come with a compiled library and
-  heavier machinery than µTest++, which was not compared by measurement.
+  a footprint about eleven times that of µTest++ (see Footprint).
 
 ### doctest
 
@@ -678,8 +564,9 @@ TEST_CASE ("requirement")
   reporters; the console reporter is the default.
 - **Other.** The tests can be written in the production code and removed from
   the binary with `DOCTEST_CONFIG_DISABLE`. Requires C++11.
-- **Differences.** The closest to µTest++ in the concern for the footprint and
-  the compile times. It is a single header with macros; it has subcases,
+- **Differences.** Its documentation emphasises the compile times, which
+  were not measured here; its footprint is close to that of Boost UT (see
+  Footprint). It is a single header with macros; it has subcases,
   fixtures, and replaceable reporters; µTest++ has the TAP report and the
   platform support of the µOS++ project.
 
@@ -712,8 +599,8 @@ BOOST_AUTO_TEST_CASE (requirement)
   (`boost/test/data`) provides the data-driven tests.
 - **Standard library.** The utilities include `<sstream>`, `<iostream>`, and
   `<ostream>`; the library is used header-only, static, or shared, and it
-  depends on other Boost libraries. The sources were read, but not built, for
-  this page, since a build needs the rest of Boost.
+  depends on other Boost libraries. The single-header variant was built for
+  the footprint measurements; the other variants need the rest of Boost.
 - **Reports.** Human-readable, XML, and JUnit log and report formats.
 - **Differences.** A large, mature framework with a rich test tree (decorators,
   dependencies, timeouts); µTest++ has only suites and nested test cases, and
@@ -990,8 +877,10 @@ tested code are confusing at first.
 ## Limits and trade-offs of µTest++
 
 - **No compile-time variants of the checks.** `expect()` and `require()` run
-  at run time; snitch has `CONSTEXPR_*` and `CONSTEVAL_*` variants of its check
-  macros.
+  at run time; the function comparators can be used in `static_assert()`
+  (see the [User's Guide](/docs/user/checks/#compile-time-checks)), but a
+  failure there is reported by the compiler, without the operands. snitch has
+  `CONSTEXPR_*` and `CONSTEVAL_*` variants of its check macros.
 - **No mocking.** GoogleTest includes GoogleMock and CppUTest includes
   CppUMock. With Unity, the mocks come from the separate CMock project.
 - **No leak detection.** CppUTest takes a checkpoint of the allocations before

@@ -21,39 +21,8 @@ date: 2026-11-03 10:00:00 +0200
 The applications can make their own types readable in the reports, and can
 write their own comparators. These are **advanced features**, which are not
 needed for the usual checks described in [Writing checks](/docs/user/checks/).
-
-## Utility functions
-
-```cpp
-namespace utility {
-  bool is_match (std::string_view input, std::string_view pattern);
-}
-
-namespace utility {
-  template <class T, class Delim_T> // string-like T only
-  auto split (T input, Delim_T delim) -> std::vector<T>;
-
-  // Selected for string literals and `const char*`.
-  std::vector<std::string_view>
-  split (std::string_view input, std::string_view delimiters);
-}
-```
-
-`is_match()` checks whether the whole input matches a pattern, in which `*`
-matches any sequence of characters, including an empty one, and `?` matches any
-single character; the comparison is case-sensitive. The `--filter` option uses
-it, for each of the alternatives that it separates with `|`.
-
-`split()` splits a string at any of the delimiter characters, and returns the
-sub-strings in a `std::vector`, omitting the empty ones. For a
-`std::string_view`, a string literal, or a `const char*`, the elements are
-views into the input, **which must outlive them**; for a `std::string` they are
-copies. The vector **allocates memory from the heap**, which may matter on
-embedded targets.
-
-Refer to the [Utility
-Functions](/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-utility-functions/)
-reference page.
+The page ends with the utility functions of the framework, which the
+applications can also use.
 
 ## Custom types
 
@@ -281,3 +250,36 @@ the operands as forwarding references (`Lhs_T&& lhs`) and pass them on with
 A helper that passes its argument on to `expect()` or `require()` can be
 constrained with `extension::checkable`, as these functions are, and one
 that passes it on to the message operator with `extension::printable`.
+
+## Utility functions
+
+```cpp
+namespace utility {
+  bool is_match (std::string_view input, std::string_view pattern);
+}
+
+namespace utility {
+  template <class T, class Delim_T> // string-like T only
+  auto split (T input, Delim_T delim) -> std::vector<T>;
+
+  // Selected for string literals and `const char*`.
+  std::vector<std::string_view>
+  split (std::string_view input, std::string_view delimiters);
+}
+```
+
+`is_match()` checks whether the whole input matches a pattern, in which `*`
+matches any sequence of characters, including an empty one, and `?` matches any
+single character; the comparison is case-sensitive. The `--filter` option uses
+it, for each of the alternatives that it separates with `|`.
+
+`split()` splits a string at any of the delimiter characters, and returns the
+sub-strings in a `std::vector`, omitting the empty ones. For a
+`std::string_view`, a string literal, or a `const char*`, the elements are
+views into the input, **which must outlive them**; for a `std::string` they are
+copies. The vector **allocates memory from the heap**, which may matter on
+embedded targets.
+
+Refer to the [Utility
+Functions](/docs/api/groups/micro-os-plus-micro-test-plus-cpp-api-utility-functions/)
+reference page.

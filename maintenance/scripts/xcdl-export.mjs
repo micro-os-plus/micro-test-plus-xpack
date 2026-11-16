@@ -199,10 +199,12 @@ const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'))
 
 // ----------------------------------------------------------------------------
 
+// `currentYear` is used by the copyright lines of the templates.
 const context = {
   libraryFilePath: xcdlJsoncPath,
   package: packageJson,
   xcdl: xcdlJson,
+  currentYear: new Date().getFullYear(),
 }
 
 console.log()

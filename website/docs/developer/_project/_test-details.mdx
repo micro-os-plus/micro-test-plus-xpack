@@ -4,7 +4,7 @@
 
 The tests are built and run for **each platform and toolchain**.
 
-The test programs are in the [`tests/sources`](https://github.com/micro-os-plus/micro-test-plus-xpack/tree/xpack-development/tests/sources) folder, one
+The test programs are in the [`tests/sources`](https://github.com/micro-os-plus/micro-test-plus-xpack/tree/xpack/tests/sources) folder, one
 folder for each program, with the sources in `src/`. The executables are
 named `<name>-test`, and the same sources are built on all platforms.
 
@@ -15,8 +15,8 @@ levels. For each run, the tests:
 
 - run the program;
 - compare the output file with a reference file in
-  [`tests/expected/tap`](https://github.com/micro-os-plus/micro-test-plus-xpack/tree/xpack-development/tests/expected/tap) or
-  [`tests/expected/txt`](https://github.com/micro-os-plus/micro-test-plus-xpack/tree/xpack-development/tests/expected/txt), ignoring the program line, the
+  [`tests/expected/tap`](https://github.com/micro-os-plus/micro-test-plus-xpack/tree/xpack/tests/expected/tap) or
+  [`tests/expected/txt`](https://github.com/micro-os-plus/micro-test-plus-xpack/tree/xpack/tests/expected/txt), ignoring the program line, the
   compiler line, the timings, the addresses, and the line numbers
   (`tests/scripts/compare-files.sh`);
 - parse each TAP output file with the node-tap parser, in strict mode, to
@@ -78,10 +78,9 @@ ok 1 - minimal-test # { passed, 2 checks in 1 test case, time: 0.069 ms }
 ```
 
 Similarly, the reference file `tests/expected/txt/minimal-test.txt` is the
-output file of
-the `minimal-test` program, run as with the human-readable reporter. The output
-file receives
-every check, whatever the verbosity of the console:
+output file of the `minimal-test` program, run with the human-readable
+reporter, as shown on the first line. The output file receives every check,
+whatever the verbosity of the console:
 
 ```console
 Running: minimal-test --reporter=human --output-file=minimal-test.txt one two

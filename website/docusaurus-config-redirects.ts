@@ -15,6 +15,12 @@ export const redirects = {
   // fromExtensions: ['html', 'htm'], // /myPage.html -> /myPage
   // toExtensions: ['exe', 'zip'], // /myAsset -> /myAsset.zip (if latter exists)
   redirects: [
+    // The comparison page moved from the Contributor's Guide to Getting
+    // Started (WEBSITE-REVIEW-6 #35).
+    {
+      to: '/docs/getting-started/comparison/',
+      from: '/docs/developer/comparison/',
+    },
     //   // /docs/oldDoc -> /docs/newDoc
     //   {
     //     to: '/docs/newDoc',

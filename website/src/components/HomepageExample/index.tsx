@@ -14,13 +14,13 @@ int
 main (int argc, char* argv[])
 {
   // Initialise the runner with the options
-  // passed as command line arguments.
+  // passed as command-line arguments.
   tr.initialise (argc, argv);
 
   // Add the top suite and get a reference to it.
   auto& ts = tr.add_top_suite ();
 
-  // Add a test case to the top suite; 
+  // Add a test case to the top suite;
   // its body runs immediately.
   ts.test ("Check truth", [] (auto& t)
     {
@@ -56,8 +56,8 @@ export default function HomepageExample(): JSX.Element {
       <Heading as="h2" className="text--center">A first test</Heading>
       <p className="text--center">
         The outputs below were produced by running the program
-        with <code>--verbose</code>; the header lines, the timings, and the
-        totals were omitted.
+        with <code>--verbose</code>; the header lines, the blank lines, the
+        timings, and the totals were omitted.
       </p>
       <div className="row">
         <div className="col col--6">
@@ -68,18 +68,19 @@ export default function HomepageExample(): JSX.Element {
           <CodeBlock language="text" title="Human-readable output (--reporter=human)">{humanOutput}</CodeBlock>
           <p>
             <b>Footprint.</b> On a Cortex-M4F, a similar program, with one
-            test case and two checks, takes <b>127 KiB</b> of flash with
-            µTest++, against 435 to 588 KiB with Boost UT, doctest,
-            GoogleTest, Boost.Test, and Catch2; an empty program takes 81
-            KiB (<Link to="/docs/developer/comparison/#footprint">measurements</Link>).
+            test case and two checks, adds <b>46 KiB</b> of flash to an
+            empty program (81 KiB) with µTest++, against 102 KiB with
+            CppUTest, and 354 to 507 KiB with Boost UT, doctest,
+            GoogleTest, snitch, Boost.Test, and Catch2
+            (<Link to="/docs/getting-started/comparison/#footprint">measurements</Link>).
           </p>
           <p>
             <b>Where to run.</b> Natively while developing, then
             on <b>QEMU</b>, which emulates Cortex-M, Cortex-A, and RISC-V
             cores with no hardware, also in CI. On hardware, prefer
             the <b>Raspberry Pi Pico 2</b> and <b>Pico</b>, then
-            the <b>STM32 Nucleo</b> boards with 256 KB of flash (preferably
-            512 KB) or more (<Link to="/docs/user/#intended-use">details</Link>).
+            the <b>STM32 Nucleo</b> boards with 256 KiB of flash (preferably
+            512 KiB) or more (<Link to="/docs/user/#intended-use">details</Link>).
           </p>
         </div>
       </div>

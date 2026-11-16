@@ -110,6 +110,7 @@ parts they define, are:
 | `utility.h` | `is_match()`, `split()`, and `extract_file_name()` | [The runner](/docs/developer/runner/) |
 | `test.h` | `test_case`, `suite`, `top_suite`, and `static_suite` | [Test cases and suites](/docs/developer/test-cases-and-suites/) |
 | `runner.h` | `runner` | [The runner](/docs/developer/runner/) |
+| `deprecated.h` | the deprecated definitions that are not class members (the operators, the literals, and the wrappers), available only with `MICRO_OS_PLUS_MICRO_TEST_PLUS_DEPRECATED_ENABLED` | [Migrating from earlier versions](/docs/user/migrating/) |
 
 `stopwatch.h`, which measures the durations, is included by the headers that
 use it (`reporter.h`, `test.h`, and `runner.h`).

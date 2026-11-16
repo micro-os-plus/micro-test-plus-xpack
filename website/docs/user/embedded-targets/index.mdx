@@ -28,7 +28,7 @@ without exceptions.
 The memory footprint of the tests based on µTest++ is smaller than that of the
 other C++ testing frameworks, primarily because the `iostream` library is **not
 used**. It is measured with the footprint programs of the project, in
-[`tests/sources/benchmarks/footprint`](https://github.com/micro-os-plus/micro-test-plus-xpack/tree/xpack-development/tests/sources/benchmarks/footprint),
+[`tests/sources/benchmarks/footprint`](https://github.com/micro-os-plus/micro-test-plus-xpack/tree/xpack/tests/sources/benchmarks/footprint),
 which run the same test case, with two checks, written with each framework.
 
 The µTest++ program is:
@@ -71,19 +71,19 @@ main (int argc, char* argv[])
 The values are `volatile`, so that the compiler cannot evaluate the checks at
 build time.
 
-Built for the Cortex-M7F QEMU test platform, with the xPack GNU Arm Embedded
+Built for the Cortex-M4F QEMU test platform, with the xPack GNU Arm Embedded
 GCC 15.2.1, as a `release` build with `-Os`, it requires **about 46 KiB** more
-flash than an empty `main()` (the baseline); of these, about 24 KiB are the
+flash than an empty `main()` (the baseline); of these, about 23 KiB are the
 functions of µTest++, and the rest are functions of the C and C++ libraries
 that it uses:
 
 ```text
    text    data     bss     dec     hex filename
-  77160    2404    9352   88916   15b54 footprint-baseline.elf
- 124096    2528    9728  136352   214a0 footprint-micro-test-plus.elf
+  80388    2404    9352   92144   167f0 footprint-baseline.elf
+ 127656    2528    9728  139912   22288 footprint-micro-test-plus.elf
 ```
 
-The baseline is already about 77 KiB on this platform, since the µOS++ startup
+The baseline already takes about 81 KiB of flash on this platform, since the µOS++ startup
 links the formatted output of newlib and the C++ run-time support of the
 exceptions.
 
@@ -112,14 +112,14 @@ main ()
 
 ```text
    text    data     bss     dec     hex filename
- 436456    4952   16600  458008   6fd18 footprint-boost-ut.elf
+ 440452    4952   16600  462004   70cb4 footprint-boost-ut.elf
 ```
 
 </details>
 
 The figures of the other frameworks (Unity, CppUTest, doctest, Catch2,
 Boost.Test, GoogleTest, and snitch), and those of the other platforms, are in
-the [comparison with other frameworks](/docs/developer/comparison/#footprint).
+the [comparison with other frameworks](/docs/getting-started/comparison/#footprint).
 
 However, the use of templates for implementing comparators should be used with
 care on platforms with severely limited memory resources, as **each unique pair
@@ -152,19 +152,18 @@ The stack needed is approximately the sum of:
 - the temporary space used by the reporter at the innermost level, to
   write the results, plus that of the C library formatting functions.
 
-For example, with GCC 15.2, the values measured with the deeply nested
-test of the `suite` sample were:
+For example, the values measured with µTest++ 6.0.1 and GCC 15.2.1, on the
+QEMU test platforms, with the deeply nested test of the `suite` sample, run
+with an output file, are (the AArch64 platform is built without exceptions):
 
 | | Cortex-M33 `debug` (`-O0`) | Cortex-M33 `release` (`-Os`) | AArch64 `debug` (`-O0`) | AArch64 `release` (`-Os`) |
 | --- | --- | --- | --- | --- |
-| Fixed part | about 1.1 KB | about 0.7 KB | about 1.3 KB | about 1.3 KB |
-| Each nesting level | 392 bytes | 200 bytes | 512 bytes | 400 bytes |
+| Fixed part | about 1.1 KiB | about 0.7 KiB | about 1.8 KiB | about 1.3 KiB |
+| Each nesting level | 416 bytes | 232 bytes | 720 bytes | 432 bytes |
+| Reporter, at the innermost level | 512 bytes | 620 bytes | 1024 bytes | 1056 bytes |
+| `vsnprintf()` of newlib, below the reporter | 504 bytes | 504 bytes | 816 bytes | 768 bytes |
 
-On Cortex-M33, the reporter uses about 0.5 KB more at the innermost
-level, in both builds, plus the space used by `vsnprintf()`, which
-depends on the C library.
-
-Of each nesting level, 88 bytes (`debug`) and 64 bytes (`release`), on
+Of each nesting level, 112 bytes (`debug`) and 12 bytes (`release`), on
 Cortex-M33, are the frame of the test case body, which depends on the
 application code: its local variables, and the calls it makes, add to
 these values. The arguments passed to `test()` after the body are copied
@@ -173,13 +172,14 @@ into the frame of the test case.
 The values depend on the architecture, the compiler, and the optimisation
 level, so they are only an indication.
 
-On platforms with small stacks, such as the 8 KB of the Cortex-M test
+On platforms with small stacks, such as the 8 KiB of the Cortex-M test
 platforms, **deep nesting must be planned**: the deeply nested test of the
-`suite` sample, with eleven levels of test cases, uses about 5 KB of the stack
-in a Cortex-M33 `debug` build, before the reporter writes the results of the
-innermost level. If the stack is not large enough, increase it, reduce the
-nesting depth, or build the tests with `-Og`, which, on Cortex-M33, needs about
-280 bytes for each nesting level.
+`suite` sample, with eleven levels of test cases, uses about 5.6 KiB of the
+stack in a Cortex-M33 `debug` build before the reporter writes the results of
+the innermost level, and about 6.6 KiB of the 8 KiB while it writes them. If the
+stack is not large enough, increase it, reduce the nesting depth, or build the
+tests with `-Og`, which, on Cortex-M33, needs 304 bytes for each nesting
+level.
 
 :::caution
 Most Cortex-M cores **do not detect a stack overflow**: the stack grows

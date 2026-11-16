@@ -203,8 +203,9 @@ The result is one of the following:
     `the filters selected no test case` is reported, also when the test cases
     are listed.
 
-  After an option error, or when the output file cannot be opened, no output
-  file is created.
+  After an option error, the output file, if its option was valid, receives
+  the error lines, and is truncated, so that it never keeps the report of an
+  earlier run; when it cannot be opened, there is no output file.
 
 When exceptions are not enabled, a failed requirement, and a call of
 `tr.abort ()`, end the test execution before the result is returned (see
@@ -336,8 +337,8 @@ reference page.
 
 ## Nested test cases
 
-Test cases can be defined in a nested manner, i.e., **a test case can include
-not only checks, but also other test cases**, at any nesting level.
+Test cases can be nested, that is, **a test case can include not only
+checks, but also other test cases**, at any nesting level.
 
 A nested test case is created by calling `test()` on the outer test case, and
 runs immediately; a failed nested test case **also fails the outer one**:

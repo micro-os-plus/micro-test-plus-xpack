@@ -85,11 +85,11 @@ Detailed instructions are available in the [Integration Guide](/docs/install/).
 The footprint of a minimal test program, built with µTest++ and with Unity,
 CppUTest, doctest, Catch2, Boost UT, Boost.Test, GoogleTest, and snitch, on
 nine QEMU platforms, is given in the
-[comparison with other frameworks](/docs/developer/comparison/#footprint);
-on a Cortex-M4F, the µTest++ program takes 127 KiB of flash, against 435 to
-588 KiB with Boost UT, doctest, GoogleTest, Boost.Test, and Catch2, and
-81 KiB for an empty program. The same page now also compares µTest++ with
-snitch.
+[comparison with other frameworks](/docs/getting-started/comparison/#footprint);
+on a Cortex-M4F, the µTest++ program adds 46 KiB of flash to an empty
+program (81 KiB), against 102 KiB with CppUTest, and 354 to 507 KiB with
+Boost UT, doctest, GoogleTest, snitch, Boost.Test, and Catch2. The same page
+now also compares µTest++ with snitch.
 
 Other changes, in the tests only:
 

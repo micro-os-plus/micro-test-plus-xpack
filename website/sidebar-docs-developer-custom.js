@@ -56,11 +56,6 @@ export const customDocsDeveloperSidebarCategory =
         },
         {
             type: 'doc',
-            id: 'developer/comparison/index',
-            label: 'Comparison with other frameworks'
-        },
-        {
-            type: 'doc',
             id: 'developer/making-changes/index',
             label: 'Making changes'
         }

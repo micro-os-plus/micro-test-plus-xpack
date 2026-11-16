@@ -46,9 +46,13 @@ regenerated with:
 xpm run xcdl-export
 ```
 
-Only the `publicIncludeFolders`, `sourceFiles`, `publicDefines`,
-`compilerOptions`, and `dependencies` properties affect the generated files;
-the other properties of `xcdl-package.jsonc` are informative.
+The exporter reads only the `publicIncludeFolders`, `sourceFiles`,
+`dependencies`, `alias`, `publicDefines`, `privateDefines`,
+`publicCompilerOptions`, `privateCompilerOptions`, and `cdlArtefacts`
+properties; the other properties of `xcdl-package.jsonc` are informative. The
+property names are not checked, so a misspelt one (for example
+`compilerOptions`) is ignored without a warning; the details are in
+`.github/skills/xcdl/SKILL.md`.
 
 ## Keep the templates small
 

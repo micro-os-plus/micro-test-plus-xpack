@@ -1,6 +1,6 @@
 ---
 name: footprint-benchmarks
-description: 'Measure the memory footprint of µTest++ and of the other testing frameworks (Unity, CppUTest, doctest, Catch2, Boost UT, Boost.Test, GoogleTest, and snitch) with the footprint programs in tests/sources/benchmarks/footprint, on all the QEMU platforms, and update the figures on the website (the comparison page, the landing page, the embedded targets page, and the Getting Started features). Use when the user asks to "re-run the footprint benchmarks", "measure the footprint", "update the footprint figures", to upgrade the compared frameworks to newer releases, or when a change of µTest++, of the toolchains, or of the platforms may have changed the sizes.'
+description: 'Measure the memory footprint of µTest++ and of the other testing frameworks (Unity, CppUTest, doctest, Catch2, Boost UT, Boost.Test, GoogleTest, and snitch) with the footprint programs in tests/sources/benchmarks/footprint, on all the QEMU platforms, and update the figures on the website (the comparison page, the landing page, the embedded targets page, and the Getting Started features), and the stack usage of the nested test cases on the embedded targets page. Use when the user asks to "re-run the footprint benchmarks", "measure the footprint", "update the footprint figures", "re-measure the stack", to upgrade the compared frameworks to newer releases, or when a change of µTest++, of the toolchains, or of the platforms may have changed the sizes.'
 argument-hint: 'Optional: the frameworks to upgrade, or the platforms to measure'
 ---
 
@@ -13,6 +13,9 @@ argument-hint: 'Optional: the frameworks to upgrade, or the platforms to measure
   or of the startup code.
 - One of the compared frameworks has a new release.
 - A new framework, or a new platform, is added to the comparison.
+- The stack figures of the embedded targets page must be refreshed,
+  after a change of the test cases, of the checks, or of the reporters
+  (see Stack Usage).
 
 ## What Is Measured
 
@@ -143,7 +146,7 @@ size of the µTest++ symbols).
    ```sh
    node .github/skills/footprint-benchmarks/scripts/generate-footprint-tables.mjs \
      tests/sources/benchmarks/footprint-sizes.json \
-     --update website/docs/developer/comparison/index.mdx
+     --update website/docs/getting-started/comparison/index.mdx
    ```
 
    The script also prints the figures quoted in the text (see the next
@@ -153,7 +156,7 @@ size of the µTest++ symbols).
    by the script; check each one, since the wording may need to change
    with the values:
 
-   - `website/docs/developer/comparison/index.mdx`:
+   - `website/docs/getting-started/comparison/index.mdx`:
      - the "Flash added on Cortex-M3" row of the summary matrix;
      - "Reading the figures": the range of the empty program on Arm,
        the µTest++ increase on Cortex-M and its own symbols, the range
@@ -185,7 +188,7 @@ size of the µTest++ symbols).
 
    ```sh
    node .github/skills/footprint-benchmarks/scripts/check-mdx.mjs website \
-     website/docs/developer/comparison/index.mdx \
+     website/docs/getting-started/comparison/index.mdx \
      website/docs/user/embedded-targets/index.mdx \
      website/docs/getting-started/_project/_features.mdx
    ```
@@ -213,10 +216,16 @@ figures are updated:
   increase; the first row, "Empty program", has the absolute values
   only. The absolute values of the µTest++ row are bold.
 - **The text quotes**: the increase on Cortex-M3 in the summary matrix
-  row; the absolute Cortex-M4F values on the landing page, always with
-  the size of the empty program, so that the reader does not take the
-  startup and the C library for the framework; and the Cortex-M7F
-  `size` output on the embedded targets page.
+  row; the Cortex-M4F increases over the empty program on the landing
+  page and in the release posts (µTest++, CppUTest, and the range of the
+  six other C++ frameworks, snitch included), always with the size of
+  the empty program, so that the reader does not take the startup and
+  the C library for the framework; the Cortex-M4F increases in the
+  Getting Started features; and the Cortex-M4F `size` output on the
+  embedded targets page. The landing page card says that, on Cortex-M,
+  µTest++ adds less than half of the flash added by the other C++
+  frameworks measured; this holds on Cortex-M and Cortex-A15, not on
+  AArch64 and RISC-V, so check it after each measurement.
 - **No unquantified claims**: "lightweight" was removed from the
   tagline, since the figures show that µTest++ is small only compared
   with the C++ frameworks that report the operands (Boost UT, doctest,
@@ -238,6 +247,53 @@ The texts come from these sources:
 - the blog posts: the "lightweight testing framework" sentence of a new
   release post comes from the blog template; correct it in each post.
 
+## Stack Usage
+
+The Stack usage section of `website/docs/user/embedded-targets/index.mdx`
+gives, for Cortex-M33 and AArch64, `debug` and `release`, the fixed part,
+the cost of each nesting level, the frame of the test case body, the
+stack used by the reporter and by `vsnprintf()` at the innermost level,
+and the cost of each level with `-Og` on Cortex-M33. They are measured
+on `suite-test`, whose "Check deeply nested test cases" runs
+`nested_test_case()` at eleven levels, under QEMU with the GDB server:
+
+1. Build `suite-test` in the `qemu-cortex-m33-cmake-gcc-{debug,release}`
+   and `qemu-aarch64-a72-cmake-gcc-{debug,release}` configurations. For
+   `-Og`, configure a separate folder with the CMake command of the
+   `debug` configuration (`-D CMAKE_TOOLCHAIN_FILE=...`,
+   `-D PLATFORM_NAME=qemu-cortex-m33`, `-D CMAKE_BUILD_TYPE=Debug`), a
+   link to the `xpacks` folder of that configuration, and
+   `-D CMAKE_{C,CXX,ASM}_FLAGS_DEBUG="-Og -g3"`.
+2. Start QEMU with the arguments of `add_qemu_test()`
+   (`tests/cmake/common-functions.cmake`), the command line of the test
+   (`suite-test --output-file=<name>.tap one two`, in the
+   `--semihosting-config`), and `-S -gdb tcp::<port>`.
+3. In GDB (`arm-none-eabi-gdb` or `aarch64-none-elf-gdb`, from the
+   `xpacks/.bin` folder of the build), stop at `main`, fill the stack
+   from its bottom (`__stack` minus `__stack_size`) up to 256 bytes
+   below `$sp` with `0xa5a5a5a5`, and print `$sp` from breakpoints
+   with commands (`silent`, `printf`, `continue`) at
+   `*nested_test_case` (the entry), `nested_test_case` (after the
+   prologue), `vsnprintf`, `vfprintf`, and `fwrite`; at `_exit`, dump
+   the stack with `dump binary memory`.
+4. Compute, from the eleven values of `$sp` after the prologue:
+   - each nesting level: the difference of two consecutive values
+     (they are all equal);
+   - the fixed part: `__stack` minus the first value, minus one level;
+   - the frame of the body: the value at the entry minus the value after
+     the prologue (with `-Og` the two breakpoints are at the same
+     address; use the entries);
+   - the reporter: the innermost value minus the lowest `$sp` at the
+     calls of the C library;
+   - `vsnprintf()`: that lowest `$sp` minus the lowest address whose
+     pattern was overwritten (the high-water mark).
+   The deepest point of the run must be below the innermost body (the
+   reporter plus `vsnprintf()`); otherwise another test sets the
+   high-water mark, and the page must say so.
+5. Update the table, the frame of the body, the `-Og` figure, and the
+   use of the deeply nested test ("about 5.6 KiB", and the total with
+   the reporter) on the page, with the versions of µTest++ and of GCC.
+
 ## Reading the Results
 
 - **Compare within a platform, not across platforms.** On the Arm
@@ -250,7 +306,7 @@ The texts come from these sources:
   180 KiB there, against about 46 KiB on Cortex-M.
 - **The µTest++ symbols** (`microTestPlusSymbols`, the code and
   read-only symbols whose names contain `micro_test_plus`) are about
-  24 KiB on Cortex-M and RISC-V; the rest of the increase comes from
+  23 KiB on Cortex-M and RISC-V; the rest of the increase comes from
   the libraries.
 - **The RAM figures** are the static RAM (`data` plus `bss`); the heap
   and the stack used at run time are not measured.

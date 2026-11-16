@@ -16,7 +16,7 @@
 //
 // Usage (from the repository root):
 //   node .github/skills/footprint-benchmarks/scripts/check-mdx.mjs \
-//     website website/docs/developer/comparison/index.mdx [page...]
+//     website website/docs/getting-started/comparison/index.mdx [page...]
 //
 // The front matter is removed, and so is the `<!-- truncate -->` marker of
 // the blog posts, which Docusaurus accepts but plain MDX rejects. The check

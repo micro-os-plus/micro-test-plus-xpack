@@ -91,7 +91,7 @@
     ]
   },
   "_websiteConfig": {
-    "tagline": "A lightweight, macro-free C++ testing framework for embedded projects, with TAP output",
+    "tagline": "A macro-free C++ testing framework for embedded projects, with TAP output",
     "hasDoxygenReference": "true",
     "skipAlgolia": "true",
     "isXpmDependency": "true",

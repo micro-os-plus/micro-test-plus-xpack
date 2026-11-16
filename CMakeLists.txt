@@ -31,7 +31,7 @@ cmake_minimum_required (VERSION 3.20)
 project (
   micro-os-plus-micro-test-plus
   DESCRIPTION
-    "A source code library with µTest++, a lightweight, macro-free C++ testing framework for embedded projects, with TAP output"
+    "A source code library with µTest++, a macro-free C++ testing framework for embedded projects, with TAP output"
   LANGUAGES C CXX ASM
 )
 

@@ -1,6 +1,6 @@
 {/* ------------------------------------------------------------------------ */}
 
-### v6.0 (2026-11-09)
+## v6.0 (2026-11-09)
 
 Version 6.0 adds parametrised tests (`test_each()`), new function comparators
 (`all_of()`, `any_of()`, `negate()`, and `approx()`), the `extension`
@@ -15,7 +15,7 @@ example the top suite is now added with `add_top_suite()`, and a failed
 names, are in the
 [v6.0.0 release post](/blog/2026/11/09/micro-test-plus-v6-0-0-released/#details).
 
-### v5.0 (2026-07-14)
+## v5.0 (2026-07-14)
 
 The C++ API is unchanged; the changes affect only the configuration and the
 build integration. The library must now be enabled by defining
@@ -27,13 +27,13 @@ the CMake OBJECT library was renamed to
 listed in the
 [v5.0.0 release post](/blog/2026/07/14/micro-test-plus-v5-0-0-released/#details).
 
-### v4.1 (2026-05-12)
+## v4.1 (2026-05-12)
 
 Passing the top suite name via the runner constructor is deprecated in
 favour of passing it via the `initialise()` function. The name is
 optional; the default is the program name, derived from `argv[0]`.
 
-### v4.0 (2026-04-29)
+## v4.0 (2026-04-29)
 
 Major rework introducing explicit objects for test suites and test cases
 (subtests), using a `ts.test()` and `t.expect()` mechanism inspired by
@@ -42,12 +42,12 @@ Major rework introducing explicit objects for test suites and test cases
 runner, and the static suites remain objects of the application, which register
 themselves with a runner. The TAP reporter is now the default.
 
-### v3.3 (2026-03-22)
+## v3.3 (2026-03-22)
 
 Support for multiple reporters was added, including a new TAP-compliant
 reporter.
 
-### v3.0 (2022-04-03)
+## v3.0 (2022-04-03)
 
 Significant revision introducing a set of comparators, exception
 handling, function templates for test cases, and class templates for test
@@ -57,11 +57,11 @@ The `run_test_case(func, name)` function was deprecated in favour of
 `run_test_case(name, func)`, in preparation for the adoption of variadic
 templates.
 
-### v2.0 (2021-03-01)
+## v2.0 (2021-03-01)
 
 The C++ namespace was changed from `os` to `micro_os_plus`.
 
-### v1.1 (2021-02-05)
+## v1.1 (2021-02-05)
 
 The initial codebase, noted for its simplicity and inspired by
 [node-tap](https://node-tap.org), was extracted from the µOS++ monorepo.

@@ -7,7 +7,7 @@
 // and the folder extracted from it.
 //
 // When a framework is updated, also update the Sources table of the
-// comparison page (website/docs/developer/comparison/index.mdx).
+// comparison page (website/docs/getting-started/comparison/index.mdx).
 {
   "unity": {
     "git": "https://github.com/ThrowTheSwitch/Unity.git",

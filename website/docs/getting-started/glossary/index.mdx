@@ -61,9 +61,13 @@ For additional details, refer to the
 - **TAP** (Test Anything Protocol): a simple text-based protocol between test
   programs and the tools that collect their results; µTest++ writes TAP
   version 14 by default;
+- **test point**: an `ok` or `not ok` line of a TAP report, one for each
+  check, and one for each nested test case or suite, which summarises it;
+- **plan**: the `1..N` line of a TAP report, or of one of its indented
+  blocks, which gives the number of its test points;
 - **node-tap**: the JavaScript testing framework that inspired the model of
   µTest++, and whose TAP parser is used to validate its output;
-- **xpm**: the xPack Project Manager, a command line tool that installs source
+- **xpm**: the xPack Project Manager, a command-line tool that installs source
   and binary packages into a project, in the `xpacks` folder;
 - **xpm package** (xPack): a package that uses the npm package format, with
   additional metadata for C/C++ projects, installed with xpm; µTest++ is

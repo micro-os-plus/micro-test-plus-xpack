@@ -7,7 +7,7 @@
     {
       "id": "micro-os-plus.micro-test-plus",
       "display": "µTest++ Testing Framework",
-      "description": "µTest++, a lightweight testing framework for embedded platforms",
+      "description": "µTest++, a macro-free testing framework for embedded platforms",
       "publicIncludeFolders": [
         "include"
       ],
