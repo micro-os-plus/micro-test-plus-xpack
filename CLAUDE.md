@@ -39,11 +39,18 @@ programs against it on many toolchains and platforms.
   builds and runs sample test programs against the library across many
   toolchains and platforms; see "Testing" below.
 - `website/` — Docusaurus-based project documentation/guides.
-- `.github/skills/` — the agent skills of the project (API review, code
-  review, Doxygen review, commits, issues, xcdl, and others), shared by
-  Copilot and Claude Code: `.claude/skills` is a symlink to this folder.
-  `.github/copilot-instructions.md` points to them from the sections
-  where they apply; follow them when the task matches.
+- `.github/skills/` — the agent skills of the project (design review,
+  code review, Doxygen review, commits, issues, xcdl, and others), shared
+  by Copilot and Claude Code: `.claude/skills` is a symlink to this
+  folder. `.github/copilot-instructions.md` points to them from the
+  sections where they apply; follow them when the task matches. Most
+  skills are generated from the `npm-packages-helper` templates (the
+  generated `SKILL.md` files start with a `DO NOT EDIT!` comment); the
+  project-specific rules are in `.github/skills/project.md` and in the
+  `project.md` files of the skill folders, and the rules shared by the
+  review skills in `.github/skills/review-common.md`;
+  `.github/skills/README.md` explains which files are generated and
+  where each kind of rule goes.
 - `maintenance/` — project maintenance resources, not part of the
   published package: `maintenance/config/` (formatter configurations
   `.clang-format`, `.cmake-format.py`, `.prettierrc.json`,

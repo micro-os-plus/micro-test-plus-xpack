@@ -1,18 +1,30 @@
 ---
 name: rewrite-bash-to-javascript
-description: 'Rewrite a bash/shell script (.sh) in this project as an ES module Node.js script (.mjs), following the conventions already used by jsonc-format.mjs and xcdl-export.mjs. Use when the user asks to "rewrite", "convert", "port", or "translate" a bash script into JavaScript/Node.js, or to replace a shell script with a .mjs equivalent.'
-argument-hint: 'Path to the .sh script to convert, e.g. maintenance/scripts/cmake-format.sh'
+description: 'Rewrite a bash/shell script (.sh) in the µTest++ Testing Framework project as an ES module Node.js script (.mjs), following the conventions of the create-javascript-mjs skill. Use when the user asks to "rewrite", "convert", "port", or "translate" a bash script into JavaScript/Node.js, or to replace a shell script with a .mjs equivalent.'
+argument-hint: 'Path to the .sh script to convert, e.g. maintenance/scripts/<name>.sh'
 ---
+
+<!--
+DO NOT EDIT!
+Automatically generated from template file: npm-packages-helper/templates/common/.github/skills/rewrite-bash-to-javascript/SKILL-liquid.md;
+put the project rules in .github/skills/project.md (all the skills) or
+in .github/skills/rewrite-bash-to-javascript/project.md (this skill only);
+see .github/skills/README.md.
+-->
 
 # Rewrite Bash Scripts to JavaScript — µTest++ Testing Framework
 
 ## When to Use
 
-- The user asks to rewrite, convert, port, or translate a
-  `maintenance/scripts/*.sh` file into JavaScript/Node.js.
+- The user asks to rewrite, convert, port, or translate a `.sh` file
+  (for example under `maintenance/scripts/`) into JavaScript/Node.js.
 
 For a new script that has no `.sh` original, use
 [create-javascript-mjs](../create-javascript-mjs/SKILL.md) instead.
+
+Read `.github/skills/project-defaults.md`, `.github/skills/project.md` first, and `project.md` in this
+folder, if it exists; their rules extend these, and take precedence
+where they differ.
 
 ## Step 1 — General Conventions
 
@@ -38,9 +50,9 @@ converting a bash script.
   echoes the command and runs it) with `execFileSync` or `spawnSync` and
   `stdio: 'inherit'`.
 - **Wiring**: update the corresponding `xpack.actions` entry in
-  `package.json` to invoke the script with `node`, e.g.
-  `"cmake-format": "node maintenance/scripts/cmake-format.mjs"`. Remove
-  the now-unused `.sh` file only if the user confirms it is no longer
+  `package.json` to invoke the script with `node`, for example
+  `"<name>": "node maintenance/scripts/<name>.mjs"`. Remove the
+  now-unused `.sh` file only if the user confirms it is no longer
   needed elsewhere.
 
 ## Step 3 — Verify

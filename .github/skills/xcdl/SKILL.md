@@ -1,20 +1,32 @@
 ---
 name: xcdl
-description: 'How xcdl-package.jsonc is used in the µTest++ Testing Framework project: which of its properties affect the generated top-level CMakeLists.txt and meson.build, and why a commented-out defaultDefine does not mean that a macro is disabled. Use when the user asks about xcdl or xcdl-package.jsonc, or when adding, removing, or renaming a source file, a public include folder, or a dependency, or when a macro documented in xcdl-package.jsonc is discussed.'
+description: 'How xcdl-package.jsonc and xcdl-test.jsonc are used in the µTest++ Testing Framework project: which of their properties affect the generated CMakeLists.txt and meson.build files, and why a commented-out defaultDefine does not mean that a macro is disabled. Use when the user asks about xcdl or xcdl-package.jsonc, or when adding, removing, or renaming a source file, a public include folder, a compiler or linker option, or a dependency, or when a macro documented in xcdl-package.jsonc is discussed.'
 argument-hint: 'Optional: the change to make to xcdl-package.jsonc, or the property or macro in question'
 ---
+
+<!--
+DO NOT EDIT!
+Automatically generated from template file: npm-packages-helper/templates/common/.github/skills/_micro-os-plus/xcdl/SKILL-liquid.md;
+put the project rules in .github/skills/project.md (all the skills) or
+in .github/skills/xcdl/project.md (this skill only);
+see .github/skills/README.md.
+-->
 
 # xcdl — µTest++ Testing Framework
 
 ## When to Use
 
-- A source file, a public include folder, a compiler/linker option 
+- A source file, a public include folder, a compiler/linker option
   or a dependency is added, removed, or renamed, and
   `xcdl-package.jsonc` and `xcdl-test.jsonc` must be updated.
 - The user asks what a property of `xcdl-*.jsonc` does, or why the
   top-level `CMakeLists.txt` or `meson.build` contain a given entry.
 - A macro listed in `xcdl-*.jsonc` (a `defaultDefine`) is discussed,
   for example to decide whether it is enabled.
+
+Read `.github/skills/project-defaults.md`, `.github/skills/project.md` first, and `project.md` in this
+folder, if it exists; their rules extend these, and take precedence
+where they differ.
 
 ## Current Status
 
@@ -28,8 +40,8 @@ xpm run xcdl-export
 ## Manual edits
 
 The generated top-level `CMakeLists.txt` and `meson.build`, and those
-in the tests `sources` folders should not be edited by hand;
-change `xcdl-*.jsonc` and run the action again.
+in the tests `sources` folders, must not be edited by hand; change `xcdl-*.jsonc` and run
+the action again.
 
 ## Properties
 
@@ -67,4 +79,4 @@ No `*-defines.h` file is generated, so a commented-out `defaultDefine`
 does not mean that the macro is disabled. Its name documents the macro
 that the application must define itself, either in
 `micro-os-plus/project-config.h` or in project specific header files
-(e.g., `micro-os-plus/startup-defines.h`).
+(for example `micro-os-plus/startup-defines.h`).

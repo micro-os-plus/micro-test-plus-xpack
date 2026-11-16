@@ -46,16 +46,16 @@
   "scripts": {
     "generate-top-commons": "node node_modules/@xpack/npm-packages-helper/maintenance/scripts/generate-top-commons.mjs --micro-os-plus",
     "npm-install": "npm install",
-    "npm-link-helpers": "npm link @xpack/npm-packages-helper",
+    "npm-link-helper": "npm link @xpack/npm-packages-helper",
     "npm-outdated": "npm outdated",
     "npm-ci": "npm ci",
     "npm-pack": "npm pack",
     "npm-link": "npm link",
     "git-log": "git log --pretty='%cd * %h %s' --date=short",
+    "update-changelog": "node maintenance/scripts/update-changelog.mjs CHANGELOG.md",
     "git-pull-helper": "git -C ${HOME}/Work/micro-os-plus/build-helper-xpack.git pull",
     "deep-clean": "del-cli node_modules package-lock.json *.tgz",
-    "postversion": "git push origin --all && git push origin --tags",
-    "update-changelog": "node maintenance/scripts/update-changelog.mjs CHANGELOG.md"
+    "postversion": "git push origin --all && git push origin --tags"
   },
   "xpack": {
     "minimumXpmRequired": "0.20.8",
@@ -63,6 +63,7 @@
       "@xpack-dev-tools/clang": "21.1.8-1.1"
     },
     "actions": {
+      "xpm-install": "xpm install",
       "xpm-link": "xpm link",
       "clang-format": "node maintenance/scripts/clang-format.mjs",
       "cmake-format": "node maintenance/scripts/cmake-format.mjs",

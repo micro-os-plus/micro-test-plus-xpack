@@ -1,4 +1,7 @@
 /*
+ * DO NOT EDIT! Automatically generated from template file:
+ * npm-packages-helper/templates/common/.github/skills/_micro-os-plus/design-review/scripts/strip-comments-liquid.mjs
+ *
  * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
  * Copyright (c) 2026 Liviu Ionescu. All rights reserved.
  *
@@ -22,7 +25,7 @@
 // The paths are files or folders, relative to the current folder; the
 // default is `include` and `src`. Only `.h`, `.hpp`, `.c`, and `.cpp`
 // files are processed. The output keeps the relative paths, e.g.
-// `<output-folder>/include/micro-os-plus/micro-test-plus/runner.h`.
+// `<output-folder>/include/micro-os-plus/<name>.h`.
 //
 // String and character literals (including raw strings) are preserved;
 // a quote preceded by a digit or a letter is treated as a digit

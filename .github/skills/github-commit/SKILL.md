@@ -1,8 +1,16 @@
 ---
 name: github-commit
-description: 'Prepare and create a git commit in the µTest++ Testing Framework repository, following the project''s commit message conventions, and add the closing comment to the GitHub issue it fixes. Use when the user asks to "commit", "make a commit", "commit the fix", or to write a commit message for the current changes.'
+description: 'Prepare and create a git commit in the µTest++ Testing Framework repository (micro-os-plus/micro-test-plus-xpack), following the project''s commit message conventions, and add the closing comment to the GitHub issue it fixes. Use when the user asks to "commit", "make a commit", "commit the fix", or to write a commit message for the current changes.'
 argument-hint: 'Optional: the GitHub issue number (#N), and whether the commit completes the issue'
 ---
+
+<!--
+DO NOT EDIT!
+Automatically generated from template file: npm-packages-helper/templates/common/.github/skills/github-commit/SKILL-liquid.md;
+put the project rules in .github/skills/project.md (all the skills) or
+in .github/skills/github-commit/project.md (this skill only);
+see .github/skills/README.md.
+-->
 
 # Commit — µTest++ Testing Framework
 
@@ -13,39 +21,50 @@ argument-hint: 'Optional: the GitHub issue number (#N), and whether the commit c
   changes.
 
 This skill is the reference for the commit messages and the issue
-updates; `.github/copilot-instructions.md` ("Git Commits" and "Issue
-Updates") points to it, and requires the user approval before each
-commit.
+updates; `.github/copilot-instructions.md` points to it, and requires
+the user approval of the file list and the message before each commit.
+
+Read `.github/skills/project-defaults.md`, `.github/skills/project.md` first, and `project.md` in this
+folder, if it exists; their rules extend these, and take precedence
+where they differ.
+
+In the replies and the questions to the user, name the issues
+explicitly as GitHub issues (see "Naming GitHub Issues" in
+`.github/skills/review-common.md`).
 
 ## Procedure
 
 1. **Inspect the working tree.** Run `git status` and `git diff` (and
    `git diff --cached` if anything is staged). Identify which changes
    belong to this commit; the working tree often contains unrelated
-   changes and untracked files (for example notes in
-   `maintenance/docs/`), which must not be included.
-2. **Identify the issue.** Each commit refers to a GitHub issue. If the
+   changes and untracked files (for example the regenerated common
+   files, the review reports and the notes in `maintenance/docs/`, or
+   the files listed under "Files Not to Commit" in
+   `.github/skills/project.md`), which must not be included unless the
+   user says so.
+2. **Identify the GitHub issue.** Each commit refers to a GitHub issue,
+   the maintenance commits included; a commit has no issue only when the
+   user explicitly decides so (see "Commits without an Issue"). If the
    user did not give the number and it cannot be determined with
    certainty from the conversation, ask for it; do not guess. If no
    issue exists, offer to create one with the `create-github-issue`
-   skill. If the user prefers a commit without an issue, see "Commits
-   without an issue". Ask whether this commit completes the issue (and
-   gets `Fixes #N`), or is one of several commits for it, unless that
-   is already clear. A commit may fix several issues; it then has one
-   `Fixes #N` line for each, and the subject has the number of the
-   main one.
-3. **Check that the tests were run** as required by the "Testing"
-   section of `.github/copilot-instructions.md` (`test-selected` after
-   major changes, `test` after minor ones, and the platform-specific
-   actions for embedded changes). If they were not run after the last
+   skill. Ask
+   whether this commit completes the issue (and gets `Fixes #N`), or is
+   one of several commits for it, unless that is already clear. A
+   commit may fix several issues; it then has one `Fixes #N` line for
+   each, and the subject has the number of the main one.
+3. **Check that the tests were run**, as listed under "Tests" in
+   `.github/skills/project.md`. If they were not run after the last
    change, say so and run them, or ask the user, before committing.
-   Report failures; do not commit over them without explicit approval.
-4. **Check the generated files.** If `xcdl-package.jsonc` or the
-   build-helper templates changed, the generated files
-   (`CMakeLists.txt`, `meson.build`, the platform files in `tests/`)
-   must be regenerated and included, not edited by hand. If the
-   reference outputs in `tests/expected/` are affected, they must be
-   updated in the same commit.
+   Changes limited to the website, to the documentation, or to the
+   generated common files do not need the tests; say so. Report
+   failures; do not commit over them without explicit approval.
+4. **Check the generated files.** If the source of a generated file
+   changed (see "Generated Files" in `.github/skills/project.md`), the
+   generated files must be regenerated and included, not edited by
+   hand. The reference outputs that the tests compare with (if the
+   project has any) are updated in the same commit as the change that
+   alters them.
 5. **Draft the message** (see "Message Format") and write it to a file
    in the scratchpad folder.
 6. **Show the user** the list of files to be committed and the full
@@ -62,55 +81,91 @@ commit.
    user asks. If a hook fails, fix the cause and create the commit
    again. Do not push unless the user asks.
 8. **Report** the commit hash and subject, with
-   `git log -1 --format='%h %s'`. The short hash is the one printed by
-   `%h`, 8 characters in this repository; use it everywhere.
-9. **Update the issue**, if the commit has `Fixes #N` (see "Issue
-   Comment"); the comment is posted after the commit is pushed.
+   `git log -1 --format='%h %s'`. Use the short hash printed by `%h`
+   everywhere (its length is set by the repository).
+9. **Update the GitHub issue**, if the commit has `Fixes #N` (see
+   "Issue Comment"). The comment is posted only after the commit is
+   pushed; if it is not pushed yet, tell the user that the comment is
+   pending, and post it when the user asks for the push (or says that
+   it was pushed).
 10. **Ask whether to update the review documents** that list the issue
     or the finding it came from (see "Review Documents").
 
 Do not start the next fix while this one is uncommitted; commit first.
 
+## Branches
+
+Work is committed on `xpack-development`. `xpack`
+receives merges at release time only; never commit directly to it. Do
+not commit to the other branches of the repository unless the user
+says so; the `webpreview` and
+`website` branches publish the websites.
+
 ## Message Format
 
 ### Subject
 
-- `#N: ` followed by a summary in the imperative mood, starting with a
-  capital letter: `#152: Write the report lines to both streams once`.
-- At most 50 characters, including the `#N: ` prefix.
-- No period at the end.
-- Describe the change, not the problem (the issue title describes the
-  problem): `Restore the deprecated subtest`, not
-  `The subtest alias is missing`.
+The subjects follow the same rule in all the µOS++ and xPack
+repositories, which is that of git itself (its
+`Documentation/SubmittingPatches`): an optional prefix, then a summary
+in lower case.
+
+- The form is `[<prefix>: ]<summary>`, with at most one prefix:
+  - `#N` for a change that refers to a GitHub issue
+    (`#152: write the report lines to both streams once`);
+  - `website` for a change limited to `website/`
+    (`website: add the footprint page`; the routine update is
+    `website: update`);
+  - the name of a file, for a change limited to that file
+    (`package.json: bump typescript`).
+- The summary starts with a lower-case letter, unless its first word
+  has a fixed case (`CHANGELOG`, `README`, `µTest++`, an identifier).
+- It is in the imperative mood, and describes the change, not the
+  problem (the issue title describes the problem):
+  `retry the partial writes`, not `the partial writes are lost`.
+- At most 50 characters, including the prefix.
+- No period at the end, and no backticks.
+- No type prefixes (`fix:`, `feat:`); the repositories do not use
+  Conventional Commits.
+- When the user decides that a maintenance commit has no GitHub issue
+  (see "Commits without an Issue"), it uses the usual subject:
+  `website: update`, `re-generate top commons`,
+  `re-generate website commons`, `re-generate tests commons`,
+  `dist update`, or `package.json update`; the release commits use
+  the subjects of "Release Commits".
 
 ### Body
 
-Separated from the subject by a blank line, wrapped at 72 characters,
-in British English, formal, with no contractions and with the Oxford
-comma. Identifiers, files, and options are written plainly, without
-backticks. Explain what and why, not how; usually three short
+Optional for the trivial and the maintenance changes; required for a
+fix, also in a repository whose earlier commits are mostly single
+lines: those were written by hand, while the body of a commit written
+by the agent explains what and why to the reviewer. Separated from the
+subject by a blank line, wrapped at 72
+characters, in British English, formal, with no contractions and with
+the Oxford comma. Identifiers, files, and options are written plainly,
+without backticks. Explain what and why, not how; usually three short
 paragraphs:
 
 1. **The previous state**, in the past tense: what the code did, and
    why it was a problem.
 
-   > In v5.0.1, the test case bodies received a subtest&, and the
-   > applications named it in the functions passed to test(). The
-   > class was renamed test_case, without an alias, so this code no
-   > longer compiled.
+   > When the host accepted only part of the buffer, the write
+   > returned the shorter count, and the remaining bytes of the line
+   > were lost.
 
 2. **The change**, in the imperative: what was added, removed, or
    changed, and the decisions that are not obvious from the diff
    (what was deliberately left unchanged, and why).
 
-   > Add back subtest, as an alias of test_case, marked
-   > [[deprecated]].
+   > Repeat the call until all the bytes are written, and return the
+   > number of bytes actually written.
 
 3. **Tests and documentation**, in the imperative: the tests added or
-   changed, the reference outputs, and the documentation updated.
+   changed, the reference outputs, and the documentation updated (or
+   the probe or the sample project that verified the change).
 
-   > Test it in deprecated.cpp, update the compatibility notices, and
-   > update the unit reference outputs.
+   > Add a test for the partial writes, and update the documentation
+   > comments of write().
 
 A trivial change may have a single paragraph.
 
@@ -119,7 +174,7 @@ they are relevant in the text: an earlier decision or change that this
 commit builds on or reverts (`as #61 chose`, `removed by #109`), or a
 follow-up left to another issue (`see #51`). Refer to an item of a
 review document by the document name and the item number, so that it
-is not mistaken for an issue: `(API-REVIEW-2.md #43)`.
+is not mistaken for an issue: `(DESIGN-REVIEW-2.md #43)`.
 
 ### Trailers
 
@@ -135,108 +190,159 @@ After the body, separated by a blank line:
 
 ### Example
 
+A hypothetical example, which illustrates the format only; the project
+may give real ones in `project.md` in this folder:
+
 ```text
-#155: Accept explicit bool conversions in checks
+#12: retry the partial writes in write()
 
-The checks accepted only the framework expressions and the values
-implicitly convertible to bool, so std::optional, std::unique_ptr,
-and the application types with an explicit operator bool had to be
-converted, for example with has_value() or != nullptr.
+When the host accepted only part of the buffer, write() returned the
+shorter count, so the remaining bytes of the line were lost.
 
-Define extension::checkable with the contextual conversion to bool,
-applied to a const value; the scoped enumerations remain rejected.
+Repeat the call until all the bytes are written, and return the number
+of bytes actually written.
 
-Test the concept in static-asserts.cpp and the checks in
-miscellaneous.cpp, update the unit reference outputs, the
-compatibility notices, and the User's Guide.
+Add a test for the partial writes, and update the documentation
+comments of write().
 
-Fixes #155
+Fixes #12
 ```
 
 ## Commits without an Issue
 
-When the user decides that a change needs no issue (for example a
-documentation update or a website change):
+Every commit refers to a GitHub issue, unless the user explicitly
+decides that a given change needs none (for example a documentation or
+a website update, or another maintenance commit). Never decide it on
+the user's behalf: when no issue is known, ask for the number, or offer
+to create the issue. For a commit that the user decided has no issue:
 
-- The subject has no `#N: ` prefix; the other subject rules apply (the
-  imperative mood, a capital letter, at most 50 characters, no period).
+- The subject has no `#N: ` prefix; the other subject rules apply.
 - The message has no `Fixes` trailer, and there is no issue comment.
 - Ask whether a review document lists the change (see "Review
   Documents"); it is then recorded with the commit hash only.
 
+## Release Commits
+
+The release commits are mechanical and are made by the maintainer
+during a release, following the release procedure of the project (in
+the maintainer pages of the website, or in
+`maintenance/docs/README-MAINTAINER.md`). Do not create them, and do
+not run `npm version`, whose `postversion` script pushes the branches
+and the tags, unless the user is performing a release. Their subjects,
+in order:
+
+1. `CHANGELOG: prepare vX.Y.Z` — the `CHANGELOG.md` entry of the
+   release;
+2. `CHANGELOG: publish npm vX.Y.Z` — the `CHANGELOG.md` update for the
+   publication on npm;
+3. `X.Y.Z` — the version bump, made by `npm version`.
+
 ## Issue Comment
 
-After a commit with `Fixes #N`, add a comment to the issue. GitHub can
-link a commit hash only after the commit is pushed, and an amend or a
-rebase changes it; therefore post the comment after the push, with the
-final hash. If the user wants the comment before the push, say that
-the hash is provisional, and correct the comment after any amend:
+After a commit with `Fixes #N`, add a comment to the GitHub issue,
+after the commit is pushed (GitHub links a hash only then, and an amend
+or a rebase changes it):
 
 ```sh
-gh issue comment <N> --body-file <scratchpad>/issue-comment.md
+gh issue comment <N> --repo micro-os-plus/micro-test-plus-xpack \
+  --body-file <scratchpad>/issue-comment.md
 ```
 
-- Start with `Fixed in <short hash>`, followed by a brief explanation
-  of the changes, written for the reader of the issue: what was
-  changed, what was deliberately not changed and why, and how it was
-  verified (measurements, compared outputs).
+The comment is short: the commit message already explains the change
+and how it was verified, and GitHub shows the commit under the issue.
+
+- If the proposal of the issue was followed, the comment is a single
+  line, `Fixed in <short hash>, on YYYY-MM-DD.` (with several hashes,
+  `Fixed in <hash> and <hash>, on YYYY-MM-DD.`).
+- Only if the proposal of the issue was not followed, or a part of it
+  was deliberately not done, or the finding was withdrawn, use three
+  paragraphs: the line `Fixed in <short hash>.`, then one or two
+  sentences with what differs and why, then the separate line
+  `Fixed on YYYY-MM-DD.`. Do not repeat the explanation of the change
+  or of its verification.
+- The date is that of the commit (`git log -1 --format=%cs`).
 - Write the commit hashes bare, without backticks (`Fixed in 123f0c76`),
-  so that GitHub links them to the commits; in backticks they are not
-  linked. (The review documents are read as files in the repository, so
-  they write the hashes in backticks; do not make the two consistent.)
-- If the proposal of the issue was not followed, or the finding was
-  withdrawn, say so and explain why.
-- Write the paragraphs unwrapped (one line each), in Markdown, with
-  backticks for identifiers (but not for the commit hashes); short
-  lists are acceptable.
-- End with a separate line `Fixed on YYYY-MM-DD.`, with the date of the
-  commit (`git log -1 --format=%cs`).
+  so that GitHub links them; in backticks they are not linked. (The
+  review documents are read as files in the repository, so they write
+  the hashes in backticks; do not make the two consistent.)
+- Write one line per paragraph, in Markdown, with backticks for
+  identifiers (but not for the commit hashes); GitHub renders every
+  newline in an issue comment as a line break, so the paragraphs are
+  not wrapped.
 - Do not close the issue; it is closed when the commit reaches the
   default branch (`xpack`).
 
+For example, for an issue whose proposal was followed:
+
+```markdown
+Fixed in a8733dc2, on 2026-11-11.
+```
+
 Show the comment to the user before posting it, unless the user has
-already approved posting it together with the commit.
+already approved posting it together with the commit; for several
+issues, show them all. Posting a comment is a public action.
 
 ## Review Documents
 
 The findings that lead to issues are often recorded in review, change,
-or comparison documents, mainly in `maintenance/docs/` (for example
-`API-REVIEW-<n>.md`, `API-COMPATIBILITY.md`, `BOOST-UT-CHANGES.md`), and
-in other files named `*-review*`, `*-changes*`, `*-compatibility*`, or
-similar. After the commit, search them for the issue and the finding.
-When the finding came from a known document (for example, the issue was
-created from `API-REVIEW-8.md`), search that document first, by the
-words of the issue title and by the item number; otherwise search all
-the documents:
+or comparison documents, mainly in `maintenance/docs/` (the reports of
+the review skills, listed under "Report Files" in
+`.github/skills/review-common.md`, and the other documents listed under
+"Review Documents" in `.github/skills/project.md`), and in other files
+named `*-review*`, `*-changes*`, `*-compatibility*`, or similar, or in
+a document that the user mentions (a notes file, for example). If there
+are none, skip this section. After the commit, search them for
+the issue and the finding. When the finding came from a known document
+(for example, the issue was created from `DESIGN-REVIEW-8.md`), search
+that document first, by the words of the issue title and by the item
+number; otherwise search all the documents:
 
 ```sh
 grep -n -i -E '<words from the issue title>|\(#<N>\)|issue #<N>' \
   maintenance/docs/*.md
 ```
 
-Replace `<N>` with the number of the issue. In some documents, a `#K`
-at the start of an item is the number of the finding within the
-document, not a GitHub issue number; match the
-GitHub number where it is used as such (in parentheses, or after
-"issue" or "fixed in"), and confirm the item by its content.
+Replace `<N>` with the number of the issue. In the reports, a `#K` at
+the start of an item is the number of the finding within the report,
+not a GitHub issue number; match the GitHub number where it is used as
+such (in parentheses, or after "issue" or "fixed in"), and confirm the
+item by its content.
+
+When an issue is created from an item (see the `create-github-issue`
+skill), its number is recorded as a line `GitHub issue #N.` at the end
+of the item, which the search above finds:
+
+```markdown
+- **#7 — <short title>.** [internal] **[confirmed]**
+  ...
+  GitHub issue #61.
+```
 
 If an item refers to the issue or to the same finding, **ask the user**
-whether to update it, and show the proposed text. Then update the item
-in the format already used by that document, and always mention both
-the GitHub issue number and the short commit hash, for example:
+whether to update it, and show the proposed text. Then add `(fixed)`
+after the tags of the item (after the title, for the items that have no
+tags), and a line at its end that mentions both the short commit hash
+and the GitHub issue number:
 
-- `` Fixed in `a8733dc2` (#96): <what was done>. `` (the format of
-  `API-REVIEW-<n>.md`, under the item, with `(fixed)` added after its
-  tags, such as `[internal] **[confirmed]**`);
-- `` Status: fixed in #155, commit `2933857e`, on 2026-10-21. <what was
-  done>. `` (the format of `BOOST-UT-CHANGES.md`, after the verdict).
+```markdown
+- **#7 — <short title>.** [internal] **[confirmed]** (fixed)
+  ...
+  GitHub issue #61.
+  Fixed in `a8733dc2` (GitHub issue #61): <what was done>.
+```
+
+The other documents use the formats listed under "Review Documents" in
+`.github/skills/project.md`; the older items of a report may use an
+earlier format, which is kept as it is.
 
 Summarise what was done, and state where the fix differs from the
 recommendation of the document. For an intermediate commit of an issue
-fixed in several commits, ask whether to record it as partial (for
-example `Partly fixed in ... (#N): ...`). For a withdrawn finding, write
-`Withdrawn (#N): <reason>.` instead.
+fixed in several commits, ask whether to record it as partial
+(`Partly fixed in ... (GitHub issue #N): ...`). For a withdrawn finding,
+write `Withdrawn (GitHub issue #N): <reason>.` instead, and add
+`(withdrawn)` after the tags.
 
-Do not change the header date or commit of the document, which record
-when the review was made. These documents are often untracked or have
-unrelated changes; do not stage or commit them unless the user asks.
+Do not change the `Date:` line of the document, which records when the
+review was made, and decides which report is the most recent. These
+documents are often untracked or have unrelated changes; do not stage
+or commit them unless the user asks.

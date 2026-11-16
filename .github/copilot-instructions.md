@@ -104,9 +104,10 @@ Enclose the whole block of pragmas between two separator lines.
 
 ## Tool Binaries
 
-The binary tools are installed in the `xpacks/.bin` folders, in the
-project root and in each build folder; the JavaScript tools are in the
-`node_modules/.bin` folders.
+The compiler and the other binary tools are installed in the
+`build/<configuration>/xpacks/.bin` folder of each build configuration,
+or in the `<project>/xpacks/.bin` folder of the project root; the
+JavaScript tools are in the `node_modules/.bin` folders.
 
 Never run `find /` or other commands that search the entire file system,
 since they always time out; limit the search to the relevant folders.
@@ -141,12 +142,20 @@ action only after the user confirms that the board is powered up.
 When asked for one of the following reviews, follow the separate
 instructions of the corresponding skill:
 
-- an API review: `.github/skills/api-review/SKILL.md`;
+- a design review, or an API review: `.github/skills/design-review/SKILL.md`;
 - a code review: `.github/skills/code-review/SKILL.md`;
 - a website review: `.github/skills/website-review/SKILL.md`;
 - a review of the API reference pages:
   `.github/skills/website-api-review/SKILL.md`;
 - a consistency check: `.github/skills/consistency-check/SKILL.md`.
+
+The review skills share the rules in `.github/skills/review-common.md`,
+and all the skills read the facts of this project in
+`.github/skills/project.md`. Most skills are generated from the
+`npm-packages-helper` templates (`npm run generate-top-commons`), so
+the project-specific rules go in `.github/skills/project.md`, or in a
+`project.md` file in the folder of the skill, never in a generated
+`SKILL.md` (see `.github/skills/README.md`).
 
 ## Git Commits
 
@@ -193,6 +202,8 @@ conversion of an existing bash script, follow
 
 ## Verbal Questions
 
-When more input from the user is required, in addition to writing the
-full question in the chat window, also ask a short version of it aloud,
-with the macOS `say` program.
+When more input from the user is required, first ask a short version
+of the question aloud, with the macOS `say` program, and only then show
+the full question in the chat window (in the text of the reply, or in a
+question dialog), so that the spoken question draws the attention of
+the user before the text appears.

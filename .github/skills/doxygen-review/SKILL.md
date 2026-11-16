@@ -1,15 +1,23 @@
 ---
 name: doxygen-review
-description: 'Verify and fix the Doxygen documentation comments of the C++ sources in the µTest++ Testing Framework project, checking both completeness (@brief/@details on every entity) and accuracy (the text matches what the code actually does). Use when the user asks to "verify", "review", "check", or "fix" the Doxygen comments or the API documentation, or to bring the documentation in line with the project rules.'
-argument-hint: 'Optional: file or folder to review; defaults to include/ and src/'
+description: 'Verify and fix the Doxygen documentation comments of the C++ sources in the µTest++ Testing Framework project, checking both completeness (@brief/@details on every entity) and accuracy (the text matches what the code actually does). Use when the user asks to "verify", "review", "update", "check", or "fix" the Doxygen comments or the API documentation, or to bring the documentation in line with the project rules.'
+argument-hint: 'Optional: file or folder to review; defaults to include/ and src/, and website/doxygen/'
 ---
+
+<!--
+DO NOT EDIT!
+Automatically generated from template file: npm-packages-helper/templates/common/.github/skills/_micro-os-plus/doxygen-review/SKILL-liquid.md;
+put the project rules in .github/skills/project.md (all the skills) or
+in .github/skills/doxygen-review/project.md (this skill only);
+see .github/skills/README.md.
+-->
 
 # Doxygen Review — µTest++ Testing Framework
 
 ## When to Use
 
-- The user asks to verify, review, update or fix the Doxygen comments, or the
-  API documentation in general.
+- The user asks to verify, review, update or fix the Doxygen comments,
+  or the API documentation in general.
 - After significant code changes, to bring the documentation back in line
   with the code.
 
@@ -17,37 +25,29 @@ This skill fixes documentation only. Code defects found while reading the
 code are reported to the user, not fixed, unless the user asks for that
 separately.
 
+Read `.github/skills/project-defaults.md`, `.github/skills/project.md` first, and `project.md` in this
+folder, if it exists (for the exceptions to the rules below, and the
+known inaccuracies of this project); their rules extend these, and take
+precedence where they differ.
+
 ## Scope
 
 If the user specifies a path, review only that path. Otherwise review
-`include/` (including `inlines/`), `src/` and `website/doxygen`.
-Fix generated files (those with a `DO NOT EDIT` header) locally,
-they'll be fixed in their templates later.
+`include/` (including `inlines/`), `src/`, and the hand-written Doxygen
+sources in `website/doxygen/`. Generated files (those with a
+`DO NOT EDIT` header) are fixed in their templates, not in place.
 
 ## The Rules
 
 The documentation rules are defined here; `.github/copilot-instructions.md`
-("Doxygen Documentation") points to this skill and requires them to be
-applied with every code change. The language rules are shared with its
-"Language and Tone" section; if they differ, ask the user which one is
-right:
+points to this skill and requires them to be applied with every code
+change. The language rules are shared with its "Language and Tone"
+section; if they differ, ask the user which one is right:
 
 - The comments are comprehensive, in the Doxygen format, and cover
   every class, method, data member, type alias, macro, parameter, and
   return value, including `private` and `protected` members, deleted
   and defaulted special members, and deduction guides.
-- Exception: the overloads that differ from a documented function only in
-  their `requires` clause, and exist only to stop the compilation with a
-  readable message (the "Rejects ..." overloads of `expect()`, `test()`,
-  `eq()`, and the like, with their `static_assert`), are hidden from
-  Doxygen with `#if !defined(__DOXYGEN__)`, in the declaration and in the
-  definition, so that the applications do not read them as API. The same
-  applies to the out-of-line definitions of the deprecated overloads whose
-  declarations carry the complete comment. Doxygen ignores the `requires`
-  clause when it matches a definition to a declaration, so the comment of
-  such a definition would otherwise be merged into the documentation of
-  the real function. Keep their comments in the source, and add a guard
-  for any new overload of this kind.
 - The documentation is placed where the code is: the declarations and
   their comments are in the headers, the non-inline definitions in
   `src/`, and the inline and template definitions in `inlines/`.
@@ -70,6 +70,19 @@ right:
   the same term for the same concept throughout.
 - Lines shorter than 80 characters; no tab characters; comment lines
   aligned with their `/**`.
+- Exception: the overloads that differ from a documented function only
+  in their `requires` clause, and exist only to stop the compilation
+  with a readable message (the "Rejects ..." overloads, with their
+  `static_assert`), are hidden from Doxygen with
+  `#if !defined(__DOXYGEN__)`, in the declaration and in the
+  definition, so that the applications do not read them as API. The
+  same applies to the out-of-line definitions of the deprecated
+  overloads whose declarations carry the complete comment. Doxygen
+  ignores the `requires` clause when it matches a definition to a
+  declaration, so the comment of such a definition would otherwise be
+  merged into the documentation of the real function. Keep their
+  comments in the source, and add a guard for any new overload of this
+  kind.
 
 ## Step 1 — Automatic Checks
 
@@ -138,72 +151,74 @@ problems are inaccurate descriptions. For each header, read it together
 with its `inlines/<name>-inlines.h` and `src/<name>.cpp`, and the code
 they describe, and check every comment against the implementation.
 
-Known sources of inaccuracy, to be checked explicitly:
+Known sources of inaccuracy, to be checked explicitly (`project.md` in
+this folder may list the examples found in this project):
 
 - **Stale design descriptions.** Comments written for an earlier design:
   removed variables or helpers still mentioned, a class template that is
-  now a plain class, a namespace that moved (e.g. `detail::op` versus
-  `type_traits::op`), a responsibility that moved to another class.
+  now a plain class, a namespace that moved, a responsibility that moved
+  to another class.
 - **Behaviour claims.** Words such as "immediately", "default",
   "automatically", "always", "never", "owns", "does not own",
   "allocation-free", "safe", "zero-initialises", "clears", "flushes".
-  Confirm each one in the code; follow the call chain if needed (e.g.
-  whether a method runs something now or only registers it for later).
-- **Copied documentation.** Sibling classes (e.g. two reporters) often
-  share copied comments that describe only one of them (symbols, colours,
-  output format).
+  Confirm each one in the code; follow the call chain if needed (for
+  example whether a method runs something now or only registers it for
+  later).
+- **Copied documentation.** Sibling classes often share copied comments
+  that describe only one of them (symbols, colours, output format).
 - **Shared enumerations and options.** Describe the behaviour of every
-  implementation (e.g. what each verbosity level displays in every
-  reporter), not of one.
+  implementation, not of one.
 - **Platform statements.** Claims about compilers, libraries, and
-  architectures (e.g. type sizes on Arm, AArch64, RISC-V, x86-64).
-- **Examples.** Every `@code` example must compile and be correct (e.g.
-  a numeric literal operator template does not accept a character
-  literal).
+  architectures (for example type sizes on Arm, AArch64, RISC-V,
+  x86-64).
+- **Examples.** Every `@code` example must compile and be correct.
 - **Return values and parameters.** The described type and meaning must
-  match the signature (e.g. a function returning a comparator object does
-  not return "an output stream").
+  match the signature (for example a function returning a comparator
+  object does not return "an output stream").
 - **Numbers and complexity.** Re-derive any stated formula, scale, or
   complexity from the code.
 - **Undefined behaviour.** Never document an undefined behaviour as a
-  feature (e.g. modifying a `const` object through `const_cast`); add a
-  `@warning` instead.
-- **Padding.** Remove filler phrases that add no information (e.g.
-  "across all test cases and folders", "enhancing the professionalism
-  of the reports").
+  feature (for example modifying a `const` object through
+  `const_cast`); add a `@warning` instead.
+- **Padding.** Remove filler phrases that add no information (for
+  example "across all test cases and folders", "enhancing the
+  professionalism of the reports").
 
 When a claim cannot be verified, ask the user rather than guess.
 
 ## Step 3 — Fix
 
 - Fix the comments only; do not change the code. Keep a list of the code
-  defects noticed (e.g. declared but undefined functions, stale forward
-  declarations) to report at the end.
+  defects noticed (for example declared but undefined functions, stale
+  forward declarations) to report at the end.
 - Match the existing style: the same block layout, the same `@par`
   conventions, and the indentation of the surrounding code (the comment
   lines start with a space and `*`, aligned under the `/**`).
 - For mechanical edits over many blocks, match the blocks exactly,
   including the leading whitespace; check that every intended block was
   matched before writing, and never rely on output that has the
-  whitespace collapsed (e.g. through `awk`) to compose the replacement.
-- Keep the `@details` meaningful and short for trivial members (e.g. why
-  a special member is deleted, what sets a data member); do not pad.
+  whitespace collapsed (for example through `awk`) to compose the
+  replacement.
+- Keep the `@details` meaningful and short for trivial members (for
+  example why a special member is deleted, what sets a data member); do
+  not pad.
 
 ## Step 4 — Verify
 
-1. Re-run the three checks of Step 1; Doxygen and the merged check must
-   report no problems. Any remaining style problems must be justified
-   (e.g. long `#endif` comments that repeat a long condition).
+1. Re-run the checks of Step 1; Doxygen and the merged check, when they
+   can be run, must report no problems. Any remaining style problems
+   must be justified
+   (for example long `#endif` comments that repeat a long condition).
 2. Check that `clang-format` would not change any of the edited files:
 
    ```sh
    xpacks/.bin/clang-format --style=file:maintenance/config/.clang-format <file> | diff <file> -
    ```
 
-3. Build and run the tests, at least with the system compiler, with
+3. Build and run the tests listed under "Tests" in
+   `.github/skills/project.md`, at least with the system compiler, with
    clang (whose `-Wdocumentation` checks the comments), and with one
-   cross target (see the Testing section of
-   `.github/copilot-instructions.md`).
+   cross target, when the project has them.
 
 ## Step 5 — Report
 
@@ -213,5 +228,6 @@ Summarise for the user:
 - the inaccurate descriptions that were corrected, grouped by kind, with
   the files involved;
 - the code defects noticed but not fixed;
-- anything left unchanged, and why (e.g. generated documentation under
-  `website/` that is updated only when the documentation is rebuilt).
+- anything left unchanged, and why (for example generated documentation
+  under `website/` that is updated only when the documentation is
+  rebuilt).
