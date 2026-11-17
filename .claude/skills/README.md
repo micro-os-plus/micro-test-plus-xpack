@@ -6,9 +6,11 @@ Automatically generated from template file: npm-packages-helper/templates/common
 -->
 
 This folder holds the agent skills of the project, shared by GitHub
-Copilot (through `.github/copilot-instructions.md`) and Claude Code
-(through `.claude/skills`, a symbolic link to this folder). Each skill
-is a sub-folder with a `SKILL.md` file, whose front matter (`name`,
+Copilot (through `.github/copilot-instructions.md`) and Claude Code.
+The files are in `.claude/skills`, where Claude Code looks for them;
+`.github/skills` is a symbolic link to that folder, so that the paths
+`.github/skills/...` used by the instruction files and the skills are
+valid. Each skill is a sub-folder with a `SKILL.md` file, whose front matter (`name`,
 `description`) tells the agent when to use it.
 
 Most of the files are generated from the templates of the

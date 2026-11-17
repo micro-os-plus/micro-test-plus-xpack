@@ -95,8 +95,10 @@ that use this one.
 ## Documentation Updates
 
 - The hand-written pages of the website are in `website/docs/`; the
-  files with a `DO NOT EDIT!` header and the API reference pages under
-  `website/docs/api/` are generated, and are not edited.
+  files with a `DO NOT EDIT!` header and are not to be editted directly,
+  but via their templates
+- The API reference pages under
+  `website/docs/api/` are generated, and are not to be edited.
 
 ## Paths
 

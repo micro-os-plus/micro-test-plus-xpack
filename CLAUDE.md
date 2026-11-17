@@ -39,10 +39,10 @@ programs against it on many toolchains and platforms.
   builds and runs sample test programs against the library across many
   toolchains and platforms; see "Testing" below.
 - `website/` — Docusaurus-based project documentation/guides.
-- `.github/skills/` — the agent skills of the project (design review,
+- `.claude/skills/` — the agent skills of the project (design review,
   code review, Doxygen review, commits, issues, xcdl, and others), shared
-  by Copilot and Claude Code: `.claude/skills` is a symlink to this
-  folder. `.github/copilot-instructions.md` points to them from the
+  by Copilot and Claude Code: `.github/skills` is a symlink to this
+  folder, so the paths `.github/skills/...` are valid. `.github/copilot-instructions.md` points to them from the
   sections where they apply; follow them when the task matches. Most
   skills are generated from the `npm-packages-helper` templates (the
   generated `SKILL.md` files start with a `DO NOT EDIT!` comment); the
