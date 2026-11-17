@@ -27,9 +27,9 @@
 //
 // The sizes are in KiB (1024 bytes), with one decimal below 10 KiB. The
 // flash is `text` plus `data`, the RAM is `data` plus `bss`. Each cell is
-// the absolute value followed, in parentheses, by the increase over the
-// empty program (`baseline`) of the same platform; the absolute values of
-// the µTest++ row are bold. The `footprint-details` block is a single
+// the increase over the empty program (`baseline`) of the same platform,
+// followed, in parentheses, by the absolute value; the increases of the
+// µTest++ row are bold, and the empty program has the absolute values only. The `footprint-details` block is a single
 // collapsed `<details>` element with three tables, of the `text`, `data`,
 // and `bss` sizes, in bytes, with the platforms as columns.
 
@@ -111,8 +111,9 @@ function summaryTable(measure) {
         return '—'
       }
       const absolute = kib(measure(s))
-      const shown = program === 'micro-test-plus' ? `**${absolute}**` : absolute
-      return `${shown} (${increase(measure(s) - measure(sizes[p].baseline))})`
+      const delta = increase(measure(s) - measure(sizes[p].baseline))
+      const shown = program === 'micro-test-plus' ? `**${delta}**` : delta
+      return `${shown} (${absolute})`
     })
     lines.push(`| ${label} | ${cells.join(' | ')} |`)
   }

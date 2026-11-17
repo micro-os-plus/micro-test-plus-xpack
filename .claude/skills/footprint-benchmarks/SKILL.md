@@ -211,10 +211,10 @@ figures are updated:
   does not call it, would get negative values. The `printf()` program
   is an ordinary row, "A `printf()` call", which shows the cost of the
   formatted output of the C library.
-- **Each cell is the absolute value followed by the increase**, as
-  `127 (+46)`, in KiB, with one decimal below 10 KiB, and `+0` for no
+- **Each cell is the increase followed by the absolute value**, as
+  `+46 (127)`, in KiB, with one decimal below 10 KiB, and `+0` for no
   increase; the first row, "Empty program", has the absolute values
-  only. The absolute values of the µTest++ row are bold.
+  only. The increases of the µTest++ row are bold.
 - **The text quotes**: the increase on Cortex-M3 in the summary matrix
   row; the Cortex-M4F increases over the empty program on the landing
   page and in the release posts (µTest++, CppUTest, and the range of the
